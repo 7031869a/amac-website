@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>SBAR Generator — AMaC PLAB 2</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0d2247;--navy-deep:#091629;--gold:#c9a227;--gold-soft:#e0c45a;--cream:#f7f4ec;--ink:#1a1d24;--muted:#5d6470;--line:#e4ddcd;}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--ink);-webkit-font-smoothing:antialiased;}
+nav{position:sticky;top:0;z-index:100;background:linear-gradient(180deg,#0f2850,#0d2247);border-bottom:1px solid rgba(201,162,39,0.25);box-shadow:0 3px 16px rgba(9,22,41,0.5);}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 28px;height:64px;display:flex;align-items:center;justify-content:space-between;}
+.brand{font-family:'Fraunces',serif;font-size:24px;font-weight:700;color:var(--gold-soft);letter-spacing:3px;text-decoration:none;}
+.nav-links{display:flex;gap:24px;list-style:none;align-items:center;}
+.nav-links a{color:#dde2ec;text-decoration:none;font-size:13px;}.nav-links a:hover{color:#fff;}
+.nav-cta{background:linear-gradient(135deg,#d4a820,#c9a227)!important;color:var(--navy-deep)!important;padding:8px 18px;border-radius:2px;font-weight:700;font-size:12px;}
+.hero{background:linear-gradient(155deg,#0d2247,#091629);color:#fff;padding:52px 28px 44px;text-align:center;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.02) 1px,transparent 1px);background-size:20px 20px;}
+.ph{max-width:800px;margin:0 auto;position:relative;}
+.kick{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--gold-soft);border:1px solid rgba(201,162,39,0.4);padding:5px 14px;border-radius:2px;display:inline-block;margin-bottom:16px;}
+.hero h1{font-family:'Fraunces',serif;font-size:clamp(24px,5vw,42px);font-weight:500;line-height:1.1;}
+.hero h1 em{font-style:italic;color:var(--gold-soft);}
+.hero p{margin:12px auto 0;color:#d0d6e8;font-weight:300;font-size:15px;max-width:56ch;line-height:1.65;}
+.wrap{max-width:900px;margin:0 auto;padding:28px 28px 64px;}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.form-section{background:#fff;border:1px solid var(--line);border-radius:10px;padding:22px;box-shadow:0 2px 8px rgba(13,34,71,0.07);}
+.fs-title{font-family:'Fraunces',serif;font-size:18px;color:var(--navy);font-weight:500;margin-bottom:16px;}
+.examples-strip{margin-bottom:20px;}
+.ex-label{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--navy);margin-bottom:8px;}
+.ex-btns{display:flex;gap:8px;flex-wrap:wrap;}
+.ex-btn{padding:7px 17px;border-radius:20px;font-size:12px;font-family:'Outfit',sans-serif;cursor:pointer;transition:all .22s;background:linear-gradient(135deg,#0f2850,#0d2247);border:1.5px solid rgba(201,162,39,0.3);color:var(--gold-soft);box-shadow:0 3px 10px rgba(9,22,41,0.35),inset 0 1px 0 rgba(255,255,255,0.06);font-weight:600;letter-spacing:.3px;}
+.ex-btn:hover{background:linear-gradient(135deg,#1b3a6b,#152d52);border-color:rgba(201,162,39,0.6);box-shadow:0 6px 18px rgba(9,22,41,0.4),inset 0 1px 0 rgba(255,255,255,0.08);transform:translateY(-2px);color:#fff;}
+.sbar-field{margin-bottom:16px;}
+.sbar-label{display:flex;align-items:center;gap:8px;margin-bottom:5px;}
+.sbar-letter{font-family:'Fraunces',serif;font-size:22px;color:var(--gold);font-weight:500;width:28px;}
+.sbar-lname{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--navy);}
+.sbar-hint{font-size:11px;color:var(--muted);margin-left:36px;margin-bottom:4px;}
+.sbar-input{width:100%;padding:9px 12px;border:1px solid var(--line);border-radius:6px;font-family:'Outfit',sans-serif;font-size:13.5px;resize:vertical;min-height:54px;outline:none;transition:border .2s;color:var(--ink);}
+.sbar-input:focus{border-color:var(--gold);}
+.gen-btn{display:block;width:100%;background:linear-gradient(135deg,#d4a820,#c9a227);color:var(--navy-deep);border:none;font-family:'Outfit',sans-serif;font-size:14px;font-weight:700;padding:14px;border-radius:6px;cursor:pointer;transition:all .2s;}
+.gen-btn:hover{opacity:.9;}
+.output-section{background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden;box-shadow:0 2px 8px rgba(13,34,71,0.07);}
+.os-hdr{background:linear-gradient(135deg,#0f2850,#0d2247);padding:14px 18px;display:flex;justify-content:space-between;align-items:center;}
+.os-title{font-family:'Fraunces',serif;font-size:16px;color:#fff;font-weight:500;}
+.copy-btn{background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);color:#fff;padding:6px 13px;border-radius:4px;font-family:'Outfit',sans-serif;font-size:12px;font-weight:600;cursor:pointer;}
+.os-body{padding:18px;}
+.sbar-line{margin-bottom:12px;padding:10px 13px;background:var(--cream);border-radius:6px;border-left:3px solid var(--gold);}
+.sl-letter{font-family:'Fraunces',serif;font-size:16px;color:var(--gold);margin-right:6px;}
+.sl-name{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--navy);margin-right:8px;}
+.sl-text{font-family:'Fraunces',serif;font-style:italic;font-size:13.5px;color:var(--ink);line-height:1.6;margin-top:4px;}
+.placeholder{color:var(--muted);font-size:13px;font-style:italic;text-align:center;padding:28px 0;}
+.trustband{background:var(--navy);color:#fff;text-align:center;padding:34px 28px;}
+.trustband .slogan{font-family:'Fraunces',serif;font-style:italic;color:var(--gold-soft);font-size:18px;margin-bottom:8px;}
+.trustband p{color:#dde2ec;font-weight:300;font-size:14px;max-width:54ch;margin:0 auto;}
+footer{background:var(--navy-deep);color:#c4ccd8;padding:36px 28px 20px;}
+.foot-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px;border-bottom:1px solid rgba(255,255,255,0.07);padding-bottom:20px;}
+.foot-brand{font-family:'Fraunces',serif;font-size:22px;color:var(--gold-soft);letter-spacing:2px;}
+.foot-p{font-size:12px;color:#8a96b0;margin-top:5px;max-width:32ch;font-weight:300;line-height:1.5;}
+.foot-col h4{color:#fff;font-size:11px;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;font-weight:600;}
+.foot-col a{display:block;color:#8a96b0;text-decoration:none;font-size:12px;margin-bottom:6px;}
+.foot-col a:hover{color:var(--gold-soft);}
+.foot-btm{max-width:1200px;margin:14px auto 0;font-size:11px;color:#4a5568;text-align:center;}
+@media(max-width:700px){.nav-links{display:none;}.wrap{padding:18px 14px 48px;}.two-col{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<nav><div class="nav-inner"><a href="index.html" class="brand">AMaC</a>
+  <ul class="nav-links"><li><a href="books.html">The Master Series</a></li><li><a href="tools.html">Study Tools</a></li><li><a href="contact.html" class="nav-cta">Get Started</a></li></ul>
+</div></nav>
+<header class="hero"><div class="ph">
+  <span class="kick">AMaC Language</span>
+  <h1>SBAR <em>Generator</em></h1>
+  <p>Fill in the clinical details — get an examiner-ready SBAR escalation script in AMaC language, ready to say aloud.</p>
+</div></header>
+<div class="wrap">
+  <div class="examples-strip">
+    <div class="ex-label">Quick examples:</div>
+    <div class="ex-btns">
+      <button class="ex-btn" onclick="loadExample('acs')">Chest Pain / ACS</button>
+      <button class="ex-btn" onclick="loadExample('sepsis')">Sepsis</button>
+      <button class="ex-btn" onclick="loadExample('stroke')">Stroke</button>
+      <button class="ex-btn" onclick="loadExample('dka')">DKA</button>
+      <button class="ex-btn" onclick="loadExample('paeds')">Febrile Child</button>
+    </div>
+  </div>
+  <div class="two-col">
+    <div class="form-section">
+      <div class="fs-title">Build your SBAR</div>
+      <div class="sbar-field">
+        <div class="sbar-label"><span class="sbar-letter">S</span><span class="sbar-lname">Situation</span></div>
+        <div class="sbar-hint">Who is the patient and what is happening right now?</div>
+        <textarea class="sbar-input" id="inp-s" placeholder="e.g. 58-year-old male, central chest pain, possible ACS"></textarea>
+      </div>
+      <div class="sbar-field">
+        <div class="sbar-label"><span class="sbar-letter">B</span><span class="sbar-lname">Background</span></div>
+        <div class="sbar-hint">Relevant history, medications, allergies</div>
+        <textarea class="sbar-input" id="inp-b" placeholder="e.g. History of angina, on amlodipine, no aspirin allergy"></textarea>
+      </div>
+      <div class="sbar-field">
+        <div class="sbar-label"><span class="sbar-letter">A</span><span class="sbar-lname">Assessment</span></div>
+        <div class="sbar-hint">Your findings and clinical impression</div>
+        <textarea class="sbar-input" id="inp-a" placeholder="e.g. HR 98, BP 144/88, SpO2 97%, ECG shows ST elevation"></textarea>
+      </div>
+      <div class="sbar-field">
+        <div class="sbar-label"><span class="sbar-letter">R</span><span class="sbar-lname">Recommendation</span></div>
+        <div class="sbar-hint">What do you need the senior to do?</div>
+        <textarea class="sbar-input" id="inp-r" placeholder="e.g. Urgent senior and cardiology review for PCI pathway"></textarea>
+      </div>
+      <button class="gen-btn" onclick="generate()">Generate SBAR Script</button>
+    </div>
+    <div class="output-section">
+      <div class="os-hdr">
+        <span class="os-title">Your AMaC SBAR</span>
+        <button class="copy-btn" onclick="copy()">Copy</button>
+      </div>
+      <div class="os-body" id="output"><div class="placeholder">Fill in the fields and generate your script</div></div>
+    </div>
+  </div>
+</div>
+<div class="trustband"><p class="slogan">Think Like an Examiner · Speak Like a Doctor · Perform With Confidence</p><p>SBAR framework from the AMaC Master Series. Every escalation station requires structured handover.</p></div>
+<footer><div class="foot-inner">
+  <div><div class="foot-brand">AMaC</div><p class="foot-p">A. Mansour &amp; Colleagues.</p></div>
+  <div class="foot-col"><h4>Tools</h4><a href="simulator.html">Consultation Simulator</a><a href="frameworks.html">Frameworks</a><a href="exam-morning.html">Exam Morning</a></div>
+  <div class="foot-col"><h4>Contact</h4><a href="mailto:info@amac-medical.com">info@amac-medical.com</a></div>
+</div><div class="foot-btm">&copy; 2026 A. Mansour &amp; Colleagues (AMaC). All rights reserved.</div></footer>
+<script>
+const EX={
+  acs:{s:"62-year-old Mr James, central crushing chest pain radiating to left arm, possible ACS",b:"History of angina, takes amlodipine. No aspirin allergy. Onset 40 minutes ago.",a:"HR 98, BP 144/88, SpO2 97% on air. ECG shows inferior ST elevation. Aspirin 300mg given.",r:"Urgent senior and cardiology review for primary PCI pathway activation"},
+  sepsis:{s:"72-year-old Mrs Chen, post-op day 2 bowel surgery, suspected sepsis with organ dysfunction",b:"BP 94/60, HR 118, RR 24, SpO2 94%, temperature 38.9, confused. Surgical source likely.",a:"NEWS2 score 9. Sepsis Six initiated — cultures sent, antibiotics started, 500mL crystalloid, lactate 3.8.",r:"Urgent senior and outreach review — ICU escalation given haemodynamic instability"},
+  stroke:{s:"65-year-old man with sudden right-sided weakness and facial droop, onset 90 minutes ago",b:"Hypertensive, on ramipril. No anticoagulants. Last well 90 minutes ago, within window.",a:"FAST positive, ROSIER 4. Glucose 6.1 — not hypoglycaemia. CT head not yet done.",r:"Urgent stroke team activation and CT head for thrombolysis pathway decision"},
+  dka:{s:"28-year-old type 1 diabetic with DKA — glucose 32, ketones 4.8, pH 7.18",b:"Known T1DM on insulin, missed doses. Possible precipitant. BP 96/60, HR 124.",a:"IV fluids started. K+ 3.8 confirmed before insulin. RR 26, drowsy.",r:"Senior review for DKA management and IV insulin initiation"},
+  paeds:{s:"18-month-old Elijah with fever 39.2 for 12 hours, amber on traffic light system",b:"Runny nose 2 days. Reduced feeding. Wet nappies normal. No rash. HR 148, RR 32, CRT 2 seconds.",a:"No non-blanching rash. Alert and responsive. Viral URTI likely but monitoring required.",r:"Paediatric senior review for assessment and admission decision"},
+};
+function loadExample(k){const e=EX[k];document.getElementById('inp-s').value=e.s;document.getElementById('inp-b').value=e.b;document.getElementById('inp-a').value=e.a;document.getElementById('inp-r').value=e.r;generate();}
+function generate(){
+  const s=document.getElementById('inp-s').value.trim();
+  const b=document.getElementById('inp-b').value.trim();
+  const a=document.getElementById('inp-a').value.trim();
+  const r=document.getElementById('inp-r').value.trim();
+  if(!s&&!b&&!a&&!r){document.getElementById('output').innerHTML='<div class="placeholder">Fill in at least one field</div>';return;}
+  const lines=[
+    {l:'S',n:'Situation',t:s?`I am calling about ${s}.`:'[Describe the situation]'},
+    {l:'B',n:'Background',t:b?`For background: ${b}.`:'[Add background]'},
+    {l:'A',n:'Assessment',t:a?`My assessment: ${a}.`:'[Your assessment]'},
+    {l:'R',n:'Recommendation',t:r?`I would like to request: ${r}. I need your urgent review please.`:'[What you need]'},
+  ];
+  document.getElementById('output').innerHTML=lines.map(l=>`<div class="sbar-line"><div><span class="sl-letter">${l.l}</span><span class="sl-name">${l.n}</span></div><div class="sl-text">${l.t}</div></div>`).join('');
+}
+function copy(){
+  const s=document.getElementById('inp-s').value.trim();
+  const b=document.getElementById('inp-b').value.trim();
+  const a=document.getElementById('inp-a').value.trim();
+  const r=document.getElementById('inp-r').value.trim();
+  const text=`S: I am calling about ${s||'[situation]'}.
+B: For background: ${b||'[background]'}.
+A: My assessment: ${a||'[assessment]'}.
+R: I would like to request: ${r||'[recommendation]'}. I need your urgent review please.`;
+  navigator.clipboard.writeText(text).then(()=>{const btn=document.querySelector('.copy-btn');btn.textContent='Copied!';setTimeout(()=>btn.textContent='Copy',2000);});
+}
+</script></body></html>

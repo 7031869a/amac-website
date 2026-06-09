@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Mock OSCE Circuit — AMaC PLAB 2</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0d2247;--navy-deep:#091629;--gold:#c9a227;--gold-soft:#e0c45a;--cream:#f7f4ec;--ink:#1a1d24;--muted:#5d6470;--line:#e4ddcd;--fail:#c0392b;--pass:#1b6b3a;}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--ink);-webkit-font-smoothing:antialiased;}
+nav{position:sticky;top:0;z-index:100;background:linear-gradient(180deg,#0f2850,#0d2247);border-bottom:1px solid rgba(201,162,39,0.25);box-shadow:0 3px 16px rgba(9,22,41,0.5);}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 28px;height:64px;display:flex;align-items:center;justify-content:space-between;}
+.brand{font-family:'Fraunces',serif;font-size:24px;font-weight:700;color:var(--gold-soft);letter-spacing:3px;text-decoration:none;}
+.nav-links{display:flex;gap:24px;list-style:none;align-items:center;}
+.nav-links a{color:#dde2ec;text-decoration:none;font-size:13px;}.nav-links a:hover{color:#fff;}
+.nav-cta{background:linear-gradient(135deg,#d4a820,#c9a227)!important;color:var(--navy-deep)!important;padding:8px 18px;border-radius:2px;font-weight:700;font-size:12px;}
+/* HERO */
+.hero{background:linear-gradient(155deg,#0d2247,#091629);color:#fff;padding:52px 28px 44px;text-align:center;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.025) 1px,transparent 1px);background-size:20px 20px;}
+.ph{max-width:760px;margin:0 auto;position:relative;}
+.kick{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--gold-soft);border:1px solid rgba(201,162,39,0.4);padding:5px 14px;border-radius:2px;display:inline-block;margin-bottom:16px;background:rgba(201,162,39,0.07);}
+.hero h1{font-family:'Fraunces',serif;font-size:clamp(26px,5vw,44px);font-weight:500;line-height:1.1;}
+.hero h1 em{font-style:italic;color:var(--gold-soft);}
+.hero p{margin:12px auto 0;color:#d0d6e8;font-weight:300;font-size:15px;max-width:54ch;line-height:1.65;}
+/* STAGES */
+.stage{display:none;}.stage.active{display:block;}
+.wrap{max-width:860px;margin:0 auto;padding:28px 28px 64px;}
+/* SETUP */
+.setup-card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:24px;margin-bottom:16px;box-shadow:0 2px 8px rgba(13,34,71,0.07);}
+.setup-title{font-family:'Fraunces',serif;font-size:20px;color:var(--navy);margin-bottom:12px;}
+.info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:20px;}
+.info-item{background:var(--cream);border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center;}
+.ii-num{font-family:'Fraunces',serif;font-size:26px;color:var(--navy);font-weight:500;}
+.ii-label{font-size:12px;color:var(--muted);margin-top:2px;}
+.station-list-preview{margin-bottom:20px;}
+.slp-title{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:10px;text-transform:uppercase;letter-spacing:.5px;}
+.st-row{display:flex;align-items:center;gap:12px;padding:8px 12px;border-radius:6px;margin-bottom:5px;background:var(--cream);border:1px solid var(--line);font-size:13.5px;}
+.st-num{font-family:'Fraunces',serif;font-size:15px;color:var(--muted);width:24px;flex-shrink:0;}
+.st-title{flex:1;color:var(--ink);font-weight:500;}
+.st-domain{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;padding:2px 8px;border-radius:10px;}
+.dom-emergency{background:rgba(192,57,43,0.1);color:var(--fail);}
+.dom-communication{background:rgba(27,58,107,0.1);color:var(--navy);}
+.dom-ethics{background:rgba(124,92,191,0.1);color:#7c5cbf;}
+.dom-prescribing{background:rgba(217,119,6,0.1);color:#d97706;}
+.dom-psychiatry{background:rgba(190,24,93,0.1);color:#be185d;}
+.dom-paediatrics{background:rgba(5,150,105,0.1);color:#059669;}
+.dom-examination{background:rgba(92,107,192,0.1);color:#5c6bc0;}
+.dom-safeguarding{background:rgba(5,150,105,0.1);color:#059669;}
+.dom-interpretation{background:rgba(55,65,81,0.1);color:#374151;}
+.start-btn{display:block;width:100%;background:linear-gradient(135deg,#d4a820,#c9a227);color:var(--navy-deep);border:none;font-family:'Outfit',sans-serif;font-size:16px;font-weight:700;padding:18px;border-radius:8px;cursor:pointer;transition:all .2s;letter-spacing:.3px;}
+.start-btn:hover{opacity:.9;transform:translateY(-1px);}
+/* BRIEF STAGE */
+.brief-header{background:linear-gradient(135deg,#0f2850,#0d2247);border-radius:12px;padding:18px 22px;margin-bottom:16px;}
+.bh-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px;}
+.bh-station{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--gold-soft);}
+.bh-progress{font-size:12px;color:rgba(255,255,255,0.5);}
+.bh-title{font-family:'Fraunces',serif;font-size:22px;color:#fff;font-weight:500;}
+.bh-domain{font-size:12px;color:rgba(255,255,255,0.6);margin-top:3px;}
+.brief-timer{background:#fff;border:1px solid var(--line);border-radius:10px;padding:16px 20px;margin-bottom:16px;display:flex;align-items:center;justify-content:space-between;}
+.bt-label{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);}
+.bt-countdown{font-family:'Fraunces',serif;font-size:36px;color:var(--navy);font-weight:500;}
+.bt-countdown.urgent{color:var(--fail);}
+.bt-desc{font-size:12px;color:var(--muted);}
+.scenario-box{background:var(--cream);border:1px solid var(--line);border-radius:8px;padding:16px 18px;margin-bottom:16px;border-left:4px solid var(--gold);}
+.sb-label{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--navy);margin-bottom:8px;}
+.sb-text{font-size:15px;color:var(--ink);line-height:1.65;}
+.checklist{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 16px;margin-bottom:16px;}
+.cl-title{font-size:13px;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px;}
+.cl-item{font-size:13px;color:var(--ink);padding:5px 0;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:8px;}
+.cl-item:last-child{border-bottom:none;}
+.cl-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0;}
+.brief-start-btn{display:block;width:100%;background:linear-gradient(135deg,#d4a820,#c9a227);color:var(--navy-deep);border:none;font-family:'Outfit',sans-serif;font-size:15px;font-weight:700;padding:15px;border-radius:8px;cursor:pointer;transition:all .2s;}
+.brief-start-btn:hover{opacity:.9;}
+/* STATION ACTIVE */
+.station-header{background:linear-gradient(135deg,#0f2850,#0d2247);border-radius:12px;padding:14px 18px;margin-bottom:14px;display:flex;justify-content:space-between;align-items:center;}
+.sh-info{}
+.sh-station{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--gold-soft);}
+.sh-title{font-family:'Fraunces',serif;font-size:18px;color:#fff;font-weight:500;margin-top:2px;}
+.sh-timer-wrap{text-align:right;}
+.sh-timer{font-family:'Fraunces',serif;font-size:32px;color:var(--gold-soft);}
+.sh-timer.urgent{color:#fca5a5;}
+.sh-timer-label{font-size:10px;color:rgba(255,255,255,0.45);text-transform:uppercase;letter-spacing:.5px;}
+.task-panel{background:#fff;border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin-bottom:14px;}
+.tp-title{font-size:13px;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px;}
+.task-row{display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid var(--line);cursor:pointer;transition:all .15s;}
+.task-row:last-child{border-bottom:none;}
+.task-row:hover{background:rgba(201,162,39,0.06);padding-left:6px;}
+.task-check{width:20px;height:20px;border:2px solid var(--line);border-radius:4px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;transition:all .2s;margin-top:1px;}
+.task-check.done{background:var(--navy);border-color:var(--navy);color:#fff;}
+.task-label{font-size:13.5px;color:var(--ink);line-height:1.4;}
+.task-label.done{text-decoration:line-through;color:var(--muted);}
+.must-say{background:linear-gradient(135deg,#0f2850,#0d2247);border-radius:8px;padding:13px 16px;margin-bottom:14px;}
+.ms-title{font-size:13px;font-weight:700;color:var(--gold-soft);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px;}
+.ms-item{font-family:'Fraunces',serif;font-style:italic;font-size:13px;color:rgba(255,255,255,0.85);padding:5px 0;border-bottom:1px solid rgba(255,255,255,0.08);line-height:1.5;}
+.ms-item:last-child{border-bottom:none;}
+.end-station-btn{display:block;width:100%;background:var(--fail);color:#fff;border:none;font-family:'Outfit',sans-serif;font-size:14px;font-weight:700;padding:14px;border-radius:8px;cursor:pointer;transition:all .2s;}
+.end-station-btn:hover{opacity:.9;}
+/* BREAK */
+.break-card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:24px;text-align:center;box-shadow:0 2px 8px rgba(13,34,71,0.07);}
+.break-title{font-family:'Fraunces',serif;font-size:24px;color:var(--navy);margin-bottom:6px;}
+.break-timer{font-family:'Fraunces',serif;font-size:52px;color:var(--gold);margin:12px 0;}
+.break-scripts{text-align:left;margin-top:16px;}
+.bs-title{font-size:13px;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px;}
+.bs-item{font-family:'Fraunces',serif;font-style:italic;font-size:13.5px;color:var(--ink);padding:7px 12px;background:var(--cream);border-left:3px solid var(--gold);border-radius:0 6px 6px 0;margin-bottom:6px;line-height:1.5;}
+/* RESULTS */
+.circuit-score{background:linear-gradient(135deg,#0f2850,#0d2247);border-radius:12px;padding:22px;text-align:center;margin-bottom:20px;}
+.cs-title{font-family:'Fraunces',serif;font-size:22px;color:#fff;margin-bottom:4px;}
+.cs-sub{font-size:13px;color:rgba(255,255,255,0.5);margin-bottom:16px;}
+.score-row{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;}
+.score-bubble{background:rgba(255,255,255,0.07);border-radius:10px;padding:14px 20px;text-align:center;min-width:100px;}
+.sb-num{font-family:'Fraunces',serif;font-size:32px;color:var(--gold-soft);}
+.sb-label{font-size:11px;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:.5px;margin-top:3px;}
+.station-results{display:flex;flex-direction:column;gap:8px;margin-bottom:20px;}
+.sr-row{display:flex;align-items:center;gap:12px;padding:11px 14px;background:#fff;border:1px solid var(--line);border-radius:8px;}
+.sr-num{font-family:'Fraunces',serif;font-size:18px;color:var(--muted);width:30px;flex-shrink:0;}
+.sr-title{flex:1;font-size:14px;font-weight:500;color:var(--ink);}
+.sr-tasks{font-size:12px;color:var(--muted);}
+.sr-pct{font-family:'Fraunces',serif;font-size:18px;font-weight:500;}
+.pct-pass{color:var(--pass);}
+.pct-merit{color:var(--navy);}
+.pct-fail{color:var(--fail);}
+.restart-btn{display:block;width:100%;background:#fff;border:2px solid var(--navy);color:var(--navy);font-family:'Outfit',sans-serif;font-size:14px;font-weight:700;padding:14px;border-radius:8px;cursor:pointer;transition:all .2s;}
+.restart-btn:hover{background:var(--navy);color:#fff;}
+.trustband{background:var(--navy);color:#fff;text-align:center;padding:34px 28px;}
+.trustband .slogan{font-family:'Fraunces',serif;font-style:italic;color:var(--gold-soft);font-size:18px;margin-bottom:8px;}
+.trustband p{color:#dde2ec;font-weight:300;font-size:14px;max-width:54ch;margin:0 auto;}
+footer{background:var(--navy-deep);color:#c4ccd8;padding:36px 28px 20px;}
+.foot-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px;border-bottom:1px solid rgba(255,255,255,0.07);padding-bottom:20px;}
+.foot-brand{font-family:'Fraunces',serif;font-size:22px;color:var(--gold-soft);letter-spacing:2px;}
+.foot-p{font-size:12px;color:#8a96b0;margin-top:5px;max-width:32ch;font-weight:300;line-height:1.5;}
+.foot-col h4{color:#fff;font-size:11px;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;font-weight:600;}
+.foot-col a{display:block;color:#8a96b0;text-decoration:none;font-size:12px;margin-bottom:6px;}
+.foot-col a:hover{color:var(--gold-soft);}
+.foot-btm{max-width:1200px;margin:14px auto 0;font-size:11px;color:#4a5568;text-align:center;}
+@media(max-width:700px){.nav-links{display:none;}.wrap{padding:16px 14px 48px;}.info-grid{grid-template-columns:1fr 1fr;}.score-row{gap:10px;}}
+</style>
+</head>
+<body>
+<nav><div class="nav-inner"><a href="index.html" class="brand">AMaC</a>
+  <ul class="nav-links"><li><a href="books.html">The Master Series</a></li><li><a href="tools.html">Study Tools</a></li><li><a href="contact.html" class="nav-cta">Get Started</a></li></ul>
+</div></nav>
+<header class="hero"><div class="ph">
+  <span class="kick">18 Stations · 8 Minutes Each · Full Circuit</span>
+  <h1>Mock OSCE <em>Circuit</em></h1>
+  <p>A full timed PLAB 2 circuit — 18 stations, 8 minutes each, with 2-minute reading time between stations. Track your performance across the whole circuit.</p>
+</div></header>
+
+<!-- SETUP -->
+<div class="stage active" id="stage-setup">
+  <div class="wrap">
+    <div class="setup-card">
+      <div class="setup-title">Circuit Overview</div>
+      <div class="info-grid">
+        <div class="info-item"><div class="ii-num">18</div><div class="ii-label">Stations</div></div>
+        <div class="info-item"><div class="ii-num">8 min</div><div class="ii-label">Per station</div></div>
+        <div class="info-item"><div class="ii-num">2 min</div><div class="ii-label">Reading time</div></div>
+      </div>
+      <div class="station-list-preview">
+        <div class="slp-title">Station list</div>
+        <div id="stationListPreview"></div>
+      </div>
+      <button class="start-btn" onclick="startCircuit()">Start Circuit →</button>
+    </div>
+  </div>
+</div>
+
+<!-- BRIEF -->
+<div class="stage" id="stage-brief">
+  <div class="wrap">
+    <div class="brief-header">
+      <div class="bh-top">
+        <div class="bh-station" id="briefStationLabel"></div>
+        <div class="bh-progress" id="briefProgress"></div>
+      </div>
+      <div class="bh-title" id="briefTitle"></div>
+      <div class="bh-domain" id="briefDomain"></div>
+    </div>
+    <div class="brief-timer">
+      <div><div class="bt-label">Reading Time</div><div class="bt-desc">Read brief. Prepare your opening.</div></div>
+      <div class="bt-countdown" id="briefCountdown">2:00</div>
+    </div>
+    <div class="scenario-box">
+      <div class="sb-label">Station Scenario</div>
+      <div class="sb-text" id="briefScenario"></div>
+    </div>
+    <div class="checklist">
+      <div class="cl-title">Before you enter</div>
+      <div class="cl-item"><span class="cl-dot"></span>Prepare your opening sentence</div>
+      <div class="cl-item"><span class="cl-dot"></span>Note the patient's name and concern</div>
+      <div class="cl-item"><span class="cl-dot"></span>ICE — Empathy — Safety-net — Document</div>
+    </div>
+    <button class="brief-start-btn" id="briefStartBtn" onclick="startStation()">Enter Station →</button>
+  </div>
+</div>
+
+<!-- STATION ACTIVE -->
+<div class="stage" id="stage-station">
+  <div class="wrap">
+    <div class="station-header">
+      <div class="sh-info">
+        <div class="sh-station" id="stationLabel"></div>
+        <div class="sh-title" id="stationTitle"></div>
+      </div>
+      <div class="sh-timer-wrap">
+        <div class="sh-timer" id="stationTimer">8:00</div>
+        <div class="sh-timer-label">remaining</div>
+      </div>
+    </div>
+    <div class="task-panel">
+      <div class="tp-title">Examiner Checklist — tick as you complete</div>
+      <div id="taskList"></div>
+    </div>
+    <div class="must-say" id="mustSayPanel"></div>
+    <button class="end-station-btn" onclick="endStation()">End Station</button>
+  </div>
+</div>
+
+<!-- BREAK -->
+<div class="stage" id="stage-break">
+  <div class="wrap">
+    <div class="break-card">
+      <div class="break-title">Between Stations</div>
+      <div id="breakSubtitle" style="font-size:13px;color:var(--muted);margin-bottom:4px;"></div>
+      <div class="break-timer" id="breakTimer">2:00</div>
+      <div class="break-scripts">
+        <div class="bs-title">Reset Protocol</div>
+        <div class="bs-item">"That station is done. I cannot change it."</div>
+        <div class="bs-item">"This next station is a clean start."</div>
+        <div class="bs-item">"Introduce. ICE. Empathy. Safety-net. Document."</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- RESULTS -->
+<div class="stage" id="stage-results">
+  <div class="wrap">
+    <div class="circuit-score">
+      <div class="cs-title">Circuit Complete</div>
+      <div class="cs-sub" id="circuitTime"></div>
+      <div class="score-row">
+        <div class="score-bubble"><div class="sb-num" id="scoreTotal">—</div><div class="sb-label">Total Score</div></div>
+        <div class="score-bubble"><div class="sb-num" id="scorePassed">—</div><div class="sb-label">Stations Passed</div></div>
+        <div class="score-bubble"><div class="sb-num" id="scoreAvg">—</div><div class="sb-label">Avg % Tasks</div></div>
+      </div>
+    </div>
+    <div style="font-size:14px;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px;">Station Breakdown</div>
+    <div class="station-results" id="stationResults"></div>
+    <button class="restart-btn" onclick="restart()">↺ Restart Circuit</button>
+  </div>
+</div>
+
+<div class="trustband"><p class="slogan">Think Like an Examiner · Speak Like a Doctor · Perform With Confidence</p><p>18 stations from the AMaC PLAB 2 Master Series. Simulate full exam conditions.</p></div>
+<footer><div class="foot-inner">
+  <div><div class="foot-brand">AMaC</div><p class="foot-p">A. Mansour &amp; Colleagues.</p></div>
+  <div class="foot-col"><h4>Practice</h4><a href="osce.html">OSCE Stations</a><a href="simulator.html">AI Simulator</a><a href="recovery-scripts.html">Recovery Scripts</a></div>
+  <div class="foot-col"><h4>Study</h4><a href="exam-morning.html">Exam Morning</a><a href="fail-recovery.html">Fail Recovery</a><a href="mastercards.html">Master Cards</a></div>
+  <div class="foot-col"><h4>Contact</h4><a href="mailto:info@amac-medical.com">info@amac-medical.com</a></div>
+</div><div class="foot-btm">&copy; 2026 A. Mansour &amp; Colleagues (AMaC). All rights reserved.</div></footer>
+
+<script>
+const STATIONS=[
+  {n:1,title:"Acute Chest Pain — Possible ACS",domain:"Emergency",scenario:"You are the FY2 on call. Mr James, 58, presents with central crushing chest pain radiating to his left arm for 40 minutes. He is sweating. HR 98, BP 144/88, SpO₂ 97%.",tasks:["Assessed ABCDE within first 60 seconds","Requested ECG urgently","Checked allergy before aspirin","Gave aspirin 300mg or stated dose","Asked about sildenafil / GTN contraindication","Escalated to senior / cardiology","ICE explored — patient fear acknowledged","Safety-netted clearly","Documented plan"],must_say:["I need to do a quick ABCDE assessment first.","I would like an ECG done immediately please.","Before I prescribe — do you have any allergies?","I am concerned this may be a heart attack — I need to escalate to my senior now."]},
+  {n:2,title:"Febrile Child — Traffic Light Assessment",domain:"Paediatrics",scenario:"Mrs Okafor brings her 18-month-old son Elijah. Temperature 39.2°C for 12 hours. HR 148, RR 32, CRT 2 seconds. Alert and responsive. You are the paediatric FY2.",tasks:["Applied traffic light system (green/amber/red)","Checked for non-blanching rash explicitly","Asked about neck stiffness and fontanelle","ICE — explored meningitis fear","Clear safety-net: 999 for non-blanching rash","Communicated in plain language to parent","Appropriate management for amber category","Offered follow-up timeframe"],must_say:["I am going to use our assessment system to check how serious this is.","I need to specifically check for a non-blanching rash.","If you notice any rash that doesn't fade when you press a glass to it — call 999 immediately.","I can hear you're worried about meningitis — let me explain what I've found."]},
+  {n:3,title:"Breaking Bad News — Colorectal Cancer",domain:"Communication",scenario:"Mrs Patel, 52, has come to discuss results. She had a colonoscopy last week. Histology: adenocarcinoma of the colon. She was told only to 'come in to discuss results.'",tasks:["Checked what patient already knows (SPIKES — P)","Used warning shot before diagnosis","Delivered diagnosis in plain language — not 'malignancy'","Paused at least 5 seconds after bad news","Responded to emotion with NURSE","ICE explored after the news","Explained next steps clearly","Offered written information and support","Safety-netted with specific follow-up"],must_say:["Before I share the results — can you tell me what you've been told so far?","I'm afraid the news isn't what we were hoping for. [Pause.]","I want to make sure I explain this clearly — the biopsy showed a cancer of the bowel.","Take your time. There's no rush. [Hold the silence.]","I can hear how frightening this is. What worries you most right now?"]},
+  {n:4,title:"Capacity Assessment — Refusing Insulin",domain:"Ethics",scenario:"Mr Davis, 67, is an inpatient who has refused insulin for newly diagnosed type 1 diabetes. He understands he may die without it but says it is his choice. The nurse asks you to assess capacity.",tasks:["Applied 4-part capacity test explicitly","Explored the reason for refusal before concluding","Did not coerce or override","Correctly concluded patient has capacity","Acknowledged patient autonomy","Offered alternatives or compromise","Safety-netted — kept door open","Documented decision"],must_say:["I need to check four things — can you understand, remember, weigh up, and tell me your decision?","Can you tell me in your own words what might happen if you don't take insulin?","I respect that this is your decision — can I ask what's making you feel this way?","I want to be clear — I respect your right to refuse, even if I'm worried about you."]},
+  {n:5,title:"Drug Chart — CAP with Penicillin Allergy",domain:"Prescribing",scenario:"Mr Begum, 68, is admitted with community-acquired pneumonia. He is allergic to penicillin (rash). You need to prescribe appropriate antibiotics on the drug chart.",tasks:["Asked about allergy — confirmed type of reaction","Chose correct alternative (doxycycline or clarithromycin)","Did NOT prescribe amoxicillin or co-amoxiclav","Documented indication for antibiotic","Prescribed correctly (dose, route, frequency, duration)","Checked renal function before prescribing","Stated review date at 48 hours"],must_say:["Before I prescribe — you mentioned a penicillin allergy. Can I ask what reaction you had?","Because you have a penicillin allergy, I will use a different antibiotic.","I am prescribing doxycycline for your pneumonia — the indication is CAP.","I will review this antibiotic in 48 to 72 hours and narrow it based on cultures."]},
+  {n:6,title:"Suicide Risk Assessment",domain:"Psychiatry",scenario:"Tom, 28, took 20 paracetamol tablets 3 hours ago after a relationship breakdown. He is medically stable in A&E. You are asked to assess psychiatric risk.",tasks:["Asked about suicidal intent directly — no minimising language","Assessed plan, intent and means","Assessed protective factors","Explored precipitating event empathically","Did not discharge without senior review","Offered safety plan","Crisis resources discussed","Documented risk assessment"],must_say:["I need to ask you directly — did you want to die?","Can you tell me — was there a plan, and did you intend to end your life?","Who or what makes life feel worth living — even a little?","I can't let you go home today without a senior review — that's about keeping you safe, not about judgement."]},
+  {n:7,title:"Sepsis — Post-Op Deterioration",domain:"Emergency",scenario:"Mrs Chen, 72, post-op day 2 after bowel surgery. Temperature 38.9°C, HR 118, BP 94/60, RR 24, SpO₂ 94%, confused. NEWS2 score 9. Ward nurse has called you.",tasks:["Said the word 'sepsis'","Performed ABCDE","Initiated Sepsis Six within the hour","Blood cultures before antibiotics stated","Checked antibiotic allergy","IV fluids initiated","Lactate and urine output mentioned","Escalated to senior or outreach urgently","Reassessed after initial management"],must_say:["I am concerned this patient has sepsis.","I need to start ABCDE immediately.","I will send blood cultures, start IV antibiotics, give fluids, measure lactate and monitor urine output — Sepsis Six.","I need to escalate this to my senior and the outreach team now."]},
+  {n:8,title:"Anaphylaxis — Post Antibiotic",domain:"Emergency",scenario:"Mr Foster, 34, was given IV amoxicillin 5 minutes ago on the ward. He now has urticaria, lip swelling, stridor and BP 80/50. You are called urgently.",tasks:["Recognised anaphylaxis explicitly","Called for help immediately","Gave IM adrenaline 0.5mg (1:1000) into outer thigh","Positioned supine with legs raised","High-flow oxygen","IV access and fluids","Chlorphenamine and hydrocortisone after adrenaline","Monitoring — BP, HR, SpO₂","Documented time of reaction and treatment"],must_say:["This is anaphylaxis — I need help now.","I am giving adrenaline 0.5mg intramuscularly into the outer thigh immediately.","I need high-flow oxygen, IV access and 500mL fluid bolus.","I will stay with this patient and reassess every 5 minutes."]},
+  {n:9,title:"Safeguarding — Child Bruising",domain:"Safeguarding",scenario:"You are a GP. A mother brings in her 3-year-old son Aiden for a routine check. You notice a bruise on his lower back in a non-mobile area. The mother says he 'fell off a chair.'",tasks:["Documented bruise location and appearance accurately","Did not promise confidentiality","Sensitively explored the history without accusation","Applied TEN-4 criteria (non-accidental injury concern)","Did not confront the parent aggressively","Escalated to named safeguarding lead","Stated referral to Children's Services","Safety-planned for Aiden"],must_say:["I want to make sure I'm giving Aiden the very best care — can I ask how this bruise happened?","I'm going to have to share this with our safeguarding team — I want to be open with you about that.","I cannot promise confidentiality when I'm worried about a child's safety.","I will be making a referral to Children's Services today — this isn't about blame, it's about making sure Aiden is safe."]},
+  {n:10,title:"DVLA — New Seizure",domain:"Ethics",scenario:"Mr Singh, 42, had his first unprovoked tonic-clonic seizure last week. He drives for work. He has come for review. Neurology has confirmed first unprovoked seizure.",tasks:["Gave correct DVLA advice — 6 months no driving","Explained legal responsibility to notify DVLA","Used gold script — clear, non-judgemental","Explored impact on patient's work empathically","Documented discussion in notes","Safety-netted: what to do if seizure recurs","Did not tell patient it is their doctor's job to notify DVLA (it is the patient's)"],must_say:["For safety reasons you should not drive for 6 months from the date of your seizure.","It is your legal responsibility to inform the DVLA — I will document that we discussed this today.","I understand this has a big impact on your work — can we talk about what support is available?","If you have any further seizures, the 6-month period restarts from that date."]},
+  {n:11,title:"Angry Relative — Ward Complaint",domain:"Communication",scenario:"Mr Morrison, 60, is demanding to speak to a doctor. His mother, 84, fell getting to the toilet because the call bell was out of reach. He is visibly angry and wants answers.",tasks:["Did not become defensive","Acknowledged emotion explicitly and early","Apologised for the experience without admitting liability","Listened without interrupting","Explored what happened factually","Explained PALS complaints process","Offered escalation to senior if needed","Maintained professional boundaries","Clear follow-up offered"],must_say:["I can hear how upset and frustrated you are — I completely understand why.","I am sorry that your mother had this experience. That should not have happened.","I am not going to be defensive about this — I want to understand exactly what happened.","I will make sure this is escalated appropriately and that you hear back from us."]},
+  {n:12,title:"Mental State Examination — Depression",domain:"Psychiatry",scenario:"Sarah, 34, is referred by her GP with low mood for 6 weeks. She has stopped going to work. She is tearful when she arrives. You are asked to assess her mental state.",tasks:["Opened with safety question about self-harm","Completed ASEPTIC systematically","Assessed mood subjectively and objectively","Asked about command hallucinations specifically","Assessed insight","Completed risk assessment (intent, plan, means, protective factors)","ICE explored sensitively","Management plan discussed"],must_say:["Before we start — have you had any thoughts of harming yourself or ending your life?","How would you describe your mood in one word?","Have you heard voices when no one was around — and if so, what do they say?","Do you think something is wrong, and do you feel you need help?"]},
+  {n:13,title:"Explanation — New Type 2 Diabetes Diagnosis",domain:"Communication",scenario:"Mr Hassan, 52, has just been told by his GP that he has type 2 diabetes. He has come to the clinic to understand what this means. He looks anxious.",tasks:["Checked understanding before explaining (BREAKDOWN — A)","Used plain language — no jargon","Chunked information and checked understanding","ICE — explored concerns about injections, diet, work","Addressed insulin misconception (T2DM ≠ always insulin initially)","Lifestyle advice given","Next steps and follow-up clear","Safety-net — symptoms of hypo/hyper"],must_say:["Before I explain — what do you already understand about diabetes?","In simple terms, diabetes means your body is not controlling sugar levels as well as it should.","Does that make sense so far? What questions do you have?","Type 2 diabetes is very manageable — the most important things are diet, exercise and monitoring."]},
+  {n:14,title:"ECG Interpretation — STEMI",domain:"Emergency",scenario:"You are the FY1 in A&E. Mr Bello, 65, has had central chest pain for 1 hour. You are handed his ECG. There is ST elevation in leads II, III and aVF with reciprocal changes.",tasks:["Identified STEMI pattern correctly","Named territory (inferior STEMI)","Said aspirin before thrombolysis/PCI decision","Escalated immediately — cardiology and senior","Did not wait for troponin before escalating","Oxygen only if SpO₂ <94%","SBAR used for escalation","Safety-netted patient"],must_say:["This ECG shows ST elevation in the inferior leads — this is an inferior STEMI.","I need to activate the primary PCI pathway now.","I am giving aspirin 300mg now — has anyone confirmed there is no allergy?","I am calling the cardiology registrar immediately using SBAR."]},
+  {n:15,title:"Prescribing — VRIII for NBM Diabetic",domain:"Prescribing",scenario:"Mrs Obi, 58, has type 2 diabetes on insulin. She is nil by mouth for an elective procedure tomorrow morning. You need to initiate VRIII on the drug chart.",tasks:["Confirmed indication — NBM diabetic patient","Did NOT stop long-acting insulin","Started 10% glucose infusion alongside insulin","Used correct VRIII protocol","Monitored blood glucose 1-hourly stated","Aimed glucose 6–10 mmol/L","Stated when to stop VRIII (eating and drinking resumed)","Allergy check performed"],must_say:["For a nil-by-mouth diabetic patient I need to start a variable rate insulin infusion.","I will not stop her long-acting insulin — that must continue.","I will run 10% glucose alongside the insulin infusion.","I will monitor blood glucose hourly and target 6 to 10 mmol/L."]},
+  {n:16,title:"Respiratory Examination",domain:"Examination",scenario:"Mr Owusu, 62, has presented with progressive breathlessness. You are asked to perform a respiratory examination and present your findings.",tasks:["Obtained consent explicitly","Inspected hands, face and neck first","Counted respiratory rate before touching patient","Assessed tracheal position","Expansion — both sides compared","Percussion — systematic comparison both sides","Auscultation — compared sides, vocal resonance done","Presented positive and negative findings","Offered differential and next investigations"],must_say:["The respiratory rate is [X] breaths per minute — normal is 12 to 20.","The trachea is central / deviated to [side].","Expansion is equal / reduced on the [side].","I can hear [vesicular / bronchial / reduced] breath sounds at [zone]."]},
+  {n:17,title:"Telephone Consultation — Chest Pain Triage",domain:"Communication",scenario:"You receive a call from Mrs Green, 67, who has had central chest pain for 20 minutes. She is at home alone. She sounds short of breath. You are the on-call FY1.",tasks:["Did NOT give reassurance over the phone","Called 999 or arranged ambulance immediately","Kept patient on the line","Gave clear instructions while waiting","Documented consultation and escalation","Safety-netted: unlock front door, sit down","Did not advise her to drive herself"],must_say:["Mrs Green, I am very concerned about your symptoms — I am going to call 999 for you right now.","Please stay on the line with me — do not hang up.","Can you unlock your front door and sit down — the ambulance is coming to you.","Do not drive yourself — please wait for the ambulance."]},
+  {n:18,title:"Duty of Candour — Drug Error",domain:"Communication",scenario:"You are the FY1. You prescribed 10× the correct dose of methotrexate last week. The pharmacist caught it before administration. The patient, Mrs Khalid, 58, needs to be told.",tasks:["Opened with clear acknowledgement of the error","Apologised sincerely — not a conditional apology","Explained what happened in plain language","Did not minimise or deflect blame","Explained that harm was prevented","Explained what would change to prevent recurrence","Offered written record of the meeting","Documented the conversation and duty of candour obligation"],must_say:["I need to tell you about something that happened — I made an error in your prescription.","I am truly sorry this happened. You deserved better care than this.","Fortunately the pharmacist identified it before you received the medication — you were not harmed.","We take this very seriously, and I want to explain what we are doing to make sure this cannot happen again."]}
+];
+
+let currentStation=0, timerInterval=null, briefInterval=null, breakInterval=null;
+let taskChecks={}, circuitStartTime=null, stationResults=[];
+const STATION_SECS=480, BRIEF_SECS=120, BREAK_SECS=120;
+let secsLeft=STATION_SECS, briefSecsLeft=BRIEF_SECS, breakSecsLeft=BREAK_SECS;
+
+// Build preview
+const domainClass={
+  'Emergency':'dom-emergency','Communication':'dom-communication','Ethics':'dom-ethics',
+  'Prescribing':'dom-prescribing','Psychiatry':'dom-psychiatry','Paediatrics':'dom-paediatrics',
+  'Examination':'dom-examination','Safeguarding':'dom-safeguarding','Interpretation':'dom-interpretation'
+};
+document.getElementById('stationListPreview').innerHTML=STATIONS.map(s=>`
+  <div class="st-row">
+    <span class="st-num">${s.n}</span>
+    <span class="st-title">${s.title}</span>
+    <span class="st-domain ${domainClass[s.domain]||''}">${s.domain}</span>
+  </div>`).join('');
+
+function showStage(id){
+  document.querySelectorAll('.stage').forEach(s=>s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function startCircuit(){
+  currentStation=0; taskChecks={}; stationResults=[];
+  circuitStartTime=Date.now();
+  showBrief();
+}
+
+function showBrief(){
+  clearAllTimers();
+  const st=STATIONS[currentStation];
+  document.getElementById('briefStationLabel').textContent=`Station ${st.n} of ${STATIONS.length}`;
+  document.getElementById('briefProgress').textContent=`${currentStation} completed`;
+  document.getElementById('briefTitle').textContent=st.title;
+  document.getElementById('briefDomain').textContent=st.domain;
+  document.getElementById('briefScenario').textContent=st.scenario;
+  briefSecsLeft=BRIEF_SECS;
+  updateBriefTimer();
+  showStage('stage-brief');
+  briefInterval=setInterval(()=>{
+    briefSecsLeft--;
+    updateBriefTimer();
+    if(briefSecsLeft<=0){clearInterval(briefInterval);startStation();}
+  },1000);
+}
+
+function updateBriefTimer(){
+  const m=Math.floor(briefSecsLeft/60), s=briefSecsLeft%60;
+  const el=document.getElementById('briefCountdown');
+  el.textContent=`${m}:${s.toString().padStart(2,'0')}`;
+  el.classList.toggle('urgent',briefSecsLeft<=30);
+}
+
+function startStation(){
+  clearAllTimers();
+  const st=STATIONS[currentStation];
+  taskChecks[currentStation]={};
+  document.getElementById('stationLabel').textContent=`Station ${st.n} of ${STATIONS.length} — ${st.domain}`;
+  document.getElementById('stationTitle').textContent=st.title;
+
+  // Build task list
+  document.getElementById('taskList').innerHTML=st.tasks.map((t,i)=>`
+    <div class="task-row" onclick="toggleTask(${i})">
+      <div class="task-check" id="tc-${i}"></div>
+      <span class="task-label" id="tl-${i}">${t}</span>
+    </div>`).join('');
+
+  // Must say
+  document.getElementById('mustSayPanel').innerHTML=`
+    <div class="ms-title">💬 Must Say</div>
+    ${st.must_say.map(m=>`<div class="ms-item">${m}</div>`).join('')}`;
+
+  secsLeft=STATION_SECS;
+  updateStationTimer();
+  showStage('stage-station');
+  timerInterval=setInterval(()=>{
+    secsLeft--;
+    updateStationTimer();
+    if(secsLeft<=0){clearInterval(timerInterval);endStation();}
+  },1000);
+}
+
+function updateStationTimer(){
+  const m=Math.floor(secsLeft/60), s=secsLeft%60;
+  const el=document.getElementById('stationTimer');
+  el.textContent=`${m}:${s.toString().padStart(2,'0')}`;
+  el.classList.toggle('urgent',secsLeft<=60);
+}
+
+function toggleTask(i){
+  taskChecks[currentStation][i]=!taskChecks[currentStation][i];
+  const box=document.getElementById('tc-'+i);
+  const lbl=document.getElementById('tl-'+i);
+  box.className='task-check'+(taskChecks[currentStation][i]?' done':'');
+  box.textContent=taskChecks[currentStation][i]?'✓':'';
+  lbl.className='task-label'+(taskChecks[currentStation][i]?' done':'');
+}
+
+function endStation(){
+  clearAllTimers();
+  const st=STATIONS[currentStation];
+  const checks=taskChecks[currentStation]||{};
+  const done=Object.values(checks).filter(Boolean).length;
+  const pct=Math.round((done/st.tasks.length)*100);
+  stationResults.push({n:st.n,title:st.title,done,total:st.tasks.length,pct});
+  currentStation++;
+  if(currentStation>=STATIONS.length){showResults();}
+  else{showBreak();}
+}
+
+function showBreak(){
+  clearAllTimers();
+  const next=STATIONS[currentStation];
+  document.getElementById('breakSubtitle').textContent=`Next: Station ${next.n} — ${next.title}`;
+  breakSecsLeft=BREAK_SECS;
+  updateBreakTimer();
+  showStage('stage-break');
+  breakInterval=setInterval(()=>{
+    breakSecsLeft--;
+    updateBreakTimer();
+    if(breakSecsLeft<=0){clearInterval(breakInterval);showBrief();}
+  },1000);
+}
+
+function updateBreakTimer(){
+  const m=Math.floor(breakSecsLeft/60), s=breakSecsLeft%60;
+  document.getElementById('breakTimer').textContent=`${m}:${s.toString().padStart(2,'0')}`;
+}
+
+function showResults(){
+  const elapsed=Math.round((Date.now()-circuitStartTime)/1000/60);
+  const totalTasks=stationResults.reduce((a,r)=>a+r.total,0);
+  const doneTasks=stationResults.reduce((a,r)=>a+r.done,0);
+  const avgPct=Math.round((doneTasks/totalTasks)*100);
+  const passed=stationResults.filter(r=>r.pct>=70).length;
+
+  document.getElementById('circuitTime').textContent=`Completed in approximately ${elapsed} minutes`;
+  document.getElementById('scoreTotal').textContent=avgPct+'%';
+  document.getElementById('scorePassed').textContent=`${passed}/${STATIONS.length}`;
+  document.getElementById('scoreAvg').textContent=avgPct+'%';
+
+  document.getElementById('stationResults').innerHTML=stationResults.map(r=>{
+    const cls=r.pct>=90?'pct-pass':r.pct>=70?'pct-merit':'pct-fail';
+    return`<div class="sr-row">
+      <span class="sr-num">${r.n}</span>
+      <div style="flex:1"><div class="sr-title">${r.title}</div><div class="sr-tasks">${r.done}/${r.total} tasks ticked</div></div>
+      <span class="sr-pct ${cls}">${r.pct}%</span>
+    </div>`;
+  }).join('');
+
+  showStage('stage-results');
+}
+
+function clearAllTimers(){clearInterval(timerInterval);clearInterval(briefInterval);clearInterval(breakInterval);}
+function restart(){clearAllTimers();currentStation=0;taskChecks={};stationResults=[];showStage('stage-setup');}
+</script>
+</body>
+</html>

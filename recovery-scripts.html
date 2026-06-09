@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Recovery Scripts — AMaC PLAB 2</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0d2247;--navy-deep:#091629;--gold:#c9a227;--gold-soft:#e0c45a;--cream:#f7f4ec;--ink:#1a1d24;--muted:#5d6470;--line:#e4ddcd;--fail:#c0392b;--pass:#1b6b3a;}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--ink);-webkit-font-smoothing:antialiased;}
+nav{position:sticky;top:0;z-index:100;background:linear-gradient(180deg,#0f2850,#0d2247);border-bottom:1px solid rgba(201,162,39,0.25);box-shadow:0 3px 16px rgba(9,22,41,0.5);}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 28px;height:64px;display:flex;align-items:center;justify-content:space-between;}
+.brand{font-family:'Fraunces',serif;font-size:24px;font-weight:700;color:var(--gold-soft);letter-spacing:3px;text-decoration:none;}
+.nav-links{display:flex;gap:24px;list-style:none;align-items:center;}
+.nav-links a{color:#dde2ec;text-decoration:none;font-size:13px;}.nav-links a:hover{color:#fff;}
+.nav-cta{background:linear-gradient(135deg,#d4a820,#c9a227)!important;color:var(--navy-deep)!important;padding:8px 18px;border-radius:2px;font-weight:700;font-size:12px;}
+.hero{background:linear-gradient(155deg,#0d2247,#091629);color:#fff;padding:52px 28px 44px;text-align:center;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.025) 1px,transparent 1px);background-size:20px 20px;}
+.ph{max-width:760px;margin:0 auto;position:relative;}
+.kick{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--gold-soft);border:1px solid rgba(201,162,39,0.4);padding:5px 14px;border-radius:2px;display:inline-block;margin-bottom:16px;background:rgba(201,162,39,0.07);}
+.hero h1{font-family:'Fraunces',serif;font-size:clamp(26px,5vw,44px);font-weight:500;line-height:1.1;}
+.hero h1 em{font-style:italic;color:var(--gold-soft);}
+.hero p{margin:12px auto 0;color:#d0d6e8;font-weight:300;font-size:15px;max-width:54ch;line-height:1.65;}
+.master-script{background:rgba(201,162,39,0.12);border:1px solid rgba(201,162,39,0.3);border-radius:10px;padding:16px 22px;margin:20px auto 0;max-width:640px;text-align:left;}
+.ms-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--gold-soft);margin-bottom:8px;}
+.ms-text{font-family:'Fraunces',serif;font-style:italic;font-size:14px;color:#fff;line-height:1.65;}
+.filter-bar{background:#fff;border-bottom:1px solid var(--line);padding:11px 28px;position:sticky;top:64px;z-index:90;box-shadow:0 2px 6px rgba(13,34,71,0.06);}
+.fi{max-width:1100px;margin:0 auto;display:flex;gap:7px;flex-wrap:wrap;align-items:center;}
+.filter-lbl{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--navy);margin-right:3px;}
+.fbtn{background:linear-gradient(135deg,#0f2850,#0d2247);border:1.5px solid rgba(201,162,39,0.3);padding:7px 18px;border-radius:20px;font-size:12px;font-family:'Outfit',sans-serif;cursor:pointer;font-weight:600;color:var(--gold-soft);transition:all .22s;box-shadow:0 2px 8px rgba(9,22,41,0.3);letter-spacing:.3px;}
+.fbtn:hover{background:linear-gradient(135deg,#1b3a6b,#152d52);border-color:rgba(201,162,39,0.6);box-shadow:0 4px 16px rgba(9,22,41,0.4);transform:translateY(-1px);color:#fff;}.fbtn.active{background:linear-gradient(135deg,#0d2247,#091629);border-color:var(--gold);box-shadow:0 4px 18px rgba(201,162,39,0.25);color:var(--gold-soft);font-weight:700;transform:translateY(-1px);border-width:2px;}
+.wrap{max-width:900px;margin:0 auto;padding:28px 28px 64px;}
+.scenario-grid{display:flex;flex-direction:column;gap:14px;}
+.sc-card{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;box-shadow:0 2px 10px rgba(13,34,71,0.08);transition:box-shadow .2s;}
+.sc-card:hover{box-shadow:0 6px 24px rgba(13,34,71,0.13);}
+/* Header — navy + gold */
+.sc-hdr{background:linear-gradient(135deg,#0f2850,#0d2247);padding:15px 20px;display:flex;align-items:center;gap:14px;cursor:pointer;user-select:none;}
+.sc-emoji{font-size:24px;flex-shrink:0;}
+.sc-hdr-text{flex:1;}
+.sc-title{font-family:'Fraunces',serif;font-size:18px;color:var(--gold-soft);font-weight:500;line-height:1.2;}
+.sc-when{font-size:12px;color:rgba(255,255,255,0.65);margin-top:3px;line-height:1.4;}
+.sc-cat-badge{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;padding:3px 10px;border-radius:10px;background:rgba(201,162,39,0.15);color:var(--gold-soft);border:1px solid rgba(201,162,39,0.3);flex-shrink:0;}
+.sc-chevron{font-size:13px;color:rgba(255,255,255,0.5);transition:transform .25s;flex-shrink:0;}
+.sc-card.open .sc-chevron{transform:rotate(180deg);}
+/* Body */
+.sc-body{display:none;padding:20px;}
+.sc-card.open .sc-body{display:block;}
+.danger-box{background:#fdf0ee;border-left:4px solid var(--fail);border-radius:0 6px 6px 0;padding:10px 14px;margin-bottom:16px;}
+.danger-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--fail);margin-bottom:4px;}
+.danger-text{font-size:13px;color:#7a1520;line-height:1.5;}
+.script-box{background:linear-gradient(135deg,#0f2850,#0d2247);border-radius:10px;padding:16px 18px;margin-bottom:14px;}
+.sb-label{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--gold-soft);margin-bottom:10px;}
+.sb-script{font-family:'Fraunces',serif;font-style:italic;font-size:15px;color:#fff;line-height:1.7;}
+.copy-btn{background:rgba(201,162,39,0.15);border:1px solid rgba(201,162,39,0.3);color:var(--gold-soft);font-family:'Outfit',sans-serif;font-size:11px;font-weight:700;padding:5px 13px;border-radius:4px;cursor:pointer;margin-top:10px;letter-spacing:.5px;transition:all .2s;}
+.copy-btn:hover{background:rgba(201,162,39,0.25);}
+.why-box{background:linear-gradient(135deg,#f2fdf6,#e8f9f0);border:1px solid rgba(27,107,58,0.2);border-radius:8px;padding:12px 15px;margin-bottom:12px;}
+.why-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--pass);margin-bottom:5px;}
+.why-text{font-size:13.5px;color:var(--ink);line-height:1.55;}
+.follow-box{background:var(--cream);border:1px solid var(--line);border-radius:8px;padding:12px 15px;}
+.follow-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--navy);margin-bottom:5px;}
+.follow-text{font-size:13.5px;color:var(--ink);line-height:1.55;}
+.trustband{background:var(--navy);color:#fff;text-align:center;padding:34px 28px;}
+.trustband .slogan{font-family:'Fraunces',serif;font-style:italic;color:var(--gold-soft);font-size:18px;margin-bottom:8px;}
+.trustband p{color:#dde2ec;font-weight:300;font-size:14px;max-width:54ch;margin:0 auto;}
+footer{background:var(--navy-deep);color:#c4ccd8;padding:36px 28px 20px;}
+.foot-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px;border-bottom:1px solid rgba(255,255,255,0.07);padding-bottom:20px;}
+.foot-brand{font-family:'Fraunces',serif;font-size:22px;color:var(--gold-soft);letter-spacing:2px;}
+.foot-p{font-size:12px;color:#8a96b0;margin-top:5px;max-width:32ch;font-weight:300;line-height:1.5;}
+.foot-col h4{color:#fff;font-size:11px;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;font-weight:600;}
+.foot-col a{display:block;color:#8a96b0;text-decoration:none;font-size:12px;margin-bottom:6px;}
+.foot-col a:hover{color:var(--gold-soft);}
+.foot-btm{max-width:1200px;margin:14px auto 0;font-size:11px;color:#4a5568;text-align:center;}
+@media(max-width:700px){.nav-links{display:none;}.wrap{padding:18px 14px 48px;}.sc-cat-badge{display:none;}}
+</style>
+</head>
+<body>
+<nav><div class="nav-inner"><a href="index.html" class="brand">AMaC</a>
+  <ul class="nav-links"><li><a href="books.html">The Master Series</a></li><li><a href="tools.html">Study Tools</a></li><li><a href="contact.html" class="nav-cta">Get Started</a></li></ul>
+</div></nav>
+<header class="hero"><div class="ph">
+  <span class="kick">App 1E · Vol 1 · No Competitor Has This</span>
+  <h1>Mid-Station <em>Recovery Scripts</em></h1>
+  <p>Exact words to say when you forget ICE, blank mid-station, face an angry patient, or realise you missed something. Every scenario. Every rescue.</p>
+  <div class="master-script">
+    <div class="ms-label">Master Recovery Script — works for any situation</div>
+    <div class="ms-text">"I want to make sure I'm addressing the most important things for you today. Let me just check — your main concern was [X], is that right? And what were you hoping I could do for you today?"</div>
+  </div>
+</div></header>
+<div class="filter-bar"><div class="fi">
+  <span class="filter-lbl">Scenario:</span>
+  <button class="fbtn active" onclick="filterCat('all',this)">All</button>
+  <button class="fbtn" onclick="filterCat('Universal Reset',this)">Universal Reset</button>
+  <button class="fbtn" onclick="filterCat('Missed Step Recovery',this)">Missed Steps</button>
+  <button class="fbtn" onclick="filterCat('Safety Recovery',this)">Safety</button>
+  <button class="fbtn" onclick="filterCat('Challenging Patient',this)">Challenging Patient</button>
+  <button class="fbtn" onclick="filterCat('Clinical Uncertainty',this)">Clinical Uncertainty</button>
+  <button class="fbtn" onclick="filterCat('Time Management',this)">Time Management</button>
+  <button class="fbtn" onclick="filterCat('Between Stations',this)">Between Stations</button>
+  <button class="fbtn" onclick="filterCat('Examination Safety',this)">Examination</button>
+</div></div>
+<div class="wrap">
+  <div class="scenario-grid" id="scenarioGrid"></div>
+</div>
+<div class="trustband"><p class="slogan">Think Like an Examiner · Speak Like a Doctor · Perform With Confidence</p><p>Recovery scripts from Appendix 1E of the AMaC PLAB 2 Master Series Volume 1.</p></div>
+<footer><div class="foot-inner">
+  <div><div class="foot-brand">AMaC</div><p class="foot-p">A. Mansour &amp; Colleagues — examiner-led preparation for the PLAB 2 OSCE.</p></div>
+  <div class="foot-col"><h4>Study Tools</h4><a href="exam-morning.html">Exam Morning Card</a><a href="fail-recovery.html">Fail Recovery</a><a href="simulator.html">Consultation Simulator</a></div>
+  <div class="foot-col"><h4>Reference</h4><a href="frameworks.html">Frameworks</a><a href="documentation.html">Documentation Coach</a><a href="nhs-language.html">NHS Language</a></div>
+  <div class="foot-col"><h4>Contact</h4><a href="mailto:info@amac-medical.com">info@amac-medical.com</a></div>
+</div><div class="foot-btm">&copy; 2026 A. Mansour &amp; Colleagues (AMaC). All rights reserved.</div></footer>
+<script>
+const SCRIPTS=[{"id":"lost_thread","icon":"\ud83d\udd04","title":"I've completely lost my thread","when":"Mid-station panic \u2014 you've gone blank and don't know where you are","danger":"Silence or visible panic scores zero. The examiner sees it immediately.","script":"I want to make sure I\u2019m addressing the most important things for you today. Let me just check \u2014 your main concern was [X], is that right? And what were you hoping I could do for you today?","why":"ICE recovery buys 20\u201330 seconds of thinking time while demonstrating patient-centredness. The examiner sees composure, not failure.","follow_up":"Once the patient re-states their concern, you have a natural anchor to continue from.","category":"Universal Reset"},{"id":"forgot_ice","icon":"\ud83d\udcac","title":"I forgot to ask ICE","when":"You realise at minute 4 you never explored Ideas, Concerns or Expectations","danger":"ICE is on the examiner mark sheet. Not asking it loses marks even if everything else is good.","script":"Before I go any further \u2014 I want to make sure I understand things from your perspective. What do you think might be causing this? And is there anything in particular that worries you about it?","why":"Late ICE still scores. The examiner ticks the box when they hear it \u2014 regardless of when in the station it appears.","follow_up":"After ICE, use what the patient says to anchor your management plan: \u2018You mentioned you were worried about X \u2014 let me address that directly.\u2019","category":"Missed Step Recovery"},{"id":"forgot_safety_net","icon":"\ud83d\udd12","title":"I forgot to safety-net","when":"The station is about to end and you haven't safety-netted","danger":"Safety-net is a mandatory mark on almost every station. Missing it is a reliable fail trigger.","script":"Before we finish \u2014 I want to make sure you know exactly when to come back. If your symptoms get significantly worse, any new symptoms appear, or you feel worried at any point \u2014 please don\u2019t wait. Go straight to A&E or call 999 if needed. Do you have any questions about that?","why":"Even delivered in the last 20 seconds, a clear safety-net scores the mark. The examiner is still watching.","follow_up":"Always personalise it: replace \u2018symptoms\u2019 with the specific warning signs relevant to that patient.","category":"Missed Step Recovery"},{"id":"forgot_to_escalate","icon":"\ud83d\udea8","title":"I forgot to escalate an unwell patient","when":"You realise mid-history that the patient is acutely unwell and you haven't done ABCDE","danger":"Completing a full history on an acutely unwell patient without escalating is an instant fail.","script":"I\u2019m sorry \u2014 I need to pause our conversation. I\u2019m concerned about how unwell you are right now. I\u2019d like to do a quick assessment first \u2014 can I just check your breathing, pulse and blood pressure? I\u2019ll also call for senior help. We can continue talking once I know you\u2019re stable.","why":"Stopping and pivoting to ABCDE demonstrates clinical safety even mid-station. The examiner rewards recognition of danger.","follow_up":"After pivoting: \u2018I\u2019d like to escalate this to my senior now. I\u2019m going to call for help \u2014 please stay calm, I\u2019m going to stay with you.\u2019","category":"Safety Recovery"},{"id":"patient_angry","icon":"\ud83d\ude24","title":"The patient becomes angry and I don't know what to say","when":"Patient raises voice, expresses frustration, or challenges you directly","danger":"Becoming defensive or clinical in response to anger fails the empathy domain instantly.","script":"I can hear that you\u2019re really frustrated, and I completely understand why. I want you to know I\u2019m on your side here. Can you help me understand what\u2019s happened from your perspective \u2014 I want to make sure I address this properly.","why":"Naming the emotion and inviting the patient to speak de-escalates almost every angry scenario. The examiner is marking whether you absorb the anger without matching it.","follow_up":"After they speak: \u2018Thank you for telling me that. I\u2019m sorry this happened. Let me tell you what I\u2019m going to do about it.\u2019","category":"Challenging Patient"},{"id":"patient_crying","icon":"\ud83d\ude22","title":"The patient starts crying and I freeze","when":"After bad news or emotional disclosure \u2014 the patient becomes tearful","danger":"Continuing to speak clinical information over a crying patient is one of the most common BBN fails.","script":"Take your time. [Pause \u2014 5 full seconds minimum.] I can see how hard this is. There\u2019s no rush at all.","why":"Silence with a calm, present expression is the correct clinical response to tears. The examiner is watching whether you fill the silence or hold it.","follow_up":"After they settle: \u2018When you\u2019re ready \u2014 is there anything you\u2019d like me to explain again, or anything you\u2019d like to ask?\u2019","category":"Challenging Patient"},{"id":"forgot_capacity","icon":"\u2696\ufe0f","title":"I forgot to assess capacity \u2014 and it was a capacity station","when":"You realise you've been advising a patient who may not have capacity without formally assessing","danger":"Treating an incapacitous patient without assessment, or overriding a capacitous refusal, are both instant fails.","script":"Before we go further \u2014 I\u2019d like to check a few things to make sure I\u2019m supporting you in the right way. Can I ask \u2014 do you understand what I\u2019ve just explained about [diagnosis/treatment]? Can you tell it back to me in your own words?","why":"Starting the 4-part capacity test at any point in the station still scores the capacity marks. It\u2019s better late than never.","follow_up":"Work through all 4 parts: understand \u2192 retain \u2192 weigh \u2192 communicate. State your conclusion aloud: \u2018Based on our conversation, I believe you have capacity to make this decision.\u2019","category":"Missed Step Recovery"},{"id":"dont_know_diagnosis","icon":"\ud83e\ude7a","title":"I don't know the diagnosis or what to do next","when":"The clinical picture isn't clear and you don't know what to say","danger":"Guessing a wrong diagnosis confidently is worse than honest uncertainty.","script":"I want to be honest with you \u2014 I want to make sure we have all the information before we draw any conclusions. I\u2019d like to arrange some investigations to help us understand what\u2019s going on. In the meantime, I want to make sure you\u2019re safe \u2014 so if anything changes or worsens, please come back immediately.","why":"Honest uncertainty + safety-net + investigation plan scores better than a confident wrong answer. The examiner marks the process, not just the diagnosis.","follow_up":"Name 2\u20133 investigations relevant to the presentation. \u2018I would like to arrange a blood test, an ECG and a chest X-ray to help narrow this down.\u2019","category":"Clinical Uncertainty"},{"id":"dont_know_drug_dose","icon":"\ud83d\udc8a","title":"I don't know the drug dose","when":"You need to prescribe but can't remember the dose or route","danger":"Guessing a wrong dose is an instant fail. Admitting uncertainty is not.","script":"I would like to prescribe [drug name] for you today. I want to make sure I give you exactly the right dose \u2014 I would check the BNF and confirm with my senior before prescribing, to make sure it\u2019s correct for your weight and kidney function.","why":"This is explicitly a passing answer in PLAB 2. The examiner marks clinical safety \u2014 and knowing your limits is safe. Guessing a 10-fold error is not.","follow_up":"Always confirm the allergy check: \u2018Before I prescribe \u2014 do you have any known allergies to medications?\u2019","category":"Clinical Uncertainty"},{"id":"ran_out_of_time","icon":"\u23f1","title":"I've run out of time and haven't finished","when":"The bell is about to go and you haven't safety-netted or closed","danger":"Ending without a safety-net or closing statement loses marks even if everything before was good.","script":"I\u2019m conscious of our time \u2014 let me make sure I give you the most important things before we finish. If anything worries you, please come back straightaway. I\u2019ll arrange [next step] for you. Is there anything urgent you need from me right now?","why":"A compressed close in 20 seconds still scores safety-net and closing marks. The examiner doesn\u2019t penalise brevity \u2014 they penalise absence.","follow_up":"If genuinely out of time: make eye contact, say the safety-net, and stop. A clean minimal close beats no close.","category":"Time Management"},{"id":"patient_refuses","icon":"\ud83d\udeab","title":"The patient refuses my advice and I don't know how to respond","when":"A capacitous patient refuses investigation, treatment or admission","danger":"Overriding a valid refusal or becoming coercive is an instant fail.","script":"I respect your decision completely \u2014 it\u2019s your right to make this choice. I want to make sure you have all the information to make it. Can I ask what\u2019s making you feel that way? And is there anything I can do differently that might help?","why":"Acknowledging autonomy, exploring the reason, and offering an alternative approach demonstrates patient-centred care. The examiner is not expecting you to change their mind.","follow_up":"After exploring: \u2018I understand. I\u2019m going to document that we\u2019ve discussed this fully and that you\u2019ve made this decision with capacity. Please come back if anything changes.\u2019","category":"Challenging Patient"},{"id":"bad_station","icon":"\ud83d\udd01","title":"I've just had a terrible station \u2014 how do I reset?","when":"Walking out of a station you know went badly \u2014 next station brief in 2 minutes","danger":"Carrying anxiety from one station into the next compounds failure. Each station is completely independent.","script":"[Say to yourself, not aloud]: That station is done. Whatever happened, I cannot change it. This next station is a clean start. I know the system. Introduce. ICE. Empathy. Safety-net. Document.","why":"The AMaC system works even under stress. The brief anchors (5 words: Introduce ICE Empathy Safety Document) are enough to walk in confidently.","follow_up":"Read the next brief carefully. Take one slow breath. Walk in and open with your standard script \u2014 \u2018Hello, I\u2019m [name], one of the doctors here...\u2019","category":"Between Stations"},{"id":"forgot_documentation","icon":"\ud83d\udccb","title":"I forgot to mention documentation","when":"The station is closing and you haven't mentioned documenting","danger":"Documentation is 1\u20132 free marks on every single station. Missing it is a consistent mark loss.","script":"Before we finish \u2014 I\u2019d also make sure to document everything clearly in your notes today: our consultation, the plan we\u2019ve agreed, and that I\u2019ve given you safety-net advice.","why":"Takes 8 seconds. Scores every time. Never skip it.","follow_up":"For specific scenarios add detail: \u2018I\u2019d document that capacity was assessed\u2019 \/ \u2018I\u2019d document the safeguarding referral made today\u2019.","category":"Missed Step Recovery"},{"id":"silence_trap","icon":"\ud83e\udd2b","title":"There's an uncomfortable silence and I don't know what to say","when":"After bad news, emotional disclosure, or when the patient stops responding","danger":"Filling every silence with more clinical information is the most common BBN fail.","script":"[Say nothing for 5 full seconds. Maintain eye contact and a calm, open expression.] Then: \u2018Take as much time as you need.\u2019","why":"Silence is not failure \u2014 it is clinical skill. After bad news, silence gives the patient space to process. The examiner is watching whether you hold it or panic.","follow_up":"If silence extends beyond 30 seconds: \u2018Is there anything going through your mind right now that you\u2019d like to share?\u2019","category":"Challenging Patient"},{"id":"forgot_chaperone","icon":"\ud83d\udee1","title":"I forgot to offer a chaperone before an intimate examination","when":"You've started or are about to start an intimate examination without offering a chaperone","danger":"Not offering a chaperone for intimate examinations is an instant fail.","script":"Before I proceed \u2014 I should have asked this first. Would you like a chaperone present for this examination? That\u2019s someone who can be in the room with us. You\u2019re completely entitled to have one, and I\u2019d also document that the offer was made.","why":"Offering late is better than not offering. The examiner marks the offer \u2014 not the timing.","follow_up":"If they decline: \u2018That\u2019s completely fine \u2014 I\u2019ll document that the offer was made and you declined.\u2019 Then proceed.","category":"Examination Safety"}];
+
+let activeCat='all';
+
+function filterCat(c,btn){
+  activeCat=c;
+  document.querySelectorAll('.fbtn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  render();
+}
+
+function render(){
+  const list=activeCat==='all'?SCRIPTS:SCRIPTS.filter(s=>s.category===activeCat);
+  document.getElementById('scenarioGrid').innerHTML=list.map((s,i)=>`
+    <div class="sc-card" id="sc-${s.id}">
+      <div class="sc-hdr" onclick="toggle('${s.id}')">
+        <span class="sc-emoji">${s.icon}</span>
+        <div class="sc-hdr-text">
+          <div class="sc-title">${s.title}</div>
+          <div class="sc-when">${s.when}</div>
+        </div>
+        <span class="sc-cat-badge">${s.category}</span>
+        <span class="sc-chevron">▾</span>
+      </div>
+      <div class="sc-body">
+        <div class="danger-box">
+          <div class="danger-label">⚠ Why this matters</div>
+          <div class="danger-text">${s.danger}</div>
+        </div>
+        <div class="script-box">
+          <div class="sb-label">Say This</div>
+          <div class="sb-script">${s.script}</div>
+          <button class="copy-btn" onclick="copyScript('${s.id}')">Copy script</button>
+        </div>
+        <div class="why-box">
+          <div class="why-label">Why it works</div>
+          <div class="why-text">${s.why}</div>
+        </div>
+        <div class="follow-box">
+          <div class="follow-label">What to do next</div>
+          <div class="follow-text">${s.follow_up}</div>
+        </div>
+      </div>
+    </div>`).join('');
+}
+
+function toggle(id){
+  document.getElementById('sc-'+id).classList.toggle('open');
+}
+
+function copyScript(id){
+  const s=SCRIPTS.find(x=>x.id===id);
+  if(!s)return;
+  navigator.clipboard.writeText(s.script).then(()=>{
+    const btn=document.querySelector(`#sc-${id} .copy-btn`);
+    if(btn){btn.textContent='Copied!';setTimeout(()=>btn.textContent='Copy script',2000);}
+  });
+}
+
+render();
+</script>
+</body>
+</html>

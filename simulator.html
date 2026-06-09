@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Consultation Simulator — AMaC PLAB 2</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0d2247;--navy-deep:#091629;--gold:#c9a227;--gold-soft:#e0c45a;--cream:#f7f4ec;--ink:#1a1d24;--muted:#5d6470;--line:#e4ddcd;--fail:#c0392b;--pass:#1b6b3a;}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--ink);-webkit-font-smoothing:antialiased;}
+nav{position:sticky;top:0;z-index:100;background:linear-gradient(180deg,#0f2850,#0d2247);border-bottom:1px solid rgba(201,162,39,0.25);box-shadow:0 3px 16px rgba(9,22,41,0.5);}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 28px;height:64px;display:flex;align-items:center;justify-content:space-between;}
+.brand{font-family:'Fraunces',serif;font-size:24px;font-weight:700;color:var(--gold-soft);letter-spacing:3px;text-decoration:none;}
+.nav-links{display:flex;gap:24px;list-style:none;align-items:center;}
+.nav-links a{color:#dde2ec;text-decoration:none;font-size:13px;}.nav-links a:hover{color:#fff;}
+.nav-cta{background:linear-gradient(135deg,#d4a820,#c9a227)!important;color:var(--navy-deep)!important;padding:8px 18px;border-radius:2px;font-weight:700;font-size:12px;}
+.hero{background:linear-gradient(155deg,#0d2247,#091629);color:#fff;padding:44px 28px 36px;text-align:center;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.02) 1px,transparent 1px);background-size:20px 20px;}
+.ph{max-width:760px;margin:0 auto;position:relative;}
+.kick{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--gold-soft);border:1px solid rgba(201,162,39,0.4);padding:5px 14px;border-radius:2px;display:inline-block;margin-bottom:14px;}
+.hero h1{font-family:'Fraunces',serif;font-size:clamp(22px,4.5vw,38px);font-weight:500;line-height:1.1;}
+.hero h1 em{font-style:italic;color:var(--gold-soft);}
+.hero p{margin:10px auto 0;color:#d0d6e8;font-weight:300;font-size:14px;max-width:54ch;line-height:1.6;}
+/* STATION SELECTOR */
+.station-select{max-width:960px;margin:0 auto 0;padding:28px 28px 24px;background:var(--cream);}
+.ss-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--navy);margin-bottom:12px;}
+.station-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;}
+.stn-btn{border-radius:10px;padding:12px 14px;cursor:pointer;transition:all .22s;text-align:left;font-family:'Outfit',sans-serif;background:linear-gradient(135deg,#0f2850,#0d2247);border:1.5px solid rgba(201,162,39,0.3);color:var(--gold-soft);box-shadow:0 3px 10px rgba(9,22,41,0.35),inset 0 1px 0 rgba(255,255,255,0.06);font-weight:600;letter-spacing:.3px;}
+.stn-btn:hover{background:linear-gradient(135deg,#1b3a6b,#152d52);border-color:rgba(201,162,39,0.6);box-shadow:0 6px 18px rgba(9,22,41,0.4),inset 0 1px 0 rgba(255,255,255,0.08);transform:translateY(-2px);color:#fff;}
+.stn-btn.selected{background:linear-gradient(135deg,#0a1d3d,#091629);border-color:var(--gold);border-width:2px;box-shadow:0 4px 20px rgba(201,162,39,0.25),inset 0 1px 0 rgba(255,255,255,0.05);color:var(--gold-soft);transform:translateY(-1px);}
+.stn-emoji{font-size:20px;margin-bottom:4px;}
+.stn-name{font-size:13px;font-weight:600;color:var(--ink);}
+.stn-domain{font-size:11px;color:var(--muted);}
+/* SIMULATION AREA */
+.sim-wrap{max-width:960px;margin:20px auto 0;padding:0 28px 60px;}
+.sim-stage{display:none;background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;box-shadow:0 4px 20px rgba(13,34,71,0.1);}
+.sim-stage.active{display:block;}
+/* Briefing */
+.brief-hdr{background:linear-gradient(135deg,#0f2850,#0d2247);padding:18px 22px;display:flex;justify-content:space-between;align-items:flex-start;}
+.brief-station{font-family:'Fraunces',serif;font-size:20px;color:#fff;font-weight:500;}
+.brief-meta{font-size:12px;color:rgba(255,255,255,0.5);margin-top:3px;}
+.timer-display{text-align:right;}
+.timer-num{font-family:'Fraunces',serif;font-size:28px;color:var(--gold-soft);}
+.timer-lbl{font-size:10px;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:.5px;}
+.brief-body{padding:20px 22px;}
+.brief-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--muted);margin-bottom:8px;}
+.scenario-text{font-size:15px;color:var(--ink);line-height:1.7;background:var(--cream);padding:14px 16px;border-radius:8px;border-left:4px solid var(--gold);margin-bottom:16px;}
+.brief-rules{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:16px;}
+.rule-item{background:#f8f9fc;border:1px solid var(--line);border-radius:6px;padding:10px 12px;text-align:center;}
+.rule-icon{font-size:18px;margin-bottom:4px;}
+.rule-text{font-size:12px;color:var(--muted);line-height:1.3;}
+.start-btn{display:block;width:100%;background:linear-gradient(135deg,#d4a820,#c9a227);color:var(--navy-deep);border:none;font-family:'Outfit',sans-serif;font-size:15px;font-weight:700;padding:16px;border-radius:6px;cursor:pointer;letter-spacing:.5px;transition:all .2s;}
+.start-btn:hover{opacity:.9;transform:translateY(-1px);}
+/* Chat */
+.chat-hdr{background:linear-gradient(135deg,#0f2850,#0d2247);padding:13px 18px;display:flex;justify-content:space-between;align-items:center;}
+.ch-station{font-size:13px;color:rgba(255,255,255,0.7);font-weight:500;}
+.ch-timer{font-family:'Fraunces',serif;font-size:20px;color:var(--gold-soft);}
+.ch-timer.urgent{color:#fca5a5;}
+.chat-window{height:380px;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px;background:#f8f9fc;}
+.msg{max-width:80%;padding:11px 14px;border-radius:12px;font-size:13.5px;line-height:1.6;}
+.msg-patient{background:#fff;border:1px solid var(--line);border-radius:12px 12px 12px 0;align-self:flex-start;color:var(--ink);}
+.msg-patient .msg-role{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--muted);margin-bottom:4px;}
+.msg-candidate{background:linear-gradient(135deg,#0f2850,#0d2247);color:#fff;border-radius:12px 12px 0 12px;align-self:flex-end;}
+.msg-system{background:rgba(201,162,39,0.1);border:1px solid rgba(201,162,39,0.2);border-radius:6px;align-self:center;max-width:90%;text-align:center;font-size:12px;color:var(--muted);}
+.msg-loading{align-self:flex-start;}
+.loading-dots{display:flex;gap:5px;padding:14px 16px;background:#fff;border:1px solid var(--line);border-radius:12px 12px 12px 0;}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--muted);animation:bounce .8s infinite;}
+.dot:nth-child(2){animation-delay:.15s;}
+.dot:nth-child(3){animation-delay:.3s;}
+@keyframes bounce{0%,80%,100%{transform:scale(.8);opacity:.5;}40%{transform:scale(1.1);opacity:1;}}
+.chat-input-area{padding:12px;border-top:1px solid var(--line);display:flex;gap:8px;background:#fff;}
+.chat-input{flex:1;padding:10px 14px;border:1px solid var(--line);border-radius:6px;font-family:'Outfit',sans-serif;font-size:14px;resize:none;height:44px;max-height:100px;outline:none;transition:border .2s;overflow:hidden;}
+.chat-input:focus{border-color:var(--gold);}
+.send-btn{background:linear-gradient(135deg,#0f2850,#0d2247);color:#fff;border:none;padding:10px 18px;border-radius:6px;font-family:'Outfit',sans-serif;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;white-space:nowrap;}
+.send-btn:hover:not(:disabled){background:var(--navy);}
+.send-btn:disabled{opacity:.5;cursor:not-allowed;}
+.end-btn{background:var(--fail);color:#fff;border:none;padding:10px 14px;border-radius:6px;font-family:'Outfit',sans-serif;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap;}
+/* Feedback */
+.feedback-hdr{background:linear-gradient(135deg,#0a5a28,#083820);padding:16px 22px;}
+.fb-title{font-family:'Fraunces',serif;font-size:20px;color:#fff;font-weight:500;}
+.fb-sub{font-size:12px;color:rgba(255,255,255,0.5);margin-top:3px;}
+.feedback-body{padding:20px 22px;}
+.score-display{display:flex;justify-content:center;margin-bottom:24px;}
+.score-circle{text-align:center;background:linear-gradient(135deg,#0f2850,#0d2247);border-radius:50%;width:110px;height:110px;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(13,34,71,0.3);}
+.score-num{font-family:'Fraunces',serif;font-size:36px;color:var(--gold-soft);line-height:1;}
+.score-label{font-size:11px;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:.5px;margin-top:2px;}
+.fb-section{margin-bottom:16px;}
+.fb-sec-title{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:8px;display:flex;align-items:center;gap:7px;}
+.fb-sec-title::after{content:'';flex:1;height:1px;background:var(--line);}
+.fb-item{padding:9px 13px;border-radius:6px;margin-bottom:6px;font-size:13.5px;line-height:1.5;}
+.fb-pass{background:#f2fdf6;border-left:4px solid var(--pass);color:#0f3a20;}
+.fb-fail{background:#fdf0ee;border-left:4px solid var(--fail);color:#7a1520;font-weight:500;}
+.fb-improve{background:#fdf8e6;border-left:4px solid var(--gold);color:var(--ink);}
+.again-btn{display:block;width:100%;background:linear-gradient(135deg,#d4a820,#c9a227);color:var(--navy-deep);border:none;font-family:'Outfit',sans-serif;font-size:14px;font-weight:700;padding:14px;border-radius:6px;cursor:pointer;margin-top:6px;transition:all .2s;}
+.again-btn:hover{opacity:.9;}
+footer{background:var(--navy-deep);color:#c4ccd8;padding:36px 28px 20px;}
+.foot-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px;border-bottom:1px solid rgba(255,255,255,0.07);padding-bottom:20px;}
+.foot-brand{font-family:'Fraunces',serif;font-size:22px;color:var(--gold-soft);letter-spacing:2px;}
+.foot-p{font-size:12px;color:#8a96b0;margin-top:5px;max-width:32ch;font-weight:300;line-height:1.5;}
+.foot-col h4{color:#fff;font-size:11px;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;font-weight:600;}
+.foot-col a{display:block;color:#8a96b0;text-decoration:none;font-size:12px;margin-bottom:6px;}
+.foot-col a:hover{color:var(--gold-soft);}
+.foot-btm{max-width:1200px;margin:14px auto 0;font-size:11px;color:#4a5568;text-align:center;}
+@media(max-width:700px){.nav-links{display:none;}.station-select,.sim-wrap{padding:0 14px 40px;}.brief-rules{grid-template-columns:1fr 1fr;}.msg{max-width:92%;}}
+</style>
+</head>
+<body>
+<nav><div class="nav-inner"><a href="index.html" class="brand">AMaC</a>
+  <ul class="nav-links"><li><a href="books.html">The Master Series</a></li><li><a href="tools.html">Study Tools</a></li><li><a href="contact.html" class="nav-cta">Get Started</a></li></ul>
+</div></nav>
+<header class="hero"><div class="ph">
+  <span class="kick">AI-Powered · AMaC Standard Marking</span>
+  <h1>Consultation <em>Simulator</em></h1>
+  <p>Practice live PLAB 2 consultations with an AI patient. Get AMaC-standard feedback on ICE, safety-netting, escalation, scripts and instant-fail risks.</p>
+</div></header>
+<div class="station-select">
+  <div class="ss-label">Choose a station to simulate:</div>
+  <div class="station-grid" id="stationGrid"></div>
+</div>
+<div class="sim-wrap">
+  <!-- Briefing stage -->
+  <div class="sim-stage" id="stageBrief">
+    <div class="brief-hdr">
+      <div><div class="brief-station" id="briefTitle"></div><div class="brief-meta">8 minutes · AMaC standard marking</div></div>
+      <div class="timer-display"><div class="timer-num">8:00</div><div class="timer-lbl">Available</div></div>
+    </div>
+    <div class="brief-body">
+      <div class="brief-label">Station Scenario</div>
+      <div class="scenario-text" id="briefScenario"></div>
+      <div class="brief-rules">
+        <div class="rule-item"><div class="rule-icon">💬</div><div class="rule-text">Type what you would say to the patient</div></div>
+        <div class="rule-item"><div class="rule-icon">⏱</div><div class="rule-text">8-minute timer starts when you begin</div></div>
+        <div class="rule-item"><div class="rule-icon">📊</div><div class="rule-text">AMaC-standard feedback at the end</div></div>
+      </div>
+      <button class="start-btn" onclick="startConsultation()">Begin Consultation →</button>
+    </div>
+  </div>
+  <!-- Chat stage -->
+  <div class="sim-stage" id="stageChat">
+    <div class="chat-hdr">
+      <span class="ch-station" id="chatTitle"></span>
+      <span class="ch-timer" id="chatTimer">8:00</span>
+    </div>
+    <div class="chat-window" id="chatWindow"></div>
+    <div class="chat-input-area">
+      <textarea class="chat-input" id="chatInput" placeholder="Type what you say to the patient..." rows="1" onkeydown="handleKey(event)" oninput="autoResize(this)"></textarea>
+      <button class="send-btn" id="sendBtn" onclick="sendMessage()">Send</button>
+      <button class="end-btn" onclick="endConsultation()">End & Score</button>
+    </div>
+  </div>
+  <!-- Feedback stage -->
+  <div class="sim-stage" id="stageFeedback">
+    <div class="feedback-hdr">
+      <div class="fb-title">AMaC Station Feedback</div>
+      <div class="fb-sub" id="fbSub"></div>
+    </div>
+    <div class="feedback-body" id="feedbackBody"></div>
+  </div>
+</div>
+<footer><div class="foot-inner">
+  <div><div class="foot-brand">AMaC</div><p class="foot-p">A. Mansour &amp; Colleagues — examiner-led preparation for the PLAB 2 OSCE.</p></div>
+  <div class="foot-col"><h4>Other Tools</h4><a href="mastercards.html">Master Cards</a><a href="osce.html">OSCE Stations</a><a href="flashcards.html">Flashcards</a></div>
+  <div class="foot-col"><h4>Study Tools</h4><a href="exam-morning.html">Exam Morning Card</a><a href="study-planner.html">Study Planner</a><a href="fail-recovery.html">Fail Recovery</a></div>
+  <div class="foot-col"><h4>Contact</h4><a href="mailto:info@amac-medical.com">info@amac-medical.com</a></div>
+</div><div class="foot-btm">&copy; 2026 A. Mansour &amp; Colleagues (AMaC). All rights reserved.</div></footer>
+<script>
+const STATIONS = [
+  {
+    id:'acs', emoji:'💔', name:'Acute Chest Pain', domain:'Emergency',
+    scenario:'You are the FY2 on call. Mr James, 58, presents to A&E with central crushing chest pain radiating to the left arm, 40 minutes ago. He is diaphoretic. Observations: HR 98, BP 144/88, SpO₂ 97% on air.',
+    patientName:'Mr James',
+    systemPrompt:`You are Mr James, a 58-year-old man in A&E with acute chest pain. You are frightened but cooperative. 
+Respond naturally as a patient — not as a doctor. Give information only when asked.
+Information to reveal if asked: Crushing central chest pain 8/10. Radiates to left arm and jaw. Started 40 minutes ago. Sweating and nausea. Previous angina 3 years ago. Takes amlodipine. No aspirin allergy. Never had anything this bad before.
+Your hidden concern: You are worried it is a heart attack and you are scared of dying. You have not told anyone you took sildenafil (Viagra) 2 hours ago — only reveal this if directly asked about medications or what you took today.
+Respond with 1-3 sentences maximum per response. Be realistic — express pain, anxiety and normal patient reactions.`,
+    markingCriteria:['Introduced self and confirmed patient identity','Performed or verbalised ABCDE assessment','Requested ECG within 10 minutes','Aspirin 300mg — checked allergy first','Oxygen only if SpO2 <94% (not routinely)','Asked about GTN contraindications / sildenafil (critical trap)','Escalated to senior / cardiology','Safety-netted appropriately','ICE explored — acknowledged fear','Remained calm and professional throughout'],
+    instantFails:['Gave oxygen routinely without checking SpO2','Did not ask about medication including sildenafil before GTN','No ECG request','Did not escalate','Sent patient home'],
+  },
+  {
+    id:'bbns', emoji:'🗣️', name:'Breaking Bad News', domain:'Communication',
+    scenario:'You are the SHO. Mrs Patel, 52, has come to discuss results of her recent investigations. She has been told to come in to "discuss some results." The histology shows adenocarcinoma of the colon.',
+    patientName:'Mrs Patel',
+    systemPrompt:`You are Mrs Patel, 52, attending to discuss results. You are anxious — you have been worrying since the call.
+Respond naturally. Give 1-3 sentences per response.
+Your emotional state: Frightened. You have a feeling it might be bad news. You ask questions like "Is it serious?" and "What does this mean for me?"
+Your hidden concern: You care for your elderly mother alone. If you are ill, who will care for her? Only share this if you feel the doctor is empathic and asks about your concerns.
+React emotionally to bad news — shock, tears, questions. Do not make it easy. Be a real patient.`,
+    markingCriteria:['Used SPIKES — checked what patient already knows','Gave a warning shot before the diagnosis','Delivered diagnosis in plain language (not "malignancy")','Paused after bad news — did not immediately continue','Responded to emotion with empathy (NURSE)','ICE explored — especially concerns about caring responsibilities','Explained next steps clearly','Did not give false reassurance','Offered written information / support','Safety-netted with clear follow-up'],
+    instantFails:['Announced diagnosis without warning shot','Used jargon — "adenocarcinoma" without explanation','Filled every silence with more information','Did not acknowledge emotion','No follow-up plan given'],
+  },
+  {
+    id:'capacity', emoji:'⚖️', name:'Capacity Assessment', domain:'Ethics',
+    scenario:'Mr Davis, 67, is an inpatient who has refused insulin for his newly diagnosed type 1 diabetes. He understands he may die without it but says "it is my choice." The nurse has asked you to assess his capacity.',
+    patientName:'Mr Davis',
+    systemPrompt:`You are Mr Davis, 67. You have been told you have type 1 diabetes and need insulin injections daily. You are refusing insulin.
+Your reason (only reveal if sensitively asked): Your wife died from complications of insulin-treated diabetes — hypoglycaemic brain damage. You watched her suffer. You would rather die than go through that. This is your informed, considered choice.
+You have capacity — you understand, retain and weigh the information. You are not confused. You are distressed but rational.
+If the doctor uses a dismissive or coercive tone, become more resistant. If they are empathic and explore your reasons, open up gradually.
+Respond with 2-3 sentences per response.`,
+    markingCriteria:['Applied 4-part capacity test (understand, retain, weigh, communicate)','Explored the reason for refusal — did not assume incapacity','Did not override or coerce a capacitous patient','Acknowledged autonomy — "this is ultimately your decision"','Sought to understand the emotional context','Involved senior / documented appropriately','Offered a clear safety-net and kept door open','Did not promise confidentiality inappropriately','Empathic throughout — not clinical or detached','Correctly concluded patient has capacity'],
+    instantFails:['Overrode valid capacitous refusal','Assumed incapacity without applying 4-part test','Coerced or pressured patient to change decision','Did not explore reason for refusal'],
+  },
+  {
+    id:'sepsis', emoji:'🦠', name:'Sepsis Management', domain:'Emergency',
+    scenario:'You are the FY1. Mrs Chen, 72, is a ward patient post-op day 2 after bowel surgery. The nurse has called you — Mrs Chen has a temperature of 38.9°C, HR 118, BP 94/60, RR 24, SpO₂ 94% on air. She is confused.',
+    patientName:'Mrs Chen',
+    systemPrompt:`You are Mrs Chen, 72, post-operative day 2. You are confused and feel very unwell. You are not able to give detailed history — mostly short responses showing you are unwell.
+If asked about pain: Tummy hurts a lot. More than before.
+If asked about breathing: Feels hard to breathe.
+If asked about last urine: Cannot remember — maybe this morning.
+Respond briefly — 1-2 sentences. Show you are unwell.`,
+    markingCriteria:['Recognised possible sepsis and said the word "sepsis"','Performed ABCDE — verbally or stated clearly','Initiated Sepsis Six within the hour (blood cultures, antibiotics, fluids, oxygen, lactate, urine output)','Escalated to senior or outreach team urgently','Checked antibiotic allergy before prescribing','Did not delay antibiotics waiting for cultures (>1 hour)','Reassessed after initial interventions','Identified surgical source (post-op bowel surgery)','Communicated clearly and calmly with patient','Documented findings and actions'],
+    instantFails:['Did not say the word "sepsis"','Delayed antibiotics beyond 1 hour','Did not escalate to senior','Forgot blood cultures before antibiotics if time allowed','No fluid resuscitation initiated'],
+  },
+  {
+    id:'suicide', emoji:'🧠', name:'Suicide Risk Assessment', domain:'Psychiatry',
+    scenario:'You are the SHO in A&E. Tom, 28, was brought in after taking 20 paracetamol tablets 3 hours ago. He is medically stable. You have been asked to complete a psychiatric assessment.',
+    patientName:'Tom',
+    systemPrompt:`You are Tom, 28. You took 20 paracetamol tablets 3 hours ago after a relationship breakdown. You told a friend who called an ambulance.
+Your emotional state: You feel ashamed you were found out. You are not sure if you really wanted to die — part of you is relieved you are here.
+Give information honestly if sensitively asked but do not volunteer it.
+Intent: You wanted it to stop — the pain. Not specifically to die.
+Plan: No specific plan for the future. No other means considered.
+Protective factors: Your mum. Your dog. A friend who cares.
+If the doctor uses a cold or clinical tone, shut down. If they are warm and non-judgemental, open up.
+Respond with 2-3 sentences.`,
+    markingCriteria:['Used direct, non-minimising language to ask about suicide ("Did you want to die?")','Assessed intent, plan and means clearly','Assessed protective factors','Did not use minimising question ("You\'re not suicidal, are you?"','Explored triggers and precipitants','Empathic and non-judgemental throughout','Did not discharge without senior review','Safety plan discussed','Crisis resources offered','Documented risk assessment clearly'],
+    instantFails:['Used minimising question format','Did not ask about intent or plan','Discharged without senior review or safety plan','No protective factors explored','Dismissed emotional context'],
+  },
+  {
+    id:'paeds-fever', emoji:'👶', name:'Febrile Child', domain:'Paediatrics',
+    scenario:'Mrs Okafor has brought her 18-month-old son, Elijah, to A&E. He has had a temperature of 39.2°C for 12 hours and she is worried. You are the paediatric FY2.',
+    patientName:'Mrs Okafor (parent)',
+    systemPrompt:`You are Mrs Okafor, mother of Elijah, 18 months. You are anxious and have been up all night. Elijah has a high temperature.
+Observations if asked: Temp 39.2, HR 148, RR 32, capillary refill 2 seconds, alert and responsive.
+Symptoms if asked: Runny nose 2 days. No rash. Feeding reduced but taking some fluids. Wet nappies still normal. No neck stiffness noted at home. No non-blanching rash.
+Your concern: You are scared it might be meningitis — your neighbour's child died from it. Only reveal this when the doctor asks what you are worried about.
+Respond as a worried parent — 2-3 sentences.`,
+    markingCriteria:['Used traffic light system to assess severity (green/amber/red)','Checked for non-blanching rash explicitly','Asked about neck stiffness and fontanelle','Explored ICE — especially meningitis fear','Communicated clearly in plain language to parent','Appropriate management for amber/green category','Gave clear safety-net including non-blanching rash and 999','Did not over-investigate a well febrile child','Treated parent as a partner','Offered clear follow-up and when to return'],
+    instantFails:['Missed non-blanching rash check','No safety-net given','Did not explore parental concern (ICE)','Dismissed parental anxiety','No traffic light assessment applied'],
+  },
+  {
+    id:'anger', emoji:'😡', name:'Angry Relative', domain:'Communication',
+    scenario:'Mr Morrison, 60, is demanding to speak with a doctor. His mother, Mrs Morrison, 84, was admitted yesterday with a fall. He says staff "let her fall again" and he wants to make a formal complaint. You are the ward doctor.',
+    patientName:'Mr Morrison',
+    systemPrompt:`You are Mr Morrison, 60. Your mother is in hospital and you believe staff have been negligent. You are angry and distressed.
+Your actual concern: Your mother fell getting to the toilet because the call bell was out of reach. You feel guilty you were not there. You want accountability.
+If the doctor is defensive or dismissive, escalate your anger. If they listen and acknowledge your concern without being defensive, gradually calm down.
+You are not irrational — you have legitimate concerns. You want to be heard, not managed.
+Respond in 2-3 sentences. Start frustrated and only soften if the doctor is genuinely empathic.`,
+    markingCriteria:['Did not become defensive — listened without interrupting','Acknowledged the distress explicitly and early ("I can hear how worried and upset you are")','Apologised for the experience without admitting liability','Did not over-promise or give false assurances','Explored what happened factually','Explained the complaints process (PALS) clearly','Involved senior or offered escalation appropriately','Maintained professional boundaries throughout','Did not discuss other patients or breach confidentiality','Offered a follow-up and clear next step'],
+    instantFails:['Became defensive — argued facts before acknowledging feelings','Apologised in a way that admitted institutional liability','Dismissed or minimised the complaint','Breached confidentiality of other patients','No clear follow-up or next step offered'],
+  },
+];
+
+const MARKING_SYSTEM = `You are an AMaC PLAB 2 examiner providing structured feedback on a consultation.
+
+Assess the candidate's performance against AMaC marking criteria.
+
+Provide your response as valid JSON with this exact structure:
+{
+  "score": <number 0-100>,
+  "verdict": "<Pass|Merit|Distinction|Fail>",
+  "passed": [<list of criteria met - max 5 strings>],
+  "failed": [<list of criteria missed or done poorly - max 5 strings>],
+  "improve": [<list of 2-3 specific improvement suggestions with exact scripts>],
+  "highlight": "<single most important learning point from this consultation>"
+}
+
+Scoring guide:
+- 70+ = Pass
+- 80+ = Merit  
+- 90+ = Distinction
+- <70 = Fail
+
+Be honest and specific. Use real PLAB 2 examiner language.`;
+
+let currentStation = null;
+let chatHistory = [];
+let timerInterval = null;
+let secondsLeft = 480;
+let isLoading = false;
+
+// Build station grid
+document.getElementById('stationGrid').innerHTML = STATIONS.map(s => `
+  <button class="stn-btn" onclick="selectStation('${s.id}')">
+    <div class="stn-emoji">${s.emoji}</div>
+    <div class="stn-name">${s.name}</div>
+    <div class="stn-domain">${s.domain}</div>
+  </button>`).join('');
+
+function selectStation(id) {
+  currentStation = STATIONS.find(s => s.id === id);
+  document.querySelectorAll('.stn-btn').forEach(b => b.classList.remove('selected'));
+  event.currentTarget.classList.add('selected');
+  
+  document.getElementById('briefTitle').textContent = `${currentStation.emoji} ${currentStation.name}`;
+  document.getElementById('briefScenario').textContent = currentStation.scenario;
+  
+  document.getElementById('stageBrief').classList.add('active');
+  document.getElementById('stageChat').classList.remove('active');
+  document.getElementById('stageFeedback').classList.remove('active');
+  
+  document.getElementById('stageBrief').scrollIntoView({behavior:'smooth', block:'start'});
+}
+
+function startConsultation() {
+  if (!currentStation) return;
+  chatHistory = [];
+  secondsLeft = 480;
+  
+  document.getElementById('chatTitle').textContent = `${currentStation.emoji} ${currentStation.name}`;
+  document.getElementById('stageBrief').classList.remove('active');
+  document.getElementById('stageChat').classList.add('active');
+  document.getElementById('stageFeedback').classList.remove('active');
+  
+  const win = document.getElementById('chatWindow');
+  win.innerHTML = `<div class="msg msg-system">Station started. 8 minutes. Speak to your patient.</div>
+    <div class="msg msg-patient"><div class="msg-role">Patient — ${currentStation.patientName}</div>${getOpeningLine()}</div>`;
+  
+  // Add opening to chat history
+  chatHistory.push({
+    role: 'assistant',
+    content: getOpeningLine()
+  });
+  
+  startTimer();
+  document.getElementById('chatInput').focus();
+}
+
+function getOpeningLine() {
+  const lines = {
+    acs: '[clutching chest] Please... the pain is really bad...',
+    bbns: '[wringing hands] I\'ve been so worried since the call. Please just tell me — what did you find?',
+    capacity: '[arms crossed] I\'ve already told the nurse. I don\'t want the insulin. That\'s final.',
+    sepsis: '[confused, restless] I don\'t... I don\'t feel right. My tummy hurts and I feel cold...',
+    suicide: '[looking down, won\'t make eye contact] I\'m fine now. Can I go home?',
+    'paeds-fever': '[bouncing baby anxiously] He\'s been burning up all night. I\'m really scared — is he going to be okay?',
+    anger: '[standing, agitated] I want to speak to someone in charge. Your staff let my mother fall — again.',
+  };
+  return lines[currentStation.id] || 'Hello, doctor.';
+}
+
+function startTimer() {
+  clearInterval(timerInterval);
+  timerInterval = setInterval(() => {
+    secondsLeft--;
+    const m = Math.floor(secondsLeft / 60);
+    const s = secondsLeft % 60;
+    const display = `${m}:${s.toString().padStart(2,'0')}`;
+    document.getElementById('chatTimer').textContent = display;
+    if (secondsLeft <= 60) document.getElementById('chatTimer').classList.add('urgent');
+    if (secondsLeft <= 0) { clearInterval(timerInterval); endConsultation(); }
+  }, 1000);
+}
+
+async function sendMessage() {
+  const input = document.getElementById('chatInput');
+  const text = input.value.trim();
+  if (!text || isLoading) return;
+  
+  input.value = '';
+  input.style.height = '44px';
+  isLoading = true;
+  document.getElementById('sendBtn').disabled = true;
+  
+  // Add to UI
+  const win = document.getElementById('chatWindow');
+  win.innerHTML += `<div class="msg msg-candidate">${text}</div>`;
+  chatHistory.push({role:'user', content: text});
+  
+  // Loading dots
+  win.innerHTML += `<div class="msg msg-loading" id="loadingMsg"><div class="loading-dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div></div>`;
+  win.scrollTop = win.scrollHeight;
+  
+  try {
+    const response = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 1000,
+        system: currentStation.systemPrompt,
+        messages: chatHistory
+      })
+    });
+    
+    const data = await response.json();
+    const patientReply = data.content?.[0]?.text || 'I\'m not sure what to say...';
+    
+    chatHistory.push({role:'assistant', content: patientReply});
+    
+    document.getElementById('loadingMsg')?.remove();
+    win.innerHTML += `<div class="msg msg-patient"><div class="msg-role">Patient — ${currentStation.patientName}</div>${patientReply}</div>`;
+    win.scrollTop = win.scrollHeight;
+    
+  } catch(e) {
+    document.getElementById('loadingMsg')?.remove();
+    win.innerHTML += `<div class="msg msg-system">Connection error — please try again</div>`;
+  }
+  
+  isLoading = false;
+  document.getElementById('sendBtn').disabled = false;
+  input.focus();
+}
+
+async function endConsultation() {
+  clearInterval(timerInterval);
+  document.getElementById('sendBtn').disabled = true;
+  
+  const win = document.getElementById('chatWindow');
+  win.innerHTML += `<div class="msg msg-system">Consultation ended. Generating AMaC feedback...</div>`;
+  win.scrollTop = win.scrollHeight;
+  
+  const timeUsed = 480 - secondsLeft;
+  const minsUsed = Math.floor(timeUsed / 60);
+  const secsUsed = timeUsed % 60;
+  
+  // Build transcript
+  const transcript = chatHistory.map((m, i) => 
+    `${m.role === 'user' ? 'CANDIDATE' : 'PATIENT'}: ${m.content}`
+  ).join('\n\n');
+  
+  const markingPrompt = `Station: ${currentStation.name}
+Domain: ${currentStation.domain}
+Time used: ${minsUsed}m ${secsUsed}s of 8:00
+
+Marking criteria for this station:
+${currentStation.markingCriteria.map((c,i) => `${i+1}. ${c}`).join('\n')}
+
+Instant fail risks to check:
+${currentStation.instantFails.join('\n')}
+
+CONSULTATION TRANSCRIPT:
+${transcript}
+
+Assess this candidate's performance and provide structured feedback.`;
+  
+  try {
+    const response = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 1000,
+        system: MARKING_SYSTEM,
+        messages: [{role:'user', content: markingPrompt}]
+      })
+    });
+    
+    const data = await response.json();
+    let rawText = data.content?.[0]?.text || '{}';
+    rawText = rawText.replace(/```json|```/g, '').trim();
+    
+    let feedback;
+    try { feedback = JSON.parse(rawText); }
+    catch(e) { feedback = {score:65, verdict:'Unable to parse', passed:['Consultation completed'], failed:['Feedback generation error'], improve:['Please try again'], highlight:'Check your internet connection and retry.'}; }
+    
+    showFeedback(feedback, minsUsed, secsUsed);
+    
+  } catch(e) {
+    showFeedback({score:0, verdict:'Error', passed:[], failed:['Could not connect to marking system'], improve:['Check your internet connection and try again'], highlight:'Feedback unavailable — please retry.'}, minsUsed, secsUsed);
+  }
+}
+
+function showFeedback(fb, minsUsed, secsUsed) {
+  document.getElementById('fbSub').textContent = `${currentStation.name} · ${minsUsed}m ${secsUsed}s used · ${fb.verdict || 'Assessed'}`;
+  
+  const scoreColour = fb.score >= 90 ? '#15803d' : fb.score >= 80 ? '#1d4ed8' : fb.score >= 70 ? '#92400e' : '#991b1b';
+  
+  document.getElementById('feedbackBody').innerHTML = `
+    <div class="score-display">
+      <div class="score-circle" style="border: 3px solid ${scoreColour}40">
+        <div class="score-num" style="color:${scoreColour}">${fb.score || '--'}</div>
+        <div class="score-label">${fb.verdict || 'Score'}</div>
+      </div>
+    </div>
+    <div class="fb-section">
+      <div class="fb-sec-title">✓ What you did well</div>
+      ${(fb.passed||[]).map(p=>`<div class="fb-item fb-pass">✓ ${p}</div>`).join('')}
+    </div>
+    <div class="fb-section">
+      <div class="fb-sec-title">✗ What was missed or weak</div>
+      ${(fb.failed||[]).map(f=>`<div class="fb-item fb-fail">✗ ${f}</div>`).join('')}
+    </div>
+    <div class="fb-section">
+      <div class="fb-sec-title">→ Specific improvements</div>
+      ${(fb.improve||[]).map(i=>`<div class="fb-item fb-improve">→ ${i}</div>`).join('')}
+    </div>
+    ${fb.highlight ? `<div class="fb-section"><div class="fb-sec-title">⭐ Key learning point</div><div class="fb-item" style="background:#fdf8e6;border-left:4px solid var(--gold);color:var(--ink)">${fb.highlight}</div></div>` : ''}
+    <button class="again-btn" onclick="selectStation('${currentStation.id}')">Try this station again →</button>`;
+  
+  document.getElementById('stageChat').classList.remove('active');
+  document.getElementById('stageFeedback').classList.add('active');
+  document.getElementById('stageFeedback').scrollIntoView({behavior:'smooth', block:'start'});
+}
+
+function handleKey(e) {
+  if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMessage(); }
+}
+function autoResize(el) {
+  el.style.height = '44px';
+  el.style.height = Math.min(el.scrollHeight, 100) + 'px';
+}
+</script>
+</body>
+</html>

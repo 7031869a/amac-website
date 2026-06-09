@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Consultation Frameworks — AMaC PLAB 2</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0d2247;--navy-deep:#091629;--gold:#c9a227;--gold-soft:#e0c45a;--cream:#f7f4ec;--ink:#1a1d24;--muted:#5d6470;--line:#e4ddcd;}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--ink);-webkit-font-smoothing:antialiased;}
+nav{position:sticky;top:0;z-index:100;background:linear-gradient(180deg,#0f2850,#0d2247);border-bottom:1px solid rgba(201,162,39,0.25);box-shadow:0 3px 16px rgba(9,22,41,0.5);}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 28px;height:64px;display:flex;align-items:center;justify-content:space-between;}
+.brand{font-family:'Fraunces',serif;font-size:24px;font-weight:700;color:var(--gold-soft);letter-spacing:3px;text-decoration:none;}
+.nav-links{display:flex;gap:24px;list-style:none;align-items:center;}
+.nav-links a{color:#dde2ec;text-decoration:none;font-size:13px;}.nav-links a:hover{color:#fff;}
+.nav-cta{background:linear-gradient(135deg,#d4a820,#c9a227)!important;color:var(--navy-deep)!important;padding:8px 18px;border-radius:2px;font-weight:700;font-size:12px;}
+.hero{background:linear-gradient(155deg,#0d2247,#091629);color:#fff;padding:52px 28px 44px;text-align:center;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.02) 1px,transparent 1px);background-size:20px 20px;}
+.ph{max-width:800px;margin:0 auto;position:relative;}
+.kick{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--gold-soft);border:1px solid rgba(201,162,39,0.4);padding:5px 14px;border-radius:2px;display:inline-block;margin-bottom:16px;}
+.hero h1{font-family:'Fraunces',serif;font-size:clamp(24px,5vw,42px);font-weight:500;line-height:1.1;}
+.hero h1 em{font-style:italic;color:var(--gold-soft);}
+.hero p{margin:12px auto 0;color:#d0d6e8;font-weight:300;font-size:15px;max-width:56ch;line-height:1.65;}
+.filter-bar{background:#fff;border-bottom:1px solid var(--line);padding:11px 28px;position:sticky;top:64px;z-index:90;box-shadow:0 2px 6px rgba(13,34,71,0.06);}
+.fi{max-width:1100px;margin:0 auto;display:flex;gap:8px;flex-wrap:wrap;align-items:center;}
+.filter-lbl{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);margin-right:3px;}
+.fbtn{padding:7px 17px;border-radius:20px;font-size:12px;font-family:'Outfit',sans-serif;cursor:pointer;transition:all .22s;background:linear-gradient(135deg,#0f2850,#0d2247);border:1.5px solid rgba(201,162,39,0.3);color:var(--gold-soft);box-shadow:0 3px 10px rgba(9,22,41,0.35),inset 0 1px 0 rgba(255,255,255,0.06);font-weight:600;letter-spacing:.3px;}
+.fbtn:hover{background:linear-gradient(135deg,#1b3a6b,#152d52);border-color:rgba(201,162,39,0.6);box-shadow:0 4px 16px rgba(9,22,41,0.4);transform:translateY(-1px);color:#fff;}.fbtn.active{background:linear-gradient(135deg,#0d2247,#091629);border-color:var(--gold);box-shadow:0 4px 18px rgba(201,162,39,0.25);color:var(--gold-soft);font-weight:700;transform:translateY(-1px);border-width:2px;}
+.wrap{max-width:1100px;margin:0 auto;padding:24px 28px 64px;}
+.fw-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px;}
+.fw-card{background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden;box-shadow:0 2px 8px rgba(13,34,71,0.07);transition:box-shadow .2s;}
+.fw-card:hover{box-shadow:0 6px 24px rgba(13,34,71,0.13);}
+.fc-hdr{padding:14px 16px 12px;background:linear-gradient(135deg,#0f2850,#0d2247);border-bottom:none;}
+.fc-acronym{font-family:'Fraunces',serif;font-size:26px;color:var(--gold-soft);font-weight:500;letter-spacing:2px;}
+.fc-name{font-size:12px;color:rgba(255,255,255,0.7);margin-top:2px;}
+.fc-use{font-size:12px;font-weight:700;color:rgba(201,162,39,0.85);margin-top:4px;}
+.fc-body{padding:14px 16px;}
+.fc-step{display:flex;gap:10px;padding:7px 0;border-bottom:1px solid var(--line);transition:background .15s;cursor:default;}
+.fc-step:last-child{border-bottom:none;}
+.fc-step:hover{background:rgba(201,162,39,0.06);padding-left:4px;}
+.fc-letter{font-family:'Fraunces',serif;font-size:18px;color:var(--gold);font-weight:500;flex-shrink:0;width:22px;line-height:1.4;}
+.fc-step-name{font-size:13px;font-weight:600;color:var(--navy);}
+.fc-step-script{font-size:12px;color:var(--muted);font-style:italic;margin-top:2px;line-height:1.4;}
+.trustband{background:var(--navy);color:#fff;text-align:center;padding:34px 28px;}
+.trustband .slogan{font-family:'Fraunces',serif;font-style:italic;color:var(--gold-soft);font-size:18px;margin-bottom:8px;}
+.trustband p{color:#dde2ec;font-weight:300;font-size:14px;max-width:54ch;margin:0 auto;}
+footer{background:var(--navy-deep);color:#c4ccd8;padding:36px 28px 20px;}
+.foot-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px;border-bottom:1px solid rgba(255,255,255,0.07);padding-bottom:20px;}
+.foot-brand{font-family:'Fraunces',serif;font-size:22px;color:var(--gold-soft);letter-spacing:2px;}
+.foot-p{font-size:12px;color:#8a96b0;margin-top:5px;max-width:32ch;font-weight:300;line-height:1.5;}
+.foot-col h4{color:#fff;font-size:11px;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;font-weight:600;}
+.foot-col a{display:block;color:#8a96b0;text-decoration:none;font-size:12px;margin-bottom:6px;}
+.foot-col a:hover{color:var(--gold-soft);}
+.foot-btm{max-width:1200px;margin:14px auto 0;font-size:11px;color:#4a5568;text-align:center;}
+@media(max-width:700px){.nav-links{display:none;}.wrap{padding:16px 14px 48px;}.fw-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<nav><div class="nav-inner"><a href="index.html" class="brand">AMaC</a>
+  <ul class="nav-links"><li><a href="books.html">The Master Series</a></li><li><a href="tools.html">Study Tools</a></li><li><a href="contact.html" class="nav-cta">Get Started</a></li></ul>
+</div></nav>
+<header class="hero"><div class="ph">
+  <span class="kick">All 3 Volumes · Communication + Clinical</span>
+  <h1>Consultation <em>Frameworks</em></h1>
+  <p>Every framework used in PLAB 2 — ICE, SPIKES, NURSE, SBAR, SOCRATES, ASEPTIC, HEADSS, CAGE and more. With scripts for each step.</p>
+</div></header>
+<div class="filter-bar"><div class="fi">
+  <span class="filter-lbl">Category:</span>
+  <button class="fbtn active" onclick="filterCat('all',this)">All</button>
+  <button class="fbtn" onclick="filterCat('Communication',this)">Communication</button>
+  <button class="fbtn" onclick="filterCat('Clinical',this)">Clinical</button>
+  <button class="fbtn" onclick="filterCat('Psychiatric',this)">Psychiatric</button>
+  <button class="fbtn" onclick="filterCat('Safety',this)">Safety</button>
+  <button class="fbtn" onclick="filterCat('Prescribing',this)">Prescribing</button>
+</div></div>
+<div class="wrap"><div class="fw-grid" id="fwGrid"></div></div>
+<div class="trustband"><p class="slogan">Think Like an Examiner · Speak Like a Doctor · Perform With Confidence</p><p>Frameworks from the AMaC PLAB 2 Master Series — supplemented with standard UK clinical frameworks.</p></div>
+<footer><div class="foot-inner">
+  <div><div class="foot-brand">AMaC</div><p class="foot-p">A. Mansour &amp; Colleagues.</p></div>
+  <div class="foot-col"><h4>Study Tools</h4><a href="sbar-generator.html">SBAR Generator</a><a href="nhs-language.html">NHS Language</a><a href="simulator.html">Simulator</a></div>
+  <div class="foot-col"><h4>Contact</h4><a href="mailto:info@amac-medical.com">info@amac-medical.com</a></div>
+</div><div class="foot-btm">&copy; 2026 A. Mansour &amp; Colleagues (AMaC). All rights reserved.</div></footer>
+<script>
+const FW=[
+  {cat:"Communication",acronym:"ICE",name:"Ideas, Concerns, Expectations",use:"Every consultation — non-negotiable",steps:[
+    {l:"I",name:"Ideas",script:'"What do you think might be causing this?"'},
+    {l:"C",name:"Concerns",script:'"Is there anything in particular that worries you?"'},
+    {l:"E",name:"Expectations",script:'"What were you hoping I could do for you today?"'},
+  ]},
+  {cat:"Communication",acronym:"SPIKES",name:"Breaking Bad News",use:"Any serious diagnosis or difficult news",steps:[
+    {l:"S",name:"Setting up",script:"Private room. Sit down. Eye contact. No interruptions."},
+    {l:"P",name:"Perception",script:'"What have you been told so far about your results?"'},
+    {l:"I",name:"Invitation",script:'"How much detail would you like me to go into today?"'},
+    {l:"K",name:"Knowledge — warning shot",script:'"I\'m afraid I have some difficult news to share."'},
+    {l:"E",name:"Emotion — empathy",script:'"I can see this is very hard to hear. Take your time."'},
+    {l:"S",name:"Strategy and summary",script:"Clear next steps. Offer written information. Follow-up."},
+  ]},
+  {cat:"Communication",acronym:"NURSE",name:"Empathy Response",use:"When patient expresses emotion — pause first",steps:[
+    {l:"N",name:"Name the emotion",script:'"I can hear how frightened you are."'},
+    {l:"U",name:"Understand",script:'"That makes complete sense given what you\'re going through."'},
+    {l:"R",name:"Respect",script:'"You\'ve been dealing with this so well."'},
+    {l:"S",name:"Support",script:'"I want you to know I\'m here to support you through this."'},
+    {l:"E",name:"Explore",script:'"Can you tell me what worries you most right now?"'},
+  ]},
+  {cat:"Safety",acronym:"SBAR",name:"Structured Escalation",use:"Every escalation call to senior or handover",steps:[
+    {l:"S",name:"Situation",script:'"I am calling about [patient] who has [problem] and I am concerned."'},
+    {l:"B",name:"Background",script:'"Background: [history, meds, allergies, relevant findings]."'},
+    {l:"A",name:"Assessment",script:'"My assessment is [diagnosis/concern]. Observations are [obs]."'},
+    {l:"R",name:"Recommendation",script:'"I would like you to review urgently please. I need [action]."'},
+  ]},
+  {cat:"Clinical",acronym:"SOCRATES",name:"Pain History",use:"Any pain presentation",steps:[
+    {l:"S",name:"Site",script:'"Where exactly is the pain? Can you point to it?"'},
+    {l:"O",name:"Onset",script:'"When did it start? Did it come on suddenly or gradually?"'},
+    {l:"C",name:"Character",script:'"How would you describe it — crushing, burning, sharp, dull?"'},
+    {l:"R",name:"Radiation",script:'"Does it go anywhere else — arm, jaw, back, shoulder?"'},
+    {l:"A",name:"Associated symptoms",script:'"Any nausea, sweating, breathlessness, fever with it?"'},
+    {l:"T",name:"Timing",script:'"Is it constant or does it come and go?"'},
+    {l:"E",name:"Exacerbating and relieving",script:'"What makes it better or worse?"'},
+    {l:"S",name:"Severity",script:'"On a scale of 0 to 10, how would you rate it now?"'},
+  ]},
+  {cat:"Psychiatric",acronym:"ASEPTIC",name:"Mental State Examination",use:"All psychiatric assessments and MSE stations",steps:[
+    {l:"A",name:"Appearance and Behaviour",script:"Dress, hygiene, eye contact, psychomotor activity — observe and describe"},
+    {l:"S",name:"Speech",script:"Rate, tone, volume, fluency — note any thought disorder"},
+    {l:"E",name:"Emotion — Mood and Affect",script:'"How would you describe your mood in one word?"'},
+    {l:"P",name:"Perception",script:'"Have you heard voices when no one was around? What do they say?"'},
+    {l:"T",name:"Thought content",script:'"Is there anything preoccupying your mind? Any thoughts of harming yourself?"'},
+    {l:"I",name:"Insight",script:'"Do you think something is wrong? Do you think you need help?"'},
+    {l:"C",name:"Cognition",script:"AMT-10 or brief cognitive screen if indicated by presentation"},
+  ]},
+  {cat:"Psychiatric",acronym:"HEADSS",name:"Adolescent Assessment",use:"Paediatric VI — adolescent health consultation",steps:[
+    {l:"H",name:"Home",script:'"Tell me about where you live and who you live with."'},
+    {l:"E",name:"Education / Employment",script:'"How\'s school going? Any problems there?"'},
+    {l:"A",name:"Activities",script:'"What do you like doing outside school? Any hobbies or sports?"'},
+    {l:"D",name:"Drugs / Alcohol",script:'"Do any of your friends smoke, drink or take drugs? Have you ever?"'},
+    {l:"S",name:"Sexuality",script:'"Are you in a relationship? Is there anything you\'d like to talk about?"'},
+    {l:"S",name:"Suicide / Safety",script:'"Have you ever felt so low that you\'ve had thoughts of hurting yourself?"'},
+  ]},
+  {cat:"Psychiatric",acronym:"CAGE",name:"Alcohol Screening",use:"Alcohol history — any psychiatric or chronic disease station",steps:[
+    {l:"C",name:"Cut down",script:'"Have you ever felt you should cut down on your drinking?"'},
+    {l:"A",name:"Annoyed",script:'"Have people annoyed you by criticising your drinking?"'},
+    {l:"G",name:"Guilty",script:'"Have you ever felt guilty about your drinking?"'},
+    {l:"E",name:"Eye-opener",script:'"Have you ever had a drink first thing in the morning to steady your nerves or get rid of a hangover?"'},
+  ]},
+  {cat:"Prescribing",acronym:"ACID-ID",name:"Prescribing Safety Check",use:"Before every prescription in every station",steps:[
+    {l:"A",name:"Allergy confirmed",script:"Ask: name of drug + nature of reaction (rash vs anaphylaxis)"},
+    {l:"C",name:"Correct indication",script:"Is this drug indicated for this patient right now?"},
+    {l:"I",name:"Indication + dose",script:"Generic name, correct dose, correct route"},
+    {l:"D",name:"Interactions checked",script:"Check key interactions — warfarin, NSAIDs, ACE, methotrexate"},
+    {l:"I",name:"Individual factors",script:"Renal function, hepatic function, pregnancy, age"},
+    {l:"D",name:"Date and sign",script:"Prescriber name, date, GMC number — never anonymous"},
+  ]},
+  {cat:"Prescribing",acronym:"FIVE Rs",name:"Prescribing Safety Rule",use:"Before administering any medication",steps:[
+    {l:"R",name:"Right patient",script:"Confirm name and date of birth — always"},
+    {l:"R",name:"Right drug",script:"Generic name, correct indication checked"},
+    {l:"R",name:"Right dose",script:"Check BNF, renal function, weight if paediatric"},
+    {l:"R",name:"Right route",script:"IV, IM, PO, SC — appropriate for clinical situation"},
+    {l:"R",name:"Right time",script:"Frequency, timing, duration — document clearly"},
+  ]},
+  {cat:"Safety",acronym:"NEWS2",name:"National Early Warning Score 2",use:"Any deteriorating patient — score before escalating",steps:[
+    {l:"R",name:"Respiratory rate",script:"≤8 or ≥25 = score 3. Say rate aloud and score."},
+    {l:"S",name:"SpO2 scale",script:"Scale 1 (normal) vs Scale 2 (COPD target 88-92%). State which."},
+    {l:"B",name:"Blood pressure — systolic",script:"≤90 or ≥220 = score 3. Check trend."},
+    {l:"P",name:"Pulse",script:"≤40 or ≥131 = score 3. State and score."},
+    {l:"C",name:"Consciousness",script:"AVPU — Alert/Voice/Pain/Unresponsive. New confusion = score 3."},
+    {l:"T",name:"Temperature",script:"≤35 or ≥39.1 = score 2. Document time of measurement."},
+  ]},
+  {cat:"Communication",acronym:"BREAK",name:"Angry Patient Framework",use:"Challenging consultation — angry or distressed patient",steps:[
+    {l:"B",name:"Breathe and listen",script:"Do not interrupt. Let them finish. Maintain calm body language."},
+    {l:"R",name:"Recognise the emotion",script:'"I can see you\'re very frustrated and upset. I understand."'},
+    {l:"E",name:"Empathise without admitting liability",script:'"I\'m sorry you\'ve had this experience. That must have been very difficult."'},
+    {l:"A",name:"Ask and explore",script:'"Can you help me understand what happened from your perspective?"'},
+    {l:"K",name:"Keep constructive",script:'"I\'d like to make sure we address this properly. Let me explain what I can do..."'},
+  ]},
+  {cat:"Clinical",acronym:"ABCDE",name:"Acute Assessment Framework",use:"Any acutely unwell patient — always first",steps:[
+    {l:"A",name:"Airway",script:'"Is the airway patent? Any stridor, gurgling or secretions?"'},
+    {l:"B",name:"Breathing",script:'"RR, SpO2, chest expansion, auscultation, work of breathing."'},
+    {l:"C",name:"Circulation",script:'"HR, BP, capillary refill, skin colour, urine output."'},
+    {l:"D",name:"Disability",script:'"GCS or AVPU. Pupils. Blood glucose — always check."'},
+    {l:"E",name:"Exposure",script:'"Temperature. Full skin inspection. Check for rashes, wounds, oedema."'},
+  ]},
+  {cat:"Clinical",acronym:"SAMPLE",name:"Emergency History Framework",use:"Rapid history in acute / emergency stations",steps:[
+    {l:"S",name:"Symptoms — presenting complaint",script:"What is happening right now? Onset and severity?"},
+    {l:"A",name:"Allergies",script:'"Any known allergies? What reaction?"'},
+    {l:"M",name:"Medications",script:'"What medications are you on? Any recent changes?"'},
+    {l:"P",name:"Past medical history",script:'"Any relevant previous conditions or hospital admissions?"'},
+    {l:"L",name:"Last ate and drank",script:'"When did you last eat or drink?" (Anaesthetic / procedural risk)'},
+    {l:"E",name:"Events leading up to this",script:'"What were you doing when this started? Did anything trigger it?"'},
+  ]},
+];
+
+let activeCat="all";
+function filterCat(c,btn){activeCat=c;document.querySelectorAll(".fbtn").forEach(b=>b.classList.remove("active"));btn.classList.add("active");render();}
+function render(){
+  const list=activeCat==="all"?FW:FW.filter(f=>f.cat===activeCat);
+  document.getElementById("fwGrid").innerHTML=list.map(f=>`
+    <div class="fw-card">
+      <div class="fc-hdr">
+        <div class="fc-acronym">${f.acronym}</div>
+        <div class="fc-name">${f.name}</div>
+        <div class="fc-use">Use: ${f.use}</div>
+      </div>
+      <div class="fc-body">${f.steps.map(s=>`
+        <div class="fc-step">
+          <span class="fc-letter">${s.l}</span>
+          <div><div class="fc-step-name">${s.name}</div><div class="fc-step-script">${s.script}</div></div>
+        </div>`).join("")}
+      </div>
+    </div>`).join("");
+}
+render();
+</script></body></html>

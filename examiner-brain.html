@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Examiner Brain — AMaC PLAB 2</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0d2247;--navy-deep:#091629;--gold:#c9a227;--gold-soft:#e0c45a;--cream:#f7f4ec;--ink:#1a1d24;--muted:#5d6470;--line:#e4ddcd;--fail:#c0392b;--pass:#1b6b3a;}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--ink);-webkit-font-smoothing:antialiased;}
+nav{position:sticky;top:0;z-index:100;background:linear-gradient(180deg,#0f2850,#0d2247);border-bottom:1px solid rgba(201,162,39,0.25);box-shadow:0 3px 16px rgba(9,22,41,0.5);}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 28px;height:64px;display:flex;align-items:center;justify-content:space-between;}
+.brand{font-family:'Fraunces',serif;font-size:24px;font-weight:700;color:var(--gold-soft);letter-spacing:3px;text-decoration:none;}
+.nav-links{display:flex;gap:24px;list-style:none;align-items:center;}
+.nav-links a{color:#dde2ec;text-decoration:none;font-size:13px;}.nav-links a:hover{color:#fff;}
+.nav-cta{background:linear-gradient(135deg,#d4a820,#c9a227)!important;color:var(--navy-deep)!important;padding:8px 18px;border-radius:2px;font-weight:700;font-size:12px;}
+.hero{background:linear-gradient(155deg,#0d2247,#091629);color:#fff;padding:52px 28px 44px;text-align:center;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.025) 1px,transparent 1px);background-size:20px 20px;}
+.ph{max-width:760px;margin:0 auto;position:relative;}
+.kick{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--gold-soft);border:1px solid rgba(201,162,39,0.4);padding:5px 14px;border-radius:2px;display:inline-block;margin-bottom:16px;background:rgba(201,162,39,0.07);}
+.hero h1{font-family:'Fraunces',serif;font-size:clamp(26px,5vw,44px);font-weight:500;line-height:1.1;}
+.hero h1 em{font-style:italic;color:var(--gold-soft);}
+.hero p{margin:12px auto 0;color:#d0d6e8;font-weight:300;font-size:15px;max-width:54ch;line-height:1.65;}
+.intro-box{background:rgba(201,162,39,0.1);border:1px solid rgba(201,162,39,0.25);border-radius:10px;padding:14px 20px;margin:20px auto 0;max-width:620px;}
+.ib-text{font-family:'Fraunces',serif;font-style:italic;font-size:14px;color:#fff;line-height:1.65;}
+.station-nav{background:var(--cream);border-bottom:1px solid var(--line);padding:8px 28px;position:sticky;top:64px;z-index:90;box-shadow:0 2px 6px rgba(13,34,71,0.06);}
+.sn-inner{max-width:1100px;margin:0 auto;display:flex;gap:4px;flex-wrap:wrap;}
+.sn-btn{padding:10px 16px;font-size:12px;font-family:'Outfit',sans-serif;cursor:pointer;border:none;margin:6px 3px;border-radius:8px;white-space:nowrap;background:linear-gradient(135deg,#0f2850,#0d2247);border:1.5px solid rgba(201,162,39,0.3);color:var(--gold-soft);box-shadow:0 3px 10px rgba(9,22,41,0.35),inset 0 1px 0 rgba(255,255,255,0.06);font-weight:600;letter-spacing:.3px;transition:all .22s;}
+.sn-btn:hover{color:var(--ink);}
+.sn-btn:hover{background:linear-gradient(135deg,#1b3a6b,#152d52);border-color:rgba(201,162,39,0.6);box-shadow:0 6px 18px rgba(9,22,41,0.4),inset 0 1px 0 rgba(255,255,255,0.08);transform:translateY(-2px);color:#fff;}.sn-btn.active{background:linear-gradient(135deg,#0a1d3d,#091629);border-color:var(--gold);border-width:2px;box-shadow:0 4px 20px rgba(201,162,39,0.25),inset 0 1px 0 rgba(255,255,255,0.05);color:var(--gold-soft);transform:translateY(-1px);}
+.wrap{max-width:960px;margin:0 auto;padding:28px 28px 64px;}
+/* Station panel */
+.station-panel{display:none;}.station-panel.active{display:block;}
+.sp-hdr{background:linear-gradient(135deg,#0f2850,#0d2247);border-radius:12px;padding:18px 22px;margin-bottom:20px;display:flex;align-items:center;gap:16px;}
+.sp-emoji{font-size:32px;flex-shrink:0;}
+.sp-info{flex:1;}
+.sp-station{font-family:'Fraunces',serif;font-size:24px;color:var(--gold-soft);font-weight:500;}
+.sp-domain{font-size:12px;color:rgba(255,255,255,0.5);margin-top:3px;text-transform:uppercase;letter-spacing:.8px;}
+/* Sections */
+.section{margin-bottom:16px;}
+.sec-hdr{background:linear-gradient(135deg,#0f2850,#0d2247);padding:12px 16px;border-radius:10px 10px 0 0;cursor:pointer;display:flex;justify-content:space-between;align-items:center;user-select:none;}
+.sh-title{font-size:14px;font-weight:700;color:var(--gold-soft);text-transform:uppercase;letter-spacing:1px;}
+.sh-chev{font-size:12px;color:rgba(255,255,255,0.4);transition:transform .25s;}
+.section.open .sh-chev{transform:rotate(180deg);}
+.sec-body{display:none;background:#fff;border:1px solid var(--line);border-top:none;border-radius:0 0 10px 10px;padding:16px;}
+.section.open .sec-body{display:block;}
+/* Lists */
+.fail-list{list-style:none;}
+.fail-item{display:flex;gap:10px;padding:8px 12px;border-radius:6px;margin-bottom:5px;background:#fdf0ee;border-left:4px solid var(--fail);font-size:13.5px;color:var(--ink);line-height:1.45;}
+.fail-dot{color:var(--fail);font-size:16px;flex-shrink:0;line-height:1.4;}
+.mark-item{display:flex;gap:10px;padding:8px 12px;border-radius:6px;margin-bottom:5px;background:#f2fdf6;border-left:4px solid var(--pass);font-size:13.5px;color:var(--ink);line-height:1.45;}
+.mark-dot{color:var(--pass);font-size:16px;flex-shrink:0;line-height:1.4;}
+/* Hidden agenda */
+.agenda-box{background:linear-gradient(135deg,#1a0a2e,#0d0520);border-radius:8px;padding:15px 18px;}
+.ag-label{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:rgba(201,162,39,0.8);margin-bottom:8px;}
+.ag-text{font-size:14px;color:rgba(255,255,255,0.85);line-height:1.7;font-style:italic;}
+/* Distinction move */
+.distinction-box{background:linear-gradient(135deg,#c9a227,#d4a820);border-radius:8px;padding:15px 18px;}
+.db-label{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--navy-deep);margin-bottom:8px;}
+.db-text{font-family:'Fraunces',serif;font-style:italic;font-size:14px;color:var(--navy-deep);line-height:1.7;}
+/* Three things */
+.three-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
+.three-item{background:linear-gradient(135deg,#0f2850,#0d2247);border-radius:8px;padding:13px 14px;text-align:center;}
+.ti-num{font-family:'Fraunces',serif;font-size:22px;color:var(--gold-soft);margin-bottom:5px;}
+.ti-text{font-size:13px;color:rgba(255,255,255,0.8);line-height:1.4;}
+.trustband{background:var(--navy);color:#fff;text-align:center;padding:34px 28px;}
+.trustband .slogan{font-family:'Fraunces',serif;font-style:italic;color:var(--gold-soft);font-size:18px;margin-bottom:8px;}
+.trustband p{color:#dde2ec;font-weight:300;font-size:14px;max-width:54ch;margin:0 auto;}
+footer{background:var(--navy-deep);color:#c4ccd8;padding:36px 28px 20px;}
+.foot-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px;border-bottom:1px solid rgba(255,255,255,0.07);padding-bottom:20px;}
+.foot-brand{font-family:'Fraunces',serif;font-size:22px;color:var(--gold-soft);letter-spacing:2px;}
+.foot-p{font-size:12px;color:#8a96b0;margin-top:5px;max-width:32ch;font-weight:300;line-height:1.5;}
+.foot-col h4{color:#fff;font-size:11px;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;font-weight:600;}
+.foot-col a{display:block;color:#8a96b0;text-decoration:none;font-size:12px;margin-bottom:6px;}
+.foot-col a:hover{color:var(--gold-soft);}
+.foot-btm{max-width:1200px;margin:14px auto 0;font-size:11px;color:#4a5568;text-align:center;}
+@media(max-width:700px){.nav-links{display:none;}.wrap{padding:16px 14px 48px;}.three-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<nav><div class="nav-inner"><a href="index.html" class="brand">AMaC</a>
+  <ul class="nav-links"><li><a href="books.html">The Master Series</a></li><li><a href="tools.html">Study Tools</a></li><li><a href="contact.html" class="nav-cta">Get Started</a></li></ul>
+</div></nav>
+<header class="hero"><div class="ph">
+  <span class="kick">Performance Intelligence · Nobody Teaches This</span>
+  <h1>The <em>Examiner Brain</em></h1>
+  <p>What the examiner is actually testing. Why candidates fail. What triggers marks. The hidden agenda. The distinction move. Per station.</p>
+  <div class="intro-box">
+    <div class="ib-text">"Candidates always ask: what does the examiner actually want? This is the answer. Not what to do — but how the examiner thinks about what you do."</div>
+  </div>
+</div></header>
+<div class="station-nav"><div class="sn-inner" id="stationNav"></div></div>
+<div class="wrap" id="stationPanels"></div>
+<div class="trustband"><p class="slogan">Think Like an Examiner · Speak Like a Doctor · Perform With Confidence</p><p>Examiner psychology sourced from the AMaC Master Series and expert PLAB 2 OSCE training.</p></div>
+<footer><div class="foot-inner">
+  <div><div class="foot-brand">AMaC</div><p class="foot-p">A. Mansour &amp; Colleagues.</p></div>
+  <div class="foot-col"><h4>Performance Tools</h4><a href="actor-traps.html">Actor Traps</a><a href="recovery-scripts.html">Recovery Scripts</a><a href="fail-recovery.html">Fail Recovery</a></div>
+  <div class="foot-col"><h4>Practice</h4><a href="simulator.html">AI Simulator</a><a href="osce.html">OSCE Stations</a><a href="mock-circuit.html">Mock Circuit</a></div>
+  <div class="foot-col"><h4>Contact</h4><a href="mailto:info@amac-medical.com">info@amac-medical.com</a></div>
+</div><div class="foot-btm">&copy; 2026 A. Mansour &amp; Colleagues (AMaC). All rights reserved.</div></footer>
+<script>
+const BRAIN=[{"id": "acs", "station": "Acute Chest Pain / ACS", "domain": "Emergency", "icon": "💔", "what_tested": "Clinical safety under time pressure. The examiner is asking one question from the moment you walk in: would I trust this candidate on call at 3am?", "why_candidates_fail": ["Starting a detailed history before doing ABCDE — the cardinal sin", "Giving GTN without checking blood pressure or asking about sildenafil", "Giving oxygen routinely without checking SpO₂ — now marked wrong in 2024", "Not requesting an ECG within the first 2 minutes", "Not escalating — saying 'I would investigate' instead of 'I need senior help now'", "Being silent throughout — the examiner cannot score silent reasoning"], "what_triggers_marks": ["Saying 'ABCDE' within the first 60 seconds", "Checking allergy before giving aspirin — even one second before", "Asking about sildenafil before considering GTN", "Calling for senior/cardiology using SBAR with specific escalation", "Explaining what you're doing as you do it — 'I'm now checking his SpO₂ because...'", "ICE — acknowledging the patient's fear, not just treating the clinical problem"], "hidden_agenda": "The examiner wants to see that you treat the patient as a frightened human being, not a set of observations. The clinical marks are almost secondary — most candidates get the clinical right. The communication marks around the fear and uncertainty are what distinguish.", "distinction_move": "After initiating ABCDE and escalation, look directly at the patient and say: 'I know this is really frightening. I want you to know we're taking this very seriously and I'm not going to leave you.' That is a distinction move — clinical safety AND humanity simultaneously.", "three_things": ["ABCDE before history", "Allergy check before aspirin", "Escalate to cardiology using SBAR — not just 'get a senior'"]}, {"id": "bbn", "station": "Breaking Bad News", "domain": "Communication", "icon": "🗣️", "what_tested": "Whether you can hold emotional space without filling it. The examiner is not testing your medical knowledge. They are testing whether you can be fully present with a person in distress.", "why_candidates_fail": ["No warning shot — delivering the diagnosis without preparation", "Speaking over silence — filling the emotional pause with more clinical information", "Using euphemisms like 'growth' or 'abnormal cells' without ever saying 'cancer'", "Volunteering statistics about survival without being asked", "Missing the patient's ICE entirely — explaining treatment before understanding what the patient actually wants to know", "No follow-up plan or support offered"], "what_triggers_marks": ["Checking what the patient already knows before you say anything", "Firing a clear warning shot: 'I'm afraid the news isn't what we were hoping for'", "Saying the word 'cancer' clearly — not avoiding it", "Holding silence for a minimum of 5 seconds after the diagnosis", "Responding to the first emotion with NURSE before continuing", "ICE explored after the news, not before", "Clear next steps and follow-up offered"], "hidden_agenda": "The examiner's hidden question is: can this candidate tolerate another person's pain without trying to fix it immediately? Most candidates cannot. They fill every silence with information because silence feels like failure. It isn't. Silence after bad news is the most skilled intervention in this station.", "distinction_move": "After delivering the diagnosis, close your notepad if you have one, put down your pen, and give the patient your complete physical attention. Say nothing for 8–10 full seconds. Then: 'Take whatever time you need. I'm here.' That physical stillness is what examiners remember.", "three_things": ["Warning shot before diagnosis", "5 seconds of silence after the word 'cancer'", "NURSE before any clinical next steps"]}, {"id": "capacity", "station": "Capacity Assessment", "domain": "Ethics", "icon": "⚖️", "what_tested": "Whether you understand that refusal is not the same as incapacity. The examiner is testing the MCA 2005 — not your ability to persuade a patient.", "why_candidates_fail": ["Assuming the patient lacks capacity because they're refusing insulin — they may have full capacity", "Not applying the 4-part test explicitly — just concluding 'they don't have capacity'", "Not exploring why the patient is refusing — the reason often reveals everything", "Overriding a valid, capacitous decision", "Using coercion — 'If you don't take this you will die' delivered as a threat, not information", "Not documenting the capacity assessment clearly"], "what_triggers_marks": ["Applying all 4 parts of the MCA test explicitly and aloud: understand, retain, weigh, communicate", "Exploring the reason for refusal before concluding anything", "Concluding out loud: 'Based on what I've assessed, I believe Mr Davis has capacity to make this decision'", "Respecting the decision: 'I respect that this is ultimately your choice'", "Keeping the door open: 'If anything changes or you want to talk again, please tell the team'", "Stating escalation and documentation"], "hidden_agenda": "The actor in the capacity station is almost always scripted to have capacity — with a deeply personal reason for refusing. The reason (a wife who died from insulin complications, a previous bad experience) is hidden behind the refusal. The examiner is watching whether you dig for it, or just apply the MCA framework mechanically. The candidates who find the reason and respond to it with empathy first, then the framework, score the highest marks.", "distinction_move": "After completing the capacity assessment and concluding the patient has capacity: 'I want to make sure you know that my door is always open if anything changes or if you want to talk further. This is not the end of the conversation — this is me respecting your right to make your own decisions, even ones I'm worried about.' That is the distinction close.", "three_things": ["4-part test explicitly and aloud", "Explore the REASON behind refusal", "Refusal ≠ incapacity — state this conclusion clearly"]}, {"id": "sepsis", "station": "Sepsis / Deteriorating Patient", "domain": "Emergency", "icon": "🦠", "what_tested": "Recognition speed and the Sepsis Six. The examiner is watching whether you say the word 'sepsis' and whether you initiate the six interventions within the hour.", "why_candidates_fail": ["Not saying the word 'sepsis' — describing features without naming the diagnosis", "Starting a history before ABCDE on a NEWS2 9 patient", "Delaying antibiotics waiting for culture results — always take cultures first if it doesn't delay antibiotics", "Not stating all six elements of the Sepsis Six", "Not escalating urgently to senior or ICU outreach", "Forgetting to recheck the patient after initial interventions"], "what_triggers_marks": ["Saying 'I'm concerned this patient has sepsis' within 90 seconds", "ABCDE immediately and verbalised", "All Sepsis Six stated: O₂, cultures, antibiotics, fluids, lactate, urine output", "Checking allergy before antibiotics — even under pressure", "Escalating to senior/ICU outreach with SBAR", "Reassessing after initial management"], "hidden_agenda": "The examiner's hidden test in sepsis stations is whether you can maintain communication with the patient while running the emergency response. Most candidates either communicate well or do ABCDE — rarely both. The distinction candidate verbalises every action to the patient: 'I'm going to check your breathing now. I'm going to put this oxygen mask on — is that okay?' That is the combination the examiner wants to see.", "distinction_move": "After initiating the Sepsis Six: briefly turn to the patient, make eye contact and say: 'I know this is overwhelming. We're moving quickly because we're taking this very seriously. I'm going to stay with you and keep you informed.' Then continue. 10 seconds of humanity in the middle of an emergency scores both the clinical and communication domains.", "three_things": ["Say 'sepsis' out loud within 90 seconds", "Sepsis Six — all six, in order, stated aloud", "Escalate with SBAR — not just 'I'd get a senior'"]}, {"id": "suicide", "station": "Suicide Risk Assessment", "domain": "Psychiatry", "icon": "🧠", "what_tested": "Whether you can ask directly about suicide without minimising language, and whether you complete a structured risk assessment with empathy.", "why_candidates_fail": ["Using minimising question format: 'You're not thinking of hurting yourself, are you?'", "Not asking about intent, plan and means — all three are separate marks", "Not assessing protective factors", "Discharging without a safety plan or senior review", "Being clinical and detached — treating it as a checklist rather than a human conversation", "Over-focusing on the method (tablets taken) and under-focusing on the emotional context"], "what_triggers_marks": ["Direct question: 'Did you want to die?' — not indirect or softened", "Intent, plan and means assessed separately and clearly", "Protective factors explored: 'What makes life feel worth living, even a little?'", "Non-judgemental tone throughout — the actor is scripted to respond to warmth", "Crisis resources offered and safety plan discussed", "Senior review stated — 'I can't let you go home without a senior psychiatric review'"], "hidden_agenda": "The examiner's hidden question in suicide stations is: does this candidate believe that asking about suicide will plant the idea? The answer they want to see is no — asking directly about suicidal intent does not increase risk and is the only safe clinical approach. Candidates who soften the question miss the mark. The examiner is also watching for warmth alongside directness — the patient should feel asked about, not interrogated.", "distinction_move": "After a thorough risk assessment: 'Before I go any further — I want to say something. What you did today took courage to tell someone about. That matters. And the fact that you're here, talking to me, is important.' Then continue with the plan. That acknowledgement of courage, before the clinical next steps, is distinction territory.", "three_things": ["Ask directly — 'Did you want to die?' not indirect softening", "Intent + plan + means = three separate marks", "Protective factors — not just risk factors"]}, {"id": "angry_relative", "station": "Angry Relative / Duty of Candour", "domain": "Communication", "icon": "😤", "what_tested": "Whether you can absorb anger without defending, explain without deflecting, and apologise without admitting liability.", "why_candidates_fail": ["Becoming defensive immediately — explaining facts before acknowledging the emotion", "Saying 'I'm sorry you feel that way' — a conditional apology that fails the professionalism domain", "Disclosing other patients' information under pressure", "Trying to talk the relative out of complaining", "Not offering escalation or PALS", "Giving false assurances — 'This will never happen again'"], "what_triggers_marks": ["Finding a private room before starting the conversation", "Listening without interrupting for at least 60 seconds", "Acknowledging the emotion before any explanation: 'I can hear how upset and frightened you are'", "Genuine apology: 'I am sorry this happened' — not 'I'm sorry you feel that way'", "Explaining PALS and supporting the right to complain", "Offering a clear follow-up and next step"], "hidden_agenda": "The examiner's hidden test is whether you understand the difference between acknowledging harm and admitting negligence. 'I'm sorry this happened' is the correct apology — it acknowledges the experience without legal admission. Most candidates either over-apologise (admitting liability) or under-apologise (sounding defensive). The zone between them is narrow and the examiner is watching for it.", "distinction_move": "After the relative has expressed everything: 'Thank you for telling me all of this. It could not have been easy to come and say this, and I'm grateful you did, because this is how things get better.' Then explain next steps. That acknowledgement of courage to complain — before the formal process — is what transforms a pass into a distinction.", "three_things": ["Private room first — never in a corridor", "Listen fully before explaining anything", "'I'm sorry this happened' not 'I'm sorry you feel that way'"]}, {"id": "safeguarding", "station": "Safeguarding", "domain": "Safeguarding", "icon": "🛡", "what_tested": "Whether you recognise the safeguarding concern, respond without promising secrecy, and escalate to the right people.", "why_candidates_fail": ["Missing the disclosure entirely — not responding to the verbal or physical signal", "Promising confidentiality: 'Don't worry, I won't tell anyone'", "Asking leading questions that contaminate the evidence", "Not escalating — documenting a concern without acting on it", "Confronting the alleged abuser directly in the station", "Not using verbatim documentation"], "what_triggers_marks": ["Responding to the disclosure with warmth, not alarm", "Not promising confidentiality: 'I can't promise to keep this secret if I'm worried about safety'", "Listening without interrupting or asking leading questions", "Naming the escalation: 'I will speak to our named safeguarding lead today'", "Naming the referral: 'I will make a referral to Children's/Adult Services'", "Verbatim documentation stated aloud"], "hidden_agenda": "The examiner's hidden test in safeguarding stations is whether candidates prioritise the child's/adult's safety over the relative relationship. Well-meaning candidates who try to avoid upsetting the family, or who promise confidentiality to be kind, consistently fail. The examiner wants to see clear prioritisation of the vulnerable person's safety — even when that's uncomfortable.", "distinction_move": "After the disclosure: 'Thank you for telling me that. I want to be completely honest with you — I take what you've shared seriously enough that I need to involve other people. That's not because I don't trust you. It's because [child/person]'s safety is the most important thing, and there are people whose whole job is to make sure of that.' Transparent escalation, without defensiveness, is distinction territory.", "three_things": ["Never promise confidentiality in safeguarding", "Verbatim documentation — state it aloud", "Name the escalation: safeguarding lead + Children's/Adult Services"]}, {"id": "prescribing", "station": "Prescribing Safety", "domain": "Prescribing", "icon": "💊", "what_tested": "Clinical safety. The examiner is watching for three automatic behaviours: allergy check, correct abbreviations, and stewardship thinking.", "why_candidates_fail": ["Not checking allergy before prescribing — the single most common prescribing fail", "Writing 'U' for units on insulin — this is an instant fail", "Methotrexate prescribed daily instead of weekly — potentially fatal error", "Decimal errors — writing '.5mg' instead of '0.5mg'", "No indication documented for antibiotics", "No review date or IV-to-oral switch plan"], "what_triggers_marks": ["Asking about allergy as the absolute first step before touching the chart", "Stating 'units' in full for insulin — every time", "Confirming the indication before prescribing", "Documenting the antibiotic indication and planned review date", "Checking eGFR for renally-cleared drugs", "VRIII: confirming long-acting insulin is NOT stopped"], "hidden_agenda": "The examiner in prescribing stations is specifically watching for whether the allergy check is automatic — not performed as an afterthought. The moment you pick up the chart, the examiner is already scoring whether your first action is to check allergies. Candidates who check allergy after making a clinical decision about the drug have already partially failed. The sequence is: allergy first, indication confirmed, drug selected, dose checked.", "distinction_move": "Before writing anything: put the chart down, look at the patient, and say: 'Before I prescribe anything — do you have any known allergies to medications? And can you tell me what reaction you had?' Then pick up the chart. That physical and verbal separation of allergy check from prescribing is what the examiner wants to see.", "three_things": ["Allergy check = first action, always", "Insulin = 'units' in full, never 'U'", "Document indication + review date for every antibiotic"]}, {"id": "telephone", "station": "Telephone Consultation", "domain": "Communication", "icon": "📞", "what_tested": "Whether you can triage safely without seeing the patient, recognise when 999 is the answer, and maintain communication safety without the visual cues you normally rely on.", "why_candidates_fail": ["Not calling 999 when the symptoms clearly warrant it — giving advice instead", "Advising the patient to drive themselves to hospital", "Not keeping the patient on the line while waiting for the ambulance", "Over-reassuring without any safety-net", "Missing red flags because you can't see the patient", "Giving specific doses or medical advice beyond your competence on the phone"], "what_triggers_marks": ["Recognising the red flags from verbal description alone", "Calling 999 or arranging ambulance without delay", "Keeping the patient on the line: 'Please don't hang up — stay with me'", "Clear safety instructions while waiting: 'Unlock your door. Sit down. Don't eat or drink anything.'", "Documenting the call and escalation", "Not advising self-transport for anything urgent"], "hidden_agenda": "The hidden test in telephone stations is whether candidates try to manage an emergency remotely rather than immediately escalating to 999. The examiner wants one clear decision: is this an emergency that needs an ambulance now, or is this something that can be managed with advice? Candidates who try to advise their way through an emergency that needs 999 consistently fail.", "distinction_move": "After calling 999: 'I'm staying on the line with you until the ambulance arrives. Can you unlock your front door right now so the paramedics can get to you easily? And please sit down — I don't want you to fall. I'm not going anywhere.' That continuous presence on the phone, with practical instructions, is distinction territory.", "three_things": ["999 first for emergencies — not advice", "Stay on the line: 'Please don't hang up'", "Practical waiting instructions: unlock door, sit down, don't eat"]}, {"id": "explanation", "station": "Explanation Station — New Diagnosis", "domain": "Communication", "icon": "📢", "what_tested": "Whether you can translate medical knowledge into language a patient can understand, check understanding repeatedly, and respond to what the patient actually needs rather than what you planned to say.", "why_candidates_fail": ["Delivering a lecture instead of a dialogue", "Not checking what the patient already knows before explaining", "Using medical jargon without noticing or correcting", "Not doing chunk-and-check — explaining 10 things without pausing to ask if it makes sense", "Ignoring the patient's ICE — their actual concern may be completely different from what you're explaining", "No written information offered"], "what_triggers_marks": ["Checking baseline knowledge first: 'What have you been told so far?'", "BREAKDOWN structure: Begin permission, Results, Explain simply, Assess understanding, Keep ICE, Discuss options, Offer written info", "Chunk-and-check every 2–3 sentences: 'Does that make sense so far?'", "Plain language throughout — no jargon", "Responding to ICE after explaining: 'Now that I've explained the basics — what questions do you have?'", "Safety-net: specific warning symptoms to return for"], "hidden_agenda": "The examiner's hidden question in explanation stations is: does this candidate notice when the patient stops understanding? Most candidates deliver their explanation regardless of the patient's signals. The actor is scripted to show confusion or concern — a slight furrowing of the brow, a question that reveals they didn't follow. Candidates who notice and adapt score the communication domain. Candidates who carry on regardless do not.", "distinction_move": "Midway through your explanation, stop completely and say: 'I want to make sure I'm actually being helpful rather than just talking. Can you tell me in your own words what you've understood so far? I ask everyone — it helps me know if I'm explaining it well.' Teach-back in the middle of an explanation, not just at the end, is a distinction move.", "three_things": ["Check baseline knowledge before explaining anything", "Chunk-and-check every 2–3 sentences", "Teach-back mid-explanation — not just at the end"]}];
+
+// Build nav
+document.getElementById('stationNav').innerHTML=BRAIN.map((s,i)=>`
+  <button class="sn-btn${i===0?' active':''}" onclick="showStation('${s.id}',this)">${s.icon} ${s.station}</button>`).join('');
+
+// Build all panels
+document.getElementById('stationPanels').innerHTML=BRAIN.map((s,i)=>`
+  <div class="station-panel${i===0?' active':''}" id="sp-${s.id}">
+    <div class="sp-hdr">
+      <span class="sp-emoji">${s.icon}</span>
+      <div class="sp-info">
+        <div class="sp-station">${s.station}</div>
+        <div class="sp-domain">${s.domain}</div>
+      </div>
+    </div>
+
+    <div class="section" id="sec-wt-${s.id}">
+      <div class="sec-hdr" onclick="toggleSec('sec-wt-${s.id}')">
+        <span class="sh-title">🎯 What is being tested</span>
+        <span class="sh-chev">▾</span>
+      </div>
+      <div class="sec-body">
+        <p style="font-size:15px;color:var(--ink);line-height:1.7;font-style:italic;border-left:3px solid var(--gold);padding-left:14px;">${s.what_tested}</p>
+      </div>
+    </div>
+
+    <div class="section" id="sec-fail-${s.id}">
+      <div class="sec-hdr" onclick="toggleSec('sec-fail-${s.id}')">
+        <span class="sh-title">✗ Why candidates fail</span>
+        <span class="sh-chev">▾</span>
+      </div>
+      <div class="sec-body">
+        <ul class="fail-list">${s.why_candidates_fail.map(f=>`<li class="fail-item"><span class="fail-dot">✗</span><span>${f}</span></li>`).join('')}</ul>
+      </div>
+    </div>
+
+    <div class="section" id="sec-mark-${s.id}">
+      <div class="sec-hdr" onclick="toggleSec('sec-mark-${s.id}')">
+        <span class="sh-title">✓ What triggers marks</span>
+        <span class="sh-chev">▾</span>
+      </div>
+      <div class="sec-body">
+        <ul class="fail-list">${s.what_triggers_marks.map(m=>`<li class="mark-item"><span class="mark-dot">✓</span><span>${m}</span></li>`).join('')}</ul>
+      </div>
+    </div>
+
+    <div class="section open" id="sec-agenda-${s.id}">
+      <div class="sec-hdr" onclick="toggleSec('sec-agenda-${s.id}')">
+        <span class="sh-title">🔍 The hidden agenda</span>
+        <span class="sh-chev">▾</span>
+      </div>
+      <div class="sec-body">
+        <div class="agenda-box">
+          <div class="ag-label">What the examiner is really thinking</div>
+          <div class="ag-text">${s.hidden_agenda}</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section open" id="sec-dist-${s.id}">
+      <div class="sec-hdr" onclick="toggleSec('sec-dist-${s.id}')">
+        <span class="sh-title">🌟 The distinction move</span>
+        <span class="sh-chev">▾</span>
+      </div>
+      <div class="sec-body">
+        <div class="distinction-box">
+          <div class="db-label">One move that separates pass from distinction</div>
+          <div class="db-text">${s.distinction_move}</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section open" id="sec-three-${s.id}">
+      <div class="sec-hdr" onclick="toggleSec('sec-three-${s.id}')">
+        <span class="sh-title">⚡ Three things that always score</span>
+        <span class="sh-chev">▾</span>
+      </div>
+      <div class="sec-body">
+        <div class="three-grid">${s.three_things.map((t,i)=>`
+          <div class="three-item"><div class="ti-num">${i+1}</div><div class="ti-text">${t}</div></div>`).join('')}
+        </div>
+      </div>
+    </div>
+  </div>`).join('');
+
+function showStation(id,btn){
+  document.querySelectorAll('.sn-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.station-panel').forEach(p=>p.classList.remove('active'));
+  document.getElementById('sp-'+id).classList.add('active');
+  window.scrollTo({top:document.querySelector('.station-nav').offsetTop-10,behavior:'smooth'});
+}
+
+function toggleSec(id){
+  document.getElementById(id).classList.toggle('open');
+}
+</script>
+</body>
+</html>

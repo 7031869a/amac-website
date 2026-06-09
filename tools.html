@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Study Tools — AMaC PLAB 2</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0d2247;--navy-deep:#091629;--gold:#c9a227;--gold-soft:#e0c45a;--cream:#f7f4ec;--ink:#1a1d24;--muted:#5d6470;--line:#e4ddcd;}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--ink);-webkit-font-smoothing:antialiased;}
+nav{position:sticky;top:0;z-index:100;background:linear-gradient(180deg,#0f2850,#0d2247);border-bottom:1px solid rgba(201,162,39,0.25);box-shadow:0 3px 16px rgba(9,22,41,0.5);}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 28px;height:64px;display:flex;align-items:center;justify-content:space-between;}
+.brand{font-family:'Fraunces',serif;font-size:24px;font-weight:700;color:var(--gold-soft);letter-spacing:3px;text-decoration:none;}
+.nav-links{display:flex;gap:24px;list-style:none;align-items:center;}
+.nav-links a{color:#dde2ec;text-decoration:none;font-size:13px;}.nav-links a:hover{color:#fff;}
+.nav-cta{background:linear-gradient(135deg,#d4a820,#c9a227)!important;color:var(--navy-deep)!important;padding:8px 18px;border-radius:2px;font-weight:700;font-size:12px;}
+.hero{background:linear-gradient(155deg,#0d2247,#091629);color:#fff;padding:52px 28px 40px;text-align:center;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.025) 1px,transparent 1px);background-size:20px 20px;}
+.ph{max-width:700px;margin:0 auto;position:relative;}
+.kick{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--gold-soft);border:1px solid rgba(201,162,39,0.4);padding:5px 14px;border-radius:2px;display:inline-block;margin-bottom:16px;background:rgba(201,162,39,0.07);}
+.hero h1{font-family:'Fraunces',serif;font-size:clamp(26px,5vw,44px);font-weight:500;line-height:1.1;}
+.hero h1 em{font-style:italic;color:var(--gold-soft);}
+.hero p{margin:12px auto 0;color:#d0d6e8;font-weight:300;font-size:15px;max-width:52ch;line-height:1.65;}
+.stats-strip{background:rgba(255,255,255,0.05);border-top:1px solid rgba(255,255,255,0.07);border-bottom:1px solid rgba(255,255,255,0.07);padding:14px 28px;display:flex;justify-content:center;gap:32px;flex-wrap:wrap;margin-top:20px;}
+.stat-item{text-align:center;}
+.stat-num{font-family:'Fraunces',serif;font-size:22px;color:var(--gold-soft);font-weight:500;}
+.stat-label{font-size:11px;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:.5px;margin-top:1px;}
+.wrap{max-width:1100px;margin:0 auto;padding:32px 28px 64px;}
+.cat-section{margin-bottom:36px;}
+.cat-label{font-size:15px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--navy);margin-bottom:14px;display:flex;align-items:center;gap:10px;}
+.cat-label::after{content:'';flex:1;height:2px;background:linear-gradient(90deg,var(--line),transparent);}
+.tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;}
+.tool-card{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;text-decoration:none;color:inherit;box-shadow:0 2px 8px rgba(13,34,71,0.07);transition:all .2s;display:flex;flex-direction:column;}
+.tool-card:hover{box-shadow:0 8px 28px rgba(13,34,71,0.14);transform:translateY(-2px);}
+.tc-hdr{background:linear-gradient(135deg,#0f2850,#0d2247);padding:14px 16px;display:flex;align-items:center;gap:12px;}
+.tc-icon{font-size:22px;flex-shrink:0;}
+.tc-hdr-text{flex:1;}
+.tc-name{font-family:'Fraunces',serif;font-size:16px;color:var(--gold-soft);font-weight:500;line-height:1.2;}
+.tc-badge{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;padding:2px 8px;border-radius:10px;background:rgba(201,162,39,0.15);color:var(--gold-soft);border:1px solid rgba(201,162,39,0.25);display:inline-block;margin-top:4px;}
+.tc-desc{padding:13px 16px;font-size:13px;color:var(--muted);line-height:1.55;flex:1;}
+.trustband{background:var(--navy);color:#fff;text-align:center;padding:34px 28px;}
+.trustband .slogan{font-family:'Fraunces',serif;font-style:italic;color:var(--gold-soft);font-size:18px;margin-bottom:8px;}
+.trustband p{color:#dde2ec;font-weight:300;font-size:14px;max-width:54ch;margin:0 auto;}
+footer{background:var(--navy-deep);color:#c4ccd8;padding:36px 28px 20px;}
+.foot-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px;border-bottom:1px solid rgba(255,255,255,0.07);padding-bottom:20px;}
+.foot-brand{font-family:'Fraunces',serif;font-size:22px;color:var(--gold-soft);letter-spacing:2px;}
+.foot-p{font-size:12px;color:#8a96b0;margin-top:5px;max-width:32ch;font-weight:300;line-height:1.5;}
+.foot-col h4{color:#fff;font-size:11px;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;font-weight:600;}
+.foot-col a{display:block;color:#8a96b0;text-decoration:none;font-size:12px;margin-bottom:6px;}
+.foot-col a:hover{color:var(--gold-soft);}
+.foot-btm{max-width:1200px;margin:14px auto 0;font-size:11px;color:#4a5568;text-align:center;}
+@media(max-width:700px){.nav-links{display:none;}.wrap{padding:20px 14px 48px;}.stats-strip{gap:18px;}.tools-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<nav><div class="nav-inner"><a href="index.html" class="brand">AMaC</a>
+  <ul class="nav-links"><li><a href="books.html">The Master Series</a></li><li><a href="tools.html" style="color:var(--gold-soft)">Study Tools</a></li><li><a href="about.html">About</a></li><li><a href="contact.html" class="nav-cta">Get Started</a></li></ul>
+</div></nav>
+<header class="hero"><div class="ph">
+  <span class="kick">PLAB 2 · UKMLA · AMaC Master Series</span>
+  <h1>The Complete <em>Study Toolkit</em></h1>
+  <p>Every tool you need from first revision to exam morning — built from the AMaC Master Series and designed for performance, not just knowledge.</p>
+  <div class="stats-strip">
+    <div class="stat-item"><div class="stat-num">26</div><div class="stat-label">Tools</div></div>
+    <div class="stat-item"><div class="stat-num">654</div><div class="stat-label">Flashcards</div></div>
+    <div class="stat-item"><div class="stat-num">77</div><div class="stat-label">Master Cards</div></div>
+    <div class="stat-item"><div class="stat-num">77</div><div class="stat-label">OSCE Stations</div></div>
+    <div class="stat-item"><div class="stat-num">585</div><div class="stat-label">Questions</div></div>
+  </div>
+</div></header>
+<div class="wrap">
+    
+  <div class="cat-section">
+    <div class="cat-label">The Master Series — Foundation</div>
+    <div class="tools-grid">
+      <a href="books.html" class="tool-card" style="border-top:4px solid var(--gold);">
+        <div class="tc-hdr" style="background:linear-gradient(135deg,#0d2247,#091629);">
+          <span class="tc-icon">📗</span>
+          <div class="tc-hdr-text">
+            <div class="tc-name">Volume 1 — Foundations & Acute</div>
+            <div class="tc-badge">Chapters 0–26</div>
+          </div>
+        </div>
+        <div class="tc-desc">Communication · Ethics · Acute emergencies · Consent · Safeguarding · Prescribing foundations. The core curriculum.</div>
+      </a>
+      <a href="books.html" class="tool-card" style="border-top:4px solid #c0392b;">
+        <div class="tc-hdr" style="background:linear-gradient(135deg,#5c1818,#3d0f0f);">
+          <span class="tc-icon">📕</span>
+          <div class="tc-hdr-text">
+            <div class="tc-name">Volume 2 — Clinical Specialties</div>
+            <div class="tc-badge">Chapters 27–56</div>
+          </div>
+        </div>
+        <div class="tc-desc">Paediatrics · O&G · Psychiatry · Surgery · Ophthalmology · Prescribing safety master reference.</div>
+      </a>
+      <a href="books.html" class="tool-card" style="border-top:4px solid #059669;">
+        <div class="tc-hdr" style="background:linear-gradient(135deg,#064e3b,#022c22);">
+          <span class="tc-icon">📘</span>
+          <div class="tc-hdr-text">
+            <div class="tc-name">Volume 3 — Examinations & Performance</div>
+            <div class="tc-badge">Chapters 57–72</div>
+          </div>
+        </div>
+        <div class="tc-desc">Clinical examinations · Procedures · Prescribing simulation · ECG/ABG/CXR · 18 Mock OSCE stations with full actor scripts.</div>
+      </a>
+    </div>
+  </div>
+<div class="cat-section">
+      <div class="cat-label">Core Study Tools</div>
+      <div class="tools-grid">
+        <a href="flashcards.html" class="tool-card">
+          <div class="tc-hdr">
+            <span class="tc-icon">🃏</span>
+            <div class="tc-hdr-text">
+              <div class="tc-name">Flashcard System</div>
+              <div class="tc-badge">654 cards</div>
+            </div>
+          </div>
+          <div class="tc-desc">654 performance cards — 7 types including Decision, Curveball, Critical Fail, Say This and Gold Close.</div>
+        </a>
+        <a href="mastercards.html" class="tool-card">
+          <div class="tc-hdr">
+            <span class="tc-icon">📖</span>
+            <div class="tc-hdr-text">
+              <div class="tc-name">Master Cards</div>
+              <div class="tc-badge">72 chapters</div>
+            </div>
+          </div>
+          <div class="tc-desc">72 chapters across all 3 volumes. 15 interactive sections each — Think First, Traps, Scripts, Escalation and more.</div>
+        </a>
+        <a href="osce.html" class="tool-card">
+          <div class="tc-hdr">
+            <span class="tc-icon">🎭</span>
+            <div class="tc-hdr-text">
+              <div class="tc-name">OSCE Stations</div>
+              <div class="tc-badge">111 stations</div>
+            </div>
+          </div>
+          <div class="tc-desc">18 full stations with tick maps, must-say scripts, mark splits, critical fails and model closing scripts.</div>
+        </a>
+        <a href="questions.html" class="tool-card">
+          <div class="tc-hdr">
+            <span class="tc-icon">❓</span>
+            <div class="tc-hdr-text">
+              <div class="tc-name">Question Bank</div>
+              <div class="tc-badge">585 questions</div>
+            </div>
+          </div>
+          <div class="tc-desc">Core Q&A, Rapid Fire (325 items), Curveball and Examiner Challenge categories — all book-sourced.</div>
+        </a>
+      </div>
+    </div>
+    <div class="cat-section">
+      <div class="cat-label">Clinical Reference</div>
+      <div class="tools-grid">
+        <a href="instant-fails.html" class="tool-card">
+          <div class="tc-hdr">
+            <span class="tc-icon">⛔</span>
+            <div class="tc-hdr-text">
+              <div class="tc-name">123 Instant-Fail Behaviours</div>
+              <div class="tc-badge">123 behaviours</div>
+            </div>
+          </div>
+          <div class="tc-desc">Complete Tier 1 and Tier 2 fail list from App 1B. Categorised, searchable, with the SAFE Rule anchor.</div>
+        </a>
+        <a href="prescribing.html" class="tool-card">
+          <div class="tc-hdr">
+            <span class="tc-icon">💊</span>
+            <div class="tc-hdr-text">
+              <div class="tc-name">Prescribing Safety</div>
+              <div class="tc-badge">Ch 67–68</div>
+            </div>
+          </div>
+          <div class="tc-desc">SAFE PRESCRIBE, ORIP, IOAPM, SADMAN, ACID-ID, VRIII protocol and 10 high-risk drugs.</div>
+        </a>
+        <a href="dvla.html" class="tool-card">
+          <div class="tc-hdr">
+            <span class="tc-icon">🚗</span>
+            <div class="tc-hdr-text">
+              <div class="tc-name">DVLA Fitness to Drive</div>
+              <div class="tc-badge">24 conditions</div>
+            </div>
+          </div>
+          <div class="tc-desc">24 conditions — stop durations, notify requirements and the OSCE gold script.</div>
+        </a>
+        <a href="antibiotics.html" class="tool-card">
+          <div class="tc-hdr">
+            <span class="tc-icon">🧪</span>
+            <div class="tc-hdr-text">
+              <div class="tc-name">Antibiotic Guide</div>
+              <div class="tc-badge">17 infections</div>
+            </div>
+          </div>
+          <div class="tc-desc">First-line antibiotics for 17 infections, penicillin allergy alternatives, STEWARD stewardship mnemonic.</div>
+        </a>
+        <a href="normal-values.html" class="tool-card">
+          <div class="tc-hdr">
+            <span class="tc-icon">📊</span>
+            <div class="tc-hdr-text">
+              <div class="tc-name">Normal Values & Critical Labs</div>
+              <div class="tc-badge">6 categories</div>
+            </div>
+          </div>
+          <div class="tc-desc">Complete UK NHS ranges — haematology, biochemistry, ABG, ECG, paediatric vitals and pregnancy changes.</div>
+        </a>
+        <a href="ecg-abg.html" class="tool-card">
+          <div class="tc-hdr">
+            <span class="tc-icon">❤️</span>
+            <div class="tc-hdr-text">
+              <div class="tc-name">ECG & ABG Interpretation</div>
+              <div class="tc-badge">Ch 70</div>
+            </div>
+          </div>
+          <div class="tc-desc">KILL first scan, RRAIS systematic, BAD scan, 5-step ABG, ROME rule and 14 emergency patterns.</div>
+        </a>
+        <a href="examcoach.html" class="tool-card">
+          <div class="tc-hdr">
+            <span class="tc-icon">🩺</span>
+            <div class="tc-hdr-text">
+              <div class="tc-name">Examination Coach</div>
+              <div class="tc-badge">6 examinations</div>
+            </div>
+          </div>
+          <div class="tc-desc">Full verbalisation scripts for CVS, respiratory, abdominal, neurological, GALS and mental state.</div>
+        </a>
+      </div>
+    </div>
+    <div class="cat-section">
+      <div class="cat-label">Communication & Language</div>
+      <div class="tools-grid">
+        <a href="frameworks.html" class="tool-card">
+          <div class="tc-hdr">
+            <span class="tc-icon">🗺</span>
+            <div class="tc-hdr-text">
+              <div class="tc-name">Consultation Frameworks</div>
+              <div class="tc-badge">14 frameworks</div>
+            </div>
+          </div>
+          <div class="tc-desc">14 complete frameworks — ICE, SPIKES, NURSE, SBAR, SOCRATES, ASEPTIC, HEADSS, CAGE, ABCDE and more. With scripts.</div>
+        </a>
+        <a href="nhs-language.html" class="tool-card">
+          <div class="tc-hdr">
+            <span class="tc-icon">🌍</span>
+            <div class="tc-hdr-text">
+              <div class="tc-name">NHS Language Coach</div>
+              <div class="tc-badge">25 phrases</div>
+            </div>
+          </div>
+          <div class="tc-desc">25 phrases IMG candidates say that mark them as not NHS — with the correct alternative and why it matters.</div>
+        </a>
+        <a href="documentation.html" class="tool-card">
+          <div class="tc-hdr">
+            <span class="tc-icon">📋</span>
+            <div class="tc-hdr-text">
+              <div class="tc-name">Documentation Coach</div>
+              <div class="tc-badge">12 scripts</div>
+            </div>
+          </div>
+          <div class="tc-desc">12 verbalisation scripts for documentation — free marks on every station. Takes 8 seconds. Never skip.</div>
+        </a>
+        <a href="sbar-generator.html" class="tool-card">
+          <div class="tc-hdr">
+            <span class="tc-icon">📞</span>
+            <div class="tc-hdr-text">
+              <div class="tc-name">SBAR Generator</div>
+              <div class="tc-badge">Interactive</div>
+            </div>
+          </div>
+          <div class="tc-desc">Fill in 4 fields and get an AMaC-language escalation script ready to say aloud. 5 pre-loaded examples.</div>
+        </a>
+        <a href="recovery-scripts.html" class="tool-card">
+          <div class="tc-hdr">
+            <span class="tc-icon">🔄</span>
+            <div class="tc-hdr-text">
+              <div class="tc-name">Recovery Scripts<span style="background:rgba(201,162,39,0.15);border:1px solid rgba(201,162,39,0.3);color:var(--gold-soft);font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;padding:2px 7px;border-radius:10px;margin-left:6px;">NEW</span></div>
+              <div class="tc-badge">15 scenarios</div>
+            </div>
+          </div>
+          <div class="tc-desc">Exact words for every mid-station crisis — forgot ICE, patient angry, went blank, ran out of time.</div>
+        </a>
+      </div>
+    </div>
+    <div class="cat-section">
+      <div class="cat-label">Practice & Simulation</div>
+      <div class="tools-grid">
+        <a href="simulator.html" class="tool-card">
+          <div class="tc-hdr">
+            <span class="tc-icon">🤖</span>
+            <div class="tc-hdr-text">
+              <div class="tc-name">AI Consultation Simulator</div>
+              <div class="tc-badge">7 stations</div>
+            </div>
+          </div>
+          <div class="tc-desc">Live AI patient responds in real time. 7 stations — ACS, BBN, Capacity, Sepsis, Suicide, Febrile Child, Angry Relative. AMaC-standard marking.</div>
+        </a>
+        <a href="mock-circuit.html" class="tool-card">
+          <div class="tc-hdr">
+            <span class="tc-icon">🏃</span>
+            <div class="tc-hdr-text">
+              <div class="tc-name">Mock OSCE Circuit<span style="background:rgba(201,162,39,0.15);border:1px solid rgba(201,162,39,0.3);color:var(--gold-soft);font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;padding:2px 7px;border-radius:10px;margin-left:6px;">NEW</span></div>
+              <div class="tc-badge">111 stations</div>
+            </div>
+          </div>
+          <div class="tc-desc">Full 18-station timed circuit — 8 minutes per station, 2-minute reading time, between-station reset protocol.</div>
+        </a>
+      </div>
+    </div>
+    <div class="cat-section">
+      <div class="cat-label">Strategy & Planning</div>
+      <div class="tools-grid">
+        <a href="exam-morning.html" class="tool-card">
+          <div class="tc-hdr">
+            <span class="tc-icon">🌅</span>
+            <div class="tc-hdr-text">
+              <div class="tc-name">Exam Morning Card</div>
+              <div class="tc-badge">Exam day</div>
+            </div>
+          </div>
+          <div class="tc-desc">Phone-optimised dark card for exam day only. 10 anchors, 5 scripts, critical values. Read this. Nothing else.</div>
+        </a>
+        <a href="study-planner.html" class="tool-card">
+          <div class="tc-hdr">
+            <span class="tc-icon">📅</span>
+            <div class="tc-hdr-text">
+              <div class="tc-name">Study Planner</div>
+              <div class="tc-badge">3 plans</div>
+            </div>
+          </div>
+          <div class="tc-desc">Day-by-day plans — 7-day crash course, 14-day focused plan, fail recovery pathway. Interactive task tracking.</div>
+        </a>
+        <a href="station-planner.html" class="tool-card">
+          <div class="tc-hdr">
+            <span class="tc-icon">📈</span>
+            <div class="tc-hdr-text">
+              <div class="tc-name">Station Frequency Analyser</div>
+              <div class="tc-badge">22 stations</div>
+            </div>
+          </div>
+          <div class="tc-desc">Where to focus first. Station types ranked by circuit frequency — filter by how many days you have.</div>
+        </a>
+        <a href="fail-recovery.html" class="tool-card">
+          <div class="tc-hdr">
+            <span class="tc-icon">↺</span>
+            <div class="tc-hdr-text">
+              <div class="tc-name">Fail Recovery Diagnostic</div>
+              <div class="tc-badge">9 domains</div>
+            </div>
+          </div>
+          <div class="tc-desc">15 behavioural questions → 9-domain failure profile → targeted 5-day repair plan. For re-sitting candidates.</div>
+        </a>
+      </div>
+    </div>
+</div>
+  <div class="cat-section">
+      <div class="cat-label">Performance Intelligence</div>
+      <div class="tools-grid">
+        <a href="examiner-brain.html" class="tool-card">
+          <div class="tc-hdr">
+            <span class="tc-icon">🧠</span>
+            <div class="tc-hdr-text">
+              <div class="tc-name">Examiner Brain <span style="background:rgba(201,162,39,0.15);border:1px solid rgba(201,162,39,0.3);color:var(--gold-soft);font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;padding:2px 7px;border-radius:10px;margin-left:6px;">NEW</span></div>
+              <div class="tc-badge">10 stations</div>
+            </div>
+          </div>
+          <div class="tc-desc">What the examiner is actually testing. Why candidates fail. What triggers marks. The hidden agenda. The distinction move. Per station.</div>
+        </a>
+        <a href="actor-traps.html" class="tool-card">
+          <div class="tc-hdr">
+            <span class="tc-icon">🎭</span>
+            <div class="tc-hdr-text">
+              <div class="tc-name">Actor Traps Library <span style="background:rgba(201,162,39,0.15);border:1px solid rgba(201,162,39,0.3);color:var(--gold-soft);font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;padding:2px 7px;border-radius:10px;margin-left:6px;">NEW</span></div>
+              <div class="tc-badge">20 traps</div>
+            </div>
+          </div>
+          <div class="tc-desc">What the actor does, why it's scripted, wrong response, right response, exact words, recovery, and examiner thought. No competitor has this.</div>
+        </a>
+        <a href="performance-bands.html" class="tool-card">
+          <div class="tc-hdr">
+            <span class="tc-icon">📊</span>
+            <div class="tc-hdr-text">
+              <div class="tc-name">Fail · Pass · Distinction <span style="background:rgba(201,162,39,0.15);border:1px solid rgba(201,162,39,0.3);color:var(--gold-soft);font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;padding:2px 7px;border-radius:10px;margin-left:6px;">NEW</span></div>
+              <div class="tc-badge">5 stations · 3 levels</div>
+            </div>
+          </div>
+          <div class="tc-desc">Word-for-word transcripts of the same station at fail, safe pass and distinction level. See exactly what separates each performance band.</div>
+        </a>
+      </div>
+    </div>
+<div class="trustband"><p class="slogan">Think Like an Examiner · Speak Like a Doctor · Perform With Confidence</p><p>Everything built from the AMaC PLAB 2 Master Series — Volumes 1, 2 and 3.</p></div>
+<footer><div class="foot-inner">
+  <div><div class="foot-brand">AMaC</div><p class="foot-p">A. Mansour &amp; Colleagues — examiner-led preparation for the PLAB 2 OSCE.</p></div>
+  <div class="foot-col"><h4>The Books</h4><a href="books.html">PLAB 2 Master Series</a><a href="about.html">About AMaC</a></div>
+  <div class="foot-col"><h4>Popular Tools</h4><a href="mastercards.html">Master Cards</a><a href="simulator.html">AI Simulator</a><a href="fail-recovery.html">Fail Recovery</a></div>
+  <div class="foot-col"><h4>Contact</h4><a href="mailto:info@amac-medical.com">info@amac-medical.com</a></div>
+</div><div class="foot-btm">&copy; 2026 A. Mansour &amp; Colleagues (AMaC). All rights reserved.</div></footer>
+</body>
+</html>

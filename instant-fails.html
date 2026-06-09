@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>123 Instant-Fail Behaviours — AMaC PLAB 2</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0d2247;--navy-deep:#091629;--gold:#c9a227;--gold-soft:#e0c45a;--cream:#f7f4ec;--ink:#1a1d24;--muted:#5d6470;--line:#e4ddcd;--red:#c0392b;--amber:#d97706;}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--ink);-webkit-font-smoothing:antialiased;}
+nav{position:sticky;top:0;z-index:100;background:linear-gradient(180deg,#0f2850,#0d2247);border-bottom:1px solid rgba(201,162,39,0.25);box-shadow:0 3px 16px rgba(9,22,41,0.5);}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 28px;height:64px;display:flex;align-items:center;justify-content:space-between;}
+.brand{font-family:'Fraunces',serif;font-size:24px;font-weight:700;color:var(--gold-soft);letter-spacing:3px;text-decoration:none;}
+.nav-links{display:flex;gap:24px;list-style:none;align-items:center;}
+.nav-links a{color:#dde2ec;text-decoration:none;font-size:13px;}
+.nav-links a:hover{color:#fff;}
+.nav-cta{background:linear-gradient(135deg,#d4a820,#c9a227)!important;color:var(--navy-deep)!important;padding:8px 18px;border-radius:2px;font-weight:700;font-size:12px;}
+.hero{background:linear-gradient(155deg,#0d2247,#091629);color:#fff;padding:52px 28px 44px;text-align:center;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.02) 1px,transparent 1px);background-size:20px 20px;}
+.ph{max-width:760px;margin:0 auto;position:relative;}
+.kick{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--gold-soft);border:1px solid rgba(201,162,39,0.4);padding:5px 14px;border-radius:2px;display:inline-block;margin-bottom:16px;}
+.hero h1{font-family:'Fraunces',serif;font-size:clamp(26px,5vw,44px);font-weight:500;line-height:1.1;}
+.hero h1 em{font-style:italic;color:var(--gold-soft);}
+.hero p{margin:12px auto 0;color:#d0d6e8;font-weight:300;font-size:15px;max-width:54ch;line-height:1.65;}
+.safe-rule{background:rgba(201,162,39,0.12);border:1px solid rgba(201,162,39,0.3);border-radius:8px;padding:14px 20px;margin:20px auto 0;max-width:600px;}
+.safe-rule strong{color:var(--gold-soft);}
+.safe-rule p{font-size:13px;color:#d0d6e8;line-height:1.6;}
+.tabs{background:var(--cream);border-bottom:1px solid var(--line);padding:8px 28px;position:sticky;top:64px;z-index:90;box-shadow:0 2px 6px rgba(13,34,71,0.07);}
+.tabs-inner{max-width:1100px;margin:0 auto;display:flex;gap:4px;flex-wrap:wrap;}
+.tab{padding:12px 20px;font-size:12px;font-family:'Outfit',sans-serif;cursor:pointer;border:none;margin:6px 4px;border-radius:8px;background:linear-gradient(135deg,#0f2850,#0d2247);border:1.5px solid rgba(201,162,39,0.3);color:var(--gold-soft);box-shadow:0 3px 10px rgba(9,22,41,0.35),inset 0 1px 0 rgba(255,255,255,0.06);font-weight:600;letter-spacing:.3px;transition:all .22s;}
+.tab.active{background:linear-gradient(135deg,#0a1d3d,#091629);border-color:var(--gold);border-width:2px;box-shadow:0 4px 20px rgba(201,162,39,0.25),inset 0 1px 0 rgba(255,255,255,0.05);color:var(--gold-soft);transform:translateY(-1px);}.tab:hover:not(.active){background:linear-gradient(135deg,#1b3a6b,#152d52);border-color:rgba(201,162,39,0.6);box-shadow:0 6px 18px rgba(9,22,41,0.4),inset 0 1px 0 rgba(255,255,255,0.08);transform:translateY(-2px);color:#fff;}
+.tab:hover:not(.active){color:var(--ink);}
+.tab-count{font-size:10px;background:rgba(201,162,39,0.15);color:var(--gold-soft);padding:2px 8px;border-radius:10px;margin-left:6px;font-weight:700;border:1px solid rgba(201,162,39,0.2);}
+.tab.active .tab-count{background:rgba(201,162,39,0.25);color:var(--gold-soft);}
+.filter-bar{background:var(--cream);border-bottom:1px solid var(--line);padding:12px 28px;}
+.filter-inner{max-width:1100px;margin:0 auto;}
+.filter-row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:8px;}
+.filter-row:last-child{margin-bottom:0;}
+.filter-lbl{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--navy);margin-right:4px;flex-shrink:0;}
+.fbtn{padding:7px 17px;border-radius:20px;font-size:12px;font-family:'Outfit',sans-serif;cursor:pointer;transition:all .22s;background:linear-gradient(135deg,#0f2850,#0d2247);border:1.5px solid rgba(201,162,39,0.3);color:var(--gold-soft);box-shadow:0 3px 10px rgba(9,22,41,0.35),inset 0 1px 0 rgba(255,255,255,0.06);font-weight:600;letter-spacing:.3px;}
+.fbtn:hover{background:linear-gradient(135deg,#1b3a6b,#152d52);border-color:rgba(201,162,39,0.6);box-shadow:0 4px 16px rgba(9,22,41,0.4);transform:translateY(-1px);color:#fff;}.fbtn.active{background:linear-gradient(135deg,#0d2247,#091629);border-color:var(--gold);box-shadow:0 4px 18px rgba(201,162,39,0.25);color:var(--gold-soft);font-weight:700;transform:translateY(-1px);border-width:2px;}
+.count-lbl{margin-left:auto;font-size:12px;color:var(--muted);}
+.wrap{max-width:1100px;margin:0 auto;padding:28px 28px 64px;}
+.tier-header{margin-bottom:20px;}
+.tier-title{font-family:'Fraunces',serif;font-size:22px;color:var(--ink);font-weight:500;margin-bottom:4px;}
+.tier-desc{font-size:13px;color:var(--ink);line-height:1.5;}
+.cat-section{margin-bottom:28px;}
+.cat-label{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--navy);margin-bottom:10px;padding:6px 0;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:8px;}
+.cat-label::after{content:'';flex:1;height:1px;background:var(--line);}
+.fail-item{display:flex;align-items:flex-start;gap:12px;padding:10px 12px;border-radius:6px;margin-bottom:6px;border-left:3px solid transparent;transition:all .15s;cursor:default;background:#fff;border:1px solid var(--line);}
+.fail-item:hover{background:rgba(192,57,43,0.06);border-color:rgba(192,57,43,0.3);border-left-color:var(--red);transform:translateX(3px);}
+.fail-item.combo{background:#fffbf0;border-color:rgba(217,119,6,0.3);}
+.fail-item.combo:hover{background:rgba(217,119,6,0.08);border-left-color:var(--amber);}
+.fail-num{font-family:'Fraunces',serif;font-size:14px;font-weight:500;color:var(--muted);flex-shrink:0;width:28px;line-height:1.6;}
+.tier1 .fail-num{color:var(--red);}
+.fail-text{font-size:13.5px;color:var(--ink);line-height:1.5;}
+.tier1 .fail-text{font-weight:500;}
+.combo-badge{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--amber);background:rgba(217,119,6,0.1);padding:2px 7px;border-radius:10px;flex-shrink:0;margin-top:2px;}
+.panel{display:none;}.panel.active{display:block;}
+.safe-anchor{background:linear-gradient(135deg,#dbeafe,#bfdbfe);border:1px solid #93c5fd;border-radius:10px;padding:20px 24px;margin-top:28px;box-shadow:0 4px 16px rgba(37,99,235,0.12);}
+.sa-title{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--navy);margin-bottom:10px;}
+.sa-items{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;}
+.sa-item{padding:10px 14px;border-radius:6px;border-left:3px solid var(--gold);background:linear-gradient(135deg,#0f2850,#0d2247);border:1px solid rgba(201,162,39,0.25);color:var(--gold-soft);font-weight:600;box-shadow:0 2px 8px rgba(9,22,41,0.3);}
+.sa-letter{font-family:'Fraunces',serif;font-size:20px;color:var(--gold-soft);margin-right:4px;}
+.sa-text{font-size:12px;color:rgba(255,255,255,0.8);line-height:1.5;}
+.trustband{background:var(--navy);color:#fff;text-align:center;padding:34px 28px;margin-top:0;}
+.trustband .slogan{font-family:'Fraunces',serif;font-style:italic;color:var(--gold-soft);font-size:18px;margin-bottom:8px;}
+.trustband p{color:#dde2ec;font-weight:300;font-size:14px;max-width:54ch;margin:0 auto;}
+footer{background:var(--navy-deep);color:#c4ccd8;padding:36px 28px 20px;}
+.foot-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px;border-bottom:1px solid rgba(255,255,255,0.07);padding-bottom:20px;}
+.foot-brand{font-family:'Fraunces',serif;font-size:22px;color:var(--gold-soft);letter-spacing:2px;}
+.foot-p{font-size:12px;color:#8a96b0;margin-top:5px;max-width:32ch;font-weight:300;line-height:1.5;}
+.foot-col h4{color:#fff;font-size:11px;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;font-weight:600;}
+.foot-col a{display:block;color:#8a96b0;text-decoration:none;font-size:12px;margin-bottom:6px;}
+.foot-col a:hover{color:var(--gold-soft);}
+.foot-btm{max-width:1200px;margin:14px auto 0;font-size:11px;color:#4a5568;text-align:center;}
+@media(max-width:700px){.nav-links{display:none;}.wrap{padding:20px 14px 48px;}.sa-items{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<nav><div class="nav-inner">
+  <a href="index.html" class="brand">AMaC</a>
+  <ul class="nav-links"><li><a href="books.html">The Master Series</a></li><li><a href="tools.html">Study Tools</a></li><li><a href="about.html">About</a></li><li><a href="contact.html" class="nav-cta">Get Started</a></li></ul>
+</div></nav>
+<header class="hero"><div class="ph">
+  <span class="kick">Appendix 1B · Volume 1</span>
+  <h1>123 <em>Instant-Fail</em> Behaviours</h1>
+  <p>The complete list from the AMaC Master Series — 59 Tier 1 critical breaches and 64 Tier 2 high-risk triggers. Know every one before exam day.</p>
+  <div class="safe-rule">
+    <p><strong>SAFE Rule — Exam Morning Anchor:</strong><br>
+    <strong>S</strong>afety first (red flags, escalation, allergies) · <strong>A</strong>sk ICE and assess risk · <strong>F</strong>lag emergencies (escalate, SBAR, senior) · <strong>E</strong>xplain clearly and safety-net</p>
+  </div>
+</div></header>
+<div class="tabs"><div class="tabs-inner">
+  <button class="tab active" onclick="showPanel('t1',this)">⛔ Tier 1 — Critical Breaches <span class="tab-count">59</span></button>
+  <button class="tab" onclick="showPanel('t2',this)">⚠ Tier 2 — High-Risk Triggers <span class="tab-count">64</span></button>
+</div></div>
+<div class="filter-bar"><div class="filter-inner">
+  <div class="filter-row">
+    <span class="filter-lbl">Category:</span>
+    <button class="fbtn active" onclick="filterCat('all',this)">All</button>
+    <div id="catBtns" style="display:contents"></div>
+  </div>
+  <div class="filter-row" style="margin-top:2px;">
+    <span class="filter-lbl">Count:</span>
+    <span class="count-lbl" id="countLbl" style="font-size:13px;color:var(--navy);font-weight:600;"></span>
+  </div>
+</div></div>
+<div class="wrap">
+  <div class="panel active" id="panel-t1"></div>
+  <div class="panel" id="panel-t2"></div>
+</div>
+<div class="trustband"><p class="slogan">Think Like an Examiner · Speak Like a Doctor · Perform With Confidence</p><p>Every item sourced from Appendix 1B of the AMaC PLAB 2 Master Series Volume 1.</p></div>
+<footer><div class="foot-inner">
+  <div><div class="foot-brand">AMaC</div><p class="foot-p">A. Mansour &amp; Colleagues — examiner-led preparation for the PLAB 2 OSCE.</p></div>
+  <div class="foot-col"><h4>Tools</h4><a href="mastercards.html">Master Cards</a><a href="osce.html">OSCE Stations</a><a href="flashcards.html">Flashcards</a><a href="questions.html">Question Bank</a></div>
+  <div class="foot-col"><h4>New Tools</h4><a href="prescribing.html">Prescribing Safety</a><a href="dvla.html">DVLA Reference</a><a href="ecg-abg.html">ECG &amp; ABG</a><a href="examcoach.html">Examination Coach</a></div>
+  <div class="foot-col"><h4>Contact</h4><a href="mailto:info@amac-medical.com">info@amac-medical.com</a></div>
+</div><div class="foot-btm">&copy; 2026 A. Mansour &amp; Colleagues (AMaC). All rights reserved.</div></footer>
+<script>
+const T1=[{"n": 1, "cat": "Consent & Capacity", "text": "Examines without explicit consent."}, {"n": 2, "cat": "Consent & Capacity", "text": "Intimate examination without verbal consent."}, {"n": 3, "cat": "Consent & Capacity", "text": "Fails to offer chaperone for intimate examination."}, {"n": 4, "cat": "Consent & Capacity", "text": "Continues examination after patient withdraws consent."}, {"n": 5, "cat": "Consent & Capacity", "text": "Proceeds with procedure despite patient refusing."}, {"n": 6, "cat": "Consent & Capacity", "text": "Does not explain nature of procedure before obtaining consent."}, {"n": 7, "cat": "Consent & Capacity", "text": "Fails to assess capacity when patient is confused or delirious."}, {"n": 8, "cat": "Consent & Capacity", "text": "Assumes incapacity based on diagnosis alone."}, {"n": 9, "cat": "Consent & Capacity", "text": "Fails to support capacity before declaring patient incapable."}, {"n": 10, "cat": "Consent & Capacity", "text": "Treats an incapable patient without applying best-interest reasoning."}, {"n": 11, "cat": "Consent & Capacity", "text": "Discloses to relatives without patient consent when patient has capacity."}, {"n": 12, "cat": "Consent & Capacity", "text": "Fails to document consent or capacity decision."}, {"n": 13, "cat": "Clinical Danger", "text": "Sends a high-risk chest pain patient home without investigation."}, {"n": 14, "cat": "Clinical Danger", "text": "Misses stroke red flags and fails to escalate."}, {"n": 15, "cat": "Clinical Danger", "text": "Discharges possible ectopic pregnancy without investigation."}, {"n": 16, "cat": "Clinical Danger", "text": "Misses cauda equina red flags."}, {"n": 17, "cat": "Clinical Danger", "text": "Discharges a suicidal patient without formal risk assessment."}, {"n": 18, "cat": "Clinical Danger", "text": "No ABCDE in an acutely unwell patient."}, {"n": 19, "cat": "Clinical Danger", "text": "Fails to give oxygen in life-threatening hypoxia."}, {"n": 20, "cat": "Clinical Danger", "text": "Delays emergency escalation unnecessarily."}, {"n": 21, "cat": "Clinical Danger", "text": "No ambulance arranged in an emergency telephone consultation."}, {"n": 22, "cat": "Clinical Danger", "text": "Misses sepsis red flags and fails to act on them."}, {"n": 23, "cat": "Clinical Danger", "text": "Leaves an unstable patient unattended."}, {"n": 24, "cat": "Clinical Danger", "text": "Fails to recognise anaphylaxis and give adrenaline."}, {"n": 25, "cat": "Clinical Danger", "text": "Discharges a patient with active haemodynamic instability."}, {"n": 26, "cat": "Prescribing Catastrophes", "text": "Prescribes a drug despite known allergy — does not ask."}, {"n": 27, "cat": "Prescribing Catastrophes", "text": "Gross dosing error — 10× dose mistake."}, {"n": 28, "cat": "Prescribing Catastrophes", "text": "Prescribes a contraindicated drug in pregnancy."}, {"n": 29, "cat": "Prescribing Catastrophes", "text": "Ignores severe renal impairment when calculating dose."}, {"n": 30, "cat": "Prescribing Catastrophes", "text": "Incorrect emergency drug dose (e.g. adrenaline route or concentration)."}, {"n": 31, "cat": "Prescribing Catastrophes", "text": "Dangerous drug interaction ignored."}, {"n": 32, "cat": "Prescribing Catastrophes", "text": "Prescribes without asking about allergies at all."}, {"n": 33, "cat": "Prescribing Catastrophes", "text": "Prescribes controlled drug for self."}, {"n": 34, "cat": "Prescribing Catastrophes", "text": "Prescribes for a family member inappropriately."}, {"n": 35, "cat": "Prescribing Catastrophes", "text": "Methotrexate prescribed daily instead of once weekly."}, {"n": 36, "cat": "Safeguarding Failure", "text": "Ignores child protection red flags."}, {"n": 37, "cat": "Safeguarding Failure", "text": "Ignores domestic abuse disclosure."}, {"n": 38, "cat": "Safeguarding Failure", "text": "Ignores elder abuse suspicion."}, {"n": 39, "cat": "Safeguarding Failure", "text": "Promises secrecy in a safeguarding scenario."}, {"n": 40, "cat": "Safeguarding Failure", "text": "Fails to escalate a safeguarding concern to a senior."}, {"n": 41, "cat": "Suicide & Mental Health", "text": "Does not ask about suicide risk when clearly indicated."}, {"n": 42, "cat": "Suicide & Mental Health", "text": "Uses minimising question: \"You're not suicidal, are you?\""}, {"n": 43, "cat": "Suicide & Mental Health", "text": "Fails to assess intent and plan after ideation is disclosed."}, {"n": 44, "cat": "Suicide & Mental Health", "text": "Discharges high-risk patient without safety plan or crisis contact."}, {"n": 45, "cat": "Suicide & Mental Health", "text": "Fails to involve crisis services when plan and intent are both present."}, {"n": 46, "cat": "Ethics & Professionalism", "text": "Discloses confidential information without patient consent."}, {"n": 47, "cat": "Ethics & Professionalism", "text": "Shares sensitive results with a relative without permission."}, {"n": 48, "cat": "Ethics & Professionalism", "text": "Falsifies or alters documentation."}, {"n": 49, "cat": "Ethics & Professionalism", "text": "Lies to the patient."}, {"n": 50, "cat": "Ethics & Professionalism", "text": "Alters notes to conceal a clinical error."}, {"n": 51, "cat": "Ethics & Professionalism", "text": "Openly discriminates against a patient."}, {"n": 52, "cat": "Ethics & Professionalism", "text": "Makes moral judgement about patient's lifestyle choices."}, {"n": 53, "cat": "Ethics & Professionalism", "text": "Accepts an inappropriate gift or crosses professional boundary."}, {"n": 54, "cat": "Ethics & Professionalism", "text": "Gives personal contact number to a patient."}, {"n": 55, "cat": "Ethics & Professionalism", "text": "Says \"I'm the doctor — I know best\" dismissing patient's view."}, {"n": 56, "cat": "Breaking Bad News", "text": "Announces serious diagnosis without warning shot."}, {"n": 57, "cat": "Breaking Bad News", "text": "Uses euphemism so vague patient does not understand the seriousness."}, {"n": 58, "cat": "Breaking Bad News", "text": "Leaves immediately after delivering bad news without support."}, {"n": 59, "cat": "Breaking Bad News", "text": "Fails to allow any pause after a major disclosure."}];
+const T2=[{"n": 60, "cat": "Communication & Empathy", "text": "Ignores visible patient distress."}, {"n": 61, "cat": "Communication & Empathy", "text": "Interrupts the patient's opening statement immediately."}, {"n": 62, "cat": "Communication & Empathy", "text": "Dismisses patient concern as unimportant."}, {"n": 63, "cat": "Communication & Empathy", "text": "Fails to demonstrate any empathy throughout consultation."}, {"n": 64, "cat": "Communication & Empathy", "text": "Uses medical jargon without explanation."}, {"n": 65, "cat": "Communication & Empathy", "text": "Adopts a patronising tone."}, {"n": 66, "cat": "Communication & Empathy", "text": "Robotic consultation — no rapport or warmth."}, {"n": 67, "cat": "Communication & Empathy", "text": "Shows visible frustration or eye-rolling."}, {"n": 68, "cat": "Communication & Empathy", "text": "Fails to address patient's main concern."}, {"n": 69, "cat": "Information Gathering", "text": "No ICE (ideas, concerns, expectations) explored."}, {"n": 70, "cat": "Information Gathering", "text": "No red-flag screening in history."}, {"n": 71, "cat": "Information Gathering", "text": "No drug or allergy history taken."}, {"n": 72, "cat": "Information Gathering", "text": "No suicide screening in relevant psychiatric presentation."}, {"n": 73, "cat": "Information Gathering", "text": "No clarification of vague symptom."}, {"n": 74, "cat": "Information Gathering", "text": "Uses leading questions to push towards preferred diagnosis."}, {"n": 75, "cat": "Information Gathering", "text": "Closes history prematurely before relevant areas explored."}, {"n": 76, "cat": "Examination Safety", "text": "No hand hygiene before or after examination."}, {"n": 77, "cat": "Examination Safety", "text": "Unsafe sharps disposal."}, {"n": 78, "cat": "Examination Safety", "text": "Leaves patient exposed unnecessarily."}, {"n": 79, "cat": "Examination Safety", "text": "Rough handling during examination."}, {"n": 80, "cat": "Examination Safety", "text": "Continues painful manoeuvre despite patient reporting pain."}, {"n": 81, "cat": "Examination Safety", "text": "Examines through clothing rather than exposing appropriately."}, {"n": 82, "cat": "Examination Safety", "text": "Reuses contaminated equipment."}, {"n": 83, "cat": "Examination Safety", "text": "Curtain left open during intimate examination."}, {"n": 84, "cat": "Management & Planning", "text": "Unsafe discharge without safety-net."}, {"n": 85, "cat": "Management & Planning", "text": "No follow-up timeframe given."}, {"n": 86, "cat": "Management & Planning", "text": "Vague plan — \"We'll do some tests\" with no specifics."}, {"n": 87, "cat": "Management & Planning", "text": "Ignores investigation results that require action."}, {"n": 88, "cat": "Management & Planning", "text": "No driving advice given in seizure or syncope station."}, {"n": 89, "cat": "Management & Planning", "text": "No lifestyle advice in chronic disease management."}, {"n": 90, "cat": "Management & Planning", "text": "Fixates on single diagnosis despite contradicting findings."}, {"n": 91, "cat": "Management & Planning", "text": "Fails to consider patient's values in management plan."}, {"n": 92, "cat": "Structure & Organisation", "text": "Fails to introduce self at start of station."}, {"n": 93, "cat": "Structure & Organisation", "text": "No signposting throughout consultation."}, {"n": 94, "cat": "Structure & Organisation", "text": "No summary before closing."}, {"n": 95, "cat": "Structure & Organisation", "text": "No safety-net at end of consultation."}, {"n": 96, "cat": "Structure & Organisation", "text": "No teach-back or check of patient understanding."}, {"n": 97, "cat": "Structure & Organisation", "text": "Ends abruptly without closing script."}, {"n": 98, "cat": "Structure & Organisation", "text": "Poor time management — no management plan discussed."}, {"n": 99, "cat": "Structure & Organisation", "text": "Fails to confirm patient identity at start."}, {"n": 100, "cat": "Acute Technical Errors", "text": "Incorrect CPR technique — wrong rate, depth or hand position."}, {"n": 101, "cat": "Acute Technical Errors", "text": "Stops CPR for more than 10 seconds unnecessarily."}, {"n": 102, "cat": "Acute Technical Errors", "text": "Fails to attach monitoring to an unwell patient."}, {"n": 103, "cat": "Acute Technical Errors", "text": "No SBAR structure during escalation call."}, {"n": 104, "cat": "Acute Technical Errors", "text": "Chaotic, unstructured handover."}, {"n": 105, "cat": "Professional Boundaries", "text": "Flirtatious behaviour towards patient."}, {"n": 106, "cat": "Professional Boundaries", "text": "Over-familiar language in a sensitive clinical context."}, {"n": 107, "cat": "Professional Boundaries", "text": "Makes an inappropriate joke."}, {"n": 108, "cat": "Professional Boundaries", "text": "Overshares personal details with the patient."}, {"n": 109, "cat": "Difficult Conversations", "text": "Bulldozes bad news without pause or emotional check."}, {"n": 110, "cat": "Difficult Conversations", "text": "Fills every silence with more clinical information."}, {"n": 111, "cat": "Difficult Conversations", "text": "Fails to explore the patient's real agenda."}, {"n": 112, "cat": "Difficult Conversations", "text": "Imposes management plan without negotiation."}, {"n": 113, "cat": "Difficult Conversations", "text": "Gives up in frustration when patient is challenging."}, {"n": 114, "cat": "System-Level Safety", "text": "No driving advice when legally required."}, {"n": 115, "cat": "System-Level Safety", "text": "No DVLA advice given after new seizure diagnosis."}, {"n": 116, "cat": "System-Level Safety", "text": "No escalation when clinical situation is beyond own competence."}, {"n": 117, "cat": "System-Level Safety", "text": "Fails to document a significant clinical decision."}, {"n": 118, "cat": "System-Level Safety", "text": "Refuses to see patient due to personal inconvenience."}, {"n": 119, "cat": "System-Level Safety", "text": "Discusses patient information in a public corridor."}, {"n": 120, "cat": "System-Level Safety", "text": "Does not check drug interactions before prescribing."}, {"n": 121, "cat": "Subtle Fatal Combinations", "text": "Poor empathy + unsafe discharge — no emotional acknowledgement AND no safety-net.", "combo": true}, {"n": 122, "cat": "Subtle Fatal Combinations", "text": "No ICE + imposed management plan — fails to explore, then forces plan without agreement.", "combo": true}, {"n": 123, "cat": "Subtle Fatal Combinations", "text": "No suicide assessment + premature reassurance — fails to screen AND falsely reassures.", "combo": true}];
+let activeTier='t1', activeCat='all';
+
+function getActive(){return activeTier==='t1'?T1:T2;}
+
+function getCats(){
+  const items=getActive();
+  const cats=[...new Set(items.map(i=>i.cat))];
+  return cats;
+}
+
+function buildCatBtns(){
+  const cats=getCats();
+  document.getElementById('catBtns').innerHTML=cats.map(c=>
+    `<button class="fbtn${c===activeCat?' active':''}" onclick="filterCat('${c}',this)">${c}</button>`
+  ).join('');
+}
+
+function filterCat(cat,btn){
+  activeCat=cat;
+  document.querySelectorAll('.fbtn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  renderPanel();
+}
+
+function showPanel(tier,btn){
+  activeTier=tier;
+  activeCat='all';
+  document.querySelectorAll('.tab').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+  document.getElementById('panel-'+tier).classList.add('active');
+  buildCatBtns();
+  renderPanel();
+}
+
+function renderPanel(){
+  const items=getActive();
+  const filtered=activeCat==='all'?items:items.filter(i=>i.cat===activeCat);
+  document.getElementById('countLbl').textContent=filtered.length+' items';
+  
+  // Group by category
+  const byCat={};
+  filtered.forEach(i=>{if(!byCat[i.cat])byCat[i.cat]=[];byCat[i.cat].push(i);});
+  
+  const isTier1=activeTier==='t1';
+  const panelId='panel-'+activeTier;
+  
+  let html=`<div class="tier-header">
+    <div class="tier-title">${isTier1?'⛔ Tier 1 — Critical Breaches':'⚠ Tier 2 — High-Risk Fail Triggers'}</div>
+    <div class="tier-desc">${isTier1?'Any single Tier 1 error usually fails the station regardless of communication skill.':'Context-dependent, but frequently fail-causing when combined with other deficits.'}</div>
+  </div>`;
+  
+  Object.entries(byCat).forEach(([cat,items])=>{
+    html+=`<div class="cat-section">
+      <div class="cat-label">${cat}</div>
+      ${items.map(i=>`
+        <div class="fail-item${i.combo?' combo':''} ${isTier1?'tier1':'tier2'}">
+          <span class="fail-num">${i.n}</span>
+          <span class="fail-text">${i.text}</span>
+          ${i.combo?'<span class="combo-badge">Double Deficit</span>':''}
+        </div>`).join('')}
+    </div>`;
+  });
+  
+  if(isTier1&&activeCat==='all'){
+    html+=`<div class="safe-anchor">
+      <div class="sa-title">SAFE Rule — Exam Morning Anchor</div>
+      <div class="sa-items">
+        <div class="sa-item"><span class="sa-letter">S</span><span class="sa-text">Safety first — red flags, escalation, allergies</span></div>
+        <div class="sa-item"><span class="sa-letter">A</span><span class="sa-text">Ask ICE and assess risk</span></div>
+        <div class="sa-item"><span class="sa-letter">F</span><span class="sa-text">Flag emergencies — escalate, SBAR, senior</span></div>
+        <div class="sa-item"><span class="sa-letter">E</span><span class="sa-text">Explain clearly and safety-net</span></div>
+      </div>
+    </div>`;
+  }
+  
+  document.getElementById(panelId).innerHTML=html;
+}
+
+// Init
+buildCatBtns();
+renderPanel();
+</script>
+</body>
+</html>

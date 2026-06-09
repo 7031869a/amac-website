@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Examination Coach — AMaC PLAB 2</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0d2247;--navy-deep:#091629;--gold:#c9a227;--gold-soft:#e0c45a;--cream:#f7f4ec;--ink:#1a1d24;--muted:#5d6470;--line:#e4ddcd;--fail:#c0392b;--pass:#1b6b3a;}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--ink);-webkit-font-smoothing:antialiased;}
+nav{position:sticky;top:0;z-index:100;background:linear-gradient(180deg,#0f2850,#0d2247);border-bottom:1px solid rgba(201,162,39,0.25);box-shadow:0 3px 16px rgba(9,22,41,0.5);}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 28px;height:64px;display:flex;align-items:center;justify-content:space-between;}
+.brand{font-family:'Fraunces',serif;font-size:24px;font-weight:700;color:var(--gold-soft);letter-spacing:3px;text-decoration:none;}
+.nav-links{display:flex;gap:24px;list-style:none;align-items:center;}
+.nav-links a{color:#dde2ec;text-decoration:none;font-size:13px;}.nav-links a:hover{color:#fff;}
+.nav-cta{background:linear-gradient(135deg,#d4a820,#c9a227)!important;color:var(--navy-deep)!important;padding:8px 18px;border-radius:2px;font-weight:700;font-size:12px;}
+.hero{background:linear-gradient(155deg,#0d2247,#091629);color:#fff;padding:52px 28px 44px;text-align:center;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.02) 1px,transparent 1px);background-size:20px 20px;}
+.ph{max-width:800px;margin:0 auto;position:relative;}
+.kick{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--gold-soft);border:1px solid rgba(201,162,39,0.4);padding:5px 14px;border-radius:2px;display:inline-block;margin-bottom:16px;}
+.hero h1{font-family:'Fraunces',serif;font-size:clamp(24px,5vw,42px);font-weight:500;line-height:1.1;}
+.hero h1 em{font-style:italic;color:var(--gold-soft);}
+.hero p{margin:12px auto 0;color:#d0d6e8;font-weight:300;font-size:15px;max-width:56ch;line-height:1.65;}
+.main-wrap{max-width:1100px;margin:24px auto;padding:0 28px 64px;display:grid;grid-template-columns:220px 1fr;gap:16px;align-items:start;}
+.sidebar{background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden;position:sticky;top:80px;}
+.sb-hdr{background:linear-gradient(135deg,#0f2850,#0d2247);padding:12px 16px;}
+.sb-title{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--gold-soft);}
+.exam-btn{display:flex;align-items:center;gap:10px;padding:11px 16px;cursor:pointer;border:none;background:linear-gradient(135deg,#0f2850,#0d2247);text-align:left;width:100%;font-family:'Outfit',sans-serif;border-bottom:1px solid rgba(255,255,255,0.06);transition:all .22s;color:var(--gold-soft);font-weight:600;}
+.exam-btn:last-child{border-bottom:none;}
+.exam-btn:hover{background:linear-gradient(135deg,#1b3a6b,#152d52);color:#fff;}
+.exam-btn.active{background:linear-gradient(135deg,#0a1d3d,#091629);border-left:3px solid var(--gold);color:var(--gold-soft);font-weight:700;}
+.eb-emoji{font-size:18px;flex-shrink:0;}
+.eb-name{font-size:12.5px;color:var(--ink);font-weight:500;line-height:1.3;}
+.content-area{background:#fff;border:1px solid var(--line);border-radius:10px;padding:22px;min-height:500px;}
+.content-title{font-family:'Fraunces',serif;font-size:22px;color:var(--navy);font-weight:500;margin-bottom:3px;}
+.content-sub{font-size:13px;color:var(--muted);margin-bottom:18px;}
+.sec-lbl{font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--navy);margin:18px 0 10px;display:flex;align-items:center;gap:8px;}
+.sec-lbl::after{content:'';flex:1;height:1px;background:var(--line);}
+.step-item{display:flex;gap:10px;padding:8px 12px;border-radius:6px;font-size:13.5px;line-height:1.5;margin-bottom:4px;border-left:3px solid transparent;transition:all .15s;cursor:default;}
+.step-item:hover{background:rgba(201,162,39,0.07);border-left-color:var(--gold);}
+.step-dot{width:6px;height:6px;border-radius:50%;background:var(--navy);flex-shrink:0;margin-top:7px;}
+.script-item{background:#edf2fc;border-left:3px solid var(--navy);padding:9px 13px;border-radius:0 6px 6px 0;margin-bottom:7px;font-style:italic;font-size:13px;color:var(--ink);line-height:1.6;cursor:default;transition:background .15s;}
+.script-item:hover{background:#dce8f8;border-left-width:5px;}
+.fail-item{background:#fdf0ee;border-left:4px solid var(--fail);padding:9px 13px;border-radius:0 6px 6px 0;margin-bottom:6px;font-size:13px;color:#7a1520;font-weight:500;transition:background .15s;cursor:default;}
+.fail-item:hover{background:#fce4e1;border-left-width:6px;}
+.univ-box{background:linear-gradient(135deg,#fdf8e6,#faf3d5);border:1px solid rgba(201,162,39,0.3);border-radius:8px;padding:13px 16px;margin-bottom:14px;}
+.ub-lbl{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--gold);margin-bottom:5px;}
+.ub-txt{font-family:'Fraunces',serif;font-style:italic;font-size:13px;color:var(--ink);line-height:1.65;}
+.globals{max-width:1100px;margin:0 auto;padding:0 28px 32px;}
+.trustband{background:var(--navy);color:#fff;text-align:center;padding:34px 28px;}
+.trustband .slogan{font-family:'Fraunces',serif;font-style:italic;color:var(--gold-soft);font-size:18px;margin-bottom:8px;}
+.trustband p{color:#dde2ec;font-weight:300;font-size:14px;max-width:54ch;margin:0 auto;}
+footer{background:var(--navy-deep);color:#c4ccd8;padding:36px 28px 20px;}
+.foot-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px;border-bottom:1px solid rgba(255,255,255,0.07);padding-bottom:20px;}
+.foot-brand{font-family:'Fraunces',serif;font-size:22px;color:var(--gold-soft);letter-spacing:2px;}
+.foot-p{font-size:12px;color:#8a96b0;margin-top:5px;max-width:32ch;font-weight:300;line-height:1.5;}
+.foot-col h4{color:#fff;font-size:11px;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;font-weight:600;}
+.foot-col a{display:block;color:#8a96b0;text-decoration:none;font-size:12px;margin-bottom:6px;}
+.foot-col a:hover{color:var(--gold-soft);}
+.foot-btm{max-width:1200px;margin:14px auto 0;font-size:11px;color:#4a5568;text-align:center;}
+@media(max-width:700px){.nav-links{display:none;}.main-wrap{grid-template-columns:1fr;padding:14px 14px 48px;}.globals{padding:0 14px 24px;}}
+</style>
+</head>
+<body>
+<nav><div class="nav-inner"><a href="index.html" class="brand">AMaC</a>
+  <ul class="nav-links"><li><a href="books.html">The Master Series</a></li><li><a href="tools.html">Study Tools</a></li><li><a href="contact.html" class="nav-cta">Get Started</a></li></ul>
+</div></nav>
+<header class="hero"><div class="ph">
+  <span class="kick">Chapters 57–62 · Volume 3</span>
+  <h1>Clinical <em>Examination Coach</em></h1>
+  <p>Full verbalisation scripts for every OSCE examination. Step-by-step sequences, must-say phrases, and station-specific instant fails. Silence scores nothing.</p>
+</div></header>
+<div class="main-wrap">
+  <div class="sidebar">
+    <div class="sb-hdr"><div class="sb-title">Select Examination</div></div>
+    <div id="sidebarBtns"></div>
+  </div>
+  <div class="content-area" id="contentArea">
+    <div style="color:var(--muted);font-size:14px;text-align:center;padding:40px;">Select an examination from the left.</div>
+  </div>
+</div>
+<div class="globals">
+  <div class="univ-box">
+    <div class="ub-lbl">🌟 Universal Opening Script — every examination</div>
+    <div class="ub-txt">Hello, my name is [name], one of the doctors. Can I confirm your name and date of birth? With your permission, I'd like to examine your [area]. I'll explain everything as I go, and you can ask me to stop at any time. Before I start — is there any area that is already painful?</div>
+  </div>
+  <div class="univ-box">
+    <div class="ub-lbl">✓ Universal Closing Script</div>
+    <div class="ub-txt">Thank you — that's the end of the examination. I'll help you cover up. I'll clean my hands again. Summary: [positive findings] / [negative findings] / [interpretation] / [next steps].</div>
+  </div>
+  <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:8px;">⛔ Universal Instant Fails — Any Examination</div>
+  <div class="fail-item">⚠ Silent examination — no verbalisation means no marks</div><div class="fail-item">⚠ No explicit consent before touching patient</div><div class="fail-item">⚠ No chaperone offered for intimate examination</div><div class="fail-item">⚠ No hand hygiene</div><div class="fail-item">⚠ Forgetting to compare both sides</div><div class="fail-item">⚠ Examining through clothing</div>
+</div>
+<div class="trustband"><p class="slogan">Think Like an Examiner · Speak Like a Doctor · Perform With Confidence</p><p>Sourced from Chapters 57–62 of the AMaC PLAB 2 Master Series Volume 3.</p></div>
+<footer><div class="foot-inner">
+  <div><div class="foot-brand">AMaC</div><p class="foot-p">A. Mansour &amp; Colleagues.</p></div>
+  <div class="foot-col"><h4>Tools</h4><a href="mastercards.html">Master Cards</a><a href="osce.html">OSCE Stations</a><a href="ecg-abg.html">ECG &amp; ABG</a></div>
+  <div class="foot-col"><h4>New Tools</h4><a href="instant-fails.html">Instant Fails</a><a href="prescribing.html">Prescribing</a><a href="dvla.html">DVLA</a></div>
+  <div class="foot-col"><h4>Contact</h4><a href="mailto:info@amac-medical.com">info@amac-medical.com</a></div>
+</div><div class="foot-btm">&copy; 2026 A. Mansour &amp; Colleagues (AMaC). All rights reserved.</div></footer>
+<script>
+const EXAMS={"universal_opening": "Hello, my name is [name], one of the doctors. Can I confirm your name and date of birth? With your permission, I'd like to examine your [area]. I'll explain everything as I go, and you can ask me to stop at any time. Before I start — is there any area that is already painful?", "universal_closing": "Thank you — that's the end of the examination. I'll help you cover up. I'll clean my hands again. [Wash visibly] Summary: [positive findings] / [negative findings] / [interpretation] / [next steps].", "instant_fails": ["Silent examination — no verbalisation means no marks", "No explicit consent before touching patient", "No chaperone offered for intimate examination", "No hand hygiene", "Forgetting to compare both sides", "Examining through clothing"], "examinations": [{"id": "cvs", "name": "Cardiovascular Examination", "emoji": "❤️", "sequence": ["WIPE hands · position at 45° · expose chest", "Inspect hands — clubbing, splinter haemorrhages, Osler's, Janeway", "Radial pulse — rate, rhythm, volume, radio-radial delay", "Blood pressure — both arms if coarctation suspected", "Face — malar flush, corneal arcus, xanthelasma, anaemia, cyanosis", "JVP at 45° — \"I can/cannot see the JVP\"", "Carotid — listen for bruits BEFORE palpating. One side at a time.", "Praecordium inspection — scars, pacemaker, apex", "Apex beat — locate (5th ICS, MCL) and character", "Heaves and thrills — left sternal edge and apex", "Auscultation — all 4 areas + axilla + carotid. Sit forward + held expiration for aortic. Left lateral for mitral.", "Sacral and ankle oedema", "Lung bases — listen for pulmonary oedema", "CLOSE: state positive and negative findings + interpretation"], "must_say": ["I'm palpating the radial pulse — rate [X], rhythm [Y], volume [Z].", "I'm looking at the JVP at 45 degrees — the waveform is/is not visible.", "I'm listening with the bell at the apex — there is/is not an added sound.", "I'm listening over all 4 valve areas in a systematic sequence.", "I'm checking for peripheral oedema — pressing over the sacrum and ankles."], "instant_fails": ["Not examining peripherals before chest", "Forgetting JVP — a common examiner trap", "Not auscultating in all 4 areas", "Not listening in special positions for murmurs", "Working in silence throughout"]}, {"id": "resp", "name": "Respiratory Examination", "emoji": "🫁", "sequence": ["WIPE hands · position upright · expose chest", "Count respiratory rate first — before touching", "Inspect hands — clubbing, peripheral cyanosis, CO₂ flap (wrist extension 15 sec)", "Face — central cyanosis, pursed lips, use of accessory muscles", "Trachea — central? Any tug?", "Chest inspection — shape, symmetry, scars, accessory muscle use, intercostal recession", "Expansion — both sides — place thumbs symmetrically", "Percussion — compare sides systematically, include clavicle and axilla, AVOID scapula", "Auscultation — compare sides, note breath sounds and added sounds", "Vocal resonance — \"say ninety-nine\" while listening", "Lymph nodes — axilla and cervical", "CLOSE: state positive and negative findings + interpretation"], "must_say": ["The respiratory rate is [X] breaths per minute — normal is 12 to 20.", "Trachea is central / deviated to [side].", "Expansion is equal / reduced on the [left/right].", "Percussion note is resonant / dull / hyper-resonant at [zone].", "I can hear [normal vesicular / bronchial / reduced] breath sounds at [zone].", "Vocal resonance is normal / increased / decreased."], "instant_fails": ["Not counting respiratory rate", "Forgetting the trachea", "Not comparing sides for every manoeuvre", "Not doing vocal resonance", "Working in silence"]}, {"id": "abdo", "name": "Abdominal Examination", "emoji": "🩺", "sequence": ["WIPE hands · position lying flat, arms by side, exposed nipple to groin", "Inspect from end of bed — distension, scars, stomas, pulsation", "Inspect closer — jaundice, spider naevi, caput medusae, gynecomastia", "Hands — clubbing, Dupuytren's, leukonychia, koilonychia, asterixis", "Face — anaemia, jaundice, Kayser-Fleischer rings", "Auscultate first (before palpation) — bowel sounds, bruits", "Ask about pain BEFORE palpating — watch face throughout", "Light palpation — all 9 regions, watch face, identify tenderness/guarding", "Deep palpation — organomegaly, masses", "Liver — start RIF, move up on expiration. Dip technique.", "Spleen — start RIF diagonally, roll right. Splenomegaly confirmed in right lateral.", "Kidneys — ballot bilaterally", "Percussion — liver span, shifting dullness if ascites suspected", "Fluid thrill if ascites confirmed", "Hernial orifices and genitalia if clinically indicated", "CLOSE: state positive and negative findings + interpretation"], "must_say": ["Before I press — is there any area that is already painful?", "I'm starting in the right iliac fossa and working systematically.", "Bowel sounds are present and normal / absent / hyperactive.", "There is / is no tenderness, guarding or rigidity.", "I'm checking for shifting dullness to assess for ascites."], "instant_fails": ["Auscultating after palpation", "Not starting palpation away from pain", "Forgetting to watch the patient's face", "Not completing all three organs (liver, spleen, kidneys)", "Working in silence"]}, {"id": "neuro_upper", "name": "Neurological — Upper Limb", "emoji": "🧠", "sequence": ["WIPE hands · position sitting · both arms exposed", "Inspect — wasting, fasciculations, posture, tremor at rest", "Tone — hold wrist, flex/extend elbow passively. Clasp knife = UMN, lead pipe = Parkinson's, cogwheeling = Parkinson's + tremor", "Power — MRC scale (0–5) at shoulder, elbow, wrist, grip, pinch", "Deep tendon reflexes — biceps (C5/6), supinator (C6), triceps (C7) — compare sides", "Coordination — finger-nose test, ask for intention tremor (cerebellar)", "Sensation — light touch, pin-prick — compare sides, dermatomal pattern", "Pronator drift — arms outstretched, eyes closed, 10 seconds", "CLOSE: UMN vs LMN findings, localise the lesion"], "must_say": ["I'm testing tone — I'll move your arm passively, please try to relax completely.", "I'm testing power — please push against me as hard as you can.", "I'm comparing reflexes on both sides using the same technique.", "Coordination is intact / impaired — there is / is no intention tremor."], "instant_fails": ["Not using MRC scale (0–5) for power", "Not comparing both sides for every test", "Not doing coordination", "Not attempting to localise the lesion", "Working in silence"]}, {"id": "gals", "name": "GALS Screening Examination", "emoji": "🦴", "sequence": ["Three screening questions first: Any pain or stiffness? Any difficulty washing/dressing? Any difficulty with stairs?", "GAIT — walk to end of room and back. Heel-toe walk. Observe footwear for uneven wear.", "ARMS — inspect. Full shoulder/elbow/wrist movement. Grip strength. MCP squeeze for tenderness.", "LEGS — inspect. Full hip/knee ROM. Squat. MTP squeeze. Check knee for effusion.", "SPINE — inspect from behind (scoliosis?). Forward flexion (Schober's). Lateral flexion. TMJ opening.", "CLOSE: GALS normal/abnormal, identify specific joint for detailed examination"], "must_say": ["I'm going to ask you three screening questions before examining you.", "GALS complete — gait is [normal/antalgic/Trendelenburg].", "Arms: full range of movement, MCP [not tender / tender].", "Legs: [full squat / unable], MTP [not tender / tender].", "I'd like to examine the [joint] in more detail."], "instant_fails": ["Not asking the three screening questions", "Skipping gait observation", "Not doing MCP and MTP squeeze", "Not doing functional assessment (squat, stairs)", "Missing hot swollen joint — must escalate immediately"]}, {"id": "mse", "name": "Mental State Examination", "emoji": "🧩", "sequence": ["Opening safety question: \"Before we start — have you had thoughts of harming yourself or ending your life?\"", "ASEPTIC framework:", "A — Appearance & Behaviour: dress, hygiene, eye contact, psychomotor activity", "S — Speech: rate, tone, volume, fluency, thought form", "E — Emotion (Mood & Affect): \"How would you describe your mood?\" Objective vs subjective", "P — Perception: \"Have you heard voices when no one was around?\" Command hallucinations?", "T — Thought content: beliefs, obsessions, delusions — \"Is there anything preoccupying your mind?\"", "I — Insight: \"Do you think something is wrong? Do you think you need help?\"", "C — Cognition: AMT-10 or MMSE if indicated", "RISK: intent, plan, means, protective factors, self-neglect", "CLOSE: formulation — predisposing, precipitating, perpetuating, protective factors"], "must_say": ["Before we start — have you had thoughts of harming yourself or ending your life?", "How would you describe your mood in one word?", "Have you heard voices when no one was around? What do they say?", "Do you think something is wrong? Do you think you need treatment?", "I'm now going to do a brief cognitive assessment — I'll ask you ten questions."], "instant_fails": ["Not opening with suicide safety question", "Not asking about command hallucinations specifically", "Confusing mood (subjective) with affect (objective)", "Not completing a risk assessment", "Working in silence with no empathy demonstrated"]}]}.examinations;
+document.getElementById('sidebarBtns').innerHTML=EXAMS.map((e,i)=>`<button class="exam-btn" onclick="showExam('${e.id}',this)"><span class="eb-emoji">${e.emoji}</span><span class="eb-name">${e.name}</span></button>`).join('');
+function showExam(id,btn){
+  document.querySelectorAll('.exam-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  const e=EXAMS.find(x=>x.id===id);if(!e)return;
+  document.getElementById('contentArea').innerHTML=`
+    <div class="content-title">${e.emoji} ${e.name}</div>
+    <div class="content-sub">Say each step aloud before moving to the next</div>
+    <div class="sec-lbl">Examination Sequence</div>
+    ${e.sequence.map(s=>`<div class="step-item"><span class="step-dot"></span><span>${s}</span></div>`).join('')}
+    <div class="sec-lbl">💬 Must-Say Scripts</div>
+    ${e.must_say.map(s=>`<div class="script-item">${s}</div>`).join('')}
+    <div class="sec-lbl">⛔ Station-Specific Instant Fails</div>
+    ${e.instant_fails.map(f=>`<div class="fail-item">⚠ ${f}</div>`).join('')}`;
+}
+// Auto-show first
+document.querySelector('.exam-btn').click();
+</script></body></html>

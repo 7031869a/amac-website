@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Antibiotic Guide — AMaC PLAB 2</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0d2247;--navy-deep:#091629;--gold:#c9a227;--gold-soft:#e0c45a;--cream:#f7f4ec;--ink:#1a1d24;--muted:#5d6470;--line:#e4ddcd;--fail:#c0392b;--pass:#1b6b3a;}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--ink);-webkit-font-smoothing:antialiased;}
+nav{position:sticky;top:0;z-index:100;background:linear-gradient(180deg,#0f2850,#0d2247);border-bottom:1px solid rgba(201,162,39,0.25);box-shadow:0 3px 16px rgba(9,22,41,0.5);}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 28px;height:64px;display:flex;align-items:center;justify-content:space-between;}
+.brand{font-family:'Fraunces',serif;font-size:24px;font-weight:700;color:var(--gold-soft);letter-spacing:3px;text-decoration:none;}
+.nav-links{display:flex;gap:24px;list-style:none;align-items:center;}
+.nav-links a{color:#dde2ec;text-decoration:none;font-size:13px;}.nav-links a:hover{color:#fff;}
+.nav-cta{background:linear-gradient(135deg,#d4a820,#c9a227)!important;color:var(--navy-deep)!important;padding:8px 18px;border-radius:2px;font-weight:700;font-size:12px;}
+.hero{background:linear-gradient(155deg,#0d2247,#091629);color:#fff;padding:52px 28px 44px;text-align:center;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.02) 1px,transparent 1px);background-size:20px 20px;}
+.ph{max-width:800px;margin:0 auto;position:relative;}
+.kick{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--gold-soft);border:1px solid rgba(201,162,39,0.4);padding:5px 14px;border-radius:2px;display:inline-block;margin-bottom:16px;}
+.hero h1{font-family:'Fraunces',serif;font-size:clamp(24px,5vw,42px);font-weight:500;line-height:1.1;}
+.hero h1 em{font-style:italic;color:var(--gold-soft);}
+.hero p{margin:12px auto 0;color:#d0d6e8;font-weight:300;font-size:15px;max-width:56ch;line-height:1.65;}
+.controls{background:#fff;border-bottom:1px solid var(--line);padding:11px 28px;position:sticky;top:64px;z-index:90;box-shadow:0 2px 6px rgba(13,34,71,0.06);}
+.ci{max-width:1100px;margin:0 auto;display:flex;gap:8px;flex-wrap:wrap;align-items:center;}
+.search{flex:1;min-width:180px;padding:8px 14px;border:1px solid var(--line);border-radius:6px;font-family:'Outfit',sans-serif;font-size:14px;}
+.search:focus{outline:none;border-color:var(--gold);}
+.fbtn{padding:7px 17px;border-radius:20px;font-size:12px;font-family:'Outfit',sans-serif;cursor:pointer;transition:all .22s;background:linear-gradient(135deg,#0f2850,#0d2247);border:1.5px solid rgba(201,162,39,0.3);color:var(--gold-soft);box-shadow:0 3px 10px rgba(9,22,41,0.35),inset 0 1px 0 rgba(255,255,255,0.06);font-weight:600;letter-spacing:.3px;}
+.fbtn:hover{background:linear-gradient(135deg,#1b3a6b,#152d52);border-color:rgba(201,162,39,0.6);box-shadow:0 4px 16px rgba(9,22,41,0.4);transform:translateY(-1px);color:#fff;}.fbtn.active{background:linear-gradient(135deg,#0d2247,#091629);border-color:var(--gold);box-shadow:0 4px 18px rgba(201,162,39,0.25);color:var(--gold-soft);font-weight:700;transform:translateY(-1px);border-width:2px;}
+.wrap{max-width:1100px;margin:0 auto;padding:24px 28px 64px;}
+.warning-box{background:linear-gradient(135deg,#fef2f2,#fee2e2);border:1px solid #fca5a5;border-radius:10px;padding:14px 18px;margin-bottom:20px;box-shadow:0 4px 16px rgba(192,57,43,0.12);}
+.wb-title{font-size:14px;color:#991b1b;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:12px;}
+.wb-items{display:flex;flex-wrap:wrap;gap:8px;}
+.wb-item{background:linear-gradient(135deg,#7f1d1d,#991b1b);border:1px solid rgba(255,255,255,0.15);color:#fff;font-weight:600;box-shadow:0 2px 8px rgba(127,29,29,0.3);font-size:12px;padding:6px 14px;border-radius:20px;}
+.abx-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:14px;}
+.abx-card{background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden;box-shadow:0 2px 6px rgba(13,34,71,0.07);}
+.ac-hdr{padding:14px 16px;background:linear-gradient(135deg,#0f2850,#0d2247);display:flex;justify-content:space-between;align-items:flex-start;gap:10px;}
+.ac-infection{font-family:'Fraunces',serif;font-size:16px;color:var(--gold-soft);font-weight:600;line-height:1.3;}
+.ac-class{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;padding:3px 10px;border-radius:10px;background:rgba(201,162,39,0.15);color:var(--gold-soft);border:1px solid rgba(201,162,39,0.3);flex-shrink:0;}
+.ac-body{padding:13px 16px;}
+.ac-row{display:flex;gap:8px;margin-bottom:7px;align-items:flex-start;}
+.ac-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);width:70px;flex-shrink:0;padding-top:2px;}
+.ac-val{font-size:13.5px;color:var(--ink);line-height:1.4;}
+.ac-allergy{font-size:13px;color:var(--fail);font-weight:500;}
+.ac-duration{font-size:12px;color:var(--muted);font-style:italic;}
+.steward-box{background:linear-gradient(135deg,#dbeafe,#bfdbfe);border:1px solid #93c5fd;border-radius:10px;padding:16px 20px;margin-bottom:20px;box-shadow:0 4px 16px rgba(37,99,235,0.12);}
+.sb-title{font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--navy);margin-bottom:10px;}
+.steward-items{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px;}
+.si-item{border-radius:6px;padding:9px 12px;background:linear-gradient(135deg,#0f2850,#0d2247);border:1px solid rgba(201,162,39,0.25);color:var(--gold-soft);font-weight:600;box-shadow:0 2px 8px rgba(9,22,41,0.3);}
+.si-letter{font-family:'Fraunces',serif;font-size:18px;color:var(--gold-soft);margin-right:4px;}
+.si-text{font-size:12.5px;color:rgba(255,255,255,0.8);line-height:1.4;}
+.trustband{background:var(--navy);color:#fff;text-align:center;padding:34px 28px;}
+.trustband .slogan{font-family:'Fraunces',serif;font-style:italic;color:var(--gold-soft);font-size:18px;margin-bottom:8px;}
+.trustband p{color:#dde2ec;font-weight:300;font-size:14px;max-width:54ch;margin:0 auto;}
+footer{background:var(--navy-deep);color:#c4ccd8;padding:36px 28px 20px;}
+.foot-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px;border-bottom:1px solid rgba(255,255,255,0.07);padding-bottom:20px;}
+.foot-brand{font-family:'Fraunces',serif;font-size:22px;color:var(--gold-soft);letter-spacing:2px;}
+.foot-p{font-size:12px;color:#8a96b0;margin-top:5px;max-width:32ch;font-weight:300;line-height:1.5;}
+.foot-col h4{color:#fff;font-size:11px;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;font-weight:600;}
+.foot-col a{display:block;color:#8a96b0;text-decoration:none;font-size:12px;margin-bottom:6px;}
+.foot-col a:hover{color:var(--gold-soft);}
+.foot-btm{max-width:1200px;margin:14px auto 0;font-size:11px;color:#4a5568;text-align:center;}
+@media(max-width:700px){.nav-links{display:none;}.wrap{padding:16px 14px 48px;}.abx-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<nav><div class="nav-inner"><a href="index.html" class="brand">AMaC</a>
+  <ul class="nav-links"><li><a href="books.html">The Master Series</a></li><li><a href="tools.html">Study Tools</a></li><li><a href="contact.html" class="nav-cta">Get Started</a></li></ul>
+</div></nav>
+<header class="hero"><div class="ph">
+  <span class="kick">Appendix 2C · Volume 2 · BNF/NICE Aligned</span>
+  <h1>Antibiotic <em>Prescribing Guide</em></h1>
+  <p>First-line antibiotics for PLAB 2 — penicillin allergy alternatives, stewardship rules, instant fail risks. Always check BNF and local guidelines in clinical practice.</p>
+</div></header>
+<div class="controls"><div class="ci">
+  <input class="search" id="searchBox" placeholder="Search infection..." oninput="render()">
+  <button class="fbtn active" onclick="filterCat('all',this)">All</button>
+  <button class="fbtn" onclick="filterCat('Respiratory',this)">Respiratory</button>
+  <button class="fbtn" onclick="filterCat('Urinary',this)">Urinary</button>
+  <button class="fbtn" onclick="filterCat('Skin & Bone',this)">Skin &amp; Bone</button>
+  <button class="fbtn" onclick="filterCat('CNS',this)">CNS</button>
+  <button class="fbtn" onclick="filterCat('Emergency',this)">Emergency</button>
+  <button class="fbtn" onclick="filterCat('GI',this)">GI</button>
+</div></div>
+<div class="wrap">
+  <div class="warning-box">
+    <div class="wb-title">⚠ Instant Fail Risks</div>
+    <div class="wb-items">
+      <span class="wb-item">No allergy check before prescribing</span>
+      <span class="wb-item">Antibiotics for viral illness</span>
+      <span class="wb-item">Delay in sepsis (&gt;1 hour)</span>
+      <span class="wb-item">No review/stop date documented</span>
+      <span class="wb-item">Missing stewardship plan</span>
+    </div>
+  </div>
+  <div class="steward-box">
+    <div class="sb-title">STEWARD — Antibiotic Stewardship</div>
+    <div class="steward-items">
+      <div class="si-item"><span class="si-letter">S</span><span class="si-text">Spectrum — narrowest effective</span></div>
+      <div class="si-item"><span class="si-letter">T</span><span class="si-text">Time — shortest course</span></div>
+      <div class="si-item"><span class="si-letter">E</span><span class="si-text">Evidence — confirm infection</span></div>
+      <div class="si-item"><span class="si-letter">W</span><span class="si-text">Watch — review at 48h</span></div>
+      <div class="si-item"><span class="si-letter">A</span><span class="si-text">Allergy — clarify reaction type</span></div>
+      <div class="si-item"><span class="si-letter">R</span><span class="si-text">Renal — dose adjust</span></div>
+      <div class="si-item"><span class="si-letter">D</span><span class="si-text">Document — indication mandatory</span></div>
+    </div>
+  </div>
+  <div class="abx-grid" id="abxGrid"></div>
+</div>
+<div class="trustband"><p class="slogan">Think Like an Examiner · Speak Like a Doctor · Perform With Confidence</p><p>Antibiotic choices from Appendix 2C of the AMaC Master Series. Always verify with BNF and local guidelines.</p></div>
+<footer><div class="foot-inner">
+  <div><div class="foot-brand">AMaC</div><p class="foot-p">A. Mansour &amp; Colleagues.</p></div>
+  <div class="foot-col"><h4>Study Tools</h4><a href="prescribing.html">Prescribing Safety</a><a href="normal-values.html">Normal Values</a><a href="dvla.html">DVLA</a></div>
+  <div class="foot-col"><h4>Contact</h4><a href="mailto:info@amac-medical.com">info@amac-medical.com</a></div>
+</div><div class="foot-btm">&copy; 2026 A. Mansour &amp; Colleagues (AMaC). All rights reserved.</div></footer>
+<script>
+const ABX=[
+  {cat:'Respiratory',infection:'Community-Acquired Pneumonia (mild-mod)',first:'Amoxicillin 500mg TDS PO × 5 days',allergy:'Doxycycline 200mg day 1, 100mg OD or Clarithromycin 500mg BD × 5 days',notes:'Add clarithromycin if atypical features (dry cough, young, bilateral)'},
+  {cat:'Respiratory',infection:'Community-Acquired Pneumonia (severe)',first:'Co-amoxiclav IV + Clarithromycin IV',allergy:'Discuss microbiology — Levofloxacin IV',notes:'CURB-65 ≥3 = severe. ICU if ≥4.'},
+  {cat:'Respiratory',infection:'Hospital-Acquired Pneumonia',first:'Piperacillin-Tazobactam IV',allergy:'Discuss microbiology — local resistance patterns',notes:'Consider MRSA cover if risk factors'},
+  {cat:'Respiratory',infection:'Acute Exacerbation COPD',first:'Amoxicillin 500mg TDS or Doxycycline 100mg BD × 5 days',allergy:'Clarithromycin 500mg BD × 5 days',notes:'Only if purulent sputum or systemic features. Not routinely.'},
+  {cat:'CNS',infection:'Bacterial Meningitis',first:'Ceftriaxone 2g IV STAT (DO NOT DELAY)',allergy:'Chloramphenicol IV — discuss with microbiology',notes:'DO NOT delay for LP or CT. Give benzylpenicillin IM pre-hospital if GP.'},
+  {cat:'Emergency',infection:'Sepsis (unknown source)',first:'Piperacillin-Tazobactam IV (per local protocol)',allergy:'Meropenem if severe penicillin allergy',notes:'Within 1 hour. Blood cultures first if no delay. SEPSIS SIX.'},
+  {cat:'Emergency',infection:'Neutropenic Sepsis',first:'Piperacillin-Tazobactam IV (within 1 hour)',allergy:'Meropenem IV',notes:'Haematology emergency. Add antifungal if >7 days or not improving at 48h.'},
+  {cat:'Skin & Bone',infection:'Cellulitis (mild-mod)',first:'Flucloxacillin 500mg QDS PO × 5–7 days',allergy:'Doxycycline 100mg BD or Clarithromycin 500mg BD',notes:'Mark skin edge to monitor spread. IV if systemically unwell or not improving.'},
+  {cat:'Skin & Bone',infection:'Cellulitis (severe / IV)',first:'Flucloxacillin 2g QDS IV',allergy:'Vancomycin IV (MRSA cover)',notes:'Add MRSA cover if risk factors.'},
+  {cat:'Skin & Bone',infection:'Septic Arthritis (empiric)',first:'Flucloxacillin 2g QDS IV',allergy:'Clindamycin IV',notes:'SURGICAL EMERGENCY — joint washout. Orthopaedics urgently.'},
+  {cat:'Urinary',infection:'UTI (lower, uncomplicated women)',first:'Trimethoprim 200mg BD × 3 days (or Nitrofurantoin MR 100mg BD × 3 days)',allergy:'Pivmecillinam 200mg TDS × 3 days',notes:'Nitrofurantoin: avoid if eGFR <45. Trimethoprim: avoid if recurrent use.'},
+  {cat:'Urinary',infection:'UTI (upper / pyelonephritis)',first:'Co-amoxiclav 625mg TDS PO × 7–10 days (mild) or IV if severe',allergy:'Ciprofloxacin 500mg BD PO (NB: use with caution)',notes:'Send MSU/blood cultures. IV if vomiting or systemically unwell.'},
+  {cat:'Urinary',infection:'UTI in pregnancy',first:'Nitrofurantoin 100mg MR BD × 3–7 days (not at term)',allergy:'Cefalexin 500mg TDS × 7 days',notes:'All UTIs in pregnancy must be treated. Risk of pyelonephritis and preterm labour.'},
+  {cat:'GI',infection:'Spontaneous Bacterial Peritonitis',first:'Cefotaxime 2g IV TDS',allergy:'Ciprofloxacin IV',notes:'Ascitic tap first (>250 neutrophils = SBP). IV albumin 20% with antibiotics.'},
+  {cat:'GI',infection:'H. pylori eradication',first:'Triple therapy: PPI + Clarithromycin + Amoxicillin × 7 days',allergy:'PPI + Clarithromycin + Metronidazole (if penicillin allergy)',notes:'Test and treat only. Confirm eradication at ≥4 weeks post-treatment.'},
+  {cat:'GI',infection:'C. difficile (mild)',first:'Metronidazole 400mg TDS PO × 10 days',allergy:'Vancomycin PO 125mg QDS × 10 days',notes:'STOP causative antibiotic. Fidaxomicin for recurrent/severe.'},
+];
+
+let activeCat='all';
+function filterCat(c,btn){activeCat=c;document.querySelectorAll('.fbtn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');render();}
+function render(){
+  const q=(document.getElementById('searchBox').value||'').toLowerCase();
+  const list=ABX.filter(a=>{
+    const cm=activeCat==='all'||a.cat===activeCat;
+    const qm=!q||a.infection.toLowerCase().includes(q)||a.first.toLowerCase().includes(q)||a.cat.toLowerCase().includes(q);
+    return cm&&qm;
+  });
+  document.getElementById('abxGrid').innerHTML=list.map(a=>`
+    <div class="abx-card">
+      <div class="ac-hdr"><div class="ac-infection">${a.infection}</div><span class="ac-class">${a.cat}</span></div>
+      <div class="ac-body">
+        <div class="ac-row"><span class="ac-label">First line</span><span class="ac-val">${a.first}</span></div>
+        <div class="ac-row"><span class="ac-label">PCN allergy</span><span class="ac-allergy">${a.allergy}</span></div>
+        <div class="ac-row"><span class="ac-label">Notes</span><span class="ac-duration">${a.notes}</span></div>
+      </div>
+    </div>`).join('');
+}
+render();
+</script></body></html>

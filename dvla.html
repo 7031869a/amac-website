@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>DVLA Fitness to Drive — AMaC PLAB 2</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0d2247;--navy-deep:#091629;--gold:#c9a227;--gold-soft:#e0c45a;--cream:#f7f4ec;--ink:#1a1d24;--muted:#5d6470;--line:#e4ddcd;--pass:#1b6b3a;--fail:#c0392b;}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--ink);-webkit-font-smoothing:antialiased;}
+nav{position:sticky;top:0;z-index:100;background:linear-gradient(180deg,#0f2850,#0d2247);border-bottom:1px solid rgba(201,162,39,0.25);box-shadow:0 3px 16px rgba(9,22,41,0.5);}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 28px;height:64px;display:flex;align-items:center;justify-content:space-between;}
+.brand{font-family:'Fraunces',serif;font-size:24px;font-weight:700;color:var(--gold-soft);letter-spacing:3px;text-decoration:none;}
+.nav-links{display:flex;gap:24px;list-style:none;align-items:center;}
+.nav-links a{color:#dde2ec;text-decoration:none;font-size:13px;}.nav-links a:hover{color:#fff;}
+.nav-cta{background:linear-gradient(135deg,#d4a820,#c9a227)!important;color:var(--navy-deep)!important;padding:8px 18px;border-radius:2px;font-weight:700;font-size:12px;}
+.hero{background:linear-gradient(155deg,#0d2247,#091629);color:#fff;padding:52px 28px 44px;text-align:center;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.02) 1px,transparent 1px);background-size:20px 20px;}
+.ph{max-width:760px;margin:0 auto;position:relative;}
+.kick{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--gold-soft);border:1px solid rgba(201,162,39,0.4);padding:5px 14px;border-radius:2px;display:inline-block;margin-bottom:16px;}
+.hero h1{font-family:'Fraunces',serif;font-size:clamp(24px,5vw,42px);font-weight:500;line-height:1.1;}
+.hero h1 em{font-style:italic;color:var(--gold-soft);}
+.hero p{margin:12px auto 0;color:#d0d6e8;font-weight:300;font-size:15px;max-width:54ch;line-height:1.65;}
+.gold-script{background:rgba(201,162,39,0.12);border:1px solid rgba(201,162,39,0.3);border-radius:8px;padding:14px 20px;margin:20px auto 0;max-width:640px;text-align:left;}
+.gs-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--gold-soft);margin-bottom:6px;}
+.gs-text{font-family:'Fraunces',serif;font-style:italic;font-size:14px;color:#fff;line-height:1.6;}
+.filter-bar{background:#fff;border-bottom:1px solid var(--line);padding:11px 28px;position:sticky;top:64px;z-index:90;box-shadow:0 2px 6px rgba(13,34,71,0.06);}
+.filter-inner{max-width:1100px;margin:0 auto;display:flex;gap:7px;flex-wrap:wrap;align-items:center;}
+.filter-lbl{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);margin-right:3px;}
+.fbtn{padding:7px 17px;border-radius:20px;font-size:12px;font-family:'Outfit',sans-serif;cursor:pointer;transition:all .22s;background:linear-gradient(135deg,#0f2850,#0d2247);border:1.5px solid rgba(201,162,39,0.3);color:var(--gold-soft);box-shadow:0 3px 10px rgba(9,22,41,0.35),inset 0 1px 0 rgba(255,255,255,0.06);font-weight:600;letter-spacing:.3px;}
+.fbtn:hover{background:linear-gradient(135deg,#1b3a6b,#152d52);border-color:rgba(201,162,39,0.6);box-shadow:0 4px 16px rgba(9,22,41,0.4);transform:translateY(-1px);color:#fff;}.fbtn.active{background:linear-gradient(135deg,#0d2247,#091629);border-color:var(--gold);box-shadow:0 4px 18px rgba(201,162,39,0.25);color:var(--gold-soft);font-weight:700;transform:translateY(-1px);border-width:2px;}
+.wrap{max-width:1100px;margin:0 auto;padding:28px 28px 64px;}
+.search-box{width:100%;padding:10px 16px;border:1px solid var(--line);border-radius:6px;font-family:'Outfit',sans-serif;font-size:14px;margin-bottom:20px;background:#fff;}
+.search-box:focus{outline:none;border-color:var(--gold);}
+.table-wrap{background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden;box-shadow:0 2px 8px rgba(13,34,71,0.07);margin-bottom:24px;}
+.table-hdr{background:linear-gradient(135deg,#0f2850,#0d2247);padding:12px 18px;display:flex;justify-content:space-between;align-items:center;}
+.table-hdr-title{font-family:'Fraunces',serif;font-size:17px;color:var(--gold-soft);font-weight:600;}
+.table-hdr-count{font-size:11px;color:rgba(255,255,255,0.8);}
+.table{width:100%;border-collapse:collapse;}
+.table th{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--muted);padding:10px 16px;text-align:left;background:#f8f6f0;border-bottom:1px solid var(--line);}
+.table td{padding:11px 16px;font-size:13.5px;border-bottom:1px solid var(--line);vertical-align:top;line-height:1.45;}
+.table tr:last-child td{border-bottom:none;}
+.table tr:hover td{background:rgba(201,162,39,0.05);}
+.stop-cell{font-weight:600;color:var(--fail);}
+.notify-yes{display:inline-flex;align-items:center;gap:4px;background:rgba(192,57,43,0.1);color:var(--fail);font-size:11px;font-weight:700;padding:3px 8px;border-radius:10px;}
+.notify-no{display:inline-flex;align-items:center;gap:4px;background:rgba(27,107,58,0.1);color:var(--pass);font-size:11px;font-weight:700;padding:3px 8px;border-radius:10px;}
+.notes-cell{font-size:12px;color:var(--muted);}
+.must-notify-box{background:linear-gradient(135deg,#fef2f2,#fee2e2);border:1px solid #fca5a5;border-radius:10px;padding:18px 22px;margin-bottom:20px;box-shadow:0 4px 16px rgba(192,57,43,0.12);}
+.mn-title{font-size:13px;color:#991b1b;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:12px;}
+.mn-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;}
+.mn-item{background:linear-gradient(135deg,#7f1d1d,#991b1b);border:1px solid rgba(255,255,255,0.15);color:#fff;font-weight:600;box-shadow:0 2px 8px rgba(127,29,29,0.3);font-size:13px;padding:9px 13px;border-radius:6px;line-height:1.4;}
+.hypo-box{background:#fdf8e6;border:1px solid rgba(201,162,39,0.3);border-radius:10px;padding:16px 20px;margin-bottom:24px;}
+.hypo-title{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--gold);margin-bottom:10px;}
+.hypo-steps{counter-reset:step;}
+.hypo-step{display:flex;gap:10px;align-items:flex-start;margin-bottom:8px;font-size:13.5px;line-height:1.5;}
+.step-num{background:var(--navy);color:var(--gold-soft);font-family:'Fraunces',serif;font-size:14px;width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.trustband{background:var(--navy);color:#fff;text-align:center;padding:34px 28px;}
+.trustband .slogan{font-family:'Fraunces',serif;font-style:italic;color:var(--gold-soft);font-size:18px;margin-bottom:8px;}
+.trustband p{color:#dde2ec;font-weight:300;font-size:14px;max-width:54ch;margin:0 auto;}
+footer{background:var(--navy-deep);color:#c4ccd8;padding:36px 28px 20px;}
+.foot-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px;border-bottom:1px solid rgba(255,255,255,0.07);padding-bottom:20px;}
+.foot-brand{font-family:'Fraunces',serif;font-size:22px;color:var(--gold-soft);letter-spacing:2px;}
+.foot-p{font-size:12px;color:#8a96b0;margin-top:5px;max-width:32ch;font-weight:300;line-height:1.5;}
+.foot-col h4{color:#fff;font-size:11px;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;font-weight:600;}
+.foot-col a{display:block;color:#8a96b0;text-decoration:none;font-size:12px;margin-bottom:6px;}
+.foot-col a:hover{color:var(--gold-soft);}
+.foot-btm{max-width:1200px;margin:14px auto 0;font-size:11px;color:#4a5568;text-align:center;}
+@media(max-width:700px){.nav-links{display:none;}.wrap{padding:18px 14px 48px;}.mn-grid{grid-template-columns:1fr 1fr;}.table th:last-child,.table td:last-child{display:none;}}
+</style>
+</head>
+<body>
+<nav><div class="nav-inner"><a href="index.html" class="brand">AMaC</a>
+  <ul class="nav-links"><li><a href="books.html">The Master Series</a></li><li><a href="tools.html">Study Tools</a></li><li><a href="contact.html" class="nav-cta">Get Started</a></li></ul>
+</div></nav>
+<header class="hero"><div class="ph">
+  <span class="kick">Appendix 2B · Volume 2</span>
+  <h1>DVLA <em>Fitness to Drive</em></h1>
+  <p>Complete quick-reference for PLAB 2 — stop durations, notification requirements and the examiner-winning script. Group 1 (cars) rules shown throughout.</p>
+  <div class="gold-script">
+    <div class="gs-label">OSCE Gold Script — use this every time</div>
+    <div class="gs-text">For safety reasons you should avoid driving for the recommended period. It is your legal responsibility to inform the DVLA, and I will document that we discussed this today.</div>
+  </div>
+</div></header>
+<div class="filter-bar"><div class="filter-inner">
+  <span class="filter-lbl">Category:</span>
+  <button class="fbtn active" onclick="filterCat('all',this)">All</button>
+  <button class="fbtn" onclick="filterCat('Neurological',this)">Neurological</button>
+  <button class="fbtn" onclick="filterCat('Cardiovascular',this)">Cardiovascular</button>
+  <button class="fbtn" onclick="filterCat('Syncope',this)">Syncope</button>
+  <button class="fbtn" onclick="filterCat('Diabetes',this)">Diabetes</button>
+  <button class="fbtn" onclick="filterCat('Visual & Other',this)">Visual & Other</button>
+</div></div>
+<div class="wrap">
+  <input type="text" class="search-box" id="searchBox" placeholder="Search condition..." oninput="renderTable()">
+  
+  <div class="must-notify-box">
+    <div class="mn-title">⚠ Must Notify DVLA — Exam Morning Shortlist</div>
+    <div class="mn-grid">
+      <div class="mn-item">Seizure / epilepsy (any)</div>
+      <div class="mn-item">ICD implantation</div>
+      <div class="mn-item">Insulin-treated diabetes</div>
+      <div class="mn-item">Stroke with residual deficit</div>
+      <div class="mn-item">Visual field defect</div>
+      <div class="mn-item">Sleep apnoea + sleepiness</div>
+      <div class="mn-item">Recurrent syncope</div>
+      <div class="mn-item">Pacemaker implantation</div>
+      <div class="mn-item">Alcohol dependence</div>
+    </div>
+  </div>
+
+  <div id="tableContainer"></div>
+
+  <div class="hypo-box">
+    <div class="hypo-title">🩸 Hypoglycaemia While Driving — Immediate Actions</div>
+    <div class="hypo-steps">
+      <div class="hypo-step"><div class="step-num">1</div><div>Stop the vehicle as soon as it is safe to do so.</div></div>
+      <div class="hypo-step"><div class="step-num">2</div><div><strong>Remove keys from the ignition</strong> — commonly missed in OSCE.</div></div>
+      <div class="hypo-step"><div class="step-num">3</div><div><strong>Move to the passenger seat</strong> — also commonly missed.</div></div>
+      <div class="hypo-step"><div class="step-num">4</div><div>Take fast-acting carbohydrates (glucose gel, sugary drink).</div></div>
+      <div class="hypo-step"><div class="step-num">5</div><div>Do NOT resume driving until glucose is normal AND symptoms fully resolved.</div></div>
+    </div>
+  </div>
+</div>
+<div class="trustband"><p class="slogan">Think Like an Examiner · Speak Like a Doctor · Perform With Confidence</p><p>All data sourced from Appendix 2B of the AMaC PLAB 2 Master Series Volume 2.</p></div>
+<footer><div class="foot-inner">
+  <div><div class="foot-brand">AMaC</div><p class="foot-p">A. Mansour &amp; Colleagues — examiner-led preparation for the PLAB 2 OSCE.</p></div>
+  <div class="foot-col"><h4>Tools</h4><a href="mastercards.html">Master Cards</a><a href="osce.html">OSCE Stations</a><a href="flashcards.html">Flashcards</a><a href="instant-fails.html">Instant Fails</a></div>
+  <div class="foot-col"><h4>New Tools</h4><a href="prescribing.html">Prescribing Safety</a><a href="ecg-abg.html">ECG &amp; ABG</a><a href="examcoach.html">Examination Coach</a></div>
+  <div class="foot-col"><h4>Contact</h4><a href="mailto:info@amac-medical.com">info@amac-medical.com</a></div>
+</div><div class="foot-btm">&copy; 2026 A. Mansour &amp; Colleagues (AMaC). All rights reserved.</div></footer>
+<script>
+const CONDITIONS={"gold_script": "For safety reasons you should avoid driving for the recommended period. It is your legal responsibility to inform the DVLA, and I will document that we discussed this today.", "safe_rule": "S-H-D-V-S: Seizure · Hypoglycaemia risk · Dangerous arrhythmia · Visual field defect · Sleep apnoea — always notify DVLA", "conditions": [{"cat": "Neurological", "condition": "First unprovoked seizure", "stop": "6 months", "notify": true, "notes": "Further seizures reset the period. 12 months if nocturnal only."}, {"cat": "Neurological", "condition": "Epilepsy / recurrent seizures", "stop": "12 months seizure-free", "notify": true, "notes": "Must be seizure-free for the full period."}, {"cat": "Neurological", "condition": "Single TIA", "stop": "1 month", "notify": false, "notes": "Notify only if deficits persist beyond 1 month."}, {"cat": "Neurological", "condition": "Stroke with residual deficit", "stop": "1 month minimum", "notify": true, "notes": "Notify if any residual neurological deficit."}, {"cat": "Neurological", "condition": "Cauda equina syndrome", "stop": "Until recovered", "notify": true, "notes": "Assess functional ability before resuming."}, {"cat": "Cardiovascular", "condition": "MI treated with PCI / stent", "stop": "1 week", "notify": false, "notes": "If recovery uncomplicated and symptom-free."}, {"cat": "Cardiovascular", "condition": "MI without PCI or complicated", "stop": "4 weeks", "notify": false, "notes": "Longer if complications occur."}, {"cat": "Cardiovascular", "condition": "Elective PCI / stent", "stop": "1 week", "notify": false, "notes": "Must be symptom-free."}, {"cat": "Cardiovascular", "condition": "CABG surgery", "stop": "4 weeks", "notify": false, "notes": "Must be clinically stable."}, {"cat": "Cardiovascular", "condition": "Pacemaker implantation", "stop": "1 week", "notify": true, "notes": "Must notify DVLA after implantation."}, {"cat": "Cardiovascular", "condition": "ICD implantation", "stop": "6 months", "notify": true, "notes": "ICD for sustained VT/VF — strict rules apply."}, {"cat": "Cardiovascular", "condition": "Arrhythmia causing syncope", "stop": "Until controlled", "notify": true, "notes": "Must notify DVLA regardless of duration."}, {"cat": "Syncope", "condition": "Single unexplained syncope", "stop": "4 weeks", "notify": false, "notes": "No notification required if single episode."}, {"cat": "Syncope", "condition": "Recurrent unexplained syncope", "stop": "Until cause identified", "notify": true, "notes": "Must notify DVLA."}, {"cat": "Syncope", "condition": "Vasovagal (simple faint) with warning", "stop": "None if prodrome present", "notify": false, "notes": "Clear warning symptoms = may continue driving."}, {"cat": "Diabetes", "condition": "Insulin-treated diabetes", "stop": "Ongoing restriction", "notify": true, "notes": "Must monitor glucose before and every 2 hours while driving."}, {"cat": "Diabetes", "condition": "Impaired hypoglycaemia awareness", "stop": "Until awareness restored", "notify": true, "notes": "Must not drive at all until awareness recovered."}, {"cat": "Diabetes", "condition": "Severe hypo requiring assistance", "stop": "Until controlled", "notify": true, "notes": "Must inform DVLA of episode."}, {"cat": "Diabetes", "condition": "Non-insulin diabetes (diet/tablets only)", "stop": "None usually", "notify": false, "notes": "Notify only if causing problems affecting safe driving."}, {"cat": "Visual & Other", "condition": "Visual field defect", "stop": "Until assessed", "notify": true, "notes": "Any field defect affecting safe driving — notify DVLA."}, {"cat": "Visual & Other", "condition": "Obstructive sleep apnoea with sleepiness", "stop": "Until controlled", "notify": true, "notes": "Must not drive until adequately treated."}, {"cat": "Visual & Other", "condition": "Alcohol dependence", "stop": "1 year abstinence for Group 2", "notify": true, "notes": "Notify DVLA. Group 2 rules are stricter."}, {"cat": "Visual & Other", "condition": "Sedating medications", "stop": "If impairing ability", "notify": false, "notes": "Advise not to drive if medication is sedating."}, {"cat": "Visual & Other", "condition": "General anaesthetic / sedation", "stop": "48 hours", "notify": false, "notes": "Minor procedures without sedation — safe when recovered."}]}.conditions;
+let activeCat='all';
+
+function filterCat(cat,btn){
+  activeCat=cat;
+  document.querySelectorAll('.fbtn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  renderTable();
+}
+
+function renderTable(){
+  const q=(document.getElementById('searchBox').value||'').toLowerCase();
+  const list=CONDITIONS.filter(c=>{
+    const catMatch=activeCat==='all'||c.cat===activeCat;
+    const qMatch=!q||c.condition.toLowerCase().includes(q)||c.notes.toLowerCase().includes(q);
+    return catMatch&&qMatch;
+  });
+  
+  const byCat={};
+  list.forEach(c=>{if(!byCat[c.cat])byCat[c.cat]=[];byCat[c.cat].push(c);});
+  
+  let html='';
+  Object.entries(byCat).forEach(([cat,items])=>{
+    html+=`<div class="table-wrap">
+      <div class="table-hdr"><span class="table-hdr-title">${cat}</span><span class="table-hdr-count">${items.length} condition${items.length!==1?'s':''}</span></div>
+      <table class="table">
+        <thead><tr><th>Condition</th><th>Stop Driving</th><th>Notify DVLA?</th><th>Key Points</th></tr></thead>
+        <tbody>
+          ${items.map(c=>`<tr>
+            <td style="font-weight:500">${c.condition}</td>
+            <td class="stop-cell">${c.stop}</td>
+            <td>${c.notify?'<span class="notify-yes">✅ YES</span>':'<span class="notify-no">❌ NO</span>'}</td>
+            <td class="notes-cell">${c.notes}</td>
+          </tr>`).join('')}
+        </tbody>
+      </table>
+    </div>`;
+  });
+  
+  document.getElementById('tableContainer').innerHTML=html||'<p style="color:var(--muted);text-align:center;padding:40px;font-size:14px;">No conditions match.</p>';
+}
+
+renderTable();
+</script>
+</body>
+</html>

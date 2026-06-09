@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Exam Morning — AMaC PLAB 2</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0d2247;--navy-deep:#091629;--gold:#c9a227;--gold-soft:#e0c45a;--cream:#f7f4ec;--ink:#1a1d24;--muted:#5d6470;--line:#e4ddcd;--fail:#c0392b;--pass:#1b6b3a;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Outfit',sans-serif;background:var(--navy-deep);color:#fff;-webkit-font-smoothing:antialiased;min-height:100vh;}
+.page{max-width:640px;margin:0 auto;padding:28px 20px 48px;}
+.top-brand{text-align:center;padding:20px 0 8px;}
+.brand-name{font-family:'Fraunces',serif;font-size:20px;color:var(--gold-soft);letter-spacing:3px;}
+.date-badge{font-size:11px;color:rgba(255,255,255,0.65);letter-spacing:1px;text-transform:uppercase;margin-top:3px;}
+.hero-line{text-align:center;padding:16px 0 24px;border-bottom:1px solid rgba(255,255,255,0.08);}
+.hero-line h1{font-family:'Fraunces',serif;font-size:clamp(26px,8vw,38px);color:#fff;font-weight:500;line-height:1.1;}
+.hero-line h1 em{color:var(--gold-soft);font-style:italic;}
+.hero-line p{font-size:13px;color:rgba(255,255,255,0.4);margin-top:6px;font-weight:300;}
+.safe-banner{background:rgba(201,162,39,0.12);border:1px solid rgba(201,162,39,0.25);border-radius:8px;padding:12px 16px;margin:20px 0;text-align:center;}
+.sb-rule{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--gold-soft);margin-bottom:6px;}
+.sb-text{font-family:'Fraunces',serif;font-style:italic;font-size:15px;color:#fff;line-height:1.5;}
+.section-label{font-size:16px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--gold-soft);margin:28px 0 14px;display:flex;align-items:center;gap:10px;}
+.section-label::after{content:'';flex:1;height:1px;background:rgba(201,162,39,0.3);}
+.anchor-item{display:flex;gap:12px;align-items:flex-start;padding:11px 14px;border-radius:8px;margin-bottom:8px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);transition:all .2s;cursor:default;}
+.anchor-item:hover{background:rgba(201,162,39,0.08);border-color:rgba(201,162,39,0.2);}
+.anchor-num{font-family:'Fraunces',serif;font-size:18px;color:var(--gold-soft);font-weight:500;flex-shrink:0;width:24px;line-height:1.4;}
+.anchor-text{font-size:14px;color:rgba(255,255,255,0.85);line-height:1.6;font-weight:300;}
+.script-item{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;padding:12px 14px;margin-bottom:8px;}
+.sl-label{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--gold-soft);margin-bottom:5px;}
+.sl-text{font-family:'Fraunces',serif;font-style:italic;font-size:13.5px;color:rgba(255,255,255,0.85);line-height:1.6;}
+.crit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:20px;}
+.crit-item{background:rgba(192,57,43,0.12);border:1px solid rgba(192,57,43,0.2);border-radius:6px;padding:8px 10px;text-align:center;}
+.ci-test{font-size:12px;font-weight:700;color:#fca5a5;margin-bottom:2px;}
+.ci-vals{font-size:11px;color:rgba(255,255,255,0.5);line-height:1.4;}
+.final-line{background:linear-gradient(135deg,rgba(201,162,39,0.15),rgba(201,162,39,0.05));border:1px solid rgba(201,162,39,0.2);border-radius:10px;padding:20px;text-align:center;margin-top:24px;}
+.fl-text{font-family:'Fraunces',serif;font-size:18px;color:var(--gold-soft);line-height:1.5;}
+.fl-sub{font-size:12px;color:rgba(255,255,255,0.65);margin-top:8px;font-weight:300;}
+.share-btn{display:block;width:100%;background:linear-gradient(135deg,#d4a820,#c9a227);color:var(--navy-deep);border:none;font-family:'Outfit',sans-serif;font-size:13px;font-weight:700;padding:14px;border-radius:6px;cursor:pointer;margin-top:16px;letter-spacing:.5px;transition:opacity .2s;}
+.share-btn:hover{opacity:.9;}
+.nav-home{display:flex;align-items:center;justify-content:space-between;padding-bottom:12px;}
+.home-link{font-size:12px;color:rgba(255,255,255,0.35);text-decoration:none;transition:color .2s;}
+.home-link:hover{color:var(--gold-soft);}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="nav-home">
+    <a href="index.html" class="home-link">← AMaC Home</a>
+    <a href="tools.html" class="home-link">All Tools</a>
+  </div>
+  <div class="top-brand">
+    <div class="brand-name">AMaC</div>
+    <div class="date-badge" id="examDate">Exam Day</div>
+  </div>
+  <div class="hero-line">
+    <h1>Exam <em>Morning</em> Card</h1>
+    <p>Read this. Nothing else. No new content. No revision. Just anchors.</p>
+  </div>
+  <div class="safe-banner">
+    <div class="sb-rule">SAFE Rule</div>
+    <div class="sb-text">Safety first · Ask ICE · Flag emergencies · Explain &amp; safety-net</div>
+  </div>
+  <div class="section-label">10 Anchors — if you forget everything else</div>
+  <div id="anchorList"></div>
+  <div class="section-label">5 Scripts — ready in your mouth</div>
+  <div id="scriptList"></div>
+  <div class="section-label">⚡ Critical Values — automatic escalation</div>
+  <div class="crit-grid" id="critGrid"></div>
+  <div class="final-line">
+    <div class="fl-text">You are ready.<br>You have the system.<br>Trust it.</div>
+    <div class="fl-sub">The examiner wants you to pass. Every station is independent. Carry nothing forward.</div>
+  </div>
+  <button class="share-btn" onclick="share()">Share this card with a colleague</button>
+</div>
+<script>
+const EM={"anchors": [{"n": 1, "text": "Every station: Introduce → ICE → Empathy → Safety-net → Document. In that order. Every time."}, {"n": 2, "text": "Unwell patient: STOP the consultation. ABCDE. Call for help. History can wait."}, {"n": 3, "text": "Silence fails stations. Verbalise your thinking even if uncertain: \"Let me think through this systematically...\""}, {"n": 4, "text": "ICE is not optional. \"What do you think is going on? What worries you most? What were you hoping I could do?\" Ask early. Revisit once."}, {"n": 5, "text": "Safety-net is not optional. \"Return if symptoms worsen, new symptoms appear, or you are worried. Do not wait.\" Personalise it."}, {"n": 6, "text": "MTX = once weekly. Insulin = \"units\" in full. Prescribe despite allergy = instant fail. These three are the prescribing exam in one line."}, {"n": 7, "text": "After a bad station: reset. Breathe. Read the next brief carefully. Each station is independent. Carry nothing forward."}, {"n": 8, "text": "Finish early? Safety-net again. Ask \"Is there anything else?\" Offer written information. Wash hands. Do not leave in silence."}, {"n": 9, "text": "\"I don't know the dose — I would check the BNF and confirm with my senior before prescribing\" is a passing answer. Guessing is not."}, {"n": 10, "text": "You are ready. You have the system. Trust it. The examiner wants you to pass."}], "scripts": [{"label": "Open", "text": "Hello, I'm Dr [Name], one of the doctors here. Is it okay if I call you [Name]? I've got about 8 minutes with you today — I'd like to understand what's brought you in. What do you think is going on?"}, {"label": "ICE", "text": "What do you think might be causing this? Is there anything in particular worrying you? What were you hoping I could do for you today?"}, {"label": "Empathy", "text": "That sounds really difficult. Thank you for sharing that with me. [Pause. Let it land.]"}, {"label": "Safety-net", "text": "If your symptoms worsen, new symptoms appear, or you're worried at any point — please come back immediately. Don't wait."}, {"label": "Escalate", "text": "I'm concerned about [X]. I would escalate this to my senior immediately and not send this patient home."}], "critical_values": [{"test": "K⁺", "low": "<2.5", "high": ">6.5", "action": "IV replacement or IV calcium + insulin-glucose"}, {"test": "Na⁺", "low": "<120", "high": ">155", "action": "Urgent senior review — slow correction"}, {"test": "Glucose", "low": "<3", "high": ">25", "action": "IV dextrose or insulin — check DKA/HHS"}, {"test": "Lactate", "low": null, "high": ">4", "action": "ICU escalation — septic shock"}, {"test": "pH", "low": "<7.2", "high": ">7.55", "action": "ICU review — ventilatory support"}, {"test": "Hb", "low": "<70", "high": null, "action": "Transfusion threshold — senior decision"}, {"test": "PaO₂", "low": "<8 kPa", "high": null, "action": "High-flow oxygen, escalate"}, {"test": "Neutrophils", "low": "<0.5", "high": null, "action": "Neutropenic sepsis protocol"}, {"test": "Platelets", "low": "<20", "high": null, "action": "Haematology urgent review"}], "safe_rule": "Safety first · Ask ICE and assess risk · Flag emergencies · Explain and safety-net"};
+document.getElementById('examDate').textContent=new Date().toLocaleDateString('en-GB',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
+document.getElementById('anchorList').innerHTML=EM.anchors.map(a=>`<div class="anchor-item"><span class="anchor-num">${a.n}</span><span class="anchor-text">${a.text}</span></div>`).join('');
+document.getElementById('scriptList').innerHTML=EM.scripts.map(s=>`<div class="script-item"><div class="sl-label">${s.label}</div><div class="sl-text">${s.text}</div></div>`).join('');
+document.getElementById('critGrid').innerHTML=EM.critical_values.map(c=>`<div class="crit-item"><div class="ci-test">${c.test}</div><div class="ci-vals">${[c.low&&'Low: '+c.low,c.high&&'High: '+c.high].filter(Boolean).join(' / ')}</div></div>`).join('');
+function share(){if(navigator.share){navigator.share({title:'AMaC Exam Morning Card',text:'PLAB 2 exam morning — 10 anchors, 5 scripts, critical values',url:window.location.href});}else{navigator.clipboard.writeText(window.location.href).then(()=>alert('Link copied to clipboard!'));}}
+</script>
+</body>
+</html>

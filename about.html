@@ -1,0 +1,122 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>About AMaC — A. Mansour & Colleagues</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0d2247;--navy-deep:#091629;--gold:#c9a227;--gold-soft:#e0c45a;--cream:#f7f4ec;--paper:#fffdf8;--ink:#1a1d24;--muted:#5d6470;--line:#e4ddcd;--v1:#1B3A6B;--v2:#7a1f2b;--v3:#1f5d4c;}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{font-family:'Outfit',sans-serif;background:var(--paper);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;}
+h1,h2,h3,.serif{font-family:'Fraunces',serif;}
+nav{position:sticky;top:0;z-index:100;background:rgba(13,34,71,0.97);backdrop-filter:blur(8px);border-bottom:1px solid rgba(201,162,39,0.25);}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 32px;height:72px;display:flex;align-items:center;justify-content:space-between;}
+.brand{font-family:'Fraunces',serif;font-size:26px;font-weight:700;color:var(--gold-soft);letter-spacing:3px;text-decoration:none;}
+.brand span{color:var(--gold-soft);}
+.nav-links{display:flex;gap:30px;list-style:none;align-items:center;}
+.nav-links a{color:#e8e3d6;text-decoration:none;font-size:14px;letter-spacing:.5px;transition:color .25s;position:relative;}
+.nav-links a.active{color:var(--gold-soft);}
+.nav-links a::after{content:'';position:absolute;left:0;bottom:-6px;width:0;height:2px;background:var(--gold);transition:width .3s;}
+.nav-links a:hover{color:#fff;}.nav-links a:hover::after{width:100%;}
+.nav-cta{background:var(--gold);color:var(--navy-deep)!important;padding:10px 20px;border-radius:2px;font-weight:600;font-size:13px;}
+.nav-cta::after{display:none!important;}.nav-cta:hover{background:var(--gold-soft);}
+.page-hero{background:radial-gradient(circle at 80% -20%,rgba(201,162,39,0.15),transparent 50%),linear-gradient(160deg,var(--navy),var(--navy-deep));color:#fff;padding:72px 32px 64px;text-align:center;position:relative;overflow:hidden;}
+.page-hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.04) 1px,transparent 1px);background-size:22px 22px;}
+.page-hero .inner{max-width:920px;margin:0 auto;position:relative;}
+.page-hero .kick{font-size:12px;letter-spacing:4px;text-transform:uppercase;color:var(--gold-soft);border:1px solid rgba(201,162,39,0.4);padding:7px 16px;border-radius:2px;display:inline-block;margin-bottom:22px;}
+.page-hero h1{font-size:clamp(32px,5vw,52px);font-weight:500;letter-spacing:-.5px;line-height:1.1;}
+.page-hero h1 em{font-style:italic;color:var(--gold-soft);}
+.page-hero p{margin:18px auto 0;color:#dde2ec;font-weight:300;font-size:clamp(15px,2vw,18px);max-width:62ch;}
+.wrap{max-width:1200px;margin:0 auto;padding:72px 32px;}
+.btn{padding:14px 28px;border-radius:2px;font-size:14px;font-weight:600;letter-spacing:.5px;text-decoration:none;display:inline-block;transition:transform .2s,box-shadow .2s,background .2s;}
+.btn-gold{background:var(--gold);color:var(--navy-deep);}
+.btn-gold:hover{background:var(--gold-soft);transform:translateY(-2px);box-shadow:0 10px 26px rgba(201,162,39,0.3);}
+.btn-navy{background:var(--navy);color:#fff;}.btn-navy:hover{background:var(--gold);color:var(--navy-deep);transform:translateY(-2px);}
+.btn-ghost{background:transparent;color:var(--navy);border:1px solid var(--line);}.btn-ghost:hover{border-color:var(--gold);}
+footer{background:var(--navy-deep);color:#c4ccd8;padding:54px 32px 28px;}
+.foot-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:30px;border-bottom:1px solid rgba(255,255,255,0.08);padding-bottom:30px;}
+.foot-brand{font-family:'Fraunces',serif;font-size:24px;color:var(--gold-soft);letter-spacing:2px;}
+.foot-brand span{color:var(--gold-soft);}
+.foot-brand p{font-size:13px;color:#aeb6c6;margin-top:10px;max-width:38ch;font-weight:300;}
+.foot-col h4{color:#fff;font-size:13px;letter-spacing:1px;text-transform:uppercase;margin-bottom:14px;}
+.foot-col a{display:block;color:#c4ccd8;text-decoration:none;font-size:14px;margin-bottom:9px;font-weight:300;transition:.2s;}
+.foot-col a:hover{color:var(--gold-soft);}
+.foot-bottom{max-width:1200px;margin:24px auto 0;font-size:12.5px;color:#9aa3b2;text-align:center;}
+.trustband{background:var(--navy);color:#fff;text-align:center;padding:40px 32px;}
+.trustband p{max-width:60ch;margin:0 auto;font-weight:300;color:#dde2ec;font-size:15px;}
+.trustband .slogan{font-family:'Fraunces',serif;font-style:italic;color:var(--gold-soft);font-size:clamp(17px,2.4vw,22px);margin-bottom:10px;}
+@media(max-width:820px){.nav-links{display:none;}}
+
+.about-body{max-width:780px;margin:0 auto;}
+.about-body p{font-size:17px;color:var(--ink);font-weight:300;margin-bottom:22px;}
+.lead-statement{text-align:center;max-width:820px;margin:0 auto 56px;}
+.lead-statement h2{font-family:'Fraunces',serif;font-size:clamp(24px,3.4vw,34px);color:var(--navy);font-weight:500;line-height:1.25;margin-bottom:18px;}
+.lead-statement h2 em{color:var(--v2);font-style:italic;}
+.lead-statement p{font-size:17px;color:var(--ink);font-weight:300;}
+.whyfail{background:var(--navy);color:#fff;border-radius:12px;padding:44px;margin:0 auto 56px;max-width:900px;}
+.whyfail h3{font-family:'Fraunces',serif;font-size:26px;color:var(--gold-soft);font-weight:500;margin-bottom:14px;}
+.whyfail p{color:#dde2ec;font-weight:300;font-size:16px;margin-bottom:14px;}
+.whyfail .big{font-size:19px;color:#fff;}
+.method{max-width:900px;margin:0 auto 56px;}
+.method h3{text-align:center;font-size:26px;color:var(--navy);font-weight:500;margin-bottom:8px;}
+.method .sub{text-align:center;color:var(--muted);font-weight:300;margin-bottom:30px;}
+.qgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;}
+.qbox{border:1px solid var(--line);border-radius:10px;padding:22px 16px;text-align:center;background:var(--paper);}
+.qbox .n{font-family:'Fraunces',serif;font-size:22px;color:var(--gold);}
+.qbox p{font-size:13px;color:var(--ink);font-weight:400;margin-top:8px;}
+.scale{max-width:900px;margin:0 auto 56px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px;text-align:center;}
+.scale .s{border:1px solid var(--line);border-radius:10px;padding:26px 16px;background:var(--paper);}
+.scale .s .num{font-family:'Fraunces',serif;font-size:30px;color:var(--navy);}
+.scale .s .lbl{font-size:13px;color:var(--muted);margin-top:6px;}
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:900px;margin:0 auto;}
+.pillar{text-align:center;padding:28px 20px;border:1px solid var(--line);border-radius:10px;background:var(--paper);}
+.pillar .n{font-family:'Fraunces',serif;font-size:30px;color:var(--gold);}
+.pillar h4{font-size:16px;color:var(--navy);margin:8px 0 6px;font-weight:600;}
+.pillar p{font-size:13.5px;color:var(--muted);font-weight:300;margin:0;}
+@media(max-width:760px){.qgrid{grid-template-columns:1fr 1fr;}.scale{grid-template-columns:1fr;}.pillars{grid-template-columns:1fr;}}
+</style></head><body><nav><div class="nav-inner"><a href="index.html" class="brand">A<span>MaC</span></a>
+<ul class="nav-links"><li><a href="books.html">The Master Series</a></li>
+<li><a href="tools.html">Study Tools</a></li><li><a href="about.html" class="active">About</a></li>
+<li><a href="contact.html" class="nav-cta">Get Started</a></li></ul></div></nav><header class="page-hero"><div class="inner"><span class="kick">About AMaC</span>
+<h1>Most resources teach medicine. <em>AMaC teaches performance.</em></h1>
+<p>A. Mansour &amp; Colleagues (AMaC) is a medical-education platform with one purpose: helping international medical graduates pass the PLAB 2 OSCE by training how they perform, not just what they know.</p></div></header>
+<div class="wrap">
+<div class="lead-statement"><h2>In the OSCE, candidates are not assessed on how much they know — they are assessed on how <em>safely, clearly and confidently</em> they demonstrate it under exam conditions.</h2>
+<p>Every AMaC resource is built from the examiner's perspective: what earns marks, what loses marks, what triggers safety concerns, and what separates a pass from a fail. From the Master Series and interactive flashcards to full mock circuits, AMaC provides a complete preparation pathway designed around the UKMLA standard.</p></div>
+
+<div class="whyfail"><h3>Why candidates fail</h3>
+<p class="big">Most candidates do not fail PLAB 2 because they lack medical knowledge.</p>
+<p>They fail because they miss safety cues, communicate poorly under pressure, lose structure, or fail to verbalise what the examiner needs to hear. AMaC is built specifically to fix those failures — turning capable doctors into confident, exam-ready candidates.</p></div>
+
+<div class="method"><h3>The examiner-led method</h3>
+<p class="sub">Many resources claim to be examiner-focused. Here is what it actually means at AMaC. Every chapter is built around five questions:</p>
+<div class="qgrid">
+<div class="qbox"><div class="n">1</div><p>What is the examiner looking for?</p></div>
+<div class="qbox"><div class="n">2</div><p>What earns marks?</p></div>
+<div class="qbox"><div class="n">3</div><p>What loses marks?</p></div>
+<div class="qbox"><div class="n">4</div><p>What causes safety failures?</p></div>
+<div class="qbox"><div class="n">5</div><p>What should the candidate actually say?</p></div>
+</div></div>
+
+<div class="scale">
+<div class="s"><div class="num">3</div><div class="lbl">Volume Master Series</div></div>
+<div class="s"><div class="num">150+</div><div class="lbl">Examiner-focused chapters</div></div>
+<div class="s"><div class="num">Full</div><div class="lbl">OSCE station library</div></div>
+</div>
+<div class="scale">
+<div class="s"><div class="num">1,000+</div><div class="lbl">Flashcards (in development)</div></div>
+<div class="s"><div class="num">Mock</div><div class="lbl">Exam circuits</div></div>
+<div class="s"><div class="num">Digital</div><div class="lbl">Interactive revision tools</div></div>
+</div>
+
+<div class="pillars">
+<div class="pillar"><div class="n">01</div><h4>Think Like an Examiner</h4><p>Understand exactly what earns marks and what fails a station.</p></div>
+<div class="pillar"><div class="n">02</div><h4>Speak Like a Doctor</h4><p>Natural, safe, patient-centred communication that scores.</p></div>
+<div class="pillar"><div class="n">03</div><h4>Perform With Confidence</h4><p>Structured, rehearsed delivery for every station type.</p></div>
+</div>
+<div style="text-align:center;margin-top:48px;"><a href="books.html" class="btn btn-navy">Explore the Series</a></div>
+</div>
+<div class="trustband"><p class="slogan">Think Like an Examiner · Speak Like a Doctor · Perform With Confidence</p>
+<p>Built for international medical graduates preparing for the PLAB 2 OSCE and the UKMLA standard.</p></div><footer><div class="foot-inner">
+<div class="foot-brand">A<span>MaC</span><p>A. Mansour &amp; Colleagues — examiner-led preparation for the PLAB 2 OSCE and the UKMLA standard. Making the difficult, easy.</p></div>
+<div class="foot-col"><h4>Explore</h4><a href="books.html">The Master Series</a><a href="tools.html">Study Tools</a><a href="about.html">About</a></div>
+<div class="foot-col"><h4>The Series</h4><a href="books.html">Vol One · Foundations</a><a href="books.html">Vol Two · Clinical Systems</a><a href="books.html">Vol Three · Advanced Practice</a></div>
+<div class="foot-col"><h4>Contact</h4><a href="mailto:info@amac-medical.com">Email AMaC</a><a href="contact.html">Get in touch</a></div>
+</div><div class="foot-bottom">© 2026 A. Mansour &amp; Colleagues (AMaC). All rights reserved. · Think Like an Examiner · Speak Like a Doctor · Perform With Confidence</div></footer></body></html>

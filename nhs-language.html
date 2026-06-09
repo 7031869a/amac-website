@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>NHS Language Coach — AMaC PLAB 2</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0d2247;--navy-deep:#091629;--gold:#c9a227;--gold-soft:#e0c45a;--cream:#f7f4ec;--ink:#1a1d24;--muted:#5d6470;--line:#e4ddcd;--fail:#c0392b;--pass:#1b6b3a;}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--ink);-webkit-font-smoothing:antialiased;}
+nav{position:sticky;top:0;z-index:100;background:linear-gradient(180deg,#0f2850,#0d2247);border-bottom:1px solid rgba(201,162,39,0.25);box-shadow:0 3px 16px rgba(9,22,41,0.5);}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 28px;height:64px;display:flex;align-items:center;justify-content:space-between;}
+.brand{font-family:'Fraunces',serif;font-size:24px;font-weight:700;color:var(--gold-soft);letter-spacing:3px;text-decoration:none;}
+.nav-links{display:flex;gap:24px;list-style:none;align-items:center;}
+.nav-links a{color:#dde2ec;text-decoration:none;font-size:13px;}.nav-links a:hover{color:#fff;}
+.nav-cta{background:linear-gradient(135deg,#d4a820,#c9a227)!important;color:var(--navy-deep)!important;padding:8px 18px;border-radius:2px;font-weight:700;font-size:12px;}
+.hero{background:linear-gradient(155deg,#0d2247,#091629);color:#fff;padding:52px 28px 44px;text-align:center;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.02) 1px,transparent 1px);background-size:20px 20px;}
+.ph{max-width:800px;margin:0 auto;position:relative;}
+.kick{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--gold-soft);border:1px solid rgba(201,162,39,0.4);padding:5px 14px;border-radius:2px;display:inline-block;margin-bottom:16px;}
+.hero h1{font-family:'Fraunces',serif;font-size:clamp(24px,5vw,42px);font-weight:500;line-height:1.1;}
+.hero h1 em{font-style:italic;color:var(--gold-soft);}
+.hero p{margin:12px auto 0;color:#d0d6e8;font-weight:300;font-size:15px;max-width:56ch;line-height:1.65;}
+.controls{background:#fff;border-bottom:1px solid var(--line);padding:12px 28px;position:sticky;top:64px;z-index:90;box-shadow:0 2px 6px rgba(13,34,71,0.06);}
+.ci{max-width:960px;margin:0 auto;display:flex;gap:8px;flex-wrap:wrap;align-items:center;}
+.search{flex:1;min-width:200px;padding:9px 14px;border:1px solid var(--line);border-radius:6px;font-family:'Outfit',sans-serif;font-size:14px;background:#fff;}
+.search:focus{outline:none;border-color:var(--gold);}
+.fbtn{background:linear-gradient(135deg,#0f2850,#0d2247);border:1.5px solid rgba(201,162,39,0.3);padding:7px 18px;border-radius:20px;font-size:12px;font-family:'Outfit',sans-serif;cursor:pointer;font-weight:600;color:var(--gold-soft);transition:all .22s;box-shadow:0 2px 8px rgba(9,22,41,0.3);letter-spacing:.3px;}
+.fbtn:hover{background:linear-gradient(135deg,#1b3a6b,#152d52);border-color:rgba(201,162,39,0.6);box-shadow:0 4px 16px rgba(9,22,41,0.4);transform:translateY(-1px);color:#fff;}.fbtn.active{background:linear-gradient(135deg,#0d2247,#091629);border-color:var(--gold);box-shadow:0 4px 18px rgba(201,162,39,0.25);color:var(--gold-soft);font-weight:700;transform:translateY(-1px);border-width:2px;}
+.count{font-size:12px;color:var(--muted);margin-left:auto;}
+.wrap{max-width:960px;margin:0 auto;padding:28px 28px 64px;}
+.phrase-card{background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden;margin-bottom:14px;box-shadow:0 2px 6px rgba(13,34,71,0.07);transition:box-shadow .2s;}
+.phrase-card:hover{box-shadow:0 6px 20px rgba(13,34,71,0.12);}
+.pc-top{display:grid;grid-template-columns:1fr 1fr;gap:0;}
+.pc-avoid{padding:14px 16px;background:#fdf0ee;border-right:1px solid var(--line);}
+.pc-say{padding:14px 16px;background:#f2fdf6;}
+.pc-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:6px;display:flex;align-items:center;gap:6px;}
+.label-avoid{color:var(--fail);}
+.label-say{color:var(--pass);}
+.pc-text{font-family:'Fraunces',serif;font-style:italic;font-size:14px;line-height:1.55;}
+.avoid-text{color:#7a1520;}
+.say-text{color:#0f3a20;}
+.pc-bottom{padding:9px 16px;background:#f8f7f3;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;}
+.pc-why{font-size:12px;color:var(--muted);font-style:italic;}
+.pc-domain{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;padding:3px 9px;border-radius:10px;background:rgba(27,58,107,0.08);color:var(--navy);}
+.std-box{background:linear-gradient(135deg,#0f2850,#0d2247);border-radius:10px;padding:18px 22px;margin-bottom:24px;}
+.std-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--gold-soft);margin-bottom:8px;}
+.std-text{font-family:'Fraunces',serif;font-style:italic;font-size:16px;color:#fff;line-height:1.5;}
+.trustband{background:var(--navy);color:#fff;text-align:center;padding:34px 28px;}
+.trustband .slogan{font-family:'Fraunces',serif;font-style:italic;color:var(--gold-soft);font-size:18px;margin-bottom:8px;}
+.trustband p{color:#dde2ec;font-weight:300;font-size:14px;max-width:54ch;margin:0 auto;}
+footer{background:var(--navy-deep);color:#c4ccd8;padding:36px 28px 20px;}
+.foot-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px;border-bottom:1px solid rgba(255,255,255,0.07);padding-bottom:20px;}
+.foot-brand{font-family:'Fraunces',serif;font-size:22px;color:var(--gold-soft);letter-spacing:2px;}
+.foot-p{font-size:12px;color:#8a96b0;margin-top:5px;max-width:32ch;font-weight:300;line-height:1.5;}
+.foot-col h4{color:#fff;font-size:11px;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;font-weight:600;}
+.foot-col a{display:block;color:#8a96b0;text-decoration:none;font-size:12px;margin-bottom:6px;}
+.foot-col a:hover{color:var(--gold-soft);}
+.foot-btm{max-width:1200px;margin:14px auto 0;font-size:11px;color:#4a5568;text-align:center;}
+@media(max-width:700px){.nav-links{display:none;}.wrap{padding:18px 14px 48px;}.pc-top{grid-template-columns:1fr;}.pc-avoid{border-right:none;border-bottom:1px solid var(--line);}}
+</style>
+</head>
+<body>
+<nav><div class="nav-inner"><a href="index.html" class="brand">AMaC</a>
+  <ul class="nav-links"><li><a href="books.html">The Master Series</a></li><li><a href="tools.html">Study Tools</a></li><li><a href="contact.html" class="nav-cta">Get Started</a></li></ul>
+</div></nav>
+<header class="hero"><div class="ph">
+  <span class="kick">App 1F · Volume 1 · IMGs</span>
+  <h1>NHS <em>Language Coach</em></h1>
+  <p>25 phrases that mark you as "not NHS" — with the correct alternative and why it matters. Every one is a real phrase used by IMG candidates in PLAB 2 circuits.</p>
+</div></header>
+<div class="controls"><div class="ci">
+  <input class="search" id="searchBox" placeholder="Search phrase..." oninput="render()">
+  <button class="fbtn active" onclick="filterDom('all',this)">All</button>
+  <button class="fbtn" onclick="filterDom('Clinical Language',this)">Clinical</button>
+  <button class="fbtn" onclick="filterDom('Patient-Centred Language',this)">Patient-Centred</button>
+  <button class="fbtn" onclick="filterDom('Shared Decision-Making',this)">Shared Decisions</button>
+  <button class="fbtn" onclick="filterDom('Empathy',this)">Empathy</button>
+  <button class="fbtn" onclick="filterDom('Safety Language',this)">Safety</button>
+  <button class="fbtn" onclick="filterDom('Professionalism',this)">Professionalism</button>
+  <span class="count" id="countLbl"></span>
+</div></div>
+<div class="wrap">
+  <div class="std-box">
+    <div class="std-label">The NHS Communication Standard</div>
+    <div class="std-text">"Warm, specific, collaborative, and honest — with the patient's perspective at the centre of every sentence."</div>
+  </div>
+  <div id="phraseList"></div>
+</div>
+<div class="trustband"><p class="slogan">Think Like an Examiner · Speak Like a Doctor · Perform With Confidence</p><p>From Appendix 1F of the AMaC Master Series — NHS communication language for IMG candidates.</p></div>
+<footer><div class="foot-inner">
+  <div><div class="foot-brand">AMaC</div><p class="foot-p">A. Mansour &amp; Colleagues.</p></div>
+  <div class="foot-col"><h4>Study Tools</h4><a href="exam-morning.html">Exam Morning Card</a><a href="station-planner.html">Station Planner</a><a href="fail-recovery.html">Fail Recovery</a></div>
+  <div class="foot-col"><h4>Contact</h4><a href="mailto:info@amac-medical.com">info@amac-medical.com</a></div>
+</div><div class="foot-btm">&copy; 2026 A. Mansour &amp; Colleagues (AMaC). All rights reserved.</div></footer>
+<script>
+const PHRASES=[{"avoid": "\"I am suspecting...\"", "why": "Non-NHS grammar — sounds unnatural", "say": "\"I think this may be...\" or \"My working diagnosis is...\"", "domain": "Clinical Language"}, {"avoid": "\"Kindly...\"", "why": "South Asian formal register — not used in NHS", "say": "\"Please...\" or state the request directly", "domain": "Professional Register"}, {"avoid": "\"Do the needful\"", "why": "Not used in NHS English", "say": "\"Please can you...\" or name the specific action", "domain": "Professional Register"}, {"avoid": "\"I will refer you to the specialist\"", "why": "Overly formal — sounds dismissive of the patient", "say": "\"I'd like to involve a specialist who can help with this\"", "domain": "Patient-Centred Language"}, {"avoid": "\"The patient is complaining of...\"", "why": "\"Complaining\" sounds dismissive in UK culture", "say": "\"The patient presents with...\" or \"reports...\"", "domain": "Documentation Language"}, {"avoid": "\"I will prescribe you medicine\"", "why": "Vague — examiners expect drug name and reason", "say": "\"I'd like to prescribe [drug name] for [reason]\"", "domain": "Clinical Language"}, {"avoid": "\"No issues\"", "why": "Informal and dismissive as a clinical statement", "say": "\"Examination was unremarkable\" or \"findings were normal\"", "domain": "Documentation Language"}, {"avoid": "\"I will advise you to...\"", "why": "Directive — fails shared decision-making domain", "say": "\"I'd recommend... but ultimately this is your decision\"", "domain": "Patient-Centred Language"}, {"avoid": "\"You should...\"", "why": "Directive — fails shared decision-making domain", "say": "\"One option would be... what do you think?\"", "domain": "Shared Decision-Making"}, {"avoid": "\"Don't worry\"", "why": "Dismisses the patient's concern entirely", "say": "\"I can understand why this feels worrying. Let me explain...\"", "domain": "Empathy"}, {"avoid": "\"It's nothing serious\"", "why": "Premature reassurance — clinically unsafe if wrong", "say": "\"I want to make sure we find out exactly what's going on\"", "domain": "Safety Language"}, {"avoid": "\"I will send you for tests\"", "why": "Directive — no shared decision-making", "say": "\"I'd like to arrange some tests — would that be okay?\"", "domain": "Shared Decision-Making"}, {"avoid": "Calling patient by their disease", "why": "\"The diabetic in bed 4\" — dehumanising in UK culture", "say": "Always use the patient's name or \"the patient\"", "domain": "Professionalism"}, {"avoid": "\"As I told you before...\"", "why": "Condescending — implies patient wasn't listening", "say": "\"Just to recap what we discussed...\"", "domain": "Communication"}, {"avoid": "Over-explaining without pausing", "why": "Fails chunk + check — patient loses understanding", "say": "Stop every 2–3 sentences: \"Does that make sense so far?\"", "domain": "Communication"}, {"avoid": "\"I don't know\" (and stop there)", "why": "Incomplete — needs follow-through", "say": "\"I'm not sure — but I will find out and come back to you\"", "domain": "Professional Honesty"}, {"avoid": "\"That's not my problem\"", "why": "Abandonment — serious professionalism failure", "say": "\"Let me help you find the right person for this\"", "domain": "Professionalism"}, {"avoid": "\"I'm just the junior doctor\"", "why": "Undermines confidence and team — never minimise role", "say": "\"I'm one of the doctors here — I'll get you the right help\"", "domain": "Professional Identity"}, {"avoid": "\"The consultant will explain\"", "why": "Passes the buck — leaves patient in uncertainty", "say": "\"I can explain what I know now, and we can get more detail later\"", "domain": "Communication"}, {"avoid": "\"Sign here\"", "why": "No explanation of consent — instant fail risk", "say": "\"Before you sign, I want to make sure you understand what this means...\"", "domain": "Consent Language"}, {"avoid": "\"Everything went fine\"", "why": "Vague — no specific information given", "say": "\"The procedure went as planned — let me tell you what we did and what happens next\"", "domain": "Post-Procedure Communication"}, {"avoid": "\"The scan showed something\"", "why": "Vague — creates anxiety without clarity", "say": "\"The scan showed [specific finding] — let me explain what that means\"", "domain": "Clinical Language"}, {"avoid": "\"We'll see how it goes\"", "why": "No safety-net — fails the patient", "say": "\"If things change, or you feel worse — please come back or call 111\"", "domain": "Safety Language"}, {"avoid": "\"Are you sure you want to refuse?\"", "why": "Coercive — pressures a capacitous decision", "say": "\"I want to make sure you have all the information to make this decision\"", "domain": "Consent Language"}, {"avoid": "\"You need to calm down\"", "why": "Dismissive and escalating to an angry patient", "say": "\"I can see you're very frustrated. I want to help. Can you tell me what's happened?\"", "domain": "Challenging Consultations"}];
+let activeDom='all';
+function filterDom(d,btn){activeDom=d;document.querySelectorAll('.fbtn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');render();}
+function render(){
+  const q=(document.getElementById('searchBox').value||'').toLowerCase();
+  const list=PHRASES.filter(p=>{
+    const dm=activeDom==='all'||p.domain===activeDom;
+    const qm=!q||p.avoid.toLowerCase().includes(q)||p.say.toLowerCase().includes(q)||p.domain.toLowerCase().includes(q);
+    return dm&&qm;
+  });
+  document.getElementById('countLbl').textContent=list.length+' phrases';
+  document.getElementById('phraseList').innerHTML=list.map(p=>`
+    <div class="phrase-card">
+      <div class="pc-top">
+        <div class="pc-avoid"><div class="pc-label label-avoid">✗ Avoid</div><div class="pc-text avoid-text">${p.avoid}</div></div>
+        <div class="pc-say"><div class="pc-label label-say">✓ Say Instead</div><div class="pc-text say-text">${p.say}</div></div>
+      </div>
+      <div class="pc-bottom">
+        <span class="pc-why">${p.why}</span>
+        <span class="pc-domain">${p.domain}</span>
+      </div>
+    </div>`).join('');
+}
+render();
+</script></body></html>

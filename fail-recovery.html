@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Fail Recovery Diagnostic — AMaC PLAB 2</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0d2247;--navy-deep:#091629;--gold:#c9a227;--gold-soft:#e0c45a;--cream:#f7f4ec;--ink:#1a1d24;--muted:#5d6470;--line:#e4ddcd;--pass:#1b6b3a;}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--ink);-webkit-font-smoothing:antialiased;}
+nav{position:sticky;top:0;z-index:100;background:linear-gradient(180deg,#0f2850,#0d2247);border-bottom:1px solid rgba(201,162,39,0.25);box-shadow:0 3px 16px rgba(9,22,41,0.5);}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 28px;height:64px;display:flex;align-items:center;justify-content:space-between;}
+.brand{font-family:'Fraunces',serif;font-size:24px;font-weight:700;color:var(--gold-soft);letter-spacing:3px;text-decoration:none;}
+.nav-links{display:flex;gap:24px;list-style:none;align-items:center;}
+.nav-links a{color:#dde2ec;text-decoration:none;font-size:13px;}.nav-links a:hover{color:#fff;}
+.nav-cta{background:linear-gradient(135deg,#d4a820,#c9a227)!important;color:var(--navy-deep)!important;padding:8px 18px;border-radius:2px;font-weight:700;font-size:12px;}
+
+/* HERO */
+.hero{background:linear-gradient(155deg,#0d2247,#091629);color:#fff;padding:52px 28px 44px;text-align:center;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.025) 1px,transparent 1px);background-size:20px 20px;}
+.ph{max-width:760px;margin:0 auto;position:relative;}
+.kick{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--gold-soft);border:1px solid rgba(201,162,39,0.4);padding:5px 14px;border-radius:2px;display:inline-block;margin-bottom:16px;background:rgba(201,162,39,0.07);}
+.hero h1{font-family:'Fraunces',serif;font-size:clamp(26px,5vw,44px);font-weight:500;line-height:1.1;}
+.hero h1 em{font-style:italic;color:var(--gold-soft);}
+.hero p{margin:12px auto 0;color:#d0d6e8;font-weight:300;font-size:15px;max-width:54ch;line-height:1.65;}
+
+/* STAGES */
+.stage{display:none;}.stage.active{display:block;}
+.wrap{max-width:760px;margin:0 auto;padding:32px 28px 64px;}
+
+/* INTRO STAGE */
+.insight-box{background:linear-gradient(135deg,#fdf8e6,#faf3d5);border:1px solid rgba(201,162,39,0.3);border-radius:10px;padding:18px 22px;margin-bottom:20px;}
+.ib-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--gold);margin-bottom:8px;}
+.ib-text{font-size:14px;color:var(--ink);line-height:1.7;}
+.ib-text strong{color:var(--navy);}
+.how-box{background:#fff;border:1px solid var(--line);border-radius:10px;padding:18px 22px;margin-bottom:24px;}
+.hb-title{font-family:'Fraunces',serif;font-size:18px;color:var(--navy);margin-bottom:12px;}
+.step-row{display:flex;gap:12px;align-items:flex-start;margin-bottom:10px;font-size:14px;line-height:1.5;}
+.step-n{background:var(--navy);color:var(--gold-soft);font-family:'Fraunces',serif;font-size:14px;width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.start-btn{display:block;width:100%;background:linear-gradient(135deg,#d4a820,#c9a227);color:var(--navy-deep);border:none;font-family:'Outfit',sans-serif;font-size:15px;font-weight:700;padding:16px;border-radius:8px;cursor:pointer;transition:all .22s;letter-spacing:.3px;box-shadow:0 4px 16px rgba(201,162,39,0.3);}
+.start-btn:hover{opacity:.9;transform:translateY(-1px);}
+
+/* QUESTION STAGE */
+.progress-wrap{margin-bottom:24px;}
+.progress-label{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;}
+.prog-text{font-size:13px;color:var(--muted);}
+.prog-num{font-family:'Fraunces',serif;font-size:20px;color:var(--navy);}
+.progress-bar{height:6px;background:var(--line);border-radius:3px;overflow:hidden;}
+.progress-fill{height:100%;background:linear-gradient(90deg,var(--navy),var(--gold));border-radius:3px;transition:width .4s;}
+.q-card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:24px;box-shadow:0 4px 16px rgba(13,34,71,0.09);margin-bottom:16px;}
+.q-num-badge{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--navy);margin-bottom:10px;}
+.q-text{font-size:16px;color:var(--ink);line-height:1.55;font-weight:500;margin-bottom:18px;}
+.option-btn{display:block;width:100%;text-align:left;padding:12px 16px;border-radius:8px;font-family:'Outfit',sans-serif;font-size:13.5px;cursor:pointer;margin-bottom:8px;transition:all .22s;line-height:1.45;background:linear-gradient(135deg,#0f2850,#0d2247);border:1.5px solid rgba(201,162,39,0.3);color:var(--gold-soft);box-shadow:0 3px 10px rgba(9,22,41,0.35),inset 0 1px 0 rgba(255,255,255,0.06);font-weight:600;letter-spacing:.3px;}
+.option-btn:hover{background:linear-gradient(135deg,#1b3a6b,#152d52);border-color:rgba(201,162,39,0.6);box-shadow:0 6px 18px rgba(9,22,41,0.4),inset 0 1px 0 rgba(255,255,255,0.08);transform:translateY(-2px);color:#fff;}
+.option-btn.selected{background:linear-gradient(135deg,#0a1d3d,#091629);border-color:var(--gold);border-width:2px;box-shadow:0 4px 20px rgba(201,162,39,0.25),inset 0 1px 0 rgba(255,255,255,0.05);color:var(--gold-soft);transform:translateY(-1px);}
+.q-nav{display:flex;justify-content:space-between;align-items:center;margin-top:8px;}
+.nav-btn{padding:10px 22px;border-radius:6px;font-family:'Outfit',sans-serif;font-size:13px;cursor:pointer;transition:all .22s;border:none;background:linear-gradient(135deg,#0f2850,#0d2247);border:1.5px solid rgba(201,162,39,0.3);color:var(--gold-soft);box-shadow:0 3px 10px rgba(9,22,41,0.35),inset 0 1px 0 rgba(255,255,255,0.06);font-weight:600;letter-spacing:.3px;}
+.nav-btn:hover{background:linear-gradient(135deg,#1b3a6b,#152d52);border-color:rgba(201,162,39,0.6);box-shadow:0 6px 18px rgba(9,22,41,0.4),inset 0 1px 0 rgba(255,255,255,0.08);transform:translateY(-2px);color:#fff;}
+.nav-btn:disabled{opacity:.3;cursor:not-allowed;}
+.nav-btn.gold-btn{background:linear-gradient(135deg,#d4a820,#c9a227);color:var(--navy-deep);border-color:var(--gold);}
+
+/* RESULTS STAGE */
+.results-header{background:linear-gradient(135deg,#0f2850,#0d2247);border-radius:12px;padding:22px;margin-bottom:20px;text-align:center;}
+.rh-title{font-family:'Fraunces',serif;font-size:22px;color:#fff;margin-bottom:4px;}
+.rh-sub{font-size:13px;color:rgba(255,255,255,0.9);}
+.profile-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:20px;}
+.profile-item{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden;box-shadow:0 2px 6px rgba(13,34,71,0.07);}
+.pi-bar-bg{height:5px;background:var(--line);}
+.pi-bar{height:5px;border-radius:0;}
+.pi-body{padding:10px 12px;}
+.pi-domain{font-size:12px;font-weight:600;color:var(--ink);margin-bottom:2px;}
+.pi-pct{font-family:'Fraunces',serif;font-size:18px;font-weight:500;line-height:1;}
+.primary-target{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-bottom:16px;box-shadow:0 4px 16px rgba(13,34,71,0.1);}
+.pt-banner{padding:14px 18px;display:flex;align-items:center;gap:12px;}
+.pt-icon{font-size:24px;}
+.pt-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--gold-soft);margin-bottom:2px;}
+.pt-domain{font-family:'Fraunces',serif;font-size:20px;color:#fff;font-weight:500;}
+.pt-body{padding:14px 18px;}
+.pt-insight{font-size:14px;color:var(--ink);line-height:1.65;margin-bottom:14px;padding:12px 14px;background:var(--cream);border-left:3px solid var(--gold);border-radius:0 6px 6px 0;}
+.section-label{font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--navy);margin:12px 0 8px;display:flex;align-items:center;gap:8px;}
+.section-label::after{content:'';flex:1;height:1px;background:var(--line);}
+.repair-item{font-size:13.5px;color:var(--ink);padding:7px 11px;background:var(--cream);border-radius:4px;margin-bottom:5px;border-left:3px solid var(--gold);transition:background .15s;}
+.repair-item:hover{background:#ede8dc;}
+.priority-fix-box{background:linear-gradient(135deg,#f2fdf6,#e8f9f0);border:1px solid rgba(27,107,58,0.2);border-radius:8px;padding:12px 14px;margin-top:10px;}
+.pf-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;color:var(--pass);margin-bottom:5px;}
+.pf-text{font-size:13.5px;color:var(--ink);line-height:1.6;}
+
+/* DAY PLAN */
+.day-plan-section{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-top:16px;box-shadow:0 2px 8px rgba(13,34,71,0.07);}
+.dps-hdr{background:linear-gradient(135deg,#0f2850,#0d2247);padding:14px 18px;display:flex;justify-content:space-between;align-items:center;}
+.dps-title{font-family:'Fraunces',serif;font-size:17px;color:#fff;font-weight:500;}
+.dps-sub{font-size:11px;color:rgba(255,255,255,0.75);}
+.day-row{border-bottom:1px solid var(--line);cursor:pointer;}
+.day-row:last-child{border-bottom:none;}
+.day-hdr{display:flex;align-items:center;gap:12px;padding:13px 18px;transition:background .15s;}
+.day-hdr:hover{background:var(--cream);}
+.day-num{font-family:'Fraunces',serif;font-size:22px;color:var(--navy);font-weight:500;flex-shrink:0;width:34px;}
+.day-focus{font-size:14px;font-weight:600;color:var(--ink);}
+.day-count{font-size:12px;color:var(--muted);margin-top:1px;}
+.day-chev{margin-left:auto;font-size:12px;color:var(--muted);transition:transform .25s;}
+.day-row.open .day-chev{transform:rotate(180deg);}
+.day-tasks{display:none;padding:0 18px 14px 64px;}
+.day-row.open .day-tasks{display:block;}
+.day-task{display:flex;align-items:flex-start;gap:10px;padding:7px 0;border-bottom:1px solid var(--line);font-size:13.5px;color:var(--ink);line-height:1.4;cursor:pointer;transition:background .15s;}
+.day-task:last-child{border-bottom:none;}
+.day-task:hover{background:rgba(201,162,39,0.06);padding-left:4px;}
+.task-box{width:18px;height:18px;border:2px solid var(--line);border-radius:3px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;transition:all .2s;margin-top:1px;}
+.task-box.done{background:var(--navy);border-color:var(--navy);color:#fff;}
+.task-text.done{text-decoration:line-through;color:var(--muted);}
+
+/* Secondary targets */
+.secondary-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px;}
+.sec-card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden;box-shadow:0 2px 6px rgba(13,34,71,0.06);}
+.sc-banner{padding:10px 14px;display:flex;align-items:center;gap:8px;}
+.sc-icon{font-size:18px;}
+.sc-domain{font-size:14px;color:#fff;font-weight:600;}
+.sc-body{padding:10px 14px;}
+.sc-fix{font-size:12.5px;color:var(--ink);line-height:1.5;font-style:italic;border-left:2px solid var(--gold);padding-left:8px;}
+
+.restart-btn{display:block;width:100%;font-family:'Outfit',sans-serif;font-size:13px;padding:13px;border-radius:8px;cursor:pointer;margin-top:20px;transition:all .22s;background:linear-gradient(135deg,#0f2850,#0d2247);border:1.5px solid rgba(201,162,39,0.3);color:var(--gold-soft);box-shadow:0 3px 10px rgba(9,22,41,0.35),inset 0 1px 0 rgba(255,255,255,0.06);font-weight:600;letter-spacing:.3px;}
+.restart-btn:hover{background:linear-gradient(135deg,#1b3a6b,#152d52);border-color:rgba(201,162,39,0.6);box-shadow:0 6px 18px rgba(9,22,41,0.4),inset 0 1px 0 rgba(255,255,255,0.08);transform:translateY(-2px);color:#fff;}
+
+.trustband{background:var(--navy);color:#fff;text-align:center;padding:34px 28px;}
+.trustband .slogan{font-family:'Fraunces',serif;font-style:italic;color:var(--gold-soft);font-size:18px;margin-bottom:8px;}
+.trustband p{color:#dde2ec;font-weight:300;font-size:14px;max-width:54ch;margin:0 auto;}
+footer{background:var(--navy-deep);color:#c4ccd8;padding:36px 28px 20px;}
+.foot-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px;border-bottom:1px solid rgba(255,255,255,0.07);padding-bottom:20px;}
+.foot-brand{font-family:'Fraunces',serif;font-size:22px;color:var(--gold-soft);letter-spacing:2px;}
+.foot-p{font-size:12px;color:#8a96b0;margin-top:5px;max-width:32ch;font-weight:300;line-height:1.5;}
+.foot-col h4{color:#fff;font-size:11px;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;font-weight:600;}
+.foot-col a{display:block;color:#8a96b0;text-decoration:none;font-size:12px;margin-bottom:6px;}
+.foot-col a:hover{color:var(--gold-soft);}
+.foot-btm{max-width:1200px;margin:14px auto 0;font-size:11px;color:#4a5568;text-align:center;}
+@media(max-width:700px){.nav-links{display:none;}.wrap{padding:20px 14px 48px;}.profile-grid{grid-template-columns:1fr 1fr;}.secondary-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<nav><div class="nav-inner"><a href="index.html" class="brand">AMaC</a>
+  <ul class="nav-links"><li><a href="books.html">The Master Series</a></li><li><a href="tools.html">Study Tools</a></li><li><a href="contact.html" class="nav-cta">Get Started</a></li></ul>
+</div></nav>
+<header class="hero"><div class="ph">
+  <span class="kick">For Re-Sitting Candidates · AMaC Diagnostic</span>
+  <h1>Fail Recovery <em>Diagnostic</em></h1>
+  <p>Answer 15 questions about what happened in your exam. The tool calculates your failure profile and generates a targeted day-by-day repair plan.</p>
+</div></header>
+
+<!-- STAGE 1: INTRO -->
+<div class="stage active" id="stage-intro">
+  <div class="wrap">
+    <div class="insight-box">
+      <div class="ib-label">Key insight</div>
+      <div class="ib-text">For many candidates, the problem is not lack of knowledge but <strong>difficulty translating knowledge into safe, structured performance</strong> under exam pressure. This diagnostic identifies what actually caused your failure — not what you think caused it.</div>
+    </div>
+    <div class="how-box">
+      <div class="hb-title">How this works</div>
+      <div class="step-row"><div class="step-n">1</div><div>Answer 15 questions about what <em>actually happened</em> in your exam — behaviours, not diagnoses.</div></div>
+      <div class="step-row"><div class="step-n">2</div><div>The tool calculates your <strong>failure profile</strong> across 9 domains with a percentage score for each.</div></div>
+      <div class="step-row"><div class="step-n">3</div><div>You get a <strong>primary repair target</strong> and a personalised <strong>5-day recovery plan</strong> with exact chapters, stations and drills.</div></div>
+      <div class="step-row"><div class="step-n">4</div><div>Drill that domain for 3–5 days before returning to full revision.</div></div>
+    </div>
+    <button class="start-btn" onclick="startDiagnostic()">Start Diagnostic →</button>
+  </div>
+</div>
+
+<!-- STAGE 2: QUESTIONS -->
+<div class="stage" id="stage-questions">
+  <div class="wrap">
+    <div class="progress-wrap">
+      <div class="progress-label">
+        <span class="prog-text" id="progText">Question 1 of 15</span>
+        <span class="prog-num" id="progNum">1 / 15</span>
+      </div>
+      <div class="progress-bar"><div class="progress-fill" id="progFill" style="width:0%"></div></div>
+    </div>
+    <div class="q-card">
+      <div class="q-num-badge" id="qNumBadge">Question 1</div>
+      <div class="q-text" id="qText"></div>
+      <div id="optionsList"></div>
+    </div>
+    <div class="q-nav">
+      <button class="nav-btn" id="prevBtn" onclick="prevQ()" disabled>← Back</button>
+      <button class="nav-btn gold-btn" id="nextBtn" onclick="nextQ()" disabled>Next →</button>
+    </div>
+  </div>
+</div>
+
+<!-- STAGE 3: RESULTS -->
+<div class="stage" id="stage-results">
+  <div class="wrap">
+    <div class="results-header">
+      <div class="rh-title">Your PLAB 2 Failure Profile</div>
+      <div class="rh-sub" id="resultsDate"></div>
+    </div>
+    <div class="profile-grid" id="profileGrid"></div>
+    <div id="primaryTarget"></div>
+    <div id="secondaryTargets"></div>
+    <button class="restart-btn" onclick="restart()">↺ Retake diagnostic</button>
+  </div>
+</div>
+
+<div class="trustband"><p class="slogan">Think Like an Examiner · Speak Like a Doctor · Perform With Confidence</p><p>Fail recovery blueprint from the AMaC PLAB 2 Master Series. Diagnosis based on behavioural symptom patterns.</p></div>
+<footer><div class="foot-inner">
+  <div><div class="foot-brand">AMaC</div><p class="foot-p">A. Mansour &amp; Colleagues.</p></div>
+  <div class="foot-col"><h4>Study Tools</h4><a href="study-planner.html">Study Planner</a><a href="station-planner.html">Station Frequency</a><a href="exam-morning.html">Exam Morning Card</a></div>
+  <div class="foot-col"><h4>Practice</h4><a href="simulator.html">Consultation Simulator</a><a href="osce.html">OSCE Stations</a><a href="mastercards.html">Master Cards</a></div>
+  <div class="foot-col"><h4>Contact</h4><a href="mailto:info@amac-medical.com">info@amac-medical.com</a></div>
+</div><div class="foot-btm">&copy; 2026 A. Mansour &amp; Colleagues (AMaC). All rights reserved.</div></footer>
+
+<script>
+const QUESTIONS = [{"id": "q1", "text": "In the exam, I ran out of time before finishing the management plan or closing the station.", "options": [{"label": "This happened in most stations", "weights": {"Structure & Time Management": 3, "Performance Anxiety": 1}}, {"label": "This happened in a few stations", "weights": {"Structure & Time Management": 2}}, {"label": "This didn't really happen", "weights": {}}]}, {"id": "q2", "text": "The patient or actor seemed frustrated, disconnected, or like I wasn't really listening to them.", "options": [{"label": "Yes, this happened in multiple stations", "weights": {"Communication & Empathy": 3}}, {"label": "Maybe in one or two stations", "weights": {"Communication & Empathy": 2}}, {"label": "I don't think so", "weights": {}}]}, {"id": "q3", "text": "I forgot to ask what the patient was worried about or what they were hoping for (ICE).", "options": [{"label": "I definitely didn't ask this", "weights": {"Communication & Empathy": 3}}, {"label": "I asked it but very briefly or awkwardly", "weights": {"Communication & Empathy": 1}}, {"label": "I asked ICE in most stations", "weights": {}}]}, {"id": "q4", "text": "In an acute or emergency station, I started taking a full history before doing ABCDE.", "options": [{"label": "Yes — I went straight to history-taking", "weights": {"Acute Safety": 3}}, {"label": "I'm not sure — maybe", "weights": {"Acute Safety": 1}}, {"label": "No — I started with ABCDE", "weights": {}}]}, {"id": "q5", "text": "I forgot to safety-net before closing a station.", "options": [{"label": "I rarely mentioned it", "weights": {"Structure & Time Management": 2, "Communication & Empathy": 1}}, {"label": "I mentioned it briefly in some stations", "weights": {"Structure & Time Management": 1}}, {"label": "I safety-netted clearly in most stations", "weights": {}}]}, {"id": "q6", "text": "I knew what to do clinically but couldn't seem to say it clearly or structure it well in the station.", "options": [{"label": "This describes my exam experience well", "weights": {"Structure & Time Management": 2, "Performance Anxiety": 2}}, {"label": "Sometimes, but not always", "weights": {"Structure & Time Management": 1, "Performance Anxiety": 1}}, {"label": "I felt I communicated my knowledge well", "weights": {}}]}, {"id": "q7", "text": "There was a station involving capacity, consent, or a patient refusing treatment — and I struggled with it.", "options": [{"label": "Yes — I didn't know how to handle it", "weights": {"Capacity & Consent": 3}}, {"label": "I attempted it but wasn't confident", "weights": {"Capacity & Consent": 2}}, {"label": "I handled it reasonably well", "weights": {}}]}, {"id": "q8", "text": "I felt significantly more anxious or panicked in the exam than in practice.", "options": [{"label": "Yes — I froze or blanked in several stations", "weights": {"Performance Anxiety": 3}}, {"label": "A little — I was nervous but managed", "weights": {"Performance Anxiety": 1}}, {"label": "My anxiety was similar to practice", "weights": {}}]}, {"id": "q9", "text": "I prescribed something incorrectly, forgot to check allergies, or made a drug chart error.", "options": [{"label": "Yes — I know I made a prescribing error", "weights": {"Prescribing Safety": 3}}, {"label": "Possibly — I wasn't confident on prescribing", "weights": {"Prescribing Safety": 2}}, {"label": "I don't think prescribing was the issue", "weights": {}}]}, {"id": "q10", "text": "There was a safeguarding or disclosure scenario — and I didn't know how to escalate appropriately.", "options": [{"label": "Yes — I was unsure what to do", "weights": {"Safeguarding": 3}}, {"label": "I attempted it but wasn't sure", "weights": {"Safeguarding": 2}}, {"label": "I handled safeguarding stations confidently", "weights": {}}]}, {"id": "q11", "text": "I was told by the examiner to continue, or I finished significantly early without knowing what to add.", "options": [{"label": "This happened in several stations", "weights": {"Structure & Time Management": 3}}, {"label": "This happened once or twice", "weights": {"Structure & Time Management": 1}}, {"label": "I used the full 8 minutes in most stations", "weights": {}}]}, {"id": "q12", "text": "I struggled when the patient was angry, distressed, or emotionally difficult.", "options": [{"label": "Yes — I became defensive or struggled to de-escalate", "weights": {"Communication & Empathy": 3, "Professionalism": 1}}, {"label": "I found it difficult but managed", "weights": {"Communication & Empathy": 1}}, {"label": "I handled emotional patients well", "weights": {}}]}, {"id": "q13", "text": "Looking back, I think I missed red flags or failed to escalate a deteriorating or high-risk patient.", "options": [{"label": "Yes — I probably sent someone home who should have stayed", "weights": {"Acute Safety": 3}}, {"label": "Possibly — my escalation wasn't clear", "weights": {"Acute Safety": 2}}, {"label": "I escalated and safety-netted appropriately", "weights": {}}]}, {"id": "q14", "text": "In clinical content — the actual medicine, diagnoses and treatments — I was unsure or made errors.", "options": [{"label": "Yes — I genuinely didn't know the clinical answers", "weights": {"Clinical Knowledge": 3}}, {"label": "There were gaps but I improvised", "weights": {"Clinical Knowledge": 2}}, {"label": "My clinical knowledge felt adequate", "weights": {}}]}, {"id": "q15", "text": "I performed much better in mock OSCEs or with friends than in the actual exam.", "options": [{"label": "Yes — there was a big drop in performance on the day", "weights": {"Performance Anxiety": 3}}, {"label": "There was some drop in performance", "weights": {"Performance Anxiety": 2}}, {"label": "My exam performance matched my practice", "weights": {}}]}];
+const DOMAINS = {"Acute Safety": {"colour": "#c0392b", "icon": "🚨", "description": "Failing to recognise danger, prioritise correctly, or escalate in time.", "insight": "The examiner's first question is always: would I trust this doctor on call? Acute safety failures are visible from the first 30 seconds when a candidate starts taking a history instead of beginning ABCDE.", "repair_chapters": ["CH8 — ABCDE & The Golden Minute", "CH13 — Sepsis", "CH11 — Anaphylaxis", "CH12 — ACS", "App 1B Tier 1 (acute safety instant fails)"], "repair_stations": ["OSCE Station 7 — Anaphylaxis", "OSCE Station 8 — Sepsis", "OSCE Station 1 — Acute Chest Pain"], "repair_cards": ["Examiner Trap cards — Emergency domain", "Critical Miss cards — Emergency domain"], "priority_fix": "ABCDE must be automatic in the first 60 seconds of any acute station. Practice saying it aloud: 'I'd like to start by assessing this patient using ABCDE.' Do this 20 times until it is a reflex.", "day_plan": [{"day": 1, "tasks": ["App 1B Tier 1 — all Tier 1 instant fails (Acute Safety section)", "CH8 — ABCDE framework — read and verbalise aloud", "CH13 — Sepsis — practice Sepsis Six from memory"]}, {"day": 2, "tasks": ["CH11 — Anaphylaxis — full read + gold close aloud", "CH12 — ACS — first 60 seconds script", "OSCE Station 7 — time the station: ABCDE in first 90 seconds?"]}, {"day": 3, "tasks": ["OSCE Station 8 — full timed run", "Simulator — Sepsis station (aim for 80%+)", "Write out ABCDE assessment from memory, check against book"]}, {"day": 4, "tasks": ["CH15 — Acute Dyspnoea", "CH16 — Stroke — ECG/aspirin trap", "Simulator — Acute Chest Pain station"]}, {"day": 5, "tasks": ["Mock circuit — any 3 Tier 1 acute stations timed", "Debrief: did ABCDE come automatically?", "Review any instant fails triggered"]}]}, "Communication & Empathy": {"colour": "#1b3a6b", "icon": "💬", "description": "Patients felt unheard, ICE was not explored, empathy was absent or procedural.", "insight": "Communication failures are the most common reason for borderline fails. Candidates often believe their communication was adequate — but the examiner scores whether the patient felt heard, not whether the doctor said the right clinical words.", "repair_chapters": ["CH1 — The Performance System", "CH2 — Professional Dominance", "App 1D — 4 Station Templates (BRIDGE + BREAKDOWN)"], "repair_stations": ["OSCE Station 3 — Breaking Bad News", "OSCE Station 18 — Angry Relative"], "repair_cards": ["Say This cards — Communication domain", "Curveball cards — Communication domain"], "priority_fix": "Drill ICE aloud until it is automatic. Say these three sentences out loud 20 times: 'What do you think might be causing this?' 'Is there anything in particular that worries you?' 'What were you hoping I could do for you today?' They must feel natural, not scripted.", "day_plan": [{"day": 1, "tasks": ["App 1D — BRIDGE template — read and practise structure aloud", "ICE drill — say all 3 ICE questions 20× from memory", "CH2 — Professional Dominance — patient-centred language section"]}, {"day": 2, "tasks": ["OSCE Station 3 — Breaking Bad News — SPIKES structure", "Simulator — Breaking Bad News station (aim for empathy marks)", "NHS Language Coach — all 25 phrases"]}, {"day": 3, "tasks": ["CH2 — NURSE framework for emotion", "OSCE Station 18 — Angry Relative", "Simulator — Angry Relative station"]}, {"day": 4, "tasks": ["App 1D — BREAKDOWN template for counselling stations", "Practice 'ICE at 2 minutes' — interrupt history at 2 minutes to do ICE", "Record yourself: does your empathy sound genuine?"]}, {"day": 5, "tasks": ["Mock 3 communication stations back-to-back timed", "Ask: did I ask ICE in every station?", "Ask: did I pause after bad news?"]}]}, "Capacity & Consent": {"colour": "#7c5cbf", "icon": "⚖️", "description": "Struggling with the MCA framework, overriding refusals, or failing capacity stations.", "insight": "Capacity stations fail candidates who assume refusal means incapacity. The 4-part test must be automatic, and the principle that a capacitous patient can refuse even if the consequence is death must be internalised — not just understood intellectually.", "repair_chapters": ["CH2 — Professional Dominance (consent section)", "CH4 — Consent in Practice", "App 1B Tier 1 (consent instant fails)"], "repair_stations": ["OSCE Station 4 — Capacity Assessment"], "repair_cards": ["Curveball cards — Ethics domain", "Examiner Trap cards — Ethics domain"], "priority_fix": "Memorise the 4-part capacity test as a script: 'I need to check four things — can they understand the information, retain it long enough to decide, weigh it up, and communicate their decision?' Say this aloud until it is automatic. Refusal ≠ incapacity — this is the single most important concept.", "day_plan": [{"day": 1, "tasks": ["CH4 — Consent in Practice — full read", "4-part test drill — say from memory 10×", "App 1B Tier 1 — consent instant fails section"]}, {"day": 2, "tasks": ["OSCE Station 4 — Capacity Assessment — full timed run", "Simulator — Capacity station (aim for 75%+)", "CH2 — Gillick vs Fraser, Montgomery ruling"]}, {"day": 3, "tasks": ["Practice refusing patient scenario — explore reasons before concluding", "Curveball cards — Ethics domain — all cards", "Write: what would you say to a patient who refuses life-saving surgery?"]}, {"day": 4, "tasks": ["Revision: DNACPR, advance directives, best-interests framework", "Practice: 'I respect your decision' script without sounding dismissive", "Examiner Trap cards — Ethics domain"]}, {"day": 5, "tasks": ["Mock capacity station with a colleague or the simulator", "Debrief: did you apply the test or just accept/override?"]}]}, "Prescribing Safety": {"colour": "#d97706", "icon": "💊", "description": "Drug errors, allergy omissions, wrong doses or abbreviations.", "insight": "Prescribing failures are disproportionately punished because they represent patient safety. MTX daily, insulin as 'U', and no allergy check are the three most common prescribing instant fails. Each one is automatic and preventable.", "repair_chapters": ["CH67 — Prescribing Consultation", "CH68 — Prescribing Safety", "App 2E — Prescribing Safety Master Reference"], "repair_stations": ["OSCE Station 5 — Drug Chart (CAP, penicillin allergy)", "OSCE Station 15 — Insulin Prescription (VRIII)"], "repair_cards": ["Safety Check cards — Prescribing domain"], "priority_fix": "Three things must be automatic before any prescription: (1) Allergy check first — always ask name of drug and nature of reaction. (2) Insulin = 'units' never 'U' or 'IU'. (3) MTX = once weekly — never daily. These three prevent the most common prescribing instant fails.", "day_plan": [{"day": 1, "tasks": ["App 2E — Prescribing Safety Master Reference — full read", "CH68 — IOAPM and SADMAN mnemonics", "Prescribing Safety tool — high-risk drugs tab — all 10 drugs"]}, {"day": 2, "tasks": ["OSCE Station 5 — Drug Chart station — practice completing", "OSCE Station 15 — VRIII insulin prescription", "Prescribing tool — instant fails tab — know all 10"]}, {"day": 3, "tasks": ["Practice: write a drug chart entry for 5 different drugs", "Check: allergy checked, dose correct, route correct, timing correct", "VRIII protocol — 8 steps from memory"]}, {"day": 4, "tasks": ["High-risk drug cards — all 10 drugs", "Practice: 'Before I prescribe I will check allergies, renal function, and interactions'", "Review antibiotic stewardship — STEWARD mnemonic"]}, {"day": 5, "tasks": ["Mock prescribing station timed", "Debrief: was allergy check the first thing?"]}]}, "Safeguarding": {"colour": "#059669", "icon": "🛡", "description": "Missing disclosures, promising secrecy, or not escalating appropriately.", "insight": "Safeguarding failures often happen because candidates try to be kind — they promise confidentiality, they don't want to alarm the patient. But the correct response to a safeguarding disclosure is always the same: thank them for telling you, explain you cannot keep absolute secrecy, and escalate to the named safeguarding lead.", "repair_chapters": ["CH5 — Documentation & Safeguarding", "App 1B Tier 1 (safeguarding instant fails)"], "repair_stations": ["OSCE Station 12 — Self-Harm Risk Assessment"], "repair_cards": ["Examiner Trap cards — Safeguarding domain"], "priority_fix": "Memorise this one script: 'Thank you for telling me — that took courage. I want to help you. I cannot promise absolute confidentiality, because if I'm worried about your safety or someone else's, I may need to share this with the right team — but I'll always tell you first.' This handles almost every safeguarding disclosure.", "day_plan": [{"day": 1, "tasks": ["CH5 — Safeguarding — full read including child, adult and domestic abuse", "App 1B Tier 1 — safeguarding instant fails", "Safeguarding disclosure script — memorise and say aloud"]}, {"day": 2, "tasks": ["OSCE Station 12 — Self-Harm Risk", "Suicide risk framework — SAP (Suicidal ideation, Plan, Access to means, Protective factors)", "TEN-4 criteria for non-accidental injury in children"]}, {"day": 3, "tasks": ["Practice: what do you say when a patient discloses domestic abuse?", "Practice: what do you say when a relative asks you not to tell the patient?", "Examiner Trap cards — Safeguarding"]}, {"day": 4, "tasks": ["MARAC referral criteria", "FGM mandatory reporting rules", "Fraser competence vs Gillick"]}, {"day": 5, "tasks": ["Mock safeguarding station", "Debrief: did you promise secrecy?"]}]}, "Professionalism": {"colour": "#0d2247", "icon": "🎯", "description": "Breaching confidentiality, inappropriate apologies, dismissing colleagues or patients.", "insight": "Professionalism failures are often invisible to the candidate — they feel natural in the moment. Breaking confidentiality to a well-meaning relative, giving a conditional apology, or sounding patronising are all professionalism fails that candidates frequently don't notice themselves making.", "repair_chapters": ["CH2 — Professional Dominance", "CH5 — Duty of Candour", "App 1B — professionalism instant fails"], "repair_stations": ["OSCE Station 18 — Angry Relative (Duty of Candour)"], "repair_cards": ["Examiner Trap cards — Professionalism domain", "NHS Language Coach — all 25 phrases"], "priority_fix": "The NHS Communication Standard in one sentence: 'Warm, specific, collaborative, honest — with the patient's perspective at the centre.' Practise every response through that filter. If your response is defensive, dismissive, or prioritises your comfort over the patient's, it is a professionalism failure.", "day_plan": [{"day": 1, "tasks": ["App 1B — professionalism instant fails", "NHS Language Coach — 25 phrases", "CH2 — confidentiality framework"]}, {"day": 2, "tasks": ["Duty of candour script — 'I'm sorry this happened to you, I can see it caused real distress'", "OSCE Station 18 — Angry Relative", "Practice: apology that acknowledges experience without admitting liability"]}, {"day": 3, "tasks": ["Simulator — Angry Relative station", "Debrief: was the apology genuine or conditional?", "Review: PALS complaints process"]}, {"day": 4, "tasks": ["Confidentiality exceptions — when can you share without consent?", "Practice: responding to a relative asking for information", "Professionalism curveball cards"]}, {"day": 5, "tasks": ["Mock difficult conversation station", "Debrief: did I remain warm and non-defensive throughout?"]}]}, "Structure & Time Management": {"colour": "#5c6bc0", "icon": "⏱", "description": "Running out of time, no safety-net, no closing script, disorganised consultation.", "insight": "Time management failure is structural, not clinical. Candidates who spend 6 minutes on history have nothing left for management, ICE, and safety-net. The fix is not working faster — it is restructuring the 8 minutes deliberately using the 4-phase framework.", "repair_chapters": ["App 1C — OSCE Timing Maps", "App 1D — 4 Station Templates", "App 3A — Full 8-Minute Blueprints"], "repair_stations": ["All 18 OSCE stations — timed practice with strict 8-minute limit"], "repair_cards": ["Structure & Time Management domain cards"], "priority_fix": "Memorise the 4-phase structure and commit to it in every station: Phase 1 (0–2 min): open and history. Phase 2 (2–5 min): management plan. Phase 3 (5–7 min): ICE and shared decision. Phase 4 (7–8 min): safety-net and close. If you are still in Phase 1 at 4 minutes, skip to Phase 2 immediately.", "day_plan": [{"day": 1, "tasks": ["App 1C — Timing Maps — study the 8-minute blueprint", "App 1D — 4 templates — memorise phase boundaries", "Practise out loud: 'At 2 minutes I will always move to management'"]}, {"day": 2, "tasks": ["OSCE Station 1 — ACS — timed, strict 8 minutes", "Debrief: what phase were you in at 4 minutes?", "Write your personal timing plan for each station type"]}, {"day": 3, "tasks": ["OSCE Station 3 — BBN — timed, strict 8 minutes", "Safety-net script — drill until automatic", "App 1D — closing scripts — memorise 3 versions"]}, {"day": 4, "tasks": ["Run 3 stations back-to-back with a 1-minute break between", "Set a phone alarm for 2-minute and 5-minute marks", "Debrief: did every station end with a safety-net?"]}, {"day": 5, "tasks": ["Full 8-station mock circuit timed", "Debrief: number of stations with no safety-net?", "Target: zero"]}]}, "Performance Anxiety": {"colour": "#be185d", "icon": "🧘", "description": "Performing well in practice but freezing, blanking or panicking in the exam.", "insight": "Performance anxiety is not a knowledge problem — it is a state management problem. Candidates who freeze in the exam have the knowledge but cannot access it under pressure. The fix is building automatic responses (scripts and anchors) that work even when the thinking brain shuts down.", "repair_chapters": ["App 1E — Exam Day Logistics", "App 1F — Exam Morning Toolkit", "CH0 — PLAB 2 Fast-Start"], "repair_stations": ["Use simulator daily — not to learn content but to normalise performing under observation"], "repair_cards": ["Exam Morning Card — 10 anchors + 5 scripts"], "priority_fix": "Build a recovery script for when you blank: 'Let me just take a moment to make sure I'm addressing the most important things for you today. Your main concern was [X] — is that right?' This resets any station. Practise it until saying it feels natural, not like defeat.", "day_plan": [{"day": 1, "tasks": ["Read App 1E — Exam Day section", "Memorise the station recovery script — 10×", "Identify your personal anxiety trigger (time pressure? silence? anger?)"]}, {"day": 2, "tasks": ["Simulator — choose hardest station — notice anxiety, don't fight it", "Practice box breathing: 4 in, 4 hold, 4 out — use between stations", "Write your pre-station ritual (30 seconds before you enter)"]}, {"day": 3, "tasks": ["Run 3 stations back-to-back without stopping between", "Recovery drill: mid-station blank → say recovery script → continue", "Debrief: did you recover or abandon?"]}, {"day": 4, "tasks": ["Exam Morning Card — commit the 10 anchors to memory", "Visualise: arriving, reading brief, entering, opening script — calmly", "Identify: what is the worst that can happen? (It is just a re-sit)"]}, {"day": 5, "tasks": ["Full mock circuit — treat it like the real exam", "Post-station reset drill between each station", "Debrief: recovery rate?"]}]}, "Clinical Knowledge": {"colour": "#374151", "icon": "📚", "description": "Genuine gaps in clinical content — diagnoses, treatments, or investigations.", "insight": "For most candidates who revise adequately, failure is behavioural not factual. But for some — particularly those sitting early or who haven't worked in UK medicine — genuine clinical knowledge gaps do contribute to failure. The fix is targeted, not broad revision.", "repair_chapters": ["Volume 1 — Chapters 8–26 (acute presentations)", "Volume 2 — high-yield specialty chapters", "Volume 3 — ECG, ABG, CXR interpretation"], "repair_stations": ["Use OSCE stations to identify specific knowledge gaps by domain"], "repair_cards": ["Decision cards — all domains (390 cards)", "Rapid Fire Q&A — all 65 topics"], "priority_fix": "Do not revise broadly — identify the specific domain where knowledge failed. Use the Station Frequency Planner to confirm Tier 1 knowledge is solid before moving to Tier 2 or 3. Rapid Fire Q&A gives you 325 viva-style answers in the examiner's expected format.", "day_plan": [{"day": 1, "tasks": ["Station Frequency Planner — identify Tier 1 gaps", "Rapid Fire Q&A — Emergency domain", "Master Cards — CH12 ACS, CH13 Sepsis, CH11 Anaphylaxis"]}, {"day": 2, "tasks": ["Master Cards — CH16 Stroke, CH17 Seizure, CH19 DKA", "Decision cards — Emergency domain", "ECG & ABG tool — KILL scan and BAD scan"]}, {"day": 3, "tasks": ["Master Cards — CH54–56 Psychiatry (if weak)", "Rapid Fire Q&A — Paediatrics domain", "Normal Values & Critical Labs tool"]}, {"day": 4, "tasks": ["Master Cards — CH67–68 Prescribing", "Prescribing Safety tool — all 4 tabs", "OSCE Station most relevant to knowledge gap"]}, {"day": 5, "tasks": ["Targeted mock — stations in your weakest domain", "Debrief: was this a knowledge failure or a performance failure?", "If performance: shift repair focus to Structure or Communication"]}]}};
+
+let currentQ = 0;
+let answers = {}; // qId -> option index
+let taskState = {};
+
+function startDiagnostic() {
+  showStage('stage-questions');
+  renderQuestion();
+}
+
+function showStage(id) {
+  document.querySelectorAll('.stage').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+function renderQuestion() {
+  const q = QUESTIONS[currentQ];
+  const pct = Math.round((currentQ / QUESTIONS.length) * 100);
+  document.getElementById('progText').textContent = `Question ${currentQ + 1} of ${QUESTIONS.length}`;
+  document.getElementById('progNum').textContent = `${currentQ + 1} / ${QUESTIONS.length}`;
+  document.getElementById('progFill').style.width = pct + '%';
+  document.getElementById('qNumBadge').textContent = `Question ${currentQ + 1}`;
+  document.getElementById('qText').textContent = q.text;
+  document.getElementById('prevBtn').disabled = currentQ === 0;
+
+  const selected = answers[q.id];
+  document.getElementById('nextBtn').disabled = selected === undefined;
+  document.getElementById('nextBtn').textContent = currentQ === QUESTIONS.length - 1 ? 'See My Results →' : 'Next →';
+
+  document.getElementById('optionsList').innerHTML = q.options.map((o, i) => `
+    <button class="option-btn${selected === i ? ' selected' : ''}" onclick="selectOption(${i})">
+      ${o.label}
+    </button>`).join('');
+}
+
+function selectOption(idx) {
+  const q = QUESTIONS[currentQ];
+  answers[q.id] = idx;
+  document.getElementById('nextBtn').disabled = false;
+  document.querySelectorAll('.option-btn').forEach((b, i) => {
+    b.classList.toggle('selected', i === idx);
+  });
+}
+
+function prevQ() {
+  if (currentQ > 0) { currentQ--; renderQuestion(); }
+}
+
+function nextQ() {
+  if (currentQ < QUESTIONS.length - 1) {
+    currentQ++;
+    renderQuestion();
+  } else {
+    calculateResults();
+  }
+}
+
+function calculateResults() {
+  // Tally domain scores
+  const scores = {};
+  Object.keys(DOMAINS).forEach(d => scores[d] = 0);
+  const maxScores = {};
+  Object.keys(DOMAINS).forEach(d => maxScores[d] = 0);
+
+  QUESTIONS.forEach(q => {
+    // max possible for this question
+    const maxW = q.options.reduce((mx, o) => {
+      Object.values(o.weights || {}).forEach(w => { if (w > mx) mx = w; });
+      return mx;
+    }, 0);
+
+    // add max to each domain that appears in any option
+    q.options.forEach(o => {
+      Object.entries(o.weights || {}).forEach(([d, w]) => {
+        if (maxScores[d] !== undefined) maxScores[d] = Math.max(maxScores[d], w);
+      });
+    });
+
+    const selectedOpt = answers[q.id];
+    if (selectedOpt !== undefined) {
+      const weights = q.options[selectedOpt].weights || {};
+      Object.entries(weights).forEach(([domain, weight]) => {
+        if (scores[domain] !== undefined) scores[domain] += weight;
+      });
+    }
+  });
+
+  // Normalise to percentages (higher = more evidence of failure in this domain)
+  const pcts = {};
+  Object.keys(DOMAINS).forEach(d => {
+    const max = maxScores[d] || 1;
+    pcts[d] = Math.round((scores[d] / max) * 100);
+  });
+
+  // Sort by score descending
+  const ranked = Object.entries(pcts)
+    .filter(([d, s]) => s > 0)
+    .sort((a, b) => b[1] - a[1]);
+
+  showResults(pcts, ranked);
+}
+
+function showResults(pcts, ranked) {
+  showStage('stage-results');
+  document.getElementById('resultsDate').textContent =
+    'Generated ' + new Date().toLocaleDateString('en-GB', {day:'numeric',month:'long',year:'numeric'});
+
+  // Profile grid — all domains with scores
+  const allDomains = Object.entries(pcts).sort((a,b) => b[1]-a[1]);
+  document.getElementById('profileGrid').innerHTML = allDomains.map(([d, pct]) => {
+    const dom = DOMAINS[d];
+    const col = dom ? dom.colour : '#888';
+    return `<div class="profile-item">
+      <div class="pi-bar-bg"><div class="pi-bar" style="width:${pct}%;background:${col}"></div></div>
+      <div class="pi-body">
+        <div class="pi-domain">${dom ? dom.icon + ' ' : ''}${d}</div>
+        <div class="pi-pct" style="color:${col}">${pct}%</div>
+      </div>
+    </div>`;
+  }).join('');
+
+  // Primary target
+  const [primaryDomain, primaryPct] = ranked[0] || ['Structure & Time Management', 40];
+  const primary = DOMAINS[primaryDomain];
+
+  if (primary) {
+    document.getElementById('primaryTarget').innerHTML = `
+      <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--muted);margin-bottom:10px;display:flex;align-items:center;gap:8px;">
+        PRIMARY REPAIR TARGET<span style="flex:1;height:1px;background:var(--line);display:block"></span>
+      </div>
+      <div class="primary-target">
+        <div class="pt-banner" style="background:${primary.colour}">
+          <span class="pt-icon">${primary.icon}</span>
+          <div>
+            <div class="pt-label">Primary repair target · ${primaryPct}% failure signal</div>
+            <div class="pt-domain">${primaryDomain}</div>
+          </div>
+        </div>
+        <div class="pt-body">
+          <div class="pt-insight">${primary.insight}</div>
+          <div class="section-label">📖 Repair chapters</div>
+          ${primary.repair_chapters.map(c => `<div class="repair-item">📖 ${c}</div>`).join('')}
+          <div class="section-label">🎭 OSCE stations to drill</div>
+          ${primary.repair_stations.map(s => `<div class="repair-item">🎭 ${s}</div>`).join('')}
+          <div class="priority-fix-box">
+            <div class="pf-label">Priority fix — do this first</div>
+            <div class="pf-text">${primary.priority_fix}</div>
+          </div>
+          ${buildDayPlan(primaryDomain, primary)}
+        </div>
+      </div>`;
+  }
+
+  // Secondary targets
+  const secondaries = ranked.slice(1, 3);
+  if (secondaries.length) {
+    document.getElementById('secondaryTargets').innerHTML = `
+      <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--muted);margin:20px 0 10px;display:flex;align-items:center;gap:8px;">
+        SECONDARY TARGETS<span style="flex:1;height:1px;background:var(--line);display:block"></span>
+      </div>
+      <div class="secondary-grid">
+        ${secondaries.map(([d, pct]) => {
+          const dom = DOMAINS[d];
+          if (!dom) return '';
+          return `<div class="sec-card">
+            <div class="sc-banner" style="background:${dom.colour}">
+              <span class="sc-icon">${dom.icon}</span>
+              <div>
+                <div style="font-size:10px;color:var(--gold-soft);text-transform:uppercase;letter-spacing:.8px;font-weight:700">${pct}% signal</div>
+                <span class="sc-domain">${d}</span>
+              </div>
+            </div>
+            <div class="sc-body"><div class="sc-fix">${dom.priority_fix.substring(0, 120)}…</div></div>
+          </div>`;
+        }).join('')}
+      </div>`;
+  }
+}
+
+function buildDayPlan(domainName, domain) {
+  if (!domain.day_plan) return '';
+  return `
+    <div class="day-plan-section">
+      <div class="dps-hdr">
+        <span class="dps-title">5-Day Recovery Plan</span>
+        <span class="dps-sub">${domainName}</span>
+      </div>
+      ${domain.day_plan.map((day, di) => `
+        <div class="day-row" id="dayrow-${di}">
+          <div class="day-hdr" onclick="toggleDay(${di})">
+            <span class="day-num">${day.day}</span>
+            <div>
+              <div class="day-focus">Day ${day.day}</div>
+              <div class="day-count">${day.tasks.length} tasks · <span id="done-${di}">0</span> done</div>
+            </div>
+            <span class="day-chev">▾</span>
+          </div>
+          <div class="day-tasks">
+            ${day.tasks.map((task, ti) => {
+              const key = domainName + '-' + di + '-' + ti;
+              const done = taskState[key];
+              return `<div class="day-task" onclick="toggleTask('${domainName}',${di},${ti})">
+                <div class="task-box${done?' done':''}" id="tb-${di}-${ti}">${done?'✓':''}</div>
+                <span class="task-text${done?' done':''}" id="tt-${di}-${ti}">${task}</span>
+              </div>`;
+            }).join('')}
+          </div>
+        </div>`).join('')}
+    </div>`;
+}
+
+function toggleDay(di) {
+  const row = document.getElementById('dayrow-' + di);
+  if (row) row.classList.toggle('open');
+}
+
+function toggleTask(domain, di, ti) {
+  const key = domain + '-' + di + '-' + ti;
+  taskState[key] = !taskState[key];
+  const box = document.getElementById('tb-' + di + '-' + ti);
+  const txt = document.getElementById('tt-' + di + '-' + ti);
+  if (box) { box.className = 'task-box' + (taskState[key] ? ' done' : ''); box.textContent = taskState[key] ? '✓' : ''; }
+  if (txt) { txt.className = 'task-text' + (taskState[key] ? ' done' : ''); }
+  // Update count
+  const domain_plan = DOMAINS[domain];
+  if (domain_plan && domain_plan.day_plan && domain_plan.day_plan[di]) {
+    const tasks = domain_plan.day_plan[di].tasks;
+    const doneCount = tasks.filter((_, i) => taskState[domain + '-' + di + '-' + i]).length;
+    const el = document.getElementById('done-' + di);
+    if (el) el.textContent = doneCount;
+  }
+}
+
+function restart() {
+  currentQ = 0;
+  answers = {};
+  taskState = {};
+  showStage('stage-intro');
+}
+</script>
+</body>
+</html>

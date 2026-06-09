@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Station Frequency — AMaC PLAB 2</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0d2247;--navy-deep:#091629;--gold:#c9a227;--gold-soft:#e0c45a;--cream:#f7f4ec;--ink:#1a1d24;--muted:#5d6470;--line:#e4ddcd;--fail:#c0392b;--pass:#1b6b3a;}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--ink);-webkit-font-smoothing:antialiased;}
+nav{position:sticky;top:0;z-index:100;background:linear-gradient(180deg,#0f2850,#0d2247);border-bottom:1px solid rgba(201,162,39,0.25);box-shadow:0 3px 16px rgba(9,22,41,0.5);}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 28px;height:64px;display:flex;align-items:center;justify-content:space-between;}
+.brand{font-family:'Fraunces',serif;font-size:24px;font-weight:700;color:var(--gold-soft);letter-spacing:3px;text-decoration:none;}
+.nav-links{display:flex;gap:24px;list-style:none;align-items:center;}
+.nav-links a{color:#dde2ec;text-decoration:none;font-size:13px;}.nav-links a:hover{color:#fff;}
+.nav-cta{background:linear-gradient(135deg,#d4a820,#c9a227)!important;color:var(--navy-deep)!important;padding:8px 18px;border-radius:2px;font-weight:700;font-size:12px;}
+.hero{background:linear-gradient(155deg,#0d2247,#091629);color:#fff;padding:52px 28px 44px;text-align:center;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.02) 1px,transparent 1px);background-size:20px 20px;}
+.ph{max-width:800px;margin:0 auto;position:relative;}
+.kick{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--gold-soft);border:1px solid rgba(201,162,39,0.4);padding:5px 14px;border-radius:2px;display:inline-block;margin-bottom:16px;}
+.hero h1{font-family:'Fraunces',serif;font-size:clamp(24px,5vw,42px);font-weight:500;line-height:1.1;}
+.hero h1 em{font-style:italic;color:var(--gold-soft);}
+.hero p{margin:12px auto 0;color:#d0d6e8;font-weight:300;font-size:15px;max-width:58ch;line-height:1.65;}
+.time-strip{background:rgba(201,162,39,0.12);border-bottom:1px solid rgba(201,162,39,0.2);padding:12px 28px;}
+.time-inner{max-width:1100px;margin:0 auto;display:flex;gap:10px;flex-wrap:wrap;align-items:center;}
+.time-lbl{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--gold);margin-right:4px;}
+.time-btn{padding:7px 18px;border-radius:20px;border:1.5px solid rgba(201,162,39,0.3);background:linear-gradient(135deg,#0f2850,#0d2247);font-size:12px;font-family:'Outfit',sans-serif;cursor:pointer;font-weight:600;color:var(--gold-soft);transition:all .22s;box-shadow:0 2px 8px rgba(9,22,41,0.25);}
+.time-btn:hover{background:linear-gradient(135deg,#1b3a6b,#152d52);color:#fff;transform:translateY(-1px);border-color:rgba(201,162,39,0.6);}.time-btn.active{background:linear-gradient(135deg,#0d2247,#091629);color:var(--gold-soft);border-color:var(--gold);border-width:2px;box-shadow:0 4px 16px rgba(201,162,39,0.2);transform:translateY(-1px);}
+.filter-bar{background:#fff;border-bottom:1px solid var(--line);padding:11px 28px;position:sticky;top:64px;z-index:90;}
+.fi{max-width:1100px;margin:0 auto;display:flex;gap:8px;flex-wrap:wrap;align-items:center;row-gap:6px;}
+.filter-lbl{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);margin-right:3px;}
+.fbtn{padding:7px 17px;border-radius:20px;font-size:12px;font-family:'Outfit',sans-serif;cursor:pointer;transition:all .22s;background:linear-gradient(135deg,#0f2850,#0d2247);border:1.5px solid rgba(201,162,39,0.3);color:var(--gold-soft);box-shadow:0 3px 10px rgba(9,22,41,0.35),inset 0 1px 0 rgba(255,255,255,0.06);font-weight:600;letter-spacing:.3px;}
+.fbtn:hover{background:linear-gradient(135deg,#1b3a6b,#152d52);border-color:rgba(201,162,39,0.6);box-shadow:0 4px 16px rgba(9,22,41,0.4);transform:translateY(-1px);color:#fff;}.fbtn.active{background:linear-gradient(135deg,#0d2247,#091629);border-color:var(--gold);box-shadow:0 4px 18px rgba(201,162,39,0.25);color:var(--gold-soft);font-weight:700;transform:translateY(-1px);border-width:2px;}
+.wrap{max-width:1100px;margin:0 auto;padding:24px 28px 64px;}
+.tier-section{margin-bottom:28px;}
+.tier-hdr{display:flex;align-items:center;gap:12px;margin-bottom:14px;}
+.tier-badge{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;padding:5px 12px;border-radius:4px;}
+.t1-badge{background:rgba(192,57,43,0.12);color:var(--fail);}
+.t2-badge{background:rgba(27,58,107,0.12);color:var(--navy);}
+.t3-badge{background:rgba(93,100,112,0.12);color:var(--muted);}
+.tier-desc{font-size:13px;color:var(--ink);}
+.station-row{display:flex;align-items:center;gap:12px;padding:11px 16px;background:#fff;border:1px solid var(--line);border-radius:8px;margin-bottom:8px;transition:all .15s;border-left:4px solid transparent;}
+.station-row:hover{box-shadow:0 4px 14px rgba(13,34,71,0.1);transform:translateY(-1px);}
+.t1-row{border-left-color:var(--fail);}
+.t2-row{border-left-color:var(--navy);}
+.t3-row{border-left-color:var(--muted);}
+.sr-freq{flex-shrink:0;width:52px;text-align:center;}
+.freq-num{font-family:'Fraunces',serif;font-size:18px;font-weight:500;}
+.t1-num{color:var(--fail);}
+.t2-num{color:var(--navy);}
+.t3-num{color:var(--muted);}
+.freq-lbl{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;}
+.sr-bar-wrap{width:80px;flex-shrink:0;}
+.sr-bar{height:6px;border-radius:3px;transition:width .4s;}
+.t1-bar{background:var(--fail);}
+.t2-bar{background:var(--navy);}
+.t3-bar{background:var(--muted);}
+.sr-content{flex:1;}
+.sr-station{font-size:14px;color:var(--ink);font-weight:500;margin-bottom:3px;}
+.sr-meta{display:flex;gap:8px;flex-wrap:wrap;}
+.sr-domain{font-size:11px;color:var(--muted);}
+.sr-vol{font-size:11px;font-weight:600;color:var(--navy);}
+.sr-ch{font-size:11px;color:var(--muted);font-style:italic;}
+.priority-box{background:linear-gradient(135deg,#0f2850,#0d2247);border-radius:10px;padding:16px 20px;margin-bottom:20px;}
+.pb-title{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--gold-soft);margin-bottom:10px;}
+.pb-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
+.pb-item{background:rgba(255,255,255,0.06);border-radius:6px;padding:10px 12px;text-align:center;}
+.pb-time{font-family:'Fraunces',serif;font-size:16px;color:var(--gold-soft);margin-bottom:4px;}
+.pb-desc{font-size:11px;color:rgba(255,255,255,0.55);line-height:1.4;}
+.trustband{background:var(--navy);color:#fff;text-align:center;padding:34px 28px;}
+.trustband .slogan{font-family:'Fraunces',serif;font-style:italic;color:var(--gold-soft);font-size:18px;margin-bottom:8px;}
+.trustband p{color:#dde2ec;font-weight:300;font-size:14px;max-width:54ch;margin:0 auto;}
+footer{background:var(--navy-deep);color:#c4ccd8;padding:36px 28px 20px;}
+.foot-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px;border-bottom:1px solid rgba(255,255,255,0.07);padding-bottom:20px;}
+.foot-brand{font-family:'Fraunces',serif;font-size:22px;color:var(--gold-soft);letter-spacing:2px;}
+.foot-p{font-size:12px;color:#8a96b0;margin-top:5px;max-width:32ch;font-weight:300;line-height:1.5;}
+.foot-col h4{color:#fff;font-size:11px;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;font-weight:600;}
+.foot-col a{display:block;color:#8a96b0;text-decoration:none;font-size:12px;margin-bottom:6px;}
+.foot-col a:hover{color:var(--gold-soft);}
+.foot-btm{max-width:1200px;margin:14px auto 0;font-size:11px;color:#4a5568;text-align:center;}
+@media(max-width:700px){.nav-links{display:none;}.wrap{padding:16px 14px 48px;}.pb-grid{grid-template-columns:1fr 1fr;}.sr-bar-wrap{display:none;}}
+</style>
+</head>
+<body>
+<nav><div class="nav-inner"><a href="index.html" class="brand">AMaC</a>
+  <ul class="nav-links"><li><a href="books.html">The Master Series</a></li><li><a href="tools.html">Study Tools</a></li><li><a href="contact.html" class="nav-cta">Get Started</a></li></ul>
+</div></nav>
+<header class="hero"><div class="ph">
+  <span class="kick">App 1E · Circuit Data 2022–2025</span>
+  <h1>Station <em>Frequency</em> Analyser</h1>
+  <p>Where to focus first. Every station type ranked by circuit frequency — filter by how many days you have to prepare and see exactly where to invest your time.</p>
+</div></header>
+<div class="time-strip"><div class="time-inner">
+  <span class="time-lbl">I have:</span>
+  <button class="time-btn active" onclick="setTime('all',this)">All stations</button>
+  <button class="time-btn" onclick="setTime(7,this)">7 days — Tier 1 only</button>
+  <button class="time-btn" onclick="setTime(14,this)">14 days — Tier 1 + 2</button>
+  <button class="time-btn" onclick="setTime(28,this)">4 weeks — All tiers</button>
+</div></div>
+<div class="filter-bar"><div class="fi">
+  <span class="filter-lbl">Domain:</span>
+  <button class="fbtn active" onclick="filterDom('all',this)">All</button>
+  <button class="fbtn" onclick="filterDom('Emergency',this)">Emergency</button>
+  <button class="fbtn" onclick="filterDom('Communication',this)">Communication</button>
+  <button class="fbtn" onclick="filterDom('Ethics',this)">Ethics</button>
+  <button class="fbtn" onclick="filterDom('Psychiatry',this)">Psychiatry</button>
+  <button class="fbtn" onclick="filterDom('Paediatrics',this)">Paediatrics</button>
+  <button class="fbtn" onclick="filterDom('Examination',this)">Examination</button>
+</div></div>
+<div class="wrap">
+  <div class="priority-box">
+    <div class="pb-title">Time-Based Strategy</div>
+    <div class="pb-grid">
+      <div class="pb-item"><div class="pb-time">7 days</div><div class="pb-desc">Master Tier 1 only — covers 70–90% of circuits</div></div>
+      <div class="pb-item"><div class="pb-time">14 days</div><div class="pb-desc">Tier 1 + 2 — prepared for 90%+ of stations</div></div>
+      <div class="pb-item"><div class="pb-time">4 weeks</div><div class="pb-desc">All tiers + mock circuits — ready for every station</div></div>
+    </div>
+  </div>
+  <div id="stationList"></div>
+</div>
+<div class="trustband"><p class="slogan">Think Like an Examiner · Speak Like a Doctor · Perform With Confidence</p><p>Circuit frequency data from Appendix 1E of the AMaC Master Series, based on PLAB 2/UKMLA recall data 2022–2025.</p></div>
+<footer><div class="foot-inner">
+  <div><div class="foot-brand">AMaC</div><p class="foot-p">A. Mansour &amp; Colleagues.</p></div>
+  <div class="foot-col"><h4>Study Tools</h4><a href="exam-morning.html">Exam Morning Card</a><a href="study-planner.html">Study Planner</a><a href="fail-recovery.html">Fail Recovery</a></div>
+  <div class="foot-col"><h4>Contact</h4><a href="mailto:info@amac-medical.com">info@amac-medical.com</a></div>
+</div><div class="foot-btm">&copy; 2026 A. Mansour &amp; Colleagues (AMaC). All rights reserved.</div></footer>
+<script>
+const FREQ=[{"tier": 1, "station": "Sepsis / deteriorating patient (NEWS2 + ABCDE)", "freq": 90, "vol": "V1", "chapters": "CH13, CH8", "domain": "Emergency"}, {"tier": 1, "station": "Chest pain (ACS · PE · pericarditis)", "freq": 85, "vol": "V1", "chapters": "CH12, CH23", "domain": "Emergency"}, {"tier": 1, "station": "Breaking bad news (cancer · diagnosis)", "freq": 85, "vol": "V1", "chapters": "CH2", "domain": "Communication"}, {"tier": 1, "station": "Capacity assessment / treatment refusal", "freq": 80, "vol": "V1", "chapters": "CH2, CH4", "domain": "Ethics"}, {"tier": 1, "station": "Shortness of breath (asthma · COPD · PE)", "freq": 80, "vol": "V1", "chapters": "CH15, CH22, CH23", "domain": "Emergency"}, {"tier": 1, "station": "Suicide risk assessment / self-harm", "freq": 75, "vol": "V2", "chapters": "CH55", "domain": "Psychiatry"}, {"tier": 1, "station": "Anaphylaxis / acute allergic reaction", "freq": 75, "vol": "V1", "chapters": "CH11", "domain": "Emergency"}, {"tier": 1, "station": "Angry / distressed / challenging patient", "freq": 70, "vol": "V1", "chapters": "CH2", "domain": "Communication"}, {"tier": 1, "station": "Safeguarding (child · adult · domestic abuse)", "freq": 70, "vol": "V1", "chapters": "CH5", "domain": "Safeguarding"}, {"tier": 1, "station": "Prescribing safety (high-risk drugs · drug chart)", "freq": 70, "vol": "V3", "chapters": "CH67, CH68", "domain": "Prescribing"}, {"tier": 2, "station": "Stroke / TIA · Seizure / epilepsy", "freq": 65, "vol": "V1", "chapters": "CH16, CH17", "domain": "Neurology"}, {"tier": 2, "station": "Diabetes emergency (DKA · HHS · hypoglycaemia)", "freq": 65, "vol": "V1", "chapters": "CH19", "domain": "Endocrine"}, {"tier": 2, "station": "ECG / ABG interpretation", "freq": 60, "vol": "V3", "chapters": "CH70", "domain": "Interpretation"}, {"tier": 2, "station": "Paediatric emergency (febrile child · wheeze)", "freq": 60, "vol": "V2", "chapters": "CH47, CH48", "domain": "Paediatrics"}, {"tier": 2, "station": "Confidentiality / ethics (DVLA · family request)", "freq": 60, "vol": "V1", "chapters": "CH2", "domain": "Ethics"}, {"tier": 2, "station": "CVS or respiratory examination", "freq": 55, "vol": "V3", "chapters": "CH58", "domain": "Examination"}, {"tier": 2, "station": "Mental health (depression · psychosis · MSE)", "freq": 55, "vol": "V2", "chapters": "CH54, CH55", "domain": "Psychiatry"}, {"tier": 2, "station": "Explanation station (new diagnosis · medication)", "freq": 55, "vol": "V1", "chapters": "CH1", "domain": "Communication"}, {"tier": 3, "station": "Procedural skills (cannulation · catheterisation)", "freq": 50, "vol": "V3", "chapters": "CH63, CH64", "domain": "Procedure"}, {"tier": 3, "station": "CXR interpretation", "freq": 50, "vol": "V3", "chapters": "CH71", "domain": "Interpretation"}, {"tier": 3, "station": "Abdominal / neurological examination", "freq": 45, "vol": "V3", "chapters": "CH59, CH60", "domain": "Examination"}, {"tier": 3, "station": "Telephone consultation / handover", "freq": 40, "vol": "V1", "chapters": "CH7", "domain": "Communication"}];
+let activeDays='all', activeDom='all';
+function setTime(d,btn){activeDays=d;document.querySelectorAll('.time-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');render();}
+function filterDom(d,btn){activeDom=d;document.querySelectorAll('.fbtn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');render();}
+function render(){
+  let list=FREQ.filter(s=>{
+    const tierOk=activeDays==='all'||(activeDays===7&&s.tier===1)||(activeDays===14&&s.tier<=2)||(activeDays===28&&s.tier<=3);
+    const domOk=activeDom==='all'||s.domain===activeDom;
+    return tierOk&&domOk;
+  });
+  const tiers=[1,2,3];
+  const tierLabels={1:'⛔ Tier 1 — High Priority (appears in 70–90% of circuits)',2:'⚠ Tier 2 — Medium Priority (appears in 55–65% of circuits)',3:'📋 Tier 3 — Complete Preparation (appears in 40–50% of circuits)'};
+  const tierBadge={1:'t1-badge',2:'t2-badge',3:'t3-badge'};
+  const tierRow={1:'t1-row',2:'t2-row',3:'t3-row'};
+  const tierNum={1:'t1-num',2:'t2-num',3:'t3-num'};
+  const tierBar={1:'t1-bar',2:'t2-bar',3:'t3-bar'};
+  let html='';
+  tiers.forEach(tier=>{
+    const items=list.filter(s=>s.tier===tier);
+    if(!items.length) return;
+    html+=`<div class="tier-section">
+      <div class="tier-hdr"><span class="tier-badge ${tierBadge[tier]}">${['','Tier 1','Tier 2','Tier 3'][tier]}</span><span class="tier-desc">${tierLabels[tier]}</span></div>
+      ${items.map(s=>`<div class="station-row ${tierRow[tier]}">
+        <div class="sr-freq"><div class="freq-num ${tierNum[tier]}">${s.freq}</div><div class="freq-lbl">%</div></div>
+        <div class="sr-bar-wrap"><div class="sr-bar ${tierBar[tier]}" style="width:${s.freq}%"></div></div>
+        <div class="sr-content">
+          <div class="sr-station">${s.station}</div>
+          <div class="sr-meta"><span class="sr-domain">${s.domain}</span><span class="sr-vol">${s.vol}</span><span class="sr-ch">${s.chapters}</span></div>
+        </div>
+      </div>`).join('')}
+    </div>`;
+  });
+  document.getElementById('stationList').innerHTML=html||'<p style="color:var(--muted);text-align:center;padding:40px;font-size:14px">No stations match this filter.</p>';
+}
+render();
+</script></body></html>

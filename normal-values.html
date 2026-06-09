@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Normal Values & Critical Labs — AMaC PLAB 2</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0d2247;--navy-deep:#091629;--gold:#c9a227;--gold-soft:#e0c45a;--cream:#f7f4ec;--ink:#1a1d24;--muted:#5d6470;--line:#e4ddcd;--fail:#c0392b;--pass:#1b6b3a;}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--ink);-webkit-font-smoothing:antialiased;}
+nav{position:sticky;top:0;z-index:100;background:linear-gradient(180deg,#0f2850,#0d2247);border-bottom:1px solid rgba(201,162,39,0.25);box-shadow:0 3px 16px rgba(9,22,41,0.5);}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 28px;height:64px;display:flex;align-items:center;justify-content:space-between;}
+.brand{font-family:'Fraunces',serif;font-size:24px;font-weight:700;color:var(--gold-soft);letter-spacing:3px;text-decoration:none;}
+.nav-links{display:flex;gap:24px;list-style:none;align-items:center;}
+.nav-links a{color:#dde2ec;text-decoration:none;font-size:13px;}.nav-links a:hover{color:#fff;}
+.nav-cta{background:linear-gradient(135deg,#d4a820,#c9a227)!important;color:var(--navy-deep)!important;padding:8px 18px;border-radius:2px;font-weight:700;font-size:12px;}
+.hero{background:linear-gradient(155deg,#0d2247,#091629);color:#fff;padding:52px 28px 44px;text-align:center;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.02) 1px,transparent 1px);background-size:20px 20px;}
+.ph{max-width:800px;margin:0 auto;position:relative;}
+.kick{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--gold-soft);border:1px solid rgba(201,162,39,0.4);padding:5px 14px;border-radius:2px;display:inline-block;margin-bottom:16px;}
+.hero h1{font-family:'Fraunces',serif;font-size:clamp(24px,5vw,42px);font-weight:500;line-height:1.1;}
+.hero h1 em{font-style:italic;color:var(--gold-soft);}
+.hero p{margin:12px auto 0;color:#d0d6e8;font-weight:300;font-size:15px;max-width:56ch;line-height:1.65;}
+.tabs{background:var(--cream);border-bottom:1px solid var(--line);padding:8px 28px;position:sticky;top:64px;z-index:90;box-shadow:0 2px 6px rgba(13,34,71,0.06);}
+.tabs-inner{max-width:1100px;margin:0 auto;display:flex;gap:4px;flex-wrap:wrap;}
+.tab{padding:10px 18px;font-size:12px;font-family:'Outfit',sans-serif;cursor:pointer;border:none;margin:6px 3px;border-radius:8px;white-space:nowrap;transition:all .22s;background:linear-gradient(135deg,#0f2850,#0d2247);border:1.5px solid rgba(201,162,39,0.3);color:var(--gold-soft);box-shadow:0 3px 10px rgba(9,22,41,0.35),inset 0 1px 0 rgba(255,255,255,0.06);font-weight:600;letter-spacing:.3px;}
+.tab.active{background:linear-gradient(135deg,#0a1d3d,#091629);border-color:var(--gold);border-width:2px;box-shadow:0 4px 20px rgba(201,162,39,0.25),inset 0 1px 0 rgba(255,255,255,0.05);color:var(--gold-soft);transform:translateY(-1px);}.tab:hover:not(.active){background:linear-gradient(135deg,#1b3a6b,#152d52);border-color:rgba(201,162,39,0.6);box-shadow:0 6px 18px rgba(9,22,41,0.4),inset 0 1px 0 rgba(255,255,255,0.08);transform:translateY(-2px);color:#fff;}
+.wrap{max-width:1100px;margin:0 auto;padding:24px 28px 64px;}
+.panel{display:none;}.panel.active{display:block;}
+.crit-alert{background:linear-gradient(135deg,#fef2f2,#fee2e2);border:1px solid #fca5a5;border-radius:10px;padding:16px 20px;margin-bottom:20px;box-shadow:0 4px 16px rgba(192,57,43,0.12);}
+.ca-title{font-size:14px;color:#991b1b;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:12px;}
+.ca-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:8px;}
+.ca-item{background:linear-gradient(135deg,#7f1d1d,#991b1b);border:1px solid rgba(255,255,255,0.15);color:#fff;font-weight:600;box-shadow:0 2px 8px rgba(127,29,29,0.3);border-radius:8px;padding:10px 12px;text-align:center;transition:all .2s;}
+.ca-test{font-size:14px;font-weight:700;color:#fff;margin-bottom:4px;}
+.ca-val{font-size:12px;color:rgba(255,255,255,0.75);font-weight:600;line-height:1.4;}
+.ref-table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden;margin-bottom:20px;box-shadow:0 2px 6px rgba(13,34,71,0.07);}
+.rt-hdr{background:linear-gradient(135deg,#0f2850,#0d2247);padding:11px 16px;display:flex;justify-content:space-between;}
+.rt-title{font-family:'Fraunces',serif;font-size:17px;color:var(--gold-soft);font-weight:600;}
+table{width:100%;border-collapse:collapse;}
+th{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--muted);padding:9px 14px;text-align:left;background:#f8f6f0;border-bottom:1px solid var(--line);}
+td{padding:10px 14px;font-size:13.5px;border-bottom:1px solid var(--line);vertical-align:top;}
+tr:last-child td{border-bottom:none;}
+tr:hover td{background:rgba(201,162,39,0.04);}
+.val-normal{color:var(--pass);font-weight:500;}
+.note-cell{font-size:12px;color:var(--muted);}
+.escalate-box{background:linear-gradient(135deg,#dbeafe,#bfdbfe);border:1px solid #93c5fd;border-radius:10px;padding:14px 18px;margin-bottom:20px;}
+.eb-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--navy);margin-bottom:6px;}
+.eb-text{font-family:'Fraunces',serif;font-style:italic;font-size:14px;color:var(--navy);line-height:1.6;font-weight:500;}
+.trustband{background:var(--navy);color:#fff;text-align:center;padding:34px 28px;}
+.trustband .slogan{font-family:'Fraunces',serif;font-style:italic;color:var(--gold-soft);font-size:18px;margin-bottom:8px;}
+.trustband p{color:#dde2ec;font-weight:300;font-size:14px;max-width:54ch;margin:0 auto;}
+footer{background:var(--navy-deep);color:#c4ccd8;padding:36px 28px 20px;}
+.foot-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px;border-bottom:1px solid rgba(255,255,255,0.07);padding-bottom:20px;}
+.foot-brand{font-family:'Fraunces',serif;font-size:22px;color:var(--gold-soft);letter-spacing:2px;}
+.foot-p{font-size:12px;color:#8a96b0;margin-top:5px;max-width:32ch;font-weight:300;line-height:1.5;}
+.foot-col h4{color:#fff;font-size:11px;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;font-weight:600;}
+.foot-col a{display:block;color:#8a96b0;text-decoration:none;font-size:12px;margin-bottom:6px;}
+.foot-col a:hover{color:var(--gold-soft);}
+.foot-btm{max-width:1200px;margin:14px auto 0;font-size:11px;color:#4a5568;text-align:center;}
+@media(max-width:700px){.nav-links{display:none;}.wrap{padding:16px 14px 48px;}.ca-grid{grid-template-columns:repeat(2,1fr);}}
+</style>
+</head>
+<body>
+<nav><div class="nav-inner"><a href="index.html" class="brand">AMaC</a>
+  <ul class="nav-links"><li><a href="books.html">The Master Series</a></li><li><a href="tools.html">Study Tools</a></li><li><a href="contact.html" class="nav-cta">Get Started</a></li></ul>
+</div></nav>
+<header class="hero"><div class="ph">
+  <span class="kick">Appendix 2D · Volume 2 · UK NHS Ranges</span>
+  <h1>Normal Values &amp; <em>Critical Labs</em></h1>
+  <p>UK NHS reference ranges, critical thresholds requiring immediate escalation, and PLAB 2 examination tips. All values from the AMaC Master Series.</p>
+</div></header>
+<div class="tabs"><div class="tabs-inner">
+  <button class="tab active" onclick="showTab('critical',this)">🚨 Critical Values</button>
+  <button class="tab" onclick="showTab('haem',this)">🩸 Haematology</button>
+  <button class="tab" onclick="showTab('biochem',this)">🧪 Biochemistry</button>
+  <button class="tab" onclick="showTab('abg',this)">🫁 ABG & ECG</button>
+  <button class="tab" onclick="showTab('paeds',this)">👶 Paediatric</button>
+  <button class="tab" onclick="showTab('preg',this)">🤰 Pregnancy</button>
+</div></div>
+<div class="wrap">
+  <div class="panel active" id="panel-critical">
+    <div class="crit-alert">
+      <div class="ca-title">⚠ Critical Values — Automatic Escalation Required</div>
+      <div class="ca-grid">
+        <div class="ca-item"><div class="ca-test">K⁺</div><div class="ca-val">&lt;2.5 or &gt;6.5 mmol/L</div></div>
+        <div class="ca-item"><div class="ca-test">Na⁺</div><div class="ca-val">&lt;120 or &gt;155 mmol/L</div></div>
+        <div class="ca-item"><div class="ca-test">Glucose</div><div class="ca-val">&lt;3 or &gt;25 mmol/L</div></div>
+        <div class="ca-item"><div class="ca-test">Lactate</div><div class="ca-val">&gt;4 mmol/L</div></div>
+        <div class="ca-item"><div class="ca-test">pH</div><div class="ca-val">&lt;7.2 or &gt;7.55</div></div>
+        <div class="ca-item"><div class="ca-test">Hb</div><div class="ca-val">&lt;70 g/L</div></div>
+        <div class="ca-item"><div class="ca-test">Neutrophils</div><div class="ca-val">&lt;0.5 ×10⁹/L</div></div>
+        <div class="ca-item"><div class="ca-test">Platelets</div><div class="ca-val">&lt;20 ×10⁹/L</div></div>
+        <div class="ca-item"><div class="ca-test">PaO₂</div><div class="ca-val">&lt;8 kPa</div></div>
+        <div class="ca-item"><div class="ca-test">PaCO₂</div><div class="ca-val">&gt;6.5 + acidosis</div></div>
+      </div>
+    </div>
+    <div class="escalate-box">
+      <div class="eb-label">OSCE Escalation Script</div>
+      <div class="eb-text">"This result is a critical abnormality. I would escalate immediately to my senior doctor or the ICU team and initiate appropriate management now."</div>
+    </div>
+    <div class="ref-table">
+      <div class="rt-hdr"><span class="rt-title">Top 6 PLAB 2 Lab Abnormalities</span></div>
+      <table><thead><tr><th>#</th><th>Abnormality</th><th>Key Tests</th><th>Immediate Action</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td style="font-weight:600">Hyperkalaemia</td><td>K⁺, ECG</td><td class="note-cell">IV calcium gluconate → insulin-dextrose → sodium bicarbonate if acidotic</td></tr>
+        <tr><td>2</td><td style="font-weight:600">Sepsis / elevated lactate</td><td>Lactate, VBG, blood cultures</td><td class="note-cell">Sepsis Six within 1 hour — escalate to senior/ICU</td></tr>
+        <tr><td>3</td><td style="font-weight:600">DKA (glucose + ketones)</td><td>Glucose, VBG, ketones, K⁺</td><td class="note-cell">Fluids → check K⁺ → fixed-rate insulin. Check K⁺ before insulin.</td></tr>
+        <tr><td>4</td><td style="font-weight:600">Anaemia (low Hb)</td><td>FBC, MCV, reticulocytes</td><td class="note-cell">Hb &lt;70 = transfusion threshold. Check MCV for type.</td></tr>
+        <tr><td>5</td><td style="font-weight:600">AKI (raised creatinine)</td><td>Creatinine, U&E, eGFR, urine output</td><td class="note-cell">Stop nephrotoxins, fluid status, senior review if severe</td></tr>
+        <tr><td>6</td><td style="font-weight:600">Hyponatraemia</td><td>Sodium, osmolality, fluid status</td><td class="note-cell">Slow correction — rapid correction causes osmotic demyelination</td></tr>
+      </tbody></table>
+    </div>
+  </div>
+  <div class="panel" id="panel-haem">
+    <div class="ref-table">
+      <div class="rt-hdr"><span class="rt-title">Haematology Reference Ranges</span></div>
+      <table><thead><tr><th>Test</th><th>Normal Range</th><th>Clinical Note</th></tr></thead>
+      <tbody>
+        <tr><td>Haemoglobin (M)</td><td class="val-normal">130–170 g/L</td><td class="note-cell">Below = anaemia. Check MCV for type.</td></tr>
+        <tr><td>Haemoglobin (F)</td><td class="val-normal">115–155 g/L</td><td class="note-cell">Pregnancy norm: 100–120 g/L (haemodilution)</td></tr>
+        <tr><td>WCC</td><td class="val-normal">4–11 ×10⁹/L</td><td class="note-cell">↑ infection/inflammation · ↓ bone marrow or viral</td></tr>
+        <tr><td>Neutrophils</td><td class="val-normal">2–7.5 ×10⁹/L</td><td class="note-cell">&lt;0.5 = neutropenic sepsis protocol</td></tr>
+        <tr><td>Platelets</td><td class="val-normal">150–400 ×10⁹/L</td><td class="note-cell">&lt;20 = critical · &lt;50 = bleeding risk during procedures</td></tr>
+        <tr><td>MCV</td><td class="val-normal">80–100 fL</td><td class="note-cell">Low = iron/thal · High = B12/folate/alcohol/liver</td></tr>
+        <tr><td>INR</td><td class="val-normal">0.9–1.2</td><td class="note-cell">Target 2–3 (warfarin AF) · 2.5–3.5 (mechanical valve)</td></tr>
+        <tr><td>APTT</td><td class="val-normal">25–35 seconds</td><td class="note-cell">Prolonged = haemophilia, heparin, lupus anticoagulant</td></tr>
+      </tbody></table>
+    </div>
+    <div style="background:#fdf8e6;border:1px solid rgba(201,162,39,0.3);border-radius:8px;padding:13px 16px;font-size:13px;color:var(--ink);line-height:1.65;">
+      <strong>PLAB 2 tip:</strong> Low Hb + low MCV = iron deficiency anaemia. Low Hb + high MCV = B12/folate deficiency or alcohol. Corrected calcium = Ca + 0.02 × (40 − albumin).
+    </div>
+  </div>
+  <div class="panel" id="panel-biochem">
+    <div class="ref-table">
+      <div class="rt-hdr"><span class="rt-title">Biochemistry Reference Ranges</span></div>
+      <table><thead><tr><th>Test</th><th>Normal Range</th><th>Clinical Note</th></tr></thead>
+      <tbody>
+        <tr><td>Sodium</td><td class="val-normal">135–145 mmol/L</td><td class="note-cell">Fluid balance marker · &lt;120 or &gt;155 = critical</td></tr>
+        <tr><td>Potassium</td><td class="val-normal">3.5–5.0 mmol/L</td><td class="note-cell">Cardiac rhythm · &lt;2.5 or &gt;6.5 = critical</td></tr>
+        <tr><td>Urea</td><td class="val-normal">2.5–7.0 mmol/L</td><td class="note-cell">Hydration + renal function. High = GI bleed or dehydration</td></tr>
+        <tr><td>Creatinine</td><td class="val-normal">60–110 µmol/L</td><td class="note-cell">Kidney function — rises late in AKI. Check trend.</td></tr>
+        <tr><td>eGFR</td><td class="val-normal">&gt;90 mL/min</td><td class="note-cell">CKD staging: &lt;60 = CKD3 · &lt;30 = CKD4 · &lt;15 = CKD5</td></tr>
+        <tr><td>Glucose (fasting)</td><td class="val-normal">3.9–5.5 mmol/L</td><td class="note-cell">Diabetes: fasting ≥7.0 · OGTT 2h ≥11.1</td></tr>
+        <tr><td>HbA1c</td><td class="val-normal">&lt;48 mmol/mol</td><td class="note-cell">Pre-diabetes 42–47 · Diabetes ≥48</td></tr>
+        <tr><td>CRP</td><td class="val-normal">&lt;5 mg/L</td><td class="note-cell">Infection/inflammation marker</td></tr>
+        <tr><td>Lactate</td><td class="val-normal">&lt;2 mmol/L</td><td class="note-cell">2–4 = significant · &gt;4 = critical / septic shock</td></tr>
+        <tr><td>Calcium (corrected)</td><td class="val-normal">2.1–2.6 mmol/L</td><td class="note-cell">Always correct for albumin. Formula: Ca + 0.02 × (40 − albumin)</td></tr>
+        <tr><td>Albumin</td><td class="val-normal">35–50 g/L</td><td class="note-cell">Low = malnutrition, liver disease, nephrotic syndrome</td></tr>
+        <tr><td>Bilirubin (total)</td><td class="val-normal">&lt;21 µmol/L</td><td class="note-cell">Jaundice visible at &gt;35 µmol/L</td></tr>
+        <tr><td>ALT / AST</td><td class="val-normal">&lt;45 IU/L</td><td class="note-cell">Hepatocellular damage. Very high = hepatitis/ischaemia</td></tr>
+        <tr><td>ALP</td><td class="val-normal">30–130 IU/L</td><td class="note-cell">↑ in cholestasis, bone disease, pregnancy</td></tr>
+        <tr><td>TSH</td><td class="val-normal">0.4–4.5 mU/L</td><td class="note-cell">↓ = hyperthyroid (or pregnancy T1) · ↑ = hypothyroid</td></tr>
+        <tr><td>Troponin</td><td class="val-normal">Lab specific (hs-TnI)</td><td class="note-cell">Serial samples at 0 and 3h (high-sensitivity). Rise + fall = ACS.</td></tr>
+        <tr><td>BNP / NT-proBNP</td><td class="val-normal">&lt;100 pg/mL (BNP)</td><td class="note-cell">Heart failure marker. Very high = decompensated HF.</td></tr>
+        <tr><td>D-dimer</td><td class="val-normal">&lt;0.5 mg/L</td><td class="note-cell">Only useful if low pre-test probability. High sensitivity, low specificity.</td></tr>
+        <tr><td>Amylase / Lipase</td><td class="val-normal">&lt;100 IU/L</td><td class="note-cell">&gt;3× upper limit = pancreatitis likely. Lipase more specific.</td></tr>
+        <tr><td>PSA</td><td class="val-normal">Age-dependent</td><td class="note-cell">Interpret with DRE. Elevated ≠ cancer. Discuss with urology.</td></tr>
+      </tbody></table>
+    </div>
+  </div>
+  <div class="panel" id="panel-abg">
+    <div class="ref-table">
+      <div class="rt-hdr"><span class="rt-title">ABG Normal Values</span></div>
+      <table><thead><tr><th>Parameter</th><th>Normal Range</th><th>Abnormal → Action</th></tr></thead>
+      <tbody>
+        <tr><td>pH</td><td class="val-normal">7.35–7.45</td><td class="note-cell">&lt;7.2 = critical escalation · &gt;7.55 = critical escalation</td></tr>
+        <tr><td>PaO₂</td><td class="val-normal">11–13 kPa</td><td class="note-cell">&lt;8 kPa = type 1/2 respiratory failure</td></tr>
+        <tr><td>PaCO₂</td><td class="val-normal">4.7–6.0 kPa</td><td class="note-cell">&gt;6.5 + acidosis = type 2 RF · NIV or ventilation</td></tr>
+        <tr><td>HCO₃⁻</td><td class="val-normal">22–26 mmol/L</td><td class="note-cell">Low = metabolic acidosis · High = metabolic alkalosis</td></tr>
+        <tr><td>Base excess</td><td class="val-normal">−2 to +2</td><td class="note-cell">≤−4 = significant metabolic acidosis</td></tr>
+        <tr><td>Lactate</td><td class="val-normal">&lt;2 mmol/L</td><td class="note-cell">&gt;4 = ICU escalation</td></tr>
+        <tr><td>SpO₂ target (general)</td><td class="val-normal">94–98%</td><td class="note-cell">COPD risk: target 88–92%</td></tr>
+      </tbody></table>
+    </div>
+    <div class="ref-table">
+      <div class="rt-hdr"><span class="rt-title">ECG Normal Values</span></div>
+      <table><thead><tr><th>Parameter</th><th>Normal Range</th><th>Abnormal</th></tr></thead>
+      <tbody>
+        <tr><td>Heart rate</td><td class="val-normal">60–100 bpm</td><td class="note-cell">&lt;60 = bradycardia · &gt;100 = tachycardia</td></tr>
+        <tr><td>PR interval</td><td class="val-normal">120–200 ms</td><td class="note-cell">&gt;200 ms = 1st degree heart block</td></tr>
+        <tr><td>QRS duration</td><td class="val-normal">&lt;120 ms</td><td class="note-cell">≥120 ms = bundle branch block or ventricular rhythm</td></tr>
+        <tr><td>QTc</td><td class="val-normal">&lt;440 ms (M) / &lt;460 ms (F)</td><td class="note-cell">Prolonged = torsades risk (drugs, hypokalaemia)</td></tr>
+        <tr><td>ST segment</td><td class="val-normal">Isoelectric</td><td class="note-cell">↑ ≥1mm in ≥2 leads = STEMI · ↓ = ischaemia/NSTEMI</td></tr>
+      </tbody></table>
+    </div>
+  </div>
+  <div class="panel" id="panel-paeds">
+    <div class="ref-table">
+      <div class="rt-hdr"><span class="rt-title">Paediatric Vital Signs by Age</span></div>
+      <table><thead><tr><th>Age</th><th>HR (bpm)</th><th>RR (/min)</th><th>SBP (mmHg)</th></tr></thead>
+      <tbody>
+        <tr><td>Neonate (&lt;1m)</td><td class="val-normal">120–160</td><td class="val-normal">30–60</td><td class="val-normal">60–80</td></tr>
+        <tr><td>Infant (1–12m)</td><td class="val-normal">110–150</td><td class="val-normal">25–50</td><td class="val-normal">70–100</td></tr>
+        <tr><td>Toddler (1–3y)</td><td class="val-normal">90–140</td><td class="val-normal">20–35</td><td class="val-normal">80–110</td></tr>
+        <tr><td>School child (4–12y)</td><td class="val-normal">70–110</td><td class="val-normal">15–25</td><td class="val-normal">90–120</td></tr>
+        <tr><td>Adolescent (12–18y)</td><td class="val-normal">60–100</td><td class="val-normal">12–20</td><td class="val-normal">100–130</td></tr>
+      </tbody></table>
+    </div>
+    <div style="background:#fdf0ee;border:1px solid rgba(192,57,43,0.2);border-radius:8px;padding:13px 16px;font-size:13px;color:var(--ink);line-height:1.7;">
+      <strong style="color:var(--fail)">Paediatric Red Flags:</strong><br>
+      Temperature &gt;38°C in infant &lt;3 months = EMERGENCY — escalate immediately<br>
+      Capillary refill &gt;3 seconds = concerning — assess circulation<br>
+      Neonatal glucose &lt;2.6 mmol/L = hypoglycaemia — treat immediately<br>
+      Non-blanching rash + fever = meningococcal disease until proven otherwise
+    </div>
+  </div>
+  <div class="panel" id="panel-preg">
+    <div class="ref-table">
+      <div class="rt-hdr"><span class="rt-title">Pregnancy Lab Changes</span></div>
+      <table><thead><tr><th>Test</th><th>Expected Change</th><th>Clinical Note</th></tr></thead>
+      <tbody>
+        <tr><td>Haemoglobin</td><td>↓ (100–120 g/L)</td><td class="note-cell">Physiological haemodilution — Hb 105 may be normal in pregnancy</td></tr>
+        <tr><td>WCC</td><td>↑ (up to 15 ×10⁹/L)</td><td class="note-cell">Normal in pregnancy — do not treat as infection without clinical context</td></tr>
+        <tr><td>Platelets</td><td>Slight ↓</td><td class="note-cell">Gestational thrombocytopenia is common and usually benign</td></tr>
+        <tr><td>Urea &amp; Creatinine</td><td>↓</td><td class="note-cell">GFR increases in pregnancy — "normal" creatinine may mask impairment</td></tr>
+        <tr><td>ALP</td><td>↑ (placental production)</td><td class="note-cell">Normal in pregnancy — isolated ↑ ALP does not indicate liver disease</td></tr>
+        <tr><td>Albumin</td><td>↓</td><td class="note-cell">Must adjust corrected calcium calculation</td></tr>
+        <tr><td>TSH</td><td>Slight ↓ (T1)</td><td class="note-cell">HCG stimulates thyroid in first trimester — not always pathological</td></tr>
+        <tr><td>BP</td><td>↓ early, then normal</td><td class="note-cell">BP &gt;140/90 after 20w = pre-eclampsia screen (+ urine protein)</td></tr>
+      </tbody></table>
+    </div>
+  </div>
+</div>
+<div class="trustband"><p class="slogan">Think Like an Examiner · Speak Like a Doctor · Perform With Confidence</p><p>Reference values from Appendix 2D of the AMaC PLAB 2 Master Series Volume 2. UK NHS SI units.</p></div>
+<footer><div class="foot-inner">
+  <div><div class="foot-brand">AMaC</div><p class="foot-p">A. Mansour &amp; Colleagues.</p></div>
+  <div class="foot-col"><h4>Study Tools</h4><a href="prescribing.html">Prescribing Safety</a><a href="ecg-abg.html">ECG &amp; ABG</a><a href="dvla.html">DVLA Reference</a></div>
+  <div class="foot-col"><h4>Contact</h4><a href="mailto:info@amac-medical.com">info@amac-medical.com</a></div>
+</div><div class="foot-btm">&copy; 2026 A. Mansour &amp; Colleagues (AMaC). All rights reserved.</div></footer>
+<script>
+function showTab(id,btn){document.querySelectorAll('.tab').forEach(b=>b.classList.remove('active'));document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));btn.classList.add('active');document.getElementById('panel-'+id).classList.add('active');}
+</script></body></html>

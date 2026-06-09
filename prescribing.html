@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Prescribing Safety — AMaC PLAB 2</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0d2247;--navy-deep:#091629;--gold:#c9a227;--gold-soft:#e0c45a;--cream:#f7f4ec;--ink:#1a1d24;--muted:#5d6470;--line:#e4ddcd;--fail:#c0392b;--pass:#1b6b3a;}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--ink);-webkit-font-smoothing:antialiased;}
+nav{position:sticky;top:0;z-index:100;background:linear-gradient(180deg,#0f2850,#0d2247);border-bottom:1px solid rgba(201,162,39,0.25);box-shadow:0 3px 16px rgba(9,22,41,0.5);}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 28px;height:64px;display:flex;align-items:center;justify-content:space-between;}
+.brand{font-family:'Fraunces',serif;font-size:24px;font-weight:700;color:var(--gold-soft);letter-spacing:3px;text-decoration:none;}
+.nav-links{display:flex;gap:24px;list-style:none;align-items:center;}
+.nav-links a{color:#dde2ec;text-decoration:none;font-size:13px;}.nav-links a:hover{color:#fff;}
+.nav-cta{background:linear-gradient(135deg,#d4a820,#c9a227)!important;color:var(--navy-deep)!important;padding:8px 18px;border-radius:2px;font-weight:700;font-size:12px;}
+.hero{background:linear-gradient(155deg,#0d2247,#091629);color:#fff;padding:52px 28px 44px;text-align:center;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.02) 1px,transparent 1px);background-size:20px 20px;}
+.ph{max-width:800px;margin:0 auto;position:relative;}
+.kick{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--gold-soft);border:1px solid rgba(201,162,39,0.4);padding:5px 14px;border-radius:2px;display:inline-block;margin-bottom:16px;}
+.hero h1{font-family:'Fraunces',serif;font-size:clamp(24px,5vw,42px);font-weight:500;line-height:1.1;}
+.hero h1 em{font-style:italic;color:var(--gold-soft);}
+.hero p{margin:12px auto 0;color:#d0d6e8;font-weight:300;font-size:15px;max-width:56ch;line-height:1.65;}
+.tabs{background:var(--cream);border-bottom:1px solid var(--line);padding:8px 28px;position:sticky;top:64px;z-index:90;box-shadow:0 2px 6px rgba(13,34,71,0.06);}
+.tabs-inner{max-width:1100px;margin:0 auto;display:flex;gap:4px;flex-wrap:wrap;}
+.tab{padding:15px 20px;font-size:13px;font-weight:600;font-family:'Outfit',sans-serif;cursor:pointer;border:none;transition:all .22s;margin:6px 3px;border-radius:8px;background:linear-gradient(135deg,#0f2850,#0d2247);border:1.5px solid rgba(201,162,39,0.3);color:var(--gold-soft);box-shadow:0 3px 10px rgba(9,22,41,0.35),inset 0 1px 0 rgba(255,255,255,0.06);font-weight:600;letter-spacing:.3px;}
+.tab.active{background:linear-gradient(135deg,#0a1d3d,#091629);border-color:var(--gold);border-width:2px;box-shadow:0 4px 20px rgba(201,162,39,0.25),inset 0 1px 0 rgba(255,255,255,0.05);color:var(--gold-soft);transform:translateY(-1px);}.tab:hover:not(.active){background:linear-gradient(135deg,#1b3a6b,#152d52);border-color:rgba(201,162,39,0.6);box-shadow:0 6px 18px rgba(9,22,41,0.4),inset 0 1px 0 rgba(255,255,255,0.08);transform:translateY(-2px);color:#fff;}
+.wrap{max-width:1100px;margin:0 auto;padding:28px 28px 64px;}
+.panel{display:none;}.panel.active{display:block;}
+/* Mnemonics */
+.mnem-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px;margin-bottom:24px;}
+.mnem-card{background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden;box-shadow:0 2px 8px rgba(13,34,71,0.07);}
+.mnem-hdr{background:linear-gradient(135deg,#0f2850,#0d2247);padding:12px 16px;display:flex;justify-content:space-between;align-items:center;}
+.mnem-name{font-family:'Fraunces',serif;font-size:17px;color:var(--gold-soft);font-weight:600;}
+.mnem-body{padding:14px 16px;}
+.mnem-text{font-size:13px;color:var(--ink);line-height:1.7;}
+.mnem-letter{font-weight:700;color:var(--navy);}
+/* Instant fails */
+.fail-grid{display:flex;flex-direction:column;gap:8px;}
+.fail-item{display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#fff;border:1px solid var(--line);border-radius:8px;border-left:4px solid var(--fail);transition:all .15s;}
+.fail-item:hover{background:rgba(192,57,43,0.04);transform:translateX(3px);}
+.fail-icon{color:var(--fail);font-size:16px;flex-shrink:0;margin-top:1px;}
+.fail-text{font-size:13.5px;color:var(--ink);line-height:1.4;font-weight:500;}
+/* High risk drugs */
+.drug-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:14px;}
+.drug-card{background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden;box-shadow:0 2px 8px rgba(13,34,71,0.07);}
+.drug-hdr{padding:13px 16px;border-bottom:none;background:linear-gradient(135deg,#0f2850,#0d2247);}
+.drug-name{font-family:'Fraunces',serif;font-size:17px;color:var(--gold-soft);font-weight:600;}
+.drug-body{padding:13px 16px;}
+.drug-risk{font-size:13px;color:var(--fail);font-weight:600;margin-bottom:6px;padding:7px 10px;background:#fdf0ee;border-radius:4px;border-left:3px solid var(--fail);}
+.drug-check{font-size:12.5px;color:var(--muted);line-height:1.6;}
+.drug-check strong{color:var(--navy);}
+/* VRIII */
+.vriii-box{background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden;box-shadow:0 2px 8px rgba(13,34,71,0.07);}
+.vriii-hdr{background:linear-gradient(135deg,#0f2850,#0d2247);padding:16px 20px;}
+.vriii-title{font-family:'Fraunces',serif;font-size:20px;color:#fff;font-weight:500;}
+.vriii-sub{font-size:12px;color:rgba(255,255,255,0.8);margin-top:3px;}
+.vriii-body{padding:18px 20px;}
+.vriii-steps{counter-reset:vr;}
+.vriii-step{display:flex;gap:12px;align-items:flex-start;margin-bottom:10px;padding:10px 13px;background:#f8f9fc;border-radius:6px;border-left:3px solid transparent;transition:all .15s;}
+.vriii-step:hover{background:#edf2fc;border-left-color:var(--navy);}
+.vs-num{background:var(--navy);color:var(--gold-soft);font-family:'Fraunces',serif;font-size:14px;width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.vs-text{font-size:13.5px;color:var(--ink);line-height:1.45;}
+.vriii-errors{background:linear-gradient(135deg,#fef2f2,#fee2e2);border:1px solid #fca5a5;border-radius:10px;padding:13px 16px;margin-top:14px;}
+.ve-title{font-size:11px;color:#991b1b;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:12px;}
+.ve-item{background:linear-gradient(135deg,#7f1d1d,#991b1b);border:1px solid rgba(255,255,255,0.15);color:#fff;font-weight:600;box-shadow:0 2px 8px rgba(127,29,29,0.3);font-size:13px;padding:6px 10px;margin-bottom:4px;border-radius:6px;}
+.ve-item:last-child{border-bottom:none;}
+.trustband{background:var(--navy);color:#fff;text-align:center;padding:34px 28px;}
+.trustband .slogan{font-family:'Fraunces',serif;font-style:italic;color:var(--gold-soft);font-size:18px;margin-bottom:8px;}
+.trustband p{color:#dde2ec;font-weight:300;font-size:14px;max-width:54ch;margin:0 auto;}
+footer{background:var(--navy-deep);color:#c4ccd8;padding:36px 28px 20px;}
+.foot-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px;border-bottom:1px solid rgba(255,255,255,0.07);padding-bottom:20px;}
+.foot-brand{font-family:'Fraunces',serif;font-size:22px;color:var(--gold-soft);letter-spacing:2px;}
+.foot-p{font-size:12px;color:#8a96b0;margin-top:5px;max-width:32ch;font-weight:300;line-height:1.5;}
+.foot-col h4{color:#fff;font-size:11px;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;font-weight:600;}
+.foot-col a{display:block;color:#8a96b0;text-decoration:none;font-size:12px;margin-bottom:6px;}
+.foot-col a:hover{color:var(--gold-soft);}
+.foot-btm{max-width:1200px;margin:14px auto 0;font-size:11px;color:#4a5568;text-align:center;}
+@media(max-width:700px){.nav-links{display:none;}.wrap{padding:18px 14px 48px;}.mnem-grid,.drug-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<nav><div class="nav-inner"><a href="index.html" class="brand">AMaC</a>
+  <ul class="nav-links"><li><a href="books.html">The Master Series</a></li><li><a href="tools.html">Study Tools</a></li><li><a href="contact.html" class="nav-cta">Get Started</a></li></ul>
+</div></nav>
+<header class="hero"><div class="ph">
+  <span class="kick">Chapters 67–68 · Volume 3</span>
+  <h1>Prescribing <em>Safety</em></h1>
+  <p>SAFE PRESCRIBE · ORIP · IOAPM · SADMAN · ACID-ID · VRIII · High-risk drugs · Instant fails. Everything from the AMaC prescribing chapters in one interactive reference.</p>
+</div></header>
+<div class="tabs"><div class="tabs-inner">
+  <button class="tab active" onclick="showTab('mnemonics',this)">📋 Mnemonics</button>
+  <button class="tab" onclick="showTab('instant-fails',this)">⚠ Instant Fails</button>
+  <button class="tab" onclick="showTab('high-risk',this)">💊 High-Risk Drugs</button>
+  <button class="tab" onclick="showTab('vriii',this)">💉 VRIII Protocol</button>
+</div></div>
+<div class="wrap">
+  <div class="panel active" id="panel-mnemonics">
+    <div class="mnem-grid" id="mnemGrid"></div>
+  </div>
+  <div class="panel" id="panel-instant-fails">
+    <div class="fail-grid" id="failGrid"></div>
+  </div>
+  <div class="panel" id="panel-high-risk">
+    <div class="drug-grid" id="drugGrid"></div>
+  </div>
+  <div class="panel" id="panel-vriii">
+    <div class="vriii-box">
+      <div class="vriii-hdr">
+        <div class="vriii-title">VRIII — Variable Rate Intravenous Insulin Infusion</div>
+        <div class="vriii-sub">For NBM diabetic patients · Perioperative management</div>
+      </div>
+      <div class="vriii-body" id="vriiiBody"></div>
+    </div>
+  </div>
+</div>
+<div class="trustband"><p class="slogan">Think Like an Examiner · Speak Like a Doctor · Perform With Confidence</p><p>All prescribing content sourced from Chapters 67–68 of the AMaC Master Series Volume 3.</p></div>
+<footer><div class="foot-inner">
+  <div><div class="foot-brand">AMaC</div><p class="foot-p">A. Mansour &amp; Colleagues — examiner-led preparation for the PLAB 2 OSCE.</p></div>
+  <div class="foot-col"><h4>Tools</h4><a href="mastercards.html">Master Cards</a><a href="osce.html">OSCE Stations</a><a href="dvla.html">DVLA Reference</a><a href="instant-fails.html">Instant Fails</a></div>
+  <div class="foot-col"><h4>New Tools</h4><a href="ecg-abg.html">ECG &amp; ABG</a><a href="examcoach.html">Examination Coach</a></div>
+  <div class="foot-col"><h4>Contact</h4><a href="mailto:info@amac-medical.com">info@amac-medical.com</a></div>
+</div><div class="foot-btm">&copy; 2026 A. Mansour &amp; Colleagues (AMaC). All rights reserved.</div></footer>
+<script>
+const RX={"mnemonics": {"SAFE_PRESCRIBE": "Status · Allergy (FIRST) · Function (renal/hepatic) · Existing meds → Precise drug (generic) · Route · Exact dose · Schedule · Clear · Review date · Indication · BNF check · End/sign", "ORIP": "Once only · Regular · IV fluids · PRN (as required)", "IOAPM": "Insulin (never \"U\") · Opioids (monitor RR) · Anticoagulants (check eGFR/platelets) · Potassium IV (NEVER bolus) · Methotrexate (ONCE WEEKLY)", "SADMAN": "Sulphonylureas · ACE inhibitors · Diuretics · Metformin · ARBs · NSAIDs — STOP these if patient vomiting/diarrhoea/dehydrated", "ACID_ID": "Allergy confirmed · Correct indication · Indication + dose · Interactions checked · Date and sign", "FIVE_Rs": "Right patient · Right drug · Right dose · Right route · Right time", "WILM_NOSABDG": "Warfarin · Insulin · Lithium · Methotrexate · NSAIDs · Opioids · Steroids · ACE inhibitors · Beta-blockers · Digoxin · Gentamicin"}, "instant_fails": ["No allergy check before any prescription", "Decimal error — \".5 mg\" instead of \"0.5 mg\"", "Methotrexate prescribed daily (must be ONCE WEEKLY)", "Insulin written as \"U\" (must be \"units\" in full)", "Controlled drug in figures only (must be words AND figures)", "PRN drug without reason, interval and maximum dose", "Wrong ORIP section used for drug", "No indication documented for antibiotics", "Potassium IV given as bolus (must be infusion)", "Warfarin major bleed reversed with Vitamin K alone (need PCC + Vit K)"], "high_risk_drugs": [{"drug": "Methotrexate", "risk": "Weekly not daily — daily is fatal", "check": "Frequency, LFTs, FBC, no NSAIDs, no trimethoprim"}, {"drug": "Insulin", "risk": "Write \"units\" never \"U\" or \"IU\"", "check": "Glucose before, type/dose correct, VRIII if NBM"}, {"drug": "Warfarin", "risk": "INR before dose change", "check": "INR, bleeding risk, interactions (amoxicillin, NSAIDs, alcohol)"}, {"drug": "Gentamicin", "risk": "Nephrotoxic + ototoxic", "check": "Renal function, levels trough/peak, avoid other nephrotoxins"}, {"drug": "Digoxin", "risk": "Narrow therapeutic index", "check": "Renal function (renal clearance), K⁺, levels if toxicity suspected"}, {"drug": "Lithium", "risk": "Narrow therapeutic index", "check": "Levels (0.6–1.0 mmol/L), renal/thyroid, avoid NSAIDs/ACE inhibitors/dehydration"}, {"drug": "Opioids", "risk": "Respiratory depression", "check": "RR, constipation management, laxative prescribed with opioid"}, {"drug": "Potassium IV", "risk": "Fatal arrhythmia if bolus", "check": "Must be diluted infusion, concentration limit, cardiac monitor"}, {"drug": "ACE inhibitors", "risk": "AKI + hyperkalaemia", "check": "Renal function + K⁺ at baseline and 1–2 weeks after starting"}, {"drug": "NSAIDs", "risk": "GI bleed, AKI, fluid retention", "check": "Avoid in CKD, HF, elderly, bleeding risk; add PPI if needed"}], "vriii": {"name": "VRIII — Variable Rate Intravenous Insulin Infusion", "indications": ["NBM diabetic patient", "Perioperative diabetes management", "DKA (use fixed-rate — FRIII)", "Uncontrolled hyperglycaemia during illness"], "steps": ["Check blood glucose — document baseline", "Continue long-acting insulin (do not stop)", "Start 10% glucose at 125 mL/hr (or as prescribed)", "Start insulin infusion per local VRIII protocol", "Monitor glucose 1-hourly", "Adjust rate per sliding scale", "Aim glucose 6–10 mmol/L (max 12)", "Stop VRIII only when eating and drinking + usual insulin resumed"], "common_errors": ["Stopping long-acting insulin", "Starting without glucose infusion", "Not monitoring hourly", "Stopping before eating resumed"]}};
+
+function showTab(id,btn){
+  document.querySelectorAll('.tab').forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('panel-'+id).classList.add('active');
+}
+
+// Mnemonics
+const mnemLabels={
+  'SAFE_PRESCRIBE':'SAFE PRESCRIBE','ORIP':'ORIP','IOAPM':'IOAPM',
+  'SADMAN':'SADMAN','ACID_ID':'ACID-ID','FIVE_Rs':'5 Rs','WILM_NOSABDG':'WILM NOSABDG'
+};
+document.getElementById('mnemGrid').innerHTML=Object.entries(RX.mnemonics).map(([k,v])=>`
+  <div class="mnem-card">
+    <div class="mnem-hdr"><span class="mnem-name">${mnemLabels[k]||k}</span></div>
+    <div class="mnem-body"><div class="mnem-text">${v.split(' · ').map(part=>{
+      const m=part.match(/^([A-Z]+=)(.+)$/);
+      if(m) return '<span class="mnem-letter">'+m[1]+'</span>'+m[2];
+      return part;
+    }).join('<br>')}</div></div>
+  </div>`).join('');
+
+// Instant fails
+document.getElementById('failGrid').innerHTML=RX.instant_fails.map(f=>`
+  <div class="fail-item"><span class="fail-icon">⚠</span><span class="fail-text">${f}</span></div>`).join('');
+
+// High risk drugs
+document.getElementById('drugGrid').innerHTML=RX.high_risk_drugs.map(d=>`
+  <div class="drug-card">
+    <div class="drug-hdr"><div class="drug-name">${d.drug}</div></div>
+    <div class="drug-body">
+      <div class="drug-risk">⚠ ${d.risk}</div>
+      <div class="drug-check"><strong>Check:</strong> ${d.check}</div>
+    </div>
+  </div>`).join('');
+
+// VRIII
+const v=RX.vriii;
+document.getElementById('vriiiBody').innerHTML=`
+  <div style="margin-bottom:14px">
+    <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:8px">Indications</div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">${v.indications.map(i=>`<span style="background:#edf2fc;border:1px solid #c8d8f0;padding:4px 12px;border-radius:20px;font-size:12px;color:var(--navy)">${i}</span>`).join('')}</div>
+  </div>
+  <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:10px">Protocol Steps</div>
+  <div class="vriii-steps">${v.steps.map((s,i)=>`<div class="vriii-step"><div class="vs-num">${i+1}</div><div class="vs-text">${s}</div></div>`).join('')}</div>
+  <div class="vriii-errors">
+    <div class="ve-title">⚠ Common Errors — Instant Fail Risk</div>
+    ${v.common_errors.map(e=>`<div class="ve-item">✗ ${e}</div>`).join('')}
+  </div>`;
+</script>
+</body>
+</html>
