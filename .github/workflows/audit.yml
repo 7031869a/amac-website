@@ -1,0 +1,26 @@
+name: Site Audit
+
+# Runs automatically on every push and pull request to the repo.
+# Green tick = structural checks passed. Red X = something needs attention
+# (broken link, banned term, old-prototype text, or a wrong advertised count).
+# It does NOT check clinical accuracy — that always needs a clinician.
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:   # also lets you run it by hand from the Actions tab
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the site
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Run AMaC structural audit
+        run: python3 .github/audit_site.py
