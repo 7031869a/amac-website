@@ -69,13 +69,14 @@ def metric_for(label):
     return None
 
 def advertised(h):
+    # Captures the displayed number plus an optional trailing "+" (a growth floor).
     out = []
     out += [(n.replace(",", ""), l.strip()) for n, l in
-            re.findall(r'class="hs-num">(\d[\d,]*)</div><div class="hs-label">([^<]+)', h)]
+            re.findall(r'class="hs-num">(\d[\d,]*\+?)</div><div class="hs-label">([^<]+)', h)]
     out += [(n.replace(",", ""), l.strip()) for n, l in
-            re.findall(r'class="stat-num">(\d[\d,]*)</div><div class="stat-label">([^<]+)', h)]
+            re.findall(r'class="stat-num">(\d[\d,]*\+?)</div><div class="stat-label">([^<]+)', h)]
     for name, badge in re.findall(r'class="tc-name"[^>]*>([^<]+)</div>\s*<div class="tc-badge">([^<]+)', h, re.S):
-        m = re.match(r'(\d[\d,]*)', badge.strip())
+        m = re.match(r'(\d[\d,]*\+?)', badge.strip())
         if m:
             out.append((m.group(1).replace(",", ""), name.strip()))
     return out
@@ -88,8 +89,19 @@ for pg in ("index", "tools"):
         if not metric:
             continue
         true_n = TRUTH[metric]
-        if true_n and str(true_n) != num:
-            msg = f"[count]     {pg}.html shows {num} for {metric}, but the data file has {true_n}"
+        if not true_n:
+            continue
+        is_floor = num.endswith("+")
+        shown = int(num.rstrip("+"))
+        if is_floor:
+            # "N+" is honest as long as reality is at least N; only flag an over-claim.
+            mismatch = true_n < shown
+            detail = f"shows {num} for {metric}, but the data file has only {true_n}"
+        else:
+            mismatch = true_n != shown
+            detail = f"shows {num} for {metric}, but the data file has {true_n}"
+        if mismatch:
+            msg = f"[count]     {pg}.html {detail}"
             if metric == "Master Cards":
                 warnings.append(msg + "  (cards vs chapters -- intentional? your call)")
             else:
