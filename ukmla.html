@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UKMLA Preparation — AMaC</title>
+<meta name="description" content="UKMLA performance training from AMaC. Mastery-based CPSA stations, real-time clinical tools, and examiner-led thinking for UK medical graduates.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0d2247;--navy-deep:#091629;--gold:#c9a227;--gold-soft:#e0c45a;--cream:#f7f4ec;--paper:#fffdf8;--ink:#1a1d24;--muted:#5d6470;--line:#e4ddcd;}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{font-family:'Outfit',sans-serif;background:var(--paper);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;}
+h1,h2,h3,.serif{font-family:'Fraunces',serif;}
+
+/* ── NAV ── */
+nav{position:sticky;top:0;z-index:100;background:rgba(13,34,71,0.97);backdrop-filter:blur(8px);border-bottom:1px solid rgba(201,162,39,0.25);}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 32px;height:72px;display:flex;align-items:center;justify-content:space-between;}
+.brand{font-family:'Fraunces',serif;font-size:26px;font-weight:700;color:var(--gold-soft);letter-spacing:3px;text-decoration:none;}
+.brand span{color:var(--gold-soft);}
+.nav-links{display:flex;gap:30px;list-style:none;align-items:center;}
+.nav-links a{color:#e8e3d6;text-decoration:none;font-size:14px;letter-spacing:.5px;transition:color .25s;position:relative;}
+.nav-links a::after{content:'';position:absolute;left:0;bottom:-6px;width:0;height:2px;background:var(--gold);transition:width .3s;}
+.nav-links a:hover{color:#fff;}.nav-links a:hover::after{width:100%;}
+.nav-cta{background:var(--gold);color:var(--navy-deep)!important;padding:10px 20px;border-radius:2px;font-weight:600;font-size:13px;}
+.nav-cta::after{display:none!important;}.nav-cta:hover{background:var(--gold-soft);}
+
+/* ── HERO ── */
+.hero{background:radial-gradient(circle at 75% -10%,rgba(201,162,39,0.12),transparent 50%),linear-gradient(160deg,var(--navy),var(--navy-deep));color:#fff;padding:0 0 0;position:relative;overflow:hidden;min-height:100vh;display:flex;align-items:center;}
+.hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.03) 1px,transparent 1px);background-size:28px 28px;pointer-events:none;}
+.hero-inner{max-width:1200px;margin:0 auto;padding:96px 32px 88px;width:100%;display:grid;grid-template-columns:1fr;gap:64px;align-items:center;position:relative;z-index:1;}
+.hero-kick{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--gold-soft);border:1px solid rgba(201,162,39,0.3);padding:6px 16px;border-radius:2px;display:inline-block;margin-bottom:24px;background:rgba(201,162,39,0.06);}
+.hero-platform-line{font-size:clamp(18px,2.8vw,32px);font-weight:700;color:#ffffff;letter-spacing:3px;text-transform:uppercase;margin-bottom:24px;}
+.hero h1{font-family:'Fraunces',serif;font-size:clamp(38px,5.5vw,66px);font-weight:400;line-height:1.0;letter-spacing:-1.5px;margin-bottom:26px;}
+.hero h1 span{display:block;}
+.hero h1 em{font-style:italic;color:var(--gold-soft);font-weight:400;}
+.hero-sub{font-size:clamp(15px,1.8vw,18px);color:rgba(200,212,228,0.8);font-weight:300;line-height:1.7;max-width:48ch;margin-bottom:36px;}
+.hero-sub strong{color:rgba(224,196,90,0.9);font-weight:500;}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:44px;}
+.btn-gold{background:var(--gold);color:var(--navy-deep);padding:14px 30px;border-radius:2px;font-weight:700;font-size:14px;text-decoration:none;letter-spacing:.4px;transition:all .2s;box-shadow:0 4px 20px rgba(201,162,39,0.3);}
+.btn-gold:hover{background:var(--gold-soft);transform:translateY(-2px);box-shadow:0 8px 30px rgba(201,162,39,0.4);}
+.btn-ghost{background:rgba(255,255,255,0.06);color:#fff;padding:14px 30px;border-radius:2px;font-weight:500;font-size:14px;text-decoration:none;border:1px solid rgba(255,255,255,0.18);transition:all .2s;}
+.btn-ghost:hover{background:rgba(255,255,255,0.12);border-color:rgba(255,255,255,0.35);}
+
+/* ── CONTENT SECTION ── */
+.content-section{background:#fff;padding:80px 32px;}
+.cs-inner{max-width:1120px;margin:0 auto;}
+.section-label{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);text-align:center;margin-bottom:10px;}
+.section-title{font-family:'Fraunces',serif;font-size:clamp(24px,4vw,36px);color:var(--navy);text-align:center;margin-bottom:8px;font-weight:400;}
+.section-sub{font-size:15px;color:var(--muted);text-align:center;max-width:52ch;margin:0 auto 52px;line-height:1.6;}
+.feature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:28px;margin-top:44px;}
+.feature-card{background:var(--cream);border:1px solid var(--line);border-radius:8px;padding:28px 24px;text-align:center;}
+.feature-card h3{font-size:18px;color:var(--navy);margin-bottom:12px;font-weight:500;}
+.feature-card p{font-size:14px;color:var(--muted);line-height:1.6;}
+.feature-icon{font-size:32px;margin-bottom:16px;color:var(--gold);}
+
+/* ── PHILOSOPHY STRIP ── */
+.phi-strip{background:var(--navy);padding:56px 32px;}
+.phi-inner{max-width:1000px;margin:0 auto;text-align:center;}
+.phi-eyebrow{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:14px;}
+.phi-title{font-family:'Fraunces',serif;font-size:clamp(22px,3.5vw,34px);color:#fff;font-weight:400;margin-bottom:24px;line-height:1.25;}
+.phi-title em{font-style:italic;color:var(--gold-soft);}
+
+/* ── CTA SECTION ── */
+.cta-section{background:linear-gradient(135deg,var(--gold),#b8901a);padding:72px 32px;text-align:center;}
+.cta-inner{max-width:600px;margin:0 auto;}
+.cta-title{font-family:'Fraunces',serif;font-size:clamp(24px,4vw,38px);color:var(--navy-deep);font-weight:500;margin-bottom:12px;line-height:1.15;}
+.cta-sub{font-size:15px;color:rgba(9,22,41,0.6);margin-bottom:30px;line-height:1.65;}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+.cta-btn-primary{background:var(--navy);color:#fff;padding:14px 30px;border-radius:2px;font-weight:700;font-size:13px;text-decoration:none;transition:background .2s;}
+.cta-btn-primary:hover{background:#112a55;}
+.cta-btn-secondary{background:transparent;color:var(--navy-deep);padding:14px 30px;border-radius:2px;font-weight:600;font-size:13px;text-decoration:none;border:2px solid rgba(9,22,41,0.3);transition:all .2s;}
+.cta-btn-secondary:hover{background:rgba(9,22,41,0.08);}
+
+/* ── FOOTER ── */
+footer{background:var(--navy-deep);color:#c4ccd8;padding:54px 32px 28px;}
+.foot-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:30px;border-bottom:1px solid rgba(255,255,255,0.08);padding-bottom:30px;}
+.foot-brand{font-family:'Fraunces',serif;font-size:24px;color:var(--gold-soft);letter-spacing:2px;}
+.foot-brand span{color:var(--gold-soft);}
+.foot-brand p{font-size:13px;color:#aeb6c6;margin-top:10px;max-width:38ch;font-weight:300;}
+.foot-col h4{color:#fff;font-size:13px;letter-spacing:1px;text-transform:uppercase;margin-bottom:14px;}
+.foot-col a{display:block;color:#c4ccd8;text-decoration:none;font-size:14px;margin-bottom:9px;font-weight:300;transition:.2s;}
+.foot-col a:hover{color:var(--gold-soft);}
+.foot-bottom{max-width:1200px;margin:24px auto 0;font-size:12.5px;color:#9aa3b2;text-align:center;}
+
+/* ── RESPONSIVE ── */
+@media(max-width:960px){
+  .hero-inner{grid-template-columns:1fr;}
+  .feature-grid{grid-template-columns:1fr 1fr;}
+  .foot-inner{flex-wrap:wrap;gap:24px;}
+}
+@media(max-width:640px){
+  nav .nav-links{display:none;}
+  .hero-btns,.cta-btns{flex-direction:column;align-items:flex-start;}
+  .feature-grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav><div class="nav-inner">
+  <a href="index.html" class="brand">A<span>MaC</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">PLAB 1 & 2</a></li>
+    <li><a href="ukmla.html">UKMLA</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html" class="nav-cta">Get Started</a></li>
+  </ul>
+</div></nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-platform-line">UKMLA Preparation</div>
+      <h1>
+        <span>Master clinical thinking.</span>
+        <span><em>Ace the assessment.</em></span>
+      </h1>
+      <p class="hero-sub">Complete UKMLA performance training — <strong>real CPSA station banks, clinical tools, and examiner intelligence</strong> built for doctors who want to pass decisively.</p>
+      <div class="hero-btns">
+        <a href="#cpsa" class="btn-gold">Explore CPSA Stations</a>
+        <a href="index.html" class="btn-ghost">Back to PLAB</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="content-section">
+  <div class="cs-inner">
+    <div class="section-label">What's Included</div>
+    <h2 class="section-title">UKMLA Mastery Platform</h2>
+    <p class="section-sub">Everything you need to prepare for the UK Medical Licensing Assessment — aligned to real CPSA standards and examiner expectations.</p>
+    
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🎬</div>
+        <h3>CPSA Stations</h3>
+        <p>Real-world station scenarios built to CPSA specifications. Communication, clinical reasoning, and safety under pressure.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🧠</div>
+        <h3>Examiner Brain</h3>
+        <p>Understand what examiners are marking. Real station transcripts, marking rubrics, and performance psychology.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">⚡</div>
+        <h3>Clinical Tools</h3>
+        <p>Quick-access frameworks, decision trees, and reference guides for station rehearsal and clinical thinking.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🎯</div>
+        <h3>Performance Coaching</h3>
+        <p>Station rehearsal guidance, voice & tone coaching, and psychological preparation for assessment day.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHILOSOPHY -->
+<section class="phi-strip">
+  <div class="phi-inner">
+    <div class="phi-eyebrow">AMaC Philosophy</div>
+    <h2 class="phi-title">Train like you'll perform. <em>Perform like you've trained.</em></h2>
+    <p style="font-size:15px;color:rgba(221,226,236,0.8);line-height:1.7;margin:0 auto;max-width:64ch;">UKMLA isn't about knowing more medicine. It's about <strong>thinking and communicating like a UK-trained doctor under pressure</strong>. AMaC teaches examiner-led thinking, safety-first decision-making, and the voice of confidence that passes stations.</p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-inner">
+    <h2 class="cta-title">Ready to Master UKMLA?</h2>
+    <p class="cta-sub">Start with real CPSA stations, learn from examiner feedback, and build the confidence that passes.</p>
+    <div class="cta-btns">
+      <a href="contact.html" class="cta-btn-primary">Get Started</a>
+      <a href="index.html" class="cta-btn-secondary">See PLAB Platform</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-inner">
+    <div class="foot-brand">
+      A<span>MaC</span>
+      <p>UKMLA performance training. Making the difficult, easy.</p>
+    </div>
+    <div class="foot-col">
+      <h4>Platform</h4>
+      <a href="index.html">PLAB 1 & 2</a>
+      <a href="ukmla.html">UKMLA</a>
+      <a href="tools.html">Tools</a>
+    </div>
+    <div class="foot-col">
+      <h4>Company</h4>
+      <a href="about.html">About AMaC</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    © 2026 A. Mansour & Colleagues. All rights reserved. | <a href="index.html" style="color:inherit;text-decoration:none;">Back to PLAB</a>
+  </div>
+</footer>
+
+</body>
+</html>
