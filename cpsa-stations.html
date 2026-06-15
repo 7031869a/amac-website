@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CPSA Stations — AMaC UKMLA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0d2247;--navy-deep:#091629;--gold:#c9a227;--gold-soft:#e0c45a;--cream:#f7f4ec;--paper:#fffdf8;--ink:#1a1d24;--muted:#5d6470;--line:#e4ddcd;}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}body{font-family:'Outfit',sans-serif;background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;}h1,h2,h3{font-family:'Fraunces',serif;}
+nav{position:sticky;top:0;z-index:100;background:rgba(13,34,71,0.97);border-bottom:1px solid rgba(201,162,39,0.25);}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 32px;height:72px;display:flex;align-items:center;justify-content:space-between;}
+.brand{font-family:'Fraunces',serif;font-size:26px;font-weight:700;color:var(--gold-soft);letter-spacing:3px;text-decoration:none;}
+.nav-links{display:flex;gap:30px;list-style:none;}
+.nav-links a{color:#e8e3d6;text-decoration:none;font-size:14px;}
+.nav-links a:hover{color:#fff;}
+.nav-cta{background:var(--gold);color:var(--navy-deep)!important;padding:10px 20px;border-radius:2px;font-weight:600;font-size:13px;}
+.hero{background:linear-gradient(160deg,var(--navy),var(--navy-deep));color:#fff;padding:88px 32px;}
+.hero-inner{max-width:900px;margin:0 auto;text-align:center;}
+.hero h1{font-size:clamp(28px,5vw,48px);margin:20px 0;}
+.hero h1 em{font-style:italic;color:var(--gold-soft);}
+.hero p{font-size:15px;color:rgba(200,212,228,0.8);max-width:60ch;margin:0 auto;}
+.stations-section{background:#fff;padding:80px 32px;}
+.ss-inner{max-width:1200px;margin:0 auto;}
+.section-title{font-size:clamp(24px,4vw,36px);text-align:center;margin:20px 0;}
+.category-tabs{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin:40px 0;padding-bottom:20px;border-bottom:1px solid var(--line);}
+.cat-tab{background:var(--cream);border:1px solid var(--line);padding:10px 18px;cursor:pointer;font-weight:600;text-transform:uppercase;font-size:13px;}
+.cat-tab.active{background:var(--gold);color:var(--navy-deep);}
+.station-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px;margin-bottom:60px;}
+.stn-card{background:var(--cream);border:1px solid var(--line);border-radius:8px;padding:18px;cursor:pointer;transition:all .22s;}
+.stn-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(13,34,71,0.12);}
+.stn-card.hidden{display:none;}
+.stn-number{font-family:'Fraunces',serif;font-size:20px;color:var(--gold);font-weight:600;margin-bottom:6px;}
+.stn-title{font-family:'Fraunces',serif;font-size:15px;color:var(--navy);margin-bottom:8px;}
+.stn-category{font-size:11px;text-transform:uppercase;color:var(--muted);margin-bottom:6px;}
+.stn-mla{font-size:12px;color:var(--muted);}
+.detail-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:200;overflow-y:auto;padding:20px;}
+.detail-overlay.active{display:block;}
+.detail-container{max-width:920px;margin:0 auto;background:#fff;border-radius:12px;overflow:hidden;}
+.detail-header{background:linear-gradient(135deg,var(--navy),var(--navy-deep));padding:36px 32px;color:#fff;}
+.detail-station-num{font-size:13px;text-transform:uppercase;color:var(--gold-soft);margin-bottom:8px;}
+.detail-station-title{font-family:'Fraunces',serif;font-size:32px;margin-bottom:12px;}
+.detail-meta{font-size:13px;color:rgba(255,255,255,0.6);}
+.detail-close{position:absolute;top:20px;right:20px;background:rgba(255,255,255,0.2);border:none;color:#fff;cursor:pointer;width:44px;height:44px;font-size:24px;z-index:210;}
+.detail-tabs{display:flex;border-bottom:1px solid var(--line);background:var(--cream);}
+.detail-tab{flex:1;padding:16px;text-align:center;font-weight:600;color:var(--muted);cursor:pointer;border-bottom:3px solid transparent;text-transform:uppercase;font-size:13px;}
+.detail-tab.active{color:var(--gold);border-bottom-color:var(--gold);}
+.detail-content{padding:32px;}
+.tab-pane{display:none;}
+.tab-pane.active{display:block;}
+.blueprint-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.bp-item{background:var(--cream);padding:14px;border-left:4px solid var(--gold);}
+.bp-label{font-size:11px;text-transform:uppercase;font-weight:700;color:var(--muted);}
+.bp-value{font-size:13px;color:var(--ink);margin-top:6px;}
+.scenario-text{background:var(--cream);padding:18px;border-left:4px solid var(--gold);font-size:14px;line-height:1.7;}
+.marking-table{width:100%;border-collapse:collapse;margin:20px 0;}
+.marking-table th{background:var(--navy);color:#fff;padding:12px;text-align:left;font-weight:600;}
+.marking-table td{padding:12px;border-bottom:1px solid var(--line);font-size:13px;}
+.station-transcript{margin:24px 0;}
+.transcript-label{font-family:'Fraunces',serif;font-size:16px;font-weight:600;margin-bottom:12px;padding-bottom:8px;border-bottom:2px solid;}
+.transcript-fail .transcript-label{color:#c0392b;}
+.transcript-pass .transcript-label{color:#1b6b3a;}
+.transcript-distinction .transcript-label{color:var(--gold);}
+.dialogue-table{width:100%;border-collapse:collapse;margin:16px 0;background:var(--cream);}
+.dialogue-table td{padding:12px;font-size:13px;line-height:1.6;}
+.dialogue-speaker{width:100px;font-weight:600;color:var(--navy);}
+.examiner-note{background:rgba(201,162,39,0.08);border-left:4px solid var(--gold);padding:12px;margin:12px 0;font-size:13px;font-style:italic;color:var(--muted);}
+.what-text{font-size:13px;margin:12px 0;line-height:1.6;}
+.what-text strong{font-weight:600;color:var(--navy);}
+footer{background:var(--navy-deep);color:#c4ccd8;padding:54px 32px;}
+.foot-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:30px;border-bottom:1px solid rgba(255,255,255,0.08);padding-bottom:30px;}
+.foot-brand{font-family:'Fraunces',serif;font-size:24px;color:var(--gold-soft);}
+.foot-col h4{color:#fff;font-size:13px;text-transform:uppercase;margin-bottom:14px;}
+.foot-col a{display:block;color:#c4ccd8;text-decoration:none;font-size:14px;margin-bottom:9px;}
+@media(max-width:960px){.blueprint-grid{grid-template-columns:1fr;}.station-grid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr));}}
+@media(max-width:640px){nav .nav-links{display:none;}.station-grid{grid-template-columns:1fr 1fr;}}
+</style>
+</head>
+<body>
+
+<nav><div class="nav-inner"><a href="index.html" class="brand">A<span>MaC</span></a><ul class="nav-links"><li><a href="index.html">PLAB 1 & 2</a></li><li><a href="ukmla.html">UKMLA</a></li><li><a href="contact.html" class="nav-cta">Get Started</a></li></ul></div></nav>
+
+<section class="hero"><div class="hero-inner"><h1>Master <em>clinical systems thinking.</em></h1><p>34 stations covering communication, prescribing, professionalism, and safety escalation. Real CPSA scenarios with examiner-level marking rubrics.</p></div></section>
+
+<section class="stations-section"><div class="ss-inner"><h2 class="section-title">CPSA Stations</h2><div class="category-tabs"><button class="cat-tab active" onclick="filterCategory('all')">All (34)</button><button class="cat-tab" onclick="filterCategory('communication')">Communication (16)</button><button class="cat-tab" onclick="filterCategory('prescribing')">Prescribing (8)</button><button class="cat-tab" onclick="filterCategory('professionalism')">Professionalism (10)</button></div><div class="station-grid" id="stationGrid"></div></div></section>
+
+<div class="detail-overlay" id="detailOverlay"><button class="detail-close" onclick="closeDetail()">✕</button><div class="detail-container"><div class="detail-header"><div class="detail-station-num" id="detailNum"></div><h1 class="detail-station-title" id="detailTitle"></h1><div class="detail-meta" id="detailMeta"></div></div><div class="detail-tabs"><button class="detail-tab active" onclick="switchTab('blueprint')">Blueprint</button><button class="detail-tab" onclick="switchTab('scenario')">Scenario</button><button class="detail-tab" onclick="switchTab('grid')">Marking Grid</button><button class="detail-tab" onclick="switchTab('performance')">Performance</button></div><div class="detail-content" id="detailContent"></div></div></div>
+
+<footer><div class="foot-inner"><div class="foot-brand">A<span>MaC</span></div><div class="foot-col"><h4>Platform</h4><a href="index.html">PLAB</a><a href="ukmla.html">UKMLA</a></div></div></footer>
+
+<script>const STATIONS=[{id:'comm-01',num:'COMM-01',title:'Miscarriage',category:'communication',mlaTheme:'Delivering patient-centred care',contentMap:'Womens health',capabilities:'Breaking bad news (SPIKES)',level:'Day-one FY1',setting:'EPU',time:'8 minutes',scenario:'Miss Sarah, 28. Ultrasound shows pregnancy 10 weeks with no heartbeat.',markingGrid:[{domain:'Prepares patient',fail:'✗',pass:'✓',dist:'✓'}],fail:{dialogue:[{speaker:'CANDIDATE',text:'Pregnancy has not continued. Miscarriage.'}],examinerNote:'No empathy, rushed.',whatFailed:'Blunt, no support.'},pass:{dialogue:[{speaker:'CANDIDATE',text:'I\'m afraid I have difficult news. The pregnancy has stopped.'}],examinerNote:'Sat, empathy.',whatScored:'Warning shot, clear news.',keptFromDist:'No understanding check.'},distinction:{dialogue:[{speaker:'CANDIDATE',text:'Before results — how feeling?'}],examinerNote:'Exemplary.',whatDist:'Named emotion, checked understanding.'}}];let currentStation=null,currentTab='blueprint';function buildGrid(){document.getElementById('stationGrid').innerHTML=STATIONS.map(s=>`<div class="stn-card" data-category="${s.category}" onclick="openDetail('${s.id}')"><div class="stn-number">${s.num}</div><div class="stn-title">${s.title}</div><div class="stn-category">${s.category}</div><div class="stn-mla">${s.mlaTheme}</div></div>`).join('');}function filterCategory(cat){document.querySelectorAll('.cat-tab').forEach(b=>b.classList.remove('active'));event.target.classList.add('active');document.querySelectorAll('[data-category]').forEach(c=>{c.classList.toggle('hidden',cat!=='all'&&c.getAttribute('data-category')!==cat);});}function openDetail(id){if(currentStation=STATIONS.find(s=>s.id===id)){document.getElementById('detailNum').textContent=currentStation.num;document.getElementById('detailTitle').textContent=currentStation.title;document.getElementById('detailMeta').textContent=`${currentStation.mlaTheme} · ${currentStation.time}`;currentTab='blueprint';renderDetailContent();document.getElementById('detailOverlay').classList.add('active');}}function closeDetail(){document.getElementById('detailOverlay').classList.remove('active');}function switchTab(t){currentTab=t;document.querySelectorAll('.detail-tab').forEach(b=>b.classList.remove('active'));event.target.classList.add('active');renderDetailContent();}function renderDetailContent(){const s=currentStation;let h='';if(currentTab==='blueprint'){h=`<h3>Blueprint</h3><div class="blueprint-grid"><div class="bp-item"><div class="bp-label">Theme</div><div class="bp-value">${s.mlaTheme}</div></div><div class="bp-item"><div class="bp-label">Content</div><div class="bp-value">${s.contentMap}</div></div></div>`;}else if(currentTab==='scenario'){h=`<h3>Scenario</h3><div class="scenario-text">${s.scenario}</div>`;}else if(currentTab==='grid'){h=`<h3>Marking Grid</h3><table class="marking-table"><tr><th>Domain</th><th>F</th><th>P</th><th>D</th></tr>${s.markingGrid.map(g=>`<tr><td>${g.domain}</td><td>${g.fail}</td><td>${g.pass}</td><td>${g.dist}</td></tr>`).join('')}</table>`;}else{h=`<div class="station-transcript"><div class="transcript-label">✗ FAIL</div><div class="examiner-note">${s.fail.examinerNote}</div></div>`;}document.getElementById('detailContent').innerHTML=h;}buildGrid();window.addEventListener('click',e=>{if(e.target.id==='detailOverlay')closeDetail();});
+</script>
+</body>
+</html>
