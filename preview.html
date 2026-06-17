@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book Preview — AMaC</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --navy:#1B2A4A;--navy-deep:#0f1e36;
+  --gold:#C9A227;--gold-dark:#B7950B;
+  --bg:#f4f4f4;--toolbar-h:56px;
+}
+html,body{height:100%;overflow:hidden;font-family:Arial,sans-serif;background:var(--bg);}
+
+/* ── HEADER ─────────────────────────────────────────── */
+#header{
+  position:fixed;top:0;left:0;right:0;height:52px;z-index:200;
+  background:var(--navy);display:flex;align-items:center;
+  padding:0 20px;gap:16px;border-bottom:2px solid var(--gold);
+}
+#back-link{
+  color:var(--gold);text-decoration:none;font-size:13px;font-weight:600;
+  letter-spacing:.4px;display:flex;align-items:center;gap:6px;
+  transition:color .2s;white-space:nowrap;
+}
+#back-link:hover{color:#e0c45a;}
+#back-link svg{flex-shrink:0;}
+.brand-text{
+  color:#e8dfc4;font-size:15px;font-weight:700;letter-spacing:2px;
+}
+.brand-text span{color:var(--gold);}
+#book-title{
+  color:#c8c0ae;font-size:13px;flex:1;text-align:center;
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+  padding:0 10px;
+}
+.preview-badge{
+  background:var(--gold);color:var(--navy-deep);
+  font-size:10px;font-weight:700;letter-spacing:.8px;
+  padding:3px 8px;border-radius:2px;white-space:nowrap;
+}
+
+/* ── TOOLBAR ─────────────────────────────────────────── */
+#toolbar{
+  position:fixed;top:52px;left:0;right:0;height:var(--toolbar-h);z-index:190;
+  background:#2a3a5c;display:flex;align-items:center;gap:6px;
+  padding:0 16px;border-bottom:1px solid #1a2a45;
+}
+.tb-btn{
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);
+  color:#e0dbd0;cursor:pointer;border-radius:3px;
+  font-size:13px;padding:5px 10px;line-height:1;
+  transition:background .15s,color .15s;
+  display:flex;align-items:center;justify-content:center;
+}
+.tb-btn:hover{background:rgba(201,162,39,.25);color:#fff;}
+.tb-btn:disabled{opacity:.35;cursor:default;}
+#page-info{
+  color:#d0cabd;font-size:12px;display:flex;align-items:center;gap:5px;
+}
+#page-input{
+  width:42px;text-align:center;background:rgba(255,255,255,.1);
+  border:1px solid rgba(255,255,255,.25);color:#fff;
+  border-radius:3px;padding:4px 4px;font-size:12px;
+}
+#page-input:focus{outline:none;border-color:var(--gold);}
+#zoom-label{color:#d0cabd;font-size:12px;margin-left:4px;}
+.tb-sep{width:1px;height:24px;background:rgba(255,255,255,.15);margin:0 4px;}
+
+/* ── WALL NOTICE (page 30+) ──────────────────────────── */
+#wall-notice{
+  display:none;position:fixed;top:50%;left:50%;
+  transform:translate(-50%,-50%);z-index:300;
+  background:var(--navy-deep);border:2px solid var(--gold);
+  border-radius:6px;padding:36px 40px;max-width:400px;width:90%;
+  text-align:center;box-shadow:0 16px 48px rgba(0,0,0,.6);
+}
+#wall-notice h3{color:var(--gold);font-size:18px;margin-bottom:12px;}
+#wall-notice p{color:#ccc;font-size:14px;line-height:1.6;margin-bottom:20px;}
+#wall-notice a{
+  display:inline-block;background:var(--gold);color:var(--navy-deep);
+  font-weight:700;padding:10px 24px;border-radius:3px;
+  text-decoration:none;font-size:14px;transition:background .2s;
+}
+#wall-notice a:hover{background:var(--gold-dark);}
+#wall-close{
+  position:absolute;top:10px;right:14px;background:none;border:none;
+  color:#888;font-size:20px;cursor:pointer;line-height:1;
+}
+#wall-close:hover{color:#fff;}
+#wall-overlay{
+  display:none;position:fixed;inset:0;z-index:299;
+  background:rgba(0,0,0,.55);backdrop-filter:blur(2px);
+}
+
+/* ── CANVAS AREA ─────────────────────────────────────── */
+#viewer-wrap{
+  position:fixed;
+  top:calc(52px + var(--toolbar-h));bottom:0;left:0;right:0;
+  overflow-y:auto;overflow-x:hidden;
+  background:var(--bg);
+  display:flex;flex-direction:column;align-items:center;
+  padding:20px 10px 40px;
+  user-select:none;-webkit-user-select:none;
+}
+#viewer-wrap canvas{
+  display:block;max-width:100%;
+  box-shadow:0 4px 20px rgba(0,0,0,.22);
+  border-radius:2px;
+}
+#loading{
+  margin-top:80px;color:#667;font-size:15px;text-align:center;
+}
+#loading .spin{
+  display:inline-block;width:32px;height:32px;
+  border:3px solid rgba(27,42,74,.15);
+  border-top-color:var(--gold);border-radius:50%;
+  animation:spin .8s linear infinite;margin-bottom:12px;
+}
+@keyframes spin{to{transform:rotate(360deg);}}
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<div id="header">
+  <a href="books.html" id="back-link">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+      <path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    Back to Books
+  </a>
+  <div class="brand-text">A<span>MaC</span></div>
+  <div id="book-title">Loading…</div>
+  <div class="preview-badge">30-PAGE PREVIEW</div>
+</div>
+
+<!-- Toolbar -->
+<div id="toolbar">
+  <button class="tb-btn" id="btn-first" title="First page">&#8676;</button>
+  <button class="tb-btn" id="btn-prev" title="Previous page">&#8249;</button>
+  <div class="page-info" id="page-info">
+    <input type="number" id="page-input" min="1" value="1">
+    <span id="page-total">/ –</span>
+  </div>
+  <button class="tb-btn" id="btn-next" title="Next page">&#8250;</button>
+  <button class="tb-btn" id="btn-last" title="Last page">&#8677;</button>
+  <div class="tb-sep"></div>
+  <button class="tb-btn" id="btn-zoom-out" title="Zoom out">&#8722;</button>
+  <span id="zoom-label">100%</span>
+  <button class="tb-btn" id="btn-zoom-in" title="Zoom in">&#43;</button>
+  <button class="tb-btn" id="btn-fit" title="Fit width">&#9974;</button>
+</div>
+
+<!-- Page wall overlay -->
+<div id="wall-overlay"></div>
+<div id="wall-notice">
+  <button id="wall-close">&#10005;</button>
+  <h3>End of Preview</h3>
+  <p>This is a 30-page sample. Purchase the full book to continue reading.</p>
+  <a href="books.html">See the full series</a>
+</div>
+
+<!-- Canvas area -->
+<div id="viewer-wrap" oncontextmenu="return false;">
+  <div id="loading">
+    <div class="spin"></div><br>Loading preview…
+  </div>
+  <canvas id="pdf-canvas" style="display:none;"></canvas>
+</div>
+
+<script type="module">
+import * as pdfjsLib from 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.4.168/pdf.min.mjs';
+pdfjsLib.GlobalWorkerOptions.workerSrc =
+  'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.4.168/pdf.worker.min.mjs';
+
+const BOOKS = {
+  volume1:  { file: 'book-previews/volume1_preview.pdf',  title: 'Volume 1 — Foundations & Communication' },
+  volume2:  { file: 'book-previews/volume2_preview.pdf',  title: 'Volume 2 — Clinical Systems & Emergencies' },
+  volume3:  { file: 'book-previews/volume3_preview.pdf',  title: 'Volume 3 — Advanced Practice & Mock OSCE' },
+  revision: { file: 'book-previews/revision_preview.pdf', title: 'The Final Fortnight — Revision Guide' },
+};
+
+const params  = new URLSearchParams(location.search);
+const bookKey = params.get('book') || 'volume1';
+const book    = BOOKS[bookKey] || BOOKS.volume1;
+
+document.title         = `${book.title} Preview — AMaC`;
+document.getElementById('book-title').textContent = book.title;
+
+const canvas   = document.getElementById('pdf-canvas');
+const ctx      = canvas.getContext('2d');
+const loading  = document.getElementById('loading');
+const wrap     = document.getElementById('viewer-wrap');
+
+let pdfDoc    = null;
+let curPage   = 1;
+let totalPages = 0;
+let scale     = 1.0;
+let fitScale  = 1.0;
+let rendering = false;
+
+const wallNotice  = document.getElementById('wall-notice');
+const wallOverlay = document.getElementById('wall-overlay');
+const pageInput   = document.getElementById('page-input');
+const pageTotal   = document.getElementById('page-total');
+const zoomLabel   = document.getElementById('zoom-label');
+const btnPrev     = document.getElementById('btn-prev');
+const btnNext     = document.getElementById('btn-next');
+const btnFirst    = document.getElementById('btn-first');
+const btnLast     = document.getElementById('btn-last');
+
+// ── Load PDF ──────────────────────────────────────────
+const loadingTask = pdfjsLib.getDocument(book.file);
+loadingTask.promise.then(pdf => {
+  pdfDoc = pdf;
+  totalPages = pdf.numPages;
+  pageTotal.textContent = `/ ${totalPages}`;
+  pageInput.max = totalPages;
+  loading.style.display = 'none';
+  canvas.style.display  = 'block';
+  calcFitScale().then(() => renderPage(1));
+});
+
+// ── Render ────────────────────────────────────────────
+async function calcFitScale() {
+  const page = await pdfDoc.getPage(1);
+  const vp   = page.getViewport({ scale: 1 });
+  const avail = wrap.clientWidth - 20;
+  fitScale = avail / vp.width;
+  scale    = fitScale;
+  updateZoomLabel();
+}
+
+async function renderPage(num) {
+  if (rendering) return;
+  rendering = true;
+
+  const page = await pdfDoc.getPage(num);
+  const vp   = page.getViewport({ scale });
+
+  canvas.width  = vp.width;
+  canvas.height = vp.height;
+
+  await page.render({ canvasContext: ctx, viewport: vp }).promise;
+  rendering = false;
+
+  curPage = num;
+  pageInput.value = num;
+  updateButtons();
+  wrap.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function updateButtons() {
+  btnPrev.disabled  = curPage <= 1;
+  btnFirst.disabled = curPage <= 1;
+  btnNext.disabled  = curPage >= totalPages;
+  btnLast.disabled  = curPage >= totalPages;
+}
+
+function updateZoomLabel() {
+  zoomLabel.textContent = Math.round(scale / fitScale * 100) + '%';
+}
+
+// ── Navigation ────────────────────────────────────────
+function goTo(n) {
+  if (n < 1) n = 1;
+  if (n > totalPages) { showWall(); return; }
+  renderPage(n);
+}
+
+document.getElementById('btn-prev').addEventListener('click',  () => goTo(curPage - 1));
+document.getElementById('btn-next').addEventListener('click',  () => goTo(curPage + 1));
+document.getElementById('btn-first').addEventListener('click', () => goTo(1));
+document.getElementById('btn-last').addEventListener('click',  () => goTo(totalPages));
+
+pageInput.addEventListener('change', () => {
+  const n = parseInt(pageInput.value, 10);
+  if (!isNaN(n)) goTo(n);
+});
+
+// ── Keyboard ──────────────────────────────────────────
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === 'PageDown') goTo(curPage + 1);
+  if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp'   || e.key === 'PageUp')   goTo(curPage - 1);
+  if (e.key === 'Home') goTo(1);
+  if (e.key === 'End')  goTo(totalPages);
+});
+
+// ── Zoom ──────────────────────────────────────────────
+function setScale(s) {
+  scale = Math.max(fitScale * 0.5, Math.min(fitScale * 3, s));
+  updateZoomLabel();
+  renderPage(curPage);
+}
+
+document.getElementById('btn-zoom-in').addEventListener('click',  () => setScale(scale * 1.2));
+document.getElementById('btn-zoom-out').addEventListener('click', () => setScale(scale / 1.2));
+document.getElementById('btn-fit').addEventListener('click', () => setScale(fitScale));
+
+// ── Page wall ─────────────────────────────────────────
+function showWall() {
+  wallNotice.style.display  = 'block';
+  wallOverlay.style.display = 'block';
+}
+document.getElementById('wall-close').addEventListener('click', () => {
+  wallNotice.style.display  = 'none';
+  wallOverlay.style.display = 'none';
+});
+wallOverlay.addEventListener('click', () => {
+  wallNotice.style.display  = 'none';
+  wallOverlay.style.display = 'none';
+});
+
+// Refit on window resize
+window.addEventListener('resize', () => calcFitScale().then(() => renderPage(curPage)));
+
+// Block right-click everywhere
+document.addEventListener('contextmenu', e => e.preventDefault());
+</script>
+</body>
+</html>
