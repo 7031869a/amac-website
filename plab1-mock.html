@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AMaC PLAB 1 &mdash; Mock Exam</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1B2A4A;--gold:#B7950B;--gold-lt:#D4AF37;--cream:#FBF8F0;--line:#e3ddd0;--ink:#1c2536;--muted:#6a7a92;--ok:#1E8449;--bad:#922B21;--amber:#b45309;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Outfit',-apple-system,Segoe UI,Roboto,sans-serif;background:var(--cream);color:var(--ink);line-height:1.5;}
+.wrap{max-width:860px;margin:0 auto;padding:24px 20px 80px;}
+h1,h2,h3{font-family:'Fraunces',Georgia,serif;color:var(--navy);}
+
+.bar{position:sticky;top:0;z-index:40;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:12px 20px;border-radius:0 0 10px 10px;box-shadow:0 2px 10px rgba(0,0,0,.12);}
+.bar .brand{font-family:'Fraunces',serif;font-size:18px;font-weight:600;}
+.bar .brand span{color:var(--gold-lt);}
+.bar .brand a{color:inherit;text-decoration:none;}
+.timer{font-variant-numeric:tabular-nums;font-size:20px;font-weight:600;letter-spacing:.5px;}
+.timer.warn{color:#ffd24d;}
+.timer.crit{color:#ff6b6b;animation:pulse 1s infinite;}
+@keyframes pulse{50%{opacity:.55;}}
+
+.screen{display:none;}
+.screen.active{display:block;}
+
+.card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:28px;margin:18px 0;}
+
+.btn{display:inline-block;background:var(--gold);color:#1a1300;border:none;border-radius:8px;padding:13px 26px;font-size:16px;font-weight:600;cursor:pointer;font-family:inherit;transition:.15s;text-decoration:none;}
+.btn:hover{background:var(--gold-lt);}
+.btn.ghost{background:transparent;border:1.5px solid var(--navy);color:var(--navy);}
+.btn.ghost:hover{background:var(--navy);color:#fff;}
+.btn.danger{background:#922B21;color:#fff;}
+.btn.danger:hover{background:#7b1e16;}
+
+.resume-banner{background:var(--navy);color:#fff;border-radius:10px;padding:18px 22px;margin:18px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;}
+.rb-text{font-size:15px;font-weight:600;}
+.rb-info{font-size:13px;color:rgba(255,255,255,.6);margin-top:3px;}
+.rb-btns{display:flex;gap:10px;flex-shrink:0;}
+.btn-resume{background:var(--gold);color:#1a1300;border:none;border-radius:7px;padding:10px 20px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;transition:.15s;}
+.btn-resume:hover{background:var(--gold-lt);}
+.btn-start-new{background:transparent;border:1.5px solid rgba(255,255,255,.4);color:#fff;border-radius:7px;padding:10px 18px;font-size:14px;cursor:pointer;font-family:inherit;transition:.15s;}
+.btn-start-new:hover{border-color:#fff;background:rgba(255,255,255,.08);}
+
+.opts label{display:flex;gap:12px;align-items:flex-start;padding:14px 16px;border:1.5px solid var(--line);border-radius:9px;margin:9px 0;cursor:pointer;transition:.12s;background:#fff;}
+.opts label:hover{border-color:var(--gold);}
+.opts input{margin-top:3px;accent-color:var(--navy);width:17px;height:17px;flex-shrink:0;}
+.opts label.sel{border-color:var(--navy);background:#f4f6fb;}
+.opt-letter{font-weight:700;color:var(--navy);margin-right:2px;}
+.qmeta{display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--muted);margin-bottom:6px;}
+.qmeta .dom{background:#eef1f7;color:var(--navy);padding:3px 10px;border-radius:20px;font-weight:600;}
+.stem{font-size:17px;margin:14px 0 18px;font-weight:500;line-height:1.65;}
+
+.nav{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:22px;}
+.flag{cursor:pointer;color:var(--muted);font-size:14px;display:flex;align-items:center;gap:6px;user-select:none;}
+.flag.on{color:var(--gold);font-weight:600;}
+
+.palette{display:flex;flex-wrap:wrap;gap:7px;margin:16px 0;}
+.pcell{width:34px;height:34px;border-radius:7px;border:1.5px solid var(--line);background:#fff;font-size:13px;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--navy);transition:.1s;}
+.pcell:hover{border-color:var(--gold);}
+.pcell.answered{background:var(--navy);color:#fff;border-color:var(--navy);}
+.pcell.flagged{border-color:var(--gold);border-width:2.5px;}
+.pcell.answered.flagged{background:var(--navy);border-color:var(--gold);border-width:2.5px;}
+.pcell.current{outline:2.5px solid var(--gold);outline-offset:1.5px;}
+.progress-txt{font-size:14px;color:var(--muted);}
+
+/* submit confirmation panel */
+.submit-panel{border:2px solid var(--bad);border-radius:12px;padding:22px 24px;margin:24px 0;background:#fff;}
+.submit-panel h3{font-size:18px;margin-bottom:8px;color:var(--bad);}
+.submit-panel p{font-size:14px;color:var(--ink);margin-bottom:18px;line-height:1.6;}
+.submit-panel .btn-row{display:flex;gap:12px;flex-wrap:wrap;}
+
+/* results */
+.score-big{font-size:54px;font-weight:700;font-family:'Fraunces',serif;}
+.verdict{display:inline-block;padding:7px 20px;border-radius:24px;font-weight:700;font-size:16px;margin:10px 0;}
+.verdict.pass{background:#e6f4ec;color:var(--ok);}
+.verdict.fail{background:#fbeceb;color:var(--bad);}
+.dom-row{display:flex;align-items:center;gap:12px;margin:8px 0;}
+.dom-row .name{width:210px;font-size:14px;flex-shrink:0;line-height:1.3;}
+.dom-row .track{flex:1;height:18px;background:#eef1f7;border-radius:9px;overflow:hidden;}
+.dom-row .fill{height:100%;border-radius:9px;}
+.dom-row .pct{width:56px;text-align:right;font-size:13px;font-weight:600;font-variant-numeric:tabular-nums;}
+
+.rev-q{border:1px solid var(--line);border-radius:10px;padding:18px;margin:12px 0;background:#fff;}
+.rev-opt{padding:9px 13px;border-radius:7px;margin:5px 0;font-size:14px;}
+.rev-opt.correct{background:#e6f4ec;border-left:3px solid var(--ok);}
+.rev-opt.wrong{background:#fbeceb;border-left:3px solid var(--bad);}
+.rev-opt.neutral{background:#f7f7f4;}
+
+.expl{padding:11px 14px;border-left:3px solid transparent;border-radius:0 7px 7px 0;margin-top:8px;font-size:13.5px;line-height:1.65;}
+.expl-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;margin-bottom:5px;}
+.expl-correct{background:#e6f4ec;border-left-color:var(--ok);}
+.expl-correct .expl-label{color:var(--ok);}
+.expl-wrong{background:#fff3e0;border-left-color:#e67e22;}
+.expl-wrong .expl-label{color:var(--amber);}
+.expl-pearl{background:#fffbe9;border-left-color:var(--gold);}
+.expl-pearl .expl-label{color:#7d6608;}
+.expl-trap{background:#fbeceb;border-left-color:var(--bad);}
+.expl-trap .expl-label{color:var(--bad);}
+.expl-takeaway{background:#ebf5fb;border-left-color:#1a5276;font-weight:600;}
+.expl-takeaway .expl-label{color:#1a5276;}
+
+.note{font-size:13px;color:var(--muted);background:#fffbe9;border:1px solid #f0e3b0;border-radius:8px;padding:11px 14px;margin:14px 0;}
+.dim{color:var(--muted);font-size:14px;}
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <div class="brand"><a href="plab1.html">A<span>MaC</span> &middot; PLAB 1</a></div>
+  <div class="timer" id="timer" style="display:none">03:00:00</div>
+</div>
+
+<div class="wrap">
+
+  <!-- START SCREEN -->
+  <div class="screen active" id="s-start">
+
+    <div class="resume-banner" id="resume-banner" style="display:none">
+      <div>
+        <div class="rb-text">You have a saved mock exam in progress.</div>
+        <div class="rb-info" id="resume-info"></div>
+      </div>
+      <div class="rb-btns">
+        <button type="button" class="btn-resume" onclick="startExam(true)">Resume</button>
+        <button type="button" class="btn-start-new" onclick="confirmStartNew()">Start new</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <h1 style="font-size:30px;margin-bottom:6px;">Mock Exam Mode</h1>
+      <p class="dim" style="margin-bottom:18px;">Exam conditions. No feedback until you finish.</p>
+      <p style="margin-bottom:14px;">The real PLAB 1 is <strong>180 single-best-answer questions in 3 hours</strong> &mdash; 60 seconds per question, no negative marking. This mock draws <strong>180 questions from the live 869-question bank</strong>, weighted proportionally across all 20 domains.</p>
+      <ul style="margin:0 0 20px 20px;font-size:15px;line-height:1.9;">
+        <li>3-hour countdown &mdash; auto-submits at zero</li>
+        <li>Flag questions to revisit</li>
+        <li>Jump anywhere with the question grid</li>
+        <li>Full per-domain breakdown and answer review at the end</li>
+        <li>Progress saved automatically &mdash; resume if you close the tab</li>
+      </ul>
+      <div class="note">Indicative pass line: 115/180 (64%). The real GMC pass mark is set by the Angoff method and varies between 110&ndash;118 each sitting.</div>
+      <button type="button" class="btn" onclick="startExam(false)">Start mock exam</button>
+    </div>
+
+  </div>
+
+  <!-- EXAM SCREEN -->
+  <div class="screen" id="s-exam">
+    <div class="progress-txt" id="prog">Question 1 of 180</div>
+    <div class="palette" id="palette"></div>
+    <div class="card" id="qcard"></div>
+    <div class="nav">
+      <button type="button" class="btn ghost" id="prev" onclick="go(-1)">&larr; Previous</button>
+      <span class="flag" id="flag" onclick="toggleFlag()">&#9873; Flag for review</span>
+      <button type="button" class="btn ghost" id="next" onclick="go(1)">Next &rarr;</button>
+    </div>
+
+    <!-- two-step submit panel: hidden until user clicks End Exam -->
+    <div class="submit-panel" id="submit-panel" style="display:none">
+      <h3>End exam?</h3>
+      <p id="submit-info"></p>
+      <div class="btn-row">
+        <button type="button" class="btn danger" onclick="submitExam(false)">Confirm &mdash; see results</button>
+        <button type="button" class="btn ghost" onclick="hideSubmitPanel()">Cancel &mdash; back to exam</button>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:28px;">
+      <button type="button" class="btn ghost" onclick="showSubmitPanel()">End exam</button>
+    </div>
+  </div>
+
+  <!-- RESULTS SCREEN -->
+  <div class="screen" id="s-results"></div>
+
+</div>
+
+<script src="plab1-questions.js"></script>
+<script>
+const TARGET       = 180;
+const FULL_SECONDS = TARGET * 60;
+const PASS_MARK    = 115;
+const LS_KEY       = 'amac_plab1_mock_v1';
+
+let EXAM_QS   = [];
+let answers   = [];
+let flags     = [];
+let cur       = 0;
+let timeLeft  = FULL_SECONDS;
+let timerId   = null;
+let submitted = false;
+
+// ---- WEIGHTED SAMPLING ----
+function buildExam() {
+  const all = window.PLAB1_QUESTIONS;
+  const n   = all.length;
+  const buckets = {};
+  all.forEach(q => {
+    if (!buckets[q.domain]) buckets[q.domain] = [];
+    buckets[q.domain].push(q);
+  });
+  const picks = {};
+  Object.keys(buckets).forEach(d => {
+    picks[d] = Math.round(TARGET * buckets[d].length / n);
+  });
+  let sum = Object.values(picks).reduce((a, b) => a + b, 0);
+  const byRem = Object.keys(buckets).sort((a, b) =>
+    (TARGET * buckets[b].length / n % 1) - (TARGET * buckets[a].length / n % 1)
+  );
+  let i = 0;
+  while (sum < TARGET) { picks[byRem[i++ % byRem.length]]++; sum++; }
+  while (sum > TARGET) { picks[byRem[byRem.length - 1 - (i++ % byRem.length)]]--; sum--; }
+  const exam = [];
+  Object.keys(buckets).forEach(d => {
+    const take = picks[d] || 0;
+    exam.push(...[...buckets[d]].sort(() => Math.random() - 0.5).slice(0, take));
+  });
+  return exam.sort(() => Math.random() - 0.5);
+}
+
+// ---- LOCAL STORAGE ----
+function saveState() {
+  try {
+    localStorage.setItem(LS_KEY, JSON.stringify({
+      ids: EXAM_QS.map(q => q.id), answers, flags, cur, timeLeft
+    }));
+  } catch(e) {}
+}
+function loadSaved() {
+  try { const r = localStorage.getItem(LS_KEY); return r ? JSON.parse(r) : null; }
+  catch(e) { return null; }
+}
+function clearSaved() { try { localStorage.removeItem(LS_KEY); } catch(e) {} }
+
+// ---- TIMER ----
+function fmt(s) {
+  const h = Math.floor(s / 3600), m = Math.floor((s % 3600) / 60), x = s % 60;
+  return String(h).padStart(2,'0') + ':' + String(m).padStart(2,'0') + ':' + String(x).padStart(2,'0');
+}
+function tick() {
+  const t = document.getElementById('timer');
+  t.textContent = fmt(timeLeft);
+  const crit = timeLeft <= Math.round(FULL_SECONDS * 0.05);
+  const warn = timeLeft <= Math.round(FULL_SECONDS * 0.15);
+  t.className = 'timer' + (crit ? ' crit' : warn ? ' warn' : '');
+  if (timeLeft <= 0) { clearInterval(timerId); submitExam(true); return; }
+  timeLeft--;
+  if (timeLeft % 30 === 0) saveState();
+}
+
+// ---- PALETTE ----
+function buildPalette() {
+  const p = document.getElementById('palette');
+  p.innerHTML = '';
+  EXAM_QS.forEach((q, i) => {
+    const c = document.createElement('div');
+    c.className = 'pcell'; c.textContent = i + 1; c.id = 'pc' + i;
+    c.onclick = () => { cur = i; hideSubmitPanel(); render(); };
+    p.appendChild(c);
+  });
+}
+function refreshPalette() {
+  EXAM_QS.forEach((q, i) => {
+    const c = document.getElementById('pc' + i); if (!c) return;
+    c.className = 'pcell'
+      + (answers[i] !== null ? ' answered' : '')
+      + (flags[i]            ? ' flagged'  : '')
+      + (i === cur           ? ' current'  : '');
+  });
+}
+
+// ---- RENDER ----
+function render() {
+  const q = EXAM_QS[cur];
+  document.getElementById('prog').textContent = 'Question ' + (cur + 1) + ' of ' + TARGET;
+  const entries = Object.entries(q.options).sort(([a],[b]) => a.localeCompare(b));
+  let opts = '';
+  entries.forEach(([k, v]) => {
+    const sel = answers[cur] === k ? ' sel' : '';
+    opts += '<label class="opt' + sel + '">'
+          + '<input type="radio" name="opt" value="' + k + '"'
+          + (answers[cur] === k ? ' checked' : '')
+          + ' onchange="pick(\'' + k + '\')">'
+          + '<span><span class="opt-letter">' + k + '.</span> ' + v + '</span>'
+          + '</label>';
+  });
+  document.getElementById('qcard').innerHTML =
+    '<div class="qmeta"><span class="dom">' + q.domain + '</span>'
+    + '<span class="dim">' + q.id + '</span></div>'
+    + '<div class="stem">' + q.stem + '</div>'
+    + '<div class="opts">' + opts + '</div>';
+  document.getElementById('prev').disabled = (cur === 0);
+  document.getElementById('next').disabled = (cur === TARGET - 1);
+  const f = document.getElementById('flag');
+  f.className = 'flag' + (flags[cur] ? ' on' : '');
+  f.innerHTML = flags[cur] ? '&#9873; Flagged' : '&#9873; Flag for review';
+  refreshPalette();
+}
+
+// ---- ACTIONS ----
+function pick(k) {
+  answers[cur] = k;
+  render();      // re-render so .sel highlights the chosen option immediately
+  saveState();
+}
+function go(d) {
+  cur = Math.max(0, Math.min(TARGET - 1, cur + d));
+  hideSubmitPanel();
+  render();
+}
+function toggleFlag() { flags[cur] = !flags[cur]; render(); saveState(); }
+
+// ---- SUBMIT PANEL (two-step, replaces window.confirm) ----
+function showSubmitPanel() {
+  const answered = answers.filter(a => a !== null).length;
+  const flagged  = flags.filter(Boolean).length;
+  const u        = TARGET - answered;
+  let info = answered + ' of ' + TARGET + ' answered';
+  if (flagged > 0) info += ', ' + flagged + ' flagged for review';
+  info += '. ';
+  if (u > 0) {
+    info += '<strong>' + u + ' question' + (u > 1 ? 's' : '') + ' unanswered</strong> — '
+          + 'no negative marking, so an educated guess is always worth making.';
+  } else {
+    info += 'All questions answered.';
+  }
+  document.getElementById('submit-info').innerHTML = info;
+  document.getElementById('submit-panel').style.display = 'block';
+  document.getElementById('submit-panel').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+function hideSubmitPanel() {
+  document.getElementById('submit-panel').style.display = 'none';
+}
+
+function confirmStartNew() {
+  if (confirm('Start a new mock exam? Your saved progress will be lost.')) startExam(false);
+}
+
+// ---- SUBMIT & RESULTS ----
+function submitExam(auto) {
+  if (submitted) return;
+  submitted = true;
+  clearInterval(timerId);
+  clearSaved();
+  document.getElementById('s-exam').classList.remove('active');
+  document.getElementById('timer').style.display = 'none';
+
+  let correct = 0;
+  const domStats = {};
+  EXAM_QS.forEach((q, i) => {
+    const ok = answers[i] === q.correct_letter;
+    if (ok) correct++;
+    if (!domStats[q.domain]) domStats[q.domain] = { c: 0, t: 0 };
+    domStats[q.domain].t++;
+    if (ok) domStats[q.domain].c++;
+  });
+  const pct    = Math.round(correct / TARGET * 100);
+  const passed = correct >= PASS_MARK;
+
+  let domHtml = '';
+  Object.entries(domStats).sort((a, b) => (a[1].c / a[1].t) - (b[1].c / b[1].t)).forEach(([d, s]) => {
+    const dp  = Math.round(s.c / s.t * 100);
+    const col = dp >= 70 ? '#1E8449' : dp >= 50 ? '#B7950B' : '#922B21';
+    domHtml += '<div class="dom-row"><div class="name">' + d + '</div>'
+             + '<div class="track"><div class="fill" style="width:' + dp + '%;background:' + col + '"></div></div>'
+             + '<div class="pct">' + s.c + '/' + s.t + '</div></div>';
+  });
+
+  let revHtml = '';
+  EXAM_QS.forEach((q, i) => {
+    const ua      = answers[i];
+    const ok      = ua === q.correct_letter;
+    const entries = Object.entries(q.options).sort(([a],[b]) => a.localeCompare(b));
+    let optHtml   = '';
+    entries.forEach(([k, v]) => {
+      let cls = 'neutral';
+      if (k === q.correct_letter) cls = 'correct';
+      else if (k === ua)          cls = 'wrong';
+      const tag = k === q.correct_letter ? ' ✓ correct' : k === ua ? ' ✗ your answer' : '';
+      optHtml += '<div class="rev-opt ' + cls + '"><span class="opt-letter">' + k + '.</span> '
+               + v + '<strong>' + tag + '</strong></div>';
+    });
+    const statusHtml = ok ? '<span style="color:#1E8449;font-weight:700">Correct</span>'
+      : ua === null ? '<span style="color:#6a7a92">Not answered</span>'
+      : '<span style="color:#922B21;font-weight:700">Incorrect</span>';
+    let explHtml = '';
+    if (q.why_correct) explHtml += '<div class="expl expl-correct"><div class="expl-label">Why it is correct</div>'     + q.why_correct + '</div>';
+    if (q.why_wrong)   explHtml += '<div class="expl expl-wrong"><div class="expl-label">Why the others are wrong</div>' + q.why_wrong   + '</div>';
+    if (q.pearl)       explHtml += '<div class="expl expl-pearl"><div class="expl-label">NICE Pearl</div>'               + q.pearl       + '</div>';
+    if (q.exam_trap)   explHtml += '<div class="expl expl-trap"><div class="expl-label">Exam trap</div>'                 + q.exam_trap   + '</div>';
+    if (q.takeaway)    explHtml += '<div class="expl expl-takeaway"><div class="expl-label">Key takeaway</div>'          + q.takeaway    + '</div>';
+    revHtml += '<div class="rev-q"><div class="qmeta"><span class="dom">' + q.domain + '</span>' + statusHtml + '</div>'
+             + '<div class="stem">' + (i + 1) + '. ' + q.stem + '</div>' + optHtml + explHtml + '</div>';
+  });
+
+  document.getElementById('s-results').innerHTML =
+    '<div class="card" style="text-align:center">'
+    + (auto ? '<div class="note">Time expired — your exam was submitted automatically.</div>' : '')
+    + '<h1 style="font-size:26px;margin-bottom:4px">Your Result</h1>'
+    + '<div class="score-big" style="color:' + (passed ? '#1E8449' : '#922B21') + '">'
+    + correct + '<span style="font-size:26px;color:#6a7a92">/' + TARGET + '</span></div>'
+    + '<div class="verdict ' + (passed ? 'pass' : 'fail') + '">' + (passed ? 'PASS' : 'BELOW PASS LINE') + ' · ' + pct + '%</div>'
+    + '<p class="dim" style="max-width:520px;margin:8px auto 0">Indicative pass line: ' + PASS_MARK + '/' + TARGET
+    + ' (' + Math.round(PASS_MARK / TARGET * 100) + '%). The real GMC pass mark is set by the Angoff method and varies between 110–118 each sitting.</p>'
+    + '</div>'
+    + '<div class="card"><h2 style="font-size:20px;margin-bottom:14px">Performance by domain</h2>'
+    + '<p class="dim" style="margin-bottom:14px">Weakest first — focus your revision here.</p>' + domHtml + '</div>'
+    + '<div class="card"><h2 style="font-size:20px;margin-bottom:6px">Review all questions</h2>'
+    + '<p class="dim" style="margin-bottom:8px">Full explanations for every question.</p>' + revHtml + '</div>'
+    + '<div style="text-align:center;margin-top:8px;margin-bottom:24px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap">'
+    + '<a href="plab1-mock.html" class="btn">Take another mock</a>'
+    + '<a href="plab1.html" class="btn ghost">Back to question bank</a></div>';
+
+  document.getElementById('s-results').classList.add('active');
+  window.scrollTo(0, 0);
+}
+
+// ---- START / RESUME ----
+function startExam(resume) {
+  // clear any running timer from a previous attempt
+  if (timerId !== null) { clearInterval(timerId); timerId = null; }
+  submitted = false;
+
+  const saved = resume ? loadSaved() : null;
+  if (resume && saved && Array.isArray(saved.ids) && saved.ids.length === TARGET
+      && typeof saved.timeLeft === 'number' && saved.timeLeft > 60) {
+    const idMap = {};
+    window.PLAB1_QUESTIONS.forEach(q => { idMap[q.id] = q; });
+    EXAM_QS  = saved.ids.map(id => idMap[id]).filter(Boolean);
+    answers  = saved.answers;
+    flags    = saved.flags;
+    cur      = typeof saved.cur === 'number' ? saved.cur : 0;
+    timeLeft = saved.timeLeft;
+  } else {
+    clearSaved();
+    EXAM_QS  = buildExam();
+    answers  = new Array(TARGET).fill(null);
+    flags    = new Array(TARGET).fill(false);
+    cur      = 0;
+    timeLeft = FULL_SECONDS;
+  }
+
+  document.getElementById('s-start').classList.remove('active');
+  document.getElementById('s-exam').classList.add('active');
+  document.getElementById('timer').style.display = 'block';
+  buildPalette();
+  render();
+  tick();
+  timerId = setInterval(tick, 1000);
+  window.addEventListener('beforeunload', saveState);
+}
+
+// ---- INIT ----
+window.addEventListener('DOMContentLoaded', function() {
+  const saved = loadSaved();
+  if (saved && Array.isArray(saved.ids) && saved.ids.length === TARGET
+      && typeof saved.timeLeft === 'number' && saved.timeLeft > 60) {
+    const answered = Array.isArray(saved.answers) ? saved.answers.filter(a => a !== null).length : 0;
+    document.getElementById('resume-info').innerHTML =
+      answered + ' of ' + TARGET + ' answered · ' + fmt(saved.timeLeft) + ' remaining';
+    document.getElementById('resume-banner').style.display = 'flex';
+  }
+});
+</script>
+</body>
+</html>

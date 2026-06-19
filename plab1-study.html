@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AMaC PLAB 1 &mdash; Study Mode</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1B2A4A;--gold:#B7950B;--gold-lt:#D4AF37;--cream:#FBF8F0;--line:#e3ddd0;--ink:#1c2536;--muted:#6a7a92;--ok:#1E8449;--bad:#922B21;--amber:#b45309;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Outfit',-apple-system,Segoe UI,Roboto,sans-serif;background:var(--cream);color:var(--ink);line-height:1.5;}
+.wrap{max-width:860px;margin:0 auto;padding:24px 20px 80px;}
+h1,h2,h3{font-family:'Fraunces',Georgia,serif;color:var(--navy);}
+
+.bar{position:sticky;top:0;z-index:40;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:12px 20px;border-radius:0 0 10px 10px;box-shadow:0 2px 10px rgba(0,0,0,.12);}
+.bar .brand{font-family:'Fraunces',serif;font-size:18px;font-weight:600;}
+.bar .brand span{color:var(--gold-lt);}
+.bar .brand a{color:inherit;text-decoration:none;}
+.tally{font-size:14px;font-weight:600;color:rgba(255,255,255,.85);font-variant-numeric:tabular-nums;}
+.tally .t-correct{color:#7fe0a0;}
+.tally .t-sep{color:rgba(255,255,255,.35);margin:0 4px;}
+
+.card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:28px;margin:18px 0;}
+
+.btn{display:inline-block;background:var(--gold);color:#1a1300;border:none;border-radius:8px;padding:13px 26px;font-size:16px;font-weight:600;cursor:pointer;font-family:inherit;transition:.15s;}
+.btn:hover:not(:disabled){background:var(--gold-lt);}
+.btn:disabled{opacity:.4;cursor:not-allowed;}
+.btn.ghost{background:transparent;border:1.5px solid var(--navy);color:var(--navy);}
+.btn.ghost:hover:not(:disabled){background:var(--navy);color:#fff;}
+.btn.ghost:disabled{opacity:.3;cursor:not-allowed;}
+
+.progress-line{display:flex;align-items:center;justify-content:space-between;font-size:14px;color:var(--muted);margin-bottom:4px;}
+
+.opts label{display:flex;gap:12px;align-items:flex-start;padding:14px 16px;border:1.5px solid var(--line);border-radius:9px;margin:9px 0;cursor:pointer;transition:.12s;background:#fff;}
+.opts label:hover:not(.locked){border-color:var(--gold);}
+.opts label.locked{cursor:default;}
+.opts input{margin-top:3px;accent-color:var(--navy);width:17px;height:17px;flex-shrink:0;}
+.opts label.sel{border-color:var(--navy);background:#f4f6fb;}
+.opts label.opt-correct{border-color:var(--ok);background:#e6f4ec;}
+.opts label.opt-wrong{border-color:var(--bad);background:#fbeceb;}
+.opts label.opt-neutral-locked{opacity:.55;}
+.opt-letter{font-weight:700;color:var(--navy);min-width:18px;}
+.stem{font-size:17px;margin:14px 0 18px;font-weight:500;line-height:1.65;}
+.qmeta{display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--muted);margin-bottom:6px;}
+.qmeta .dom{background:#eef1f7;color:var(--navy);padding:3px 10px;border-radius:20px;font-weight:600;}
+.dim{color:var(--muted);font-size:14px;}
+
+.result-banner{padding:12px 16px;border-radius:8px;font-weight:700;font-size:15px;margin:16px 0 8px;}
+.result-banner.result-correct{background:#e6f4ec;color:var(--ok);border-left:4px solid var(--ok);}
+.result-banner.result-wrong{background:#fbeceb;color:var(--bad);border-left:4px solid var(--bad);}
+
+.expl-wrap{margin-top:16px;display:flex;flex-direction:column;gap:8px;}
+.expl{padding:11px 14px;border-left:3px solid transparent;border-radius:0 7px 7px 0;font-size:13.5px;line-height:1.65;}
+.expl-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;margin-bottom:5px;}
+.expl-correct{background:#e6f4ec;border-left-color:var(--ok);}
+.expl-correct .expl-label{color:var(--ok);}
+.expl-wrong{background:#fff3e0;border-left-color:#e67e22;}
+.expl-wrong .expl-label{color:var(--amber);}
+.expl-pearl{background:#fffbe9;border-left-color:var(--gold);}
+.expl-pearl .expl-label{color:#7d6608;}
+.expl-trap{background:#fbeceb;border-left-color:var(--bad);}
+.expl-trap .expl-label{color:var(--bad);}
+.expl-takeaway{background:#ebf5fb;border-left-color:#1a5276;font-weight:600;}
+.expl-takeaway .expl-label{color:#1a5276;}
+
+.action-row{display:flex;align-items:center;gap:14px;margin-top:20px;flex-wrap:wrap;}
+
+.nav{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:6px;}
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <div class="brand"><a href="plab1.html">A<span>MaC</span> &middot; PLAB 1</a></div>
+  <div class="tally" id="tally"></div>
+</div>
+
+<div class="wrap">
+  <div class="progress-line">
+    <span id="prog">Question 1 of 869</span>
+    <span class="dim">Study mode &mdash; no timer, full explanations</span>
+  </div>
+
+  <div class="card" id="qcard"></div>
+
+  <div class="nav">
+    <button type="button" class="btn ghost" id="btn-prev" onclick="go(-1)">&larr; Previous</button>
+    <button type="button" class="btn ghost" id="btn-next" onclick="go(1)">Next &rarr;</button>
+  </div>
+</div>
+
+<script src="plab1-questions.js"></script>
+<script>
+const QUESTIONS = window.PLAB1_QUESTIONS;
+let cur         = 0;
+let confirmed   = new Array(QUESTIONS.length).fill(null);
+let currentSel  = null;
+let confirming  = false;
+
+function selectOption(k) {
+  if (confirmed[cur] !== null) return;
+  currentSel = k;
+  const btn = document.getElementById('confirm-btn');
+  if (btn) btn.disabled = false;
+}
+
+function confirmAnswer() {
+  if (confirming) return;
+  if (currentSel === null || confirmed[cur] !== null) return;
+  confirming = true;
+  confirmed[cur] = currentSel;
+  render();
+  confirming = false;
+}
+
+function go(d) {
+  cur = Math.max(0, Math.min(QUESTIONS.length - 1, cur + d));
+  currentSel = null;
+  render();
+}
+
+function render() {
+  const q           = QUESTIONS[cur];
+  const isConfirmed = confirmed[cur] !== null;
+  const userAnswer  = confirmed[cur];
+
+  // tally
+  const attempted     = confirmed.filter(c => c !== null).length;
+  const correctCount  = confirmed.filter((c, i) => c !== null && c === QUESTIONS[i].correct_letter).length;
+  const tallyEl       = document.getElementById('tally');
+  if (attempted > 0) {
+    tallyEl.innerHTML =
+      '<span class="t-correct">' + correctCount + ' correct</span>'
+      + '<span class="t-sep">/</span>'
+      + attempted + ' attempted';
+  } else {
+    tallyEl.textContent = '';
+  }
+
+  // question position
+  document.getElementById('prog').textContent = 'Question ' + (cur + 1) + ' of ' + QUESTIONS.length;
+
+  // options
+  const entries = Object.entries(q.options).sort(([a],[b]) => a.localeCompare(b));
+  let opts = '';
+  entries.forEach(function(entry) {
+    const k = entry[0], v = entry[1];
+    let cls = 'opt';
+    let checked = '';
+    const disabledAttr = isConfirmed ? 'disabled' : '';
+
+    if (isConfirmed) {
+      cls += ' locked';
+      if (k === q.correct_letter) {
+        cls += ' opt-correct';
+      } else if (k === userAnswer) {
+        cls += ' opt-wrong';
+      } else {
+        cls += ' opt-neutral-locked';
+      }
+      if (k === userAnswer || k === q.correct_letter) checked = 'checked';
+    } else {
+      if (currentSel === k) { cls += ' sel'; checked = 'checked'; }
+    }
+
+    opts += '<label class="' + cls + '">'
+          + '<input type="radio" name="opt" value="' + k + '" ' + disabledAttr + ' ' + checked
+          + ' onchange="selectOption(\'' + k + '\')">'
+          + '<span><span class="opt-letter">' + k + '.</span> ' + v + '</span>'
+          + '</label>';
+  });
+
+  // result banner + explanation
+  let explHtml = '';
+  if (isConfirmed) {
+    const isCorrect = userAnswer === q.correct_letter;
+    const bannerCls = isCorrect ? 'result-correct' : 'result-wrong';
+    const bannerTxt = isCorrect
+      ? '&#10003; Correct'
+      : '&#10007; Incorrect &mdash; correct answer: ' + q.correct_letter;
+    explHtml = '<div class="result-banner ' + bannerCls + '">' + bannerTxt + '</div>'
+             + '<div class="expl-wrap">';
+    if (q.why_correct) explHtml += '<div class="expl expl-correct"><div class="expl-label">Why it is correct</div>'     + q.why_correct + '</div>';
+    if (q.why_wrong)   explHtml += '<div class="expl expl-wrong"><div class="expl-label">Why the others are wrong</div>' + q.why_wrong   + '</div>';
+    if (q.pearl)       explHtml += '<div class="expl expl-pearl"><div class="expl-label">NICE Pearl</div>'               + q.pearl       + '</div>';
+    if (q.exam_trap)   explHtml += '<div class="expl expl-trap"><div class="expl-label">Exam trap</div>'                 + q.exam_trap   + '</div>';
+    if (q.takeaway)    explHtml += '<div class="expl expl-takeaway"><div class="expl-label">Key takeaway</div>'          + q.takeaway    + '</div>';
+    explHtml += '</div>';
+  }
+
+  // action button
+  let actionBtn = '';
+  if (isConfirmed) {
+    if (cur < QUESTIONS.length - 1) {
+      actionBtn = '<div class="action-row">'
+                + '<button type="button" class="btn" onclick="go(1)">Next question &rarr;</button>'
+                + '</div>';
+    }
+  } else {
+    actionBtn = '<div class="action-row">'
+              + '<button type="button" class="btn" id="confirm-btn" onclick="confirmAnswer()"'
+              + (currentSel ? '' : ' disabled') + '>Confirm answer</button>'
+              + '</div>';
+  }
+
+  document.getElementById('qcard').innerHTML =
+    '<div class="qmeta"><span class="dom">' + q.domain + '</span><span class="dim">' + q.id + '</span></div>'
+    + '<div class="stem">' + q.stem + '</div>'
+    + '<div class="opts">' + opts + '</div>'
+    + actionBtn
+    + explHtml;
+
+  document.getElementById('btn-prev').disabled = (cur === 0);
+  document.getElementById('btn-next').disabled = (cur === QUESTIONS.length - 1);
+}
+
+render();
+</script>
+</body>
+</html>
