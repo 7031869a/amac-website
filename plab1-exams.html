@@ -136,9 +136,9 @@ footer a{color:var(--gold-soft);text-decoration:none;}
     <span class="hero-kick">Exam Simulation</span>
     <span class="exam-line">Mock <span>Exams</span></span>
     <span class="exam-sub">Sit the paper before you sit the exam</span>
-    <p>Four full-length, blueprint-weighted mock papers that mirror the real PLAB 1 — plus free-draw practice from the whole bank. Every question carries a worked rationale for all five options, so each mark you lose becomes a lesson learned.</p>
+    <p>Five full-length mock papers that mirror the real PLAB 1, plus free-draw practice from the whole bank. Every question carries a worked rationale for all five options, so each mark you lose becomes a lesson learned.</p>
     <div class="stats-row">
-      <div><div class="stat-num">4</div><div class="stat-label">Full Mocks</div></div>
+      <div><div class="stat-num">5</div><div class="stat-label">Full Mocks</div></div>
       <div><div class="stat-num">180</div><div class="stat-label">Questions Each</div></div>
       <div><div class="stat-num">909</div><div class="stat-label">Bank Total</div></div>
       <div><div class="stat-num">20</div><div class="stat-label">Domains</div></div>
@@ -148,8 +148,8 @@ footer a{color:var(--gold-soft);text-decoration:none;}
 
 <main class="main">
   <div class="section-eyebrow">Blueprint-Weighted Papers</div>
-  <h2 class="section-title">The Four Mocks</h2>
-  <p class="section-intro">Each paper samples the twenty domains in the same proportions as the real exam — the clinical workhorses weighted heavily, the cross-cutting subjects lighter. The four papers share no questions, so all four together are a complete mock course. Your progress on each is saved automatically on this device.</p>
+  <h2 class="section-title">The Five Mocks</h2>
+  <p class="section-intro">The first four papers each sample the twenty domains in the same proportions as the real exam — the clinical workhorses weighted heavily, the cross-cutting subjects lighter. The fifth is a high-yield paper built from the remaining questions, so it leans towards the most heavily tested domains — Neurology, Gastroenterology, and Endocrinology. No question repeats across any of the five papers. Your progress on each is saved automatically on this device.</p>
 
   <div class="mocks-grid" id="mocksGrid"><!-- cards injected by JS --></div>
 
@@ -207,7 +207,7 @@ footer a{color:var(--gold-soft);text-decoration:none;}
     }catch(e){ return null; }
   }
 
-  function paperOrder(){ return ["mock-1","mock-2","mock-3","mock-4"]; }
+  function paperOrder(){ return ["mock-1","mock-2","mock-3","mock-4","mock-5"]; }
 
   function domainsFor(ids){
     var byId = {};
@@ -245,7 +245,7 @@ footer a{color:var(--gold-soft);text-decoration:none;}
 
     html += '<div class="mock-meta">';
     html += '<span class="mock-meta-item"><b>'+total+'</b> questions</span>';
-    html += '<span class="mock-meta-item">Blueprint-weighted</span>';
+    html += '<span class="mock-meta-item">'+(paperId==="mock-5"?"High-yield mix":"Blueprint-weighted")+'</span>';
     html += '</div>';
 
     html += '<div class="mock-domains">Heaviest domains: <b>'+topDomains+'</b></div>';
@@ -323,7 +323,7 @@ footer a{color:var(--gold-soft);text-decoration:none;}
     var btn = document.getElementById("resetProgress");
     if(!btn){ return; }
     btn.addEventListener("click", function(){
-      if(confirm("This clears your saved progress and scores for all four mocks on this device. Continue?")){
+      if(confirm("This clears your saved progress and scores for all five mocks on this device. Continue?")){
         paperOrder().forEach(function(pid){
           try{ localStorage.removeItem(STORE_PREFIX+pid); }catch(e){}
         });
