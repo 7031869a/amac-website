@@ -33,6 +33,7 @@ TRUTH = {
     "Master Cards":   record_count("mastercards"),
     "Flashcards":     record_count("flashcards"),
     "Question Bank":  record_count("questions"),
+    "PLAB 1":         record_count("plab1"),
 }
 
 # ---------------------------------------------------------------- 1. links
@@ -62,9 +63,10 @@ def metric_for(label):
     L = label.lower()
     if "examiner brain" in L: return "Examiner Brain"
     if "actor trap"    in L: return "Actor Traps"
-    if "osce"          in L: return "OSCE Stations"
+    if "plab"          in L: return "PLAB 1"
+    if "osce"          in L and "circuit" not in L: return "OSCE Stations"
     if "flashcard"     in L: return "Flashcards"
-    if "question"      in L: return "Question Bank"
+    if "question"      in L and "plab" not in L: return "Question Bank"
     if "master card"   in L: return "Master Cards"
     return None
 
