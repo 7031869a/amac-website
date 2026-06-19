@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PLAB 1 Mock Exams · AMaC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0d2247;--navy-deep:#091629;--navy-mid:#112a55;
+  --gold:#c9a227;--gold-soft:#e0c45a;
+  --cream:#f7f4ec;--paper:#fffdf8;--ink:#1a1d24;--muted:#5d6470;--line:#e4ddcd;
+  --green:#1a7a4a;--green-bg:#e8f8f0;
+  --amber:#b45309;--amber-bg:#fff3e0;
+  --red:#c0392b;--red-bg:#fdecea;
+  --blue:#1a5276;--blue-bg:#ebf5fb;
+  --indigo:#1a3ab0;--indigo-bg:#f0f4ff;
+  --gold-bg:#fffbee;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Outfit',sans-serif;background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:200;background:rgba(13,34,71,0.97);backdrop-filter:blur(8px);border-bottom:1px solid rgba(201,162,39,0.25);}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 32px;height:72px;display:flex;align-items:center;justify-content:space-between;}
+.brand{font-family:'Fraunces',serif;font-size:26px;font-weight:700;color:var(--gold-soft);letter-spacing:3px;text-decoration:none;}
+.nav-links{display:flex;gap:30px;list-style:none;align-items:center;}
+.nav-links a{color:#e8e3d6;text-decoration:none;font-size:14px;letter-spacing:.5px;transition:color .25s;position:relative;}
+.nav-links a::after{content:'';position:absolute;left:0;bottom:-6px;width:0;height:2px;background:var(--gold);transition:width .3s;}
+.nav-links a:hover{color:#fff;}.nav-links a:hover::after{width:100%;}
+.nav-cta{background:var(--gold);color:var(--navy-deep)!important;padding:10px 20px;border-radius:2px;font-weight:600;font-size:13px;}
+.nav-cta::after{display:none!important;}.nav-cta:hover{background:var(--gold-soft);}
+
+/* HERO */
+.hero{background:radial-gradient(circle at 80% -20%,rgba(201,162,39,0.12),transparent 50%),linear-gradient(160deg,var(--navy),var(--navy-deep));color:#fff;padding:68px 32px 60px;text-align:center;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.04) 1px,transparent 1px);background-size:22px 22px;pointer-events:none;}
+.hero-inner{max-width:1000px;margin:0 auto;position:relative;}
+.hero-kick{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:rgba(224,196,90,0.7);border:1px solid rgba(201,162,39,0.3);padding:6px 16px;border-radius:2px;display:inline-block;margin-bottom:20px;}
+.exam-line{font-family:'Fraunces',serif;font-size:clamp(54px,11vw,118px);font-weight:500;line-height:.9;letter-spacing:-2px;color:#fff;display:block;}
+.exam-line span{color:var(--gold-soft);}
+.exam-sub{font-family:'Fraunces',serif;font-style:italic;font-size:clamp(18px,3.2vw,30px);color:rgba(255,255,255,0.7);font-weight:300;margin-top:10px;display:block;letter-spacing:-.5px;}
+.hero p{margin:22px auto 0;color:rgba(200,212,228,0.78);font-weight:300;font-size:clamp(14px,1.6vw,16px);max-width:60ch;line-height:1.7;}
+.stats-row{display:flex;gap:40px;justify-content:center;margin-top:34px;flex-wrap:wrap;padding-top:30px;border-top:1px solid rgba(255,255,255,0.08);}
+.stat-num{font-family:'Fraunces',serif;font-size:32px;color:var(--gold-soft);font-weight:500;line-height:1;}
+.stat-label{font-size:10px;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:.8px;margin-top:4px;}
+
+/* MAIN */
+.main{max-width:1100px;margin:0 auto;padding:56px 32px 80px;}
+.section-eyebrow{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:10px;}
+.section-title{font-family:'Fraunces',serif;font-size:34px;font-weight:500;color:var(--navy);letter-spacing:-.5px;margin-bottom:8px;}
+.section-intro{color:var(--muted);font-size:15px;line-height:1.7;max-width:62ch;margin-bottom:34px;}
+
+/* MOCK CARDS */
+.mocks-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-bottom:60px;}
+.mock-card{background:#fff;border:1px solid var(--line);border-radius:6px;padding:28px 26px;position:relative;transition:transform .2s,box-shadow .2s,border-color .2s;display:flex;flex-direction:column;}
+.mock-card:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(13,34,71,0.1);border-color:var(--gold-soft);}
+.mock-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:16px;}
+.mock-num{font-family:'Fraunces',serif;font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);font-weight:600;}
+.mock-title{font-family:'Fraunces',serif;font-size:25px;font-weight:500;color:var(--navy);line-height:1.1;margin-top:4px;}
+.status-pill{font-size:10px;letter-spacing:.5px;text-transform:uppercase;font-weight:600;padding:5px 11px;border-radius:20px;white-space:nowrap;}
+.status-new{background:var(--blue-bg);color:var(--blue);}
+.status-progress{background:var(--amber-bg);color:var(--amber);}
+.status-done{background:var(--green-bg);color:var(--green);}
+.mock-meta{display:flex;gap:18px;margin:6px 0 16px;flex-wrap:wrap;}
+.mock-meta-item{font-size:13px;color:var(--muted);}
+.mock-meta-item b{color:var(--ink);font-weight:600;}
+.mock-domains{font-size:12.5px;color:var(--muted);line-height:1.6;margin-bottom:20px;padding-top:14px;border-top:1px dashed var(--line);flex-grow:1;}
+.mock-domains b{color:var(--navy);font-weight:600;}
+.progress-track{height:6px;background:var(--cream);border-radius:6px;overflow:hidden;margin-bottom:16px;}
+.progress-fill{height:100%;background:linear-gradient(90deg,var(--gold),var(--gold-soft));width:0;transition:width .5s;}
+.mock-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--navy);color:#fff;border:none;font-family:'Outfit',sans-serif;font-size:14px;font-weight:600;letter-spacing:.3px;padding:13px 20px;border-radius:3px;cursor:pointer;transition:background .2s;width:100%;text-decoration:none;}
+.mock-btn:hover{background:var(--navy-mid);}
+.mock-btn.resume{background:var(--amber);}
+.mock-btn.resume:hover{background:#9a4708;}
+.mock-btn.review{background:#fff;color:var(--navy);border:1px solid var(--navy);}
+.mock-btn.review:hover{background:var(--cream);}
+.mock-btn-row{display:flex;gap:10px;}
+.mock-btn-row .mock-btn{flex:1;}
+.score-line{font-size:13px;color:var(--green);font-weight:600;margin-bottom:14px;display:flex;align-items:center;gap:6px;}
+
+/* RANDOM PRACTICE */
+.practice-card{background:linear-gradient(160deg,var(--navy),var(--navy-deep));border-radius:8px;padding:40px;color:#fff;position:relative;overflow:hidden;}
+.practice-card::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.04) 1px,transparent 1px);background-size:20px 20px;pointer-events:none;}
+.practice-inner{position:relative;}
+.practice-eyebrow{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-soft);font-weight:600;margin-bottom:10px;}
+.practice-title{font-family:'Fraunces',serif;font-size:30px;font-weight:500;margin-bottom:10px;letter-spacing:-.5px;}
+.practice-desc{color:rgba(200,212,228,0.8);font-size:14.5px;line-height:1.7;max-width:54ch;margin-bottom:28px;font-weight:300;}
+.config-row{margin-bottom:24px;}
+.config-label{font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--gold-soft);font-weight:600;margin-bottom:12px;}
+.chip-row{display:flex;gap:10px;flex-wrap:wrap;}
+.chip{background:rgba(255,255,255,0.06);border:1px solid rgba(224,196,90,0.3);color:#e8e3d6;font-family:'Outfit',sans-serif;font-size:14px;font-weight:500;padding:10px 18px;border-radius:3px;cursor:pointer;transition:all .2s;}
+.chip:hover{background:rgba(255,255,255,0.12);}
+.chip.active{background:var(--gold);color:var(--navy-deep);border-color:var(--gold);font-weight:600;}
+.domain-select{width:100%;background:rgba(255,255,255,0.06);border:1px solid rgba(224,196,90,0.3);color:#e8e3d6;font-family:'Outfit',sans-serif;font-size:14px;padding:12px 14px;border-radius:3px;cursor:pointer;}
+.domain-select option{background:var(--navy-deep);color:#e8e3d6;}
+.practice-start{background:var(--gold);color:var(--navy-deep);border:none;font-family:'Outfit',sans-serif;font-size:15px;font-weight:700;letter-spacing:.3px;padding:15px 36px;border-radius:3px;cursor:pointer;transition:background .2s;margin-top:8px;}
+.practice-start:hover{background:var(--gold-soft);}
+
+/* RESET LINK */
+.reset-row{text-align:center;margin-top:50px;}
+.reset-link{background:none;border:none;color:var(--muted);font-family:'Outfit',sans-serif;font-size:12.5px;cursor:pointer;text-decoration:underline;text-underline-offset:3px;}
+.reset-link:hover{color:var(--red);}
+
+/* FOOTER */
+footer{background:var(--navy-deep);color:rgba(255,255,255,0.5);text-align:center;padding:36px 32px;font-size:12.5px;line-height:1.8;}
+footer a{color:var(--gold-soft);text-decoration:none;}
+
+@media(max-width:760px){
+  nav .nav-links{display:none;}
+  .main{padding:36px 18px 60px;}
+  .hero{padding:50px 20px 46px;}
+  .mocks-grid{grid-template-columns:1fr;}
+  .practice-card{padding:28px 22px;}
+}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="brand">AMaC</a>
+    <ul class="nav-links">
+      <li><a href="books.html">The Master Series</a></li>
+      <li><a href="tools.html">Study Tools</a></li>
+      <li><a href="plab1.html">PLAB 1 Bank</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" class="nav-cta">Get Started</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <span class="hero-kick">Exam Simulation</span>
+    <span class="exam-line">Mock <span>Exams</span></span>
+    <span class="exam-sub">Sit the paper before you sit the exam</span>
+    <p>Four full-length, blueprint-weighted mock papers that mirror the real PLAB 1 — plus free-draw practice from the whole bank. Every question carries a worked rationale for all five options, so each mark you lose becomes a lesson learned.</p>
+    <div class="stats-row">
+      <div><div class="stat-num">4</div><div class="stat-label">Full Mocks</div></div>
+      <div><div class="stat-num">180</div><div class="stat-label">Questions Each</div></div>
+      <div><div class="stat-num">909</div><div class="stat-label">Bank Total</div></div>
+      <div><div class="stat-num">20</div><div class="stat-label">Domains</div></div>
+    </div>
+  </div>
+</header>
+
+<main class="main">
+  <div class="section-eyebrow">Blueprint-Weighted Papers</div>
+  <h2 class="section-title">The Four Mocks</h2>
+  <p class="section-intro">Each paper samples the twenty domains in the same proportions as the real exam — the clinical workhorses weighted heavily, the cross-cutting subjects lighter. The four papers share no questions, so all four together are a complete mock course. Your progress on each is saved automatically on this device.</p>
+
+  <div class="mocks-grid" id="mocksGrid"><!-- cards injected by JS --></div>
+
+  <div class="practice-card">
+    <div class="practice-inner">
+      <div class="practice-eyebrow">Revision Mode</div>
+      <h2 class="practice-title">Random Practice</h2>
+      <p class="practice-desc">Not ready for a full sitting? Draw a custom set from anywhere in the bank. Pick how many questions and which domain — ideal for targeted revision between mocks.</p>
+
+      <div class="config-row">
+        <div class="config-label">How many questions?</div>
+        <div class="chip-row" id="countChips">
+          <button class="chip active" data-count="10">10</button>
+          <button class="chip" data-count="25">25</button>
+          <button class="chip" data-count="50">50</button>
+          <button class="chip" data-count="100">100</button>
+        </div>
+      </div>
+
+      <div class="config-row">
+        <div class="config-label">Which domain?</div>
+        <select class="domain-select" id="domainSelect">
+          <option value="__all__">All domains (mixed)</option>
+        </select>
+      </div>
+
+      <button class="practice-start" id="startPractice">Start Practice →</button>
+    </div>
+  </div>
+
+  <div class="reset-row">
+    <button class="reset-link" id="resetProgress">Reset all saved mock progress on this device</button>
+  </div>
+</main>
+
+<footer>
+  AMaC · A. Mansour &amp; Colleagues — <em>Making the difficult, easy.</em><br>
+  Mock papers are study aids and not a guarantee of exam outcome. <a href="plab1.html">Back to the PLAB 1 Bank</a>
+</footer>
+
+<script src="plab1-papers.js"></script>
+<script src="plab1-questions.js"></script>
+<script>
+(function(){
+  "use strict";
+  var PAPERS = window.PLAB1_PAPERS || {};
+  var QUESTIONS = window.PLAB1_QUESTIONS || [];
+  var STORE_PREFIX = "plab1-exam-";
+
+  // ---- progress helpers (localStorage; works on the live site) ----
+  function readProgress(paperId){
+    try{
+      var raw = localStorage.getItem(STORE_PREFIX + paperId);
+      return raw ? JSON.parse(raw) : null;
+    }catch(e){ return null; }
+  }
+
+  function paperOrder(){ return ["mock-1","mock-2","mock-3","mock-4"]; }
+
+  function domainsFor(ids){
+    var byId = {};
+    QUESTIONS.forEach(function(q){ byId[q.id]=q; });
+    var counts = {};
+    ids.forEach(function(id){
+      var q = byId[id];
+      if(q){ counts[q.domain] = (counts[q.domain]||0)+1; }
+    });
+    return Object.keys(counts).sort(function(a,b){ return counts[b]-counts[a]; });
+  }
+
+  function buildMockCard(paperId, idx){
+    var paper = PAPERS[paperId];
+    if(!paper){ return ""; }
+    var total = paper.ids.length;
+    var prog = readProgress(paperId);
+    var answered = prog && prog.answers ? Object.keys(prog.answers).length : 0;
+    var completed = prog && prog.completed;
+    var score = prog && typeof prog.score === "number" ? prog.score : null;
+
+    var status, statusClass;
+    if(completed){ status="Completed"; statusClass="status-done"; }
+    else if(answered>0){ status="In Progress"; statusClass="status-progress"; }
+    else { status="Not Started"; statusClass="status-new"; }
+
+    var topDomains = domainsFor(paper.ids).slice(0,3).join(" · ");
+    var pct = total>0 ? Math.round((answered/total)*100) : 0;
+
+    var html = '<div class="mock-card">';
+    html += '<div class="mock-top"><div>';
+    html += '<div class="mock-num">Paper '+(idx+1)+'</div>';
+    html += '<div class="mock-title">'+paper.title.replace("AMaC PLAB 1 ","")+'</div>';
+    html += '</div><span class="status-pill '+statusClass+'">'+status+'</span></div>';
+
+    html += '<div class="mock-meta">';
+    html += '<span class="mock-meta-item"><b>'+total+'</b> questions</span>';
+    html += '<span class="mock-meta-item">Blueprint-weighted</span>';
+    html += '</div>';
+
+    html += '<div class="mock-domains">Heaviest domains: <b>'+topDomains+'</b></div>';
+
+    if(completed && score!==null){
+      var pctScore = Math.round((score/total)*100);
+      html += '<div class="score-line">✓ Your score: '+score+' / '+total+' ('+pctScore+'%)</div>';
+      html += '<div class="mock-btn-row">';
+      html += '<a class="mock-btn review" href="'+runnerUrl(paperId,"review")+'">Review answers</a>';
+      html += '<a class="mock-btn" href="'+runnerUrl(paperId,"restart")+'">Retake</a>';
+      html += '</div>';
+    } else if(answered>0){
+      html += '<div class="progress-track"><div class="progress-fill" style="width:'+pct+'%"></div></div>';
+      html += '<a class="mock-btn resume" href="'+runnerUrl(paperId,"resume")+'">Resume ('+answered+'/'+total+') →</a>';
+    } else {
+      html += '<a class="mock-btn" href="'+runnerUrl(paperId,"start")+'">Start mock →</a>';
+    }
+    html += '</div>';
+    return html;
+  }
+
+  // The runner is the existing mock engine page. We pass the paper id so it loads
+  // the fixed list from PLAB1_PAPERS. Mode hints (resume/review/restart) are read there.
+  function runnerUrl(paperId, mode){
+    return "plab1-exam-runner.html?paper="+encodeURIComponent(paperId)+"&mode="+encodeURIComponent(mode||"start");
+  }
+
+  function renderMocks(){
+    var grid = document.getElementById("mocksGrid");
+    if(!grid){ return; }
+    grid.innerHTML = paperOrder().map(function(pid, i){ return buildMockCard(pid, i); }).join("");
+  }
+
+  // ---- random practice ----
+  function populateDomains(){
+    var sel = document.getElementById("domainSelect");
+    if(!sel){ return; }
+    var doms = {};
+    QUESTIONS.forEach(function(q){ if(q.domain){ doms[q.domain]=(doms[q.domain]||0)+1; } });
+    Object.keys(doms).sort().forEach(function(d){
+      var opt = document.createElement("option");
+      opt.value = d;
+      opt.textContent = d + " (" + doms[d] + ")";
+      sel.appendChild(opt);
+    });
+  }
+
+  var selectedCount = 10;
+  function wireCountChips(){
+    var chips = document.querySelectorAll("#countChips .chip");
+    chips.forEach(function(c){
+      c.addEventListener("click", function(){
+        chips.forEach(function(x){ x.classList.remove("active"); });
+        c.classList.add("active");
+        selectedCount = parseInt(c.getAttribute("data-count"),10);
+      });
+    });
+  }
+
+  function wirePracticeStart(){
+    var btn = document.getElementById("startPractice");
+    if(!btn){ return; }
+    btn.addEventListener("click", function(){
+      var sel = document.getElementById("domainSelect");
+      var domain = sel ? sel.value : "__all__";
+      var url = "plab1-exam-runner.html?mode=practice&count="+selectedCount;
+      if(domain && domain!=="__all__"){
+        url += "&domain="+encodeURIComponent(domain);
+      }
+      window.location.href = url;
+    });
+  }
+
+  function wireReset(){
+    var btn = document.getElementById("resetProgress");
+    if(!btn){ return; }
+    btn.addEventListener("click", function(){
+      if(confirm("This clears your saved progress and scores for all four mocks on this device. Continue?")){
+        paperOrder().forEach(function(pid){
+          try{ localStorage.removeItem(STORE_PREFIX+pid); }catch(e){}
+        });
+        renderMocks();
+      }
+    });
+  }
+
+  // init
+  document.addEventListener("DOMContentLoaded", function(){
+    renderMocks();
+    populateDomains();
+    wireCountChips();
+    wirePracticeStart();
+    wireReset();
+  });
+})();
+</script>
+</body>
+</html>
