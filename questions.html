@@ -193,6 +193,26 @@ footer p{font-size:12px;font-weight:300;}
   .hero{padding:52px 20px 48px;}
   .plab-line{font-size:clamp(70px,22vw,140px);}
 }
+
+/* PRINT BUTTON */
+.btn-print-all{padding:8px 16px;background:var(--navy);color:#fff;border:none;border-radius:4px;font-size:13px;font-weight:600;cursor:pointer;font-family:'Outfit',sans-serif;white-space:nowrap;transition:opacity .15s;display:flex;align-items:center;gap:6px;}
+.btn-print-all:hover{opacity:.85;}
+
+/* PRINT STYLES */
+@media print{
+  nav,.mode-bar,.controls,.hero,.trustband,footer,.btn-print-all,.action-row,.q-chevron{display:none!important;}
+  body{background:#fff;}
+  .main{padding:0;max-width:100%;}
+  .q-body{display:block!important;}
+  .q-card{break-inside:avoid;page-break-inside:avoid;border-bottom:1px solid #e4ddcd;}
+  .q-card:last-child{border-bottom:none;}
+  .domain-section{break-inside:auto;margin-bottom:20px;}
+  .domain-header{background:#0d2247!important;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .questions-list{border:1px solid #e4ddcd;border-top:none;}
+  .opt{break-inside:avoid;}
+  .explanation{display:flex!important;}
+  .explanation.show,.result-row.show{display:flex!important;}
+}
 </style>
 </head>
 <body>
@@ -263,6 +283,7 @@ footer p{font-size:12px;font-weight:300;}
       <option value="wrong">Wrong</option>
     </select>
     <span id="q-count"></span>
+    <button class="btn-print-all" onclick="printAllQuestions()" title="Expand all questions and print as PDF">🖨 Print All</button>
   </div>
 </div>
 
@@ -636,6 +657,13 @@ function filter() {
 });
 
 renderBank(QUESTIONS);
+
+function printAllQuestions() {
+  // Expand every visible question card
+  document.querySelectorAll('.q-card').forEach(card => card.classList.add('open'));
+  // Brief delay to let DOM repaint before print dialog opens
+  setTimeout(() => window.print(), 350);
+}
 </script>
 </body>
 </html>
