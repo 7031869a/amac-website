@@ -84,7 +84,7 @@ footer{background:var(--navy-deep);color:#c4ccd8;padding:36px 28px 20px;}
 </style>
 </head>
 <body>
-<nav><div class="nav-inner"><a href="index.html" class="brand">AMaC</a>
+<nav data-door="shelf"><div class="nav-inner"><a href="index.html" class="brand">AMaC</a>
   <ul class="nav-links"><li><a href="books.html">The Master Series</a></li><li><a href="tools.html">Study Tools</a></li><li><a href="contact.html" class="nav-cta">Get Started</a></li></ul>
 </div></nav>
 <header class="hero"><div class="ph">
@@ -139,4 +139,5 @@ document.getElementById('ecgEmergs').innerHTML=D.ecg.emergencies.map((e,i)=>`<di
 document.getElementById('badItems').innerHTML=D.abg.bad_scan.map(b=>`<div class="scan-item"><div class="scan-letter">${b.letter}</div><div><div class="scan-meaning">${b.meaning}</div><div class="scan-signs">${b.sign}</div><div class="scan-action">→ ${b.action}</div></div></div>`).join('');
 document.getElementById('abgSteps').innerHTML=D.abg.five_steps.map(s=>`<div class="step-card"><div class="step-num-bar"><span class="sn">${s.n}</span><span class="sn-label">${s.step}</span></div><div class="step-body"><div style="font-size:13px;color:var(--ink);line-height:1.5">${s.question}</div></div></div>`).join('');
 document.getElementById('abgPatterns').innerHTML=D.abg.patterns.map(p=>`<div class="pattern-card"><div class="pc-hdr"><div class="pc-name">${p.name}</div></div><div class="pc-body"><div class="pc-values">${p.values}</div><div class="pc-causes">Causes: ${p.causes}</div><div class="pc-action">→ ${p.action}</div></div></div>`).join('');
-</script></body></html>
+</script><script src="nav.js" defer></script>
+</body></html>
