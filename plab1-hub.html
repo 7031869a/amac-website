@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PLAB 1 Question Bank — AMaC</title>
+<meta name="description" content="PLAB 1 preparation from AMaC — the written single-best-answer paper, drilled to instinct. 909 SBA questions across 20 clinical domains and 5 full timed mock papers.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0d2247;--navy-deep:#091629;--gold:#c9a227;--gold-soft:#e0c45a;
+  --cream:#f7f4ec;--paper:#fffdf8;--ink:#1a1d24;--muted:#5d6470;--line:#e4ddcd;
+  /* dark-premium house tokens */
+  --bg:#0C1526;--panel:#0F1A2E;--card:#16233F;--card-deep:#111E33;
+  --edge:#1E2C46;--edge-soft:#28385A;--edge-line:#243149;
+  --txt:#F6F4EE;--txt-soft:#AEB9D0;--txt-mute:#8593AE;--txt-faint:#6B7794;
+  /* PLAB 1 door accent (blue) */
+  --door:#4F97DD;--door-deep:#2B7CC9;--door-text:#85B7EB;
+  --neutral:#888780;
+}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--txt);line-height:1.6;-webkit-font-smoothing:antialiased;}
+h1,h2,h3,.serif{font-family:'Fraunces',serif;}
+a{text-decoration:none;color:inherit;}
+
+/* ── NAV (pure-separation; nav.js arrives in Layer 3) ── */
+nav{position:sticky;top:0;z-index:100;background:var(--panel);border-bottom:1px solid var(--edge);backdrop-filter:blur(8px);}
+.nav-inner{max-width:1180px;margin:0 auto;padding:13px 26px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;}
+.nav-l{display:flex;align-items:center;gap:13px;}
+.brand{font-weight:600;letter-spacing:.1em;color:var(--gold);font-size:16px;}
+.door-tag{font-size:11px;color:var(--door-text);border-left:1px solid var(--edge-soft);padding-left:13px;letter-spacing:.1em;}
+.nav-links{display:flex;align-items:center;gap:16px;list-style:none;font-size:12.5px;color:#C7D0E2;flex-wrap:wrap;}
+.nav-links a{transition:color .2s;}
+.nav-links a:hover{color:#fff;}
+.nav-links a.here{color:var(--door-text);}
+.nav-exit{color:var(--txt-mute);font-size:11.5px;border-left:1px solid var(--edge-soft);padding-left:13px;}
+.nav-exit:hover{color:var(--door-text);}
+
+/* ── HERO ── */
+.hero{position:relative;padding:62px 26px 44px;text-align:center;border-bottom:1px solid #1A2740;overflow:hidden;}
+.hero-glow{position:absolute;top:46px;left:50%;transform:translateX(-50%);width:540px;max-width:92%;height:200px;background:radial-gradient(ellipse,rgba(79,151,221,0.15),transparent 70%);pointer-events:none;}
+.hero-inner{position:relative;max-width:760px;margin:0 auto;}
+.hero-kick{font-size:11px;letter-spacing:.2em;color:var(--door-text);font-weight:600;}
+.hero h1{font-size:clamp(30px,5vw,46px);color:var(--txt);font-weight:600;margin:16px 0 12px;line-height:1.1;}
+.hero-sub{font-size:clamp(14px,1.7vw,16px);color:var(--txt-soft);margin:0 auto 26px;max-width:46ch;line-height:1.6;}
+.hero-stats{display:inline-flex;gap:30px;flex-wrap:wrap;justify-content:center;}
+.hs-num{font-family:'Fraunces',serif;font-size:26px;color:var(--txt);font-weight:600;}
+.hs-lbl{font-size:12.5px;color:var(--txt-mute);margin-left:7px;}
+
+/* ── TOOLKIT ── */
+.wrap{max-width:1180px;margin:0 auto;padding:34px 26px 14px;}
+.sec-label{font-size:11px;letter-spacing:.14em;color:var(--txt-mute);margin-bottom:16px;}
+.tool-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;}
+.tool-card{
+  background:var(--card);
+  border-top:3px solid var(--door);border-left:3px solid var(--door);
+  border-right:1px solid var(--edge-soft);border-bottom:1px solid var(--edge-soft);
+  border-radius:9px;padding:20px 19px;display:block;transition:transform .15s;
+}
+.tool-card:hover{transform:translateY(-3px);}
+.tc-name{font-family:'Fraunces',serif;font-size:19px;color:var(--txt);margin-bottom:6px;}
+.tc-badge{font-size:12.5px;color:var(--door-text);margin-bottom:9px;}
+.tc-desc{font-size:13px;color:var(--txt-soft);line-height:1.55;}
+
+/* shared shelf — neutral two-border */
+.shelf{
+  margin-top:16px;background:var(--card-deep);
+  border-top:2px solid var(--neutral);border-left:2px solid var(--neutral);
+  border-right:1px solid var(--edge-line);border-bottom:1px solid var(--edge-line);
+  border-radius:9px;padding:18px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;transition:transform .15s;
+}
+.shelf:hover{transform:translateY(-2px);}
+.shelf-name{font-family:'Fraunces',serif;font-size:16px;color:var(--txt);}
+.shelf-list{font-size:12.5px;color:var(--txt-mute);margin-top:4px;}
+.shelf-go{font-size:12.5px;color:#B4B2A9;white-space:nowrap;}
+
+/* ── PHILOSOPHY ── */
+.phi{max-width:780px;margin:34px auto 8px;padding:0 26px;text-align:center;}
+.phi-eyebrow{font-size:11px;letter-spacing:.16em;color:var(--door-text);margin-bottom:12px;}
+.phi-title{font-family:'Fraunces',serif;font-size:clamp(21px,3.2vw,30px);color:var(--txt);font-weight:600;line-height:1.25;margin-bottom:16px;}
+.phi-body{font-size:14.5px;color:var(--txt-soft);line-height:1.7;max-width:60ch;margin:0 auto;}
+.phi-body strong{color:var(--door-text);font-weight:500;}
+
+/* ── FOOTER ── */
+footer{margin-top:40px;border-top:1px solid #1A2740;padding:34px 26px 26px;}
+.foot-inner{max-width:1180px;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:28px;border-bottom:1px solid var(--edge);padding-bottom:26px;}
+.foot-brand{font-weight:600;letter-spacing:.1em;color:var(--gold);font-size:18px;}
+.foot-brand p{font-size:13px;color:var(--txt-mute);margin-top:9px;max-width:36ch;font-weight:300;line-height:1.6;}
+.foot-col h4{color:#fff;font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px;}
+.foot-col a{display:block;color:#C7D0E2;font-size:13.5px;margin-bottom:8px;font-weight:300;transition:.2s;}
+.foot-col a:hover{color:var(--door-text);}
+.foot-bottom{max-width:1180px;margin:20px auto 0;font-size:12px;color:var(--txt-faint);text-align:center;}
+.foot-tag{text-align:center;font-size:11.5px;color:var(--txt-faint);letter-spacing:.03em;margin-top:6px;}
+
+@media(max-width:640px){
+  .nav-links{gap:13px;font-size:12px;}
+  .hero-stats{gap:22px;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV (pure-separation, PLAB 1 door; Layer 3 replaces with shared nav.js) -->
+<nav data-door="plab1"><div class="nav-inner">
+  <div class="nav-l">
+    <a href="index.html" class="brand">AMaC</a>
+    <span class="door-tag">PLAB 1</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="plab1.html" class="here">Question bank</a></li>
+    <li><a href="plab1-exams.html">Mock papers</a></li>
+    <li><a href="plab1-study.html">Study mode</a></li>
+    <li><a href="#shelf">Clinical reference</a></li>
+    <li><a href="index.html" class="nav-exit">← all exams</a></li>
+  </ul>
+</div></nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-glow"></div>
+  <div class="hero-inner">
+    <div class="hero-kick">THE WRITTEN SBA PAPER</div>
+    <h1>Drill it to instinct.<br>Walk in ready.</h1>
+    <p class="hero-sub">Single-best-answer clinical reasoning under exam pressure — practised until it is automatic.</p>
+    <div class="hero-stats">
+      <div><span class="hs-num">909</span><span class="hs-lbl">SBA questions</span></div>
+      <div><span class="hs-num">20</span><span class="hs-lbl">clinical domains</span></div>
+      <div><span class="hs-num">5</span><span class="hs-lbl">mock papers</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOLKIT -->
+<div class="wrap">
+  <div class="sec-label">YOUR PLAB 1 TOOLKIT</div>
+  <div class="tool-grid">
+
+    <a class="tool-card" href="plab1.html">
+      <div class="tc-name">Question Bank</div>
+      <div class="tc-badge">909 questions · 20 domains</div>
+      <div class="tc-desc">Learning mode and exam mode, with a full explanation on every question — why right, why wrong, the trap, the takeaway.</div>
+    </a>
+
+    <a class="tool-card" href="plab1-exams.html">
+      <div class="tc-name">Mock Exams</div>
+      <div class="tc-badge">5 papers · 180 each · timed</div>
+      <div class="tc-desc">Full timed papers under real exam conditions — 180 questions, three hours, scored against the bank.</div>
+    </a>
+
+    <a class="tool-card" href="plab1-study.html">
+      <div class="tc-name">Study Mode</div>
+      <div class="tc-badge">filter by domain &amp; difficulty</div>
+      <div class="tc-desc">Work through by topic at your own pace, targeting your weak domains with no clock running.</div>
+    </a>
+
+  </div>
+
+  <a class="shelf" id="shelf" href="tools.html">
+    <div>
+      <div class="shelf-name">Shared clinical reference</div>
+      <div class="shelf-list">Prescribing · antibiotics · normal values · ECG/ABG · frameworks · NHS language · documentation · SBAR</div>
+    </div>
+    <span class="shelf-go">Open shelf →</span>
+  </a>
+</div>
+
+<!-- PHILOSOPHY -->
+<section class="phi">
+  <div class="phi-eyebrow">THE AMaC APPROACH</div>
+  <h2 class="phi-title">Knowing the answer isn&rsquo;t enough.<br>You have to find it in ninety seconds.</h2>
+  <p class="phi-body">PLAB 1 isn&rsquo;t only a test of knowledge &mdash; it&rsquo;s a test of <strong>recognition under time pressure</strong>. The bank trains the pattern-matching that turns a hard question into an obvious one, so that on the day the right answer simply looks right.</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-inner">
+    <div class="foot-brand">
+      AMaC
+      <p>Preparation for the PLAB 1 written paper — single-best-answer reasoning, drilled to instinct. Making the difficult, easy.</p>
+    </div>
+    <div class="foot-col">
+      <h4>PLAB 1</h4>
+      <a href="plab1.html">Question bank</a>
+      <a href="plab1-exams.html">Mock papers</a>
+      <a href="plab1-study.html">Study mode</a>
+    </div>
+    <div class="foot-col">
+      <h4>AMaC</h4>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="index.html">← All exams</a>
+    </div>
+  </div>
+  <div class="foot-bottom">© 2026 A. Mansour &amp; Colleagues (AMaC). All rights reserved.</div>
+  <div class="foot-tag">Written by doctors, for doctors who want to excel · free while we grow</div>
+</footer>
+
+</body>
+</html>
