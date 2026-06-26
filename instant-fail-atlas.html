@@ -48,29 +48,32 @@ nav{position:sticky;top:0;z-index:100;background:var(--panel);border-bottom:1px 
 .flip{perspective:1600px;height:380px;}
 .flip-in{position:relative;width:100%;height:100%;transition:transform .6s cubic-bezier(.4,.2,.2,1);transform-style:preserve-3d;cursor:pointer;}
 .flip.flipped .flip-in{transform:rotateY(180deg);}
-.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:12px;overflow:hidden;display:flex;flex-direction:column;}
-.front{background:linear-gradient(160deg,#F7F4EC,#EFEADD);border:1px solid #E2D9C4;}
+.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:12px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 8px 24px rgba(6,11,20,0.45);}
+/* FRONT = default (grid) face — now the DARK branded surface, carries the cognitive trap.
+   Two-border card system (matches the hub tool cards): gold top+left, edge right+bottom. */
+.front{background:linear-gradient(160deg,#16233F,#111E33);border-top:3px solid var(--door);border-left:3px solid var(--door);border-right:1px solid var(--edge-soft);border-bottom:1px solid var(--edge-soft);}
 .front-body{padding:26px 24px;flex:1;display:flex;flex-direction:column;}
-.front-kick{font-size:10.5px;letter-spacing:.18em;color:var(--door-deep);font-weight:600;text-transform:uppercase;}
-.front-title{font-family:'Fraunces',serif;font-size:30px;color:var(--navy);font-weight:600;line-height:1.05;margin:8px 0 4px;}
+.front-kick{font-size:10.5px;letter-spacing:.18em;color:var(--door-text);font-weight:600;text-transform:uppercase;}
+.front-title{font-family:'Fraunces',serif;font-size:30px;color:var(--txt);font-weight:600;line-height:1.05;margin:8px 0 4px;}
 .front-rule{width:46px;height:2px;background:var(--gold);margin:10px 0 16px;}
-.trap-label{font-size:10.5px;letter-spacing:.16em;color:#9A8A5E;font-weight:600;text-transform:uppercase;margin-bottom:8px;}
-.trap-text{font-family:'Fraunces',serif;font-style:italic;font-size:16.5px;color:#3A3A36;line-height:1.5;}
-.front-foot{padding:13px 24px;border-top:1px solid #E2D9C4;display:flex;align-items:center;justify-content:space-between;color:#8A7F66;font-size:12px;}
+.trap-label{font-size:10.5px;letter-spacing:.16em;color:#B3A270;font-weight:600;text-transform:uppercase;margin-bottom:8px;}
+.trap-text{font-family:'Fraunces',serif;font-style:italic;font-size:16.5px;color:#EAEDF3;line-height:1.5;}
+.front-foot{padding:13px 24px;border-top:1px solid var(--edge);display:flex;align-items:center;justify-content:space-between;color:var(--txt-mute);font-size:12px;}
 .front-foot .flip-cue{display:flex;align-items:center;gap:7px;}
-.back{background:#142235;border:1px solid var(--edge-soft);transform:rotateY(180deg);}
-.back-head{background:linear-gradient(100deg,#2E4057,#1B2A40);padding:11px 18px;display:flex;align-items:center;justify-content:space-between;}
-.back-head .bt{font-family:'Fraunces',serif;font-size:15px;color:#fff;font-weight:500;}
-.back-head .ba{font-size:10.5px;letter-spacing:.14em;color:var(--door-text);font-weight:600;}
+/* BACK = after-flip face — now the LIGHT/cream surface, carries the fail moves / museum / one rule */
+.back{background:linear-gradient(160deg,#F7F4EC,#EFEADD);border:1px solid #E2D9C4;transform:rotateY(180deg);}
+.back-head{background:linear-gradient(100deg,#EFE8D6,#E7DEC9);border-bottom:1px solid #E2D9C4;padding:11px 18px;display:flex;align-items:center;justify-content:space-between;}
+.back-head .bt{font-family:'Fraunces',serif;font-size:15px;color:var(--navy);font-weight:500;}
+.back-head .ba{font-size:10.5px;letter-spacing:.14em;color:var(--door-deep);font-weight:700;}
 .back-body{padding:15px 18px;flex:1;overflow-y:auto;}
-.moves-label{font-size:10px;letter-spacing:.15em;color:var(--txt-mute);font-weight:600;text-transform:uppercase;margin-bottom:9px;}
+.moves-label{font-size:10px;letter-spacing:.15em;color:#8A7F66;font-weight:600;text-transform:uppercase;margin-bottom:9px;}
 .move{display:flex;gap:9px;margin-bottom:10px;}
-.move .x{flex:none;width:18px;height:18px;border-radius:50%;background:var(--fail-bg);border:1px solid #4A2C24;color:var(--fail-soft);font-size:11px;display:flex;align-items:center;justify-content:center;margin-top:1px;}
-.move .mt{font-size:12.5px;color:var(--txt-soft);line-height:1.45;}
-.move .mt b{color:#E9EDF5;font-weight:600;}
-.museum{border-left:2px solid var(--door);background:#0F1B2C;padding:10px 13px;margin:13px 0;border-radius:0 6px 6px 0;}
-.museum .ml{font-size:10px;letter-spacing:.14em;color:var(--door-text);font-weight:600;text-transform:uppercase;margin-bottom:5px;}
-.museum .mtxt{font-family:'Fraunces',serif;font-style:italic;font-size:13px;color:#B9C4D8;line-height:1.5;}
+.move .x{flex:none;width:18px;height:18px;border-radius:50%;background:#F7E2DC;border:1px solid #E3B3A6;color:var(--fail);font-size:11px;display:flex;align-items:center;justify-content:center;margin-top:1px;}
+.move .mt{font-size:12.5px;color:#44473F;line-height:1.45;}
+.move .mt b{color:var(--navy);font-weight:600;}
+.museum{border-left:2px solid var(--door);background:#F3ECDB;padding:10px 13px;margin:13px 0;border-radius:0 6px 6px 0;}
+.museum .ml{font-size:10px;letter-spacing:.14em;color:var(--door-deep);font-weight:600;text-transform:uppercase;margin-bottom:5px;}
+.museum .mtxt{font-family:'Fraunces',serif;font-style:italic;font-size:13px;color:#4A4A40;line-height:1.5;}
 .one-rule{background:linear-gradient(100deg,var(--door),var(--door-deep));padding:12px 18px;}
 .one-rule .orl{font-size:10px;letter-spacing:.15em;color:rgba(11,18,32,0.6);font-weight:700;text-transform:uppercase;}
 .one-rule .ort{font-family:'Fraunces',serif;font-size:16px;color:#0B1220;font-weight:600;line-height:1.2;margin-top:2px;}
