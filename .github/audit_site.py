@@ -27,13 +27,13 @@ def record_count(name):
     return len(re.findall(r'"id"\s*:', pages.get(name, "")))
 
 # Some tools keep their cards in an external JS data file, not inline HTML.
-# Those use unquoted object keys (id: "slug"), one per record at line start.
+# Handle both shapes: minified JSON ("id":"slug") and pretty-printed (id: "slug").
 def js_record_count(filename):
     path = os.path.join(ROOT, filename)
     if not os.path.exists(path):
         return 0
     txt = open(path, encoding="utf-8", errors="ignore").read()
-    return len(re.findall(r'(?m)^\s*id:\s*"', txt))
+    return len(re.findall(r'"id"\s*:', txt)) or len(re.findall(r'(?m)^\s*id:\s*"', txt))
 
 TRUTH = {
     "Examiner Brain": record_count("examiner-brain"),
