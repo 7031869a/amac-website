@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AMaC — PLAB 1, PLAB 2 &amp; UKMLA preparation</title>
+<meta name="description" content="AMaC — preparation for the UK medical licensing exams. Choose your exam: UKMLA (CPSA & AKT), PLAB 2 (the OSCE), or PLAB 1 (the written SBA paper). Written by doctors, for doctors who want to excel.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0d2247;--gold:#c9a227;--gold-soft:#e0c45a;
+  --bg:#0C1526;--panel:#0F1A2E;
+  --txt:#F6F4EE;--txt-soft:#AEB9D0;--txt-mute:#8593AE;--txt-faint:#6B7794;
+  /* door accents */
+  --ukmla:#2FB48C;--ukmla-deep:#1D9E75;--ukmla-text:#5DCAA5;
+  --plab2:#C9A227;--plab2-deep:#A8841C;--plab2-text:#D7B43A;
+  --plab1:#4F97DD;--plab1-deep:#2B7CC9;--plab1-text:#85B7EB;
+}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--txt);line-height:1.6;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column;}
+h1,h2,h3,.serif{font-family:'Fraunces',serif;}
+a{text-decoration:none;color:inherit;}
+
+/* ── minimal top bar (brand only — this IS the entrance, no door nav) ── */
+.topbar{padding:22px 30px 0;display:flex;align-items:center;justify-content:space-between;}
+.brand{font-weight:600;letter-spacing:.14em;color:var(--gold);font-size:18px;}
+.topbar .about{font-size:12.5px;color:var(--txt-mute);}
+.topbar .about a{margin-left:18px;transition:color .2s;}
+.topbar .about a:hover{color:var(--txt);}
+
+/* ── hero headline ── */
+.head{text-align:center;padding:48px 26px 8px;position:relative;}
+.head-kick{font-size:11px;letter-spacing:.22em;color:var(--txt-mute);text-transform:uppercase;margin-bottom:18px;}
+.head h1{font-size:clamp(28px,4.6vw,46px);font-weight:600;line-height:1.1;color:var(--txt);}
+.head p{font-size:clamp(14px,1.8vw,17px);color:var(--txt-soft);margin-top:14px;}
+
+/* ── the three doors ── */
+.doors{flex:1;display:flex;align-items:center;justify-content:center;padding:30px 26px 20px;}
+.doors-row{display:grid;grid-template-columns:1fr 1.08fr 1fr;gap:26px;align-items:center;max-width:1080px;width:100%;}
+
+.door{
+  position:relative;border-radius:16px;padding:34px 26px 30px;cursor:pointer;
+  background:linear-gradient(150deg,#1E2F4F,#16233D);
+  text-align:left;display:block;color:inherit;
+  transition:transform .22s cubic-bezier(.4,.2,.2,1), box-shadow .22s;
+  border-top:6px solid var(--d);border-left:6px solid var(--dd);
+}
+.door::after{content:"";position:absolute;inset:0;border-radius:16px;pointer-events:none;
+  box-shadow:0 1px 0 rgba(255,255,255,0.05) inset;}
+.door{
+  box-shadow:
+    -10px 0 26px -6px var(--glow),
+    0 20px 40px -12px rgba(0,0,0,0.55),
+    0 6px 14px -6px rgba(0,0,0,0.4);
+}
+.door:hover{transform:translateY(-6px);
+  box-shadow:
+    -14px 0 34px -6px var(--glow),
+    0 30px 56px -14px rgba(0,0,0,0.6),
+    0 8px 18px -6px rgba(0,0,0,0.45);}
+
+.door.ukmla{--d:var(--ukmla);--dd:var(--ukmla-deep);--glow:rgba(47,180,140,0.22);--accent:var(--ukmla-text);}
+.door.plab2{--d:var(--plab2);--dd:var(--plab2-deep);--glow:rgba(201,162,39,0.22);--accent:var(--plab2-text);}
+.door.plab1{--d:var(--plab1);--dd:var(--plab1-deep);--glow:rgba(79,151,221,0.22);--accent:var(--plab1-text);}
+.door.plab2{padding-top:40px;padding-bottom:36px;}
+
+.door-kick{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:600;}
+.door-name{font-family:'Fraunces',serif;font-size:clamp(30px,3.6vw,40px);font-weight:600;color:var(--txt);margin:8px 0 6px;line-height:1;}
+.door-sub{font-size:13px;color:var(--txt-soft);line-height:1.5;min-height:38px;}
+.door-stats{margin:16px 0 18px;font-size:12.5px;color:var(--txt-mute);line-height:1.7;}
+.door-stats b{color:var(--accent);font-weight:600;}
+.door-enter{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:600;color:var(--accent);}
+
+/* ── tagline foot ── */
+.foot{text-align:center;padding:14px 26px 30px;}
+.foot p{font-size:12px;color:var(--txt-faint);letter-spacing:.03em;}
+
+@media(max-width:820px){
+  .doors-row{grid-template-columns:1fr;gap:18px;max-width:440px;}
+  .door.plab2{padding:34px 26px 30px;}
+  .doors{padding:20px 26px;}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <span class="brand">AMaC</span>
+  <span class="about"><a href="about.html">About</a><a href="contact.html">Contact</a></span>
+</div>
+
+<div class="head">
+  <div class="head-kick">A. Mansour &amp; Colleagues</div>
+  <h1>Think like an examiner. Pass with confidence.</h1>
+  <p>Which exam are you preparing for?</p>
+</div>
+
+<main class="doors">
+  <div class="doors-row">
+
+    <!-- UKMLA (left, green) -->
+    <a class="door ukmla" href="ukmla.html">
+      <div class="door-kick">Clinical &amp; Written</div>
+      <div class="door-name">UKMLA</div>
+      <div class="door-sub">The AKT written paper and the CPSA station assessment.</div>
+      <div class="door-stats"><b>127</b> CPSA stations<br><b>1,569</b> AKT questions</div>
+      <span class="door-enter">Enter UKMLA &rarr;</span>
+    </a>
+
+    <!-- PLAB 2 (centre, gold) -->
+    <a class="door plab2" href="plab2.html">
+      <div class="door-kick">The OSCE</div>
+      <div class="door-name">PLAB 2</div>
+      <div class="door-sub">The clinical OSCE — the Master Series and the full performance-intelligence suite.</div>
+      <div class="door-stats"><b>26</b> performance tools<br><b>3</b> Master Series volumes</div>
+      <span class="door-enter">Enter PLAB 2 &rarr;</span>
+    </a>
+
+    <!-- PLAB 1 (right, blue) -->
+    <a class="door plab1" href="plab1-hub.html">
+      <div class="door-kick">Written SBA</div>
+      <div class="door-name">PLAB 1</div>
+      <div class="door-sub">The single-best-answer written paper, drilled to instinct.</div>
+      <div class="door-stats"><b>909</b> SBA questions<br><b>5</b> full mock papers</div>
+      <span class="door-enter">Enter PLAB 1 &rarr;</span>
+    </a>
+
+  </div>
+</main>
+
+<div class="foot">
+  <p>Written by doctors, for doctors who want to excel · free while we grow</p>
+</div>
+
+</body>
+</html>
