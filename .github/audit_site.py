@@ -26,6 +26,15 @@ errors, warnings = [], []
 def record_count(name):
     return len(re.findall(r'"id"\s*:', pages.get(name, "")))
 
+# Some tools keep their cards in an external JS data file, not inline HTML.
+# Those use unquoted object keys (id: "slug"), one per record at line start.
+def js_record_count(filename):
+    path = os.path.join(ROOT, filename)
+    if not os.path.exists(path):
+        return 0
+    txt = open(path, encoding="utf-8", errors="ignore").read()
+    return len(re.findall(r'(?m)^\s*id:\s*"', txt))
+
 TRUTH = {
     "Examiner Brain": record_count("examiner-brain"),
     "Actor Traps":    record_count("actor-traps"),
@@ -34,6 +43,7 @@ TRUTH = {
     "Flashcards":     record_count("flashcards"),
     "Question Bank":  record_count("questions"),
     "PLAB 1":         record_count("plab1"),
+    "Instant Fail Atlas": js_record_count("atlas-cards.js"),
 }
 
 # ---------------------------------------------------------------- 1. links
@@ -61,6 +71,7 @@ for n, h in pages.items():
 # ---------------------------------------------------------------- 4. advertised counts
 def metric_for(label):
     L = label.lower()
+    if "instant fail atlas" in L: return "Instant Fail Atlas"
     if "examiner brain" in L: return "Examiner Brain"
     if "actor trap"    in L: return "Actor Traps"
     if "plab"          in L: return "PLAB 1"
