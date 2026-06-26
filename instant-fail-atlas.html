@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Instant Fail Atlas — AMaC</title>
+<meta name="description" content="The Instant Fail Atlas from AMaC — the cognitive traps that fail UK clinical stations, the instant-fail moves behind them, and the one rule that saves each station. PLAB 2 and UKMLA CPSA.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0d2247;--gold:#c9a227;--gold-soft:#e0c45a;
+  --bg:#0C1526;--panel:#0F1A2E;--card:#16233F;--card-deep:#111E33;
+  --edge:#1E2C46;--edge-soft:#28385A;--edge-line:#243149;
+  --txt:#F6F4EE;--txt-soft:#AEB9D0;--txt-mute:#8593AE;--txt-faint:#6B7794;
+  --door:#C9A227;--door-deep:#A8841C;--door-text:#D7B43A;
+  --neutral:#888780;
+  --fail:#C0563F;--fail-soft:#E08A74;--fail-bg:#2A1A16;
+}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--txt);line-height:1.6;-webkit-font-smoothing:antialiased;}
+h1,h2,h3,.serif{font-family:'Fraunces',serif;}
+a{text-decoration:none;color:inherit;}
+nav{position:sticky;top:0;z-index:100;background:var(--panel);border-bottom:1px solid var(--edge);backdrop-filter:blur(8px);}
+.nav-inner{max-width:1180px;margin:0 auto;padding:13px 26px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;}
+.nav-l{display:flex;align-items:center;gap:13px;}
+.brand{font-weight:600;letter-spacing:.1em;color:var(--gold);font-size:16px;}
+.door-tag{font-size:11px;color:var(--door-text);border-left:1px solid var(--edge-soft);padding-left:13px;letter-spacing:.1em;}
+.nav-links{display:flex;align-items:center;gap:16px;list-style:none;font-size:12.5px;color:#C7D0E2;flex-wrap:wrap;}
+.nav-links a:hover{color:#fff;}
+.nav-exit{color:var(--txt-mute);font-size:11.5px;border-left:1px solid var(--edge-soft);padding-left:13px;}
+.nav-exit:hover{color:var(--door-text);}
+.hero{position:relative;padding:50px 26px 30px;text-align:center;border-bottom:1px solid #1A2740;overflow:hidden;}
+.hero-glow{position:absolute;top:30px;left:50%;transform:translateX(-50%);width:560px;max-width:92%;height:200px;background:radial-gradient(ellipse,rgba(201,162,39,0.13),transparent 70%);pointer-events:none;}
+.hero-inner{position:relative;max-width:780px;margin:0 auto;}
+.hero-kick{font-size:11px;letter-spacing:.2em;color:var(--door-text);font-weight:600;}
+.hero h1{font-size:clamp(30px,5vw,48px);color:var(--txt);font-weight:600;margin:15px 0 12px;line-height:1.08;}
+.hero-sub{font-size:clamp(14px,1.7vw,16px);color:var(--txt-soft);margin:0 auto;max-width:52ch;line-height:1.6;}
+.controls{max-width:1180px;margin:0 auto;padding:22px 26px 6px;display:flex;flex-direction:column;gap:12px;}
+.filter-row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;}
+.chip{background:var(--card);border:1px solid var(--edge-soft);color:var(--txt-soft);font-size:12.5px;padding:6px 14px;border-radius:20px;cursor:pointer;transition:all .15s;font-family:'Outfit',sans-serif;}
+.chip:hover{border-color:var(--door);color:var(--txt);}
+.chip.on{background:var(--door);border-color:var(--door);color:#0B1220;font-weight:600;}
+.exam-row{display:flex;gap:8px;align-items:center;font-size:12px;color:var(--txt-mute);}
+.exam-chip{background:transparent;border:1px solid var(--edge-soft);color:var(--txt-mute);font-size:11.5px;padding:5px 12px;border-radius:6px;cursor:pointer;transition:all .15s;font-family:'Outfit',sans-serif;}
+.exam-chip.on{border-color:var(--door-text);color:var(--door-text);}
+.count{margin-left:auto;font-size:12px;color:var(--txt-faint);}
+.grid{max-width:1180px;margin:0 auto;padding:16px 26px 50px;display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:18px;}
+.flip{perspective:1600px;height:380px;}
+.flip-in{position:relative;width:100%;height:100%;transition:transform .6s cubic-bezier(.4,.2,.2,1);transform-style:preserve-3d;cursor:pointer;}
+.flip.flipped .flip-in{transform:rotateY(180deg);}
+.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:12px;overflow:hidden;display:flex;flex-direction:column;}
+.front{background:linear-gradient(160deg,#F7F4EC,#EFEADD);border:1px solid #E2D9C4;}
+.front-body{padding:26px 24px;flex:1;display:flex;flex-direction:column;}
+.front-kick{font-size:10.5px;letter-spacing:.18em;color:var(--door-deep);font-weight:600;text-transform:uppercase;}
+.front-title{font-family:'Fraunces',serif;font-size:30px;color:var(--navy);font-weight:600;line-height:1.05;margin:8px 0 4px;}
+.front-rule{width:46px;height:2px;background:var(--gold);margin:10px 0 16px;}
+.trap-label{font-size:10.5px;letter-spacing:.16em;color:#9A8A5E;font-weight:600;text-transform:uppercase;margin-bottom:8px;}
+.trap-text{font-family:'Fraunces',serif;font-style:italic;font-size:16.5px;color:#3A3A36;line-height:1.5;}
+.front-foot{padding:13px 24px;border-top:1px solid #E2D9C4;display:flex;align-items:center;justify-content:space-between;color:#8A7F66;font-size:12px;}
+.front-foot .flip-cue{display:flex;align-items:center;gap:7px;}
+.back{background:#142235;border:1px solid var(--edge-soft);transform:rotateY(180deg);}
+.back-head{background:linear-gradient(100deg,#2E4057,#1B2A40);padding:11px 18px;display:flex;align-items:center;justify-content:space-between;}
+.back-head .bt{font-family:'Fraunces',serif;font-size:15px;color:#fff;font-weight:500;}
+.back-head .ba{font-size:10.5px;letter-spacing:.14em;color:var(--door-text);font-weight:600;}
+.back-body{padding:15px 18px;flex:1;overflow-y:auto;}
+.moves-label{font-size:10px;letter-spacing:.15em;color:var(--txt-mute);font-weight:600;text-transform:uppercase;margin-bottom:9px;}
+.move{display:flex;gap:9px;margin-bottom:10px;}
+.move .x{flex:none;width:18px;height:18px;border-radius:50%;background:var(--fail-bg);border:1px solid #4A2C24;color:var(--fail-soft);font-size:11px;display:flex;align-items:center;justify-content:center;margin-top:1px;}
+.move .mt{font-size:12.5px;color:var(--txt-soft);line-height:1.45;}
+.move .mt b{color:#E9EDF5;font-weight:600;}
+.museum{border-left:2px solid var(--door);background:#0F1B2C;padding:10px 13px;margin:13px 0;border-radius:0 6px 6px 0;}
+.museum .ml{font-size:10px;letter-spacing:.14em;color:var(--door-text);font-weight:600;text-transform:uppercase;margin-bottom:5px;}
+.museum .mtxt{font-family:'Fraunces',serif;font-style:italic;font-size:13px;color:#B9C4D8;line-height:1.5;}
+.one-rule{background:linear-gradient(100deg,var(--door),var(--door-deep));padding:12px 18px;}
+.one-rule .orl{font-size:10px;letter-spacing:.15em;color:rgba(11,18,32,0.6);font-weight:700;text-transform:uppercase;}
+.one-rule .ort{font-family:'Fraunces',serif;font-size:16px;color:#0B1220;font-weight:600;line-height:1.2;margin-top:2px;}
+footer{border-top:1px solid #1A2740;padding:28px 26px;text-align:center;}
+.foot-tag{font-size:11.5px;color:var(--txt-faint);letter-spacing:.03em;}
+@media(max-width:560px){.flip{height:410px;}.nav-links{gap:12px;font-size:12px;}}
+</style>
+</head>
+<body>
+
+<nav data-door="plab2"><div class="nav-inner">
+  <div class="nav-l">
+    <a href="index.html" class="brand">AMaC</a>
+    <span class="door-tag">PLAB 2</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="osce.html">OSCE stations</a></li>
+    <li><a href="examiner-brain.html">Examiner Brain</a></li>
+    <li><a href="instant-fail-atlas.html" style="color:var(--door-text)">Instant Fail Atlas</a></li>
+    <li><a href="index.html" class="nav-exit">&larr; all exams</a></li>
+  </ul>
+</div></nav>
+
+
+<section class="hero">
+  <div class="hero-glow"></div>
+  <div class="hero-inner">
+    <div class="hero-kick">PERFORMANCE INTELLIGENCE &middot; PLAB 2 &amp; CPSA</div>
+    <h1>The Instant Fail Atlas</h1>
+    <p class="hero-sub">Not a list of mistakes. A museum of the moments good candidates fail &mdash; the cognitive trap, the instant-fail moves behind it, and the one rule that saves the station.</p>
+  </div>
+</section>
+
+<div class="controls">
+  <div class="filter-row" id="catRow"></div>
+  <div class="filter-row">
+    <div class="exam-row">
+      <span>Exam:</span>
+      <button class="exam-chip on" data-exam="all">Both</button>
+      <button class="exam-chip" data-exam="cpsa">UKMLA CPSA</button>
+      <button class="exam-chip" data-exam="plab2">PLAB 2</button>
+    </div>
+    <span class="count" id="count"></span>
+  </div>
+</div>
+
+<div class="grid" id="grid"></div>
+
+<footer>
+  <div class="foot-tag">Written by doctors, for doctors who want to excel &middot; The Instant Fail Atlas</div>
+</footer>
+
+<script src="atlas-cards.js"></script>
+<script>
+(function(){
+  var CARDS = window.ATLAS_CARDS || [];
+  var CATS  = window.ATLAS_CATS  || [{key:"all",label:"All"}];
+  var state = { cat:"all", exam:"all" };
+  var grid   = document.getElementById('grid');
+  var catRow = document.getElementById('catRow');
+  var countEl= document.getElementById('count');
+  CATS.forEach(function(c){
+    var b = document.createElement('button');
+    b.className = 'chip' + (c.key===state.cat?' on':'');
+    b.textContent = c.label;
+    b.setAttribute('data-cat', c.key);
+    b.onclick = function(){ state.cat = c.key; syncChips(); render(); };
+    catRow.appendChild(b);
+  });
+  function syncChips(){
+    catRow.querySelectorAll('.chip').forEach(function(b){
+      b.classList.toggle('on', b.getAttribute('data-cat')===state.cat);
+    });
+  }
+  document.querySelectorAll('.exam-chip').forEach(function(b){
+    b.onclick = function(){
+      state.exam = b.getAttribute('data-exam');
+      document.querySelectorAll('.exam-chip').forEach(function(x){ x.classList.toggle('on', x===b); });
+      render();
+    };
+  });
+  function esc(s){ return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+  function matches(card){
+    var catOk  = state.cat==='all'  || card.cat===state.cat;
+    var examOk = state.exam==='all' || card.exam==='both' || card.exam===state.exam;
+    return catOk && examOk;
+  }
+  function cardHTML(c){
+    var moves = (c.fails||[]).map(function(f){
+      return '<div class="move"><div class="x">&#10005;</div><div class="mt"><b>'+esc(f.lead)+'</b> '+esc(f.body)+'</div></div>';
+    }).join('');
+    return ''+
+    '<div class="flip" onclick="this.classList.toggle(\'flipped\')">'+
+      '<div class="flip-in">'+
+        '<div class="face front">'+
+          '<div class="front-body">'+
+            '<div class="front-kick">'+esc(c.kicker)+'</div>'+
+            '<div class="front-title">'+esc(c.title)+'</div>'+
+            '<div class="front-rule"></div>'+
+            '<div class="trap-label">The Cognitive Trap</div>'+
+            '<div class="trap-text">'+esc(c.trap)+'</div>'+
+          '</div>'+
+          '<div class="front-foot"><span class="flip-cue">&#8634; Turn the card to see what fails you</span><span>&#8595;</span></div>'+
+        '</div>'+
+        '<div class="face back">'+
+          '<div class="back-head"><span class="bt">'+esc(c.title)+'</span><span class="ba">THE AUTOPSY</span></div>'+
+          '<div class="back-body">'+
+            '<div class="moves-label">The Instant-Fail Moves</div>'+
+            moves+
+            '<div class="museum"><div class="ml">From the Museum</div><div class="mtxt">&ldquo;'+esc(c.museum)+'&rdquo;</div></div>'+
+          '</div>'+
+          '<div class="one-rule"><div class="orl">The One Rule</div><div class="ort">'+esc(c.rule)+'</div></div>'+
+        '</div>'+
+      '</div>'+
+    '</div>';
+  }
+  function render(){
+    var list = CARDS.filter(matches);
+    grid.innerHTML = list.map(cardHTML).join('');
+    countEl.textContent = list.length + ' card' + (list.length===1?'':'s');
+  }
+  render();
+})();
+</script>
+<script src="nav.js" defer></script>
+</body>
+</html>
