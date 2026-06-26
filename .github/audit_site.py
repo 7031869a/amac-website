@@ -83,7 +83,7 @@ def advertised(h):
             out.append((m.group(1).replace(",", ""), name.strip()))
     return out
 
-for pg in ("index", "tools"):
+for pg in ("index", "tools", "plab2"):
     if pg not in pages:
         continue
     for num, label in advertised(pages[pg]):
