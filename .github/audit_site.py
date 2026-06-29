@@ -75,7 +75,7 @@ def metric_for(label):
     if "examiner brain" in L: return "Examiner Brain"
     if "actor trap"    in L: return "Actor Traps"
     if "plab"          in L: return "PLAB 1"
-    if "osce"          in L and "circuit" not in L: return "OSCE Stations"
+    if "osce"          in L and "circuit" not in L and "trainer" not in L: return "OSCE Stations"
     if "flashcard"     in L: return "Flashcards"
     if "question"      in L and "plab" not in L: return "Question Bank"
     if "master card"   in L: return "Master Cards"

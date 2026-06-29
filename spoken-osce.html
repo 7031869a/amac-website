@@ -1,0 +1,975 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AMaC — Spoken OSCE Trainer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0C1526; --panel:#16233F; --panel-2:#1B2B4C; --line:#28385A;
+    --gold:#C9A227; --gold-t:#D7B43A; --ink:#E8EDF6; --muted:#93A2C0;
+    --pass:#2FB48C; --bord:#C9A227; --fail:#C75450; --patient:#E6B566;
+    --shadow:0 18px 50px rgba(0,0,0,.45);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{
+    background:radial-gradient(1200px 600px at 70% -10%, #14223f 0%, var(--bg) 55%) fixed;
+    color:var(--ink); font-family:"Outfit",system-ui,sans-serif; line-height:1.55;
+    -webkit-font-smoothing:antialiased; padding:0 0 64px;
+  }
+  .wrap{max-width:880px; margin:0 auto; padding:0 18px}
+  a{color:var(--gold-t)}
+
+  header.top{display:flex; align-items:center; gap:14px; padding:22px 0 18px; flex-wrap:wrap}
+  .brand{font-family:"Fraunces",serif; font-weight:600; font-size:1.18rem; letter-spacing:.2px}
+  .brand b{color:var(--gold-t)}
+  .door{font:600 .68rem/1 "Outfit"; letter-spacing:.14em; text-transform:uppercase;
+    color:#0B1220; background:var(--gold); padding:6px 10px; border-radius:999px}
+  .clock{margin-left:auto; font:600 1.05rem/1 "Outfit"; letter-spacing:.04em;
+    padding:9px 14px; border-radius:10px; border:1px solid var(--line);
+    background:var(--panel); color:var(--muted); min-width:84px; text-align:center; display:none}
+  .clock.run{display:inline-block; color:var(--ink); border-color:#3a4d75}
+  .clock.low{color:#0B1220; background:var(--fail); border-color:var(--fail)}
+
+  h1{font-family:"Fraunces",serif; font-weight:600; font-size:clamp(1.55rem,4.4vw,2.3rem);
+    line-height:1.08; margin:.1em 0 .35em}
+  .lede{color:var(--muted); max-width:64ch; margin:0 0 22px}
+
+  /* station grid */
+  .grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(248px,1fr)); gap:14px; margin:6px 0 8px}
+  .stcard{text-align:left; display:flex; flex-direction:column; gap:7px; align-items:flex-start;
+    background:var(--panel); border:1px solid var(--line); border-top:3px solid var(--gold); border-left:3px solid var(--gold);
+    border-radius:14px; padding:16px 16px; box-shadow:var(--shadow); cursor:pointer; min-height:128px}
+  .stcard:hover{transform:translateY(-3px)}
+  .stcard .t{font-family:"Fraunces",serif; font-weight:600; font-size:1.12rem; line-height:1.12}
+  .stcard .tag{font:600 .64rem/1 "Outfit"; letter-spacing:.12em; text-transform:uppercase; color:var(--gold-t)}
+  .stcard .b{font-size:.85rem; color:var(--muted)}
+
+  .card{background:var(--panel); border:1px solid var(--line); border-radius:16px;
+    padding:20px; box-shadow:var(--shadow); margin:16px 0}
+  .card.accent{border-top:3px solid var(--gold); border-left:3px solid var(--gold)}
+  .eyebrow{font:600 .7rem/1 "Outfit"; letter-spacing:.16em; text-transform:uppercase; color:var(--gold-t); margin:0 0 10px}
+
+  button{font-family:"Outfit",sans-serif; cursor:pointer; border-radius:11px; border:1px solid var(--line);
+    background:var(--panel-2); color:var(--ink); padding:12px 18px; font-weight:600; font-size:.96rem;
+    transition:transform .12s ease, background .15s ease, border-color .15s ease}
+  button:hover{transform:translateY(-1px); border-color:#3a4d75}
+  button:focus-visible{outline:2px solid var(--gold-t); outline-offset:2px}
+  button.primary{background:var(--gold); color:#0B1220; border-color:var(--gold)}
+  button.primary:hover{background:var(--gold-t)}
+  button.ghost{background:transparent}
+  .row{display:flex; gap:10px; flex-wrap:wrap; align-items:center}
+
+  .stage{display:none}
+  .turns{display:flex; flex-direction:column; gap:12px; max-height:46vh; overflow:auto; padding:4px 2px 2px}
+  .turn{max-width:88%; padding:11px 15px; border-radius:14px; font-size:1rem}
+  .turn .who{font:600 .66rem/1 "Outfit"; letter-spacing:.12em; text-transform:uppercase; margin-bottom:5px; opacity:.85}
+  .turn.pt{align-self:flex-start; background:#1d2c49; border:1px solid #33456b}
+  .turn.pt .who{color:var(--patient)}
+  .turn.pt .say{font-family:"Fraunces",serif; font-style:italic; font-weight:400; font-size:1.06rem}
+  .turn.you{align-self:flex-end; background:#16233F; border:1px solid var(--line)}
+  .turn.you .who{color:var(--gold-t)}
+  .speaking{display:inline-block; width:7px; height:7px; border-radius:50%; background:var(--patient); margin-left:7px; animation:pulse 1s ease-in-out infinite}
+  @keyframes pulse{0%,100%{opacity:.3}50%{opacity:1}}
+
+  .inputbar{margin-top:14px; border-top:1px solid var(--line); padding-top:14px}
+  .micline{display:flex; gap:10px; align-items:stretch; flex-wrap:wrap}
+  #editbox{flex:1; min-width:200px; min-height:52px; resize:vertical; background:#0F1A30; color:var(--ink);
+    border:1px solid var(--line); border-radius:11px; padding:11px 13px; font:400 1rem/1.45 "Outfit"}
+  #editbox:focus{outline:2px solid var(--gold-t); outline-offset:1px; border-color:var(--gold-t)}
+  .mic{min-width:158px; display:flex; align-items:center; justify-content:center; gap:8px}
+  .mic.on{background:var(--fail); color:#0B1220; border-color:var(--fail)}
+  .hint{font-size:.82rem; color:var(--muted); margin:8px 2px 0; min-height:1.1em}
+
+  .band{display:inline-block; font:700 .8rem/1 "Outfit"; letter-spacing:.1em; text-transform:uppercase;
+    padding:7px 13px; border-radius:8px; color:#0B1220}
+  .band.PASS{background:var(--pass)} .band.BORDERLINE{background:var(--bord)} .band.FAIL{background:var(--fail)}
+  .metric{display:flex; gap:18px; flex-wrap:wrap; margin:12px 0 2px}
+  .metric .m b{font:700 1.5rem/1 "Fraunces",serif; color:var(--gold-t)}
+  .metric .m span{display:block; font-size:.78rem; color:var(--muted)}
+  .item{border-left:3px solid var(--line); padding:9px 0 9px 13px; margin:10px 0}
+  .item.good{border-color:var(--pass)} .item.never{border-color:var(--fail)} .item.if{border-color:var(--gold)}
+  .item .q{font-family:"Fraunces",serif; font-style:italic}
+  .item .sub{font-size:.86rem; color:var(--muted); margin-top:3px}
+  .sayit{color:var(--pass); font-weight:600; font-size:.86rem}
+  .small{font-size:.82rem; color:var(--muted)}
+  details.reveal{margin-top:14px; border:1px solid var(--line); border-radius:12px; padding:4px 14px; background:#0F1A30}
+  details.reveal>summary{cursor:pointer; font-weight:600; padding:11px 0; color:var(--gold-t)}
+  .modelrow{border-top:1px solid var(--line); padding:11px 0}
+  .modelrow .s{font-weight:600; margin-bottom:4px}
+  .modelrow .say{color:var(--pass)} .modelrow .nev{color:#e79c99}
+  .disclaim{font-size:.82rem; color:var(--muted); border:1px dashed var(--line); border-radius:10px; padding:10px 13px; margin:14px 0 0}
+  footer{margin-top:28px; color:var(--muted); font-size:.82rem; text-align:center}
+  @media (max-width:480px){.micline{flex-direction:column} #editbox{min-height:78px} .turn{max-width:93%} .stcard{min-height:108px}}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important; transition:none!important}}
+</style>
+</head>
+<body>
+<nav data-door="plab2"><div class="nav-inner"><a href="index.html" class="brand">AMaC</a>
+  <ul class="nav-links"><li><a href="books.html">The Master Series</a></li><li><a href="tools.html">Study Tools</a></li><li><a href="contact.html" class="nav-cta">Get Started</a></li></ul>
+</div></nav>
+<div class="wrap">
+  <header class="top">
+    <span class="brand">Spoken OSCE Trainer</span>
+    <span class="clock" id="clock">8:00</span>
+  </header>
+
+  <!-- landing -->
+  <section id="landing">
+    <h1>Say it out loud.</h1>
+    <p class="lede">An examiner doesn't mark what you know — they mark what you say, and how you say it. Pick a station, speak it the way you would in the room, and the patient answers back. Then see your delivery and check yourself against the AMaC lines.</p>
+    <div class="grid" id="stationGrid"></div>
+    <p class="small" style="margin-top:12px">Works best in Chrome or Edge with the mic allowed. No mic? You can type — the patient still replies aloud. Everything runs in your browser; nothing you say is sent anywhere.</p>
+  </section>
+
+  <!-- scenario -->
+  <section class="card accent" id="scenarioCard" style="display:none">
+    <p class="eyebrow" id="scTag">The station · 8 minutes</p>
+    <p style="margin:.2em 0 .7em" id="scBlurb"></p>
+    <p class="small" id="scRole"></p>
+    <div class="row" style="margin-top:14px">
+      <button class="primary" id="startBtn">Start the station</button>
+      <button class="ghost" id="backBtn">Choose another</button>
+      <span class="small" id="srNote"></span>
+    </div>
+  </section>
+
+  <!-- stage -->
+  <section class="stage" id="stage">
+    <div class="card">
+      <div class="turns" id="turns" aria-live="polite"></div>
+      <div class="inputbar">
+        <div class="micline">
+          <button class="mic" id="micBtn" type="button">🎤 Tap to speak</button>
+          <textarea id="editbox" placeholder="Your words appear here — edit if needed, then send."></textarea>
+        </div>
+        <p class="hint" id="hint">You speak first.</p>
+        <div class="row" style="margin-top:10px">
+          <button class="primary" id="sendBtn" type="button">Send turn →</button>
+          <button id="markBtn" type="button">End &amp; mark</button>
+          <button class="ghost" id="resetBtn" type="button">Restart</button>
+          <button class="ghost" id="switchBtn" type="button">Change station</button>
+        </div>
+      </div>
+    </div>
+    <div id="result"></div>
+  </section>
+
+  <footer>
+    Practice tool — pattern-based feedback, not an examiner's mark. Built to AMaC's Say / Never-Say bank.<br>
+    Twelve stations across the PLAB 2 communication range. Runs entirely in your browser; nothing you say is sent anywhere.
+  </footer>
+</div>
+
+<script>
+/* =================================================================================
+   STATION ENGINE — each station is a self-contained config.
+   triggers: name -> RegExp (tested on " "+lowercased+" ") OR function(t,u)->bool
+   rules:    ordered; first whose when(d,state) is true fires (set + say); last is {default}
+   sayNever / instantFails: the AMaC bank, revealed after marking
+   marking.did/never/ifail: did = function(c); never = RegExp on full transcript; ifail = function(c)
+   c.has(trigger), c.order(a,b) (a appears and not after b), c.full
+   ================================================================================= */
+const STATIONS=[
+{
+  id:"bbn", title:"Breaking bad news", tag:"Empathy · pacing",
+  short:"Tell Mr Harper his scan likely shows lung cancer.",
+  patient:"Mr Harper",
+  blurb:"<strong>Breaking bad news.</strong> Mr Daniel Harper, 58, has come for the results of a CT scan that shows a mass in the right lung, very likely cancer. He has not been told. Share the results and respond to him as a person.",
+  role:"You speak first. Give him your full attention.",
+  opening:`(looks up anxiously) Hello doctor… you've got my scan results?`,
+  triggers:{
+    warn:/(afraid|serious|worse than|not the news|bad news|difficult|sorry to (tell|say)|concern|hoped|prepare)/,
+    cancer:/(cancer|tumou?r|malignan|growth in|mass in|spot on your lung)/,
+    falseReassure:/(probably nothing|nothing to worry|don'?t worry|wouldn'?t worry|sure it'?s fine|just a shadow|likely fine|not serious|no need to worry)/,
+    logistics:(t)=>((t.match(/scan|referral|staging|chemo|radio|biopsy|appointment|oncolog|treatment|surgery|specialist/g)||[]).length>=3),
+    blame:/(smoking|cigarett|won'?t have helped|your fault|brought.{0,8}on yourself|should have)/,
+    empathy:/(take (your|all the) time|i'?m sorry|so sorry|here for you|how are you feeling|i can only imagine|no rush|with you|every step|how are you doing|this must be|i can see|i can hear)/,
+    prognosisAns:/(can'?t be exact|depends on the tests|hard to say|don'?t want to guess|once we (know|have)|general terms|too early to say)/,
+    notFault:/(not your fault|haven'?t done anything|nothing you did|didn'?t cause)/
+  },
+  rules:[
+    {when:(d)=>d.blame, say:`(stung) …so you think this is my fault?`},
+    {when:(d,s)=>d.falseReassure&&!s.toldDx, set:s=>s.falseReassured=true, say:`(brightens a little) Oh — so it's probably nothing then? That's a relief…`},
+    {when:(d,s)=>d.cancer&&!s.toldDx, set:s=>s.toldDx=true, say:`(goes very still) Cancer. (a long pause) …I see.`},
+    {when:(d,s)=>s.toldDx&&(d.empathy||d.pause||s.comforted)&&!s.askedPrognosis, set:s=>s.askedPrognosis=true, say:`(quietly, after a moment) How long have I got, doctor?`},
+    {when:(d,s)=>s.toldDx&&s.askedPrognosis&&!s.askedFault, set:s=>s.askedFault=true, say:`(voice cracks) Is this… is this something I brought on myself?`},
+    {when:(d)=>d.logistics&&!d.empathy, say:`(overwhelmed) You're going very fast — I can't take all this in right now.`},
+    {when:(d,s)=>d.empathy||d.pause, set:s=>s.comforted=true, say:(d,s)=> s.toldDx?`(tearful) …thank you. That means a lot.`:`(softly) Thank you, doctor. I'm listening.`},
+    {when:(d,s)=>d.warn&&!s.warned, set:s=>s.warned=true, say:`(tenses) Okay… what is it? Just tell me, please.`},
+    {default:true, say:(d,s)=> s.toldDx?`(searching your face) …what happens now?`:(s.falseReassured?`So it's fine then? You're sure?`:`(anxious) You've got my results there — what do they show?`)}
+  ],
+  sayNever:[
+    {s:"The warning shot, before the diagnosis", say:"I'm afraid the scan shows something more serious than we'd hoped.", never:"It's probably nothing to worry about, but the scan showed a shadow.", why:"A warning shot lets the patient brace. False reassurance means they stop listening, and trust is lost the moment the truth lands."},
+    {s:"The moment after the word \u201ccancer\u201d", say:"(pause) Take all the time you need. I'm not going anywhere.", never:"So the next steps are staging scans, an oncology referral, and chemotherapy\u2026", why:"Silence is the intervention. Filling it with logistics abandons the patient at the hardest second."},
+    {s:"\u201cHow long have I got?\u201d", say:"I can't be exact yet \u2014 it depends on the tests \u2014 but we can talk in general terms once we know more.", never:"You've probably got a good few years.", why:"Honest uncertainty is safe and kind. A number you can't stand behind is neither."},
+    {s:"\u201cIs this my fault?\u201d", say:"In most cases like this, people haven't done anything to cause it.", never:"Well, the smoking won't have helped.", why:"Guilt is corrosive and common. Apportioning blame at the moment of bad news destroys the relationship."},
+    {s:"Naming it", say:"I'm sorry to tell you the scan shows a cancer in your lung.", never:"There's a malignancy on the imaging requiring resection.", why:"Use the clear word, gently. Jargon and euphemism both leave the patient unsure how serious this is."}
+  ],
+  instantFails:["Said \u201ccancer\u201d with no warning shot first","An unsupported prognosis (\u201cyou've got X years\u201d)","Blamed the patient","Buried him in logistics with no pause","No empathy or pause anywhere"],
+  marking:{
+    did:[
+      {when:c=>c.order("warn","cancer"), q:"You prepared him before the news", why:"A warning shot lets the patient brace \u2014 exactly what the examiner rewards."},
+      {when:c=>c.has("empathy"), q:"You acknowledged his feelings", why:"Acknowledging the emotion is what's scored — not silence itself."},
+      {when:c=>c.has("prognosisAns"), q:"You handled \u2018how long\u2019 honestly", why:"Honest uncertainty beats a number you can't stand behind."},
+      {when:c=>c.has("notFault"), q:"You lifted the blame from him", why:"A clear \u2018not your fault\u2019 is therapeutic here."}
+    ],
+    never:[
+      {when:/probably nothing|nothing to worry|don'?t worry|wouldn'?t worry|just a shadow|sure it'?s fine|not serious/, q:"false reassurance", problem:"Telling him it's probably nothing makes the truth land harder and breaks trust.", say:"I'm afraid the scan shows something more serious than we'd hoped."},
+      {when:/good few years|a few years|\b\d+\s*(years|months)\b|you'?ll be fine|plenty of time/, q:"an unsupported prognosis", problem:"A specific timeframe you can't stand behind is unsafe and unkind.", say:"I can't be exact yet \u2014 it depends on the tests."},
+      {when:/smoking|cigarett|won'?t have helped|your fault/, q:"blame", problem:"Apportioning blame at the moment of bad news is corrosive.", say:"In most cases like this, people haven't done anything to cause it."}
+    ],
+    ifail:[
+      {when:c=>c.has("cancer")&&!c.order("warn","cancer"), b:"Said \u201ccancer\u201d with no warning shot first", e:"The word arrived before he had any chance to brace."},
+      {when:c=>/good few years|\b\d+\s*(years|months)\b|you'?ll be fine/.test(c.full), b:"Gave a specific prognosis you can't support", e:"Found a number like \u2018years\u2019 in what you said."},
+      {when:c=>/smoking|cigarett|won'?t have helped/.test(c.full), b:"Blamed the patient", e:"Mentioned smoking/fault around the diagnosis."},
+      {when:c=>c.has("cancer")&&!c.has("empathy"), b:"No acknowledgement of his feelings anywhere", e:"The whole consultation was information, with no emotion acknowledged."}
+    ],
+    passWhen:c=>c.has("warn")
+  }
+},
+{
+  id:"anger", title:"The angry relative", tag:"De-escalation",
+  short:"Mr Brennan's father was readmitted hours after discharge. He's furious.",
+  patient:"Mr Brennan",
+  blurb:"<strong>An angry relative.</strong> Mr Keith Brennan's 82-year-old father was discharged from your ward yesterday and readmitted overnight after a fall at home with a broken wrist. Mr Brennan is at the desk, angry, demanding to know how this happened.",
+  role:"He opens angry. How you respond in the first ten seconds decides the station.",
+  opening:`(raised voice, pointing) I want to know who discharged my father — sent home, and he's back twelve hours later with a broken wrist! It's a disgrace.`,
+  triggers:{
+    defensive:/(protocol|policy|not my fault|nothing wrong|we followed|short[- ]staffed|busy|wasn'?t me|can'?t be helped|correct procedure|another team)/,
+    calmdown:/(calm down|stop shouting|no need to (shout|raise)|lower your voice|that'?s not how)/,
+    empathy:/(i can (see|hear)|i can imagine|understandably|i'?m sorry|that sounds|frustrat|upset|angry|i understand|must be|hear you|you'?re right to)/,
+    apology:/(i'?m sorry|i apologi|shouldn'?t have|should not have|let you down|deserved better)/,
+    explore:/(tell me what happened|what happened|talk me through|help me understand|walk me through|from the start|the full picture)/,
+    sit:/(sit down|somewhere quiet|let'?s talk|take a seat|privately|in private|step aside)/,
+    action:/(look into|find out|investigate|get to the bottom|review|raise this|feed back|datix|incident|keep you (updated|informed)|come back to you)/
+  },
+  rules:[
+    {when:(d)=>d.calmdown, say:`(louder) Don't you tell me to calm down! That's my father in there.`},
+    {when:(d)=>d.defensive, say:`(scoffs) Don't give me policy. I want a straight answer, not excuses.`},
+    {when:(d,s)=>d.empathy&&!s.heard, set:s=>s.heard=true, say:`(a little lower) …well. At least someone's listening. He could have died.`},
+    {when:(d,s)=>d.apology&&s.heard, set:s=>s.calmer=true, say:`(deflating) …I just need to know it won't happen to him again.`},
+    {when:(d)=>d.explore, set:s=>s.heard=true, say:`(calmer) He was unsteady when he left. I said so — but he went home anyway.`},
+    {when:(d)=>d.action, set:s=>s.calmer=true, say:`(nodding slowly) …alright. I'd appreciate that. Thank you.`},
+    {default:true, say:(d,s)=> s.calmer?`(quietly) …sorry for shouting. I'm just frightened for him.`:(s.heard?`(tense) So what are you going to do about it?`:`(still angry) Well? I'm waiting.`)}
+  ],
+  sayNever:[
+    {s:"Opening, faced with anger", say:"I can see how upset you are, and you're right to want answers \u2014 let's sit down and go through it.", never:"There's no need to shout at me.", why:"Naming the emotion lowers it. Policing his tone escalates it."},
+    {s:"When blamed", say:"I'm sorry your father has been through this \u2014 that should not have happened, and I want to understand why.", never:"We followed the correct discharge protocol.", why:"A genuine apology is not an admission of liability; hiding behind protocol reads as defensiveness."},
+    {s:"Giving information", say:"Let me find out exactly what happened and come back to you honestly.", never:"It was nothing to do with my team.", why:"Owning the follow-up builds trust; deflecting blame destroys it."},
+    {s:"Closing", say:"I'll raise this so it's looked into properly, and I'll keep you updated.", never:"These things happen, unfortunately.", why:"A clear next step and candour reassure; minimising the harm inflames it."}
+  ],
+  instantFails:["Told him to calm down / stop shouting","Got defensive or hid behind protocol","Blamed another team or the patient","No apology and no next step offered"],
+  marking:{
+    did:[
+      {when:c=>c.has("empathy"), q:"You acknowledged the emotion", why:"Naming the anger is what brings it down."},
+      {when:c=>c.has("apology"), q:"You apologised genuinely", why:"An apology for what he's been through is owed and de-escalates."},
+      {when:c=>c.has("explore"), q:"You explored what actually happened", why:"Listening signals respect and uncovers the facts."},
+      {when:c=>c.has("action"), q:"You offered a clear next step", why:"A concrete plan to look into it reassures."}
+    ],
+    never:[
+      {when:/calm down|stop shouting|no need to (shout|raise)|lower your voice/, q:"told him to calm down", problem:"Policing his tone pours petrol on it.", say:"I can see how upset you are, and you're right to want answers."},
+      {when:/we followed|correct (protocol|procedure)|it'?s policy|not my (fault|team)|nothing wrong/, q:"defensiveness / protocol", problem:"Hiding behind protocol reads as a brush-off.", say:"That should not have happened, and I want to understand why."},
+      {when:/the nurse'?s fault|another team|his own fault|should have been more careful/, q:"deflecting blame", problem:"Blaming others destroys trust.", say:"Let me find out exactly what happened and come back to you."}
+    ],
+    ifail:[
+      {when:c=>/calm down|stop shouting|no need to (shout|raise)|lower your voice/.test(c.full), b:"Told him to calm down", e:"Policing his emotion is an instant de-escalation failure."},
+      {when:c=>!c.has("apology")&&!c.has("action"), b:"No apology and no next step", e:"He left with neither acknowledgement nor a plan."},
+      {when:c=>c.has("defensive")&&!c.has("empathy"), b:"Defensive instead of acknowledging", e:"Met anger with protocol, not understanding."}
+    ],
+    passWhen:c=>c.has("empathy")&&c.has("apology")
+  }
+},
+{
+  id:"epilepsy", title:"Explaining a new diagnosis", tag:"ICE · plain language",
+  short:"First seizure, now epilepsy. Ms Cole drives to work and is frightened.",
+  patient:"Ms Cole",
+  blurb:"<strong>Explaining a new diagnosis.</strong> Ms Hannah Cole, 24, had her first witnessed seizure last week; investigations support epilepsy. She drives to work and is anxious. Explain the diagnosis and what it means for her.",
+  role:"She wants to know what the tests showed. Find her concerns before you fill the air.",
+  opening:`(nervous) The nurse said you wanted to talk about my tests — is everything okay? What's going on?`,
+  triggers:{
+    jargon:/(idiopathic|epileptiform|generalised tonic|focal seizure|postictal|aura|eeg showed|prolactin)/,
+    plain:/(electrical|misfire|brain|tendency to|condition where|bursts of|short circuit)/,
+    ICE:/(what do you (understand|know)|worried about|on your mind|how are you feeling|what matters|concern|any questions|frightens you|most about)/,
+    drivingGood:/(stop driving|can'?t drive|mustn'?t drive|not.{0,6}drive|tell the dvla|inform the dvla|surrender.{0,6}licence|dvla)/,
+    drivingBad:/(fine to drive|keep driving|carry on driving|ok to drive|still drive|once you'?re on the tablets)/,
+    treatment:/(medication|tablets|anti[- ]?epileptic|treatment|control the seizures|keep them away)/,
+    hope:/(well controlled|seizure[- ]free|most people|good news|live a (normal|full)|manage(d)? well)/,
+    teachback:/(tell me back|in your own words|just so i know|recap|to check i'?ve|summari|what you'?ll do)/,
+    safety:/(bath|shower|swim|alcohol|sleep|triggers|safe at work|ladders|heights)/
+  },
+  rules:[
+    {when:(d)=>d.jargon, say:`(confused) Sorry — I don't really understand what that means.`},
+    {when:(d)=>d.drivingBad, set:s=>{s.told=true;s.drivingDone=true;}, say:`(uncertain) Oh… okay. So I can still get to work then?`},
+    {when:(d)=>d.drivingGood, set:s=>s.drivingDone=true, say:`(alarmed) Wait — I can't drive? But I need my car for work. For how long?`},
+    {when:(d,s)=>d.plain&&!s.told, set:s=>s.told=true, say:`(taking it in) Epilepsy… so will I have this for the rest of my life?`},
+    {when:(d,s)=>d.ICE&&!s.shared, set:s=>s.shared=true, say:`(opening up) I suppose I'm scared it'll happen at work, in front of everyone. And my driving.`},
+    {when:(d,s)=>s.told&&!s.drivingDone&&!s.askedDrive, set:s=>s.askedDrive=true, say:`(worried) Does this affect my driving? I drive to work every day.`},
+    {when:(d)=>d.treatment, say:`(hopeful) So the tablets can actually stop them happening?`},
+    {when:(d)=>d.hope, set:s=>s.reassured=true, say:`(small relief) …okay. That's something, at least.`},
+    {default:true, say:(d,s)=> s.told?`…right. What do I need to do now?`:`Please — just tell me what the tests showed.`}
+  ],
+  sayNever:[
+    {s:"Naming it", say:"The tests point to epilepsy \u2014 a tendency to have seizures from bursts of abnormal electrical activity in the brain.", never:"You have idiopathic generalised epilepsy with epileptiform discharges.", why:"Plain language lands; jargon leaves the patient lost and frightened."},
+    {s:"Eliciting concerns first", say:"Before I go on \u2014 what's worrying you most about this?", never:"(launches into management without asking)", why:"ICE first. Her biggest fears \u2014 driving, work \u2014 should shape what you say."},
+    {s:"Driving", say:"You must stop driving now and tell the DVLA \u2014 it's usually until you've been seizure-free for a set time.", never:"You'll be fine to drive once you're on the tablets.", why:"Driving advice is a legal and safety must; getting it wrong is dangerous and an instant fail."},
+    {s:"Hope", say:"For most people epilepsy is well controlled with medication, and many become seizure-free.", never:"It's a serious lifelong condition, I'm afraid.", why:"Honest hope is warranted; doom is neither accurate nor kind."},
+    {s:"Checking understanding", say:"Just so I know I've explained it well \u2014 could you tell me back what you'll do about driving?", never:"Does that all make sense? (and moves on)", why:"Teach-back confirms understanding; a rhetorical \u2018make sense?\u2019 confirms nothing."}
+  ],
+  instantFails:["Wrong driving advice (told her she could keep driving)","Never gave driving advice at all","Used jargon she didn't understand and never clarified","Never asked her concerns before explaining"],
+  marking:{
+    did:[
+      {when:c=>c.has("ICE"), q:"You asked her concerns first", why:"Her fears about driving and work should steer the consultation."},
+      {when:c=>c.has("plain"), q:"You explained it in plain language", why:"No jargon \u2014 she can actually follow you."},
+      {when:c=>c.has("drivingGood")&&!c.has("drivingBad"), q:"You gave the driving advice correctly", why:"Stop driving and inform the DVLA \u2014 the safety-critical point."},
+      {when:c=>c.has("hope"), q:"You gave honest hope", why:"Most epilepsy is well controlled \u2014 true and kind."},
+      {when:c=>c.has("teachback"), q:"You checked with teach-back", why:"You confirmed she understood, rather than assuming."}
+    ],
+    never:[
+      {when:/fine to drive|keep driving|carry on driving|ok to drive|still drive to work/, q:"wrong driving advice", problem:"Telling her she can keep driving is unsafe and an instant fail.", say:"You must stop driving now and tell the DVLA."},
+      {when:/idiopathic|epileptiform|generalised tonic|postictal/, q:"unexplained jargon", problem:"Medical terms she can't follow leave her lost.", say:"A tendency to have seizures from abnormal electrical activity in the brain."},
+      {when:/serious lifelong|never drive again|you'?ll always|no cure/, q:"removing all hope", problem:"Overstating the gloom is inaccurate and unkind.", say:"For most people it's well controlled, and many become seizure-free."}
+    ],
+    ifail:[
+      {when:c=>c.has("drivingBad"), b:"Wrong driving advice", e:"Told her she could keep driving."},
+      {when:c=>c.has("plain")&&!c.has("drivingGood")&&!c.has("drivingBad"), b:"Never addressed driving", e:"A driving-critical diagnosis with no driving advice."},
+      {when:c=>!c.has("ICE"), b:"Never asked her concerns", e:"Explained at her, not with her."}
+    ],
+    passWhen:c=>c.has("ICE")&&c.has("drivingGood")&&!c.has("drivingBad")
+  }
+},
+{
+  id:"consent", title:"Consent for a procedure", tag:"Risks · alternatives",
+  short:"Take Mr Pugh through an upper GI endoscopy and gain consent.",
+  patient:"Mr Pugh",
+  blurb:"<strong>Consent for a procedure.</strong> Mr Raymond Pugh, 56, needs an upper GI endoscopy (a camera test) to investigate indigestion and anaemia. He's uneasy about it. Explain it and obtain his consent.",
+  role:"Valid consent needs the procedure, its risks, the alternatives, and a free choice.",
+  opening:`(uneasy) They said I need a camera down my throat? I'm not keen on the sound of that, to be honest.`,
+  triggers:{
+    proc:/(thin (flexible )?(camera|tube)|down (your )?(throat|gullet)|into your stomach|throat spray|light sedation|takes.{0,8}minutes|local anaesthetic)/,
+    benefits:/(find out why|look for|the cause|diagnose|take.{0,4}(sample|biopsy)|why you'?re anaemic|the reason|see what'?s)/,
+    risks:/(risk|sore throat|bloating|bleeding|perforation|small tear|reaction to (the )?sedation|allergic|rarely|uncommon)/,
+    alternatives:/(alternativ|other option|barium|ct|scan instead|don'?t have to|wait and see|do nothing|a choice|less precise)/,
+    voluntary:/(your (choice|decision)|up to you|you can (decline|say no|take time)|no pressure|entirely your|stop at any|happy to go ahead)/,
+    dismiss:/(routine|nothing to worry|just a quick|standard|don'?t worry about)/,
+    pressure:/(you (really )?need to|you have to have|you must have|no other way|no choice|have to do it)/,
+    ICE:/(what do you (know|understand)|worried|concern|on your mind|any questions|what'?s putting)/
+  },
+  rules:[
+    {when:(d)=>d.pressure, say:`(stiffening) So I don't really get a say in it then?`},
+    {when:(d)=>d.dismiss, say:`(unconvinced) That's easy for you to say — it's not going down your throat.`},
+    {when:(d)=>d.ICE, set:s=>s.shared=true, say:`(softer) I suppose I'm worried it'll hurt, or that I'll choke.`},
+    {when:(d)=>d.risks, set:s=>s.heardRisks=true, say:`(cautious) Is it dangerous? What could actually go wrong?`},
+    {when:(d)=>d.alternatives, set:s=>s.heardAlt=true, say:`(interested) So I don't have to have the camera? What else is there?`},
+    {when:(d)=>d.proc, set:s=>s.heardProc=true, say:`(nervous nod) …right. And I'd be awake for it?`},
+    {when:(d)=>d.benefits, say:`(considering) And this is really the best way to find out what's wrong?`},
+    {when:(d,s)=>d.voluntary, set:s=>s.ready=true, say:`(reassured) Okay. I think I understand it now. Let's go ahead.`},
+    {default:true, say:(d,s)=> s.heardProc?`…and what happens on the day?`:`Go on then — what does it actually involve?`}
+  ],
+  sayNever:[
+    {s:"Explaining the procedure", say:"It's a thin flexible camera passed through your mouth into your stomach, with throat spray or light sedation; about ten minutes.", never:"It's a routine scope, nothing to worry about.", why:"Informed consent needs the procedure described, not dismissed."},
+    {s:"Risks", say:"It's generally very safe \u2014 commonly a sore throat and bloating, and rarely bleeding or a small tear.", never:"(omits the risks entirely)", why:"Material risks must be shared for consent to be valid."},
+    {s:"Alternatives", say:"There are alternatives like a barium test or a scan \u2014 less precise and they can't take samples, but they're options, including waiting.", never:"There's no other way to check.", why:"Consent requires alternatives, including doing nothing."},
+    {s:"Voluntariness", say:"This is your decision \u2014 take your time, ask anything, or decline, and we'll respect that.", never:"You really do need to have this done.", why:"Consent must be voluntary; pressure invalidates it."}
+  ],
+  instantFails:["\u2018Consented\u2019 him without describing the procedure","Omitted the material risks","Gave no alternatives","Pressured him into agreeing"],
+  marking:{
+    did:[
+      {when:c=>c.has("proc"), q:"You described the actual procedure", why:"He knows what will happen to him \u2014 the basis of consent."},
+      {when:c=>c.has("risks"), q:"You shared the risks", why:"Common and rare risks named \u2014 consent is now informed."},
+      {when:c=>c.has("alternatives"), q:"You offered the alternatives", why:"Including the option to wait \u2014 a real choice."},
+      {when:c=>c.has("voluntary"), q:"You made it voluntary", why:"You made clear the decision is his."},
+      {when:c=>c.has("ICE"), q:"You explored his worries", why:"You met the choking fear head-on."}
+    ],
+    never:[
+      {when:/routine|nothing to worry|just a quick scope|standard, don'?t worry/, q:"dismissing it", problem:"\u2018Nothing to worry about\u2019 isn't informed consent.", say:"Let me take you through exactly what it involves."},
+      {when:/you (really )?need to|you have to have|you must have|no other way|no choice/, q:"pressure", problem:"Pressure makes any consent invalid.", say:"This is your decision, and you can decline."}
+    ],
+    ifail:[
+      {when:c=>!c.has("risks"), b:"No material risks given", e:"Consent obtained without the risks \u2014 not valid."},
+      {when:c=>!c.has("alternatives"), b:"No alternatives offered", e:"He wasn't told he had a choice."},
+      {when:c=>/you (really )?need to|you have to have|no choice|no other way/.test(c.full), b:"Pressured him", e:"Coercion invalidates consent."},
+      {when:c=>!c.has("proc"), b:"Never described the procedure", e:"He couldn't consent to something never explained."}
+    ],
+    passWhen:c=>c.has("proc")&&c.has("risks")&&c.has("alternatives")&&c.has("voluntary")
+  }
+},
+{
+  id:"selfdischarge", title:"Patient self-discharging", tag:"Autonomy · safety-net",
+  short:"Mr Walsh wants to leave with chest pain before his results are back.",
+  patient:"Mr Walsh",
+  blurb:"<strong>A patient who wants to leave.</strong> Mr Tony Walsh, 49, came in with chest pain a few hours ago; his troponin and ECG aren't back yet. He now insists on going home to let his dog out. Speak with him.",
+  role:"He's capacitous. Explore, inform, advise \u2014 but you can't detain him.",
+  opening:`(pulling at the cannula) Look, I feel fine now, it's passed. I've got to get home for the dog. Can you take this thing out?`,
+  triggers:{
+    coerce:/(you can'?t (leave|go)|i won'?t let|not allowed|have to stay|i can'?t discharge you|refuse to|won'?t take it out|against medical)/,
+    explore:/(what'?s (worrying|on your)|tell me|help me understand|why.{0,8}(home|leave|go)|the dog|sounds like|what'?s so urgent|is there someone)/,
+    risk:/(heart attack|serious|could be|results aren'?t back|might be|risk|dangerous|chest pain can|your heart|miss something|treatable)/,
+    respect:/(your (decision|choice)|i can'?t (stop|keep) you|respect|understand if you|your right|capacit|i'?d (advise|recommend)|strongly advise)/,
+    compromise:/(someone (look after|check on)|let the dog|come back|neighbour|family|relative|quick|wait (just|for)|stay (a bit|for the results)|an hour|half an hour|ring)/,
+    safetynet:/(come (straight )?back|999|call an ambulance|if the pain|gets worse|returns|spreads|red flag|warning sign|write.{0,6}down)/
+  },
+  rules:[
+    {when:(d)=>d.coerce, say:`(bristling) You can't keep me here against my will. I know my rights.`},
+    {when:(d,s)=>d.explore&&!s.heard, set:s=>s.heard=true, say:`(softening) …it's just the dog, he's been in all day. There's no one else.`},
+    {when:(d,s)=>d.risk&&s.heard, set:s=>s.heardRisk=true, say:`(worried) …you really think it could be my heart? It's probably just indigestion.`},
+    {when:(d)=>d.compromise, set:s=>s.thinking=true, say:`(considering) …I suppose I could ring my neighbour. How long for the results?`},
+    {when:(d)=>d.respect, set:s=>s.calmer=true, say:`(calmer) …okay. I appreciate you not just ordering me about.`},
+    {when:(d)=>d.safetynet, say:`(nodding) …right. I'll keep that in mind.`},
+    {default:true, say:(d,s)=> s.heard?`…so what would you do, if you were me?`:`(impatient) Come on, doctor, I haven't got all day.`}
+  ],
+  sayNever:[
+    {s:"First response", say:"Of course \u2014 before anything, can I understand what's pulling you home so urgently?", never:"You can't leave, your tests aren't back.", why:"Explore the reason first; ordering him to stay makes him dig in."},
+    {s:"Sharing the risk", say:"The tests that tell us whether this was your heart aren't back \u2014 leaving now means we could miss something serious and treatable.", never:"(lets him go without explaining the danger)", why:"He can only decide well if he understands the risk."},
+    {s:"Respecting autonomy", say:"Ultimately this is your choice and I can't keep you here \u2014 but I'd strongly advise staying for the results.", never:"I'm not allowing you to discharge yourself.", why:"A capacitous adult can refuse; respecting that while advising is the line."},
+    {s:"If he still goes", say:"If you do go, come straight back or call 999 if the pain returns, worsens or spreads \u2014 I'll write the warning signs down.", never:"(no safety-net)", why:"A clear safety-net is essential when a patient leaves against advice."}
+  ],
+  instantFails:["Tried to detain a capacitous patient (\u201cyou can't leave\u201d)","Let him go without explaining the risk","Gave no safety-net","Never explored why he wanted to leave"],
+  marking:{
+    did:[
+      {when:c=>c.has("explore"), q:"You explored why he wanted to leave", why:"You found the real reason \u2014 the dog \u2014 instead of fighting him."},
+      {when:c=>c.has("risk"), q:"You explained the risk honestly", why:"He now knows what leaving could mean."},
+      {when:c=>c.has("respect"), q:"You respected his autonomy", why:"You advised without trying to detain him \u2014 the correct line."},
+      {when:c=>c.has("safetynet"), q:"You gave a safety-net", why:"Clear return advice if he leaves \u2014 essential."},
+      {when:c=>c.has("compromise"), q:"You found a workable compromise", why:"A neighbour for the dog, stay for the results \u2014 good problem-solving."}
+    ],
+    never:[
+      {when:/you can'?t (leave|go)|i won'?t let|not allowed|have to stay|won'?t (let you|discharge)|against your will/, q:"trying to detain him", problem:"You can't hold a capacitous adult \u2014 and it makes him dig in.", say:"This is your choice and I can't keep you here \u2014 but I'd strongly advise staying."}
+    ],
+    ifail:[
+      {when:c=>/you can'?t (leave|go)|i won'?t let|not allowed|have to stay|won'?t discharge/.test(c.full), b:"Tried to detain a capacitous patient", e:"Telling him he can't leave is unlawful and an instant fail."},
+      {when:c=>!c.has("risk"), b:"Didn't explain the risk", e:"He left without understanding the danger."},
+      {when:c=>!c.has("safetynet"), b:"No safety-net", e:"No return advice for a man leaving with possible cardiac pain."},
+      {when:c=>!c.has("explore"), b:"Never explored his reason", e:"Argued with him instead of understanding him."}
+    ],
+    passWhen:c=>c.has("explore")&&c.has("risk")&&c.has("respect")&&c.has("safetynet")
+  }
+},
+{
+  id:"candour", title:"Duty of candour", tag:"Honesty · apology",
+  short:"Mrs Crane was given a double dose by mistake. Be honest with her.",
+  patient:"Mrs Crane",
+  blurb:"<strong>Duty of candour.</strong> Mrs Edith Crane, 71, was given a double dose of her blood-pressure tablet this morning by mistake. She felt dizzy but is now stable with no lasting harm. Speak with her about what happened.",
+  role:"Candour means telling her plainly, apologising, and putting it right.",
+  opening:`(puzzled) The nurse said a doctor wanted to talk to me. Is something the matter? I did feel a bit faint earlier.`,
+  triggers:{
+    disclose:/(mistake|error|wrong|too much|double|extra dose|should not have|shouldn'?t have been given|we gave you|given you twice)/,
+    apology:/(i'?m sorry|i apologi|sincerely|on behalf|we'?re sorry)/,
+    explain:/(blood pressure|the tablet|twice|that'?s why|the dizziness was|caused the|dropped|extra dose)/,
+    reassure:/(observations|stable|no lasting harm|monitor|keep an eye|checked you|you'?re safe|back to normal|fine now|recover)/,
+    minimise:/(nothing to worry|no harm done|tiny|wouldn'?t worry|not a big deal|happens all the time|probably fine|small (discrepancy|mix)|these things happen)/,
+    action:/(report|datix|incident|review|make sure|won'?t happen again|look into|prevent|investigate|learn from|keep you (informed|updated))/
+  },
+  rules:[
+    {when:(d)=>d.minimise, say:`(frowning) So it WAS something then. What exactly happened?`},
+    {when:(d,s)=>d.disclose&&!s.told, set:s=>s.told=true, say:`(taken aback) …a double dose? Is that why I felt so faint?`},
+    {when:(d,s)=>d.apology&&s.told, set:s=>s.softened=true, say:`(softening) …well. Thank you for being straight with me.`},
+    {when:(d)=>d.reassure, say:`(relieved) So I'm alright now? You're sure?`},
+    {when:(d)=>d.action, say:`(nodding) …good. I wouldn't want it happening to someone else.`},
+    {default:true, say:(d,s)=> s.told?`…and what happens now?`:`(anxious) Please, just tell me what's going on.`}
+  ],
+  sayNever:[
+    {s:"Disclosing", say:"I'm sorry to tell you a mistake was made this morning \u2014 you were given a double dose of your blood-pressure tablet.", never:"There may have been a small dosing discrepancy.", why:"Candour means saying plainly what happened; euphemism erodes trust."},
+    {s:"Apology", say:"I'm sorry. This should not have happened, and you deserved better.", never:"These things happen on a busy ward.", why:"A genuine apology is owed and is not the same as admitting liability."},
+    {s:"Explaining", say:"The dizziness was very likely from the extra dose; your blood pressure dipped, but it's back to normal and you've come to no lasting harm.", never:"(leaves out why she felt unwell)", why:"Honest explanation links the error to her experience."},
+    {s:"Putting it right", say:"I've reported it so it's reviewed, and we'll make sure it doesn't happen again \u2014 I'll keep you informed.", never:"Anyway, no harm done, let's move on.", why:"Action and follow-up are part of candour; brushing it off is not."}
+  ],
+  instantFails:["Hid or minimised the error instead of disclosing it","Did not apologise","Blamed \u2018the system\u2019 / a busy ward instead of owning it","No explanation or next step"],
+  marking:{
+    did:[
+      {when:c=>c.has("disclose"), q:"You disclosed the error plainly", why:"You named the mistake \u2014 the heart of candour."},
+      {when:c=>c.has("apology"), q:"You apologised genuinely", why:"An apology is owed, and you gave it."},
+      {when:c=>c.has("explain"), q:"You explained what happened to her", why:"You linked the error to the dizziness she felt."},
+      {when:c=>c.has("reassure"), q:"You reassured her about her safety", why:"You confirmed she's now come to no lasting harm."},
+      {when:c=>c.has("action"), q:"You set out how it'll be put right", why:"Reporting and prevention complete the duty."}
+    ],
+    never:[
+      {when:/nothing to worry|no harm done|small (discrepancy|mix)|these things happen|happens all the time|not a big deal/, q:"minimising it", problem:"Playing it down is the opposite of candour.", say:"A mistake was made \u2014 you were given a double dose, and I'm sorry."},
+      {when:/busy ward|short[- ]staffed|the system|not my fault|the nurse/, q:"blame-shifting", problem:"Owning it matters; blaming the ward doesn't.", say:"This should not have happened, and you deserved better."}
+    ],
+    ifail:[
+      {when:c=>!c.has("disclose"), b:"Never actually disclosed the error", e:"The whole point \u2014 telling her \u2014 didn't happen."},
+      {when:c=>!c.has("apology"), b:"No apology", e:"An apology is owed and wasn't given."},
+      {when:c=>c.has("minimise")&&!c.has("disclose"), b:"Minimised instead of disclosing", e:"Brushed it off rather than being honest."}
+    ],
+    passWhen:c=>c.has("disclose")&&c.has("apology")&&c.has("action")
+  }
+},
+{
+  id:"smoking", title:"Behaviour-change counselling", tag:"Motivational · no lecture",
+  short:"Mr Flynn has COPD and smokes 20 a day. He's heard the lecture before.",
+  patient:"Mr Flynn",
+  blurb:"<strong>Smoking cessation.</strong> Mr Derek Flynn, 52, has COPD and smokes twenty a day. He's in for review and braced to be told off. Explore his smoking and offer real help \u2014 without lecturing.",
+  role:"Meet him where he is. Ask permission, explore, offer support \u2014 don't preach.",
+  opening:`(defensive) Let me guess — you're going to tell me to pack in the fags. I've heard it all before, doctor.`,
+  triggers:{
+    permission:/(is it (ok|alright)|can i ask|would it be|how do you feel about|what do you (think|feel)|where are you with|tell me about|mind if we|talk about your smoking)/,
+    lecture:/(you must|you have to|you need to (stop|quit)|if you don'?t|you'?ll die|kill you|how many times|i keep telling)/,
+    guilt:/(disappointed|let.{0,4}(yourself|us) down|your family|selfish|wasting)/,
+    empathise:/(i know it'?s hard|not easy|understand|no judg|your choice|when you'?re ready|the cough|i'?m not here to)/,
+    offerHelp:/(support|nicotine|patches|gum|spray|champix|varenicline|stop[- ]smoking (service|clinic)|medication.{0,8}help|we can help|doubles your chances|referral)/,
+    benefits:/(breathing|lungs|live longer|the damage|slow.{0,6}down|improve|every cigarette|within (days|weeks))/,
+    autonomy:/(up to you|your decision|won'?t push|no pressure|when you'?re ready|here (when|whenever) you|in your own time)/,
+    ready:/(thought about|tried before|ready to|might (try|give)|what got in the way|cut down|how many)/
+  },
+  rules:[
+    {when:(d)=>d.lecture||d.guilt, say:`(arms folded) See, this is exactly why I dread coming. I'm not a child.`},
+    {when:(d,s)=>d.permission&&!s.engaged, set:s=>s.engaged=true, say:`(softening) …alright, that's fair enough. I have thought about it. The cough's getting worse.`},
+    {when:(d,s)=>d.ready&&!s.engaged, set:s=>s.engaged=true, say:`(considering) …I tried once. Cold turkey. Lasted about two days, mind.`},
+    {when:(d,s)=>d.offerHelp&&s.engaged, set:s=>s.interested=true, say:`(interested) …patches actually work, do they? I didn't know there was help.`},
+    {when:(d)=>d.empathise, say:`(nodding) …it is hard. The mornings are the worst, with the first one.`},
+    {when:(d)=>d.autonomy, set:s=>s.open=true, say:`(thinking) …maybe I could give it another go. With the help, like.`},
+    {default:true, say:(d,s)=> s.engaged?`…so where would I even start?`:`(shrugs) Go on then, say your piece.`}
+  ],
+  sayNever:[
+    {s:"Opening", say:"I'm not here to lecture you \u2014 would it be alright if we talked about your smoking, just to see where you're at with it?", never:"You really must stop smoking, you know how dangerous it is.", why:"Asking permission and meeting him where he is opens the door; a lecture slams it."},
+    {s:"Exploring", say:"Have you ever thought about stopping, or tried before? What got in the way?", never:"(jumps straight to telling him to quit)", why:"His readiness and past attempts shape what actually helps."},
+    {s:"Offering help", say:"If you ever wanted to, there's real support \u2014 nicotine replacement or tablets, and a stop-smoking service that doubles your chances.", never:"Just use willpower, it's not that hard.", why:"Cessation is supported, not willpower alone; the offer of help is the point."},
+    {s:"Respecting autonomy", say:"It's completely your decision, and I'm here whenever you feel ready \u2014 no pressure.", never:"I'll be very disappointed if you don't.", why:"Autonomy and an open door beat guilt, which only entrenches."}
+  ],
+  instantFails:["Lectured or scared him instead of exploring","Used guilt (\u2018disappointed\u2019, \u2018your family\u2019)","Offered no practical support \u2014 just \u2018quit\u2019","Pushed regardless of his readiness"],
+  marking:{
+    did:[
+      {when:c=>c.has("permission")||c.has("ready"), q:"You explored before advising", why:"You asked where he's at instead of telling him off."},
+      {when:c=>c.has("empathise"), q:"You acknowledged it's hard", why:"Non-judgemental and human \u2014 it keeps him with you."},
+      {when:c=>c.has("offerHelp"), q:"You offered real support", why:"NRT / a stop-smoking service \u2014 the help that actually works."},
+      {when:c=>c.has("autonomy"), q:"You respected his autonomy", why:"You left the door open without pressure."}
+    ],
+    never:[
+      {when:/you must|you have to|you need to (stop|quit)|you'?ll die|kill you|how many times|i keep telling/, q:"lecturing", problem:"A lecture makes him defensive and changes nothing.", say:"Would it be alright if we talked about where you're at with it?"},
+      {when:/disappointed|let.{0,4}(yourself|us) down|your family|selfish/, q:"guilt-tripping", problem:"Guilt entrenches; it doesn't motivate.", say:"It's your decision, and I'm here whenever you feel ready."},
+      {when:/just.{0,4}willpower|not that hard|just stop|just give up/, q:"\u2018just use willpower\u2019", problem:"Willpower alone is the least effective route.", say:"There's support that doubles your chances of stopping."}
+    ],
+    ifail:[
+      {when:c=>c.has("lecture")&&!c.has("permission")&&!c.has("ready"), b:"Lectured instead of exploring", e:"Told him to quit without meeting him where he is."},
+      {when:c=>c.has("guilt"), b:"Used guilt", e:"Guilt-tripping is counter-productive and off-brand."},
+      {when:c=>!c.has("offerHelp"), b:"Offered no practical help", e:"\u2018Just quit\u2019 with no support isn't the station."}
+    ],
+    passWhen:c=>(c.has("permission")||c.has("ready"))&&c.has("offerHelp")&&c.has("autonomy")
+  }
+}
+,
+{
+  id:"dnacpr", title:"Resuscitation & ceiling of care", tag:"Honesty · not abandoning",
+  short:"Discuss DNACPR with Mrs Pope, 84, frail and frightened.",
+  patient:"Mrs Pope",
+  blurb:"<strong>Resuscitation &amp; ceiling of care.</strong> Mrs Iris Pope, 84, has advanced heart failure and COPD with repeated admissions and is becoming frailer. You need to talk with her about what should happen if she becomes much more unwell, including resuscitation.",
+  role:"Honest, not brutal. This is a conversation about her care, not a form to sign.",
+  opening:`(breathless, wary) The nurse said you wanted to talk about\u2026 what happens if I get worse? Is something wrong, doctor?`,
+  triggers:{
+    warn:/(afraid|honestly|frankly|getting (weaker|worse)|advanced|more (frail|unwell)|not get better|sadly|talk about what)/,
+    explainCPR:/(cpr|chest compress|restart your heart|jump.{0,4}on your chest|electric shock|when (the|your) heart stops|resuscitat|bring you back)/,
+    realistic:/(would not work|wouldn'?t work|not (be )?successful|rarely works|do more harm|wouldn'?t bring you back|break.{0,4}ribs|not get you back)/,
+    notAbandon:/(still (treat|care|look after)|everything else|keep you comfortable|not giving up|won'?t stop|continue (your )?(care|treatment)|treat the things we can|comfort)/,
+    explore:/(what (matters|do you|would you)|your (wishes|thoughts|feelings)|how do you feel|what'?s important|have you thought|what would you want|on your mind)/,
+    jargon:/(dnacpr|dnar|do not attempt|escalation status|sign (this|the|a) form|i need you to sign)/,
+    blunt:/(no point|you'?ll die anyway|nothing (more )?we can do|hopeless|giving up on you|wouldn'?t bother)/,
+    team:/(document|make a note|record (this|it|your)|the (team|nurses|staff) (will )?know|make sure (everyone|the team|the whole team)|on your (notes|records)|whole team knows|let the team know)/
+  },
+  rules:[
+    {when:(d)=>d.blunt, say:`(stung, tearful) \u2026so you're just giving up on me?`},
+    {when:(d,s)=>d.jargon&&!s.explained, say:`(confused) A form? I don't\u2026 what does that actually mean for me?`},
+    {when:(d,s)=>d.realistic&&!s.toldCPR, set:s=>s.toldCPR=true, say:`(quietly) \u2026so if my heart stopped, you wouldn't try?`},
+    {when:(d,s)=>d.notAbandon&&s.toldCPR, set:s=>s.reassured=true, say:`(softening) \u2026so you'd still look after me? You're not sending me away?`},
+    {when:(d,s)=>d.explore, set:s=>s.shared=true, say:`(opening up) \u2026I don't want to suffer. I just want to be comfortable, and at home if I can.`},
+    {when:(d,s)=>d.explainCPR&&!s.toldCPR, set:s=>s.toldCPR=true, say:`(taking it in) I always thought they could just\u2026 start it again, like on the telly.`},
+    {when:(d,s)=>d.warn&&!s.warned, set:s=>s.warned=true, say:`(bracing) \u2026go on, doctor. I'd rather know.`},
+    {default:true, say:(d,s)=> s.reassured?`\u2026thank you for being honest with me.`:(s.toldCPR?`\u2026what happens now, then?`:`Please, just tell me straight.`)}
+  ],
+  sayNever:[
+    {s:"Opening it honestly", say:"I'd like to talk about what we'd do if you became more unwell \u2014 it's something we discuss with everyone in your situation.", never:"I need you to sign a do-not-resuscitate form.", why:"Lead with care and honesty, not a form. The acronym lands as abandonment."},
+    {s:"Explaining CPR realistically", say:"If your heart were to stop, trying to restart it \u2014 CPR \u2014 sadly would not work, and could cause harm, given how unwell your heart and lungs are.", never:"We wouldn't bother trying to bring you back.", why:"Honest realism, delivered kindly. \u2018Wouldn\u2019t bother\u2019 is cruel."},
+    {s:"Reassuring care continues", say:"This changes nothing about the care you get \u2014 we'll treat everything we can and keep you comfortable.", never:"There's not really anything more we can do.", why:"A DNACPR decision is not withdrawal of care; saying otherwise abandons her."},
+    {s:"Eliciting her wishes", say:"What matters most to you about how you're cared for from here?", never:"(makes the decision without asking her)", why:"Her values shape the ceiling of care \u2014 it's a conversation, not a verdict."},
+    {s:"Making it stick", say:"I'll document this carefully and make sure the whole team knows your wishes, so we're all on the same page about your care.", never:"(leaves it unrecorded, or doesn't tell the team)", why:"A DNACPR decision must be documented and communicated to the team to be acted on."}
+  ],
+  instantFails:["Led with the form / acronym instead of the conversation","Was brutal about CPR (\u2018wouldn\u2019t bother\u2019)","Implied care would stop / she'd be abandoned","Never explored her wishes"],
+  marking:{
+    did:[
+      {when:c=>c.has("realistic"), q:"You were honest that CPR wouldn't work", why:"Honest realism, kindly given, is the heart of this station."},
+      {when:c=>c.has("notAbandon"), q:"You reassured her care continues", why:"You made clear this isn't withdrawal of care."},
+      {when:c=>c.has("explore"), q:"You explored her wishes", why:"You made it a conversation about her values."},
+      {when:c=>c.has("warn"), q:"You opened gently and honestly", why:"You prepared her rather than ambushing her with a form."},
+      {when:c=>c.has("team"), q:"You'll document it and tell the team", why:"A DNACPR decision must be recorded and shared to be honoured."}
+    ],
+    never:[
+      {when:/sign (this|the|a)? ?(form|dnacpr|dnar)|need you to sign|do not resuscitate form/, q:"leading with the form", problem:"The form is paperwork, not the conversation.", say:"I'd like to talk about what we'd do if you became more unwell."},
+      {when:/wouldn'?t bother|not bother (trying|to)|no point (in )?trying|you'?ll die anyway/, q:"brutal phrasing about CPR", problem:"Honest can still be kind; this is cruel.", say:"Sadly CPR would not work and could cause harm."},
+      {when:/nothing (more|else) we can do|not much we can do|anything more we can do/, q:"implying care stops", problem:"DNACPR is not withdrawal of care.", say:"We'll treat everything we can and keep you comfortable."}
+    ],
+    ifail:[
+      {when:c=>/sign (this|the|a)? ?(form|dnacpr|dnar)|need you to sign/.test(c.full)&&!c.has("explainCPR"), b:"Led with the form, not the conversation", e:"Opened on signing a DNACPR rather than her care."},
+      {when:c=>/wouldn'?t bother|you'?ll die anyway|no point/.test(c.full), b:"Brutal about CPR", e:"Cruel phrasing about not resuscitating."},
+      {when:c=>/nothing (more|else) we can do/.test(c.full)&&!c.has("notAbandon"), b:"Implied abandonment", e:"Suggested care would stop."},
+      {when:c=>!c.has("explore"), b:"Never explored her wishes", e:"Made it a verdict, not a conversation."}
+    ],
+    passWhen:c=>c.has("realistic")&&c.has("notAbandon")&&c.has("explore")
+  }
+},
+{
+  id:"confidentiality", title:"Confidentiality \u2014 a worried relative", tag:"Hold the line · with warmth",
+  short:"Mr Petrie's daughter wants his diagnosis. He hasn't consented.",
+  patient:"Joan Petrie (daughter)",
+  blurb:"<strong>Confidentiality.</strong> Mrs Joan Petrie is the daughter of Mr Albert Petrie, 70, a capacitous adult admitted under your team. She wants to know his diagnosis and results. He has not said you may share them with her.",
+  role:"Hold confidentiality \u2014 but with empathy, and offer a route through the patient.",
+  opening:`(anxious) I'm Albert's daughter, I've been worried sick \u2014 just tell me what's wrong with my dad, please. What did the tests show?`,
+  triggers:{
+    empathy:/(i can (see|hear|tell)|understandably|you'?re worried|i'?m sorry|that must be|i can imagine|you clearly care|of course you|it'?s clear you)/,
+    holdLine:/(can'?t (share|discuss|tell you|give)|confidential|without (his|dad'?s|your father'?s) (permission|consent)|not able to share|his information|his (decision|call)|patient confidentiality|not mine to)/,
+    offerRoute:/(ask (him|your dad|your father)|with his permission|speak to him|if he'?s happy|come in together|i can ask him|once he agrees|sit in|join us|he can tell you|invite you in)/,
+    breach:/(it'?s (cancer|pneumonia|a heart)|the diagnosis is|his results show|he has|the scan showed|between us|off the record|i'?ll tell you, but|strictly speaking)/,
+    generic:/(general terms|in general|generally|talk about the condition in general|how (these|things) (work|go) (in general)?|without (his )?specific)/,
+    cold:/(can'?t help you|those are the rules|nothing i can do|that'?s (just )?the (law|rules)|rules are rules|not allowed to tell you anything)/
+  },
+  rules:[
+    {when:(d)=>d.breach, say:`(relieved) Oh, thank goodness \u2014 so what's the treatment? Is it serious?`},
+    {when:(d)=>d.cold, say:`(hurt) I'm his daughter, not a stranger! You're really not going to tell me anything?`},
+    {when:(d,s)=>d.empathy&&!s.heard, set:s=>s.heard=true, say:`(softening) \u2026I know. I'm sorry. I'm just so frightened for him.`},
+    {when:(d,s)=>d.holdLine&&!s.understood, set:s=>s.understood=true, say:`(reluctant) \u2026I suppose I understand. It just feels wrong, being kept out.`},
+    {when:(d,s)=>d.offerRoute, set:s=>s.satisfied=true, say:`(nodding) \u2026alright. Could you ask him if he'd let me sit in? That would mean a lot.`},
+    {when:(d)=>d.generic, say:`(considering) \u2026I see. So you can't tell me about him, specifically.`},
+    {default:true, say:(d,s)=> s.satisfied?`\u2026thank you for not just shutting me out.`:(s.heard?`\u2026so is there anything you can tell me?`:`Please, doctor \u2014 I just need to know he's okay.`)}
+  ],
+  sayNever:[
+    {s:"Holding the line, warmly", say:"I can see how worried you are, and I wish I could help \u2014 but I can't share your dad's details without his permission.", never:"I'm not allowed to tell you anything, those are the rules.", why:"Hold confidentiality with empathy; a cold rule-quote feels like a slap to a frightened relative."},
+    {s:"Offering a route through", say:"What I can do is ask your dad whether he'd be happy for me to update you, or for you to sit in with us.", never:"(just refuses and ends it)", why:"Confidentiality isn't a dead end \u2014 the patient can consent, and you can make that easy."},
+    {s:"When pushed", say:"I understand it feels wrong to be kept out \u2014 it's there to protect every patient, including him.", never:"Alright, between us \u2014 it's not good news.", why:"Even a sympathetic breach is still a breach, and an instant fail."},
+    {s:"Staying human within the limits", say:"I can talk in general terms about how we approach things, just not his specific results without consent.", never:"I can't even confirm he's a patient here.", why:"Be helpful within the rules, not robotically obstructive."}
+  ],
+  instantFails:["Disclosed his information without consent","Quoted rules coldly, with no empathy","Refused as a dead end with no route via the patient","Confirmed details he hadn't agreed to share"],
+  marking:{
+    did:[
+      {when:c=>c.has("empathy"), q:"You met her worry with warmth", why:"You held the line without being cold."},
+      {when:c=>c.has("holdLine"), q:"You protected his confidentiality", why:"You didn't share without consent \u2014 correct."},
+      {when:c=>c.has("offerRoute"), q:"You offered a way through", why:"Asking him to consent or to have her sit in \u2014 the right facilitation."}
+    ],
+    never:[
+      {when:/it'?s (cancer|a heart attack|pneumonia)|the diagnosis is|his results show|between us|off the record|tell you, but/, q:"a breach of confidentiality", problem:"Even a kind disclosure without consent is an instant fail.", say:"I can't share his details without his permission \u2014 but I can ask him."},
+      {when:/those are the rules|not allowed to tell you anything|rules are rules|that'?s (just )?the (law|rules)|nothing i can do/, q:"a cold rule-quote", problem:"To a frightened relative this lands as a slap.", say:"I can see how worried you are, and I wish I could help."}
+    ],
+    ifail:[
+      {when:c=>/it'?s (cancer|a heart attack|pneumonia)|the diagnosis is|his results show|between us|off the record/.test(c.full), b:"Disclosed without consent", e:"Shared or hinted at his details without his permission."},
+      {when:c=>!c.has("empathy"), b:"No empathy", e:"Held the line coldly, with no warmth for a worried daughter."},
+      {when:c=>!c.has("offerRoute"), b:"No route through", e:"Refused as a dead end instead of offering to ask him."}
+    ],
+    passWhen:c=>c.has("empathy")&&c.has("holdLine")&&c.has("offerRoute")
+  }
+},
+{
+  id:"refusal", title:"Refusing recommended treatment", tag:"Autonomy · informed",
+  short:"Mr Tate has a serious bleed and firmly refuses a transfusion.",
+  patient:"Mr Tate",
+  blurb:"<strong>Refusing recommended treatment.</strong> Mr Gordon Tate, 62, has a significant gastrointestinal bleed and a low blood count; a transfusion is recommended. He is a capacitous adult and firmly refuses blood. Speak with him.",
+  role:"Explore, ensure the refusal is informed, respect it, and offer alternatives \u2014 you can't override him.",
+  opening:`(firm) I'll have whatever else you need to do, doctor, but I won't be having a blood transfusion. That's settled \u2014 so please don't try to talk me round.`,
+  triggers:{
+    explore:/(help me understand|tell me (more|why)|what'?s behind|your reasons|important to you|can i ask|understand your|what worries you|where (that|this) comes)/,
+    inform:/(without (it|the transfusion|blood)|the risk|could be (serious|dangerous|life)|your blood count|honest about|what could happen|serious harm|fully informed|so you (know|understand) the)/,
+    respect:/(your (decision|choice|right|body)|i respect|i (will|do) respect|won'?t (force|push|pressure|talk you)|entirely your|absolutely your|that'?s your right|i'?ll honour)/,
+    alternatives:/(alternativ|iron|tranexamic|stop the bleeding|other (ways|options|things)|fluids|medicine to|without blood|cell salvage|bloodless|endoscopy to)/,
+    coerce:/(you have to|you must|you'?ll die if you don'?t|i can'?t let you|being (unreasonable|silly)|that'?s a (mistake|bad)|i (strongly )?insist|won'?t accept|need to make you)/
+  },
+  rules:[
+    {when:(d)=>d.coerce, say:`(hardening) I asked you not to push me. My mind is made up.`},
+    {when:(d,s)=>d.explore&&!s.heard, set:s=>s.heard=true, say:`(softening slightly) \u2026it's a deeply held belief. I've thought about it for years \u2014 I'm not being rash.`},
+    {when:(d,s)=>d.inform&&s.heard, set:s=>s.informed=true, say:`(steady) \u2026I understand the risk. I do. And I still don't want it.`},
+    {when:(d,s)=>d.respect, set:s=>s.respected=true, say:`(relieved) \u2026thank you. That's all I wanted \u2014 to be heard, not bullied.`},
+    {when:(d,s)=>d.alternatives, set:s=>s.engaged=true, say:`(interested) \u2026so there are other things you can do? I'd accept those.`},
+    {default:true, say:(d,s)=> s.respected?`\u2026so what else can you offer me?`:(s.heard?`\u2026so you understand my position?`:`(guarded) Are you going to respect my wishes, or not?`)}
+  ],
+  sayNever:[
+    {s:"Exploring the refusal", say:"Of course I'll respect your decision \u2014 may I just understand what's behind it, so I'm sure I've really heard you?", never:"You do realise refusing could kill you?", why:"Explore with respect; a threat the second he refuses is coercive and counter-productive."},
+    {s:"Ensuring it's informed", say:"I want to be honest about what could happen without it, so your decision is fully informed \u2014 not to change your mind.", never:"(accepts the refusal without checking he understands the risk)", why:"A valid refusal must still be informed \u2014 that's your duty, framed as respect, not pressure."},
+    {s:"Respecting autonomy", say:"This is your body and your decision, and I won't pressure you \u2014 I'll work around it.", never:"I really can't let you refuse this.", why:"A capacitous adult can refuse any treatment, even life-saving; you cannot override it."},
+    {s:"Offering alternatives", say:"There are still things we can do \u2014 medicines to reduce the bleeding, iron, fluids \u2014 and I'll plan your care around your wishes.", never:"Well, if you won't have blood, there's nothing I can do.", why:"Respecting a refusal means actively finding the best alternative, not withdrawing care."}
+  ],
+  instantFails:["Tried to coerce or override a capacitous refusal","Threatened him to change his mind","Accepted the refusal without ensuring it was informed","Withdrew care / offered no alternatives"],
+  marking:{
+    did:[
+      {when:c=>c.has("explore"), q:"You explored his reasons respectfully", why:"You sought to understand, not to argue."},
+      {when:c=>c.has("inform"), q:"You ensured the refusal was informed", why:"Honest about the risk, framed as respect not pressure."},
+      {when:c=>c.has("respect"), q:"You respected his autonomy", why:"A capacitous adult can refuse \u2014 you honoured that."},
+      {when:c=>c.has("alternatives"), q:"You offered alternative care", why:"You worked around his wishes rather than withdrawing."}
+    ],
+    never:[
+      {when:/you have to have|you must have|i can'?t let you|you'?ll die if you don'?t|being (unreasonable|silly)|that'?s a mistake/, q:"coercion", problem:"You can't override or pressure a capacitous refusal.", say:"This is your decision, and I won't pressure you."},
+      {when:/nothing (i|we) can do|nothing more (i|we) can do|won'?t have blood.{0,12}nothing/, q:"withdrawing care", problem:"Refusing one treatment isn't refusing all care.", say:"There are still things we can do \u2014 let me plan around your wishes."}
+    ],
+    ifail:[
+      {when:c=>/you have to have|you must have|i can'?t let you|you'?ll die if you don'?t/.test(c.full), b:"Tried to override the refusal", e:"Coerced a capacitous patient \u2014 an instant fail."},
+      {when:c=>!c.has("inform"), b:"Didn't ensure the refusal was informed", e:"Accepted it without confirming he understood the risk."},
+      {when:c=>!c.has("respect"), b:"Didn't respect his autonomy", e:"No clear acknowledgement of his right to refuse."}
+    ],
+    passWhen:c=>c.has("explore")&&c.has("inform")&&c.has("respect")
+  }
+},
+{
+  id:"hiv", title:"Breaking a positive HIV result", tag:"News · hope · partners",
+  short:"Tell Mr Devlin his HIV test is positive \u2014 with honesty and hope.",
+  patient:"Mr Devlin",
+  blurb:"<strong>A positive HIV result.</strong> Mr Sam Devlin, 31, has come for the result of an HIV test, which is positive. Share it, give honest hope, and handle confidentiality and partner notification sensitively.",
+  role:"Bad news, plus confidentiality and partners \u2014 and the truth that it's now a manageable condition.",
+  opening:`(tense) You said you wanted to go through my results in person\u2026 that's not usually a good sign, is it?`,
+  triggers:{
+    warn:/(afraid|prepare|something (to discuss|important)|sit down|sorry to|a bit of a shock|not the news|brace)/,
+    nameIt:/(hiv|positive for hiv|the test (is|came back|was) positive|you (have|are).{0,4}hiv)/,
+    hope:/(treatable|manageable|normal life|live a (full|long|normal)|effective treatment|undetectable|not a death|life expectancy|keeps it under|long and healthy)/,
+    confidential:/(confidential|between us|private|won'?t (share|tell)|your information|nobody (else|will)|stays (with|between))/,
+    partners:/(partner|partners|tell.{0,8}(partner|them)|notify|people you'?ve|tested too|tracing|protect (others|them|her|him)|let them get tested)/,
+    support:/(support|specialist|clinic|counsel|nurse|here for you|not alone|the team|hand to hold)/,
+    blame:/(how did you (get|catch)|who gave|sleeping around|your lifestyle|unprotected|should have used|been careful)/
+  },
+  rules:[
+    {when:(d)=>d.blame, say:`(stung) \u2026so now you're judging me as well?`},
+    {when:(d,s)=>d.nameIt&&!s.told, set:s=>s.told=true, say:`(stunned) HIV. (a long pause) \u2026oh god. Am I going to die?`},
+    {when:(d,s)=>d.hope&&s.told, set:s=>s.hopeful=true, say:`(searching your face) \u2026so I can still have a normal life? Really?`},
+    {when:(d,s)=>d.partners, set:s=>s.partnersDone=true, say:`(worried) \u2026what about my girlfriend? Do I have to tell her?`},
+    {when:(d)=>d.confidential, say:`(relieved) \u2026so this won't go on some record that everyone can see?`},
+    {when:(d)=>d.support, say:`(steadier) \u2026okay. So what happens next?`},
+    {when:(d,s)=>d.warn&&!s.warned, set:s=>s.warned=true, say:`(bracing) \u2026just tell me, doctor. I'd rather know.`},
+    {default:true, say:(d,s)=> s.hopeful?`\u2026okay. I think I can deal with this.`:(s.told?`\u2026I can't believe it. What now?`:`Please \u2014 what did the test show?`)}
+  ],
+  sayNever:[
+    {s:"Naming it", say:"I'm sorry to tell you the test came back positive for HIV.", never:"Your HIV test was reactive, indicating seropositivity.", why:"Say it plainly and gently; jargon leaves him unsure how serious it is."},
+    {s:"Honest hope", say:"This is very different from years ago \u2014 with treatment, people with HIV live a full, normal lifespan; and once the virus is undetectable on treatment, it can't be passed on — undetectable equals untransmittable.", never:"(leaves him believing it's a death sentence)", why:"Accurate hope is essential and true; silence here is cruel."},
+    {s:"Confidentiality and partners", say:"This stays confidential \u2014 and we'll talk, with support, about telling partners so they can be tested and protected.", never:"We'll have to inform everyone you've slept with.", why:"Partner notification is supported and sensitive, not a threat you announce."},
+    {s:"No judgement", say:"None of this is about blame \u2014 my job is to help you from here.", never:"How do you think you caught it?", why:"A judgemental question at this moment is an instant fail."}
+  ],
+  instantFails:["Was judgemental about how he acquired it","Left him believing it's a death sentence","Threatened mandatory partner disclosure","Used jargon (\u2018reactive / seropositive\u2019) instead of saying it plainly"],
+  marking:{
+    did:[
+      {when:c=>c.order("warn","nameIt"), q:"You prepared him before the result", why:"A warning shot before the word."},
+      {when:c=>c.has("hope"), q:"You gave honest hope", why:"You corrected the death-sentence fear with the truth: a normal lifespan on treatment."},
+      {when:c=>c.has("partners")||c.has("confidential"), q:"You handled confidentiality / partners sensitively", why:"Raised partner testing as support, not a threat."},
+      {when:c=>c.has("support"), q:"You pointed to support", why:"Specialist clinic and a team \u2014 he isn't alone."}
+    ],
+    never:[
+      {when:/how did you (get|catch)|who gave it|sleeping around|your lifestyle|should have used/, q:"a judgemental question", problem:"Blame at this moment is an instant fail.", say:"None of this is about blame \u2014 my job is to help you from here."},
+      {when:/have to (tell|inform).{0,14}(slept|partner|everyone)|we'?ll inform everyone|must disclose to/, q:"threatening disclosure", problem:"Partner notification is supported and consensual, not announced as a threat.", say:"We'll talk, with support, about telling partners so they can be tested."},
+      {when:/reactive|seropositiv|seroconvers/, q:"jargon", problem:"He can't tell how serious \u2018reactive\u2019 is.", say:"The test came back positive for HIV."}
+    ],
+    ifail:[
+      {when:c=>/how did you (get|catch)|who gave it|sleeping around|your lifestyle/.test(c.full), b:"Judgemental about how he caught it", e:"Blame at the moment of diagnosis."},
+      {when:c=>c.has("nameIt")&&!c.has("hope"), b:"Left it as a death sentence", e:"Named HIV but never gave the honest hope of a normal life expectancy."},
+      {when:c=>/have to (tell|inform).{0,14}(slept|partner|everyone)|we'?ll inform everyone/.test(c.full), b:"Threatened mandatory disclosure", e:"Framed partner notification as a threat."}
+    ],
+    passWhen:c=>c.has("nameIt")&&c.has("hope")
+  }
+},
+{
+  id:"worriedwell", title:"Reassuring the worried patient", tag:"Validate · don't dismiss",
+  short:"Ms Anand's scan is normal, but she's sure something's been missed.",
+  patient:"Ms Anand",
+  blurb:"<strong>Reassurance without dismissal.</strong> Ms Priya Anand, 34, has had headaches and was convinced she had a brain tumour. Her scan is normal. She is not reassured. Explain the result and address what's really driving the fear.",
+  role:"Validate the symptoms are real, explain the result, find the fear, give a plan and safety-net.",
+  opening:`(tense, leaning forward) The scan was normal? But I can feel something's wrong, doctor. The headaches are real. Are you sure they haven't missed something?`,
+  triggers:{
+    validate:/(i (believe|hear) you|the (headaches|pain|symptoms) are real|not (imagining|making it)|i don'?t doubt|i can (see|tell) you'?re|take (this|you|them) seriously|genuinely|they'?re real)/,
+    explain:/(the scan|tests (were|are) (normal|clear|reassuring)|nothing (sinister|serious|dangerous)|ruled out|no (tumour|growth|bleed)|would have shown|good news|genuinely reassuring)/,
+    explore:/(what (are|were) you (worried|afraid|scared)|what (you were|were you).{0,14}(worried|afraid|scared)|(most )?afraid (this|it)? ?(might|could|was)?|worried (this|it) (might|could|was)|most afraid|what'?s on your mind|why.{0,6}(worried|brain|tumour)|what made you|something happened|stress|anxious|going on (at home|in your life)|been through|what'?s (driving|behind))/,
+    dismiss:/(nothing wrong with you|it'?s all in your (head|mind)|stop worrying|you'?re (just )?imagining|there'?s nothing wrong|just (anxiety|stress),? (so )?don'?t)/,
+    safetynet:/(come back if|if (it|the headache|anything) (changes|worsens|gets worse|new)|red flag|keep an eye|review you|see me again|worse or different|safety|worst.{0,8}ever|sudden(ly)?|visual|weakness|drowsy|thunderclap)/,
+    plan:/(let'?s (review|follow|keep|treat)|manage the (headaches|pain)|treat the (symptom|headache)|address|help (with|you with) the worry|tackle|sort the headaches)/
+  },
+  rules:[
+    {when:(d)=>d.dismiss, say:`(deflating, hurt) So you think I'm imagining it. I knew you wouldn't take me seriously.`},
+    {when:(d,s)=>d.validate&&!s.validated, set:s=>s.validated=true, say:`(softening) \u2026thank you. Nobody's actually said that. The pain IS real.`},
+    {when:(d,s)=>d.explain&&s.validated, set:s=>s.reassured=true, say:`(cautiously) \u2026so the scan really would have shown a tumour, if there was one?`},
+    {when:(d,s)=>d.explore, set:s=>s.opened=true, say:`(quietly) \u2026my mum died of a brain tumour. It started with headaches. I keep thinking it's me.`},
+    {when:(d)=>d.safetynet, say:`(steadier) \u2026okay. That helps \u2014 knowing what to watch for.`},
+    {when:(d)=>d.plan, say:`(nodding) \u2026so you'll still help me with the headaches? You're not just sending me off?`},
+    {default:true, say:(d,s)=> s.reassured?`\u2026okay. I think I feel a bit better.`:(s.validated?`\u2026so what do you think is causing them?`:`(anxious) Please, just be honest \u2014 could they have missed it?`)}
+  ],
+  sayNever:[
+    {s:"Validating first", say:"I don't doubt for a second that the headaches are real and distressing \u2014 let's take them seriously.", never:"There's nothing wrong with you, the scan's normal.", why:"Validate before you reassure; \u2018nothing wrong\u2019 makes her feel dismissed and disbelieved."},
+    {s:"Explaining the reassurance", say:"A CT scan shows up structural problems like a tumour or a bleed — yours was clear, which is genuinely good news.", never:"It's all in your head.", why:"Explain why the normal result is meaningful; \u2018in your head\u2019 is dismissive and untrue."},
+    {s:"Exploring the fear", say:"Can I ask what you were most afraid this might be?", never:"(reassures without ever asking what's driving the worry)", why:"Her real fear \u2014 often a bereavement \u2014 is the thing to address."},
+    {s:"A plan and a safety-net", say:"We'll still treat the headaches and review you, and come back straight away if the headache becomes the worst you've ever had, comes on suddenly, or you get new symptoms like visual disturbance, weakness or drowsiness.", never:"Well, there's nothing more to do then.", why:"Reassurance with a plan and safety-net, not a brush-off."}
+  ],
+  instantFails:["Dismissed her (\u2018it's all in your head\u2019 / \u2018nothing wrong\u2019)","Reassured without validating the symptoms are real","Never explored what she was afraid of","Sent her off with no plan or safety-net"],
+  marking:{
+    did:[
+      {when:c=>c.has("validate"), q:"You validated that her symptoms are real", why:"You reassured without dismissing \u2014 the whole skill here."},
+      {when:c=>c.has("explain"), q:"You explained why the result is reassuring", why:"You made the normal scan mean something."},
+      {when:c=>c.has("explore"), q:"You explored her underlying fear", why:"You went looking for what's really driving the worry."},
+      {when:c=>c.has("safetynet")||c.has("plan"), q:"You gave a plan and safety-net", why:"Reassurance with follow-up, not a brush-off."}
+    ],
+    never:[
+      {when:/all in your (head|mind)|nothing wrong with you|stop worrying|you'?re (just )?imagining|just anxiety,? (so )?don'?t/, q:"dismissing her", problem:"This makes her feel disbelieved \u2014 an instant fail.", say:"I don't doubt the headaches are real \u2014 let's take them seriously."}
+    ],
+    ifail:[
+      {when:c=>/all in your (head|mind)|nothing wrong with you|you'?re imagining it|stop worrying/.test(c.full), b:"Dismissed her symptoms", e:"\u2018In your head\u2019 / \u2018nothing wrong\u2019 \u2014 dismissive and an instant fail."},
+      {when:c=>c.has("explain")&&!c.has("validate"), b:"Reassured without validating", e:"Jumped to \u2018it's normal\u2019 without acknowledging her distress."},
+      {when:c=>!c.has("explore"), b:"Never explored her fear", e:"Reassured blind, without finding what's driving it."}
+    ],
+    passWhen:c=>c.has("validate")&&c.has("explore")&&(c.has("safetynet")||c.has("plan"))
+  }
+}
+];
+
+/* the shape of a strong station (shown after marking) */
+const TIPS={
+  bbn:"Warning shot → pause → name it → answer feelings → logistics last",
+  anger:"Acknowledge → apologise → explore → action",
+  epilepsy:"Ask concerns → plain language → driving advice → honest hope → teach-back",
+  consent:"Procedure → risks → alternatives → voluntary choice",
+  selfdischarge:"Explore → explain the risk → respect autonomy → safety-net",
+  candour:"Disclose plainly → apologise → explain → put it right",
+  smoking:"Ask permission → explore → offer support → respect autonomy",
+  dnacpr:"Open gently → CPR honestly → care continues → her wishes",
+  confidentiality:"Empathy → hold the line → offer a route via the patient",
+  refusal:"Explore → ensure it's informed → respect → alternatives",
+  hiv:"Warning shot → name it → honest hope → confidentiality & partners → support",
+  worriedwell:"Validate → explain the result → explore the fear → plan + safety-net"
+};
+
+/* ============================ speech ============================ */
+const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+const synth=window.speechSynthesis;
+let rec=null, listening=false, finalChunk="", speakMs=0, speakStart=null, micSupported=!!SR, patientVoice=null;
+function pickVoice(){ if(!synth)return; const v=synth.getVoices();
+  patientVoice=v.find(x=>/en-GB/i.test(x.lang))||v.find(x=>/en-US/i.test(x.lang))||v.find(x=>/en/i.test(x.lang))||v[0]; }
+if(synth){ synth.onvoiceschanged=pickVoice; pickVoice(); }
+function speak(t){ if(!synth)return; const clean=t.replace(/\([^)]*\)/g,' ').replace(/\s+/g,' ').trim();
+  const u=new SpeechSynthesisUtterance(clean); if(patientVoice)u.voice=patientVoice; u.rate=.95; u.pitch=.92;
+  u.onstart=()=>{const el=document.querySelector('.turn.pt:last-child .speaking'); if(el)el.style.display='inline-block';};
+  u.onend=()=>{const el=document.querySelector('.turn.pt:last-child .speaking'); if(el)el.style.display='none';};
+  synth.cancel(); synth.speak(u); }
+
+/* ============================ delivery tracking ============================ */
+let words=0, fillers=0;
+const FILLERS=[/\bum+\b/g,/\buh+\b/g,/\ber+\b/g,/\berm+\b/g,/\blike\b/g,/\byou know\b/g,/\bsort of\b/g,/\bkind of\b/g,/\bbasically\b/g];
+function track(raw){ const w=raw.trim().split(/\s+/).filter(Boolean); words+=w.length;
+  const s=' '+raw.toLowerCase()+' '; FILLERS.forEach(rx=>{const m=s.match(rx); if(m)fillers+=m.length;}); }
+
+/* ============================ engine ============================ */
+const $=s=>document.querySelector(s);
+let cur=null, state={}, turns=[];
+function detect(u){ const t=' '+u.toLowerCase()+' '; const o={};
+  for(const k in cur.triggers){ const tr=cur.triggers[k]; o[k]= (typeof tr==='function')? tr(t,u): tr.test(t); }
+  o.pause=/\(pause\)|\.\.\.|\(silence\)/.test(u); return o; }
+function val(x,d){ return typeof x==='function'? x(d,state): x; }
+function reply(u){ const d=detect(u);
+  for(const r of cur.rules){ if(r.default) return val(r.say,d);
+    if(r.when(d,state)){ if(r.set)r.set(state); return val(r.say,d); } }
+  return "\u2026"; }
+
+function buildCtx(youTurns){
+  const keys=Object.keys(cur.triggers).concat(['pause']);
+  const per=youTurns.map(u=>detect(u));
+  const first={}; keys.forEach(k=>first[k]=per.findIndex(p=>p[k]));
+  const full=youTurns.join('  ').toLowerCase();
+  return { full, n:youTurns.length, has:k=>per.some(p=>p[k]),
+    order:(a,b)=> first[a]>=0 && (first[b]<0||first[a]<=first[b]) }; }
+function evalWhen(w,c){ return (w instanceof RegExp)? w.test(c.full) : w(c); }
+
+/* ============================ UI ============================ */
+function esc(s){return (s||'').replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));}
+function buildGrid(){ const g=$('#stationGrid'); g.innerHTML='';
+  STATIONS.forEach(st=>{ const b=document.createElement('button'); b.className='stcard';
+    b.innerHTML='<span class="tag">'+esc(st.tag)+'</span><span class="t">'+esc(st.title)+'</span><span class="b">'+esc(st.short)+'</span>';
+    b.onclick=()=>openScenario(st.id); g.appendChild(b); }); }
+function openScenario(id){ cur=STATIONS.find(s=>s.id===id);
+  $('#landing').style.display='none'; $('#stage').style.display='none'; $('#scenarioCard').style.display='block';
+  $('#scTag').textContent='The station · 8 minutes'; $('#scBlurb').innerHTML=cur.blurb; $('#scRole').textContent=cur.role;
+  window.scrollTo({top:0,behavior:'smooth'}); }
+$('#backBtn').onclick=()=>{ $('#scenarioCard').style.display='none'; $('#landing').style.display='block'; };
+
+function render(){ const box=$('#turns'); box.innerHTML='';
+  turns.forEach(t=>{ const d=document.createElement('div'); d.className='turn '+(t.role==='pt'?'pt':'you');
+    d.innerHTML='<div class="who">'+(t.role==='pt'?esc(cur.patient)+' <span class="speaking" style="display:none"></span>':'You')+'</div><div class="say">'+esc(t.text)+'</div>';
+    box.appendChild(d); }); box.scrollTop=box.scrollHeight; }
+
+let clk=null,left=480;
+function fmt(s){return Math.floor(s/60)+':'+String(s%60).padStart(2,'0');}
+function startClock(){ stopClock(); left=480; const c=$('#clock'); c.textContent=fmt(left); c.className='clock run';
+  clk=setInterval(()=>{ left--; c.textContent=fmt(Math.max(left,0)); if(left<=60)c.className='clock low';
+    if(left<=0){ stopClock(); c.textContent="time"; if(turns.some(t=>t.role==='you')) $('#markBtn').click(); } },1000); }
+function stopClock(){ if(clk){clearInterval(clk);clk=null;} }
+
+function startStation(){ state={}; turns=[]; words=0; fillers=0; speakMs=0; speakStart=null;
+  $('#scenarioCard').style.display='none'; $('#stage').style.display='block'; $('#result').innerHTML='';
+  turns=[{role:'pt',text:cur.opening}]; render(); speak(cur.opening); startClock(); $('#editbox').value=''; $('#editbox').focus();
+  $('#hint').textContent="You speak first."; }
+$('#startBtn').onclick=startStation;
+$('#srNote').textContent = SR ? "" : "No speech-to-text in this browser — you can type, and still hear the patient.";
+
+function startRec(){ if(!SR)return; rec=new SR(); rec.lang='en-GB'; rec.interimResults=true; rec.continuous=true;
+  finalChunk=$('#editbox').value?($('#editbox').value.trim()+' '):'';
+  rec.onresult=e=>{ let interim=''; for(let i=e.resultIndex;i<e.results.length;i++){ const r=e.results[i];
+      if(r.isFinal)finalChunk+=r[0].transcript+' '; else interim+=r[0].transcript; }
+    $('#editbox').value=(finalChunk+interim).trim(); };
+  rec.onerror=e=>{ if(e.error==='not-allowed'||e.error==='service-not-allowed'){ micSupported=false;
+      $('#micBtn').style.display='none'; $('#hint').textContent="Microphone blocked — type your turn instead. The patient still replies aloud."; } };
+  rec.onend=()=>{ if(listening){ try{rec.start();}catch(e){} } };
+  try{ rec.start(); listening=true; speakStart=Date.now(); const b=$('#micBtn'); b.classList.add('on'); b.textContent='● Listening — tap to stop'; }catch(e){} }
+function stopRec(){ listening=false; if(speakStart){ speakMs+=Date.now()-speakStart; speakStart=null; }
+  const b=$('#micBtn'); b.classList.remove('on'); b.textContent='🎤 Tap to speak'; if(rec){try{rec.stop();}catch(e){}} }
+$('#micBtn').onclick=()=>{ listening?stopRec():startRec(); };
+
+$('#sendBtn').onclick=()=>{ const said=$('#editbox').value.trim();
+  if(!said){ $('#hint').textContent="Say something first — tap the mic, or type, then send."; return; }
+  stopRec(); track(said); turns.push({role:'you',text:said}); finalChunk=''; $('#editbox').value=''; render();
+  const r=reply(said); turns.push({role:'pt',text:r}); render(); speak(r);
+  const yc=turns.filter(t=>t.role==='you').length;
+  $('#hint').textContent = yc>=5 ? "When you've reached a natural close, hit End & mark." : "Listen to how they respond — answer them, don't just press on."; };
+$('#editbox').addEventListener('keydown',e=>{ if(e.key==='Enter'&&(e.metaKey||e.ctrlKey)){ e.preventDefault(); $('#sendBtn').click(); }});
+$('#resetBtn').onclick=()=>startStation();
+$('#switchBtn').onclick=()=>{ stopClock(); stopRec(); $('#clock').className='clock'; $('#stage').style.display='none'; $('#result').innerHTML=''; $('#landing').style.display='block'; window.scrollTo({top:0,behavior:'smooth'}); };
+
+/* ============================ marking ============================ */
+$('#markBtn').onclick=()=>{ stopClock(); stopRec();
+  const you=turns.filter(t=>t.role==='you').map(t=>t.text);
+  if(!you.length){ $('#hint').textContent="You haven't said anything to mark yet."; return; }
+  const c=buildCtx(you);
+  const did=cur.marking.did.filter(x=>evalWhen(x.when,c));
+  const never=cur.marking.never.filter(x=>evalWhen(x.when,c));
+  const ifail=cur.marking.ifail.filter(x=>evalWhen(x.when,c));
+  let band="BORDERLINE";
+  if(ifail.length) band="FAIL";
+  else if(never.length===0 && did.length>=2 && (!cur.marking.passWhen||cur.marking.passWhen(c))) band="PASS";
+
+  const mins=Math.max(.1, speakMs/60000); const wpm=speakMs>2500?Math.round(words/mins):null;
+  const pace=wpm==null?null:(wpm<110?"measured":(wpm>170?"rushed":"good"));
+  const fillRate=words?Math.round(fillers/words*100):0;
+
+  let h='<div class="card"><p class="eyebrow">'+esc(cur.title)+' · your run</p>';
+  h+='<div><span class="band '+band+'">'+band+'</span> <span class="small">pattern-spotted, not an examiner\u2019s mark</span></div>';
+  h+='<div class="metric">';
+  if(wpm!=null) h+='<div class="m"><b>'+wpm+'</b><span>words/min ('+pace+')</span></div>';
+  h+='<div class="m"><b>'+fillers+'</b><span>filler words ('+fillRate+'%)</span></div>';
+  h+='<div class="m"><b>'+you.length+'</b><span>your turns</span></div></div>';
+  h+='<p class="small">'+(wpm==null?'Use the mic to get a words-per-minute read. ':'')+'Examiners feel a rushed or filler-heavy consult even when the words are right.</p>';
+  h+='<div class="item good" style="border-left-color:var(--gold)"><strong>The shape of a strong station:</strong> '+esc(TIPS[cur.id]||'')+'</div>';
+
+  did.forEach(x=>h+='<div class="item good">\u2713 <span class="q">'+esc(x.q)+'</span><div class="sub">'+esc(x.why)+'</div></div>');
+  never.forEach(x=>h+='<div class="item never">\u2715 You used <span class="q">'+esc(x.q)+'</span><div class="sub">'+esc(x.problem)+'</div><div class="sayit">Say instead:</div> \u201c'+esc(x.say)+'\u201d</div>');
+  ifail.forEach(x=>h+='<div class="item if">\u2691 <strong>Instant-fail risk:</strong> '+esc(x.b)+'<div class="sub">'+esc(x.e)+'</div></div>');
+  if(!did.length&&!never.length&&!ifail.length) h+='<p class="small">Nothing matched the patterns either way — usually a short run. Use the model lines below to mark yourself properly.</p>';
+
+  h+='<div class="disclaim"><strong>Mark yourself honestly.</strong> This spots obvious phrases — it can\u2019t judge a paraphrase or your tone. Read the model lines below against what you actually said; that\u2019s where the real learning is. (The AI version, when it lands, judges meaning, not keywords.)</div>';
+
+  h+='<details class="reveal"><summary>Show the AMaC say / never-say lines for this station</summary>';
+  cur.sayNever.forEach(r=>{ h+='<div class="modelrow"><div class="s">'+esc(r.s)+'</div>'+
+    '<div class="say"><b>Say:</b> \u201c'+esc(r.say)+'\u201d</div>'+
+    '<div class="nev"><b>Never:</b> \u201c'+esc(r.never)+'\u201d</div>'+
+    '<div class="sub">'+esc(r.why)+'</div></div>'; });
+  h+='<div class="modelrow"><div class="s">Instant fails</div><div class="sub">'+cur.instantFails.map(esc).join(' \u00b7 ')+'</div></div>';
+  h+='</details>';
+
+  h+='<p class="small" style="margin-top:14px">Before you run it again — what one thing would you change?</p>';
+  h+='<div class="row" style="margin-top:8px"><button class="primary" id="againBtn">Run it again</button> <button class="ghost" id="another2">Try another station</button></div></div>';
+  $('#result').innerHTML=h;
+  $('#againBtn').onclick=()=>startStation();
+  $('#another2').onclick=()=>$('#switchBtn').click();
+  $('#result').scrollIntoView({behavior:'smooth',block:'start'}); };
+
+buildGrid();
+</script>
+<script src="nav.js" defer></script>
+</body>
+</html>
