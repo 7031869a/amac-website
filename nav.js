@@ -47,7 +47,8 @@
         { href: "tools.html",          label: "Tools" },
         { href: "books.html",          label: "Master Series" },
         { href: "osce.html",           label: "OSCE" },
-        { href: "examiner-brain.html", label: "Examiner Brain" }
+        { href: "examiner-brain.html", label: "Examiner Brain" },
+        { href: "instant-fail-atlas.html", label: "Instant Fail Atlas" }
       ],
       cta: { href: "contact.html", label: "Get Started" }
     },
