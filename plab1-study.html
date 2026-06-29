@@ -22,6 +22,20 @@ h1,h2,h3{font-family:'Fraunces',Georgia,serif;color:var(--navy);}
 
 .card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:28px;margin:18px 0;}
 
+/* ── filter bar ── */
+.filters{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:18px 0 6px;display:flex;flex-wrap:wrap;align-items:center;gap:18px 26px;}
+.filter-group{display:flex;align-items:center;gap:10px;}
+.filter-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.9px;color:var(--muted);}
+.filter-select{font-family:inherit;font-size:14px;font-weight:500;color:var(--navy);background:var(--cream);border:1.5px solid var(--line);border-radius:8px;padding:8px 12px;cursor:pointer;min-width:190px;}
+.filter-select:hover{border-color:var(--gold);}
+.chips{display:flex;gap:7px;flex-wrap:wrap;}
+.chip{font-family:inherit;font-size:13px;font-weight:600;color:var(--navy);background:var(--cream);border:1.5px solid var(--line);border-radius:20px;padding:6px 14px;cursor:pointer;transition:.12s;}
+.chip:hover{border-color:var(--gold);}
+.chip.active{background:var(--navy);color:#fff;border-color:var(--navy);}
+.filter-count{margin-left:auto;font-size:13px;font-weight:600;color:var(--muted);font-variant-numeric:tabular-nums;}
+.filter-reset{font-family:inherit;font-size:12px;font-weight:600;color:var(--gold);background:none;border:none;cursor:pointer;text-decoration:underline;padding:0;}
+.filter-reset:hover{color:var(--navy);}
+
 .btn{display:inline-block;background:var(--gold);color:#1a1300;border:none;border-radius:8px;padding:13px 26px;font-size:16px;font-weight:600;cursor:pointer;font-family:inherit;transition:.15s;}
 .btn:hover:not(:disabled){background:var(--gold-lt);}
 .btn:disabled{opacity:.4;cursor:not-allowed;}
@@ -43,7 +57,9 @@ h1,h2,h3{font-family:'Fraunces',Georgia,serif;color:var(--navy);}
 .stem{font-size:17px;margin:14px 0 18px;font-weight:500;line-height:1.65;}
 .qmeta{display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--muted);margin-bottom:6px;}
 .qmeta .dom{background:#eef1f7;color:var(--navy);padding:3px 10px;border-radius:20px;font-weight:600;}
+.qmeta .diff{padding:3px 10px;border-radius:20px;font-weight:600;background:#f0ece0;color:var(--amber);}
 .dim{color:var(--muted);font-size:14px;}
+.empty{text-align:center;color:var(--muted);padding:40px 20px;font-size:15px;}
 
 .result-banner{padding:12px 16px;border-radius:8px;font-weight:700;font-size:15px;margin:16px 0 8px;}
 .result-banner.result-correct{background:#e6f4ec;color:var(--ok);border-left:4px solid var(--ok);}
@@ -64,8 +80,8 @@ h1,h2,h3{font-family:'Fraunces',Georgia,serif;color:var(--navy);}
 .expl-takeaway .expl-label{color:#1a5276;}
 
 .action-row{display:flex;align-items:center;gap:14px;margin-top:20px;flex-wrap:wrap;}
-
 .nav{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:6px;}
+@media(max-width:620px){.filters{gap:14px 16px;}.filter-select{min-width:0;flex:1;}.filter-count{margin-left:0;width:100%;}}
 </style>
 </head>
 <body>
@@ -76,8 +92,28 @@ h1,h2,h3{font-family:'Fraunces',Georgia,serif;color:var(--navy);}
 </div>
 
 <div class="wrap">
+
+  <div class="filters">
+    <div class="filter-group">
+      <label class="filter-label" for="domSel">Domain</label>
+      <select id="domSel" class="filter-select" onchange="applyFilters()">
+        <option value="">All domains</option>
+      </select>
+    </div>
+    <div class="filter-group">
+      <span class="filter-label">Difficulty</span>
+      <div class="chips" id="diffChips">
+        <button type="button" class="chip active" data-diff="" onclick="setDiff(this,'')">All</button>
+        <button type="button" class="chip" data-diff="Easy" onclick="setDiff(this,'Easy')">Easy</button>
+        <button type="button" class="chip" data-diff="Moderate" onclick="setDiff(this,'Moderate')">Moderate</button>
+        <button type="button" class="chip" data-diff="Difficult" onclick="setDiff(this,'Difficult')">Difficult</button>
+      </div>
+    </div>
+    <span class="filter-count" id="filterCount"></span>
+  </div>
+
   <div class="progress-line">
-    <span id="prog">Question 1 of 869</span>
+    <span id="prog"></span>
     <span class="dim">Study mode &mdash; no timer, full explanations</span>
   </div>
 
@@ -91,78 +127,122 @@ h1,h2,h3{font-family:'Fraunces',Georgia,serif;color:var(--navy);}
 
 <script src="plab1-questions.js"></script>
 <script>
-const QUESTIONS = window.PLAB1_QUESTIONS;
+const ALL = Array.isArray(window.PLAB1_QUESTIONS) ? window.PLAB1_QUESTIONS : [];
+let domain      = '';
+let difficulty  = '';
+let QUESTIONS   = ALL.slice();          // current filtered working set
 let cur         = 0;
-let confirmed   = new Array(QUESTIONS.length).fill(null);
+const answers   = {};                   // q.id -> chosen letter (persists across filter changes)
 let currentSel  = null;
 let confirming  = false;
 
-function selectOption(k) {
-  if (confirmed[cur] !== null) return;
+// Build the domain dropdown straight from the data so it can never drift.
+(function initDomains(){
+  if (!ALL.length) return;
+  const doms = Array.from(new Set(ALL.map(q => q.domain))).sort();
+  const sel  = document.getElementById('domSel');
+  doms.forEach(function(d){
+    const o = document.createElement('option');
+    o.value = d; o.textContent = d;
+    sel.appendChild(o);
+  });
+})();
+
+function applyFilters(){
+  domain     = document.getElementById('domSel').value;
+  QUESTIONS  = ALL.filter(function(q){
+    return (!domain || q.domain === domain) && (!difficulty || q.difficulty === difficulty);
+  });
+  cur = 0; currentSel = null;
+  render();
+}
+
+function setDiff(btn, d){
+  difficulty = d;
+  const chips = document.querySelectorAll('#diffChips .chip');
+  chips.forEach(function(c){ c.classList.remove('active'); });
+  btn.classList.add('active');
+  applyFilters();
+}
+
+function selectOption(k){
+  const q = QUESTIONS[cur];
+  if (answers[q.id] !== undefined) return;
   currentSel = k;
   const btn = document.getElementById('confirm-btn');
   if (btn) btn.disabled = false;
 }
 
-function confirmAnswer() {
+function confirmAnswer(){
   if (confirming) return;
-  if (currentSel === null || confirmed[cur] !== null) return;
+  const q = QUESTIONS[cur];
+  if (currentSel === null || answers[q.id] !== undefined) return;
   confirming = true;
-  confirmed[cur] = currentSel;
+  answers[q.id] = currentSel;
   render();
   confirming = false;
 }
 
-function go(d) {
+function go(d){
+  if (!QUESTIONS.length) return;
   cur = Math.max(0, Math.min(QUESTIONS.length - 1, cur + d));
   currentSel = null;
   render();
 }
 
-function render() {
-  const q           = QUESTIONS[cur];
-  const isConfirmed = confirmed[cur] !== null;
-  const userAnswer  = confirmed[cur];
+function render(){
+  const total = QUESTIONS.length;
 
-  // tally
-  const attempted     = confirmed.filter(c => c !== null).length;
-  const correctCount  = confirmed.filter((c, i) => c !== null && c === QUESTIONS[i].correct_letter).length;
-  const tallyEl       = document.getElementById('tally');
-  if (attempted > 0) {
-    tallyEl.innerHTML =
-      '<span class="t-correct">' + correctCount + ' correct</span>'
-      + '<span class="t-sep">/</span>'
-      + attempted + ' attempted';
-  } else {
-    tallyEl.textContent = '';
+  // live filter count
+  const fc = document.getElementById('filterCount');
+  fc.textContent = total === ALL.length
+    ? (ALL.length + ' questions')
+    : (total + ' of ' + ALL.length + ' questions');
+
+  // tally across the current filtered set
+  let attempted = 0, correctCount = 0;
+  QUESTIONS.forEach(function(q){
+    if (answers[q.id] !== undefined){ attempted++; if (answers[q.id] === q.correct_letter) correctCount++; }
+  });
+  const tallyEl = document.getElementById('tally');
+  tallyEl.innerHTML = attempted > 0
+    ? '<span class="t-correct">' + correctCount + ' correct</span><span class="t-sep">/</span>' + attempted + ' attempted'
+    : '';
+
+  // empty state
+  if (!total){
+    if (!ALL.length){
+      document.getElementById('prog').textContent = '';
+      document.getElementById('qcard').innerHTML = '<div class="empty">The question bank could not be loaded. Please refresh the page or check your connection.</div>';
+    } else {
+      document.getElementById('prog').textContent = 'No questions match';
+      document.getElementById('qcard').innerHTML = '<div class="empty">No questions match this combination of domain and difficulty.<br>Try widening the filters above.</div>';
+    }
+    document.getElementById('btn-prev').disabled = true;
+    document.getElementById('btn-next').disabled = true;
+    return;
   }
 
-  // question position
-  document.getElementById('prog').textContent = 'Question ' + (cur + 1) + ' of ' + QUESTIONS.length;
+  const q           = QUESTIONS[cur];
+  const userAnswer  = answers[q.id] !== undefined ? answers[q.id] : null;
+  const isConfirmed = userAnswer !== null;
+
+  document.getElementById('prog').textContent = 'Question ' + (cur + 1) + ' of ' + total;
 
   // options
-  const entries = Object.entries(q.options).sort(([a],[b]) => a.localeCompare(b));
+  const entries = Object.entries(q.options).sort(function(a,b){ return a[0].localeCompare(b[0]); });
   let opts = '';
-  entries.forEach(function(entry) {
+  entries.forEach(function(entry){
     const k = entry[0], v = entry[1];
-    let cls = 'opt';
-    let checked = '';
+    let cls = 'opt', checked = '';
     const disabledAttr = isConfirmed ? 'disabled' : '';
-
-    if (isConfirmed) {
+    if (isConfirmed){
       cls += ' locked';
-      if (k === q.correct_letter) {
-        cls += ' opt-correct';
-      } else if (k === userAnswer) {
-        cls += ' opt-wrong';
-      } else {
-        cls += ' opt-neutral-locked';
-      }
+      if (k === q.correct_letter) cls += ' opt-correct';
+      else if (k === userAnswer)  cls += ' opt-wrong';
+      else                        cls += ' opt-neutral-locked';
       if (k === userAnswer || k === q.correct_letter) checked = 'checked';
-    } else {
-      if (currentSel === k) { cls += ' sel'; checked = 'checked'; }
-    }
-
+    } else if (currentSel === k){ cls += ' sel'; checked = 'checked'; }
     opts += '<label class="' + cls + '">'
           + '<input type="radio" name="opt" value="' + k + '" ' + disabledAttr + ' ' + checked
           + ' onchange="selectOption(\'' + k + '\')">'
@@ -170,16 +250,13 @@ function render() {
           + '</label>';
   });
 
-  // result banner + explanation
+  // result + explanation
   let explHtml = '';
-  if (isConfirmed) {
+  if (isConfirmed){
     const isCorrect = userAnswer === q.correct_letter;
     const bannerCls = isCorrect ? 'result-correct' : 'result-wrong';
-    const bannerTxt = isCorrect
-      ? '&#10003; Correct'
-      : '&#10007; Incorrect &mdash; correct answer: ' + q.correct_letter;
-    explHtml = '<div class="result-banner ' + bannerCls + '">' + bannerTxt + '</div>'
-             + '<div class="expl-wrap">';
+    const bannerTxt = isCorrect ? '&#10003; Correct' : '&#10007; Incorrect &mdash; correct answer: ' + q.correct_letter;
+    explHtml = '<div class="result-banner ' + bannerCls + '">' + bannerTxt + '</div><div class="expl-wrap">';
     if (q.why_correct) explHtml += '<div class="expl expl-correct"><div class="expl-label">Why it is correct</div>'     + q.why_correct + '</div>';
     if (q.why_wrong)   explHtml += '<div class="expl expl-wrong"><div class="expl-label">Why the others are wrong</div>' + q.why_wrong   + '</div>';
     if (q.pearl)       explHtml += '<div class="expl expl-pearl"><div class="expl-label">NICE Pearl</div>'               + q.pearl       + '</div>';
@@ -190,28 +267,26 @@ function render() {
 
   // action button
   let actionBtn = '';
-  if (isConfirmed) {
-    if (cur < QUESTIONS.length - 1) {
-      actionBtn = '<div class="action-row">'
-                + '<button type="button" class="btn" onclick="go(1)">Next question &rarr;</button>'
-                + '</div>';
+  if (isConfirmed){
+    if (cur < total - 1){
+      actionBtn = '<div class="action-row"><button type="button" class="btn" onclick="go(1)">Next question &rarr;</button></div>';
     }
   } else {
-    actionBtn = '<div class="action-row">'
-              + '<button type="button" class="btn" id="confirm-btn" onclick="confirmAnswer()"'
-              + (currentSel ? '' : ' disabled') + '>Confirm answer</button>'
-              + '</div>';
+    actionBtn = '<div class="action-row"><button type="button" class="btn" id="confirm-btn" onclick="confirmAnswer()"'
+              + (currentSel ? '' : ' disabled') + '>Confirm answer</button></div>';
   }
 
   document.getElementById('qcard').innerHTML =
-    '<div class="qmeta"><span class="dom">' + q.domain + '</span><span class="dim">' + q.id + '</span></div>'
+    '<div class="qmeta"><span class="dom">' + q.domain + '</span>'
+    + (q.difficulty ? '<span class="diff">' + q.difficulty + '</span>' : '')
+    + '<span class="dim">' + q.id + '</span></div>'
     + '<div class="stem">' + q.stem + '</div>'
     + '<div class="opts">' + opts + '</div>'
     + actionBtn
     + explHtml;
 
   document.getElementById('btn-prev').disabled = (cur === 0);
-  document.getElementById('btn-next').disabled = (cur === QUESTIONS.length - 1);
+  document.getElementById('btn-next').disabled = (cur === total - 1);
 }
 
 render();
