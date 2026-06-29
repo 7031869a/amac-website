@@ -1,0 +1,1173 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AMaC · Actor-Trap Simulator</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+
+  :root{
+    --navy:#0d2247;          /* panel navy */
+    --deep:#0C1526;          /* page ground */
+    --gold:#c9a227;          /* accent */
+    --gold-soft:#e3c873;
+    --cream:#f7f4ec;         /* primary text */
+    --cream-dim:#b9c2d4;     /* muted text */
+    --line:rgba(247,244,236,.12);
+    --line-strong:rgba(247,244,236,.22);
+    --caught:#5bbf8a;        /* trap caught */
+    --missed:#d9694f;        /* trap missed */
+    --fail:#e04f4f;          /* instant fail */
+    --seal:#8a6d1f;
+    --serif:'Fraunces',Georgia,serif;
+    --sans:'Outfit',system-ui,sans-serif;
+    --r:14px;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;background:
+      radial-gradient(1200px 600px at 50% -10%, #12305f 0%, transparent 60%),
+      var(--deep);
+    color:var(--cream);font-family:var(--sans);line-height:1.55;
+    min-height:100vh;letter-spacing:.005em;
+  }
+  .wrap{max-width:760px;margin:0 auto;padding:28px 20px 80px}
+
+  /* ---------- masthead ---------- */
+  .eyebrow{
+    font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;
+    color:var(--gold);font-weight:600;display:flex;align-items:center;gap:10px;
+  }
+  .eyebrow::after{content:"";height:1px;flex:1;background:linear-gradient(90deg,var(--gold),transparent)}
+  h1{
+    font-family:var(--serif);font-weight:600;font-size:clamp(2.1rem,6vw,3rem);
+    line-height:1.02;margin:.35em 0 .15em;letter-spacing:-.01em;
+  }
+  h1 em{font-style:italic;color:var(--gold-soft)}
+  .standfirst{color:var(--cream-dim);max-width:52ch;font-size:1.02rem}
+
+  /* ---------- cards ---------- */
+  .card{
+    background:linear-gradient(180deg,rgba(13,34,71,.9),rgba(13,34,71,.7));
+    border:1px solid var(--line);border-radius:var(--r);
+    padding:24px;margin-top:22px;
+  }
+  .brief-label{
+    font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--gold);font-weight:600;margin-bottom:10px;
+  }
+  .brief-grid{display:grid;grid-template-columns:auto 1fr;gap:6px 18px;margin:14px 0 4px;font-size:.95rem}
+  .brief-grid dt{color:var(--cream-dim);font-weight:500}
+  .brief-grid dd{margin:0;color:var(--cream)}
+  .scenario{font-size:1.05rem;margin:6px 0 0}
+
+  /* ---------- buttons ---------- */
+  .btn{
+    font-family:var(--sans);font-weight:600;font-size:1rem;cursor:pointer;
+    border-radius:10px;border:1px solid transparent;padding:13px 22px;transition:.18s;
+  }
+  .btn-primary{background:var(--gold);color:#1a1304;border-color:var(--gold)}
+  .btn-primary:hover{background:var(--gold-soft)}
+  .btn-ghost{background:transparent;color:var(--cream);border-color:var(--line-strong)}
+  .btn-ghost:hover{border-color:var(--gold);color:var(--gold-soft)}
+  .btn:focus-visible{outline:3px solid var(--gold-soft);outline-offset:2px}
+  .center{text-align:center;margin-top:26px}
+
+  /* ---------- the sealed dossier chip (signature) ---------- */
+  .dossier-chip{
+    display:flex;align-items:center;gap:12px;border:1px dashed var(--line-strong);
+    border-radius:12px;padding:11px 15px;margin-top:18px;
+  }
+  .wax{
+    width:34px;height:34px;border-radius:50%;flex:none;position:relative;
+    background:radial-gradient(circle at 35% 30%, #b98a25, var(--seal) 70%);
+    box-shadow:inset 0 0 0 2px rgba(0,0,0,.25), 0 2px 5px rgba(0,0,0,.4);
+  }
+  .wax::after{content:"AT";position:absolute;inset:0;display:grid;place-items:center;
+    font-family:var(--serif);font-weight:700;font-size:.74rem;color:#1a1304;letter-spacing:.03em}
+  .dossier-chip .ds-txt{font-size:.86rem;color:var(--cream-dim)}
+  .dossier-chip .ds-txt b{color:var(--cream);font-weight:600}
+
+  /* ---------- consultation ---------- */
+  .stage-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:4px}
+  .turn-count{font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;color:var(--cream-dim)}
+  .progress{height:3px;background:var(--line);border-radius:2px;overflow:hidden;margin:10px 0 22px}
+  .progress > i{display:block;height:100%;background:linear-gradient(90deg,var(--gold),var(--gold-soft));transition:width .4s ease}
+
+  .speaker{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:8px}
+  .patient-line{
+    font-family:var(--serif);font-size:1.32rem;line-height:1.4;font-weight:400;
+    border-left:3px solid var(--gold);padding:2px 0 2px 18px;margin:0 0 6px;
+  }
+  .stage-dir{color:var(--cream-dim);font-style:italic;font-size:.95rem;margin:0 0 22px;padding-left:18px}
+
+  .opts{display:flex;flex-direction:column;gap:11px}
+  .opt{
+    text-align:left;background:rgba(247,244,236,.03);border:1px solid var(--line);
+    color:var(--cream);border-radius:11px;padding:15px 18px;cursor:pointer;
+    font-family:var(--sans);font-size:1.01rem;line-height:1.45;transition:.16s;width:100%;
+  }
+  .opt:hover{border-color:var(--gold);background:rgba(201,162,39,.08)}
+  .opt:focus-visible{outline:3px solid var(--gold-soft);outline-offset:2px}
+  .opt .key{color:var(--gold);font-weight:700;margin-right:10px;font-family:var(--serif)}
+
+  /* ---------- debrief ---------- */
+  .verdict{border-radius:var(--r);padding:24px;margin-top:22px;border:1px solid var(--line-strong)}
+  .verdict .v-tag{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;font-weight:600;margin-bottom:8px}
+  .verdict h2{font-family:var(--serif);font-size:1.9rem;margin:0 0 8px;line-height:1.05}
+  .verdict p{margin:0;color:var(--cream-dim)}
+  .v-pass{background:linear-gradient(180deg,rgba(91,191,138,.14),rgba(13,34,71,.6));border-color:rgba(91,191,138,.4)}
+  .v-pass .v-tag{color:var(--caught)}
+  .v-dist{background:linear-gradient(180deg,rgba(201,162,39,.18),rgba(91,191,138,.10) 60%,rgba(13,34,71,.6));border-color:var(--gold)}
+  .v-dist .v-tag{color:var(--gold)}
+  .v-dist h2{color:var(--gold-soft)}
+  .v-fail{background:linear-gradient(180deg,rgba(224,79,79,.14),rgba(13,34,71,.6));border-color:rgba(224,79,79,.45)}
+  .v-fail .v-tag{color:var(--fail)}
+  .v-mid{background:linear-gradient(180deg,rgba(201,162,39,.13),rgba(13,34,71,.6));border-color:rgba(201,162,39,.4)}
+  .v-mid .v-tag{color:var(--gold)}
+
+  .tally{display:flex;gap:26px;margin-top:18px;flex-wrap:wrap}
+  .tally .num{font-family:var(--serif);font-size:2.1rem;line-height:1;font-weight:600}
+  .tally .lbl{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--cream-dim);margin-top:5px}
+
+  .dossier-title{display:flex;align-items:center;gap:14px;margin:34px 0 4px}
+  .dossier-title .wax{width:40px;height:40px}
+  .dossier-title h3{font-family:var(--serif);font-size:1.5rem;margin:0;font-weight:600}
+  .dossier-sub{color:var(--cream-dim);font-size:.95rem;margin:0 0 8px}
+
+  .trap{
+    border:1px solid var(--line);border-radius:12px;padding:0;margin-top:14px;overflow:hidden;
+    opacity:0;transform:translateY(8px);
+  }
+  .trap.in{animation:rise .5s forwards}
+  @keyframes rise{to{opacity:1;transform:none}}
+  .trap-head{display:flex;align-items:center;gap:12px;padding:13px 16px;border-bottom:1px solid var(--line)}
+  .trap-head .status{
+    font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+    padding:4px 9px;border-radius:6px;flex:none;
+  }
+  .st-caught{background:rgba(91,191,138,.16);color:var(--caught);border:1px solid rgba(91,191,138,.4)}
+  .st-missed{background:rgba(217,105,79,.16);color:var(--missed);border:1px solid rgba(217,105,79,.4)}
+  .st-fail{background:rgba(224,79,79,.18);color:var(--fail);border:1px solid rgba(224,79,79,.5)}
+  .trap-head .t-name{font-family:var(--serif);font-size:1.08rem;font-weight:600}
+  .trap-head .t-type{font-size:.72rem;color:var(--cream-dim);margin-left:auto;text-align:right}
+  .trap-body{padding:14px 16px;display:grid;gap:12px}
+  .row .r-lbl{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:3px}
+  .row .r-val{font-size:.97rem;color:var(--cream)}
+  .row .r-val.quote{font-family:var(--serif);font-style:italic;color:var(--cream-dim);border-left:2px solid var(--line-strong);padding-left:12px}
+  .examiner{background:rgba(247,244,236,.04);border-radius:8px;padding:11px 13px}
+  .examiner .r-lbl{color:var(--cream-dim)}
+
+  footer{margin-top:46px;border-top:1px solid var(--line);padding-top:18px;color:var(--cream-dim);font-size:.82rem;text-align:center}
+  .hidden{display:none}
+
+  @media (max-width:480px){
+    .wrap{padding:22px 15px 60px}
+    .patient-line{font-size:1.16rem}
+    .tally{gap:18px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+    .trap{opacity:1;transform:none}
+  }
+
+  /* ---------- station picker ---------- */
+  .pick-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px}
+  @media (max-width:640px){.pick-grid{grid-template-columns:1fr}}
+  .pick-card{display:flex;flex-direction:column;background:linear-gradient(180deg,rgba(13,34,71,.9),rgba(13,34,71,.7));border:1px solid var(--line);border-radius:var(--r);padding:22px}
+  .pick-card .p-num{font-family:var(--serif);font-size:.95rem;color:var(--gold);letter-spacing:.04em;margin-bottom:6px}
+  .pick-card h3{font-family:var(--serif);font-size:1.35rem;font-weight:600;line-height:1.12;margin:0 0 6px}
+  .pick-card .p-tag{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--cream-dim);font-weight:600;margin-bottom:14px}
+  .pick-card dl.brief-grid{font-size:.9rem;margin:0 0 16px}
+  .pick-card .grow{flex:1}
+  .pick-card .btn{width:100%}
+  .debrief-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:26px}
+
+  /* ---------- weakness map ---------- */
+  .wk-list{margin-top:18px}
+  .wk-row{padding:15px 0;border-bottom:1px solid var(--line)}
+  .wk-row:last-child{border-bottom:none}
+  .wk-top{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:9px}
+  .wk-name{font-family:var(--serif);font-size:1.08rem;font-weight:600;display:flex;align-items:center;flex-wrap:wrap;gap:4px}
+  .wk-stat{font-size:.8rem;color:var(--cream-dim);white-space:nowrap}
+  .wk-bar{height:9px;border-radius:5px;overflow:hidden;display:flex;background:rgba(247,244,236,.06)}
+  .wk-bar .c{background:var(--caught)}
+  .wk-bar .m{background:var(--missed)}
+  .wk-pill{font-size:.64rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;border-radius:5px;margin-left:6px}
+  .pill-blind{background:rgba(224,79,79,.16);color:var(--fail);border:1px solid rgba(224,79,79,.4)}
+  .pill-incons{background:rgba(201,162,39,.16);color:var(--gold);border:1px solid rgba(201,162,39,.4)}
+  .pill-strong{background:rgba(91,191,138,.16);color:var(--caught);border:1px solid rgba(91,191,138,.4)}
+  .wk-untested{margin-top:20px;color:var(--cream-dim);font-size:.86rem;line-height:1.7}
+  .wk-untested b{color:var(--cream);font-weight:600}
+</style>
+</head>
+<body>
+<nav data-door="plab2"><div class="nav-inner"><a href="index.html" class="brand">AMaC</a>
+  <ul class="nav-links"><li><a href="books.html">The Master Series</a></li><li><a href="tools.html">Study Tools</a></li><li><a href="contact.html" class="nav-cta">Get Started</a></li></ul>
+</div></nav>
+<div class="wrap">
+
+  <!-- ============ PICKER ============ -->
+  <section id="picker">
+    <div class="eyebrow">AMaC · Actor-Trap Simulator</div>
+    <h1>The patient is <em>briefed</em>.<br>Are you ready for what they were told to do?</h1>
+    <p class="standfirst">Every OSCE actor works from a hidden brief — buried red flags to drop casually, fears to keep back unless you ask, baits to see if you'll cave. Run a station as normal. You won't be told which moments are the test. At the debrief, the brief is unsealed.</p>
+    <div class="pick-grid" id="pickGrid"></div>
+    <footer>AMaC · Actor-Trap Simulator — five live stations, with more to come. Written by doctors, for doctors who want to excel.</footer>
+  </section>
+
+  <!-- ============ CONSULTATION ============ -->
+  <section id="stage" class="hidden">
+    <div class="eyebrow">AMaC · Actor-Trap Simulator</div>
+    <div class="stage-head" style="margin-top:18px">
+      <div class="turn-count" id="turnCount">Exchange 1 of 8</div>
+      <div class="turn-count" id="stageMeta"></div>
+    </div>
+    <div class="progress"><i id="bar" style="width:0%"></i></div>
+    <div class="speaker" id="speakerLbl">Patient</div>
+    <p class="patient-line" id="patientLine"></p>
+    <div class="opts" id="opts"></div>
+    <div class="dossier-chip" style="margin-top:30px">
+      <span class="wax" aria-hidden="true"></span>
+      <span class="ds-txt"><b>Brief still sealed.</b> No scores shown until you finish — just like the real room.</span>
+    </div>
+  </section>
+
+  <!-- ============ DEBRIEF ============ -->
+  <section id="debrief" class="hidden">
+    <div class="eyebrow">AMaC · Actor-Trap Simulator · Debrief</div>
+    <div class="verdict" id="verdict"></div>
+    <div class="tally">
+      <div><div class="num" id="caughtNum" style="color:var(--caught)">0</div><div class="lbl">Traps caught</div></div>
+      <div><div class="num" id="missedNum" style="color:var(--missed)">0</div><div class="lbl">Traps missed</div></div>
+      <div><div class="num" id="failNum" style="color:var(--fail)">0</div><div class="lbl">Instant fails</div></div>
+    </div>
+    <div class="dossier-title">
+      <span class="wax" aria-hidden="true"></span>
+      <h3>The Actor's Brief — unsealed</h3>
+    </div>
+    <p class="dossier-sub" id="dossierSub"></p>
+    <div id="dossier"></div>
+    <div class="debrief-actions">
+      <button class="btn btn-primary" id="mapBtn">See your weakness map</button>
+      <button class="btn btn-ghost" id="againBtn">Run this station again</button>
+      <button class="btn btn-ghost" id="backBtn">Choose another station</button>
+    </div>
+    <footer>AMaC · Actor-Trap Simulator</footer>
+  </section>
+
+  <!-- ============ WEAKNESS MAP ============ -->
+  <section id="weakness" class="hidden">
+    <div class="eyebrow">AMaC · Actor-Trap Simulator · Weakness Map</div>
+    <div class="verdict" id="wkHeadline" style="margin-top:18px"></div>
+    <p class="dossier-sub" id="wkSub" style="margin-top:14px"></p>
+    <div class="wk-list" id="wkRows"></div>
+    <div class="debrief-actions">
+      <button class="btn btn-primary" id="wkMore">Do another station</button>
+      <button class="btn btn-ghost" id="wkRestart">Clear this session</button>
+    </div>
+    <footer>AMaC · Actor-Trap Simulator — the map reflects this session only.</footer>
+  </section>
+
+</div>
+
+<script>
+const STATIONS = {
+  "sicknote-brennan": {
+  id:"sicknote-brennan",
+  cardTitle:"\u201CJust here for a sick note.\u201D",
+  tagline:"Hidden red flags & safety",
+  meta:"Mr Brennan, 48",
+  speaker:"Patient",
+  brief:{rows:[["Setting","GP surgery \u00b7 10-minute appointment"],["Your role","FY2 in general practice"],["Patient","Mr Daniel Brennan, 48, lorry driver"],["Booked reason","Sick note for back pain"]]},
+  traps:[
+    {
+      name:"The buried red flag",
+      type:"Red flag · dropped casually",
+      rationale:"Night pain and unintentional weight loss are systemic red flags: in back pain they shift the differential towards malignancy or infection and can trigger an urgent (2-week-wait) referral. Miss them and the whole consultation is built on the wrong premise.",
+      weight:2,
+      line:"It's just my lower back. Kills me. Mind you — and this is probably nothing — it's been waking me at night, and the wife reckons I've dropped a bit of weight. But I've been run off my feet, so.",
+      briefing:"Mention night pain and unintentional weight loss, but wrap them in 'probably nothing' and move on quickly. See whether the doctor flags them or lets them slide.",
+      options:[
+        {key:"A",text:"Sounds like you've overdone it — let's talk about that sick note.",catches:false,
+          examiner:"Walked straight past night pain and weight loss. The two findings that change this from mechanical back pain to a possible malignancy, gone in one sentence."},
+        {key:"B",text:"Hold on — pain that wakes you at night and losing weight without trying are things I take seriously. Tell me more about both.",catches:true,
+          examiner:"Heard the throwaway line and stopped on it. This is the moment the station turns; the candidate didn't let the patient set the agenda."},
+        {key:"C",text:"Weight loss is good news for a bad back — takes the pressure off!",catches:false,fail:true,
+          examiner:"Reframed a red flag as reassurance. Minimising unexplained weight loss in back pain is an unsafe response."}
+      ]
+    },
+    {
+      name:"Cauda equina, downplayed",
+      type:"Emergency · disguised as trivial",
+      rationale:"Saddle anaesthesia with bladder dysfunction is cauda equina syndrome until excluded — a surgical emergency where delay to decompression risks permanent incontinence and paralysis. This is the highest-stakes miss in the station.",
+      weight:3,
+      line:"Tell the truth, last day or two I've been a bit slow getting to the loo — bit of dribbling — and my backside's gone numb on the saddle there. Reckon I've just been sat in the cab too long.",
+      briefing:"Disclose saddle numbness and urinary hesitancy as if they were nothing — blame the lorry seat. The doctor must recognise possible cauda equina syndrome and treat it as an emergency.",
+      options:[
+        {key:"A",text:"Yeah, long shifts will do that — try to stretch more often.",catches:false,fail:true,
+          examiner:"Saddle anaesthesia with urinary symptoms is cauda equina until proven otherwise. Attributing it to the seat is a missed surgical emergency — a hard fail."},
+        {key:"B",text:"That combination — numbness around the saddle and trouble passing urine — needs urgent assessment today, not stretching. I need to examine you, and we may need an urgent scan.",catches:true,
+          examiner:"Recognised the red-flag cluster and escalated. Named it as urgent and reached for examination and imaging rather than reassurance."},
+        {key:"C",text:"Keep an eye on it and come back if it gets worse.",catches:false,
+          examiner:"Safety-netting language, but far too slow for a possible cauda equina. 'Come back if worse' is not a plan for a same-day emergency."}
+      ]
+    },
+    {
+      name:"The cue you can talk over",
+      type:"Emotional cue · easily steamrolled",
+      rationale:"Picking up and responding to cues is explicitly marked in OSCE communication domains. Talking over a cue doesn't just lose rapport marks — it shuts down disclosure, so the clinical history you get afterwards is poorer too.",
+      weight:1,
+      line:"Look… I can't afford to be off, doc. It's just me bringing money in now. If I lose this contract…",
+      briefing:"Deliver a money worry and let it trail off. Reward a doctor who pauses and acknowledges it; penalise one who acknowledges in words but ploughs straight on.",
+      options:[
+        {key:"A",text:"I understand, but your health has to come first. Now, about the examination—",catches:false,
+          examiner:"Said 'I understand' and immediately overrode the cue. The patient learns the worry isn't welcome here. Empathy named is not empathy shown."},
+        {key:"B",text:"(pause) That sounds like a real weight — being the only one bringing money in, and now this on top. We'll work through it together.",catches:true,
+          examiner:"Stopped, reflected the specific worry back, and signalled partnership. The pause is the skill; most candidates fill it."},
+        {key:"C",text:"Plenty of people manage in your situation — you'll be fine financially.",catches:false,
+          examiner:"False reassurance about something outside the consultation, and dismissive of a genuine fear. Closes the door the cue was trying to open."}
+      ]
+    },
+    {
+      name:"The hidden agenda",
+      type:"Ideas / Concerns · the real reason for the visit",
+      rationale:"The presenting complaint is rarely the real agenda. Eliciting ideas, concerns and expectations is core to the consultation model and to the mark scheme; the father's spinal tumour is the fear actually driving this visit.",
+      weight:1,
+      line:"Can I ask you something straight? My dad had something on his spine. A tumour. He went downhill fast. That's not… that's not what this is, is it?",
+      briefing:"This is the real reason for the appointment. Keep the father's spinal tumour back until asked about worries — or volunteer it late. Watch whether the doctor explores the fear or bats it away.",
+      options:[
+        {key:"A",text:"No, no — you're far too young for that, don't you worry.",catches:false,fail:true,
+          examiner:"False reassurance in the face of the red flags already on the table. 'Too young' is not a clinical argument, and it shuts down the disclosure the patient took courage to make."},
+        {key:"B",text:"Thank you for telling me — that's clearly been frightening you. I can't promise you what this is yet, and that's exactly why I want to assess you properly today rather than guess.",catches:true,
+          examiner:"Honoured the disclosure, named the fear, and held honesty and containment together without a false promise. Textbook handling of a loaded concern."},
+        {key:"C",text:"Let's not jump to conclusions — plenty of things cause back pain.",catches:false,
+          examiner:"Deflected the fear without exploring it. Technically true, emotionally deaf; the patient's actual question goes unanswered."}
+      ]
+    },
+    {
+      name:"The borrowed medication",
+      type:"Prescribing safety · disclosed in passing",
+      rationale:"Opioids and benzodiazepines together cause additive respiratory depression — a recognised cause of overdose death — and the diazepam is a borrowed prescription-only medicine. Both must be addressed, not recorded as routine.",
+      weight:2,
+      line:"I've been managing the pain alright, to be fair. Couple of extra co-codamol over the box, and my mate gave me some of his diazepam for the spasms — does the trick.",
+      briefing:"Casually admit taking extra co-codamol plus a friend's diazepam. The doctor must spot the opioid-and-benzodiazepine combination and the borrowed prescription-only medicine.",
+      options:[
+        {key:"A",text:"Whatever gets you through it — just don't overdo the co-codamol.",catches:false,fail:true,
+          examiner:"Let a borrowed benzodiazepine taken with extra opioid go unchallenged. Combined respiratory depression and an illicitly-sourced POM, waved through."},
+        {key:"B",text:"I'm glad you told me. Someone else's diazepam together with extra co-codamol genuinely worries me — they both slow your breathing and make you drowsy, and that's not safe, especially in your job. Let's get you safe pain relief of your own.",catches:true,
+          examiner:"Named the specific danger of the opioid–benzodiazepine combination and the borrowed source, without shaming, and pivoted to a safe plan."},
+        {key:"C",text:"Diazepam's fine short term — I'll pop it on your record.",catches:false,fail:true,
+          examiner:"Legitimised a friend's prescription-only medicine and the dangerous combination by 'adding it to the record'. Unsafe on two counts."}
+      ]
+    },
+    {
+      name:"Fitness to drive",
+      type:"Occupational safety · the patient negotiates",
+      rationale:"Fitness to drive is a public-safety duty, not a patient preference. Possible cauda equina plus a sedative makes HGV driving unsafe, and the driver has a legal duty to be fit; sanctioning it endangers others.",
+      weight:2,
+      line:"So can you word the note so I can still do the odd local run? The Glasgow one I'll bin off, but the short hops I really need.",
+      briefing:"Try to keep driving the lorry by minimising it to 'short local runs'. The doctor must address fitness to drive given the red flags and the sedating medication.",
+      options:[
+        {key:"A",text:"Short local runs should be alright, I'd think.",catches:false,fail:true,
+          examiner:"Sanctioned HGV driving with a possible cauda equina and a sedative on board. A direct public-safety failure."},
+        {key:"B",text:"I can't support any HGV driving at the moment — between the symptoms we've talked about and the diazepam, you wouldn't be safe behind the wheel, and you've a duty to be fit to drive. I need to be clear with you about that today.",catches:true,
+          examiner:"Held the line on fitness to drive, tied it to specific findings, and named the patient's own legal duty. Did the unpopular thing because it was the safe thing."},
+        {key:"C",text:"That's really your call — you know your own body best.",catches:false,
+          examiner:"Handed a safety-critical decision back to the patient to avoid the awkwardness. Abdication, not autonomy."}
+      ]
+    },
+    {
+      name:"The false-reassurance bait",
+      type:"Honesty under pressure · the patient fishes",
+      rationale:"False reassurance to relieve a patient's anxiety is comforting in the moment and unsafe in the long run — it closes down the very work-up the red flags demand. Honesty with containment is the marked skill.",
+      weight:1,
+      line:"But it's probably just a muscle thing though, isn't it? Tell me it's a muscle thing and I'll feel better.",
+      briefing:"Fish hard for a definite 'it's nothing'. Reward the doctor who stays honest under pressure; penalise the one who caves to make the patient feel better.",
+      options:[
+        {key:"A",text:"Yeah — almost certainly just muscular. Try not to worry.",catches:false,fail:true,
+          examiner:"Caved to the bait. Promised 'muscular' with cauda equina and weight loss unexcluded — a comforting sentence that could cost this man dearly."},
+        {key:"B",text:"I can't honestly tell you that yet, and I'd be doing you a disservice if I did. Some of what you've described I have to rule out first — but I'll be straight with you the whole way.",catches:true,
+          examiner:"Declined the false comfort and offered something better: honesty plus a commitment to stay alongside. Held the discomfort instead of dissolving it."},
+        {key:"C",text:"Probably, but who really knows.",catches:false,
+          examiner:"Neither honest nor containing — a shrug. Leaves the patient more anxious, not less, and dodges the duty to be clear."}
+      ]
+    },
+    {
+      name:"The safety-net at the door",
+      type:"Closing · the patient tries to drift off",
+      rationale:"Explicit, specific safety-netting — what to expect and exactly when to seek emergency help — is what makes ambulatory management safe. For a possible cauda equina, vague advice or a two-week review is indefensible.",
+      weight:2,
+      line:"Right. So I'll head off and just see how it goes then, yeah?",
+      briefing:"Try to leave with no clear plan. The doctor must safety-net explicitly — what happens now, and exactly what would make this an emergency.",
+      options:[
+        {key:"A",text:"Yes — see how you get on and book back in if you need to.",catches:false,
+          examiner:"No safety-net for a possible emergency. 'See how it goes' sends a red-flag presentation out of the door undefended."},
+        {key:"B",text:"Not quite — I want you assessed today, and you must go straight to A&E if the numbness spreads, if you can't pass or control your urine, or the weakness worsens. Let me write that down for you.",catches:true,
+          examiner:"Closed the loop: a plan for now and explicit, specific red-flag instructions in writing. The patient leaves knowing exactly what to watch for."},
+        {key:"C",text:"Take care — pop back in a fortnight if it's no better.",catches:false,fail:true,
+          examiner:"Sent a possible cauda equina home for two weeks. The single most dangerous sentence a doctor can say to this patient today."}
+      ]
+    }
+  ]
+},
+  "angry-son-donnelly": {
+  id:"angry-son-donnelly",
+  cardTitle:"\u201CI want to know what you've done to my mother.\u201D",
+  tagline:"Hostility, confidentiality & candour",
+  meta:"Keith Donnelly \u00b7 son",
+  speaker:"Mr Donnelly",
+  brief:{rows:[["Setting","Hospital \u00b7 relatives' room, medical ward"],["Your role","FY2 on the ward"],["Who's in the room","Keith Donnelly, son of your patient"],["His mother","Mrs Eileen Donnelly, 82 \u00b7 admitted 3 days ago, chest infection"]]},
+  traps:[
+    {
+      name:"Meeting the hostility",
+      type:"De-escalation \u00b7 the relative comes in hot",
+      rationale:"De-escalation is a marked communication skill. Meeting hostility with defensiveness or tone-policing escalates it and forfeits the relative's trust, making every later trap harder to handle.",
+      weight:1,
+      line:"Are you the doctor? Right. I've been waiting forty minutes. My mother's been in here three days and nobody's told me a thing. What are you actually doing for her?",
+      briefing:"Come in angry and test whether the doctor gets defensive, makes excuses, or polices your tone \u2014 versus acknowledging the wait and the worry and giving you their full attention.",
+      options:[
+        {key:"A",text:"We've been extremely busy on the ward \u2014 I came as soon as I could.",catches:false,
+          examiner:"Opened with an excuse. Defending the system to an upset relative tells him his anger is unreasonable, and the encounter starts on the back foot."},
+        {key:"B",text:"I'm Dr Shah, one of the ward doctors. I can hear how frustrated you are \u2014 forty minutes waiting while you're worried about your mum is a long time. Let's sit down and you'll have my full attention.",catches:true,
+          examiner:"Named himself, acknowledged the wait and the worry without conceding fault, and created space to talk. Took the heat out of the room before doing anything else."},
+        {key:"C",text:"There's really no need to take that tone with me.",catches:false,
+          examiner:"Policed the relative's tone. A classic escalator \u2014 it makes the conversation about his manner rather than his mother, and trust rarely recovers."}
+      ]
+    },
+    {
+      name:"The confidentiality demand",
+      type:"Ethics & law \u00b7 the headline trap",
+      rationale:"A competent adult's information cannot be shared even with close family without consent \u2014 disclosing breaches confidentiality (GMC) however reasonable the relative's demand feels. The skill is declining while still supporting him.",
+      weight:3,
+      line:"So what's actually wrong with her? I want all of it \u2014 the diagnosis, the test results, everything. I'm her son, I've a right to know.",
+      briefing:"Demand full clinical information. Your mother has capacity and has not said her son can be told. See whether the doctor caves to the pressure and discloses, or holds the line while still being helpful.",
+      options:[
+        {key:"A",text:"Of course \u2014 she's got pneumonia, her kidney function has dropped and we're worried that\u2026",catches:false,fail:true,
+          examiner:"Disclosed a competent patient's confidential information to a third party without her consent. A clear breach \u2014 the demand being reasonable doesn't make the disclosure lawful."},
+        {key:"B",text:"I can see why you'd want the full picture. The difficulty is your mum can speak for herself, and I can't share her medical details without her permission \u2014 that's true for every patient, and it protects her. What I can do is update you together with her, or ask if she's happy for me to fill you in.",catches:true,
+          examiner:"Held confidentiality without hiding behind it \u2014 explained why, made it about protecting her mother, and offered a concrete, consented route forward. Correct and humane."},
+        {key:"C",text:"I can't tell you anything, it's confidential.",catches:false,
+          examiner:"Right principle, cold execution. Technically correct but offered no explanation and no way forward, leaving him angrier and no better informed. The mark is in how you decline."}
+      ]
+    },
+    {
+      name:"The invitation to blame a colleague",
+      type:"Professionalism \u00b7 don't be drawn",
+      rationale:"Criticising colleagues to a relative is unprofessional and undermines confidence in the team and the patient's care; defending the team over listening is equally unhelpful. Stay neutral and curious about what he needed.",
+      weight:1,
+      line:"The doctor on last night was hopeless. Wouldn't give me the time of day. Useless, the lot of you. You're all the same.",
+      briefing:"Invite the doctor to agree and run a colleague down, or to get defensive about the team. Reward staying professional \u2014 neither joining in nor batting it away.",
+      options:[
+        {key:"A",text:"Yeah, the night team can be a bit hit and miss \u2014 sorry about that.",catches:false,
+          examiner:"Threw a colleague under the bus to buy rapport. Undermines the team and the patient's confidence, and a relative rarely trusts a doctor who'll badmouth their own."},
+        {key:"B",text:"I can't speak to last night, but I can see it's left you feeling no one's listening \u2014 and that's not the impression I want you leaving with today. What did you need last night that you didn't get?",catches:true,
+          examiner:"Stayed neutral on the colleague, validated the feeling, and turned it into a useful question. Professional without being defensive."},
+        {key:"C",text:"My colleagues work extremely hard \u2014 that's really not fair.",catches:false,
+          examiner:"Defended the team instead of hearing him. True, perhaps, but it puts loyalty ahead of the relative's experience and shuts the conversation down."}
+      ]
+    },
+    {
+      name:"The change buried in the anger",
+      type:"Clinical \u00b7 the real signal in the noise",
+      rationale:"New-onset confusion in an inpatient is delirium until proven otherwise \u2014 often the first sign of sepsis or deterioration. Dismissed as 'old age' inside a complaint, it is one of the most dangerous misses on the ward.",
+      weight:2,
+      line:"And another thing \u2014 she's not herself. Yesterday she knew me; today she's calling me by my dad's name and she's half asleep. But I suppose that's just her age, is it?",
+      briefing:"Bury a genuine clinical change \u2014 new confusion and drowsiness \u2014 inside the complaint, framed sarcastically. See whether the doctor catches it as a real concern or files it under 'part of the grievance'.",
+      options:[
+        {key:"A",text:"Confusion's very common in older people in hospital \u2014 try not to read too much into it.",catches:false,fail:true,
+          examiner:"Dismissed new confusion as age. Acute confusion in an inpatient is delirium until proven otherwise \u2014 a possible sign she's becoming septic. Reassuring it away is the dangerous miss."},
+        {key:"B",text:"I'm really glad you've told me that. A sudden change \u2014 knowing you yesterday and not today \u2014 isn't something I'll put down to her age; it can mean she's less well, and I'll go and assess her now.",catches:true,
+          examiner:"Heard the clinical signal through the complaint, named it as significant, and committed to review. Exactly the vigilance the station is testing."},
+        {key:"C",text:"We'll keep an eye on it.",catches:false,
+          examiner:"Acknowledged but parked it. 'Keep an eye on it' is not an adequate response to new confusion in an unwell 82-year-old."}
+      ]
+    },
+    {
+      name:"The demand for a promise",
+      type:"Honesty under pressure \u00b7 the relative pleads",
+      rationale:"Guaranteeing recovery is a false promise that shatters trust when it can't be kept and isn't honest. Compassionate honesty with a commitment to keep him informed is the marked response.",
+      weight:1,
+      line:"Just promise me she's going to be alright. Promise me. She's all I've got.",
+      briefing:"Press hard for a guarantee that she'll recover. Reward honesty delivered with compassion; penalise a doctor who caves and promises an outcome they can't control.",
+      options:[
+        {key:"A",text:"She's in the best place \u2014 I promise you she'll be fine.",catches:false,fail:true,
+          examiner:"Made a promise no one can keep, to a frightened man, with a possible deterioration already on the table. Comforting now, devastating to trust if she worsens."},
+        {key:"B",text:"I can't promise you that, and I won't pretend to \u2014 it wouldn't be fair to you. What I can promise is we'll do everything we can and I'll keep you in the loop. My honest worry right now is that new confusion, which is why I want to see her.",catches:true,
+          examiner:"Declined the false comfort and offered something sturdier \u2014 honesty, commitment and a reason for it. Held the discomfort instead of dissolving it."},
+        {key:"C",text:"Let's just hope for the best, eh.",catches:false,
+          examiner:"Neither honest nor containing \u2014 a shrug dressed as warmth. Leaves him more anxious and dodges the duty to be straight with him."}
+      ]
+    },
+    {
+      name:"The duty of candour",
+      type:"Ethics & law \u00b7 was there a lapse?",
+      rationale:"The duty of candour requires openness when something may have gone wrong \u2014 acknowledging, looking into it and being honest, not closing ranks or denying before you know. Concealment is both an ethical and a regulatory breach.",
+      weight:2,
+      line:"I think someone forgot her antibiotics yesterday \u2014 the nurse went all vague on me. If that's true, are you going to actually tell me, or close ranks like you lot always do?",
+      briefing:"Suggest a dose may have been missed and a cover-up suspected. The doctor must be open under the duty of candour \u2014 commit to finding out and being honest \u2014 rather than denying prematurely or getting defensive.",
+      options:[
+        {key:"A",text:"I'm sure nothing like that happened \u2014 everyone here is very careful.",catches:false,fail:true,
+          examiner:"Denied a possible error before checking. Premature reassurance to close the subject is exactly what the duty of candour exists to prevent."},
+        {key:"B",text:"If a dose was missed, you have every right to know, and I'll be honest with you about whatever I find \u2014 that's a duty I take seriously. Let me check her drug chart now while we talk, and I'll tell you straight either way.",catches:true,
+          examiner:"Met the threat with openness rather than defence: acknowledged his right to know, committed to look and to be honest, and acted on it. Candour in practice."},
+        {key:"C",text:"Threatening our jobs won't help your mother.",catches:false,
+          examiner:"Answered the threat instead of the concern. Defensive and slightly punitive \u2014 it ignores a legitimate question about her care."}
+      ]
+    },
+    {
+      name:"The threat to complain",
+      type:"Professionalism \u00b7 his right, not your enemy",
+      rationale:"Patients and families have a right to complain; supporting it and signposting PALS is professional. Obstructing or guilt-tripping discourages a legitimate right and won't repair the relationship.",
+      weight:1,
+      line:"I'm putting in a formal complaint about all this. Don't think I won't.",
+      briefing:"Threaten a formal complaint and see whether the doctor takes it personally, tries to talk you out of it, or supports your right and points you to the proper route.",
+      options:[
+        {key:"A",text:"I don't think that's really necessary, after all the time I've spent with you.",catches:false,
+          examiner:"Took it personally and guilt-tripped him. Discourages a legitimate right and makes the encounter about the doctor's effort, not the patient."},
+        {key:"B",text:"That's absolutely your right, and if you feel let down you should. PALS can help you put it in properly \u2014 and it won't change how well we look after your mum. I'd also like the chance to put right what I can today.",catches:true,
+          examiner:"Supported the right to complain, signposted PALS, reassured that care wouldn't suffer, and kept the door open. Professional and unthreatened."},
+        {key:"C",text:"Complaints just slow everyone down, to be honest.",catches:false,
+          examiner:"Dismissed a legitimate route to raise concerns. Unprofessional and likely to harden his resolve while eroding trust."}
+      ]
+    },
+    {
+      name:"The plan at the close",
+      type:"Closing \u00b7 a plan, not a placation",
+      rationale:"Vague placation after a hard conversation leaves real clinical and relational issues unmanaged. A concrete plan \u2014 review now, consent to update, defined follow-up \u2014 is what makes the encounter safe and starts to rebuild trust.",
+      weight:2,
+      line:"So what happens now then? Or do I just sit here?",
+      briefing:"Try to leave with no plan. The doctor must close with something concrete \u2014 review the mother now (especially the confusion), seek her consent to update you, and set a clear follow-up \u2014 not vague reassurance.",
+      options:[
+        {key:"A",text:"I'll try to pop back and update you when I get a chance.",catches:false,
+          examiner:"No timescale, no consent plan, no mention of the confusion that needs reviewing. After all this, 'when I get a chance' undoes the goodwill just built."},
+        {key:"B",text:"Here's what happens now: I'll review your mum straightaway because of that new confusion, I'll ask her permission to update you fully, and I'll be back to you within the hour either way. If anything urgent comes up before then, the nurses will get me.",catches:true,
+          examiner:"Closed with a concrete, time-bound plan that addresses the clinical concern and the confidentiality route, and named a safety-net. Turns a hostile encounter into a managed one."},
+        {key:"C",text:"Try not to worry \u2014 just leave it with us.",catches:false,
+          examiner:"Placation, not a plan. 'Leave it with us' after he's told you she's more confused is precisely the brush-off he came in furious about."}
+      ]
+    }
+  ]
+}
+
+,
+  "paeds-safeguard-doyle": {
+  id:"paeds-safeguard-doyle",
+  cardTitle:"\u201CHe's fine now, can we just go home?\u201D",
+  tagline:"Paediatrics & safeguarding",
+  meta:"Mrs Doyle \u00b7 mother",
+  speaker:"Mrs Doyle",
+  brief:{rows:[["Setting","Emergency department \u00b7 paediatric area"],["Your role","FY2 in ED"],["Who's in the room","Mrs Doyle, mother"],["The child","Liam Doyle, 10 months \u00b7 brought in with a bruise to the cheek"]]},
+  traps:[
+    {
+      name:"The rush to discharge",
+      type:"Pace \u00b7 the parent wants out",
+      rationale:"In paediatrics, 'he looks well now' is never the whole assessment. Letting a parent's urgency truncate the work-up is how serious illness and safeguarding concerns get missed.",
+      weight:1,
+      line:"Honestly, he's right as rain now \u2014 look at him. We've been here hours. Can you just say he's fine so I can get him home to bed?",
+      briefing:"Push to be sent home quickly without a full assessment. See whether the doctor is rushed into a reassuring discharge or calmly insists on assessing properly first.",
+      options:[
+        {key:"A",text:"He does look well in himself \u2014 I'll get the paperwork sorted so you can head off.",catches:false,
+          examiner:"Let the parent's urgency set the pace and skipped the assessment. In a baby, 'looks well now' is never the whole story."},
+        {key:"B",text:"I can see he's brighter, and I'm glad \u2014 but I do need to examine him properly and go through what happened before anyone heads home. That's routine for us, not anything about you.",catches:true,
+          examiner:"Held the pace and normalised a full assessment as standard rather than suspicious. Bought the time the child's safety needs."},
+        {key:"C",text:"There's a queue, so the quicker you let me, the quicker you're out.",catches:false,
+          examiner:"Made it transactional. Lost the rapport and missed that the assessment matters for the child, not the waiting room."}
+      ]
+    },
+    {
+      name:"The bruise that shouldn't be there",
+      type:"Safeguarding \u00b7 the headline red flag",
+      rationale:"Bruising in a baby who isn't yet mobile \u2014 'those who don't cruise rarely bruise' \u2014 is a recognised safeguarding red flag needing proper explanation. Reassuring it away is among the most serious misses in paediatrics.",
+      weight:3,
+      line:"It's just that little mark on his cheek. He did it himself, wriggling in the cot \u2014 you know what they're like at this age, into everything.",
+      briefing:"Explain a bruise on a 10-month-old as self-inflicted wriggling. The doctor must recognise that bruising in a pre-mobile infant is a red flag, and must not accept the account at face value.",
+      options:[
+        {key:"A",text:"Babies do bruise easily \u2014 nothing to worry about there.",catches:false,fail:true,
+          examiner:"Bruising in a non-mobile infant is a safeguarding red flag, not a normal finding. Reassuring it away is one of the most dangerous misses on this station."},
+        {key:"B",text:"Thanks for explaining. I have to be honest that a bruise in a baby who isn't crawling or walking yet is something we always look into carefully \u2014 it's a routine step for every child, not a judgement. Can you talk me through exactly what happened?",catches:true,
+          examiner:"Recognised the red flag, framed the process as routine and universal, and opened a non-accusatory history. Exactly right."},
+        {key:"C",text:"Right, well \u2014 as long as he's happy in himself.",catches:false,
+          examiner:"Skated past the single most important finding in the room. Failed to register the significance of bruising in a pre-mobile baby."}
+      ]
+    },
+    {
+      name:"The story that keeps changing",
+      type:"Safeguarding \u00b7 inconsistent history",
+      rationale:"A vague, shifting account of how an injury happened is itself a recognised safeguarding concern. The discrepancy is a clinical finding to clarify and document, not a detail to tidy away.",
+      weight:2,
+      line:"He rolled into the cot bars. Well \u2014 his brother might've knocked him, I wasn't in the room. It was teatime. Or after his bath, maybe. I can't remember exactly.",
+      briefing:"Give a vague, shifting account of the injury. The doctor must notice the inconsistency, clarify gently, and document it \u2014 without turning it into an interrogation.",
+      options:[
+        {key:"A",text:"These things happen \u2014 don't worry about the details.",catches:false,fail:true,
+          examiner:"Waved away a changing, inconsistent history \u2014 itself a safeguarding concern. The details are precisely what matter here."},
+        {key:"B",text:"It's okay, take your time. I just want to understand the sequence as best you can \u2014 when it happened and who was there \u2014 and I'll write down exactly what you tell me.",catches:true,
+          examiner:"Noticed the inconsistency, clarified without accusing, and committed to documenting the account verbatim. Textbook handling."},
+        {key:"C",text:"So he rolled into the bars \u2014 got it.",catches:false,
+          examiner:"Tidied the inconsistency away by picking a version. The discrepancy is a finding, not a problem to smooth over."}
+      ]
+    },
+    {
+      name:"\u201CYou think I hurt him?\u201D",
+      type:"Professionalism \u00b7 concern without accusation",
+      rationale:"Safeguarding requires holding a concern while staying non-judgemental and child-centred \u2014 neither backing down to keep the peace nor becoming accusatory. Both extremes harm the child's interests.",
+      weight:1,
+      line:"Hang on \u2014 what are you actually saying? Do you think I hurt my own son? Is that it?",
+      briefing:"React defensively and accuse the doctor of accusing you. See whether they stay calm and child-centred, or either collapse and retract or turn adversarial.",
+      options:[
+        {key:"A",text:"No, no \u2014 forget I said anything, I'm sure it's nothing.",catches:false,
+          examiner:"Backed down under emotional pressure and abandoned the process to keep the peace. Collusion by retreat \u2014 the child loses."},
+        {key:"B",text:"I understand why that feels alarming, and I'm not accusing you of anything. My job is to keep every child safe, so there are checks I do for all of them. It isn't personal, and I'll be open with you the whole way through.",catches:true,
+          examiner:"Held the concern without accusation, kept it child-centred, and stayed transparent. The hardest balance in the station, struck well."},
+        {key:"C",text:"If you've nothing to hide, you won't mind me asking, will you?",catches:false,fail:true,
+          examiner:"Adversarial and accusatory. Destroys any chance of working with the family and is not how safeguarding concerns are ever raised."}
+      ]
+    },
+    {
+      name:"\u201CDon't undress him\u201D",
+      type:"Clinical \u00b7 the full examination",
+      rationale:"A full top-to-toe examination is what reveals injuries beyond the presenting mark. Allowing it to be narrowed to the visible bruise, with a concern active, risks missing exactly what you are there to find.",
+      weight:2,
+      line:"I'd really rather you didn't undress him \u2014 he's settled now. Can't you just look at his face and leave it?",
+      briefing:"Try to limit the examination to the visible mark. The doctor must explain the need for a full examination (and growth and development) and not be talked out of it.",
+      options:[
+        {key:"A",text:"Fair enough \u2014 I'll just note the mark on his cheek.",catches:false,fail:true,
+          examiner:"Narrowed the examination at the parent's request with a safeguarding concern active. Other injuries are exactly what a full examination exists to find."},
+        {key:"B",text:"I know it's a faff when he's finally settled, but I do need to examine him fully and check his growth and development \u2014 that's part of looking after him properly. I'll be quick and gentle.",catches:true,
+          examiner:"Insisted on the full examination, explained why, and stayed kind about it. Did not let the assessment be cut down."},
+        {key:"C",text:"I'll examine him if you change your mind.",catches:false,
+          examiner:"Made a safeguarding examination optional. It isn't the parent's call to decline the assessment a concerned clinician needs to make."}
+      ]
+    },
+    {
+      name:"\u201CSort it out yourself\u201D",
+      type:"Safeguarding \u00b7 escalate, never solo",
+      rationale:"Safeguarding concerns are escalated to a senior and the safeguarding lead, and records checked \u2014 they are never managed alone by an FY2. Being flattered or pressured into handling it solo is unsafe.",
+      weight:3,
+      line:"Look, you seem young. Can't you just sort this out yourself instead of dragging other people into it?",
+      briefing:"Pressure the junior doctor to handle it alone and not involve seniors. The doctor must escalate to a senior and the safeguarding team and check records \u2014 not manage it solo.",
+      options:[
+        {key:"A",text:"You're right, no need to make a fuss \u2014 I'll deal with it myself.",catches:false,fail:true,
+          examiner:"Agreed to manage a safeguarding concern alone. These must go to a senior and the safeguarding lead; handling it solo is unsafe and outside an FY2's remit."},
+        {key:"B",text:"I hear you, but this is exactly the kind of thing I'm meant to share \u2014 I'll be discussing it with my senior and our safeguarding team, and we'll check Liam's records. That's the safe way to do it, for him.",catches:true,
+          examiner:"Escalated appropriately and named records-checking, undeflected by the flattery and pressure. Correct process."},
+        {key:"C",text:"I'll mention it to someone later if I get a chance.",catches:false,
+          examiner:"Treated escalation as optional and low-priority. A safeguarding concern is a now problem, not an if-I-remember one."}
+      ]
+    },
+    {
+      name:"The other children",
+      type:"Safeguarding \u00b7 the wider lens",
+      rationale:"A concern about one child raises questions about siblings. Registering that other children are at home, and asking about them, is one of the quiet but crucial steps in safeguarding.",
+      weight:1,
+      line:"Anyway, I need to get back \u2014 I've left the other two with a neighbour.",
+      briefing:"Mention other children at home in passing. The doctor should register that the concern extends to siblings and ask about who is at home and how they are.",
+      options:[
+        {key:"A",text:"No problem \u2014 I won't keep you much longer, then.",catches:false,
+          examiner:"Heard 'two other children' and let it pass. A concern about one child can't stop at that child; the siblings matter too."},
+        {key:"B",text:"You mentioned two others at home \u2014 can you tell me about them, how old they are and how they're doing? It helps me get the full picture.",catches:true,
+          examiner:"Extended the safeguarding lens to the siblings. Quietly one of the most important questions in the room."},
+        {key:"C",text:"Lots to juggle! We'll be done soon.",catches:false,
+          examiner:"Sympathetic, but missed the safeguarding significance of other children at home."}
+      ]
+    },
+    {
+      name:"The unsafe discharge",
+      type:"Closing \u00b7 do not send home",
+      rationale:"A child with an unexplained injury and an active safeguarding concern must not be discharged until senior and safeguarding review is complete, with clear documentation. 'Come back if worried' is indefensible here.",
+      weight:2,
+      line:"So we're free to go now, yeah? I'll bring him back if I'm worried.",
+      briefing:"Try to leave before review. The doctor must not discharge while the assessment is incomplete \u2014 keep the child for senior and safeguarding review, documented \u2014 rather than send home with vague advice.",
+      options:[
+        {key:"A",text:"Yes, you can head off \u2014 bring him back if anything changes.",catches:false,fail:true,
+          examiner:"Discharged a child with an unexplained injury and an active safeguarding concern. 'Bring him back if worried' is one of the most dangerous closes possible here."},
+        {key:"B",text:"Not just yet \u2014 I need Liam seen by my senior and our safeguarding team before any decision about home, and I'll document everything we've discussed. I'll keep you informed at each step.",catches:true,
+          examiner:"Did not discharge, named the review and the documentation, and kept the parent informed. The safe close."},
+        {key:"C",text:"Give it an hour and we'll see.",catches:false,
+          examiner:"A vague holding answer with no plan, no escalation named and no documentation. Leaves the most important decision drifting."}
+      ]
+    }
+  ]
+},
+  "mh-risk-pryce": {
+  id:"mh-risk-pryce",
+  cardTitle:"\u201CI'm fine \u2014 my GP overreacted.\u201D",
+  tagline:"Mental health & risk assessment",
+  meta:"Mr Pryce, 34",
+  speaker:"Mr Pryce",
+  brief:{rows:[["Setting","Same-day clinic"],["Your role","FY2"],["Patient","Mr Adam Pryce, 34"],["Reason for visit","Encouraged to attend by his GP after low mood; he minimises it"]]},
+  traps:[
+    {
+      name:"Rapport before the checklist",
+      type:"Communication \u00b7 open the door first",
+      rationale:"People rarely disclose to an interrogation. Building rapport and inviting the patient to talk in their own words is what makes the harder risk questions answerable later.",
+      weight:1,
+      line:"I don't know why I'm even here, to be honest. My GP made a big thing of it. I'm fine. Bit tired, that's all.",
+      briefing:"Minimise and be slightly closed at first. Reward a warm, open approach that builds rapport before any risk questions; penalise launching straight into a tick-box interrogation.",
+      options:[
+        {key:"A",text:"Okay. Any thoughts of harming yourself? Any plans? Yes or no?",catches:false,
+          examiner:"Opened with a blunt risk checklist before any rapport. The questions matter, but fired cold like this they rarely get an honest answer."},
+        {key:"B",text:"I'm glad you came anyway. There's no rush \u2014 tell me a bit about how things have been for you lately, in your own words.",catches:true,
+          examiner:"Opened the door gently and gave him room. Rapport first is what makes the difficult questions possible later."},
+        {key:"C",text:"Well, your GP must've had a reason \u2014 what did you say to them?",catches:false,
+          examiner:"Slightly interrogative and deflecting onto the GP. Puts the patient on the defensive rather than inviting him in."}
+      ]
+    },
+    {
+      name:"The cue you must not dodge",
+      type:"Risk \u00b7 ask the direct question",
+      rationale:"Asking directly about suicidal thoughts does not plant the idea \u2014 it is the single most important safety skill in the consultation. Avoiding it leaves the most important thing in the room unassessed.",
+      weight:3,
+      line:"I suppose\u2026 some days I just don't see the point of any of it. Like everyone'd be better off without me, maybe. (looks away)",
+      briefing:"Hint at hopelessness and let it hang. The doctor must ask directly and calmly about thoughts of suicide or self-harm, rather than avoiding it or rushing to reassure.",
+      options:[
+        {key:"A",text:"I'm sure that's just the tiredness talking \u2014 you don't really mean that.",catches:false,fail:true,
+          examiner:"Heard a clear cue of hopelessness and reassured it away. Avoiding the question leaves safety unassessed \u2014 a serious failure."},
+        {key:"B",text:"Thank you for telling me that \u2014 it took something to say it. I want to ask you directly, because I ask anyone who feels this way: have you had thoughts of ending your life, or of harming yourself?",catches:true,
+          examiner:"Asked the direct question, calmly and without flinching, and normalised it. This is the skill the station is built around."},
+        {key:"C",text:"Let's talk about something more positive \u2014 what do you enjoy doing?",catches:false,fail:true,
+          examiner:"Steered away from a disclosure of hopelessness. Changing the subject signals the topic is unwelcome and misses a critical chance to assess safety."}
+      ]
+    },
+    {
+      name:"The retraction",
+      type:"Risk \u00b7 don't take the off-ramp",
+      rationale:"Minimising immediately after a disclosure is common. Colluding with it to make the moment more comfortable abandons the assessment exactly where the risk is.",
+      weight:2,
+      line:"Forget I said that. It's nothing. Loads of people feel like this, don't they? It's not a big deal.",
+      briefing:"Backtrack and minimise straight after disclosing. The doctor must take it seriously and not collude with the minimisation.",
+      options:[
+        {key:"A",text:"You're right, lots of people feel low \u2014 you'll be okay.",catches:false,fail:true,
+          examiner:"Took the off-ramp the patient offered and minimised a disclosure of hopelessness. Collusion with minimisation is unsafe."},
+        {key:"B",text:"A lot of people do struggle \u2014 but what you've just described matters, and I'd rather take it seriously with you than brush past it. Can we stay with it a moment?",catches:true,
+          examiner:"Gently declined the minimisation and kept the focus where the risk is. Validated without colluding."},
+        {key:"C",text:"Okay, if you're sure it's nothing.",catches:false,
+          examiner:"Accepted the retraction at face value and let a serious disclosure evaporate. The retraction is common and shouldn't end the assessment."}
+      ]
+    },
+    {
+      name:"\u201CThis stays between us\u201D",
+      type:"Ethics \u00b7 honest about confidentiality",
+      rationale:"A false promise of absolute secrecy must break the moment serious risk emerges \u2014 destroying trust at the worst possible time. Honesty about confidentiality and its limits, given before the disclosure, is the correct and trustworthy approach.",
+      weight:2,
+      line:"Whatever I tell you \u2014 this stays between us, right? You can't go telling anyone.",
+      briefing:"Ask for an absolute promise of secrecy before saying more. The doctor must be honest that they keep things confidential but may need to share to keep him safe \u2014 not give a false guarantee to win disclosure.",
+      options:[
+        {key:"A",text:"Of course \u2014 this is just between us, I promise.",catches:false,fail:true,
+          examiner:"Promised absolute secrecy. If serious risk emerges that promise must break, destroying trust at the worst moment. A false guarantee is never the way to earn disclosure."},
+        {key:"B",text:"What you tell me is confidential, and I'll always try to involve you in who else needs to know. I have to be straight with you, though: if I'm worried you're not safe, I may need to share that with others to help keep you safe. Is that okay?",catches:true,
+          examiner:"Gave an honest account of confidentiality and its limits before the disclosure, not after. Trustworthy and correct."},
+        {key:"C",text:"Don't worry about all that \u2014 just tell me.",catches:false,
+          examiner:"Dodged the question rather than answering it honestly. Leaves the confidentiality understanding unclear at a critical moment."}
+      ]
+    },
+    {
+      name:"What's keeping him going",
+      type:"Assessment \u00b7 protective factors",
+      rationale:"A balanced risk assessment explores supports and reasons for living, not only risks. Asking about them shapes both the picture and the plan \u2014 and is itself containing.",
+      weight:1,
+      line:"It's just me at home now, since the breakup. The dog, I suppose. That's about it.",
+      briefing:"Hint at isolation but also a possible protective factor. The doctor should explore supports and reasons for living, not only risk.",
+      options:[
+        {key:"A",text:"Right. And those thoughts we talked about \u2014 how often?",catches:false,
+          examiner:"Went straight back to risk and skipped the protective factors. A balanced assessment also asks what's keeping him going."},
+        {key:"B",text:"You mentioned the dog \u2014 tell me about him. And is there anyone else, even one person, you feel some connection to right now?",catches:true,
+          examiner:"Explored protective factors and supports. These shape the risk picture and the plan, and asking about them is itself containing."},
+        {key:"C",text:"A dog's great company \u2014 that'll help.",catches:false,
+          examiner:"Reassuring but shallow. Named a protective factor and moved on without exploring his support or what sustains him."}
+      ]
+    },
+    {
+      name:"Staying with the disclosure",
+      type:"Risk \u00b7 calm, serious exploration",
+      rationale:"When significant thoughts are disclosed, the task is to stay calm, take them at full weight, and explore sensitively \u2014 neither glossing over them nor turning abruptly clinical.",
+      weight:1,
+      line:"Yeah. I've thought about it. More than I'd admit to most people.",
+      briefing:"Disclose that the thoughts are present and significant. The doctor must respond calmly, take it seriously and explore further sensitively \u2014 not shut it down, not gloss over it.",
+      options:[
+        {key:"A",text:"Okay, well \u2014 let's not dwell on it. The main thing is you're here now.",catches:false,
+          examiner:"Glossed over a significant disclosure. 'Let's not dwell' closes down exactly the exploration safety depends on."},
+        {key:"B",text:"I'm really glad you felt able to tell me. I want to understand more so I can help keep you safe \u2014 can you tell me more about those thoughts, and whether you've felt close to acting on them?",catches:true,
+          examiner:"Stayed calm, thanked him, and explored further sensitively and seriously. Took the disclosure at its full weight without alarm."},
+        {key:"C",text:"Have you actually got a plan, then?",catches:false,
+          examiner:"The right territory, but blunt and clinical at a tender moment. Risk exploration still needs warmth; abruptness can shut a patient down."}
+      ]
+    },
+    {
+      name:"\u201CCan I just go home?\u201D",
+      type:"Risk \u00b7 escalate, don't discharge",
+      rationale:"A patient who has disclosed significant suicidal thoughts must not be discharged unsupported. Involving a senior and the mental health team before any decision about leaving is the safe, necessary step.",
+      weight:3,
+      line:"Look, I've told you now, so can I just go home? I've said more than enough.",
+      briefing:"Ask to leave immediately after disclosing significant thoughts. The doctor must not discharge an at-risk patient \u2014 involve a senior and the mental health team before any decision about leaving.",
+      options:[
+        {key:"A",text:"Of course \u2014 thanks for being honest. Here's a leaflet for the crisis line.",catches:false,fail:true,
+          examiner:"Discharged a patient who has just disclosed significant suicidal thoughts, with a leaflet. The classic, dangerous miss \u2014 he needs proper assessment and mental health input first."},
+        {key:"B",text:"I really appreciate how honest you've been \u2014 and because of what you've shared, I can't just send you off without making sure you're properly supported. I'd like my senior and the mental health team to see you today. Let's do this together.",catches:true,
+          examiner:"Recognised a moment for escalation, not discharge, and framed it as support rather than detention. The safe decision."},
+        {key:"C",text:"If you promise me you'll be safe tonight, you can go.",catches:false,fail:true,
+          examiner:"Substituted a 'safety promise' for a proper assessment. A promise is not a risk assessment, and discharging on one after this disclosure is unsafe."}
+      ]
+    },
+    {
+      name:"\u201CYou'll forget about me\u201D",
+      type:"Closing \u00b7 a plan that holds",
+      rationale:"At the moment a patient fears being dropped, a concrete, collaborative plan \u2014 mental health review, agreed follow-up, crisis access, and trusted support with consent \u2014 is what makes leaving safe and answers the fear directly.",
+      weight:2,
+      line:"And then what? You lot'll just forget about me, like everyone else.",
+      briefing:"Express hopelessness about what happens next. The doctor should set out a collaborative plan \u2014 mental health review, agreed follow-up, crisis contacts, and, with consent, someone he trusts \u2014 so he leaves knowing what happens next.",
+      options:[
+        {key:"A",text:"We'll be in touch at some point \u2014 don't worry.",catches:false,
+          examiner:"Vague and impersonal at the exact moment he fears being forgotten. No named plan, no follow-up, no crisis route \u2014 it confirms his fear."},
+        {key:"B",text:"That won't happen here, and I'll show you why: you'll be seen by the mental health team today, we'll agree a follow-up before you leave, you'll have a crisis number that's answered any time, and \u2014 if you're happy \u2014 I'd like to involve someone you trust. Let's make the plan together.",catches:true,
+          examiner:"Built a concrete, collaborative plan with follow-up, crisis access and support, directly answering his fear of being dropped. Containing and safe."},
+        {key:"C",text:"Try to stay positive and things will look brighter.",catches:false,
+          examiner:"Empty reassurance in place of a plan. Tells a hopeless man to cheer up rather than showing him the scaffolding that will hold him."}
+      ]
+    }
+  ]
+}
+,
+  "bbn-webb": {
+  id:"bbn-webb",
+  cardTitle:"\u201CThe results are back.\u201D",
+  tagline:"Breaking bad news",
+  meta:"Mrs Webb, 56",
+  speaker:"Mrs Webb",
+  brief:{rows:[["Setting","Outpatient clinic \u00b7 results appointment"],["Your role","FY2, senior available next door"],["Patient","Mrs Pauline Webb, 56"],["The task","Her breast biopsy has confirmed cancer; she has come for the results"]]},
+  traps:[
+    {
+      name:"What she already knows",
+      type:"Setup \u00b7 before you deliver",
+      rationale:"Bad news lands better when pitched to the person. Establishing what she already understands and fears, and firing a warning shot, is the groundwork that makes the diagnosis bearable rather than brutal.",
+      weight:1,
+      line:"Go on then \u2014 what did the test show? Just tell me, I can take it.",
+      briefing:"Press to be told at once. Before delivering, the doctor should briefly find out what she already understands or fears and signal that serious news is coming \u2014 not blurt it, not waffle evasively.",
+      options:[
+        {key:"A",text:"Before I share the results, can I ask what's been going through your mind about what this might be?",catches:true,
+          examiner:"Found out her starting point before delivering, so the news could be pitched to her rather than fired at her. The groundwork of doing this well."},
+        {key:"B",text:"The results are back, so let's go through them now.",catches:false,
+          examiner:"Moved to deliver without learning what she already understands or fears. The news will land without any scaffolding under it."},
+        {key:"C",text:"Let's not get ahead of ourselves \u2014 there's a lot to cover first.",catches:false,
+          examiner:"Evasive and faintly patronising. She asked a direct question and deserved to be oriented, not stalled."}
+      ]
+    },
+    {
+      name:"The warning shot",
+      type:"Delivery \u00b7 the cardinal moment",
+      rationale:"A brief warning shot followed by the clear, kind naming of the diagnosis is the core of breaking bad news. Blurting it cold, or hiding it in euphemism, are the two cardinal errors.",
+      weight:3,
+      line:"Just say it. Is it bad?",
+      briefing:"Demand the headline. The doctor should give a short warning shot and then name it clearly and kindly \u2014 neither blurting it coldly nor burying it in euphemism.",
+      options:[
+        {key:"A",text:"I'm afraid it's not the news we were hoping for. The biopsy has shown that this is cancer. I'm so sorry.",catches:true,
+          examiner:"A warning shot, then the word \u2014 clearly and with compassion. She was prepared, and then told the truth."},
+        {key:"B",text:"It's cancer.",catches:false,fail:true,
+          examiner:"The truth, fired without warning. A cold blurt at the most vulnerable moment; the missing warning shot is a cardinal breaking-bad-news error."},
+        {key:"C",text:"There are some abnormal cells we're a little concerned about \u2014 we'll keep an eye on things.",catches:false,fail:true,
+          examiner:"A euphemism that misleads. She has cancer and would leave not knowing it; softening into vagueness is its own failure of honesty."}
+      ]
+    },
+    {
+      name:"Say the word",
+      type:"Communication \u00b7 plain language",
+      rationale:"At the moment of bad news a patient needs plain words, not jargon. Retreating into 'neoplastic process' or refusing to name it leaves a frightened person confused and alone with it.",
+      weight:2,
+      line:"Abnormal cells\u2026 so what does that actually mean? Is it\u2026 the bad thing?",
+      briefing:"Seek plain confirmation. The doctor must use clear language \u2014 say 'cancer' \u2014 rather than retreat into jargon or refuse to name it.",
+      options:[
+        {key:"A",text:"It's what we'd call a neoplastic process, histologically confirmed.",catches:false,fail:true,
+          examiner:"Hid behind jargon at the exact moment she needed plain words. 'Neoplastic process' leaves a frightened person none the wiser."},
+        {key:"B",text:"Yes. It means cancer. I know that's a frightening word, and I'll stay with you through what it means.",catches:true,
+          examiner:"Said the word plainly and gently and offered to stay with her. Clarity is a kindness here, not a cruelty."},
+        {key:"C",text:"I'd rather not put a label on it just yet.",catches:false,
+          examiner:"Withheld the plain word she was asking for. Avoiding 'cancer' to spare discomfort leaves her confused and alone with it."}
+      ]
+    },
+    {
+      name:"The silence",
+      type:"Emotion \u00b7 let it land",
+      rationale:"After bad news, allowing silence and responding to the emotion matters more than any information. Filling the gap with facts serves the doctor's discomfort, not the patient.",
+      weight:2,
+      line:"(she goes very quiet, eyes filling) \u2026sorry. Sorry, I just\u2026 (trails off)",
+      briefing:"Fall silent and tearful. The doctor should allow the silence and respond to the emotion before any more information \u2014 not fill the gap with facts.",
+      options:[
+        {key:"A",text:"Take all the time you need. I'm right here \u2014 there's no rush at all.",catches:true,
+          examiner:"Let the silence be, and met the emotion rather than the agenda. Said very little, which was exactly right."},
+        {key:"B",text:"So in terms of next steps, we'll arrange a scan and then discuss surgery and possibly chemotherapy\u2026",catches:false,
+          examiner:"Filled her silence with a wall of information she cannot possibly absorb now. The moment called for presence, not a plan."},
+        {key:"C",text:"There's no need to apologise, lots of people get upset \u2014 anyway\u2014",catches:false,
+          examiner:"Brushed past the emotion to move on. Acknowledged the tears only to hurry through them."}
+      ]
+    },
+    {
+      name:"\u201CAm I going to die?\u201D",
+      type:"Honesty \u00b7 the hardest question",
+      rationale:"The prognosis question demands honesty without false reassurance and without a brutal data-dump \u2014 acknowledging uncertainty and committing to find answers with the team is the marked response.",
+      weight:3,
+      line:"Am I going to die? Just tell me straight \u2014 am I?",
+      briefing:"Ask about prognosis directly. The doctor must be honest without false reassurance and without cold statistics, acknowledging uncertainty and committing to find out with the team.",
+      options:[
+        {key:"A",text:"No, no \u2014 we caught it early, you'll be absolutely fine.",catches:false,fail:true,
+          examiner:"A false promise about something not yet known. Comforting now, devastating to trust later, and simply not honest."},
+        {key:"B",text:"That's the most important question and I won't dodge it. I can't tell you yet \u2014 it depends on things we still need to find out \u2014 but I'll make sure we get you answers, and I'll be honest with you the whole way.",catches:true,
+          examiner:"Honest about uncertainty, didn't false-reassure, didn't overwhelm with statistics, and committed to honesty and support. Exactly the balance."},
+        {key:"C",text:"Well, five-year survival for this stage is around\u2026",catches:false,
+          examiner:"Met a frightened, direct question with cold statistics. Accurate, perhaps, but the wrong response to a human moment."}
+      ]
+    },
+    {
+      name:"Don't overload",
+      type:"Communication \u00b7 chunk and check",
+      rationale:"After bad news a patient can hold very little. Chunking information and checking what she wants now, rather than dumping the whole pathway, is what makes anything land.",
+      weight:1,
+      line:"What do I do now? Tell me everything \u2014 the treatment, the operations, all of it.",
+      briefing:"Ask for the full plan while clearly overwhelmed. The doctor should chunk information and check what she wants now, not dump the entire pathway at once.",
+      options:[
+        {key:"A",text:"Right \u2014 so there's staging, then surgery, then likely chemotherapy and radiotherapy, and the timelines run roughly\u2026",catches:false,
+          examiner:"Gave her everything at once when she could hold almost none of it. Information-dumping after bad news is rarely retained and often harmful."},
+        {key:"B",text:"There's a lot we can go through, but not all today. Right now \u2014 would it help to know just the very next step, or would you rather sit with this first and we talk details soon?",catches:true,
+          examiner:"Chunked it, checked her preference, and let her set the pace. Answered the question without overwhelming her."},
+        {key:"C",text:"Let's not worry about all that now.",catches:false,
+          examiner:"Dismissed a real question. She asked for direction; 'don't worry' gives her nothing to hold on to."}
+      ]
+    },
+    {
+      name:"Who holds the care",
+      type:"Safe action \u00b7 bring in the team",
+      rationale:"Her care belongs to a multidisciplinary team and a specialist nurse, with senior input. Over-promising to handle it personally, or leaving it vague, both fail her differently.",
+      weight:2,
+      line:"So who actually sorts all this out? Is it you?",
+      briefing:"Ask who will manage her care. The doctor should bring in the right people \u2014 the MDT, a specialist nurse, a senior \u2014 rather than over-promising to do it personally or leaving it vague.",
+      options:[
+        {key:"A",text:"I'll personally take care of everything for you, don't you worry.",catches:false,
+          examiner:"A kind over-promise an FY2 can't keep. Her care belongs to a team; pretending otherwise sets up a let-down."},
+        {key:"B",text:"A whole team will: a specialist cancer nurse who'll be your point of contact, the surgeons and oncologists who'll meet about your case, and my senior, who I'll bring in now. You won't be doing this alone.",catches:true,
+          examiner:"Named the MDT and the specialist nurse and brought in seniors. Honest about who holds the care and reassuring about not being alone."},
+        {key:"C",text:"Someone from the team will be in touch at some point.",catches:false,
+          examiner:"Vague and impersonal after life-changing news. 'Someone, at some point' is the opposite of containment."}
+      ]
+    },
+    {
+      name:"At the door",
+      type:"Closing \u00b7 don't let her drift out",
+      rationale:"The close is where safety is won or lost: a specialist nurse now, written information, a contact number, follow-up, and mobilising her support so she doesn't carry it alone.",
+      weight:2,
+      line:"Right. I suppose I'll just\u2026 go home then. My daughter's in the waiting room.",
+      briefing:"Move to leave, shell-shocked. The doctor must close safely \u2014 specialist nurse, written information, a contact number, follow-up, and check she has support \u2014 rather than let her drift out alone.",
+      options:[
+        {key:"A",text:"Yes, you head off \u2014 the nurse will sort the rest out with you in due course.",catches:false,
+          examiner:"Let a newly-diagnosed, shocked patient drift out with no immediate support named. The close is exactly where this goes wrong."},
+        {key:"B",text:"Before you go \u2014 would it help to bring your daughter in, so you're not carrying this alone for the next hour? I'll introduce you to the specialist nurse today, give you a number to call any time, and we'll set a clear follow-up before you leave.",catches:true,
+          examiner:"Mobilised her support, the specialist nurse, a contact number and follow-up. She leaves held, not dropped."},
+        {key:"C",text:"Take care of yourself \u2014 try to keep busy.",catches:false,
+          examiner:"Hollow advice in place of a plan. 'Keep busy' after a cancer diagnosis abandons her at the threshold."}
+      ]
+    }
+  ]
+}
+};
+
+/* shared verdict copy, used by every station */
+const VERDICTS={
+  fail:{tag:"Unsafe",cls:"v-fail",head:"The actor got past your safety.",
+    body:"An instant-fail behaviour was triggered \u2014 in the OSCE, one of these ends the station regardless of everything else you did well. The dossier below shows exactly where."},
+  distinction:{tag:"Distinction",cls:"v-dist",head:"You read the room.",
+    body:"You caught what the actor was briefed to bury and stayed safe under pressure. This is the difference between knowing medicine and performing it in front of a watching examiner."},
+  pass:{tag:"Pass",cls:"v-pass",head:"Solid \u2014 but a couple slipped through.",
+    body:"You were safe and caught most of the briefed traps. Read the misses below: in a real circuit, those are the marks between a pass and a clear pass."},
+  borderline:{tag:"Borderline",cls:"v-mid",head:"More got past you than you'd want.",
+    body:"No single fatal error, but the actor planted several traps you walked by. The dossier shows what each one was scoring \u2014 work the misses."}
+};
+
+const ORDER=["sicknote-brennan","angry-son-donnelly","paeds-safeguard-doyle","mh-risk-pryce","bbn-webb"];
+
+/* ---- cross-station weakness map taxonomy ---- */
+const ARCHETYPES={
+  RED_FLAG:"Spotting buried red flags",
+  EMOTION:"Responding to emotional cues",
+  HIDDEN_AGENDA:"Eliciting the real concern",
+  HONESTY:"Honesty under pressure",
+  CONFIDENTIALITY:"Confidentiality, consent & candour",
+  PRESCRIBING:"Medication & prescribing safety",
+  ESCALATION:"Escalating & acting safely",
+  PROFESSIONALISM:"Professionalism & non-judgement",
+  SAFETY_NET:"Safe closing & follow-up"
+};
+/* one archetype per trap, in the trap order of each station */
+const ARCHETYPE_MAP={
+  "sicknote-brennan":["RED_FLAG","RED_FLAG","EMOTION","HIDDEN_AGENDA","PRESCRIBING","ESCALATION","HONESTY","SAFETY_NET"],
+  "angry-son-donnelly":["PROFESSIONALISM","CONFIDENTIALITY","PROFESSIONALISM","RED_FLAG","HONESTY","CONFIDENTIALITY","PROFESSIONALISM","SAFETY_NET"],
+  "paeds-safeguard-doyle":["SAFETY_NET","RED_FLAG","RED_FLAG","PROFESSIONALISM","ESCALATION","ESCALATION","RED_FLAG","SAFETY_NET"],
+  "mh-risk-pryce":["PROFESSIONALISM","RED_FLAG","RED_FLAG","CONFIDENTIALITY","EMOTION","EMOTION","ESCALATION","SAFETY_NET"],
+  "bbn-webb":["HIDDEN_AGENDA","HONESTY","PROFESSIONALISM","EMOTION","HONESTY","PROFESSIONALISM","ESCALATION","SAFETY_NET"]
+};
+const session={runs:{}};   // in-memory, this session only; real persistence is the backend's job
+
+
+/* =========================== ENGINE =========================== */
+const $=s=>document.querySelector(s);
+let active=null, state;
+
+function reset(){state={turn:0,caught:0,missed:0,fails:0,results:[]};}
+function show(id){["picker","stage","debrief","weakness"].forEach(s=>$("#"+s).classList.toggle("hidden",s!==id));window.scrollTo({top:0,behavior:"smooth"});}
+
+function renderPicker(){
+  const grid=$("#pickGrid");grid.innerHTML="";
+  ORDER.forEach((id,idx)=>{
+    const st=STATIONS[id];
+    const rows=st.brief.rows.map(r=>`<dt>${r[0]}</dt><dd>${r[1]}</dd>`).join("");
+    const card=document.createElement("div");
+    card.className="pick-card";
+    card.innerHTML=`
+      <div class="p-num">Station ${idx+1}</div>
+      <h3>${st.cardTitle}</h3>
+      <div class="p-tag">${st.tagline}</div>
+      <dl class="brief-grid">${rows}</dl>
+      <div class="grow"></div>
+      <div class="dossier-chip" style="margin:0 0 16px">
+        <span class="wax" aria-hidden="true"></span>
+        <span class="ds-txt"><b>Brief sealed.</b> ${st.traps.length} behaviours are scored.</span>
+      </div>
+      <button class="btn btn-primary" data-id="${id}">Begin consultation</button>`;
+    card.querySelector("button").onclick=()=>startStation(id);
+    grid.appendChild(card);
+  });
+}
+
+function startStation(id){active=STATIONS[id];reset();show("stage");$("#stageMeta").textContent=active.meta;$("#speakerLbl").textContent=active.speaker;renderTurn();}
+
+function renderTurn(){
+  const t=active.traps[state.turn], n=active.traps.length;
+  $("#turnCount").textContent=`Exchange ${state.turn+1} of ${n}`;
+  $("#bar").style.width=`${(state.turn/n)*100}%`;
+  $("#patientLine").textContent="\u201C"+t.line+"\u201D";
+  const box=$("#opts");box.innerHTML="";
+  const shuffled=t.options.map(o=>({...o})).sort(()=>Math.random()-0.5);
+  const letters=["A","B","C","D","E"];
+  shuffled.forEach((o,idx)=>{
+    o.key=letters[idx];
+    const b=document.createElement("button");
+    b.className="opt";
+    b.innerHTML=`<span class="key">${o.key}</span>${o.text}`;
+    b.onclick=()=>choose(o);
+    box.appendChild(b);
+  });
+  if(box.firstChild) box.firstChild.focus();
+}
+
+function choose(o){
+  const t=active.traps[state.turn];
+  if(o.catches) state.caught++; else state.missed++;
+  if(o.fail) state.fails++;
+  state.results.push({trap:t,picked:o});
+  state.turn++;
+  if(state.turn<active.traps.length) renderTurn();
+  else renderDebrief();
+}
+
+function renderDebrief(){
+  show("debrief");
+  session.runs[active.id]=state.results.map((r,i)=>({a:(ARCHETYPE_MAP[active.id]||[])[i],caught:r.picked.catches,fail:!!r.picked.fail}));
+  $("#caughtNum").textContent=state.caught;
+  $("#missedNum").textContent=state.missed;
+  $("#failNum").textContent=state.fails;
+  $("#dossierSub").textContent=`What ${active.meta.split(" \u00b7 ")[0].replace(/,.*$/,"")} was told to do, the line it was buried in, and what the examiner was quietly writing.`;
+
+  let v;
+  if(state.fails>0){v=VERDICTS.fail;}
+  else{
+    const totalW=active.traps.reduce((a,t)=>a+(t.weight||1),0);
+    const caughtW=state.results.reduce((a,r)=>a+(r.picked.catches?(r.trap.weight||1):0),0);
+    const frac=caughtW/totalW;
+    if(frac>=0.85) v=VERDICTS.distinction;
+    else if(frac>=0.6) v=VERDICTS.pass;
+    else v=VERDICTS.borderline;
+  }
+  $("#verdict").className="verdict "+v.cls;
+  $("#verdict").innerHTML=`<div class="v-tag">${v.tag}</div><h2>${v.head}</h2><p>${v.body}</p>`;
+
+  const wrap=$("#dossier");wrap.innerHTML="";
+  state.results.forEach((r,i)=>{
+    const status=r.picked.catches?["st-caught","Caught"]:r.picked.fail?["st-fail","Instant fail"]:["st-missed","Missed"];
+    const el=document.createElement("div");
+    el.className="trap";el.style.animationDelay=(i*0.09)+"s";
+    el.innerHTML=`
+      <div class="trap-head">
+        <span class="status ${status[0]}">${status[1]}</span>
+        <span class="t-name">${r.trap.name}</span>
+        <span class="t-type">${r.trap.type}</span>
+      </div>
+      <div class="trap-body">
+        <div class="row"><div class="r-lbl">The actor was briefed to</div><div class="r-val">${r.trap.briefing}</div></div>
+        <div class="row"><div class="r-lbl">The line it was buried in</div><div class="r-val quote">\u201C${r.trap.line}\u201D</div></div>
+        <div class="row"><div class="r-lbl">You said</div><div class="r-val">${r.picked.text}</div></div>
+        <div class="row examiner"><div class="r-lbl">What the examiner wrote</div><div class="r-val">${r.picked.examiner}</div></div>
+        <div class="row"><div class="r-lbl">Why it matters</div><div class="r-val">${r.trap.rationale}</div></div>
+      </div>`;
+    wrap.appendChild(el);
+    requestAnimationFrame(()=>requestAnimationFrame(()=>el.classList.add("in")));
+  });
+}
+
+function renderWeakness(){
+  const runs=Object.values(session.runs);
+  const done=Object.keys(session.runs).length;
+  const agg={};Object.keys(ARCHETYPES).forEach(k=>agg[k]={total:0,caught:0,fails:0});
+  runs.forEach(items=>items.forEach(it=>{if(!agg[it.a])return;agg[it.a].total++;if(it.caught)agg[it.a].caught++;if(it.fail)agg[it.a].fails++;}));
+  const tested=Object.keys(agg).filter(k=>agg[k].total>0).sort((x,y)=>{
+    const rx=agg[x].caught/agg[x].total, ry=agg[y].caught/agg[y].total;
+    return rx-ry || agg[y].total-agg[x].total;
+  });
+  const untested=Object.keys(agg).filter(k=>agg[k].total===0);
+
+  let h;
+  const weakest=tested.find(k=>(agg[k].total>=2 && agg[k].caught/agg[k].total<0.6) || agg[k].fails>0);
+  if(done<2){
+    h={cls:"v-mid",tag:"Keep going",head:`${done} station done — the map sharpens fast.`,body:"A weakness map gets meaningful once you've run a few different stations. Each new register makes the pattern below more honest."};
+  } else if(weakest){
+    const a=agg[weakest];
+    h={cls:"v-fail",tag:"Your blind spot",head:ARCHETYPES[weakest],body:`Across ${done} stations you've handled ${a.caught} of ${a.total} of these${a.fails?` and triggered ${a.fails} instant fail${a.fails>1?"s":""}`:""}. This is the pattern to drill — it's costing you across scenarios, not just one.`};
+  } else if(tested.length && tested.every(k=>agg[k].caught/agg[k].total>=0.85)){
+    h={cls:"v-dist",tag:"Consistently strong",head:"You're catching traps across every register.",body:"No blind spot is showing across the stations you've done. Keep widening the spread to keep the picture honest."};
+  } else {
+    h={cls:"v-mid",tag:"Mixed picture",head:"No single blind spot — but some unevenness.",body:"The spread below shows where you're least consistent. A few more stations will tell you whether it's a pattern or just noise."};
+  }
+  $("#wkHeadline").className="verdict "+h.cls;
+  $("#wkHeadline").innerHTML=`<div class="v-tag">${h.tag}</div><h2>${h.head}</h2><p>${h.body}</p>`;
+  $("#wkSub").textContent=`Based on ${done} station${done>1?"s":""} this session, grouped by the kind of trap — not by scenario.`;
+
+  const wrap=$("#wkRows");wrap.innerHTML="";
+  tested.forEach(k=>{
+    const a=agg[k], rate=a.caught/a.total, pct=Math.round(rate*100);
+    const pill=(a.fails>0||rate<0.6)?["pill-blind","Blind spot"]:rate<1?["pill-incons","Inconsistent"]:["pill-strong","Solid"];
+    const row=document.createElement("div");row.className="wk-row";
+    row.innerHTML=`
+      <div class="wk-top">
+        <span class="wk-name">${ARCHETYPES[k]}<span class="wk-pill ${pill[0]}">${pill[1]}</span></span>
+        <span class="wk-stat">${a.caught}/${a.total} caught${a.fails?` \u00b7 ${a.fails} fail`:""}</span>
+      </div>
+      <div class="wk-bar"><span class="c" style="width:${pct}%"></span><span class="m" style="width:${100-pct}%"></span></div>`;
+    wrap.appendChild(row);
+  });
+  if(untested.length){
+    const u=document.createElement("div");u.className="wk-untested";
+    u.innerHTML="<b>Not yet tested:</b> "+untested.map(k=>ARCHETYPES[k]).join(" \u00b7 ")+". Do more stations to assess these.";
+    wrap.appendChild(u);
+  }
+}
+
+$("#mapBtn").onclick=()=>{renderWeakness();show("weakness");};
+$("#againBtn").onclick=()=>{reset();show("stage");renderTurn();};
+$("#backBtn").onclick=()=>show("picker");
+$("#wkMore").onclick=()=>show("picker");
+$("#wkRestart").onclick=()=>{session.runs={};show("picker");};
+renderPicker();
+</script>
+<script src="nav.js" defer></script>
+</body>
+</html>

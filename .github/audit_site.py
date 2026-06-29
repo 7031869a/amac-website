@@ -73,7 +73,7 @@ def metric_for(label):
     L = label.lower()
     if "instant fail atlas" in L: return "Instant Fail Atlas"
     if "examiner brain" in L: return "Examiner Brain"
-    if "actor trap"    in L: return "Actor Traps"
+    if "actor trap"    in L and "simulator" not in L: return "Actor Traps"
     if "plab"          in L: return "PLAB 1"
     if "osce"          in L and "circuit" not in L and "trainer" not in L: return "OSCE Stations"
     if "flashcard"     in L: return "Flashcards"
