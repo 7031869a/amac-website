@@ -148,7 +148,7 @@ footer a{color:var(--gold-soft);text-decoration:none;}
 
 <main class="main">
   <div class="section-eyebrow">Blueprint-Weighted Papers</div>
-  <h2 class="section-title">The Five Mocks</h2>
+  <h2 class="section-title">The Six Mocks</h2>
   <p class="section-intro">The first four papers each sample the twenty domains in the same proportions as the real exam — the clinical workhorses weighted heavily, the cross-cutting subjects lighter. The fifth is a high-yield paper built from the remaining questions, so it leans towards the most heavily tested domains — Neurology, Gastroenterology, and Endocrinology. No question repeats across any of the five papers. Your progress on each is saved automatically on this device.</p>
 
   <div class="mocks-grid" id="mocksGrid"><!-- cards injected by JS --></div>
@@ -207,7 +207,7 @@ footer a{color:var(--gold-soft);text-decoration:none;}
     }catch(e){ return null; }
   }
 
-  function paperOrder(){ return ["mock-1","mock-2","mock-3","mock-4","mock-5"]; }
+  function paperOrder(){ return ["mock-1","mock-2","mock-3","mock-4","mock-5","mock-6"]; }
 
   function domainsFor(ids){
     var byId = {};
@@ -323,7 +323,7 @@ footer a{color:var(--gold-soft);text-decoration:none;}
     var btn = document.getElementById("resetProgress");
     if(!btn){ return; }
     btn.addEventListener("click", function(){
-      if(confirm("This clears your saved progress and scores for all five mocks on this device. Continue?")){
+      if(confirm("This clears your saved progress and scores for all six mocks on this device. Continue?")){
         paperOrder().forEach(function(pid){
           try{ localStorage.removeItem(STORE_PREFIX+pid); }catch(e){}
         });
