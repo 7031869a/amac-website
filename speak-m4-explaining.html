@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Explaining in Plain English · Speak Like a Doctor · AMaC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0C1526;--card:#16233F;--gold:#C9A227;--gold-text:#D7B43A;--neutral-border:#28385A;--ink:#E7ECF6;--body:#AEB9CE;--muted:#7C879E;--slate:#1E2C49;--nav:#16243F;}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0;background:var(--bg);color:var(--body);font-family:'Outfit',system-ui,sans-serif;font-weight:300;line-height:1.65;-webkit-font-smoothing:antialiased;padding:0 0 100px;}
+.wrap{max-width:760px;margin:0 auto;padding:0 20px;}
+h1,h2,h3{font-family:'Fraunces',Georgia,serif;color:var(--ink);font-weight:500;line-height:1.2;}
+/* preview nav (replace with nav.js at repo integration) */
+.amac-nav{display:flex;align-items:center;gap:14px;background:var(--nav);border-bottom:1px solid #233655;padding:13px 22px;margin-bottom:6px;flex-wrap:wrap;}
+.amac-nav a{color:var(--body);text-decoration:none;font-size:.84rem;}
+.amac-nav a:hover{color:var(--ink);}
+.nav-exit{font-size:.82rem;}
+.nav-brand{font-family:'Fraunces',serif;color:var(--ink);font-size:1.05rem;letter-spacing:.02em;}
+.nav-badge{background:var(--gold);color:#0B1220;font-size:.72rem;font-weight:600;letter-spacing:.06em;padding:3px 11px;border-radius:999px;text-transform:uppercase;}
+.nav-tool{color:var(--gold-text);font-size:.84rem;font-weight:500;margin-left:auto;}
+.crumb{margin:26px 0 0;font-size:.85rem;}
+.crumb a{color:var(--gold-text);text-decoration:none;}
+.crumb a:hover{text-decoration:underline;}
+.kicker{font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-text);font-weight:500;margin:0 0 16px;}
+.hero{padding:40px 0 30px;border-bottom:1px solid var(--neutral-border);}
+.hero h1{font-size:clamp(2rem,6vw,3rem);margin:0 0 14px;}
+.hero .lead{font-size:1.1rem;color:var(--ink);max-width:60ch;margin:0 0 22px;font-weight:300;}
+.frame{font-size:.92rem;color:var(--body);border-left:3px solid var(--gold);padding:4px 0 4px 16px;max-width:62ch;}
+.frame b{color:var(--gold-text);font-weight:500;}
+.moment-tag{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);font-weight:500;margin:34px 0 8px;}
+h2{font-size:1.7rem;margin:0 0 14px;}
+.intro{font-size:1rem;max-width:64ch;}
+.card{background:var(--card);border-radius:14px;border-top:3px solid var(--gold);border-left:3px solid var(--gold);border-right:1px solid var(--neutral-border);border-bottom:1px solid var(--neutral-border);padding:26px 26px 24px;margin:22px 0;}
+.pnum{font-family:'Fraunces',serif;font-size:.82rem;color:var(--gold-text);letter-spacing:.04em;}
+.card h3{font-size:1.22rem;margin:6px 0 18px;}
+.xform{margin:4px 0 20px;}
+.line{border-radius:10px;padding:13px 16px;font-size:1rem;line-height:1.5;}
+.line .lab{display:block;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;margin-bottom:6px;font-weight:500;font-family:'Outfit',sans-serif;}
+.instinct{background:var(--slate);color:var(--muted);}
+.instinct .lab{color:#5E6B85;}
+.instinct .said{color:#9AA6BE;font-style:italic;}
+.becomes{display:flex;align-items:center;gap:10px;margin:9px 2px;color:var(--muted);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;}
+.becomes::before,.becomes::after{content:"";height:1px;flex:1;background:var(--neutral-border);}
+.polished{background:rgba(201,162,39,.10);border:1px solid rgba(201,162,39,.32);}
+.polished .lab{color:var(--gold-text);}
+.polished .said{color:var(--ink);font-weight:400;}
+.why{font-size:.95rem;color:var(--body);}
+.why b{color:var(--gold-text);font-weight:500;}
+.drill{margin-top:18px;border-top:1px solid var(--neutral-border);padding-top:16px;}
+.drill .dlab{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:500;margin-bottom:8px;}
+.drill .prompt{font-size:.96rem;color:var(--ink);margin-bottom:14px;}
+.reveal-btn{background:transparent;color:var(--gold-text);border:1px solid var(--gold);border-radius:8px;padding:9px 16px;font-family:'Outfit',sans-serif;font-size:.86rem;font-weight:500;cursor:pointer;transition:background .15s ease,color .15s ease;}
+.reveal-btn:hover,.reveal-btn:focus-visible{background:var(--gold);color:#0B1220;}
+.reveal-btn:focus-visible{outline:2px solid var(--ink);outline-offset:2px;}
+.model{max-height:0;overflow:hidden;opacity:0;transition:max-height .35s ease,opacity .35s ease,margin .35s ease;}
+.model.open{max-height:420px;opacity:1;margin-top:14px;}
+.model .said{background:rgba(201,162,39,.10);border:1px solid rgba(201,162,39,.32);border-radius:10px;padding:13px 16px;color:var(--ink);}
+.model .micro{font-size:.86rem;color:var(--muted);margin-top:9px;}
+.note{background:rgba(255,255,255,.02);border:1px solid var(--neutral-border);border-left:3px solid var(--gold);border-radius:12px;padding:22px 24px;margin:26px 0;}
+.note h3{font-size:1.12rem;margin:0 0 14px;}
+.note ul{margin:0;padding-left:0;list-style:none;}
+.note li{margin:0 0 12px;font-size:.96rem;padding-left:20px;position:relative;}
+.note li::before{content:"\2014";position:absolute;left:0;color:var(--gold-text);}
+.note li b{color:var(--ink);font-weight:500;}
+.bleed{border-left-color:#B7472A;}
+.bleed li::before{content:"\00d7";color:#D9785F;font-weight:600;}
+/* moment-to-moment flow */
+.moment-flow{display:flex;align-items:center;gap:12px;margin:46px 0 0;padding-top:24px;border-top:1px solid var(--neutral-border);font-size:.9rem;}
+.moment-flow a{text-decoration:none;color:var(--gold-text);padding:10px 14px;border:1px solid var(--neutral-border);border-radius:9px;transition:border-color .15s ease,color .15s ease;}
+.moment-flow a:hover{border-color:var(--gold);color:var(--ink);}
+.flow-prev{margin-right:auto;}
+.flow-next{margin-left:auto;}
+.flow-hub{color:var(--muted)!important;}
+/* hub grid */
+.moment-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:34px 0 0;}
+.moment-card{display:block;text-decoration:none;background:var(--card);border-radius:14px;border-top:3px solid var(--gold);border-left:3px solid var(--gold);border-right:1px solid var(--neutral-border);border-bottom:1px solid var(--neutral-border);padding:22px 22px 20px;transition:transform .15s ease;}
+.moment-card:hover{transform:translateY(-3px);}
+.mc-num{font-family:'Fraunces',serif;font-size:1.5rem;color:var(--gold-text);line-height:1;}
+.moment-card h3{font-size:1.12rem;margin:10px 0 8px;}
+.moment-card p{font-size:.9rem;color:var(--body);margin:0 0 14px;}
+.mc-go{font-size:.82rem;color:var(--gold-text);font-weight:500;}
+footer{margin-top:54px;border-top:1px solid var(--neutral-border);padding-top:22px;font-size:.84rem;color:var(--muted);}
+footer b{color:var(--body);font-weight:500;}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important;}}
+@media(max-width:600px){.moment-grid{grid-template-columns:1fr;}.card{padding:22px 18px;}.nav-tool{margin-left:0;width:100%;}}
+</style>
+</head>
+<body>
+<nav data-door="plab2"><div class="nav-inner"><a href="index.html" class="brand">AMaC</a>
+  <ul class="nav-links"><li><a href="books.html">The Master Series</a></li><li><a href="tools.html">Study Tools</a></li><li><a href="contact.html" class="nav-cta">Get Started</a></li></ul>
+</div></nav>
+<div class="wrap">
+<div class="crumb"><a href="speak-like-a-doctor.html">← All eight moments</a></div>
+<p class="moment-tag">Moment 4 of 8</p>
+<h2>Explaining in Plain English</h2>
+  <p class="intro">You can hold the whole diagnosis in your head and still lose the explanation mark, because the patient left the room nodding politely and understanding nothing. The skill here is translation: plain words first, small chunks, honest checks that the message actually landed.</p>
+
+  <div class="card">
+    <span class="pnum">Pattern 01</span>
+    <h3>Plain word first, medical name second</h3>
+    <div class="xform">
+      <div class="line instinct"><span class="lab">What many candidates say</span><span class="said">"You have atrial fibrillation — an arrhythmia with an irregular ventricular response."</span></div>
+      <div class="becomes">becomes</div>
+      <div class="line polished"><span class="lab">What scores in the room</span><span class="said">"Your heart's beating in an irregular, uneven way. The medical name for it is atrial fibrillation, but in plain terms the top chambers aren't keeping a steady rhythm."</span></div>
+    </div>
+    <p class="why">Leading with the plain explanation — and offering the medical name as a label, not the explanation — is what earns the mark. Jargon-first leaves the patient nodding without a clue what you've said.</p>
+    <div class="drill">
+      <p class="dlab">Your turn</p>
+      <p class="prompt">Explain "you've had a small heart attack" without the words "myocardial infarction" or "ischaemia."</p>
+      <button class="reveal-btn" aria-expanded="false">Reveal a model line</button>
+      <div class="model"><div class="said">"One of the blood vessels supplying your heart got blocked, and that starved a small part of the heart muscle of blood — that's what we call a heart attack."</div><p class="micro">Every word is one a non-medical person uses. The mechanism is there, the jargon isn't.</p></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <span class="pnum">Pattern 02</span>
+    <h3>Chunk it, and check between the chunks</h3>
+    <div class="xform">
+      <div class="line instinct"><span class="lab">What many candidates say</span><span class="said">(delivers one unbroken 60-second monologue)</span></div>
+      <div class="becomes">becomes</div>
+      <div class="line polished"><span class="lab">What scores in the room</span><span class="said">"So that's what the condition is — does that make sense so far, before I move on to what we can do about it?"</span></div>
+    </div>
+    <p class="why">Chunking the information and checking understanding <em>between</em> the chunks — not only at the end — is a named, marked behaviour. A wall of information the patient can't absorb scores nothing, however accurate it is.</p>
+    <div class="drill">
+      <p class="dlab">Your turn</p>
+      <p class="prompt">You've explained the diagnosis and you're about to explain the treatment. Insert the check.</p>
+      <button class="reveal-btn" aria-expanded="false">Reveal a model line</button>
+      <div class="model"><div class="said">"I've thrown quite a bit at you there — shall I pause for a second? Is there anything in what I've said so far you'd like me to go over again?"</div><p class="micro">You name the overload, then give them a genuine opening to ask. That's the check.</p></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <span class="pnum">Pattern 03</span>
+    <h3>Reach for an everyday picture</h3>
+    <div class="xform">
+      <div class="line instinct"><span class="lab">What many candidates say</span><span class="said">"The stent maintains luminal patency in the stenosed coronary artery."</span></div>
+      <div class="becomes">becomes</div>
+      <div class="line polished"><span class="lab">What scores in the room</span><span class="said">"Picture the artery like a hose that's gone narrow — the stent is a tiny scaffold that holds it open so the blood can flow through properly again."</span></div>
+    </div>
+    <p class="why">A simple, accurate analogy makes an abstract idea land and shows real communication skill. One caution worth saying out loud: the picture has to be <em>accurate</em>, not just neat — a memorable-but-wrong analogy does more harm than none.</p>
+    <div class="drill">
+      <p class="dlab">Your turn</p>
+      <p class="prompt">Explain what a "flare-up" of a long-term condition is, using an everyday image.</p>
+      <button class="reveal-btn" aria-expanded="false">Reveal a model line</button>
+      <div class="model"><div class="said">"Think of it like a fire that's usually kept low and under control — a flare-up is when something stokes it back up for a while. Our job is to settle it down and stop it catching again."</div><p class="micro">Accurate to the idea of background control plus intermittent worsening — and instantly graspable.</p></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <span class="pnum">Pattern 04</span>
+    <h3>Check understanding without making them feel tested</h3>
+    <div class="xform">
+      <div class="line instinct"><span class="lab">What many candidates say</span><span class="said">"Do you understand?"</span></div>
+      <div class="becomes">becomes</div>
+      <div class="line polished"><span class="lab">What scores in the room</span><span class="said">"Just so I know I've explained it clearly — what would you tell your partner at home about what's going on?"</span></div>
+    </div>
+    <p class="why">"Do you understand?" nearly always earns a polite "yes" that means nothing. Asking them to put it in their own words — framed as checking <em>your</em> explanation, not testing them — is the real understanding-check, and it's the version that's marked.</p>
+    <div class="drill">
+      <p class="dlab">Your turn</p>
+      <p class="prompt">Confirm the patient has really understood their new diagnosis — gently, without it feeling like an exam.</p>
+      <button class="reveal-btn" aria-expanded="false">Reveal a model line</button>
+      <div class="model"><div class="said">"I always worry I've not been clear enough — would you mind telling me back, in your own words, what you've taken from this? Then I can fill in anything I've missed."</div><p class="micro">The "fault" sits with your explanation, not their understanding. That's what makes it safe to answer honestly.</p></div>
+    </div>
+  </div>
+
+  <div class="note">
+    <h3>Register notes — plain-English voice</h3>
+    <ul>
+      <li><b>Plain word first, medical name second</b> — "an irregular heartbeat; we call it AF," never the other way round.</li>
+      <li><b>"Does that make sense so far?"</b> belongs <em>between</em> chunks, not saved for the end.</li>
+      <li><b>Analogies must be accurate as well as simple</b> — a neat-but-wrong picture is worse than none.</li>
+      <li><b>"What would you tell someone at home…?"</b> checks understanding without making the patient feel examined.</li>
+    </ul>
+  </div>
+
+  <div class="note bleed">
+    <h3>Where marks bleed when explaining</h3>
+    <ul>
+      <li>Jargon the patient can't decode, dressed up as an explanation.</li>
+      <li>One long monologue with no pauses to check anything landed.</li>
+      <li>"Do you understand?" as your only check — it isn't one.</li>
+      <li>Pitching at the wrong level because you never found out what they already knew.</li>
+    </ul>
+  </div>
+<nav class="moment-flow"><a class="flow-prev" href="speak-m3-signposting.html">← Signposting & Structuring</a><a class="flow-hub" href="speak-like-a-doctor.html">All moments</a><a class="flow-next" href="speak-m5-bad-news.html">Breaking Bad News →</a></nav>
+<footer><p><b>Speak Like a Doctor</b> — the AMaC fluency trainer. Moment 4 of 8.</p><p>© A. Mansour &amp; Colleagues (AMaC). Think Like an Examiner · Speak Like a Doctor · Perform With Confidence.</p></footer>
+</div>
+<script>
+document.querySelectorAll('.reveal-btn').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    var model=btn.parentElement.querySelector('.model');
+    var open=model.classList.toggle('open');
+    btn.setAttribute('aria-expanded',open?'true':'false');
+    btn.textContent=open?'Hide model line':'Reveal a model line';
+  });
+});
+</script>
+<script src="nav.js" defer></script>
+</body></html>

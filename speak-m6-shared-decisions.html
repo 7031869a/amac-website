@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shared Decisions · Speak Like a Doctor · AMaC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0C1526;--card:#16233F;--gold:#C9A227;--gold-text:#D7B43A;--neutral-border:#28385A;--ink:#E7ECF6;--body:#AEB9CE;--muted:#7C879E;--slate:#1E2C49;--nav:#16243F;}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0;background:var(--bg);color:var(--body);font-family:'Outfit',system-ui,sans-serif;font-weight:300;line-height:1.65;-webkit-font-smoothing:antialiased;padding:0 0 100px;}
+.wrap{max-width:760px;margin:0 auto;padding:0 20px;}
+h1,h2,h3{font-family:'Fraunces',Georgia,serif;color:var(--ink);font-weight:500;line-height:1.2;}
+/* preview nav (replace with nav.js at repo integration) */
+.amac-nav{display:flex;align-items:center;gap:14px;background:var(--nav);border-bottom:1px solid #233655;padding:13px 22px;margin-bottom:6px;flex-wrap:wrap;}
+.amac-nav a{color:var(--body);text-decoration:none;font-size:.84rem;}
+.amac-nav a:hover{color:var(--ink);}
+.nav-exit{font-size:.82rem;}
+.nav-brand{font-family:'Fraunces',serif;color:var(--ink);font-size:1.05rem;letter-spacing:.02em;}
+.nav-badge{background:var(--gold);color:#0B1220;font-size:.72rem;font-weight:600;letter-spacing:.06em;padding:3px 11px;border-radius:999px;text-transform:uppercase;}
+.nav-tool{color:var(--gold-text);font-size:.84rem;font-weight:500;margin-left:auto;}
+.crumb{margin:26px 0 0;font-size:.85rem;}
+.crumb a{color:var(--gold-text);text-decoration:none;}
+.crumb a:hover{text-decoration:underline;}
+.kicker{font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-text);font-weight:500;margin:0 0 16px;}
+.hero{padding:40px 0 30px;border-bottom:1px solid var(--neutral-border);}
+.hero h1{font-size:clamp(2rem,6vw,3rem);margin:0 0 14px;}
+.hero .lead{font-size:1.1rem;color:var(--ink);max-width:60ch;margin:0 0 22px;font-weight:300;}
+.frame{font-size:.92rem;color:var(--body);border-left:3px solid var(--gold);padding:4px 0 4px 16px;max-width:62ch;}
+.frame b{color:var(--gold-text);font-weight:500;}
+.moment-tag{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);font-weight:500;margin:34px 0 8px;}
+h2{font-size:1.7rem;margin:0 0 14px;}
+.intro{font-size:1rem;max-width:64ch;}
+.card{background:var(--card);border-radius:14px;border-top:3px solid var(--gold);border-left:3px solid var(--gold);border-right:1px solid var(--neutral-border);border-bottom:1px solid var(--neutral-border);padding:26px 26px 24px;margin:22px 0;}
+.pnum{font-family:'Fraunces',serif;font-size:.82rem;color:var(--gold-text);letter-spacing:.04em;}
+.card h3{font-size:1.22rem;margin:6px 0 18px;}
+.xform{margin:4px 0 20px;}
+.line{border-radius:10px;padding:13px 16px;font-size:1rem;line-height:1.5;}
+.line .lab{display:block;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;margin-bottom:6px;font-weight:500;font-family:'Outfit',sans-serif;}
+.instinct{background:var(--slate);color:var(--muted);}
+.instinct .lab{color:#5E6B85;}
+.instinct .said{color:#9AA6BE;font-style:italic;}
+.becomes{display:flex;align-items:center;gap:10px;margin:9px 2px;color:var(--muted);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;}
+.becomes::before,.becomes::after{content:"";height:1px;flex:1;background:var(--neutral-border);}
+.polished{background:rgba(201,162,39,.10);border:1px solid rgba(201,162,39,.32);}
+.polished .lab{color:var(--gold-text);}
+.polished .said{color:var(--ink);font-weight:400;}
+.why{font-size:.95rem;color:var(--body);}
+.why b{color:var(--gold-text);font-weight:500;}
+.drill{margin-top:18px;border-top:1px solid var(--neutral-border);padding-top:16px;}
+.drill .dlab{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:500;margin-bottom:8px;}
+.drill .prompt{font-size:.96rem;color:var(--ink);margin-bottom:14px;}
+.reveal-btn{background:transparent;color:var(--gold-text);border:1px solid var(--gold);border-radius:8px;padding:9px 16px;font-family:'Outfit',sans-serif;font-size:.86rem;font-weight:500;cursor:pointer;transition:background .15s ease,color .15s ease;}
+.reveal-btn:hover,.reveal-btn:focus-visible{background:var(--gold);color:#0B1220;}
+.reveal-btn:focus-visible{outline:2px solid var(--ink);outline-offset:2px;}
+.model{max-height:0;overflow:hidden;opacity:0;transition:max-height .35s ease,opacity .35s ease,margin .35s ease;}
+.model.open{max-height:420px;opacity:1;margin-top:14px;}
+.model .said{background:rgba(201,162,39,.10);border:1px solid rgba(201,162,39,.32);border-radius:10px;padding:13px 16px;color:var(--ink);}
+.model .micro{font-size:.86rem;color:var(--muted);margin-top:9px;}
+.note{background:rgba(255,255,255,.02);border:1px solid var(--neutral-border);border-left:3px solid var(--gold);border-radius:12px;padding:22px 24px;margin:26px 0;}
+.note h3{font-size:1.12rem;margin:0 0 14px;}
+.note ul{margin:0;padding-left:0;list-style:none;}
+.note li{margin:0 0 12px;font-size:.96rem;padding-left:20px;position:relative;}
+.note li::before{content:"\2014";position:absolute;left:0;color:var(--gold-text);}
+.note li b{color:var(--ink);font-weight:500;}
+.bleed{border-left-color:#B7472A;}
+.bleed li::before{content:"\00d7";color:#D9785F;font-weight:600;}
+/* moment-to-moment flow */
+.moment-flow{display:flex;align-items:center;gap:12px;margin:46px 0 0;padding-top:24px;border-top:1px solid var(--neutral-border);font-size:.9rem;}
+.moment-flow a{text-decoration:none;color:var(--gold-text);padding:10px 14px;border:1px solid var(--neutral-border);border-radius:9px;transition:border-color .15s ease,color .15s ease;}
+.moment-flow a:hover{border-color:var(--gold);color:var(--ink);}
+.flow-prev{margin-right:auto;}
+.flow-next{margin-left:auto;}
+.flow-hub{color:var(--muted)!important;}
+/* hub grid */
+.moment-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:34px 0 0;}
+.moment-card{display:block;text-decoration:none;background:var(--card);border-radius:14px;border-top:3px solid var(--gold);border-left:3px solid var(--gold);border-right:1px solid var(--neutral-border);border-bottom:1px solid var(--neutral-border);padding:22px 22px 20px;transition:transform .15s ease;}
+.moment-card:hover{transform:translateY(-3px);}
+.mc-num{font-family:'Fraunces',serif;font-size:1.5rem;color:var(--gold-text);line-height:1;}
+.moment-card h3{font-size:1.12rem;margin:10px 0 8px;}
+.moment-card p{font-size:.9rem;color:var(--body);margin:0 0 14px;}
+.mc-go{font-size:.82rem;color:var(--gold-text);font-weight:500;}
+footer{margin-top:54px;border-top:1px solid var(--neutral-border);padding-top:22px;font-size:.84rem;color:var(--muted);}
+footer b{color:var(--body);font-weight:500;}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important;}}
+@media(max-width:600px){.moment-grid{grid-template-columns:1fr;}.card{padding:22px 18px;}.nav-tool{margin-left:0;width:100%;}}
+</style>
+</head>
+<body>
+<nav data-door="plab2"><div class="nav-inner"><a href="index.html" class="brand">AMaC</a>
+  <ul class="nav-links"><li><a href="books.html">The Master Series</a></li><li><a href="tools.html">Study Tools</a></li><li><a href="contact.html" class="nav-cta">Get Started</a></li></ul>
+</div></nav>
+<div class="wrap">
+<div class="crumb"><a href="speak-like-a-doctor.html">← All eight moments</a></div>
+<p class="moment-tag">Moment 6 of 8</p>
+<h2>Shared Decisions</h2>
+  <p class="intro">Modern UK practice — and the mark sheet — expects decisions made <em>with</em> the patient, not handed down to them. But shared decision-making isn't refusing to give an opinion; patients want a steer. The marked skill is the balance: offer the options, find out what matters to them, give an honest recommendation, and leave the choice genuinely theirs.</p>
+
+  <div class="card">
+    <span class="pnum">Pattern 01</span>
+    <h3>Offer options — don't issue instructions</h3>
+    <div class="xform">
+      <div class="line instinct"><span class="lab">What many candidates say</span><span class="said">"You need to start this medication."</span></div>
+      <div class="becomes">becomes</div>
+      <div class="line polished"><span class="lab">What scores in the room</span><span class="said">"There are a couple of options here, and I'd like to talk them through with you so we can decide together. How does that sound?"</span></div>
+    </div>
+    <p class="why">Framing care as options to <b>decide together</b> — rather than an instruction to follow — is the core shared-decision behaviour and is explicitly marked. The word "together" does a lot of the work.</p>
+    <div class="drill">
+      <p class="dlab">Your turn</p>
+      <p class="prompt">A patient could try lifestyle change first or start medication now. Open it as a shared choice.</p>
+      <button class="reveal-btn" aria-expanded="false">Reveal a model line</button>
+      <div class="model"><div class="said">"There are really two ways we could go from here, each with pros and cons. Rather than me just deciding, I'd like to lay them out and work out together what fits your life best."</div><p class="micro">You signal partnership before naming a single option. The patient is already a participant, not a recipient.</p></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <span class="pnum">Pattern 02</span>
+    <h3>Ask what actually matters to them</h3>
+    <div class="xform">
+      <div class="line instinct"><span class="lab">What many candidates say</span><span class="said">(assumes the patient's priority and recommends straight away)</span></div>
+      <div class="becomes">becomes</div>
+      <div class="line polished"><span class="lab">What scores in the room</span><span class="said">"Before I give you my advice — can I ask what matters most to you in all this? What are you hoping we can achieve?"</span></div>
+    </div>
+    <p class="why">Drawing out the patient's own priorities and values is a marked behaviour, and it genuinely changes the recommendation. It's the line that separates a shared decision from a polite lecture.</p>
+    <div class="drill">
+      <p class="dlab">Your turn</p>
+      <p class="prompt">Before recommending a treatment with trade-offs, find out what the patient values most.</p>
+      <button class="reveal-btn" aria-expanded="false">Reveal a model line</button>
+      <div class="model"><div class="said">"Everyone weighs these things differently — some people most want to avoid side effects, others just want the quickest result. Where do you find yourself on that?"</div><p class="micro">You make it normal to have a preference, then ask for theirs. Now your advice can actually fit them.</p></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <span class="pnum">Pattern 03</span>
+    <h3>Give a real recommendation — then leave room</h3>
+    <div class="xform">
+      <div class="line instinct"><span class="lab">What many candidates say</span><span class="said">"It's entirely up to you."</span></div>
+      <div class="becomes">becomes</div>
+      <div class="line polished"><span class="lab">What scores in the room</span><span class="said">"My honest recommendation would be the second option, mainly because of X — but it's your decision, and I'm happy to go back over any of them."</span></div>
+    </div>
+    <p class="why">Shared decision-making isn't withholding your view — patients find "it's up to you" abandoning. Give a clear recommendation <em>with</em> its reason, then explicitly hand the decision back. Both halves are marked; do only one and you lose the balance.</p>
+    <div class="drill">
+      <p class="dlab">Your turn</p>
+      <p class="prompt">The patient asks "what would you do, doctor?" Answer honestly without taking the choice away.</p>
+      <button class="reveal-btn" aria-expanded="false">Reveal a model line</button>
+      <div class="model"><div class="said">"If it were me, I'd lean towards starting treatment now, because of how things have been going — but that's my steer, not a rule. The right call is the one you're comfortable with."</div><p class="micro">A genuine answer to a fair question, with the decision still firmly in their hands.</p></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <span class="pnum">Pattern 04</span>
+    <h3>Check the decision is really theirs</h3>
+    <div class="xform">
+      <div class="line instinct"><span class="lab">What many candidates say</span><span class="said">"Great, I'll get that booked in."</span></div>
+      <div class="becomes">becomes</div>
+      <div class="line polished"><span class="lab">What scores in the room</span><span class="said">"How are you feeling about that? We don't have to settle everything today if you'd like some time to think it over."</span></div>
+    </div>
+    <p class="why">Checking comfort with the decision — and offering time — respects autonomy and catches the patient who's only agreeing to please you. Marked, and safer. Real consent isn't a nod under pressure.</p>
+    <div class="drill">
+      <p class="dlab">Your turn</p>
+      <p class="prompt">The patient has agreed quickly and quietly. Make sure it's a true decision, not politeness.</p>
+      <button class="reveal-btn" aria-expanded="false">Reveal a model line</button>
+      <div class="model"><div class="said">"You've said yes quite quickly, and that's completely fine — but I'd rather you were sure than just agreeable. Shall we sit with it a moment, or is there anything still niggling you?"</div><p class="micro">You gently test the quick yes. That's the difference between consent and compliance.</p></div>
+    </div>
+  </div>
+
+  <div class="note">
+    <h3>Register notes — the shared-decision voice</h3>
+    <ul>
+      <li><b>"Decide together", "what matters most to you", "it's your decision"</b> — the vocabulary of partnership.</li>
+      <li><b>Give a recommendation <em>and</em> a reason.</b> "It's up to you" on its own is abandonment, not autonomy.</li>
+      <li><b>"We don't have to decide today"</b> — offering time is a real option, not a stall.</li>
+      <li><b>Hand the decision back at the end</b> — "how are you feeling about that?".</li>
+    <li><b>When a patient may feel pressure to agree</b> — family in the room, a perceived power gap — the comfort-check matters most; make space for an unpressured "yes."</li></ul>
+  </div>
+
+  <div class="note bleed">
+    <h3>Where marks bleed in shared decisions</h3>
+    <ul>
+      <li>Instructing instead of offering — "you need to…".</li>
+      <li>Never asking what the patient actually wants from their care.</li>
+      <li>Withholding your recommendation entirely — patients experience "it's up to you" as being left alone.</li>
+      <li>Assuming consent and moving straight to booking without checking comfort.</li>
+    </ul>
+  </div>
+<nav class="moment-flow"><a class="flow-prev" href="speak-m5-bad-news.html">← Breaking Bad News</a><a class="flow-hub" href="speak-like-a-doctor.html">All moments</a><a class="flow-next" href="speak-m7-difficult-patient.html">The Angry or Anxious Patient →</a></nav>
+<footer><p><b>Speak Like a Doctor</b> — the AMaC fluency trainer. Moment 6 of 8.</p><p>© A. Mansour &amp; Colleagues (AMaC). Think Like an Examiner · Speak Like a Doctor · Perform With Confidence.</p></footer>
+</div>
+<script>
+document.querySelectorAll('.reveal-btn').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    var model=btn.parentElement.querySelector('.model');
+    var open=model.classList.toggle('open');
+    btn.setAttribute('aria-expanded',open?'true':'false');
+    btn.textContent=open?'Hide model line':'Reveal a model line';
+  });
+});
+</script>
+<script src="nav.js" defer></script>
+</body></html>

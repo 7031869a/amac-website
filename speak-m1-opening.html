@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Opening · Speak Like a Doctor · AMaC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0C1526;--card:#16233F;--gold:#C9A227;--gold-text:#D7B43A;--neutral-border:#28385A;--ink:#E7ECF6;--body:#AEB9CE;--muted:#7C879E;--slate:#1E2C49;--nav:#16243F;}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0;background:var(--bg);color:var(--body);font-family:'Outfit',system-ui,sans-serif;font-weight:300;line-height:1.65;-webkit-font-smoothing:antialiased;padding:0 0 100px;}
+.wrap{max-width:760px;margin:0 auto;padding:0 20px;}
+h1,h2,h3{font-family:'Fraunces',Georgia,serif;color:var(--ink);font-weight:500;line-height:1.2;}
+/* preview nav (replace with nav.js at repo integration) */
+.amac-nav{display:flex;align-items:center;gap:14px;background:var(--nav);border-bottom:1px solid #233655;padding:13px 22px;margin-bottom:6px;flex-wrap:wrap;}
+.amac-nav a{color:var(--body);text-decoration:none;font-size:.84rem;}
+.amac-nav a:hover{color:var(--ink);}
+.nav-exit{font-size:.82rem;}
+.nav-brand{font-family:'Fraunces',serif;color:var(--ink);font-size:1.05rem;letter-spacing:.02em;}
+.nav-badge{background:var(--gold);color:#0B1220;font-size:.72rem;font-weight:600;letter-spacing:.06em;padding:3px 11px;border-radius:999px;text-transform:uppercase;}
+.nav-tool{color:var(--gold-text);font-size:.84rem;font-weight:500;margin-left:auto;}
+.crumb{margin:26px 0 0;font-size:.85rem;}
+.crumb a{color:var(--gold-text);text-decoration:none;}
+.crumb a:hover{text-decoration:underline;}
+.kicker{font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-text);font-weight:500;margin:0 0 16px;}
+.hero{padding:40px 0 30px;border-bottom:1px solid var(--neutral-border);}
+.hero h1{font-size:clamp(2rem,6vw,3rem);margin:0 0 14px;}
+.hero .lead{font-size:1.1rem;color:var(--ink);max-width:60ch;margin:0 0 22px;font-weight:300;}
+.frame{font-size:.92rem;color:var(--body);border-left:3px solid var(--gold);padding:4px 0 4px 16px;max-width:62ch;}
+.frame b{color:var(--gold-text);font-weight:500;}
+.moment-tag{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);font-weight:500;margin:34px 0 8px;}
+h2{font-size:1.7rem;margin:0 0 14px;}
+.intro{font-size:1rem;max-width:64ch;}
+.card{background:var(--card);border-radius:14px;border-top:3px solid var(--gold);border-left:3px solid var(--gold);border-right:1px solid var(--neutral-border);border-bottom:1px solid var(--neutral-border);padding:26px 26px 24px;margin:22px 0;}
+.pnum{font-family:'Fraunces',serif;font-size:.82rem;color:var(--gold-text);letter-spacing:.04em;}
+.card h3{font-size:1.22rem;margin:6px 0 18px;}
+.xform{margin:4px 0 20px;}
+.line{border-radius:10px;padding:13px 16px;font-size:1rem;line-height:1.5;}
+.line .lab{display:block;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;margin-bottom:6px;font-weight:500;font-family:'Outfit',sans-serif;}
+.instinct{background:var(--slate);color:var(--muted);}
+.instinct .lab{color:#5E6B85;}
+.instinct .said{color:#9AA6BE;font-style:italic;}
+.becomes{display:flex;align-items:center;gap:10px;margin:9px 2px;color:var(--muted);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;}
+.becomes::before,.becomes::after{content:"";height:1px;flex:1;background:var(--neutral-border);}
+.polished{background:rgba(201,162,39,.10);border:1px solid rgba(201,162,39,.32);}
+.polished .lab{color:var(--gold-text);}
+.polished .said{color:var(--ink);font-weight:400;}
+.why{font-size:.95rem;color:var(--body);}
+.why b{color:var(--gold-text);font-weight:500;}
+.drill{margin-top:18px;border-top:1px solid var(--neutral-border);padding-top:16px;}
+.drill .dlab{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:500;margin-bottom:8px;}
+.drill .prompt{font-size:.96rem;color:var(--ink);margin-bottom:14px;}
+.reveal-btn{background:transparent;color:var(--gold-text);border:1px solid var(--gold);border-radius:8px;padding:9px 16px;font-family:'Outfit',sans-serif;font-size:.86rem;font-weight:500;cursor:pointer;transition:background .15s ease,color .15s ease;}
+.reveal-btn:hover,.reveal-btn:focus-visible{background:var(--gold);color:#0B1220;}
+.reveal-btn:focus-visible{outline:2px solid var(--ink);outline-offset:2px;}
+.model{max-height:0;overflow:hidden;opacity:0;transition:max-height .35s ease,opacity .35s ease,margin .35s ease;}
+.model.open{max-height:420px;opacity:1;margin-top:14px;}
+.model .said{background:rgba(201,162,39,.10);border:1px solid rgba(201,162,39,.32);border-radius:10px;padding:13px 16px;color:var(--ink);}
+.model .micro{font-size:.86rem;color:var(--muted);margin-top:9px;}
+.note{background:rgba(255,255,255,.02);border:1px solid var(--neutral-border);border-left:3px solid var(--gold);border-radius:12px;padding:22px 24px;margin:26px 0;}
+.note h3{font-size:1.12rem;margin:0 0 14px;}
+.note ul{margin:0;padding-left:0;list-style:none;}
+.note li{margin:0 0 12px;font-size:.96rem;padding-left:20px;position:relative;}
+.note li::before{content:"\2014";position:absolute;left:0;color:var(--gold-text);}
+.note li b{color:var(--ink);font-weight:500;}
+.bleed{border-left-color:#B7472A;}
+.bleed li::before{content:"\00d7";color:#D9785F;font-weight:600;}
+/* moment-to-moment flow */
+.moment-flow{display:flex;align-items:center;gap:12px;margin:46px 0 0;padding-top:24px;border-top:1px solid var(--neutral-border);font-size:.9rem;}
+.moment-flow a{text-decoration:none;color:var(--gold-text);padding:10px 14px;border:1px solid var(--neutral-border);border-radius:9px;transition:border-color .15s ease,color .15s ease;}
+.moment-flow a:hover{border-color:var(--gold);color:var(--ink);}
+.flow-prev{margin-right:auto;}
+.flow-next{margin-left:auto;}
+.flow-hub{color:var(--muted)!important;}
+/* hub grid */
+.moment-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:34px 0 0;}
+.moment-card{display:block;text-decoration:none;background:var(--card);border-radius:14px;border-top:3px solid var(--gold);border-left:3px solid var(--gold);border-right:1px solid var(--neutral-border);border-bottom:1px solid var(--neutral-border);padding:22px 22px 20px;transition:transform .15s ease;}
+.moment-card:hover{transform:translateY(-3px);}
+.mc-num{font-family:'Fraunces',serif;font-size:1.5rem;color:var(--gold-text);line-height:1;}
+.moment-card h3{font-size:1.12rem;margin:10px 0 8px;}
+.moment-card p{font-size:.9rem;color:var(--body);margin:0 0 14px;}
+.mc-go{font-size:.82rem;color:var(--gold-text);font-weight:500;}
+footer{margin-top:54px;border-top:1px solid var(--neutral-border);padding-top:22px;font-size:.84rem;color:var(--muted);}
+footer b{color:var(--body);font-weight:500;}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important;}}
+@media(max-width:600px){.moment-grid{grid-template-columns:1fr;}.card{padding:22px 18px;}.nav-tool{margin-left:0;width:100%;}}
+</style>
+</head>
+<body>
+<nav data-door="plab2"><div class="nav-inner"><a href="index.html" class="brand">AMaC</a>
+  <ul class="nav-links"><li><a href="books.html">The Master Series</a></li><li><a href="tools.html">Study Tools</a></li><li><a href="contact.html" class="nav-cta">Get Started</a></li></ul>
+</div></nav>
+<div class="wrap">
+<div class="crumb"><a href="speak-like-a-doctor.html">← All eight moments</a></div>
+<p class="moment-tag">Moment 1 of 8</p>
+<h2>The Opening</h2>
+  <p class="intro">The first thirty seconds decide whether the patient — and the examiner — believe they're with a safe, human doctor. You do five small things here: introduce yourself, learn what to call them, signpost the plan, open the history, and acknowledge why they've come. Each one can be said like a checklist, or like a doctor. Here's the difference, line by line — but first, the actions that come before the words.</p>
+
+  <!-- WIPE ACTIONS -->
+  <div class="note">
+    <h3>Before the words — the WIPE actions</h3>
+    <p style="margin:0 0 14px;font-size:.95rem;">Phrasing wins marks, but it can't rescue a missed action. As you greet the patient, do these — visibly, so the examiner sees them:</p>
+    <ul>
+      <li><b>Wash</b> your hands or use the gel — visibly, before you sit or touch anything.</li>
+      <li><b>Introduce</b> yourself — name and role, warmly (Pattern 01).</li>
+      <li><b>Permission</b> — ask before you sit, examine, or proceed ("Is it alright if I sit with you?").</li>
+      <li><b>Exposure</b> — explain what you'll need to look at. <em>This one mainly applies to examination stations; in a pure counselling or breaking-bad-news station there's nothing to expose, so don't force it.</em></li>
+    </ul>
+  </div>
+
+  <!-- PATTERN 1 -->
+  <div class="card">
+    <span class="pnum">Pattern 01</span>
+    <h3>Introduce yourself like a person, not a procedure</h3>
+    <div class="xform">
+      <div class="line instinct"><span class="lab">What many candidates say</span><span class="said">"Hello. My name is Doctor Mansour. I am one of the junior doctors. Today I am going to take your history."</span></div>
+      <div class="becomes">becomes</div>
+      <div class="line polished"><span class="lab">What scores in the room</span><span class="said">"Hi — I'm Dr Mansour, one of the doctors looking after you today. It's good to meet you."</span></div>
+    </div>
+    <p class="why">The first five seconds set the rapport mark. <b>"Looking after you"</b> and <b>"good to meet you"</b> make you a person, not a process. Announcing <em>"I'm going to take your history"</em> narrates the exam to the examiner — the patient doesn't need it, so drop it.</p>
+    <div class="drill">
+      <p class="dlab">Your turn</p>
+      <p class="prompt">You walk in to a 40-year-old man waiting with chest pain. Say your opening line out loud — then reveal one that scores.</p>
+      <button class="reveal-btn" aria-expanded="false">Reveal a model line</button>
+      <div class="model"><div class="said">"Hi, I'm Dr Mansour, one of the doctors on the team today. It's good to meet you — thanks for waiting."</div><p class="micro">Warm, named, human. "Thanks for waiting" acknowledges him before a single question.</p></div>
+    </div>
+  </div>
+
+  <!-- PATTERN 2 -->
+  <div class="card">
+    <span class="pnum">Pattern 02</span>
+    <h3>Ask what to call them — don't interrogate them</h3>
+    <div class="xform">
+      <div class="line instinct"><span class="lab">What many candidates say</span><span class="said">"Can you confirm your full name and date of birth, please."</span></div>
+      <div class="becomes">becomes</div>
+      <div class="line polished"><span class="lab">What scores in the room</span><span class="said">"And what would you like me to call you?" &nbsp;/&nbsp; "Is it Mr Okafor — or would you prefer your first name?"</span></div>
+    </div>
+    <p class="why">In a PLAB 2 communication station you already have the patient's name from the door, so a formal name-and-date-of-birth check feels artificial and cold — there are no notes or wristband to verify against. Asking <b>what they'd like to be called</b> builds rapport and shows respect in one line. Save the full name + DOB identity check for the stations where it genuinely belongs: <b>prescribing, procedures, and examination.</b></p>
+    <div class="drill">
+      <p class="dlab">Your turn</p>
+      <p class="prompt">You already know from the card it's a 68-year-old, Margaret Hughes. Open warmly without reading her details back at her.</p>
+      <button class="reveal-btn" aria-expanded="false">Reveal a model line</button>
+      <div class="model"><div class="said">"And what would you like me to call you? … Margaret — lovely. Thanks for coming in today."</div><p class="micro">You know her name; you ask anyway, because how she'd like to be addressed is hers to give, not yours to recite.</p></div>
+    </div>
+  </div>
+
+  <!-- PATTERN 3 -->
+  <div class="card">
+    <span class="pnum">Pattern 03</span>
+    <h3>Signpost the plan, then ask permission</h3>
+    <div class="xform">
+      <div class="line instinct"><span class="lab">What many candidates say</span><span class="said">"I will ask you some questions, then I will examine you."</span></div>
+      <div class="becomes">becomes</div>
+      <div class="line polished"><span class="lab">What scores in the room</span><span class="said">"What I'd like to do is ask you a little about what's been going on, then we'll talk through what happens next — is that alright?"</span></div>
+    </div>
+    <p class="why">Signposting is a named communication descriptor on the mark sheet, and ending on <b>"is that alright?"</b> hands the patient control. That's two marks in one sentence — structure and shared decision-making.</p>
+    <div class="drill">
+      <p class="dlab">Your turn</p>
+      <p class="prompt">Set out the plan for a 10-minute counselling station and check the patient is happy to proceed.</p>
+      <button class="reveal-btn" aria-expanded="false">Reveal a model line</button>
+      <div class="model"><div class="said">"I thought we could go through what the diagnosis means, talk about the options, and leave plenty of time for any questions — how does that sound to you?"</div><p class="micro">"How does that sound to you?" is a question, not a statement. It invites; it doesn't instruct.</p></div>
+    </div>
+  </div>
+
+  <!-- PATTERN 4 -->
+  <div class="card">
+    <span class="pnum">Pattern 04</span>
+    <h3>Open the history with an invitation, not an interrogation</h3>
+    <div class="xform">
+      <div class="line instinct"><span class="lab">What many candidates say</span><span class="said">"What is your presenting complaint?" &nbsp;/&nbsp; "Why have you come today?"</span></div>
+      <div class="becomes">becomes</div>
+      <div class="line polished"><span class="lab">What scores in the room</span><span class="said">"So — tell me what's brought you in today." &nbsp;/&nbsp; "Tell me a bit about what's been happening."</span></div>
+    </div>
+    <p class="why">An open invitation gets the patient talking and earns the data-gathering mark. <em>"Why have you come"</em> can land as though they must justify themselves; <b>"tell me"</b> opens the door. The rule: open with an invitation, then go quiet and let them talk.</p>
+    <div class="drill">
+      <p class="dlab">Your turn</p>
+      <p class="prompt">You don't yet know why the patient is here. Get them talking in one line.</p>
+      <button class="reveal-btn" aria-expanded="false">Reveal a model line</button>
+      <div class="model"><div class="said">"So, tell me — what's been going on?"</div><p class="micro">Three words of invitation, then stop talking and listen. The pause isn't what's marked — the <em>listening</em> is, and you can't listen while you're still talking.</p></div>
+    </div>
+  </div>
+
+  <!-- PATTERN 5 -->
+  <div class="card">
+    <span class="pnum">Pattern 05</span>
+    <h3>Name the concern before you dig into it</h3>
+    <div class="xform">
+      <div class="line instinct"><span class="lab">What many candidates say</span><span class="said">"I understand you have abdominal pain. When did it start? Is it sharp or dull?"</span></div>
+      <div class="becomes">becomes</div>
+      <div class="line polished"><span class="lab">What scores in the room</span><span class="said">"I gather you've been having some tummy pain — that sounds really uncomfortable. Take me through it from the start."</span></div>
+    </div>
+    <p class="why">Acknowledging the concern before the questions picks up the <b>empathy mark</b> and shows you've actually listened. <b>"Tummy"</b> over "abdominal" meets a lay patient in plain English — a real UK-register move. Then one open prompt, not a volley of closed ones.</p>
+    <div class="drill">
+      <p class="dlab">Your turn</p>
+      <p class="prompt">The notes say "headache for 3 days." Acknowledge it, then open it up — without firing off closed questions.</p>
+      <button class="reveal-btn" aria-expanded="false">Reveal a model line</button>
+      <div class="model"><div class="said">"I hear you've been struggling with headaches for a few days — that can really wear you down. Tell me how it's been for you."</div><p class="micro">Empathy first ("wear you down"), then an open prompt. The closed questions come later, once you've listened.</p></div>
+    </div>
+  </div>
+
+  <!-- REGISTER NOTES -->
+  <div class="note">
+    <h3>Register notes — the things UK grads do without thinking</h3>
+    <ul>
+      <li><b>Contractions are your friend.</b> "I'm," "you've," "we'll," "that's." Full forms — "I am going to," "you have been having" — sound rehearsed and stiff out loud. (In writing AMaC stays formal; spoken to a patient, contract.)</li>
+      <li><b>Plain words for lay patients.</b> "Tummy," not "abdomen." "Waterworks," not "micturition." "Bloods," not "a full blood count." "Heart tracing," not "ECG." Match the patient, not the textbook.</li>
+      <li><b>Soft openers acknowledge before they ask.</b> "I gather…", "I understand…", "It sounds like…", "I hear…". They tell the patient you were listening.</li>
+      <li><b>Tag questions invite, they don't command.</b> "…is that alright?", "…how does that sound?", "…if that's okay with you?" Ending on a question hands control back to the patient — and the examiner hears it.</li>
+    </ul>
+  </div>
+
+  <!-- WHERE MARKS BLEED -->
+  <div class="note bleed">
+    <h3>Where marks quietly bleed in the opening</h3>
+    <ul>
+      <li>Launching straight into questions with no greeting — you lose rapport before you've started.</li>
+      <li>Reciting the ID check like a security guard — safe, but cold, and the examiner notices.</li>
+      <li>Narrating the exam to the room ("I am now going to take a history") instead of speaking <em>to</em> the patient.</li>
+      <li>Walking past a visible cue at the door — if they're tearful or clearly in pain, acknowledge it <em>first</em>.</li>
+      <li>Opening with "Everything you tell me is completely confidential" — it sounds robotic, and it isn't yours to promise: confidentiality has real legal and professional limits (safeguarding, risk to others, notifiable disease, the courts).</li>
+    </ul>
+  </div>
+<nav class="moment-flow"><span class="flow-prev"></span><a class="flow-hub" href="speak-like-a-doctor.html">All moments</a><a class="flow-next" href="speak-m2-cue.html">Responding to a Cue →</a></nav>
+<footer><p><b>Speak Like a Doctor</b> — the AMaC fluency trainer. Moment 1 of 8.</p><p>© A. Mansour &amp; Colleagues (AMaC). Think Like an Examiner · Speak Like a Doctor · Perform With Confidence.</p></footer>
+</div>
+<script>
+document.querySelectorAll('.reveal-btn').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    var model=btn.parentElement.querySelector('.model');
+    var open=model.classList.toggle('open');
+    btn.setAttribute('aria-expanded',open?'true':'false');
+    btn.textContent=open?'Hide model line':'Reveal a model line';
+  });
+});
+</script>
+<script src="nav.js" defer></script>
+</body></html>
