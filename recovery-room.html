@@ -12,8 +12,8 @@
   :root{
     --page:#0C1526; --card:#16233F; --card-2:#1B2B4D;
     --gold:#C9A227; --gold-text:#D7B43A; --gold-soft:rgba(201,162,39,.14);
-    --ink:#E8ECF4; --ink-soft:#A6B2C9; --ink-mute:#6E7B96;
-    --freeze:#7E8AA3; --line:#243454; --line-soft:#1E2C4A;
+    --ink:#E8ECF4; --ink-soft:#A6B2C9; --ink-mute:#909DB6;
+    --freeze:#9BA7BE; --line:#243454; --line-soft:#1E2C4A;
     --rule:rgba(201,162,39,.32);
   }
   *{box-sizing:border-box}
@@ -164,6 +164,33 @@
     html{scroll-behavior:auto}
     .model,.tile,.sib,#totop{transition:none}
   }
+
+  /* --- scenario depth layer --- */
+  details.scenarios{margin:16px 0 2px; border:1px solid var(--line); border-radius:12px; background:rgba(22,35,63,.45); overflow:hidden}
+  details.scenarios>summary{list-style:none; cursor:pointer; padding:15px 20px; display:flex; align-items:center; gap:11px; user-select:none; transition:background .15s}
+  details.scenarios>summary::-webkit-details-marker{display:none}
+  details.scenarios>summary:hover{background:var(--card-2)}
+  details.scenarios>summary:focus-visible{outline:2px solid var(--gold-text); outline-offset:-2px}
+  .scenarios .su-l{font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--gold-text); font-weight:600}
+  .scenarios .su-n{font-size:12px; color:var(--ink-soft); border:1px solid var(--rule); border-radius:999px; padding:3px 10px; flex:none}
+  .scenarios .su-x{font-size:13.5px; color:var(--ink-mute)}
+  .scenarios .chev{margin-left:auto; color:var(--gold-text); font-size:15px; transition:transform .2s; flex:none}
+  details.scenarios[open]>summary .chev{transform:rotate(180deg)}
+  .scn-wrap{padding:4px 18px 22px; border-top:1px solid var(--line)}
+  .scn-wrap .card{margin-top:16px; background:var(--card-2)}
+  .sstrip{display:flex; align-items:center; gap:13px; margin:30px 0 0}
+  .scn-wrap .sstrip:first-of-type{margin-top:18px}
+  .sstrip .sl{font-family:"Fraunces",serif; font-size:14px; color:var(--gold-text); border:1px solid var(--rule); border-radius:8px; padding:5px 12px; font-weight:600; flex:none}
+  .sstrip .st{font-family:"Fraunces",serif; font-size:21px; font-weight:500}
+  .sstrip .kind{font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-mute); border:1px solid var(--line); border-radius:999px; padding:4px 10px; flex:none}
+  .sstrip .hr{flex:1; height:1px; background:var(--line)}
+  .diff{margin-top:22px; background:var(--card); border:1px solid var(--line); border-left:2px solid var(--rule); border-radius:10px; padding:16px 18px}
+  .diff .dl{font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--gold-text); font-weight:600; margin:0 0 8px}
+  .diff p{margin:0; font-size:15px; color:var(--ink-soft); line-height:1.55} .diff p b{color:var(--ink); font-weight:500}
+  .trap{margin-top:14px; background:var(--card); border:1px solid var(--line); border-left:2px solid #7E3B3B; border-radius:10px; padding:16px 18px}
+  .trap .tl{font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:#D98A8A; font-weight:600; margin:0 0 8px}
+  .trap p{margin:0; font-size:15px; color:var(--ink-soft); line-height:1.55} .trap p b{color:var(--ink); font-weight:500}
+  @media (max-width:560px){ .sstrip .st{font-size:19px} .scn-wrap{padding:4px 12px 18px} }
 </style>
 </head>
 <body>
@@ -234,6 +261,96 @@
       </div>
     </div>
   </section>
+  <details class="scenarios">
+    <summary><span class="su-l">Practise this</span><span class="su-n">3 scenarios</span><span class="su-x">see the move travel across stations</span><span class="chev">&#9662;</span></summary>
+    <div class="scn-wrap">
+        <div class="sstrip"><span class="sl">A</span><span class="st">The lost thread</span><span class="kind">Varied surface · explaining</span><span class="hr"></span></div>
+        <section class="card" aria-label="The Blank A — the lost thread">
+    <p class="label freeze">The scene</p>
+    <p class="scene">You're explaining a diagnosis and management plan. Halfway through, you lose your place entirely — <span class="you">you can't remember what you've already said or what comes next. The patient is waiting for the rest.</span></p>
+    <div class="transform">
+      <p class="label freeze">The freeze</p>
+      <div class="line freeze">"Have I said this bit already? I can't remember. Just keep talking and hope I land somewhere that makes sense."</div>
+      <div class="arrowrow"><span class="ln"></span>The save<span class="ln"></span></div>
+      <p class="label save">The recovery line</p>
+      <div class="line save"><span class="q">"</span>Let me recap where we've got to, so we're on the same page — so far we've covered the diagnosis and why it's happened. The next thing I'd like to go through is the plan.<span class="q">"</span></div>
+    </div>
+    <div class="diff">
+      <p class="dl">What's different here</p>
+      <p>In an explanation station the reset isn't a screening framework — it's a <b>recap</b>. Summarising what you've covered orients the patient <i>and</i> hands you back the thread. The structure you reach for is the summary itself.</p>
+    </div>
+    <div class="drill">
+      <h3>Your turn</h3>
+      <p class="sub">You've lost your place mid-explanation. Write the line that recaps to reset — then reveal a model.</p>
+      <textarea placeholder="Type your recovery line…" aria-label="Your recovery line"></textarea>
+      <button class="btn" data-reveal>Reveal the model line</button>
+      <div class="model" aria-live="polite">
+        <p class="label save">Model recovery line</p>
+        <div class="line model"><span class="q">"</span>Can I just check I've explained that clearly so far? Let me summarise the main points, and then we'll move on to what happens next.<span class="q">"</span></div>
+        <p class="why"><b>Why it scores:</b> a recap is a legitimate consultation skill, so it never reads as a stumble — it doubles as a comprehension check (a mark) while you quietly recover your place.</p>
+      </div>
+    </div>
+  </section>
+        <div class="sstrip"><span class="sl">B</span><span class="st">The frozen sequence</span><span class="kind">Varied surface · examining</span><span class="hr"></span></div>
+        <section class="card" aria-label="The Blank B — the frozen sequence">
+    <p class="label freeze">The scene</p>
+    <p class="scene">You're partway through a focused examination and your mind goes blank on the next step. <span class="you">The patient is exposed, waiting, watching you decide what to do.</span></p>
+    <div class="transform">
+      <p class="label freeze">The freeze</p>
+      <div class="line freeze">"What comes next? Don't just stand here. Touch something — anything — so it at least looks deliberate."</div>
+      <div class="arrowrow"><span class="ln"></span>The save<span class="ln"></span></div>
+      <p class="label save">The recovery line</p>
+      <div class="line save"><span class="q">"</span>Bear with me one moment — I want to make sure I'm being thorough and complete this properly.<span class="q">"</span> <span class="after">— then return to the standard sequence for that examination, step by step.</span></div>
+    </div>
+    <div class="diff">
+      <p class="dl">What's different here</p>
+      <p>In a procedural station the framework you re-enter through is the <b>examination sequence itself</b>. Naming "thorough" out loud reframes the pause as diligence, and the standard order is the scaffold that gets your hands moving again.</p>
+    </div>
+    <div class="drill">
+      <h3>Your turn</h3>
+      <p class="sub">You've blanked mid-examination. Write the line that buys a beat and returns you to the sequence — then reveal a model.</p>
+      <textarea placeholder="Type your recovery line…" aria-label="Your recovery line"></textarea>
+      <button class="btn" data-reveal>Reveal the model line</button>
+      <div class="model" aria-live="polite">
+        <p class="label save">Model recovery line</p>
+        <div class="line model"><span class="q">"</span>Let me take a moment to make sure I examine this systematically and don't miss anything.<span class="q">"</span></div>
+        <p class="why"><b>Why it scores:</b> a systematic sequence is itself marked, so reaching for it openly recovers both the step and your composure. "Don't miss anything" frames the pause as safety, not a freeze.</p>
+      </div>
+    </div>
+  </section>
+        <div class="sstrip"><span class="sl">C</span><span class="st">The blank that stays</span><span class="kind">Escalating · the reset fails</span><span class="hr"></span></div>
+        <section class="card" aria-label="The Blank C — the blank that stays">
+    <p class="label freeze">The scene</p>
+    <p class="scene">You bought yourself a pause — and it still hasn't come back. <span class="you">The next question genuinely won't arrive, and the silence is stretching well past comfortable.</span></p>
+    <div class="transform">
+      <p class="label freeze">The freeze</p>
+      <div class="line freeze">"It's still gone. The pause didn't work. Now I look like I've frozen twice — that's it, I've lost the station."</div>
+      <div class="arrowrow"><span class="ln"></span>The save<span class="ln"></span></div>
+      <p class="label save">The recovery line</p>
+      <div class="line save"><span class="q">"</span>I want to make sure I don't miss anything important, so let me go back to basics — can I just check I've asked about the things that matter most for your safety?<span class="q">"</span> <span class="after">— then run the red-flag screen for the presentation.</span></div>
+    </div>
+    <div class="diff">
+      <p class="dl">What's different here</p>
+      <p>When buying time fails, you don't buy more time — you <b>change tactic</b>. Fall back to the most basic safe scaffold you can run on autopilot: a red-flag screen, or ICE. Don't chase the specific question you lost; default to the structure you can always produce.</p>
+    </div>
+    <div class="trap">
+      <p class="tl">The trap here</p>
+      <p>Freezing a second time, or <b>abandoning structure entirely</b> because the first reset didn't deliver. The pause is a tool, not a guarantee — when it doesn't work, switching to an automatic safe scaffold is the recovery; waiting helplessly is the fail.</p>
+    </div>
+    <div class="drill">
+      <h3>Your turn</h3>
+      <p class="sub">The pause didn't bring it back. Write the line that switches to a scaffold you can always run — then reveal a model.</p>
+      <textarea placeholder="Type your recovery line…" aria-label="Your recovery line"></textarea>
+      <button class="btn" data-reveal>Reveal the model line</button>
+      <div class="model" aria-live="polite">
+        <p class="label save">Model recovery line</p>
+        <div class="line model"><span class="q">"</span>Let me make sure I've covered the important safety questions first — have you had any red-flag symptoms I should know about?<span class="q">"</span></div>
+        <p class="why"><b>Why it scores:</b> red-flag screening is always available and always scored. Defaulting to it when you're lost guarantees forward motion on safe ground — it converts a stall into marks instead of dead air.</p>
+      </div>
+    </div>
+  </section>
+    </div>
+  </details>
 
   <!-- ============ 02 — THE OFF-SCRIPT ACTOR ============ -->
   <div class="strip" id="d02">
@@ -266,6 +383,104 @@
       </div>
     </div>
   </section>
+  <details class="scenarios">
+    <summary><span class="su-l">Practise this</span><span class="su-n">3 scenarios</span><span class="su-x">see the move travel across stations</span><span class="chev">&#9662;</span></summary>
+    <div class="scn-wrap">
+        <div class="sstrip"><span class="sl">A</span><span class="st">The buried cue</span><span class="kind">Varied surface · a throwaway line</span><span class="hr"></span></div>
+        <section class="card" aria-label="The Off-Script Actor A — the buried cue">
+    <p class="label freeze">The scene</p>
+    <p class="scene">You're taking a routine history. Almost mumbled, in passing, the patient says <span class="you">"…it's been harder since the accident, but anyway—"</span> and carries straight on answering your question. The cue is half-buried, and they've already moved past it.</p>
+    <div class="transform">
+      <p class="label freeze">The freeze</p>
+      <div class="line freeze">"They moved on, so I'll move on too. If it mattered they'd have said more — I'll stick to my questions."</div>
+      <div class="arrowrow"><span class="ln"></span>The save<span class="ln"></span></div>
+      <p class="label save">The recovery line</p>
+      <div class="line save"><span class="q">"</span>Can I just go back a second — you mentioned an accident, and that things have been harder since. I'd like to hear more about that, if that's okay.<span class="q">"</span></div>
+    </div>
+    <div class="diff">
+      <p class="dl">What's different here</p>
+      <p>The cue here is <b>buried, not offered</b> — thrown away mid-sentence and easy to let pass. The skill is catching it and gently going back, rather than only following cues that are handed to you plainly.</p>
+    </div>
+    <div class="trap">
+      <p class="tl">The trap here</p>
+      <p>Letting a throwaway cue pass because the patient didn't dwell on it. Patients often <b>test the water</b> with a half-cue; missing it isn't neutral — it's the mark walking quietly out of the room.</p>
+    </div>
+    <div class="drill">
+      <h3>Your turn</h3>
+      <p class="sub">The patient half-mentioned something and moved on. Write the line that catches it and goes back — then reveal a model.</p>
+      <textarea placeholder="Type your recovery line…" aria-label="Your recovery line"></textarea>
+      <button class="btn" data-reveal>Reveal the model line</button>
+      <div class="model" aria-live="polite">
+        <p class="label save">Model recovery line</p>
+        <div class="line model"><span class="q">"</span>Before we carry on — you said something a moment ago about the accident. Can we come back to that? It sounds important.<span class="q">"</span></div>
+        <p class="why"><b>Why it scores:</b> noticing and returning to a buried cue shows active listening at the level examiners reward most. Patients frequently under-state what matters; catching the half-said thing is the harder, higher-scoring skill.</p>
+      </div>
+    </div>
+  </section>
+        <div class="sstrip"><span class="sl">B</span><span class="st">The cue that breaks the diagnosis</span><span class="kind">Varied surface · a clinical red flag</span><span class="hr"></span></div>
+        <section class="card" aria-label="The Off-Script Actor B — the cue that breaks the diagnosis">
+    <p class="label freeze">The scene</p>
+    <p class="scene">You're working toward a tidy diagnosis when the patient adds: <span class="you">"Oh — and I've lost about a stone without trying, these last two months."</span> It doesn't fit your working diagnosis at all.</p>
+    <div class="transform">
+      <p class="label freeze">The freeze</p>
+      <div class="line freeze">"That doesn't fit what I was thinking. I'll note it and stay on my line — I don't want to lose my structure now."</div>
+      <div class="arrowrow"><span class="ln"></span>The save<span class="ln"></span></div>
+      <p class="label save">The recovery line</p>
+      <div class="line save"><span class="q">"</span>I'm glad you mentioned that — unintentional weight loss is something I want to take seriously. Can you tell me more about it, and whether you've noticed anything else?<span class="q">"</span></div>
+    </div>
+    <div class="diff">
+      <p class="dl">What's different here</p>
+      <p>This cue is <b>clinical, not emotional</b> — a red flag that should reshape your differential. Following it means letting new information change your reasoning, not just acknowledging a feeling.</p>
+    </div>
+    <div class="trap">
+      <p class="tl">The trap here</p>
+      <p>Noting a red-flag cue but <b>not acting on it</b> — filing "weight loss" away to preserve a tidy working diagnosis. A red flag you heard but didn't pursue is a safety miss, not just a lost mark.</p>
+    </div>
+    <div class="drill">
+      <h3>Your turn</h3>
+      <p class="sub">The patient dropped a red flag that breaks your diagnosis. Write the line that follows it properly — then reveal a model.</p>
+      <textarea placeholder="Type your recovery line…" aria-label="Your recovery line"></textarea>
+      <button class="btn" data-reveal>Reveal the model line</button>
+      <div class="model" aria-live="polite">
+        <p class="label save">Model recovery line</p>
+        <div class="line model"><span class="q">"</span>That's really important — unexplained weight loss changes the picture, so I'd like to explore it properly before we go on.<span class="q">"</span></div>
+        <p class="why"><b>Why it scores:</b> following a clinical cue that breaks your differential shows you reason from the patient, not from your plan. Acting on a red flag — rather than just hearing it — is both a safety mark and a diagnostic one.</p>
+      </div>
+    </div>
+  </section>
+        <div class="sstrip"><span class="sl">C</span><span class="st">The cue you'd rather dodge</span><span class="kind">Escalating · awkward and badly timed</span><span class="hr"></span></div>
+        <section class="card" aria-label="The Off-Script Actor C — the cue you'd rather dodge">
+    <p class="label freeze">The scene</p>
+    <p class="scene">Late in the station, low on time, the patient says quietly: <span class="you">"Can I ask you something… it's a bit embarrassing."</span> Following it means opening something big with the clock against you.</p>
+    <div class="transform">
+      <p class="label freeze">The freeze</p>
+      <div class="line freeze">"Not now — there's no time, and it'll open a whole thing. I'll gently steer us towards wrapping up instead."</div>
+      <div class="arrowrow"><span class="ln"></span>The save<span class="ln"></span></div>
+      <p class="label save">The recovery line</p>
+      <div class="line save"><span class="q">"</span>Please don't feel embarrassed at all — you're welcome to ask me anything that's worrying you. Go ahead, I'm listening.<span class="q">"</span></div>
+    </div>
+    <div class="diff">
+      <p class="dl">What's different here</p>
+      <p>This cue is <b>inconvenient</b> — awkward, and badly timed. Everything pushes you to skate past it, and following it anyway is the test. Never let discomfort or the clock be the reason you decline a patient's opening.</p>
+    </div>
+    <div class="trap">
+      <p class="tl">The trap here</p>
+      <p>Using time or awkwardness as <b>cover</b> to avoid a hard cue. Declining an explicit invitation — "can I ask you something embarrassing" — signals you'll dodge the difficult consultations, the opposite of what's being assessed.</p>
+    </div>
+    <div class="drill">
+      <h3>Your turn</h3>
+      <p class="sub">An awkward cue arrives with the clock against you. Write the line that opens the door anyway — then reveal a model.</p>
+      <textarea placeholder="Type your recovery line…" aria-label="Your recovery line"></textarea>
+      <button class="btn" data-reveal>Reveal the model line</button>
+      <div class="model" aria-live="polite">
+        <p class="label save">Model recovery line</p>
+        <div class="line model"><span class="q">"</span>Absolutely — you're welcome to ask whatever's worrying you, and nothing you say will embarrass me. Take your time.<span class="q">"</span></div>
+        <p class="why"><b>Why it scores:</b> meeting an awkward, late cue with openness is the hardest version of following the cue — and the most scored. Examiners specifically watch whether discomfort or time pressure makes you close a door the patient just opened.</p>
+      </div>
+    </div>
+  </section>
+    </div>
+  </details>
 
   <!-- ============ 03 — THE TIME CRUNCH ============ -->
   <div class="strip" id="d03">
@@ -299,6 +514,105 @@
       </div>
     </div>
   </section>
+  <details class="scenarios">
+    <summary><span class="su-l">Practise this</span><span class="su-n">3 scenarios</span><span class="su-x">see the move travel across stations</span><span class="chev">&#9662;</span></summary>
+    <div class="scn-wrap">
+        <div class="sstrip"><span class="sl">A</span><span class="st">The squeezed close</span><span class="kind">Varied surface · counselling</span><span class="hr"></span></div>
+        <section class="card" aria-label="The Time Crunch A — the squeezed close">
+    <p class="label freeze">The scene</p>
+    <p class="scene">You've explained the diagnosis carefully — perhaps too carefully — and the minute-warning goes. <span class="you">You haven't checked their understanding, answered their questions, or agreed the plan together.</span></p>
+    <div class="transform">
+      <p class="label freeze">The freeze</p>
+      <div class="line freeze">"No time for questions now. Just tell them the plan as fast as I can and finish before the bell."</div>
+      <div class="arrowrow"><span class="ln"></span>The save<span class="ln"></span></div>
+      <p class="label save">The recovery line</p>
+      <div class="line save"><span class="q">"</span>We're almost out of time, so I want to make the most of these last moments — what's the one thing you most want to understand before you leave?<span class="q">"</span></div>
+    </div>
+    <div class="diff">
+      <p class="dl">What's different here</p>
+      <p>When time runs short in a counselling station, the triage is to <b>hand the last minute to the patient's priority</b> — ask what matters most to <i>them</i> — rather than spend it completing your own agenda. The shared-decision marks are the ones at risk.</p>
+    </div>
+    <div class="trap">
+      <p class="tl">The trap here</p>
+      <p>Spending the final minute delivering your plan <b>at</b> the patient. A rushed monologue with no check of understanding scores nothing for shared decision-making — the very marks a counselling station is built on.</p>
+    </div>
+    <div class="drill">
+      <h3>Your turn</h3>
+      <p class="sub">A counselling station is running out of time. Write the line that gives the last minute to the patient — then reveal a model.</p>
+      <textarea placeholder="Type your recovery line…" aria-label="Your recovery line"></textarea>
+      <button class="btn" data-reveal>Reveal the model line</button>
+      <div class="model" aria-live="polite">
+        <p class="label save">Model recovery line</p>
+        <div class="line model"><span class="q">"</span>I'm aware we're nearly out of time — is there anything worrying you that you'd like me to make sure we cover before we finish?<span class="q">"</span></div>
+        <p class="why"><b>Why it scores:</b> handing the last minute to the patient's concern protects the ICE and shared-decision marks, which is where a counselling station's points concentrate. Eliciting their priority is worth more than completing yours.</p>
+      </div>
+    </div>
+  </section>
+        <div class="sstrip"><span class="sl">B</span><span class="st">The task you can't finish</span><span class="kind">Varied surface · defer, don't half-do</span><span class="hr"></span></div>
+        <section class="card" aria-label="The Time Crunch B — the task you can't finish">
+    <p class="label freeze">The scene</p>
+    <p class="scene">The clock is nearly gone and it's clear you won't complete the examination you started. <span class="you">There simply isn't time to do it properly now.</span></p>
+    <div class="transform">
+      <p class="label freeze">The freeze</p>
+      <div class="line freeze">"I'll rush the rest — half-do it fast so at least I've physically touched everything before the bell."</div>
+      <div class="arrowrow"><span class="ln"></span>The save<span class="ln"></span></div>
+      <p class="label save">The recovery line</p>
+      <div class="line save"><span class="q">"</span>I'm conscious we're short on time. As long as it's safe to wait, I'd rather arrange to complete this properly than rush it and risk missing something — and I'll make sure it's followed up before you leave.<span class="q">"</span></div>
+    </div>
+    <div class="diff">
+      <p class="dl">What's different here</p>
+      <p>When you genuinely can't finish a <b>non-urgent</b> task, the safe move is to name the limit and arrange completion, not to half-perform it. A safely-deferred task beats a rushed, unreliable one — <i>provided the task can safely wait</i>.</p>
+    </div>
+    <div class="register"><b>Safety boundary:</b> deferring only ever applies when it's clinically safe to wait. Anything safety-critical — an unstable patient, chest pain, anaphylaxis, a safeguarding or suicide-risk concern — is <b>never</b> deferred for time. You prioritise it over everything else, even if the bell goes. "Out of time" is never a reason to leave a safety-critical task undone.</div>
+    <div class="trap">
+      <p class="tl">The trap here</p>
+      <p>Half-performing a clinical task at speed. A hurried, incomplete examination gives <b>false reassurance</b> — an unreliable result is worse than an honest "this needs completing properly."</p>
+    </div>
+    <div class="drill">
+      <h3>Your turn</h3>
+      <p class="sub">You can't finish the task in time. Write the line that defers it safely instead of rushing — then reveal a model.</p>
+      <textarea placeholder="Type your recovery line…" aria-label="Your recovery line"></textarea>
+      <button class="btn" data-reveal>Reveal the model line</button>
+      <div class="model" aria-live="polite">
+        <p class="label save">Model recovery line</p>
+        <div class="line model"><span class="q">"</span>I don't want to rush this and give you a false picture — I'd prefer to arrange for it to be done thoroughly. Let me make sure that's set up before you go.<span class="q">"</span></div>
+        <p class="why"><b>Why it scores:</b> recognising that a rushed task is unreliable — and deferring it safely — shows clinical judgment. Examiners reward the candidate who protects accuracy over the appearance of completeness.</p>
+      </div>
+    </div>
+  </section>
+        <div class="sstrip"><span class="sl">C</span><span class="st">The one sentence left</span><span class="kind">Escalating · triage to a single message</span><span class="hr"></span></div>
+        <section class="card" aria-label="The Time Crunch C — the one sentence left">
+    <p class="label freeze">The scene</p>
+    <p class="scene">Seconds left. You haven't safety-netted, arranged follow-up, or closed. <span class="you">You can do exactly one thing well before the bell.</span></p>
+    <div class="transform">
+      <p class="label freeze">The freeze</p>
+      <div class="line freeze">"Too much left — gabble all of it, fast, and hope at least some of it lands before time's called."</div>
+      <div class="arrowrow"><span class="ln"></span>The save<span class="ln"></span></div>
+      <p class="label save">The recovery line</p>
+      <div class="line save"><span class="q">"</span>With the little time we have left, the most important thing is this: if you develop [a red-flag symptom], you must [seek help / act] straight away. We'll arrange everything else, but that's the one thing I need you to remember.<span class="q">"</span></div>
+    </div>
+    <div class="diff">
+      <p class="dl">What's different here</p>
+      <p>At the absolute end, triage collapses to <b>one sentence</b>. You don't compress everything — you pick the single safety-critical message and deliver it cleanly, deliberately sacrificing the rest.</p>
+    </div>
+    <div class="trap">
+      <p class="tl">The trap here</p>
+      <p>Refusing to choose — trying to deliver <b>everything at double speed</b>. A gabbled list at the bell lands as nothing; one clear safety message lands as a mark. The skill is deciding what to drop, not fitting it all in.</p>
+    </div>
+    <div class="drill">
+      <h3>Your turn</h3>
+      <p class="sub">You have one sentence left. Write the single safety message you'd choose — then reveal a model.</p>
+      <textarea placeholder="Type your recovery line…" aria-label="Your recovery line"></textarea>
+      <button class="btn" data-reveal>Reveal the model line</button>
+      <div class="model" aria-live="polite">
+        <p class="label save">Model recovery line</p>
+        <div class="line model"><span class="q">"</span>We're out of time, so the one thing I need you to take away is this: if [red flag] happens, [action] immediately — everything else we can arrange to follow up.<span class="q">"</span></div>
+        <p class="why"><b>Why it scores:</b> under the hardest time pressure, deliberately sacrificing everything except the single safety-critical instruction is the highest-level triage. One landed message beats five blurred ones — and it's the safety message the examiner is listening for.</p>
+      </div>
+    </div>
+  </section>
+    </div>
+  </details>
 
   <!-- ============ 04 — THE WRONG TURN ============ -->
   <div class="strip" id="d04">
@@ -331,6 +645,104 @@
       </div>
     </div>
   </section>
+  <details class="scenarios">
+    <summary><span class="su-l">Practise this</span><span class="su-n">3 scenarios</span><span class="su-x">see the move travel across stations</span><span class="chev">&#9662;</span></summary>
+    <div class="scn-wrap">
+        <div class="sstrip"><span class="sl">A</span><span class="st">The plan said out loud</span><span class="kind">Varied surface · a voiced mistake</span><span class="hr"></span></div>
+        <section class="card" aria-label="The Wrong Turn A — the plan said out loud">
+    <p class="label freeze">The scene</p>
+    <p class="scene">You're a sentence into explaining a management plan when you realise it's built on the wrong assumption — you'd misread the scenario. <span class="you">You've now committed to it out loud, and the patient is listening.</span></p>
+    <div class="transform">
+      <p class="label freeze">The freeze</p>
+      <div class="line freeze">"I've already started saying it. If I backtrack now they'll think I don't know what I'm doing — better to keep going and hope it's close enough."</div>
+      <div class="arrowrow"><span class="ln"></span>The save<span class="ln"></span></div>
+      <p class="label save">The recovery line</p>
+      <div class="line save"><span class="q">"</span>Actually, let me correct myself — having thought about it again, I don't think that's the right plan for you. Let me explain what I'd recommend instead, and why.<span class="q">"</span></div>
+    </div>
+    <div class="diff">
+      <p class="dl">What's different here</p>
+      <p>The wrong turn here is <b>spoken aloud</b> to the patient, not just an internal slip. Correcting in front of them — openly, without flannel — is harder and more important; an uncorrected wrong plan is a safety issue.</p>
+    </div>
+    <div class="trap">
+      <p class="tl">The trap here</p>
+      <p>Doubling down on a plan you've voiced because you've already committed. A wrong management plan, left standing <b>to save face</b>, is a patient-safety failure — not just a lost mark.</p>
+    </div>
+    <div class="drill">
+      <h3>Your turn</h3>
+      <p class="sub">You've voiced the wrong plan to the patient. Write the line that corrects it openly — then reveal a model.</p>
+      <textarea placeholder="Type your recovery line…" aria-label="Your recovery line"></textarea>
+      <button class="btn" data-reveal>Reveal the model line</button>
+      <div class="model" aria-live="polite">
+        <p class="label save">Model recovery line</p>
+        <div class="line model"><span class="q">"</span>I want to correct something I just said — on reflection, that isn't the best approach for you. Here's what I'd actually recommend.<span class="q">"</span></div>
+        <p class="why"><b>Why it scores:</b> openly retracting a plan you've voiced shows the patient's safety matters more than your image. Examiners reward the candidate who corrects in real time over one who lets a wrong plan stand to look consistent.</p>
+      </div>
+    </div>
+  </section>
+        <div class="sstrip"><span class="sl">B</span><span class="st">The misread emotion</span><span class="kind">Varied surface · a wrong assumption</span><span class="hr"></span></div>
+        <section class="card" aria-label="The Wrong Turn B — the misread emotion">
+    <p class="label freeze">The scene</p>
+    <p class="scene">You said, <span class="you">"I imagine you must be relieved"</span> — and the patient's face falls. You've misjudged how they feel entirely.</p>
+    <div class="transform">
+      <p class="label freeze">The freeze</p>
+      <div class="line freeze">"I read that completely wrong. Pretend I didn't — smooth over it and keep going as if nothing happened."</div>
+      <div class="arrowrow"><span class="ln"></span>The save<span class="ln"></span></div>
+      <p class="label save">The recovery line</p>
+      <div class="line save"><span class="q">"</span>I'm sorry — I think I misjudged that. Tell me how you're actually feeling about it, because I'd got the wrong impression.<span class="q">"</span></div>
+    </div>
+    <div class="diff">
+      <p class="dl">What's different here</p>
+      <p>The wrong turn here is an <b>emotional misread</b>, not a clinical one. The recovery is to own the misjudgement and hand it back to the patient to correct — repairing the rapport rather than papering over it.</p>
+    </div>
+    <div class="trap">
+      <p class="tl">The trap here</p>
+      <p>Ploughing on after a misjudged emotion, pretending the patient's reaction <b>didn't happen</b>. An unrepaired misread quietly tells the examiner you didn't notice — or didn't care — that you'd got the person wrong.</p>
+    </div>
+    <div class="drill">
+      <h3>Your turn</h3>
+      <p class="sub">You misjudged how the patient feels and they reacted. Write the line that repairs it — then reveal a model.</p>
+      <textarea placeholder="Type your recovery line…" aria-label="Your recovery line"></textarea>
+      <button class="btn" data-reveal>Reveal the model line</button>
+      <div class="model" aria-live="polite">
+        <p class="label save">Model recovery line</p>
+        <div class="line model"><span class="q">"</span>Forgive me — I don't think I read that right. How are you really feeling about all this?<span class="q">"</span></div>
+        <p class="why"><b>Why it scores:</b> noticing and repairing an emotional misread shows attunement and humility — both heavily marked in communication stations. The repair often scores higher than if you'd never misjudged at all.</p>
+      </div>
+    </div>
+  </section>
+        <div class="sstrip"><span class="sl">C</span><span class="st">The reassurance you must take back</span><span class="kind">Escalating · walking back a wrong premise</span><span class="hr"></span></div>
+        <section class="card" aria-label="The Wrong Turn C — the reassurance you must take back">
+    <p class="label freeze">The scene</p>
+    <p class="scene">Near the end, you realise the reassurance you've been giving was based on something you got wrong — and the patient has visibly relaxed on the strength of it. <span class="you">You now have to walk back your own reassurance.</span></p>
+    <div class="transform">
+      <p class="label freeze">The freeze</p>
+      <div class="line freeze">"I've already reassured them. If I take it back now I'll frighten them and look incompetent. Maybe I'll just… let it stand."</div>
+      <div class="arrowrow"><span class="ln"></span>The save<span class="ln"></span></div>
+      <p class="label save">The recovery line</p>
+      <div class="line save"><span class="q">"</span>I need to be honest with you — I want to correct something I said earlier, because it's important you have the right information. Let me go back to it carefully.<span class="q">"</span></div>
+    </div>
+    <div class="diff">
+      <p class="dl">What's different here</p>
+      <p>The wrong turn is caught <b>late, after the patient has acted on it emotionally</b>. The recovery requires walking back false reassurance — the hardest correction — gently but unmistakably, because letting wrong reassurance stand is unsafe.</p>
+    </div>
+    <div class="trap">
+      <p class="tl">The trap here</p>
+      <p>Letting <b>false reassurance stand</b> because correcting it is uncomfortable and will worry the patient. Comfortable silence that leaves a patient misinformed is a clear safety failure — the discomfort of correcting is never a reason to leave it.</p>
+    </div>
+    <div class="drill">
+      <h3>Your turn</h3>
+      <p class="sub">You've reassured the patient on a wrong premise and must take it back. Write the line that does it gently but clearly — then reveal a model.</p>
+      <textarea placeholder="Type your recovery line…" aria-label="Your recovery line"></textarea>
+      <button class="btn" data-reveal>Reveal the model line</button>
+      <div class="model" aria-live="polite">
+        <p class="label save">Model recovery line</p>
+        <div class="line model"><span class="q">"</span>I'm sorry — I have to revisit something I told you earlier, because I want to make sure you have accurate information. It's important, so let's go through it together.<span class="q">"</span></div>
+        <p class="why"><b>Why it scores:</b> retracting your own reassurance is the hardest correction there is, and doing it gently but clearly is exactly what safety demands. Examiners reward the candidate who prioritises honesty over the patient's short-term comfort — and their own.</p>
+      </div>
+    </div>
+  </section>
+    </div>
+  </details>
 
   <!-- ============ 05 — THE EMOTIONAL AMBUSH ============ -->
   <div class="strip" id="d05">
@@ -363,6 +775,104 @@
       </div>
     </div>
   </section>
+  <details class="scenarios">
+    <summary><span class="su-l">Practise this</span><span class="su-n">3 scenarios</span><span class="su-x">see the move travel across stations</span><span class="chev">&#9662;</span></summary>
+    <div class="scn-wrap">
+        <div class="sstrip"><span class="sl">A</span><span class="st">The angry relative</span><span class="kind">Varied surface · anger, not tears</span><span class="hr"></span></div>
+        <section class="card" aria-label="The Emotional Ambush A — the angry relative">
+    <p class="label freeze">The scene</p>
+    <p class="scene">A relative cuts across you, angry: <span class="you">"This is a disgrace. Nobody has told us anything. Why has it taken this long?"</span> The structure you had is gone, and it feels aimed at you.</p>
+    <div class="transform">
+      <p class="label freeze">The freeze</p>
+      <div class="line freeze">"They're attacking me. Defend yourself — explain why it wasn't your fault, or they'll think I'm incompetent."</div>
+      <div class="arrowrow"><span class="ln"></span>The save<span class="ln"></span></div>
+      <p class="label save">The recovery line</p>
+      <div class="line save"><span class="q">"</span>You're clearly really frustrated, and I'm sorry you've felt left in the dark — that's not the experience anyone should have. Help me understand what's happened so far, and I'll do my best to put it right.<span class="q">"</span></div>
+    </div>
+    <div class="diff">
+      <p class="dl">What's different here</p>
+      <p>Anger isn't met with empathy-for-sadness — it's met by <b>acknowledging the grievance without getting defensive</b>, then inviting them to tell you. Don't justify; absorb, and redirect to understanding.</p>
+    </div>
+    <div class="trap">
+      <p class="tl">The trap here</p>
+      <p>Becoming <b>defensive</b> — explaining, justifying, or arguing back. Defensiveness pours fuel on the anger and reads as a doctor who can't stay regulated when challenged. The grievance may not even be about you; treating it as an attack guarantees escalation.</p>
+    </div>
+    <div class="drill">
+      <h3>Your turn</h3>
+      <p class="sub">An angry relative has just rounded on you. Write the line that de-escalates without defending — then reveal a model.</p>
+      <textarea placeholder="Type your recovery line…" aria-label="Your recovery line"></textarea>
+      <button class="btn" data-reveal>Reveal the model line</button>
+      <div class="model" aria-live="polite">
+        <p class="label save">Model recovery line</p>
+        <div class="line model"><span class="q">"</span>You have every right to be upset, and I want to understand exactly what's gone wrong so I can help. Can you tell me what's happened?<span class="q">"</span></div>
+        <p class="why"><b>Why it scores:</b> acknowledging the legitimacy of the anger de-escalates it; not defending shows composure. Examiners score whether you can stay non-defensive and curious under challenge — that is the mark, not winning the argument.</p>
+      </div>
+    </div>
+  </section>
+        <div class="sstrip"><span class="sl">B</span><span class="st">The shutdown</span><span class="kind">Varied surface · withdrawal, not eruption</span><span class="hr"></span></div>
+        <section class="card" aria-label="The Emotional Ambush B — the shutdown">
+    <p class="label freeze">The scene</p>
+    <p class="scene">After you mention the diagnosis, the patient goes quiet. <span class="you">They stop answering, look down, won't meet your eye. The conversation just… stops.</span></p>
+    <div class="transform">
+      <p class="label freeze">The freeze</p>
+      <div class="line freeze">"They've gone silent and it's so awkward. Fill it — keep giving information so the silence doesn't sit there."</div>
+      <div class="arrowrow"><span class="ln"></span>The save<span class="ln"></span></div>
+      <p class="label save">The recovery line</p>
+      <div class="line save"><span class="q">"</span>This has clearly come as a shock, and that's completely understandable. We don't have to say anything for a moment — take your time, and I'm right here when you're ready.<span class="q">"</span></div>
+    </div>
+    <div class="diff">
+      <p class="dl">What's different here</p>
+      <p>Withdrawal is the hardest emotion to read, and the instinct is to fill the silence with facts. The recovery is to <b>name the withdrawal and tolerate the silence</b> — sit in it rather than paper over it with information.</p>
+    </div>
+    <div class="trap">
+      <p class="tl">The trap here</p>
+      <p>Flooding the silence with <b>information</b> to relieve your own discomfort. Facts dumped on a patient who has just shut down land on no one — and signal to the examiner that you couldn't read the room when it went quiet.</p>
+    </div>
+    <div class="drill">
+      <h3>Your turn</h3>
+      <p class="sub">The patient has gone silent on you. Write the line that holds the space instead of filling it — then reveal a model.</p>
+      <textarea placeholder="Type your recovery line…" aria-label="Your recovery line"></textarea>
+      <button class="btn" data-reveal>Reveal the model line</button>
+      <div class="model" aria-live="polite">
+        <p class="label save">Model recovery line</p>
+        <div class="line model"><span class="q">"</span>It's alright to take a moment. I can see this is a lot to take in — there's no rush, and I'm here.<span class="q">"</span></div>
+        <p class="why"><b>Why it scores:</b> tolerating silence and naming the emotion shows you can read non-verbal distress, which is precisely the harder communication mark. A patient who withdraws needs space, not more words.</p>
+      </div>
+    </div>
+  </section>
+        <div class="sstrip"><span class="sl">C</span><span class="st">The emotion that won't settle</span><span class="kind">Escalating · empathy under the clock</span><span class="hr"></span></div>
+        <section class="card" aria-label="The Emotional Ambush C — the emotion that won't settle">
+    <p class="label freeze">The scene</p>
+    <p class="scene">You acknowledged the distress and gently tried to continue — and they break down again, harder. <span class="you">There's a safety-critical thing you still must cover, the clock is running, and the emotion isn't settling.</span></p>
+    <div class="transform">
+      <p class="label freeze">The freeze</p>
+      <div class="line freeze">"I've already given them a moment and it didn't work. I'm going to fail — I have to push on now, ready or not."</div>
+      <div class="arrowrow"><span class="ln"></span>The save<span class="ln"></span></div>
+      <p class="label save">The recovery line</p>
+      <div class="line save"><span class="q">"</span>I know this is an enormous amount to take in, and I don't want to rush you. There are one or two important things I do need to make sure you know before we finish — would it be alright if we go through those together, at a pace that feels manageable for you?<span class="q">"</span></div>
+    </div>
+    <div class="diff">
+      <p class="dl">What's different here</p>
+      <p>When emotion won't resolve, you don't get to wait indefinitely <i>or</i> steamroll. You <b>carry the task inside the empathy</b> — ask permission to continue gently, completing the safety-critical step <i>with</i> the patient rather than choosing one over the other.</p>
+    </div>
+    <div class="trap">
+      <p class="tl">The trap here</p>
+      <p>Treating empathy and task as a <b>binary</b> — either abandoning the safety-critical step to stay with the emotion, or abandoning the emotion to force the step. The recovery refuses the false choice; the fail is picking a side.</p>
+    </div>
+    <div class="drill">
+      <h3>Your turn</h3>
+      <p class="sub">The emotion won't settle and a safety-critical task remains. Write the line that holds both — then reveal a model.</p>
+      <textarea placeholder="Type your recovery line…" aria-label="Your recovery line"></textarea>
+      <button class="btn" data-reveal>Reveal the model line</button>
+      <div class="model" aria-live="polite">
+        <p class="label save">Model recovery line</p>
+        <div class="line model"><span class="q">"</span>There's something important I do need to share with you for your safety — can we go through it slowly, together, at your pace?<span class="q">"</span></div>
+        <p class="why"><b>Why it scores:</b> it refuses the false choice between compassion and completion. Asking permission keeps the patient in control while you protect the safety-critical task — the highest-level handling of an emotional station under time pressure.</p>
+      </div>
+    </div>
+  </section>
+    </div>
+  </details>
 
   <!-- ============ 06 — THE EXAMINER INTERRUPTION ============ -->
   <div class="strip" id="d06">
@@ -396,6 +906,104 @@
       </div>
     </div>
   </section>
+  <details class="scenarios">
+    <summary><span class="su-l">Practise this</span><span class="su-n">3 scenarios</span><span class="su-x">see the move travel across stations</span><span class="chev">&#9662;</span></summary>
+    <div class="scn-wrap">
+        <div class="sstrip"><span class="sl">A</span><span class="st">The "why?"</span><span class="kind">Varied surface · a reasoning probe</span><span class="hr"></span></div>
+        <section class="card" aria-label="The Examiner Interruption A — the why">
+    <p class="label freeze">The scene</p>
+    <p class="scene">Mid-flow, the examiner asks: <span class="you">"Why would you do that?"</span> You can answer — but it knocks you off your rhythm, and the urge to over-justify is strong.</p>
+    <div class="transform">
+      <p class="label freeze">The freeze</p>
+      <div class="line freeze">"They're testing me. Defend my reasoning at length — pile on the justification until they're convinced I'm right."</div>
+      <div class="arrowrow"><span class="ln"></span>The save<span class="ln"></span></div>
+      <p class="label save">The recovery line</p>
+      <div class="line save"><span class="q">"</span>Good question — [the single clear reason]. I'll continue if that's alright.<span class="q">"</span></div>
+    </div>
+    <div class="diff">
+      <p class="dl">What's different here</p>
+      <p>When the examiner asks for your reasoning, give <b>one clean reason, not a defence</b>. Over-justifying eats the clock and signals insecurity; a crisp answer signals you knew exactly why all along.</p>
+    </div>
+    <div class="trap">
+      <p class="tl">The trap here</p>
+      <p>Over-justifying. A long, defensive explanation <b>burns your time</b> and reads as a candidate who isn't sure — the opposite of what a confident one-line answer conveys.</p>
+    </div>
+    <div class="drill">
+      <h3>Your turn</h3>
+      <p class="sub">The examiner has asked "why?". Write the one-line answer that resists over-justifying — then reveal a model.</p>
+      <textarea placeholder="Type your recovery line…" aria-label="Your recovery line"></textarea>
+      <button class="btn" data-reveal>Reveal the model line</button>
+      <div class="model" aria-live="polite">
+        <p class="label save">Model recovery line</p>
+        <div class="line model"><span class="q">"</span>That's because [single clear reason] — shall I carry on?<span class="q">"</span></div>
+        <p class="why"><b>Why it scores:</b> a confident one-line answer shows you understood your own reasoning, and the brevity itself reads as competence. Examiners probing "why" want to see clear thinking, not volume.</p>
+      </div>
+    </div>
+  </section>
+        <div class="sstrip"><span class="sl">B</span><span class="st">The redirect</span><span class="kind">Varied surface · "move on"</span><span class="hr"></span></div>
+        <section class="card" aria-label="The Examiner Interruption B — the redirect">
+    <p class="label freeze">The scene</p>
+    <p class="scene">The examiner says: <span class="you">"I think we can move on from that."</span> You read it as "you've done something wrong," and your confidence drops through the floor.</p>
+    <div class="transform">
+      <p class="label freeze">The freeze</p>
+      <div class="line freeze">"I've messed up — they're cutting me off because I'm doing badly. That's the station gone."</div>
+      <div class="arrowrow"><span class="ln"></span>The save<span class="ln"></span></div>
+      <p class="label save">The recovery line</p>
+      <div class="line save"><span class="q">"</span>Of course — let me move on to the next part.<span class="q">"</span> <span class="after">— said warmly, no apology, no visible wobble.</span></div>
+    </div>
+    <div class="diff">
+      <p class="dl">What's different here</p>
+      <p>A redirect is <b>help, not censure</b> — usually the examiner steering you toward marks you haven't reached yet. Take it gratefully and move, rather than reading rejection into a nudge.</p>
+    </div>
+    <div class="trap">
+      <p class="tl">The trap here</p>
+      <p>Hearing a redirect as a <b>verdict</b> and deflating. The examiner is often saving you time for marks elsewhere; treating it as failure turns a helpful steer into a real loss of the minutes that follow.</p>
+    </div>
+    <div class="drill">
+      <h3>Your turn</h3>
+      <p class="sub">The examiner has redirected you. Write the line that moves on cleanly without reading rejection into it — then reveal a model.</p>
+      <textarea placeholder="Type your recovery line…" aria-label="Your recovery line"></textarea>
+      <button class="btn" data-reveal>Reveal the model line</button>
+      <div class="model" aria-live="polite">
+        <p class="label save">Model recovery line</p>
+        <div class="line model"><span class="q">"</span>Happy to move on — I'll pick up with the next part.<span class="q">"</span></div>
+        <p class="why"><b>Why it scores:</b> accepting a redirect cleanly shows you can take steer without losing composure. The examiner is frequently moving you toward the marks — gratitude and momentum is the right read, not self-doubt.</p>
+      </div>
+    </div>
+  </section>
+        <div class="sstrip"><span class="sl">C</span><span class="st">The correction</span><span class="kind">Escalating · taking it gracefully</span><span class="hr"></span></div>
+        <section class="card" aria-label="The Examiner Interruption C — the correction">
+    <p class="label freeze">The scene</p>
+    <p class="scene">The examiner interrupts to correct you: <span class="you">"Actually, that's not quite right."</span> It lands hard — and there's still half a station left to run.</p>
+    <div class="transform">
+      <p class="label freeze">The freeze</p>
+      <div class="line freeze">"I got it wrong, in front of them. That's it — I've failed. How am I even meant to carry on now?"</div>
+      <div class="arrowrow"><span class="ln"></span>The save<span class="ln"></span></div>
+      <p class="label save">The recovery line</p>
+      <div class="line save"><span class="q">"</span>You're right — thank you. I'd reconsider, and [the corrected approach]. Let me carry on with that in mind.<span class="q">"</span></div>
+    </div>
+    <div class="diff">
+      <p class="dl">What's different here</p>
+      <p>Being corrected by the examiner isn't the end — <b>accept it, integrate it, continue</b>. The recovery is graceful incorporation, not collapse. How you take a correction is itself scored.</p>
+    </div>
+    <div class="trap">
+      <p class="tl">The trap here</p>
+      <p>Letting the correction <b>end the station</b> — visibly deflating, apologising over and over, or going to pieces for the remaining minutes. One correction costs one mark; unravelling costs the rest of the station.</p>
+    </div>
+    <div class="drill">
+      <h3>Your turn</h3>
+      <p class="sub">The examiner has corrected you mid-station. Write the line that takes it gracefully and keeps going — then reveal a model.</p>
+      <textarea placeholder="Type your recovery line…" aria-label="Your recovery line"></textarea>
+      <button class="btn" data-reveal>Reveal the model line</button>
+      <div class="model" aria-live="polite">
+        <p class="label save">Model recovery line</p>
+        <div class="line model"><span class="q">"</span>Thank you — that's a fair point. I'd adjust my approach and [the correction], and I'll keep going.<span class="q">"</span></div>
+        <p class="why"><b>Why it scores:</b> taking a correction with grace and continuing demonstrates insight and resilience — both marked. The examiner is watching how you recover from being wrong far more than the single error itself.</p>
+      </div>
+    </div>
+  </section>
+    </div>
+  </details>
 
   <!-- ============ 07 — THE FORGOTTEN STEP ============ -->
   <div class="strip" id="d07">
@@ -428,6 +1036,101 @@
       </div>
     </div>
   </section>
+  <details class="scenarios">
+    <summary><span class="su-l">Practise this</span><span class="su-n">3 scenarios</span><span class="su-x">see the move travel across stations</span><span class="chev">&#9662;</span></summary>
+    <div class="scn-wrap">
+        <div class="sstrip"><span class="sl">A</span><span class="st">The hygiene you skipped</span><span class="kind">Varied surface · timing lost, behaviour kept</span><span class="hr"></span></div>
+        <section class="card" aria-label="The Forgotten Step A — the hygiene you skipped">
+    <p class="label freeze">The scene</p>
+    <p class="scene">You're well into the station when you realise you never cleaned your hands before touching the patient. <span class="you">The moment for it was right at the start.</span></p>
+    <div class="transform">
+      <p class="label freeze">The freeze</p>
+      <div class="line freeze">"It's too late — drawing attention to it now just highlights that I forgot. Better to quietly carry on and hope nobody clocked it."</div>
+      <div class="arrowrow"><span class="ln"></span>The save<span class="ln"></span></div>
+      <p class="label save">The recovery line</p>
+      <div class="line save"><span class="q">"</span>I do apologise — I should clean my hands before we continue. Let me do that now.<span class="q">"</span> <span class="after">— gel or wash first, then continue.</span></div>
+    </div>
+    <div class="diff">
+      <p class="dl">What's different here</p>
+      <p>Hygiene is the one step where the <b>ideal timing has passed</b> — but doing it late, openly, still shows you know it matters. You can't recover the timing mark; you recover the safety behaviour and the insight.</p>
+    </div>
+    <div class="drill">
+      <h3>Your turn</h3>
+      <p class="sub">You skipped hand hygiene at the start and have just realised. Write the line that puts it right — then reveal a model.</p>
+      <textarea placeholder="Type your recovery line…" aria-label="Your recovery line"></textarea>
+      <button class="btn" data-reveal>Reveal the model line</button>
+      <div class="model" aria-live="polite">
+        <p class="label save">Model recovery line</p>
+        <div class="line model"><span class="q">"</span>Apologies — I realise I haven't cleaned my hands. Let me do that properly before we continue.<span class="q">"</span></div>
+        <p class="why"><b>Why it scores:</b> correcting hygiene openly, even late, shows you hold the standard and can self-monitor. The visible correction recovers the behaviour and the insight, even where the timing mark is gone.</p>
+      </div>
+    </div>
+  </section>
+        <div class="sstrip"><span class="sl">B</span><span class="st">The ICE you never asked</span><span class="kind">Varied surface · a communication step</span><span class="hr"></span></div>
+        <section class="card" aria-label="The Forgotten Step B — the ICE you never asked">
+    <p class="label freeze">The scene</p>
+    <p class="scene">You're moving toward closing when you realise you never asked what the patient thinks is going on, or what they're worried about. <span class="you">You've run the whole consultation on your own agenda.</span></p>
+    <div class="transform">
+      <p class="label freeze">The freeze</p>
+      <div class="line freeze">"We're nearly done — asking now will feel clunky and out of place. I'll just leave it and close."</div>
+      <div class="arrowrow"><span class="ln"></span>The save<span class="ln"></span></div>
+      <p class="label save">The recovery line</p>
+      <div class="line save"><span class="q">"</span>There's one thing I haven't asked that I should — what's been going through your own mind about all this? Was there anything you were particularly worried about?<span class="q">"</span></div>
+    </div>
+    <div class="diff">
+      <p class="dl">What's different here</p>
+      <p>ICE forgotten is a <b>communication</b> step, not a safety one — and it folds in late quite naturally with a brief bridge. The recovery is smoother than for a clinical step, but the omission costs real marks if left.</p>
+    </div>
+    <div class="trap">
+      <p class="tl">The trap here</p>
+      <p>Skipping ICE entirely because it feels <b>awkward to bolt on</b> near the end. ICE is where a large share of communication marks sit; "it felt clunky to add" loses them just as surely as forgetting did.</p>
+    </div>
+    <div class="drill">
+      <h3>Your turn</h3>
+      <p class="sub">You forgot to explore ideas, concerns and expectations. Write the line that folds it in late — then reveal a model.</p>
+      <textarea placeholder="Type your recovery line…" aria-label="Your recovery line"></textarea>
+      <button class="btn" data-reveal>Reveal the model line</button>
+      <div class="model" aria-live="polite">
+        <p class="label save">Model recovery line</p>
+        <div class="line model"><span class="q">"</span>Before we wrap up — can I ask what you were hoping for from today, and whether anything's been particularly worrying you?<span class="q">"</span></div>
+        <p class="why"><b>Why it scores:</b> recovering ICE even late captures marks that otherwise vanish, and shows you can self-correct without losing flow. A slightly late ICE scores; an absent one doesn't.</p>
+      </div>
+    </div>
+  </section>
+        <div class="sstrip"><span class="sl">C</span><span class="st">The consent you never took</span><span class="kind">Escalating · safety- and ethics-critical</span><span class="hr"></span></div>
+        <section class="card" aria-label="The Forgotten Step C — the consent you never took">
+    <p class="label freeze">The scene</p>
+    <p class="scene">Partway through, you realise you began examining the patient without ever properly gaining consent. <span class="you">There's more of the examination still to do, and the clock is short.</span></p>
+    <div class="transform">
+      <p class="label freeze">The freeze</p>
+      <div class="line freeze">"Going back to consent now is awkward and eats my last seconds — and I've already started, so surely it's implied by this point."</div>
+      <div class="arrowrow"><span class="ln"></span>The save<span class="ln"></span></div>
+      <p class="label save">The recovery line</p>
+      <div class="line save"><span class="q">"</span>Before we go any further, I need to apologise — I should have checked you were happy for me to examine you. May I explain what the rest of the examination involves and ask your consent before I continue?<span class="q">"</span></div>
+    </div>
+    <div class="diff">
+      <p class="dl">What's different here</p>
+      <p>Consent is <b>safety- and ethics-critical</b> — unlike ICE, it cannot be quietly dropped. You stop and obtain consent <i>before any further examination</i> — mandatory, not optional, even under time pressure. It is never sought retrospectively for something already done.</p>
+    </div>
+    <div class="register"><b>Safety boundary:</b> consent is never "implied" by how far the consultation has gone, and it is never sought retrospectively for something already done. If it wasn't taken, you stop and obtain it before going any further — late and awkward beats absent. This is an ethical duty, not a courtesy, and an uncorrected consent omission is treated as a serious fail.</div>
+    <div class="trap">
+      <p class="tl">The trap here</p>
+      <p>Treating consent as <b>implied</b> because the moment passed. Proceeding without explicit consent — and never going back for it — is an ethical and safety failure that a late, awkward correction fully prevents.</p>
+    </div>
+    <div class="drill">
+      <h3>Your turn</h3>
+      <p class="sub">You realise you never took consent and you're nearly out of time. Write the line that goes back for it — then reveal a model.</p>
+      <textarea placeholder="Type your recovery line…" aria-label="Your recovery line"></textarea>
+      <button class="btn" data-reveal>Reveal the model line</button>
+      <div class="model" aria-live="polite">
+        <p class="label save">Model recovery line</p>
+        <div class="line model"><span class="q">"</span>I'm sorry — I should have asked before I started. Before I do anything further, may I explain the examination and check you're happy for me to go on?<span class="q">"</span></div>
+        <p class="why"><b>Why it scores:</b> returning for consent, however late and awkward, is non-negotiable — it's an ethical duty, not a courtesy. Examiners treat an uncorrected consent omission as a serious fail; the late correction recovers both the ethics and the mark.</p>
+      </div>
+    </div>
+  </section>
+    </div>
+  </details>
 
   <!-- ============ 08 — THE KNOWLEDGE GAP ============ -->
   <div class="strip" id="d08">
@@ -461,6 +1164,109 @@
       </div>
     </div>
   </section>
+  <details class="scenarios">
+    <summary><span class="su-l">Practise this</span><span class="su-n">3 scenarios</span><span class="su-x">see the move travel across stations</span><span class="chev">&#9662;</span></summary>
+    <div class="scn-wrap">
+        <div class="sstrip">
+    <span class="sl">A</span><span class="st">The wrong expert</span>
+    <span class="kind">Varied surface</span><span class="hr"></span>
+  </div>
+        <section class="card" aria-label="Scenario A — the wrong expert">
+    <p class="label freeze">The scene</p>
+    <p class="scene">You're counselling a patient who's about to start a new medication. As you finish, they ask: <span class="you">"Will this be alright with the herbal supplement I take every day?"</span> — and you don't know whether the two interact.</p>
+    <div class="transform">
+      <p class="label freeze">The freeze</p>
+      <div class="line freeze">"I don't know that interaction. They'll think I'm not competent if I can't answer. It's probably fine — I'll just say it should be okay."</div>
+      <div class="arrowrow"><span class="ln"></span>The save<span class="ln"></span></div>
+      <p class="label save">The recovery line</p>
+      <div class="line save"><span class="q">"</span>That's a sensible thing to check, and I wouldn't want to guess about an interaction. Let me confirm it with our pharmacist before you start anything, and I'll come back to explain what it means for you.<span class="q">"</span></div>
+    </div>
+    <div class="diff">
+      <p class="dl">What's different here</p>
+      <p>Safe escalation isn't always "ask a senior doctor." A medicines question belongs with the <b>pharmacist</b> — and naming the <i>right</i> professional for the question is itself the scored judgment. The candidate who escalates to the correct expert shows they understand the team, not just that they're unsure.</p>
+    </div>
+    <div class="drill">
+      <h3>Your turn</h3>
+      <p class="sub">A patient asks about a drug interaction you don't know. Write the line that escalates to the right person — then reveal a model.</p>
+      <textarea placeholder="Type your recovery line…" aria-label="Your recovery line"></textarea>
+      <button class="btn" data-reveal>Reveal the model line</button>
+      <div class="model" aria-live="polite">
+        <p class="label save">Model recovery line</p>
+        <div class="line model"><span class="q">"</span>I want to be certain about that rather than guess — our pharmacist can check the interaction properly, and I'll come straight back to you before you take the first dose.<span class="q">"</span></div>
+        <p class="why"><b>Why it scores:</b> it routes the question to the correct expert and protects the patient with a clear "before the first dose" safety hold. Knowing <i>who</i> to escalate to is a competency in its own right — it reads as a doctor who works safely within a team.</p>
+      </div>
+    </div>
+  </section>
+        <div class="sstrip">
+    <span class="sl">B</span><span class="st">The half-answer</span>
+    <span class="kind">Varied surface</span><span class="hr"></span>
+  </div>
+        <section class="card" aria-label="Scenario B — the half-answer">
+    <p class="label freeze">The scene</p>
+    <p class="scene">At a follow-up, the patient points to their clinic letter: <span class="you">"It says here I was positive for something called anti-centromere antibodies — what does that mean for me?"</span> You half-remember it's something to do with autoimmune conditions, but you're not sure what it actually means for this patient.</p>
+    <div class="transform">
+      <p class="label freeze">The freeze</p>
+      <div class="line freeze">"I sort of know this. I'll give them the gist — something that sounds right — rather than admit I'm not certain."</div>
+      <div class="arrowrow"><span class="ln"></span>The save<span class="ln"></span></div>
+      <p class="label save">The recovery line</p>
+      <div class="line save"><span class="q">"</span>It's understandable to want to know what that means — and I'd rather explain it accurately than give you a half-answer. Let me check exactly what it means for you with the specialist team, and then I'll go through it with you properly.<span class="q">"</span></div>
+    </div>
+    <div class="diff">
+      <p class="dl">What's different here</p>
+      <p>The trap here isn't a blank mind — it's <b>partial knowledge</b>. "I sort of know" is more dangerous than "I don't know," because a half-remembered fact bluffs convincingly and you half-believe it yourself. The scenario teaches candidates to treat their own uncertainty as the signal to stop — not the gap they can paper over.</p>
+    </div>
+    <div class="trap">
+      <p class="tl">The trap here</p>
+      <p>Confidently delivering the gist of something you only half-know. A <b>plausible half-answer</b> about a clinical result is still misinformation — and it's harder for the examiner to forgive than an honest "let me check," because it shows a doctor who can't feel the edge of their own knowledge.</p>
+    </div>
+    <div class="drill">
+      <h3>Your turn</h3>
+      <p class="sub">You half-remember the answer but aren't sure. Write the line that resists the half-answer — then reveal a model.</p>
+      <textarea placeholder="Type your recovery line…" aria-label="Your recovery line"></textarea>
+      <button class="btn" data-reveal>Reveal the model line</button>
+      <div class="model" aria-live="polite">
+        <p class="label save">Model recovery line</p>
+        <div class="line model"><span class="q">"</span>I'd rather give you a complete and accurate explanation than a partial one — let me check it properly and come back to you with the full picture.<span class="q">"</span></div>
+        <p class="why"><b>Why it scores:</b> it names the difference between a partial and a proper answer out loud, which is exactly the insight being tested. Choosing accuracy over the appearance of knowledge is what a safe doctor does — and the examiner can see the self-awareness behind it.</p>
+      </div>
+    </div>
+  </section>
+        <div class="sstrip">
+    <span class="sl">C</span><span class="st">The push-back</span>
+    <span class="kind">Escalating · holds under pressure</span><span class="hr"></span>
+  </div>
+        <section class="card" aria-label="Scenario C — the push-back">
+    <p class="label freeze">The scene</p>
+    <p class="scene">You've said you'll check and come back — and the patient pushes: <span class="you">"But you're the doctor. Surely you can just tell me now? I've waited long enough for this."</span> The frustration is real, and the pressure to simply answer is enormous.</p>
+    <div class="transform">
+      <p class="label freeze">The freeze</p>
+      <div class="line freeze">"They're frustrated with me. Maybe I should just give them my best guess — anything to settle this and not look useless."</div>
+      <div class="arrowrow"><span class="ln"></span>The save<span class="ln"></span></div>
+      <p class="label save">The recovery line</p>
+      <div class="line save"><span class="q">"</span>I completely understand the frustration, and I'm sorry you've had to wait. It's precisely because this matters so much that I won't guess — I'd rather give you the right answer than a quick one. Let me get it checked and I'll come back to you as soon as I can.<span class="q">"</span></div>
+    </div>
+    <div class="diff">
+      <p class="dl">What's different here</p>
+      <p>The hero move now meets <b>resistance</b>. The recovery has to do two things at once — acknowledge the frustration <i>and</i> hold the line — without letting the first collapse into the second. This is the harder case: empathy that stays firm, not empathy that caves.</p>
+    </div>
+    <div class="trap">
+      <p class="tl">The trap here</p>
+      <p>Caving to the pressure. The patient's frustration is the bait — and guessing "just to keep them happy" turns a safe escalation into the very bluff that Instant-Fails. <b>Relieving the tension is not the same as helping the patient.</b></p>
+    </div>
+    <div class="drill">
+      <h3>Your turn</h3>
+      <p class="sub">The patient is pushing you to answer now. Write the line that stays warm but doesn't cave — then reveal a model.</p>
+      <textarea placeholder="Type your recovery line…" aria-label="Your recovery line"></textarea>
+      <button class="btn" data-reveal>Reveal the model line</button>
+      <div class="model" aria-live="polite">
+        <p class="label save">Model recovery line</p>
+        <div class="line model"><span class="q">"</span>I can hear how frustrating this is — and that's exactly why I want to get it right rather than risk giving you wrong information. I'll check it and come straight back to you.<span class="q">"</span></div>
+        <p class="why"><b>Why it scores:</b> it validates the emotion and uses it as the reason to stay safe, rather than the reason to abandon safety. Holding a clinical line under social pressure — kindly — is a high-level mark: it's the difference between a doctor who is liked and a doctor who is safe.</p>
+      </div>
+    </div>
+  </section>
+    </div>
+  </details>
 
   <!-- ============ SIBLINGS ============ -->
   <section class="siblings" aria-label="Related AMaC trainers">
