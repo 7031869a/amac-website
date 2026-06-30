@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Recovery Room — AMaC · PLAB 2</title>
+<meta name="description" content="Every OSCE wobble has a save. Eight ways a PLAB 2 station comes off the rails — and the exact line that turns each one back into marks. Recovery is where the marks are.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --page:#0C1526; --card:#16233F; --card-2:#1B2B4D;
+    --gold:#C9A227; --gold-text:#D7B43A; --gold-soft:rgba(201,162,39,.14);
+    --ink:#E8ECF4; --ink-soft:#A6B2C9; --ink-mute:#6E7B96;
+    --freeze:#7E8AA3; --line:#243454; --line-soft:#1E2C4A;
+    --rule:rgba(201,162,39,.32);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; background:var(--page); color:var(--ink);
+    font-family:"Outfit",system-ui,sans-serif; font-weight:400;
+    line-height:1.65; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:780px; margin:0 auto; padding:0 22px}
+
+  /* JS-off fallback nav (nav.js replaces this on load) */
+  .navfb{display:flex;align-items:center;gap:12px;max-width:1180px;margin:0 auto;padding:13px 26px;
+    font-size:13px;color:#C7D0E2}
+  .navfb a{color:#C9A227;text-decoration:none;font-weight:600;letter-spacing:.08em}
+  .navfb .tag{background:#C9A227;color:#0B1220;font-weight:600;padding:3px 11px;border-radius:6px;letter-spacing:.08em}
+  .navfb .ex{margin-left:auto;color:#8593AE;font-size:12px}
+
+  /* hero */
+  header.hero{padding:74px 0 18px; text-align:center}
+  .eyebrow{font-size:12px; letter-spacing:.22em; text-transform:uppercase; color:var(--gold-text); margin-bottom:18px}
+  h1{font-family:"Fraunces",serif; font-weight:500; font-size:clamp(44px,9vw,72px); line-height:1.0;
+    margin:0 0 24px; letter-spacing:-.015em}
+  h1 .em{font-style:italic; color:var(--gold-text)}
+  .thesis{max-width:620px; margin:0 auto; font-size:19px; color:var(--ink-soft); line-height:1.6}
+  .thesis b{color:var(--ink); font-weight:500}
+  .thesis .pull{display:block; margin-top:18px; font-family:"Fraunces",serif; font-style:italic;
+    font-size:22px; color:var(--gold-text); font-weight:500}
+
+  /* taxonomy index */
+  .index{margin:64px 0 0; scroll-margin-top:20px}
+  .index-head{display:flex; align-items:baseline; gap:14px; margin-bottom:8px}
+  .index-head .k{font-family:"Fraunces",serif; font-size:24px; font-weight:500}
+  .index-head .s{font-size:13.5px; color:var(--ink-mute); letter-spacing:.02em}
+  .index-sub{font-size:14.5px; color:var(--ink-soft); margin:0 0 22px; max-width:640px; line-height:1.6}
+  .tiles{display:grid; grid-template-columns:1fr 1fr; gap:13px}
+  .tile{display:flex; gap:15px; align-items:flex-start; text-decoration:none; color:inherit;
+    background:var(--card); border:1px solid var(--line); border-left:2px solid var(--rule);
+    border-radius:11px; padding:16px 18px; transition:transform .14s ease, border-color .14s ease, background .14s ease}
+  .tile:hover{transform:translateY(-2px); background:var(--card-2); border-left-color:var(--gold-text)}
+  .tile .tn{font-family:"Fraunces",serif; font-size:15px; color:var(--gold-text); flex:none; padding-top:1px; font-weight:600}
+  .tile .tt{font-family:"Fraunces",serif; font-size:18px; font-weight:500; line-height:1.2; margin:0 0 4px}
+  .tile .td{font-size:13.5px; color:var(--ink-soft); line-height:1.45; margin:0}
+  .tile .td .g{color:var(--gold-text)}
+
+  /* derailment label strip */
+  .strip{display:flex; align-items:center; gap:14px; margin:62px 0 0; scroll-margin-top:18px}
+  .strip .n{font-family:"Fraunces",serif; font-size:15px; color:var(--gold-text); border:1px solid var(--rule);
+    border-radius:8px; padding:6px 11px; font-weight:600; flex:none}
+  .strip .t{font-family:"Fraunces",serif; font-size:28px; font-weight:500}
+  .strip .hr{flex:1; height:1px; background:var(--line)}
+  .strip .up{font-size:11.5px; letter-spacing:.04em; color:var(--ink-mute); text-decoration:none; flex:none}
+  .strip .up:hover{color:var(--gold-text)}
+
+  /* card */
+  .card{background:var(--card); border:1px solid var(--line);
+    border-top:2px solid var(--rule); border-radius:14px; padding:30px 30px 32px; margin-top:22px;
+    box-shadow:0 1px 0 rgba(255,255,255,.02) inset}
+  .scene{font-size:18px; line-height:1.62; color:var(--ink)}
+  .scene .you{color:var(--ink-mute); font-style:italic}
+
+  .label{font-size:11px; letter-spacing:.18em; text-transform:uppercase; font-weight:600; margin:0 0 9px}
+  .label.freeze{color:var(--freeze)} .label.save{color:var(--gold-text)}
+
+  /* the signature transform — one hero moment per card */
+  .transform{margin:26px 0 4px}
+  .line{border-radius:11px; padding:17px 19px; font-size:18px; line-height:1.5}
+  .line.freeze{background:var(--line-soft); border:1px solid #283755; color:var(--freeze); font-style:italic}
+  .arrowrow{display:flex; align-items:center; justify-content:center; gap:10px; color:var(--gold-text);
+    font-size:12px; letter-spacing:.16em; text-transform:uppercase; padding:13px 0}
+  .arrowrow .ln{height:1px; width:46px; background:var(--rule)}
+  .line.save{background:var(--gold-soft); border:1px solid var(--rule); color:var(--ink); font-family:"Fraunces",serif;
+    font-size:20px; font-weight:500; line-height:1.45}
+  .line.save .q{color:var(--gold-text)}
+  .line.save .after{font-family:"Outfit",sans-serif; font-size:16px; font-weight:400; color:var(--ink-soft)}
+
+  /* subordinate model line */
+  .line.model{background:var(--line-soft); border:1px solid var(--line); border-left:2px solid var(--rule);
+    color:var(--ink-soft); font-family:"Outfit",sans-serif; font-size:16.5px; font-weight:400; line-height:1.5}
+  .line.model .q{color:var(--gold-text)}
+
+  /* register note (delicate-wording aside) */
+  .register{margin-top:18px; font-size:13.5px; color:var(--ink-soft); line-height:1.55;
+    border-left:2px solid var(--line); padding:2px 0 2px 14px}
+  .register b{color:var(--gold-text); font-weight:500}
+
+  /* two facets */
+  .facets{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:26px}
+  .facet{background:var(--card-2); border:1px solid var(--line); border-radius:11px; padding:18px 19px}
+  .facet.never{border-left:2px solid #7E3B3B}
+  .facet.eye{border-left:2px solid var(--rule)}
+  .facet .label.eye{color:var(--gold-text)} .facet .label.never{color:#D98A8A}
+  .facet p{margin:0; font-size:15.5px; color:var(--ink-soft); line-height:1.55}
+  .facet p b{color:var(--ink); font-weight:500}
+
+  /* drill */
+  .drill{margin-top:26px; border-top:1px solid var(--line); padding-top:24px}
+  .drill h3{font-family:"Fraunces",serif; font-weight:500; font-size:20px; margin:0 0 6px}
+  .drill .sub{font-size:14.5px; color:var(--ink-mute); margin:0 0 16px}
+  textarea{width:100%; background:var(--page); color:var(--ink); border:1px solid var(--line);
+    border-radius:10px; padding:14px 15px; font-family:"Outfit",sans-serif; font-size:16px; line-height:1.5;
+    resize:vertical; min-height:84px}
+  textarea:focus{outline:none; border-color:var(--rule); box-shadow:0 0 0 3px var(--gold-soft)}
+  .btn{margin-top:14px; background:var(--gold); color:#1a1304; border:none; border-radius:10px;
+    font-family:"Outfit",sans-serif; font-weight:600; font-size:15px; letter-spacing:.01em;
+    padding:12px 22px; cursor:pointer; transition:filter .15s, transform .05s}
+  .btn:hover{filter:brightness(1.07)} .btn:active{transform:translateY(1px)}
+  .btn:focus-visible{outline:2px solid var(--gold-text); outline-offset:3px}
+  .model{margin-top:18px; overflow:hidden; max-height:0; opacity:0;
+    transition:max-height .5s ease, opacity .4s ease}
+  .model.open{opacity:1}
+  .model .label{margin-top:2px}
+  .model .why{margin-top:13px; font-size:14.5px; color:var(--ink-soft); line-height:1.55}
+  .model .why b{color:var(--gold-text); font-weight:500}
+
+  /* siblings */
+  .siblings{margin:72px 0 0; border-top:1px solid var(--line); padding-top:40px}
+  .siblings .sk{font-size:12px; letter-spacing:.2em; text-transform:uppercase; color:var(--ink-mute); margin-bottom:18px; text-align:center}
+  .sibgrid{display:grid; grid-template-columns:1fr 1fr; gap:14px}
+  .sib{display:block; text-decoration:none; color:inherit; background:var(--card); border:1px solid var(--line);
+    border-top:2px solid var(--rule); border-radius:12px; padding:20px 22px; transition:transform .14s ease, background .14s ease}
+  .sib:hover{transform:translateY(-2px); background:var(--card-2)}
+  .sib .sg{font-size:22px} .sib h4{font-family:"Fraunces",serif; font-weight:500; font-size:19px; margin:8px 0 5px}
+  .sib p{margin:0; font-size:14px; color:var(--ink-soft); line-height:1.5}
+  .sib .go{display:inline-block; margin-top:10px; font-size:13px; color:var(--gold-text); letter-spacing:.02em}
+
+  footer{margin:64px 0 44px; padding-top:24px; border-top:1px solid var(--line); text-align:center;
+    color:var(--ink-mute); font-size:13px; line-height:1.7}
+  footer .more{color:var(--ink-soft)}
+  footer a{color:var(--gold-text); text-decoration:none}
+
+  /* back to index */
+  #totop{position:fixed; right:22px; bottom:22px; width:44px; height:44px; border-radius:50%;
+    background:var(--card-2); color:var(--gold-text); border:1px solid var(--rule); cursor:pointer;
+    font-size:18px; line-height:1; display:flex; align-items:center; justify-content:center;
+    opacity:0; pointer-events:none; transition:opacity .25s ease, transform .15s ease; z-index:50}
+  #totop.show{opacity:1; pointer-events:auto}
+  #totop:hover{transform:translateY(-2px)} #totop:focus-visible{outline:2px solid var(--gold-text); outline-offset:3px}
+
+  @media (max-width:600px){
+    .tiles{grid-template-columns:1fr}
+    .sibgrid{grid-template-columns:1fr}
+    .facets{grid-template-columns:1fr}
+    .card{padding:24px 20px 26px}
+    .strip .t{font-size:24px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .model,.tile,.sib,#totop{transition:none}
+  }
+</style>
+</head>
+<body>
+
+<nav data-door="plab2">
+  <div class="navfb">
+    <a href="index.html">AMaC</a>
+    <span class="tag">PLAB 2</span>
+    <a href="plab2.html" class="ex" style="color:#8593AE">← PLAB 2</a>
+  </div>
+</nav>
+
+<div class="wrap">
+
+  <header class="hero">
+    <div class="eyebrow">PLAB 2 · Perform with confidence</div>
+    <h1>The <span class="em">Recovery</span> Room</h1>
+    <p class="thesis">The examiner is not scoring whether your station was perfect. They are scoring whether you stayed <b>safe, structured, and human</b> when it wobbled.
+      <span class="pull">Recovery is where the marks are.</span></p>
+  </header>
+
+  <!-- ============ TAXONOMY INDEX ============ -->
+  <section class="index" id="index" aria-label="The eight derailments">
+    <div class="index-head">
+      <span class="k">Eight ways a station comes off the rails</span>
+    </div>
+    <p class="index-sub">Not a sequence to march through — a map of the distinct ways a good candidate loses a station, and the one move that saves each. Go to the one that frightens you.</p>
+    <div class="tiles">
+      <a class="tile" href="#d01"><span class="tn">01</span><div><p class="tt">The Blank</p><p class="td">Your mind empties. <span class="g">Buy structured time.</span></p></div></a>
+      <a class="tile" href="#d02"><span class="tn">02</span><div><p class="tt">The Off-Script Actor</p><p class="td">A cue you didn't prepare for. <span class="g">Follow it.</span></p></div></a>
+      <a class="tile" href="#d03"><span class="tn">03</span><div><p class="tt">The Time Crunch</p><p class="td">Clock gone, tasks left. <span class="g">Triage out loud.</span></p></div></a>
+      <a class="tile" href="#d04"><span class="tn">04</span><div><p class="tt">The Wrong Turn</p><p class="td">Wrong line chased. <span class="g">Correct openly.</span></p></div></a>
+      <a class="tile" href="#d05"><span class="tn">05</span><div><p class="tt">The Emotional Ambush</p><p class="td">They break down. <span class="g">Meet the emotion first.</span></p></div></a>
+      <a class="tile" href="#d06"><span class="tn">06</span><div><p class="tt">The Examiner Interruption</p><p class="td">The examiner cuts in. <span class="g">Answer, don't unravel.</span></p></div></a>
+      <a class="tile" href="#d07"><span class="tn">07</span><div><p class="tt">The Forgotten Step</p><p class="td">A step skipped. <span class="g">Late but explicit.</span></p></div></a>
+      <a class="tile" href="#d08"><span class="tn">08</span><div><p class="tt">The Knowledge Gap</p><p class="td">You don't know. <span class="g">Escalate, don't bluff.</span></p></div></a>
+    </div>
+  </section>
+
+  <!-- ============ 01 — THE BLANK ============ -->
+  <div class="strip" id="d01">
+    <span class="n">01</span><span class="t">The Blank</span><span class="hr"></span>
+    <a class="up" href="#index">↑ the eight</a>
+  </div>
+  <section class="card" aria-label="The Blank — derailment and recovery">
+    <p class="label freeze">The derailment</p>
+    <p class="scene">Four minutes in. You've taken the history, the patient stops talking, and your mind goes completely empty. <span class="you">You have no idea what comes next. The clock is loud. The examiner is writing.</span></p>
+    <div class="transform">
+      <p class="label freeze">The freeze</p>
+      <div class="line freeze">"I've lost it. Say something — anything. Just don't let them see I've gone blank. Keep talking and hope it comes back."</div>
+      <div class="arrowrow"><span class="ln"></span>The save<span class="ln"></span></div>
+      <p class="label save">The recovery line</p>
+      <div class="line save"><span class="q">"</span>Thank you for sharing all of that with me. I'd just like to take a moment to gather my thoughts and make sure I've covered everything important.<span class="q">"</span> <span class="after">— then re-enter through a framework you trust: ideas, concerns and expectations, or a red-flag screen.</span></div>
+    </div>
+    <div class="facets">
+      <div class="facet eye"><p class="label eye">Examiner's eye</p><p>A signposted pause reads as <b>methodical</b>. Silence with darting eyes reads as <b>lost</b>. The examiner is scoring your structure, not your speed — buying time openly is a structured move, not a stumble.</p></div>
+      <div class="facet never"><p class="label never">Never</p><p>Never fill the blank with <b>invented questions</b> or a nervous monologue. Waffle is what converts a recoverable pause into a visible loss of control — and it eats the clock you need.</p></div>
+    </div>
+    <div class="drill">
+      <h3>Your turn</h3>
+      <p class="sub">You've gone blank mid-station. Write the line you'd say out loud to buy yourself a structured ten seconds — then reveal a model.</p>
+      <textarea placeholder="Type your recovery line…" aria-label="Your recovery line"></textarea>
+      <button class="btn" data-reveal>Reveal the model line</button>
+      <div class="model" aria-live="polite">
+        <p class="label save">Model recovery line</p>
+        <div class="line model"><span class="q">"</span>That's really helpful — let me just pause for a second and check I've understood everything before we move on.<span class="q">"</span></div>
+        <p class="why"><b>Why it scores:</b> it buys time as a patient-centred act — checking understanding — not a confession. Naming the pause keeps you in control, and the examiner ticks structure while you breathe. The principle generalises; the exact words don't.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 02 — THE OFF-SCRIPT ACTOR ============ -->
+  <div class="strip" id="d02">
+    <span class="n">02</span><span class="t">The Off-Script Actor</span><span class="hr"></span>
+    <a class="up" href="#index">↑ the eight</a>
+  </div>
+  <section class="card" aria-label="The Off-Script Actor — derailment and recovery">
+    <p class="label freeze">The derailment</p>
+    <p class="scene">You're halfway through a structured history when the patient says something that isn't on your list — <span class="you">"honestly, doctor, I've been drinking a lot more since my wife left."</span> It doesn't fit your plan, and your next rehearsed question is already queued.</p>
+    <div class="transform">
+      <p class="label freeze">The freeze</p>
+      <div class="line freeze">"That's not where I was going. If I follow it I'll lose my thread. I'll acknowledge it quickly and get back to my questions."</div>
+      <div class="arrowrow"><span class="ln"></span>The save<span class="ln"></span></div>
+      <p class="label save">The recovery line</p>
+      <div class="line save"><span class="q">"</span>Thank you for telling me that — it sounds like things have been really difficult since your wife left. Can you tell me a bit more about how you've been coping?<span class="q">"</span> <span class="after">— explore the cue first, then return to your structure.</span></div>
+    </div>
+    <div class="facets">
+      <div class="facet eye"><p class="label eye">Examiner's eye</p><p>The cue <b>is</b> the mark scheme. Examiners plant these deliberately; chasing your own checklist past a disclosure is how candidates walk straight past the thing being tested.</p></div>
+      <div class="facet never"><p class="label never">Never</p><p>Never acknowledge-and-bypass — <b>"sorry to hear that, now about your headaches…"</b> Noting a cue without exploring it scores almost nothing and tells the examiner you weren't really listening.</p></div>
+    </div>
+    <div class="drill">
+      <h3>Your turn</h3>
+      <p class="sub">The patient has handed you a cue you didn't prepare for. Write the line that follows it instead of burying it — then reveal a model.</p>
+      <textarea placeholder="Type your recovery line…" aria-label="Your recovery line"></textarea>
+      <button class="btn" data-reveal>Reveal the model line</button>
+      <div class="model" aria-live="polite">
+        <p class="label save">Model recovery line</p>
+        <div class="line model"><span class="q">"</span>I'm really glad you felt able to share that. Before we go any further, I'd like to understand more about that — would that be alright?<span class="q">"</span></div>
+        <p class="why"><b>Why it scores:</b> it slows down, seeks permission, and opens the cue rather than closing it. The examiner is watching whether you can abandon your own agenda for the patient's — that flexibility is the mark, not the completeness of your list.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 03 — THE TIME CRUNCH ============ -->
+  <div class="strip" id="d03">
+    <span class="n">03</span><span class="t">The Time Crunch</span><span class="hr"></span>
+    <a class="up" href="#index">↑ the eight</a>
+  </div>
+  <section class="card" aria-label="The Time Crunch — derailment and recovery">
+    <p class="label freeze">The derailment</p>
+    <p class="scene">The minute-warning has gone and you still haven't explained the plan, safety-netted, or answered the patient's question. <span class="you">There's too much left and not enough clock.</span></p>
+    <div class="transform">
+      <p class="label freeze">The freeze</p>
+      <div class="line freeze">"I'm out of time. Rush — cram everything in, talk faster, just get it all out before the bell goes."</div>
+      <div class="arrowrow"><span class="ln"></span>The save<span class="ln"></span></div>
+      <p class="label save">The recovery line</p>
+      <div class="line save"><span class="q">"</span>We're coming towards the end of our time, so let me make sure I cover what matters most. The key thing for your safety is…<span class="q">"</span> <span class="after">— protect the safety-net first, signpost the compression openly.</span></div>
+    </div>
+    <div class="register"><b>Register note:</b> that sentence must land on real content — name the actual red-flag symptoms and what to do ("…if you develop chest pain, breathlessness or you feel worse, call 999"). A safety-net that trails off into "…" scores nothing; the words after the colon are the mark.</div>
+    <div class="facets">
+      <div class="facet eye"><p class="label eye">Examiner's eye</p><p>Triage under pressure is <b>itself</b> scored. Examiners reward the candidate who does the right thing well over the one who does everything badly — safe prioritisation beats a frantic sprint.</p></div>
+      <div class="facet never"><p class="label never">Never</p><p>Never sprint silently through the checklist and <b>drop safety-netting</b> to save seconds. Omitting the safety-critical step to tick more boxes is the fail; visible triage is the save.</p></div>
+    </div>
+    <div class="drill">
+      <h3>Your turn</h3>
+      <p class="sub">One minute left, three things undone. Write the line that names the squeeze and protects the one thing you cannot drop — then reveal a model.</p>
+      <textarea placeholder="Type your recovery line…" aria-label="Your recovery line"></textarea>
+      <button class="btn" data-reveal>Reveal the model line</button>
+      <div class="model" aria-live="polite">
+        <p class="label save">Model recovery line</p>
+        <div class="line model"><span class="q">"</span>I'm conscious of our time, so I want to prioritise what's most important for you. Before we finish, I need to make sure you know exactly what to look out for and when to seek help.<span class="q">"</span></div>
+        <p class="why"><b>Why it scores:</b> it names the compression out loud and then protects the single non-negotiable — the safety-net. The examiner sees a candidate making a deliberate clinical choice under pressure, which is precisely what the time pressure is there to test.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 04 — THE WRONG TURN ============ -->
+  <div class="strip" id="d04">
+    <span class="n">04</span><span class="t">The Wrong Turn</span><span class="hr"></span>
+    <a class="up" href="#index">↑ the eight</a>
+  </div>
+  <section class="card" aria-label="The Wrong Turn — derailment and recovery">
+    <p class="label freeze">The derailment</p>
+    <p class="scene">You've spent two minutes building a picture — and a new piece of information makes it clear you've been chasing the wrong line. <span class="you">The diagnosis you were working towards no longer fits. You need to backtrack, and the examiner saw the whole detour.</span></p>
+    <div class="transform">
+      <p class="label freeze">The freeze</p>
+      <div class="line freeze">"If I change direction now they'll know I got it wrong. Better to commit to where I was going and hope it doesn't matter."</div>
+      <div class="arrowrow"><span class="ln"></span>The save<span class="ln"></span></div>
+      <p class="label save">The recovery line</p>
+      <div class="line save"><span class="q">"</span>Having heard more, I'd like to revisit something — I think it's important we also consider another possibility. Let me ask you a few questions about that.<span class="q">"</span> <span class="after">— correct openly, then redirect with intent.</span></div>
+    </div>
+    <div class="facets">
+      <div class="facet eye"><p class="label eye">Examiner's eye</p><p>Demonstrated <b>insight</b> is what scores here. Examiners actively reward the candidate who notices and corrects — recognising your own error is a marked competency, not a confession of weakness.</p></div>
+      <div class="facet never"><p class="label never">Never</p><p>Never bury the wrong turn and plough on. Pressing ahead with a line you know is wrong is <b>unsafe</b>, and it reads as poor insight — the exact quality the station is testing.</p></div>
+    </div>
+    <div class="drill">
+      <h3>Your turn</h3>
+      <p class="sub">You've realised mid-station you're on the wrong track. Write the line that corrects course without pretending the detour didn't happen — then reveal a model.</p>
+      <textarea placeholder="Type your recovery line…" aria-label="Your recovery line"></textarea>
+      <button class="btn" data-reveal>Reveal the model line</button>
+      <div class="model" aria-live="polite">
+        <p class="label save">Model recovery line</p>
+        <div class="line model"><span class="q">"</span>Thinking about what you've told me, I'd like to step back for a moment — there's another possibility I want to make sure we don't miss.<span class="q">"</span></div>
+        <p class="why"><b>Why it scores:</b> open correction signals clinical safety — you'd rather be right than look right. Framing it as "make sure we don't miss" reads as diligence rather than failure, and the examiner ticks insight where a silent candidate scores nothing.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 05 — THE EMOTIONAL AMBUSH ============ -->
+  <div class="strip" id="d05">
+    <span class="n">05</span><span class="t">The Emotional Ambush</span><span class="hr"></span>
+    <a class="up" href="#index">↑ the eight</a>
+  </div>
+  <section class="card" aria-label="The Emotional Ambush — derailment and recovery">
+    <p class="label freeze">The derailment</p>
+    <p class="scene">You're working through your structure when the patient suddenly breaks down in tears — or a relative turns sharply angry. <span class="you">The room changes. Your carefully ordered plan no longer fits the person in front of you.</span></p>
+    <div class="transform">
+      <p class="label freeze">The freeze</p>
+      <div class="line freeze">"This wasn't in the plan. Get them back on track — if I just finish my questions the emotion will settle and I can carry on."</div>
+      <div class="arrowrow"><span class="ln"></span>The save<span class="ln"></span></div>
+      <p class="label save">The recovery line</p>
+      <div class="line save"><span class="q">"</span>I can see this is really upsetting for you, and I'm sorry. We don't need to rush — take whatever time you need, and I'm here.<span class="q">"</span> <span class="after">— let the acknowledgment land, then gently return.</span></div>
+    </div>
+    <div class="facets">
+      <div class="facet eye"><p class="label eye">Examiner's eye</p><p>The acknowledgment <b>is</b> the mark. Pushing past distress to protect your structure is the fail; naming the emotion is the scored move. Empathy is marked when it's demonstrated, not when it's claimed.</p></div>
+      <div class="facet never"><p class="label never">Never</p><p>Never talk over the emotion to preserve your agenda. <b>Continuing your checklist through a patient's tears</b> tells the examiner you put your plan ahead of the person.</p></div>
+    </div>
+    <div class="drill">
+      <h3>Your turn</h3>
+      <p class="sub">The patient has just broken down in front of you. Write the line that meets the emotion before you do anything else — then reveal a model.</p>
+      <textarea placeholder="Type your recovery line…" aria-label="Your recovery line"></textarea>
+      <button class="btn" data-reveal>Reveal the model line</button>
+      <div class="model" aria-live="polite">
+        <p class="label save">Model recovery line</p>
+        <div class="line model"><span class="q">"</span>I can tell how hard this is for you, and it's completely understandable to feel this way. Shall we take a moment together before we carry on?<span class="q">"</span></div>
+        <p class="why"><b>Why it scores:</b> it acknowledges, normalises, and hands a little control back to the patient with the offer to pause. The examiner is scoring whether you can hold the room when it turns — composure plus genuine empathy is the mark.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 06 — THE EXAMINER INTERRUPTION ============ -->
+  <div class="strip" id="d06">
+    <span class="n">06</span><span class="t">The Examiner Interruption</span><span class="hr"></span>
+    <a class="up" href="#index">↑ the eight</a>
+  </div>
+  <section class="card" aria-label="The Examiner Interruption — derailment and recovery">
+    <p class="label freeze">The derailment</p>
+    <p class="scene">Mid-flow, the examiner cuts in: <span class="you">"And what would you do next?"</span> It breaks your rhythm completely, and your first instinct is that you've done something wrong.</p>
+    <div class="transform">
+      <p class="label freeze">The freeze</p>
+      <div class="line freeze">"Why are they stopping me? I must have made a mistake. They've seen something. I think I've failed."</div>
+      <div class="arrowrow"><span class="ln"></span>The save<span class="ln"></span></div>
+      <p class="label save">The recovery line</p>
+      <div class="line save"><span class="q">"</span>Thank you — [a clear, direct answer to the question]. Shall I continue?<span class="q">"</span> <span class="after">— answer cleanly, then resume your flow as if it were a natural beat.</span></div>
+    </div>
+    <div class="register"><b>Filling the slot:</b> keep the answer <b>brief, clear and accurate</b> — not a lecture. If the examiner asks "What are the red flags for cauda equina?", you answer: "Loss of bladder or bowel control, saddle anaesthesia, and bilateral leg weakness — shall I continue?" One clean sentence, then back to the station.</div>
+    <div class="facets">
+      <div class="facet eye"><p class="label eye">Examiner's eye</p><p>An examiner's prompt is <b>information, not a verdict</b>. Often it's steering you toward marks you're about to miss. Treat it as a cue to answer, never as proof you've failed.</p></div>
+      <div class="facet never"><p class="label never">Never</p><p>Never freeze, over-apologise, or abandon the station because the examiner spoke. <b>Unravelling at the interruption</b> is what loses the marks — far more than whatever prompted it.</p></div>
+    </div>
+    <div class="drill">
+      <h3>Your turn</h3>
+      <p class="sub">The examiner has just cut across you with a question. Write the line that answers it and gets you smoothly back to your station — then reveal a model.</p>
+      <textarea placeholder="Type your recovery line…" aria-label="Your recovery line"></textarea>
+      <button class="btn" data-reveal>Reveal the model line</button>
+      <div class="model" aria-live="polite">
+        <p class="label save">Model recovery line</p>
+        <div class="line model"><span class="q">"</span>That's a good point — [clear, brief answer]. I'll factor that in and carry on, if that's alright.<span class="q">"</span></div>
+        <p class="why"><b>Why it scores:</b> it answers without flapping and reclaims control of the station in one move. Examiners interrupt to test composure as much as content; a calm, brief answer and a deliberate return demonstrates both at once.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 07 — THE FORGOTTEN STEP ============ -->
+  <div class="strip" id="d07">
+    <span class="n">07</span><span class="t">The Forgotten Step</span><span class="hr"></span>
+    <a class="up" href="#index">↑ the eight</a>
+  </div>
+  <section class="card" aria-label="The Forgotten Step — derailment and recovery">
+    <p class="label freeze">The derailment</p>
+    <p class="scene">You're nearly at the end when you realise you skipped something that mattered — you never took consent, never explored ideas and concerns, or never safety-netted. <span class="you">The moment for it has passed, and the clock is short.</span></p>
+    <div class="transform">
+      <p class="label freeze">The freeze</p>
+      <div class="line freeze">"It's too late now. If I go back to it they'll know I forgot — better to leave it and hope they didn't notice."</div>
+      <div class="arrowrow"><span class="ln"></span>The save<span class="ln"></span></div>
+      <p class="label save">The recovery line</p>
+      <div class="line save"><span class="q">"</span>Before we finish, I realise there's something important I should also check with you — is it alright if I ask you about that now?<span class="q">"</span> <span class="after">— late but explicit recovers the mark; silent omission does not.</span></div>
+    </div>
+    <div class="facets">
+      <div class="facet eye"><p class="label eye">Examiner's eye</p><p>A recovered step <b>still scores</b>. An unrecovered one is a blank on the mark sheet — and for consent or safety-netting, sometimes an Instant Fail. Going back openly also shows self-monitoring, which is marked in its own right.</p></div>
+      <div class="facet never"><p class="label never">Never</p><p>Never leave a safety-critical step out because the moment passed. A skipped <b>consent or safety-net</b> isn't saved by silence — it's only saved by returning to it before the bell.</p></div>
+    </div>
+    <div class="drill">
+      <h3>Your turn</h3>
+      <p class="sub">You've spotted a missed step with little time left. Write the line that goes back for it openly rather than hoping no one noticed — then reveal a model.</p>
+      <textarea placeholder="Type your recovery line…" aria-label="Your recovery line"></textarea>
+      <button class="btn" data-reveal>Reveal the model line</button>
+      <div class="model" aria-live="polite">
+        <p class="label save">Model recovery line</p>
+        <div class="line model"><span class="q">"</span>I want to make sure I haven't missed anything before we close — there's one thing I should have asked earlier that's important we cover.<span class="q">"</span></div>
+        <p class="why"><b>Why it scores:</b> returning to the step recovers the mark you'd otherwise have lost, and "important we cover" frames it as thoroughness, not panic. The examiner ticks both the step itself and the self-awareness that brought you back to it.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 08 — THE KNOWLEDGE GAP ============ -->
+  <div class="strip" id="d08">
+    <span class="n">08</span><span class="t">The Knowledge Gap</span><span class="hr"></span>
+    <a class="up" href="#index">↑ the eight</a>
+  </div>
+  <section class="card" aria-label="The Knowledge Gap — derailment and recovery">
+    <p class="label freeze">The derailment</p>
+    <p class="scene">The patient asks you a direct clinical question — and you genuinely don't know the answer. <span class="you">You feel you should know it. The silence stretches, and the urge to say something that sounds right is enormous.</span></p>
+    <div class="transform">
+      <p class="label freeze">The freeze</p>
+      <div class="line freeze">"I should know this. Make something up that sounds plausible — anything is better than admitting I don't know in front of the examiner."</div>
+      <div class="arrowrow"><span class="ln"></span>The save<span class="ln"></span></div>
+      <p class="label save">The recovery line</p>
+      <div class="line save"><span class="q">"</span>That's a really important question, and I want to give you accurate information rather than guess. I'd like to check with a senior colleague and come back to you — is that okay?<span class="q">"</span> <span class="after">— honest, safe escalation is the scored move.</span></div>
+    </div>
+    <div class="register"><b>Register note:</b> name the role you'd escalate to — <b>registrar, consultant, or senior colleague</b> — rather than a vague "someone." Naming the senior shows you understand the chain of escalation, which is itself part of the mark.</div>
+    <div class="facets">
+      <div class="facet eye"><p class="label eye">Examiner's eye</p><p>Honest, safe escalation <b>scores</b>; bluffing Instant-Fails. The station tests safety, not omniscience — recognising the edge of your knowledge and escalating is exactly what a safe junior does.</p></div>
+      <div class="facet never"><p class="label never">Never</p><p>Never invent a clinical answer to look knowledgeable. A <b>confident wrong answer</b> to a patient is a patient-safety failure and an Instant Fail — the one move on this whole list that cannot be recovered.</p></div>
+    </div>
+    <div class="drill">
+      <h3>Your turn</h3>
+      <p class="sub">A patient has asked you something you don't know. Write the line that escalates honestly and safely instead of bluffing — then reveal a model.</p>
+      <textarea placeholder="Type your recovery line…" aria-label="Your recovery line"></textarea>
+      <button class="btn" data-reveal>Reveal the model line</button>
+      <div class="model" aria-live="polite">
+        <p class="label save">Model recovery line</p>
+        <div class="line model"><span class="q">"</span>I'll be honest — I don't want to give you the wrong answer on something this important. Let me check with my registrar and make sure you get the right information.<span class="q">"</span></div>
+        <p class="why"><b>Why it scores:</b> it models the exact behaviour of a safe junior — recognise the limit, don't guess, escalate to a named senior. The examiner rewards the candidate who protects the patient from their own uncertainty; here, honesty reads as competence, not as a gap.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SIBLINGS ============ -->
+  <section class="siblings" aria-label="Related AMaC trainers">
+    <p class="sk">Part of the AMaC method</p>
+    <div class="sibgrid">
+      <a class="sib" href="speak-like-a-doctor.html">
+        <span class="sg">🗣️</span>
+        <h4>Speak Like a Doctor</h4>
+        <p>The eight moments a UK consultation is quietly scored on — opening, cue, bad news, the close.</p>
+        <span class="go">Start the trainer →</span>
+      </a>
+      <a class="sib" href="instant-fail-atlas.html">
+        <span class="sg">⚠️</span>
+        <h4>The Instant Fail Atlas</h4>
+        <p>A museum of the moments good candidates fail — the trap, the instant-fail move, and the rule that saves the station.</p>
+        <span class="go">Open the atlas →</span>
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <p class="more">The eight derailments of the Recovery Room</p>
+    <p>The Blank · The Off-Script Actor · The Time Crunch · The Wrong Turn · The Emotional Ambush · The Examiner Interruption · The Forgotten Step · The Knowledge Gap</p>
+    <p style="margin-top:18px"><a href="plab2.html">AMaC · PLAB 2</a> — Think Like an Examiner · Speak Like a Doctor · Perform With Confidence</p>
+  </footer>
+</div>
+
+<button id="totop" aria-label="Back to the eight derailments" title="Back to the index">↑</button>
+
+<script>
+  (function(){
+    /* reveal drills — measured height, never clips */
+    document.querySelectorAll('[data-reveal]').forEach(function(btn){
+      var drill = btn.closest('.drill');
+      var model = drill.querySelector('.model');
+      btn.addEventListener('click', function(){
+        var open = model.classList.toggle('open');
+        if(open){
+          model.style.maxHeight = model.scrollHeight + 'px';
+          btn.textContent = 'Hide the model line';
+          model.scrollIntoView({behavior:'smooth', block:'nearest'});
+        } else {
+          model.style.maxHeight = '0px';
+          btn.textContent = 'Reveal the model line';
+        }
+      });
+      window.addEventListener('resize', function(){
+        if(model.classList.contains('open')){
+          model.style.maxHeight = 'none';
+          model.style.maxHeight = model.scrollHeight + 'px';
+        }
+      });
+    });
+
+    /* back-to-index button */
+    var top = document.getElementById('totop');
+    var idx = document.getElementById('index');
+    top.addEventListener('click', function(){
+      idx.scrollIntoView({behavior:'smooth', block:'start'});
+    });
+    var onScroll = function(){
+      if(window.scrollY > 900){ top.classList.add('show'); } else { top.classList.remove('show'); }
+    };
+    window.addEventListener('scroll', onScroll, {passive:true});
+    onScroll();
+  })();
+</script>
+<script src="nav.js" defer></script>
+</body>
+</html>
