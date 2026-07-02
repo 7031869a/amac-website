@@ -52,6 +52,15 @@
       ],
       cta: { href: "contact.html", label: "Get Started" }
     },
+    frcs: {
+      tag: "FRCS",
+      accent: "#17A2A9", accentText: "#57C7CE",
+      links: [
+        { href: "frcs-sample.html",    label: "Free Sample" },
+        { href: "frcs-flashcards.html", label: "Flashcards" },
+        { href: "frcs.html",           label: "Handbook" }
+      ]
+    },
     shelf: {
       tag: "CLINICAL REFERENCE",
       accent: "#888780", accentText: "#B4B2A9",

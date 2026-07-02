@@ -1,0 +1,1950 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FRCS Paper Critique - Companion Flashcard Set</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, serif;
+    line-height: 1.6;
+    background: linear-gradient(135deg, #1a4d6d 0%, #0d2b3d 100%);
+    padding: 40px 20px;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header {
+    text-align: center;
+    color: white;
+    margin-bottom: 40px;
+}
+
+.header h1 {
+    font-size: 48px;
+    margin-bottom: 15px;
+    color: #d4af37;
+}
+
+.header p {
+    font-size: 20px;
+}
+
+.instructions {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+.instructions h2 {
+    color: #1a4d6d;
+    margin-bottom: 15px;
+}
+
+.category-section {
+    margin-bottom: 50px;
+}
+
+.category-header {
+    background: #d4af37;
+    color: #0d2b3d;
+    padding: 20px;
+    border-radius: 10px 10px 0 0;
+    font-size: 28px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 0 0 10px 10px;
+}
+
+.flashcard {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    min-height: 200px;
+}
+
+.flashcard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+.card-front, .card-back {
+    padding: 25px;
+}
+
+.card-front {
+    border-bottom: 3px solid #d4af37;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #1a4d6d;
+    background: #f8f9fa;
+}
+
+.card-back {
+    color: #333;
+    line-height: 1.8;
+}
+
+.card-number {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #1a4d6d;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.highlight {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+.formula {
+    background: #fff4e6;
+    padding: 10px;
+    border-left: 4px solid #d4af37;
+    margin: 10px 0;
+    font-family: 'Courier New', monospace;
+}
+
+.tip {
+    background: #e8f4f8;
+    padding: 10px;
+    border-left: 4px solid #2980b9;
+    margin: 10px 0;
+    font-style: italic;
+}
+
+.print-btn {
+    background: #d4af37;
+    color: #0d2b3d;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    margin: 20px auto;
+    display: block;
+}
+
+.print-btn:hover {
+    background: #c49b2d;
+    transform: translateY(-2px);
+}
+
+@media print {
+    body {
+        background: white;
+        padding: 0;
+    }
+    .header, .instructions, .print-btn {
+        display: none;
+    }
+    .flashcard {
+        page-break-inside: avoid;
+        box-shadow: none;
+        border: 2px solid #ddd;
+        margin-bottom: 20px;
+    }
+    .cards-grid {
+        display: block;
+        background: white;
+    }
+}
+
+@media (max-width: 768px) {
+    .cards-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+<body>
+<nav data-door="frcs" style="background:#16243F;border-bottom:1px solid #28385A;font-family:'Outfit',system-ui,sans-serif;margin:-40px -20px 30px;">
+  <div style="max-width:1200px;margin:0 auto;padding:13px 26px;display:flex;gap:18px;align-items:center;font-size:13px;">
+    <a href="index.html" style="font-weight:600;letter-spacing:.1em;color:#57C7CE;text-decoration:none;">AMaC</a>
+    <a href="frcs.html" style="color:#C7D0E2;text-decoration:none;">FRCS Hub</a>
+    <a href="frcs-sample.html" style="color:#C7D0E2;text-decoration:none;">Free Sample</a>
+    <a href="index.html" style="color:#8593AE;text-decoration:none;">&larr; all exams</a>
+  </div>
+</nav>
+
+
+<div class="container">
+
+<div class="header">
+<h1>📚 FRCS Viva Flashcards</h1>
+<p>100 High-Yield Cards for Paper Critique Mastery</p>
+<p style="font-size: 16px; margin-top: 10px;">Companion to FRCS Part 2 Paper Critique Handbook</p>
+</div>
+
+<div class="instructions">
+<h2>How to Use These Flashcards</h2>
+<ul style="margin-left: 30px; line-height: 2;">
+<li><strong>Digital Study:</strong> Click/tap each card to reveal the answer</li>
+<li><strong>Print Option:</strong> Click "Print Flashcards" button for physical cards</li>
+<li><strong>Spaced Repetition:</strong> Review cards you get wrong daily, correct ones every 3 days</li>
+<li><strong>Last 48 Hours:</strong> Focus on Statistics & Risk Measures cards</li>
+<li><strong>Mock Vivas:</strong> Use Exam Technique cards to practice professional language</li>
+</ul>
+<p style="margin-top: 20px;"><strong>Pro Tip:</strong> Cover the answer side with your hand or a piece of paper. Speak your answer out loud before checking!</p>
+</div>
+
+<button class="print-btn" onclick="window.print()">🖨️ Print Flashcards</button>
+
+<!-- CATEGORY 1: STATISTICS & RISK MEASURES -->
+<div class="category-section">
+<div class="category-header">
+📊 Statistics & Risk Measures (25 cards)
+</div>
+<div class="cards-grid">
+
+<div class="flashcard">
+<div class="card-number">#1</div>
+<div class="card-front">
+What is Absolute Risk Reduction (ARR)?
+</div>
+<div class="card-back">
+<div class="formula">ARR = CER - EER</div>
+<p>The absolute difference in event rates between control and experimental groups.</p>
+<p><strong>Example:</strong> If control death rate = 20% and treatment death rate = 15%:</p>
+<p class="highlight">ARR = 20% - 15% = 5%</p>
+<div class="tip">💡 ARR tells you the actual benefit size - always report it alongside RRR!</div>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#2</div>
+<div class="card-front">
+What is Relative Risk Reduction (RRR)?
+</div>
+<div class="card-back">
+<div class="formula">RRR = ARR / CER × 100%</div>
+<p>The proportional reduction in risk compared to the control group.</p>
+<p><strong>Example:</strong> ARR = 5%, CER = 20%:</p>
+<p class="highlight">RRR = 5/20 = 25%</p>
+<div class="tip">⚠️ NEVER quote RRR alone - it exaggerates benefits!</div>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#3</div>
+<div class="card-front">
+What is Number Needed to Treat (NNT)?
+</div>
+<div class="card-back">
+<div class="formula">NNT = 1 / ARR</div>
+<p>How many patients need treatment to prevent one adverse event.</p>
+<p><strong>Example:</strong> ARR = 5% = 0.05:</p>
+<p class="highlight">NNT = 1/0.05 = 20</p>
+<p>Meaning: Treat 20 patients to prevent 1 death</p>
+<div class="tip">💡 Lower NNT = better (NNT of 2-5 is excellent)</div>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#4</div>
+<div class="card-front">
+How do you interpret a p-value?
+</div>
+<div class="card-back">
+<p><strong>p-value</strong> = the probability of observing a result at least as extreme as this one, <em>if the null hypothesis were true</em>.</p>
+<p style="font-size:0.92em;color:#555">It is <strong>not</strong> "the probability the result is due to chance," nor the probability the null hypothesis is true — that is the classic viva trap.</p>
+<ul>
+<li><strong>p < 0.05:</strong> Statistically significant (reject null hypothesis)</li>
+<li><strong>p < 0.001:</strong> Very strong evidence against the null</li>
+<li><strong>p > 0.05:</strong> Not significant (fail to reject null)</li>
+</ul>
+<div class="tip">⚠️ Viva Trap: "p=0.048 doesn't mean the finding is important - always consider clinical significance!"</div>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#5</div>
+<div class="card-front">
+How do you interpret a 95% Confidence Interval (CI)?
+</div>
+<div class="card-back">
+<p><strong>CI</strong> = Range within which the true effect likely lies (95% confident)</p>
+<p><strong>For differences:</strong></p>
+<ul>
+<li>CI crosses 0? → Not significant</li>
+<li>CI doesn't cross 0? → Significant</li>
+</ul>
+<p><strong>For ratios (OR, RR, HR):</strong></p>
+<ul>
+<li>CI crosses 1.0? → Not significant</li>
+<li>CI doesn't cross 1.0? → Significant</li>
+</ul>
+<div class="tip">💡 Narrow CI = precise; Wide CI = uncertain</div>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#6</div>
+<div class="card-front">
+What is Sensitivity?
+</div>
+<div class="card-back">
+<div class="formula">Sensitivity = TP / (TP + FN)</div>
+<p>Ability of a test to correctly identify people WHO HAVE the disease.</p>
+<p><strong>Think:</strong> SnNout - High <strong>Sen</strong>sitivity rules <strong>N</strong>egative result <strong>out</strong></p>
+<div class="tip">💡 Perfect sensitivity = 100% means test catches everyone with disease (no false negatives)</div>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#7</div>
+<div class="card-front">
+What is Specificity?
+</div>
+<div class="card-back">
+<div class="formula">Specificity = TN / (TN + FP)</div>
+<p>Ability of a test to correctly identify people WHO DON'T HAVE the disease.</p>
+<p><strong>Think:</strong> SpPin - High <strong>Sp</strong>ecificity rules positive result <strong>in</strong></p>
+<div class="tip">💡 Perfect specificity = 100% means test never falsely labels healthy people as diseased</div>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#8</div>
+<div class="card-front">
+What's the difference between Type I and Type II errors?
+</div>
+<div class="card-back">
+<p><strong>Type I Error (α):</strong> False positive</p>
+<p>→ Saying there's an effect when there isn't (rejecting true null hypothesis)</p>
+<p>→ Set by p-value threshold (usually 0.05 = 5% risk)</p>
+<p><strong>Type II Error (β):</strong> False negative</p>
+<p>→ Missing a real effect (failing to reject false null hypothesis)</p>
+<p>→ Related to statistical power (Power = 1 - β)</p>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#9</div>
+<div class="card-front">
+What is statistical power?
+</div>
+<div class="card-back">
+<p><strong>Power</strong> = Ability to detect a real effect if it exists</p>
+<p><strong>Power = 1 - β (Type II error)</strong></p>
+<p>Standard target: <strong>80% power</strong></p>
+<p><strong>Increased by:</strong></p>
+<ul>
+<li>Larger sample size</li>
+<li>Larger effect size</li>
+<li>Less variability in data</li>
+</ul>
+<div class="tip">💡 Underpowered study = risk of false negative result</div>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#10</div>
+<div class="card-front">
+What is Relative Risk (RR)?
+</div>
+<div class="card-back">
+<div class="formula">RR = Risk in exposed / Risk in unexposed</div>
+<p><strong>Interpretation:</strong></p>
+<ul>
+<li>RR = 1: No difference</li>
+<li>RR < 1: Protective effect</li>
+<li>RR > 1: Increased risk</li>
+</ul>
+<p><strong>Example:</strong> RR = 0.75 means 25% reduction in risk</p>
+<div class="tip">⚠️ Can only calculate from RCTs or cohort studies, NOT case-control!</div>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#11</div>
+<div class="card-front">
+What is Odds Ratio (OR)?
+</div>
+<div class="card-back">
+<div class="formula">OR = (a × d) / (b × c)</div>
+<p>From 2×2 table: Odds of exposure in cases vs controls</p>
+<p><strong>Interpretation (same direction as RR):</strong></p>
+<ul>
+<li>OR = 1: No association</li>
+<li>OR < 1: Protective</li>
+<li>OR > 1: Risk factor</li>
+</ul>
+<div class="tip">💡 Used in case-control studies and logistic regression. ⚠️ OR only approximates RR when the outcome is rare (&lt;10%); for common outcomes it exaggerates the effect — a favourite viva follow-up.</div>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#12</div>
+<div class="card-front">
+What is Hazard Ratio (HR)?
+</div>
+<div class="card-back">
+<p><strong>HR</strong> = the <em>ratio</em> of the hazard (event rate at a given instant) in one group vs the other, across the whole follow-up.</p>
+<p>Used in survival analysis (time-to-event data)</p>
+<p><strong>Interpretation:</strong></p>
+<ul>
+<li>HR = 0.66: 34% reduction in hazard of death</li>
+<li>HR = 1: No difference</li>
+<li>HR = 1.5: 50% increase in hazard</li>
+</ul>
+<div class="tip">💡 Shown on Kaplan-Meier curves, calculated by Cox regression. Assumes <strong>proportional hazards</strong> — if the KM curves cross, that assumption may not hold (a common examiner follow-up).</div>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#13</div>
+<div class="card-front">
+When do you use t-test vs Mann-Whitney U?
+</div>
+<div class="card-back">
+<p><strong>Comparing 2 independent groups, continuous data:</strong></p>
+<p><strong>Independent t-test:</strong></p>
+<ul>
+<li>✓ Data normally distributed</li>
+<li>✓ Similar variances</li>
+</ul>
+<p><strong>Mann-Whitney U test:</strong></p>
+<ul>
+<li>✓ Non-normal distribution</li>
+<li>✓ Skewed data</li>
+<li>✓ Ordinal data</li>
+</ul>
+<div class="tip">💡 Mann-Whitney = non-parametric alternative to t-test</div>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#14</div>
+<div class="card-front">
+When do you use Chi-square vs Fisher's exact test?
+</div>
+<div class="card-back">
+<p><strong>Comparing 2 categorical variables:</strong></p>
+<p><strong>Chi-square test:</strong></p>
+<ul>
+<li>✓ Large sample (all <em>expected</em> cell counts > 5)</li>
+<li>✓ Quick calculation</li>
+</ul>
+<p><strong>Fisher's exact test:</strong></p>
+<ul>
+<li>✓ Small sample (any cell < 5)</li>
+<li>✓ More accurate for small numbers</li>
+</ul>
+<div class="tip">💡 Both test association between categorical variables</div>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#15</div>
+<div class="card-front">
+What is ANOVA used for?
+</div>
+<div class="card-back">
+<p><strong>Analysis of Variance (ANOVA)</strong></p>
+<p><strong>Use:</strong> Comparing means of 3+ groups</p>
+<p><strong>Requirements:</strong></p>
+<ul>
+<li>Continuous data</li>
+<li>Normal distribution</li>
+<li>Independent groups</li>
+</ul>
+<p><strong>If significant → Post-hoc tests</strong> to see which specific pairs differ</p>
+<div class="tip">💡 Non-parametric alternative = Kruskal-Wallis test</div>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#16</div>
+<div class="card-front">
+What's the difference between linear and logistic regression?
+</div>
+<div class="card-back">
+<p><strong>Linear Regression:</strong></p>
+<ul>
+<li>Continuous outcome (e.g., length of stay)</li>
+<li>Predicts actual values</li>
+</ul>
+<p><strong>Logistic Regression:</strong></p>
+<ul>
+<li>Binary outcome (yes/no, e.g., complication)</li>
+<li>Predicts probability (0-1)</li>
+<li>Results = Odds Ratios</li>
+</ul>
+<div class="tip">💡 Both control for confounders in multivariable analysis</div>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#17</div>
+<div class="card-front">
+What is Cox regression used for?
+</div>
+<div class="card-back">
+<p><strong>Cox Proportional Hazards Regression</strong></p>
+<p><strong>Use:</strong> Time-to-event data (survival analysis)</p>
+<p><strong>Outcome:</strong> Hazard Ratios (HR) for each predictor</p>
+<p><strong>Example:</strong> Identifying independent predictors of recurrence-free survival while adjusting for age, stage, grade</p>
+<div class="tip">💡 Allows multivariable analysis of survival data</div>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#18</div>
+<div class="card-front">
+What does "statistically significant but not clinically significant" mean?
+</div>
+<div class="card-back">
+<p>A result can have p<0.05 but be too small to matter in practice.</p>
+<p><strong>Example:</strong> New drug reduces operative time by 2 minutes</p>
+<ul>
+<li>✓ p = 0.001 (statistically significant)</li>
+<li>✗ But 2 minutes is clinically trivial</li>
+</ul>
+<div class="tip">⚠️ Viva Gold: "While statistically significant, the absolute difference of 2 minutes has no meaningful clinical impact on patient care or outcomes"</div>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#19</div>
+<div class="card-front">
+What is intention-to-treat (ITT) analysis?
+</div>
+<div class="card-back">
+<p><strong>ITT:</strong> Analyze patients in the groups they were randomized to, regardless of what actually happened</p>
+<p><strong>Why?</strong></p>
+<ul>
+<li>Preserves randomization</li>
+<li>Reflects real-world practice</li>
+<li>Prevents bias</li>
+</ul>
+<p><strong>Example:</strong> Patient randomized to surgery but refused → still counted in surgery group</p>
+<div class="tip">💡 Opposite = Per-protocol analysis (only those who completed treatment)</div>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#20</div>
+<div class="card-front">
+What is heterogeneity (I²) in meta-analysis?
+</div>
+<div class="card-back">
+<p><strong>I²</strong> = Measure of how different the studies are</p>
+<p><strong>Interpretation:</strong></p>
+<ul>
+<li>I² < 25%: Low (studies consistent)</li>
+<li>I² 25-50%: Moderate</li>
+<li>I² > 50%: Substantial (explore causes before pooling)</li>
+</ul>
+<div class="tip">⚠️ These are the classic Higgins bands; Cochrane calls 50–90% "substantial." Avoid rigid cut-offs — high I² should prompt exploring clinical/methodological differences, not an automatic "don't pool."</div>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#21</div>
+<div class="card-front">
+What is the difference between prevalence and incidence?
+</div>
+<div class="card-back">
+<p><strong>Prevalence:</strong> Proportion with disease AT ONE TIME POINT</p>
+<ul>
+<li>Snapshot</li>
+<li>Example: 10% of population has diabetes</li>
+</ul>
+<p><strong>Incidence:</strong> NEW cases over a TIME PERIOD</p>
+<ul>
+<li>Rate</li>
+<li>Example: 50 new diabetes cases per 1000 people per year</li>
+</ul>
+<div class="tip">💡 Cross-sectional studies measure prevalence; Cohort studies measure incidence</div>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#22</div>
+<div class="card-front">
+What's the difference between correlation and causation?
+</div>
+<div class="card-back">
+<p><strong>Correlation:</strong> Two variables are associated/related</p>
+<p><strong>Causation:</strong> One variable CAUSES the other</p>
+<p><strong>Classic example:</strong> Ice cream sales correlate with drowning deaths</p>
+<ul>
+<li>✓ Correlated</li>
+<li>✗ Ice cream doesn't cause drowning</li>
+<li>✓ Confounder = summer weather</li>
+</ul>
+<div class="tip">⚠️ Observational studies show correlation; RCTs establish causation</div>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#23</div>
+<div class="card-front">
+What is a forest plot diamond?
+</div>
+<div class="card-back">
+<p>The <strong>diamond</strong> at the bottom of a forest plot shows the <strong>pooled result</strong> from all studies combined.</p>
+<p><strong>Interpretation:</strong></p>
+<ul>
+<li>Width = confidence interval</li>
+<li>Center = pooled estimate</li>
+<li>Crosses the line of no effect? = Not significant</li>
+<li>Doesn't cross it? = Significant</li>
+</ul>
+<div class="tip">💡 This is what the meta-analysis concludes overall. Line of no effect = <strong>1.0</strong> for ratio measures (OR/RR/HR) but <strong>0</strong> for continuous outcomes (e.g. mean difference in length of stay).</div>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#24</div>
+<div class="card-front">
+How do you calculate NNH (Number Needed to Harm)?
+</div>
+<div class="card-back">
+<div class="formula">NNH = 1 / Absolute Risk Increase</div>
+<p>How many patients need to be exposed to cause one additional harm</p>
+<p><strong>Example:</strong> New drug increases bleeding by 3%</p>
+<p class="highlight">NNH = 1/0.03 = 33</p>
+<p>Meaning: Treat 33 patients to cause 1 additional bleed</p>
+<div class="tip">💡 Higher NNH = safer (fewer harmed)</div>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#25</div>
+<div class="card-front">
+What's a standard deviation vs standard error?
+</div>
+<div class="card-back">
+<p><strong>Standard Deviation (SD):</strong></p>
+<ul>
+<li>Describes spread of DATA</li>
+<li>How much individual values vary</li>
+</ul>
+<p><strong>Standard Error (SE):</strong></p>
+<ul>
+<li>Describes uncertainty of the MEAN</li>
+<li>How precise our estimate is</li>
+<li>SE = SD / √n</li>
+</ul>
+<div class="tip">💡 Larger sample → smaller SE → more precise estimate</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- CATEGORY 2: BIAS & CONFOUNDING -->
+<div class="category-section">
+<div class="category-header">
+⚠️ Bias & Confounding (20 cards)
+</div>
+<div class="cards-grid">
+
+<div class="flashcard">
+<div class="card-number">#26</div>
+<div class="card-front">
+What is selection bias?
+</div>
+<div class="card-back">
+<p><strong>When:</strong> Sample doesn't represent target population</p>
+<p><strong>Example:</strong> Trial only enrolls fit, healthy patients but results applied to elderly with comorbidities</p>
+<p><strong>Prevention:</strong></p>
+<ul>
+<li>Broad inclusion criteria</li>
+<li>Consecutive enrollment</li>
+<li>Document who was excluded and why</li>
+</ul>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#27</div>
+<div class="card-front">
+What is performance bias?
+</div>
+<div class="card-back">
+<p><strong>When:</strong> Groups treated differently beyond the intervention</p>
+<p><strong>Example:</strong> Intervention group gets more clinic visits, closer monitoring, extra support</p>
+<p><strong>Prevention:</strong></p>
+<ul>
+<li>Blinding of participants and clinicians</li>
+<li>Standardized protocols</li>
+<li>Equal attention to both groups</li>
+</ul>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#28</div>
+<div class="card-front">
+What is detection bias?
+</div>
+<div class="card-back">
+<p><strong>When:</strong> Outcomes measured differently between groups</p>
+<p><strong>Example:</strong> Assessor knows treatment allocation and "looks harder" for complications in one group</p>
+<p><strong>Prevention:</strong></p>
+<ul>
+<li>Blinding of outcome assessors</li>
+<li>Objective outcome measures</li>
+<li>Standardized assessment protocols</li>
+</ul>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#29</div>
+<div class="card-front">
+What is attrition bias?
+</div>
+<div class="card-back">
+<p><strong>When:</strong> Systematic differences in dropouts/withdrawals</p>
+<p><strong>Example:</strong> Sicker patients preferentially drop out from treatment group because of side effects</p>
+<p><strong>Prevention:</strong></p>
+<ul>
+<li>Minimize dropout (good follow-up)</li>
+<li>Intention-to-treat analysis</li>
+<li>Report reasons for withdrawal</li>
+</ul>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#30</div>
+<div class="card-front">
+What is recall bias?
+</div>
+<div class="card-back">
+<p><strong>When:</strong> Participants remember past exposures differently</p>
+<p><strong>Example:</strong> Patients with cancer remember risk factors (smoking, diet) better than healthy controls</p>
+<p><strong>Most common in:</strong> Case-control studies</p>
+<p><strong>Prevention:</strong></p>
+<ul>
+<li>Use objective records</li>
+<li>Prospective data collection</li>
+</ul>
+</div>
+</div>
+
+
+
+
+<div class="flashcard">
+<div class="card-number">#31</div>
+<div class="card-front">
+What is publication bias?
+</div>
+<div class="card-back">
+<p><strong>When:</strong> Positive studies more likely to be published than negative ones</p>
+<p><strong>Result:</strong> Meta-analyses overestimate treatment effects</p>
+<p><strong>Detection:</strong> Funnel plot asymmetry</p>
+<p><strong>Prevention:</strong></p>
+<ul>
+<li>Search trial registries</li>
+<li>Contact authors for unpublished data</li>
+<li>Grey literature searches</li>
+</ul>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#32</div>
+<div class="card-front">
+What is a confounder?
+</div>
+<div class="card-back">
+<p><strong>Definition:</strong> Variable associated with BOTH exposure AND outcome that distorts the apparent relationship</p>
+<p><strong>Classic Example:</strong> Coffee → Lung cancer?</p>
+<ul>
+<li>✗ Coffee doesn't cause cancer</li>
+<li>✓ <span class="highlight">Smoking</span> is the confounder</li>
+<li>Smokers drink more coffee AND get cancer</li>
+</ul>
+<div class="tip">💡 Confounders create spurious associations</div>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#33</div>
+<div class="card-front">
+How do you address confounding in study design?
+</div>
+<div class="card-back">
+<p><strong>At Design Stage:</strong></p>
+<ol>
+<li><strong>Randomization</strong> (RCTs) - best method</li>
+<li><strong>Matching</strong> - match cases/controls on confounders</li>
+<li><strong>Restriction</strong> - only include homogeneous group</li>
+</ol>
+<p><strong>Example of restriction:</strong> Only include non-smokers to eliminate smoking as confounder</p>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#34</div>
+<div class="card-front">
+How do you address confounding in analysis?
+</div>
+<div class="card-back">
+<p><strong>At Analysis Stage:</strong></p>
+<ol>
+<li><strong>Stratification</strong> - analyze subgroups separately</li>
+<li><strong>Multivariable regression</strong> - adjust for multiple confounders</li>
+<li><strong>Propensity score matching</strong> - advanced statistical technique</li>
+</ol>
+<div class="tip">💡 Regression is most common method in observational studies</div>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#35</div>
+<div class="card-front">
+What is lead-time bias?
+</div>
+<div class="card-back">
+<p><strong>When:</strong> Early detection appears to improve survival without actually changing death</p>
+<p><strong>Example:</strong> Screening detects cancer 2 years earlier</p>
+<ul>
+<li>Without screening: Diagnosis age 60 → Death age 65 (5-yr survival)</li>
+<li>With screening: Diagnosis age 58 → Death age 65 (7-yr survival)</li>
+<li>✗ Patient still dies age 65!</li>
+</ul>
+<p><strong>Solution:</strong> Use mortality, not survival from diagnosis</p>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#36</div>
+<div class="card-front">
+What is length-time bias?
+</div>
+<div class="card-back">
+<p><strong>When:</strong> Screening preferentially detects slow-growing cancers</p>
+<p><strong>Why:</strong> Aggressive cancers progress quickly and present between screens</p>
+<p><strong>Result:</strong> Screened cancers have better prognosis (but only because we caught the slow ones)</p>
+<p><strong>Solution:</strong> Randomized screening trials</p>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#37</div>
+<div class="card-front">
+What is observer bias?
+</div>
+<div class="card-back">
+<p><strong>When:</strong> Assessor's expectations influence measurements</p>
+<p><strong>Example:</strong> Surgeon who performed novel technique assesses outcomes</p>
+<p><strong>Prevention:</strong></p>
+<ul>
+<li>Independent outcome assessment</li>
+<li>Blinding of assessors</li>
+<li>Objective outcome measures</li>
+</ul>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#38</div>
+<div class="card-front">
+What is the Hawthorne effect?
+</div>
+<div class="card-back">
+<p><strong>When:</strong> People change behavior because they know they're being observed</p>
+<p><strong>Example:</strong> Patients in trial comply better with medication than real-world patients</p>
+<p><strong>Result:</strong> Trial overestimates real-world effectiveness</p>
+<p><strong>Solution:</strong> Pragmatic trial design, minimal monitoring</p>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#39</div>
+<div class="card-front">
+What is reporting bias?
+</div>
+<div class="card-back">
+<p><strong>When:</strong> Selective reporting of favorable outcomes</p>
+<p><strong>Example:</strong> Trial pre-specifies primary outcome A, but reports secondary outcome B because it was significant</p>
+<p><strong>Prevention:</strong></p>
+<ul>
+<li>Pre-registration of protocols</li>
+<li>Report all pre-specified outcomes</li>
+<li>Check trial registry</li>
+</ul>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#40</div>
+<div class="card-front">
+What's the difference between randomization and blinding?
+</div>
+<div class="card-back">
+<p><strong>Randomization:</strong></p>
+<ul>
+<li>Prevents selection bias</li>
+<li>Balances known/unknown confounders</li>
+<li>Creates comparable groups</li>
+</ul>
+<p><strong>Blinding:</strong></p>
+<ul>
+<li>Prevents performance & detection bias</li>
+<li>Prevents differential treatment</li>
+<li>Prevents biased assessment</li>
+</ul>
+<div class="tip">💡 Both are needed for high-quality RCT!</div>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#41</div>
+<div class="card-front">
+What are the three types of blinding?
+</div>
+<div class="card-back">
+<p><strong>Single-blind:</strong> Patient doesn't know (doctor does)</p>
+<p><strong>Double-blind:</strong> Patient AND doctor don't know</p>
+<p><strong>Triple-blind:</strong> Patient, doctor, AND outcome assessor don't know</p>
+<div class="tip">💡 In surgery, blinding patient & outcome assessor is often best achievable</div>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#42</div>
+<div class="card-front">
+Why can't surgical RCTs always be double-blind?
+</div>
+<div class="card-back">
+<p><strong>Impossible to blind:</strong></p>
+<ul>
+<li>Surgeon doing the operation</li>
+<li>Patient if different incisions</li>
+<li>Patient if awake</li>
+</ul>
+<p><strong>CAN still blind:</strong></p>
+<ul>
+<li>Outcome assessors</li>
+<li>Data analysts</li>
+<li>Sometimes patients (if under GA, similar wounds)</li>
+</ul>
+<div class="tip">⚠️ Examiners know surgical trials face blinding challenges!</div>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#43</div>
+<div class="card-front">
+What is confounding by indication?
+</div>
+<div class="card-back">
+<p><strong>When:</strong> Treatment decision is based on prognosis</p>
+<p><strong>Example:</strong> Sicker patients get more aggressive treatment</p>
+<ul>
+<li>Compare laparoscopic vs open surgery</li>
+<li>Surgeons do open on sicker patients</li>
+<li>Open appears to have worse outcomes</li>
+<li>But really = sicker patients!</li>
+</ul>
+<div class="tip">💡 Common in observational studies - need good risk adjustment</div>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#44</div>
+<div class="card-front">
+What's the difference between internal and external validity?
+</div>
+<div class="card-back">
+<p><strong>Internal Validity:</strong> Are results true for THIS study population?</p>
+<ul>
+<li>Threatened by bias</li>
+<li>Threatened by confounding</li>
+</ul>
+<p><strong>External Validity (Generalizability):</strong> Do results apply to OTHER populations?</p>
+<ul>
+<li>Threatened by selection bias</li>
+<li>Depends on how representative sample is</li>
+</ul>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#45</div>
+<div class="card-front">
+What is information bias?
+</div>
+<div class="card-back">
+<p><strong>When:</strong> Errors in measuring/classifying variables</p>
+<p><strong>Examples:</strong></p>
+<ul>
+<li>Misclas sification of disease status</li>
+<li>Inaccurate measurement tools</li>
+<li>Different criteria used in groups</li>
+</ul>
+<p><strong>Types:</strong> Recall bias, observer bias, measurement error</p>
+<div class="tip">💡 Use validated, standardized tools to minimize</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- CATEGORY 3: STUDY DESIGNS -->
+<div class="category-section">
+<div class="category-header">
+🔬 Study Designs (20 cards)
+</div>
+<div class="cards-grid">
+
+<div class="flashcard">
+<div class="card-number">#46</div>
+<div class="card-front">
+What defines a cohort study?
+</div>
+<div class="card-back">
+<p><strong>Direction:</strong> Forward (Exposure → Outcome)</p>
+<p><strong>Setup:</strong></p>
+<ol>
+<li>Identify exposed vs unexposed groups</li>
+<li>Follow forward in time</li>
+<li>Compare incidence of outcomes</li>
+</ol>
+<p><strong>Measure:</strong> Relative Risk</p>
+<p><strong>Example:</strong> Follow smokers vs non-smokers → lung cancer</p>
+<div class="tip">💡 "Cohort = Forward" is your memory aid</div>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#47</div>
+<div class="card-front">
+What defines a case-control study?
+</div>
+<div class="card-back">
+<p><strong>Direction:</strong> Backward (Outcome → Exposure)</p>
+<p><strong>Setup:</strong></p>
+<ol>
+<li>Identify cases (with outcome)</li>
+<li>Select controls (without outcome)</li>
+<li>Look back at exposures</li>
+</ol>
+<p><strong>Measure:</strong> Odds Ratio (NOT relative risk!)</p>
+<p><strong>Example:</strong> Lung cancer patients vs controls → smoking history</p>
+<div class="tip">⚠️ NEVER say "relative risk" for case-control!</div>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#48</div>
+<div class="card-front">
+What's the main advantage of case-control studies?
+</div>
+<div class="card-back">
+<p><strong>Best for RARE OUTCOMES</strong></p>
+<p><strong>Why:</strong> You start with cases that already have the rare outcome</p>
+<p><strong>Other advantages:</strong></p>
+<ul>
+<li>Quick</li>
+<li>Inexpensive</li>
+<li>Small sample needed</li>
+<li>Multiple risk factors at once</li>
+</ul>
+<div class="tip">💡 Viva phrase: "Case-control design is efficient for rare complications like anastomotic leak"</div>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#49</div>
+<div class="card-front">
+What's the main disadvantage of case-control studies?
+</div>
+<div class="card-back">
+<p><strong>Main problem:</strong> Recall bias</p>
+<p><strong>Other limitations:</strong></p>
+<ul>
+<li>Cannot calculate incidence/prevalence</li>
+<li>Difficult to prove temporal relationship</li>
+<li>Selection of controls is challenging</li>
+<li>Can only study one outcome</li>
+</ul>
+<div class="tip">⚠️ Cases remember exposures better than controls</div>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#50</div>
+<div class="card-front">
+What are the 3 essential features of an RCT?
+</div>
+<div class="card-back">
+<ol>
+<li><strong>Random allocation</strong> to intervention or control</li>
+<li><strong>Concurrent control group</strong> for comparison</li>
+<li><strong>Prospective follow-up</strong> to measure outcomes</li>
+</ol>
+<p><strong>Gold standard because:</strong></p>
+<ul>
+<li>Randomization balances confounders</li>
+<li>Establishes causation</li>
+<li>Minimizes bias</li>
+</ul>
+</div>
+</div>
+
+
+
+<div class="flashcard">
+<div class="card-number">#51</div>
+<div class="card-front">
+What's the difference between retrospective and prospective cohort?
+</div>
+<div class="card-back">
+<p><strong>Prospective Cohort:</strong></p>
+<ul>
+<li>Identify groups NOW</li>
+<li>Follow forward into future</li>
+<li>Higher quality data</li>
+</ul>
+<p><strong>Retrospective Cohort:</strong></p>
+<ul>
+<li>Look back at historical data</li>
+<li>Use existing records</li>
+<li>Faster, cheaper</li>
+<li>Lower quality data</li>
+</ul>
+<div class="tip">💡 Both are cohort designs (exposure → outcome)</div>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#52</div>
+<div class="card-front">
+What is a cross-sectional study?
+</div>
+<div class="card-back">
+<p><strong>Design:</strong> Snapshot at one time point</p>
+<p><strong>Measures:</strong> Prevalence (not incidence)</p>
+<p><strong>Example:</strong> Survey of current smoking rates</p>
+<p><strong>Advantage:</strong> Quick, cheap</p>
+<p><strong>Limitation:</strong> Cannot establish temporal relationship or causation</p>
+<div class="tip">💡 Good for prevalence studies, hypothesis generation</div>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#53</div>
+<div class="card-front">
+What's the difference between systematic review and meta-analysis?
+</div>
+<div class="card-back">
+<p><strong>Systematic Review:</strong></p>
+<ul>
+<li>Comprehensive search</li>
+<li>Quality assessment</li>
+<li>Narrative synthesis</li>
+<li>May or may not pool data</li>
+</ul>
+<p><strong>Meta-Analysis:</strong></p>
+<ul>
+<li>Statistical pooling of results</li>
+<li>Calculates combined estimate</li>
+<li>Shown on forest plot</li>
+</ul>
+<div class="tip">💡 All meta-analyses are systematic reviews, but not all systematic reviews include meta-analysis</div>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#54</div>
+<div class="card-front">
+When should studies NOT be pooled in meta-analysis?
+</div>
+<div class="card-back">
+<p><strong>Don't pool if:</strong></p>
+<ul>
+<li>High heterogeneity (I² > 50%)</li>
+<li>Different populations</li>
+<li>Different interventions</li>
+<li>Different outcomes measured</li>
+<li>Methodological issues</li>
+</ul>
+<div class="tip">⚠️ Viva trap: "I² is 78% - should we trust this pooled estimate?"</div>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#55</div>
+<div class="card-front">
+What are the PICO components?
+</div>
+<div class="card-back">
+<p><strong>P</strong> = Population/Patient</p>
+<p><strong>I</strong> = Intervention</p>
+<p><strong>C</strong> = Comparison/Control</p>
+<p><strong>O</strong> = Outcome</p>
+<p><strong>Example:</strong> In patients with gastric cancer (P), does perioperative chemotherapy (I) vs surgery alone (C) improve survival (O)?</p>
+<div class="tip">💡 Always identify PICO in first 30 seconds of viva</div>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#56</div>
+<div class="card-front">
+What is stratified randomization?
+</div>
+<div class="card-back">
+<p><strong>Method:</strong> Randomize within subgroups to ensure balance of important prognostic factors</p>
+<p><strong>Example:</strong> Stratify by cancer stage</p>
+<ul>
+<li>Stage I patients randomized</li>
+<li>Stage II patients randomized</li>
+<li>Stage III patients randomized</li>
+</ul>
+<p><strong>Result:</strong> Equal stage distribution in both groups</p>
+<div class="tip">💡 Ensures balance of key confounders</div>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#57</div>
+<div class="card-front">
+What is block randomization?
+</div>
+<div class="card-back">
+<p><strong>Method:</strong> Randomize in blocks to ensure equal group sizes</p>
+<p><strong>Example:</strong> Block of 4</p>
+<ul>
+<li>Block 1: AABB</li>
+<li>Block 2: BABA</li>
+<li>Block 3: ABAB</li>
+</ul>
+<p><strong>Result:</strong> Balanced allocation throughout trial</p>
+<div class="tip">💡 Prevents imbalance if trial stops early</div>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#58</div>
+<div class="card-front">
+What is cluster randomization?
+</div>
+<div class="card-back">
+<p><strong>Method:</strong> Randomize groups (hospitals, wards) not individuals</p>
+<p><strong>When used:</strong> Intervention is at group level</p>
+<p><strong>Example:</strong> Surgical safety checklist implementation</p>
+<ul>
+<li>Can't randomize individual patients</li>
+<li>Randomize hospitals</li>
+</ul>
+<p><strong>Analysis:</strong> Need to account for clustering</p>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#59</div>
+<div class="card-front">
+What is allocation concealment?
+</div>
+<div class="card-back">
+<p><strong>Definition:</strong> Keeping randomization sequence hidden until patient enrolled</p>
+<p><strong>Prevents:</strong> Selection bias</p>
+<p><strong>How:</strong></p>
+<ul>
+<li>Central randomization (phone/web)</li>
+<li>Sequentially numbered sealed envelopes</li>
+<li>Third-party allocation</li>
+</ul>
+<div class="tip">💡 Different from blinding - this is BEFORE allocation</div>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#60</div>
+<div class="card-front">
+What's the difference between per-protocol and intention-to-treat analysis?
+</div>
+<div class="card-back">
+<p><strong>Intention-to-Treat (ITT):</strong></p>
+<ul>
+<li>Analyze all as randomized</li>
+<li>Includes dropouts, crossovers</li>
+<li>Reflects real-world</li>
+<li><strong>Preferred</strong></li>
+</ul>
+<p><strong>Per-Protocol:</strong></p>
+<ul>
+<li>Only those who completed</li>
+<li>Excludes non-compliant</li>
+<li>Overestimates benefit</li>
+</ul>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#61</div>
+<div class="card-front">
+What is the Oxford Levels of Evidence hierarchy?
+</div>
+<div class="card-back">
+<p><strong>Level 1:</strong> Systematic review of RCTs (1a) or a single high-quality RCT (1b)</p>
+<p><strong>Level 2:</strong> Cohort study, or a lower-quality / underpowered RCT (2a/2b)</p>
+<p><strong>Level 3:</strong> Case-control study</p>
+<p><strong>Level 4:</strong> Case series</p>
+<p><strong>Level 5:</strong> Expert opinion</p>
+<div class="tip">💡 Higher levels = stronger evidence for treatment decisions</div>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#62</div>
+<div class="card-front">
+What is non-inferiority trial design?
+</div>
+<div class="card-back">
+<p><strong>Goal:</strong> Show new treatment is "not worse than" standard (within acceptable margin)</p>
+<p><strong>Example:</strong> New operation is less invasive - want to show outcomes not significantly worse</p>
+<p><strong>Pre-specify:</strong> Non-inferiority margin (acceptable difference)</p>
+<div class="tip">💡 Different from superiority trials (showing treatment is better)</div>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#63</div>
+<div class="card-front">
+What is a composite outcome?
+</div>
+<div class="card-back">
+<p><strong>Definition:</strong> Combining multiple outcomes into one endpoint</p>
+<p><strong>Example:</strong> MACE (Major Adverse Cardiac Events)</p>
+<ul>
+<li>Death OR MI OR stroke</li>
+<li>Patient counted if ANY occur</li>
+</ul>
+<p><strong>Advantage:</strong> Increases power, fewer patients needed</p>
+<p><strong>Problem:</strong> Mixing important (death) with less important outcomes</p>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#64</div>
+<div class="card-front">
+What is a pragmatic trial?
+</div>
+<div class="card-back">
+<p><strong>Design:</strong> Real-world conditions, broad inclusion, minimal intervention</p>
+<p><strong>vs Explanatory trial:</strong> Ideal conditions, strict criteria, close monitoring</p>
+<p><strong>Pragmatic advantages:</strong></p>
+<ul>
+<li>Better external validity</li>
+<li>More generalizable</li>
+<li>Reflects actual practice</li>
+</ul>
+<div class="tip">💡 Answers "Does it work in practice?" vs "Does it work under perfect conditions?"</div>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#65</div>
+<div class="card-front">
+What is interim analysis and why is it important?
+</div>
+<div class="card-back">
+<p><strong>Definition:</strong> Planned analysis before trial completion</p>
+<p><strong>Reasons:</strong></p>
+<ul>
+<li>Early benefit detected → stop trial early</li>
+<li>Clear harm detected → stop trial</li>
+<li>Futility (no chance of benefit) → stop</li>
+</ul>
+<p><strong>Important:</strong> Must be pre-planned, use adjusted significance levels</p>
+<div class="tip">💡 Ethical to stop early if clear benefit or harm</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- CATEGORY 4: EXAM TECHNIQUE & VIVA PHRASES (35 cards) -->
+<div class="category-section">
+<div class="category-header">
+🎯 Exam Technique & Viva Phrases (35 cards)
+</div>
+<div class="cards-grid">
+
+<div class="flashcard">
+<div class="card-number">#66</div>
+<div class="card-front">
+How do you start every paper critique?
+</div>
+<div class="card-back">
+<p><strong>The 4-Sentence Opening:</strong></p>
+<ol>
+<li>"This is a [study design] published in [journal] in [year]"</li>
+<li>"The PICO is: [state PICO clearly]"</li>
+<li>"The main finding was [primary outcome with numbers]"</li>
+<li>"This provides Level [X] evidence for/against [intervention]"</li>
+</ol>
+<div class="tip">💡 Practice this until it's automatic - sets professional tone</div>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#67</div>
+<div class="card-front">
+Never say these 4 phrases in a viva
+</div>
+<div class="card-back">
+<p>❌ <strong>"Age causes complications"</strong></p>
+<p>✅ Say: "Age correlates with complications"</p>
+<p>❌ <strong>"p=0.05 so it's clinically important"</strong></p>
+<p>✅ Say: "While statistically significant, we must consider clinical significance"</p>
+<p>❌ <strong>"The paper says..."</strong></p>
+<p>✅ Say: "The authors found/reported..."</p>
+<p>❌ <strong>"I don't know"</strong></p>
+<p>✅ Say: "Based on what I can see in the methods..."</p>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#68</div>
+<div class="card-front">
+What's the SBAR structure for viva answers?
+</div>
+<div class="card-back">
+<p><strong>S</strong> = Situation (what you see)</p>
+<p>"This is a... The main finding is..."</p>
+<p><strong>B</strong> = Background (context)</p>
+<p>"This is important because current practice is..."</p>
+<p><strong>A</strong> = Assessment (your critique)</p>
+<p>"The strengths are... However, I'm concerned about..."</p>
+<p><strong>R</strong> = Recommendation (conclusion)</p>
+<p>"This suggests we should/shouldn't..."</p>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#69</div>
+<div class="card-front">
+How do you critique randomization?
+</div>
+<div class="card-back">
+<p><strong>Good viva response:</strong></p>
+<p>"I would check if randomization was appropriate by examining Table 1 for baseline balance. The groups should be similar for age, sex, comorbidities, and disease severity. If there are significant differences, randomization may have failed or the sample was too small to achieve balance. I'd also check if allocation was concealed and if the randomization method is described."</p>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#70</div>
+<div class="card-front">
+How do you discuss blinding in surgical trials?
+</div>
+<div class="card-back">
+<p><strong>Professional response:</strong></p>
+<p>"True double-blinding is challenging in surgical trials because the operating surgeon necessarily knows the procedure performed. However, we can still minimize bias by blinding the outcome assessors, data analysts, and potentially the patients if incisions are similar and they're under general anaesthetic. The key is documented, standardized outcome assessment by independent, blinded assessors."</p>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#71</div>
+<div class="card-front">
+How do you identify the primary outcome?
+</div>
+<div class="card-back">
+<p><strong>Where to look:</strong></p>
+<ol>
+<li>Abstract - usually stated clearly</li>
+<li>Methods section - "Primary endpoint was..."</li>
+<li>Sample size calculation - based on primary outcome</li>
+<li>Results - reported first</li>
+</ol>
+<div class="tip">⚠️ Be suspicious if multiple outcomes claimed as "primary"</div>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#72</div>
+<div class="card-front">
+How do you assess if results are clinically meaningful?
+</div>
+<div class="card-back">
+<p><strong>Viva response structure:</strong></p>
+<p>"While the result is statistically significant (p=[value]), I need to consider clinical significance. The absolute difference is [ARR], meaning [interpretation]. The NNT is [value], which means treating [X] patients prevents one event. Given the [risks/costs/burden] of treatment, I would consider this [clinically meaningful / clinically trivial]."</p>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#73</div>
+<div class="card-front">
+How do you critique sample size?
+</div>
+<div class="card-back">
+<p><strong>Good answer:</strong></p>
+<p>"I would check if a sample size calculation was performed. The authors should report the assumed effect size, significance level (usually 0.05), power (usually 80-90%), and expected dropout rate. If the calculated sample wasn't achieved, the study may be underpowered to detect a real effect, increasing risk of type II error."</p>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#74</div>
+<div class="card-front">
+How do you discuss generalizability?
+</div>
+<div class="card-back">
+<p><strong>Template response:</strong></p>
+<p>"The generalizability depends on how representative this sample is. I note the patients were [describe population]. In my practice, patients tend to be [older/younger/sicker/healthier]. The [strict inclusion criteria / single center / specialized setting] may limit external validity. However, the internal validity appears sound, so results likely apply to similar populations."</p>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#75</div>
+<div class="card-front">
+What are the 2 strengths + 2 weaknesses structure?
+</div>
+<div class="card-back">
+<p><strong>Always prepared to give:</strong></p>
+<p><strong>2 Strengths:</strong></p>
+<ul>
+<li>Start positive ("The main strength is...")</li>
+<li>Be specific (RCT design, large sample, good follow-up)</li>
+</ul>
+<p><strong>2 Weaknesses:</strong></p>
+<ul>
+<li>Use diplomatic language ("However, I'm concerned about...")</li>
+<li>Be specific (selection bias, lack of blinding, short follow-up)</li>
+</ul>
+<div class="tip">💡 Practice this for every trial you read</div>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#76</div>
+<div class="card-front">
+How do you discuss conflict of interest?
+</div>
+<div class="card-back">
+<p><strong>Professional way to mention:</strong></p>
+<p>"I note the study was funded by [pharmaceutical company / device manufacturer]. While this doesn't automatically invalidate results, it does warrant careful scrutiny of the methods and consideration of whether outcomes favor the sponsor. I would look for independent replication and check if protocol was pre-registered."</p>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#77</div>
+<div class="card-front">
+How do you present a Kaplan-Meier curve?
+</div>
+<div class="card-back">
+<p><strong>6-Step Description:</strong></p>
+<ol>
+<li>"This Kaplan-Meier curve shows..."</li>
+<li>"There are [N] groups: [describe]"</li>
+<li>"The curves [do/don't] separate early, suggesting..."</li>
+<li>"At [time point], the survival is [%] vs [%]"</li>
+<li>"The hazard ratio is [value] with CI [range], p=[value]"</li>
+<li>"This represents a [X]% relative reduction in mortality"</li>
+</ol>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#78</div>
+<div class="card-front">
+How do you interpret a wide confidence interval?
+</div>
+<div class="card-back">
+<p><strong>Good response:</strong></p>
+<p>"The wide confidence interval indicates imprecision in the estimate. This usually reflects a small sample size, high variability, or few events. While the point estimate suggests [effect], the CI ranges from [lower] to [upper], meaning the true effect could be anywhere in this range. I would interpret this result cautiously and consider whether additional data is needed."</p>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#79</div>
+<div class="card-front">
+How do you discuss loss to follow-up?
+</div>
+<div class="card-back">
+<p><strong>Structured answer:</strong></p>
+<p>"The loss to follow-up was [X]%. Generally, <5% is acceptable, 5-20% introduces potential bias, and >20% threatens validity. I'm concerned because: (1) dropout was differential between groups [[%] vs [%]], and (2) reasons suggest sicker patients may have dropped out. This could introduce attrition bias. Ideally, I'd want sensitivity analysis assuming worst-case scenarios."</p>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#80</div>
+<div class="card-front">
+What's your 10-minute reading period strategy?
+</div>
+<div class="card-back">
+<p><strong>0-2 min:</strong> Quick scan - title, abstract, figures</p>
+<p><strong>2-7 min:</strong> Deep dive - methods (PICO, design, randomization), Table 1 (baseline), main results table</p>
+<p><strong>7-10 min:</strong> Prepare critique - identify 2 strengths, 2 weaknesses, calculate NNT if possible, note discussion points</p>
+<div class="tip">💡 Don't read everything - focus on structure and main points!</div>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#81</div>
+<div class="card-front">
+How do you handle a question you don't know?
+</div>
+<div class="card-back">
+<p><strong>Never say "I don't know" - instead:</strong></p>
+<ul>
+<li>"Based on what I see in the methods section..."</li>
+<li>"The paper doesn't specify this, but typically..."</li>
+<li>"I would need to examine [X] to answer that fully..."</li>
+<li>"My understanding is that... but I'd want to verify..."</li>
+</ul>
+<div class="tip">💡 Show your thought process - examiners want to see reasoning</div>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#82</div>
+<div class="card-front">
+How do you discuss subgroup analysis?
+</div>
+<div class="card-back">
+<p><strong>Critical points to make:</strong></p>
+<p>"While the subgroup analysis suggests [finding], I'm cautious because: (1) it appears post-hoc rather than pre-specified, (2) multiple subgroups increase risk of false positives, and (3) each subgroup is underpowered. Subgroup findings should be hypothesis-generating only and require validation in dedicated trials."</p>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#83</div>
+<div class="card-front">
+How do you present ARR, RRR, and NNT together?
+</div>
+<div class="card-back">
+<p><strong>The complete answer:</strong></p>
+<p>"The control event rate was [X]% and the experimental rate was [Y]%, giving an absolute risk reduction of [ARR]%. This represents a relative risk reduction of [RRR]%. The number needed to treat is [NNT], meaning we need to treat [N] patients to prevent one [outcome]. Given the [burden/cost/risks] of treatment, I consider this [clinically significant/marginal]."</p>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#84</div>
+<div class="card-front">
+What's your 60-second summary template?
+</div>
+<div class="card-back">
+<p><strong>The Perfect 60-Second Pitch:</strong></p>
+<p>"This [design] of [N] patients with [condition] compared [intervention] to [control] and found [primary outcome with numbers]. The [ARR/RRR/NNT] was [values]. Main strengths are [2 strengths]. However, I'm concerned about [2 limitations]. This provides Level [X] evidence that in [population], [intervention] [does/doesn't] improve [outcome], and I [would/wouldn't] change practice based on this."</p>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#85</div>
+<div class="card-front">
+How do you discuss "Would you change your practice?"
+</div>
+<div class="card-back">
+<p><strong>Balanced response template:</strong></p>
+<p>"This is Level [X] evidence showing [finding]. Before changing practice I would consider: (1) Are these results internally valid? (2) Do they apply to my patients? (3) Are benefits clinically meaningful given risks/costs? (4) Has this been replicated? Based on this single study, I would [await further evidence / discuss with MDT / consider in selected patients]."</p>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#86</div>
+<div class="card-front">
+What are common examiner traps to avoid?
+</div>
+<div class="card-back">
+<p><strong>Trap 1:</strong> Confusing correlation with causation</p>
+<p><strong>Trap 2:</strong> Saying "relative risk" for case-control</p>
+<p><strong>Trap 3:</strong> Ignoring clinical vs statistical significance</p>
+<p><strong>Trap 4:</strong> Not checking baseline balance (Table 1)</p>
+<p><strong>Trap 5:</strong> Assuming subgroup analysis is valid</p>
+<div class="tip">⚠️ Examiners deliberately set these traps!</div>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#87</div>
+<div class="card-front">
+How do you buy thinking time?
+</div>
+<div class="card-back">
+<p><strong>Professional stalling phrases:</strong></p>
+<ul>
+<li>"Let me just check the methods section..."</li>
+<li>"That's a good question. Looking at Table 1..."</li>
+<li>"I'd approach this systematically..."</li>
+<li>"Before answering, I want to clarify..."</li>
+<li>"Let me think through the PICO..."</li>
+</ul>
+<div class="tip">💡 Better to pause and think than rush to wrong answer</div>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#88</div>
+<div class="card-front">
+How do you acknowledge uncertainty professionally?
+</div>
+<div class="card-back">
+<p><strong>Professional uncertainty phrases:</strong></p>
+<ul>
+<li>"The paper doesn't clearly specify..."</li>
+<li>"My understanding is... but I'd want to verify..."</li>
+<li>"Based on standard practice, I would expect..."</li>
+<li>"I can't be certain from what's presented, but..."</li>
+<li>"I would need to see [X] to answer definitively..."</li>
+</ul>
+<div class="tip">💡 This shows maturity, not weakness</div>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#89</div>
+<div class="card-front">
+What's the "structured critique" checklist?
+</div>
+<div class="card-back">
+<p><strong>The 8-Point Critique:</strong></p>
+<ol>
+<li>Study design appropriate?</li>
+<li>Sample size adequate?</li>
+<li>Baseline balance (Table 1)?</li>
+<li>Primary outcome clearly defined?</li>
+<li>Blinding/bias minimization?</li>
+<li>Analysis appropriate (ITT)?</li>
+<li>Results clinically meaningful?</li>
+<li>Generalizable to my patients?</li>
+</ol>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#90</div>
+<div class="card-front">
+How do you pivot from statistics to clinical care?
+</div>
+<div class="card-back">
+<p><strong>The bridge phrase:</strong></p>
+<p>"So statistically, [summarize numbers]. Clinically, this means for my patients, [translate to practice]. I would [counseling approach / treatment modification / shared decision-making]. The key message for the patient is [simple language explanation]."</p>
+<div class="tip">💡 Examiners want to see you're a clinician, not just a statistician</div>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#91</div>
+<div class="card-front">
+How do you describe a forest plot professionally?
+</div>
+<div class="card-back">
+<p><strong>Complete forest plot answer:</strong></p>
+<p>"This forest plot meta-analysis of [N] studies shows [intervention] compared to [control] for [outcome]. Each square represents a study, with size reflecting weight. The diamond shows the pooled estimate of [value] with 95% CI [range]. This [does/doesn't] cross the line of no effect (1.0 for ratio measures, 0 for mean differences), indicating [significance]. The I² of [X]% suggests [low/moderate/high] heterogeneity."</p>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#92</div>
+<div class="card-front">
+How do you handle a hostile examiner?
+</div>
+<div class="card-back">
+<p><strong>Professional responses:</strong></p>
+<ul>
+<li>Stay calm and courteous</li>
+<li>Don't get defensive</li>
+<li>"That's a fair point. Let me reconsider..."</li>
+<li>"I see your concern. Looking at it differently..."</li>
+<li>Stick to what you know</li>
+<li>Don't make things up</li>
+</ul>
+<div class="tip">💡 Some examiners test your temperament - stay professional!</div>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#93</div>
+<div class="card-front">
+What's your pre-viva mental checklist?
+</div>
+<div class="card-back">
+<p><strong>Before entering the room:</strong></p>
+<ol>
+<li>□ Deep breath, relax shoulders</li>
+<li>□ Smile, make eye contact</li>
+<li>□ Have pen & paper ready</li>
+<li>□ Remember: PICO first</li>
+<li>□ Use 10-min reading time wisely</li>
+<li>□ 2 strengths, 2 weaknesses prepared</li>
+<li>□ Speak slowly and clearly</li>
+</ol>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#94</div>
+<div class="card-front">
+How do you recover from a mistake?
+</div>
+<div class="card-back">
+<p><strong>If you realize you're wrong:</strong></p>
+<p>"Actually, let me correct that. On reflection..." OR "I apologize, I misspoke. What I meant to say was..."</p>
+<p><strong>If examiner corrects you:</strong></p>
+<p>"Thank you for clarifying. So if [restate correctly]..."</p>
+<div class="tip">💡 Better to correct yourself than persist with wrong answer</div>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#95</div>
+<div class="card-front">
+How do you settle your nerves right before the viva?
+</div>
+<div class="card-back">
+<p><strong>In the last 90 seconds:</strong></p>
+<ul>
+<li>Stand or sit tall with a relaxed, upright posture</li>
+<li>Slow, controlled breathing to steady your nerves</li>
+<li>Remind yourself: "I've prepared. I know this."</li>
+<li>A shoulder roll or short walk to release tension</li>
+</ul>
+<div class="tip">💡 The goal is simply to feel calm and composed. (Earlier "power pose" hormonal/performance claims did not replicate and are no longer supported — rely on breathing and preparation, not posture tricks.)</div>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#96</div>
+<div class="card-front">
+How do you end strong?
+</div>
+<div class="card-back">
+<p><strong>Final 30 seconds template:</strong></p>
+<p>"In summary, this [study design] of [N] patients shows [main finding]. The [ARR/NNT] is [value], which I consider [clinically significant/not significant] given [rationale]. The main limitation is [key weakness]. This provides Level [X] evidence, and based on this, I would [clinical action]."</p>
+<div class="tip">💡 End with confidence - this is your last impression</div>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#97</div>
+<div class="card-front">
+What if you completely don't understand the statistics?
+</div>
+<div class="card-back">
+<p><strong>Honest fallback:</strong></p>
+<p>"I'm not familiar with this specific statistical method. However, I can see the p-value is [X] and confidence interval is [Y], suggesting [interpretation]. The clinical finding appears to be [describe]. I would discuss this with a statistician to fully understand the analysis."</p>
+<div class="tip">💡 Honesty + clinical interpretation > making up statistics</div>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#98</div>
+<div class="card-front">
+How do you discuss multi-center vs single-center?
+</div>
+<div class="card-back">
+<p><strong>Comparison response:</strong></p>
+<p>"Multi-center trials have better external validity because they include diverse populations, surgical techniques, and settings. However, single-center studies often have more consistent protocols and data quality. This [multi/single]-center design means results are [more/less] generalizable but [more/less] internally consistent."</p>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#99</div>
+<div class="card-front">
+What are your go-to transitional phrases?
+</div>
+<div class="card-back">
+<p><strong>Professional transitions:</strong></p>
+<ul>
+<li>"Moving to the methods..."</li>
+<li>"Looking at the baseline characteristics..."</li>
+<li>"Turning to the results..."</li>
+<li>"In terms of clinical applicability..."</li>
+<li>"From a methodological standpoint..."</li>
+<li>"Considering the limitations..."</li>
+</ul>
+<div class="tip">💡 These make you sound organized and professional</div>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-number">#100</div>
+<div class="card-front">
+What's your final exam day mantra?
+</div>
+<div class="card-back">
+<div style="background: #1a4d6d; color: white; padding: 20px; border-radius: 8px; text-align: center;">
+<p style="font-size: 20px; margin-bottom: 15px;"><strong>"I'm PREPARED. I'm CALM. I'm a SURGEON."</strong></p>
+<p style="font-size: 16px;">You know PICO.<br>
+You know 2+2 (strengths + weaknesses).<br>
+You know ARR, RRR, NNT.<br>
+You've practiced.<br>
+You've got this. 💪</p>
+</div>
+<div class="tip">🌟 Repeat this 3 times before entering the examination room</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- Footer -->
+<div style="background: white; padding: 40px; border-radius: 10px; margin-top: 50px; text-align: center;">
+<h2 style="color: #1a4d6d; margin-bottom: 20px;">You've Got 100 Cards to Master!</h2>
+<p style="font-size: 18px; line-height: 1.8; max-width: 800px; margin: 0 auto;">
+These flashcards distill the essential knowledge from the FRCS Part 2 Paper Critique Handbook. Review them daily, focus on your weak areas, and use them for last-minute revision. Remember: you don't need to know everything perfectly - you need to demonstrate structured thinking and professional communication.
+</p>
+<p style="margin-top: 30px; font-size: 20px; color: #d4af37;"><strong>Good luck in your viva! 🎓</strong></p>
+</div>
+
+</div>
+
+<script>
+// Add click functionality for flashcards
+document.querySelectorAll('.flashcard').forEach(card => {
+    card.addEventListener('click', function() {
+        const back = this.querySelector('.card-back');
+        if (back.style.display === 'none' || !back.style.display) {
+            back.style.display = 'block';
+        } else {
+            back.style.display = 'none';
+        }
+    });
+    
+    // Initially hide backs
+    const back = card.querySelector('.card-back');
+    back.style.display = 'none';
+});
+</script>
+
+<script src="nav.js" defer></script>
+</body>
+</html>
