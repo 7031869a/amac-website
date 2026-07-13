@@ -150,6 +150,64 @@ footer{margin-top:40px;border-top:1px solid #1A2740;padding:34px 26px 26px;}
   .hero-stats{gap:22px;}
 }
 </style>
+<style>
+.amac-capture{
+  max-width:780px;margin:60px auto;padding:34px 32px;
+  background:linear-gradient(180deg,#111E36,var(--panel,#0F1A2E));
+  border:1px solid rgba(201,162,39,.28);
+  border-top:3px solid var(--gold,#c9a227);
+  border-radius:16px;box-shadow:0 18px 46px rgba(0,0,0,.34);
+}
+.amac-capture .eyebrow{
+  font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--gold,#c9a227);font-weight:600;margin-bottom:10px;
+}
+.amac-capture h3{
+  font-family:'Fraunces',serif;font-size:26px;line-height:1.25;
+  color:var(--txt,#F6F4EE);margin:0 0 10px;font-weight:600;
+}
+.amac-capture p.sub{
+  color:var(--txt-soft,#AEB9D0);font-size:15px;margin:0 0 20px;max-width:62ch;
+}
+.amac-capture ul.bullets{
+  margin:0 0 22px;padding:0;list-style:none;display:flex;gap:22px;flex-wrap:wrap;
+}
+.amac-capture ul.bullets li{
+  font-size:13.5px;color:var(--txt-soft,#AEB9D0);
+  display:flex;align-items:center;gap:7px;
+}
+.amac-capture ul.bullets li::before{content:"\2713";color:var(--gold,#c9a227);font-weight:700;}
+.amac-capture form{display:flex;gap:10px;flex-wrap:wrap;}
+.amac-capture input[type=email]{
+  flex:1 1 260px;min-width:0;background:#0B1524;
+  border:1px solid rgba(174,185,208,.25);border-radius:10px;
+  padding:14px 16px;color:var(--txt,#F6F4EE);
+  font-family:'Outfit',sans-serif;font-size:15px;
+  transition:border-color .2s,box-shadow .2s;
+}
+.amac-capture input[type=email]::placeholder{color:var(--txt-faint,#6B7794);}
+.amac-capture input[type=email]:focus{
+  outline:none;border-color:var(--gold,#c9a227);
+  box-shadow:0 0 0 3px rgba(201,162,39,.16);
+}
+.amac-capture button{
+  background:var(--gold,#c9a227);color:#0B1220;border:none;border-radius:10px;
+  padding:14px 26px;font-family:'Outfit',sans-serif;font-weight:600;font-size:15px;
+  cursor:pointer;transition:transform .08s,background .2s;flex:0 0 auto;
+}
+.amac-capture button:hover{background:var(--gold-soft,#e0c45a);}
+.amac-capture button:active{transform:translateY(1px);}
+.amac-capture .promise{margin-top:14px;font-size:12.5px;color:var(--txt-faint,#6B7794);}
+.amac-capture .thanks{display:none;color:var(--txt,#F6F4EE);font-size:16px;line-height:1.6;}
+.amac-capture.done form,.amac-capture.done ul.bullets,.amac-capture.done p.sub{display:none;}
+.amac-capture.done .thanks{display:block;}
+@media(max-width:560px){
+  .amac-capture{padding:26px 20px;margin:44px 16px;}
+  .amac-capture h3{font-size:21px;}
+  .amac-capture button{width:100%;}
+}
+</style>
+
 </head>
 <body>
 
@@ -225,6 +283,35 @@ footer{margin-top:40px;border-top:1px solid #1A2740;padding:34px 26px 26px;}
 </section>
 
 <!-- FOOTER -->
+<section class="amac-capture">
+  <div class="eyebrow">Free chapter &middot; no spam &middot; unsubscribe anytime</div>
+  <h3>Get a free chapter of our PLAB 1 material</h3>
+  <p class="sub">
+    Tell us where to send it and we will email you a chapter from the AMaC
+    library &mdash; free. You will also be first to know when new question banks,
+    tools and books go live.
+  </p>
+  <ul class="bullets">
+    <li>A real chapter, not a sample page</li>
+    <li>New question banks first</li>
+    <li>Early access to our books</li>
+  </ul>
+  <form class="amac-form" action="https://formsubmit.co/info@amac-medical.com" method="POST">
+    <input type="email" name="email" required placeholder="your@email.com" aria-label="Email address">
+    <input type="hidden" name="book" value="PLAB 1">
+    <input type="hidden" name="_subject" value="AMaC free chapter request — PLAB 1">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_template" value="table">
+    <input type="text" name="_honey" style="display:none">
+    <button type="submit">Send me the chapter &rarr;</button>
+  </form>
+  <div class="thanks">
+    <strong>Thank you &mdash; it is on its way.</strong><br>
+    We will email your chapter shortly. Welcome to AMaC.
+  </div>
+  <p class="promise">We never sell your address, and we email rarely &mdash; only when there is something genuinely worth your time.</p>
+</section>
+
 <footer>
   <div class="foot-inner">
     <div class="foot-brand">
@@ -249,5 +336,17 @@ footer{margin-top:40px;border-top:1px solid #1A2740;padding:34px 26px 26px;}
 </footer>
 
 <script src="nav.js" defer></script>
+<script>
+document.addEventListener('submit', function(e){
+  var f = e.target;
+  if(!f.classList || !f.classList.contains('amac-form')) return;
+  e.preventDefault();
+  var box = f.closest('.amac-capture');
+  fetch(f.action, {method:'POST', body:new FormData(f), headers:{'Accept':'application/json'}})
+    .then(function(){ box.classList.add('done'); })
+    .catch(function(){ box.classList.add('done'); });
+});
+</script>
+
 </body>
 </html>
