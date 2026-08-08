@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Exam Morning — AMaC PLAB 2</title>
+<meta name="description" content="Your PLAB 2 exam morning &mdash; what to review, what to leave alone, and how to walk into the first station already settled.">
 <!-- ══════════════════════════════════════════════════════════════
      AMaC — SHARED HEAD BLOCK
      Paste this inside <head> on EVERY page, just after <title>.
@@ -134,5 +135,6 @@ document.getElementById('scriptList').innerHTML=EM.scripts.map(s=>`<div class="s
 document.getElementById('critGrid').innerHTML=EM.critical_values.map(c=>`<div class="crit-item"><div class="ci-test">${c.test}</div><div class="ci-vals">${[c.low&&'Low: '+c.low,c.high&&'High: '+c.high].filter(Boolean).join(' / ')}</div></div>`).join('');
 function share(){if(navigator.share){navigator.share({title:'AMaC Exam Morning Card',text:'PLAB 2 exam morning — 10 anchors, 5 scripts, critical values',url:window.location.href});}else{navigator.clipboard.writeText(window.location.href).then(()=>alert('Link copied to clipboard!'));}}
 </script>
+<script src="footer.js" defer></script>
 </body>
 </html>
