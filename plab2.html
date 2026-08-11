@@ -155,6 +155,18 @@ a{color:inherit;text-decoration:none;}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto;}}
 :focus-visible{outline:2px solid var(--gold-lt);outline-offset:3px;border-radius:4px;}
 
+/* ── sticky-nav anchor offset ──
+   nav.js's .amac-nav measures 56.75px here and is position:sticky above 760px
+   (below that nav.js switches it to position:relative). 72px = measured
+   height + a 15px gap. #reference and #books carry no in-page link today but
+   are section targets of the same kind, so they get the same offset. */
+#think,#speak,#perform,#reference,#books{scroll-margin-top:72px;}
+/* This door has the longest link row, so between 761px and ~870px the nav
+   wraps to two lines and measures 83.39px. 98px = that + a 15px gap. */
+@media(min-width:761px) and (max-width:899px){
+  #think,#speak,#perform,#reference,#books{scroll-margin-top:98px;}
+}
+
 </style>
 <style>
 .amac-capture{

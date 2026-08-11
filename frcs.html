@@ -131,6 +131,15 @@ nav[data-door] .fb .b{font-weight:600;letter-spacing:.1em;color:var(--teal-lt);}
   .anchor{grid-template-columns:1fr;} .anchor-side{border-left:0;border-top:1px solid var(--line2);flex-direction:row;gap:22px;}
   .cards{grid-template-columns:1fr;} .inside ul{grid-template-columns:1fr;}
 }
+
+/* ── sticky-nav anchor offset ──
+   nav.js's .amac-nav measures 56.75px here and is position:sticky above 760px
+   (below that nav.js switches it to position:relative). 72px = measured
+   height + a 15px gap.
+   NOTE: #buy-handbook is linked from the product card but no element carries
+   that id, so this rule matches nothing today. It is left in place so the
+   offset is already correct once the missing target is added. */
+#buy-handbook{scroll-margin-top:72px;}
 </style>
 <style>
 .amac-capture{

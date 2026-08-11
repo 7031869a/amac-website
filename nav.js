@@ -61,6 +61,14 @@
         { href: "frcs.html",           label: "Handbook" }
       ]
     },
+    mrcp: {
+      tag: "MRCP",
+      accent: "#8A6FD1", accentText: "#B79EE8",
+      links: [
+        { href: "#parts",    label: "The three exams" },
+        { href: "#waitlist", label: "Join the waitlist" }
+      ]
+    },
     shelf: {
       tag: "CLINICAL REFERENCE",
       accent: "#888780", accentText: "#B4B2A9",

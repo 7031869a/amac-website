@@ -69,6 +69,7 @@
   --plab2:#C9A227;--plab2-deep:#A8841C;--plab2-text:#D7B43A;
   --plab1:#4F97DD;--plab1-deep:#2B7CC9;--plab1-text:#85B7EB;
   --frcs:#17A2A9;--frcs-deep:#0F8087;--frcs-text:#57C7CE;
+  --mrcp:#8A6FD1;--mrcp-deep:#6B52AC;--mrcp-text:#B79EE8;
 }
 *{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
 body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--txt);line-height:1.6;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column;}
@@ -88,9 +89,13 @@ a{text-decoration:none;color:inherit;}
 .head h1{font-size:clamp(28px,4.6vw,46px);font-weight:600;line-height:1.1;color:var(--txt);}
 .head p{font-size:clamp(14px,1.8vw,17px);color:var(--txt-soft);margin-top:14px;}
 
-/* ── the three doors ── */
+/* ── the five doors — 3 across, then 2 centred beneath ── */
 .doors{flex:1;display:flex;align-items:center;justify-content:center;padding:30px 26px 20px;}
-.doors-row{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;align-items:stretch;max-width:1200px;width:100%;}
+.doors-row{display:grid;grid-template-columns:repeat(6,1fr);gap:20px;align-items:stretch;max-width:1200px;width:100%;}
+/* six-column track: each door spans two, so the second row of two can centre */
+.door{grid-column:span 2;}
+.door:nth-child(4){grid-column:2/span 2;}
+.door:nth-child(5){grid-column:4/span 2;}
 
 .door{
   position:relative;border-radius:16px;padding:30px 22px 26px;cursor:pointer;
@@ -117,6 +122,7 @@ a{text-decoration:none;color:inherit;}
 .door.plab2{--d:var(--plab2);--dd:var(--plab2-deep);--glow:rgba(201,162,39,0.22);--accent:var(--plab2-text);}
 .door.plab1{--d:var(--plab1);--dd:var(--plab1-deep);--glow:rgba(79,151,221,0.22);--accent:var(--plab1-text);}
 .door.frcs{--d:var(--frcs);--dd:var(--frcs-deep);--glow:rgba(23,162,169,0.22);--accent:var(--frcs-text);}
+.door.mrcp{--d:var(--mrcp);--dd:var(--mrcp-deep);--glow:rgba(138,111,209,0.22);--accent:var(--mrcp-text);}
 
 .door-kick{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:600;}
 .door-name{font-family:'Fraunces',serif;font-size:clamp(26px,3vw,34px);font-weight:600;color:var(--txt);margin:8px 0 6px;line-height:1;}
@@ -124,13 +130,26 @@ a{text-decoration:none;color:inherit;}
 .door-stats{margin:16px 0 18px;font-size:12.5px;color:var(--txt-mute);line-height:1.7;}
 .door-stats b{color:var(--accent);font-weight:600;}
 .door-enter{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:600;color:var(--accent);}
+/* status chip — house pill idiom (cf. .tc-badge on the hub pages) */
+.door-chip{position:absolute;top:24px;right:20px;font-size:10.5px;font-weight:600;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--accent);
+  background:rgba(138,111,209,0.10);border:1px solid rgba(138,111,209,0.28);
+  padding:3px 10px;border-radius:20px;white-space:nowrap;line-height:1.5;}
 
 /* ── tagline foot ── */
 .foot{text-align:center;padding:14px 26px 30px;}
 .foot p{font-size:12px;color:var(--txt-faint);letter-spacing:.03em;}
 
-@media(max-width:1040px){ .doors-row{grid-template-columns:1fr 1fr;gap:18px;max-width:620px;} }
-@media(max-width:560px){ .doors-row{grid-template-columns:1fr;max-width:420px;} .doors{padding:20px 26px;} }
+@media(max-width:1040px){
+  .doors-row{grid-template-columns:1fr 1fr;gap:18px;max-width:620px;}
+  .door,.door:nth-child(4){grid-column:auto;}
+  .door:nth-child(5){grid-column:1/-1;}   /* MRCP spans the pair — no stranded card */
+}
+@media(max-width:560px){
+  .doors-row{grid-template-columns:1fr;max-width:420px;}
+  .doors{padding:20px 26px;}
+  .door:nth-child(5){grid-column:auto;}
+}
 </style>
 </head>
 <body>
@@ -183,6 +202,16 @@ a{text-decoration:none;color:inherit;}
       <div class="door-sub">Part 2 paper critique &mdash; appraise the study and speak the examiners&rsquo; language.</div>
       <div class="door-stats"><b>100</b> critique flashcards<br><b>195</b>-page handbook</div>
       <span class="door-enter">Enter FRCS &rarr;</span>
+    </a>
+
+    <!-- MRCP (violet) — placeholder door, waitlist only -->
+    <a class="door mrcp" href="mrcp.html">
+      <span class="door-chip">Coming soon</span>
+      <div class="door-kick">The Physician Exams</div>
+      <div class="door-name">MRCP</div>
+      <div class="door-sub">Part 1 &middot; Part 2 &middot; PACES</div>
+      <div class="door-stats">Examiner reasoning<br>Spoken performance</div>
+      <span class="door-enter">See what&rsquo;s planned &rarr;</span>
     </a>
 
   </div>
