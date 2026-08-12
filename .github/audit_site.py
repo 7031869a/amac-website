@@ -7,6 +7,10 @@ Runs from the repository root and checks the things that break silently:
   2. Banned editorial terms        (HARD FAIL)  -- "Kill Zone", "Automatic Fail"
   3. Old-prototype contamination   (HARD FAIL)  -- catches the wrong file being deployed
   4. Advertised counts vs reality  (HARD FAIL, except Master Cards = WARNING)
+  5. Missing ground truth          (HARD FAIL)  -- a metric that cannot be checked
+                                                   at all is a broken audit, not a pass
+  6. Unmapped advertised numbers   (WARNING)   -- a displayed count with no metric
+                                                   behind it; visible, not enforced
 
 It does NOT check clinical accuracy. That always needs a human clinician.
 
@@ -42,9 +46,21 @@ TRUTH = {
     "Master Cards":   record_count("mastercards"),
     "Flashcards":     record_count("flashcards"),
     "Question Bank":  record_count("questions"),
-    "PLAB 1":         record_count("plab1"),
+    # PLAB 1 lives in an external data file, NOT inline in plab1.html.
+    # Counting plab1.html returned 0, which silently disabled every PLAB 1 check.
+    "PLAB 1":         js_record_count("plab1-questions.js"),
     "Instant Fail Atlas": js_record_count("atlas-cards.js"),
 }
+
+# A metric with no ground truth cannot be validated at all. That is a broken
+# audit, not a clean site -- fail hard rather than skipping in silence. This is
+# exactly how the PLAB 1 counts went unchecked: the counter returned 0 and every
+# downstream check quietly passed.
+for _metric, _true in sorted(TRUTH.items()):
+    if not _true:
+        errors.append(
+            f"[no-truth]  '{_metric}' has NO ground truth (0 records found) -- "
+            f"every advertised '{_metric}' count is going UNVALIDATED")
 
 # ---------------------------------------------------------------- 1. links
 valid = set(pages)
@@ -69,40 +85,89 @@ for n, h in pages.items():
             errors.append(f"[prototype] {n}.html contains '{p}' -- wrong/old file deployed?")
 
 # ---------------------------------------------------------------- 4. advertised counts
-def metric_for(label):
-    L = label.lower()
+# Bare labels that mean "the whole PLAB 1 bank" when they appear on a PLAB 1
+# page. Kept as an explicit set so a label like "Questions Each" (180 per mock
+# paper) can never be mistaken for the bank total.
+PLAB1_BANK_LABELS = {
+    "questions", "sba questions", "bank total", "question bank", "total questions",
+}
+
+def metric_for(label, page=""):
+    L = label.lower().strip()
     if "instant fail atlas" in L: return "Instant Fail Atlas"
     if "examiner brain" in L: return "Examiner Brain"
     if "actor trap"    in L and "simulator" not in L: return "Actor Traps"
-    if "plab"          in L: return "PLAB 1"
+    # A bare "plab" test is ambiguous: it fires on "... -- PLAB 2" labels too,
+    # which are not the PLAB 1 bank. Match the exam explicitly.
+    if "plab 1" in L or "plab1" in L:
+        return "PLAB 1" if ("question" in L or "sba" in L or "bank" in L) else None
+    if "plab 2" in L or "plab2" in L: return None
     if "osce"          in L and "circuit" not in L and "trainer" not in L: return "OSCE Stations"
     if "flashcard"     in L: return "Flashcards"
-    if "question"      in L and "plab" not in L: return "Question Bank"
+    # An unqualified bank label means the PLAB 1 bank on a PLAB 1 page and the
+    # AKT bank anywhere else.
+    if page.startswith("plab1"):
+        return "PLAB 1" if L in PLAB1_BANK_LABELS else None
+    if "question"      in L: return "Question Bank"
     if "master card"   in L: return "Master Cards"
     return None
 
 def advertised(h):
     # Captures the displayed number plus an optional trailing "+" (a growth floor).
     out = []
+    # Tolerate attributes before '>' (e.g. id="total-count") and the
+    # <span class="hs-num">N</span><span class="hs-lbl">..</span> variant used
+    # by the hub pages -- the original patterns matched neither, so those
+    # numbers were invisible to this audit.
     out += [(n.replace(",", ""), l.strip()) for n, l in
-            re.findall(r'class="hs-num">(\d[\d,]*\+?)</div><div class="hs-label">([^<]+)', h)]
+            re.findall(r'class="hs-num"[^>]*>(\d[\d,]*\+?)</(?:div|span)>\s*'
+                       r'<(?:div|span) class="hs-(?:label|lbl)"[^>]*>([^<]+)', h)]
     out += [(n.replace(",", ""), l.strip()) for n, l in
-            re.findall(r'class="stat-num">(\d[\d,]*\+?)</div><div class="stat-label">([^<]+)', h)]
+            re.findall(r'class="stat-num"[^>]*>(\d[\d,]*\+?)</div>\s*'
+                       r'<div class="stat-label"[^>]*>([^<]+)', h)]
     for name, badge in re.findall(r'class="tc-name"[^>]*>([^<]+)</div>\s*<div class="tc-badge">([^<]+)', h, re.S):
         m = re.match(r'(\d[\d,]*\+?)', badge.strip())
         if m:
             out.append((m.group(1).replace(",", ""), name.strip()))
+    # Entrance-page door cards: <div class="door-stats"><b>N</b> Label<br>...
+    # Only the PLAB 1 door is decoded. The other doors mix metrics (stations,
+    # tools, handbook pages) that this audit has no ground truth for, so
+    # reading them would produce false failures, not coverage.
+    for block in re.findall(r'<a class="door plab1"[^>]*>(.*?)</a>', h, re.S):
+        for n, l in re.findall(r'<b>(\d[\d,]*\+?)</b>\s*([^<]*)', block):
+            if "question" in l.lower() or "sba" in l.lower():
+                out.append((n.replace(",", ""), "PLAB 1 " + l.strip()))
     return out
 
-for pg in ("index", "tools", "plab2"):
+# Every page that displays a headline count. PLAB 1 numbers appear on far more
+# than the original three, and a page missing from this tuple is never checked.
+COUNT_PAGES = ("index", "landing", "tools", "plab2",
+               "plab1", "plab1-hub", "plab1-exams", "plab1-study")
+
+_unmapped_seen = set()
+
+for pg in COUNT_PAGES:
     if pg not in pages:
         continue
     for num, label in advertised(pages[pg]):
-        metric = metric_for(label)
+        metric = metric_for(label, pg)
         if not metric:
+            # An unmapped label is either a number nobody is checking or a gap
+            # in metric_for(). Both are worth seeing. Kept a WARNING because the
+            # site legitimately displays numbers with no ground truth behind them.
+            if (pg, label) not in _unmapped_seen:
+                _unmapped_seen.add((pg, label))
+                warnings.append(
+                    f"[no-metric] {pg}.html shows {num} for '{label}' -- no metric "
+                    f"mapped, so this number is never validated")
             continue
         true_n = TRUTH[metric]
         if not true_n:
+            # Never treat "no ground truth" as a pass -- that is exactly how the
+            # PLAB 1 counts went unchecked for so long.
+            errors.append(
+                f"[no-truth]  {pg}.html shows {num} for '{metric}', but there is "
+                f"no ground truth to validate it against")
             continue
         is_floor = num.endswith("+")
         shown = int(num.rstrip("+"))
