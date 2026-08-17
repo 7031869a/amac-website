@@ -49,7 +49,21 @@ TRUTH = {
     # PLAB 1 lives in an external data file, NOT inline in plab1.html.
     # Counting plab1.html returned 0, which silently disabled every PLAB 1 check.
     "PLAB 1":         js_record_count("plab1-questions.js"),
+    # Wired in while the bank is still a scaffold, deliberately. A bank that is
+    # only added to the audit once it is "ready" is a bank that ships unchecked.
+    # NOTE: this counts every object in the file, reviewed or not. Structural
+    # conformance is a separate gate -- see mrcp1-validate.py.
+    "MRCP 1":         js_record_count("mrcp1-questions.js"),
     "Instant Fail Atlas": js_record_count("atlas-cards.js"),
+}
+
+# Metrics that are deliberately wired up before their bank exists. A pre-launch
+# metric is allowed to have zero ground truth WITHOUT failing the build -- but it
+# is still named out loud on every run, and the moment a page advertises a count
+# for it the [no-truth] hard failure below fires anyway. The point is that an
+# unwritten bank is not an excuse for being absent from the audit.
+PRELAUNCH_METRICS = {
+    "MRCP 1",   # scaffold only; remove from this set at the first authored question
 }
 
 # A metric with no ground truth cannot be validated at all. That is a broken
@@ -58,9 +72,20 @@ TRUTH = {
 # downstream check quietly passed.
 for _metric, _true in sorted(TRUTH.items()):
     if not _true:
-        errors.append(
-            f"[no-truth]  '{_metric}' has NO ground truth (0 records found) -- "
-            f"every advertised '{_metric}' count is going UNVALIDATED")
+        if _metric in PRELAUNCH_METRICS:
+            warnings.append(
+                f"[prelaunch] '{_metric}' has no ground truth yet (bank is empty). "
+                f"Wired into the audit and watched; it will be enforced as soon as "
+                f"the first record exists.")
+        else:
+            errors.append(
+                f"[no-truth]  '{_metric}' has NO ground truth (0 records found) -- "
+                f"every advertised '{_metric}' count is going UNVALIDATED")
+    elif _metric in PRELAUNCH_METRICS:
+        # The exemption must not outlive its purpose.
+        warnings.append(
+            f"[prelaunch] '{_metric}' now has {_true} record(s) -- remove it from "
+            f"PRELAUNCH_METRICS so a zero count fails the build again.")
 
 # ---------------------------------------------------------------- 1. links
 valid = set(pages)
@@ -92,11 +117,20 @@ PLAB1_BANK_LABELS = {
     "questions", "sba questions", "bank total", "question bank", "total questions",
 }
 
+# The same idea for the MRCP Part 1 bank, on mrcp1* pages.
+MRCP1_BANK_LABELS = {
+    "questions", "bank total", "question bank", "total questions",
+}
+
 def metric_for(label, page=""):
     L = label.lower().strip()
     if "instant fail atlas" in L: return "Instant Fail Atlas"
     if "examiner brain" in L: return "Examiner Brain"
     if "actor trap"    in L and "simulator" not in L: return "Actor Traps"
+    # MRCP before the PLAB tests: "MRCP Part 1" must not fall through to any
+    # PLAB rule, and "Part 1"/"Part 2" here mean the MRCP parts, not PLAB.
+    if "mrcp" in L:
+        return "MRCP 1" if ("question" in L or "bank" in L) else None
     # A bare "plab" test is ambiguous: it fires on "... -- PLAB 2" labels too,
     # which are not the PLAB 1 bank. Match the exam explicitly.
     if "plab 1" in L or "plab1" in L:
@@ -106,6 +140,8 @@ def metric_for(label, page=""):
     if "flashcard"     in L: return "Flashcards"
     # An unqualified bank label means the PLAB 1 bank on a PLAB 1 page and the
     # AKT bank anywhere else.
+    if page.startswith("mrcp1"):
+        return "MRCP 1" if L in MRCP1_BANK_LABELS else None
     if page.startswith("plab1"):
         return "PLAB 1" if L in PLAB1_BANK_LABELS else None
     if "question"      in L: return "Question Bank"
@@ -142,7 +178,9 @@ def advertised(h):
 # Every page that displays a headline count. PLAB 1 numbers appear on far more
 # than the original three, and a page missing from this tuple is never checked.
 COUNT_PAGES = ("index", "landing", "tools", "plab2",
-               "plab1", "plab1-hub", "plab1-exams", "plab1-study")
+               "plab1", "plab1-hub", "plab1-exams", "plab1-study",
+               "mrcp", "mrcp1", "mrcp1-study", "mrcp1-exams",
+               "mrcp1-mock", "mrcp1-exam-runner")
 
 _unmapped_seen = set()
 

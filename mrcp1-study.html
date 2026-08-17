@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MRCP Part 1 Study Mode | AMaC</title>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#0C1526">
+<link rel="canonical" href="https://amac-medical.com/mrcp1-study.html">
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AMaC">
+<meta property="og:locale" content="en_GB">
+<meta property="og:title" content="MRCP Part 1 Study Mode — AMaC">
+<meta property="og:description" content="Untimed MRCP Part 1 study mode. Scaffold only — no questions have been authored yet.">
+<meta property="og:url" content="https://amac-medical.com/mrcp1-study.html">
+<meta property="og:image" content="https://amac-medical.com/og-image.png">
+<meta name="description" content="Untimed MRCP Part 1 study mode. Scaffold only — no questions have been authored yet.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0C1526;--panel:#0F1A2E;--card:#16233F;--card-deep:#111E33;
+  --edge:#1E2C46;--edge-soft:#28385A;--edge-line:#243149;
+  --txt:#F6F4EE;--txt-soft:#AEB9D0;--txt-mute:#8593AE;--txt-faint:#6B7794;
+  --door:#8A6FD1;--door-deep:#6B52AC;--door-text:#B79EE8;
+  --gold:#c9a227;--ok:#2FB48C;--bad:#D2596B;
+}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--txt);line-height:1.6;-webkit-font-smoothing:antialiased;}
+h1,h2,h3{font-family:'Fraunces',serif;}
+a{text-decoration:none;color:inherit;}
+nav{position:sticky;top:0;z-index:100;background:var(--panel);border-bottom:1px solid var(--edge);backdrop-filter:blur(8px);}
+.nav-inner{max-width:1180px;margin:0 auto;padding:13px 26px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;}
+.nav-l{display:flex;align-items:center;gap:13px;}
+.brand{font-weight:600;letter-spacing:.1em;color:var(--gold);font-size:16px;}
+.door-tag{font-size:11px;color:var(--door-text);border-left:1px solid var(--edge-soft);padding-left:13px;letter-spacing:.1em;}
+.nav-links{display:flex;align-items:center;gap:16px;list-style:none;font-size:12.5px;color:#C7D0E2;flex-wrap:wrap;}
+.nav-links a:hover{color:#fff;}
+.nav-links a.here{color:var(--door-text);}
+.nav-exit{color:var(--txt-mute);font-size:11.5px;border-left:1px solid var(--edge-soft);padding-left:13px;}
+
+.wrap{max-width:900px;margin:0 auto;padding:34px 26px 40px;}
+.page-head{margin-bottom:24px;}
+.page-kick{font-size:11px;letter-spacing:.2em;color:var(--door-text);font-weight:600;}
+.page-head h1{font-size:clamp(24px,3.6vw,34px);font-weight:600;margin:12px 0 8px;}
+.page-head p{font-size:14.5px;color:var(--txt-soft);max-width:60ch;}
+
+.scaffold-note{background:var(--card-deep);border-top:3px solid var(--gold);border-left:3px solid var(--gold);
+  border-right:1px solid var(--edge-soft);border-bottom:1px solid var(--edge-soft);border-radius:9px;
+  padding:15px 18px;font-size:13px;color:var(--txt-soft);line-height:1.6;margin-bottom:24px;}
+.scaffold-note b{color:var(--txt);font-weight:600;}
+
+.filters{display:flex;gap:22px;align-items:flex-end;flex-wrap:wrap;margin-bottom:18px;}
+.filter-label{display:block;font-size:11px;letter-spacing:.14em;color:var(--txt-mute);margin-bottom:7px;text-transform:uppercase;}
+.filter-select{background:var(--card);border:1px solid var(--edge-soft);border-radius:7px;color:var(--txt);
+  font-family:inherit;font-size:14px;padding:9px 12px;min-width:210px;}
+.filter-select:focus{outline:none;border-color:var(--door);}
+.chips{display:flex;gap:8px;flex-wrap:wrap;}
+.chip{background:var(--card);border:1px solid var(--edge-soft);border-radius:20px;color:var(--txt-soft);
+  font-family:inherit;font-size:12.5px;padding:7px 14px;cursor:pointer;transition:.15s;}
+.chip:hover{border-color:var(--door);}
+.chip.active{background:rgba(138,111,209,0.14);border-color:var(--door);color:var(--door-text);font-weight:600;}
+.filter-count{font-size:12.5px;color:var(--txt-mute);margin-left:auto;}
+
+.progress-line{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;
+  font-size:12.5px;color:var(--txt-mute);margin-bottom:12px;}
+.tally .t-correct{color:var(--ok);font-weight:600;}
+.tally .t-sep{margin:0 5px;color:var(--txt-faint);}
+
+.card{
+  background:var(--card);
+  border-top:3px solid var(--door);border-left:3px solid var(--door);
+  border-right:1px solid var(--edge-soft);border-bottom:1px solid var(--edge-soft);
+  border-radius:9px;padding:24px 22px;transition:transform .15s;
+}
+.card:hover{transform:translateY(-3px);}
+.qmeta{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:13px;font-size:11.5px;}
+.qmeta .sub{color:var(--door-text);font-weight:600;letter-spacing:.06em;text-transform:uppercase;}
+.qmeta .topic{color:var(--txt-soft);}
+.qmeta .diff{color:var(--txt-mute);border:1px solid var(--edge-soft);border-radius:14px;padding:2px 9px;}
+.qmeta .qid{color:var(--txt-faint);margin-left:auto;font-variant-numeric:tabular-nums;}
+.stem{font-size:15.5px;color:var(--txt);line-height:1.7;margin-bottom:16px;}
+.opts{display:flex;flex-direction:column;gap:8px;}
+.opt{display:flex;gap:11px;align-items:flex-start;background:var(--card-deep);border:1px solid var(--edge-line);
+  border-radius:7px;padding:11px 13px;font-size:14px;color:var(--txt-soft);cursor:pointer;transition:.15s;}
+.opt:hover{border-color:var(--door);}
+.opt input{margin-top:5px;accent-color:var(--door);}
+.opt-letter{color:var(--door-text);font-weight:600;margin-right:5px;}
+.opt.sel{border-color:var(--door);background:rgba(138,111,209,0.10);}
+.opt.locked{cursor:default;}
+.opt.opt-correct{border-color:var(--ok);background:rgba(47,180,140,0.10);color:var(--txt);}
+.opt.opt-wrong{border-color:var(--bad);background:rgba(210,89,107,0.10);}
+.action-row{margin-top:16px;}
+.btn{background:var(--door);color:#0B1220;border:none;border-radius:8px;padding:11px 20px;
+  font-family:inherit;font-weight:600;font-size:14px;cursor:pointer;transition:.15s;}
+.btn:hover{background:var(--door-text);}
+.btn:disabled{background:var(--edge-soft);color:var(--txt-faint);cursor:not-allowed;}
+.btn.ghost{background:transparent;border:1px solid var(--edge-soft);color:var(--txt-soft);}
+.btn.ghost:hover{border-color:var(--door);color:var(--door-text);}
+.btn.ghost:disabled{border-color:var(--edge-line);color:var(--txt-faint);}
+.result-banner{margin-top:16px;border-radius:7px;padding:10px 14px;font-size:14px;font-weight:600;}
+.result-correct{background:rgba(47,180,140,0.12);color:#6FD5B4;border:1px solid rgba(47,180,140,.35);}
+.result-wrong{background:rgba(210,89,107,0.12);color:#E88C9B;border:1px solid rgba(210,89,107,.35);}
+.expl{margin-top:12px;background:var(--card-deep);border-left:3px solid var(--edge-soft);border-radius:0 7px 7px 0;
+  padding:13px 15px;font-size:13.5px;color:var(--txt-soft);line-height:1.65;}
+.expl-label{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--door-text);font-weight:600;margin-bottom:6px;}
+.expl.correct{border-left-color:var(--ok);}
+.expl.gen{border-left-color:var(--gold);}
+.da-row{margin-bottom:8px;}
+.da-row:last-child{margin-bottom:0;}
+.da-letter{color:var(--door-text);font-weight:600;}
+.empty{background:var(--card);border:1px dashed var(--edge-soft);border-radius:9px;padding:44px 24px;
+  text-align:center;color:var(--txt-mute);font-size:14px;line-height:1.7;}
+.pager{display:flex;gap:10px;justify-content:center;margin-top:20px;}
+
+footer{margin-top:40px;border-top:1px solid #1A2740;padding:30px 26px 26px;}
+.foot-bottom{max-width:1180px;margin:0 auto;font-size:12px;color:var(--txt-faint);text-align:center;}
+.amac-legal-note{max-width:74ch;margin:16px auto 0;font-size:11.5px;line-height:1.65;color:var(--txt-faint);text-align:center;}
+@media(max-width:640px){.nav-links{gap:13px;font-size:12px;}.filter-count{margin-left:0;}}
+</style>
+</head>
+<body>
+
+<nav data-door="mrcp1"><div class="nav-inner">
+  <div class="nav-l">
+    <a href="index.html" class="brand">AMaC</a>
+    <span class="door-tag">MRCP PART 1</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="mrcp1.html">Question bank</a></li>
+    <li><a href="mrcp1-study.html" class="here">Study mode</a></li>
+    <li><a href="mrcp1-exams.html">Mock papers</a></li>
+    <li><a href="mrcp.html" class="nav-exit">← MRCP</a></li>
+  </ul>
+</div></nav>
+
+<div class="wrap">
+  <div class="page-head">
+    <div class="page-kick">MRCP PART 1</div>
+    <h1>Study mode</h1>
+    <p>One question at a time, no clock, full reasoning shown after you commit to an answer.</p>
+  </div>
+
+  <div class="scaffold-note" id="scaffoldNote"></div>
+
+  <div class="filters">
+    <div>
+      <label class="filter-label" for="subSel">Subdomain</label>
+      <select id="subSel" class="filter-select" onchange="applyFilters()"><option value="">All subdomains</option></select>
+    </div>
+    <div>
+      <span class="filter-label">Difficulty</span>
+      <div class="chips" id="diffChips">
+        <button type="button" class="chip active" onclick="setDiff(this,'')">All</button>
+        <button type="button" class="chip" onclick="setDiff(this,'Easy')">Easy</button>
+        <button type="button" class="chip" onclick="setDiff(this,'Moderate')">Moderate</button>
+        <button type="button" class="chip" onclick="setDiff(this,'Difficult')">Difficult</button>
+      </div>
+    </div>
+    <span class="filter-count" id="filterCount"></span>
+  </div>
+
+  <div class="progress-line">
+    <span id="prog"></span>
+    <span class="tally" id="tally"></span>
+  </div>
+
+  <div class="card" id="qcard"></div>
+
+  <div class="pager">
+    <button type="button" class="btn ghost" id="btn-prev" onclick="go(-1)">&larr; Previous</button>
+    <button type="button" class="btn ghost" id="btn-next" onclick="go(1)">Next &rarr;</button>
+  </div>
+</div>
+
+<footer>
+  <div class="foot-bottom">© 2026 A. Mansour &amp; Colleagues (AMaC). All rights reserved.</div>
+  <p class="amac-legal-note">AMaC Publishing is not affiliated with, endorsed by, or connected to the Federation of the Royal Colleges of Physicians of the United Kingdom, or any Royal College. MRCP and PACES are used here only to identify the examinations to which this material relates.</p>
+</footer>
+
+<script src="mrcp1-questions.js"></script>
+<script>
+var ALL = Array.isArray(window.MRCP1_QUESTIONS) ? window.MRCP1_QUESTIONS : [];
+var QS = ALL.slice(), cur = 0, subdomain = '', difficulty = '', sel = null;
+var answers = {};
+
+function esc(s){ return String(s == null ? '' : s)
+  .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+(function init(){
+  var subs = [];
+  ALL.forEach(function(q){ if (subs.indexOf(q.subdomain) === -1) subs.push(q.subdomain); });
+  subs.sort();
+  var selEl = document.getElementById('subSel');
+  subs.forEach(function(s){
+    var o = document.createElement('option'); o.value = s; o.textContent = s; selEl.appendChild(o);
+  });
+  var fixtures = ALL.filter(function(q){ return q.review_status === 'fixture'; }).length;
+  var note = document.getElementById('scaffoldNote');
+  if (fixtures){
+    note.innerHTML = '<b>Scaffold — not a bank.</b> ' + fixtures + ' synthetic fixture question' +
+      (fixtures === 1 ? '' : 's') + ' only. Deliberately non-clinical, to be deleted before real authoring.';
+  } else if (!ALL.length){
+    note.innerHTML = '<b>The bank is empty.</b> No questions have been authored yet.';
+  } else {
+    note.innerHTML = '<b>Run <span style="font-weight:600">python mrcp1-validate.py</span></b> before committing any change to the bank.';
+  }
+})();
+
+function applyFilters(){
+  subdomain = document.getElementById('subSel').value;
+  QS = ALL.filter(function(q){
+    return (!subdomain || q.subdomain === subdomain) && (!difficulty || q.difficulty === difficulty);
+  });
+  cur = 0; sel = null; render();
+}
+function setDiff(btn, d){
+  difficulty = d;
+  var chips = document.querySelectorAll('#diffChips .chip');
+  for (var i = 0; i < chips.length; i++) chips[i].classList.remove('active');
+  btn.classList.add('active');
+  applyFilters();
+}
+function selectOption(k){
+  var q = QS[cur];
+  if (answers[q.id] !== undefined) return;
+  sel = k;
+  var b = document.getElementById('confirm-btn'); if (b) b.disabled = false;
+}
+function confirmAnswer(){
+  var q = QS[cur];
+  if (sel === null || answers[q.id] !== undefined) return;
+  answers[q.id] = sel; render();
+}
+function go(d){
+  if (!QS.length) return;
+  cur = Math.max(0, Math.min(QS.length - 1, cur + d)); sel = null; render();
+}
+
+function render(){
+  var total = QS.length;
+  document.getElementById('filterCount').textContent = total === ALL.length
+    ? ALL.length + ' question' + (ALL.length === 1 ? '' : 's')
+    : total + ' of ' + ALL.length + ' questions';
+
+  var attempted = 0, correct = 0;
+  QS.forEach(function(q){
+    if (answers[q.id] !== undefined){ attempted++; if (answers[q.id] === q.correct_letter) correct++; }
+  });
+  document.getElementById('tally').innerHTML = attempted
+    ? '<span class="t-correct">' + correct + ' correct</span><span class="t-sep">/</span>' + attempted + ' attempted'
+    : '';
+
+  if (!total){
+    document.getElementById('prog').textContent = '';
+    document.getElementById('qcard').innerHTML = '<div class="empty">' +
+      (ALL.length ? 'No questions match this combination of subdomain and difficulty.'
+                  : 'The MRCP Part 1 bank is empty. No questions have been authored yet.<br>' +
+                    'Add them to mrcp1-questions.js and run the validator.') + '</div>';
+    document.getElementById('btn-prev').disabled = true;
+    document.getElementById('btn-next').disabled = true;
+    return;
+  }
+
+  var q = QS[cur];
+  var ua = answers[q.id] !== undefined ? answers[q.id] : null;
+  var done = ua !== null;
+  document.getElementById('prog').textContent = 'Question ' + (cur + 1) + ' of ' + total;
+
+  var opts = '';
+  Object.keys(q.options).sort().forEach(function(k){
+    var cls = 'opt', checked = '';
+    if (done){
+      cls += ' locked';
+      if (k === q.correct_letter) cls += ' opt-correct';
+      else if (k === ua) cls += ' opt-wrong';
+      if (k === ua || k === q.correct_letter) checked = 'checked';
+    } else if (sel === k){ cls += ' sel'; checked = 'checked'; }
+    opts += '<label class="' + cls + '"><input type="radio" name="opt" ' +
+            (done ? 'disabled' : '') + ' ' + checked + ' onchange="selectOption(\'' + k + '\')">' +
+            '<span><span class="opt-letter">' + k + '.</span> ' + esc(q.options[k]) + '</span></label>';
+  });
+
+  var expl = '';
+  if (done){
+    var right = ua === q.correct_letter;
+    expl += '<div class="result-banner ' + (right ? 'result-correct' : 'result-wrong') + '">' +
+            (right ? '&#10003; Correct'
+                   : '&#10007; Incorrect — the answer is ' + esc(q.correct_letter) + '. ' +
+                     esc(q.options[q.correct_letter])) + '</div>';
+    expl += '<div class="expl correct"><div class="expl-label">Why it is correct</div>' +
+            esc(q.why_correct) + '</div>';
+    var da = q.distractor_analysis || {}, rows = '';
+    Object.keys(da).sort().forEach(function(k){
+      rows += '<div class="da-row"><span class="da-letter">' + k + '.</span> ' + esc(da[k]) + '</div>';
+    });
+    if (rows) expl += '<div class="expl"><div class="expl-label">Distractor analysis</div>' + rows + '</div>';
+    if (q.generalisation) expl += '<div class="expl gen"><div class="expl-label">Generalisation</div>' +
+            esc(q.generalisation) + '</div>';
+  }
+
+  var action = done
+    ? (cur < total - 1 ? '<div class="action-row"><button type="button" class="btn" onclick="go(1)">Next question &rarr;</button></div>' : '')
+    : '<div class="action-row"><button type="button" class="btn" id="confirm-btn" onclick="confirmAnswer()"' +
+      (sel ? '' : ' disabled') + '>Confirm answer</button></div>';
+
+  document.getElementById('qcard').innerHTML =
+    '<div class="qmeta"><span class="sub">' + esc(q.subdomain) + '</span>' +
+    '<span class="topic">' + esc(q.topic) + '</span>' +
+    (q.difficulty ? '<span class="diff">' + esc(q.difficulty) + '</span>' : '') +
+    '<span class="qid">' + esc(q.id) + '</span></div>' +
+    '<div class="stem">' + esc(q.stem) + '</div>' +
+    '<div class="opts">' + opts + '</div>' + action + expl;
+
+  document.getElementById('btn-prev').disabled = (cur === 0);
+  document.getElementById('btn-next').disabled = (cur === total - 1);
+}
+render();
+</script>
+<script src="nav.js" defer></script>
+<script src="footer.js" defer></script>
+</body>
+</html>

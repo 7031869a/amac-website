@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MRCP Part 1 Session · AMaC</title>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#0C1526">
+<link rel="canonical" href="https://amac-medical.com/mrcp1-exam-runner.html">
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AMaC">
+<meta property="og:locale" content="en_GB">
+<meta property="og:title" content="MRCP Part 1 Session — AMaC">
+<meta property="og:description" content="MRCP Part 1 practice session runner. Scaffold only.">
+<meta property="og:url" content="https://amac-medical.com/mrcp1-exam-runner.html">
+<meta property="og:image" content="https://amac-medical.com/og-image.png">
+<meta name="description" content="MRCP Part 1 practice session runner. Scaffold only.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0C1526;--panel:#0F1A2E;--card:#16233F;--card-deep:#111E33;
+  --edge:#1E2C46;--edge-soft:#28385A;--edge-line:#243149;
+  --txt:#F6F4EE;--txt-soft:#AEB9D0;--txt-mute:#8593AE;--txt-faint:#6B7794;
+  --door:#8A6FD1;--door-deep:#6B52AC;--door-text:#B79EE8;
+  --gold:#c9a227;--ok:#2FB48C;--bad:#D2596B;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--txt);line-height:1.6;-webkit-font-smoothing:antialiased;}
+h1,h2,h3{font-family:'Fraunces',serif;}
+a{text-decoration:none;color:inherit;}
+nav{position:sticky;top:0;z-index:100;background:var(--panel);border-bottom:1px solid var(--edge);backdrop-filter:blur(8px);}
+.nav-inner{max-width:1180px;margin:0 auto;padding:13px 26px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;}
+.nav-l{display:flex;align-items:center;gap:13px;}
+.brand{font-weight:600;letter-spacing:.1em;color:var(--gold);font-size:16px;}
+.door-tag{font-size:11px;color:var(--door-text);border-left:1px solid var(--edge-soft);padding-left:13px;letter-spacing:.1em;}
+.nav-links{display:flex;align-items:center;gap:16px;list-style:none;font-size:12.5px;color:#C7D0E2;flex-wrap:wrap;}
+.nav-links a:hover{color:#fff;}
+.nav-exit{color:var(--txt-mute);font-size:11.5px;border-left:1px solid var(--edge-soft);padding-left:13px;}
+
+.wrap{max-width:900px;margin:0 auto;padding:26px 26px 40px;}
+.session-bar{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  background:var(--card-deep);border:1px solid var(--edge-soft);border-radius:9px;padding:13px 17px;margin-bottom:18px;}
+.session-title{font-family:'Fraunces',serif;font-size:17px;color:var(--txt);}
+.session-meta{font-size:12.5px;color:var(--txt-mute);}
+.timer{font-variant-numeric:tabular-nums;font-size:18px;font-weight:600;color:var(--door-text);}
+.timer.untimed{font-size:12.5px;font-weight:400;color:var(--txt-mute);}
+
+.prog-strip{height:4px;background:var(--edge-line);border-radius:3px;overflow:hidden;margin-bottom:18px;}
+.prog-fill{height:100%;background:var(--door);width:0%;transition:width .25s;}
+
+.card{
+  background:var(--card);
+  border-top:3px solid var(--door);border-left:3px solid var(--door);
+  border-right:1px solid var(--edge-soft);border-bottom:1px solid var(--edge-soft);
+  border-radius:9px;padding:24px 22px;
+}
+.qmeta{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:13px;font-size:11.5px;}
+.qmeta .sub{color:var(--door-text);font-weight:600;letter-spacing:.06em;text-transform:uppercase;}
+.qmeta .qid{color:var(--txt-faint);margin-left:auto;font-variant-numeric:tabular-nums;}
+.stem{font-size:15.5px;color:var(--txt);line-height:1.7;margin-bottom:16px;}
+.opts{display:flex;flex-direction:column;gap:8px;}
+.opt{display:flex;gap:11px;align-items:flex-start;background:var(--card-deep);border:1px solid var(--edge-line);
+  border-radius:7px;padding:11px 13px;font-size:14px;color:var(--txt-soft);cursor:pointer;transition:.15s;}
+.opt:hover{border-color:var(--door);}
+.opt input{margin-top:5px;accent-color:var(--door);}
+.opt-letter{color:var(--door-text);font-weight:600;margin-right:5px;}
+.opt.sel{border-color:var(--door);background:rgba(138,111,209,0.10);}
+.opt.correct-opt{border-color:var(--ok);background:rgba(47,180,140,0.10);color:var(--txt);}
+.opt.wrong-opt{border-color:var(--bad);background:rgba(210,89,107,0.10);}
+
+.nav-row{display:flex;gap:10px;justify-content:space-between;margin-top:20px;flex-wrap:wrap;}
+.btn{background:var(--door);color:#0B1220;border:none;border-radius:8px;padding:11px 20px;
+  font-family:inherit;font-weight:600;font-size:14px;cursor:pointer;transition:.15s;}
+.btn:hover{background:var(--door-text);}
+.btn:disabled{background:var(--edge-soft);color:var(--txt-faint);cursor:not-allowed;}
+.btn.ghost{background:transparent;border:1px solid var(--edge-soft);color:var(--txt-soft);}
+.btn.ghost:hover{border-color:var(--door);color:var(--door-text);}
+
+.palette{display:flex;gap:6px;flex-wrap:wrap;margin-top:22px;}
+.pal{width:34px;height:34px;border-radius:6px;border:1px solid var(--edge-soft);background:var(--card-deep);
+  color:var(--txt-mute);font-family:inherit;font-size:12px;cursor:pointer;transition:.12s;}
+.pal:hover{border-color:var(--door);}
+.pal.answered{background:rgba(138,111,209,.18);border-color:var(--door);color:var(--door-text);font-weight:600;}
+.pal.current{outline:2px solid var(--door);outline-offset:1px;}
+
+.rationale{margin-top:14px;background:var(--card-deep);border-left:3px solid var(--edge-soft);
+  border-radius:0 7px 7px 0;padding:13px 15px;font-size:13.5px;color:var(--txt-soft);line-height:1.65;}
+.rationale-label{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--door-text);font-weight:600;margin-bottom:6px;}
+.rationale.correct{border-left-color:var(--ok);}
+.rationale.gen{border-left-color:var(--gold);}
+.da-row{margin-bottom:7px;}
+.da-letter{color:var(--door-text);font-weight:600;}
+
+.results{background:var(--card);border-top:3px solid var(--door);border-left:3px solid var(--door);
+  border-right:1px solid var(--edge-soft);border-bottom:1px solid var(--edge-soft);border-radius:9px;padding:28px 24px;}
+.score{font-family:'Fraunces',serif;font-size:44px;color:var(--txt);font-weight:600;line-height:1;}
+.score-sub{font-size:13.5px;color:var(--txt-mute);margin-top:6px;}
+.results-note{font-size:12.5px;color:var(--txt-faint);margin-top:16px;line-height:1.65;}
+.sub-line{display:flex;justify-content:space-between;gap:14px;font-size:13px;color:var(--txt-soft);
+  padding:8px 0;border-bottom:1px solid var(--edge-line);}
+
+.empty{background:var(--card);border:1px dashed var(--edge-soft);border-radius:9px;padding:48px 26px;
+  text-align:center;color:var(--txt-mute);font-size:14px;line-height:1.75;}
+.empty b{color:var(--txt-soft);}
+.empty a{color:var(--door-text);font-weight:600;}
+@media(max-width:640px){.nav-links{gap:13px;font-size:12px;}}
+</style>
+</head>
+<body>
+
+<nav data-door="mrcp1"><div class="nav-inner">
+  <div class="nav-l">
+    <a href="index.html" class="brand">AMaC</a>
+    <span class="door-tag">MRCP PART 1</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="mrcp1.html">Question bank</a></li>
+    <li><a href="mrcp1-study.html">Study mode</a></li>
+    <li><a href="mrcp1-exams.html">Mock papers</a></li>
+    <li><a href="mrcp.html" class="nav-exit">← MRCP</a></li>
+  </ul>
+</div></nav>
+
+<div class="wrap">
+  <div class="session-bar" id="sessionBar" style="display:none;">
+    <div>
+      <div class="session-title" id="sessionTitle"></div>
+      <div class="session-meta" id="sessionMeta"></div>
+    </div>
+    <div class="timer untimed" id="timer"></div>
+  </div>
+  <div class="prog-strip" id="progStrip" style="display:none;"><div class="prog-fill" id="progFill"></div></div>
+  <div id="main"></div>
+</div>
+
+<script src="mrcp1-questions.js"></script>
+<script src="mrcp1-papers.js"></script>
+<script src="mrcp1-spec.js"></script>
+<script>
+(function(){
+  "use strict";
+  var QUESTIONS = Array.isArray(window.MRCP1_QUESTIONS) ? window.MRCP1_QUESTIONS : [];
+  var PAPERS    = window.MRCP1_PAPERS || {};
+  var SPEC      = window.MRCP1_SPEC || {};
+  // Stated from mrcp1-spec.js so the results wording cannot drift from the source.
+  var PASS      = SPEC.PASS_MARK_SCALED || 450;
+  var FROMDIET  = SPEC.PASS_MARK_APPLIES_FROM || "2026/1";
+  var BYID = {};
+  QUESTIONS.forEach(function(q){ BYID[q.id] = q; });
+
+  function esc(s){ return String(s == null ? '' : s)
+    .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+  function param(k){
+    var m = new RegExp('[?&]' + k + '=([^&]*)').exec(location.search);
+    return m ? decodeURIComponent(m[1].replace(/\+/g,' ')) : null;
+  }
+
+  var paperId  = param('paper');
+  var mode     = param('mode');
+  var n        = parseInt(param('n') || '0', 10);
+  var subParam = param('sub');
+
+  var sessionQs = [], sessionTitle = '', isTimed = false;
+
+  if (paperId && PAPERS[paperId]){
+    sessionTitle = PAPERS[paperId].title || paperId;
+    sessionQs = (PAPERS[paperId].ids || []).map(function(id){ return BYID[id]; })
+                  .filter(function(q){ return !!q; });
+    // Timed only once the published specification supplies a duration. Until
+    // mrcp1-papers.js carries one, a paper runs untimed rather than inventing a clock.
+    isTimed = false;
+  } else if (mode === 'practice' && n > 0){
+    sessionTitle = 'Random practice';
+    var pool = QUESTIONS.slice();
+    if (subParam) pool = pool.filter(function(q){ return q.subdomain === subParam; });
+    for (var i = pool.length - 1; i > 0; i--){
+      var j = Math.floor(Math.random() * (i + 1));
+      var t = pool[i]; pool[i] = pool[j]; pool[j] = t;
+    }
+    sessionQs = pool.slice(0, Math.min(n, pool.length));
+    isTimed = false;
+  }
+
+  var main = document.getElementById('main');
+
+  if (!sessionQs.length){
+    var why;
+    if (paperId && !PAPERS[paperId]){
+      why = 'Paper <b>' + esc(paperId) + '</b> is not defined in mrcp1-papers.js.';
+    } else if (paperId){
+      why = 'Paper <b>' + esc(paperId) + '</b> lists no question ids that exist in the bank.';
+    } else if (!QUESTIONS.length){
+      why = 'The MRCP Part 1 bank is empty — no questions have been authored yet.';
+    } else if (subParam){
+      why = 'No questions in the bank carry the subdomain <b>' + esc(subParam) + '</b>.';
+    } else {
+      why = 'No session was requested. Start one from the mock papers page.';
+    }
+    main.innerHTML = '<div class="empty"><b>This session could not be started.</b><br>' + why +
+      '<br><br><a href="mrcp1-exams.html">&larr; Back to mock papers</a></div>';
+    return;
+  }
+
+  document.getElementById('sessionBar').style.display = '';
+  document.getElementById('progStrip').style.display = '';
+  document.getElementById('sessionTitle').textContent = sessionTitle;
+  document.getElementById('sessionMeta').textContent =
+    sessionQs.length + ' question' + (sessionQs.length === 1 ? '' : 's');
+  document.getElementById('timer').textContent = isTimed ? '' : 'Untimed';
+
+  var TOTAL = sessionQs.length;
+  var cur = 0;
+  var answers = {};   // index -> letter
+  var finished = false;
+
+  function updateProgress(){
+    var done = Object.keys(answers).length;
+    document.getElementById('progFill').style.width = (100 * done / TOTAL) + '%';
+  }
+
+  function pick(letter){
+    if (finished) return;
+    answers[cur] = letter;
+    renderQuestion();
+  }
+  window.__pick = pick;
+
+  function goTo(i){ cur = Math.max(0, Math.min(TOTAL - 1, i)); renderQuestion(); }
+  window.__goTo = goTo;
+
+  function palette(){
+    var html = '<div class="palette">';
+    for (var i = 0; i < TOTAL; i++){
+      var cls = 'pal' + (answers[i] !== undefined ? ' answered' : '') + (i === cur ? ' current' : '');
+      html += '<button type="button" class="' + cls + '" onclick="__goTo(' + i + ')">' + (i + 1) + '</button>';
+    }
+    return html + '</div>';
+  }
+
+  function renderQuestion(){
+    var q = sessionQs[cur];
+    var chosen = answers[cur];
+
+    var opts = '';
+    Object.keys(q.options).sort().forEach(function(k){
+      var cls = 'opt';
+      if (finished){
+        if (k === q.correct_letter) cls += ' correct-opt';
+        else if (k === chosen) cls += ' wrong-opt';
+      } else if (chosen === k) cls += ' sel';
+      opts += '<label class="' + cls + '"><input type="radio" name="q' + cur + '" ' +
+              (finished ? 'disabled' : '') + (chosen === k ? ' checked' : '') +
+              ' onchange="__pick(\'' + k + '\')">' +
+              '<span><span class="opt-letter">' + k + '.</span> ' + esc(q.options[k]) + '</span></label>';
+    });
+
+    var rationale = '';
+    if (finished){
+      rationale += '<div class="rationale correct"><div class="rationale-label">Why ' +
+                   esc(q.correct_letter) + ' is correct</div>' + esc(q.why_correct) + '</div>';
+      var da = q.distractor_analysis || {}, rows = '';
+      Object.keys(da).sort().forEach(function(k){
+        rows += '<div class="da-row"><span class="da-letter">' + k + '.</span> ' + esc(da[k]) + '</div>';
+      });
+      if (rows) rationale += '<div class="rationale"><div class="rationale-label">Distractor analysis</div>' + rows + '</div>';
+      if (q.generalisation) rationale += '<div class="rationale gen"><div class="rationale-label">Generalisation</div>' +
+                   esc(q.generalisation) + '</div>';
+    }
+
+    main.innerHTML =
+      '<div class="card">' +
+        '<div class="qmeta"><span class="sub">' + esc(q.subdomain) + '</span>' +
+        '<span class="qid">' + esc(q.id) + ' · ' + (cur + 1) + '/' + TOTAL + '</span></div>' +
+        '<div class="stem">' + esc(q.stem) + '</div>' +
+        '<div class="opts">' + opts + '</div>' + rationale +
+        '<div class="nav-row">' +
+          '<button type="button" class="btn ghost" onclick="__goTo(' + (cur - 1) + ')"' +
+            (cur === 0 ? ' disabled' : '') + '>&larr; Previous</button>' +
+          (cur === TOTAL - 1
+            ? (finished
+                ? '<button type="button" class="btn" onclick="__submit()">Back to results</button>'
+                : '<button type="button" class="btn" onclick="__submit()">Submit session</button>')
+            : '<button type="button" class="btn" onclick="__goTo(' + (cur + 1) + ')">Next &rarr;</button>') +
+        '</div>' +
+        palette() +
+      '</div>';
+    updateProgress();
+  }
+
+  function submit(){
+    finished = true;
+    var correct = 0, bySub = {};
+    sessionQs.forEach(function(q, i){
+      var ok = answers[i] === q.correct_letter;
+      if (ok) correct++;
+      if (!bySub[q.subdomain]) bySub[q.subdomain] = { n: 0, ok: 0 };
+      bySub[q.subdomain].n++;
+      if (ok) bySub[q.subdomain].ok++;
+    });
+    var pct = Math.round(100 * correct / TOTAL);
+    var rows = '';
+    Object.keys(bySub).sort().forEach(function(s){
+      rows += '<div class="sub-line"><span>' + esc(s) + '</span><span>' +
+              bySub[s].ok + ' / ' + bySub[s].n + '</span></div>';
+    });
+    main.innerHTML =
+      '<div class="results">' +
+        '<div class="score">' + correct + ' / ' + TOTAL + '</div>' +
+        '<div class="score-sub">' + pct + '% of this practice set — a raw figure, not a scaled score</div>' +
+        '<div style="margin-top:22px;">' + rows + '</div>' +
+        '<div class="results-note">' +
+        'MRCP Part 1 is scored as an <b>equated scaled score</b>, with a pass mark of <b>' +
+        PASS + '</b> applied from the <b>' + FROMDIET + '</b> diet. Scaling equates each diet ' +
+        'against the difficulty of the questions actually sat in it, so the raw mark that ' +
+        'corresponds to ' + PASS + ' differs between diets and is not knowable in advance. ' +
+        '<b>A practice percentage does not convert to that scale.</b><br><br>' +
+        'That is why the figure above is a raw score and a sub-domain breakdown only, with no ' +
+        'verdict, no predicted scaled score and no comparison against the pass mark.' +
+        '</div>' +
+        '<div class="nav-row"><button type="button" class="btn ghost" onclick="__review()">Review answers</button>' +
+        '<a class="btn" href="mrcp1-exams.html">Back to mock papers</a></div>' +
+      '</div>';
+  }
+  window.__submit = submit;
+  // Review pages back through the session with the rationale revealed. Kept
+  // separate from submit() so scoring does not immediately overwrite itself.
+  window.__review = function(){ cur = 0; renderQuestion(); };
+
+  renderQuestion();
+})();
+</script>
+<script src="nav.js" defer></script>
+<script src="footer.js" defer></script>
+</body>
+</html>

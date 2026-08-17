@@ -69,6 +69,16 @@
         { href: "#waitlist", label: "Join the waitlist" }
       ]
     },
+    mrcp1: {
+      tag: "MRCP PART 1",
+      accent: "#8A6FD1", accentText: "#B79EE8",
+      links: [
+        { href: "mrcp1.html",       label: "Question bank" },
+        { href: "mrcp1-study.html", label: "Study mode" },
+        { href: "mrcp1-exams.html", label: "Mock papers" },
+        { href: "mrcp.html",        label: "MRCP overview" }
+      ]
+    },
     shelf: {
       tag: "CLINICAL REFERENCE",
       accent: "#888780", accentText: "#B4B2A9",
