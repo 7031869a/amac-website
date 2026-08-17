@@ -91,13 +91,23 @@ def build(paths):
     shuffled = [pool[i] for i in order]
 
     # Fingerprint of this exact pack. The reviewer's browser stores answers
-    # under it, so a pack built from a different set of questions can never
-    # repaint another pack's answers onto its own tokens -- the tokens restart
-    # at R01 every build, so without this the collision is silent and the
-    # returned verdicts attach to the wrong questions.
-    fp = hashlib.sha1(
-        ("%d|" % SEED + "|".join(q["id"] for q in shuffled)).encode("utf-8")
-    ).hexdigest()[:12]
+    # under it, and apply verifies a return against it, so a pack built from
+    # different questions can never have its verdicts applied to this one.
+    #
+    # It hashes the CONTENT the reviewer actually sees, not just the ids.
+    # Hashing ids alone was not enough: correcting a stem or an explanation
+    # leaves every id unchanged, so a return describing the uncorrected text
+    # would validate against the corrected bank and be written as sign-off on
+    # wording the reviewer never read. Every field rendered into the pack is
+    # included; anything not rendered is excluded, so an editorial change that
+    # the reviewer cannot see does not needlessly invalidate their work.
+    RENDERED = ("id", "subdomain", "topic", "stem", "options",
+                "correct_letter", "why_correct", "distractor_analysis",
+                "generalisation")
+    payload = json.dumps(
+        [{k: q[k] for k in RENDERED} for q in shuffled],
+        sort_keys=True, ensure_ascii=False, separators=(",", ":"))
+    fp = hashlib.sha1(("%d|" % SEED + payload).encode("utf-8")).hexdigest()[:12]
 
     io.open(KEY, "w", encoding="utf-8").write(json.dumps({
         "seed": SEED,
