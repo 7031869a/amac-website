@@ -62,9 +62,7 @@ TRUTH = {
 # is still named out loud on every run, and the moment a page advertises a count
 # for it the [no-truth] hard failure below fires anyway. The point is that an
 # unwritten bank is not an excuse for being absent from the audit.
-PRELAUNCH_METRICS = {
-    "MRCP 1",   # scaffold only; remove from this set at the first authored question
-}
+PRELAUNCH_METRICS = set()   # empty: every wired metric currently has a bank
 
 # A metric with no ground truth cannot be validated at all. That is a broken
 # audit, not a clean site -- fail hard rather than skipping in silence. This is
