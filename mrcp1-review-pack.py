@@ -76,7 +76,12 @@ def build(paths):
     pool, seen = [], set()
     for p in paths:
         for q in load(p):
-            if q.get("review_status") != "draft":
+            # A question already carrying a verbal clearance still needs the
+            # second key, so it belongs in the pack. Selecting on "draft" alone
+            # forced a choice between erasing the first clearance and never
+            # sending the questions for review -- a decision the schema should
+            # make, not the selection filter.
+            if q.get("review_status") not in ("draft", "cleared_verbally"):
                 continue
             if q["id"] in seen:
                 sys.exit("FATAL: duplicate id %s across the input files" % q["id"])
@@ -91,23 +96,19 @@ def build(paths):
     shuffled = [pool[i] for i in order]
 
     # Fingerprint of this exact pack. The reviewer's browser stores answers
-    # under it, and apply verifies a return against it, so a pack built from
-    # different questions can never have its verdicts applied to this one.
-    #
-    # It hashes the CONTENT the reviewer actually sees, not just the ids.
-    # Hashing ids alone was not enough: correcting a stem or an explanation
-    # leaves every id unchanged, so a return describing the uncorrected text
-    # would validate against the corrected bank and be written as sign-off on
-    # wording the reviewer never read. Every field rendered into the pack is
-    # included; anything not rendered is excluded, so an editorial change that
-    # the reviewer cannot see does not needlessly invalidate their work.
-    RENDERED = ("id", "subdomain", "topic", "stem", "options",
-                "correct_letter", "why_correct", "distractor_analysis",
-                "generalisation")
-    payload = json.dumps(
-        [{k: q[k] for k in RENDERED} for q in shuffled],
-        sort_keys=True, ensure_ascii=False, separators=(",", ":"))
-    fp = hashlib.sha1(("%d|" % SEED + payload).encode("utf-8")).hexdigest()[:12]
+    # under it, so a pack built from a different set of questions can never
+    # repaint another pack's answers onto its own tokens -- the tokens restart
+    # at R01 every build, so without this the collision is silent and the
+    # returned verdicts attach to the wrong questions.
+    # Hashes the CONTENT, not just the ids. Ids and seed alone are not enough:
+    # correcting a stem or an explanation leaves both unchanged, so a return
+    # produced from the pre-correction pack would be accepted against the
+    # corrected questions and the verdicts would describe text the reviewer
+    # never saw. Any edit to any reviewed field invalidates the pack, which is
+    # the correct behaviour -- an edited question has not been reviewed.
+    fp = hashlib.sha1(json.dumps(
+        {"seed": SEED, "questions": shuffled}, sort_keys=True, ensure_ascii=False
+    ).encode("utf-8")).hexdigest()[:12]
 
     io.open(KEY, "w", encoding="utf-8").write(json.dumps({
         "seed": SEED,
@@ -186,6 +187,9 @@ def apply_returns(returned_path, questions_path):
             continue
         ok = all(v.get(k) == "yes" for k, _ in VERDICTS)
         q["review_status"] = "reviewed" if ok else "revise"
+        # Second key only. cleared_by / cleared_date belong to the first
+        # clearance and are never touched here -- two keys, two slots, and
+        # recording one must not erase the other.
         q["reviewer"] = reviewer
         q["signoff_date"] = date
         if ok:
@@ -201,6 +205,13 @@ def apply_returns(returned_path, questions_path):
     print("  reviewed : %d" % passed)
     print("  revise   : %d" % failed)
     print("  untouched: %d" % untouched)
+    both = sum(1 for q in data if q.get("review_status") == "reviewed"
+               and (q.get("cleared_by") or "").strip())
+    onekey = passed - both
+    print("  -- of the %d now 'reviewed', %d carry BOTH keys and %d carry the"
+          % (passed, both, onekey))
+    print("     recorded verdicts only, with no first clearance on record."
+          if onekey else "     second key alone.")
     print("\nRun the validator before committing:  python mrcp1-validate.py")
 
 
@@ -219,7 +230,7 @@ def render(qs, fp):
             for L in sorted(q["distractor_analysis"]))
         verdicts = "".join(
             '<div class="v"><p class="vq">%s</p><div class="vb">%s</div>'
-            '<textarea rows="2" placeholder="If no, what is wrong?" '
+            '<textarea rows="2" placeholder="Optional note \u2014 especially if you answered no" '
             'data-q="%s" data-k="%s"></textarea></div>' % (
                 e(label),
                 "".join('<button type="button" data-q="%s" data-k="%s" data-a="%s">%s</button>'
@@ -316,8 +327,8 @@ article.q > header{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap;mar
 .vb button.on[data-a="yes"]{background:var(--yes);border-color:var(--yes);color:#fff}
 .vb button.on[data-a="no"]{background:var(--no);border-color:var(--no);color:#fff}
 .v textarea{width:100%;font-family:inherit;font-size:14px;padding:9px 11px;border:1px solid var(--rule);
-  border-radius:6px;background:var(--paper);color:var(--ink);resize:vertical;display:none}
-.v.show-note textarea{display:block}
+  border-radius:6px;background:var(--paper);color:var(--ink);resize:vertical;display:block}
+.v.show-note textarea{border-color:var(--no)}
 
 .bar{position:fixed;left:0;right:0;bottom:0;background:var(--card);border-top:1px solid var(--rule);
   padding:12px 24px;display:flex;gap:14px;align-items:center;justify-content:center;flex-wrap:wrap;
@@ -345,8 +356,9 @@ article.q > header{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap;mar
       <li>Is every distractor genuinely wrong?</li>
       <li>Is the explanation's reasoning sound?</li>
     </ol>
-    Those three fail differently, and we need to know which one failed. Answering <em>no</em> opens
-    a box — a line on what is wrong is worth more than a long note.
+    Those three fail differently, and we need to know which one failed. A note box sits under
+    each verdict — a line on what is wrong, or a qualification on something you are passing,
+    is worth more than a long note.
   </div>
   <div class="who">
     <div><label for="rev">Your name</label><input id="rev" placeholder="Reviewer"></div>
@@ -398,7 +410,8 @@ article.q > header{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap;mar
       t.value=(r&&r.note)||'';
       t.closest('.v').classList.toggle('show-note', !!r && r.a==='no');
     });
-    var n=Object.keys(state.v).length;
+    var n=0;
+    for(var kk in state.v){ if(state.v[kk] && state.v[kk].a){ n++; } }
     document.getElementById('done').textContent=n;
     var ready=n===buttons.length/2 && rev.value.trim() && dt.value;
     document.getElementById('save').disabled=!ready;
@@ -413,8 +426,12 @@ article.q > header{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap;mar
     save();
   });});
   notes.forEach(function(t){t.addEventListener('input',function(){
+    // A note may be written before, or without, a verdict -- a qualified pass
+    // is exactly the case the old behaviour discarded. Create the entry if
+    // needed and leave the verdict empty until one is chosen.
     var k=key(t.dataset.q,t.dataset.k);
-    if(state.v[k]){state.v[k].note=t.value; save();}
+    if(!state.v[k]){state.v[k]={a:'',note:''};}
+    state.v[k].note=t.value; save();
   });});
   rev.addEventListener('input',save); dt.addEventListener('input',save);
 
