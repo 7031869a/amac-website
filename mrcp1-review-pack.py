@@ -5,8 +5,9 @@ AMaC — MRCP Part 1 clinical review pack.
 Two commands, run from the repository root:
 
     python mrcp1-review-pack.py build [questions.js ...]
-        Collects every question with review_status == "draft" from the files
-        given (default: mrcp1-questions.js), shuffles them, and writes:
+        Collects every question whose review_status is "draft" or
+        "cleared_verbally" from the files given (default: mrcp1-questions.js),
+        shuffles them, and writes:
             mrcp1-review-pack.html   -- what the reviewer opens
             mrcp1-review-key.json    -- maps the pack's opaque tokens (R01..) back to
                                 question ids. The pack itself never contains a
@@ -89,7 +90,8 @@ def build(paths):
             pool.append(q)
 
     if not pool:
-        sys.exit("Nothing to review: no question has review_status 'draft'.")
+        sys.exit("Nothing to review: no question has review_status "
+                 "'draft' or 'cleared_verbally'.")
 
     order = list(range(len(pool)))
     random.Random(SEED).shuffle(order)
