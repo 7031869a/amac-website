@@ -63,11 +63,11 @@ window.MRCP1_QUESTIONS = [
       "E": "Asks for less information than is already present. The interval answers the same question about compatibility with the null, and adds the range of effects that remain plausible — which is the part that matters clinically."
     },
     "generalisation": "A confidence interval is the range of effects compatible with the data, and whether it crosses the null is the least informative thing about it.",
-    "review_status": "cleared_verbally",
+    "review_status": "reviewed",
     "cleared_by": "A. Mansour",
     "cleared_date": "2026-08-19",
-    "reviewer": "",
-    "signoff_date": ""
+    "reviewer": "Clinical reviewer A",
+    "signoff_date": "2026-08-20"
   },
   {
     "id": "M1Q002",
@@ -91,11 +91,11 @@ window.MRCP1_QUESTIONS = [
       "D": "Conditions the analysis on the result, which discards the comparability that randomisation created and answers a question the trial was never designed to address. It converts a randomised comparison into an observational one."
     },
     "generalisation": "Pre-specification protects against choosing the subgroup after seeing the answer; it does nothing about how many were examined, and the number examined is what governs how often chance produces one.",
-    "review_status": "cleared_verbally",
+    "review_status": "reviewed",
     "cleared_by": "A. Mansour",
     "cleared_date": "2026-08-19",
-    "reviewer": "",
-    "signoff_date": ""
+    "reviewer": "Clinical reviewer A",
+    "signoff_date": "2026-08-20"
   },
   {
     "id": "M1Q003",
@@ -119,11 +119,11 @@ window.MRCP1_QUESTIONS = [
       "E": "Confuses a point estimate with its precision. Number needed to treat is arithmetic from the two risks given; a confidence interval would tell you how precisely it is known, which is a different and later question."
     },
     "generalisation": "Relative measures travel between populations; absolute ones do not, and it is the absolute benefit that determines whether treating is worth it.",
-    "review_status": "cleared_verbally",
+    "review_status": "reviewed",
     "cleared_by": "A. Mansour",
     "cleared_date": "2026-08-19",
-    "reviewer": "",
-    "signoff_date": ""
+    "reviewer": "Clinical reviewer A",
+    "signoff_date": "2026-08-20"
   },
   {
     "id": "M1Q004",
@@ -147,11 +147,11 @@ window.MRCP1_QUESTIONS = [
       "E": "Likelihood ratios are constructed from sensitivity and specificity alone, which is precisely why they can be carried from one setting to another. That portability is the reason they are useful in a way that predictive values are not."
     },
     "generalisation": "Sensitivity and specificity describe the test; predictive values describe the test in a population, and only the second pair moves with prevalence.",
-    "review_status": "cleared_verbally",
+    "review_status": "reviewed",
     "cleared_by": "A. Mansour",
     "cleared_date": "2026-08-19",
-    "reviewer": "",
-    "signoff_date": ""
+    "reviewer": "Clinical reviewer A",
+    "signoff_date": "2026-08-20"
   },
   {
     "id": "M1Q005",
@@ -175,11 +175,11 @@ window.MRCP1_QUESTIONS = [
       "D": "Confuses prevalence with pre-test probability. The pre-test probability is a clinical judgement about this patient, informed by prevalence but also by history and examination, and the likelihood ratio operates on whatever estimate is offered."
     },
     "generalisation": "Likelihood ratios multiply odds rather than probabilities, which is why a strongly positive test applied to a low pre-test probability frequently leaves the diagnosis unresolved.",
-    "review_status": "cleared_verbally",
+    "review_status": "reviewed",
     "cleared_by": "A. Mansour",
     "cleared_date": "2026-08-19",
-    "reviewer": "",
-    "signoff_date": ""
+    "reviewer": "Clinical reviewer A",
+    "signoff_date": "2026-08-20"
   },
   {
     "id": "M1Q006",
@@ -203,11 +203,11 @@ window.MRCP1_QUESTIONS = [
       "E": "States as a general truth something that holds only under a condition the stem explicitly violates. The odds ratio approximates the risk ratio when the outcome is uncommon; here the outcome is common, so the approximation fails precisely in this case."
     },
     "generalisation": "Choose the sampling frame by whichever is rarer — sample on the outcome when the outcome is rare, and on the exposure when the exposure is.",
-    "review_status": "cleared_verbally",
+    "review_status": "reviewed",
     "cleared_by": "A. Mansour",
     "cleared_date": "2026-08-19",
-    "reviewer": "",
-    "signoff_date": ""
+    "reviewer": "Clinical reviewer A",
+    "signoff_date": "2026-08-20"
   },
   {
     "id": "M1Q007",
@@ -231,11 +231,11 @@ window.MRCP1_QUESTIONS = [
       "E": "Inverts the purpose of the procedure. Stratification removes the contribution of smoking rather than introducing anything; it is the crude estimate that carries the distortion."
     },
     "generalisation": "Stratify, then compare — stratum-specific estimates that agree with each other but differ from the crude indicate confounding, and estimates that differ from each other indicate effect modification, for which no single pooled figure should be quoted.",
-    "review_status": "cleared_verbally",
+    "review_status": "reviewed",
     "cleared_by": "A. Mansour",
     "cleared_date": "2026-08-19",
-    "reviewer": "",
-    "signoff_date": ""
+    "reviewer": "Clinical reviewer A",
+    "signoff_date": "2026-08-20"
   },
   {
     "id": "M1Q008",
@@ -259,11 +259,11 @@ window.MRCP1_QUESTIONS = [
       "E": "Reaches for an explanation that preserves the benefit. Low uptake would reduce the size of any mortality effect but would not manufacture a survival difference of this magnitude between the two groups."
     },
     "generalisation": "Judge a screening programme on disease-specific mortality and never on survival from diagnosis, because lead time and length time both inflate survival without postponing a single death.",
-    "review_status": "cleared_verbally",
+    "review_status": "reviewed",
     "cleared_by": "A. Mansour",
     "cleared_date": "2026-08-19",
-    "reviewer": "",
-    "signoff_date": ""
+    "reviewer": "Clinical reviewer A",
+    "signoff_date": "2026-08-20"
   },
   {
     "id": "M1Q009",
@@ -287,11 +287,11 @@ window.MRCP1_QUESTIONS = [
       "E": "Treats a structural property of the design as a matter of preference. Only one of the two analyses preserves the comparison that randomisation created, and which one it is does not depend on the reader."
     },
     "generalisation": "Intention-to-treat estimates the effect of offering a treatment and is the only analysis that keeps the groups randomisation made; any analysis conditioned on what happened after randomisation forfeits that protection.",
-    "review_status": "cleared_verbally",
+    "review_status": "reviewed",
     "cleared_by": "A. Mansour",
     "cleared_date": "2026-08-19",
-    "reviewer": "",
-    "signoff_date": ""
+    "reviewer": "Clinical reviewer A",
+    "signoff_date": "2026-08-20"
   },
   {
     "id": "M1Q010",
@@ -315,11 +315,11 @@ window.MRCP1_QUESTIONS = [
       "E": "Takes the point estimate as the answer and discards the interval around it, which is where almost all the information in a negative result lives. The observed 12% is the single most likely value, not the established one."
     },
     "generalisation": "A negative trial excludes the effect it was powered to find, not every effect worth having, and the confidence interval is what tells you which is which.",
-    "review_status": "cleared_verbally",
+    "review_status": "reviewed",
     "cleared_by": "A. Mansour",
     "cleared_date": "2026-08-19",
-    "reviewer": "",
-    "signoff_date": ""
+    "reviewer": "Clinical reviewer A",
+    "signoff_date": "2026-08-20"
   },
   {
     "id": "M1Q011",
@@ -343,11 +343,11 @@ window.MRCP1_QUESTIONS = [
       "E": "Over-corrects from a correct starting observation. It is true that the trial was not designed to demonstrate superiority, but it answers its own question perfectly well, and declining to interpret it discards a valid result."
     },
     "generalisation": "A non-inferiority trial supports a bounded claim — not worse by more than a stated margin — and because that margin is set in advance, it has to be justified clinically rather than statistically.",
-    "review_status": "cleared_verbally",
+    "review_status": "reviewed",
     "cleared_by": "A. Mansour",
     "cleared_date": "2026-08-19",
-    "reviewer": "",
-    "signoff_date": ""
+    "reviewer": "Clinical reviewer A",
+    "signoff_date": "2026-08-20"
   },
   {
     "id": "M1Q012",
@@ -371,11 +371,11 @@ window.MRCP1_QUESTIONS = [
       "D": "Discards the most precise and generally least biased evidence because it disagrees with the rest, which is the opposite of what the pattern implies. When large and small trials disagree, it is the small ones that warrant suspicion."
     },
     "generalisation": "Wide scatter and funnel asymmetry are reasons to distrust a pooled estimate rather than features to explain away, and when the largest trials disagree with the small ones, the pooled estimate deserves particular scrutiny rather than acceptance.",
-    "review_status": "cleared_verbally",
+    "review_status": "reviewed",
     "cleared_by": "A. Mansour",
     "cleared_date": "2026-08-19",
-    "reviewer": "",
-    "signoff_date": ""
+    "reviewer": "Clinical reviewer A",
+    "signoff_date": "2026-08-20"
   },
   {
     "id": "M1Q013",
@@ -399,11 +399,11 @@ window.MRCP1_QUESTIONS = [
       "E": "The most distal enzyme of the cycle. Arginase deficiency raises arginine and characteristically presents with progressive spastic diplegia rather than acute hyperammonaemic encephalopathy after a protein load, so both the biochemistry and the tempo are wrong."
     },
     "generalisation": "In a urea cycle defect, citrulline tells you whether the block is proximal or distal, and orotic acid tells you whether carbamoyl phosphate is accumulating behind it.",
-    "review_status": "cleared_verbally",
+    "review_status": "reviewed",
     "cleared_by": "A. Mansour",
     "cleared_date": "2026-08-19",
-    "reviewer": "",
-    "signoff_date": ""
+    "reviewer": "Clinical reviewer A",
+    "signoff_date": "2026-08-20"
   },
   {
     "id": "M1Q014",
@@ -427,11 +427,11 @@ window.MRCP1_QUESTIONS = [
       "E": "Reads well because it names the correct final common step for both glycogenolysis and gluconeogenesis, and blocking it really would cause fasting hypoglycaemia with raised lactate. It is not, however, an action of ethanol — it is the lesion in glucose-6-phosphatase deficiency, which is what makes this option attractive to a candidate who has matched the biochemical pattern without checking the cause."
     },
     "generalisation": "Hypoglycaemia with raised lactate and ketones in a fasting drinker is a substrate problem, not a hormone problem.",
-    "review_status": "cleared_verbally",
+    "review_status": "reviewed",
     "cleared_by": "A. Mansour",
     "cleared_date": "2026-08-19",
-    "reviewer": "",
-    "signoff_date": ""
+    "reviewer": "Clinical reviewer A",
+    "signoff_date": "2026-08-20"
   },
   {
     "id": "M1Q015",
@@ -455,11 +455,11 @@ window.MRCP1_QUESTIONS = [
       "E": "Confuses arterial oxygen tension with oxygen delivery to tissues. A left shift impairs unloading at the tissues; it does not prevent the arterial tension rising when the inspired concentration is raised."
     },
     "generalisation": "Marked failure of hypoxaemia to respond to a high inspired oxygen concentration strongly suggests a right-to-left shunt, because shunt is the mechanism in which blood and alveolar gas never meet at all.",
-    "review_status": "cleared_verbally",
+    "review_status": "reviewed",
     "cleared_by": "A. Mansour",
     "cleared_date": "2026-08-19",
-    "reviewer": "",
-    "signoff_date": ""
+    "reviewer": "Clinical reviewer A",
+    "signoff_date": "2026-08-20"
   },
   {
     "id": "M1Q016",
@@ -483,11 +483,11 @@ window.MRCP1_QUESTIONS = [
       "D": "The right principle applied to the wrong ligand. Chelation does lower the ionised fraction while leaving the total unchanged, which is exactly what happens in massive transfusion with citrated blood. There is no source of citrate in acute hyperventilation."
     },
     "generalisation": "Symptoms track ionised calcium, not total calcium, and acid–base status is the commonest reason the two diverge.",
-    "review_status": "cleared_verbally",
+    "review_status": "reviewed",
     "cleared_by": "A. Mansour",
     "cleared_date": "2026-08-19",
-    "reviewer": "",
-    "signoff_date": ""
+    "reviewer": "Clinical reviewer A",
+    "signoff_date": "2026-08-20"
   },
   {
     "id": "M1Q017",
@@ -511,11 +511,11 @@ window.MRCP1_QUESTIONS = [
       "E": "Superficially attractive because autoantibodies to the high-affinity IgE receptor really are found in chronic spontaneous urticaria. But that condition itches, produces weals and generally does respond to antihistamines — the opposite of the picture described."
     },
     "generalisation": "Angioedema without urticaria or itch that ignores antihistamines and adrenaline is bradykinin-mediated, whether from C1 inhibitor deficiency or from an ACE inhibitor; the treatment failure is itself the diagnostic clue.",
-    "review_status": "cleared_verbally",
+    "review_status": "reviewed",
     "cleared_by": "A. Mansour",
     "cleared_date": "2026-08-19",
-    "reviewer": "",
-    "signoff_date": ""
+    "reviewer": "Clinical reviewer A",
+    "signoff_date": "2026-08-20"
   },
   {
     "id": "M1Q018",
@@ -539,11 +539,11 @@ window.MRCP1_QUESTIONS = [
       "E": "A real mechanism, and the reasoning gets close. But a planted antigen lodges at discrete sites, so antibody forming against it in situ still produces granular staining."
     },
     "generalisation": "On immunofluorescence the pattern maps onto the antigen's distribution: linear means a uniform structural component, granular means discrete deposits, and absent immunoglobulin means the injury is not antibody-mediated.",
-    "review_status": "cleared_verbally",
+    "review_status": "reviewed",
     "cleared_by": "A. Mansour",
     "cleared_date": "2026-08-19",
-    "reviewer": "",
-    "signoff_date": ""
+    "reviewer": "Clinical reviewer A",
+    "signoff_date": "2026-08-20"
   },
   {
     "id": "M1Q019",
@@ -567,11 +567,11 @@ window.MRCP1_QUESTIONS = [
       "E": "Describes carriers who never develop the disease. The father has the disease, so penetrance is not the variable in question."
     },
     "generalisation": "Anticipation means the mutation itself changed between generations, so when the age of onset falls ask whether the lesion has expanded rather than whether the same lesion is behaving differently.",
-    "review_status": "cleared_verbally",
+    "review_status": "reviewed",
     "cleared_by": "A. Mansour",
     "cleared_date": "2026-08-19",
-    "reviewer": "",
-    "signoff_date": ""
+    "reviewer": "Clinical reviewer A",
+    "signoff_date": "2026-08-20"
   },
   {
     "id": "M1Q020",
@@ -595,10 +595,10 @@ window.MRCP1_QUESTIONS = [
       "E": "Would explain one child being unaffected while carrying the deletion. It cannot explain two affected children having different syndromes."
     },
     "generalisation": "When one deletion produces two syndromes, the variable is not the deletion but which parent it came from.",
-    "review_status": "cleared_verbally",
+    "review_status": "reviewed",
     "cleared_by": "A. Mansour",
     "cleared_date": "2026-08-19",
-    "reviewer": "",
-    "signoff_date": ""
+    "reviewer": "Clinical reviewer A",
+    "signoff_date": "2026-08-20"
   }
 ];
