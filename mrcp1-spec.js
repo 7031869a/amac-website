@@ -97,9 +97,11 @@ window.MRCP1_SPEC = {
           pass mark and its effective date are not, pending the pass-marks
           page.
 
-          OUTSTANDING: mrcp1-mock.html still renders an 'Images' row as
-          SPEC.IMAGES_PERMITTED ? 'Used' : 'Not used'. With the constant
-          gone that reads undefined and still displays "Not used" -- the
-          withdrawn claim, now with nothing behind it. Delete that row.
+          The 'Images' row in mrcp1-mock.html was removed with it, so no
+          page renders a claim about images, and none falls through to a
+          falsy undefined. That row was the only reference: mrcp1.html,
+          mrcp1-exams.html, mrcp1-exam-runner.html and mrcp1-study.html
+          were checked and state nothing about images, in the spec table
+          or as prose.
   */
 };
