@@ -7,11 +7,28 @@
 
    PROVENANCE: transcribed from the Federation of the Royal Colleges of
    Physicians of the UK published Part 1 specification. Each constant
-   below names what it came from. These figures were supplied to this
-   repository as a transcription; they have not been re-fetched and
-   re-verified from the Federation's site by this file's author, because
-   that site blocks automated retrieval. Re-check them against the
-   published specification before they are shown to a candidate.
+   below names what it came from.
+
+   VERIFIED against thefederation.uk/examinations/part-1/format -- eight
+   figures, checked against that page:
+     - two papers per diet, three hours each   (PAPERS_PER_DIET, HOURS_PER_PAPER)
+     - 100 questions per paper                 (QUESTIONS_PER_PAPER)
+     - 200 questions per diet                  (QUESTIONS_PER_DIET)
+     - best of five                            (OPTIONS_PER_QUESTION)
+     - no negative marking                     (NEGATIVE_MARKING)
+     - clinical sciences, 25 of 200            (not encoded here)
+     - the seven sub-domain names              (not encoded here)
+     - sub-domain counts 5/4/4/4/3/3/2         (not encoded here)
+   The last three are verified but have no constants in this file:
+   MRCP1_SUBDOMAINS does not exist yet (see the TODO in mrcp1-papers.js).
+   Take them from the format page when it is populated; do not re-derive them.
+
+   NOT VERIFIED. The pass-marks page has not been read, so these remain as
+   supplied and must be re-checked before they are shown to a candidate:
+     - PASS_MARK_SCALED (450)
+     - PASS_MARK_APPLIES_FROM ("2026/1")
+   SCALED_SCORE_RANGE and STANDARD_SETTING were not part of this
+   verification pass either way, and stand as originally transcribed.
 
    SPEC_VERSION tracks this transcription, not the exam. Bump it whenever
    any value below changes, and say why in the changelog comment.
@@ -22,7 +39,7 @@
 window.MRCP1_SPEC = {
 
   /* ---- version of this transcription ---- */
-  SPEC_VERSION: 1,
+  SPEC_VERSION: 2,
   SPEC_SOURCE:  "Federation of the Royal Colleges of Physicians of the UK — published MRCP(UK) Part 1 specification",
 
   /* ---- paper structure ---- */
@@ -40,8 +57,6 @@ window.MRCP1_SPEC = {
   OPTIONS_PER_QUESTION: 5,
   // Published marking scheme: there is no negative marking in Part 1.
   NEGATIVE_MARKING: false,
-  // Published question format: images are not used in Part 1.
-  IMAGES_PERMITTED: false,
 
   /* ---- standard setting and scoring ---- */
   // Published standard: the pass mark is a SCALED score of 450.
@@ -74,5 +89,17 @@ window.MRCP1_SPEC = {
   /* ---- changelog ----
      v1 — initial transcription: paper structure, question format, 450 scaled
           pass mark from the 2026/1 diet, 200-800 range, modified Angoff.
+     v2 — removed IMAGES_PERMITTED. The claim that Part 1 uses no images is
+          not supported by the Federation's format page; it was stated in
+          error and is withdrawn, not restated in the other direction.
+          Provenance rewritten: paper structure, question format and the
+          sub-domain blueprint are verified against the format page; the
+          pass mark and its effective date are not, pending the pass-marks
+          page.
+
+          OUTSTANDING: mrcp1-mock.html still renders an 'Images' row as
+          SPEC.IMAGES_PERMITTED ? 'Used' : 'Not used'. With the constant
+          gone that reads undefined and still displays "Not used" -- the
+          withdrawn claim, now with nothing behind it. Delete that row.
   */
 };
