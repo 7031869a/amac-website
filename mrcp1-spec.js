@@ -23,12 +23,20 @@
    MRCP1_SUBDOMAINS does not exist yet (see the TODO in mrcp1-papers.js).
    Take them from the format page when it is populated; do not re-derive them.
 
-   NOT VERIFIED. The pass-marks page has not been read, so these remain as
-   supplied and must be re-checked before they are shown to a candidate:
-     - PASS_MARK_SCALED (450)
-     - PASS_MARK_APPLIES_FROM ("2026/1")
-   SCALED_SCORE_RANGE and STANDARD_SETTING were not part of this
-   verification pass either way, and stand as originally transcribed.
+   VERIFIED against thefederation.uk/examinations/guidance-and-information/
+   pass-marks-explained, read 25 August 2026:
+     - PASS_MARK_SCALED (450)                  scaled pass mark
+     - PASS_MARK_APPLIES_FROM ("2026/1")       diet it applies from
+     - STANDARD_SETTING                        equating by Item Response
+       Theory, pass mark set by the MRCP(UK) Part 1 Standard Setting Group
+     - SCALED_SCORE_RANGE ([200, 800])         see the caveat below
+
+   SCALED_SCORE_RANGE IS NOT A LIMIT. The pass-marks page says most
+   candidates score between 200 and 800; it also says a score can
+   occasionally fall below 200 or rise above 800. Treat the pair as a
+   typical span, never as bounds, and never clamp or validate against it.
+   Anything rendering it must say so -- mrcp1-mock.html shows
+   "typically 200-800" for this reason.
 
    SPEC_VERSION tracks this transcription, not the exam. Bump it whenever
    any value below changes, and say why in the changelog comment.
@@ -39,7 +47,7 @@
 window.MRCP1_SPEC = {
 
   /* ---- version of this transcription ---- */
-  SPEC_VERSION: 2,
+  SPEC_VERSION: 3,
   SPEC_SOURCE:  "Federation of the Royal Colleges of Physicians of the UK — published MRCP(UK) Part 1 specification",
 
   /* ---- paper structure ---- */
@@ -63,10 +71,12 @@ window.MRCP1_SPEC = {
   PASS_MARK_SCALED: 450,
   // Published standard: the 450 scaled pass mark applies from the 2026/1 diet.
   PASS_MARK_APPLIES_FROM: "2026/1",
-  // Published scoring: candidate results are reported on a 200-800 scaled range.
+  // Published scoring: most candidates score between 200 and 800. Scores can
+  // occasionally fall below 200 or rise above 800, so this is a typical span,
+  // NOT a pair of bounds. See the provenance note at the top of this file.
   SCALED_SCORE_RANGE: [200, 800],
-  // Published standard-setting method.
-  STANDARD_SETTING: "modified Angoff at question level, equated to a scaled score",
+  // Published standard-setting method, from the pass-marks page.
+  STANDARD_SETTING: "equating based on Item Response Theory, with the pass mark set by the MRCP(UK) Part 1 Standard Setting Group",
 
   /* ------------------------------------------------------------------
      WHY NO PRACTICE SCORE MAY BE COMPARED TO PASS_MARK_SCALED
@@ -77,7 +87,7 @@ window.MRCP1_SPEC = {
      in advance.
 
      There is therefore NO fixed conversion from a raw score or a percentage
-     on a practice set to a point on the 200-800 scale. Any page that maps a
+     on a practice set to a point on the scaled range. Any page that maps a
      practice percentage onto 450 is inventing a threshold and telling the
      candidate something false about their standing.
 
@@ -103,5 +113,18 @@ window.MRCP1_SPEC = {
           mrcp1-exams.html, mrcp1-exam-runner.html and mrcp1-study.html
           were checked and state nothing about images, in the spec table
           or as prose.
+     v3 — pass-marks page read (25 August 2026), so the last two unverified
+          constants are now verified and one asserted value is corrected.
+          STANDARD_SETTING no longer says "modified Angoff at question
+          level": that method is not stated on the pass-marks page and was
+          asserted in error. It now records what the page does describe --
+          equating by Item Response Theory, with the pass mark set by the
+          MRCP(UK) Part 1 Standard Setting Group.
+          PASS_MARK_SCALED (450) and PASS_MARK_APPLIES_FROM ("2026/1") are
+          verified against that page; their values are unchanged.
+          SCALED_SCORE_RANGE is unchanged as a value but is documented as a
+          TYPICAL span, not bounds -- the page allows scores below 200 and
+          above 800. mrcp1-mock.html now renders "typically 200-800" instead
+          of "200-800 scaled" so the table does not read as a limit.
   */
 };
