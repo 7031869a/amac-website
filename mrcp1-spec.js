@@ -36,7 +36,7 @@
    occasionally fall below 200 or rise above 800. Treat the pair as a
    typical span, never as bounds, and never clamp or validate against it.
    Anything rendering it must say so -- mrcp1-mock.html shows
-   "typically 200-800" for this reason.
+   "typically 200-800 scaled" for this reason.
 
    SPEC_VERSION tracks this transcription, not the exam. Bump it whenever
    any value below changes, and say why in the changelog comment.
