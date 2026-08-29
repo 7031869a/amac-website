@@ -109,6 +109,22 @@
     return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
   }
 
+  /* ---- root-relative link emission ----
+     The DOORS config above writes hrefs bare ("tools.html") because that
+     reads cleanly and because currentFile() compares against bare names.
+     They are emitted with a leading slash so a page served from a
+     subdirectory resolves them against the site root rather than against
+     its own folder: without this, /cpsa/x.html would send "tools.html"
+     to /cpsa/tools.html. In-page anchors (#parts) and absolute URLs are
+     passed through untouched. */
+  function url(h) {
+    if (!h) return h;
+    var c = String(h).charAt(0);
+    if (c === "#" || c === "/") return h;
+    if (/^[a-z][a-z0-9+.-]*:/i.test(h)) return h;
+    return "/" + h;
+  }
+
   /* ---- inject scoped CSS once ---- */
   function injectStyles() {
     if (document.getElementById("amac-nav-styles")) return;
@@ -155,17 +171,17 @@
     var linksHTML = cfg.links.map(function (l) {
       var isHere = (l.href === here);
       var style = isHere ? ' style="color:' + cfg.accentText + '"' : "";
-      return '<li><a href="' + esc(l.href) + '"' + style + '>' + esc(l.label) + "</a></li>";
+      return '<li><a href="' + esc(url(l.href)) + '"' + style + '>' + esc(l.label) + "</a></li>";
     }).join("");
 
     var ctaHTML = cfg.cta
-      ? '<li><a class="amac-nav-cta" href="' + esc(cfg.cta.href) + '">' + esc(cfg.cta.label) + "</a></li>"
+      ? '<li><a class="amac-nav-cta" href="' + esc(url(cfg.cta.href)) + '">' + esc(cfg.cta.label) + "</a></li>"
       : "";
 
     // structural pages don't get an "all exams" exit (they ARE cross-site)
     var exitHTML = (doorKey === "structural")
       ? ""
-      : '<li><a class="amac-nav-exit" href="index.html">\u2190 all exams</a></li>';
+      : '<li><a class="amac-nav-exit" href="/index.html">\u2190 all exams</a></li>';
 
     var tagHTML = cfg.tag
       ? '<span class="amac-door-tag" style="background:' + cfg.accent + ';color:#0B1220;">' + esc(cfg.tag) + "</span>"
@@ -174,7 +190,7 @@
     nav.innerHTML =
       '<div class="amac-nav-inner">' +
         '<div class="amac-nav-left">' +
-          '<a class="amac-brand" href="index.html">AMaC</a>' +
+          '<a class="amac-brand" href="/index.html">AMaC</a>' +
           tagHTML +
         "</div>" +
         '<button class="amac-nav-toggle" aria-label="Menu" aria-expanded="false">\u2630</button>' +
