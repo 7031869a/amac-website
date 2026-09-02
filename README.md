@@ -28,9 +28,8 @@ Keep all files together in the repo root (no sub-folders); they link by filename
 - CLINICAL REVIEW: have a suitably qualified clinician verify all doses/protocols on
   mastercards.html against current UK guidance, and approve the OSCE risk labels.
 - Build out the remaining OSCE station detail, Question Bank, Mock Exam.
-- Pricing on books.html (currently "Launching soon").
+- Buy buttons on books.html link to Amazon (added Sep 2026).
 - Confirm the info@amac-medical.com inbox is receiving mail.
-- Replace placeholder Buy / tool buttons with real destinations.
 - Add testimonials only when genuine.
 
 ## To deploy

@@ -114,6 +114,7 @@ nav[data-door] .fb .b{font-weight:600;letter-spacing:.1em;color:var(--teal-lt);}
 .card .badge{position:absolute;top:22px;right:22px;font-size:11px;font-weight:600;letter-spacing:.03em;color:var(--teal-lt);background:rgba(23,162,169,.09);border:1px solid rgba(23,162,169,.22);padding:3px 10px;border-radius:20px;}
 .card h3{font-family:'Fraunces',serif;font-size:21px;font-weight:600;color:#fff;line-height:1.15;max-width:78%;}
 .card p{font-size:14px;color:var(--muted);margin-top:9px;line-height:1.55;}
+.card .price{display:block;font-size:15px;font-weight:600;color:var(--teal-lt);margin:-2px 0 8px;}
 .card .go{display:inline-flex;align-items:center;gap:7px;margin-top:18px;font-size:13.5px;font-weight:600;color:var(--teal-lt);}
 
 /* what's inside */
@@ -132,14 +133,6 @@ nav[data-door] .fb .b{font-weight:600;letter-spacing:.1em;color:var(--teal-lt);}
   .cards{grid-template-columns:1fr;} .inside ul{grid-template-columns:1fr;}
 }
 
-/* ── sticky-nav anchor offset ──
-   nav.js's .amac-nav measures 56.75px here and is position:sticky above 760px
-   (below that nav.js switches it to position:relative). 72px = measured
-   height + a 15px gap.
-   NOTE: #buy-handbook is linked from the product card but no element carries
-   that id, so this rule matches nothing today. It is left in place so the
-   offset is already correct once the missing target is added. */
-#buy-handbook{scroll-margin-top:72px;}
 </style>
 <style>
 .amac-capture{
@@ -241,10 +234,11 @@ nav[data-door] .fb .b{font-weight:600;letter-spacing:.1em;color:var(--teal-lt);}
 
     <!-- product cards -->
     <div class="cards">
-      <a class="card" href="#buy-handbook">
+      <a class="card" href="https://www.amazon.co.uk/dp/1066746796" target="_blank" rel="noopener">
         <span class="badge">On Amazon</span>
         <h3>The complete handbook</h3>
-        <p>195 pages: the four-pass reading method, the statistics from first principles, biases and study designs in plain terms, sixteen chart types and how to read each in five seconds, and worked model critiques of CROSS, MAGIC, Z0011 and the Dutch TME trial.</p>
+        <span class="price">&pound;29.99</span>
+        <p>194 pages: the four-pass reading method, the statistics from first principles, biases and study designs in plain terms, sixteen chart types and how to read each in five seconds, and worked model critiques of CROSS, MAGIC, Z0011 and the Dutch TME trial.</p>
         <span class="go">Get it on Amazon &rarr;</span>
       </a>
       <a class="card" href="frcs-flashcards.html">
