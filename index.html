@@ -150,6 +150,25 @@ a{text-decoration:none;color:inherit;}
   .doors{padding:20px 26px;}
   .door:nth-child(5){grid-column:auto;}
 }
+
+/* ── in-print books strip ── */
+.bookstrip{padding:10px 26px 46px;}
+.bookstrip-in{max-width:1200px;margin:0 auto;background:#16233F;border:1px solid rgba(201,162,39,.18);border-radius:14px;padding:34px 30px 30px;}
+.bs-kick{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
+.bookstrip h2{font-family:'Fraunces',serif;font-size:clamp(21px,2.6vw,27px);font-weight:600;color:var(--txt);}
+.bs-sub{font-size:14.5px;color:var(--txt-soft);margin-top:9px;max-width:660px;}
+.bs-row{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;margin-top:26px;}
+.bs-item{display:block;text-align:center;transition:transform .2s;}
+.bs-item:hover{transform:translateY(-3px);}
+.bs-item img{width:120px;max-width:100%;height:auto;border-radius:4px;box-shadow:0 10px 26px rgba(0,0,0,.42);}
+.bs-cap{font-size:12px;color:var(--txt-mute);margin-top:10px;line-height:1.35;}
+.bs-more{display:inline-block;margin-top:24px;font-size:13.5px;color:var(--gold);border-bottom:1px solid rgba(201,162,39,.4);padding-bottom:2px;transition:color .2s;}
+.bs-more:hover{color:var(--gold-soft);}
+@media(max-width:640px){
+  .bs-row{grid-template-columns:repeat(3,1fr);gap:14px;}
+  .bookstrip-in{padding:26px 20px 24px;}
+  .bs-item img{width:100%;}
+}
 </style>
 </head>
 <body>
@@ -216,6 +235,37 @@ a{text-decoration:none;color:inherit;}
 
   </div>
 </main>
+
+<section class="bookstrip">
+  <div class="bookstrip-in">
+    <div class="bs-kick">In print</div>
+    <h2>The AMaC books, now on Amazon</h2>
+    <p class="bs-sub">PLAB 2 Master Series &mdash; three volumes and The Final Fortnight, &pound;24.99 each. FRCS Part 2 Paper Critique, &pound;29.99.</p>
+    <div class="bs-row">
+      <a class="bs-item" href="https://www.amazon.co.uk/dp/1066746788" target="_blank" rel="noopener">
+        <img src="covers/volume1_cover.svg" alt="Volume One cover" loading="lazy">
+        <span class="bs-cap">Volume One</span>
+      </a>
+      <a class="bs-item" href="https://www.amazon.co.uk/dp/1066746729" target="_blank" rel="noopener">
+        <img src="covers/volume2_cover.svg" alt="Volume Two cover" loading="lazy">
+        <span class="bs-cap">Volume Two</span>
+      </a>
+      <a class="bs-item" href="https://www.amazon.co.uk/dp/1066746745" target="_blank" rel="noopener">
+        <img src="covers/volume3_cover.svg" alt="Volume Three cover" loading="lazy">
+        <span class="bs-cap">Volume Three</span>
+      </a>
+      <a class="bs-item" href="https://www.amazon.co.uk/dp/1066746761" target="_blank" rel="noopener">
+        <img src="covers/revision_cover.svg" alt="The Final Fortnight cover" loading="lazy">
+        <span class="bs-cap">The Final Fortnight</span>
+      </a>
+      <a class="bs-item" href="https://www.amazon.co.uk/dp/1066746796" target="_blank" rel="noopener">
+        <img src="covers/frcs_cover.jpg" alt="FRCS Paper Critique cover" loading="lazy">
+        <span class="bs-cap">FRCS Paper Critique</span>
+      </a>
+    </div>
+    <a class="bs-more" href="books.html">Details and free sample chapters &rarr;</a>
+  </div>
+</section>
 
 <div class="foot">
   <p>Written by doctors, for doctors who want to excel · free while we grow</p>
