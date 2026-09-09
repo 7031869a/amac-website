@@ -43,6 +43,7 @@ TRUTH = {
     "Examiner Brain": record_count("examiner-brain"),
     "Actor Traps":    record_count("actor-traps"),
     "OSCE Stations":  record_count("osce"),
+    "CPSA Stations":  record_count("cpsa-stations"),
     "Master Cards":   record_count("mastercards"),
     "Flashcards":     record_count("flashcards"),
     "Question Bank":  record_count("questions"),
@@ -134,6 +135,10 @@ def metric_for(label, page=""):
     if "plab 1" in L or "plab1" in L:
         return "PLAB 1" if ("question" in L or "sba" in L or "bank" in L) else None
     if "plab 2" in L or "plab2" in L: return None
+    # CPSA is a separate 238-station UKMLA set, not the 111-station PLAB 2 OSCE
+    # library. Require "station": tools.html carries "Say This. Avoid This. -- CPSA"
+    # (177 cards), which must NOT be measured against the CPSA station count.
+    if "cpsa" in L and "station" in L: return "CPSA Stations"
     if "osce"          in L and "circuit" not in L and "trainer" not in L: return "OSCE Stations"
     if "flashcard"     in L: return "Flashcards"
     # An unqualified bank label means the PLAB 1 bank on a PLAB 1 page and the
