@@ -136,6 +136,29 @@ footer{background:var(--navy-deep);color:#c4ccd8;padding:36px 28px 20px;}
 .foot-col a{display:block;color:#8a96b0;text-decoration:none;font-size:12px;margin-bottom:6px;}
 .foot-col a:hover{color:var(--gold-soft);}
 .foot-btm{max-width:1200px;margin:14px auto 0;font-size:11px;color:#4a5568;text-align:center;}
+/* ── view toggle + side-by-side comparison ── */
+.view-bar{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:0 0 18px;}
+.view-lbl{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700;}
+.vbtn{background:#fff;border:1px solid var(--line);border-radius:7px;padding:7px 14px;font-size:13px;font-weight:600;color:var(--navy);cursor:pointer;transition:border-color .18s,background .18s,color .18s;}
+.vbtn:hover{border-color:var(--gold);}
+.vbtn.active{background:var(--navy);border-color:var(--navy);color:#fff;}
+.lens-btn{margin-left:auto;}
+.lens-btn.active{background:#fdf0ee;border-color:var(--fail);color:var(--fail);}
+.compare-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+.compare-col{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden;}
+.cc-hdr{padding:11px 14px;color:#fff;font-size:13px;font-weight:700;letter-spacing:.02em;flex:0 0 auto;}
+.cc-body{height:520px;overflow-y:auto;overscroll-behavior:contain;}
+.cc-body::-webkit-scrollbar{width:9px;}
+.cc-body::-webkit-scrollbar-thumb{background:rgba(13,34,71,.22);border-radius:5px;}
+.cc-count{float:right;font-weight:500;opacity:.85;}
+/* the lens hides examiner notes without re-rendering */
+.hide-notes .tl-row.is-note{display:none;}
+
+@media(max-width:900px){
+  .compare-grid{grid-template-columns:1fr;}
+  .cc-body{height:auto;max-height:420px;}
+  .lens-btn{margin-left:0;}
+}
 @media(max-width:700px){.nav-links{display:none;}.wrap{padding:16px 14px 48px;}.band-tabs{flex-direction:column;}.outcome-grid{grid-template-columns:1fr;}.tl-speaker{min-width:70px;}}
 
 .filter-bar{background:#0a1d3d;padding:11px 28px;border-bottom:1px solid rgba(201,162,39,0.25);}
@@ -176,8 +199,10 @@ function speakerClass(s){
 }
 
 function buildTranscript(lines){
+  // is-note lets the examiner lens hide these with CSS alone — no re-render,
+  // and the toggle keeps its scroll position.
   return lines.map(l=>`
-    <div class="tl-row">
+    <div class="tl-row${l.speaker === 'EXAMINER NOTE' ? ' is-note' : ''}">
       <div class="tl-speaker ${speakerClass(l.speaker)}">${l.speaker}</div>
       <div class="tl-text">${l.text}</div>
     </div>`).join('');
@@ -220,6 +245,29 @@ document.getElementById('stationPanels').innerHTML=BANDS.map((s,i)=>`
       <div class="sb-label">Station Scenario</div>
       <div class="sb-text">${s.scenario}</div>
     </div>
+    <div class="view-bar">
+      <span class="view-lbl">View</span>
+      <button class="vbtn active" onclick="showView('${s.id}','tabbed',this)">Tabbed</button>
+      <button class="vbtn" onclick="showView('${s.id}','compare',this)">Side by side</button>
+      <button class="vbtn lens-btn active" onclick="toggleLens('${s.id}',this)">👁 Examiner lens: on</button>
+    </div>
+    <div class="compare-wrap" id="cw-${s.id}" style="display:none">
+      <div class="compare-grid">
+        <div class="compare-col">
+          <div class="cc-hdr" style="background:linear-gradient(135deg,#c0392b,#9b2335)">✗ Fail<span class="cc-count">${s.fail.transcript.length} turns</span></div>
+          <div class="cc-body">${buildTranscript(s.fail.transcript)}</div>
+        </div>
+        <div class="compare-col">
+          <div class="cc-hdr" style="background:linear-gradient(135deg,#1e3a8a,#1d4ed8)">✓ Safe Pass<span class="cc-count">${s.pass.transcript.length} turns</span></div>
+          <div class="cc-body">${buildTranscript(s.pass.transcript)}</div>
+        </div>
+        <div class="compare-col">
+          <div class="cc-hdr" style="background:linear-gradient(135deg,#14532d,#166534)">★ Distinction<span class="cc-count">${s.distinction.transcript.length} turns</span></div>
+          <div class="cc-body">${buildTranscript(s.distinction.transcript)}</div>
+        </div>
+      </div>
+    </div>
+    <div class="tabbed-wrap" id="tw-${s.id}">
     <div class="band-tabs">
       <button class="band-tab fail-tab active" onclick="showBand('${s.id}','fail',this)">✗ Fail</button>
       <button class="band-tab pass-tab" onclick="showBand('${s.id}','pass',this)">✓ Safe Pass</button>
@@ -262,6 +310,7 @@ document.getElementById('stationPanels').innerHTML=BANDS.map((s,i)=>`
         ${buildOutcomes(s.distinction.what_distinguished,'pass-outcomes','pass-oc-label','★')}
       </div>
     </div>
+    </div>
   </div>`).join('');
 
 function showStation(id,btn){
@@ -273,6 +322,23 @@ function showStation(id,btn){
   document.querySelectorAll(`#sp-${id} .band-tab`).forEach((b,i)=>{b.classList.toggle('active',i===0);});
   document.querySelectorAll(`#sp-${id} .band-panel`).forEach((p,i)=>{p.classList.toggle('active',i===0);});
   window.scrollTo({top:document.querySelector('.station-nav').offsetTop-10,behavior:'smooth'});
+}
+
+function showView(stationId, view, btn){
+  const panel = document.getElementById('sp-' + stationId);
+  panel.querySelectorAll('.view-bar .vbtn:not(.lens-btn)').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('tw-' + stationId).style.display = view === 'tabbed' ? '' : 'none';
+  document.getElementById('cw-' + stationId).style.display = view === 'compare' ? '' : 'none';
+}
+
+// Examiner-lens turns are present in all 318 level-transcripts, so this only
+// ever hides content that exists. CSS-only so scroll position survives.
+function toggleLens(stationId, btn){
+  const panel = document.getElementById('sp-' + stationId);
+  const hidden = panel.classList.toggle('hide-notes');
+  btn.classList.toggle('active', !hidden);
+  btn.textContent = hidden ? '👁 Examiner lens: off' : '👁 Examiner lens: on';
 }
 
 function showBand(stationId, band, btn){
