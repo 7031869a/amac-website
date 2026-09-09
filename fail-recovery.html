@@ -328,12 +328,26 @@ function calculateResults() {
   const maxScores = {};
   Object.keys(DOMAINS).forEach(d => maxScores[d] = 0);
 
+  // Two separate denominators, deliberately.
+  //   rankBasis - the original largest-single-weight value. Ranking is left
+  //     on this so the ordering of repair targets is unchanged; it is never
+  //     shown to the candidate.
+  //   ceiling   - the true maximum attainable for a domain, summed across
+  //     questions. Used for the DISPLAYED percentage only. The old code showed
+  //     score/rankBasis, which reported up to 333% for domains fed by several
+  //     questions.
+  const ceiling = {};
+  Object.keys(DOMAINS).forEach(d => ceiling[d] = 0);
+
   QUESTIONS.forEach(q => {
-    // max possible for this question
-    const maxW = q.options.reduce((mx, o) => {
-      Object.values(o.weights || {}).forEach(w => { if (w > mx) mx = w; });
-      return mx;
-    }, 0);
+    Object.keys(DOMAINS).forEach(d => {
+      let best = 0;
+      q.options.forEach(o => {
+        const w = (o.weights || {})[d] || 0;
+        if (w > best) best = w;
+      });
+      ceiling[d] += best;
+    });
 
     // add max to each domain that appears in any option
     q.options.forEach(o => {
@@ -351,17 +365,25 @@ function calculateResults() {
     }
   });
 
-  // Normalise to percentages (higher = more evidence of failure in this domain)
+  // Displayed percentage: score against the true ceiling, so it cannot exceed 100.
   const pcts = {};
   Object.keys(DOMAINS).forEach(d => {
-    const max = maxScores[d] || 1;
-    pcts[d] = Math.round((scores[d] / max) * 100);
+    pcts[d] = Math.round((scores[d] / (ceiling[d] || 1)) * 100);
   });
 
-  // Sort by score descending
-  const ranked = Object.entries(pcts)
-    .filter(([d, s]) => s > 0)
-    .sort((a, b) => b[1] - a[1]);
+  // Ranking basis: the ORIGINAL rounded score/maxScores value. Kept so the
+  // order of repair targets is exactly what it has always been.
+  const rankPct = {};
+  Object.keys(DOMAINS).forEach(d => {
+    rankPct[d] = Math.round((scores[d] / (maxScores[d] || 1)) * 100);
+  });
+
+  // Sort by score descending (on the ranking basis; the pair carries the
+  // displayed percentage so downstream rendering is unaffected).
+  const ranked = Object.keys(DOMAINS)
+    .filter(d => rankPct[d] > 0)
+    .sort((a, b) => rankPct[b] - rankPct[a])
+    .map(d => [d, pcts[d]]);
 
   showResults(pcts, ranked);
 }
@@ -372,7 +394,13 @@ function showResults(pcts, ranked) {
     'Generated ' + new Date().toLocaleDateString('en-GB', {day:'numeric',month:'long',year:'numeric'});
 
   // Profile grid — all domains with scores
-  const allDomains = Object.entries(pcts).sort((a,b) => b[1]-a[1]);
+  // Order the bars by the SAME ranking the repair targets use, so the top bar
+  // always matches the primary target. Sorting by the displayed percentage
+  // instead would disagree with it, because display and ranking now use
+  // different denominators.
+  const rankedNames = ranked.map(r => r[0]);
+  const allDomains = rankedNames.map(d => [d, pcts[d]]).concat(
+    Object.keys(DOMAINS).filter(d => rankedNames.indexOf(d) === -1).map(d => [d, pcts[d]]));
   document.getElementById('profileGrid').innerHTML = allDomains.map(([d, pct]) => {
     const dom = DOMAINS[d];
     const col = dom ? dom.colour : '#888';
