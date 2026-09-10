@@ -123,9 +123,10 @@
         { href: CONFIG.communityUrl,    label: "Join the community" }
       ])
     + col("AMaC", [
-        { href: "about.html",   label: "About" },
-        { href: "contact.html", label: "Contact" },
-        { href: "index.html",   label: "All exams" }
+        { href: "about.html",     label: "About" },
+        { href: "standards.html", label: "Independence & Standards" },
+        { href: "contact.html",   label: "Contact" },
+        { href: "index.html",     label: "All exams" }
       ]);
 
   /* ---- email capture (skipped where a capture block already exists) ---- */
