@@ -18,6 +18,11 @@ design you chose, with your real Master Cards content folded into Study Tools.
 All pages share the same navy/gold/cream design, Fraunces + Outfit fonts, and nav.
 Keep all files together in the repo root (no sub-folders); they link by filename.
 
+## Maintenance notes
+- `CPSA_STATION_BATCH_CHECKLIST.md` — how to merge a new batch of CPSA stations
+  into cpsa-stations.html, and which station-count copy still needs updating by
+  hand (the on-page counts update themselves; 14 sites across 6 files do not).
+
 ## How this was assembled
 - mastercards.html reuses your chapter content **verbatim** from
   amac_plab2_complete_72chapters_v6 — no clinical wording was changed or invented.

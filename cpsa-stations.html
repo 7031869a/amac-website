@@ -177,12 +177,12 @@ footer{background:var(--navy-deep);color:#c4ccd8;padding:48px 32px 26px;}
 
 <section class="hero"><div class="hero-inner">
   <h1>Master <em>clinical systems thinking.</em></h1>
-  <p>275 CPSA stations across history taking, communication, prescribing, professionalism, procedures, mental health, mixed specialties, acute care, clinical examination, data interpretation and telephone. Each with an examiner marking grid and full Fail / Pass / Distinction transcripts.</p>
+  <p><span class="js-station-count"></span> CPSA stations across history taking, communication, prescribing, professionalism, procedures, mental health, mixed specialties, acute care, clinical examination, data interpretation and telephone. Each with an examiner marking grid and full Fail / Pass / Distinction transcripts.</p>
 </div></section>
 
 <section class="stations-section"><div class="ss-inner">
   <div class="section-label">CPSA Station Bank</div>
-  <h2 class="section-title">275 Stations</h2>
+  <h2 class="section-title"><span class="js-station-count"></span> Stations</h2>
   <div class="category-tabs" id="categoryTabs"></div>
   <div class="station-grid" id="stationGrid"></div>
 </div></section>
@@ -13359,7 +13359,8 @@ function esc(s){return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replac
 function mark(v){return v==='\u2713'?'<span class="mark-yes">\u2713</span>':'<span class="mark-no">\u2717</span>';}
 
 function buildTabs(){var order=["history-taking","communication","prescribing","professionalism","procedures","acute","mental-health","mixed","clinical-examination","data-interpretation","telephone"];var counts={};STATIONS.forEach(function(s){counts[s.category]=(counts[s.category]||0)+1;});Object.keys(counts).forEach(function(c){if(order.indexOf(c)<0)order.push(c);});var html='<button class="cat-tab active" onclick="filterCategory(event,\'all\')">All ('+STATIONS.length+')</button>';order.forEach(function(c){if(!counts[c])return;var label=(catLabel[c]||c);html+='<button class="cat-tab" onclick="filterCategory(event,\''+c+'\')">'+label+' ('+counts[c]+')</button>';});var el=document.getElementById('categoryTabs');if(el)el.innerHTML=html;}
-function buildGrid(){buildTabs();
+function buildCounts(){var n=STATIONS.length;var els=document.querySelectorAll('.js-station-count');for(var i=0;i<els.length;i++)els[i].textContent=n;}
+function buildGrid(){buildTabs();buildCounts();
   document.getElementById('stationGrid').innerHTML=STATIONS.map(s=>
     `<div class="stn-card" data-cat="${s.category}" onclick="openDetail('${s.id}')">
        <div class="stn-number">${esc(s.num)}</div>
