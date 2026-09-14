@@ -87,6 +87,7 @@
         { href: "antibiotics.html",   label: "Antibiotics" },
         { href: "normal-values.html", label: "Normal values" },
         { href: "ecg-abg.html",       label: "ECG / ABG" },
+        { href: "ethics-law.html",    label: "Ethics & law" },
         { href: "frameworks.html",    label: "Frameworks" }
       ]
     },
