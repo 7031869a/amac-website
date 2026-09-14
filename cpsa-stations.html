@@ -13357,7 +13357,7 @@ const STATIONS = [{"id":"comm-01","num":"COMM-01","title":"Miscarriage (Breaking
  "category": "acute",
  "mlaTheme": "Recognition of the acutely unwell patient",
  "contentMap": "Acute medicine · anaphylaxis recognition and management, biphasic reaction discharge planning",
- "capabilities": "Recognising anaphylaxis clinically without diagnostic hesitation; giving IM adrenaline into the anterolateral thigh without delay; positioning by whether the airway/breathing or the circulation problem predominates, and not sitting or standing a hypotensive patient; repeating adrenaline at five minutes for inadequate response without treating this as a failure; correcting a colleague who suggests antihistamine first; not letting a prior mild reaction downgrade the current assessment, while flagging that the drug was re-given despite that reaction as a safety incident; explaining the need for a post-resolution observation period given biphasic reaction risk",
+ "capabilities": "Recognising anaphylaxis clinically without diagnostic hesitation; giving IM adrenaline into the anterolateral thigh without delay; treating hypotension as a circulation problem with a rapid IV crystalloid fluid bolus, repeated according to response; positioning by whether the airway/breathing or the circulation problem predominates, and not sitting or standing a hypotensive patient; repeating adrenaline at five minutes for inadequate response without treating this as a failure; correcting a colleague who suggests antihistamine first; not letting a prior mild reaction downgrade the current assessment, while flagging that the drug was re-given despite that reaction as a safety incident; explaining the need for a post-resolution observation period given biphasic reaction risk",
  "level": "Day-one FY1",
  "setting": "Outpatient infusion unit. You are the FY1 covering the unit.",
  "time": "8 minutes",
@@ -13378,6 +13378,12 @@ const STATIONS = [{"id":"comm-01","num":"COMM-01","title":"Miscarriage (Breaking
   },
   {
    "domain": "Gives IM adrenaline into the anterolateral thigh without delay",
+   "fail": "✗",
+   "pass": "✓",
+   "dist": "✓"
+  },
+  {
+   "domain": "Treats the hypotension as a circulation problem: gives a rapid IV crystalloid fluid bolus alongside adrenaline and repeats it according to blood pressure response",
    "fail": "✗",
    "pass": "✓",
    "dist": "✓"
@@ -13461,7 +13467,7 @@ const STATIONS = [{"id":"comm-01","num":"COMM-01","title":"Miscarriage (Breaking
    },
    {
     "speaker": "CANDIDATE",
-    "text": "(Gives IM adrenaline immediately, applies high-flow oxygen.) I need help urgently, and I'd like the resuscitation team aware in case this progresses."
+    "text": "(Gives IM adrenaline immediately, applies high-flow oxygen, and starts a rapid IV crystalloid fluid bolus for her low blood pressure.) I need help urgently, and I'd like the resuscitation team aware in case this progresses."
    },
    {
     "speaker": "COLLEAGUE",
@@ -13473,15 +13479,15 @@ const STATIONS = [{"id":"comm-01","num":"COMM-01","title":"Miscarriage (Breaking
    },
    {
     "speaker": "CANDIDATE",
-    "text": "(At 5 minutes, reassesses — still wheezy, BP still low.) There's no adequate improvement, so I'm repeating the IM adrenaline now."
+    "text": "(At 5 minutes, reassesses — still wheezy, BP still low.) There's no adequate improvement, so I'm repeating the IM adrenaline now and giving a further fluid bolus."
    },
    {
     "speaker": "CANDIDATE",
     "text": "(To examiner.) I'll ensure an observation period before discharge and arrange an allergy clinic referral."
    }
   ],
-  "examinerNote": "Diagnosed anaphylaxis without hesitation. Gave IM adrenaline immediately. Corrected a colleague suggesting antihistamine first. Repeated adrenaline appropriately at five minutes.",
-  "summary": "Anaphylaxis diagnosed without hesitation; IM adrenaline given immediately; colleague's antihistamine-first suggestion corrected; adrenaline repeated appropriately at five minutes."
+  "examinerNote": "Diagnosed anaphylaxis without hesitation. Gave IM adrenaline immediately, with a fluid bolus for her hypotension. Corrected a colleague suggesting antihistamine first. Repeated adrenaline appropriately at five minutes.",
+  "summary": "Anaphylaxis diagnosed without hesitation; IM adrenaline given immediately with a fluid bolus for hypotension; colleague's antihistamine-first suggestion corrected; adrenaline repeated appropriately at five minutes."
  },
  "distinction": {
   "dialogue": [
@@ -13495,7 +13501,7 @@ const STATIONS = [{"id":"comm-01","num":"COMM-01","title":"Miscarriage (Breaking
    },
    {
     "speaker": "CANDIDATE",
-    "text": "(Gives IM adrenaline immediately into the anterolateral thigh, standard adult dose. Her airway and her blood pressure are both compromised, so she is not sat upright: lies her back with her legs raised, head and shoulders only slightly supported so her breathing is not made worse.) High-flow oxygen now. IV access is already in place from the infusion. This is anaphylaxis, I need help urgently, and I'd like the resuscitation team aware in case this progresses."
+    "text": "(Gives IM adrenaline immediately into the anterolateral thigh, standard adult dose. Her airway and her blood pressure are both compromised, so she is not sat upright: lies her back with her legs raised, head and shoulders only slightly supported so her breathing is not made worse.) High-flow oxygen now. IV access is already in place from the infusion, so I'm giving a rapid IV crystalloid fluid bolus for her blood pressure. This is anaphylaxis, I need help urgently, and I'd like the resuscitation team aware in case this progresses."
    },
    {
     "speaker": "PATIENT",
@@ -13535,7 +13541,7 @@ const STATIONS = [{"id":"comm-01","num":"COMM-01","title":"Miscarriage (Breaking
    },
    {
     "speaker": "CANDIDATE",
-    "text": "(At 5 minutes, reassesses — still audible wheeze, BP still low, ongoing facial swelling.) There's no adequate improvement at five minutes, so I'm going to repeat the IM adrenaline now."
+    "text": "(At 5 minutes, reassesses — still audible wheeze, BP still low, ongoing facial swelling.) There's no adequate improvement at five minutes, so I'm going to repeat the IM adrenaline now, and give a further fluid bolus while her blood pressure is still low."
    },
    {
     "speaker": "COLLEAGUE",
@@ -13558,11 +13564,11 @@ const STATIONS = [{"id":"comm-01","num":"COMM-01","title":"Miscarriage (Breaking
     "text": "(To examiner.) Before discharge, I'll ensure the trigger is documented clearly and communicated to her, prescribe and demonstrate an adrenaline auto-injector, and refer her to an allergy clinic for definitive testing. I'll also make sure the missed allergy history is escalated and reported as an incident, and explain openly to her and her spouse what happened."
    }
   ],
-  "examinerNote": "Exemplary. Diagnosed anaphylaxis immediately and confidently, manufacturing no diagnostic ambiguity despite the pressure of an acute scenario. Gave IM adrenaline without delay, positioned her with both the airway and the low blood pressure in mind rather than defaulting to sitting her up, and called for help appropriately. Corrected a colleague's antihistamine-first suggestion clearly and immediately, and held firm against a spouse's minimisation based on a prior mild reaction, explaining the clinical reasoning kindly but without wavering, and recognised that the same disclosure meant she had been given a drug she had already reacted to, flagging it for escalation and incident reporting rather than passing over it. Repeated adrenaline confidently at five minutes and explicitly reassured a colleague that this wasn't a sign of failure. Explained the biphasic reaction risk to a patient keen to leave, addressing her embarrassment directly. Ensured comprehensive discharge planning including auto-injector training and allergy referral.",
-  "summary": "Anaphylaxis diagnosed immediately without manufactured ambiguity; IM adrenaline given without delay with positioning balanced for combined airway compromise and hypotension; colleague's antihistamine-first suggestion corrected immediately; spouse's minimisation based on prior mild reaction held against kindly, and the re-administration despite that reaction flagged as a safety incident; adrenaline repeated confidently at five minutes with colleague reassured this isn't failure; biphasic reaction risk explained to a patient keen to leave, addressing her embarrassment; comprehensive discharge planning ensured including auto-injector training and allergy referral."
+  "examinerNote": "Exemplary. Diagnosed anaphylaxis immediately and confidently, manufacturing no diagnostic ambiguity despite the pressure of an acute scenario. Gave IM adrenaline without delay with a rapid fluid bolus for her hypotension, repeated when her blood pressure stayed low, positioned her with both the airway and the low blood pressure in mind rather than defaulting to sitting her up, and called for help appropriately. Corrected a colleague's antihistamine-first suggestion clearly and immediately, and held firm against a spouse's minimisation based on a prior mild reaction, explaining the clinical reasoning kindly but without wavering, and recognised that the same disclosure meant she had been given a drug she had already reacted to, flagging it for escalation and incident reporting rather than passing over it. Repeated adrenaline confidently at five minutes and explicitly reassured a colleague that this wasn't a sign of failure. Explained the biphasic reaction risk to a patient keen to leave, addressing her embarrassment directly. Ensured comprehensive discharge planning including auto-injector training and allergy referral.",
+  "summary": "Anaphylaxis diagnosed immediately without manufactured ambiguity; IM adrenaline given without delay with fluid boluses for hypotension and positioning balanced for combined airway compromise and hypotension; colleague's antihistamine-first suggestion corrected immediately; spouse's minimisation based on prior mild reaction held against kindly, and the re-administration despite that reaction flagged as a safety incident; adrenaline repeated confidently at five minutes with colleague reassured this isn't failure; biphasic reaction risk explained to a patient keen to leave, addressing her embarrassment; comprehensive discharge planning ensured including auto-injector training and allergy referral."
  },
  "hook": "In anaphylaxis, hesitation kills marks far more often than diagnostic error — a clear picture of ABC compromise with skin changes and a plausible trigger needs IM adrenaline immediately, not a pause to consider alternatives.",
- "examinerTrap": "The biggest mistake is giving antihistamines or steroids before or instead of IM adrenaline, or hesitating to repeat adrenaline at five minutes out of a mistaken belief that a second dose implies an error. Candidates also commonly let a reported prior mild reaction downgrade their assessment of the current, more severe episode. Two further misses: sitting a hypotensive patient bolt upright because she is breathless, and passing over the spouse's disclosure without recognising that the drug was given again despite a known reaction.",
+ "examinerTrap": "The biggest mistake is giving antihistamines or steroids before or instead of IM adrenaline, or hesitating to repeat adrenaline at five minutes out of a mistaken belief that a second dose implies an error. Candidates also commonly let a reported prior mild reaction downgrade their assessment of the current, more severe episode. Further misses: leaving her hypotension without an IV fluid bolus, sitting a hypotensive patient bolt upright because she is breathless, and passing over the spouse's disclosure without recognising that the drug was given again despite a known reaction.",
  "thinkSayDo": [
   {
    "think": "This is a clear anaphylaxis picture — I should not manufacture diagnostic ambiguity by pausing to consider alternatives.",
@@ -13594,6 +13600,7 @@ const STATIONS = [{"id":"comm-01","num":"COMM-01","title":"Miscarriage (Breaking
   "Confirms the trigger is removed and performs rapid ABC assessment",
   "Diagnoses anaphylaxis clinically without manufactured diagnostic ambiguity",
   "Gives IM adrenaline into the anterolateral thigh without delay",
+  "Rapid IV crystalloid fluid bolus for hypotension, repeated according to response",
   "Positions by the predominant problem: no sitting upright or standing while hypotensive, reassesses",
   "Calls for help urgently, flagging resuscitation team awareness",
   "Repeats IM adrenaline at five minutes for inadequate response without treating it as failure",
@@ -13976,7 +13983,7 @@ const STATIONS = [{"id":"comm-01","num":"COMM-01","title":"Miscarriage (Breaking
    },
    {
     "speaker": "COLLEAGUE",
-    "text": "(Separately.) She seems pretty together when I spoke to her, does she really need the full psych assessment?"
+    "text": "(Separately.) She seemed pretty together when I spoke to her, does she really need the full psych assessment?"
    },
    {
     "speaker": "CANDIDATE",
