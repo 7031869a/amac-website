@@ -3,8 +3,8 @@
 Procedure for merging a new batch of stations into `cpsa-stations.html` and
 keeping the advertised station count consistent across the site.
 
-Current total: **275** stations (as of commit `395ff33`, plus the count-automation
-commit that added this file).
+Current total: **282** stations (as of the batch 3 commit that completed the book
+screening; previously 275 at `395ff33`).
 
 ## 1. Merge the stations
 
