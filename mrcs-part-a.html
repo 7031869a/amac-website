@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MRCS Part A Question Bank — AMaC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0c1526;
+    --card: #16233F;
+    --card-border: #2b3752;
+    --accent: #A6373F;
+    --accent-soft: #3a1f24;
+    --text: #EDEEF2;
+    --text-dim: #9AA4BD;
+    --green: #2FB48C;
+    --red: #D9635C;
+    --amber: #D9A23B;
+    --font-head: 'Fraunces', serif;
+    --font-body: 'Outfit', sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    line-height: 1.5;
+  }
+  a { color: inherit; }
+
+  .site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 18px 28px;
+    border-bottom: 1px solid var(--card-border);
+  }
+  .site-header h1 {
+    font-family: var(--font-head);
+    font-weight: 600;
+    font-size: 20px;
+    margin: 0;
+  }
+  .site-header nav a {
+    text-decoration: none;
+    color: var(--text-dim);
+    margin-left: 18px;
+    font-size: 14px;
+  }
+  .site-header nav a:hover { color: var(--text); }
+
+  main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 36px 20px 80px;
+  }
+  main.wide { max-width: 1040px; }
+
+  .screen { display: none; }
+  .screen.active { display: block; }
+
+  h2 {
+    font-family: var(--font-head);
+    font-weight: 600;
+    font-size: 26px;
+    margin: 0 0 8px;
+  }
+  .lede { color: var(--text-dim); font-size: 15px; margin: 0 0 28px; }
+
+  .card {
+    background: var(--card);
+    border-top: 3px solid var(--accent);
+    border-left: 3px solid var(--accent);
+    border-right: 1px solid var(--card-border);
+    border-bottom: 1px solid var(--card-border);
+    border-radius: 6px;
+    padding: 22px 24px;
+    margin-bottom: 16px;
+    transition: transform 0.15s ease;
+  }
+  .card.interactive:hover { transform: translateY(-3px); }
+
+  label {
+    display: block;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-dim);
+    margin: 18px 0 6px;
+  }
+  label:first-of-type { margin-top: 0; }
+
+  select {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 6px;
+    border: 1px solid var(--card-border);
+    background: #0e1a30;
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 14px;
+  }
+
+  .checkbox-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 20px;
+    padding: 12px 14px;
+    background: #0e1a30;
+    border-radius: 6px;
+    border: 1px solid var(--card-border);
+  }
+  .checkbox-row input { margin-top: 3px; }
+  .checkbox-row .label-main { font-size: 14px; }
+  .checkbox-row .label-sub { font-size: 12px; color: var(--text-dim); margin-top: 2px; }
+
+  button {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 14px;
+    border: none;
+    border-radius: 6px;
+    padding: 12px 22px;
+    cursor: pointer;
+    transition: filter 0.15s ease;
+  }
+  button:hover { filter: brightness(1.12); }
+  button:disabled { opacity: 0.4; cursor: default; filter: none; }
+
+  .btn-primary { background: var(--accent); color: #fff; }
+  .btn-secondary { background: transparent; color: var(--text); border: 1px solid var(--card-border); }
+  .btn-danger { background: var(--red); color: #fff; }
+
+  #start-btn { margin-top: 24px; }
+
+  .mode-toggle {
+    display: flex;
+    gap: 6px;
+    background: #0e1a30;
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    padding: 4px;
+    margin-bottom: 24px;
+  }
+  .mode-btn {
+    flex: 1;
+    background: transparent;
+    color: var(--text-dim);
+    padding: 10px;
+    border-radius: 6px;
+  }
+  .mode-btn.active { background: var(--card); color: var(--text); }
+  .mode-btn:hover { filter: none; }
+
+  .info-list { margin: 0; padding-left: 18px; color: var(--text-dim); font-size: 14px; }
+  .info-list li { margin-bottom: 6px; }
+
+  .progress-track {
+    height: 5px;
+    background: var(--card-border);
+    border-radius: 3px;
+    overflow: hidden;
+    margin-bottom: 18px;
+  }
+  .progress-fill {
+    height: 100%;
+    background: var(--accent);
+    width: 0%;
+    transition: width 0.25s ease;
+  }
+  .quiz-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    color: var(--text-dim);
+    margin-bottom: 14px;
+  }
+  .topic-tag {
+    display: inline-block;
+    font-size: 12px;
+    color: var(--accent);
+    background: var(--accent-soft);
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+  }
+  .question-text {
+    font-size: 17px;
+    line-height: 1.55;
+    margin: 0 0 20px;
+  }
+  .options { list-style: none; padding: 0; margin: 0 0 8px; }
+  .options li {
+    border: 1px solid var(--card-border);
+    border-radius: 6px;
+    padding: 13px 16px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: border-color 0.15s ease, background 0.15s ease;
+  }
+  .options li:hover { border-color: var(--accent); }
+  .options li.correct { border-color: var(--green); background: rgba(47,180,140,0.12); }
+  .options li.incorrect { border-color: var(--red); background: rgba(217,99,92,0.12); }
+  .options li.selected { border-color: var(--accent); background: var(--accent-soft); }
+  .options li.disabled { cursor: default; pointer-events: none; }
+
+  .explain {
+    display: none;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px dashed var(--card-border);
+    font-size: 14px;
+    color: var(--text-dim);
+  }
+  .explain.show { display: block; }
+  .explain .row { margin-bottom: 8px; }
+  .explain .row b { color: var(--text); }
+  .review-flag {
+    display: inline-block;
+    font-size: 11px;
+    color: var(--text-dim);
+    border: 1px solid var(--card-border);
+    padding: 2px 8px;
+    border-radius: 20px;
+    margin-top: 10px;
+  }
+
+  .quiz-controls {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .mock-layout {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  .mock-main { flex: 1 1 480px; min-width: 0; }
+  .mock-side {
+    flex: 0 0 260px;
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 6px;
+    padding: 16px;
+    position: sticky;
+    top: 20px;
+  }
+  .mock-header {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-size: 13px;
+    color: var(--text-dim);
+    margin-bottom: 16px;
+  }
+  .mock-timer { font-variant-numeric: tabular-nums; font-weight: 600; color: var(--text); }
+  .mock-timer.warning { color: var(--amber); }
+  .mock-timer.danger { color: var(--red); }
+
+  .mock-side h3 {
+    font-family: var(--font-body);
+    font-size: 13px;
+    text-transform: none;
+    color: var(--text-dim);
+    margin: 0 0 10px;
+  }
+  .palette-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-bottom: 14px;
+  }
+  .palette-btn {
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    font-size: 12px;
+    font-weight: 500;
+    background: #0e1a30;
+    color: var(--text-dim);
+    border: 1px solid var(--card-border);
+    border-radius: 4px;
+  }
+  .palette-btn.answered { background: rgba(47,180,140,0.18); color: var(--green); border-color: var(--green); }
+  .palette-btn.flagged { background: rgba(217,162,59,0.18); color: var(--amber); border-color: var(--amber); }
+  .palette-btn.current { outline: 2px solid var(--accent); outline-offset: 1px; }
+
+  .palette-legend { font-size: 12px; color: var(--text-dim); }
+  .palette-legend div { display: flex; align-items: center; gap: 8px; margin-bottom: 5px; }
+  .legend-dot { width: 10px; height: 10px; border-radius: 3px; display: inline-block; }
+
+  .mock-controls {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+  }
+  .mock-controls .left-group, .mock-controls .right-group { display: flex; gap: 10px; }
+
+  #mock-flag-btn.active { background: rgba(217,162,59,0.18); color: var(--amber); border-color: var(--amber); }
+
+  .score-display {
+    font-family: var(--font-head);
+    font-size: 44px;
+    font-weight: 600;
+    margin: 8px 0;
+  }
+  .score-display.pass { color: var(--green); }
+  .score-display.fail { color: var(--red); }
+  .results-actions { display: flex; gap: 10px; margin-top: 24px; flex-wrap: wrap; }
+  .results-meta { color: var(--text-dim); font-size: 14px; margin: 4px 0; }
+
+  .review-filters { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 18px; }
+  .filter-btn {
+    background: transparent;
+    color: var(--text-dim);
+    border: 1px solid var(--card-border);
+    padding: 8px 14px;
+    font-size: 13px;
+    font-weight: 500;
+  }
+  .filter-btn.active { background: var(--card); color: var(--text); border-color: var(--accent); }
+
+  .review-item {
+    border-left: 3px solid var(--card-border);
+    padding: 14px 16px;
+    margin-bottom: 10px;
+    background: var(--card);
+    border-radius: 6px;
+    font-size: 14px;
+  }
+  .review-item.correct { border-left-color: var(--green); }
+  .review-item.incorrect { border-left-color: var(--red); }
+  .review-item .q { margin: 0 0 6px; }
+  .review-item .a { margin: 3px 0; color: var(--text-dim); }
+  .review-item .a.right { color: var(--green); }
+  .review-item .a.wrong { color: var(--red); }
+  .review-item .flag-note { font-size: 12px; color: var(--amber); margin-top: 4px; }
+
+  .empty-state {
+    text-align: center;
+    color: var(--text-dim);
+    padding: 50px 0;
+    font-size: 14px;
+  }
+
+  footer {
+    text-align: center;
+    color: var(--text-dim);
+    font-size: 12px;
+    padding: 30px 20px 50px;
+  }
+
+  @media (max-width: 800px) {
+    .mock-side { position: static; flex-basis: 100%; }
+  }
+  @media (max-width: 600px) {
+    main { padding: 24px 16px 60px; }
+    .card { padding: 18px; }
+    .question-text { font-size: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <h1>AMaC — MRCS Part A</h1>
+  <nav>
+    <a href="mrcs.html">MRCS Home</a>
+    <a href="mrcs-part-a.html">Part A Question Bank</a>
+  </nav>
+</header>
+
+<main id="main-el">
+
+  <section id="setup-screen" class="screen active">
+    <h2>Practise for Part A</h2>
+    <p class="lede">Applied Basic Science — pick a mode and go.</p>
+
+    <div class="mode-toggle">
+      <button id="mode-practice-btn" class="mode-btn active">Practice</button>
+      <button id="mode-mock-btn" class="mode-btn">Mock exam</button>
+    </div>
+
+    <div id="practice-options">
+      <div class="card">
+        <label for="subject-select">Subject</label>
+        <select id="subject-select"></select>
+
+        <label for="count-select">Number of questions</label>
+        <select id="count-select">
+          <option value="10">10</option>
+          <option value="20" selected>20</option>
+          <option value="50">50</option>
+          <option value="100">100</option>
+          <option value="all">All available</option>
+        </select>
+
+        <div class="checkbox-row" id="pending-checkbox-row">
+          <input type="checkbox" id="include-pending">
+          <div>
+            <div class="label-main">Include recently added questions</div>
+            <div class="label-sub" id="pending-sub-label"></div>
+          </div>
+        </div>
+
+        <button id="start-btn" class="btn-primary">Start practice</button>
+      </div>
+      <p class="lede" id="bank-size-note"></p>
+    </div>
+
+    <div id="mock-options" style="display:none;">
+      <div class="card">
+        <ul class="info-list">
+          <li><b style="color:var(--text)">180 questions</b>, drawn at random across all subjects</li>
+          <li><b style="color:var(--text)">180 minutes</b>, one continuous sitting — this mirrors Paper 1 (Applied Basic Science) as it is actually sat, not a split into two half-length papers</li>
+          <li>No feedback until you finish, same as the real exam</li>
+          <li>Flag questions and jump between them freely using the palette</li>
+          <li>Auto-submits if time runs out; you can submit early at any point</li>
+        </ul>
+        <button id="start-mock-btn" class="btn-primary">Start mock exam</button>
+      </div>
+      <p class="lede" id="mock-availability-note"></p>
+    </div>
+  </section>
+
+  <section id="quiz-screen" class="screen">
+    <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
+    <div class="quiz-meta">
+      <span id="q-counter">Question 1 of 20</span>
+      <span id="q-score">Score: 0</span>
+    </div>
+
+    <div class="card">
+      <span class="topic-tag" id="q-topic"></span>
+      <p class="question-text" id="q-text"></p>
+      <ul class="options" id="q-options"></ul>
+      <div class="explain" id="q-explain"></div>
+    </div>
+
+    <div class="quiz-controls">
+      <button id="finish-early-btn" class="btn-secondary">Finish now</button>
+      <button id="next-btn" class="btn-primary" disabled>Next question</button>
+    </div>
+  </section>
+
+  <section id="mock-screen" class="screen">
+    <div class="mock-header">
+      <span id="mock-counter">Question 1 of 180</span>
+      <span>Time remaining: <span class="mock-timer" id="mock-timer">180:00</span></span>
+      <span id="mock-answered-count">Answered: 0 / 180</span>
+    </div>
+
+    <div class="mock-layout">
+      <div class="mock-main">
+        <div class="card">
+          <span class="topic-tag" id="mock-topic"></span>
+          <p class="question-text" id="mock-text"></p>
+          <ul class="options" id="mock-options-list"></ul>
+        </div>
+
+        <div class="mock-controls">
+          <div class="left-group">
+            <button id="mock-prev-btn" class="btn-secondary">Previous</button>
+            <button id="mock-flag-btn" class="btn-secondary">Flag this question</button>
+          </div>
+          <div class="right-group">
+            <button id="mock-next-btn" class="btn-primary">Next</button>
+            <button id="mock-submit-btn" class="btn-danger">Submit exam</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="mock-side">
+        <h3>Question palette</h3>
+        <div class="palette-wrap" id="palette-wrap"></div>
+        <div class="palette-legend">
+          <div><span class="legend-dot" style="background:rgba(47,180,140,0.4);border:1px solid var(--green);"></span>Answered</div>
+          <div><span class="legend-dot" style="background:rgba(217,162,59,0.4);border:1px solid var(--amber);"></span>Flagged</div>
+          <div><span class="legend-dot" style="background:#0e1a30;border:1px solid var(--card-border);"></span>Unanswered</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="results-screen" class="screen">
+    <h2>Session complete</h2>
+    <p class="lede" id="results-summary"></p>
+    <div class="score-display" id="score-display"></div>
+    <p class="results-meta" id="results-meta"></p>
+    <div class="results-actions">
+      <button id="review-btn" class="btn-secondary">Review answers</button>
+      <button id="restart-btn" class="btn-primary">Back to setup</button>
+    </div>
+  </section>
+
+  <section id="review-screen" class="screen">
+    <h2>Review</h2>
+    <div class="review-filters" id="review-filters" style="display:none;"></div>
+    <div id="review-list"></div>
+    <div class="results-actions">
+      <button id="back-to-setup-btn" class="btn-primary">Back to setup</button>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  &copy; 2026 AMaC. Not affiliated with or endorsed by the Royal Colleges of Surgeons.
+</footer>
+
+<script>
+/* =========================================================
+   AMaC MRCS Part A — Question Bank Engine
+   Two modes:
+     - Practice: instant feedback, any subject/length.
+     - Mock exam: one continuous 180-question/180-minute
+       sitting representing Paper 1 as it is actually sat —
+       deliberately NOT split into two fake half-length papers.
+   Data pools: reviewed (clinically checked) and
+   pending-review (dedup-checked, not yet clinically reviewed).
+   The pending pool is opt-in in practice mode and always
+   visibly labelled; mock exam draws from reviewed only.
+   ========================================================= */
+
+const DATA_FILES = {
+  reviewed: 'data/reviewed.json',
+  pending: 'data/pending-review.json',
+};
+const MOCK_QUESTION_COUNT = 180;
+const MOCK_SECONDS = 180 * 60;
+
+let reviewedData = [];
+let pendingData = [];
+
+let quizPool = [];
+let currentIndex = 0;
+let score = 0;
+let answered = false;
+let sessionLog = [];
+
+let mockPool = [];
+let mockIndex = 0;
+let mockAnswers = {};
+let mockFlags = {};
+let mockTimer = null;
+let mockTimeLeft = MOCK_SECONDS;
+let mockSubmitted = null;
+let lastReviewMode = 'practice';
+
+const screens = {
+  setup: document.getElementById('setup-screen'),
+  quiz: document.getElementById('quiz-screen'),
+  mock: document.getElementById('mock-screen'),
+  results: document.getElementById('results-screen'),
+  review: document.getElementById('review-screen'),
+};
+const mainEl = document.getElementById('main-el');
+
+function showScreen(name) {
+  Object.values(screens).forEach(s => s.classList.remove('active'));
+  screens[name].classList.add('active');
+  mainEl.classList.toggle('wide', name === 'mock');
+}
+
+function shuffle(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+async function loadData() {
+  try {
+    const [rev, pend] = await Promise.all([
+      fetch(DATA_FILES.reviewed).then(r => r.json()),
+      fetch(DATA_FILES.pending).then(r => r.json()),
+    ]);
+    reviewedData = rev;
+    pendingData = pend;
+  } catch (e) {
+    document.getElementById('bank-size-note').textContent =
+      'Could not load question data. This page must be served over http(s) — opening the file directly will not work.';
+    console.error(e);
+    return;
+  }
+  populateSubjects();
+  if (pendingData.length === 0) {
+    document.getElementById('pending-checkbox-row').style.display = 'none';
+    document.getElementById('bank-size-note').textContent =
+      `${reviewedData.length} clinically reviewed questions available.`;
+  } else {
+    document.getElementById('pending-sub-label').textContent =
+      `${pendingData.length} additional questions that have passed duplicate-checking but not yet the full clinical accuracy review. Off by default.`;
+    document.getElementById('bank-size-note').textContent =
+      `${reviewedData.length} clinically reviewed questions available. Tick the box above to add ${pendingData.length} more that are duplicate-checked but pending review.`;
+  }
+
+  const mockNote = document.getElementById('mock-availability-note');
+  if (reviewedData.length < MOCK_QUESTION_COUNT) {
+    mockNote.textContent = `Only ${reviewedData.length} reviewed questions are available so far — a full ${MOCK_QUESTION_COUNT}-question mock needs more before it can run.`;
+    document.getElementById('start-mock-btn').disabled = true;
+  } else {
+    mockNote.textContent = `Drawing from ${reviewedData.length} clinically reviewed questions.`;
+  }
+}
+
+function populateSubjects() {
+  const includePending = document.getElementById('include-pending').checked;
+  const pool = includePending ? [...reviewedData, ...pendingData] : reviewedData;
+  const subjects = [...new Set(pool.map(d => d.subject))].sort();
+  const select = document.getElementById('subject-select');
+  select.innerHTML = '<option value="all">All subjects</option>' +
+    subjects.map(s => {
+      const count = pool.filter(d => d.subject === s).length;
+      return `<option value="${s}">${s} (${count})</option>`;
+    }).join('');
+}
+document.getElementById('include-pending').addEventListener('change', populateSubjects);
+
+document.getElementById('mode-practice-btn').addEventListener('click', () => {
+  document.getElementById('mode-practice-btn').classList.add('active');
+  document.getElementById('mode-mock-btn').classList.remove('active');
+  document.getElementById('practice-options').style.display = '';
+  document.getElementById('mock-options').style.display = 'none';
+});
+document.getElementById('mode-mock-btn').addEventListener('click', () => {
+  document.getElementById('mode-mock-btn').classList.add('active');
+  document.getElementById('mode-practice-btn').classList.remove('active');
+  document.getElementById('mock-options').style.display = '';
+  document.getElementById('practice-options').style.display = 'none';
+});
+
+document.getElementById('start-btn').addEventListener('click', () => {
+  const includePending = document.getElementById('include-pending').checked;
+  const pool = includePending ? [...reviewedData, ...pendingData] : reviewedData;
+  const subject = document.getElementById('subject-select').value;
+  const countSel = document.getElementById('count-select').value;
+
+  let filtered = subject === 'all' ? pool : pool.filter(d => d.subject === subject);
+  filtered = shuffle(filtered);
+  quizPool = countSel === 'all' ? filtered : filtered.slice(0, parseInt(countSel, 10));
+
+  if (quizPool.length === 0) {
+    alert('No questions available for that combination. Try a different subject.');
+    return;
+  }
+
+  currentIndex = 0;
+  score = 0;
+  sessionLog = [];
+  lastReviewMode = 'practice';
+  showScreen('quiz');
+  renderQuestion();
+});
+
+function renderQuestion() {
+  const q = quizPool[currentIndex];
+  const total = quizPool.length;
+  answered = false;
+
+  document.getElementById('q-counter').textContent = `Question ${currentIndex + 1} of ${total}`;
+  document.getElementById('q-score').textContent = `Score: ${score}`;
+  document.getElementById('progress-fill').style.width = `${(currentIndex / total) * 100}%`;
+  document.getElementById('q-topic').textContent = q.topic + (q.reviewed ? '' : ' · pending review');
+  document.getElementById('q-text').textContent = q.question;
+
+  const optionsEl = document.getElementById('q-options');
+  optionsEl.innerHTML = '';
+  shuffle(q.options).forEach(opt => {
+    const li = document.createElement('li');
+    li.textContent = opt;
+    li.addEventListener('click', () => selectAnswer(opt));
+    optionsEl.appendChild(li);
+  });
+
+  const explainEl = document.getElementById('q-explain');
+  explainEl.classList.remove('show');
+  explainEl.innerHTML = '';
+
+  document.getElementById('next-btn').disabled = true;
+  document.getElementById('next-btn').textContent =
+    currentIndex === total - 1 ? 'See results' : 'Next question';
+}
+
+function selectAnswer(selected) {
+  if (answered) return;
+  answered = true;
+  const q = quizPool[currentIndex];
+  const isCorrect = selected === q.correct_answer;
+  if (isCorrect) score++;
+
+  document.querySelectorAll('#q-options li').forEach(li => {
+    li.classList.add('disabled');
+    if (li.textContent === q.correct_answer) li.classList.add('correct');
+    if (li.textContent === selected && !isCorrect) li.classList.add('incorrect');
+  });
+
+  const explainEl = document.getElementById('q-explain');
+  explainEl.innerHTML = Object.entries(q.explanations).map(([opt, text]) =>
+    `<div class="row"><b>${opt}:</b> ${text}</div>`
+  ).join('') + (q.reviewed ? '' : '<span class="review-flag">Not yet clinically reviewed</span>');
+  explainEl.classList.add('show');
+
+  sessionLog.push({
+    question: q.question, options: q.options, correct_answer: q.correct_answer,
+    selected, isCorrect, reviewed: q.reviewed, flagged: false,
+  });
+
+  document.getElementById('q-score').textContent = `Score: ${score}`;
+  document.getElementById('next-btn').disabled = false;
+}
+
+document.getElementById('next-btn').addEventListener('click', () => {
+  currentIndex++;
+  if (currentIndex >= quizPool.length) {
+    showPracticeResults();
+  } else {
+    renderQuestion();
+  }
+});
+
+document.getElementById('finish-early-btn').addEventListener('click', () => {
+  if (confirm('End this session now and see your score?')) showPracticeResults();
+});
+
+function showPracticeResults() {
+  showScreen('results');
+  lastReviewMode = 'practice';
+  const total = sessionLog.length;
+  const pct = total ? Math.round((score / total) * 100) : 0;
+  document.getElementById('results-summary').textContent =
+    `You answered ${total} question${total === 1 ? '' : 's'}.`;
+  document.getElementById('results-meta').textContent = '';
+  const scoreEl = document.getElementById('score-display');
+  scoreEl.textContent = `${score} / ${total} (${pct}%)`;
+  scoreEl.className = 'score-display ' + (pct >= 70 ? 'pass' : 'fail');
+}
+
+document.getElementById('start-mock-btn').addEventListener('click', () => {
+  if (reviewedData.length < MOCK_QUESTION_COUNT) return;
+  mockPool = shuffle(reviewedData).slice(0, MOCK_QUESTION_COUNT).map(q => ({
+    ...q, shuffledOptions: shuffle(q.options),
+  }));
+  mockIndex = 0;
+  mockAnswers = {};
+  mockFlags = {};
+  mockTimeLeft = MOCK_SECONDS;
+  mockSubmitted = null;
+
+  buildPalette();
+  showScreen('mock');
+  renderMockQuestion();
+  startMockTimer();
+});
+
+function startMockTimer() {
+  clearInterval(mockTimer);
+  updateTimerDisplay();
+  mockTimer = setInterval(() => {
+    mockTimeLeft--;
+    updateTimerDisplay();
+    if (mockTimeLeft <= 0) {
+      clearInterval(mockTimer);
+      submitMockExam(true);
+    }
+  }, 1000);
+}
+
+function updateTimerDisplay() {
+  const m = Math.floor(mockTimeLeft / 60);
+  const s = mockTimeLeft % 60;
+  const el = document.getElementById('mock-timer');
+  el.textContent = `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+  el.className = 'mock-timer' + (mockTimeLeft <= 600 ? ' danger' : mockTimeLeft <= 1800 ? ' warning' : '');
+}
+
+function renderMockQuestion() {
+  const q = mockPool[mockIndex];
+  document.getElementById('mock-counter').textContent = `Question ${mockIndex + 1} of ${mockPool.length}`;
+  document.getElementById('mock-answered-count').textContent =
+    `Answered: ${Object.keys(mockAnswers).length} / ${mockPool.length}`;
+  document.getElementById('mock-topic').textContent = q.topic;
+  document.getElementById('mock-text').textContent = q.question;
+
+  const optsEl = document.getElementById('mock-options-list');
+  optsEl.innerHTML = '';
+  q.shuffledOptions.forEach(opt => {
+    const li = document.createElement('li');
+    li.textContent = opt;
+    if (mockAnswers[mockIndex] === opt) li.classList.add('selected');
+    li.addEventListener('click', () => {
+      mockAnswers[mockIndex] = opt;
+      renderMockQuestion();
+      updatePalette();
+    });
+    optsEl.appendChild(li);
+  });
+
+  const flagBtn = document.getElementById('mock-flag-btn');
+  flagBtn.classList.toggle('active', !!mockFlags[mockIndex]);
+  flagBtn.textContent = mockFlags[mockIndex] ? 'Flagged \u2713' : 'Flag this question';
+
+  document.getElementById('mock-prev-btn').disabled = mockIndex === 0;
+  document.getElementById('mock-next-btn').textContent =
+    mockIndex === mockPool.length - 1 ? 'Last question' : 'Next';
+  document.getElementById('mock-next-btn').disabled = mockIndex === mockPool.length - 1;
+
+  updatePalette();
+}
+
+function buildPalette() {
+  const wrap = document.getElementById('palette-wrap');
+  wrap.innerHTML = '';
+  mockPool.forEach((_, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'palette-btn';
+    btn.textContent = i + 1;
+    btn.addEventListener('click', () => { mockIndex = i; renderMockQuestion(); });
+    wrap.appendChild(btn);
+  });
+}
+
+function updatePalette() {
+  document.querySelectorAll('.palette-btn').forEach((btn, i) => {
+    btn.className = 'palette-btn';
+    if (mockAnswers[i] !== undefined) btn.classList.add('answered');
+    if (mockFlags[i]) btn.classList.add('flagged');
+    if (i === mockIndex) btn.classList.add('current');
+  });
+}
+
+document.getElementById('mock-prev-btn').addEventListener('click', () => {
+  if (mockIndex > 0) { mockIndex--; renderMockQuestion(); }
+});
+document.getElementById('mock-next-btn').addEventListener('click', () => {
+  if (mockIndex < mockPool.length - 1) { mockIndex++; renderMockQuestion(); }
+});
+document.getElementById('mock-flag-btn').addEventListener('click', () => {
+  mockFlags[mockIndex] = !mockFlags[mockIndex];
+  renderMockQuestion();
+});
+document.getElementById('mock-submit-btn').addEventListener('click', () => {
+  const unanswered = mockPool.length - Object.keys(mockAnswers).length;
+  const msg = unanswered > 0
+    ? `You have ${unanswered} unanswered question${unanswered === 1 ? '' : 's'}. Submit anyway?`
+    : 'Submit your exam now?';
+  if (confirm(msg)) submitMockExam(false);
+});
+
+function submitMockExam(autoSubmitted) {
+  clearInterval(mockTimer);
+  let correct = 0;
+  const log = mockPool.map((q, i) => {
+    const selected = mockAnswers[i];
+    const isCorrect = selected === q.correct_answer;
+    if (isCorrect) correct++;
+    return {
+      question: q.question, options: q.shuffledOptions, correct_answer: q.correct_answer,
+      selected: selected || null, isCorrect: !!selected && isCorrect,
+      reviewed: q.reviewed, flagged: !!mockFlags[i],
+    };
+  });
+  sessionLog = log;
+  score = correct;
+  mockSubmitted = {
+    total: mockPool.length, timeUsed: MOCK_SECONDS - mockTimeLeft, autoSubmitted,
+    unanswered: mockPool.length - Object.keys(mockAnswers).length,
+    flaggedCount: Object.keys(mockFlags).filter(k => mockFlags[k]).length,
+  };
+  showMockResults();
+}
+
+function showMockResults() {
+  showScreen('results');
+  lastReviewMode = 'mock';
+  const { total, timeUsed, autoSubmitted, unanswered, flaggedCount } = mockSubmitted;
+  const pct = Math.round((score / total) * 100);
+  const mins = Math.floor(timeUsed / 60), secs = timeUsed % 60;
+
+  document.getElementById('results-summary').textContent = autoSubmitted
+    ? 'Time ran out \u2014 your exam was submitted automatically.'
+    : 'Mock exam submitted.';
+  document.getElementById('results-meta').textContent =
+    `Time used: ${mins}m ${secs}s \u00b7 Unanswered: ${unanswered} \u00b7 Flagged: ${flaggedCount}`;
+
+  const scoreEl = document.getElementById('score-display');
+  scoreEl.textContent = `${score} / ${total} (${pct}%)`;
+  scoreEl.className = 'score-display ' + (pct >= 70 ? 'pass' : 'fail');
+}
+
+document.getElementById('review-btn').addEventListener('click', () => {
+  showScreen('review');
+  renderReview('all');
+});
+
+function renderReview(filter) {
+  const filtersEl = document.getElementById('review-filters');
+  const listEl = document.getElementById('review-list');
+
+  if (lastReviewMode === 'mock') {
+    filtersEl.style.display = 'flex';
+    const counts = {
+      all: sessionLog.length,
+      incorrect: sessionLog.filter(a => a.selected && !a.isCorrect).length,
+      correct: sessionLog.filter(a => a.isCorrect).length,
+      flagged: sessionLog.filter(a => a.flagged).length,
+      unanswered: sessionLog.filter(a => !a.selected).length,
+    };
+    filtersEl.innerHTML = Object.entries(counts).map(([key, n]) =>
+      `<button class="filter-btn ${filter === key ? 'active' : ''}" data-filter="${key}">
+        ${key[0].toUpperCase() + key.slice(1)} (${n})
+      </button>`
+    ).join('');
+    filtersEl.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => renderReview(btn.dataset.filter));
+    });
+  } else {
+    filtersEl.style.display = 'none';
+  }
+
+  let items = sessionLog;
+  if (filter === 'incorrect') items = items.filter(a => a.selected && !a.isCorrect);
+  if (filter === 'correct') items = items.filter(a => a.isCorrect);
+  if (filter === 'flagged') items = items.filter(a => a.flagged);
+  if (filter === 'unanswered') items = items.filter(a => !a.selected);
+
+  if (items.length === 0) {
+    listEl.innerHTML = '<div class="empty-state">Nothing to show for this filter.</div>';
+    return;
+  }
+
+  listEl.innerHTML = items.map((a) => {
+    const idx = sessionLog.indexOf(a) + 1;
+    const answeredText = a.selected
+      ? `<p class="a ${a.isCorrect ? 'right' : 'wrong'}">Your answer: ${a.selected} ${a.isCorrect ? '\u2713' : '\u2717'}</p>`
+      : `<p class="a wrong">Not answered</p>`;
+    return `
+    <div class="review-item ${a.isCorrect ? 'correct' : 'incorrect'}">
+      <p class="q"><b>Q${idx}.</b> ${a.question}</p>
+      ${answeredText}
+      ${!a.isCorrect ? `<p class="a right">Correct answer: ${a.correct_answer}</p>` : ''}
+      ${a.flagged ? '<p class="flag-note">Flagged during exam</p>' : ''}
+    </div>`;
+  }).join('');
+}
+
+document.getElementById('restart-btn').addEventListener('click', () => showScreen('setup'));
+document.getElementById('back-to-setup-btn').addEventListener('click', () => showScreen('setup'));
+
+window.addEventListener('beforeunload', (e) => {
+  if (screens.mock.classList.contains('active')) {
+    e.preventDefault();
+    e.returnValue = '';
+  }
+});
+
+loadData();
+</script>
+
+</body>
+</html>

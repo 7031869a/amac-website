@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MRCS — AMaC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0c1526;
+    --card: #16233F;
+    --card-border: #2b3752;
+    --accent: #A6373F;
+    --accent-soft: #3a1f24;
+    --text: #EDEEF2;
+    --text-dim: #9AA4BD;
+    --font-head: 'Fraunces', serif;
+    --font-body: 'Outfit', sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    line-height: 1.5;
+  }
+  a { color: inherit; }
+
+  .site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 18px 28px;
+    border-bottom: 1px solid var(--card-border);
+  }
+  .site-header h1 {
+    font-family: var(--font-head);
+    font-weight: 600;
+    font-size: 20px;
+    margin: 0;
+  }
+  .site-header nav a {
+    text-decoration: none;
+    color: var(--text-dim);
+    margin-left: 18px;
+    font-size: 14px;
+  }
+  .site-header nav a:hover { color: var(--text); }
+
+  main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 56px 20px 90px;
+  }
+
+  .hero h2 {
+    font-family: var(--font-head);
+    font-weight: 700;
+    font-size: 34px;
+    margin: 0 0 12px;
+    max-width: 20ch;
+  }
+  .hero p {
+    color: var(--text-dim);
+    font-size: 16px;
+    max-width: 56ch;
+    margin: 0 0 44px;
+  }
+
+  .door-grid {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .door {
+    flex: 1 1 320px;
+    display: flex;
+    flex-direction: column;
+    background: var(--card);
+    border-top: 3px solid var(--accent);
+    border-left: 3px solid var(--accent);
+    border-right: 1px solid var(--card-border);
+    border-bottom: 1px solid var(--card-border);
+    border-radius: 8px;
+    padding: 28px 26px;
+    text-decoration: none;
+    color: var(--text);
+    transition: transform 0.15s ease, border-color 0.15s ease;
+  }
+  .door:hover {
+    transform: translateY(-4px);
+  }
+
+  .door .eyebrow {
+    font-size: 12px;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  .door h3 {
+    font-family: var(--font-head);
+    font-weight: 600;
+    font-size: 22px;
+    margin: 0 0 10px;
+  }
+  .door p.desc {
+    color: var(--text-dim);
+    font-size: 14px;
+    margin: 0 0 20px;
+    flex-grow: 1;
+  }
+
+  .door .stat-row {
+    display: flex;
+    gap: 22px;
+    margin-bottom: 20px;
+    padding-top: 18px;
+    border-top: 1px dashed var(--card-border);
+  }
+  .door .stat b {
+    display: block;
+    font-family: var(--font-head);
+    font-size: 22px;
+    font-weight: 600;
+  }
+  .door .stat span {
+    display: block;
+    font-size: 12px;
+    color: var(--text-dim);
+    margin-top: 2px;
+  }
+
+  .door .cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--accent);
+  }
+  .door:hover .cta { text-decoration: underline; }
+
+  .below-note {
+    margin-top: 36px;
+    color: var(--text-dim);
+    font-size: 13px;
+  }
+
+  footer {
+    text-align: center;
+    color: var(--text-dim);
+    font-size: 12px;
+    padding: 30px 20px 50px;
+  }
+
+  @media (max-width: 600px) {
+    main { padding: 40px 16px 60px; }
+    .hero h2 { font-size: 28px; }
+    .door { padding: 22px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <h1>AMaC — MRCS</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="mrcs.html">MRCS</a>
+  </nav>
+</header>
+
+<main>
+  <div class="hero">
+    <h2>MRCS exam preparation</h2>
+    <p>Two exams, two very different formats. Pick the one you're preparing for.</p>
+  </div>
+
+  <div class="door-grid">
+    <a class="door" href="mrcs-part-a.html">
+      <div class="eyebrow">PAPER 1 — APPLIED BASIC SCIENCE</div>
+      <h3>Part A Question Bank</h3>
+      <p class="desc">Single-best-answer questions across anatomy, physiology, pathology, microbiology, pharmacology, and the surgical principles papers. Practise by subject, or sit a full timed mock.</p>
+      <div class="stat-row">
+        <div class="stat"><b>631</b><span>questions, reviewed</span></div>
+        <div class="stat"><b>19</b><span>subjects</span></div>
+        <div class="stat"><b>180</b><span>min mock exam</span></div>
+      </div>
+      <span class="cta">Start Part A practice →</span>
+    </a>
+
+    <a class="door" href="mrcs-part-b.html">
+      <div class="eyebrow">PRINCIPLES OF SURGERY IN GENERAL — OSCE</div>
+      <h3>Part B Station Guide</h3>
+      <p class="desc">Structured walkthroughs for the clinical and communication stations — model performance for each scenario, rapid recall points, and cross-references between related stations.</p>
+      <div class="stat-row">
+        <div class="stat"><b>85</b><span>stations</span></div>
+        <div class="stat"><b>259</b><span>pages</span></div>
+      </div>
+      <span class="cta">Open the station guide →</span>
+    </a>
+  </div>
+
+  <p class="below-note">Not sure which paper you need first? Part A is sat before Part B in the exam sequence — most candidates work through the question bank first.</p>
+</main>
+
+<footer>
+  &copy; 2026 AMaC. Not affiliated with or endorsed by the Royal Colleges of Surgeons.
+</footer>
+
+</body>
+</html>
