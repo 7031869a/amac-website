@@ -616,17 +616,13 @@ async function loadData() {
     console.error(e);
     return;
   }
-  populateSubjects();
   if (pendingData.length === 0) {
     document.getElementById('pending-checkbox-row').style.display = 'none';
-    document.getElementById('bank-size-note').textContent =
-      `${reviewedData.length} clinically reviewed questions available.`;
   } else {
     document.getElementById('pending-sub-label').textContent =
       `${pendingData.length} additional questions that have passed duplicate-checking but not yet the full clinical accuracy review. Off by default.`;
-    document.getElementById('bank-size-note').textContent =
-      `${reviewedData.length} clinically reviewed questions available. Tick the box above to add ${pendingData.length} more that are duplicate-checked but pending review.`;
   }
+  populateSubjects();
 
   const mockNote = document.getElementById('mock-availability-note');
   if (reviewedData.length < MOCK_QUESTION_COUNT) {
@@ -647,8 +643,27 @@ function populateSubjects() {
       const count = pool.filter(d => d.subject === s).length;
       return `<option value="${s}">${s} (${count})</option>`;
     }).join('');
+  updateBankNote();
 }
 document.getElementById('include-pending').addEventListener('change', populateSubjects);
+
+// Live count for the current practice selection (as questions.html's #q-count).
+// Subjects below SMALL_SUBJECT_THRESHOLD get a qualifier so a short run isn't a surprise.
+const SMALL_SUBJECT_THRESHOLD = 10;
+function updateBankNote() {
+  const includePending = document.getElementById('include-pending').checked;
+  const pool = includePending ? [...reviewedData, ...pendingData] : reviewedData;
+  const subject = document.getElementById('subject-select').value;
+  const n = subject === 'all' ? pool.length : pool.filter(d => d.subject === subject).length;
+  let text = `${n} question${n !== 1 ? 's' : ''} available`;
+  if (subject !== 'all' && n < SMALL_SUBJECT_THRESHOLD) text += ' (a smaller question set)';
+  text += '.';
+  if (pendingData.length > 0 && !includePending) {
+    text += ` Tick the box above to add ${pendingData.length} more that are duplicate-checked but pending review.`;
+  }
+  document.getElementById('bank-size-note').textContent = text;
+}
+document.getElementById('subject-select').addEventListener('change', updateBankNote);
 
 document.getElementById('mode-practice-btn').addEventListener('click', () => {
   document.getElementById('mode-practice-btn').classList.add('active');
