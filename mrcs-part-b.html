@@ -143,16 +143,11 @@
     flex:1 1 30%;
     min-width:180px;
   }
-  .part-cell .n{
+  .part-cell .label{
     font-family:'Fraunces',serif;
-    font-size:26px;
+    font-size:19px;
     color:#fff;
     font-weight:600;
-  }
-  .part-cell .label{
-    color:var(--text-onDark-dim);
-    font-size:14px;
-    margin-top:4px;
   }
   .appendix-note{
     margin-top:18px;
@@ -213,9 +208,47 @@
     .chapter-item{flex:1 1 100%;}
     .hero .stats{gap:24px;}
   }
+
+  /* ── NAV (static JS-off fallback; nav.js replaces it with the shared MRCS nav) ──
+     Scoped to .nav-fallback so none of it reaches nav.js's .amac-nav. */
+  .nav-fallback{position:sticky;top:0;z-index:100;background:#0F1A2E;border-bottom:1px solid #1E2C46;font-family:'Outfit',sans-serif;}
+  .nav-fallback .nav-inner{max-width:1180px;margin:0 auto;padding:13px 26px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;}
+  .nav-fallback .nav-l{display:flex;align-items:center;gap:13px;}
+  .nav-fallback .brand{font-weight:600;letter-spacing:.1em;color:#C9A227;font-size:16px;text-decoration:none;}
+  .nav-fallback .door-tag{font-size:11px;color:#EA8A94;border-left:1px solid #28385A;padding-left:13px;letter-spacing:.1em;}
+  .nav-fallback .nav-links{display:flex;align-items:center;gap:16px;list-style:none;margin:0;padding:0;font-size:12.5px;flex-wrap:wrap;}
+  .nav-fallback .nav-links a{color:#C7D0E2;text-decoration:none;}
+  .nav-fallback .nav-links a:hover{color:#fff;}
+  .nav-fallback .nav-exit{color:#8593AE;font-size:11.5px;border-left:1px solid #28385A;padding-left:13px;}
+
+  /* ── FOOTER (house structure, as mrcp.html; footer.js appends the global band below) ── */
+  .site-foot{background:#0C1526;border-top:1px solid #1A2740;padding:34px 26px 26px;font-family:'Outfit',sans-serif;text-align:left;}
+  .site-foot .foot-inner{max-width:1180px;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:28px;border-bottom:1px solid #1E2C46;padding-bottom:26px;}
+  .site-foot .foot-brand{font-weight:600;letter-spacing:.1em;color:#C9A227;font-size:18px;}
+  .site-foot .foot-brand p{font-size:13px;color:#8593AE;margin:9px 0 0;max-width:36ch;font-weight:300;letter-spacing:normal;line-height:1.6;}
+  .site-foot .foot-col h4{color:#fff;font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin:0 0 12px;}
+  .site-foot .foot-col a{display:block;color:#C7D0E2;font-size:13.5px;margin-bottom:8px;font-weight:300;text-decoration:none;transition:.2s;}
+  .site-foot .foot-col a:hover{color:#EA8A94;}
+  .site-foot .foot-legal{max-width:74ch;margin:22px auto 0;font-size:11.5px;line-height:1.65;color:#6B7794;text-align:center;}
+  .site-foot .foot-bottom{max-width:1180px;margin:10px auto 0;font-size:12px;color:#6B7794;text-align:center;}
+  #library{scroll-margin-top:72px;}
 </style>
 </head>
 <body>
+
+<!-- NAV (MRCS door; static fallback, nav.js replaces it with the shared nav) -->
+<nav data-door="mrcs" class="nav-fallback"><div class="nav-inner">
+  <div class="nav-l">
+    <a href="index.html" class="brand">AMaC</a>
+    <span class="door-tag">MRCS</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="mrcs-part-a.html">MRCS A question bank</a></li>
+    <li><a href="mrcs-part-b.html">MRCS B preview</a></li>
+    <li><a href="mrcs.html">MRCS overview</a></li>
+    <li><a href="index.html" class="nav-exit">← all exams</a></li>
+  </ul>
+</div></nav>
 
 <header class="hero">
   <div class="wrap">
@@ -224,11 +257,10 @@
     <h1>MRCS Part B, examiner style.</h1>
     <p class="lede">Anatomy, surgical pathology, applied science, critical care, communication, history-taking, physical examination, and procedural skills — built around the exam's own verified structure, not a generic checklist.</p>
     <div class="stats">
-      <div class="stat"><b>78</b><span>verified exam stations</span></div>
       <div class="stat"><b>4</b><span>transferable chapters</span></div>
       <div class="stat"><b>9</b><span>facts checked against current guidance</span></div>
     </div>
-    <a class="cta" href="#library">Enter the station library →</a>
+    <a class="cta" href="#library">See what's planned →</a>
   </div>
 </header>
 
@@ -258,20 +290,20 @@
 
 <section class="library" id="library">
   <div class="wrap">
-    <h2>78 stations, across nine parts.</h2>
+    <h2>The planned station library, across nine parts.</h2>
     <p>Every station follows the same structure: what you're asked to do, why the examiner is testing it, what a strong answer sounds like, and how candidates specifically fail.</p>
     <div class="parts">
-      <div class="part-cell"><div class="n">26</div><div class="label">Anatomy</div></div>
-      <div class="part-cell"><div class="n">4</div><div class="label">Surgical Pathology</div></div>
-      <div class="part-cell"><div class="n">4</div><div class="label">Applied Surgical Science</div></div>
-      <div class="part-cell"><div class="n">6</div><div class="label">Critical Care</div></div>
-      <div class="part-cell"><div class="n">10</div><div class="label">Communication</div></div>
-      <div class="part-cell"><div class="n">10</div><div class="label">History-Taking</div></div>
-      <div class="part-cell"><div class="n">11</div><div class="label">Physical Examination</div></div>
-      <div class="part-cell"><div class="n">7</div><div class="label">Procedural Skills</div></div>
-      <div class="part-cell"><div class="n">7</div><div class="label">Appendix</div></div>
+      <div class="part-cell"><div class="label">Anatomy</div></div>
+      <div class="part-cell"><div class="label">Surgical Pathology</div></div>
+      <div class="part-cell"><div class="label">Applied Surgical Science</div></div>
+      <div class="part-cell"><div class="label">Critical Care</div></div>
+      <div class="part-cell"><div class="label">Communication</div></div>
+      <div class="part-cell"><div class="label">History-Taking</div></div>
+      <div class="part-cell"><div class="label">Physical Examination</div></div>
+      <div class="part-cell"><div class="label">Procedural Skills</div></div>
+      <div class="part-cell"><div class="label">Appendix</div></div>
     </div>
-    <p class="appendix-note">The appendix holds seven further topics whose presence in the current exam rotation hasn't been independently confirmed — kept separate so the 78 verified stations are never in question.</p>
+    <p class="appendix-note">The appendix holds seven further topics whose presence in the current exam rotation hasn't been independently confirmed — kept separate so the verified stations are never in question.</p>
   </div>
 </section>
 
@@ -309,9 +341,34 @@
 <section class="final-cta">
   <div class="wrap">
     <h2>The full station library and the four chapters are still in preparation.</h2>
-    <a class="cta" href="#library">Enter MRCS →</a>
+    <a class="cta" href="mrcs-part-a.html">Practise MRCS A while you wait →</a>
   </div>
 </section>
 
+<footer class="site-foot">
+  <div class="foot-inner">
+    <div class="foot-brand">
+      AMaC
+      <p>Examiner-led preparation for the UK medical and surgical examinations. Making the difficult, easy.</p>
+    </div>
+    <div class="foot-col">
+      <h4>MRCS</h4>
+      <a href="mrcs-part-a.html">MRCS A question bank</a>
+      <a href="mrcs-part-b.html">MRCS B preview</a>
+      <a href="mrcs.html">MRCS overview</a>
+    </div>
+    <div class="foot-col">
+      <h4>AMaC</h4>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="index.html">← All exams</a>
+    </div>
+  </div>
+  <p class="foot-legal">Not affiliated with or endorsed by the Royal Colleges of Surgeons.</p>
+  <div class="foot-bottom">&copy; 2026 A. Mansour &amp; Colleagues (AMaC). All rights reserved.</div>
+</footer>
+
+<script src="nav.js" defer></script>
+<script src="footer.js" defer></script>
 </body>
 </html>

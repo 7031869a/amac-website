@@ -108,6 +108,7 @@
         { href: "plab2.html",     label: "PLAB 2" },
         { href: "plab1-hub.html", label: "PLAB 1" },
         { href: "frcs.html",      label: "FRCS Part 2" },
+        { href: "mrcs.html",      label: "MRCS" },
         { href: "mrcp.html",      label: "MRCP" }
       ])
     + col("Free resources", [

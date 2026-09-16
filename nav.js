@@ -69,6 +69,15 @@
         { href: "#waitlist", label: "Join the waitlist" }
       ]
     },
+    mrcs: {
+      tag: "MRCS",
+      accent: "#A6373F", accentText: "#EA8A94",
+      links: [
+        { href: "mrcs-part-a.html", label: "MRCS A question bank" },
+        { href: "mrcs-part-b.html", label: "MRCS B preview" },
+        { href: "mrcs.html",        label: "MRCS overview" }
+      ]
+    },
     mrcp1: {
       tag: "MRCP PART 1",
       accent: "#8A6FD1", accentText: "#B79EE8",
