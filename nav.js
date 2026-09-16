@@ -27,7 +27,8 @@
         { href: "cpsa-stations.html", label: "CPSA stations" },
         { href: "questions.html",     label: "AKT bank" },
         { href: "say-never-say.html", label: "Say / Never" },
-        { href: "tools.html",         label: "Clinical reference" }
+        { href: "tools.html#clinical-reference", label: "Clinical reference" },
+        { href: "tools.html",         label: "Study Tools" }
       ]
     },
     plab1: {
@@ -37,7 +38,8 @@
         { href: "plab1.html",        label: "Question bank" },
         { href: "plab1-exams.html",  label: "Mock papers" },
         { href: "plab1-study.html",  label: "Study mode" },
-        { href: "tools.html",        label: "Clinical reference" }
+        { href: "tools.html#clinical-reference", label: "Clinical reference" },
+        { href: "tools.html",        label: "Study Tools" }
       ]
     },
     plab2: {
