@@ -14,7 +14,9 @@ The bank lives in one array in `cpsa-stations.html`:
 const STATIONS = [ ... ];
 ```
 
-The first ~238 entries are minified onto a single line; everything appended since
+The first 213 entries are minified onto a single line (an earlier version of this
+checklist said ~238; that figure was wrong from the start — the line held 213
+when this file was added at `0369d3b`); everything appended since
 is pretty-printed with `JSON.stringify(station, null, 1)`. Match that style when
 appending — new objects go at the end of the array, comma-separated, no trailing
 comma.
@@ -27,8 +29,15 @@ Before merging, check the incoming batch against the live bank:
   `id, num, title, category, mlaTheme, contentMap, capabilities, level, setting,
   time, yourRole, scenario, markingGrid, fail, pass, distinction, hook,
   examinerTrap, thinkSayDo, markTriggers`
-- no emoji in any field. The only non-ASCII characters the bank uses are
-  `✓ ✗ · —` (and `°` where a temperature is quoted)
+- no emoji in any field. Ordinary typographic and clinical non-ASCII characters
+  are legitimate and already in the bank — do not strip them. As of 282 stations
+  the full set is:
+  - marks and punctuation: `✓ ✗ · — – ’ “ ”`
+  - symbols: `° µ → × ± ≤ ≥ ≠ é`
+  - sub/superscripts: `₂ ₃ ² ⁹ ⁺ ⁻`
+
+  A character outside this set isn't automatically wrong (a new unit or
+  formula may need one), but check it isn't an emoji or a paste artefact.
 
 After merging, confirm the page still works:
 
@@ -79,12 +88,21 @@ Easy to miss: the two `.door-stats` blocks on `index.html` / `landing.html`, and
 the `.hs-num` / `.tc-badge` pair on `ukmla.html`. Batch briefs have historically
 listed only the meta descriptions.
 
-**False positives — do not change these.** The count appears as a coincidental
-number inside page data:
+**False positives — do not change these.** The count can appear as a coincidental
+number inside page data. This list is keyed to a specific count, so it goes stale
+every batch — re-run the grep for the old count and re-check each hit rather than
+trusting it.
 
-- `flashcards.html` — inside the `const CARDS` array
-- `questions.html` — inside the `const QUESTIONS` array
-- `plab1-qc-notes.md` — inside a list of question IDs
+At 282 (after `7f7dfe4`), the only HTML false positive is:
+
+- `flashcards.html` — inside the `const CARDS` array (`"id": 282`)
+
+(`book-previews/volume2_preview.pdf` and `book-samples/volume2_sample_chapter.pdf`
+also match `282`, but the `--include=*.html` grep never reaches them.)
+
+An earlier version of this list also named `questions.html` (`const QUESTIONS`)
+and `plab1-qc-notes.md` (a list of question IDs). Those were hits for `262`, an
+older count; neither file matched `275` or `282`.
 
 ## 4. Categories
 
