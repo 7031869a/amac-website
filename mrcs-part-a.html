@@ -559,6 +559,10 @@ const DATA_FILES = {
 };
 const MOCK_QUESTION_COUNT = 180;
 const MOCK_SECONDS = 180 * 60;
+// Bank 1 has completed full clinical review; Banks 2-4 are duplicate-checked
+// and cross-referenced, pending sign-off. reviewed.json does not record which
+// is which (every record says reviewed: true), so this count is kept by hand.
+const CLINICALLY_REVIEWED_COUNT = 318;
 
 let reviewedData = [];
 let pendingData = [];
@@ -629,7 +633,7 @@ async function loadData() {
     mockNote.textContent = `Only ${reviewedData.length} reviewed questions are available so far — a full ${MOCK_QUESTION_COUNT}-question mock needs more before it can run.`;
     document.getElementById('start-mock-btn').disabled = true;
   } else {
-    mockNote.textContent = `Drawing from ${reviewedData.length} clinically reviewed questions.`;
+    mockNote.textContent = `Drawing from ${reviewedData.length} questions: ${CLINICALLY_REVIEWED_COUNT} fully clinically reviewed; the rest are duplicate-checked and cross-referenced, pending final clinical sign-off.`;
   }
 }
 
