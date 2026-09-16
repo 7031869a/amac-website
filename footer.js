@@ -112,7 +112,7 @@
         { href: "mrcp.html",      label: "MRCP" }
       ])
     + col("Free resources", [
-        { href: "tools.html",                 label: "Clinical reference" },
+        { href: "tools.html#clinical-reference", label: "Clinical reference" },
         { href: "uk-consultation-guide.html", label: "The UK consultation" },
         { href: "recovery-room.html",         label: "The Recovery Room" },
         { href: "instant-fail-atlas.html",    label: "Instant Fail Atlas" }
