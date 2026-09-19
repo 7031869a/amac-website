@@ -29,6 +29,24 @@ covered only MH/HIST/RX. The TEL check ran afterwards and found TEL-11 to be
 a third 6-week postnatal depression station, so it was removed from the live
 bank in `f73fc47`.
 
+**What counts as a duplicate: the station, not the skeleton** (Dr Carter,
+2026-09-19). Duplication is judged on the content tested and the reasoning
+demanded, and above all on what the distinction tier is marked on: for
+example, a process boundary (attend and assess before prescribing) versus a
+knowledge boundary (name the pharmacological mechanism and its risks). It is
+not judged on whether two stations share a setup skeleton, such as "urgent
+out-of-hours call from an assertive nurse". Two stations that share a
+skeleton but test different content and mark the distinction tier on
+different things are not duplicates. Record the skeleton overlap in the
+duplication table and give the verdict on content and distinction-tier
+marking. Example: TEL-12 (care home diuretic request) and mix-34 (ward
+sedation request) share a skeleton, but TEL-12's distinction tier is marked
+on a knowledge boundary and mix-34's on a process boundary, so both stay.
+TEL-11 was pulled because its tested content repeated comm-09 and mh-09, not
+because of its format.
+
+## 1. Merge the stations
+
 The bank lives in one array in `cpsa-stations.html`:
 
 ```js
