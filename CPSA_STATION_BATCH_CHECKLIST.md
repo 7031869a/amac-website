@@ -6,7 +6,28 @@ keeping the advertised station count consistent across the site.
 Current total: **282** stations (as of the batch 3 commit that completed the book
 screening; previously 275 at `395ff33`).
 
-## 1. Merge the stations
+## 0. Release gate — do not merge or push until both are done
+
+Standing rule from Dr Carter (2026-09-19). A batch goes live only when **both**
+of these are complete for **every** station in it:
+
+1. Dr Carter's full clinical sign-off on the final text, with no open rounds.
+   A later review round reopens sign-off, even if an earlier round cleared it.
+2. A category duplication check against the live bank: each new station
+   compared field by field (not by title) with every real station in its own
+   category, plus the nearest cross-category analogues. Check both caller
+   type/pressure dynamic and the core mechanism being tested. The results are
+   written up as a draft → nearest real station → what's different table.
+
+A status line in a draft file ("all 9 duplication-checked", "cleared") is not
+evidence. Before pushing, confirm the table exists and names each station in
+the batch. Stations whose check hasn't run are held back, even if the rest of
+the batch goes live.
+
+Why: commit `4ea7355` pushed nine stations when the duplication check had
+covered only MH/HIST/RX. The TEL check ran afterwards and found TEL-11 to be
+a third 6-week postnatal depression station, so it was removed from the live
+bank in `f73fc47`.
 
 The bank lives in one array in `cpsa-stations.html`:
 
