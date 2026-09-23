@@ -9,7 +9,7 @@ design you chose, with your real Master Cards content folded into Study Tools.
 | index.html       | Homepage — 3D Master Series book shelf (your preferred design)        |
 | books.html       | The Master Series — three volumes in detail                           |
 | tools.html       | Study Tools hub — links to the live tools below                       |
-| mastercards.html | **Interactive Master Cards** — your 15 detailed chapters (57–72)      |
+| mastercards.html | **Interactive Master Cards** — 67 PLAB 2 stations, variable sections |
 | osce.html        | **OSCE Stations** — 18-station index, sorted by risk tier             |
 | about.html       | About — the AMaC story / examiner-led method                          |
 | contact.html     | Contact — message form, branded email                                 |
@@ -24,8 +24,9 @@ Keep all files together in the repo root (no sub-folders); they link by filename
   hand (the on-page counts update themselves; 14 sites across 6 files do not).
 
 ## How this was assembled
-- mastercards.html reuses your chapter content **verbatim** from
-  amac_plab2_complete_72chapters_v6 — no clinical wording was changed or invented.
+- mastercards.html reuses your station content **verbatim** from the PLAB 2 Master
+  Series manuscripts (Volume 1 v25, Volume 2 v8, Volume 3 v5) — no clinical wording
+  was changed or invented.
 - osce.html uses your station titles/risk tiers/summaries. Detailed walkthroughs are
   marked "In preparation" — they were NOT auto-generated.
 
