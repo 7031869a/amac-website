@@ -264,7 +264,7 @@ footer{background:var(--navy-deep);color:#c4ccd8;padding:36px 28px 20px;}
       <option value="Foundation">Foundation</option>
       <option value="Safety">Safety</option>
     </select>
-    <button class="fbtn active" onclick="filterType('all',this)">All (1,654)</button>
+    <button class="fbtn active" id="allTypeBtn" onclick="filterType('all',this)">All (1,654)</button>
     <button class="fbtn t-curve" onclick="filterType('curveball',this)">🟣 Curveball</button>
     <button class="fbtn t-trap" onclick="filterType('examiner_trap',this)">🔴 Examiner Trap</button>
     <button class="fbtn t-miss" onclick="filterType('critical_miss',this)">🔴 Critical Miss</button>
@@ -3979,6 +3979,9 @@ function prevCard(){if(studyIdx>0){studyIdx--;renderSingle();}}
 function nextCard(){if(studyIdx<studyList.length-1){studyIdx++;renderSingle();}}
 
 renderGrid();
+
+/* self-counting "All" button, sourced from the live CARDS array so it never drifts */
+(function(){var b=document.getElementById('allTypeBtn');if(b)b.textContent='All ('+CARDS.length.toLocaleString('en-GB')+')';})();
 </script>
 <script src="nav.js" defer></script>
 <script src="footer.js" defer></script>
