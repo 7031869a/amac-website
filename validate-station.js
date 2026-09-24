@@ -16,7 +16,7 @@ const BANNED = /\b(reviewed|reviewers?|unreviewed|pending review|under review|aw
 // Framing the MRCS does not use: no 'instant fail', 'kill zone' or 'hurdle' on candidate-facing text.
 const BANNED_FRAMING = /\b(instant fail|kill zone|hurdle)\b/i;
 const COMPONENTS = ['Applied Knowledge', 'Applied Skills'];
-const GRID_BANDS = ['fail', 'borderline', 'pass', 'high'];
+const GRID_BANDS = ['fail', 'pass', 'high'];  // required on every row; 'borderline' is optional
 const MODEL_BANDS = ['fail', 'borderline', 'pass', 'high'];
 const BUDGET = { brief: 120, before: 60, flow: 40, cell: 25, fail: 150, pass: 200, borderline: 200, high: 300, failure: 40, knowledge: 150, recall: 80 };
 const REQUIRED = ['id', 'exam', 'title', 'type', 'header', 'brief', 'beforeYouWalkIn', 'flow', 'grid', 'performances', 'failures', 'knowledge', 'recall', 'sources', 'partner'];
@@ -52,6 +52,7 @@ function validate(file) {
       if (blank(r[band])) errors.push(`${r.id} ${band} descriptor is empty`);
       else if (words(r[band]) > BUDGET.cell * 1.2) warnings.push(`${r.id} ${band} is ${words(r[band])} words (budget ${BUDGET.cell})`);
     }
+    if (r.borderline !== undefined && blank(r.borderline)) errors.push(`${r.id} borderline descriptor is present but empty (remove it or fill it in)`);
     if (domains && !domains.includes(r.domain)) errors.push(`${r.id} domain "${r.domain}" is not a ${st.exam} domain`);
     const hasNumber = /\d/.test(`${r.pass} ${r.high}`);
     if (hasNumber && !r.source) errors.push(`${r.id} contains a number but has no source`);

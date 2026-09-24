@@ -20,7 +20,7 @@ A station is used four ways. The current bank mixes them into one long page. Thi
 
 1. **One master record per station.** Views are generated, never hand-written.
 2. **The scoring grid is the single source of truth.** Every mark trigger, failure, model line and examiner prompt must point to a grid row.
-3. **Every grid row has all four band descriptors:** Fail, Borderline, Pass, High-performance. No blank or "—" cells.
+3. **Every grid row has Fail, Pass and High-performance descriptors.** Borderline is optional per row: add it only where it teaches something specific. No blank or "—" cells. Partner and Solo modes also ask for an **overall rating** of the whole station (Pass / Borderline / Fail), because that is how the exam gives borderline.
 4. **Every row's Pass and High-performance cells must be demonstrated by at least one tagged line in the models.** Every Fail cell must be demonstrated by the Fail model or a failure entry. A Borderline model is optional.
 5. **Each fact lives in one place.** Other sections reference it; they don't restate it.
 6. **Knowledge removal test:** if removing a fact would not change performance in this station, it doesn't belong.
@@ -40,7 +40,7 @@ Word budgets are ceilings, not targets.
 | 2 | **Candidate brief** | Exactly what is read outside the door. No hints, no diagnosis in the task unless the real format would give it. | 120 |
 | 3 | **Before you walk in** | Three fields only: *Frame* (one line), *Biggest trap*, *First phrase/action* | 60 |
 | 4 | **Station flow** | Functional phases only (e.g. Assess → Interpret → Act → Respond to prompts). Timing is added **only** when supported by published format information. | 40 |
-| 5 | **Scoring grid** | 5–10 rows. Each row: exam domain tag, short label, Fail / Borderline / Pass / High-performance descriptors, optional source reference | 25 per cell |
+| 5 | **Scoring grid** | 5–10 rows. Each row: exam domain tag, short label, Fail / Pass / High-performance descriptors (Borderline optional), optional source reference | 25 per cell |
 | 6–8 | **Fail / Pass / High-performance performances** (Borderline optional) | Examiner–candidate dialogue. Each candidate line tagged with the grid row(s) and band it demonstrates. Lines that move a candidate up a band are highlighted in Learn view automatically. Performances must differ in substance, not just length. | 150 / 200 / 300 |
 | 9 | **Why marks are lost** | 3–5 entries, each tied to one grid row, stating the wrong move and the consequence | 40 each |
 | 10 | **Recovery lines** | Station-specific only. Generic lines live in the shared library (§6). | 3 lines |
@@ -127,7 +127,7 @@ The viewer (`station-viewer.html`) renders all four views from this file. Guidel
 `node validate-station.js <file.json>` fails the station if:
 
 1. Any required field is missing or the station type is not in the vocabulary.
-2. Any of the four grid cells in a row is empty or "—", or `header.domain` is not Applied Knowledge / Applied Skills.
+2. A row's Fail, Pass or High-performance cell is empty (or a Borderline cell is present but empty) or "—", or `header.domain` is not Applied Knowledge / Applied Skills.
 3. Any grid row's Pass or High-performance descriptor has no tagged model line.
 4. Any grid row's Fail descriptor has no tagged Fail-model line or failure entry.
 5. Any reveal, push question, curveball, failure or knowledge item references a non-existent row or source.

@@ -1,3 +1,6 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>MRCS Station Viewer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,6 +31,7 @@
   --dist:#5CC99D; --dist-soft:#1D3A3A; --focus:#8FB0F5;
 }
 *{box-sizing:border-box}
+[hidden]{display:none!important}
 body{background:var(--bg);color:var(--text);font:400 15px/1.55 var(--body);margin:0}
 .wrap{max-width:980px;margin:0 auto;padding-inline:16px;padding-block:20px 56px}
 h1,h2,h3{font-family:var(--display);font-weight:650;text-wrap:balance;margin:0}
@@ -78,6 +82,22 @@ th.b-fail{color:var(--fail)} th.b-borderline{color:var(--bord)} th.b-pass{color:
 .rowlab .id{font-variant-numeric:tabular-nums;color:var(--muted);font-weight:500;margin-right:6px}
 .dom{display:block;font-size:.72rem;color:var(--muted);font-weight:400;margin-top:2px}
 .src{font-size:.72rem;color:var(--muted)}
+/* band buttons: one band's content at a time (Master Card pattern) */
+.bandtabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
+.bandtabs button,.pickbtns button{min-height:44px;border:1px solid var(--line);background:var(--surface);border-radius:8px;font-weight:500;color:var(--muted);padding:6px 4px;font-size:.84rem;line-height:1.2}
+.bandtabs button:hover,.pickbtns button:hover{background:var(--surface-2)}
+.bandtabs button[aria-pressed="true"].fail,.pickbtns button[aria-pressed="true"].fail{background:var(--fail-soft);color:var(--fail);border-color:var(--fail)}
+.bandtabs button[aria-pressed="true"].borderline,.pickbtns button[aria-pressed="true"].borderline{background:var(--bord-soft);color:var(--bord);border-color:var(--bord)}
+.bandtabs button[aria-pressed="true"].pass,.pickbtns button[aria-pressed="true"].pass{background:var(--pass-soft);color:var(--pass);border-color:var(--pass)}
+.bandtabs button[aria-pressed="true"].high,.pickbtns button[aria-pressed="true"].high{background:var(--dist-soft);color:var(--dist);border-color:var(--dist)}
+.gridlist{display:grid;gap:8px}
+.grow{display:grid;gap:8px;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+.grow .rowlab{white-space:normal}
+.grow .desc{padding-left:10px;border-left:3px solid var(--line)}
+.grow .desc.fail{border-color:var(--fail)} .grow .desc.borderline{border-color:var(--bord)} .grow .desc.pass{border-color:var(--pass)} .grow .desc.high{border-color:var(--dist)}
+.grow .desc .bl{font-size:.72rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);display:block}
+.pickbtns{display:grid;grid-template-columns:repeat(var(--n,4),minmax(0,1fr));gap:6px}
+.overall{display:grid;gap:8px;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:var(--surface-2)}
 td.pick{cursor:pointer;border-left:1px solid var(--line)}
 td.pick:hover{background:var(--surface-2)}
 td.pick.sel-fail{background:var(--fail-soft);box-shadow:inset 3px 0 0 var(--fail)}
@@ -161,6 +181,9 @@ details p{margin-top:6px;color:var(--muted)}
 
 @media (max-width:720px){
   .walkin,.two{grid-template-columns:1fr}
+  .bandtabs button,.pickbtns button{font-size:.78rem;padding:6px 2px}
+  .brief dl{grid-template-columns:1fr;gap:2px}
+  .brief dd{margin-bottom:8px}
   .line{grid-template-columns:1fr;gap:2px}
   .recall dl{grid-template-columns:1fr}
   .recall dt{padding-bottom:0;border-bottom:0}
@@ -187,8 +210,8 @@ details p{margin-top:6px;color:var(--muted)}
   const DOMAIN_LABEL={"clinical-knowledge":"Clinical knowledge","clinical-skill":"Clinical & technical skill","communication":"Communication","professionalism":"Professionalism"};
   const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
   const $=s=>document.querySelector(s);
-  let S=null, mode="learn", perfBand="high";
-  const partnerScore={}, soloScore={};
+  let S=null, mode="learn", perfBand="high", gridBand="pass";
+  const partnerScore={}, soloScore={}, partnerOverall={v:null}, soloOverall={v:null};
   let solo={step:0}, timer=null;
 
   function rowById(id){return S.grid.find(r=>r.id===id)}
@@ -216,14 +239,26 @@ details p{margin-top:6px;color:var(--muted)}
       <dt>Task</dt><dd><strong>${esc(b.task)}</strong></dd></dl></div>`;
   }
 
+  function rowHead(r){
+    return `<div class="rowlab"><span class="id">${r.id}</span>${esc(r.label)}<span class="dom">${esc(DOMAIN_LABEL[r.domain]||r.domain)}${r.source?` · Source: ${esc(srcName(r.source))}`:""}</span></div>`;
+  }
+  function tabBands(){ return BANDS.filter(b=>b!=="borderline"||S.grid.some(r=>r.borderline)); }
+  function bandTabsHTML(){
+    return `<div class="bandtabs" id="gridtabs" role="group" aria-label="Show band">${tabBands().map(b=>`<button class="${b}" data-band="${b}" aria-pressed="${gridBand===b}">${BAND_LABEL[b]}</button>`).join("")}</div>`;
+  }
+  function gridListHTML(){
+    const rows=S.grid.filter(r=>r[gridBand]);
+    const note=gridBand==="borderline"?`<p class="note">Borderline is shown only for rows where it has a specific marker. In the exam, borderline is an overall judgement of the whole station.</p>`:"";
+    return `${note}<div class="gridlist">${rows.map(r=>`<div class="grow">${rowHead(r)}<div class="desc ${gridBand}">${esc(r[gridBand])}</div></div>`).join("")}</div>`;
+  }
+  // Scoring (Partner/Solo): tap a band per row; only the chosen band's descriptor shows.
   function gridHTML(scoreObj){
-    const pick=!!scoreObj;
-    return `<div class="tbl"><table>
-      <thead><tr><th>Row</th>${BANDS.map(b=>`<th class="b-${b}">${BAND_LABEL[b]}</th>`).join("")}</tr></thead>
-      <tbody>${S.grid.map(r=>`<tr>
-        <td class="rowlab"><span class="id">${r.id}</span>${esc(r.label)}<span class="dom">${esc(DOMAIN_LABEL[r.domain]||r.domain)}</span>${r.source?`<span class="src">Source: ${esc(srcName(r.source))}</span>`:""}</td>
-        ${BANDS.map(b=>`<td class="${pick?"pick":""} ${pick&&scoreObj[r.id]===b?"sel-"+b:""}" ${pick?`data-row="${r.id}" data-band="${b}" tabindex="0" role="button" aria-pressed="${scoreObj[r.id]===b}"`:""}>${esc(r[b])}</td>`).join("")}
-      </tr>`).join("")}</tbody></table></div>`;
+    return `<div class="gridlist">${S.grid.map(r=>{
+      const sel=scoreObj[r.id];
+      return `<div class="grow">${rowHead(r)}
+        <div class="pickbtns" style="--n:${BANDS.filter(b=>r[b]).length}" role="group" aria-label="${esc(r.id)} band">${BANDS.filter(b=>r[b]).map(b=>`<button class="${b}" data-row="${r.id}" data-band="${b}" aria-pressed="${sel===b}">${BAND_LABEL[b]}</button>`).join("")}</div>
+        ${sel?`<div class="desc ${sel}"><span class="bl">${BAND_LABEL[sel]}</span>${esc(r[sel])}</div>`:`<div class="desc"><span class="bl">Pass looks like</span><span class="muted">${esc(r.pass)}</span></div>`}
+      </div>`;}).join("")}</div>`;
   }
 
   function tallyHTML(scoreObj){
@@ -234,11 +269,23 @@ details p{margin-top:6px;color:var(--muted)}
   }
 
   function bindGrid(scoreObj,rerender){
-    document.querySelectorAll("td.pick").forEach(td=>{
-      const act=()=>{const r=td.dataset.row,b=td.dataset.band;scoreObj[r]=scoreObj[r]===b?undefined:b;if(!scoreObj[r])delete scoreObj[r];rerender();};
-      td.addEventListener("click",act);
-      td.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();act();}});
-    });
+    document.querySelectorAll(".pickbtns button[data-row]").forEach(btn=>btn.addEventListener("click",()=>{
+      const r=btn.dataset.row,b=btn.dataset.band;
+      if(scoreObj[r]===b)delete scoreObj[r]; else scoreObj[r]=b;
+      rerender();
+    }));
+  }
+
+  // The exam's own overall judgement for the whole station.
+  function overallHTML(obj){
+    return `<div class="overall"><span class="eyebrow">Overall rating for the whole station</span>
+      <div class="pickbtns" style="--n:3" role="group" aria-label="Overall rating">${["fail","borderline","pass"].map(b=>`<button class="${b}" data-overall="${b}" aria-pressed="${obj.v===b}">${BAND_LABEL[b]}</button>`).join("")}</div>
+      <span class="muted" style="font-size:.84rem">This mirrors the exam, which rates each station pass, borderline or fail.</span></div>`;
+  }
+  function bindOverall(obj,rerender){
+    document.querySelectorAll("[data-overall]").forEach(btn=>btn.addEventListener("click",()=>{
+      obj.v=obj.v===btn.dataset.overall?null:btn.dataset.overall; rerender();
+    }));
   }
 
   function dialogueHTML(band){
@@ -277,9 +324,9 @@ details p{margin-top:6px;color:var(--muted)}
       <section><h2>Candidate brief</h2>${briefHTML()}</section>
       <section><h2>Scoring grid</h2>
         <p class="note">In the exam each station is marked out of 20 with an overall rating of pass, borderline or fail. <strong>High-performance</strong> is AMaC's teaching label for what lifts a pass towards full marks. It is not an official grade.</p>
-        ${gridHTML(null)}</section>
-      <section><h2>Three performances</h2>
-        <div class="seg" role="group" aria-label="Performance band">${BANDS.filter(b=>S.performances[b]).map(b=>`<button class="${b}" data-band="${b}" aria-pressed="${perfBand===b}">${BAND_LABEL[b]}</button>`).join("")}</div>
+        ${bandTabsHTML()}<div id="gridbody">${gridListHTML()}</div></section>
+      <section><h2>Model performances</h2>
+        <div class="seg" id="perfseg" role="group" aria-label="Performance band">${BANDS.filter(b=>S.performances[b]).map(b=>`<button class="${b}" data-band="${b}" aria-pressed="${perfBand===b}">${BAND_LABEL[b]}</button>`).join("")}</div>
         <p class="note">Highlighted lines are the ones that earn this band. Tags show which grid row each line scores.</p>
         <div id="dlg">${dialogueHTML(perfBand)}</div></section>
       <section><h2>Why marks are lost</h2><div class="cards">${S.failures.map(f=>`<div class="panel fl"><span class="row">${f.row} · ${esc(rowById(f.row)?.label)}</span><p><strong>${esc(f.move)}</strong></p><p class="muted">${esc(f.consequence)}</p></div>`).join("")}</div></section>
@@ -288,9 +335,14 @@ details p{margin-top:6px;color:var(--muted)}
       <section><h2>Recall card</h2>${recallHTML()}</section>
       ${S.header.related&&S.header.related.length?`<section><h2>Related stations</h2><ul class="plain">${S.header.related.map(r=>`<li><strong>${esc(r.id)}</strong> <span class="muted">${esc(r.why)}</span></li>`).join("")}</ul></section>`:""}
       <section><h2>Sources</h2>${sourcesHTML()}</section>`;
-    document.querySelectorAll(".seg button").forEach(b=>b.addEventListener("click",()=>{
+    document.querySelectorAll("#gridtabs button").forEach(b=>b.addEventListener("click",()=>{
+      gridBand=b.dataset.band;
+      document.querySelectorAll("#gridtabs button").forEach(x=>x.setAttribute("aria-pressed",x===b));
+      $("#gridbody").innerHTML=gridListHTML();
+    }));
+    document.querySelectorAll("#perfseg button").forEach(b=>b.addEventListener("click",()=>{
       perfBand=b.dataset.band;
-      document.querySelectorAll(".seg button").forEach(x=>x.setAttribute("aria-pressed",x===b));
+      document.querySelectorAll("#perfseg button").forEach(x=>x.setAttribute("aria-pressed",x===b));
       $("#dlg").innerHTML=dialogueHTML(perfBand);
     }));
   }
@@ -326,11 +378,11 @@ details p{margin-top:6px;color:var(--muted)}
       <section><h2>Findings to reveal</h2><div class="dlg">${p.reveals.map((r,i)=>`<label class="reveal" for="rv${i}"><input type="checkbox" id="rv${i}"><span><span class="trig">When the candidate: ${esc(r.trigger)}</span><br>${esc(r.finding)}</span></label>`).join("")}</div></section>
       <section><h2>Push questions, in order</h2><ol class="push">${p.push.map(q=>`<li><div><strong>${esc(q.question)}</strong>${q.expect?`<div class="exp">Listen for: ${esc(q.expect)}</div>`:""}<div class="tags"><span class="tag">${q.row} ${esc(rowById(q.row)?.label)}</span></div></div></li>`).join("")}</ol></section>
       <section><h2>Curveballs</h2><div>${p.curveballs.map(c=>`<details><summary>${esc(c.prompt)}</summary><p>Safe answer: ${esc(c.safeAnswer)}</p></details>`).join("")}</div></section>
-      <section><h2>Tick-sheet</h2><p class="note">Tap the cell that best matches the candidate's performance on each row.</p><div id="ptally">${tallyHTML(partnerScore)}</div><div id="pgrid">${gridHTML(partnerScore)}</div></section>`;
+      <section><h2>Tick-sheet</h2><p class="note">For each row, tap the band that best matches the candidate's performance.</p><div id="ptally">${tallyHTML(partnerScore)}</div><div id="pgrid">${gridHTML(partnerScore)}</div><div id="povr">${overallHTML(partnerOverall)}</div></section>`;
     bindTimer("pt");
     document.querySelectorAll(".reveal input").forEach(cb=>cb.addEventListener("change",()=>cb.closest(".reveal").classList.toggle("done",cb.checked)));
-    const re=()=>{$("#pgrid").innerHTML=gridHTML(partnerScore);$("#ptally").innerHTML=tallyHTML(partnerScore);bindGrid(partnerScore,re);};
-    bindGrid(partnerScore,re);
+    const re=()=>{$("#pgrid").innerHTML=gridHTML(partnerScore);$("#ptally").innerHTML=tallyHTML(partnerScore);$("#povr").innerHTML=overallHTML(partnerOverall);bindGrid(partnerScore,re);bindOverall(partnerOverall,re);};
+    bindGrid(partnerScore,re); bindOverall(partnerOverall,re);
   }
 
   function renderSolo(){
@@ -347,21 +399,23 @@ details p{margin-top:6px;color:var(--muted)}
     }else if(solo.step===1){
       const draw=()=>{
         $("#view").innerHTML=`${stepsHTML}
-          <p class="note">Before you see any model answer, tap the cell on each row that matches what you actually said. Be strict: if you didn't say it, it doesn't count.</p>
+          <p class="note">Before you see any model answer, tap the band on each row that matches what you actually said. Be strict: if you didn't say it, it doesn't count.</p>
           <div id="stally">${tallyHTML(soloScore)}</div>${gridHTML(soloScore)}
-          <div><button class="btn primary" id="so-next" ${Object.keys(soloScore).length<S.grid.length?"disabled":""}>Compare with the models</button></div>`;
-        bindGrid(soloScore,draw);
+          ${overallHTML(soloOverall)}
+          <div><button class="btn primary" id="so-next" ${(Object.keys(soloScore).length<S.grid.length||!soloOverall.v)?"disabled":""}>Compare with the models</button></div>`;
+        bindGrid(soloScore,draw); bindOverall(soloOverall,draw);
         $("#so-next").addEventListener("click",()=>{solo.step=2;renderSolo();});
       };
       draw();
     }else{
       const gaps=S.grid.filter(r=>soloScore[r.id]!=="high");
       $("#view").innerHTML=`${stepsHTML}
+        <div class="tally"><span class="muted">Your overall rating:</span> <span class="pill ${soloOverall.v}">${BAND_LABEL[soloOverall.v]}</span></div>
         ${tallyHTML(soloScore)}
         <section><h2>Where to gain marks</h2>${gaps.length?`<ul class="plain gap-list">${gaps.map(r=>`<li class="panel"><span><span class="pill ${soloScore[r.id]}">${BAND_LABEL[soloScore[r.id]]}</span> <strong>${r.id} ${esc(r.label)}</strong></span><span class="muted">High-performance: ${esc(r.high)}</span></li>`).join("")}</ul>`:`<p>You scored every row at high-performance.</p>`}</section>
         <section><h2>High-performance answer</h2>${dialogueHTML("high")}</section>
         <div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn" id="so-again">Try again</button><button class="btn" id="so-learn">Open Learn mode</button></div>`;
-      $("#so-again").addEventListener("click",()=>{solo={step:0};for(const k in soloScore)delete soloScore[k];renderSolo();});
+      $("#so-again").addEventListener("click",()=>{solo={step:0};for(const k in soloScore)delete soloScore[k];soloOverall.v=null;renderSolo();});
       $("#so-learn").addEventListener("click",()=>setMode("learn"));
     }
   }
@@ -385,7 +439,13 @@ details p{margin-top:6px;color:var(--muted)}
       try{const r=await fetch(`stations/${id}.json`);if(r.ok)data=await r.json();}catch(e){}
     }
     if(!data){try{data=JSON.parse(document.getElementById("station-data").textContent);}catch(e){}}
-    if(!data){$("#view").innerHTML=`<p class="panel">This station couldn't be loaded. Check the station ID in the address and try again.</p>`;return;}
+    if(!data){
+      const msg=id?`We couldn't find station <strong>${esc(id)}</strong>. It may have been renamed or not published yet.`:`No station was chosen.`;
+      $("#view").innerHTML=`<div class="panel" style="display:grid;gap:12px"><p>${msg}</p><p><a class="btn primary" href="mrcs-part-b.html" style="display:inline-block;text-decoration:none">Go to the MRCS Part B stations</a></p></div>`;
+      $("#head").innerHTML=`<span class="eyebrow">AMaC · MRCS Part B</span><h1>Station viewer</h1>`;
+      document.querySelector(".modes").hidden=true;
+      return;
+    }
     S=data; header();
     document.querySelectorAll(".mode").forEach(b=>b.addEventListener("click",()=>setMode(b.dataset.mode)));
     let start=(location.hash||"").slice(1);
