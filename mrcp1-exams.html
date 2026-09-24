@@ -131,13 +131,13 @@ footer{margin-top:40px;border-top:1px solid #1A2740;padding:30px 26px 26px;}
 
 <div class="wrap">
   <div class="scaffold-note">
-    <b>Paper length, timing and pass mark are not set.</b> They come from the Federation's published
-    Part 1 specification and have not been transcribed yet, so this scaffold does not assume them.
-    Nothing here invents a paper size or a pass threshold. See the TODO in <b>mrcp1-papers.js</b>.
+    <b>Mock papers are coming soon.</b> Paper length, timing and the pass mark are set by the
+    Federation, and we do not state them here until we can cite them. Nothing on this page
+    invents a paper size or a pass threshold.
   </div>
 
   <h2 class="section-title">Fixed papers</h2>
-  <p class="section-sub">Defined in <b>mrcp1-papers.js</b> as an explicit list of question ids per paper.</p>
+  <p class="section-sub">Each paper is a fixed set of questions, so sitting the same paper again gives you the same questions.</p>
   <div id="mocksGrid"></div>
 
   <div style="margin-top:38px;"></div>
@@ -202,9 +202,9 @@ function esc(s){ return String(s == null ? '' : s)
 function renderMocks(ids){
   var grid = document.getElementById('mocksGrid');
   if (!ids.length){
-    grid.innerHTML = '<div class="empty"><b>No papers defined yet.</b><br>' +
-      'mrcp1-papers.js declares an empty set. Papers cannot be assembled until the subdomain ' +
-      'blueprint is populated and there are enough reviewed questions to fill one without reuse.</div>';
+    grid.innerHTML = '<div class="empty"><b>Mock papers are coming soon.</b><br>' +
+      'They will be published once the question bank is large enough to fill a paper without ' +
+      'repeating questions.</div>';
     return;
   }
   var html = '<div class="mocks-grid">';
