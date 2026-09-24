@@ -1,44 +1,18 @@
 /* ============================================================
    AMaC — MRCP Part 1 question bank  (mrcp1-questions.js)
    ------------------------------------------------------------
-   Batch 1: 20 questions, M1Q001–M1Q020.
+   The MRCP Part 1 question bank data used by mrcp1.html,
+   mrcp1-study.html and mrcp1-mock.html.
 
-   TWO KEYS, TWO SETS OF FIELDS
+   Each question carries these fields:
+     id, subdomain, topic, difficulty, stem, options,
+     correct_letter, why_correct, distractor_analysis,
+     generalisation, review_status
 
-   The standing rule is that clinical content needs two independent
-   clearances and that neither substitutes for the other. The schema
-   holds one slot for each, so recording the second never overwrites
-   the first:
+   review_status is used by the pages to identify placeholder
+   questions.
 
-     cleared_by / cleared_date   key one — a named clinician read the
-                                 material and cleared it. May be recorded
-                                 by hand; no per-question verdicts exist.
-
-     reviewer / signoff_date     key two — the pack's three verdicts were
-                                 completed and applied by
-                                 mrcp1-review-pack.py apply. Only that
-                                 tool writes these two fields.
-
-   review_status says how many keys have been turned:
-
-     draft             neither
-     cleared_verbally  key one only — a clinician cleared it verbally
-     reviewed          both — verbal clearance plus recorded verdicts,
-                       all three axes passing on every question
-     revise            a recorded verdict failed on at least one axis
-
-   Only "reviewed" means both keys are turned. A question at
-   "cleared_verbally" has been read by a clinician but carries no record
-   of WHICH of the three axes — keyed answer, distractors, explanation —
-   was checked, so if a defect surfaces later there is no way to tell
-   whether it was missed or never looked at.
-
-   Schema is enforced by mrcp1-validate.py. Every object carries exactly:
-     id, subdomain, topic, difficulty, stem, options, correct_letter,
-     why_correct, distractor_analysis, generalisation,
-     review_status, cleared_by, cleared_date, reviewer, signoff_date
-
-   Validate before committing:  python mrcp1-validate.py
+   Validation runs against the full copy in the private repository, not this file.
    ============================================================ */
 window.MRCP1_QUESTIONS = [
   {
