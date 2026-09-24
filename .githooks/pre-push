@@ -1,0 +1,36 @@
+#!/bin/sh
+# pre-push: refuse to push a commit whose headline counts are stale.
+#
+# Install once per clone:   git config core.hooksPath .githooks
+#
+# For every commit being pushed, runs that commit's own build-counts.py --check
+# against that commit's files (not the working tree, so uncommitted edits
+# cannot hide or cause a failure). If anything is stale, the push is blocked:
+# run  python build-counts.py , commit the result, and push again.
+
+zero=0000000000000000000000000000000000000000
+py=
+for c in python python3 py; do
+  if "$c" -c 'import sys' >/dev/null 2>&1; then py=$c; break; fi
+done
+if [ -z "$py" ]; then
+  echo "pre-push: no Python found, cannot check counts. Push blocked." >&2
+  exit 1
+fi
+
+status=0
+while read -r local_ref local_sha remote_ref remote_sha; do
+  [ "$local_sha" = "$zero" ] && continue          # branch deletion
+  git cat-file -e "$local_sha:build-counts.py" 2>/dev/null || continue
+
+  tmp=$(mktemp -d) || exit 1
+  git archive "$local_sha" -- build-counts.py data '*.html' '*.js' | tar -x -C "$tmp"
+  if ! out=$("$py" "$tmp/build-counts.py" --check 2>&1); then
+    echo "pre-push: counts are stale in $local_ref ($local_sha):" >&2
+    echo "$out" | grep -E 'stale:|MARKUP PROBLEMS|COULD NOT COUNT|^  - ' >&2
+    echo "Run  python build-counts.py , commit, and push again." >&2
+    status=1
+  fi
+  rm -rf "$tmp"
+done
+exit $status

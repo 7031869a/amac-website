@@ -264,7 +264,7 @@ footer{background:var(--navy-deep);color:#c4ccd8;padding:36px 28px 20px;}
       <option value="Safety">Safety</option>
       <option value="Professional">Professional</option>
     </select>
-    <button class="fbtn active" onclick="filterType('all',this)">All (1,302)</button>
+    <button class="fbtn active" onclick="filterType('all',this)">All (<span data-count="cpsaFlashcards">1,302</span>)</button>
     <button class="fbtn t-qa" onclick="filterType('qa',this)">🔵 Decision</button>
     <button class="fbtn t-curve" onclick="filterType('curveball',this)">🟣 Curveball</button>
     <button class="fbtn t-miss" onclick="filterType('critical_miss',this)">🔴 Critical Miss</button>
@@ -450,5 +450,6 @@ renderGrid();
 </script>
 <script src="nav.js" defer></script>
 <script src="footer.js" defer></script>
+<script src="counts.js" defer></script>
 </body>
 </html>

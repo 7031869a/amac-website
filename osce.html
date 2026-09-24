@@ -210,7 +210,7 @@ footer{background:var(--navy-deep);color:#c4ccd8;padding:36px 28px 20px;}
 </div></header>
 <div class="filter-bar"><div class="filter-inner">
   <span class="filter-lbl">Domain:</span>
-  <button class="fbtn active" data-filter="all" onclick="filterStations('all',this)">All (111)</button>
+  <button class="fbtn active" data-filter="all" onclick="filterStations('all',this)">All (<span data-count="osceStations">111</span>)</button>
   <button class="fbtn r-red" onclick="filterStations('Emergency',this)">Emergency</button>
   <button class="fbtn" onclick="filterStations('Communication',this)">Communication</button>
   <button class="fbtn" onclick="filterStations('Examination',this)">Examination</button>
@@ -226,12 +226,12 @@ footer{background:var(--navy-deep);color:#c4ccd8;padding:36px 28px 20px;}
   <button class="fbtn" onclick="filterStations('Cardiology',this)">Cardiology</button>
   <button class="fbtn" onclick="filterStations('Palliative',this)">Palliative</button>
   <button class="fbtn" onclick="filterStations('Urology',this)">Urology</button>
-  <span class="count-lbl" id="countLbl">111 stations</span>
+  <span class="count-lbl" id="countLbl"><span data-count="osceStations">111</span> stations</span>
 </div></div>
 <div class="wrap" style="background:#f7f4ec;"><div class="grid" id="stGrid"></div></div>
 <div class="trustband">
   <p class="slogan">Think Like an Examiner · Speak Like a Doctor · Perform With Confidence</p>
-  <p>111 mock OSCE stations — scenario, examiner tick map, timing blueprint, must-say scripts, mark split, model closing script and critical fail moments.</p>
+  <p><span data-count="osceStations">111</span> mock OSCE stations — scenario, examiner tick map, timing blueprint, must-say scripts, mark split, model closing script and critical fail moments.</p>
 </div>
 <footer><div class="foot-inner">
   <div><div class="foot-brand">AMaC</div><p class="foot-p">A. Mansour &amp; Colleagues — examiner-led preparation for the PLAB 2 OSCE.</p></div>
@@ -429,5 +429,6 @@ console.log('AMaC OSCE: Loaded ' + STATIONS.length + ' stations. Filter: ' + act
 </script>
 <script src="nav.js" defer></script>
 <script src="footer.js" defer></script>
+<script src="counts.js" defer></script>
 </body>
 </html>
