@@ -242,9 +242,17 @@ def main():
     json_path = os.path.join(ROOT, 'data', 'counts.json')
     try:
         prev = json.loads(read('data/counts.json'))
-        stale_json = {k: v for k, v in prev.items() if k != 'generated'} != counts
+        prev.pop('generated', None)
     except (OSError, ValueError):
-        stale_json = True
+        prev = None
+    stale_json = prev != counts
+    if stale_json and check:
+        if prev is None:
+            print('stale: data/counts.json is missing or unreadable')
+        else:
+            diff = ['%s %s -> %s' % (k, prev.get(k), counts.get(k))
+                    for k in sorted(set(prev) | set(counts)) if prev.get(k) != counts.get(k)]
+            print('stale: data/counts.json (%s)' % '; '.join(diff))
     if stale_json and not check:
         with open(json_path, 'wb') as f:
             f.write((json.dumps(out, indent=2) + '\n').encode('utf-8'))
@@ -255,7 +263,7 @@ def main():
     verb = 'stale' if check else 'updated'
     print('\n%s: %s' % (verb, ', '.join(changed) if changed else 'no HTML files'))
     if check:
-        return 1 if (changed or errors) else 0
+        return 1 if (changed or errors or stale_json) else 0
     return 1 if errors else 0
 
 
