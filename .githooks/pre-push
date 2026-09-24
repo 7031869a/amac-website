@@ -26,7 +26,10 @@ while read -r local_ref local_sha remote_ref remote_sha; do
   for s in _tools/build-counts.py build-counts.py; do
     if git cat-file -e "$local_sha:$s" 2>/dev/null; then script=$s; break; fi
   done
-  [ -z "$script" ] && continue
+  if [ -z "$script" ]; then
+    echo "pre-push: WARNING - no build-counts.py found in $local_ref ($local_sha); counts NOT checked." >&2
+    continue
+  fi
 
   tmp=$(mktemp -d) || exit 1
   git archive "$local_sha" -- "$script" data '*.html' '*.js' | tar -x -C "$tmp"
