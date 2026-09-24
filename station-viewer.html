@@ -1,0 +1,397 @@
+<title>MRCS Station Viewer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Outfit:wght@400;500;600&display=swap">
+<style>
+:root{
+  --bg:#F3F5F9; --surface:#FFFFFF; --surface-2:#EAEEF5; --line:#D5DCE8;
+  --text:#14203A; --muted:#56627D; --accent:#B8483E; --accent-soft:#F6E2DF;
+  --fail:#C23B3B; --fail-soft:#FBE4E4; --bord:#A86F0E; --bord-soft:#FAF0DA; --pass:#2F62B8; --pass-soft:#E3ECFA;
+  --dist:#1E8A63; --dist-soft:#DFF3EA; --focus:#3B6FD4;
+  --display:"Fraunces",Georgia,"Times New Roman",serif;
+  --body:"Outfit",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#0D1628; --surface:#16233F; --surface-2:#1C2B4B; --line:#2B3C60;
+    --text:#E8ECF4; --muted:#9AA7C2; --accent:#E07A6F; --accent-soft:#3A2530;
+    --fail:#F07B7B; --fail-soft:#3A2232; --bord:#E5B45A; --bord-soft:#3A3024; --pass:#8FB3F5; --pass-soft:#1E2E4E;
+    --dist:#5CC99D; --dist-soft:#1D3A3A; --focus:#8FB0F5;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#0D1628; --surface:#16233F; --surface-2:#1C2B4B; --line:#2B3C60;
+  --text:#E8ECF4; --muted:#9AA7C2; --accent:#E07A6F; --accent-soft:#3A2530;
+  --fail:#F07B7B; --fail-soft:#3A2232; --bord:#E5B45A; --bord-soft:#3A3024; --pass:#8FB3F5; --pass-soft:#1E2E4E;
+  --dist:#5CC99D; --dist-soft:#1D3A3A; --focus:#8FB0F5;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font:400 15px/1.55 var(--body);margin:0}
+.wrap{max-width:980px;margin:0 auto;padding-inline:16px;padding-block:20px 56px}
+h1,h2,h3{font-family:var(--display);font-weight:650;text-wrap:balance;margin:0}
+h1{font-size:clamp(1.6rem,4vw,2.2rem);line-height:1.15}
+h2{font-size:1.25rem;margin-bottom:10px}
+h3{font-size:1.02rem;font-family:var(--body);font-weight:600}
+p{margin:0}
+.eyebrow{font-size:.72rem;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.muted{color:var(--muted)}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+
+/* header */
+.head{display:grid;gap:10px;padding-bottom:16px;border-bottom:1px solid var(--line)}
+.meta{display:flex;flex-wrap:wrap;gap:6px}
+.chip{display:inline-flex;align-items:center;gap:5px;border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:2px 10px;font-size:.78rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.chip b{color:var(--text);font-weight:600}
+
+/* modes */
+.modes{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);display:flex;gap:4px;padding-block:12px;border-bottom:1px solid var(--line);overflow-x:auto}
+.mode{border:1px solid transparent;background:none;border-radius:8px;padding:7px 14px;font-weight:500;color:var(--muted);white-space:nowrap}
+.mode[aria-selected="true"]{background:var(--surface);border-color:var(--line);color:var(--text);box-shadow:inset 0 -2px 0 var(--accent)}
+.mode small{display:block;font-size:.7rem;font-weight:400;color:var(--muted)}
+main{display:grid;gap:28px;padding-top:22px}
+section{display:grid;gap:10px}
+
+/* panels */
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px}
+.brief dl{display:grid;grid-template-columns:max-content 1fr;gap:6px 14px;margin:0}
+.brief dt{font-size:.78rem;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);padding-top:2px}
+.brief dd{margin:0}
+.walkin{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.walkin .panel{display:grid;gap:4px;align-content:start}
+.walkin .trap{border-color:var(--accent);background:var(--accent-soft)}
+.flow{display:flex;flex-wrap:wrap;gap:6px;align-items:center;list-style:none;margin:0;padding:0}
+.flow li{background:var(--surface-2);border-radius:6px;padding:4px 10px;font-size:.88rem}
+.flow li+li::before{content:"→";margin-right:8px;color:var(--muted)}
+.note{font-size:.84rem;color:var(--muted);border-left:2px solid var(--line);padding-left:10px}
+
+/* grid */
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:.88rem}
+th,td{text-align:left;vertical-align:top;padding:9px 11px;border-bottom:1px solid var(--line)}
+tr:last-child td{border-bottom:0}
+thead th{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:600;background:var(--surface-2)}
+th.b-fail{color:var(--fail)} th.b-borderline{color:var(--bord)} th.b-pass{color:var(--pass)} th.b-high{color:var(--dist)}
+.rowlab{font-weight:600;white-space:nowrap}
+.rowlab .id{font-variant-numeric:tabular-nums;color:var(--muted);font-weight:500;margin-right:6px}
+.dom{display:block;font-size:.72rem;color:var(--muted);font-weight:400;margin-top:2px}
+.src{font-size:.72rem;color:var(--muted)}
+td.pick{cursor:pointer;border-left:1px solid var(--line)}
+td.pick:hover{background:var(--surface-2)}
+td.pick.sel-fail{background:var(--fail-soft);box-shadow:inset 3px 0 0 var(--fail)}
+td.pick.sel-borderline{background:var(--bord-soft);box-shadow:inset 3px 0 0 var(--bord)}
+td.pick.sel-pass{background:var(--pass-soft);box-shadow:inset 3px 0 0 var(--pass)}
+td.pick.sel-high{background:var(--dist-soft);box-shadow:inset 3px 0 0 var(--dist)}
+.tally{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-variant-numeric:tabular-nums}
+.pill{border-radius:999px;padding:2px 10px;font-size:.8rem;font-weight:600}
+.pill.fail{background:var(--fail-soft);color:var(--fail)}
+.pill.borderline{background:var(--bord-soft);color:var(--bord)}
+.pill.pass{background:var(--pass-soft);color:var(--pass)}
+.pill.high{background:var(--dist-soft);color:var(--dist)}
+
+/* dialogue */
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--surface)}
+.seg button{border:0;background:none;padding:6px 14px;font-weight:500;color:var(--muted)}
+.seg button+button{border-left:1px solid var(--line)}
+.seg button[aria-pressed="true"].fail{background:var(--fail-soft);color:var(--fail)}
+.seg button[aria-pressed="true"].borderline{background:var(--bord-soft);color:var(--bord)}
+.seg button[aria-pressed="true"].pass{background:var(--pass-soft);color:var(--pass)}
+.seg button[aria-pressed="true"].high{background:var(--dist-soft);color:var(--dist)}
+.dlg{display:grid;gap:8px}
+.line{display:grid;grid-template-columns:86px 1fr;gap:10px;padding:8px 10px;border-radius:8px}
+.line .who{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);padding-top:3px}
+.line.examiner .txt{color:var(--muted);font-style:italic}
+.line.candidate{background:var(--surface);border:1px solid var(--line)}
+.line.up-pass{border-color:var(--pass);background:var(--pass-soft)}
+.line.up-borderline{border-color:var(--bord);background:var(--bord-soft)}
+.line.up-high{border-color:var(--dist);background:var(--dist-soft)}
+.line.up-fail{border-color:var(--fail);background:var(--fail-soft)}
+.tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px}
+.tag{font-size:.7rem;border-radius:4px;padding:1px 6px;background:var(--surface-2);color:var(--muted);font-variant-numeric:tabular-nums}
+
+/* lists */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:10px}
+.fl{display:grid;gap:4px}
+.fl .row{font-size:.72rem;color:var(--fail);font-weight:600;letter-spacing:.05em;text-transform:uppercase}
+ul.plain{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+ul.plain li{display:grid;gap:2px}
+.facts li{padding-left:14px;position:relative}
+.facts li::before{content:"";position:absolute;left:0;top:.62em;width:5px;height:5px;border-radius:50%;background:var(--accent)}
+.srcs li{font-size:.86rem}
+.srcs a{color:var(--text)}
+
+/* recall card */
+.recall{border:1px solid var(--line);border-radius:12px;background:var(--surface);overflow:hidden}
+.recall header{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:14px 16px;background:var(--surface-2);border-bottom:1px solid var(--line)}
+.recall dl{display:grid;grid-template-columns:96px 1fr;margin:0}
+.recall dt,.recall dd{padding:10px 16px;border-bottom:1px solid var(--line);margin:0}
+.recall dt{font-size:.74rem;font-weight:600;letter-spacing:.1em;color:var(--accent);padding-top:12px}
+.recall dd ol{margin:0;padding-left:18px}
+.recall .num{font-family:var(--display);font-size:1.1rem;font-variant-numeric:tabular-nums}
+.recall .trapline{font-family:var(--display);font-size:1.25rem}
+.recall dl > :nth-last-child(-n+2){border-bottom:0}
+
+/* partner / solo */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:start}
+.reveal{display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:start;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--surface)}
+.reveal input{margin-top:4px;accent-color:var(--accent);width:16px;height:16px}
+.reveal.done{opacity:.55}
+.reveal .trig{font-size:.8rem;color:var(--muted)}
+details{border:1px solid var(--line);border-radius:8px;background:var(--surface);padding:10px 12px}
+details+details{margin-top:8px}
+summary{cursor:pointer;font-weight:500}
+details p{margin-top:6px;color:var(--muted)}
+.push{counter-reset:p;list-style:none;padding:0;margin:0;display:grid;gap:8px}
+.push li{counter-increment:p;display:grid;grid-template-columns:28px 1fr;gap:8px;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--surface)}
+.push li::before{content:counter(p);font-family:var(--display);color:var(--accent);font-size:1.05rem}
+.push .exp{font-size:.84rem;color:var(--muted)}
+.timer{display:flex;flex-wrap:wrap;align-items:center;gap:12px;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+.clock{font-family:var(--display);font-size:2.2rem;font-variant-numeric:tabular-nums;line-height:1;min-width:4.2ch}
+.phase{font-size:.8rem;color:var(--muted)}
+.btn{border:1px solid var(--line);background:var(--surface-2);border-radius:8px;padding:7px 14px;font-weight:500}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.steps{display:flex;flex-wrap:wrap;gap:6px;list-style:none;margin:0;padding:0;font-size:.82rem}
+.steps li{padding:3px 10px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
+.steps li.on{border-color:var(--accent);color:var(--text);font-weight:500}
+.steps li.ok{color:var(--dist);border-color:var(--dist)}
+.gap-list li{font-size:.9rem}
+
+@media (max-width:720px){
+  .walkin,.two{grid-template-columns:1fr}
+  .line{grid-template-columns:1fr;gap:2px}
+  .recall dl{grid-template-columns:1fr}
+  .recall dt{padding-bottom:0;border-bottom:0}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+  <header class="head" id="head"></header>
+  <nav class="modes" role="tablist" aria-label="Station mode">
+    <button class="mode" role="tab" data-mode="learn" id="tab-learn">Learn<small>Why marks are won and lost</small></button>
+    <button class="mode" role="tab" data-mode="partner" id="tab-partner">Partner<small>Examiner script for a colleague</small></button>
+    <button class="mode" role="tab" data-mode="solo" id="tab-solo">Solo<small>Timed attempt, then self-score</small></button>
+    <button class="mode" role="tab" data-mode="revise" id="tab-revise">Revise<small>60-second recall</small></button>
+  </nav>
+  <main id="view" aria-live="polite"></main>
+</div>
+
+<script type="application/json" id="station-data">__STATION_JSON__</script>
+<script>
+(function(){
+  const BANDS=["fail","borderline","pass","high"];
+  const BAND_LABEL={fail:"Fail",borderline:"Borderline",pass:"Pass",high:"High-performance"};
+  const DOMAIN_LABEL={"clinical-knowledge":"Clinical knowledge","clinical-skill":"Clinical & technical skill","communication":"Communication","professionalism":"Professionalism"};
+  const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+  const $=s=>document.querySelector(s);
+  let S=null, mode="learn", perfBand="high";
+  const partnerScore={}, soloScore={};
+  let solo={step:0}, timer=null;
+
+  function rowById(id){return S.grid.find(r=>r.id===id)}
+  function srcName(id){const s=S.sources.find(x=>x.id===id);return s?s.id:""}
+
+  function header(){
+    const h=S.header;
+    $("#head").innerHTML=`
+      <span class="eyebrow">${esc(S.exam==="MRCS-B"?"MRCS Part B":S.exam)} · ${esc(h.domain||"")}</span>
+      <h1>${esc(S.id)} · ${esc(S.title)}</h1>
+      <div class="meta">
+        <span class="chip">Station type: <b>${esc(h.contentArea)}</b></span>
+        <span class="chip"><b>${h.minutes} min</b> + ${h.readingMinutes} min reading</span>
+        ${h.guidelineVersions.map(g=>`<span class="chip">${esc(g)}</span>`).join("")}
+      </div>`;
+    document.title=`${S.id} ${S.title}`;
+  }
+
+  function briefHTML(){
+    const b=S.brief;
+    return `<div class="panel brief"><dl>
+      <dt>Setting</dt><dd>${esc(b.setting)}</dd>
+      <dt>Your role</dt><dd>${esc(b.role)}</dd>
+      <dt>Scenario</dt><dd>${esc(b.scenario)}</dd>
+      <dt>Task</dt><dd><strong>${esc(b.task)}</strong></dd></dl></div>`;
+  }
+
+  function gridHTML(scoreObj){
+    const pick=!!scoreObj;
+    return `<div class="tbl"><table>
+      <thead><tr><th>Row</th>${BANDS.map(b=>`<th class="b-${b}">${BAND_LABEL[b]}</th>`).join("")}</tr></thead>
+      <tbody>${S.grid.map(r=>`<tr>
+        <td class="rowlab"><span class="id">${r.id}</span>${esc(r.label)}<span class="dom">${esc(DOMAIN_LABEL[r.domain]||r.domain)}</span>${r.source?`<span class="src">Source: ${esc(srcName(r.source))}</span>`:""}</td>
+        ${BANDS.map(b=>`<td class="${pick?"pick":""} ${pick&&scoreObj[r.id]===b?"sel-"+b:""}" ${pick?`data-row="${r.id}" data-band="${b}" tabindex="0" role="button" aria-pressed="${scoreObj[r.id]===b}"`:""}>${esc(r[b])}</td>`).join("")}
+      </tr>`).join("")}</tbody></table></div>`;
+  }
+
+  function tallyHTML(scoreObj){
+    const n=b=>Object.values(scoreObj).filter(v=>v===b).length;
+    const done=Object.keys(scoreObj).length;
+    return `<div class="tally"><span class="muted">${done} of ${S.grid.length} rows scored</span>
+      ${BANDS.map(b=>`<span class="pill ${b}">${BAND_LABEL[b]} ${n(b)}</span>`).join("")}</div>`;
+  }
+
+  function bindGrid(scoreObj,rerender){
+    document.querySelectorAll("td.pick").forEach(td=>{
+      const act=()=>{const r=td.dataset.row,b=td.dataset.band;scoreObj[r]=scoreObj[r]===b?undefined:b;if(!scoreObj[r])delete scoreObj[r];rerender();};
+      td.addEventListener("click",act);
+      td.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();act();}});
+    });
+  }
+
+  function dialogueHTML(band){
+    return `<div class="dlg">${S.performances[band].map(l=>{
+      const tags=(l.tags||[]);
+      const up=l.speaker==="candidate"&&tags.some(t=>t.band===band)?` up-${band}`:"";
+      return `<div class="line ${l.speaker}${up}"><span class="who">${l.speaker==="examiner"?"Examiner":"Candidate"}</span>
+        <div><div class="txt">${esc(l.text)}</div>${tags.length?`<div class="tags">${tags.map(t=>`<span class="tag">${t.row} ${esc(rowById(t.row)?.label||"")}</span>`).join("")}</div>`:""}</div></div>`;
+    }).join("")}</div>`;
+  }
+
+  function recallHTML(){
+    const r=S.recall;
+    return `<div class="recall"><header><h2 style="margin:0">${esc(S.title)}</h2><span class="eyebrow">60-second recall</span></header><dl>
+      <dt>THINK</dt><dd>${esc(r.think)}</dd>
+      <dt>SAY</dt><dd>${esc(r.say)}</dd>
+      <dt>DO</dt><dd><ol>${r.do.map(d=>`<li>${esc(d)}</li>`).join("")}</ol></dd>
+      <dt>NUMBERS</dt><dd><ul class="plain">${r.numbers.map(n=>`<li><span class="num">${esc(n.value)}</span> <span class="muted">${esc(n.meaning)} · ${esc(n.source)}</span></li>`).join("")}</ul></dd>
+      <dt>TRAP</dt><dd class="trapline">${esc(r.trap)}</dd>
+      <dt>FINISH</dt><dd>${esc(r.finish)}</dd></dl></div>`;
+  }
+
+  function sourcesHTML(){
+    return `<ul class="plain srcs">${S.sources.map(s=>`<li><span><strong>${esc(s.id)}</strong> · <a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.name)}</a></span><span class="muted">${esc(s.version)}. Supports: ${esc(s.supports)}</span></li>`).join("")}</ul>
+      <p class="note">An AMaC teaching station based on the published MRCS syllabus and current UK guidance. It is not a prediction of an examination station.</p>`;
+  }
+
+  function renderLearn(){
+    const w=S.beforeYouWalkIn;
+    $("#view").innerHTML=`
+      <section><h2>Before you walk in</h2><div class="walkin">
+        <div class="panel"><span class="eyebrow">Frame</span><p>${esc(w.frame)}</p></div>
+        <div class="panel trap"><span class="eyebrow">Biggest trap</span><p>${esc(w.trap)}</p></div>
+        <div class="panel"><span class="eyebrow">First move</span><p>${esc(w.firstMove)}</p></div></div></section>
+      <section><h2>Station flow</h2><ol class="flow">${S.flow.map(f=>`<li>${esc(f)}</li>`).join("")}</ol></section>
+      <section><h2>Candidate brief</h2>${briefHTML()}</section>
+      <section><h2>Scoring grid</h2>
+        <p class="note">In the exam each station is marked out of 20 with an overall rating of pass, borderline or fail. <strong>High-performance</strong> is AMaC's teaching label for what lifts a pass towards full marks. It is not an official grade.</p>
+        ${gridHTML(null)}</section>
+      <section><h2>Three performances</h2>
+        <div class="seg" role="group" aria-label="Performance band">${BANDS.filter(b=>S.performances[b]).map(b=>`<button class="${b}" data-band="${b}" aria-pressed="${perfBand===b}">${BAND_LABEL[b]}</button>`).join("")}</div>
+        <p class="note">Highlighted lines are the ones that earn this band. Tags show which grid row each line scores.</p>
+        <div id="dlg">${dialogueHTML(perfBand)}</div></section>
+      <section><h2>Why marks are lost</h2><div class="cards">${S.failures.map(f=>`<div class="panel fl"><span class="row">${f.row} · ${esc(rowById(f.row)?.label)}</span><p><strong>${esc(f.move)}</strong></p><p class="muted">${esc(f.consequence)}</p></div>`).join("")}</div></section>
+      ${S.recovery&&S.recovery.length?`<section><h2>Recovery lines</h2><ul class="plain">${S.recovery.map(r=>`<li class="panel"><span class="eyebrow">${esc(r.when)}</span><span>“${esc(r.line)}”</span></li>`).join("")}</ul></section>`:""}
+      <section><h2>Knowledge you need</h2><ul class="plain facts">${S.knowledge.map(k=>`<li>${esc(k.fact)}${k.source?` <span class="src">(${esc(k.source)})</span>`:""}</li>`).join("")}</ul></section>
+      <section><h2>Recall card</h2>${recallHTML()}</section>
+      ${S.header.related&&S.header.related.length?`<section><h2>Related stations</h2><ul class="plain">${S.header.related.map(r=>`<li><strong>${esc(r.id)}</strong> <span class="muted">${esc(r.why)}</span></li>`).join("")}</ul></section>`:""}
+      <section><h2>Sources</h2>${sourcesHTML()}</section>`;
+    document.querySelectorAll(".seg button").forEach(b=>b.addEventListener("click",()=>{
+      perfBand=b.dataset.band;
+      document.querySelectorAll(".seg button").forEach(x=>x.setAttribute("aria-pressed",x===b));
+      $("#dlg").innerHTML=dialogueHTML(perfBand);
+    }));
+  }
+
+  function timerHTML(id){
+    return `<div class="timer" id="${id}"><span class="clock" id="${id}-clock">1:00</span>
+      <span class="phase" id="${id}-phase">Reading time</span>
+      <button class="btn primary" id="${id}-go">Start</button><button class="btn" id="${id}-reset">Reset</button></div>`;
+  }
+  function bindTimer(id,onEnd){
+    const total=[S.header.readingMinutes*60,S.header.minutes*60];
+    let phase=0,left=total[0],running=false;
+    const fmt=s=>`${Math.floor(s/60)}:${String(s%60).padStart(2,"0")}`;
+    const paint=()=>{$(`#${id}-clock`).textContent=fmt(left);$(`#${id}-phase`).textContent=phase===0?"Reading time":phase===1?"In the station":"Time";$(`#${id}-go`).textContent=running?"Pause":(phase===2?"Done":"Start");$(`#${id}-go`).disabled=phase===2;};
+    const tick=()=>{left--;if(left<=0){if(phase===0){phase=1;left=total[1];}else{phase=2;left=0;stop();onEnd&&onEnd();}}paint();};
+    const stop=()=>{clearInterval(timer);timer=null;running=false;};
+    $(`#${id}-go`).addEventListener("click",()=>{if(running){stop();}else{running=true;timer=setInterval(tick,1000);}paint();});
+    $(`#${id}-reset`).addEventListener("click",()=>{stop();phase=0;left=total[0];paint();});
+    paint();
+    return {skip(){stop();phase=2;left=0;paint();}};
+  }
+
+  function renderPartner(){
+    const p=S.partner;
+    $("#view").innerHTML=`
+      <p class="note">One of you is the candidate, one the examiner. Give the candidate the brief, then run the script. Reveal findings only when the candidate asks for them or performs the step.</p>
+      ${timerHTML("pt")}
+      <div class="two">
+        <section><h2>For the candidate</h2>${briefHTML()}</section>
+        <section><h2>Examiner opening</h2><div class="panel"><p>“${esc(p.opening)}”</p></div></section>
+      </div>
+      ${p.actorBrief?`<section><h2>Actor brief</h2><div class="panel"><p>${esc(p.actorBrief)}</p></div></section>`:""}
+      <section><h2>Findings to reveal</h2><div class="dlg">${p.reveals.map((r,i)=>`<label class="reveal" for="rv${i}"><input type="checkbox" id="rv${i}"><span><span class="trig">When the candidate: ${esc(r.trigger)}</span><br>${esc(r.finding)}</span></label>`).join("")}</div></section>
+      <section><h2>Push questions, in order</h2><ol class="push">${p.push.map(q=>`<li><div><strong>${esc(q.question)}</strong>${q.expect?`<div class="exp">Listen for: ${esc(q.expect)}</div>`:""}<div class="tags"><span class="tag">${q.row} ${esc(rowById(q.row)?.label)}</span></div></div></li>`).join("")}</ol></section>
+      <section><h2>Curveballs</h2><div>${p.curveballs.map(c=>`<details><summary>${esc(c.prompt)}</summary><p>Safe answer: ${esc(c.safeAnswer)}</p></details>`).join("")}</div></section>
+      <section><h2>Tick-sheet</h2><p class="note">Tap the cell that best matches the candidate's performance on each row.</p><div id="ptally">${tallyHTML(partnerScore)}</div><div id="pgrid">${gridHTML(partnerScore)}</div></section>`;
+    bindTimer("pt");
+    document.querySelectorAll(".reveal input").forEach(cb=>cb.addEventListener("change",()=>cb.closest(".reveal").classList.toggle("done",cb.checked)));
+    const re=()=>{$("#pgrid").innerHTML=gridHTML(partnerScore);$("#ptally").innerHTML=tallyHTML(partnerScore);bindGrid(partnerScore,re);};
+    bindGrid(partnerScore,re);
+  }
+
+  function renderSolo(){
+    const labels=["Attempt","Self-score","Compare"];
+    const stepsHTML=`<ol class="steps">${labels.map((l,i)=>`<li class="${i===solo.step?"on":i<solo.step?"ok":""}">${i+1}. ${l}</li>`).join("")}</ol>`;
+    if(solo.step===0){
+      $("#view").innerHTML=`${stepsHTML}
+        <p class="note">Read the brief during reading time, then answer out loud as if the examiner were in front of you. When you would ask for a finding or perform a step, open it below.</p>
+        ${timerHTML("so")}${briefHTML()}
+        <section><h2>Findings, on request</h2><div>${S.partner.reveals.map(r=>`<details><summary>${esc(r.trigger)}</summary><p>${esc(r.finding)}</p></details>`).join("")}</div></section>
+        <div><button class="btn primary" id="so-next">I've finished — score myself</button></div>`;
+      bindTimer("so",()=>{});
+      $("#so-next").addEventListener("click",()=>{clearInterval(timer);timer=null;solo.step=1;renderSolo();});
+    }else if(solo.step===1){
+      const draw=()=>{
+        $("#view").innerHTML=`${stepsHTML}
+          <p class="note">Before you see any model answer, tap the cell on each row that matches what you actually said. Be strict: if you didn't say it, it doesn't count.</p>
+          <div id="stally">${tallyHTML(soloScore)}</div>${gridHTML(soloScore)}
+          <div><button class="btn primary" id="so-next" ${Object.keys(soloScore).length<S.grid.length?"disabled":""}>Compare with the models</button></div>`;
+        bindGrid(soloScore,draw);
+        $("#so-next").addEventListener("click",()=>{solo.step=2;renderSolo();});
+      };
+      draw();
+    }else{
+      const gaps=S.grid.filter(r=>soloScore[r.id]!=="high");
+      $("#view").innerHTML=`${stepsHTML}
+        ${tallyHTML(soloScore)}
+        <section><h2>Where to gain marks</h2>${gaps.length?`<ul class="plain gap-list">${gaps.map(r=>`<li class="panel"><span><span class="pill ${soloScore[r.id]}">${BAND_LABEL[soloScore[r.id]]}</span> <strong>${r.id} ${esc(r.label)}</strong></span><span class="muted">High-performance: ${esc(r.high)}</span></li>`).join("")}</ul>`:`<p>You scored every row at high-performance.</p>`}</section>
+        <section><h2>High-performance answer</h2>${dialogueHTML("high")}</section>
+        <div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn" id="so-again">Try again</button><button class="btn" id="so-learn">Open Learn mode</button></div>`;
+      $("#so-again").addEventListener("click",()=>{solo={step:0};for(const k in soloScore)delete soloScore[k];renderSolo();});
+      $("#so-learn").addEventListener("click",()=>setMode("learn"));
+    }
+  }
+
+  function renderRevise(){ $("#view").innerHTML=recallHTML(); }
+
+  function setMode(m){
+    if(timer){clearInterval(timer);timer=null;}
+    mode=m;
+    document.querySelectorAll(".mode").forEach(b=>b.setAttribute("aria-selected",b.dataset.mode===m));
+    ({learn:renderLearn,partner:renderPartner,solo:renderSolo,revise:renderRevise})[m]();
+    try{history.replaceState(null,"","#"+m);}catch(e){}
+    try{localStorage.setItem("amac-station-mode",m);}catch(e){}
+  }
+
+  async function load(){
+    let data=null;
+    const params=new URLSearchParams(location.search);
+    const id=params.get("station");
+    if(id&&/^[A-Z]{2,5}-[0-9]{2,4}$/.test(id)){
+      try{const r=await fetch(`stations/${id}.json`);if(r.ok)data=await r.json();}catch(e){}
+    }
+    if(!data){try{data=JSON.parse(document.getElementById("station-data").textContent);}catch(e){}}
+    if(!data){$("#view").innerHTML=`<p class="panel">This station couldn't be loaded. Check the station ID in the address and try again.</p>`;return;}
+    S=data; header();
+    document.querySelectorAll(".mode").forEach(b=>b.addEventListener("click",()=>setMode(b.dataset.mode)));
+    let start=(location.hash||"").slice(1);
+    if(!["learn","partner","solo","revise"].includes(start)){try{start=localStorage.getItem("amac-station-mode")||"learn";}catch(e){start="learn";}}
+    setMode(start);
+  }
+  load();
+})();
+</script>

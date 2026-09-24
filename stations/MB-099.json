@@ -1,0 +1,586 @@
+{
+  "id": "MB-099",
+  "exam": "MRCS-B",
+  "title": "Acute compartment syndrome",
+  "type": "applied-knowledge",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "Applied surgical science & critical care (trauma)",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "BOASt Compartment Syndrome — updated July 2025",
+      "NICE NG37 — compartment syndrome recommendations 2016"
+    ],
+    "related": [
+      {
+        "id": "AKI station",
+        "why": "Rhabdomyolysis and renal protection"
+      },
+      {
+        "id": "Arterial examination station",
+        "why": "Why a present pulse can mislead"
+      },
+      {
+        "id": "Consent station",
+        "why": "Consenting for fasciotomy"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "District general hospital, trauma ward",
+    "role": "Core surgical trainee on call",
+    "scenario": "A 24-year-old man sustained a closed right tibial shaft fracture 8 hours ago. It was manipulated and placed in a plaster cast. The nurse asks you to review him because his pain has increased markedly over the last 2 hours despite analgesia.",
+    "task": "Assess the patient and explain your management to the examiner. The examiner will give you findings as you go."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Tibial fracture + pain out of proportion = compartment syndrome until proven otherwise.",
+    "trap": "A warm foot with a palpable pulse does not exclude it.",
+    "firstMove": "Say \"I'm concerned about acute compartment syndrome\" in your first sentence."
+  },
+  "flow": [
+    "Recognise the risk",
+    "Assess pain and compartments",
+    "Interpret examiner findings",
+    "Immediate action and escalation",
+    "Respond to prompts: pressures, surgery, complications"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-knowledge",
+      "label": "Recognition",
+      "fail": "Attributes pain to the fracture; does not consider compartment syndrome.",
+      "borderline": "Names compartment syndrome only after prompting.",
+      "pass": "Names compartment syndrome as the concern.",
+      "high": "Names it immediately and links it to disproportionate, escalating pain after a tibial fracture."
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-skill",
+      "label": "Pain assessment",
+      "fail": "Treats pain with more analgesia only.",
+      "borderline": "Asks about the pain but does not test passive stretch.",
+      "pass": "Asks about severity and progression; tests pain on passive stretch.",
+      "high": "Treats rising analgesic requirement as a warning sign and knows which passive movement stretches which compartment."
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-skill",
+      "label": "Neurovascular examination",
+      "fail": "Relies on pulse; states present pulse excludes the diagnosis.",
+      "borderline": "Examines neurovascular status but hesitates when told the pulse is present.",
+      "pass": "Assesses compartments, sensation, motor function and perfusion; states a pulse does not exclude it.",
+      "high": "Compares all four compartments with the other leg and tests first web space sensation (deep peroneal nerve)."
+    },
+    {
+      "id": "G4",
+      "domain": "professionalism",
+      "label": "Escalation",
+      "fail": "Plans to review later or does not escalate.",
+      "borderline": "Plans to escalate, but only after further tests.",
+      "pass": "Escalates urgently to the on-call orthopaedic team.",
+      "high": "Calls the orthopaedic registrar and consultant now, and alerts theatres for possible fasciotomy."
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-knowledge",
+      "label": "Immediate limb measures",
+      "fail": "Only 'loosens' the cast.",
+      "borderline": "Releases the dressings but leaves cast padding in place.",
+      "pass": "Releases circumferential dressings and cast to expose the skin.",
+      "high": "Splits cast and padding to skin, elevates the limb, re-evaluates within 30 minutes.",
+      "source": "BOAST"
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-knowledge",
+      "label": "Pressure measurement",
+      "fail": "Waits for pressures before escalating a clear diagnosis.",
+      "borderline": "Knows pressures are an adjunct but cannot say when to use them.",
+      "pass": "Uses pressures only when clinical findings are equivocal or assessment is unreliable.",
+      "high": "Gives delta pressure < 30 mmHg as increased risk; notes the consultant decides; > 40 mmHg: consider urgent decompression.",
+      "source": "BOAST"
+    },
+    {
+      "id": "G7",
+      "domain": "clinical-knowledge",
+      "label": "Definitive surgery",
+      "fail": "Does not identify fasciotomy.",
+      "borderline": "Says 'surgery' but names fasciotomy only when prompted.",
+      "pass": "States immediate fasciotomy is required once diagnosed.",
+      "high": "Two-incision four-compartment decompression, debride dead muscle, wounds left open, plastics within 24 h, relook within 72 h.",
+      "source": "BOAST"
+    },
+    {
+      "id": "G8",
+      "domain": "clinical-knowledge",
+      "label": "Systemic complications",
+      "fail": "Does not mention systemic effects.",
+      "borderline": "Mentions the kidneys only when prompted.",
+      "pass": "Mentions rhabdomyolysis and acute kidney injury.",
+      "high": "Checks CK, potassium, renal function and urine output; plans renal protection."
+    },
+    {
+      "id": "G9",
+      "domain": "professionalism",
+      "label": "Masked assessment",
+      "fail": "Is reassured by a nerve block, sedation or improving pain on opioids.",
+      "borderline": "Says a block makes assessment harder but gives no monitoring plan.",
+      "pass": "Recognises that blocks, reduced consciousness and opioids make assessment unreliable.",
+      "high": "Plans hourly documented assessment and considers continuous compartment pressure monitoring.",
+      "source": "BOAST"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "What are you concerned about?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "It's probably post-reduction pain. I'd give him more morphine.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          },
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The foot is warm and the pulse is present."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Good, so the circulation is fine and it isn't compartment syndrome.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What would you do about the plaster?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd loosen it a bit and see him again on the ward round.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          },
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Would you measure compartment pressures?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Yes, I'd get the pressures and wait for the result before calling anyone.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "examiner",
+        "text": "What are you concerned about?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'm concerned about acute compartment syndrome because his pain is increasing despite analgesia.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you assess him?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd ask about severity and progression, test pain on passive stretch, feel the compartments, and check sensation, movement and perfusion. A present pulse wouldn't exclude it.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          },
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The leg is tense and passive stretch is very painful. What now?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd escalate urgently to the on-call orthopaedic team and release the cast and dressings down to the skin.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          },
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Would you measure pressures?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Not if the diagnosis is clear. Only if the findings were equivocal or he couldn't be assessed reliably.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What is the definitive treatment, and what else worries you?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Immediate fasciotomy. I'd also watch for rhabdomyolysis and acute kidney injury.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          },
+          {
+            "row": "G8",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What if he'd had a nerve block?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Then his pain wouldn't be a reliable guide, so I couldn't be reassured by it.",
+        "tags": [
+          {
+            "row": "G9",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "examiner",
+        "text": "What are you concerned about?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Acute compartment syndrome. Escalating pain out of proportion to a tibial fracture is the key early sign, and his rising analgesic requirement is itself a warning.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          },
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you examine him?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd compare all four compartments with the other leg. Passive plantarflexion stretches the anterior compartment, dorsiflexion the posterior ones. I'd test first web space sensation for the deep peroneal nerve. A palpable pulse wouldn't exclude it.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          },
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The leg is tense, passive plantarflexion is very painful and the first web space is numb. The pulse is present."
+      },
+      {
+        "speaker": "candidate",
+        "text": "That's compartment syndrome. I'd call the orthopaedic registrar and consultant now and alert theatres. Meanwhile I'd split the cast and padding to skin, elevate the limb and re-evaluate within 30 minutes.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          },
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Would you measure pressures?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Not when the diagnosis is clinically clear. If it were equivocal, I'd measure all suspected compartments with a concurrent blood pressure. A delta pressure under 30 mmHg means increased risk, and the consultant decides whether to decompress. Above 40 mmHg absolute, urgent decompression should be considered.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What happens in theatre?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Immediate two-incision, four-compartment fasciotomy, debriding non-viable muscle. The wounds are left open, with plastic surgery input within 24 hours and a relook within 72 hours.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Anything else?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Rhabdomyolysis. I'd check CK, potassium, renal function and urine output and protect the kidneys. And if he'd had a nerve block or was sedated, I'd do hourly documented assessments and consider continuous pressure monitoring.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "high"
+          },
+          {
+            "row": "G9",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G3",
+      "move": "Being reassured by a warm foot and palpable pulse.",
+      "consequence": "Pulses are often preserved; the diagnosis is missed at the stage when it is treatable."
+    },
+    {
+      "row": "G6",
+      "move": "Waiting for pressure readings before escalating a clear clinical picture.",
+      "consequence": "Delay to fasciotomy; loses the escalation and safety marks."
+    },
+    {
+      "row": "G7",
+      "move": "Stopping at 'surgery' without saying what the operation is.",
+      "consequence": "Caps the station at a bare pass when the examiner pushes."
+    },
+    {
+      "row": "G8",
+      "move": "Forgetting the kidneys when asked 'anything else?'",
+      "consequence": "Misses the systemic complication that examiners expect."
+    },
+    {
+      "row": "G9",
+      "move": "Accepting improved pain after morphine or a block as reassurance.",
+      "consequence": "Masked symptoms delay diagnosis — a recognised pattern in missed cases."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You forget the pressure threshold",
+      "line": "I'd measure all suspected compartments with a concurrent blood pressure and interpret them with my consultant."
+    },
+    {
+      "when": "The examiner says the pain has improved",
+      "line": "That doesn't reassure me — the rising analgesic requirement is itself a warning sign."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Lower leg compartments: anterior, lateral, superficial posterior, deep posterior."
+    },
+    {
+      "fact": "Passive stretch: plantarflexion → anterior; inversion → lateral; dorsiflexion → posterior compartments."
+    },
+    {
+      "fact": "First dorsal web space numbness = deep peroneal nerve, which runs in the anterior compartment."
+    },
+    {
+      "fact": "Delta pressure = diastolic BP − compartment pressure; < 30 mmHg indicates increased risk.",
+      "source": "BOAST"
+    },
+    {
+      "fact": "After a tibial fracture, stay alert for compartment syndrome for 48 hours after injury or fixation.",
+      "source": "NG37"
+    },
+    {
+      "fact": "Late presentation: decision involves two consultants; non-operative management with renal protection is an option.",
+      "source": "BOAST"
+    }
+  ],
+  "recall": {
+    "think": "Muscle and nerve death within hours; limb and kidneys at risk.",
+    "say": "\"I'm concerned about acute compartment syndrome.\"",
+    "do": [
+      "Split cast and padding to skin, elevate",
+      "Call orthopaedic registrar + consultant now",
+      "Re-evaluate within 30 minutes; prepare theatre"
+    ],
+    "numbers": [
+      {
+        "value": "ΔP < 30 mmHg",
+        "meaning": "increased risk",
+        "source": "BOAST"
+      },
+      {
+        "value": "30 min",
+        "meaning": "re-evaluate after release",
+        "source": "BOAST"
+      },
+      {
+        "value": "24 h / 72 h",
+        "meaning": "plastics discussion / relook",
+        "source": "BOAST"
+      }
+    ],
+    "trap": "Pulse present ≠ compartment safe.",
+    "finish": "Immediate two-incision, four-compartment fasciotomy."
+  },
+  "sources": [
+    {
+      "id": "BOAST",
+      "name": "BOA Standard: Diagnosis and Management of Compartment Syndrome of the Extremities",
+      "version": "Published July 2014; updated July 2025",
+      "url": "https://www.boa.ac.uk/resource/boast-10-pdf.html",
+      "supports": "Hourly assessment, release to skin and elevation, 30-minute re-evaluation, pressure thresholds, consultant decision, fasciotomy technique, plastics and relook timing, late presentation"
+    },
+    {
+      "id": "NG37",
+      "name": "NICE NG37: Fractures (complex): assessment and management",
+      "version": "2016 (compartment syndrome recommendations; guideline last amended 2022)",
+      "url": "https://www.nice.org.uk/guidance/ng37/chapter/recommendations",
+      "supports": "48-hour awareness after tibial fracture; continuous pressure monitoring when the patient is unconscious or has a nerve block"
+    }
+  ],
+  "partner": {
+    "opening": "Please assess this patient's leg and tell me what you're concerned about. I'll give you findings as you go.",
+    "reveals": [
+      {
+        "trigger": "Asks about the pain",
+        "finding": "Pain 9/10, worse over 2 hours, needed two extra morphine doses.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Inspects or palpates the leg",
+        "finding": "Calf and anterior leg swollen and tense compared with the left.",
+        "row": "G3"
+      },
+      {
+        "trigger": "Tests passive stretch",
+        "finding": "Severe pain on passive plantarflexion of the ankle and toes.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Tests sensation",
+        "finding": "Reduced sensation in the first dorsal web space.",
+        "row": "G3"
+      },
+      {
+        "trigger": "Checks perfusion",
+        "finding": "Foot warm, capillary refill 2 seconds, dorsalis pedis palpable.",
+        "row": "G3"
+      }
+    ],
+    "push": [
+      {
+        "question": "Who would you call, and how quickly?",
+        "row": "G4",
+        "expect": "Orthopaedic registrar and consultant now; theatres alerted."
+      },
+      {
+        "question": "What exactly would you do with the plaster?",
+        "row": "G5",
+        "expect": "Split cast and padding to skin, elevate, re-evaluate in 30 min."
+      },
+      {
+        "question": "Diastolic 80, compartment 55. Interpret.",
+        "row": "G6",
+        "expect": "ΔP 25 mmHg — below 30, increased risk; consultant decides."
+      },
+      {
+        "question": "Describe the operation.",
+        "row": "G7",
+        "expect": "Two-incision, four-compartment fasciotomy; wounds left open."
+      },
+      {
+        "question": "What systemic problem worries you?",
+        "row": "G8",
+        "expect": "Rhabdomyolysis: CK, potassium, renal function, urine output."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "His pain is better after morphine. Are you reassured?",
+        "safeAnswer": "No — rising analgesic need is a warning sign; reassess objectively.",
+        "row": "G2"
+      },
+      {
+        "prompt": "The foot is pink with a strong pulse.",
+        "safeAnswer": "That doesn't exclude compartment syndrome.",
+        "row": "G3"
+      },
+      {
+        "prompt": "The nurse thinks he's exaggerating.",
+        "safeAnswer": "Severe escalating pain after a tibial fracture needs objective assessment, not dismissal.",
+        "row": "G9"
+      },
+      {
+        "prompt": "He presents 36 hours late with an insensate, firm leg.",
+        "safeAnswer": "High surgical risk; decision involves two consultants; non-operative management with renal protection is an option.",
+        "row": "G7"
+      }
+    ]
+  }
+}

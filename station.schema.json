@@ -1,0 +1,496 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://amac-medical.com/schema/station.schema.json",
+  "title": "AMaC Station",
+  "type": "object",
+  "required": [
+    "id",
+    "exam",
+    "title",
+    "type",
+    "header",
+    "brief",
+    "beforeYouWalkIn",
+    "flow",
+    "grid",
+    "performances",
+    "failures",
+    "knowledge",
+    "recall",
+    "sources",
+    "partner"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[A-Z]{2,5}-[0-9]{2,4}$"
+    },
+    "exam": {
+      "enum": [
+        "MRCS-B",
+        "PLAB-2",
+        "UKMLA-CPSA"
+      ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "type": {
+      "enum": [
+        "examination",
+        "applied-knowledge",
+        "communication",
+        "history",
+        "procedural",
+        "data-interpretation"
+      ]
+    },
+    "header": {
+      "type": "object",
+      "required": [
+        "domain",
+        "contentArea",
+        "minutes",
+        "readingMinutes",
+        "guidelineVersions"
+      ],
+      "properties": {
+        "domain": {
+          "enum": [
+            "Applied Knowledge",
+            "Applied Skills"
+          ]
+        },
+        "contentArea": {
+          "type": "string"
+        },
+        "minutes": {
+          "type": "number"
+        },
+        "readingMinutes": {
+          "type": "number"
+        },
+        "guidelineVersions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "related": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "why"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "why": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "brief": {
+      "type": "object",
+      "required": [
+        "setting",
+        "role",
+        "scenario",
+        "task"
+      ],
+      "properties": {
+        "setting": {
+          "type": "string"
+        },
+        "role": {
+          "type": "string"
+        },
+        "scenario": {
+          "type": "string"
+        },
+        "task": {
+          "type": "string"
+        }
+      }
+    },
+    "beforeYouWalkIn": {
+      "type": "object",
+      "required": [
+        "frame",
+        "trap",
+        "firstMove"
+      ],
+      "properties": {
+        "frame": {
+          "type": "string"
+        },
+        "trap": {
+          "type": "string"
+        },
+        "firstMove": {
+          "type": "string"
+        }
+      }
+    },
+    "flow": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 3
+    },
+    "grid": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 10,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "domain",
+          "label",
+          "fail",
+          "borderline",
+          "pass",
+          "high"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^G[0-9]+$"
+          },
+          "domain": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          },
+          "fail": {
+            "type": "string",
+            "minLength": 3
+          },
+          "borderline": {
+            "type": "string",
+            "minLength": 3
+          },
+          "pass": {
+            "type": "string",
+            "minLength": 3
+          },
+          "high": {
+            "type": "string",
+            "minLength": 3,
+            "description": "AMaC 'High-performance' teaching band; not an official exam grade"
+          },
+          "source": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "performances": {
+      "type": "object",
+      "required": [
+        "fail",
+        "pass",
+        "high"
+      ],
+      "properties": {
+        "fail": {
+          "$ref": "#/$defs/dialogue"
+        },
+        "borderline": {
+          "$ref": "#/$defs/dialogue"
+        },
+        "pass": {
+          "$ref": "#/$defs/dialogue"
+        },
+        "high": {
+          "$ref": "#/$defs/dialogue"
+        }
+      }
+    },
+    "failures": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "required": [
+          "row",
+          "move",
+          "consequence"
+        ],
+        "properties": {
+          "row": {
+            "type": "string"
+          },
+          "move": {
+            "type": "string"
+          },
+          "consequence": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "recovery": {
+      "type": "array",
+      "maxItems": 3,
+      "items": {
+        "type": "object",
+        "required": [
+          "when",
+          "line"
+        ],
+        "properties": {
+          "when": {
+            "type": "string"
+          },
+          "line": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "knowledge": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "fact"
+        ],
+        "properties": {
+          "fact": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "recall": {
+      "type": "object",
+      "required": [
+        "think",
+        "say",
+        "do",
+        "numbers",
+        "trap",
+        "finish"
+      ],
+      "properties": {
+        "think": {
+          "type": "string"
+        },
+        "say": {
+          "type": "string"
+        },
+        "do": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 3
+        },
+        "numbers": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "value",
+              "meaning"
+            ],
+            "properties": {
+              "value": {
+                "type": "string"
+              },
+              "meaning": {
+                "type": "string"
+              },
+              "source": {
+                "type": "string"
+              }
+            }
+          },
+          "maxItems": 3
+        },
+        "trap": {
+          "type": "string"
+        },
+        "finish": {
+          "type": "string"
+        }
+      }
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "version",
+          "url",
+          "supports"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "version": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "supports": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "partner": {
+      "type": "object",
+      "required": [
+        "opening",
+        "reveals",
+        "push",
+        "curveballs"
+      ],
+      "properties": {
+        "opening": {
+          "type": "string"
+        },
+        "actorBrief": {
+          "type": "string"
+        },
+        "reveals": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "trigger",
+              "finding",
+              "row"
+            ],
+            "properties": {
+              "trigger": {
+                "type": "string"
+              },
+              "finding": {
+                "type": "string"
+              },
+              "row": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "push": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "question",
+              "row"
+            ],
+            "properties": {
+              "question": {
+                "type": "string"
+              },
+              "row": {
+                "type": "string"
+              },
+              "expect": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "curveballs": {
+          "type": "array",
+          "maxItems": 4,
+          "items": {
+            "type": "object",
+            "required": [
+              "prompt",
+              "safeAnswer",
+              "row"
+            ],
+            "properties": {
+              "prompt": {
+                "type": "string"
+              },
+              "safeAnswer": {
+                "type": "string"
+              },
+              "row": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "dialogue": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "required": [
+          "speaker",
+          "text"
+        ],
+        "properties": {
+          "speaker": {
+            "enum": [
+              "examiner",
+              "candidate"
+            ]
+          },
+          "text": {
+            "type": "string"
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "row",
+                "band"
+              ],
+              "properties": {
+                "row": {
+                  "type": "string"
+                },
+                "band": {
+                  "enum": [
+                    "fail",
+                    "borderline",
+                    "pass",
+                    "high"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
