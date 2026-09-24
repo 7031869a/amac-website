@@ -152,10 +152,8 @@ def measure():
     safe('mrcp1Questions', lambda: count('mrcp1-questions.js', 'MRCP1_QUESTIONS'))
     try:
         reviewed = load_json('data/reviewed.json')
-        pending = load_json('data/pending-review.json')
+        # the pending pool was withdrawn from the site on 24 Sep 2026
         counts['mrcsReviewed'] = len(reviewed)
-        counts['mrcsPending'] = len(pending)
-        counts['mrcsTotal'] = len(reviewed) + len(pending)
     except Exception as exc:  # noqa: BLE001
         problems.append('mrcs: %s: %s' % (type(exc).__name__, exc))
     return counts, problems

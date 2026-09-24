@@ -199,16 +199,6 @@
   .explain.show { display: block; }
   .explain .row { margin-bottom: 8px; }
   .explain .row b { color: var(--text); }
-  .review-flag {
-    display: inline-block;
-    font-size: 11px;
-    color: var(--text-dim);
-    border: 1px solid var(--card-border);
-    padding: 2px 8px;
-    border-radius: 20px;
-    margin-top: 10px;
-  }
-
   .quiz-controls {
     display: flex;
     justify-content: flex-end;
@@ -407,13 +397,6 @@
           <option value="all">All available</option>
         </select>
 
-        <div class="checkbox-row" id="pending-checkbox-row">
-          <input type="checkbox" id="include-pending">
-          <div>
-            <div class="label-main">Include recently added questions</div>
-            <div class="label-sub" id="pending-sub-label"></div>
-          </div>
-        </div>
 
         <button id="start-btn" class="btn-primary">Start practice</button>
       </div>
@@ -423,7 +406,7 @@
     <div id="mock-options" style="display:none;">
       <div class="card">
         <ul class="info-list">
-          <li><b style="color:var(--text)">180 questions</b>, drawn at random from clinically reviewed questions only<span id="mock-subject-coverage"></span></li>
+          <li><b style="color:var(--text)">180 questions</b>, drawn at random from the question bank<span id="mock-subject-coverage"></span></li>
           <li><b style="color:var(--text)">180 minutes</b>, one continuous sitting — this mirrors Paper 1 (Applied Basic Science) as it is actually sat, not a split into two half-length papers</li>
           <li>No feedback until you finish, same as the real exam</li>
           <li>Flag questions and jump between them freely using the palette</li>
@@ -547,21 +530,17 @@
      - Mock exam: one continuous 180-question/180-minute
        sitting representing Paper 1 as it is actually sat —
        deliberately NOT split into two fake half-length papers.
-   Data pools: reviewed (clinically checked) and
-   pending-review (dedup-checked, not yet clinically reviewed).
-   The pending pool is opt-in in practice mode and always
-   visibly labelled; mock exam draws from reviewed only.
+   Both modes draw from data/reviewed.json. There is no second
+   pool: the previously held set was withdrawn from the site.
    ========================================================= */
 
 const DATA_FILES = {
   reviewed: 'data/reviewed.json',
-  pending: 'data/pending-review.json',
 };
 const MOCK_QUESTION_COUNT = 180;
 const MOCK_SECONDS = 180 * 60;
 
 let reviewedData = [];
-let pendingData = [];
 
 let quizPool = [];
 let currentIndex = 0;
@@ -604,35 +583,21 @@ function shuffle(arr) {
 
 async function loadData() {
   try {
-    const [rev, pend] = await Promise.all([
-      fetch(DATA_FILES.reviewed).then(r => r.json()),
-      fetch(DATA_FILES.pending).then(r => r.json()),
-    ]);
-    reviewedData = rev;
-    pendingData = pend;
+    reviewedData = await fetch(DATA_FILES.reviewed).then(r => r.json());
   } catch (e) {
     document.getElementById('bank-size-note').textContent =
       'Could not load question data. This page must be served over http(s) — opening the file directly will not work.';
     console.error(e);
     return;
   }
-  if (pendingData.length === 0) {
-    document.getElementById('pending-checkbox-row').style.display = 'none';
-  } else {
-    document.getElementById('pending-sub-label').textContent =
-      `${pendingData.length} additional questions that have passed duplicate-checking but not yet the full clinical accuracy review. Off by default.`;
-  }
   populateSubjects();
 
   const mockNote = document.getElementById('mock-availability-note');
   if (reviewedData.length < MOCK_QUESTION_COUNT) {
-    mockNote.textContent = `Only ${reviewedData.length} reviewed questions are available so far — a full ${MOCK_QUESTION_COUNT}-question mock needs more before it can run.`;
+    mockNote.textContent = `Only ${reviewedData.length} questions are available so far — a full ${MOCK_QUESTION_COUNT}-question mock needs more before it can run.`;
     document.getElementById('start-mock-btn').disabled = true;
   } else {
-    mockNote.textContent = `Drawing from ${reviewedData.length} fully clinically reviewed questions.` +
-      (pendingData.length > 0
-        ? ` ${pendingData.length} more are duplicate-checked and cross-referenced, pending final clinical sign-off, and are not used in the mock.`
-        : '');
+    mockNote.textContent = `Drawing from ${reviewedData.length} questions.`;
   }
   // Which subjects the mock currently covers, derived from the reviewed pool.
   const mockSubjects = [...new Set(reviewedData.map(d => d.subject))].sort();
@@ -640,47 +605,31 @@ async function loadData() {
     ` — currently covering ${mockSubjects.length} subjects: ${mockSubjects.join(', ')}`;
 }
 
-// Every subject is listed whatever the checkbox state, so subjects whose
-// questions are all pending review stay visible (labelled) instead of vanishing.
 function populateSubjects() {
   const select = document.getElementById('subject-select');
   const previous = select.value;
-  const subjects = [...new Set([...reviewedData, ...pendingData].map(d => d.subject))].sort();
+  const subjects = [...new Set(reviewedData.map(d => d.subject))].sort();
   select.innerHTML = '<option value="all">All subjects</option>' +
     subjects.map(s => {
-      const reviewed = reviewedData.filter(d => d.subject === s).length;
-      const pending = pendingData.filter(d => d.subject === s).length;
-      const label = pendingData.length > 0 ? `${reviewed} reviewed · ${pending} pending` : `${reviewed}`;
-      return `<option value="${s}">${s} (${label})</option>`;
+      const n = reviewedData.filter(d => d.subject === s).length;
+      return `<option value="${s}">${s} (${n})</option>`;
     }).join('');
   if (previous && subjects.includes(previous)) select.value = previous;
   updateBankNote();
 }
-// The option list doesn't depend on the checkbox, so toggling it only refreshes
-// the note and keeps the chosen subject.
-document.getElementById('include-pending').addEventListener('change', updateBankNote);
 
 // Live count for the current practice selection (as questions.html's #q-count).
 // Subjects below SMALL_SUBJECT_THRESHOLD get a qualifier so a short run isn't a surprise.
 const SMALL_SUBJECT_THRESHOLD = 10;
 function updateBankNote() {
-  const includePending = document.getElementById('include-pending').checked;
-  const pool = includePending ? [...reviewedData, ...pendingData] : reviewedData;
   const subject = document.getElementById('subject-select').value;
-  const n = subject === 'all' ? pool.length : pool.filter(d => d.subject === subject).length;
-  const pendingHere = subject === 'all' ? pendingData.length : pendingData.filter(d => d.subject === subject).length;
-  const note = document.getElementById('bank-size-note');
-  if (n === 0 && pendingHere > 0 && !includePending) {
-    note.textContent = `All ${pendingHere} ${subject} questions are pending clinical review — tick the box above to include them.`;
-    return;
-  }
+  const n = subject === 'all'
+    ? reviewedData.length
+    : reviewedData.filter(d => d.subject === subject).length;
   let text = `${n} question${n !== 1 ? 's' : ''} available`;
   if (subject !== 'all' && n < SMALL_SUBJECT_THRESHOLD) text += ' (a smaller question set)';
   text += '.';
-  if (pendingHere > 0 && !includePending) {
-    text += ` Tick the box above to add ${pendingHere} more that are duplicate-checked but pending review.`;
-  }
-  note.textContent = text;
+  document.getElementById('bank-size-note').textContent = text;
 }
 document.getElementById('subject-select').addEventListener('change', updateBankNote);
 
@@ -698,8 +647,7 @@ document.getElementById('mode-mock-btn').addEventListener('click', () => {
 });
 
 document.getElementById('start-btn').addEventListener('click', () => {
-  const includePending = document.getElementById('include-pending').checked;
-  const pool = includePending ? [...reviewedData, ...pendingData] : reviewedData;
+  const pool = reviewedData;
   const subject = document.getElementById('subject-select').value;
   const countSel = document.getElementById('count-select').value;
 
@@ -708,9 +656,7 @@ document.getElementById('start-btn').addEventListener('click', () => {
   quizPool = countSel === 'all' ? filtered : filtered.slice(0, parseInt(countSel, 10));
 
   if (quizPool.length === 0) {
-    alert(includePending
-      ? 'No questions available for that combination. Try a different subject.'
-      : 'All questions in this subject are pending clinical review. Tick "Include recently added questions" to practise them.');
+    alert('No questions available for that combination. Try a different subject.');
     return;
   }
 
@@ -730,7 +676,7 @@ function renderQuestion() {
   document.getElementById('q-counter').textContent = `Question ${currentIndex + 1} of ${total}`;
   document.getElementById('q-score').textContent = `Score: ${score}`;
   document.getElementById('progress-fill').style.width = `${(currentIndex / total) * 100}%`;
-  document.getElementById('q-topic').textContent = q.topic + (q.reviewed ? '' : ' · pending review');
+  document.getElementById('q-topic').textContent = q.topic;
   document.getElementById('q-text').textContent = q.question;
 
   const optionsEl = document.getElementById('q-options');
@@ -767,7 +713,7 @@ function selectAnswer(selected) {
   const explainEl = document.getElementById('q-explain');
   explainEl.innerHTML = Object.entries(q.explanations).map(([opt, text]) =>
     `<div class="row"><b>${opt}:</b> ${text}</div>`
-  ).join('') + (q.reviewed ? '' : '<span class="review-flag">Not yet clinically reviewed</span>');
+  ).join('');
   explainEl.classList.add('show');
 
   sessionLog.push({
