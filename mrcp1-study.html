@@ -200,12 +200,12 @@ function esc(s){ return String(s == null ? '' : s)
   var fixtures = ALL.filter(function(q){ return q.review_status === 'fixture'; }).length;
   var note = document.getElementById('scaffoldNote');
   if (fixtures){
-    note.innerHTML = '<b>Scaffold — not a bank.</b> ' + fixtures + ' synthetic fixture question' +
-      (fixtures === 1 ? '' : 's') + ' only. Deliberately non-clinical, to be deleted before real authoring.';
+    note.innerHTML = '<b>Coming soon.</b> The MRCP Part 1 question bank is still being '
+      + 'written. The examples shown here are placeholders, not exam questions.';
   } else if (!ALL.length){
-    note.innerHTML = '<b>The bank is empty.</b> No questions have been authored yet.';
+    note.innerHTML = '<b>Coming soon.</b> The MRCP Part 1 question bank is still being written.';
   } else {
-    note.innerHTML = '<b>Run <span style="font-weight:600">python mrcp1-validate.py</span></b> before committing any change to the bank.';
+    note.innerHTML = '';
   }
 })();
 
@@ -257,8 +257,7 @@ function render(){
     document.getElementById('prog').textContent = '';
     document.getElementById('qcard').innerHTML = '<div class="empty">' +
       (ALL.length ? 'No questions match this combination of subdomain and difficulty.'
-                  : 'The MRCP Part 1 bank is empty. No questions have been authored yet.<br>' +
-                    'Add them to mrcp1-questions.js and run the validator.') + '</div>';
+                  : 'The MRCP Part 1 question bank is coming soon.') + '</div>';
     document.getElementById('btn-prev').disabled = true;
     document.getElementById('btn-next').disabled = true;
     return;

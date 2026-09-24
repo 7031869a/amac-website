@@ -150,7 +150,7 @@ footer{margin-top:40px;border-top:1px solid #1A2740;padding:30px 26px 26px;}
   <div class="hero-inner">
     <div class="hero-kick">MRCP PART 1</div>
     <h1>Question bank</h1>
-    <p class="hero-sub">The container is built. The bank is not. Nothing here has been authored or reviewed.</p>
+    <p class="hero-sub">The MRCP Part 1 question bank is coming soon.</p>
     <!-- No bank-size figures are displayed. An empty scaffold advertises nothing;
          counts return once there are reviewed questions to count. -->
   </div>
@@ -208,16 +208,12 @@ function subdomains(list){
   var fixtures = ALL.filter(function(q){ return q.review_status === 'fixture'; }).length;
   var note = document.getElementById('scaffoldNote');
   if (fixtures){
-    note.innerHTML = '<b>Scaffold — not a bank.</b> This page is showing ' + fixtures +
-      ' synthetic fixture question' + (fixtures === 1 ? '' : 's') +
-      ' so the container renders. The content is deliberately non-clinical and must be deleted' +
-      ' before any real authoring begins. Run <b>python mrcp1-validate.py</b> before committing' +
-      ' any change to the bank.';
+    note.innerHTML = '<b>Coming soon.</b> The MRCP Part 1 question bank is still being '
+      + 'written. The examples shown here are placeholders, not exam questions.';
   } else if (!ALL.length){
-    note.innerHTML = '<b>The bank is empty.</b> No questions have been authored yet.';
+    note.innerHTML = '<b>Coming soon.</b> The MRCP Part 1 question bank is still being written.';
   } else {
-    note.innerHTML = '<b>Run the validator</b> (<b>python mrcp1-validate.py</b>) before committing' +
-      ' any change to this bank.';
+    note.innerHTML = '';
   }
 })();
 
@@ -340,8 +336,7 @@ function renderBank(){
   if (!list.length){
     document.getElementById('bank').innerHTML = '<div class="empty">' +
       (ALL.length ? 'No questions match this combination of subdomain and difficulty.'
-                  : 'The MRCP Part 1 bank is empty. No questions have been authored yet.<br>' +
-                    'Add them to mrcp1-questions.js and run the validator.') + '</div>';
+                  : 'The MRCP Part 1 question bank is coming soon.') + '</div>';
     return;
   }
 
