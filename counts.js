@@ -2,7 +2,7 @@
    counts.js — keeps headline numbers in step with the data.
 
    Fills every element carrying data-count="<key>" from
-   data/counts.json. build-counts.py writes that file and also
+   data/counts.json. _tools/build-counts.py writes that file and also
    rewrites the number already in the markup, so the page is
    correct without JavaScript; this script only corrects drift
    between a content change and the next build.
@@ -11,7 +11,7 @@
    Keys that are only digits (the chips on plab1-exams.html)
    are not counts and are left alone.
 
-   After adding content, run:  python build-counts.py
+   After adding content, run:  python _tools/build-counts.py
    ========================================================= */
 (function () {
   'use strict';

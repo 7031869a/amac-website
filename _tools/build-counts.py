@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-build-counts.py — keep every headline number on the site in step with the data.
+_tools/build-counts.py — keep every headline number on the site in step with the data.
 
-    python build-counts.py          count, write data/counts.json, rewrite HTML fallbacks
-    python build-counts.py --check  count and report only; exit 1 if anything is stale
+    python _tools/build-counts.py          count, write data/counts.json, rewrite HTML fallbacks
+    python _tools/build-counts.py --check  count and report only; exit 1 if anything is stale
 
 What it does:
 
@@ -41,7 +41,8 @@ import re
 import sys
 from datetime import date
 
-ROOT = os.path.dirname(os.path.abspath(__file__))
+# The script lives in _tools/ (not published by GitHub Pages); the site is one level up.
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 def read(rel):
