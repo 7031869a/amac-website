@@ -1,0 +1,563 @@
+{
+  "id": "MB-279",
+  "exam": "MRCS-B",
+  "title": "The limping child: irritable hip at age 6",
+  "type": "data-interpretation",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "Paediatric orthopaedics: the irritable hip (findings and results released in stages)",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "BOAST: The management of children with acute musculoskeletal infection (May 2022)",
+      "UK consensus on paediatric musculoskeletal infection (Bone Joint J, July 2023)",
+      "Kocher et al., J Bone Joint Surg Am (1999 and 2004)"
+    ],
+    "related": [
+      {
+        "id": "MB-247",
+        "why": "Septic arthritis of the native knee in adults"
+      },
+      {
+        "id": "MB-199",
+        "why": "Acute haematogenous osteomyelitis"
+      },
+      {
+        "id": "MB-140",
+        "why": "Hip examination"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Paediatric emergency department",
+    "role": "Core surgical trainee in trauma and orthopaedics",
+    "scenario": "Oliver Petrie, 6, is brought by his mother with 3 days of right hip pain and a limp. There was no injury. He had a cold last week.",
+    "task": "The examiner will give you examination findings and results in stages. Discuss your differential diagnosis, interpretation and management."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Most irritable hips at this age are transient synovitis, but septic arthritis must be excluded first.",
+    "trap": "Treating a zero Kocher score as a rule-out, or thinking SUFE at age 6.",
+    "firstMove": "\"I'd look for fever, weight-bearing and red flags, and examine hip, knee and spine.\""
+  },
+  "flow": [
+    "History and examination",
+    "Differential by age",
+    "Investigations",
+    "Interpret with Kocher criteria",
+    "Transient synovitis plan",
+    "Septic arthritis pathway",
+    "Explain and safety-net"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-skill",
+      "label": "Assess and look for red flags",
+      "fail": "Diagnoses from the doorway without examining him.",
+      "pass": "Asks about fever, injury, recent illness, night pain and systemic upset; checks temperature, weight-bearing, hip, knee, spine and abdomen.",
+      "high": "Examines the knee because hip pain refers there, and considers safeguarding if the story does not fit."
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-knowledge",
+      "label": "Differential by age",
+      "fail": "Anchors on SUFE, or omits septic arthritis.",
+      "pass": "Transient synovitis, septic arthritis, osteomyelitis, Perthes disease, juvenile idiopathic arthritis, injury including non-accidental, and malignancy.",
+      "high": "At 6, transient synovitis and Perthes are likely; SUFE is an adolescent condition; septic arthritis is the one not to miss.",
+      "source": "BL"
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-skill",
+      "label": "Investigations",
+      "fail": "Requests only an X-ray, or no blood tests.",
+      "pass": "FBC, CRP, ESR and blood cultures; AP pelvis and frog-lateral X-rays; hip ultrasound for effusion.",
+      "high": "Knows ultrasound shows an effusion but not whether it is infected; MRI if doubt persists.",
+      "source": "BOAST"
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-knowledge",
+      "label": "Interpret results with the Kocher criteria",
+      "fail": "Says a low score excludes septic arthritis.",
+      "pass": "Kocher predictors: history of fever, non-weight-bearing, ESR 40 or more, white count over 12; none present, so septic arthritis is unlikely.",
+      "high": "Treats the score as support, not a rule-out: it performed less well on validation, and early CRP can be normal.",
+      "source": "KOCHER"
+    },
+    {
+      "id": "G5",
+      "domain": "professionalism",
+      "label": "Manage transient synovitis safely",
+      "fail": "Discharges with no plan or review.",
+      "pass": "Diagnosis of exclusion: analgesia with ibuprofen, rest, and a planned review.",
+      "high": "Gives explicit return criteria and arranges repeat X-rays if the limp persists, as early Perthes can be missed."
+    },
+    {
+      "id": "G6",
+      "domain": "professionalism",
+      "label": "Septic arthritis pathway (safety-critical)",
+      "fail": "Starts oral antibiotics and sends him home, or waits for the morning.",
+      "pass": "If suspected: urgent orthopaedic and paediatric referral, blood cultures, and aspiration or washout ideally within 24 hours of diagnosis.",
+      "high": "IV antibiotics immediately if septic; if stable with surgery imminent, deep samples first to guide treatment.",
+      "source": "BOAST"
+    },
+    {
+      "id": "G7",
+      "domain": "communication",
+      "label": "Explain and safety-net",
+      "fail": "Tells the mother it is nothing and gives no advice.",
+      "pass": "Explains the likely diagnosis, the uncertainty and what would change it, with written safety-net advice.",
+      "high": "Addresses her worry directly, checks she can return quickly, and documents the advice."
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "A 6-year-old with a limp. What are you thinking?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Probably a slipped upper femoral epiphysis.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you assess him?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "He's walking in, so I don't think he needs much examining. I'd get a hip X-ray.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          },
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "He has no fever history, he's weight-bearing, ESR 14 and white count 9.2."
+      },
+      {
+        "speaker": "candidate",
+        "text": "So his Kocher score is zero and septic arthritis is excluded.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What would you tell his mother?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "It's nothing serious. He can go home, no need to come back.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          },
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "examiner",
+        "text": "A 6-year-old with a limp. How would you assess him?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd ask about fever, injury, recent illness, night pain and whether he's unwell. Then temperature, whether he'll weight-bear, and examine the hip, knee, spine and abdomen.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Your differential?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Transient synovitis, septic arthritis, osteomyelitis, Perthes disease, juvenile idiopathic arthritis, injury including non-accidental, and malignancy.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Investigations?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "FBC, CRP, ESR and blood cultures, AP pelvis and frog-lateral X-rays, and a hip ultrasound.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "No fever history, weight-bearing, ESR 14, white count 9.2, CRP 8. Small effusion on ultrasound. X-rays normal."
+      },
+      {
+        "speaker": "candidate",
+        "text": "None of the four Kocher predictors are present: fever history, non-weight-bearing, ESR 40 or more, white count over 12. Septic arthritis is unlikely.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Management?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Transient synovitis is a diagnosis of exclusion: ibuprofen, rest, and a planned review.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What if you suspected septic arthritis?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Urgent orthopaedic and paediatric referral, blood cultures, and aspiration or washout ideally within 24 hours.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What do you tell his mother?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "That this is most likely a temporary inflammation after his cold, what we're not yet sure of, and written advice on when to bring him back.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "examiner",
+        "text": "How would you assess him?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd examine the knee as well, because hip pain often refers there. If the story didn't fit his injuries, I'd think about safeguarding.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Could this be SUFE?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Unlikely at 6: SUFE is an adolescent condition. At his age, transient synovitis and Perthes are more likely, and septic arthritis is the one I mustn't miss.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The ultrasound shows an effusion. Does that mean infection?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "No, ultrasound can't tell a sterile effusion from pus. If I remained worried, MRI would help.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "So a Kocher score of zero rules out infection?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "It makes it unlikely, but it's support for judgement, not a rule-out. It performed less well when validated elsewhere, and CRP can be normal early. If he became febrile or stopped weight-bearing, I'd reassess.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "You're sending him home?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Yes, with clear return criteria: fever, refusing to walk, worsening pain or a limp that doesn't settle. If it persists, repeat X-rays, as early Perthes can look normal.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "He returns febrile, refusing to weight-bear."
+      },
+      {
+        "speaker": "candidate",
+        "text": "If he meets sepsis criteria, IV antibiotics immediately after cultures. If he's stable and theatre is imminent, aspiration first so we get samples to guide treatment.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "His mother is worried."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd ask what worries her most, check she can get back quickly, and document the advice I've given.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G6",
+      "move": "Oral antibiotics and discharge for a febrile child who won't weight-bear.",
+      "consequence": "Septic arthritis destroys the joint; delayed drainage risks growth disturbance and sepsis."
+    },
+    {
+      "row": "G4",
+      "move": "Using a zero Kocher score to stop thinking about infection.",
+      "consequence": "Early septic arthritis with normal markers is sent home."
+    },
+    {
+      "row": "G2",
+      "move": "Anchoring on SUFE in a 6-year-old.",
+      "consequence": "Transient synovitis, Perthes and infection are under-investigated."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You said Kocher excludes infection",
+      "line": "To be precise, it makes infection unlikely; I'd still safety-net and reassess if he becomes febrile or stops weight-bearing."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Kocher predictors: history of fever, non-weight-bearing, ESR 40 mm/h or more, WCC over 12 x 10^9/L. Probability under 0.2% with none, 93% with three.",
+      "source": "KOCHER"
+    },
+    {
+      "fact": "The rule performed less well in a new population.",
+      "source": "KOCHER04"
+    },
+    {
+      "fact": "No algorithm is completely reliable; a normal CRP or ESR does not exclude early infection.",
+      "source": "MSKCONS"
+    },
+    {
+      "fact": "Septic arthritis: drainage ideally within 24 hours of diagnosis; IV antibiotics immediately if septic.",
+      "source": "BOAST"
+    },
+    {
+      "fact": "SUFE presents in adolescence; Perthes and transient synovitis in younger children.",
+      "source": "BL"
+    }
+  ],
+  "recall": {
+    "think": "Septic arthritis destroying the hip.",
+    "say": "\"Septic arthritis must be excluded before transient synovitis is diagnosed.\"",
+    "do": [
+      "Fever, weight-bearing, hip, knee, spine",
+      "FBC, CRP, ESR, cultures; X-rays; ultrasound",
+      "Discharge only with safety-net and review"
+    ],
+    "numbers": [
+      {
+        "value": "4 Kocher predictors",
+        "meaning": "fever history, non-weight-bearing, ESR ≥40, WCC >12",
+        "source": "KOCHER"
+      },
+      {
+        "value": "Within 24 hours",
+        "meaning": "drainage of septic arthritis",
+        "source": "BOAST"
+      }
+    ],
+    "trap": "Kocher zero means infection is excluded.",
+    "finish": "Transient synovitis: analgesia and review. Septic: washout and IV antibiotics."
+  },
+  "sources": [
+    {
+      "id": "KOCHER",
+      "name": "Kocher MS, Zurakowski D, Kasser JR. Differentiating between septic arthritis and transient synovitis of the hip in children: an evidence-based clinical prediction algorithm. J Bone Joint Surg Am 1999;81:1662-70",
+      "version": "1999",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/10608376/",
+      "supports": "Four independent predictors: history of fever, non-weight-bearing, ESR at least 40 mm/h, serum white cell count over 12 x 10^9/L; predicted probability of septic arthritis under 0.2% with none, 3.0% with one, 40.0% with two, 93.1% with three, 99.6% with four"
+    },
+    {
+      "id": "KOCHER04",
+      "name": "Kocher MS, Mandiga R, Zurakowski D, et al. Validation of a clinical prediction rule for the differentiation between septic arthritis and transient synovitis of the hip in children. J Bone Joint Surg Am 2004;86:1629-35",
+      "version": "2004",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/15292409/",
+      "supports": "The same four predictors in a new population; diagnostic performance diminished on validation (area under the ROC curve 0.86 vs 0.96)"
+    },
+    {
+      "id": "BOAST",
+      "name": "British Orthopaedic Association Standard for Trauma and Orthopaedics (BOAST) with BSCOS: The management of children with acute musculoskeletal infection",
+      "version": "May 2022",
+      "url": "https://www.boa.ac.uk/resource/boast-the-management-of-children-with-acute-musculoskeletal-infection.html",
+      "supports": "Inpatient care under orthopaedic and paediatric specialists; FBC, CRP, blood cultures and ESR; MRI as preferred second-line imaging; empirical IV antibiotics immediately if high-risk sepsis criteria are met; if stable and surgery planned, antibiotics may be delayed for deep tissue sampling; septic arthritis needs surgical drainage as soon as possible, ideally within 24 hours of diagnosis"
+    },
+    {
+      "id": "MSKCONS",
+      "name": "Mitchell PD, et al. Consensus guidelines on the management of musculoskeletal infection affecting children in the UK. Bone Joint J 2023;105-B:815-20",
+      "version": "July 2023",
+      "url": "https://boneandjoint.org.uk/Article/10.1302/0301-620X.105B7.BJJ-2022-1316.R1",
+      "supports": "No single clinical algorithm is completely reliable; a normal CRP or ESR does not exclude infection early in the disease course; plain radiographs in all suspected cases; MRI as the preferred advanced imaging"
+    },
+    {
+      "id": "BL",
+      "name": "Bailey & Love's Short Practice of Surgery (O'Connell, McCaskie, Sayers, eds)",
+      "version": "28th edition, 2023",
+      "url": "https://www.routledge.com/Bailey--Loves-Short-Practice-of-Surgery---28th-Edition/OConnell-McCaskie-Sayers/p/book/9780367548117",
+      "supports": "Paediatric hip disorders: transient synovitis, Perthes disease and slipped upper femoral epiphysis, and their typical ages"
+    },
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format: 9 minutes with 1 minute's reading; examiner-led questioning with data released in stages"
+    }
+  ],
+  "partner": {
+    "opening": "Oliver, 6, has had right hip pain and a limp for 3 days. No injury. He had a cold last week. How would you assess him?",
+    "actorBrief": "You are the examiner. Release findings and results only when the candidate asks. If the candidate uses Kocher as a rule-out, push on it.",
+    "reveals": [
+      {
+        "trigger": "Asks for history and observations, or examines (stage 1)",
+        "finding": "No history of fever. T 37.4°C, HR 100. Walks with an antalgic limp but bears weight. Right hip: pain at the end of internal rotation. Knee, spine and abdomen normal. No bruising. Story consistent.",
+        "row": "G1"
+      },
+      {
+        "trigger": "Asks for bloods (stage 2)",
+        "finding": "WCC 9.2 x 10^9/L, CRP 8 mg/L, ESR 14 mm/h. Blood cultures sent.",
+        "row": "G4"
+      },
+      {
+        "trigger": "Asks for imaging (stage 3)",
+        "finding": "AP pelvis and frog-lateral X-rays normal. Ultrasound: small right hip effusion.",
+        "row": "G3"
+      }
+    ],
+    "push": [
+      {
+        "question": "What is your differential?",
+        "row": "G2",
+        "expect": "Transient synovitis, septic arthritis, osteomyelitis, Perthes, JIA, injury including NAI, malignancy."
+      },
+      {
+        "question": "What investigations?",
+        "row": "G3",
+        "expect": "FBC, CRP, ESR, blood cultures; AP and frog-lateral X-rays; ultrasound."
+      },
+      {
+        "question": "Apply the Kocher criteria.",
+        "row": "G4",
+        "expect": "None of four present; septic arthritis unlikely but not excluded."
+      },
+      {
+        "question": "How will you manage him?",
+        "row": "G5",
+        "expect": "Analgesia, rest, safety-net, planned review; repeat X-rays if limp persists."
+      },
+      {
+        "question": "What if septic arthritis were suspected?",
+        "row": "G6",
+        "expect": "Urgent orthopaedic and paediatric care; cultures; drainage within 24 hours; IV antibiotics."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "He comes back 24 hours later: T 38.9°C and refusing to stand.",
+        "safeAnswer": "Now two or more predictors: treat as septic arthritis; urgent orthopaedic referral, cultures, aspiration or washout, IV antibiotics.",
+        "row": "G6"
+      },
+      {
+        "prompt": "Instead he is a 13-year-old with knee pain and an externally rotated leg.",
+        "safeAnswer": "Suspect SUFE: stop weight-bearing, AP and lateral X-rays of both hips, urgent orthopaedic fixation.",
+        "row": "G2"
+      },
+      {
+        "prompt": "His mother mentions night sweats, pallor and bruising.",
+        "safeAnswer": "Consider leukaemia: blood film and urgent paediatric review.",
+        "row": "G1"
+      },
+      {
+        "prompt": "Six weeks later he still limps.",
+        "safeAnswer": "Repeat hip X-rays for Perthes and orthopaedic follow-up.",
+        "row": "G5"
+      }
+    ]
+  }
+}

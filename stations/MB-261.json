@@ -1,0 +1,511 @@
+{
+  "id": "MB-261",
+  "exam": "MRCS-B",
+  "title": "Traumatic cardiac tamponade after a penetrating chest wound",
+  "type": "applied-knowledge",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "Trauma: penetrating chest injury",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "ERC Guidelines 2025: Special Circumstances in Resuscitation (Resuscitation, October 2025)",
+      "Resuscitative thoracotomy multisociety consensus (Wien Klin Wochenschr, 2026)",
+      "Bailey & Love, 28th ed. (2023)"
+    ],
+    "related": [
+      {
+        "id": "MB-270",
+        "why": "Blunt chest trauma with flail chest, where tamponade is the differential"
+      },
+      {
+        "id": "MB-164",
+        "why": "The primary survey and tension pneumothorax, the other obstructive cause of shock"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Emergency department resuscitation room",
+    "role": "Core surgical trainee on the trauma team",
+    "scenario": "Mr Euan Stobart, 45, arrives with a single stab wound just left of the sternum. He is pale, anxious and hypotensive.",
+    "task": "Answer the examiner's questions on your assessment and immediate management."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Wound in the cardiac box plus shock is tamponade until proven otherwise; the fix is surgical.",
+    "trap": "Treating needle pericardiocentesis as the treatment, or sending him to CT.",
+    "firstMove": "\"This is likely cardiac tamponade. I need the trauma team leader and cardiothoracic surgeon now.\""
+  },
+  "flow": [
+    "Recognise",
+    "Primary survey and eFAST",
+    "Escalate to theatre",
+    "Pericardial anatomy",
+    "Role of pericardiocentesis",
+    "If he arrests"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-knowledge",
+      "label": "Recognition",
+      "fail": "Diagnoses hypovolaemia or pneumothorax alone without considering tamponade.",
+      "pass": "Stab wound in the cardiac box with hypotension, raised neck veins and muffled heart sounds: cardiac tamponade.",
+      "high": "Knows the triad is often incomplete, and excludes tension pneumothorax clinically (trachea, breath sounds).",
+      "source": "BL"
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-skill",
+      "label": "Primary survey and eFAST",
+      "fail": "Delays for chest X-ray or CT, or omits ultrasound.",
+      "pass": "ABCDE with oxygen, two large-bore cannulae, bloods and cross-match, and eFAST including the pericardial view.",
+      "high": "Knows a negative pericardial view can mislead if blood drains into the left pleura; a haemothorax should raise suspicion.",
+      "source": "BL"
+    },
+    {
+      "id": "G3",
+      "domain": "professionalism",
+      "label": "Escalation and definitive care",
+      "fail": "Manages alone or waits to see the response before calling for help.",
+      "pass": "Calls trauma team leader and cardiothoracic surgeon immediately; theatre now for sternotomy or thoracotomy and repair.",
+      "high": "Activates the major haemorrhage protocol and moves him straight to theatre without CT.",
+      "source": "BL"
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-knowledge",
+      "label": "Pericardial anatomy",
+      "fail": "Cannot describe the layers of the pericardium.",
+      "pass": "Fibrous pericardium outside; serous pericardium with parietal and visceral layers; blood collects between them.",
+      "high": "The fibrous layer cannot stretch acutely, so a small volume causes tamponade; phrenic nerves run on its lateral surface.",
+      "source": "GRAYS"
+    },
+    {
+      "id": "G5",
+      "domain": "professionalism",
+      "label": "Role of pericardiocentesis",
+      "fail": "Offers pericardiocentesis as definitive treatment, or stands theatre down after it.",
+      "pass": "Temporising only, when surgery cannot happen immediately; ultrasound-guided; theatre still needed.",
+      "high": "Clotted blood may not aspirate, so failure proves nothing; it must never delay transfer to theatre.",
+      "source": "DUNSER"
+    },
+    {
+      "id": "G6",
+      "domain": "professionalism",
+      "label": "If he arrests",
+      "fail": "Continues standard CPR alone or attempts a needle first.",
+      "pass": "Resuscitative thoracotomy to release the tamponade, if within 15 minutes of arrest with a trained team and kit.",
+      "high": "Clamshell approach; opens the pericardium in front of the phrenic nerves and controls the wound with a finger.",
+      "source": "DUNSER"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "BP 84/60, pulse 124. What's going on?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "He's lost blood. I'd give fluids and get a chest X-ray.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          },
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Anything else?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd see if he responds before calling anyone.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Describe the pericardium."
+      },
+      {
+        "speaker": "candidate",
+        "text": "It's a sac around the heart. I don't know the layers.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Ultrasound shows pericardial fluid."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Then a pericardiocentesis will sort it out, and he won't need theatre.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "He loses his output."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Start CPR and try the needle again.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "examiner",
+        "text": "What's going on?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Stab wound in the cardiac box with shock. With raised neck veins and muffled heart sounds, this is cardiac tamponade.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What do you do?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "ABCDE, oxygen, two large-bore cannulae, bloods and cross-match, and eFAST including the pericardial view.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd call the trauma team leader and cardiothoracic surgeon now; he needs theatre for sternotomy or thoracotomy and repair.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Describe the pericardium."
+      },
+      {
+        "speaker": "candidate",
+        "text": "An outer fibrous layer, and a serous layer with parietal and visceral parts. Blood collects between them.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What about pericardiocentesis?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Only as a temporary measure if theatre isn't immediately available, ultrasound-guided. He'd still need surgery.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "He loses his output."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Resuscitative thoracotomy to release the tamponade, if we're within 15 minutes and have the team and kit.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "examiner",
+        "text": "What's going on?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Tamponade until proven otherwise. The triad is often incomplete. Trachea is central and breath sounds equal, so tension pneumothorax is less likely.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "eFAST shows no pericardial fluid but a left haemothorax."
+      },
+      {
+        "speaker": "candidate",
+        "text": "That doesn't exclude a cardiac wound: the pericardium can drain into the pleura.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd activate the major haemorrhage protocol and take him straight to theatre. No CT.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Why so unstable with little blood?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "The fibrous pericardium can't stretch acutely, so a small volume raises pressure and stops filling. The phrenic nerves run on its lateral surface.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "A needle aspirate is dry."
+      },
+      {
+        "speaker": "candidate",
+        "text": "That proves nothing; clot doesn't aspirate. Pericardiocentesis must never delay theatre.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "He arrests in the department."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Clamshell thoracotomy, open the pericardium in front of the phrenic nerves, evacuate clot and put a finger on the wound.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G1",
+      "move": "Attributing shock to blood loss alone.",
+      "consequence": "Fluids are given while the heart cannot fill."
+    },
+    {
+      "row": "G2",
+      "move": "Sending him for CT or waiting for a chest X-ray.",
+      "consequence": "He deteriorates away from the resuscitation room and theatre."
+    },
+    {
+      "row": "G5",
+      "move": "Calling pericardiocentesis the treatment.",
+      "consequence": "The cardiac wound is left unrepaired and tamponade recurs."
+    },
+    {
+      "row": "G6",
+      "move": "Continuing CPR alone in traumatic arrest from tamponade.",
+      "consequence": "Chest compressions cannot fill a tamponaded heart."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You called pericardiocentesis definitive",
+      "line": "To correct that: it buys time; the wound needs surgical repair."
+    },
+    {
+      "when": "The eFAST is negative",
+      "line": "A negative scan with a haemothorax doesn't exclude a cardiac injury."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Penetrating wound in the cardiac box with shock: tamponade until proven otherwise. The triad is often incomplete.",
+      "source": "BL"
+    },
+    {
+      "fact": "Fibrous pericardium cannot stretch acutely; the phrenic nerves run on its lateral surface.",
+      "source": "GRAYS"
+    },
+    {
+      "fact": "Pericardiocentesis only when thoracotomy cannot be done; it does not remove clot or close the wound.",
+      "source": "DUNSER"
+    },
+    {
+      "fact": "Traumatic arrest from tamponade after penetrating injury: resuscitative thoracotomy within 15 minutes if the team, kit and setting allow; clamshell preferred.",
+      "source": "DUNSER"
+    }
+  ],
+  "recall": {
+    "think": "Tamponade from a cardiac stab wound kills within minutes.",
+    "say": "\"Likely tamponade: trauma team leader, cardiothoracic surgeon, theatre now.\"",
+    "do": [
+      "ABCDE, large-bore access, major haemorrhage protocol",
+      "eFAST pericardial view",
+      "Straight to theatre"
+    ],
+    "numbers": [
+      {
+        "value": "15 min",
+        "meaning": "Window for resuscitative thoracotomy after penetrating traumatic arrest",
+        "source": "DUNSER"
+      }
+    ],
+    "trap": "A dry tap or a negative eFAST.",
+    "finish": "Sternotomy or thoracotomy and repair of the cardiac wound."
+  },
+  "sources": [
+    {
+      "id": "ERC25",
+      "name": "Lott C, et al. European Resuscitation Council Guidelines 2025: Special Circumstances in Resuscitation. Resuscitation 2025;215 Suppl 1:110753",
+      "version": "October 2025",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41117569/",
+      "supports": "Resuscitative thoracotomy for traumatic cardiac arrest from tamponade after penetrating chest injury, within 15 minutes, if expertise, equipment and environment allow"
+    },
+    {
+      "id": "DUNSER",
+      "name": "Dünser MW, et al. Resuscitative thoracotomy in traumatic cardiac arrest: multisociety consensus recommendations for settings with a low prevalence of penetrating injuries. Wien Klin Wochenschr 2026;138:623-640",
+      "version": "June 2026",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42301425/",
+      "supports": "Thoracotomy for penetrating cardiac-box traumatic arrest with signs of life or arrest under 15 minutes; clamshell preferred; pericardiocentesis only when thoracotomy cannot be done; it does not drain clot or close the wound"
+    },
+    {
+      "id": "LEE",
+      "name": "Lee TH, et al. Pericardiocentesis in trauma: a systematic review. J Trauma Acute Care Surg 2013;75(4):543-9",
+      "version": "October 2013",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/24064864/",
+      "supports": "Limited role for pericardiocentesis as a bridge where definitive surgery is not immediately available"
+    },
+    {
+      "id": "GRAYS",
+      "name": "Gray's Anatomy for Students (Drake, Vogl, Mitchell)",
+      "version": "5th edition, 2023",
+      "url": "https://shop.elsevier.com/books/grays-anatomy-for-students/drake/978-0-323-93423-7",
+      "supports": "Fibrous and serous pericardium; phrenic nerves on the lateral fibrous pericardium"
+    },
+    {
+      "id": "BL",
+      "name": "Bailey & Love's Short Practice of Surgery (O'Connell, McCaskie, Sayers, eds)",
+      "version": "28th edition, 2023",
+      "url": "https://www.routledge.com/Bailey--Loves-Short-Practice-of-Surgery---28th-Edition/OConnell-McCaskie-Sayers/p/book/9780367548117",
+      "supports": "Cardiac box, Beck's triad, eFAST, pericardial drainage into the pleura, operative repair of cardiac wounds"
+    },
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format: 9 minutes with 1 minute's reading; examiner-led questioning in applied knowledge stations"
+    }
+  ],
+  "partner": {
+    "opening": "\"This man has a stab wound just left of the sternum. BP 84/60, pulse 124. What is going on?\"",
+    "actorBrief": "You are the examiner running a trauma scenario. Give findings only when asked; press on whether pericardiocentesis is the treatment.",
+    "reveals": [
+      {
+        "trigger": "Candidate examines neck, chest and heart sounds",
+        "finding": "Distended neck veins, muffled heart sounds. Trachea central, breath sounds equal.",
+        "row": "G1"
+      },
+      {
+        "trigger": "Candidate performs eFAST",
+        "finding": "Pericardial fluid with right ventricular collapse in diastole. No free abdominal fluid.",
+        "row": "G2"
+      }
+    ],
+    "push": [
+      {
+        "question": "Who do you call, and where does he go?",
+        "row": "G3",
+        "expect": "Trauma team leader, cardiothoracic surgeon; theatre, not CT."
+      },
+      {
+        "question": "Describe the layers of the pericardium.",
+        "row": "G4",
+        "expect": "Fibrous; serous parietal and visceral."
+      },
+      {
+        "question": "His BP improves after pericardiocentesis. Can we stand theatre down?",
+        "row": "G5",
+        "expect": "No: temporising only; the wound needs repair."
+      },
+      {
+        "question": "He loses his output. What now?",
+        "row": "G6",
+        "expect": "Resuscitative thoracotomy within 15 minutes if team and kit available."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "No ultrasound is available.",
+        "safeAnswer": "Do not delay: straight to theatre on clinical grounds.",
+        "row": "G2"
+      },
+      {
+        "prompt": "The needle aspirate is dry.",
+        "safeAnswer": "Clot may not aspirate; tamponade is not excluded; theatre.",
+        "row": "G5"
+      },
+      {
+        "prompt": "eFAST shows no pericardial fluid but a left haemothorax.",
+        "safeAnswer": "A cardiac wound can drain into the pleura; still suspect it.",
+        "row": "G2"
+      }
+    ]
+  }
+}

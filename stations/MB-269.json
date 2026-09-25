@@ -1,0 +1,570 @@
+{
+  "id": "MB-269",
+  "exam": "MRCS-B",
+  "title": "Pelvic fracture with haemorrhage",
+  "type": "applied-knowledge",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "Trauma: pelvic ring injury and major haemorrhage",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "NICE NG39 Major trauma: assessment and initial management (published 17 February 2016; minor updates to May 2025)",
+      "BOAST The Management of Patients with Pelvic Fractures (January 2018)",
+      "CRASH-2 (Lancet, 2010)",
+      "Bonner et al., J Bone Joint Surg Br (2011)"
+    ],
+    "related": [
+      {
+        "id": "MB-164",
+        "why": "The trauma primary survey this station builds on"
+      },
+      {
+        "id": "MB-123",
+        "why": "Anatomy of the pelvis: the venous plexus, internal iliac branches and urethra at risk"
+      },
+      {
+        "id": "MB-232",
+        "why": "Another BOAST-led orthopaedic trauma viva: the open tibial fracture"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Emergency department resuscitation room",
+    "role": "Core surgical trainee on the trauma team",
+    "scenario": "Mr Lewis Everleigh, 34, came off his motorcycle at speed 40 minutes ago. He has severe pelvic pain. HR 128, BP 82/50. The paramedics have not applied a pelvic binder.",
+    "task": "Answer the examiner's questions on his immediate management. His response to treatment will be given to you as you go."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Stop the bleeding while you assess: binder, blood, tranexamic acid, then let his response decide CT or haemorrhage control.",
+    "trap": "Sending a non-responder to CT, or placing the binder over the iliac crests.",
+    "firstMove": "\"Catastrophic haemorrhage first: a pelvic binder at the greater trochanters and activate the major haemorrhage protocol.\""
+  },
+  "flow": [
+    "Primary survey",
+    "Pelvic binder",
+    "Tranexamic acid and blood",
+    "Responder or non-responder",
+    "Associated injuries",
+    "After stabilisation"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "professionalism",
+      "label": "Primary survey and escalation",
+      "fail": "Starts with a pelvic X-ray or secondary survey; no trauma team or senior call.",
+      "pass": "<C>ABCDE with trauma team; two large-bore cannulas (intraosseous if needed); bloods and crossmatch; activates the major haemorrhage protocol.",
+      "high": "Uses his physiology and response to fluids to trigger the protocol; calls interventional radiology, orthopaedics and theatres early.",
+      "source": "NG39"
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-skill",
+      "label": "Pelvic binder",
+      "fail": "Places the binder over the iliac crests, or springs the pelvis to test stability.",
+      "pass": "Applies a purpose-made binder centred over the greater trochanters, feet and knees together.",
+      "high": "Explains the crest position fails to close the ring; avoids repeated pelvic springing, which can dislodge clot.",
+      "source": "BONNER"
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "Tranexamic acid and blood",
+      "fail": "Omits tranexamic acid or runs litres of crystalloid.",
+      "pass": "Tranexamic acid as soon as possible, within 3 hours: 1 g over 10 minutes, then 1 g over 8 hours.",
+      "high": "No crystalloid in active bleeding: plasma and red cells 1:1, restrictive resuscitation until the bleeding is controlled.",
+      "source": "NG39"
+    },
+    {
+      "id": "G4",
+      "domain": "professionalism",
+      "label": "Response decides the next step",
+      "fail": "Sends him to CT while still hypotensive after blood.",
+      "pass": "Responder: immediate contrast CT. Non-responder: minimal imaging (chest and pelvic X-ray, FAST) and straight to haemorrhage control.",
+      "high": "Knows a negative FAST does not exclude retroperitoneal bleeding; non-responder needs angioembolisation or pelvic packing and damage control.",
+      "source": "NG39"
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-skill",
+      "label": "Associated injuries",
+      "fail": "Passes a urethral catheter despite blood at the meatus.",
+      "pass": "Looks for blood at the meatus, perineal bruising and open wounds; no blind urethral catheter if a urethral injury is suspected.",
+      "high": "Examines the perineum, rectum and vagina for an open fracture; open fracture needs a general or colorectal surgeon.",
+      "source": "BOAST"
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-knowledge",
+      "label": "After stabilisation",
+      "fail": "Leaves the binder on for days or removes it for an X-ray while unstable.",
+      "pass": "Post-binder pelvic X-ray once stable, even after a normal CT, because the binder can hide the injury.",
+      "high": "Binder off ideally within 24 hours; external fixation if definitive surgery is delayed; transfer to the major trauma centre.",
+      "source": "BOAST"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "He's just arrived. What do you do?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd get a pelvic X-ray first to see what we're dealing with.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The X-ray shows an open-book fracture."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd spring the pelvis to check, then put a binder round the iliac crests.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "His BP is still 80 systolic."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Two litres of saline, and I'd leave tranexamic acid for now.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "After 4 units of blood he's still 80 systolic."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd get the CT with contrast now so we know exactly where it's bleeding.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "There's blood at the urethral meatus."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd catheterise to monitor his urine output.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "He stabilises. What about the binder?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Leave it on until the orthopaedic operation next week.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "examiner",
+        "text": "He's just arrived. What do you do?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Trauma team, catastrophic haemorrhage first, then ABCDE. Two large-bore cannulas, bloods and crossmatch, and activate the major haemorrhage protocol.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How do you apply the binder?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Centred over the greater trochanters, with his knees and feet together.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Any drugs?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Tranexamic acid now, as it's within 3 hours: 1 g over 10 minutes, then 1 g over 8 hours.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "After 4 units he's still 80 systolic."
+      },
+      {
+        "speaker": "candidate",
+        "text": "He's a non-responder. Chest and pelvic X-ray and FAST only, then straight to haemorrhage control. If he had responded, CT.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "There's blood at the urethral meatus."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Suspected urethral injury: no blind urethral catheter. I'd check the perineum for open wounds.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "He stabilises after embolisation."
+      },
+      {
+        "speaker": "candidate",
+        "text": "A post-binder pelvic X-ray, because the binder can hide how bad the injury is.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "examiner",
+        "text": "He's just arrived. What do you do?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Catastrophic haemorrhage and ABCDE with the trauma team. His physiology meets the trigger, so I'd activate the major haemorrhage protocol and call interventional radiology, orthopaedics and theatres now.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Why not put the binder over the iliac crests?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Too high: it won't close the ring. It goes over the trochanters. And I wouldn't spring the pelvis again; it can dislodge clot.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How will you resuscitate him?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "No crystalloid while he's bleeding. Plasma and red cells 1:1, aiming for a central pulse rather than a normal blood pressure until the bleeding is controlled.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "He's still 80 systolic. FAST is negative."
+      },
+      {
+        "speaker": "candidate",
+        "text": "A negative FAST doesn't exclude retroperitoneal bleeding. He needs angioembolisation for arterial bleeding, or pelvic packing with damage control surgery if he's too unstable.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Anything else on the secondary survey?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Perineal, rectal and vaginal examination: a wound there makes it an open fracture, and I'd call the general or colorectal surgeon.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "And after that?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Binder off ideally within 24 hours; external fixation if definitive fixation has to wait; ongoing care at the major trauma centre.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G4",
+      "move": "Sending a non-responder to CT.",
+      "consequence": "He can die in the scanner while bleeding goes uncontrolled."
+    },
+    {
+      "row": "G2",
+      "move": "Placing the binder over the iliac crests.",
+      "consequence": "The ring stays open and pelvic bleeding continues."
+    },
+    {
+      "row": "G3",
+      "move": "Giving litres of crystalloid and no tranexamic acid.",
+      "consequence": "Dilutional coagulopathy and continued fibrinolysis worsen the bleeding."
+    },
+    {
+      "row": "G5",
+      "move": "Blind urethral catheterisation with blood at the meatus.",
+      "consequence": "A partial urethral tear can be made complete."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You started with imaging",
+      "line": "Let me go back: binder, blood and tranexamic acid first; imaging must not delay haemorrhage control."
+    },
+    {
+      "when": "Asked about CT in an unstable patient",
+      "line": "CT is for the responder; a non-responder goes straight to haemorrhage control."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Binder over the greater trochanters, not the iliac crests.",
+      "source": "BONNER"
+    },
+    {
+      "fact": "Tranexamic acid as soon as possible; not beyond 3 hours unless hyperfibrinolysis. CRASH-2 dose: 1 g over 10 minutes, then 1 g over 8 hours.",
+      "source": "CRASH2"
+    },
+    {
+      "fact": "Active bleeding in hospital: no crystalloid; plasma to red cells 1:1; restrictive resuscitation until bleeding controlled.",
+      "source": "NG39"
+    },
+    {
+      "fact": "Responder: immediate CT. Non-responder: minimal imaging, then haemorrhage control. Negative FAST does not exclude bleeding.",
+      "source": "NG39"
+    },
+    {
+      "fact": "Interventional radiology for active arterial pelvic bleeding unless open surgery is needed for other injuries.",
+      "source": "NG39"
+    },
+    {
+      "fact": "Post-binder X-ray once stable; binder removal ideally within 24 hours.",
+      "source": "BOAST"
+    }
+  ],
+  "recall": {
+    "think": "Exsanguination from the pelvis; a non-responder lost in the CT scanner.",
+    "say": "\"Binder at the trochanters, major haemorrhage protocol, tranexamic acid.\"",
+    "do": [
+      "Binder over the greater trochanters",
+      "Tranexamic acid; plasma and red cells 1:1",
+      "Responder to CT; non-responder to haemorrhage control"
+    ],
+    "numbers": [
+      {
+        "value": "3 hours",
+        "meaning": "Tranexamic acid not given after this unless hyperfibrinolysis",
+        "source": "NG39"
+      },
+      {
+        "value": "1:1",
+        "meaning": "Plasma to red cells in active bleeding",
+        "source": "NG39"
+      },
+      {
+        "value": "24 hours",
+        "meaning": "Target for binder removal",
+        "source": "BOAST"
+      }
+    ],
+    "trap": "A negative FAST does not exclude pelvic bleeding.",
+    "finish": "Angioembolisation or pelvic packing; external fixation; definitive fixation at the major trauma centre."
+  },
+  "sources": [
+    {
+      "id": "NG39",
+      "name": "NICE NG39: Major trauma: assessment and initial management",
+      "version": "Published 17 February 2016; minor updates to May 2025",
+      "url": "https://www.nice.org.uk/guidance/ng39/chapter/Recommendations",
+      "supports": "Recs 1.5.3: pelvic binder; 1.5.4-1.5.5: tranexamic acid as soon as possible, not after 3 hours; 1.5.13: physiological triggers for major haemorrhage protocol; 1.5.18-1.5.24: restrictive resuscitation, no crystalloid in hospital, plasma to red cells 1:1; 1.5.29-1.5.31: minimal imaging in non-responders, negative FAST, CT for responders; 1.5.37: damage control surgery; 1.5.40: interventional radiology for arterial pelvic bleeding"
+    },
+    {
+      "id": "BOAST",
+      "name": "British Orthopaedic Association Audit Standards for Trauma (BOAST): The Management of Patients with Pelvic Fractures",
+      "version": "January 2018",
+      "url": "https://www.boa.ac.uk/resource/boast-3-pdf.html",
+      "supports": "Binder for suspected pelvic bleeding; packing or embolisation for non-responders; post-binder X-ray even after negative CT; binder removal ideally within 24 hours; external fixation; open pelvic fractures need a general or colorectal surgeon; urological injury"
+    },
+    {
+      "id": "BONNER",
+      "name": "Bonner TJ, et al. Accurate placement of a pelvic binder improves reduction of unstable fractures of the pelvic ring. J Bone Joint Surg Br 2011;93(11):1524-8",
+      "version": "November 2011",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/22058306/",
+      "supports": "Binders placed above the greater trochanters reduce the pelvic ring less well"
+    },
+    {
+      "id": "CRASH2",
+      "name": "Shakur H, et al (CRASH-2 trial collaborators). Effects of tranexamic acid on death, vascular occlusive events, and blood transfusion in trauma patients with significant haemorrhage (CRASH-2). Lancet 2010;376(9734):23-32",
+      "version": "3 July 2010",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/20554319/",
+      "supports": "Tranexamic acid 1 g over 10 minutes then 1 g over 8 hours"
+    },
+    {
+      "id": "BL",
+      "name": "Bailey & Love's Short Practice of Surgery (O'Connell, McCaskie, Sayers, eds)",
+      "version": "28th edition, 2023",
+      "url": "https://www.routledge.com/Bailey--Loves-Short-Practice-of-Surgery---28th-Edition/OConnell-McCaskie-Sayers/p/book/9780367548117",
+      "supports": "Pelvic ring injuries: urethral injury, open pelvic fracture, external fixation"
+    },
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format: 9 minutes with 1 minute's reading; examiner-led questioning in applied knowledge stations"
+    }
+  ],
+  "media": [
+    {
+      "id": "IMG1",
+      "task": "Candidate describes the pelvic radiograph and names the injury pattern.",
+      "description": "AP pelvic radiograph of an adult showing an open-book (anteroposterior compression) injury: pubic symphysis diastasis with widening of one sacroiliac joint, no binder in place.",
+      "required": false,
+      "status": "needed"
+    }
+  ],
+  "partner": {
+    "opening": "This 34-year-old motorcyclist has just arrived. HR 128, BP 82/50, severe pelvic pain, no binder. What do you do?",
+    "reveals": [
+      {
+        "trigger": "Candidate asks for the pelvic X-ray",
+        "finding": "Pubic symphysis diastasis with a widened right sacroiliac joint: open-book injury.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Candidate asks for the response after binder, tranexamic acid and 4 units of blood with plasma",
+        "finding": "HR 124, BP 84/52. Still a non-responder. FAST negative.",
+        "row": "G4"
+      },
+      {
+        "trigger": "Candidate examines the perineum",
+        "finding": "Blood at the urethral meatus and scrotal bruising. No perineal or rectal wound.",
+        "row": "G5"
+      },
+      {
+        "trigger": "Candidate asks after haemorrhage control",
+        "finding": "Angiography: bleeding branch of the right internal iliac artery embolised. HR 96, BP 118/70.",
+        "row": "G6"
+      }
+    ],
+    "push": [
+      {
+        "question": "Where does the binder go?",
+        "row": "G2",
+        "expect": "Over the greater trochanters, knees and feet together."
+      },
+      {
+        "question": "What dose of tranexamic acid, and what is the time limit?",
+        "row": "G3",
+        "expect": "1 g over 10 minutes, then 1 g over 8 hours; not after 3 hours."
+      },
+      {
+        "question": "He's still hypotensive after blood. Do you send him to CT?",
+        "row": "G4",
+        "expect": "No: non-responder goes to haemorrhage control; CT is for responders."
+      },
+      {
+        "question": "When does the binder come off?",
+        "row": "G6",
+        "expect": "Once stable, after a post-binder X-ray; ideally within 24 hours."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "Isn't the iliac crest close enough?",
+        "safeAnswer": "No: the binder must sit over the greater trochanters to close the ring.",
+        "row": "G2"
+      },
+      {
+        "prompt": "The nurse wants to catheterise him for urine output.",
+        "safeAnswer": "Not blindly with blood at the meatus; urology opinion and urethral imaging, or suprapubic drainage.",
+        "row": "G5"
+      },
+      {
+        "prompt": "Interventional radiology is 40 minutes away and he is deteriorating.",
+        "safeAnswer": "Damage control: preperitoneal pelvic packing in theatre, with the consultant.",
+        "row": "G4"
+      }
+    ]
+  }
+}

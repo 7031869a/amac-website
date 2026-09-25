@@ -1,0 +1,585 @@
+{
+  "id": "MB-267",
+  "exam": "MRCS-B",
+  "title": "Primary hyperparathyroidism: reading the calcium results and planning surgery",
+  "type": "data-interpretation",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "Endocrine surgery: hypercalcaemia and primary hyperparathyroidism (results released in stages)",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "NICE NG132 Hyperparathyroidism (primary) (published 23 May 2019)",
+      "Bailey & Love, 28th ed. (2023)"
+    ],
+    "related": [
+      {
+        "id": "MB-193",
+        "why": "Anatomy of the parathyroids and the recurrent laryngeal nerve at neck exploration"
+      },
+      {
+        "id": "MB-230",
+        "why": "Hypocalcaemia and neck haematoma after thyroid and parathyroid surgery"
+      },
+      {
+        "id": "MB-268",
+        "why": "The other endocrine surgery viva: adrenal incidentaloma and phaeochromocytoma"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Endocrine surgery clinic",
+    "role": "Core surgical trainee",
+    "scenario": "Mrs Isla Cairncross, 58, has had two episodes of renal colic in a year and complains of thirst and constipation. Her GP found a raised calcium.",
+    "task": "The examiner will give you her results in stages. Interpret them and discuss her assessment and management."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Calcium with PTH first. Exclude FHH, measure vitamin D, look for end-organ damage, then refer against NG132.",
+    "trap": "Using imaging to make the diagnosis, or quoting old age and bone-density rules as the NICE criteria.",
+    "firstMove": "\"A high calcium with a PTH that is not suppressed means primary hyperparathyroidism until proven otherwise.\""
+  },
+  "flow": [
+    "Read calcium and PTH",
+    "Exclude FHH, check vitamin D",
+    "End-organ assessment",
+    "Referral criteria",
+    "Localisation imaging",
+    "Surgery and follow-up",
+    "Pathology"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-knowledge",
+      "label": "Interpret calcium and PTH",
+      "fail": "Calls it hypercalcaemia of malignancy, or ignores the raised PTH.",
+      "pass": "Raised albumin-adjusted calcium on repeat with raised PTH: primary hyperparathyroidism. Low PTH points to other causes, including malignancy.",
+      "high": "Notes a PTH in the normal range is inappropriate when calcium is high; lists PTH-suppressed causes: malignancy (PTHrP, bone metastases), vitamin D excess, thiazides.",
+      "source": "NG132"
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-skill",
+      "label": "Exclude FHH, check vitamin D",
+      "fail": "Proceeds to surgery without measuring urine calcium.",
+      "pass": "Measures urine calcium excretion (24-hour, or calcium:creatinine clearance ratio) to exclude familial hypocalciuric hypercalcaemia; measures vitamin D.",
+      "high": "Explains FHH is benign and parathyroidectomy does not cure it; replaces vitamin D if low.",
+      "source": "NG132"
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-skill",
+      "label": "End-organ assessment",
+      "fail": "Does not look for bone or kidney effects.",
+      "pass": "eGFR or creatinine, DXA of lumbar spine, distal radius and hip, and renal tract ultrasound.",
+      "high": "Links findings back to referral: stones, osteoporosis or fragility fracture are end-organ disease.",
+      "source": "NG132"
+    },
+    {
+      "id": "G4",
+      "domain": "professionalism",
+      "label": "Referral for surgery",
+      "fail": "Quotes age under 50 or bone-density thresholds as the NICE criteria, or waits for symptoms to worsen.",
+      "pass": "Refer to a parathyroid surgeon: symptoms of hypercalcaemia, end-organ disease, or adjusted calcium 2.85 mmol/L or above.",
+      "high": "Notes she meets all three; NICE also allows referral of patients without these features.",
+      "source": "NG132"
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-knowledge",
+      "label": "Localisation imaging",
+      "fail": "Uses sestamibi or ultrasound to make or exclude the diagnosis.",
+      "pass": "Imaging only localises before surgery: ultrasound first, sestamibi if it would guide the approach.",
+      "high": "Negative or discordant scans do not cancel surgery: four-gland exploration by an experienced surgeon; ectopic adenoma to a specialist centre.",
+      "source": "NG132"
+    },
+    {
+      "id": "G6",
+      "domain": "professionalism",
+      "label": "Surgery and follow-up",
+      "fail": "Recommends routine intraoperative PTH monitoring, or no follow-up calcium.",
+      "pass": "Single adenoma on imaging: choice of focused parathyroidectomy or four-gland exploration. No intraoperative PTH monitoring at first-time surgery.",
+      "high": "Calcium and PTH before discharge; calcium at 3 to 6 months to confirm cure, then yearly.",
+      "source": "NG132"
+    },
+    {
+      "id": "G7",
+      "domain": "clinical-knowledge",
+      "label": "Pathology",
+      "fail": "Cannot name the usual cause.",
+      "pass": "Usually a single parathyroid adenoma; less often multigland hyperplasia; carcinoma rarely.",
+      "high": "Multigland disease suggests MEN syndromes; a very high calcium with a neck mass raises carcinoma.",
+      "source": "BL"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "Adjusted calcium 2.92 mmol/L twice, PTH 12.4 pmol/L. Interpret."
+      },
+      {
+        "speaker": "candidate",
+        "text": "High calcium in a woman her age, so I'd worry about bone metastases.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What else would you measure?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Nothing more. I'd list her for parathyroidectomy.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Any other assessment?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Not really, the blood tests are enough.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "When does NICE recommend surgery?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Age under 50, a T-score below minus 2.5, or calcium well above normal.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How do you confirm the diagnosis?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "A sestamibi scan. If it's negative, it isn't hyperparathyroidism.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How do you know the operation worked?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Intraoperative PTH monitoring every time.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What is the usual pathology?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I think carcinoma.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "examiner",
+        "text": "Adjusted calcium 2.92 mmol/L twice, PTH 12.4 pmol/L. Interpret."
+      },
+      {
+        "speaker": "candidate",
+        "text": "High calcium with raised PTH: primary hyperparathyroidism. If the PTH were low I'd look for malignancy.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What else do you need?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Urine calcium excretion to exclude familial hypocalciuric hypercalcaemia, and vitamin D.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Any other assessment?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "eGFR, a DXA of the lumbar spine, distal radius and hip, and a renal tract ultrasound.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Should she be referred?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Yes: she has symptoms, stones, and a calcium above 2.85.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What imaging?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Ultrasound to localise, then sestamibi if it would guide surgery. Imaging doesn't make the diagnosis.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Ultrasound and sestamibi agree: right inferior adenoma."
+      },
+      {
+        "speaker": "candidate",
+        "text": "She can choose focused parathyroidectomy or four-gland exploration. NICE says no intraoperative PTH at first-time surgery.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Likely pathology?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "A single adenoma; less often hyperplasia; rarely carcinoma.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "examiner",
+        "text": "Interpret these."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Calcium 2.92 with a raised PTH is primary hyperparathyroidism. Even a PTH in the normal range would be inappropriate here. A suppressed PTH would mean malignancy, vitamin D excess or thiazides.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Urine calcium:creatinine clearance ratio is 0.024; vitamin D is 38 nmol/L."
+      },
+      {
+        "speaker": "candidate",
+        "text": "That doesn't suggest FHH, which matters because surgery doesn't cure FHH. I'd replace her vitamin D.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "DXA shows a T-score of minus 2.7 at the distal radius."
+      },
+      {
+        "speaker": "candidate",
+        "text": "That's osteoporosis, so with her stones she has end-organ disease in bone and kidney.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "So does she meet NICE criteria?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "On all three counts: symptoms, end-organ disease and calcium over 2.85. NICE also lets us refer people who meet none of them.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Suppose both scans were negative."
+      },
+      {
+        "speaker": "candidate",
+        "text": "She'd still have surgery: four-gland exploration by an experienced parathyroid surgeon. If imaging showed an ectopic gland, I'd refer to a specialist centre.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How will you follow her up?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Calcium and PTH before discharge, calcium at 3 to 6 months to confirm cure, then yearly.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "If all four glands were enlarged?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Multigland hyperplasia: I'd think about MEN syndromes and ask about family history.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G2",
+      "move": "Operating without measuring urine calcium.",
+      "consequence": "A patient with FHH has a neck exploration that cannot lower her calcium."
+    },
+    {
+      "row": "G5",
+      "move": "Using a negative sestamibi scan to rule out the diagnosis or cancel surgery.",
+      "consequence": "A biochemically proven disease goes untreated and her stones and bone loss continue."
+    },
+    {
+      "row": "G4",
+      "move": "Applying age and T-score rules instead of NG132.",
+      "consequence": "Symptomatic patients with end-organ disease are not referred."
+    },
+    {
+      "row": "G6",
+      "move": "Planning routine intraoperative PTH monitoring at first-time surgery.",
+      "consequence": "Goes against NG132, which advises against it at first-time parathyroid surgery."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You quoted old surgical criteria",
+      "line": "Under NG132 the triggers are symptoms, end-organ disease or calcium of 2.85 or above."
+    },
+    {
+      "when": "You suggested imaging to diagnose",
+      "line": "The diagnosis is biochemical; imaging only plans the operation."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Raised adjusted calcium with raised or unsuppressed PTH: primary hyperparathyroidism. Low PTH: look for malignancy.",
+      "source": "NG132"
+    },
+    {
+      "fact": "Exclude FHH with urine calcium excretion; measure and replace vitamin D.",
+      "source": "NG132"
+    },
+    {
+      "fact": "After diagnosis: eGFR, DXA (lumbar spine, distal radius, hip), renal tract ultrasound.",
+      "source": "NG132"
+    },
+    {
+      "fact": "Refer for surgery: symptoms, end-organ disease (stones, fragility fracture, osteoporosis) or adjusted calcium 2.85 mmol/L or above.",
+      "source": "NG132"
+    },
+    {
+      "fact": "Imaging localises only; operate even if scans are negative. No intraoperative PTH at first-time surgery.",
+      "source": "NG132"
+    },
+    {
+      "fact": "Cure confirmed by normal calcium 3 to 6 months after surgery.",
+      "source": "NG132"
+    }
+  ],
+  "recall": {
+    "think": "Stones, bones and a calcium that keeps rising; FHH that surgery cannot cure.",
+    "say": "\"High calcium, unsuppressed PTH: primary hyperparathyroidism.\"",
+    "do": [
+      "Urine calcium and vitamin D",
+      "eGFR, DXA, renal ultrasound",
+      "Refer; image only to localise"
+    ],
+    "numbers": [
+      {
+        "value": "2.85 mmol/L",
+        "meaning": "Adjusted calcium that alone triggers surgical referral",
+        "source": "NG132"
+      },
+      {
+        "value": "3 to 6 months",
+        "meaning": "Calcium check to confirm surgical cure",
+        "source": "NG132"
+      }
+    ],
+    "trap": "A negative sestamibi scan does not exclude the disease.",
+    "finish": "Parathyroidectomy by an experienced surgeon; no intraoperative PTH first time."
+  },
+  "sources": [
+    {
+      "id": "NG132",
+      "name": "NICE NG132: Hyperparathyroidism (primary): diagnosis, assessment and initial management",
+      "version": "Published 23 May 2019",
+      "url": "https://www.nice.org.uk/guidance/ng132/chapter/Recommendations",
+      "supports": "Recs 1.1.5-1.1.10: PTH testing and low PTH pointing to other causes; 1.2.1-1.2.3: vitamin D, urine calcium to exclude FHH, eGFR, DXA and renal ultrasound; 1.3.1-1.3.2: referral criteria including calcium 2.85 mmol/L; 1.4.1-1.4.9: imaging, four-gland exploration, no intraoperative PTH at first-time surgery; 1.4.10-1.4.12: follow-up calcium"
+    },
+    {
+      "id": "BL",
+      "name": "Bailey & Love's Short Practice of Surgery (O'Connell, McCaskie, Sayers, eds)",
+      "version": "28th edition, 2023",
+      "url": "https://www.routledge.com/Bailey--Loves-Short-Practice-of-Surgery---28th-Edition/OConnell-McCaskie-Sayers/p/book/9780367548117",
+      "supports": "Causes of primary hyperparathyroidism: adenoma, hyperplasia, carcinoma; MEN syndromes"
+    },
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format: 9 minutes with 1 minute's reading; examiner-led questioning in applied knowledge stations"
+    }
+  ],
+  "partner": {
+    "opening": "Mrs Cairncross has renal stones, thirst and constipation. Her albumin-adjusted calcium is 2.92 mmol/L on two occasions and her PTH is 12.4 pmol/L (reference 1.6 to 6.9). Interpret these results.",
+    "reveals": [
+      {
+        "trigger": "Candidate asks for urine calcium and vitamin D",
+        "finding": "Calcium:creatinine clearance ratio 0.024 (laboratory comment: not suggestive of FHH). 25-hydroxyvitamin D 38 nmol/L.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Candidate asks for end-organ assessment",
+        "finding": "eGFR 74. DXA: T-score minus 2.7 at the distal radius. Renal ultrasound: two small left renal calculi.",
+        "row": "G3"
+      },
+      {
+        "trigger": "Candidate requests imaging",
+        "finding": "Ultrasound: 12 mm hypoechoic nodule behind the lower pole of the right thyroid lobe. Sestamibi: concordant uptake, right inferior.",
+        "row": "G5"
+      }
+    ],
+    "push": [
+      {
+        "question": "What does the PTH tell you?",
+        "row": "G1",
+        "expect": "Unsuppressed PTH with high calcium: primary hyperparathyroidism."
+      },
+      {
+        "question": "What must you exclude before surgery?",
+        "row": "G2",
+        "expect": "FHH by urine calcium excretion; check vitamin D."
+      },
+      {
+        "question": "Does she meet NICE referral criteria?",
+        "row": "G4",
+        "expect": "Yes: symptoms, end-organ disease, calcium 2.85 or above."
+      },
+      {
+        "question": "Would you use intraoperative PTH monitoring?",
+        "row": "G6",
+        "expect": "Not at first-time surgery (NG132)."
+      },
+      {
+        "question": "How do you know she is cured?",
+        "row": "G6",
+        "expect": "Normal calcium 3 to 6 months after surgery."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "Both scans are negative. Do we still operate?",
+        "safeAnswer": "Yes: four-gland exploration by an experienced surgeon; imaging is not diagnostic.",
+        "row": "G5"
+      },
+      {
+        "prompt": "Her PTH comes back at the top of the normal range.",
+        "safeAnswer": "Still inappropriate for the calcium; consistent with primary hyperparathyroidism; seek specialist advice.",
+        "row": "G1"
+      },
+      {
+        "prompt": "She would rather not have surgery. Can we give a bisphosphonate for the calcium?",
+        "safeAnswer": "Not for the hypercalcaemia; cinacalcet can be considered if surgery is declined and calcium is high enough; bisphosphonate only for fracture risk.",
+        "row": "G4"
+      }
+    ]
+  }
+}

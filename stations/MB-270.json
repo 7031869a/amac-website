@@ -1,0 +1,613 @@
+{
+  "id": "MB-270",
+  "exam": "MRCS-B",
+  "title": "Blunt chest trauma: flail chest and pulmonary contusion",
+  "type": "applied-knowledge",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "Trauma: chest wall injury (emergency management viva)",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "NICE NG39 Major trauma: assessment and initial management (published 17 February 2016)",
+      "EAST pulmonary contusion and flail chest guideline (J Trauma Acute Care Surg, November 2012)",
+      "EAST operative rib fixation guideline (J Trauma Acute Care Surg, March 2017)",
+      "WSES and CWIS position paper on surgical stabilisation of rib fractures (World J Emerg Surg, 18 October 2024)"
+    ],
+    "related": [
+      {
+        "id": "MB-164",
+        "why": "Primary survey and tension pneumothorax: the threats to exclude first in this patient"
+      },
+      {
+        "id": "MB-261",
+        "why": "Traumatic cardiac tamponade after chest trauma"
+      },
+      {
+        "id": "MB-179",
+        "why": "Chest drain insertion if a haemothorax or pneumothorax is found"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Emergency department resuscitation room",
+    "role": "Core surgical trainee in the trauma team",
+    "scenario": "Mr Faulkner, 67, was the driver in a side-impact car crash. He is alert and talking. Respiratory rate 30/min, SpO2 91% on 15 L/min oxygen by reservoir mask, pulse 104/min, BP 138/82 mmHg. Part of his left chest wall moves inwards when he breathes in.",
+    "task": "The airway and cervical spine have been assessed by the team leader. Discuss your assessment and management of his chest injury with the examiner."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Flail chest is a sign of a bad lung underneath. Treat the contusion and the pain.",
+    "trap": "Intubating because a flail is present, or sending him to the ward because gases look acceptable now.",
+    "firstMove": "\"This is a flail segment. I'd first exclude tension pneumothorax and massive haemothorax.\""
+  },
+  "flow": [
+    "Recognise the flail",
+    "Exclude immediate threats",
+    "Explain the hypoxia",
+    "Analgesia",
+    "Ventilation and fluids",
+    "Rib fixation",
+    "Where he goes"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-knowledge",
+      "label": "Recognises a flail segment",
+      "fail": "Calls it 'a broken rib' or does not recognise paradoxical movement.",
+      "pass": "Adjacent ribs each broken in two or more places, so a segment moves inwards on inspiration.",
+      "high": "Separates the clinical sign (paradox) from the radiological segment, and knows splinting from pain can hide paradox early.",
+      "source": "WSES"
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-skill",
+      "label": "Excludes immediate threats",
+      "fail": "Focuses on the ribs without checking for tension pneumothorax or haemothorax.",
+      "pass": "Re-examines breathing: trachea, percussion, air entry. Chest X-ray or eFAST in the primary survey if respiratory compromise is severe.",
+      "high": "Decompresses before imaging only if haemodynamically unstable or in severe respiratory compromise; CT chest once he is stable or responding.",
+      "source": "NG39"
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "Explains the hypoxia",
+      "fail": "Blames the hypoxia on the paradoxical movement alone.",
+      "pass": "Hypoxia comes mainly from the underlying pulmonary contusion, plus pain-limited breathing causing atelectasis and retained secretions.",
+      "high": "Expects the contusion to worsen over the next days, so acceptable early gases do not mean he is safe.",
+      "source": "EAST12"
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-skill",
+      "label": "Analgesia",
+      "fail": "Offers oral analgesia only, or withholds opioids 'to protect his breathing'.",
+      "pass": "Titrated IV morphine first, then early regional analgesia so he can breathe deeply and cough.",
+      "high": "Epidural preferred in severe flail chest; paravertebral block if epidural is contraindicated. Tracks pain scores and ability to cough.",
+      "source": "EAST12"
+    },
+    {
+      "id": "G5",
+      "domain": "professionalism",
+      "label": "Ventilatory support and fluids",
+      "fail": "Intubates because a flail is present, or restricts fluids severely.",
+      "pass": "Oxygen and chest physiotherapy; trial of mask CPAP if alert with marginal respiratory status; intubates for respiratory failure, not for the flail.",
+      "high": "Resuscitates to adequate perfusion, then avoids unnecessary fluid; no steroids for the contusion.",
+      "source": "EAST12"
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-knowledge",
+      "label": "Surgical rib fixation",
+      "fail": "Says flail chest is always managed without surgery.",
+      "pass": "Surgical stabilisation of rib fractures should be considered in all patients with flail chest, ideally within 48 to 72 hours.",
+      "high": "Knows the benefits (less ventilation, pneumonia, tracheostomy, ICU stay and mortality) and that haemodynamic instability rules it out.",
+      "source": "WSES"
+    },
+    {
+      "id": "G7",
+      "domain": "professionalism",
+      "label": "Disposition and escalation",
+      "fail": "Admits him to a general ward on oral analgesia.",
+      "pass": "High dependency or critical care bed under a named trauma team, with serial blood gases and reassessment.",
+      "high": "Asks early for an anaesthetic regional block and a thoracic opinion on fixation; flags his age as raising risk."
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "What is happening to his chest wall?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "He has broken a rib.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What would you do first?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Get a rib X-ray to count the fractures.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Why is he hypoxic?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Because that bit of chest wall moves the wrong way, so he can't ventilate.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How will you manage his pain?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Regular paracetamol. I'd avoid morphine because it will suppress his breathing.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Does he need intubating?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Yes. A flail chest needs ventilation to splint it internally.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Is there any role for surgery?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "No, rib fractures are always treated conservatively.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Where does he go?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "If his sats pick up, the surgical ward.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "examiner",
+        "text": "What is happening to his chest wall?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "This is a flail segment: adjacent ribs each broken in two or more places, so that segment moves inwards when he breathes in.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What would you do first?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Re-examine his breathing: trachea, percussion, air entry, to exclude tension pneumothorax and haemothorax. With this degree of compromise, a chest X-ray or eFAST in the primary survey.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Why is he hypoxic?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Mainly the pulmonary contusion underneath, plus pain stopping him breathing deeply, which leads to atelectasis and retained secretions.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How will you manage his pain?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Titrated IV morphine now, then early regional analgesia so he can breathe deeply and cough.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Does he need intubating?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Not for the flail itself. Oxygen and physiotherapy, and a trial of mask CPAP if he stays alert but marginal. I'd intubate if he goes into respiratory failure.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Is there any role for surgery?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Yes. Surgical rib fixation should be considered in flail chest, ideally within 48 to 72 hours.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Where does he go?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "High dependency or critical care under the trauma team, with serial gases.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "examiner",
+        "text": "What is happening to his chest wall?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "A flail chest: the clinical sign is paradoxical movement; the flail segment is the radiological finding of adjacent ribs each broken in two or more places. Pain splinting can hide the paradox early, so I'd look for it on CT too.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What would you do first?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Exclude tension pneumothorax and massive haemothorax. He is haemodynamically stable, so I'd only decompress before imaging if he became unstable or his breathing got much worse. Once he is stable, CT chest.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "His first gas on 15 litres shows a PaO2 of 9 kPa. Reassured?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "No. The contusion is the main problem and it tends to get worse over the next days, so I'd expect his gas exchange to deteriorate before it improves.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What analgesia would you want?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "IV morphine titrated now, and I'd ask the anaesthetist for an epidural, which is preferred in severe flail chest, or a paravertebral catheter if an epidural isn't possible. I'd judge success by whether he can cough.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "And his fluids?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Resuscitate him to adequate perfusion, then avoid unnecessary fluid, because it worsens the contused lung. Steroids have no role.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Would you fix the ribs?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd ask the thoracic team to consider it within 48 to 72 hours. Fixation reduces ventilator days, pneumonia, tracheostomy, ICU stay and mortality. It isn't done while he is haemodynamically unstable.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Anything else?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "At 67 with multiple rib fractures he is at higher risk, so I'd want critical care involved from the start, not after he tires.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G5",
+      "move": "Intubating because a flail segment is present.",
+      "consequence": "Exposes him to ventilator-associated pneumonia when analgesia and CPAP may have avoided ventilation."
+    },
+    {
+      "row": "G4",
+      "move": "Withholding opioids and regional analgesia to 'protect his breathing'.",
+      "consequence": "Pain stops him coughing and breathing deeply; atelectasis and pneumonia follow."
+    },
+    {
+      "row": "G2",
+      "move": "Concentrating on the ribs before excluding tension pneumothorax or haemothorax.",
+      "consequence": "Misses the injury that can kill him in minutes."
+    },
+    {
+      "row": "G7",
+      "move": "Admitting to a general ward because the first gas is acceptable.",
+      "consequence": "Contusion worsens over days; he deteriorates unwatched."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "Asked whether he needs a tube",
+      "line": "Not for the flail itself: I'd treat the pain and the lung, and intubate only for respiratory failure."
+    },
+    {
+      "when": "He deteriorates suddenly",
+      "line": "I'd go back to the primary survey and exclude tension pneumothorax and haemothorax first."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Flail chest is the clinical sign of paradox. WSES/CWIS define a radiological flail segment as three or more consecutive ribs each broken in two or more places.",
+      "source": "WSES"
+    },
+    {
+      "fact": "Respiratory failure is driven mainly by the underlying contusion and by pain-limited breathing.",
+      "source": "EAST12"
+    },
+    {
+      "fact": "Epidural is the preferred analgesia in severe flail chest; paravertebral if epidural is contraindicated. Avoid ventilation without respiratory failure; consider mask CPAP.",
+      "source": "EAST12"
+    },
+    {
+      "fact": "Consider rib fixation in all flail chest, within 48 to 72 hours; not while haemodynamically unstable.",
+      "source": "WSES"
+    },
+    {
+      "fact": "Consider CT chest for adults without severe respiratory compromise who are stable or responding to resuscitation.",
+      "source": "NG39"
+    }
+  ],
+  "recall": {
+    "think": "Hidden tension pneumothorax or haemothorax; contusion worsening over days.",
+    "say": "\"Flail segment with underlying contusion: analgesia, not automatic intubation.\"",
+    "do": [
+      "Exclude tension pneumothorax and haemothorax",
+      "IV morphine, then epidural or paravertebral",
+      "Oxygen, physiotherapy, CPAP; critical care bed"
+    ],
+    "numbers": [
+      {
+        "value": "48–72 h",
+        "meaning": "window for surgical rib fixation in flail chest",
+        "source": "WSES"
+      },
+      {
+        "value": "3+ ribs, 2+ breaks each",
+        "meaning": "WSES/CWIS radiological flail segment",
+        "source": "WSES"
+      }
+    ],
+    "trap": "Normal early gases: the contusion worsens later.",
+    "finish": "Regional analgesia, critical care, thoracic opinion on rib fixation."
+  },
+  "sources": [
+    {
+      "id": "NG39",
+      "name": "NICE guideline NG39: Major trauma: assessment and initial management",
+      "version": "Published 17 February 2016",
+      "url": "https://www.nice.org.uk/guidance/ng39",
+      "supports": "Chest decompression before imaging only with haemodynamic instability or severe respiratory compromise (1.4.1); chest X-ray and/or eFAST in the primary survey with severe respiratory compromise (1.4.4); CT for stable or responding adults (1.4.5); IV morphine first-line analgesia (1.7.4)"
+    },
+    {
+      "id": "EAST12",
+      "name": "Simon B, et al. Management of pulmonary contusion and flail chest: an Eastern Association for the Surgery of Trauma practice management guideline. J Trauma Acute Care Surg 2012;73(5 Suppl 4):S351–61",
+      "version": "November 2012",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23114493/",
+      "supports": "Avoid excessive fluid restriction and obligatory ventilation; optimal analgesia and chest physiotherapy; epidural preferred, paravertebral as alternative; mask CPAP trial; no steroids"
+    },
+    {
+      "id": "EAST17",
+      "name": "Kasotakis G, et al. Operative fixation of rib fractures after blunt trauma: a practice management guideline from the Eastern Association for the Surgery of Trauma. J Trauma Acute Care Surg 2017;82(3):618–26",
+      "version": "March 2017",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/28030502/",
+      "supports": "Conditional recommendation for rib fixation in adult flail chest to reduce mortality, ventilation duration, ICU and hospital stay, pneumonia and tracheostomy"
+    },
+    {
+      "id": "WSES",
+      "name": "Sermonesi G, et al. Surgical stabilization of rib fractures (SSRF): the WSES and CWIS position paper. World J Emerg Surg 2024;19:33",
+      "version": "Published 18 October 2024 (erratum 29 January 2025)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39425134/",
+      "supports": "Flail chest (clinical) versus flail segment (radiological, three or more consecutive ribs broken in two or more places); consider SSRF in all flail chest; timing within 48–72 h; haemodynamic instability a contraindication"
+    },
+    {
+      "id": "BL",
+      "name": "Bailey & Love's Short Practice of Surgery (O'Connell, McCaskie, Sayers, eds)",
+      "version": "28th edition, 2023",
+      "url": "https://www.routledge.com/Bailey--Loves-Short-Practice-of-Surgery---28th-Edition/OConnell-McCaskie-Sayers/p/book/9780367548117",
+      "supports": "Chest wall injury, pulmonary contusion and higher risk in older patients with multiple rib fractures"
+    },
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format: 9 minutes with 1 minute's reading; examiner-led questioning in applied knowledge stations"
+    }
+  ],
+  "partner": {
+    "opening": "This man has just arrived. Tell me what is happening to his chest wall and what worries you.",
+    "reveals": [
+      {
+        "trigger": "Candidate examines the chest",
+        "finding": "Trachea central. Reduced air entry at the left base, resonant to percussion. Paradoxical segment left lateral chest wall.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Candidate asks for a chest X-ray or eFAST",
+        "finding": "Left ribs 4 to 7 fractured anteriorly and posteriorly. Patchy left mid-zone opacification. No pneumothorax or haemothorax.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Candidate asks for a blood gas",
+        "finding": "On 15 L/min: PaO2 9 kPa, PaCO2 5.8 kPa, lactate 1.4.",
+        "row": "G3"
+      },
+      {
+        "trigger": "Candidate asks about pain",
+        "finding": "Pain 9/10; he cannot cough or take a deep breath.",
+        "row": "G4"
+      }
+    ],
+    "push": [
+      {
+        "question": "Why is he hypoxic?",
+        "row": "G3",
+        "expect": "Underlying contusion and pain-limited breathing, not the paradox itself."
+      },
+      {
+        "question": "How will you control his pain?",
+        "row": "G4",
+        "expect": "IV morphine now; epidural preferred, paravertebral if not."
+      },
+      {
+        "question": "Should we intubate him now?",
+        "row": "G5",
+        "expect": "No: CPAP trial if alert and marginal; intubate for respiratory failure."
+      },
+      {
+        "question": "Is there a role for surgery?",
+        "row": "G6",
+        "expect": "Consider rib fixation in flail chest within 48–72 hours; not if unstable."
+      },
+      {
+        "question": "Where should he be managed?",
+        "row": "G7",
+        "expect": "HDU or critical care under a named trauma team."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "His saturations are 96% after morphine. Can he go to the ward?",
+        "safeAnswer": "No. The contusion may worsen over the next days; critical care with serial gases.",
+        "row": "G7"
+      },
+      {
+        "prompt": "He suddenly becomes hypotensive and his trachea deviates to the right.",
+        "safeAnswer": "Left tension pneumothorax: immediate decompression, then chest drain.",
+        "row": "G2"
+      },
+      {
+        "prompt": "Should he have steroids for the lung contusion?",
+        "safeAnswer": "No. Steroids are not used for pulmonary contusion.",
+        "row": "G5"
+      },
+      {
+        "prompt": "He becomes hypotensive with distended neck veins; trachea central, air entry unchanged.",
+        "safeAnswer": "Consider cardiac tamponade: eFAST pericardial view and immediate senior and cardiothoracic help (see MB-261).",
+        "row": "G2"
+      }
+    ]
+  }
+}

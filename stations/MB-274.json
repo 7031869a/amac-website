@@ -1,0 +1,537 @@
+{
+  "id": "MB-274",
+  "exam": "MRCS-B",
+  "title": "Anaphylaxis in theatre after induction",
+  "type": "applied-knowledge",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "Perioperative care: anaphylaxis during anaesthesia (emergency management viva)",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "Resuscitation Council UK peri-operative anaphylaxis algorithm for anaesthetists (Anaesthesia, May 2024; online 11 January 2024)",
+      "NAP6: Anaesthesia, surgery and life-threatening allergic reactions (Br J Anaesth, July 2018)"
+    ],
+    "related": [
+      {
+        "id": "MB-304",
+        "why": "Malignant hyperthermia: the other drug-triggered crisis in theatre"
+      },
+      {
+        "id": "MB-305",
+        "why": "The WHO checklist, where allergies and antibiotic timing are confirmed before induction"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Operating theatre",
+    "role": "Core surgical trainee, scrubbed as first assistant",
+    "scenario": "Mrs Sinclair, 58, is having an elective laparoscopic cholecystectomy. She was given teicoplanin and rocuronium at induction. Five minutes later, before the incision, her BP is 64/32 mmHg, pulse 128/min, and airway pressures are rising with wheeze. There is no rash. The consultant anaesthetist is leading.",
+    "task": "Discuss this emergency, and your part in it, with the examiner."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Sudden hypotension or bronchospasm after induction drugs is anaphylaxis until proved otherwise.",
+    "trap": "Waiting for a rash, or quoting the 500 microgram IM dose as if it were IV.",
+    "firstMove": "\"This looks like anaphylaxis. Call for help, stop surgery and remove triggers.\""
+  },
+  "flow": [
+    "Recognise",
+    "Help, stop surgery, remove triggers",
+    "Adrenaline",
+    "Oxygen, fluids, position",
+    "Refractory reaction",
+    "After the event"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-knowledge",
+      "label": "Recognises anaphylaxis",
+      "fail": "Blames the induction agent for the hypotension and waits for a rash.",
+      "pass": "Suspects anaphylaxis: sudden hypotension and bronchospasm within minutes of induction drugs.",
+      "high": "Knows skin signs are often absent in severe reactions; hypotension was the first feature in nearly half of NAP6 cases.",
+      "source": "RCUK"
+    },
+    {
+      "id": "G2",
+      "domain": "professionalism",
+      "label": "Help, surgery and triggers",
+      "fail": "Carries on preparing to operate.",
+      "pass": "Calls for help and the arrest trolley, stops the surgery, and stops or removes suspected triggers.",
+      "high": "Names theatre triggers: antibiotics (teicoplanin), neuromuscular blockers, chlorhexidine, dyes, latex; removes chlorhexidine-coated lines and lubricants.",
+      "source": "RCUK"
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "Adrenaline route and dose",
+      "fail": "Quotes 500 micrograms IV, or delays adrenaline.",
+      "pass": "With IV access: adrenaline 50 micrograms IV (0.5 mL of 1:10,000), repeated according to response.",
+      "high": "IM (10 micrograms/kg, maximum 500) only without IV access; if boluses are repeatedly needed, starts an adrenaline infusion and involves ICU early.",
+      "source": "RCUK"
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-skill",
+      "label": "Oxygen, fluids and position",
+      "fail": "Gives colloid, or a small fluid bolus.",
+      "pass": "100% oxygen; rapid 500 to 1000 mL crystalloid bolus, avoiding colloid; legs raised or head-down tilt.",
+      "high": "Anticipates 3 to 5 litres; starts CPR if systolic pressure falls below 50 mmHg.",
+      "source": "RCUK"
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-knowledge",
+      "label": "Refractory reaction",
+      "fail": "Relies on chlorphenamine and hydrocortisone as the main treatment.",
+      "pass": "Refractory to adrenaline infusion: adds noradrenaline or vasopressin; considers steroids.",
+      "high": "Glucagon 1 mg IV if on a beta-blocker; considers extracorporeal life support.",
+      "source": "RCUK"
+    },
+    {
+      "id": "G6",
+      "domain": "professionalism",
+      "label": "After the event",
+      "fail": "Proceeds with the operation, or arranges no follow-up.",
+      "pass": "Abandons non-urgent surgery; tryptase once stable, at 1 to 4 hours and at least 24 hours; allergy clinic referral.",
+      "high": "Proceeds only if surgery is urgent and she is stable, avoiding triggers; Yellow Card report; tells the patient and her GP.",
+      "source": "RCUK"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "What do you think is happening?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "The induction drugs have dropped her pressure. There's no rash, so it isn't anaphylaxis.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What would you do?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Carry on setting up; the anaesthetist will sort the pressure.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "It is anaphylaxis. What adrenaline?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "500 micrograms of 1 in 1000 IV.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Fluids?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "A 250 mL bag of colloid.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "She isn't responding."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Chlorphenamine and hydrocortisone, and wait for them to work.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "She stabilises. What now?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Carry on with the cholecystectomy.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "examiner",
+        "text": "What do you think is happening?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Anaphylaxis: sudden hypotension and bronchospasm minutes after induction drugs.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What would you do?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Call for help and the arrest trolley, stop the surgery, and stop or remove any suspected trigger.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What adrenaline?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "She has IV access, so 50 micrograms IV, that's 0.5 mL of 1 in 10,000, repeated according to response.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "And then?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "100% oxygen, a rapid 500 to 1000 mL crystalloid bolus, no colloid, and raise her legs or tilt her head down.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "She stays hypotensive on an adrenaline infusion."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Add a second vasopressor, noradrenaline or vasopressin, and consider steroids.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "She stabilises. What now?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Abandon this elective operation. Tryptase once stable, again at 1 to 4 hours and after at least 24 hours, and refer to the allergy clinic.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "examiner",
+        "text": "There's no rash. Are you sure?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Skin signs are often absent in severe reactions. Hypotension was the first feature in nearly half of the NAP6 cases, so I'd treat this as anaphylaxis.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What can you do from the table?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Stop, and take off anything that could be a trigger: chlorhexidine on the skin, any chlorhexidine-coated catheter or lubricant, latex. Teicoplanin and rocuronium are both recognised culprits.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "She has no IV access yet. What adrenaline?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "IM, 10 micrograms per kilo up to 500 micrograms of 1 in 1000, while access is secured. If she needs repeated IV boluses, an adrenaline infusion and early ICU involvement.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "She's had two litres."
+      },
+      {
+        "speaker": "candidate",
+        "text": "She may need 3 to 5 litres. If the systolic pressure falls below 50 mmHg, I'd start chest compressions.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "She takes bisoprolol and isn't responding."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Glucagon 1 mg IV, alongside a second vasopressor. Extracorporeal life support if it remains refractory.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "If this had been an urgent operation?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "If it were time-critical and she were stable, we could proceed, avoiding the suspected triggers. I'd make sure it's reported through the Yellow Card scheme and that she and her GP know what happened.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G3",
+      "move": "Giving 500 micrograms of 1:1000 adrenaline intravenously.",
+      "consequence": "Ten times the IV bolus: risks arrhythmia, severe hypertension and myocardial ischaemia."
+    },
+    {
+      "row": "G1",
+      "move": "Ruling out anaphylaxis because there is no rash.",
+      "consequence": "Delays adrenaline in the most severe reactions, where skin signs are often absent."
+    },
+    {
+      "row": "G5",
+      "move": "Relying on antihistamine and steroid instead of adrenaline and vasopressors.",
+      "consequence": "Treats the least important part while she stays in shock."
+    },
+    {
+      "row": "G6",
+      "move": "Arranging no tryptase or allergy referral.",
+      "consequence": "The culprit is never identified and may be given again."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You quote the IM dose for an IV patient",
+      "line": "Correction: with IV access it's 50 micrograms IV, titrated; 500 micrograms is the IM dose."
+    },
+    {
+      "when": "Asked what the surgeon does",
+      "line": "Stop operating, remove chlorhexidine, lubricants and latex, and help with the resuscitation."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Skin signs are often absent in severe reactions; hypotension may be the only sign.",
+      "source": "RCUK"
+    },
+    {
+      "fact": "Adrenaline: 50 micrograms IV bolus with IV access; without it, 10 micrograms/kg IM (maximum 500). Infusion if boluses are repeatedly needed.",
+      "source": "RCUK"
+    },
+    {
+      "fact": "Crystalloid 500 to 1000 mL, repeated; avoid colloid. CPR if systolic below 50 mmHg.",
+      "source": "RCUK"
+    },
+    {
+      "fact": "Tryptase once stable, at 1 to 4 hours, and after at least 24 hours; complete an allergy referral.",
+      "source": "RCUK"
+    },
+    {
+      "fact": "NAP6: about 1 in 10,000 anaesthetics; antibiotics were the leading culprits (teicoplanin over-represented), then neuromuscular blockers, chlorhexidine and Patent Blue.",
+      "source": "NAP6"
+    }
+  ],
+  "recall": {
+    "think": "Cardiovascular collapse and cardiac arrest.",
+    "say": "\"This is anaphylaxis: stop surgery and triggers, adrenaline now.\"",
+    "do": [
+      "Call for help, stop surgery, remove triggers",
+      "Adrenaline 50 micrograms IV",
+      "Oxygen and crystalloid bolus"
+    ],
+    "numbers": [
+      {
+        "value": "50 micrograms",
+        "meaning": "IV adrenaline bolus (IM 500)",
+        "source": "RCUK"
+      },
+      {
+        "value": "500–1000 mL",
+        "meaning": "crystalloid bolus",
+        "source": "RCUK"
+      },
+      {
+        "value": "< 50 mmHg",
+        "meaning": "systolic: start CPR",
+        "source": "RCUK"
+      }
+    ],
+    "trap": "No rash, so not anaphylaxis.",
+    "finish": "Tryptase, allergy referral, Yellow Card."
+  },
+  "sources": [
+    {
+      "id": "RCUK",
+      "name": "Dodd A, et al. Emergency treatment of peri-operative anaphylaxis: Resuscitation Council UK algorithm for anaesthetists. Anaesthesia 2024;79(5):535–41",
+      "version": "May 2024 (published online 11 January 2024)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38205901/",
+      "supports": "Diagnosis (skin signs often absent); call for help, stop non-essential surgery, remove triggers; adrenaline 50 micrograms IV or 500 micrograms IM without IV access; infusion if poor response; crystalloid 500–1000 mL, up to 3–5 L, avoid colloid; CPR if systolic below 50 mmHg; second vasopressor, glucagon 1 mg IV on beta-blockers, steroids, ECLS; tryptase timing, allergy referral, proceed only if urgent and stable"
+    },
+    {
+      "id": "NAP6",
+      "name": "Harper NJN, et al. Anaesthesia, surgery, and life-threatening allergic reactions: epidemiology and clinical features of perioperative anaphylaxis in the 6th National Audit Project (NAP6). Br J Anaesth 2018;121(1):159–71",
+      "version": "July 2018",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/29935567/",
+      "supports": "Incidence about 1 in 10,000; culprits antibiotics, neuromuscular blockers, chlorhexidine, Patent Blue; teicoplanin over-represented; hypotension the first feature in 46%; only 24% reported via Yellow Card"
+    },
+    {
+      "id": "NAP6M",
+      "name": "Harper NJN, et al. Anaesthesia, surgery, and life-threatening allergic reactions: management and outcomes in the 6th National Audit Project (NAP6). Br J Anaesth 2018;121(1):172–88",
+      "version": "July 2018",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/29935569/",
+      "supports": "No clear evidence of harm or benefit from chlorphenamine; chest compressions omitted in half of patients with unrecordable blood pressure; surgery abandoned in most cases"
+    },
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format: 9 minutes with 1 minute's reading; examiner-led questioning in applied knowledge stations"
+    }
+  ],
+  "partner": {
+    "opening": "Five minutes after induction, before you've made an incision, this happens. What's going on, and what do you do?",
+    "reveals": [
+      {
+        "trigger": "Candidate asks what has been given",
+        "finding": "Propofol, fentanyl, rocuronium and teicoplanin. Skin prepared with chlorhexidine; urinary catheter not used.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Candidate asks about IV access",
+        "finding": "Working 18G cannula in the left forearm.",
+        "row": "G3"
+      },
+      {
+        "trigger": "Candidate asks for response after two boluses",
+        "finding": "BP 78/40 mmHg, still wheezy.",
+        "row": "G3"
+      },
+      {
+        "trigger": "Candidate asks about her medicines",
+        "finding": "Bisoprolol 5 mg daily for hypertension.",
+        "row": "G5"
+      }
+    ],
+    "push": [
+      {
+        "question": "There's no rash. Could it still be anaphylaxis?",
+        "row": "G1",
+        "expect": "Yes: skin signs are often absent in severe reactions."
+      },
+      {
+        "question": "What dose of adrenaline, by which route?",
+        "row": "G3",
+        "expect": "50 micrograms IV (0.5 mL of 1:10,000), repeated; IM only without IV access."
+      },
+      {
+        "question": "What would you send, and when?",
+        "row": "G6",
+        "expect": "Tryptase once stable, at 1–4 hours and at least 24 hours; allergy referral."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "Her systolic pressure is now 45 mmHg.",
+        "safeAnswer": "Start chest compressions and follow the cardiac arrest algorithm, continuing adrenaline.",
+        "row": "G4"
+      },
+      {
+        "prompt": "She takes bisoprolol and is still hypotensive on an adrenaline infusion.",
+        "safeAnswer": "Glucagon 1 mg IV and a second vasopressor.",
+        "row": "G5"
+      },
+      {
+        "prompt": "Shall we just carry on now she's stable?",
+        "safeAnswer": "No: this is elective, so abandon; proceed only if surgery is urgent, avoiding triggers.",
+        "row": "G6"
+      },
+      {
+        "prompt": "Should we give chlorphenamine first?",
+        "safeAnswer": "No: adrenaline and fluids first; there is no clear evidence that chlorphenamine helps.",
+        "row": "G5"
+      }
+    ]
+  }
+}

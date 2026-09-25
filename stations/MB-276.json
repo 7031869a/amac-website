@@ -1,0 +1,568 @@
+{
+  "id": "MB-276",
+  "exam": "MRCS-B",
+  "title": "Leg weakness with an epidural: suspected epidural haematoma",
+  "type": "applied-knowledge",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "Perioperative care: complications of epidural analgesia and neuraxial anticoagulation",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "FPM Best practice in the management of epidural analgesia in the hospital setting (third edition, 2025)",
+      "Association of Anaesthetists, OAA and RA-UK: Regional anaesthesia and patients with abnormalities of coagulation (Anaesthesia, 2013)"
+    ],
+    "related": [
+      {
+        "id": "MB-205",
+        "why": "Perioperative management of anticoagulants"
+      },
+      {
+        "id": "MB-155",
+        "why": "Cauda equina syndrome: the same time-critical compression logic"
+      },
+      {
+        "id": "MB-237",
+        "why": "Anatomy of the lumbar spine and vertebral canal"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Surgical ward, 08:00",
+    "role": "Core surgical trainee on call",
+    "scenario": "Mrs Angela Oldroyd, 68, is on day 1 after an emergency laparotomy. A thoracic epidural infusion was started before surgery. She is on prophylactic enoxaparin. The nurse reports that she can no longer lift her legs and they feel numb.",
+    "task": "Discuss your assessment and management with the examiner."
+  },
+  "beforeYouWalkIn": {
+    "frame": "A thoracic epidural should not paralyse the legs. New or worsening leg weakness is compression until MRI says otherwise.",
+    "trap": "Calling it 'the epidural working' and rechecking at the next ward round.",
+    "firstMove": "\"I'd see her now: stop the infusion, check sensory level and Bromage score, and call the anaesthetist.\""
+  },
+  "flow": [
+    "Assess the block",
+    "Differential",
+    "Stop, reassess, escalate",
+    "Urgent MRI and neurosurgery",
+    "Anticoagulant timing",
+    "Explain and document",
+    "Other complications"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-skill",
+      "label": "Assess the block formally",
+      "fail": "Accepts numb, weak legs as the expected epidural effect without examining her.",
+      "pass": "Checks sensory level to cold, Bromage score, back pain and tenderness, temperature, observations and the drug chart.",
+      "high": "Knows a thoracic epidural should spare leg power, so a dense leg motor block is abnormal from the start.",
+      "source": "FPM"
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-knowledge",
+      "label": "Differential diagnosis",
+      "fail": "Considers only the local anaesthetic.",
+      "pass": "Excess local anaesthetic or catheter migration, epidural haematoma, epidural abscess, and cord ischaemia or nerve injury.",
+      "high": "Back pain, anticoagulation or recent catheter handling point to haematoma; fever and local tenderness point to abscess."
+    },
+    {
+      "id": "G3",
+      "domain": "professionalism",
+      "label": "Stop, reassess and escalate (safety-critical)",
+      "fail": "Leaves the infusion running and observes until the next ward round.",
+      "pass": "Stops the infusion, calls the anaesthetist now, reassesses hourly; escalates if no improvement over two consecutive hours or any worsening.",
+      "high": "Does not wait if the block is worsening or there is new back pain: MRI now.",
+      "source": "FPM"
+    },
+    {
+      "id": "G4",
+      "domain": "professionalism",
+      "label": "Urgent MRI and neurosurgery",
+      "fail": "Requests a routine MRI, or waits for the morning team.",
+      "pass": "Urgent MRI spine and urgent neurosurgical discussion; withholds enoxaparin; checks platelets and clotting.",
+      "high": "Runs these in parallel, because recovery depends on early decompression; keeps her nil by mouth for possible surgery.",
+      "source": "FPM"
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-knowledge",
+      "label": "LMWH timing around the epidural",
+      "fail": "Quotes one flat interval for every step, or gives LMWH regardless of the catheter.",
+      "pass": "Prophylactic LMWH: 12 hours before insertion or catheter removal; next dose at least 4 hours after insertion or removal.",
+      "high": "Treatment-dose LMWH needs 24 hours; knows catheter removal is the highest-risk moment, so it is timed like insertion.",
+      "source": "AOA13"
+    },
+    {
+      "id": "G6",
+      "domain": "communication",
+      "label": "Explain and document",
+      "fail": "Tells her it is normal and does not document.",
+      "pass": "Explains honestly, informs the registrar and consultant, and documents findings and actions.",
+      "high": "Records exact times of onset, each assessment and each call, and updates her family with her consent."
+    },
+    {
+      "id": "G7",
+      "domain": "clinical-knowledge",
+      "label": "Other epidural complications",
+      "fail": "Cannot name other complications.",
+      "pass": "Hypotension, urinary retention, pruritus, respiratory depression, dural puncture headache and local anaesthetic toxicity.",
+      "high": "Dural puncture headache is postural; an epidural blood patch is offered if conservative treatment fails."
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "The nurse says her legs are numb and weak. What do you do?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "That's the epidural working. I'd ask the nurse to keep an eye on it until the ward round.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          },
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "When can she have her enoxaparin?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "You leave four hours either side of anything to do with the epidural.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What would you tell her?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd reassure her it's normal. I don't think it needs writing up.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Other complications of epidurals?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I can't think of any others.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "examiner",
+        "text": "The nurse says her legs are numb and weak. What do you do?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd see her now: sensory level to cold, Bromage score, any back pain or tenderness, temperature, observations and the drug chart.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What could this be?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Too much local anaesthetic or a migrated catheter, an epidural haematoma, an abscess, or cord ischaemia or nerve injury.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What next?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Stop the infusion, call the anaesthetist, and reassess hourly. If there's no improvement over two hours or it gets worse, it's escalated.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "An hour later her legs are weaker."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Urgent MRI spine and urgent discussion with neurosurgery. I'd withhold her enoxaparin and check platelets and clotting.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "When is enoxaparin safe around an epidural?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "For a prophylactic dose, 12 hours before insertion or catheter removal, and the next dose at least 4 hours after either.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Who do you tell?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "My registrar and consultant. I'd explain to Mrs Oldroyd honestly and document everything.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Any other complications?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Hypotension, urinary retention, itching, respiratory depression, post-dural puncture headache and local anaesthetic toxicity.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "examiner",
+        "text": "The nurse says her legs are numb and weak."
+      },
+      {
+        "speaker": "candidate",
+        "text": "This is a thoracic epidural, so her legs should have normal power. A dense leg block is abnormal before I even examine her.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "She has new pain between her shoulder blades."
+      },
+      {
+        "speaker": "candidate",
+        "text": "With enoxaparin on board, back pain and progressive weakness point to a haematoma. If she were febrile with local tenderness, I'd think abscess.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Would you wait two hours after stopping it?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Not with worsening weakness and back pain. I'd stop the infusion and request the MRI now, not after two hours.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "MRI can't scan her for three hours."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd escalate through my consultant and the anaesthetist, and talk to neurosurgery in parallel, because the chance of recovery falls the longer the cord is compressed. She stays nil by mouth.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The nurse asks whether to pull the catheter."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Not yet. Removal is the highest-risk moment for bleeding, so it follows the same timing as insertion: 12 hours after a prophylactic dose, 24 after a treatment dose, and the anaesthetist decides.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How will you document this?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "With exact times: when the weakness started, each assessment, and each call. I'd update her husband with her permission.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "She asks about the headache she had yesterday."
+      },
+      {
+        "speaker": "candidate",
+        "text": "If it's postural it may be a dural puncture headache. Fluids, analgesia and caffeine first; a blood patch if that fails.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G3",
+      "move": "Treating new leg weakness as the epidural working and leaving the infusion running.",
+      "consequence": "A compressing haematoma goes unrecognised until paraplegia is permanent."
+    },
+    {
+      "row": "G4",
+      "move": "Requesting a routine MRI and waiting for the day team.",
+      "consequence": "Delay to decompression reduces the chance of neurological recovery."
+    },
+    {
+      "row": "G2",
+      "move": "Considering only local anaesthetic effect.",
+      "consequence": "Haematoma and abscess, both surgical emergencies, are missed."
+    },
+    {
+      "row": "G5",
+      "move": "Giving or omitting LMWH without regard to catheter insertion and removal times.",
+      "consequence": "Raises the risk of epidural haematoma, or leaves her unprotected against VTE."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You called it the expected block",
+      "line": "A thoracic epidural shouldn't weaken the legs, so I'd stop the infusion and get the anaesthetist to see her now."
+    },
+    {
+      "when": "Asked for one LMWH rule",
+      "line": "There are two: 12 hours after a prophylactic dose before insertion or removal, then at least 4 hours before the next dose."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Escalate if a dense motor block does not improve over two consecutive hours after stopping the infusion, or worsens hour to hour.",
+      "source": "FPM"
+    },
+    {
+      "fact": "Suspected haematoma or abscess: urgent MRI and urgent neurosurgical discussion.",
+      "source": "FPM"
+    },
+    {
+      "fact": "Prophylactic LMWH: 12 hours before insertion or catheter removal; next dose 4 hours after either. Treatment dose: 24 hours before.",
+      "source": "AOA13"
+    },
+    {
+      "fact": "NAP3 identified catheter removal as the time of greatest risk for epidural haematoma.",
+      "source": "FPM"
+    },
+    {
+      "fact": "Post-dural puncture headache is postural; a blood patch is offered if conservative treatment fails.",
+      "source": "BL"
+    }
+  ],
+  "recall": {
+    "think": "Epidural haematoma or abscess compressing the cord.",
+    "say": "\"New leg weakness with an epidural: compression until MRI excludes it.\"",
+    "do": [
+      "Stop the infusion; sensory level and Bromage",
+      "Anaesthetist now; urgent MRI",
+      "Withhold LMWH; neurosurgery"
+    ],
+    "numbers": [
+      {
+        "value": "12 h",
+        "meaning": "after prophylactic LMWH before insertion or removal",
+        "source": "AOA13"
+      },
+      {
+        "value": "4 h",
+        "meaning": "after insertion or removal before next LMWH",
+        "source": "AOA13"
+      },
+      {
+        "value": "2 h",
+        "meaning": "no improvement after stopping: escalate",
+        "source": "FPM"
+      }
+    ],
+    "trap": "\"It's just the epidural working.\"",
+    "finish": "Urgent MRI and decompression if a haematoma is found."
+  },
+  "sources": [
+    {
+      "id": "FPM",
+      "name": "Faculty of Pain Medicine of the Royal College of Anaesthetists. Best practice in the management of epidural analgesia in the hospital setting",
+      "version": "Third edition, 2025",
+      "url": "https://fpm.ac.uk/sites/fpm/files/documents/2026-04/Management%20of%20epidural%20analgesia%202025%20-2026%20update.pdf",
+      "supports": "Monitor sensory and motor block with the Bromage score (7.13); escalate if dense motor block does not improve for two consecutive hours after stopping the infusion, or worsens from one hour to the next (7.15); suspected vertebral canal haematoma or abscess: urgent MRI and urgent discussion with the neurosurgical unit; NAP3 found catheter removal to be the time of greatest risk for epidural haematoma"
+    },
+    {
+      "id": "AOA13",
+      "name": "Harrop-Griffiths W, et al. Regional anaesthesia and patients with abnormalities of coagulation (Association of Anaesthetists, Obstetric Anaesthetists' Association, Regional Anaesthesia UK). Anaesthesia 2013;68:966-72",
+      "version": "2013",
+      "url": "https://doi.org/10.1111/anae.12359",
+      "supports": "Table 1: prophylactic LMWH 12 hours before neuraxial block, next dose 4 hours after block or catheter removal; treatment-dose LMWH 24 hours before block, next dose 4 hours after (24 hours if the block was traumatic); catheter removal follows the same timings as insertion"
+    },
+    {
+      "id": "BL",
+      "name": "Bailey & Love's Short Practice of Surgery (O'Connell, McCaskie, Sayers, eds)",
+      "version": "28th edition, 2023",
+      "url": "https://www.routledge.com/Bailey--Loves-Short-Practice-of-Surgery---28th-Edition/OConnell-McCaskie-Sayers/p/book/9780367548117",
+      "supports": "Complications of epidural analgesia; post-dural puncture headache and epidural blood patch"
+    },
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format: 9 minutes with 1 minute's reading; examiner-led questioning in applied knowledge stations"
+    }
+  ],
+  "partner": {
+    "opening": "Mrs Oldroyd had a thoracic epidural sited before her laparotomy yesterday. The nurse says she can't lift her legs and they feel numb. What would you do?",
+    "actorBrief": "You are the examiner. Release findings only when the candidate asks or examines. Push on the LMWH timings if the candidate gives a single interval.",
+    "reveals": [
+      {
+        "trigger": "Examines sensation and power",
+        "finding": "Reduced sensation to cold from T10 downwards on both sides. Cannot lift either leg against gravity; can move the toes. Yesterday evening she could lift both legs.",
+        "row": "G1"
+      },
+      {
+        "trigger": "Asks about back pain, fever or the site",
+        "finding": "New aching pain in the mid-back since 06:00. T 36.9°C. Catheter site clean, no tenderness.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Checks the drug chart",
+        "finding": "Epidural sited 08:30 yesterday. Enoxaparin 40 mg SC at 18:00 yesterday. No antiplatelets. Platelets 210.",
+        "row": "G5"
+      },
+      {
+        "trigger": "Reassesses one hour after stopping the infusion",
+        "finding": "Weakness is worse: she can no longer move her toes.",
+        "row": "G3"
+      }
+    ],
+    "push": [
+      {
+        "question": "How would you assess her?",
+        "row": "G1",
+        "expect": "Sensory level to cold, Bromage score, back pain, fever, observations, drug chart."
+      },
+      {
+        "question": "What is the differential?",
+        "row": "G2",
+        "expect": "LA excess or catheter migration, haematoma, abscess, cord ischaemia or nerve injury."
+      },
+      {
+        "question": "What do you do first?",
+        "row": "G3",
+        "expect": "Stop infusion, anaesthetist now, hourly reassessment; escalate if no improvement or worsening."
+      },
+      {
+        "question": "Her weakness is worse. Now what?",
+        "row": "G4",
+        "expect": "Urgent MRI spine and neurosurgery in parallel; withhold LMWH; clotting and platelets."
+      },
+      {
+        "question": "When can LMWH be given around an epidural?",
+        "row": "G5",
+        "expect": "Prophylactic: 12 h before insertion or removal; next dose 4 h after; treatment dose 24 h."
+      },
+      {
+        "question": "Name other complications of epidurals.",
+        "row": "G7",
+        "expect": "Hypotension, retention, pruritus, respiratory depression, PDPH, LA toxicity."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "The registrar says to wait for the morning ward round.",
+        "safeAnswer": "Escalate to the consultant and anaesthetist now; progressive weakness is time-critical.",
+        "row": "G4"
+      },
+      {
+        "prompt": "Her 18:00 enoxaparin is due. Should the nurse give it?",
+        "safeAnswer": "No: withhold until the haematoma is excluded and the anaesthetist has advised on catheter removal.",
+        "row": "G5"
+      },
+      {
+        "prompt": "She is febrile with a red, tender catheter site instead.",
+        "safeAnswer": "Suspect epidural abscess: urgent MRI, blood cultures, IV antibiotics, neurosurgical discussion.",
+        "row": "G2"
+      },
+      {
+        "prompt": "She asks, \"Will I walk again?\"",
+        "safeAnswer": "Honest: it is serious, it is being treated as an emergency, and outcome is better the sooner it is treated.",
+        "row": "G6"
+      }
+    ]
+  }
+}

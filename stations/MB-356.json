@@ -1,0 +1,575 @@
+{
+  "id": "MB-356",
+  "exam": "MRCS-B",
+  "title": "Breast cancer: interpreting a core biopsy report",
+  "type": "data-interpretation",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "Breast disease: core biopsy pathology, receptor status and treatment planning",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "NICE NG101 (published 18 July 2018; last updated 14 April 2025)",
+      "RCPath G150 non-operative breast reporting, version 3 (July 2026)",
+      "UK HER2 recommendations (Rakha et al., J Clin Pathol, 2023)",
+      "ESMO early breast cancer guideline (Loibl et al., Ann Oncol, 2024)",
+      "NICE DG58 tumour profiling tests (May 2024)"
+    ],
+    "related": [
+      {
+        "id": "MB-138",
+        "why": "The breast examination that finds the lump before triple assessment"
+      },
+      {
+        "id": "MB-286",
+        "why": "Blood-stained nipple discharge: the other common route into the breast clinic"
+      },
+      {
+        "id": "MB-264",
+        "why": "Breast and axillary anatomy behind sentinel node biopsy and axillary surgery"
+      },
+      {
+        "id": "MB-357",
+        "why": "Giving a result like this one to the patient"
+      },
+      {
+        "id": "MB-358",
+        "why": "Consent for wide local excision and sentinel node biopsy"
+      },
+      {
+        "id": "MB-359",
+        "why": "The final histology and adjuvant plan after surgery"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Data interpretation station",
+    "role": "Core surgical trainee",
+    "scenario": "A 54-year-old postmenopausal woman has a 22 mm suspicious mass in the left breast on mammography and ultrasound. Axillary ultrasound is normal. The examiner will hand you her core biopsy report.",
+    "task": "Interpret the report for the examiner and explain how it shapes staging and treatment. You will be asked questions."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Category, type, grade, receptors; then axilla, systemic staging, surgery, adjuvant therapy, MDT.",
+    "trap": "Reading HER2 2+ as HER2 positive. The in situ hybridisation result decides.",
+    "firstMove": "\"B5b: this is invasive carcinoma of no special type, grade 2.\""
+  },
+  "flow": [
+    "Category, type and grade",
+    "Receptor status",
+    "Axillary staging",
+    "Systemic staging",
+    "Surgery",
+    "Adjuvant therapy",
+    "MDT and the patient"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-knowledge",
+      "label": "B category and tumour type",
+      "fail": "Cannot say what B5b means, or calls the lesion in situ disease.",
+      "pass": "B5b means invasive carcinoma. No special type (ductal) tumour, grade 2 of 3.",
+      "high": "Contrasts B5a (in situ disease) and B3/B4 cores, which never justify definitive cancer surgery on their own.",
+      "source": "G150"
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-knowledge",
+      "label": "Receptor status",
+      "fail": "Reads HER2 2+ as HER2 positive and plans trastuzumab.",
+      "pass": "ER positive: endocrine therapy. HER2 2+ is equivocal; ISH not amplified makes her HER2 negative, so no HER2-targeted therapy.",
+      "high": "States IHC 0 and 1+ are negative, 3+ positive, and 2+ always needs ISH before HER2 status is final.",
+      "source": "HER2"
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-skill",
+      "label": "Axillary staging",
+      "fail": "Plans axillary clearance without assessing the axilla, or ignores the axilla.",
+      "pass": "Normal axillary ultrasound: sentinel lymph node biopsy at surgery. Abnormal nodes on ultrasound need needle sampling first.",
+      "high": "Biopsy-proven nodal disease means axillary node clearance; sentinel node biopsy uses the dual isotope and blue dye technique.",
+      "source": "NG101"
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-skill",
+      "label": "Systemic staging",
+      "fail": "Orders CT and bone scan routinely for this small, node-negative tumour.",
+      "pass": "No routine CT or bone scan for small, clinically node-negative disease without symptoms of metastasis.",
+      "high": "Reserves CT chest and abdomen with bone scan, or PET-CT, for node-positive or higher-stage disease, symptoms, or abnormal bloods.",
+      "source": "ESMO"
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-knowledge",
+      "label": "Surgical options",
+      "fail": "Offers mastectomy as the only option.",
+      "pass": "Wide local excision with radiotherapy, or mastectomy; survival is similar. Depends on tumour-to-breast size and her preference.",
+      "high": "Adds oncoplastic or reconstructive options, and that tumour on ink at a radial margin needs further surgery.",
+      "source": "FISHER"
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-knowledge",
+      "label": "Adjuvant therapy",
+      "fail": "Omits endocrine therapy, or gives chemotherapy to everyone.",
+      "pass": "Whole-breast radiotherapy after conservation; aromatase inhibitor as she is postmenopausal; chemotherapy decided on risk, using PREDICT.",
+      "high": "Genomic test such as Oncotype DX when chemotherapy benefit is uncertain; radiotherapy is 26 Gy in 5 fractions over 1 week.",
+      "source": "NG101"
+    },
+    {
+      "id": "G7",
+      "domain": "professionalism",
+      "label": "MDT and shared decision",
+      "fail": "Presents the plan as a personal decision.",
+      "pass": "Plan agreed at the breast MDT, then discussed with her; named clinical nurse specialist.",
+      "high": "Final treatment decisions made with her, using absolute benefit figures (PREDICT) she can weigh.",
+      "source": "NG101"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "Here is the core biopsy report. Talk me through it."
+      },
+      {
+        "speaker": "candidate",
+        "text": "It's a B5, so it's cancer. HER2 is 2+, so she's HER2 positive and needs trastuzumab.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          },
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you stage her?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "CT and a bone scan for everyone with cancer. Then I'd clear the axilla to be safe.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          },
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What surgery and further treatment would you offer?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "A mastectomy. Then chemotherapy.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          },
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Who decides?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I would, as the surgeon.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "examiner",
+        "text": "Here is the core biopsy report. Talk me through it."
+      },
+      {
+        "speaker": "candidate",
+        "text": "B5b means invasive carcinoma. It's no special type, grade 2 of 3.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "ER positive, so endocrine therapy. HER2 is 2+, which is equivocal, but ISH isn't amplified, so she's HER2 negative: no trastuzumab.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you stage her?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Her axillary ultrasound is normal, so sentinel lymph node biopsy at surgery. If nodes had looked abnormal, I'd want needle sampling first.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "With a small, node-negative tumour and no symptoms, I wouldn't request routine CT or bone scan.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What are her treatment options?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Wide local excision with radiotherapy, or mastectomy. Survival is similar, so it depends on tumour-to-breast size and her preference.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "After conservation, whole-breast radiotherapy. As she's postmenopausal, an aromatase inhibitor. Chemotherapy depends on her risk, estimated with PREDICT.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Who decides?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "The breast MDT agrees the plan, then we discuss it with her, and she has a named clinical nurse specialist.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "examiner",
+        "text": "Here is the core biopsy report. Talk me through it."
+      },
+      {
+        "speaker": "candidate",
+        "text": "B5b: invasive carcinoma, no special type, grade 2. That's different from B5a, which is in situ disease; a B3 or B4 core would never justify cancer surgery on its own.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "ER positive, so endocrine therapy. HER2 is 2+, which is equivocal; IHC 0 and 1+ are negative and 3+ positive, and 2+ always goes to ISH. Here ISH isn't amplified, so she's HER2 negative.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you stage her?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Normal axillary ultrasound, so sentinel node biopsy with isotope and blue dye. A positive needle biopsy of a node would mean axillary clearance instead.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "No routine CT or bone scan. I'd reserve CT chest and abdomen with a bone scan, or PET-CT, for node-positive or higher-stage disease, symptoms or abnormal bloods.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What are her treatment options?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Wide local excision with radiotherapy, or mastectomy, with equivalent survival. Oncoplastic techniques or reconstruction widen the choice. Tumour on ink at a radial margin means further surgery.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Whole-breast radiotherapy, 26 Gy in 5 fractions over a week, and an aromatase inhibitor. If PREDICT leaves chemotherapy uncertain, a genomic test such as Oncotype DX helps decide.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Who decides?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "The breast MDT recommends; she decides, with absolute benefit figures from PREDICT she can weigh, supported by her named nurse specialist.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G2",
+      "move": "Calling HER2 2+ positive.",
+      "consequence": "2+ is equivocal. Without ISH she could be given trastuzumab, with its cardiac risk, for a tumour it will not treat."
+    },
+    {
+      "row": "G4",
+      "move": "Routine CT and bone scan for small, node-negative disease.",
+      "consequence": "Radiation, delay and false positives, with no change in management."
+    },
+    {
+      "row": "G3",
+      "move": "Axillary clearance without ultrasound and needle sampling.",
+      "consequence": "Most ultrasound-negative axillae are node-negative; clearance adds lymphoedema and sensory loss that sentinel node biopsy avoids."
+    },
+    {
+      "row": "G5",
+      "move": "Offering mastectomy as the only option.",
+      "consequence": "Breast conservation with radiotherapy gives equivalent survival; she is denied a real choice."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You called HER2 2+ positive",
+      "line": "Let me correct that: 2+ is equivocal, and the ISH result makes her HER2 negative."
+    },
+    {
+      "when": "You jumped to one operation",
+      "line": "There are two surgical routes with similar survival: conservation with radiotherapy, or mastectomy."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "B categories: B5a in situ, B5b invasive, B5c invasion uncertain. B3 and B4 cores need further tissue before definitive surgery.",
+      "source": "G150"
+    },
+    {
+      "fact": "HER2: IHC 0 or 1+ negative, 3+ positive, 2+ equivocal and settled by in situ hybridisation.",
+      "source": "HER2"
+    },
+    {
+      "fact": "Axillary ultrasound for every invasive cancer; abnormal nodes are sampled. Ultrasound-negative: sentinel node biopsy. Biopsy-proven nodal disease: axillary node clearance.",
+      "source": "NG101"
+    },
+    {
+      "fact": "Systemic staging is for node-positive or higher-stage disease, or symptoms suggesting metastasis.",
+      "source": "ESMO"
+    },
+    {
+      "fact": "Postmenopausal ER-positive disease at medium or high risk: aromatase inhibitor. Whole-breast radiotherapy after conservation: 26 Gy in 5 fractions over 1 week.",
+      "source": "NG101"
+    },
+    {
+      "fact": "Genomic tests (Oncotype DX, EndoPredict, Prosigna) guide chemotherapy in ER-positive, HER2-negative early disease.",
+      "source": "DG58"
+    }
+  ],
+  "recall": {
+    "think": "Invasive? Which receptors? Has it spread to the axilla?",
+    "say": "\"B5b: invasive carcinoma, ER positive, HER2 negative after ISH.\"",
+    "do": [
+      "Read category, type, grade, receptors",
+      "Stage the axilla by ultrasound",
+      "Offer conservation or mastectomy via MDT"
+    ],
+    "numbers": [
+      {
+        "value": "HER2 IHC 2+",
+        "meaning": "equivocal: ISH decides",
+        "source": "HER2"
+      },
+      {
+        "value": "0 mm",
+        "meaning": "tumour on ink: further surgery",
+        "source": "NG101"
+      },
+      {
+        "value": "26 Gy in 5 fractions",
+        "meaning": "whole-breast radiotherapy over 1 week",
+        "source": "NG101"
+      }
+    ],
+    "trap": "HER2 2+ is not HER2 positive.",
+    "finish": "MDT plan, decided with her."
+  },
+  "sources": [
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format: 9 minutes with 1 minute's reading; examiner-led questioning in applied knowledge stations"
+    },
+    {
+      "id": "NG101",
+      "name": "NICE NG101: Early and locally advanced breast cancer: diagnosis and management",
+      "version": "Published 18 July 2018; last updated 14 April 2025 (links updated July 2026)",
+      "url": "https://www.nice.org.uk/guidance/ng101",
+      "supports": "Named clinical nurse specialist (1.1.1); pretreatment axillary ultrasound with needle sampling of abnormal nodes (1.2.1); further surgery for tumour on ink, 0 mm (1.4.3); sentinel lymph node biopsy for an ultrasound-negative axilla, dual isotope and blue dye technique (1.4.9, 1.4.10); axillary node clearance for biopsy-proven nodal disease (1.4.11); MDT-based systemic therapy decisions and PREDICT (1.6.2, 1.6.4); adjuvant endocrine therapy for ER-positive disease, aromatase inhibitor for postmenopausal women at medium or high risk (1.11.5, 1.11.7); whole-breast radiotherapy after breast-conserving surgery, 26 Gy in 5 fractions over 1 week (1.13.3, 1.13.13)"
+    },
+    {
+      "id": "G150",
+      "name": "Royal College of Pathologists G150: Guidelines for non-operative diagnostic procedures and reporting in breast cancer screening",
+      "version": "Version 3, July 2026",
+      "url": "https://www.rcpath.org/static/4b16f19c-f7bd-456c-b212f557f8040f66/d5177404-500f-4c59-9b5e10d2b2979cb2/G150-Non-op-reporting-breast-cancer-screening.pdf",
+      "supports": "B categories: B5a in situ carcinoma (DCIS), B5b invasive carcinoma, B5c invasion uncertain; definitive therapeutic surgery should not follow a B3 or B4 core alone; ER, PR and HER2 assessed on the core biopsy to plan treatment"
+    },
+    {
+      "id": "HER2",
+      "name": "Rakha EA, et al. UK recommendations for HER2 assessment in breast cancer: an update. J Clin Pathol 2023;76:217-227",
+      "version": "2023",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/36564170/",
+      "supports": "Two-tier HER2 testing: immunohistochemistry first, with in situ hybridisation for equivocal (IHC 2+) tumours; IHC 0 and 1+ are HER2 negative, 3+ positive"
+    },
+    {
+      "id": "ESMO",
+      "name": "Loibl S, et al. Early breast cancer: ESMO Clinical Practice Guideline for diagnosis, treatment and follow-up. Ann Oncol 2024;35(2):159-182",
+      "version": "2024",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38101773/",
+      "supports": "Systemic staging (CT chest and abdomen with bone scan, or FDG PET-CT) for node-positive and higher-stage disease rather than routinely in small node-negative tumours"
+    },
+    {
+      "id": "DG58",
+      "name": "NICE DG58: Tumour profiling tests to guide adjuvant chemotherapy decisions in early breast cancer",
+      "version": "Published 9 May 2024 (incorporates DG34, 2018)",
+      "url": "https://www.nice.org.uk/guidance/dg58",
+      "supports": "Oncotype DX, EndoPredict and Prosigna as options to guide adjuvant chemotherapy decisions in ER-positive, HER2-negative early breast cancer, including node-negative disease"
+    },
+    {
+      "id": "FISHER",
+      "name": "Fisher B, et al. Twenty-year follow-up of a randomized trial comparing total mastectomy, lumpectomy, and lumpectomy plus irradiation for the treatment of invasive breast cancer. N Engl J Med 2002;347:1233-1241",
+      "version": "2002",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/12393820/",
+      "supports": "No difference in disease-free, distant disease-free or overall survival between mastectomy and lumpectomy with or without radiotherapy at 20 years"
+    }
+  ],
+  "partner": {
+    "opening": "This is the core biopsy report of a 54-year-old postmenopausal woman with a 22 mm left breast mass. Talk me through it.",
+    "actorBrief": "You are the examiner. Hand over the report: \"Left breast core biopsy, B5b. Invasive carcinoma of no special type, grade 2. ER positive, Allred score 8/8. HER2 IHC 2+ (equivocal); ISH not amplified. Ki-67 15%.\" Release further data only when asked. If the candidate names one treatment as the only option, ask \"Is that her only option?\"",
+    "reveals": [
+      {
+        "trigger": "Candidate asks what the HER2 ISH showed",
+        "finding": "HER2/CEP17 ratio below 2.0; not amplified.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Candidate asks about the axilla",
+        "finding": "Axillary ultrasound: normal nodes; no needle sampling needed.",
+        "row": "G3"
+      },
+      {
+        "trigger": "Candidate asks about symptoms or blood tests before staging",
+        "finding": "No bone pain, breathlessness or weight loss. Liver function tests, calcium and alkaline phosphatase normal.",
+        "row": "G4"
+      }
+    ],
+    "push": [
+      {
+        "question": "What does B5b mean?",
+        "row": "G1",
+        "expect": "Invasive carcinoma on core biopsy (B5a is in situ)."
+      },
+      {
+        "question": "Is she HER2 positive?",
+        "row": "G2",
+        "expect": "No: 2+ is equivocal and ISH is not amplified."
+      },
+      {
+        "question": "Would you request a CT and bone scan?",
+        "row": "G4",
+        "expect": "Not routinely for small, node-negative disease without symptoms or abnormal bloods."
+      },
+      {
+        "question": "Will she need chemotherapy?",
+        "row": "G6",
+        "expect": "Decided on risk using PREDICT; a genomic test if the benefit is uncertain."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "The axillary node biopsy had shown metastatic carcinoma. What changes?",
+        "safeAnswer": "Axillary node clearance rather than sentinel node biopsy, and systemic staging becomes appropriate.",
+        "row": "G3"
+      },
+      {
+        "prompt": "The core had been reported B3. Would you operate?",
+        "safeAnswer": "Not with cancer surgery: further tissue by vacuum-assisted or diagnostic excision biopsy, discussed at MDT.",
+        "row": "G1"
+      },
+      {
+        "prompt": "She wants to avoid radiotherapy.",
+        "safeAnswer": "Mastectomy avoids breast radiotherapy in most node-negative women; discuss it and reconstruction, and respect her choice.",
+        "row": "G7"
+      }
+    ]
+  }
+}

@@ -1,0 +1,519 @@
+{
+  "id": "MB-275",
+  "exam": "MRCS-B",
+  "title": "Postoperative hyponatraemia: new confusion on day 2",
+  "type": "data-interpretation",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "Perioperative care: fluid and electrolyte disorders (results released in stages)",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "Society for Endocrinology emergency guidance on symptomatic hyponatraemia (Endocr Connect 2016; revised 2022)",
+      "ESE/ESICM/ERBP clinical practice guideline on hyponatraemia (Eur J Endocrinol, March 2014)"
+    ],
+    "related": [
+      {
+        "id": "MB-301",
+        "why": "Delirium in the older surgical patient: the other causes of new confusion"
+      },
+      {
+        "id": "MB-202",
+        "why": "Postoperative fluid balance and acute kidney injury"
+      },
+      {
+        "id": "MB-298",
+        "why": "Sepsis after emergency laparotomy, a coexisting cause of confusion to exclude"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Surgical ward",
+    "role": "Core surgical trainee on call",
+    "scenario": "Mr Andrew Pilbeam, 72, is on day 2 after an emergency laparotomy and small bowel resection for adhesional obstruction. The nurse reports he has become confused this evening. His sodium this afternoon was 125 mmol/L; before surgery it was 139 mmol/L.",
+    "task": "The examiner will give you his observations, fluid chart and results in stages. Interpret them and discuss your management."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Sodium 125 with new confusion is symptomatic and acute. Symptoms, not the number, set the urgency.",
+    "trap": "Fluid restriction alone for a confused patient, or a litre of 0.9% saline without a diagnosis.",
+    "firstMove": "\"I'd see him now: ABCDE, GCS, glucose, and look for other causes of confusion.\""
+  },
+  "flow": [
+    "Assess and exclude other causes",
+    "Grade severity and timing",
+    "Read the fluid chart and results",
+    "Hypertonic saline for symptoms",
+    "Limit and monitor the rise",
+    "Stop the cause and escalate"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-skill",
+      "label": "Assess the confused patient",
+      "fail": "Treats the result over the phone without seeing him or considering other causes of confusion.",
+      "pass": "Sees him: ABCDE, GCS, glucose, observations and fluid balance; considers sepsis, hypoxia, opioids and anastomotic leak as well.",
+      "high": "Asks specifically about vomiting, seizures and drowsiness, which change urgency; repeats the sodium on a blood gas now."
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-knowledge",
+      "label": "Grade severity and timing",
+      "fail": "Calls this mild, or misses that the sodium has fallen within two days.",
+      "pass": "Moderate hyponatraemia (125 to 129 mmol/L) with moderately severe symptoms (confusion); a documented fall within 48 hours makes it acute.",
+      "high": "Explains that symptoms, not the number, drive treatment, and that an acute fall risks cerebral oedema.",
+      "source": "ESE"
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "Find the cause from the chart and results",
+      "fail": "Labels it SIADH without assessing volume status, or does not look at the fluid chart.",
+      "pass": "Low serum osmolality, concentrated urine with a high urine sodium, clinically euvolaemic: an SIADH picture made worse by hypotonic dextrose-saline.",
+      "high": "Links the SIADH to pain, nausea, opioids and surgery; checks cortisol and thyroid function because SIADH is a diagnosis of exclusion."
+    },
+    {
+      "id": "G4",
+      "domain": "professionalism",
+      "label": "Treat symptomatic hyponatraemia (safety-critical)",
+      "fail": "Fluid restriction alone, or 0.9% saline, for a confused patient.",
+      "pass": "Senior and critical care input; 150 ml of 3% saline IV over 20 minutes, recheck sodium, repeat up to twice until it rises by 5.",
+      "high": "Gives it where he can be monitored closely; stops boluses once symptoms improve; knows 0.9% saline can worsen SIADH.",
+      "source": "SFE"
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-knowledge",
+      "label": "Limit the rate of correction",
+      "fail": "Aims to normalise the sodium today, or sets no upper limit.",
+      "pass": "Limits the rise to 10 mmol/L in the first 24 hours and 8 mmol/L per 24 hours after; checks sodium at 6 and 12 hours.",
+      "high": "Names osmotic demyelination; if overcorrecting, stops hypertonic fluid and seeks specialist advice on hypotonic fluid with or without desmopressin.",
+      "source": "SFE"
+    },
+    {
+      "id": "G6",
+      "domain": "communication",
+      "label": "Stop the cause, escalate and explain",
+      "fail": "Leaves the dextrose-saline running and does not tell a senior.",
+      "pass": "Stops hypotonic fluid, reviews opioids and antiemetics, informs the registrar, documents, explains to him and his family.",
+      "high": "Involves endocrinology early; once symptoms settle, plans fluid restriction and tailors any IV maintenance to his losses."
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "The nurse rings: sodium 125 and he's confused. What do you do?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd prescribe fluid restriction to a litre a day and recheck the sodium in the morning.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          },
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How severe is it?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "It's only 125, so it's mild. He's probably just confused from the anaesthetic.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "His sodium was 139 two days ago. Anything else?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd give a bag of normal saline to bring it up and aim to get it back to normal by tomorrow.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What fluid has he been on?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd carry on with his current fluids; he still needs maintenance.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "examiner",
+        "text": "The nurse rings: sodium 125 and he's confused. What do you do?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd see him now: ABCDE, GCS, glucose, observations and fluid balance. I'd also look for sepsis, hypoxia, opioid toxicity and an anastomotic leak.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you classify this?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Moderate hyponatraemia, 125 to 129, with moderately severe symptoms because he's confused. It fell from 139 within 48 hours, so it's acute.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "He looks euvolaemic. Serum osmolality 262, urine osmolality 460, urine sodium 52. He's had three litres of dextrose-saline."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Hypotonic hyponatraemia with concentrated urine and a high urine sodium in a euvolaemic patient: an SIADH picture, worsened by hypotonic fluid.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Treatment?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "He's symptomatic, so I'd call my registrar and critical care. 150 ml of 3% saline over 20 minutes, recheck the sodium, and repeat up to twice until it's risen by 5.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How fast should it rise?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "No more than 10 in the first 24 hours and 8 a day after that, with sodium checks at 6 and 12 hours.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Anything else?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Stop the dextrose-saline, review his opioids and antiemetics, document, and explain to him and his family what's happening.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "examiner",
+        "text": "The nurse rings: sodium 125 and he's confused."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'll see him now. Has he vomited, had a fit or become drowsy? Those make it more urgent. I'll repeat the sodium on a gas while I assess him.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "It's only 125. Does that matter?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "The symptoms matter more than the number. A fall this fast gives the brain no time to adapt, so the risk is cerebral oedema.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "You think it's SIADH?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "The picture fits: pain, nausea, morphine and surgery all drive ADH. But it's a diagnosis of exclusion, so I'd send cortisol and thyroid function before labelling it.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Why not give normal saline?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "In SIADH the kidney keeps the water and excretes the sodium, so 0.9% saline can lower it further. He needs 3% saline in a monitored setting, and I'd stop the boluses once his confusion improves.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Six hours later his sodium is 133."
+      },
+      {
+        "speaker": "candidate",
+        "text": "That's 8 already, so he's close to the 24-hour limit of 10. I'd stop all hypertonic fluid. If it overshoots, I'd ask the endocrinologist about hypotonic fluid with or without desmopressin to avoid osmotic demyelination.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What's the ongoing plan?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Endocrinology advice today. Once he's settled, fluid restriction, with any IV maintenance matched to his NG losses rather than a routine dextrose-saline bag.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G4",
+      "move": "Fluid restriction alone, or 0.9% saline, for a confused patient with acute hyponatraemia.",
+      "consequence": "Cerebral oedema can progress to seizures and coma; saline may lower the sodium further in SIADH."
+    },
+    {
+      "row": "G5",
+      "move": "Aiming to normalise the sodium within a day.",
+      "consequence": "Overcorrection risks osmotic demyelination, which can cause permanent neurological disability."
+    },
+    {
+      "row": "G3",
+      "move": "Calling it SIADH without assessing volume status or excluding adrenal and thyroid causes.",
+      "consequence": "Hypovolaemia or adrenal insufficiency is treated wrongly and he deteriorates."
+    },
+    {
+      "row": "G6",
+      "move": "Leaving hypotonic dextrose-saline running.",
+      "consequence": "The cause continues and the sodium keeps falling."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You started with fluid restriction",
+      "line": "Because he's confused, I'd treat this as symptomatic first: hypertonic saline with senior input, then fluid restriction once he's settled."
+    },
+    {
+      "when": "Asked for a target sodium",
+      "line": "I'd target symptom relief and a rise of about 5, not a normal number, keeping within 10 in the first 24 hours."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Moderate hyponatraemia is 125 to 129 mmol/L, profound below 125; acute means documented within 48 hours.",
+      "source": "ESE"
+    },
+    {
+      "fact": "Confusion, headache and nausea without vomiting are moderately severe symptoms; vomiting, seizures and reduced consciousness are severe.",
+      "source": "SFE"
+    },
+    {
+      "fact": "Both groups need 150 ml of 3% saline IV over 20 minutes, repeated up to twice until the sodium rises by 5 mmol/L.",
+      "source": "SFE"
+    },
+    {
+      "fact": "Limit the rise to 10 mmol/L in the first 24 hours and 8 mmol/L per 24 hours thereafter.",
+      "source": "SFE"
+    },
+    {
+      "fact": "Postoperative pain, nausea and opioids stimulate ADH; hypotonic maintenance fluid then lowers the sodium.",
+      "source": "BL"
+    }
+  ],
+  "recall": {
+    "think": "Cerebral oedema: seizures and coma.",
+    "say": "\"Acute symptomatic hyponatraemia: he needs hypertonic saline with senior input.\"",
+    "do": [
+      "See him: ABCDE, GCS, glucose",
+      "Stop dextrose-saline",
+      "150 ml 3% saline over 20 minutes, recheck"
+    ],
+    "numbers": [
+      {
+        "value": "150 ml 3% over 20 min",
+        "meaning": "repeat up to twice, target rise 5",
+        "source": "SFE"
+      },
+      {
+        "value": "10 then 8 mmol/L",
+        "meaning": "maximum rise in first 24 h, then each 24 h",
+        "source": "SFE"
+      }
+    ],
+    "trap": "Fluid restriction or 0.9% saline for a confused patient.",
+    "finish": "Hypertonic saline, then fluid restriction for SIADH."
+  },
+  "sources": [
+    {
+      "id": "SFE",
+      "name": "Society for Endocrinology Endocrine Emergency Guidance: Emergency management of severe and moderately severely symptomatic hyponatraemia in adult patients (Ball S, Barth J, Levy M; update of Endocr Connect 2016;5:G4-G6)",
+      "version": "2016; revised 2022",
+      "url": "https://www.endocrinology.org/media/xhrhxhxm/emergency-management-of-severe-and-moderately-severely-symptomatic-hyponatraemia-in-adult-patients-2022.pdf",
+      "supports": "Severe symptoms (persistent vomiting, seizures, reduced consciousness, cardiorespiratory arrest) and moderately severe symptoms (confusion, headache, nausea without vomiting) both need immediate IV hypertonic saline: 150 ml 3% over 20 minutes, repeated up to twice until a 5 mmol/L rise; limit the rise to 10 mmol/L in the first 24 hours and 8 mmol/L per 24 hours thereafter; check sodium at 6 and 12 hours and daily; if limits are exceeded, stop hypertonic fluid and consider hypotonic fluid with or without desmopressin"
+    },
+    {
+      "id": "ESE",
+      "name": "Spasovski G, Vanholder R, Allolio B, et al. Clinical practice guideline on diagnosis and treatment of hyponatraemia (ESE, ESICM, ERBP). Eur J Endocrinol 2014;170:G1-G47",
+      "version": "March 2014",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/24569125/",
+      "supports": "Biochemical severity: mild 130-135, moderate 125-129, profound below 125 mmol/L; acute hyponatraemia documented to have developed within 48 hours; classification by symptoms; correction limits of 10 mmol/L in the first 24 hours and 8 mmol/L in each subsequent 24 hours; diagnostic approach using serum osmolality, urine osmolality and urine sodium"
+    },
+    {
+      "id": "BL",
+      "name": "Bailey & Love's Short Practice of Surgery (O'Connell, McCaskie, Sayers, eds)",
+      "version": "28th edition, 2023",
+      "url": "https://www.routledge.com/Bailey--Loves-Short-Practice-of-Surgery---28th-Edition/OConnell-McCaskie-Sayers/p/book/9780367548117",
+      "supports": "Postoperative fluid and electrolyte disturbance: ADH release after surgery and hyponatraemia from hypotonic fluid"
+    },
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format: 9 minutes with 1 minute's reading; examiner-led questioning with data released in stages"
+    }
+  ],
+  "partner": {
+    "opening": "Mr Pilbeam is on day 2 after an emergency laparotomy. The nurse has called you because he is confused and his sodium is 125 mmol/L. What would you do?",
+    "reveals": [
+      {
+        "trigger": "Asks for observations or assesses him (stage 1)",
+        "finding": "T 37.6°C, HR 92, BP 138/80, RR 18, SpO2 96% on air. GCS 14 (confused). Capillary glucose 6.8 mmol/L. Nauseated, no vomiting, no seizures. Abdomen soft, wound clean. Moist mucosa, JVP not raised, no oedema.",
+        "row": "G1"
+      },
+      {
+        "trigger": "Asks for the fluid and drug charts (stage 2)",
+        "finding": "Last 24 hours: 3,000 ml 0.18% sodium chloride in 4% glucose IV; NG aspirate 300 ml; urine 1,100 ml. Morphine PCA and ondansetron. No diuretics.",
+        "row": "G3"
+      },
+      {
+        "trigger": "Asks for bloods and urine (stage 3)",
+        "finding": "Na 125 mmol/L (139 pre-op, 131 day 1), K 3.9, urea 4.1, creatinine 78, glucose 6.8. Serum osmolality 262 mOsm/kg. Urine osmolality 460 mOsm/kg, urine sodium 52 mmol/L. Cortisol and TSH sent.",
+        "row": "G3"
+      }
+    ],
+    "push": [
+      {
+        "question": "How would you assess him?",
+        "row": "G1",
+        "expect": "See him now: ABCDE, GCS, glucose, fluid balance; exclude sepsis, hypoxia, opioids, leak."
+      },
+      {
+        "question": "How severe is this?",
+        "row": "G2",
+        "expect": "Moderate biochemically, moderately severe symptoms, acute (within 48 hours)."
+      },
+      {
+        "question": "What do the fluid chart and results show?",
+        "row": "G3",
+        "expect": "Hypotonic hyponatraemia, euvolaemic, concentrated urine, high urine sodium: SIADH picture plus hypotonic fluid."
+      },
+      {
+        "question": "How will you treat him?",
+        "row": "G4",
+        "expect": "Senior and critical care input; 150 ml 3% saline over 20 minutes; recheck; up to three boluses."
+      },
+      {
+        "question": "How fast can the sodium rise?",
+        "row": "G5",
+        "expect": "No more than 10 mmol/L in 24 hours, then 8 per 24 hours; check at 6 and 12 hours."
+      },
+      {
+        "question": "What else will you do?",
+        "row": "G6",
+        "expect": "Stop dextrose-saline; review opioids and antiemetics; registrar; document; explain to patient and family."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "He has a generalised seizure while you are talking.",
+        "safeAnswer": "Severe symptoms: ABC, treat the seizure, call for senior and critical care help, give 150 ml 3% saline now and repeat as needed.",
+        "row": "G4"
+      },
+      {
+        "prompt": "Six hours after one bolus he is lucid and his sodium is 131.",
+        "safeAnswer": "Stop hypertonic saline; only 4 mmol/L more is allowed in the first 24 hours; recheck at 12 hours; then fluid restriction.",
+        "row": "G5"
+      },
+      {
+        "prompt": "The ward has no 3% saline.",
+        "safeAnswer": "Escalate now: critical care or pharmacy can supply it; do not substitute a litre of 0.9% saline.",
+        "row": "G4"
+      },
+      {
+        "prompt": "His wife asks if he has had a stroke.",
+        "safeAnswer": "Explain that a low salt level in the blood is the likely cause, it is being treated, and he is being monitored closely.",
+        "row": "G6"
+      }
+    ]
+  }
+}

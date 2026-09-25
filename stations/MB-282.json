@@ -1,0 +1,566 @@
+{
+  "id": "MB-282",
+  "exam": "MRCS-B",
+  "title": "Breaking news of a sudden death after trauma",
+  "type": "communication",
+  "header": {
+    "domain": "Applied Skills",
+    "contentArea": "Breaking bad news; death and the coroner",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "Notification of Deaths Regulations 2019 (SI 2019/1112), as amended 9 September 2024",
+      "Ministry of Justice Guide to coroner services for bereaved people (January 2020)",
+      "RCEM End of Life Care Toolkit (May 2025)",
+      "SPIKES protocol (Baile et al., Oncologist 2000)"
+    ],
+    "related": [
+      {
+        "id": "MB-176",
+        "why": "Breaking bad news when there is time to plan"
+      },
+      {
+        "id": "MB-164",
+        "why": "The trauma resuscitation that came before this conversation"
+      },
+      {
+        "id": "MB-177",
+        "why": "An angry relative: acknowledging emotion"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Emergency department relatives' room",
+    "role": "Core surgical trainee on the trauma team",
+    "scenario": "James O'Brien, 35, was the driver in a high-speed collision on the motorway. He was unresponsive when paramedics reached him and had a cardiac arrest on arrival. Despite 40 minutes of resuscitation, he died at 14:10. His wife, Sarah, has just arrived. Police are at the hospital. Your consultant has asked you to speak to her with the nurse in charge.",
+    "task": "Speak to Mrs O'Brien."
+  },
+  "beforeYouWalkIn": {
+    "frame": "She needs to know he has died, in plain words, early. Then stay with her.",
+    "trap": "'We lost him' or 'he passed away': she may not understand.",
+    "firstMove": "Check the facts and his identity, hand over your bleep, and take the nurse in with you."
+  },
+  "flow": [
+    "Prepare",
+    "What she knows",
+    "Warning shot",
+    "Tell her",
+    "Silence and emotion",
+    "Her questions",
+    "Coroner and viewing",
+    "Support and close"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "communication",
+      "label": "Preparation",
+      "fail": "Speaks to her standing in the corridor, bleep going, alone.",
+      "pass": "Checks the facts and his identity first; private room; sits down; nurse present; bleep handed over.",
+      "high": "Asks whether she has anyone with her or would like someone called before starting."
+    },
+    {
+      "id": "G2",
+      "domain": "communication",
+      "label": "What she knows and the warning shot",
+      "fail": "Opens with the death, or with a long description of the resuscitation.",
+      "pass": "Asks what she has been told, then gives a warning shot and pauses.",
+      "high": "A brief lead-in in her terms: serious crash, unresponsive at the scene, heart stopped, everything tried.",
+      "source": "SPIKES"
+    },
+    {
+      "id": "G3",
+      "domain": "communication",
+      "label": "Telling her clearly",
+      "fail": "Uses euphemisms ('we lost him', 'passed away') or stays vague.",
+      "pass": "'I'm very sorry. James has died.' Says 'died' or 'dead'.",
+      "high": "Uses his name, then stays silent; repeats 'he has died' if she asks again or doesn't take it in."
+    },
+    {
+      "id": "G4",
+      "domain": "communication",
+      "label": "Emotion and her questions",
+      "fail": "Fills the silence, gives false reassurance, or overloads her with clinical detail.",
+      "pass": "Acknowledges her distress, lets her lead, answers honestly within what he knows.",
+      "high": "Answers 'Did he suffer?' honestly from the facts: unresponsive from when paramedics reached him; offers the consultant for more detail."
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-knowledge",
+      "label": "The coroner",
+      "fail": "Says the hospital will issue the death certificate, or suggests the police think James did wrong.",
+      "pass": "A death after injury must be reported to the coroner, who may order a post-mortem; this is routine.",
+      "high": "The death can't be registered until the coroner allows; a coroner's officer will contact her; police investigate every serious collision.",
+      "source": "NODR"
+    },
+    {
+      "id": "G6",
+      "domain": "professionalism",
+      "label": "Viewing and support",
+      "fail": "Leaves her alone, or refuses to let her see him.",
+      "pass": "Offers to take her to see him; bereavement service, written information, chaplaincy; arranges someone to be with her.",
+      "high": "Explains touching him may need the coroner's agreement; offers a later meeting with the consultant.",
+      "source": "MOJ"
+    },
+    {
+      "id": "G7",
+      "domain": "professionalism",
+      "label": "Closing the conversation",
+      "fail": "Leaves without a plan or contact.",
+      "pass": "Summarises next steps, gives a named contact, checks how she will get home.",
+      "high": "Records the conversation, tells the consultant, and informs his GP."
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "candidate",
+        "text": "Hi, are you the wife? I'm afraid the news isn't good.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "He came in with a GCS of 3 in PEA arrest. We did 40 minutes of CPR, gave adrenaline, and did a thoracostomy.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Mrs O'Brien: \"Is he OK?\""
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'm sorry, we lost him.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Mrs O'Brien: \"Did he suffer?\""
+      },
+      {
+        "speaker": "candidate",
+        "text": "No, it would have been instant, he felt nothing at all.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Mrs O'Brien: \"Why are the police here? Did he do something wrong?\""
+      },
+      {
+        "speaker": "candidate",
+        "text": "They may think he did. The hospital will do the death certificate today.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Mrs O'Brien: \"Can I see him?\""
+      },
+      {
+        "speaker": "candidate",
+        "text": "Probably not today. I've got to get back to the department. Someone will tell you what happens next.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          },
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "candidate",
+        "text": "Mrs O'Brien? I'm Dr Patel, one of the doctors who looked after James. This is Anna, the nurse in charge. Shall we sit down? What have you been told so far?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          },
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Mrs O'Brien: \"Only that there was a crash.\""
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'm afraid I have some very bad news.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'm very sorry. James has died.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "(She cries.) \"Did he suffer?\""
+      },
+      {
+        "speaker": "candidate",
+        "text": "Take your time. He was unconscious when the paramedics reached him. The consultant can go through it with you in more detail.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "\"Why are the police here?\""
+      },
+      {
+        "speaker": "candidate",
+        "text": "When someone dies after an injury, the coroner has to be told; it's routine. The coroner may ask for a post-mortem.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "\"Can I see him?\""
+      },
+      {
+        "speaker": "candidate",
+        "text": "Yes. Anna will take you when you're ready. We'll give you written information, and the bereavement team and chaplain are here for you. Who can be with you?",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "This is our direct number. How will you get home?",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "candidate",
+        "text": "Mrs O'Brien? I'm Dr Patel. This is Anna, the nurse in charge. Shall we sit? Is anyone with you, or would you like someone called?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "\"No, just tell me.\""
+      },
+      {
+        "speaker": "candidate",
+        "text": "James was in a serious crash. He was unconscious when the paramedics got to him, and his heart stopped when he arrived. We tried everything to restart it.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'm very sorry. James has died.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "(Silence, then:) \"Is he... is he dead?\""
+      },
+      {
+        "speaker": "candidate",
+        "text": "Yes. James has died.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "\"Did he suffer?\""
+      },
+      {
+        "speaker": "candidate",
+        "text": "He was unresponsive from when the paramedics reached him, so I don't think he was aware. The consultant can go through everything with you.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "\"The police are here. Did he do something wrong?\""
+      },
+      {
+        "speaker": "candidate",
+        "text": "No one is suggesting that. The police look into every serious crash. Because James died after an injury, the coroner will be told; a coroner's officer will contact you. The death can't be registered until the coroner allows.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "\"Can I hold him?\""
+      },
+      {
+        "speaker": "candidate",
+        "text": "You can see him. Holding him may need the coroner's agreement; we'll ask for you. We'll also offer you a meeting with the consultant later.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'll write this in the notes and tell his GP. Here's our number.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G3",
+      "move": "Saying 'we lost him' or 'he passed away'.",
+      "consequence": "She may not understand he has died; she has to ask again or holds false hope."
+    },
+    {
+      "row": "G4",
+      "move": "Saying 'he felt nothing at all' without knowing it.",
+      "consequence": "False reassurance that the post-mortem or inquest may contradict, damaging trust."
+    },
+    {
+      "row": "G5",
+      "move": "Telling her the hospital will issue the death certificate today.",
+      "consequence": "The coroner must be told; she makes plans that then fall through."
+    },
+    {
+      "row": "G1",
+      "move": "Starting the conversation standing in a corridor.",
+      "consequence": "No privacy or support at the worst moment of her life."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You used a euphemism",
+      "line": "I'm sorry, I need to be clear: James has died."
+    },
+    {
+      "when": "She asks something you don't know",
+      "line": "I don't know, and I don't want to guess. I'll find out or ask the consultant to talk to you."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "A doctor must notify the coroner if the death may be due to trauma or injury.",
+      "source": "NODR"
+    },
+    {
+      "fact": "The coroner may order a post-mortem; the death can't be registered until the cause is known, but an interim certificate of the fact of death can be given.",
+      "source": "MOJ"
+    },
+    {
+      "fact": "Relatives can normally see the body; touching may not always be possible, for example when evidence is needed.",
+      "source": "MOJ"
+    },
+    {
+      "fact": "Police may investigate a death separately from the coroner.",
+      "source": "MOJ"
+    },
+    {
+      "fact": "Organ donation directly from the ED is uncommon; tissue donation is possible up to 24–48 hours after death.",
+      "source": "RCEM"
+    }
+  ],
+  "recall": {
+    "think": "She may not understand he has died if you soften it.",
+    "say": "\"I'm very sorry. James has died.\"",
+    "do": [
+      "Facts checked, private room, nurse, bleep off",
+      "Warning shot, then 'died', then silence",
+      "Coroner, viewing, support, contact"
+    ],
+    "numbers": [
+      {
+        "value": "Reg 3(1)(a)(v)",
+        "meaning": "death from trauma or injury: notify the coroner",
+        "source": "NODR"
+      },
+      {
+        "value": "24–48 h",
+        "meaning": "window for tissue donation after death",
+        "source": "RCEM"
+      }
+    ],
+    "trap": "'We lost him' feels kinder but confuses.",
+    "finish": "Clear news, honest answers, coroner explained, support arranged."
+  },
+  "sources": [
+    {
+      "id": "NODR",
+      "name": "The Notification of Deaths Regulations 2019 (SI 2019/1112), regulation 3",
+      "version": "In force 1 October 2019; amended 9 September 2024 (SI 2024/668)",
+      "url": "https://www.legislation.gov.uk/uksi/2019/1112/regulation/3",
+      "supports": "Duty to notify the senior coroner when the practitioner suspects death was due to trauma or injury (reg 3(1)(a)(v)), violence, or was otherwise unnatural"
+    },
+    {
+      "id": "MOJ",
+      "name": "Ministry of Justice: Guide to coroner services for bereaved people",
+      "version": "January 2020",
+      "url": "https://www.gov.uk/government/publications/guide-to-coroner-services-and-coroner-investigations-a-short-guide",
+      "supports": "Coroner investigates violent or unnatural deaths and may order a post-mortem (sections 2, 3); death can't be registered until the cause is known; interim certificate of the fact of death (section 2); viewing the body, touching may not always be possible (2.3); police may investigate separately (2.1); coroner's officers (section 1)"
+    },
+    {
+      "id": "RCEM",
+      "name": "Royal College of Emergency Medicine: End of Life Care Toolkit",
+      "version": "May 2025 update",
+      "url": "https://rcem.ac.uk/wp-content/uploads/2025/05/RCEM-End-of-Life-Care-Toolkit-2025-Update-FINALV2.pdf",
+      "supports": "Organ donation directly from the ED uncommon; tissue donation possible up to 24–48 hours after death; referral to coroner and medical examiner; bereavement meetings; private relatives' room"
+    },
+    {
+      "id": "SPIKES",
+      "name": "Baile WF, et al. SPIKES: a six-step protocol for delivering bad news: application to the patient with cancer. Oncologist 2000;5(4):302–11",
+      "version": "Volume 5, issue 4, 2000",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/10964998/",
+      "supports": "Setting, perception (what the person knows), warning before bad news, giving knowledge in plain language, responding to emotion, summary"
+    },
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format: 9 minutes with 1 minute's reading; examiner-led questioning in applied knowledge stations"
+    }
+  ],
+  "partner": {
+    "opening": "Mrs O'Brien has just been shown into the relatives' room. Please go in when you're ready.",
+    "actorBrief": "You are Sarah O'Brien, 34, James's wife. You got a call from the police to come to hospital after a crash; you don't know how bad it is. Opening line: \"Where is he? Can I see him?\" If the candidate uses a euphemism ('lost him', 'passed away'), ask: \"So is he alive or not?\" When told clearly he has died, fall silent, then cry. Then ask, in this order, if the candidate leaves space: \"Did he suffer?\", \"Why are the police here? Did he do something wrong?\", \"Can I see him? Can I hold him?\" If the candidate gives a detailed medical account, look lost. Hidden concern, revealed only if asked what's worrying her: your two children are with a neighbour, and you don't know what to tell them.",
+    "reveals": [
+      {
+        "trigger": "Asks what she has been told",
+        "finding": "\"Only that there's been a crash and I should come.\"",
+        "row": "G2"
+      },
+      {
+        "trigger": "Asks if anyone is with her",
+        "finding": "\"My sister's parking the car.\"",
+        "row": "G1"
+      },
+      {
+        "trigger": "Asks what's worrying her",
+        "finding": "\"The kids are with a neighbour. What do I tell them?\"",
+        "row": "G6"
+      }
+    ],
+    "push": [
+      {
+        "question": "Why does the coroner need to know?",
+        "row": "G5",
+        "expect": "Death after trauma or injury must be reported; coroner may order a post-mortem; registration waits."
+      },
+      {
+        "question": "What support will you arrange?",
+        "row": "G6",
+        "expect": "Viewing, bereavement service, written information, chaplaincy, someone with her, later meeting."
+      },
+      {
+        "question": "What will you do after the conversation?",
+        "row": "G7",
+        "expect": "Record it, tell the consultant and GP, check she can get home safely."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "\"He was on the donor register. Can he still help someone?\"",
+        "safeAnswer": "Thanks her; organ donation is unlikely after a death in the ED, but tissue donation may be possible; the specialist nurse will talk to her.",
+        "row": "G6"
+      },
+      {
+        "prompt": "\"What do I tell our children?\"",
+        "safeAnswer": "Use clear words like 'died', not 'gone to sleep'; offers written resources and bereavement support.",
+        "row": "G6"
+      },
+      {
+        "prompt": "\"Was it the other driver's fault?\"",
+        "safeAnswer": "Doesn't speculate: the police investigation and the coroner will look at how it happened.",
+        "row": "G4"
+      },
+      {
+        "prompt": "\"Someone must have made a mistake in here.\"",
+        "safeAnswer": "Acknowledges her feelings, doesn't argue; offers a meeting with the consultant; the coroner's investigation looks at how he died.",
+        "row": "G4"
+      }
+    ]
+  }
+}
