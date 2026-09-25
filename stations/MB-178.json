@@ -1,0 +1,579 @@
+{
+  "id": "MB-178",
+  "exam": "MRCS-B",
+  "title": "Handover of a deteriorating patient to the night team",
+  "type": "communication",
+  "header": {
+    "domain": "Applied Skills",
+    "contentArea": "Communication skills in giving and receiving information and history taking",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "RCS England Safe handover (Mar 2007)",
+      "RCP Acute care toolkit 1: Handover (May 2011)",
+      "NHS England SBAR tool (2020)",
+      "RCP NEWS2 (Dec 2017)",
+      "NICE NG148 (Dec 2019; updated Oct 2024)",
+      "NICE CG174 (Dec 2013; updated May 2017)",
+      "NICE NG253 (Nov 2025; updated Sep 2026)"
+    ],
+    "related": [
+      {
+        "id": "MB-163 Telephone referral (SBAR)",
+        "why": "The same structure when you need a senior now"
+      },
+      {
+        "id": "MB-165 Adhesional small bowel obstruction",
+        "why": "Fluids, AKI and the emergency laparotomy patient"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Surgical ward, 8 pm handover",
+    "role": "Core surgical trainee, day team",
+    "scenario": "Mr Peter Hollis, 72, 80 kg, is day 1 after an emergency laparotomy and small bowel resection for a strangulated incisional hernia. At 2 pm his NEWS2 was 1. You saw him at 7 pm, gave a 500 ml crystalloid bolus at 7.15 pm and sent bloods. At 7.30 pm: RR 22, SpO2 95% on air, BP 104/68, pulse 108, alert, temperature 37.8°C. Urine output over the last 3 hours: 25, 20 and 15 ml. Venous lactate 2.1 mmol/L; FBC and U&E are pending.",
+    "task": "Hand over Mr Hollis to the night surgical registrar (the examiner)."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Sickest first, SBAR, a timed jobs list, clear \"call if\" triggers, resuscitation status, read-back.",
+    "trap": "\"He's a bit dry, keep an eye on him\": no score, no times, no triggers.",
+    "firstMove": "Work out NEWS2 before you start, and lead with it."
+  },
+  "flow": [
+    "Situation: patient, score, concern",
+    "Background",
+    "Assessment and treatment so far",
+    "Jobs with times",
+    "Escalation triggers",
+    "Ceiling of care",
+    "Read-back; record"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "communication",
+      "label": "Situation",
+      "fail": "Starts with a chronological story; gives no score or concern.",
+      "pass": "Names the patient, ward, bed and consultant, and the concern: NEWS2 5, up from 1, with falling urine output.",
+      "high": "Hands him over first as the sickest patient, and checks the registrar has the handover list in front of them.",
+      "source": "SBAR"
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-knowledge",
+      "label": "Background",
+      "fail": "Omits the operation, the day, or relevant history.",
+      "pass": "Age and weight, day 1 after emergency laparotomy and small bowel resection; relevant history and allergies.",
+      "high": "Adds what changes decisions tonight: the anastomosis, preoperative haemoglobin and the time of the last enoxaparin dose.",
+      "source": "RCSH"
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "Assessment",
+      "fail": "Reads out observations without interpreting them.",
+      "pass": "Interprets: NEWS2 5 is the key threshold for an urgent response; he is oliguric; hypovolaemia, bleeding or early sepsis.",
+      "high": "Gives the response to treatment so far, a working diagnosis, and the next investigation if he doesn't respond.",
+      "source": "NEWS2"
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-skill",
+      "label": "Jobs list with priorities and times",
+      "fail": "Vague jobs (\"keep an eye on him\") with no times or owner.",
+      "pass": "Timed jobs: a further bolus now, as he hasn't responded to the first; at least hourly observations and urine output; review at 8.30 pm; chase the bloods.",
+      "high": "Says who does each job, and the next step if he still hasn't responded: repeat lactate, senior review, consider CT.",
+      "source": "NEWS2"
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-knowledge",
+      "label": "Escalation triggers (safety-critical)",
+      "fail": "Gives no thresholds for calling for help.",
+      "borderline": "Says \"call me if he gets worse\" without defining worse.",
+      "pass": "Call if NEWS2 reaches 7 or more, any single parameter scores 3 (e.g. systolic 90 or less), or urine stays low after fluid.",
+      "high": "Links each trigger to an action: NEWS2 7 or more means an emergency response, critical care outreach and the consultant told.",
+      "source": "NEWS2"
+    },
+    {
+      "id": "G6",
+      "domain": "professionalism",
+      "label": "Ceiling of care and resuscitation status",
+      "fail": "Doesn't know his resuscitation status or ceiling of care.",
+      "pass": "States he is for full escalation, including critical care, and for CPR, as documented by the consultant.",
+      "high": "Says where it is documented, that his wife knows, and that the consultant wants a call if he deteriorates.",
+      "source": "RCSH"
+    },
+    {
+      "id": "G7",
+      "domain": "communication",
+      "label": "Two-way handover and read-back",
+      "fail": "Leaves without checking the plan was understood.",
+      "pass": "Invites questions; asks the registrar to read back the jobs and triggers, and corrects any error.",
+      "high": "States that responsibility now passes to the registrar, and tells the nurse in charge the plan and triggers.",
+      "source": "RCP"
+    },
+    {
+      "id": "G8",
+      "domain": "professionalism",
+      "label": "Documentation",
+      "fail": "Verbal handover only; nothing written.",
+      "pass": "Written handover on the list or proforma; plan and triggers documented in the notes.",
+      "high": "Records the handover time and the receiving doctor, and rates him red on the list (unstable, diagnosis unclear).",
+      "source": "RCP"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "candidate",
+        "text": "So, bed 12, Mr Hollis. He came in on Sunday with a hernia, had his operation yesterday, and he's been OK mostly. Bit of a low urine output tonight.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          },
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Registrar: “What are his obs?”"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Pulse 108, BP 104 over 68, temp 37.8.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Registrar: “What needs doing?”"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Just keep an eye on him, really. Call if he gets worse.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          },
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Registrar: “Is he for resus?”"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Not sure, I'd have to check. Right, I'm off. [Leaves; nothing written]",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          },
+          {
+            "row": "G7",
+            "band": "fail"
+          },
+          {
+            "row": "G8",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "candidate",
+        "text": "Mr Hollis, Ward 9, bed 12, under Mr Hale. I'm worried about him: NEWS2 5, up from 1 at 2 pm, and his urine output is falling.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "He's 72, 80 kg, day 1 after an emergency laparotomy and small bowel resection for a strangulated incisional hernia. Hypertension; no allergies.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "At 7.30: RR 22, sats 95% on air, BP 104/68, pulse 108, alert, 37.8. Urine 25, 20, then 15 ml an hour. NEWS2 5 needs an urgent response. I think he's dry, but bleeding or early sepsis are possible.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "He had 500 ml at 7.15; lactate 2.1, FBC and U&E pending. Jobs: a second 500 ml bolus now; obs and urine hourly; review him at 8.30; chase the bloods.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Triggers: NEWS2 7 or more, systolic 90 or less, or urine still low after fluid.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "He's for full escalation, including ICU, and for CPR; Mr Hale documented that today.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Any questions? Could you read back the jobs and triggers?",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Registrar: “Review at 8.30, chase bloods, hourly obs. Call outreach if NEWS2 goes above 7.”"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Nearly: it's 7 or more, not above 7. At 7 he needs an emergency response.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Updates the handover list and writes the plan and triggers in the notes.]",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "candidate",
+        "text": "Can I start with the sickest? Mr Hollis, Ward 9, bed 12, under Mr Hale. Have you got the list? I'm worried about him: NEWS2 5, up from 1 at 2 pm, and falling urine output.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "He's 72, 80 kg, day 1 after emergency laparotomy and small bowel resection with an anastomosis, for a strangulated incisional hernia. Preoperative haemoglobin 132. Enoxaparin given at 6 pm. No allergies.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "At 7.30: RR 22, sats 95% on air, BP 104/68, pulse 108, alert, 37.8: NEWS2 5, the urgent-response threshold. Urine 25, 20, 15 ml an hour; at 80 kg he should make at least 40. No real response yet to 500 ml at 7.15. Most likely he's dry; bleeding and an early leak are the worries. Lactate 2.1; Hb and creatinine pending. If he doesn't respond, I think he needs a CT.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Jobs, in order: I've prescribed a second 500 ml bolus, going up now. The nurse does obs and urine hourly. You review him at 8.30. If he's no better: repeat lactate, a senior look and consider CT. I've asked the lab to phone the Hb; if it has dropped, hold his next enoxaparin and call Mr Hale.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Triggers: NEWS2 7 or more is an emergency response: outreach now, and Mr Hale told. Systolic 90 or less scores 3 on its own. Urine under 40 an hour for more than 6 hours would meet the AKI definition.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "He's for full escalation, including ICU, and for CPR. Mr Hale documented it on the ward round, his wife knows, and he wants a call if Mr Hollis deteriorates.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Any questions? Could you read back the jobs and triggers? [Corrects one error] From now he's yours; I'll tell the nurse in charge the plan and triggers.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "He's red on the list, with the time and your name, and the plan is in his notes.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G5",
+      "move": "\"Call if he gets worse\" with no defined triggers.",
+      "consequence": "Safety-critical: nobody knows when to escalate, so deterioration is recognised late."
+    },
+    {
+      "row": "G3",
+      "move": "Reading out observations without the NEWS2 or the trend.",
+      "consequence": "The registrar can't prioritise him against other patients."
+    },
+    {
+      "row": "G6",
+      "move": "Not knowing his resuscitation status.",
+      "consequence": "In an arrest, the night team has to make the decision with no information."
+    },
+    {
+      "row": "G7",
+      "move": "Leaving without a read-back.",
+      "consequence": "Errors in the plan, like the wrong trigger, go uncorrected."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You started with the story",
+      "line": "Sorry, the headline: Mr Hollis has a NEWS2 of 5, up from 1, and falling urine output. He needs review at 8.30."
+    },
+    {
+      "when": "You don't know his resuscitation status",
+      "line": "I'll check it in the notes now and tell you before I leave."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "NEWS2 5–6: key threshold for urgent response, at least hourly observations. Single parameter 3: urgent ward-based response. 7 or more: emergency response, registrar informed, critical care team, continuous monitoring.",
+      "source": "NEWS2"
+    },
+    {
+      "fact": "Oliguria: under 0.5 ml/kg/h; AKI if it lasts more than 6 hours (1.3.1).",
+      "source": "NG148"
+    },
+    {
+      "fact": "Resuscitation bolus: 500 ml crystalloid over less than 15 minutes (1.3.1); for suspected sepsis, follow the NICE sepsis guideline (1.3.2).",
+      "source": "CG174"
+    },
+    {
+      "fact": "Handover minimum: name, age, location, consultant, diagnosis, results; add review urgency, a \"what if\" plan, resuscitation plan and outstanding tasks.",
+      "source": "RCSH"
+    },
+    {
+      "fact": "Across five handovers, 2.5% of information survives with no written record; 99% with a standardised proforma.",
+      "source": "RCP"
+    },
+    {
+      "fact": "If infection is suspected, NEWS2 5–6 is medium risk: venous gas with lactate, blood cultures, FBC, CRP, U&E; FY2-or-above review within 1 hour; antibiotic decision within 3 hours. Sepsis fluids: 250 ml boluses, reassess after each, senior advice after 1,000 ml.",
+      "source": "NG253"
+    }
+  ],
+  "recall": {
+    "think": "Early deterioration on day 1: hypovolaemia, bleeding or a leak.",
+    "say": "\"I'm worried about Mr Hollis: NEWS2 5, up from 1, and falling urine output.\"",
+    "do": [
+      "SBAR with the score first",
+      "Timed jobs and defined triggers",
+      "Resuscitation status, read-back, write it down"
+    ],
+    "numbers": [
+      {
+        "value": "5",
+        "meaning": "NEWS2 key threshold for urgent response",
+        "source": "NEWS2"
+      },
+      {
+        "value": "7+",
+        "meaning": "NEWS2 emergency response",
+        "source": "NEWS2"
+      },
+      {
+        "value": "0.5 ml/kg/h",
+        "meaning": "oliguria",
+        "source": "NG148"
+      }
+    ],
+    "trap": "\"Call me if he gets worse.\"",
+    "finish": "Named review at 8.30 pm; senior and CT if no response."
+  },
+  "sources": [
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format; introduce yourself at every station"
+    },
+    {
+      "id": "SBAR",
+      "name": "NHS England and NHS Improvement: SBAR communication tool – situation, background, assessment, recommendation (Online library of Quality, Service Improvement and Redesign tools)",
+      "version": "April 2020 (PDF)",
+      "url": "https://aqua.nhs.uk/wp-content/uploads/2023/07/qsir-sbar-communication-tool.pdf",
+      "supports": "SBAR structure; state the concern and early warning score first; be specific about the request and time frame; advice given by phone is repeated back; agreed recommendations are documented in the notes"
+    },
+    {
+      "id": "NEWS2",
+      "name": "Royal College of Physicians: National Early Warning Score (NEWS) 2",
+      "version": "December 2017",
+      "url": "https://www.rcp.ac.uk/improving-care/resources/national-early-warning-score-news-2/",
+      "supports": "Parameter bands (Chart 1); aggregate 5–6: key threshold for urgent response; single parameter 3: urgent ward-based response; 7 or more: urgent or emergency response (Chart 2); 5 or more: at least hourly monitoring and urgent assessment; 7 or more: inform medical team at least at specialist registrar level, emergency assessment by a team with critical care competencies, continuous monitoring (Chart 4)"
+    },
+    {
+      "id": "RCSH",
+      "name": "Royal College of Surgeons of England: Safe handover: guidance from the Working Time Directive working party",
+      "version": "March 2007",
+      "url": "https://www.rcseng.ac.uk/-/media/files/rcs/library-and-publications/non-journal-publications/safe-handovers.pdf",
+      "supports": "Minimum information: patient name and age, date of admission, location, responsible consultant, current diagnosis, results of significant or pending investigations; also condition, urgency and frequency of review, management plan including 'what if…', resuscitation plan, consultant contact details, outstanding tasks; more extensive information on patients who are particularly unwell; assign tasks and responsibilities clearly; handover is a two-way process"
+    },
+    {
+      "id": "RCP",
+      "name": "Royal College of Physicians: Acute care toolkit 1: Handover",
+      "version": "May 2011",
+      "url": "https://www.rcp.ac.uk/media/5q5hqwbx/acute-care-toolkit-1-handover.pdf",
+      "supports": "Define who is relinquishing responsibility and who is now responsible, including specific tasks; standardise communication (e.g. SBAR), with repetition so that understanding is shared; standardised documentation; red–amber–green risk rating (red: haemodynamic or respiratory instability, unclear diagnosis, sepsis); over five handovers, 2.5% of information is retained with no written record, 85.5% with notes and 99% with a standardised proforma (Bhabra et al. 2007)"
+    },
+    {
+      "id": "NG148",
+      "name": "NICE NG148: Acute kidney injury: prevention, detection and management",
+      "version": "Published 18 December 2019; last updated 16 October 2024",
+      "url": "https://www.nice.org.uk/guidance/ng148",
+      "supports": "Oliguria: urine output less than 0.5 ml/kg/hour; systems to recognise and respond to oliguria in adults at risk (1.2.2); detect AKI by a fall in urine output to less than 0.5 ml/kg/hour for more than 6 hours in adults, or a creatinine rise of 26 micromol/litre or more within 48 hours, or a 50% rise within 7 days (1.3.1)"
+    },
+    {
+      "id": "CG174",
+      "name": "NICE CG174: Intravenous fluid therapy in adults in hospital",
+      "version": "Published 10 December 2013; last updated 5 May 2017",
+      "url": "https://www.nice.org.uk/guidance/cg174",
+      "supports": "Resuscitation: crystalloid with sodium 130–154 mmol/l, 500 ml bolus over less than 15 minutes (1.3.1); for suspected sepsis, follow the NICE sepsis guidelines (1.3.2)"
+    },
+    {
+      "id": "NG253",
+      "name": "NICE NG253: Suspected sepsis in people aged 16 or over: recognition, assessment and early management",
+      "version": "Published 19 November 2025; last updated 23 September 2026",
+      "url": "https://www.nice.org.uk/guidance/ng253",
+      "supports": "Medium risk: suspected infection and NEWS2 5–6; bloods including lactate and cultures, FY2+ review within 1 hour (1.8.16); antibiotics may be deferred up to 3 hours (1.8.17); 250 ml boluses up to 1,000 ml, reassess after each, senior advice after 1,000 ml (1.8.6–1.8.9)"
+    }
+  ],
+  "media": [
+    {
+      "id": "news2-chart-hollis",
+      "task": "Read the observation trend and calculate NEWS2 before handing over",
+      "description": "A NEWS2 observation chart for Mr Hollis showing 2 pm (RR 18, SpO2 96% on air, BP 122/74, pulse 92, alert, 37.4°C; NEWS2 1) and 7.30 pm (RR 22, SpO2 95% on air, BP 104/68, pulse 108, alert, 37.8°C; NEWS2 5), with a fluid balance chart showing hourly urine 25, 20 and 15 ml",
+      "required": false,
+      "status": "needed"
+    }
+  ],
+  "partner": {
+    "opening": "You're handing over to the night registrar. Please begin when you're ready.",
+    "actorBrief": "You are the night surgical registrar, starting your shift with a list of 20 patients. Opening line: \"Right, who's first?\" Emotional state: friendly but pressed for time. If the candidate hasn't told you why Mr Hollis matters within about 30 seconds, interrupt: \"Is there anyone you're worried about?\" Ask \"What's his NEWS2?\", \"Is he for escalation?\" and \"What do you want me to do?\" if they are not offered. When asked to read back, make one deliberate error: \"Call outreach if NEWS2 goes above 7.\" Accept a correction. If the candidate doesn't ask for a read-back, don't give one. If asked who will review at 8.30 pm, say you may be in theatre (see curveball).",
+    "reveals": [
+      {
+        "trigger": "Doesn't state a concern early",
+        "finding": "\"Is there anyone you're worried about?\"",
+        "row": "G1"
+      },
+      {
+        "trigger": "Asks the registrar to read back",
+        "finding": "\"Review at 8.30, chase bloods, hourly obs. Call outreach if NEWS2 goes above 7.\" (deliberate error)",
+        "row": "G7"
+      },
+      {
+        "trigger": "Asks if the registrar has questions",
+        "finding": "\"When was his last enoxaparin, and what was his Hb before surgery?\"",
+        "row": "G2"
+      },
+      {
+        "trigger": "Mentions resuscitation status",
+        "finding": "\"Good. Where's that written?\"",
+        "row": "G6"
+      }
+    ],
+    "push": [
+      {
+        "question": "What NEWS2 score needs an emergency response, and what does that involve?",
+        "row": "G5",
+        "expect": "7 or more: registrar-level review at least, emergency assessment by a team with critical care competencies, continuous monitoring, and consider level 2 or 3 care."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "\"I'll be in theatre at 8.30. Can the F1 review him?\"",
+        "safeAnswer": "Only with the triggers and a named senior to call; otherwise ask critical care outreach to review; someone named must own the 8.30 pm review.",
+        "row": "G4"
+      },
+      {
+        "prompt": "\"NEWS2 of 5 on day 1 after a laparotomy is normal, isn't it?\"",
+        "safeAnswer": "Disagree: 5 is the key threshold for urgent response, with at least hourly observations, whatever the day.",
+        "row": "G3"
+      },
+      {
+        "prompt": "\"Is he DNACPR?\"",
+        "safeAnswer": "No: for CPR and full escalation, documented by the consultant today.",
+        "row": "G6"
+      }
+    ]
+  }
+}

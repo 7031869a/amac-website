@@ -1,0 +1,605 @@
+{
+  "id": "MB-182",
+  "exam": "MRCS-B",
+  "title": "Arterial blood gas interpretation in a surgical patient",
+  "type": "data-interpretation",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "Applied surgical science and critical care",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "RCEMLearning Arterial blood gas analysis (updated April 2026)",
+      "Kraut & Nagami, serum anion gap, CJASN (2013)",
+      "WSES Bologna ASBO guideline (2017 update, 2018)",
+      "NICE NG253 (updated September 2026)",
+      "RCS England High-Risk General Surgical Patient (2018)"
+    ],
+    "related": [
+      {
+        "id": "MB-165 Adhesional small bowel obstruction",
+        "why": "The same patient group and the decision to operate"
+      },
+      {
+        "id": "MB-166 Hyperkalaemia",
+        "why": "Reading a blood gas alongside the electrolytes"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Surgical ward",
+    "role": "Core surgical trainee on call",
+    "scenario": "Mr Colin Ashby, 68, was admitted yesterday with adhesional small bowel obstruction after a previous laparotomy. He has vomited repeatedly and is being managed non-operatively with a nasogastric tube and IV fluids.",
+    "task": "The examiner will show you his arterial blood gases in stages. Interpret each one systematically and say what you would do."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Oxygenation, pH, PaCO2, bicarbonate, compensation, anion gap, lactate; then act.",
+    "trap": "Calling the second gas 'compensated' and carrying on with drip and suck.",
+    "firstMove": "\"First, what was his inspired oxygen when this was taken?\""
+  },
+  "flow": [
+    "Oxygenation and FiO2",
+    "Primary disorder and compensation",
+    "Anion gap and lactate",
+    "Link to the patient",
+    "Act and escalate"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-skill",
+      "label": "Systematic read and oxygenation",
+      "fail": "Jumps to a diagnosis without a sequence, or reads PaO2 without asking the FiO2.",
+      "pass": "Asks the FiO2; PaO2 11.2 kPa on air is normal (10.67–13.33); then pH, PaCO2, bicarbonate, base excess, compensation, anion gap, lactate.",
+      "high": "States each normal range as used, and reads the electrolytes on the same sample.",
+      "source": "RCEMABG"
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-knowledge",
+      "label": "Gas 1: metabolic alkalosis",
+      "fail": "Calls it respiratory, or misses the alkalosis.",
+      "pass": "pH 7.50 and bicarbonate 37: metabolic alkalosis, with a raised PaCO2 of 6.4 kPa as respiratory compensation.",
+      "high": "Notes compensation never fully normalises the pH, and base excess +13 confirms the metabolic cause.",
+      "source": "RCEMABG"
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "Gas 1: cause and treatment",
+      "fail": "Doesn't link it to vomiting, or ignores the potassium.",
+      "pass": "Vomiting and nasogastric loss of acid; potassium 3.0 is low; rehydrate and replace potassium, measuring NG losses.",
+      "high": "Explains dehydration keeps the kidney retaining bicarbonate, so rehydration corrects it faster; checks renal function for AKI.",
+      "source": "RCEMABG"
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-knowledge",
+      "label": "Gas 2: high anion gap metabolic acidosis",
+      "fail": "Misses the acidosis, or calls it compensated.",
+      "pass": "pH 7.28, bicarbonate 13.5, PaCO2 3.9 kPa: metabolic acidosis with respiratory compensation; anion gap 136 − (104 + 13.5) = 18.5, raised.",
+      "high": "Knows the range depends on the analyser (about 3–11 with ion-selective electrodes); sees the swing from alkalosis to acidosis as deterioration.",
+      "source": "AGKN"
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-knowledge",
+      "label": "Lactate and the bowel",
+      "fail": "Puts the lactate down to vomiting or the saline.",
+      "pass": "Lactate 6.8: tissue hypoperfusion; in obstruction, suspects strangulated or ischaemic bowel.",
+      "high": "Knows examination misses about half of strangulations, so a soft abdomen doesn't reassure.",
+      "source": "BOL17"
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-skill",
+      "label": "Sepsis and resuscitation (safety-critical)",
+      "fail": "Treats the numbers without seeing him, or delays antibiotics.",
+      "pass": "Sees him now; NEWS2 8 is high risk: IV antibiotics within 1 hour; 250 ml crystalloid boluses, up to 1,000 ml, reassessing each.",
+      "high": "Seeks senior advice if not improved after 1,000 ml, and calls the surgical team for source control.",
+      "source": "NG253"
+    },
+    {
+      "id": "G7",
+      "domain": "clinical-knowledge",
+      "label": "Stopping non-operative management (safety-critical)",
+      "fail": "Continues drip and suck.",
+      "pass": "Strangulation suspected: stops non-operative management; urgent CT only if it won't delay theatre.",
+      "high": "Names CT signs needing surgery without delay: closed loop, ischaemia, free fluid.",
+      "source": "BOL17"
+    },
+    {
+      "id": "G8",
+      "domain": "professionalism",
+      "label": "Escalation and risk",
+      "fail": "Waits for the morning ward round.",
+      "pass": "Registrar and consultant now; risk of death documented by ST3 or above.",
+      "high": "If predicted mortality is 5% or more: consultant surgeon and anaesthetist in theatre, critical care afterwards.",
+      "source": "RCS18"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "Here is his first gas."
+      },
+      {
+        "speaker": "candidate",
+        "text": "The pH is high, so it's a respiratory alkalosis. He's probably hyperventilating.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          },
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What would you do?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Nothing specific; it'll settle.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Twelve hours later: gas 2."
+      },
+      {
+        "speaker": "candidate",
+        "text": "pH 7.28, but his CO2 is low, so it's compensated.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "The lactate is probably from all the vomiting.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "His NEWS2 is 8."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'll ask the nurse to repeat the obs in an hour.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Carry on with the drip and suck.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'll mention him on the ward round tomorrow.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "examiner",
+        "text": "Here is his first gas."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Was he on air? Yes: PaO2 11.2 kPa is normal. Then pH, PaCO2, bicarbonate, compensation, anion gap and lactate.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "pH 7.50, bicarbonate 37: metabolic alkalosis. PaCO2 6.4 kPa is raised, which is respiratory compensation.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "That's from vomiting and nasogastric losses. Potassium is 3.0. I'd rehydrate him, replace potassium, and replace his NG losses.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Twelve hours later: gas 2."
+      },
+      {
+        "speaker": "candidate",
+        "text": "pH 7.28, bicarbonate 13.5, PaCO2 3.9: metabolic acidosis with respiratory compensation. Anion gap: 136, minus 104 plus 13.5, is 18.5. Raised.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Lactate 6.8 means hypoperfusion. In obstruction, I'm worried about strangulated bowel.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "His NEWS2 is 8."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd see him now. High risk: IV antibiotics within the hour, 250 ml crystalloid boluses up to 1,000 ml, reassessing each time.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Stop non-operative management. Urgent CT if it won't delay theatre.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Registrar and consultant now, and his risk of death documented.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "examiner",
+        "text": "Here is his first gas."
+      },
+      {
+        "speaker": "candidate",
+        "text": "On air? Then PaO2 11.2 is normal, 10.67 to 13.33. pH, PaCO2, bicarbonate and base excess, compensation, anion gap, lactate, and I'll read the electrolytes on the same sample.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "pH 7.50, bicarbonate 37, base excess +13: metabolic alkalosis. PaCO2 6.4 is compensation, and as expected it hasn't normalised the pH.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Acid lost by vomiting and NG drainage; potassium 3.0. While he's dry, his kidneys hold on to bicarbonate, so rehydration and potassium correct it faster. I'd check his creatinine.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Twelve hours later: gas 2."
+      },
+      {
+        "speaker": "candidate",
+        "text": "pH 7.28, bicarbonate 13.5, PaCO2 3.9: metabolic acidosis, compensated by breathing. Anion gap, sodium minus chloride and bicarbonate, is 18.5, against the lab's range of about 3 to 11. He's swung from alkalosis to acidosis: he's deteriorating.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Lactate 6.8: hypoperfusion, and in obstruction that's strangulation until proven otherwise. Examination misses about half, so a soft abdomen wouldn't reassure me.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "His NEWS2 is 8."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'm going now. High risk: antibiotics within the hour; 250 ml boluses, reassessing each, up to 1,000 ml, and senior advice if he hasn't improved by then.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Non-operative management stops. CT only if it won't delay theatre; a closed loop, ischaemia or free fluid means surgery without delay.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Registrar and consultant now. Risk documented; if 5% or more, consultant surgeon and anaesthetist in theatre and a critical care bed.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G7",
+      "move": "Continuing drip and suck with a new acidosis and lactate 6.8.",
+      "consequence": "Safety-critical: strangulated bowel becomes gangrenous or perforates."
+    },
+    {
+      "row": "G6",
+      "move": "Delaying antibiotics and fluids in a patient with NEWS2 8.",
+      "consequence": "Safety-critical: delay in a high-risk septic patient."
+    },
+    {
+      "row": "G4",
+      "move": "Calling a pH of 7.28 'compensated' because the PaCO2 is low.",
+      "consequence": "The acidosis is missed and the team is falsely reassured."
+    },
+    {
+      "row": "G1",
+      "move": "Reading the PaO2 without knowing the FiO2.",
+      "consequence": "Hypoxaemia on high-flow oxygen can be read as normal."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You lose your place",
+      "line": "Let me go back to the sequence: oxygenation, pH, CO2, bicarbonate, compensation, anion gap, lactate."
+    },
+    {
+      "when": "You can't recall the normal gap",
+      "line": "I'd use the lab's reference range; 18.5 is above the usual ranges."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Anion gap = Na − (Cl + HCO3), the usual formula. The normal range depends on the method: about 3–11 mmol/L with ion-selective electrodes. Use your lab's range.",
+      "source": "AGKN"
+    },
+    {
+      "fact": "Normal on air: pH 7.35–7.45, PaCO2 4.67–6.00 kPa, PaO2 10.67–13.33 kPa, bicarbonate 23–28, base excess −2 to +2.",
+      "source": "RCEMABG"
+    },
+    {
+      "fact": "Vomiting and NG suction cause metabolic alkalosis; raised lactate from ischaemic bowel causes a high anion gap acidosis.",
+      "source": "RCEMABG"
+    },
+    {
+      "fact": "Bowel obstruction: check lactate, electrolytes and creatinine; low potassium is frequent.",
+      "source": "BOL17"
+    },
+    {
+      "fact": "NEWS2 7 or more with suspected sepsis: antibiotics within 1 hour.",
+      "source": "NG253"
+    }
+  ],
+  "recall": {
+    "think": "Strangulated bowel behind a new acidosis.",
+    "say": "\"High anion gap acidosis with lactate 6.8: I suspect ischaemic bowel.\"",
+    "do": [
+      "FiO2, then a fixed sequence",
+      "Calculate the anion gap",
+      "See him, antibiotics, fluids, senior, theatre"
+    ],
+    "numbers": [
+      {
+        "value": "3–11",
+        "meaning": "normal anion gap, Na − (Cl + HCO3), ion-selective electrodes; lab ranges vary",
+        "source": "AGKN"
+      },
+      {
+        "value": "23–28",
+        "meaning": "normal bicarbonate (mmol/L)",
+        "source": "RCEMABG"
+      },
+      {
+        "value": "1 hour",
+        "meaning": "antibiotics if NEWS2 7+",
+        "source": "NG253"
+      }
+    ],
+    "trap": "A low PaCO2 is compensation, not a normal gas.",
+    "finish": "Laparotomy for strangulation; critical care afterwards."
+  },
+  "sources": [
+    {
+      "id": "RCEMABG",
+      "name": "RCEMLearning reference: Arterial blood gas analysis (Kelly G; ed. Kendall JM)",
+      "version": "Updated 16 April 2026",
+      "url": "https://www.rcemlearning.co.uk/reference/arterial-blood-gas-analysis/",
+      "supports": "Normal values on room air: pH 7.35-7.45, pCO2 4.67-6.00 kPa, pO2 10.67-13.33 kPa, bicarbonate 23-28 mmol/L, base excess -2 to +2; raised anion gap causes include lactate from tissue hypoxia such as ischaemic bowel; metabolic alkalosis from vomiting or nasogastric suction; compensation: ventilation falls in metabolic alkalosis and rises in metabolic acidosis; rehydration corrects the alkalosis of vomiting more quickly; a normal pH does not exclude serious illness"
+    },
+    {
+      "id": "AGKN",
+      "name": "Kraut JA, Nagami GT. The serum anion gap in the evaluation of acid-base disorders: what are its limitations and can its effectiveness be improved? Clin J Am Soc Nephrol 2013;8(11):2018-2024",
+      "version": "Published online 5 July 2013; November 2013 issue",
+      "url": "https://doi.org/10.2215/CJN.04040413",
+      "supports": "The anion gap is most frequently calculated as Na - (Cl + HCO3), and the major textbooks leave out potassium; the normal range depends on the laboratory method (for example 7-13, or 3-11 with ion-selective electrodes, in Rose's textbook), so use the laboratory's own range; a lactic acidosis can be present with a normal anion gap"
+    },
+    {
+      "id": "BOL17",
+      "name": "ten Broek RPG, Krielen P, Di Saverio S, et al. Bologna guidelines for diagnosis and management of adhesive small bowel obstruction (ASBO): 2017 update of the evidence-based guidelines from the World Society of Emergency Surgery ASBO working group. World J Emerg Surg 2018;13:24",
+      "version": "2017 update, published June 2018",
+      "url": "https://doi.org/10.1186/s13017-018-0185-2",
+      "supports": "Non-operative management unless peritonitis, strangulation or ischaemia; examination detects strangulation in only 48%; minimum bloods: blood count, lactate, electrolytes, CRP, urea/creatinine; low potassium frequent and must be corrected; dehydration causes AKI; CT is the investigation of choice; closed loop, ischaemia and free fluid mean surgery without delay"
+    },
+    {
+      "id": "NG253",
+      "name": "NICE NG253: Suspected sepsis in people aged 16 or over: recognition, assessment and early management",
+      "version": "Published 19 November 2025; last updated 23 September 2026",
+      "url": "https://www.nice.org.uk/guidance/ng253",
+      "supports": "High risk = NEWS2 7 or more; IV antibiotics within 1 hour (1.8.3); 250 ml crystalloid boluses up to 1,000 ml in total (1.8.6-1.8.7); senior advice if not improved after 1,000 ml (1.8.9); early surgical team for source control (1.11.4)"
+    },
+    {
+      "id": "NEWS2",
+      "name": "Royal College of Physicians: National Early Warning Score (NEWS) 2",
+      "version": "December 2017",
+      "url": "https://www.rcp.ac.uk/improving-care/resources/national-early-warning-score-news-2/",
+      "supports": "NEWS2 parameter bands and aggregate score"
+    },
+    {
+      "id": "RCS18",
+      "name": "RCS England: The High-Risk General Surgical Patient: Raising the Standard",
+      "version": "2018",
+      "url": "https://www.rcseng.ac.uk/-/media/files/rcs/news-and-events/media-centre/2018-press-releases-documents/rcs-report-the-highrisk-general-surgical-patient--raising-the-standard--december-2018.pdf",
+      "supports": "Standard 3: risk of death assessed and recorded by a senior surgeon (ST3 and above) within four hours of admission; standard 4: high risk = predicted hospital mortality 5% or more; standard 8: consultant surgeon and consultant anaesthetist present, and immediate postoperative critical care admission"
+    },
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format: 9 minutes with 1 minute's reading"
+    }
+  ],
+  "partner": {
+    "opening": "Mr Ashby's first arterial gas has just come back. Please interpret it.",
+    "reveals": [
+      {
+        "trigger": "At the start",
+        "finding": "Gas 1: pH 7.50, PaCO2 6.4 kPa, PaO2 11.2 kPa, bicarbonate 37 mmol/L, base excess +13.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Asks the FiO2",
+        "finding": "Taken on room air.",
+        "row": "G1"
+      },
+      {
+        "trigger": "Asks for electrolytes and lactate on gas 1",
+        "finding": "Na 134, K 3.0, Cl 88, lactate 1.4 mmol/L.",
+        "row": "G3"
+      },
+      {
+        "trigger": "After gas 1 is interpreted",
+        "finding": "Say: \"Twelve hours later he is worse.\" Gas 2 on air: pH 7.28, PaCO2 3.9 kPa, PaO2 11.8 kPa, bicarbonate 13.5, base excess −12, Na 136, K 3.6, Cl 104, lactate 6.8.",
+        "row": "G4"
+      },
+      {
+        "trigger": "Asks for observations",
+        "finding": "RR 26, SpO2 96% on air, BP 98/58, pulse 124, alert, temperature 38.4°C: NEWS2 8.",
+        "row": "G6"
+      },
+      {
+        "trigger": "Asks to examine",
+        "finding": "Distended, tender centrally, mild guarding.",
+        "row": "G5"
+      }
+    ],
+    "push": [
+      {
+        "question": "How do you know the raised PaCO2 in gas 1 isn't a respiratory acidosis?",
+        "row": "G2",
+        "expect": "pH is high and bicarbonate is high: the primary problem is metabolic alkalosis; the CO2 is compensation."
+      },
+      {
+        "question": "Calculate the anion gap for gas 2.",
+        "row": "G4",
+        "expect": "136 − (104 + 13.5) = 18.5; normal about 3–11 with ion-selective electrodes, but use the lab's range."
+      },
+      {
+        "question": "What would make you take him to theatre?",
+        "row": "G7",
+        "expect": "Peritonism, strangulation or ischaemia; on CT a closed loop, ischaemia or free fluid."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "The lactate on gas 2 is 1.9. Does that reassure you?",
+        "safeAnswer": "No: the new acidosis, fever and tenderness still need urgent senior review and CT or theatre.",
+        "row": "G5"
+      },
+      {
+        "prompt": "Gas 2 was taken on 40% oxygen, PaO2 11.8.",
+        "safeAnswer": "That PaO2 is low for 40% oxygen: impaired oxygenation, perhaps aspiration. Assess the chest and escalate.",
+        "row": "G1"
+      },
+      {
+        "prompt": "The registrar asks whether to give sodium bicarbonate.",
+        "safeAnswer": "No: treat the cause with resuscitation and source control.",
+        "row": "G7"
+      }
+    ]
+  }
+}

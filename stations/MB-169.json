@@ -1,0 +1,599 @@
+{
+  "id": "MB-169",
+  "exam": "MRCS-B",
+  "title": "Varicose veins examination",
+  "type": "examination",
+  "header": {
+    "domain": "Applied Skills",
+    "contentArea": "Clinical and procedural skills",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "signalMinutes": 6,
+    "guidelineVersions": [
+      "NICE CG168 (Jul 2013)",
+      "ESVS chronic venous disease guideline (2022)"
+    ],
+    "related": [
+      {
+        "id": "MB-168 Peripheral arterial examination",
+        "why": "Pulses and ABPI before compression"
+      },
+      {
+        "id": "MB-170 Groin hernia examination",
+        "why": "A saphena varix can mimic a femoral hernia"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Vascular surgery outpatient clinic",
+    "role": "Core surgical trainee",
+    "scenario": "Mrs Joanne Hale, 52, a hairdresser, has had visible veins in her left leg for years. The leg aches and feels heavy by the end of the day, and the skin above her ankle has become itchy and darker.",
+    "task": "Examine her legs. You will be stopped at 6 minutes to present your findings and answer questions."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Stand her up: distribution, skin, groin; tap and tourniquet tests; then pulses, abdomen and the other leg.",
+    "trap": "Treating a controlled tourniquet test as a substitute for duplex.",
+    "firstMove": "\"Could you stand up for me, with both legs uncovered?\""
+  },
+  "flow": [
+    "Introduce, consent, chaperone",
+    "Inspect standing",
+    "Palpate; groin cough impulse",
+    "Tap and tourniquet tests",
+    "Pulses, abdomen, other leg",
+    "At 6 minutes: present"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "professionalism",
+      "label": "Preparation and position",
+      "fail": "Examines her lying down, with the legs partly covered.",
+      "pass": "Introduces, gains consent, offers a chaperone, exposes both legs from the groins to the toes, and examines standing.",
+      "high": "Explains why she stands: the veins fill and reflux shows; keeps her covered where not examining.",
+      "source": "ESVS22"
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-skill",
+      "label": "Inspection standing",
+      "fail": "Says 'varicose veins' without naming the system or looking at the skin.",
+      "pass": "Describes the distribution (great or small saphenous), skin changes, oedema, active or healed ulcer, and scars from previous surgery.",
+      "high": "Grades the leg with CEAP (C4a for pigmentation or eczema) and looks for corona phlebectatica and suprapubic collaterals.",
+      "source": "ESVS22"
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-skill",
+      "label": "Palpation and the groin",
+      "fail": "Doesn't examine the groin.",
+      "pass": "Feels for tenderness, warmth and hard veins, then the saphenofemoral junction for a cough impulse or saphena varix; performs a tap test.",
+      "high": "Distinguishes a saphena varix (soft, bluish, cough thrill, empties when lying) from a femoral hernia or node.",
+      "source": "BL"
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-skill",
+      "label": "Tourniquet test and its limits",
+      "fail": "Omits any test of where the reflux starts.",
+      "borderline": "Performs the test correctly but can't say what a controlled result means.",
+      "pass": "Lying, empties the veins, applies a tourniquet just below the saphenofemoral junction, stands her up, and watches whether the veins stay empty.",
+      "high": "States the test's limits: it can't show deep or perforator reflux precisely and doesn't replace duplex.",
+      "source": "BL"
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-skill",
+      "label": "Doppler and completion",
+      "fail": "Finishes at the affected leg.",
+      "pass": "Examines the other leg, checks the foot pulses, and offers an abdominal and pelvic examination for a mass.",
+      "high": "Says handheld Doppler has no role in diagnosing venous reflux, but is still used to measure the ABPI before any compression.",
+      "source": "ESVS22"
+    },
+    {
+      "id": "G6",
+      "domain": "communication",
+      "label": "Presentation at the signal",
+      "fail": "Says 'varicose veins in the left leg' and stops.",
+      "pass": "Presents the distribution, skin changes, likely source of reflux and the other leg, then gives a diagnosis.",
+      "high": "Leads with 'left great saphenous varicose veins with skin changes, C4a', then key negatives: no ulcer, no thrombophlebitis, normal pulses.",
+      "source": "ESVS22"
+    },
+    {
+      "id": "G7",
+      "domain": "clinical-knowledge",
+      "label": "Referral and investigation",
+      "fail": "Offers compression stockings and discharges her.",
+      "pass": "Refers to a vascular service because she has symptoms and skin changes; duplex ultrasound confirms reflux and plans treatment.",
+      "high": "Quotes NICE: endothermal ablation first; foam sclerotherapy if unsuitable, then surgery; compression only if intervention is unsuitable.",
+      "source": "CG168"
+    },
+    {
+      "id": "G8",
+      "domain": "clinical-knowledge",
+      "label": "Bleeding and ulcers (safety-critical)",
+      "fail": "Sends a patient with a bleeding varicose vein home to wait for a routine appointment.",
+      "pass": "Controls a bleeding varicose vein and refers to a vascular service immediately; refers any venous leg ulcer.",
+      "high": "Defines a venous leg ulcer as a break in the skin below the knee not healed within 2 weeks.",
+      "source": "CG168"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "candidate",
+        "text": "[Asks her to lie on the couch; rolls up the left trouser leg.]",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "She has varicose veins. [Doesn't look at the skin; skips the groin.]",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          },
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I've finished examining the left leg.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          },
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop. Your findings?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Varicose veins in the left leg.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What would you do?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Class 2 stockings and discharge back to the GP.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "A man's varicose vein is bleeding at the ankle. What do you do?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Put a plaster on and refer him routinely.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "candidate",
+        "text": "Hello, I'm Dr Osei, one of the surgical trainees. Can I check your name and date of birth? I'd like to examine your legs, standing first, from the groins down. Would you like a chaperone? [Consent; cleans hands.]",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Inspects standing, front and back.] The veins follow the great saphenous vein on the left. There's pigmentation and eczema above the medial ankle, no ulcer and no scars.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Feels along the veins; no tenderness.] Could you cough? [Hand over the saphenofemoral junction; tap test.]",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Lying, raises the leg to empty the veins; tourniquet below the junction; stands her up.] The veins stay empty until I release it.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Examines the right leg; feels the foot pulses.] I'd also examine her abdomen and pelvis for a mass. Thank you. [Cleans hands.]",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop. Your findings?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Mrs Hale has left great saphenous varicose veins with pigmentation and eczema at the ankle, a saphena varix, and reflux at the saphenofemoral junction. There's no ulcer. The right leg is normal and pulses are present.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What next?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "She has symptoms and skin changes, so I'd refer her to the vascular service for a duplex scan to confirm reflux and plan treatment.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "A man's varicose vein is bleeding at the ankle. What do you do?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Elevate the leg and press on it to stop the bleeding, then refer him to the vascular service immediately.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "candidate",
+        "text": "Hello, I'm Dr Osei, one of the surgical trainees. Can I check your name and date of birth? I'll examine you standing first, because the veins fill and any leak shows. I'd like to offer you a chaperone, and I'll keep you covered where I can. [Cleans hands.]",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Inspects standing.] Great saphenous distribution; pigmentation and eczema at the medial ankle, which is C4a. No ulcer, no corona phlebectatica, no suprapubic collaterals.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Palpates veins; groin cough impulse; tap test.] The groin swelling is soft and bluish with a thrill on coughing, and empties when she lies down: a saphena varix, not a hernia.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Tourniquet test.] The veins stay controlled, suggesting saphenofemoral reflux, but the test can't show deep or perforator reflux, so it doesn't replace duplex.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Right leg; foot pulses.] I wouldn't rely on a handheld Doppler; duplex is the test. But I'd use it to measure the ABPI before any compression. [Cleans hands.]",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop. Your findings?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Mrs Hale has left great saphenous varicose veins with skin changes, C4a, and a saphena varix. There's no ulcer or thrombophlebitis, the pulses are normal, and the right leg is normal.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What next?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "She meets NICE referral criteria, so a vascular service and duplex. If there's truncal reflux, endothermal ablation first; foam if that's unsuitable, then surgery. Stockings aren't the treatment unless intervention is unsuitable.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "A man's varicose vein is bleeding at the ankle. What do you do?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Elevate and press to stop it, then refer immediately. And any break below the knee that hasn't healed within 2 weeks is a venous leg ulcer, which also needs referral.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G1",
+      "move": "Examining the veins with the patient lying down.",
+      "consequence": "The veins empty, so the distribution and the groin swelling are missed."
+    },
+    {
+      "row": "G4",
+      "move": "Using a controlled tourniquet test to plan treatment.",
+      "consequence": "Deep and perforator reflux are missed; NICE requires duplex to confirm and plan."
+    },
+    {
+      "row": "G7",
+      "move": "Offering stockings instead of referral for skin changes.",
+      "consequence": "Goes against NICE, which advises referral and compression only if intervention is unsuitable."
+    },
+    {
+      "row": "G8",
+      "move": "Routine referral for a bleeding varicose vein.",
+      "consequence": "Safety-critical: the bleeding can recur and be heavy; NICE advises immediate referral."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You started with her lying down",
+      "line": "Could you stand up for me? The veins show properly only when you're standing."
+    },
+    {
+      "when": "The examiner asks if the tourniquet test is enough",
+      "line": "It suggests where the reflux starts, but I'd confirm it with duplex before any treatment."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "NICE referral: bleeding veins (immediately); symptoms; skin changes; superficial vein thrombosis with suspected incompetence; active or healed venous ulcer.",
+      "source": "CG168"
+    },
+    {
+      "fact": "Duplex confirms reflux and plans treatment. Endothermal ablation; foam if unsuitable; surgery if foam is unsuitable. Compression hosiery only if intervention is unsuitable.",
+      "source": "CG168"
+    },
+    {
+      "fact": "CEAP: C2 varicose veins; C3 oedema; C4a pigmentation or eczema; C4b lipodermatosclerosis or atrophie blanche; C4c corona phlebectatica; C5 healed ulcer; C6 active ulcer.",
+      "source": "ESVS22"
+    },
+    {
+      "fact": "Handheld Doppler has no role in diagnosing venous disease; it is still used for ABPI.",
+      "source": "ESVS22"
+    },
+    {
+      "fact": "Assess for PAD in anyone who needs compression hosiery.",
+      "source": "CG147"
+    }
+  ],
+  "recall": {
+    "think": "Bleeding, an ulcer or skin changes mean referral.",
+    "say": "\"Could you stand up for me, please?\"",
+    "do": [
+      "Stand: distribution and skin (CEAP)",
+      "Groin cough impulse; tap and tourniquet tests",
+      "Other leg, pulses, abdomen"
+    ],
+    "numbers": [
+      {
+        "value": "2 weeks",
+        "meaning": "unhealed break below the knee: venous leg ulcer",
+        "source": "CG168"
+      },
+      {
+        "value": "C4a",
+        "meaning": "pigmentation or eczema: skin changes",
+        "source": "ESVS22"
+      },
+      {
+        "value": "7 days",
+        "meaning": "maximum compression after intervention",
+        "source": "CG168"
+      }
+    ],
+    "trap": "A controlled tourniquet test doesn't replace duplex.",
+    "finish": "Vascular service, duplex, then endothermal ablation."
+  },
+  "sources": [
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "At every station: introduce yourself, explain the task, confirm identity, obtain consent, clean hands before and after patient contact; 6-minute signal in examination stations"
+    },
+    {
+      "id": "GMC",
+      "name": "GMC: Intimate examinations and chaperones",
+      "version": "In effect from 30 January 2024; updated 13 December 2024",
+      "url": "https://www.gmc-uk.org/professional-standards/the-professional-standards/intimate-examinations-and-chaperones/intimate-examinations-and-chaperones",
+      "supports": "Explain the examination (para 8); consent and record it (para 9); offer a chaperone (para 16); record the chaperone discussion and identity (para 23)"
+    },
+    {
+      "id": "BL",
+      "name": "Bailey & Love's Short Practice of Surgery (O'Connell, McCaskie, Sayers, eds)",
+      "version": "28th edition, 2023",
+      "url": "https://www.routledge.com/Bailey--Loves-Short-Practice-of-Surgery---28th-Edition/OConnell-McCaskie-Sayers/p/book/9780367548117",
+      "supports": "Examination technique and clinical signs"
+    },
+    {
+      "id": "CG168",
+      "name": "NICE CG168: Varicose veins: diagnosis and management",
+      "version": "Published 24 July 2013; links updated March 2025",
+      "url": "https://www.nice.org.uk/guidance/cg168",
+      "supports": "Refer bleeding varicose veins to a vascular service immediately (1.2.1); refer symptomatic primary or recurrent varicose veins, skin changes from chronic venous insufficiency, superficial vein thrombosis with suspected venous incompetence, a venous leg ulcer (a break in the skin below the knee not healed within 2 weeks) or a healed venous leg ulcer (1.2.2); duplex ultrasound confirms the diagnosis and extent of truncal reflux and plans treatment (1.3.1); endothermal ablation; if unsuitable, ultrasound-guided foam sclerotherapy; if foam is unsuitable, surgery (1.3.2); compression after intervention for no more than 7 days (1.3.3); no compression hosiery to treat varicose veins unless interventional treatment is unsuitable (1.3.4); no intervention in pregnancy except in exceptional circumstances (1.4.2); consider compression hosiery for leg swelling in pregnancy (1.4.3)"
+    },
+    {
+      "id": "ESVS22",
+      "name": "De Maeseneer MG et al. European Society for Vascular Surgery (ESVS) 2022 Clinical Practice Guidelines on the Management of Chronic Venous Disease of the Lower Limbs. Eur J Vasc Endovasc Surg 2022;63(2):184–267",
+      "version": "2022",
+      "url": "https://esvs.org/guideline/chronic-venous-disease-of-lower-limbs/",
+      "supports": "CEAP 2020 update (Table 3): C2 varicose veins, C3 oedema, C4a pigmentation or eczema, C4b lipodermatosclerosis or atrophie blanche, C4c corona phlebectatica, C5 healed ulcer, C6 active ulcer; examine standing whenever possible and look for suprapubic and abdominal wall collaterals (2.1); handheld continuous wave Doppler has no role in diagnosis and has been replaced by duplex, but is still used for ankle pressures and ABI when arterial disease is suspected (2.2)"
+    },
+    {
+      "id": "CG147",
+      "name": "NICE CG147: Peripheral arterial disease: diagnosis and management",
+      "version": "Published 8 August 2012; last updated 11 December 2020; minor changes July 2026",
+      "url": "https://www.nice.org.uk/guidance/cg147",
+      "supports": "Assess for peripheral arterial disease in people who need compression hosiery (1.3.1)"
+    }
+  ],
+  "partner": {
+    "opening": "Please examine this patient's legs. A chaperone is available. I'll stop you at 6 minutes.",
+    "actorBrief": "You are Mrs Joanne Hale, 52, a hairdresser who stands all day. Your left leg aches and feels heavy by evening, and the skin above the inner ankle itches. The veins have never bled and you've never had a clot. You'd like them treated. Accept a chaperone if offered.",
+    "reveals": [
+      {
+        "trigger": "Inspects standing",
+        "finding": "Varicose veins along the medial left thigh and calf. Brown pigmentation and eczema above the left medial malleolus. No ulcer, no scars, no oedema. Right leg normal.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Palpates the veins",
+        "finding": "Soft, non-tender veins. No hard or red segments.",
+        "row": "G3"
+      },
+      {
+        "trigger": "Examines the groin and asks her to cough",
+        "finding": "Soft, bluish 2 cm swelling below and lateral to the left pubic tubercle, with a thrill on coughing. It empties when she lies down.",
+        "row": "G3"
+      },
+      {
+        "trigger": "Performs a tap test",
+        "finding": "Tap at the groin is felt in the veins of the medial calf.",
+        "row": "G3"
+      },
+      {
+        "trigger": "Performs the tourniquet test below the saphenofemoral junction",
+        "finding": "Veins stay empty on standing; they fill rapidly from above when the tourniquet is released.",
+        "row": "G4"
+      },
+      {
+        "trigger": "Checks pulses, offers abdominal examination, examines the other leg",
+        "finding": "Foot pulses present on both sides. Abdomen and pelvis: no mass. Right leg normal.",
+        "row": "G5"
+      },
+      {
+        "trigger": "At 6 minutes",
+        "finding": "Say: \"Please stop there and present your findings.\"",
+        "row": "G6"
+      }
+    ],
+    "push": [
+      {
+        "question": "What does the tourniquet test tell you, and what are its limits?",
+        "row": "G4",
+        "expect": "Controlled below the junction suggests saphenofemoral reflux; it doesn't show deep or perforator reflux and doesn't replace duplex."
+      },
+      {
+        "question": "Who should be referred to a vascular service?",
+        "row": "G7",
+        "expect": "Bleeding (immediately); symptoms; skin changes; superficial vein thrombosis with suspected incompetence; active or healed ulcer."
+      },
+      {
+        "question": "How would you classify her clinically?",
+        "row": "G2",
+        "expect": "CEAP C4a (pigmentation, eczema), symptomatic."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "A segment of vein is hard, red and tender.",
+        "safeAnswer": "Superficial vein thrombosis with suspected incompetence: refer to the vascular service.",
+        "row": "G3"
+      },
+      {
+        "prompt": "She is 30 weeks pregnant.",
+        "safeAnswer": "No intervention in pregnancy except in exceptional circumstances; consider compression hosiery for leg swelling.",
+        "row": "G7"
+      },
+      {
+        "prompt": "Her foot pulses are weak and she asks for stockings.",
+        "safeAnswer": "Assess for arterial disease with an ABPI before any compression.",
+        "row": "G5"
+      },
+      {
+        "prompt": "There's a 3 cm break in the skin above the ankle that has been there for a month.",
+        "safeAnswer": "Venous leg ulcer (not healed within 2 weeks): refer to the vascular service; check the ABPI.",
+        "row": "G8"
+      }
+    ]
+  }
+}

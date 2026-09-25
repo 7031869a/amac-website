@@ -1,0 +1,592 @@
+{
+  "id": "MB-168",
+  "exam": "MRCS-B",
+  "title": "Peripheral arterial examination of the lower limb",
+  "type": "examination",
+  "header": {
+    "domain": "Applied Skills",
+    "contentArea": "Clinical and procedural skills",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "signalMinutes": 6,
+    "guidelineVersions": [
+      "NICE CG147 (last updated Dec 2020)",
+      "ESVS PAD and claudication guideline (2024)",
+      "NICE NG156 (Mar 2020)",
+      "GMC Intimate examinations and chaperones (updated December 2024)"
+    ],
+    "related": [
+      {
+        "id": "MB-169 Varicose veins examination",
+        "why": "The venous examination of the same leg; ABPI before compression"
+      },
+      {
+        "id": "MB-139 Examination of a lump",
+        "why": "Describing a pulsatile mass"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Vascular surgery outpatient clinic",
+    "role": "Core surgical trainee",
+    "scenario": "Mr Keith Morrow, 67, has smoked for 45 years. For nine months he has had cramping pain in his right calf after walking about 100 metres. It goes within a few minutes of stopping.",
+    "task": "Examine his lower limbs' arterial system. You will be stopped at 6 minutes to present your findings and answer questions."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Look, feel, pulses from the aorta to the foot, Buerger's test, listen, then ABPI.",
+    "trap": "Forgetting the aorta and popliteal arteries, where an aneurysm hides.",
+    "firstMove": "\"Could you lie on the couch and uncover both legs, from the groins to the toes?\""
+  },
+  "flow": [
+    "Introduce, consent, expose both legs",
+    "Inspect, including heels and toes",
+    "Temperature and capillary refill",
+    "Pulses: aorta to foot",
+    "Buerger's test; bruits",
+    "Offer ABPI and neurological examination",
+    "At 6 minutes: present"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "professionalism",
+      "label": "Preparation and exposure",
+      "fail": "Examines one leg, through clothing.",
+      "pass": "Introduces, confirms identity, gains consent, cleans hands, asks about pain, and exposes both legs from groins to toes.",
+      "high": "Offers a chaperone before feeling the groins, and compares the two legs at every step.",
+      "source": "GMC"
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-skill",
+      "label": "Inspection",
+      "fail": "Glances at the legs without looking at the heels or between the toes.",
+      "pass": "Colour, hair loss, shiny skin, wasting, scars, ulcers, gangrene and amputations, including the heels and between the toes.",
+      "high": "Distinguishes arterial ulcers (punched out, painful, on pressure points) from venous ulcers, and looks for bypass or vein-harvest scars."
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-skill",
+      "label": "Temperature and capillary refill",
+      "fail": "Doesn't compare temperature or check capillary refill.",
+      "pass": "Compares temperature down both legs with the back of the hand; compares capillary refill at the toe pulps.",
+      "high": "Notes the level where the leg turns cool, and uses it with the pulses to place the disease."
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-skill",
+      "label": "Pulses, aorta to foot",
+      "fail": "Feels only the foot pulses.",
+      "borderline": "Feels every leg pulse but not the aorta, so doesn't comment on an aneurysm.",
+      "pass": "Palpates the abdominal aorta, then femoral, popliteal, posterior tibial and dorsalis pedis pulses on both sides.",
+      "high": "Names the level from the pattern: femoral present, popliteal absent means femoropopliteal disease; checks the aorta and popliteals for aneurysm.",
+      "source": "ESVS24"
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-skill",
+      "label": "Buerger's test and bruits",
+      "fail": "Omits Buerger's test, or raises the legs without watching for pallor.",
+      "pass": "Raises both legs, notes the angle at which each foot goes pale, then hangs them down for rubor; listens over the femoral arteries.",
+      "high": "States that pallor at a low angle and slow dusky rubor mean severe ischaemia; listens over the aorta, iliac and femoral arteries.",
+      "source": "BL"
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-skill",
+      "label": "Completion and ABPI technique",
+      "fail": "Finishes without offering an ABPI or a neurological examination.",
+      "pass": "Offers an ABPI, a neurological examination of the feet, and examination of the other vascular territories.",
+      "high": "Describes NICE's method: supine, handheld Doppler, both arms and each ankle artery; highest ankle over highest arm pressure for each leg.",
+      "source": "CG147"
+    },
+    {
+      "id": "G7",
+      "domain": "communication",
+      "label": "Presentation at the signal",
+      "fail": "Lists the manoeuvres without a conclusion.",
+      "pass": "Presents positive and negative findings, the likely level of disease and a diagnosis.",
+      "high": "Leads with the diagnosis and level: right femoropopliteal disease causing claudication, no rest pain or tissue loss, no aneurysm."
+    },
+    {
+      "id": "G8",
+      "domain": "clinical-knowledge",
+      "label": "ABPI interpretation (safety-critical)",
+      "fail": "Calls an ABPI above 1.4 normal, or rules out disease in a diabetic patient on a normal ABPI.",
+      "pass": "ABPI 0.90 or less confirms PAD; 1.40 or more means incompressible arteries, so toe pressures or toe brachial index are needed.",
+      "high": "Adds that a normal ABPI doesn't exclude PAD in diabetes, and uses a post-exercise ABPI when the story fits but resting ABPI is normal.",
+      "source": "ESVS24"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "candidate",
+        "text": "[Rolls up the right trouser leg only.] Is this the painful leg? Right.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Brief look at the shin.] The skin looks fine.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Feels the foot pulses.] They're weak on the right. [Skips temperature, capillary refill and the aorta.]",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          },
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I've finished examining the leg.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          },
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop. Your findings?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I felt the pulses, and they're weak on the right.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Suppose a patient's ABPI came back at 1.5. What would that tell you?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "That's above 1, so the circulation is normal.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "candidate",
+        "text": "Hello, I'm Dr Osei, one of the surgical trainees. Can I check your name and date of birth? I'd like to examine the circulation in your legs. Any pain now? Could you uncover both legs from the groins down? [Consent; cleans hands.]",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Inspects both legs, heels and between the toes: colour, hair, skin, wasting, scars, ulcers, amputations.]",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Back of the hand down both legs; capillary refill at each big toe.]",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'll feel your tummy first. [Aorta; then femoral, popliteal, posterior tibial and dorsalis pedis pulses, both sides.]",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'm going to lift your legs. [Notes the angle of pallor; hangs them over the edge; watches for rubor. Listens over the femoral arteries.]",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "To finish, I'd measure the ABPI, examine sensation in the feet, and examine the other pulses. Thank you. [Cleans hands.]",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop. Your findings?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Mr Morrow's right leg shows hair loss, a cool foot and slow capillary refill. His femoral pulses are present, but the right popliteal and foot pulses are absent. Buerger's test is positive on the right. This is right femoropopliteal disease causing intermittent claudication.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Suppose a patient's ABPI came back at 1.5. What would that tell you?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "An ABPI of 0.90 or less confirms PAD, but 1.40 or more means the arteries are incompressible, so it's unreliable. I'd ask for toe pressures or a toe brachial index.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "candidate",
+        "text": "Hello, I'm Dr Osei, one of the surgical trainees. Can I check your name and date of birth? I'll compare both legs, from the groins to the toes. I'd like to offer you a chaperone when I feel the groins. [Cleans hands.]",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Inspects heels and between the toes.] No ulcers; an arterial ulcer would be punched out on a pressure point. No bypass or vein-harvest scars.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Temperature, capillary refill.] The right foot turns cool from mid-calf.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Aorta: not expansile. Femorals present; right popliteal and foot pulses absent; popliteals not aneurysmal.] Femoral present, popliteal absent: that places the disease femoropopliteal.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Buerger's test.] The right foot pales at a lower angle and flushes slowly when dependent, which shows significant ischaemia. [Listens over the aorta, iliac and femoral arteries.]",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd measure the ABPI lying flat, with a handheld Doppler: both arms, then each ankle artery, dividing the highest ankle pressure by the highest arm pressure for each leg. I'd also examine sensation in the feet. [Cleans hands.]",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop. Your findings?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Mr Morrow has right femoropopliteal disease causing intermittent claudication. There's no rest pain or tissue loss, and I found no aortic or popliteal aneurysm. The right foot is cool with slow refill and a positive Buerger's test; the left leg is normal.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Suppose a patient's ABPI came back at 1.5. What would that tell you?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "That's 1.40 or more, so the arteries are incompressible and the reading is falsely high; I'd ask for toe pressures. A normal or raised ABPI doesn't exclude PAD in diabetes. If his resting ABPI were normal with this story, I'd repeat it after exercise.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G4",
+      "move": "Not palpating the aorta or the popliteal arteries.",
+      "consequence": "Misses an aneurysm, which is often found alongside PAD in smokers."
+    },
+    {
+      "row": "G5",
+      "move": "Leaving out Buerger's test.",
+      "consequence": "The severity of ischaemia is underestimated before the ABPI is known."
+    },
+    {
+      "row": "G6",
+      "move": "Dividing by the lower arm pressure when calculating the ABPI.",
+      "consequence": "The ABPI comes out falsely high and can hide PAD."
+    },
+    {
+      "row": "G8",
+      "move": "Reading an ABPI of 1.40 or more as normal.",
+      "consequence": "Safety-critical: calcified arteries hide severe disease, particularly in diabetes, and limb-threatening ischaemia is missed."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You forgot the aorta",
+      "line": "Before I finish, I'd like to feel the abdominal aorta for an aneurysm."
+    },
+    {
+      "when": "You can't feel a foot pulse confidently",
+      "line": "I can't feel it confidently, so I'll record it as absent and confirm with a Doppler and the ABPI."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "NICE ABPI: supine; handheld Doppler; both arms and each ankle artery; each leg = highest ankle pressure ÷ highest arm pressure.",
+      "source": "CG147"
+    },
+    {
+      "fact": "ABPI 0.90 or less confirms PAD. ABPI 1.40 or more: use toe pressures or toe brachial index. A post-exercise drop of 20% or more confirms PAD.",
+      "source": "ESVS24"
+    },
+    {
+      "fact": "A normal or raised ABPI does not exclude PAD in diabetes.",
+      "source": "CG147"
+    },
+    {
+      "fact": "Claudication: offer supervised exercise (1.5.1); consider 2 hours a week for 3 months (1.5.2); duplex first if revascularisation is being considered.",
+      "source": "CG147"
+    },
+    {
+      "fact": "Suspected AAA on palpation: offer an aortic ultrasound.",
+      "source": "NG156"
+    }
+  ],
+  "recall": {
+    "think": "Is the limb threatened, and is there an aneurysm?",
+    "say": "\"I'd like to compare both legs, from the groins to the toes.\"",
+    "do": [
+      "Heels and between the toes",
+      "Pulses from the aorta to the foot",
+      "Buerger's, bruits, then ABPI"
+    ],
+    "numbers": [
+      {
+        "value": "≤ 0.90",
+        "meaning": "ABPI confirming PAD",
+        "source": "ESVS24"
+      },
+      {
+        "value": "≥ 1.40",
+        "meaning": "incompressible arteries: use toe pressures",
+        "source": "ESVS24"
+      },
+      {
+        "value": "2 h/week for 3 months",
+        "meaning": "supervised exercise for claudication",
+        "source": "CG147"
+      }
+    ],
+    "trap": "A normal ABPI in a patient with diabetes.",
+    "finish": "Risk-factor control and supervised exercise; duplex if revascularisation is considered."
+  },
+  "sources": [
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "At every station: introduce yourself, explain the task, confirm identity, obtain consent, clean hands before and after patient contact; 6-minute signal in examination stations"
+    },
+    {
+      "id": "GMC",
+      "name": "GMC: Intimate examinations and chaperones",
+      "version": "In effect from 30 January 2024; updated 13 December 2024",
+      "url": "https://www.gmc-uk.org/professional-standards/the-professional-standards/intimate-examinations-and-chaperones/intimate-examinations-and-chaperones",
+      "supports": "Explain the examination (para 8); consent and record it (para 9); offer a chaperone (para 16); record the chaperone discussion and identity (para 23)"
+    },
+    {
+      "id": "BL",
+      "name": "Bailey & Love's Short Practice of Surgery (O'Connell, McCaskie, Sayers, eds)",
+      "version": "28th edition, 2023",
+      "url": "https://www.routledge.com/Bailey--Loves-Short-Practice-of-Surgery---28th-Edition/OConnell-McCaskie-Sayers/p/book/9780367548117",
+      "supports": "Examination technique and clinical signs"
+    },
+    {
+      "id": "CG147",
+      "name": "NICE CG147: Peripheral arterial disease: diagnosis and management",
+      "version": "Published 8 August 2012; last updated 11 December 2020; minor changes July 2026",
+      "url": "https://www.nice.org.uk/guidance/cg147",
+      "supports": "Assess for PAD if symptoms, diabetes, non-healing leg wounds, or compression hosiery needed (1.3.1); examine legs, feet and pulses and measure ABPI (1.3.2); ABPI method: supine, appropriately sized cuff, both arms and posterior tibial, dorsalis pedis and peroneal arteries, manual Doppler, highest ankle ÷ highest arm pressure for each leg (1.3.3); normal or raised ABPI does not exclude PAD in diabetes (1.3.4); duplex first-line imaging if revascularisation considered (1.4.1); offer supervised exercise (1.5.1); consider a programme of 2 hours a week for 3 months, exercising to maximal pain (1.5.2); angioplasty only after risk-factor advice reinforced, supervised exercise unsuccessful and imaging confirms suitability (1.5.3); critical limb ischaemia assessed by a vascular multidisciplinary team (1.6.1)"
+    },
+    {
+      "id": "ESVS24",
+      "name": "Nordanstig J et al. European Society for Vascular Surgery (ESVS) 2024 Clinical Practice Guidelines on the Management of Asymptomatic Lower Limb Peripheral Arterial Disease and Intermittent Claudication. Eur J Vasc Endovasc Surg 2024;67(1):9–96",
+      "version": "2024",
+      "url": "https://www.ejves.com/article/S1078-5884(23)00741-4/fulltext",
+      "supports": "Examine femoral, popliteal, posterior tibial and dorsalis pedis pulses bilaterally, plus brachial pulses and the abdominal aorta (3.1.2.1); arterial bruits increase the likelihood of PAD (3.1.2.2); Table 6: ABI 0.90 or less confirms PAD; post-exercise ABI drop of 20% or more confirms PAD; ABI 1.40 or more with suspected PAD: use toe brachial index or other tests; Recommendations 9 and 11"
+    },
+    {
+      "id": "NG156",
+      "name": "NICE NG156: Abdominal aortic aneurysm: diagnosis and management",
+      "version": "Published 19 March 2020",
+      "url": "https://www.nice.org.uk/guidance/ng156",
+      "supports": "Encourage men aged 66 or over who have not been screened to self-refer to the NHS AAA screening programme if they have risk factors including peripheral arterial disease or smoking (1.1.2); offer an aortic ultrasound to people with a suspected AAA on abdominal palpation (1.1.6)"
+    }
+  ],
+  "partner": {
+    "opening": "Please examine this patient's lower limb arterial system. I'll stop you at 6 minutes.",
+    "actorBrief": "You are Mr Keith Morrow, 67, a retired bus driver. You smoke 20 a day. Your right calf cramps after about 100 metres and eases within a few minutes of stopping. No pain at rest or at night, no sores on your feet. You don't have diabetes. Tell the candidate if anything hurts.",
+    "reveals": [
+      {
+        "trigger": "Inspects both legs, heels and between the toes",
+        "finding": "Hair loss and shiny skin on the right shin. No ulcers, gangrene, scars or amputations.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Checks temperature and capillary refill",
+        "finding": "Right foot cool from mid-calf down. Capillary refill 4 seconds on the right, 2 seconds on the left.",
+        "row": "G3"
+      },
+      {
+        "trigger": "Palpates the aorta and pulses",
+        "finding": "Aorta palpable, not expansile. Both femoral pulses present. Right popliteal, posterior tibial and dorsalis pedis absent; all present on the left. Popliteals not aneurysmal.",
+        "row": "G4"
+      },
+      {
+        "trigger": "Performs Buerger's test",
+        "finding": "Right foot pales at about 30 degrees; left stays pink at 90 degrees. When hung down, the right foot slowly turns dusky red.",
+        "row": "G5"
+      },
+      {
+        "trigger": "Listens for bruits",
+        "finding": "Soft bruit over the right femoral artery. None over the aorta.",
+        "row": "G5"
+      },
+      {
+        "trigger": "Asks for the ABPI",
+        "finding": "Arm pressures 150 and 146 mmHg. Right ankle: posterior tibial 84, dorsalis pedis 78 mmHg. Left ankle: posterior tibial 138, dorsalis pedis 132 mmHg. (Right ABPI 0.56; left 0.92.)",
+        "row": "G6"
+      },
+      {
+        "trigger": "Offers a neurological examination",
+        "finding": "Sensation normal in both feet.",
+        "row": "G6"
+      },
+      {
+        "trigger": "At 6 minutes",
+        "finding": "Say: \"Please stop there and present your findings.\"",
+        "row": "G7"
+      }
+    ],
+    "push": [
+      {
+        "question": "Where is the disease, and why?",
+        "row": "G4",
+        "expect": "Right femoropopliteal: femoral pulse present, popliteal and foot pulses absent."
+      },
+      {
+        "question": "Calculate his right ABPI from these pressures.",
+        "row": "G6",
+        "expect": "Highest right ankle 84 ÷ highest arm 150 = 0.56: PAD confirmed."
+      },
+      {
+        "question": "How would you manage him?",
+        "row": "G8",
+        "expect": "Stop smoking, statin and antiplatelet; offer supervised exercise (NICE suggests 2 hours a week for 3 months); duplex only if revascularisation is being considered."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "He has diabetes and his ABPI is 1.45.",
+        "safeAnswer": "Incompressible, calcified arteries: the ABPI is unreliable and doesn't exclude PAD. Toe pressures or toe brachial index.",
+        "row": "G8"
+      },
+      {
+        "prompt": "His resting ABPI is 1.0, but the story is classic claudication.",
+        "safeAnswer": "Repeat after exercise: a drop of 20% or more confirms PAD.",
+        "row": "G8"
+      },
+      {
+        "prompt": "He now has night pain in the foot, eased by hanging it out of bed, and a toe ulcer.",
+        "safeAnswer": "Critical limb ischaemia: urgent referral for vascular multidisciplinary team assessment before any treatment decision; not exercise therapy.",
+        "row": "G5"
+      },
+      {
+        "prompt": "The aorta feels expansile.",
+        "safeAnswer": "Suspected AAA: arrange an aortic ultrasound.",
+        "row": "G4"
+      }
+    ]
+  }
+}

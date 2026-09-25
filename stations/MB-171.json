@@ -1,0 +1,590 @@
+{
+  "id": "MB-171",
+  "exam": "MRCS-B",
+  "title": "Abdominal examination: right iliac fossa mass",
+  "type": "examination",
+  "header": {
+    "domain": "Applied Skills",
+    "contentArea": "Clinical and procedural skills",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "signalMinutes": 6,
+    "guidelineVersions": [
+      "NICE NG12 (updated Apr 2026)",
+      "ACPGBI colorectal cancer guideline (2017)",
+      "BSG iron deficiency anaemia guideline (2021)"
+    ],
+    "related": [
+      {
+        "id": "MB-159 Examination of a stoma",
+        "why": "The stoma that may follow a right hemicolectomy"
+      },
+      {
+        "id": "MB-139 Examination of a lump",
+        "why": "Describing a mass"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Colorectal surgery outpatient clinic",
+    "role": "Core surgical trainee",
+    "scenario": "Mrs Margaret Dunn, 72, has been referred with four months of tiredness and weight loss. Her GP's blood tests show iron-deficiency anaemia (haemoglobin 94 g/L).",
+    "task": "Examine her abdomen. You will be stopped at 6 minutes to present your findings and answer questions."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Hands, eyes, neck, then look, feel, percuss, listen; describe the mass; offer the rest.",
+    "trap": "Finding the mass and forgetting Virchow's node, the liver and the rectal examination.",
+    "firstMove": "\"Could you lie flat with one pillow? I'll start with your hands.\""
+  },
+  "flow": [
+    "Introduce, consent, chaperone",
+    "Hands, eyes, neck",
+    "Inspect",
+    "Palpate; describe the mass",
+    "Percuss, auscultate",
+    "Offer DRE, hernias, genitalia",
+    "At 6 minutes: present"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "professionalism",
+      "label": "Preparation",
+      "fail": "Starts palpating without consent or asking about pain.",
+      "pass": "Introduces, gains consent, lies her flat, exposes the abdomen while keeping her covered elsewhere, and asks about pain.",
+      "high": "Offers a chaperone, kneels to the bed's level, and watches her face while palpating.",
+      "source": "GMC"
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-skill",
+      "label": "Hands, eyes and nodes",
+      "fail": "Goes straight to the abdomen.",
+      "pass": "Hands (clubbing, pallor, koilonychia), conjunctivae, sclerae, and the left supraclavicular fossa for Virchow's node.",
+      "high": "Links findings to the story: pallor and koilonychia fit iron deficiency; a Virchow's node or jaundice suggests spread.",
+      "source": "BL"
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-skill",
+      "label": "Inspection and palpation",
+      "fail": "Palpates deeply first, or misses the mass.",
+      "pass": "Inspects for distension, scars and visible masses; light then deep palpation of all nine regions; liver, spleen and kidneys.",
+      "high": "Feels for an enlarged, irregular liver as a sign of metastases, and ballots the right kidney to separate it from the mass."
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-skill",
+      "label": "Describing the mass",
+      "fail": "Says 'there's a mass' with no description.",
+      "pass": "Site, size, shape, surface, edge, consistency, tenderness, mobility, movement with breathing, percussion note and pulsatility.",
+      "high": "Uses the findings to place it: not ballotable, doesn't move with breathing, can get above it, so bowel rather than kidney or liver."
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-skill",
+      "label": "Percussion, auscultation and completion",
+      "fail": "Finishes without offering a rectal examination or hernial orifices.",
+      "pass": "Percusses the mass and for shifting dullness; listens for bowel sounds; offers hernial orifices, external genitalia and a rectal examination with a chaperone.",
+      "high": "Explains shifting dullness looks for ascites from peritoneal spread, and the rectal examination looks for blood or a rectal mass.",
+      "source": "GMC"
+    },
+    {
+      "id": "G6",
+      "domain": "communication",
+      "label": "Presentation and differential",
+      "fail": "Offers appendicitis first in a well, anaemic 72-year-old.",
+      "pass": "Presents a firm, irregular right iliac fossa mass with pallor; caecal cancer first, then appendix mass, Crohn's disease and ovarian mass.",
+      "high": "Orders the differential by age and story, and names the key negatives: no liver edge, no ascites, no Virchow's node."
+    },
+    {
+      "id": "G7",
+      "domain": "clinical-knowledge",
+      "label": "Suspected cancer pathway",
+      "fail": "Asks the GP to send a FIT first, or books a routine clinic.",
+      "borderline": "Knows the tests are urgent but tells the GP to re-refer her on a cancer pathway.",
+      "pass": "States she meets the NG12 criteria and stays on the suspected cancer pathway (28 days); arranges her tests from clinic.",
+      "high": "Adds that NICE says 'offer' FIT for a mass or iron-deficiency anaemia, but referral shouldn't wait for it with a palpable mass.",
+      "source": "NG12"
+    },
+    {
+      "id": "G8",
+      "domain": "clinical-knowledge",
+      "label": "Investigations",
+      "fail": "Requests an ultrasound only.",
+      "pass": "Arranges colonoscopy (or CT colonography if unfit) and CT of the chest, abdomen and pelvis to stage.",
+      "high": "Adds gastroscopy for iron-deficiency anaemia, and images the whole colon for a second cancer before surgery.",
+      "source": "ACPGBI"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "candidate",
+        "text": "I'm going to feel your tummy. [Starts deep palpation without asking about pain.]",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          },
+          {
+            "row": "G2",
+            "band": "fail"
+          },
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "There's a mass on the right.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "That's all. [Doesn't percuss, auscultate or offer a rectal examination.]",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop. Your findings?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "A right iliac fossa mass, probably appendicitis.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What next?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd write to the GP to send a FIT test, and get a routine ultrasound.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          },
+          {
+            "row": "G8",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "candidate",
+        "text": "Hello, I'm Dr Osei, one of the surgical trainees. Can I check your name and date of birth? I'd like to examine your tummy. Is it painful anywhere? Could you lie flat for me? [Consent; cleans hands; exposes the abdomen.]",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Hands; conjunctivae; sclerae; left supraclavicular fossa.]",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Inspects; light then deep palpation of all nine regions; liver, spleen, kidneys.]",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Describes the mass: site, size, shape, surface, edge, consistency, tenderness, mobility, breathing, percussion, pulsatility.]",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Shifting dullness; bowel sounds.] I'd like to examine the hernial orifices and external genitalia, and do a rectal examination with a chaperone. Thank you. [Cleans hands.]",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop. Your findings?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Mrs Dunn is pale, with koilonychia. She has a 6 by 5 cm firm, irregular, non-tender mass in the right iliac fossa. It's dull to percussion and doesn't move with breathing. The most likely diagnosis is caecal cancer; the differential includes an appendix mass, Crohn's disease and an ovarian mass.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What happens next?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "She meets the NG12 criteria, so she stays on the suspected cancer pathway, 28 days. I'd arrange her tests from clinic.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Which tests?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "A colonoscopy, or CT colonography if she's unfit, and a CT of the chest, abdomen and pelvis to stage it.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "candidate",
+        "text": "Hello, I'm Dr Osei, one of the surgical trainees. Can I check your name and date of birth? Is it painful anywhere? I'd like to offer you a chaperone. [Kneels to her level; watches her face.]",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Hands: pale creases, koilonychia; pale conjunctivae; no jaundice; no Virchow's node.] That fits iron deficiency, with no sign of spread to the neck.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Palpates.] The liver isn't enlarged. [Ballots the right kidney.] The kidney is separate from the mass.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Describes the mass.] I can get above it, it isn't ballotable and it doesn't move with breathing, so it's bowel rather than kidney or liver.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[No shifting dullness, so no ascites to suggest peritoneal spread.] I'd do a rectal examination for blood or a rectal mass, and check the hernial orifices and genitalia. [Cleans hands.]",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop. Your findings?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Mrs Dunn has a 6 by 5 cm firm, irregular, non-tender right iliac fossa mass, with pallor and koilonychia. There's no liver edge, ascites or Virchow's node. Given her age, weight loss and anaemia, this is caecal cancer until proven otherwise; less likely an appendix mass, Crohn's disease or an ovarian mass.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What happens next?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "She meets the NG12 criteria and stays on the suspected cancer pathway, 28 days. NICE says to offer a FIT for a mass or iron-deficiency anaemia, but with a palpable mass referral shouldn't wait for the result.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Which tests?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Colonoscopy and a gastroscopy for the iron deficiency, with CT colonography if she can't have a colonoscopy. A CT of the chest, abdomen and pelvis to stage. The whole colon needs imaging for a second cancer before surgery.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G2",
+      "move": "Skipping the hands, eyes and neck.",
+      "consequence": "Misses the pallor that supports iron deficiency and a Virchow's node that suggests spread."
+    },
+    {
+      "row": "G4",
+      "move": "Reporting 'a mass' without describing it.",
+      "consequence": "Can't tell bowel from kidney, liver or ovary, so the differential is wrong."
+    },
+    {
+      "row": "G5",
+      "move": "Not offering a rectal examination.",
+      "consequence": "A rectal mass or blood is missed."
+    },
+    {
+      "row": "G7",
+      "move": "Sending her back to the GP for a FIT first.",
+      "consequence": "Delays a cancer diagnosis; NICE says referral shouldn't wait for FIT when there's a palpable mass."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You forgot the neck",
+      "line": "Before I finish, I'd like to feel above the left collarbone for an enlarged node."
+    },
+    {
+      "when": "You're not sure the mass is separate from the kidney",
+      "line": "I'd like to ballot the kidney, to see whether the mass moves with it."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "NICE: offer FIT to adults with an abdominal mass or iron-deficiency anaemia; refer if FIT is at least 10 µg Hb/g. With a mass, don't delay referral for FIT.",
+      "source": "NG12"
+    },
+    {
+      "fact": "Suspected cancer pathway: diagnosis or ruling out within 28 days.",
+      "source": "NG12"
+    },
+    {
+      "fact": "Iron-deficiency anaemia in men and postmenopausal women: gastroscopy and colonoscopy; CT colonography if unsuitable.",
+      "source": "BSG"
+    },
+    {
+      "fact": "Suspected colon cancer: colonoscopy or CT colonography; stage with CT of the chest, abdomen and pelvis.",
+      "source": "ACPGBI"
+    },
+    {
+      "fact": "Appendix mass treated without surgery at 40 or over: colonoscopy and interval CT.",
+      "source": "WSES"
+    }
+  ],
+  "recall": {
+    "think": "Is this caecal cancer, and has it spread?",
+    "say": "\"I'll start with your hands.\"",
+    "do": [
+      "Hands, eyes, Virchow's node",
+      "Describe the mass; liver; ballot the kidney",
+      "Offer DRE, hernial orifices, genitalia"
+    ],
+    "numbers": [
+      {
+        "value": "28 days",
+        "meaning": "suspected cancer pathway: diagnosis or ruling out",
+        "source": "NG12"
+      },
+      {
+        "value": "≥ 10 µg Hb/g",
+        "meaning": "FIT result for suspected cancer referral",
+        "source": "NG12"
+      },
+      {
+        "value": "40+",
+        "meaning": "after an appendix mass: colonoscopy and CT",
+        "source": "WSES"
+      }
+    ],
+    "trap": "A FIT isn't needed before referral when there's a palpable mass.",
+    "finish": "Colonoscopy, gastroscopy and staging CT on the suspected cancer pathway."
+  },
+  "sources": [
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "At every station: introduce yourself, explain the task, confirm identity, obtain consent, clean hands before and after patient contact; 6-minute signal in examination stations"
+    },
+    {
+      "id": "GMC",
+      "name": "GMC: Intimate examinations and chaperones",
+      "version": "In effect from 30 January 2024; updated 13 December 2024",
+      "url": "https://www.gmc-uk.org/professional-standards/the-professional-standards/intimate-examinations-and-chaperones/intimate-examinations-and-chaperones",
+      "supports": "Explain the examination (para 8); consent and record it (para 9); offer a chaperone (para 16); record the chaperone discussion and identity (para 23)"
+    },
+    {
+      "id": "BL",
+      "name": "Bailey & Love's Short Practice of Surgery (O'Connell, McCaskie, Sayers, eds)",
+      "version": "28th edition, 2023",
+      "url": "https://www.routledge.com/Bailey--Loves-Short-Practice-of-Surgery---28th-Edition/OConnell-McCaskie-Sayers/p/book/9780367548117",
+      "supports": "Examination technique and clinical signs"
+    },
+    {
+      "id": "NG12",
+      "name": "NICE NG12: Suspected cancer: recognition and referral",
+      "version": "Published 23 June 2015; last updated 15 April 2026",
+      "url": "https://www.nice.org.uk/guidance/ng12",
+      "supports": "Offer quantitative FIT to guide referral in adults with an abdominal mass, a change in bowel habit or iron-deficiency anaemia, or aged 60 and over with anaemia even without iron deficiency (1.3.1); suspected cancer pathway referral if FIT at least 10 micrograms Hb per gram of faeces (1.3.2); if FIT below 10 or not returned, referral should not be delayed if there is strong clinical concern, for example an abdominal mass (1.3.3); suspected cancer pathway referral: diagnosis or ruling out of cancer within 28 days (glossary)"
+    },
+    {
+      "id": "ACPGBI",
+      "name": "Cunningham C et al. ACPGBI Guidelines for the Management of Cancer of the Colon, Rectum and Anus (2017): Diagnosis, Investigations and Screening. Colorectal Dis 2017;19 Suppl 1:9–17",
+      "version": "2017",
+      "url": "https://www.acpgbi.org.uk/resources/354/guidelines_for_the_management_of_cancer_of_the_colon_rectum_and_anus_2017/",
+      "supports": "Suspected colorectal cancer: offer either optical colonoscopy or CT colonography (grade A); stage suspected colonic cancer with CT of the thorax, abdomen and pelvis (grade B); identify synchronous lesions with colonoscopy or CT colonography before resection (grade B)"
+    },
+    {
+      "id": "BSG",
+      "name": "Snook J et al. British Society of Gastroenterology guidelines for the management of iron deficiency anaemia in adults. Gut 2021;70(11):2030–51",
+      "version": "Published online 8 September 2021",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8515119/",
+      "supports": "Men and postmenopausal women with newly diagnosed iron-deficiency anaemia: gastroscopy and colonoscopy as first-line GI investigations; CT colonography if not suitable for colonoscopy (strong)"
+    },
+    {
+      "id": "WSES",
+      "name": "Di Saverio S et al. Diagnosis and treatment of acute appendicitis: 2020 update of the WSES Jerusalem guidelines. World J Emerg Surg 2020;15:27",
+      "version": "2020",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7386163/",
+      "supports": "Non-operative management with antibiotics and, if available, percutaneous drainage for periappendicular abscess where laparoscopic expertise is not available (6.1); laparoscopic approach where expertise is available (6.2); appendiceal neoplasm 3–17% in adults 40 or over with complicated appendicitis (statement 6.4); colonoscopy and interval contrast-enhanced CT after non-operative management if 40 or over (6.4)"
+    }
+  ],
+  "partner": {
+    "opening": "Please examine this patient's abdomen. A chaperone is available. I'll stop you at 6 minutes.",
+    "actorBrief": "You are Mrs Margaret Dunn, 72, a retired teacher. You've felt tired for four months and lost about 6 kg without trying. Your bowels are a bit looser than usual. No pain. You're worried it's something serious but haven't said so to anyone. Accept a chaperone if offered.",
+    "reveals": [
+      {
+        "trigger": "Examines the hands",
+        "finding": "Pale palmar creases; koilonychia. No clubbing.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Examines the eyes and neck",
+        "finding": "Pale conjunctivae. No jaundice. No left supraclavicular node.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Inspects and palpates the abdomen",
+        "finding": "No distension or scars. Mass in the right iliac fossa. Liver and spleen not palpable. Right kidney ballotable and separate from the mass.",
+        "row": "G3"
+      },
+      {
+        "trigger": "Examines the mass",
+        "finding": "6 × 5 cm, firm, irregular, non-tender; can get above it; slightly mobile side to side; doesn't move with respiration; dull to percussion; not pulsatile.",
+        "row": "G4"
+      },
+      {
+        "trigger": "Percusses for shifting dullness and auscultates",
+        "finding": "No shifting dullness. Normal bowel sounds.",
+        "row": "G5"
+      },
+      {
+        "trigger": "Offers a rectal examination, hernial orifices and genitalia",
+        "finding": "Say: \"Thank you; assume these are normal, with brown stool and no blood on the glove.\"",
+        "row": "G5"
+      },
+      {
+        "trigger": "At 6 minutes",
+        "finding": "Say: \"Please stop there and present your findings.\"",
+        "row": "G6"
+      }
+    ],
+    "push": [
+      {
+        "question": "What is your differential for a right iliac fossa mass?",
+        "row": "G6",
+        "expect": "Caecal cancer; appendix mass or abscess; Crohn's disease; ovarian mass; others such as lymphoma or a transplanted kidney."
+      },
+      {
+        "question": "How do you know it isn't the kidney?",
+        "row": "G4",
+        "expect": "Can get above it, not ballotable, kidney felt separately."
+      },
+      {
+        "question": "Does she need a FIT first?",
+        "row": "G7",
+        "expect": "No: she meets NG12 criteria and stays on the suspected cancer pathway; with a palpable mass referral isn't delayed for FIT."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "Instead, a 55-year-old man has five days of right iliac fossa pain, fever and a tender mass. CT shows an appendix abscess.",
+        "safeAnswer": "Antibiotics with percutaneous drainage if available, or laparoscopic surgery where the expertise exists; at 40 or over, colonoscopy and interval CT to exclude a tumour.",
+        "row": "G6"
+      },
+      {
+        "prompt": "Her FIT result comes back at 4 µg Hb/g.",
+        "safeAnswer": "Doesn't change the plan: with a palpable mass, referral and investigation aren't delayed.",
+        "row": "G7"
+      },
+      {
+        "prompt": "She can't tolerate bowel preparation for colonoscopy.",
+        "safeAnswer": "CT colonography is an acceptable alternative.",
+        "row": "G8"
+      }
+    ]
+  }
+}

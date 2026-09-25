@@ -1,0 +1,515 @@
+{
+  "id": "MB-181",
+  "exam": "MRCS-B",
+  "title": "Male urethral catheterisation",
+  "type": "procedural",
+  "header": {
+    "domain": "Applied Skills",
+    "contentArea": "Clinical and procedural skills",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "epic3 (J Hosp Infect, January 2014)",
+      "RCN Catheter care (December 2025)",
+      "Instillagel SmPC (February 2019)",
+      "GMC Intimate examinations and chaperones (updated December 2024)"
+    ],
+    "related": [
+      {
+        "id": "MB-142 Sterile technique",
+        "why": "Gloving and keeping a sterile field"
+      },
+      {
+        "id": "MB-179 Chest drain insertion",
+        "why": "Another bedside procedure with consent and aseptic technique"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Surgical ward, on a male catheterisation manikin",
+    "role": "Core surgical trainee on call",
+    "scenario": "Mr Owen Bartley, 74, had an open inguinal hernia repair this morning. He hasn't passed urine for 9 hours and has lower abdominal discomfort. A bladder scan shows 850 ml. He is uncircumcised. A catheter pack, anaesthetic gel, catheters and a drainage bag are provided.",
+    "task": "Catheterise the manikin, talking the examiner through each step, and answer questions."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Indication, consent and chaperone; aseptic, gel and wait; urine before the balloon; foreskin back; closed system; document.",
+    "trap": "Inflating the balloon before urine flows, or leaving the foreskin retracted.",
+    "firstMove": "\"I'll explain why he needs a catheter, get his consent and offer a chaperone.\""
+  },
+  "flow": [
+    "Indication, consent, chaperone",
+    "Allergies and equipment",
+    "Aseptic preparation",
+    "Anaesthetic gel",
+    "Insert and inflate",
+    "Foreskin",
+    "Drainage and documentation"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "professionalism",
+      "label": "Indication, consent and chaperone",
+      "fail": "Starts without explaining, gaining consent or offering a chaperone.",
+      "pass": "Confirms the indication (acute retention), explains the procedure, gains consent and offers a chaperone.",
+      "high": "Records the chaperone discussion and who was present; checks he knows the catheter will come out as soon as possible.",
+      "source": "GMC"
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-knowledge",
+      "label": "Allergies and equipment",
+      "fail": "Doesn't ask about latex, lidocaine or chlorhexidine allergy.",
+      "pass": "Asks about latex, lidocaine and chlorhexidine allergy; chooses the smallest catheter that will drain, with a 10 ml balloon.",
+      "high": "Knows the anaesthetic gel contains chlorhexidine and lidocaine, and isn't used on bleeding or damaged urethral mucosa.",
+      "source": "EPIC3"
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-skill",
+      "label": "Aseptic technique",
+      "fail": "Touches the catheter tip or the glans with a contaminated glove.",
+      "pass": "Hand hygiene, sterile field and gloves; retracts the foreskin with a swab; cleans the meatus with sterile saline.",
+      "high": "Keeps a non-touch technique throughout, and changes to a second pair of sterile gloves after the gel.",
+      "source": "EPIC3"
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-skill",
+      "label": "Anaesthetic gel",
+      "fail": "Uses no gel, or dry lubricant only.",
+      "borderline": "Instils the gel but starts inserting straight away.",
+      "pass": "Instils 11 ml of lidocaine gel from a sterile single-use syringe, squeezes the glans and waits about 3–5 minutes.",
+      "high": "Explains the wait lets the anaesthetic act and the gel lubricates the whole urethra; follows the manufacturer's timing.",
+      "source": "RCN"
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-skill",
+      "label": "Insertion and balloon",
+      "fail": "Inflates the balloon before urine flows, or pushes on against pain.",
+      "pass": "Penis at 90 degrees; inserts until urine flows, then 2–5 cm further; inflates slowly with sterile water per the manufacturer; stops if painful.",
+      "high": "Asks him to cough or strain gently if resisted at the sphincter; after inflating, withdraws slightly to check it is secure; never inflates without urine.",
+      "source": "RCN"
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-skill",
+      "label": "Foreskin replaced (safety-critical)",
+      "fail": "Leaves the foreskin retracted.",
+      "pass": "Cleans the glans and returns the foreskin over it.",
+      "high": "Explains a retracted foreskin can cause paraphimosis, a urological emergency that can lead to gangrene.",
+      "source": "RCN"
+    },
+    {
+      "id": "G7",
+      "domain": "professionalism",
+      "label": "Closed drainage and documentation",
+      "fail": "Leaves an open or disconnected system, or doesn't record anything.",
+      "pass": "Connects a sterile closed system, bag below the bladder; records residual volume, catheter type, size, batch and expiry, and balloon water.",
+      "high": "Records the indication and removal plan, and plans a trial without catheter.",
+      "source": "RCN"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "candidate",
+        "text": "[Starts opening the pack without explaining or asking about a chaperone.]",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Doesn't ask about allergies.]",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Touches the catheter tip with the glove used to hold the penis.]",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Squirts a little lubricant on the tip; no anaesthetic gel.]",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Pushes the catheter in partway and inflates the balloon before any urine appears.]",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Leaves the foreskin retracted.]",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Leaves the bag on the bed; writes nothing down.]",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "candidate",
+        "text": "Mr Bartley, your bladder is holding 850 ml and you can't pass urine, so I'd like to put in a catheter. May I? Would you like a chaperone?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Any allergy to latex, local anaesthetic or chlorhexidine? I'll use the smallest catheter that will drain, with a 10 ml balloon.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Hand hygiene, sterile gloves and field; retracts the foreskin with a swab; cleans the meatus with sterile saline.]",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Instils 11 ml of anaesthetic gel, squeezes the glans.] I'll wait 3 to 5 minutes for it to work.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Holds the penis at 90 degrees, inserts until urine flows, then 2 to 5 cm further; inflates slowly with sterile water.] Tell me if it hurts.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Cleans the glans and returns the foreskin.]",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Connects a sterile closed bag, hung below the bladder.] I'll record 900 ml drained, the catheter type, size, batch and expiry, and the balloon volume.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "candidate",
+        "text": "Your bladder is holding 850 ml after the operation, which is why it's uncomfortable. A catheter will drain it; I'll aim to remove it as soon as possible. Are you happy for me to go ahead? Would you like a chaperone? [Records the chaperone discussion and who is present.]",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Any allergy to latex, lidocaine or chlorhexidine? This gel contains both, and I wouldn't use it if the urethra were bleeding. Smallest catheter that will drain, 10 ml balloon.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Non-touch technique throughout: retracts the foreskin with a swab, cleans the meatus with saline, touches only the catheter sleeve.]",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Instils all 11 ml, squeezes the glans.] Waiting 3 to 5 minutes lets it numb and lubricate the whole urethra. [Changes to fresh sterile gloves.]",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Penis at 90 degrees; resistance at the sphincter, so asks him to cough; urine flows, then advances 2 to 5 cm further; inflates slowly with sterile water to the manufacturer's volume; withdraws slightly.] No pain? Good.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Cleans the glans, returns the foreskin.] Leaving it back risks paraphimosis, which can compromise the glans.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Closed system, bag below the bladder, off the floor.] I'll record 900 ml residual, indication, catheter details with the sticker, balloon volume, and a plan for a trial without catheter.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G6",
+      "move": "Leaving the foreskin retracted after catheterisation.",
+      "consequence": "Safety-critical: paraphimosis, which can progress to ischaemia of the glans."
+    },
+    {
+      "row": "G5",
+      "move": "Inflating the balloon before urine flows.",
+      "consequence": "Safety-critical: inflating in the prostatic urethra causes pain, bleeding and urethral trauma."
+    },
+    {
+      "row": "G3",
+      "move": "Contaminating the catheter tip or glans.",
+      "consequence": "Introduces bacteria into the bladder: catheter-associated infection."
+    },
+    {
+      "row": "G1",
+      "move": "No chaperone offered, or not recorded.",
+      "consequence": "Breaches GMC guidance for an intimate procedure."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "No urine appears",
+      "line": "I won't inflate. I'll check the position, press gently over the bladder, and if still nothing, remove and reassess."
+    },
+    {
+      "when": "You forget the foreskin",
+      "line": "Before I finish, I'll return his foreskin to prevent paraphimosis."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Catheterisation is aseptic; clean the meatus with sterile saline; lubricant from a sterile single-use container.",
+      "source": "EPIC3"
+    },
+    {
+      "fact": "Smallest gauge that drains; 10 ml balloon in adults.",
+      "source": "EPIC3"
+    },
+    {
+      "fact": "Sterile closed drainage with a sampling port; bag below the bladder, off the floor.",
+      "source": "EPIC3"
+    },
+    {
+      "fact": "Anaesthetic gel: instil 11 ml and wait about 3–5 minutes; when urine flows, advance a further 2–5 cm; then inflate slowly.",
+      "source": "RCN"
+    },
+    {
+      "fact": "Instillagel contains lidocaine and chlorhexidine; avoid with hypersensitivity or bleeding mucosa.",
+      "source": "INST"
+    }
+  ],
+  "recall": {
+    "think": "Urethral trauma, infection, paraphimosis.",
+    "say": "\"Urine first, then the balloon; foreskin back before I finish.\"",
+    "do": [
+      "Consent, chaperone, allergies",
+      "Aseptic, 11 ml gel, wait",
+      "Urine, advance, inflate; foreskin back"
+    ],
+    "numbers": [
+      {
+        "value": "3–5 min",
+        "meaning": "wait after the gel",
+        "source": "RCN"
+      },
+      {
+        "value": "2–5 cm",
+        "meaning": "further after urine flows",
+        "source": "RCN"
+      },
+      {
+        "value": "10 ml",
+        "meaning": "balloon in adults",
+        "source": "EPIC3"
+      }
+    ],
+    "trap": "Inflating as soon as the catheter feels in.",
+    "finish": "Closed system, residual and catheter details recorded, removal plan."
+  },
+  "sources": [
+    {
+      "id": "EPIC3",
+      "name": "Loveday HP, Wilson JA, Pratt RJ, et al. epic3: national evidence-based guidelines for preventing healthcare-associated infections in NHS hospitals in England. J Hosp Infect 2014;86(Suppl 1):S1-S70",
+      "version": "January 2014",
+      "url": "https://doi.org/10.1016/S0195-6701(13)60012-2",
+      "supports": "Short-term urethral catheters: only when clinically indicated, after alternatives and discussion (UC1); document indication, date, type, drainage system and removal plan (UC2); assess latex allergy (UC4); smallest gauge that allows outflow and a 10 ml balloon in adults (UC6); aseptic procedure by trained staff (UC7); clean the meatus with sterile saline (UC8); lubricant from a sterile single-use container (UC9); sterile closed drainage system with a sampling port (UC10); don't break the connection (UC11); bag below the bladder, off the floor (UC15)"
+    },
+    {
+      "id": "RCN",
+      "name": "Royal College of Nursing: Catheter care: RCN guidance for health care professionals (publication code 010 988)",
+      "version": "December 2025 (revised November 2025)",
+      "url": "https://www.rcn.org.uk/-/media/Royal-College-Of-Nursing/Documents/Publications/2025/December/010-988.pdf",
+      "supports": "Male procedure (appendix 3): discuss a chaperone and gain consent; retract the foreskin with a sterile swab, clean the meatus with sterile saline; penis at 90 degrees; insert all 11 ml of anaesthetic gel, squeeze and wait approximately 3 to 5 minutes according to the manufacturer's instructions; change to a second pair of sterile gloves; insert 15 cm to 25 cm; if resistance is felt at the external sphincter, ask the patient to cough or strain gently; when urine begins to flow, advance a further 2 cm to 5 cm; inflate the balloon slowly per the manufacturer, stopping and rechecking the position if there is discomfort, then withdraw slightly and check it remains secure; clean the glans and reduce the foreskin; measure urine drained; document reason, consent, catheter manufacturer, material, batch and expiry, size and length, gel, balloon water volume and drainage system; paraphimosis is a urological emergency that can result in gangrene; allergy risks include latex and lidocaine gels"
+    },
+    {
+      "id": "INST",
+      "name": "Instillagel (lidocaine hydrochloride and chlorhexidine gluconate gel): UK Summary of Product Characteristics (Farco-Pharma)",
+      "version": "Revision of text February 2019",
+      "url": "https://www.clinimed.co.uk/app/uploads/2024/09/uk-spc-instillagel.pdf",
+      "supports": "Catheterisation: instil 6-11 ml, press the glans until the anaesthetic effect begins; for cystoscopy the effect begins after 3.5 minutes; contraindicated with hypersensitivity to amide anaesthetics, chlorhexidine or hydroxybenzoates, and with damaged or bleeding mucosa"
+    },
+    {
+      "id": "GMC",
+      "name": "GMC: Intimate examinations and chaperones",
+      "version": "In effect from 30 January 2024; updated 13 December 2024",
+      "url": "https://www.gmc-uk.org/professional-standards/the-professional-standards/intimate-examinations-and-chaperones/intimate-examinations-and-chaperones",
+      "supports": "Explain the examination (para 8); consent and record it (para 9); offer a chaperone (para 16); record the chaperone discussion and identity (para 23)"
+    },
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format: 9 minutes with 1 minute's reading"
+    }
+  ],
+  "partner": {
+    "opening": "Please catheterise Mr Bartley using this manikin, talking me through what you're doing.",
+    "reveals": [
+      {
+        "trigger": "Asks about consent and a chaperone",
+        "finding": "He agrees and would like a chaperone; a nurse is available.",
+        "row": "G1"
+      },
+      {
+        "trigger": "Asks about allergies",
+        "finding": "No allergies. No bleeding from the urethra.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Resistance at the sphincter",
+        "finding": "Say: \"You feel resistance about 16 cm in.\"",
+        "row": "G5"
+      },
+      {
+        "trigger": "Advances past the resistance",
+        "finding": "Say: \"Clear urine starts to flow.\"",
+        "row": "G5"
+      },
+      {
+        "trigger": "Connects the bag",
+        "finding": "Say: \"900 ml drains.\"",
+        "row": "G7"
+      }
+    ],
+    "push": [
+      {
+        "question": "Why wait after the gel?",
+        "row": "G4",
+        "expect": "It needs about 3–5 minutes to anaesthetise; follow the manufacturer's timing."
+      },
+      {
+        "question": "When do you inflate the balloon?",
+        "row": "G5",
+        "expect": "Only after urine flows and the catheter is advanced further; slowly, stopping if painful."
+      },
+      {
+        "question": "What must you do before you leave?",
+        "row": "G6",
+        "expect": "Return the foreskin to prevent paraphimosis."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "He says it hurts as you start inflating.",
+        "safeAnswer": "Stop, deflate, and advance further or reposition before trying again.",
+        "row": "G5"
+      },
+      {
+        "prompt": "You can't pass the catheter beyond the prostate after two gentle attempts.",
+        "safeAnswer": "Stop; don't force it. Call the senior or urology team.",
+        "row": "G5"
+      },
+      {
+        "prompt": "He tells you he reacted to chlorhexidine at the dentist.",
+        "safeAnswer": "Don't use chlorhexidine-containing gel: use a sterile lubricant or anaesthetic gel without it.",
+        "row": "G2"
+      }
+    ]
+  }
+}

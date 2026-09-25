@@ -1,0 +1,582 @@
+{
+  "id": "MB-170",
+  "exam": "MRCS-B",
+  "title": "Groin hernia examination",
+  "type": "examination",
+  "header": {
+    "domain": "Applied Skills",
+    "contentArea": "Clinical and procedural skills",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "signalMinutes": 6,
+    "guidelineVersions": [
+      "HerniaSurge international guideline (2018)",
+      "HerniaSurge update (BJS Open, 2023)",
+      "GMC intimate examinations and chaperones"
+    ],
+    "related": [
+      {
+        "id": "MB-156 Scrotal examination",
+        "why": "Getting above a scrotal swelling"
+      },
+      {
+        "id": "MB-169 Varicose veins examination",
+        "why": "A saphena varix can mimic a femoral hernia"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "General surgery outpatient clinic",
+    "role": "Core surgical trainee",
+    "scenario": "Mr Derek Fowler, 58, a delivery driver, has noticed a lump in his right groin for four months. It aches after lifting and goes away when he lies down. A chaperone is available.",
+    "task": "Examine his groins. You will be stopped at 6 minutes to present your findings and answer questions."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Standing first: find the pubic tubercle, cough impulse; then lying: he reduces it, deep ring, scrotum, other side.",
+    "trap": "Examining lying only, when the hernia has already gone back.",
+    "firstMove": "\"I'd like to offer you a chaperone. Could you stand for me?\""
+  },
+  "flow": [
+    "Consent and chaperone",
+    "Inspect standing; cough",
+    "Pubic tubercle",
+    "Lying: reduce, deep ring test",
+    "Scrotum, other side, abdomen",
+    "At 6 minutes: present"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "professionalism",
+      "label": "Consent and chaperone",
+      "fail": "Examines the groin and scrotum without offering a chaperone.",
+      "pass": "Explains the examination, gains consent, offers a chaperone, and exposes from the umbilicus to the thighs.",
+      "high": "Asks about pain first, tells him he can stop at any time, and records the chaperone's name.",
+      "source": "GMC"
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-skill",
+      "label": "Standing, then lying",
+      "fail": "Examines him lying down only.",
+      "pass": "Inspects both groins and the scrotum standing; asks him to cough and watches both sides.",
+      "high": "Explains that a hernia may reduce when lying, so standing comes first; checks both sides for a second hernia."
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-skill",
+      "label": "Relation to the pubic tubercle",
+      "fail": "Doesn't find the pubic tubercle.",
+      "pass": "Finds the pubic tubercle: inguinal hernias lie above and medial to it, femoral hernias below and lateral.",
+      "high": "Adds that this distinction is often hard, especially in obese women, and asks for ultrasound if unsure.",
+      "source": "HS18"
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-skill",
+      "label": "Cough impulse and reducibility",
+      "fail": "Pushes hard to reduce a tender lump.",
+      "borderline": "Reduces it but doesn't comment on tenderness, the finding that decides urgency.",
+      "pass": "Feels for a cough impulse, then lying asks him to reduce it himself, noting whether it reduces and whether it is tender.",
+      "high": "Checks whether he can get above it in the scrotum: if not, it's an inguinoscrotal hernia."
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-skill",
+      "label": "Deep ring occlusion test",
+      "fail": "Names the hernia direct or indirect with certainty from the test.",
+      "pass": "After reduction, presses over the deep ring, above the midpoint of the inguinal ligament, and asks him to cough: controlled suggests indirect.",
+      "high": "States its limits: examination often misclassifies direct and indirect hernias, and the answer doesn't change the repair.",
+      "source": "BL"
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-skill",
+      "label": "Scrotum, other side and abdomen",
+      "fail": "Doesn't examine the scrotum or the other groin.",
+      "pass": "Examines both testes, the other groin, and the abdomen for scars, masses and distension.",
+      "high": "Asks about chronic cough, constipation and straining, which raise abdominal pressure and affect the plan."
+    },
+    {
+      "id": "G7",
+      "domain": "communication",
+      "label": "Presentation and plan",
+      "fail": "Presents 'a lump in the groin' without its relation to the pubic tubercle.",
+      "pass": "Presents a reducible, non-tender right inguinoscrotal hernia and offers mesh repair because it is symptomatic.",
+      "high": "Incarceration risk under 3% a year, so watchful waiting suits only minimal symptoms; HerniaSurge 2023 favours laparo-endoscopic repair for primary unilateral hernias where expertise exists.",
+      "source": "HS18"
+    },
+    {
+      "id": "G8",
+      "domain": "clinical-knowledge",
+      "label": "Femoral or strangulated hernia (safety-critical)",
+      "fail": "Books a routine clinic for a femoral hernia or a tender, irreducible lump.",
+      "pass": "Femoral hernia: timely repair, not watchful waiting. Tender, irreducible lump with vomiting: emergency surgical review and repair.",
+      "high": "Explains why: after emergency femoral repair about 23% need bowel resection, against about 5% for inguinal.",
+      "source": "HS18"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "candidate",
+        "text": "Could you lie on the couch and drop your trousers? [No chaperone offered.]",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          },
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Feels the groin.] There's a lump. [Doesn't find the pubic tubercle.]",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Presses hard to push it back in.] It's gone. [Presses over the ring.] Controlled, so it's definitely indirect.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          },
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Thank you, that's all. [Doesn't examine the scrotum or the other side.]",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop. Your findings?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "A lump in the right groin, probably a hernia.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "A 72-year-old woman has a tender, irreducible lump below and lateral to the pubic tubercle, and she's vomiting. What do you do?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd book her into the next hernia clinic.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "candidate",
+        "text": "Hello, I'm Dr Osei, one of the surgical trainees. Can I check your name and date of birth? I'd like to examine your groins and scrotum. I'd like to offer you a chaperone. [Consent; chaperone present; cleans hands; exposes umbilicus to thighs.]",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Could you stand for me? [Inspects both groins and scrotum.] Now a cough, please. [Watches both sides.]",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Finds the pubic tubercle.] The lump is above and medial to it, so it's inguinal.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Cough impulse present.] Could you lie down and push it back in yourself? Is it sore? [It reduces; non-tender.]",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Presses over the deep ring, above the midpoint of the inguinal ligament.] Cough, please. It stays in, which suggests indirect.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Both testes; left groin; abdomen.] Thank you. [Cleans hands; records the chaperone.]",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop. Your findings?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Mr Fowler has a reducible, non-tender right inguinoscrotal hernia with a cough impulse, above and medial to the pubic tubercle. It's controlled by deep ring pressure, suggesting indirect. It's symptomatic, so I'd offer a mesh repair.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "A 72-year-old woman has a tender, irreducible lump below and lateral to the pubic tubercle, and she's vomiting. What do you do?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "That's likely a strangulated femoral hernia: an emergency. I'd resuscitate her, call my registrar and arrange emergency repair. Even an uncomplicated femoral hernia needs timely repair.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "candidate",
+        "text": "Hello, I'm Dr Osei, one of the surgical trainees. Can I check your name and date of birth? Is the lump sore now? I'd like a chaperone present; you can ask me to stop at any time. [Cleans hands; records the chaperone's name.]",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'll look while you're standing, because a hernia can slip back when you lie down. [Inspects both sides; cough.] Nothing on the left.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Pubic tubercle.] Above and medial, so inguinal. That distinction can be hard, especially in obese women, so I'd use ultrasound if unsure.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[He reduces it lying; non-tender.] I can't get above it in the scrotum, so it's inguinoscrotal.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Deep ring occlusion.] It's controlled, suggesting indirect, but examination often gets direct and indirect wrong, and it doesn't change the repair.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Testes; left groin; abdomen.] Do you have a chronic cough or constipation? [Cleans hands.]",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop. Your findings?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Mr Fowler has a symptomatic, reducible, non-tender right inguinoscrotal hernia, probably indirect. The left side is normal. The incarceration risk is under 3% a year, but his is symptomatic, so I'd offer a mesh repair; for a primary unilateral hernia, the 2023 HerniaSurge update favours laparo-endoscopic repair where the expertise exists.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "A 72-year-old woman has a tender, irreducible lump below and lateral to the pubic tubercle, and she's vomiting. What do you do?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "A strangulated femoral hernia until proven otherwise. I'd resuscitate her, call my registrar and book emergency repair. Femoral hernias strangulate more often; after emergency femoral repair about 23% need a bowel resection, against about 5% for inguinal.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G2",
+      "move": "Examining lying only.",
+      "consequence": "The hernia has reduced, so it is missed or misclassified."
+    },
+    {
+      "row": "G3",
+      "move": "Not finding the pubic tubercle.",
+      "consequence": "A femoral hernia can be called inguinal, and its urgency is missed."
+    },
+    {
+      "row": "G6",
+      "move": "Leaving out the scrotum and the other groin.",
+      "consequence": "Misses the inguinoscrotal extent and a second hernia."
+    },
+    {
+      "row": "G8",
+      "move": "Routine referral for a tender, irreducible groin lump.",
+      "consequence": "Safety-critical: strangulated bowel becomes non-viable; this needs emergency repair."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You started with him lying down",
+      "line": "Could you stand up for me? A hernia can go back when you lie down."
+    },
+    {
+      "when": "You're not sure if it's inguinal or femoral",
+      "line": "I can't be certain of its relation to the pubic tubercle, so I'd arrange an ultrasound, and treat it as femoral until shown otherwise."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Inguinal hernias lie above and medial to the pubic tubercle; femoral below and lateral. The distinction is often difficult.",
+      "source": "HS18"
+    },
+    {
+      "fact": "Inguinal hernia incarceration risk is under 3% a year. Symptomatic: mesh repair. Minimal or no symptoms in men: watchful waiting is an option.",
+      "source": "HS18"
+    },
+    {
+      "fact": "Femoral hernias have a higher strangulation risk: timely repair even with vague or no symptoms.",
+      "source": "HS18"
+    },
+    {
+      "fact": "Femoral hernias and groin hernias in women: prompt referral, as femoral hernias carry a high strangulation risk.",
+      "source": "HS18"
+    },
+    {
+      "fact": "Offer a chaperone, explain, gain consent, and record the discussion.",
+      "source": "GMC"
+    },
+    {
+      "fact": "Primary unilateral inguinal hernia: the 2023 update favours laparo-endoscopic repair where expertise exists.",
+      "source": "HS23"
+    }
+  ],
+  "recall": {
+    "think": "Is it tender and irreducible, and is it femoral?",
+    "say": "\"I'd like to offer you a chaperone. Could you stand for me?\"",
+    "do": [
+      "Stand: cough, both sides",
+      "Find the pubic tubercle",
+      "He reduces it; scrotum; other side"
+    ],
+    "numbers": [
+      {
+        "value": "< 3% a year",
+        "meaning": "inguinal hernia incarceration risk",
+        "source": "HS18"
+      },
+      {
+        "value": "23% vs 5%",
+        "meaning": "bowel resection: emergency femoral vs inguinal repair",
+        "source": "HS18"
+      },
+      {
+        "value": "6 min",
+        "meaning": "signal to stop and present",
+        "source": "ICBSE"
+      }
+    ],
+    "trap": "Deep ring occlusion doesn't reliably tell direct from indirect.",
+    "finish": "Symptomatic inguinal: mesh repair. Femoral: timely repair. Strangulated: emergency."
+  },
+  "sources": [
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "At every station: introduce yourself, explain the task, confirm identity, obtain consent, clean hands before and after patient contact; 6-minute signal in examination stations"
+    },
+    {
+      "id": "GMC",
+      "name": "GMC: Intimate examinations and chaperones",
+      "version": "In effect from 30 January 2024; updated 13 December 2024",
+      "url": "https://www.gmc-uk.org/professional-standards/the-professional-standards/intimate-examinations-and-chaperones/intimate-examinations-and-chaperones",
+      "supports": "Explain the examination (para 8); consent and record it (para 9); offer a chaperone (para 16); record the chaperone discussion and identity (para 23)"
+    },
+    {
+      "id": "BL",
+      "name": "Bailey & Love's Short Practice of Surgery (O'Connell, McCaskie, Sayers, eds)",
+      "version": "28th edition, 2023",
+      "url": "https://www.routledge.com/Bailey--Loves-Short-Practice-of-Surgery---28th-Edition/OConnell-McCaskie-Sayers/p/book/9780367548117",
+      "supports": "Examination technique and clinical signs"
+    },
+    {
+      "id": "HS18",
+      "name": "HerniaSurge Group. International guidelines for groin hernia management. Hernia 2018;22(1):1–165",
+      "version": "Published January 2018",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5809582/",
+      "supports": "Inguinal hernias lie superomedial and femoral hernias inferolateral to the pubic tubercle, but the distinction is often difficult, particularly in obese women; about 95% of inguinal hernias are diagnosed by examination; ultrasound if uncertain; incarceration risk of an inguinal hernia less than 3% a year; symptomatic inguinal hernias: mesh repair recommended; watchful waiting for asymptomatic or minimally symptomatic men; femoral hernias carry a higher risk of incarceration and strangulation: timely repair even if symptoms are vague or absent; emergency femoral repair: bowel resection in 23% versus about 5% for emergency inguinal repair; acutely incarcerated or strangulated hernias repaired emergently (KQ21.d); in women, femoral hernias are relatively common and may be missed at open inguinal repair"
+    },
+    {
+      "id": "HS23",
+      "name": "Stabilini C, et al. Update of the international HerniaSurge guidelines for groin hernia management. BJS Open 2023;7(5):zrad080",
+      "version": "2023",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10588975/",
+      "supports": "For primary unilateral inguinal hernias, laparo-endoscopic repair is favoured over open repair (Lichtenstein) where expertise and resources are available, because of less postoperative pain and chronic pain"
+    }
+  ],
+  "partner": {
+    "opening": "Please examine this patient's groins. A chaperone is available. I'll stop you at 6 minutes.",
+    "actorBrief": "You are Mr Derek Fowler, 58, a delivery driver. A lump in your right groin for four months aches after lifting and goes away when you lie down. It is not painful now. No vomiting, and your bowels are normal. You'd like it fixed. Reduce the lump when asked. Accept a chaperone.",
+    "reveals": [
+      {
+        "trigger": "Inspects standing",
+        "finding": "5 cm swelling in the right groin, extending into the upper scrotum. Left groin normal. Skin normal.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Asks him to cough while standing",
+        "finding": "Visible and palpable cough impulse on the right; none on the left.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Locates the pubic tubercle",
+        "finding": "The swelling lies above and medial to the pubic tubercle.",
+        "row": "G3"
+      },
+      {
+        "trigger": "Asks him to reduce it lying, checks tenderness and gets above it",
+        "finding": "He reduces it easily. Non-tender. You cannot get above it in the scrotum.",
+        "row": "G4"
+      },
+      {
+        "trigger": "Performs deep ring occlusion",
+        "finding": "Controlled with pressure over the deep ring; reappears when pressure is released.",
+        "row": "G5"
+      },
+      {
+        "trigger": "Examines the scrotum, other groin and abdomen",
+        "finding": "Both testes normal and separate from the swelling. Left groin normal. Abdomen soft, no scars or masses.",
+        "row": "G6"
+      },
+      {
+        "trigger": "At 6 minutes",
+        "finding": "Say: \"Please stop there and present your findings.\"",
+        "row": "G7"
+      }
+    ],
+    "push": [
+      {
+        "question": "How do you tell an inguinal from a femoral hernia?",
+        "row": "G3",
+        "expect": "Inguinal above and medial to the pubic tubercle; femoral below and lateral. Often difficult: ultrasound if unsure."
+      },
+      {
+        "question": "Does it matter whether it's direct or indirect?",
+        "row": "G5",
+        "expect": "Examination is unreliable and it doesn't change the repair."
+      },
+      {
+        "question": "What would you offer him?",
+        "row": "G7",
+        "expect": "Symptomatic, so mesh repair, open or laparoscopic."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "The lump is tender, red and irreducible, and he has vomited twice.",
+        "safeAnswer": "Strangulated or obstructed hernia: nil by mouth, IV access, bloods, fluids, senior review and emergency repair.",
+        "row": "G8"
+      },
+      {
+        "prompt": "He says it hardly bothers him and he'd rather not have an operation.",
+        "safeAnswer": "Watchful waiting is an option for men with minimal symptoms; warn him about symptoms of incarceration.",
+        "row": "G7"
+      },
+      {
+        "prompt": "The swelling is soft and bluish, with a thrill on coughing, and disappears when he lies down.",
+        "safeAnswer": "Saphena varix: look for varicose veins; duplex if unsure.",
+        "row": "G3"
+      },
+      {
+        "prompt": "He declines a chaperone.",
+        "safeAnswer": "Respect his choice and record it; if you're not comfortable proceeding, offer to rearrange.",
+        "row": "G1"
+      }
+    ]
+  }
+}

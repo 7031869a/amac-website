@@ -1,0 +1,604 @@
+{
+  "id": "MB-185",
+  "exam": "MRCS-B",
+  "title": "Ruptured abdominal aortic aneurysm",
+  "type": "applied-knowledge",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "Applied surgical science and critical care",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "NICE NG156 (Mar 2020)",
+      "ESVS AAA guideline (Jan 2024)",
+      "NHS AAA screening programme overview (updated May 2026)"
+    ],
+    "related": [
+      {
+        "id": "MB-164 Major trauma",
+        "why": "Haemorrhage control and restrictive resuscitation"
+      },
+      {
+        "id": "MB-187 Acute limb ischaemia",
+        "why": "Another vascular emergency needing a regional vascular service"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Emergency department of a district general hospital without on-site vascular surgery",
+    "role": "Core surgical trainee on call",
+    "scenario": "Mr Graham Pollard, 74, collapsed at home with sudden severe back and left loin pain. He smokes and has hypertension. He is pale and sweaty but talking. Pulse 118, BP 84/50. He has a 5.1 cm abdominal aortic aneurysm, measured on a surveillance scan 4 months ago.",
+    "task": "The examiner will ask you about your assessment and management."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Suspected rupture: confirm quickly, call the vascular centre early, keep him conscious, not normotensive, and move him fast.",
+    "trap": "Calling it renal colic, or pouring in crystalloid to 'normalise' his blood pressure.",
+    "firstMove": "\"This is a ruptured aneurysm until proven otherwise. ABCDE, and I'll call my senior.\""
+  },
+  "flow": [
+    "Recognise",
+    "Resuscitate: major haemorrhage protocol",
+    "Permissive hypotension",
+    "Bedside ultrasound; call vascular centre",
+    "Transfer within 30 minutes",
+    "EVAR or open repair",
+    "After repair"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-knowledge",
+      "label": "Recognition",
+      "fail": "Diagnoses renal colic or a musculoskeletal back pain.",
+      "pass": "Suspects rupture: new back or abdominal pain with collapse, in a man over 60 who smokes, with hypertension and a known AAA.",
+      "high": "Knows ruptures often mimic renal colic, and that a small aneurysm under surveillance can still rupture.",
+      "source": "NG156"
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-skill",
+      "label": "Resuscitation and blood",
+      "fail": "Gives litres of crystalloid and forgets blood.",
+      "pass": "ABCDE, oxygen, two large-bore cannulas, crossmatch; activates the major haemorrhage protocol; senior surgeon and anaesthetist informed.",
+      "high": "Uses blood and products rather than crystalloid, with plasma to red cells close to 1:1, as ESVS suggests.",
+      "source": "ESVS24"
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "Permissive hypotension (safety-critical)",
+      "fail": "Aims for a normal blood pressure.",
+      "pass": "Restrictive volume resuscitation: tolerates a low pressure while he stays conscious and talking.",
+      "high": "Gives the ESVS target: conscious, systolic 70–90 mmHg; knows IMPROVE data suggest 70 may be too low in ruptured AAA.",
+      "source": "ESVS24"
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-skill",
+      "label": "Imaging",
+      "fail": "Sends him round the department for a CT before calling anyone.",
+      "pass": "Immediate bedside ultrasound; discusses immediately with the regional vascular service, even if ultrasound is unavailable or non-diagnostic.",
+      "high": "CT angiography only if the vascular team wants it for planning and he is stable enough; the unstable may go straight to theatre.",
+      "source": "NG156"
+    },
+    {
+      "id": "G5",
+      "domain": "professionalism",
+      "label": "Transfer decision and timing",
+      "fail": "Delays transfer to calculate a risk score or complete tests.",
+      "pass": "Once accepted, he leaves within 30 minutes of the transfer decision, with the transfer protocol.",
+      "high": "Knows no single sign or score decides transfer; cardiac arrest or persistent loss of consciousness means negligible chance of surviving repair.",
+      "source": "NG156"
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-knowledge",
+      "label": "EVAR or open repair",
+      "fail": "Can't name the repair options.",
+      "pass": "Consider EVAR or open repair for ruptured infrarenal AAA; open if EVAR is anatomically unsuitable.",
+      "high": "EVAR benefits most, especially men over 70 and women of any age; open may suit men under 70; EVAR under local anaesthetic.",
+      "source": "NG156"
+    },
+    {
+      "id": "G7",
+      "domain": "clinical-knowledge",
+      "label": "Complications after repair",
+      "fail": "Thinks the job ends in theatre.",
+      "pass": "Watches for abdominal compartment syndrome if he doesn't improve after repair.",
+      "high": "Also colonic ischaemia (bloody diarrhoea, acidosis): flexible sigmoidoscopy to confirm.",
+      "source": "ESVS24"
+    },
+    {
+      "id": "G8",
+      "domain": "professionalism",
+      "label": "Communication and ceilings of care",
+      "fail": "Doesn't involve the family or discuss what happens if he isn't a candidate.",
+      "pass": "Tells him and his family what is happening; if the vascular team declines repair, plans end-of-life care.",
+      "high": "Makes the decision with the vascular consultant, not on a single sign; documents the plan and times."
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "What do you think is going on?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Loin pain radiating to the groin: renal colic. I'd give him analgesia and send a urine dip.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "His BP is 84/50."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Two litres of saline stat to get his pressure back to normal.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          },
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "And imaging?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "A CT KUB first, then I'll ring vascular with the result.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The vascular centre accepts him."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd work out his Glasgow Aneurysm Score first to see if he's worth sending.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How will they fix it?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'm not sure; they'll open him up, and then he's fixed.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          },
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "His wife has arrived."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'll let the vascular centre talk to her.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "examiner",
+        "text": "What do you think is going on?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "A ruptured aneurysm until proven otherwise: back pain and collapse, known AAA, smoker, hypertensive, over 60.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "His BP is 84/50."
+      },
+      {
+        "speaker": "candidate",
+        "text": "ABCDE, oxygen, two large-bore cannulas, crossmatch, and activate the major haemorrhage protocol. I'd tell my registrar and the anaesthetist.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd restrict fluids and accept a low pressure as long as he stays conscious and talking.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "And imaging?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "A bedside ultrasound now, and I'd discuss him immediately with the regional vascular service.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The vascular centre accepts him."
+      },
+      {
+        "speaker": "candidate",
+        "text": "He should leave within 30 minutes of that decision, following the transfer protocol.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How will they fix it?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "EVAR or open repair, depending on his anatomy; open if EVAR isn't suitable.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Afterwards they'll watch for abdominal compartment syndrome if he doesn't improve.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd explain to him and his family what's happening. If the vascular team decided not to operate, we'd plan end-of-life care.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "examiner",
+        "text": "What do you think is going on?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Ruptured AAA until proven otherwise. Back pain and collapse in a hypertensive smoker with a known aneurysm. It often mimics renal colic, and 5.1 cm doesn't mean it can't rupture.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "His BP is 84/50."
+      },
+      {
+        "speaker": "candidate",
+        "text": "ABCDE, high-flow oxygen, two large-bore cannulas, crossmatch and major haemorrhage protocol. Blood and plasma close to 1:1 rather than crystalloid. Registrar, consultant and anaesthetist now; nothing like an arterial line should delay him.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Permissive hypotension: he's talking, so his brain is perfused. ESVS suggests keeping him conscious with a systolic of 70 to 90; in an older man I wouldn't let it drift below 70.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "And imaging?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Bedside ultrasound in resus, and I'm phoning the vascular centre at the same time. CT angiography only if they want it for planning and he's stable enough; if not, he goes straight to their theatre.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The vascular centre accepts him."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Out of the door within 30 minutes of that decision. No risk score decides this. It would only change if he arrested or lost consciousness and stayed that way.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How will they fix it?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "For an infrarenal rupture, EVAR gives most benefit, especially in men over 70 like him, and can be done under local anaesthetic. Open repair if his anatomy isn't suitable.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "After repair, abdominal compartment syndrome if he isn't improving, and colonic ischaemia: bloody diarrhoea means a flexible sigmoidoscopy.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd tell him and his wife honestly how serious this is. The repair decision is the vascular consultant's, and I'd document times and decisions.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G3",
+      "move": "Running in crystalloid to restore a normal blood pressure.",
+      "consequence": "Safety-critical: raising the pressure and diluting clotting factors can restart bleeding from the contained rupture."
+    },
+    {
+      "row": "G4",
+      "move": "Sending him for CT before speaking to the vascular centre.",
+      "consequence": "Safety-critical: an unstable patient may arrest in the scanner, and transfer is delayed."
+    },
+    {
+      "row": "G5",
+      "move": "Using a risk score to decide whether he is worth transferring.",
+      "consequence": "NICE says no score determines transfer and scores must not decide on repair; it delays transfer and may deny a survivable repair."
+    },
+    {
+      "row": "G1",
+      "move": "Diagnosing renal colic in an older man with loin pain and hypotension.",
+      "consequence": "He is sent to the wrong pathway while he bleeds."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You gave a fluid bolus by reflex",
+      "line": "I'd stop there: permissive hypotension, blood not crystalloid, as long as he's talking."
+    },
+    {
+      "when": "You can't recall the EVAR criteria",
+      "line": "That's the vascular centre's decision; my job is to get him there within 30 minutes."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Suspect rupture with new abdominal or back pain, collapse or loss of consciousness; more likely with a known AAA, age over 60, smoking or hypertension.",
+      "source": "NG156"
+    },
+    {
+      "fact": "Accepted for transfer: leave within 30 minutes. Consider permissive hypotension during transfer.",
+      "source": "NG156"
+    },
+    {
+      "fact": "Permissive hypotension: conscious and able to speak, systolic 70–90 mmHg. Plasma to red cells close to 1:1.",
+      "source": "ESVS24"
+    },
+    {
+      "fact": "Screening: men in the year they turn 65.",
+      "source": "AAASP"
+    },
+    {
+      "fact": "Refer 5.5 cm or more within 2 weeks; 3.0–5.4 cm within 12 weeks. Elective repair: consider if symptomatic, 5.5 cm or more, or over 4.0 cm and grown over 1 cm in a year.",
+      "source": "NG156"
+    },
+    {
+      "fact": "Suspected colonic ischaemia after repair: flexible sigmoidoscopy.",
+      "source": "ESVS24"
+    }
+  ],
+  "recall": {
+    "think": "Exsanguination from a contained rupture.",
+    "say": "\"Ruptured AAA until proven otherwise: call the vascular centre now.\"",
+    "do": [
+      "Major haemorrhage protocol; blood, not crystalloid",
+      "Bedside ultrasound; call vascular centre",
+      "Transfer fast"
+    ],
+    "numbers": [
+      {
+        "value": "30 min",
+        "meaning": "leave the referring unit after the transfer decision",
+        "source": "NG156"
+      },
+      {
+        "value": "70–90 mmHg",
+        "meaning": "systolic target, patient conscious",
+        "source": "ESVS24"
+      },
+      {
+        "value": "5.5 cm",
+        "meaning": "refer within 2 weeks; consider elective repair",
+        "source": "NG156"
+      }
+    ],
+    "trap": "'Renal colic' in an older hypotensive man.",
+    "finish": "EVAR, or open repair if EVAR is unsuitable."
+  },
+  "sources": [
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format: 9 minutes with 1 minute's reading; examiner-led questioning in applied knowledge stations"
+    },
+    {
+      "id": "NG156",
+      "name": "NICE NG156: Abdominal aortic aneurysm: diagnosis and management",
+      "version": "Published 19 March 2020",
+      "url": "https://www.nice.org.uk/guidance/ng156",
+      "supports": "Refer AAA 5.5 cm or larger to a regional vascular service to be seen within 2 weeks; 3.0-5.4 cm within 12 weeks (1.1.5, for AAAs found on ultrasound); think of rupture with new abdominal and/or back pain, cardiovascular collapse or loss of consciousness, more likely with known AAA, age over 60, smoking or hypertension (1.1.7); immediate bedside aortic ultrasound, and discuss immediately with a regional vascular service if it shows an AAA or is unavailable or non-diagnostic (1.1.9); consider CT angiography for suspected rupture being evaluated for repair (1.1.12); no single symptom, sign or risk tool determines transfer (1.3.1); cardiac arrest and/or persistent loss of consciousness: negligible chance of surviving repair (1.3.2); care of dying adults if repair inappropriate (1.3.3); leave the referring unit within 30 minutes of the decision to transfer (1.3.4); consider permissive hypotension during transfer (1.3.6); no scoring systems to decide on repair (1.4.4-1.4.5); unruptured: consider repair if symptomatic, 5.5 cm or more, or over 4.0 cm and grown over 1 cm in a year (1.5.1); ruptured infrarenal: consider EVAR or open repair; EVAR more benefit for most, especially men over 70 and women of any age; open likely better for men under 70 (1.6.1); open if standard EVAR unsuitable (1.6.2); consider local anaesthetic alone for EVAR (1.6.4); abdominal compartment syndrome after repair (1.6.5-1.6.6)"
+    },
+    {
+      "id": "ESVS24",
+      "name": "Wanhainen A, Van Herzeele I, Bastos Goncalves F, et al. European Society for Vascular Surgery (ESVS) 2024 Clinical Practice Guidelines on the Management of Abdominal Aorto-Iliac Artery Aneurysms. Eur J Vasc Endovasc Surg 2024;67:192-331",
+      "version": "Published online 23 January 2024",
+      "url": "https://doi.org/10.1016/j.ejvs.2023.11.002",
+      "supports": "Prompt CT angiography for suspected rupture (Rec 70); most who reach hospital alive are stable enough for CTA; the too unstable may go straight to theatre; haemodynamic instability = loss or reduced consciousness or systolic BP under 80 mmHg; permissive hypotension recommended (Rec 72), e.g. restricting fluids, with consciousness and the ability to speak as markers of cerebral perfusion; text: patient conscious with a target systolic 70-90 mmHg, and IMPROVE suggested 70 mmHg may be too low; resuscitate with blood and products, plasma to red cells close to 1:1; local anaesthesia for EVAR (Rec 73); EVAR first option for rupture with suitable anatomy (Rec 80); monitor intra-abdominal pressure after repair for abdominal compartment syndrome (Rec 81) and decompressive laparotomy if it develops (Rec 82); ureteric colic and myocardial infarction are the most common misdiagnoses; flexible sigmoidoscopy if colonic ischaemia suspected after repair (Rec 84)"
+    },
+    {
+      "id": "AAASP",
+      "name": "NHS England: Abdominal aortic aneurysm screening programme overview (GOV.UK)",
+      "version": "Published 2 January 2015; last updated 18 May 2026",
+      "url": "https://www.gov.uk/guidance/abdominal-aortic-aneurysm-screening-programme-overview",
+      "supports": "Screening offered to men in the screening year they turn 65, by ultrasound; not routinely offered to women or men under 65; men over 65 not invited can self-refer"
+    }
+  ],
+  "media": [
+    {
+      "id": "us-aaa",
+      "task": "Say what the bedside scan shows and what you would do next",
+      "description": "Transverse bedside ultrasound of the abdominal aorta showing an aneurysm of about 5-6 cm with calipers; optional",
+      "required": false,
+      "status": "needed"
+    }
+  ],
+  "partner": {
+    "opening": "Mr Pollard has just arrived by ambulance. What do you think is going on, and how would you manage him?",
+    "reveals": [
+      {
+        "trigger": "Asks about the abdomen",
+        "finding": "Tender, pulsatile, expansile mass in the epigastrium; left loin bruising. Femoral pulses present.",
+        "row": "G1"
+      },
+      {
+        "trigger": "Asks for bloods and a gas",
+        "finding": "Hb 92 g/L, lactate 4.1 mmol/L, creatinine 128 µmol/L. Crossmatch sent.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Asks for a bedside ultrasound",
+        "finding": "Infrarenal aorta 5.6 cm; free fluid can't be assessed. The vascular centre, 40 minutes away, accepts him.",
+        "row": "G4"
+      },
+      {
+        "trigger": "Asks about the response to treatment",
+        "finding": "After 2 units of red cells and 2 of plasma: BP 92/58, pulse 108, still talking.",
+        "row": "G3"
+      }
+    ],
+    "push": [
+      {
+        "question": "What blood pressure are you aiming for?",
+        "row": "G3",
+        "expect": "A restrictive approach: accept a low pressure while he stays conscious and talking; ESVS suggests systolic 70–90 mmHg."
+      },
+      {
+        "question": "How quickly should he leave, and what would stop you sending him?",
+        "row": "G5",
+        "expect": "Within 30 minutes of the decision; no score decides; cardiac arrest or persistent loss of consciousness means negligible survival."
+      },
+      {
+        "question": "Which repair would you expect, and why?",
+        "row": "G6",
+        "expect": "EVAR or open; EVAR gives most benefit, especially men over 70 and women; open if EVAR unsuitable."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "His wife asks why the aneurysm wasn't fixed at 5.1 cm.",
+        "safeAnswer": "Explain honestly that elective repair is usually considered at 5.5 cm, or earlier if it grows fast or causes symptoms, and that smaller ones can still rupture.",
+        "row": "G8"
+      },
+      {
+        "prompt": "He becomes unresponsive and pulseless before transfer.",
+        "safeAnswer": "ALS; if he arrests with a confirmed rupture, his chance of surviving repair is negligible; discuss with the vascular consultant and family.",
+        "row": "G5"
+      },
+      {
+        "prompt": "On day 1 after repair his bladder pressure is high, he is oliguric and hard to ventilate.",
+        "safeAnswer": "Abdominal compartment syndrome: tell the vascular team now; decompression may be needed.",
+        "row": "G7"
+      }
+    ]
+  }
+}

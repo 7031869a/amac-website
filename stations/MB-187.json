@@ -1,0 +1,578 @@
+{
+  "id": "MB-187",
+  "exam": "MRCS-B",
+  "title": "Acute limb ischaemia",
+  "type": "applied-knowledge",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "Applied surgical science and critical care",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "ESVS acute limb ischaemia guideline (Feb 2020)",
+      "Rutherford classification (J Vasc Surg 1997)",
+      "UKKA acute hyperkalaemia (updated Jul 2026)"
+    ],
+    "related": [
+      {
+        "id": "MB-099 Acute compartment syndrome",
+        "why": "Compartment syndrome after reperfusion and fasciotomy"
+      },
+      {
+        "id": "MB-166 Hyperkalaemia",
+        "why": "Potassium release on reperfusion"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Emergency department",
+    "role": "Core surgical trainee on call",
+    "scenario": "Mrs Brenda Shaw, 78, developed sudden severe pain in her right leg 4 hours ago. She has atrial fibrillation; her warfarin was stopped after a fall last year. She has never had leg pain on walking. The right foot is pale and cold.",
+    "task": "The examiner will ask you about your assessment and management, giving findings as you ask."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Acutely ischaemic leg: grade it by sensation, movement and Doppler, heparinise, and get it revascularised on time.",
+    "trap": "Missing motor weakness, which turns a threatened limb into one that needs immediate surgery.",
+    "firstMove": "\"ABCDE, then I'll examine both legs: pulses, sensation, movement and Doppler signals.\""
+  },
+  "flow": [
+    "Recognise: embolus or thrombosis?",
+    "Examine and grade (Rutherford)",
+    "Heparin, analgesia, fluids",
+    "Vascular specialist; imaging if no delay",
+    "Revascularise",
+    "Reperfusion: compartments, potassium"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-knowledge",
+      "label": "Embolus or thrombosis",
+      "fail": "Doesn't consider the cause.",
+      "pass": "Sudden onset with atrial fibrillation and no claudication suggests embolus; gradual worsening with claudication suggests thrombosis.",
+      "high": "Adds normal contralateral pulses favour embolus; plans to find and treat the embolic source.",
+      "source": "ESVS20"
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-skill",
+      "label": "Examination and Rutherford grade",
+      "fail": "Checks pulses only, without sensation, movement or Doppler.",
+      "pass": "Tests sensation, movement and arterial and venous Doppler, and grades by Rutherford: I, IIa, IIb, III.",
+      "high": "Grades her IIb: sensory loss beyond the toes, weak dorsiflexion, arterial signal absent, venous present; salvageable with immediate revascularisation.",
+      "source": "ESVS20"
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "Immediate treatment",
+      "fail": "Gives no anticoagulation while waiting.",
+      "pass": "IV unfractionated heparin; analgesia; oxygen; IV fluids; bloods including CK, U&E, clotting, group and save.",
+      "high": "Gives the dose: 5,000 IU (or 70–100 IU/kg) IV bolus, then infusion adjusted to APTT or ACT.",
+      "source": "ESVS20"
+    },
+    {
+      "id": "G4",
+      "domain": "professionalism",
+      "label": "Vascular referral and imaging",
+      "fail": "Books a routine outpatient duplex.",
+      "pass": "Urgent vascular specialist assessment now; CT angiography first-line if it won't delay treatment.",
+      "high": "Knows imaging must not delay a IIb limb; transfers to a vascular centre if this hospital lacks one.",
+      "source": "ESVS20"
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-knowledge",
+      "label": "Revascularisation by grade (safety-critical)",
+      "fail": "Offers IV thrombolysis, or thrombolysis that cannot start promptly, or waits until morning with a motor deficit.",
+      "pass": "IIb: immediate revascularisation, here Fogarty balloon embolectomy; completion angiography; III: primary amputation.",
+      "high": "Knows catheter-directed thrombolysis suits IIa, only if started promptly in IIb; IV thrombolysis is not recommended.",
+      "source": "ESVS20"
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-knowledge",
+      "label": "Reperfusion: compartments and potassium",
+      "fail": "Thinks the job ends when the pulse returns.",
+      "pass": "Watches for compartment syndrome after reperfusion, with fasciotomy if it develops; checks potassium, CK and urine output.",
+      "high": "Gets an ECG and gas; gives IV calcium gluconate only if the ECG shows hyperkalaemic changes, and insulin–glucose for K 6.5 mmol/L or more; anticipates acidosis and myoglobin-related AKI.",
+      "source": "UKKA"
+    },
+    {
+      "id": "G7",
+      "domain": "professionalism",
+      "label": "Consent and decision-making",
+      "fail": "Consents without explaining amputation risk or her wishes.",
+      "pass": "Assesses her capacity; discusses risks including limb loss and death and her wishes; records decisions.",
+      "high": "Involves the consultant and family, and discusses ceilings of care in a frail patient."
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "What's going on?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Probably sciatica or a DVT.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you examine her?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd feel for her foot pulses.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "There are no pulses below the femoral."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd give her paracetamol and book a duplex scan.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          },
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "She can't move her toes well."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Thrombolysis overnight, and the vascular team can see her in the morning.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "After embolectomy her calf becomes tense and very painful."
+      },
+      {
+        "speaker": "candidate",
+        "text": "That's expected post-op pain; more morphine.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Consent?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd get her to sign the form for embolectomy.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "examiner",
+        "text": "What's going on?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Acute limb ischaemia. Sudden onset with AF and no claudication suggests an embolus rather than thrombosis.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you examine her?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Pulses in both legs, sensation, movement, and Doppler signals, arterial and venous. Then I'd grade it by Rutherford.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Numb to mid-foot, weak dorsiflexion, no arterial signal, venous signal present."
+      },
+      {
+        "speaker": "candidate",
+        "text": "IV unfractionated heparin, analgesia, oxygen and IV fluids. Bloods including CK, U&E, clotting and group and save.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd ask for an urgent vascular assessment now. CT angiography, but only if it won't delay treatment.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What grade, and what treatment?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "IIb: she needs immediate revascularisation, here a Fogarty embolectomy with completion angiography. A grade III leg would need primary amputation.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "After embolectomy her calf becomes tense and very painful."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Compartment syndrome after reperfusion: she needs fasciotomy. I'd also check her potassium, CK and urine output.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Consent?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd check she has capacity, explain the risks, including losing the leg and death, check what she wants, and record the decisions.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "examiner",
+        "text": "What's going on?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Acute limb ischaemia, most likely embolic: sudden onset, untreated AF, no claudication. If her left leg pulses are normal, that supports it. We'll need to find and treat the source.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you examine her?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Compare both legs: pulses, then sensation, movement and hand-held Doppler, arterial and venous. That grades it.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Numb to mid-foot, weak dorsiflexion, no arterial signal, venous signal present."
+      },
+      {
+        "speaker": "candidate",
+        "text": "That's Rutherford IIb: sensory loss beyond the toes and motor weakness. Immediately threatened but salvageable with immediate revascularisation.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Unfractionated heparin now: 5,000 units IV, then an infusion adjusted to APTT. Morphine, oxygen, fluids, and bloods including CK and potassium.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Vascular registrar and consultant now. CT angiography only if it doesn't delay theatre; with motor loss, it mustn't.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What grade, and what treatment?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "IIb: immediate Fogarty embolectomy with completion angiography. Catheter thrombolysis suits IIa; in IIb only if it can start promptly. No IV thrombolysis. Grade III would mean primary amputation.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "After embolectomy her calf becomes tense and very painful."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Reperfusion compartment syndrome: fasciotomy now. Reperfusion also releases potassium: ECG and gas now. IV calcium gluconate if the ECG shows hyperkalaemic changes, and insulin–glucose for K 6.5 or more. And fluids, with CK and urine output for myoglobin-related kidney injury.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Consent?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "She's frail, so with the consultant and her family I'd discuss limb loss, death and her wishes, including ceilings of care, and document it.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G5",
+      "move": "Delaying revascularisation, or choosing slow thrombolysis, in a leg with motor loss.",
+      "consequence": "Safety-critical: a IIb limb becomes irreversible (III) and needs amputation."
+    },
+    {
+      "row": "G2",
+      "move": "Feeling for pulses without testing sensation, movement and Doppler signals.",
+      "consequence": "Safety-critical: motor loss is missed, so the limb is under-graded and treated too late."
+    },
+    {
+      "row": "G6",
+      "move": "Calling a tense, painful calf after revascularisation 'post-op pain'.",
+      "consequence": "Safety-critical: reperfusion compartment syndrome kills the muscle the operation just saved."
+    },
+    {
+      "row": "G3",
+      "move": "Waiting for the vascular team before giving heparin.",
+      "consequence": "The clot propagates while she waits."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You forgot to grade the leg",
+      "line": "Let me grade it: sensation, movement and Doppler put her in Rutherford IIb."
+    },
+    {
+      "when": "You can't recall the heparin dose",
+      "line": "IV unfractionated heparin per the trust protocol now; I'd check the dose with pharmacy but not delay it."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Rutherford: I viable; IIa marginally threatened (toes numb or none, no weakness); IIb immediately threatened (sensory loss beyond toes, weakness); III irreversible (anaesthesia, paralysis, no Doppler signals).",
+      "source": "ESVS20"
+    },
+    {
+      "fact": "Heparin while awaiting revascularisation: UFH 5,000 IU or 70–100 IU/kg, then infusion. CT angiography first line if it won't delay treatment.",
+      "source": "ESVS20"
+    },
+    {
+      "fact": "Sudden onset suggests embolism; about two thirds of emboli are associated with atrial fibrillation.",
+      "source": "ESVS20"
+    },
+    {
+      "fact": "Severe hyperkalaemia is 6.5 mmol/L or more: insulin–glucose. IV calcium only if the ECG shows hyperkalaemic changes.",
+      "source": "UKKA"
+    }
+  ],
+  "recall": {
+    "think": "Losing the leg, then reperfusion: compartment syndrome and hyperkalaemia.",
+    "say": "\"Rutherford IIb: immediately threatened. Heparin now and immediate revascularisation.\"",
+    "do": [
+      "Grade: sensation, movement, Doppler",
+      "IV heparin, analgesia, fluids; vascular team now",
+      "Revascularise; watch compartments and potassium"
+    ],
+    "numbers": [
+      {
+        "value": "5,000 IU",
+        "meaning": "IV unfractionated heparin bolus (or 70–100 IU/kg)",
+        "source": "ESVS20"
+      },
+      {
+        "value": "≥ 6.5 mmol/L",
+        "meaning": "severe hyperkalaemia after reperfusion",
+        "source": "UKKA"
+      }
+    ],
+    "trap": "A pink-ish foot with a venous signal can still be IIb if she can't move her toes.",
+    "finish": "Embolectomy (or bypass or endovascular treatment for thrombosis); primary amputation if irreversible."
+  },
+  "sources": [
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format: 9 minutes with 1 minute's reading; examiner-led questioning in applied knowledge stations"
+    },
+    {
+      "id": "ESVS20",
+      "name": "Björck M, Earnshaw JJ, Acosta S, et al. European Society for Vascular Surgery (ESVS) 2020 Clinical Practice Guidelines on the Management of Acute Limb Ischaemia. Eur J Vasc Endovasc Surg 2020;59:173-218",
+      "version": "February 2020 issue",
+      "url": "https://doi.org/10.1016/j.ejvs.2019.09.006",
+      "supports": "Urgent clinical assessment by a vascular specialist (Rec 3); Rutherford classification recommended (Rec 4; table: I viable, no sensory or motor loss, arterial and venous Doppler audible; IIa marginally threatened, salvageable if promptly treated, minimal (toes) or no sensory loss, no motor loss, arterial Doppler inaudible, venous audible; IIb immediately threatened, salvageable with immediate revascularisation, sensory loss beyond the toes with rest pain, mild or moderate muscle weakness, arterial inaudible, venous audible; III irreversible, profound anaesthesia and paralysis (rigor), both inaudible, major tissue loss or permanent nerve damage inevitable); imaging if it does not delay treatment (Rec 5), CT angiography first line (Rec 6); heparin while awaiting revascularisation (Rec 9); text: unfractionated heparin initially 5,000 IU or 70-100 IU/kg, then infusion adjusted to ACT or APTT; oxygen (Rec 10); analgesia and IV rehydration (Rec 11); transfer to a vascular centre (Rec 13); completion angiography (Rec 18); no IV thrombolysis (Rec 22); catheter-directed thrombolysis an alternative to surgery in IIa (Rec 24), may be considered in IIb if started promptly (Rec 25); motor loss (IIb): urgent revascularisation mandatory; primary amputation for irreversible (III) ischaemia; sudden onset suggests embolism, gradual worsening thrombosis; about two thirds of emboli are associated with atrial fibrillation; Fogarty balloon embolectomy standard for embolic occlusion; fasciotomy needed in 39% of one embolectomy series"
+    },
+    {
+      "id": "RUTH",
+      "name": "Rutherford RB, Baker JD, Ernst C, et al. Recommended standards for reports dealing with lower extremity ischemia: revised version. J Vasc Surg 1997;26:517-38",
+      "version": "September 1997",
+      "url": "https://doi.org/10.1016/S0741-5214(97)70045-4",
+      "supports": "Original source of the acute limb ischaemia categories I, IIa, IIb and III (the station uses the table as reproduced in ESVS 2020)"
+    },
+    {
+      "id": "UKKA",
+      "name": "UK Kidney Association Clinical Practice Guidelines: Treatment of Acute Hyperkalaemia in Adults (Alfonzo A, Harrison A, Baines R, et al.)",
+      "version": "Original July 2020; updated October 2023 and July 2026",
+      "url": "https://www.ukkidney.org/health-professionals/guidelines/treatment-acute-hyperkalaemia-adults-0",
+      "supports": "Severe hyperkalaemia 6.5 mmol/L or more; 12-lead ECG if K 6.0 or more; IV calcium first when the ECG shows hyperkalaemic changes; insulin-glucose to shift potassium; insulin–glucose for severe hyperkalaemia (6.5 mmol/L or more)"
+    },
+    {
+      "id": "BL",
+      "name": "Bailey & Love's Short Practice of Surgery (O'Connell, McCaskie, Sayers, eds)",
+      "version": "28th edition, 2023",
+      "url": "https://www.routledge.com/Bailey--Loves-Short-Practice-of-Surgery---28th-Edition/OConnell-McCaskie-Sayers/p/book/9780367548117",
+      "supports": "Normal contralateral pulses favour embolism; compartment syndrome after reperfusion needing fasciotomy; reperfusion releases potassium and myoglobin (hyperkalaemia, acidosis, acute kidney injury)"
+    }
+  ],
+  "partner": {
+    "opening": "Mrs Shaw has just arrived in ED. What do you think is going on, and how would you manage her?",
+    "reveals": [
+      {
+        "trigger": "Asks about the history",
+        "finding": "Pain came on suddenly while watching television. No previous claudication. Warfarin stopped 14 months ago.",
+        "row": "G1"
+      },
+      {
+        "trigger": "Examines pulses",
+        "finding": "Right: femoral present; popliteal, dorsalis pedis and posterior tibial absent. Left leg: all pulses present. ECG: atrial fibrillation, rate 96.",
+        "row": "G1"
+      },
+      {
+        "trigger": "Tests sensation, movement and Doppler",
+        "finding": "Reduced sensation to mid-foot; weak dorsiflexion of the toes; no arterial Doppler signal at the ankle; venous signal present; calf soft.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Asks for bloods",
+        "finding": "K 5.1 mmol/L, CK 1,850 U/L, creatinine 104 µmol/L, INR 1.0.",
+        "row": "G3"
+      },
+      {
+        "trigger": "After revascularisation",
+        "finding": "Two hours after embolectomy: foot pink with palpable pedal pulses; calf tense and exquisitely tender on passive toe stretch. K 6.7 mmol/L.",
+        "row": "G6"
+      }
+    ],
+    "push": [
+      {
+        "question": "What features separate an embolus from a thrombosis?",
+        "row": "G1",
+        "expect": "Embolus: sudden onset, AF or another source, no claudication, normal contralateral pulses. Thrombosis: gradual worsening on a background of claudication."
+      },
+      {
+        "question": "Grade her limb and justify it.",
+        "row": "G2",
+        "expect": "Rutherford IIb: sensory loss beyond the toes, motor weakness, absent arterial signal, venous signal present."
+      },
+      {
+        "question": "Why not thrombolysis?",
+        "row": "G5",
+        "expect": "It is slower; for IIb only if started promptly; embolectomy restores flow immediately; IV thrombolysis is not recommended."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "Her foot is mottled and fixed, calf rigid, no arterial or venous signals.",
+        "safeAnswer": "Rutherford III, irreversible: revascularisation is futile and dangerous; discuss primary amputation or palliation with the consultant and family.",
+        "row": "G5"
+      },
+      {
+        "prompt": "The radiographer can scan her in 90 minutes.",
+        "safeAnswer": "Imaging must not delay a IIb limb: she goes to theatre, with on-table angiography.",
+        "row": "G4"
+      },
+      {
+        "prompt": "A 70-year-old with years of calf claudication now has a cold IIa foot.",
+        "safeAnswer": "Likely thrombosis on existing disease: heparin, CT angiography to plan; bypass, endovascular treatment or catheter-directed thrombolysis.",
+        "row": "G1"
+      }
+    ]
+  }
+}
