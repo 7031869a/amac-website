@@ -1,0 +1,571 @@
+{
+  "id": "MB-303",
+  "exam": "MRCS-B",
+  "title": "Sickle cell disease and surgery",
+  "type": "applied-knowledge",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "Perioperative care: haemoglobinopathy",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "BSH red cell transfusion in sickle cell disease, Parts I and II (2016)",
+      "BSH acute chest syndrome guideline (2015)",
+      "TAPS trial, Lancet (2013)"
+    ],
+    "related": [
+      {
+        "id": "MB-125",
+        "why": "Gallstones and cholecystitis"
+      },
+      {
+        "id": "MB-209",
+        "why": "Consent for laparoscopic cholecystectomy"
+      },
+      {
+        "id": "MB-134",
+        "why": "Postoperative breathlessness"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Preoperative assessment clinic",
+    "role": "Core surgical trainee",
+    "scenario": "Mr Samuel Okonjo, 26, has sickle cell disease (HbSS). He has had two episodes of biliary colic and is listed for elective laparoscopic cholecystectomy. His haemoglobin is 82 g/L.",
+    "task": "Answer the examiner's questions on his perioperative management."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Risks, haematology plan, transfusion, right blood, avoid triggers, watch the chest.",
+    "trap": "Treating him as a routine cholecystectomy and finding out about his antibodies on the day.",
+    "firstMove": "\"I'd refer him to the specialist haemoglobinopathy team to plan transfusion before listing.\""
+  },
+  "flow": [
+    "Perioperative risks",
+    "Specialist planning",
+    "Transfusion",
+    "Blood specification",
+    "Avoiding triggers",
+    "Acute chest syndrome"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-knowledge",
+      "label": "Perioperative risks",
+      "fail": "Treats it as a routine cholecystectomy, or cannot name sickle-specific risks.",
+      "pass": "Acute chest syndrome, painful crisis, stroke, infection and transfusion complications; asks about previous crises, chest syndrome and transfusions.",
+      "high": "Links his gallstones to chronic haemolysis (pigment stones); a previous acute chest syndrome raises his risk.",
+      "source": "BL"
+    },
+    {
+      "id": "G2",
+      "domain": "professionalism",
+      "label": "Specialist planning",
+      "fail": "Lists him without informing haematology or anaesthesia.",
+      "pass": "Early referral to the specialist haemoglobinopathy team; joint plan with the anaesthetist and haematologist before listing.",
+      "high": "Complex surgery belongs in a centre with specialist haemoglobinopathy support; alerts the transfusion laboratory early.",
+      "source": "BSH2"
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "Preoperative transfusion",
+      "fail": "No transfusion plan, or transfuses to a normal haemoglobin.",
+      "pass": "HbSS having medium-risk surgery: preoperative transfusion recommended; simple transfusion when Hb is below 90 g/L, to about 100 g/L.",
+      "high": "Cites TAPS: untransfused patients had more complications, mostly acute chest syndrome; exchange for high-risk surgery or severe disease.",
+      "source": "BSH2"
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-knowledge",
+      "label": "Blood specification",
+      "fail": "Requests standard crossmatched blood without telling the laboratory.",
+      "pass": "HbS-negative red cells matched at least for Rh (D, C, c, E, e) and K; checks his antibody history.",
+      "high": "Warns of delayed haemolytic reactions and hyperhaemolysis; tells the laboratory he has sickle cell disease.",
+      "source": "BSH1"
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-skill",
+      "label": "Avoiding triggers",
+      "fail": "Allows him to fast without IV fluids, or to become cold or hypoxic.",
+      "pass": "Optimises oxygenation, hydration and warmth: IV fluids while fasting, oxygen saturation monitoring, active warming, good analgesia.",
+      "high": "Adds early mobilisation and a clear analgesia plan, so pain after upper abdominal surgery does not stop him breathing deeply.",
+      "source": "BSH2"
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-knowledge",
+      "label": "Acute chest syndrome",
+      "fail": "Treats postoperative fever and chest pain as simple atelectasis.",
+      "pass": "Fever and/or respiratory symptoms with a new infiltrate on chest X-ray: oxygen, antibiotics, analgesia, incentive spirometry, urgent haematology.",
+      "high": "Knows severe chest syndrome needs transfusion, often exchange, and early critical care involvement.",
+      "source": "ACS"
+    },
+    {
+      "id": "G7",
+      "domain": "professionalism",
+      "label": "Emergency surgery",
+      "fail": "Delays an emergency operation to arrange an exchange transfusion.",
+      "pass": "Doesn't delay emergency surgery: simple transfusion first if Hb is below 90 g/L, provided it won't unduly delay surgery.",
+      "high": "If transfusion would delay surgery unacceptably, proceeds and transfuses intra- or postoperatively; haematology informed immediately.",
+      "source": "BSH2"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "What are the risks for him?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Same as anyone having a cholecystectomy: bleeding, bile leak, infection.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Who needs to know he's coming in?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd just put him on the list; the anaesthetist will see him on the day.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "His haemoglobin is 82. Would you transfuse?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd give three units to get him to normal.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Anything special about the blood?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "No, routine group and crossmatch.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you look after him on the ward?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Nil by mouth from midnight; he can drink when he's back.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Day 2 he has a fever and chest pain."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Probably atelectasis. Chest physio.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "examiner",
+        "text": "What are the risks for him?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Acute chest syndrome, painful crisis, stroke, infection and complications of transfusion. I'd ask about previous crises, chest syndrome and transfusions.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Who needs to know?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "The specialist haemoglobinopathy team, early, and the anaesthetist. We'd agree a joint plan before he's listed.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "His haemoglobin is 82. Would you transfuse?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Yes. He's HbSS and this is medium-risk surgery, so preoperative transfusion is recommended: a simple top-up to about 100 g/L.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Anything special about the blood?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "HbS-negative red cells matched for Rh and K, and I'd check his antibody history.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you look after him perioperatively?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Avoid hypoxia, dehydration, cold and acidosis: IV fluids while fasting, saturation monitoring, active warming and good analgesia.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Day 2 he has a fever and chest pain."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd suspect acute chest syndrome: chest X-ray for a new infiltrate, oxygen, antibiotics, analgesia, incentive spirometry, and call haematology urgently.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What if he'd come in with acute cholecystitis needing surgery tonight?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I wouldn't delay. A simple transfusion first if Hb is below 90, as long as it doesn't unduly delay the operation.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "candidate",
+        "text": "His gallstones are probably pigment stones from chronic haemolysis. If he's had chest syndrome before, his risk is higher.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd want him done where there's specialist haemoglobinopathy support, and I'd alert the transfusion lab now.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What's the evidence for transfusing?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "The TAPS trial: untransfused HbSS patients had more complications, mostly acute chest syndrome. Exchange is for high-risk surgery or severe disease.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Why tell the lab so early?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "He may have red cell antibodies. Delayed haemolytic reactions and hyperhaemolysis can be severe, so the lab needs time to find matched blood.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Upper abdominal surgery hurts to breathe through, so a clear analgesia plan and early mobilisation protect his chest.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "His saturations fall to 88% on air."
+      },
+      {
+        "speaker": "candidate",
+        "text": "That's severe chest syndrome. He may need exchange transfusion, and I'd involve critical care early.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "And if transfusing would delay the emergency operation?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Then proceed and transfuse during or after surgery, with haematology informed immediately.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G6",
+      "move": "Calling postoperative fever and chest pain atelectasis.",
+      "consequence": "Safety-critical: acute chest syndrome can progress quickly to respiratory failure."
+    },
+    {
+      "row": "G4",
+      "move": "Ordering routine crossmatched blood without informing the laboratory.",
+      "consequence": "Risks alloimmunisation and delayed haemolytic reactions."
+    },
+    {
+      "row": "G7",
+      "move": "Delaying emergency surgery for transfusion.",
+      "consequence": "The surgical emergency progresses while waiting."
+    },
+    {
+      "row": "G2",
+      "move": "Listing him without a haematology plan.",
+      "consequence": "Cancellation on the day, or surgery without transfusion."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You blank on the triggers",
+      "line": "Keep him oxygenated, hydrated, warm and pain-free."
+    },
+    {
+      "when": "Asked for a transfusion target",
+      "line": "Simple top-up to about 100 g/L, planned with haematology."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Preoperative transfusion is recommended for HbSS and HbSC patients having medium-risk surgery (e.g. abdominal).",
+      "source": "BSH2"
+    },
+    {
+      "fact": "Simple transfusion if Hb below 90 g/L, to a post-transfusion Hb of 100 g/L; consider exchange for high-risk surgery.",
+      "source": "BSH2"
+    },
+    {
+      "fact": "In TAPS, clinically important complications were 39% without and 15% with preoperative transfusion.",
+      "source": "TAPS"
+    },
+    {
+      "fact": "Blood should be HbS-negative and matched at least for Rh (D, C, c, E, e) and K.",
+      "source": "BSH1"
+    },
+    {
+      "fact": "Acute chest syndrome: fever and/or respiratory symptoms with a new infiltrate on chest X-ray.",
+      "source": "ACS"
+    }
+  ],
+  "recall": {
+    "think": "Acute chest syndrome, crisis and stroke; transfusion reactions.",
+    "say": "\"I'd plan his transfusion with the haemoglobinopathy team.\"",
+    "do": [
+      "Refer to haematology before listing",
+      "Top-up transfusion; HbS-negative, Rh and K matched",
+      "Oxygen, fluids, warmth, analgesia"
+    ],
+    "numbers": [
+      {
+        "value": "100 g/L",
+        "meaning": "target Hb after simple preoperative transfusion",
+        "source": "BSH2"
+      },
+      {
+        "value": "Hb < 90 g/L",
+        "meaning": "simple transfusion before emergency surgery",
+        "source": "BSH2"
+      }
+    ],
+    "trap": "Postoperative fever and chest pain are not always atelectasis.",
+    "finish": "Transfused, warm, hydrated and oxygenated; chest watched closely after surgery."
+  },
+  "sources": [
+    {
+      "id": "BSH2",
+      "name": "Davis BA, Allard S, Qureshi A, et al; British Society for Haematology. Guidelines on red cell transfusion in sickle cell disease Part II: indications for transfusion. Br J Haematol 2017;176:192–209",
+      "version": "Published online November 2016",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/27858994/",
+      "supports": "Preoperative transfusion recommended for SS and SC patients having medium-risk surgery (e.g. abdominal); simple transfusion if Hb <90 g/L to 100 g/L; exchange for high-risk surgery or severe disease; optimise oxygenation, hydration and warmth; close liaison with haematology; complex surgery in centres with specialist support; emergency surgery: simple transfusion if Hb <90 g/L without undue delay, otherwise transfuse intra- or postoperatively"
+    },
+    {
+      "id": "BSH1",
+      "name": "Davis BA, Allard S, Qureshi A, et al; British Society for Haematology. Guidelines on red cell transfusion in sickle cell disease. Part I: principles and laboratory aspects. Br J Haematol 2017;176:179–91",
+      "version": "Published online November 2016",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/28092109/",
+      "supports": "Red cells HbS-negative and matched at least for Rh (D, C, c, E, e) and K; alloimmunisation, delayed haemolytic reactions and hyperhaemolysis"
+    },
+    {
+      "id": "TAPS",
+      "name": "Howard J, Malfroy M, Llewelyn C, et al. The Transfusion Alternatives Preoperatively in Sickle Cell Disease (TAPS) study: a randomised, controlled, multicentre clinical trial. Lancet 2013;381:930–8",
+      "version": "2013",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23352054/",
+      "supports": "Clinically important complications 39% without vs 15% with preoperative transfusion; most serious adverse events were acute chest syndrome"
+    },
+    {
+      "id": "ACS",
+      "name": "Howard J, Hart N, Roberts-Harewood M, et al; BCSH Committee. Guideline on the management of acute chest syndrome in sickle cell disease. Br J Haematol 2015;169:492–505",
+      "version": "2015",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/25824256/",
+      "supports": "Definition of acute chest syndrome; oxygen, antibiotics, analgesia, incentive spirometry; transfusion and critical care in severe cases"
+    },
+    {
+      "id": "BL",
+      "name": "Bailey & Love's Short Practice of Surgery (O'Connell, McCaskie, Sayers, eds)",
+      "version": "28th edition, 2023",
+      "url": "https://www.routledge.com/Bailey--Loves-Short-Practice-of-Surgery---28th-Edition/OConnell-McCaskie-Sayers/p/book/9780367548117",
+      "supports": "Pigment gallstones in chronic haemolysis; perioperative complications of sickle cell disease"
+    },
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format: 9 minutes with 1 minute's reading; examiner-led questioning in applied knowledge stations"
+    }
+  ],
+  "partner": {
+    "opening": "Mr Okonjo has HbSS disease and is listed for laparoscopic cholecystectomy. What are the risks for him?",
+    "reveals": [
+      {
+        "trigger": "Candidate asks about his sickle history",
+        "finding": "Two or three painful crises a year. One episode of acute chest syndrome two years ago needing ICU. Transfused twice.",
+        "row": "G1"
+      },
+      {
+        "trigger": "Candidate asks about antibodies",
+        "finding": "Laboratory record: anti-E antibody detected after his last transfusion.",
+        "row": "G4"
+      },
+      {
+        "trigger": "Candidate asks for day 2 observations",
+        "finding": "Temperature 38.4°C, RR 26, SpO2 91% on air, pleuritic chest pain. New left basal shadowing on chest X-ray.",
+        "row": "G6"
+      }
+    ],
+    "push": [
+      {
+        "question": "Would you transfuse him before surgery?",
+        "row": "G3",
+        "expect": "Yes: HbSS, medium-risk surgery; simple transfusion to about 100 g/L."
+      },
+      {
+        "question": "What blood would you ask for?",
+        "row": "G4",
+        "expect": "HbS-negative, Rh and K matched; account for his anti-E."
+      },
+      {
+        "question": "What precipitates sickling perioperatively?",
+        "row": "G5",
+        "expect": "Hypoxia, dehydration, cold, acidosis, pain."
+      },
+      {
+        "question": "What is acute chest syndrome?",
+        "row": "G6",
+        "expect": "Fever and/or respiratory symptoms with a new infiltrate on chest X-ray."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "He has anti-E from a previous transfusion.",
+        "safeAnswer": "Tell the laboratory now; they need time to find E-negative, Rh and K matched blood.",
+        "row": "G4"
+      },
+      {
+        "prompt": "He presents instead with acute cholecystitis and needs surgery tonight.",
+        "safeAnswer": "Don't delay; simple transfusion if Hb below 90 g/L without undue delay; haematology informed.",
+        "row": "G7"
+      },
+      {
+        "prompt": "His saturations fall to 88% on air on day 2.",
+        "safeAnswer": "Severe acute chest syndrome: oxygen, urgent haematology, transfusion (often exchange) and critical care.",
+        "row": "G6"
+      }
+    ]
+  }
+}

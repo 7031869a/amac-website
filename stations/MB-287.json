@@ -1,0 +1,539 @@
+{
+  "id": "MB-287",
+  "exam": "MRCS-B",
+  "title": "History: painless testicular lump",
+  "type": "history",
+  "header": {
+    "domain": "Applied Skills",
+    "contentArea": "Communication skills in giving and receiving information and history taking",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "signalMinutes": 6,
+    "guidelineVersions": [
+      "EAU Guidelines on Testicular Cancer (2026)",
+      "NICE NG12 (updated April 2026)"
+    ],
+    "related": [
+      {
+        "id": "MB-156 Scrotal examination",
+        "why": "The examination that follows this history"
+      },
+      {
+        "id": "MB-150 Pathology: testicular tumours",
+        "why": "Tumour types, markers and spread in more depth"
+      },
+      {
+        "id": "MB-217 History: acute scrotal pain",
+        "why": "The painful scrotum and torsion"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Urology outpatient clinic",
+    "role": "Core surgical trainee",
+    "scenario": "Mr Owen Penhale, 32, has been referred by his GP with a lump in his right testicle.",
+    "task": "Take a focused history. You will be stopped at 6 minutes to summarise, then asked about investigation and management."
+  },
+  "beforeYouWalkIn": {
+    "frame": "A painless lump in the body of the testis is cancer until proven otherwise. Ask risk factors, spread and fertility.",
+    "trap": "Accepting a minor knock as the cause of the lump.",
+    "firstMove": "\"Is the lump part of the testicle itself, or separate from it?\""
+  },
+  "flow": [
+    "Open sensitively",
+    "The lump and alternatives",
+    "Risk factors",
+    "Symptoms of spread",
+    "Fertility and concerns",
+    "At 6 minutes: summarise",
+    "Investigate and treat"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "communication",
+      "label": "Opening and sensitivity",
+      "fail": "Asks intimate questions abruptly with no explanation.",
+      "pass": "Introduces, confirms identity, open question; explains he'll ask some personal questions.",
+      "high": "Normalises embarrassment and checks whether he'd like a chaperone for the examination later."
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-skill",
+      "label": "The lump and alternatives",
+      "fail": "Doesn't ask about pain, size change or infective symptoms.",
+      "pass": "Onset, how noticed, size change, pain or heaviness, trauma; urinary symptoms, discharge, fever and sexual risk.",
+      "high": "Asks whether the lump is in the testis or separate from it, and treats a recent knock as how it was noticed, not the cause."
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-skill",
+      "label": "Risk factors",
+      "fail": "Doesn't ask about undescended testis or family history.",
+      "pass": "Undescended testis or orchidopexy, previous testicular cancer, father or brother with testicular cancer, fertility problems.",
+      "high": "Links cryptorchidism and a small testis to contralateral risk, to raise at the treatment discussion.",
+      "source": "EAU"
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-skill",
+      "label": "Symptoms of spread",
+      "fail": "Doesn't ask about back pain or chest symptoms.",
+      "pass": "Asks back or abdominal pain, cough, breathlessness, haemoptysis, weight loss, neck lump.",
+      "high": "Asks about breast swelling or tenderness (hCG) and explains back pain can come from para-aortic nodes."
+    },
+    {
+      "id": "G5",
+      "domain": "communication",
+      "label": "Fertility and concerns",
+      "fail": "Doesn't explore his worries or plans for children.",
+      "pass": "Asks what he is worried about and about plans for children.",
+      "high": "Raises sperm banking before any treatment and offers a prosthesis if the testis is removed.",
+      "source": "EAU"
+    },
+    {
+      "id": "G6",
+      "domain": "communication",
+      "label": "Summary at the signal",
+      "fail": "Presents it as a probable cyst or an injury.",
+      "pass": "Summarises a painless intratesticular lump over two months with relevant risk factors and states suspected testicular cancer.",
+      "high": "Leads with the lump's features and risk factors, then the negatives for spread and infection."
+    },
+    {
+      "id": "G7",
+      "domain": "clinical-knowledge",
+      "label": "Investigation",
+      "fail": "Plans no ultrasound, or omits tumour markers before surgery.",
+      "pass": "Urgent bilateral scrotal ultrasound; AFP, hCG and LDH before orchidectomy; contrast CT chest, abdomen and pelvis if cancer.",
+      "high": "Repeats markers after orchidectomy; knows a significant AFP rise implies a non-seminomatous component.",
+      "source": "EAU"
+    },
+    {
+      "id": "G8",
+      "domain": "professionalism",
+      "label": "Definitive management",
+      "fail": "Plans a scrotal biopsy or scrotal orchidectomy.",
+      "pass": "Radical inguinal orchidectomy with the cord divided at the internal ring; urology cancer MDT.",
+      "high": "Explains why the scrotum isn't opened; offers contralateral biopsy discussion if high risk (volume under 12 mL, cryptorchidism).",
+      "source": "EAU"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "candidate",
+        "text": "You've got a lump down below? Did you hurt it?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          },
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Any other problems? No? OK.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          },
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop there and summarise your history."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Mr Penhale, 32, knocked his testicle playing football and has a lump, probably a haematoma or a cyst.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you investigate and manage?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "A scan in a few weeks if it hasn't gone. If it looks suspicious, a scrotal biopsy.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          },
+          {
+            "row": "G8",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "candidate",
+        "text": "Hello, I'm Dr Patel, one of the urology trainees. Can I confirm your name and date of birth? Tell me what you noticed. I'll need to ask some personal questions; is that OK?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "When did you notice it? Has it grown? Any pain or heaviness? Any injury? Any burning passing urine, discharge or fever?",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Were your testicles both down as a baby, or did you need an operation? Has anyone in the family had testicular cancer? Any problems with fertility?",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Any back or tummy pain, cough, breathlessness or coughing blood? Any weight loss or lumps in your neck?",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "What's worrying you most? Do you have or want children?",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop there and summarise your history."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Mr Penhale, 32, with a two-month painless, enlarging right testicular lump. He had a right orchidopexy as a child. No symptoms of spread or infection. I suspect testicular cancer.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you investigate and manage?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Urgent scrotal ultrasound of both testes; AFP, hCG and LDH before surgery. If it's a tumour, radical inguinal orchidectomy, contrast CT chest, abdomen and pelvis, and MDT discussion.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          },
+          {
+            "row": "G8",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "candidate",
+        "text": "Hello, I'm Dr Patel, one of the urology trainees. Can I confirm your name and date of birth? Lots of men find this awkward; I ask everyone these questions. I'll also offer a chaperone when I examine you.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Does the lump feel part of the testicle, or separate above or behind it? You mentioned a knock: was the lump there before?",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Your right testicle was brought down as a child; that raises the risk, and we'd think about the other side too.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Any breast swelling or tenderness? Back pain can come from glands at the back of the tummy, so I ask about that too.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Before any treatment, we can store sperm. If a testicle is removed, you can have a prosthesis.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop there and summarise your history."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Mr Penhale, 32: two months of a painless, enlarging lump within the right testis, noticed after a minor knock. Right orchidopexy aged 4. No back pain, chest or breast symptoms, weight loss or infective features. Wants children. Suspected right testicular germ cell tumour.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you investigate and manage?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Urgent bilateral scrotal ultrasound; AFP, hCG and LDH before orchidectomy and repeated after. A significant AFP rise means a non-seminomatous component. Sperm banking, then radical inguinal orchidectomy dividing the cord at the internal ring; we avoid the scrotum so lymphatic spread stays predictable. Contrast CT chest, abdomen and pelvis for staging, MDT, and a discussion about biopsy of the left testis if it's under 12 mL.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          },
+          {
+            "row": "G8",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G8",
+      "move": "Planning scrotal biopsy or a scrotal approach.",
+      "consequence": "Safety-critical: breaches the scrotum, altering lymphatic spread and risking local recurrence."
+    },
+    {
+      "row": "G2",
+      "move": "Accepting trauma as the cause.",
+      "consequence": "Delays diagnosis of a tumour that the knock only drew attention to."
+    },
+    {
+      "row": "G7",
+      "move": "Delaying ultrasound or skipping pre-operative markers.",
+      "consequence": "Loses the baseline needed for staging, prognosis and follow-up."
+    },
+    {
+      "row": "G5",
+      "move": "Not raising fertility before treatment.",
+      "consequence": "He loses the chance to bank sperm before orchidectomy or chemotherapy."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You forgot the risk factors",
+      "line": "Can I go back to one thing: were both testicles down when you were a child?"
+    },
+    {
+      "when": "He asks directly if it's cancer",
+      "line": "It could be, and I'd rather check quickly. Testicular cancer is usually very treatable, and the scan today is the first step."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Bilateral high-frequency testicular ultrasound for all suspected cancer; AFP, hCG and LDH before orchidectomy and repeated after.",
+      "source": "EAU"
+    },
+    {
+      "fact": "Radical inguinal orchidectomy with cord division at the internal ring; avoid a scrotal approach. Offer a prosthesis.",
+      "source": "EAU"
+    },
+    {
+      "fact": "Contrast CT chest, abdomen and pelvis for staging. Discuss sperm banking with all men before treatment.",
+      "source": "EAU"
+    },
+    {
+      "fact": "High risk of contralateral germ cell neoplasia: testicular volume under 12 mL and/or cryptorchidism history.",
+      "source": "EAU"
+    },
+    {
+      "fact": "Consider suspected cancer referral for non-painful enlargement or change in shape or texture of the testis.",
+      "source": "NG12"
+    },
+    {
+      "fact": "Testicular lymph drains to para-aortic nodes.",
+      "source": "GRAYS"
+    }
+  ],
+  "recall": {
+    "think": "Germ cell tumour; metastases to para-aortic nodes and lungs.",
+    "say": "\"A painless intratesticular lump is cancer until proven otherwise.\"",
+    "do": [
+      "Undescended testis, family history",
+      "Back pain, cough, gynaecomastia",
+      "Ultrasound and markers today"
+    ],
+    "numbers": [
+      {
+        "value": "12 mL",
+        "meaning": "contralateral testis smaller than this: high risk, discuss biopsy",
+        "source": "EAU"
+      }
+    ],
+    "trap": "A minor knock that explains the lump.",
+    "finish": "Sperm banking, radical inguinal orchidectomy, CT staging, MDT."
+  },
+  "sources": [
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format: 9-minute stations with 1 minute's reading; introduce yourself and confirm identity"
+    },
+    {
+      "id": "EAU",
+      "name": "European Association of Urology: Guidelines on Testicular Cancer",
+      "version": "2026 edition",
+      "url": "https://uroweb.org/guidelines/testicular-cancer/chapter/diagnostic-evaluation",
+      "supports": "Bilateral testicular ultrasound in all suspected cases; AFP, hCG and LDH before and after orchidectomy; contrast CT chest, abdomen and pelvis; inguinal orchidectomy with cord division at internal ring, avoid scrotal approach; offer prosthesis; discuss sperm banking; contralateral biopsy for high risk (volume under 12 mL, cryptorchidism); significant AFP elevation in seminoma suggests NSGCT component"
+    },
+    {
+      "id": "NG12",
+      "name": "NICE NG12: Suspected cancer: recognition and referral",
+      "version": "Published 23 June 2015; last updated 15 April 2026",
+      "url": "https://www.nice.org.uk/guidance/ng12/chapter/Recommendations-organised-by-site-of-cancer",
+      "supports": "1.6.7: consider suspected cancer pathway referral for non-painful enlargement or change in shape or texture of the testis"
+    },
+    {
+      "id": "GRAYS",
+      "name": "Gray's Anatomy for Students (Drake, Vogl, Mitchell)",
+      "version": "5th edition, 2023",
+      "url": "https://shop.elsevier.com/books/grays-anatomy-for-students/drake/978-0-323-93423-7",
+      "supports": "Lymphatic drainage of the testis to para-aortic nodes; scrotal skin to superficial inguinal nodes"
+    }
+  ],
+  "partner": {
+    "opening": "Please take a focused history from Mr Penhale. I'll stop you at 6 minutes to summarise.",
+    "actorBrief": "You are Owen Penhale, 32, a PE teacher, married, no children yet. Opening line: \"I've noticed a lump in my right testicle. It doesn't hurt. I'm worried.\" Embarrassed; brief answers until put at ease. You think a football knock caused it; mention the knock early. Hidden fear: not being able to have children; say so only if asked about worries or children. Volunteer nothing else; give facts only when asked (see reveals).",
+    "reveals": [
+      {
+        "trigger": "Asks what worries him",
+        "finding": "\"We've just started trying for a baby. Will this stop that?\"",
+        "row": "G5"
+      },
+      {
+        "trigger": "Asks onset, size, pain, injury",
+        "finding": "Noticed two months ago in the shower after a football knock; slowly bigger; dull heaviness, no pain.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Asks whether it's part of the testicle",
+        "finding": "\"It's in the testicle itself, hard, near the front.\"",
+        "row": "G2"
+      },
+      {
+        "trigger": "Asks urinary, discharge, fever, sexual risk",
+        "finding": "None; one partner (his wife).",
+        "row": "G2"
+      },
+      {
+        "trigger": "Asks about undescended testis",
+        "finding": "\"I had an operation on the right side when I was 4 to bring it down.\"",
+        "row": "G3"
+      },
+      {
+        "trigger": "Asks family history or fertility",
+        "finding": "No family history. No known fertility problems; trying for six months.",
+        "row": "G3"
+      },
+      {
+        "trigger": "Asks back pain, chest, breast, weight, neck",
+        "finding": "None.",
+        "row": "G4"
+      },
+      {
+        "trigger": "At 6 minutes",
+        "finding": "Say: \"Please stop there and summarise your history.\"",
+        "row": "G6"
+      }
+    ],
+    "push": [
+      {
+        "question": "How would you investigate?",
+        "row": "G7",
+        "expect": "Urgent bilateral scrotal ultrasound; AFP, hCG, LDH before surgery; CT chest, abdomen and pelvis if cancer."
+      },
+      {
+        "question": "The ultrasound shows a solid intratesticular mass. What next?",
+        "row": "G8",
+        "expect": "Sperm banking, radical inguinal orchidectomy, prosthesis offered, MDT."
+      },
+      {
+        "question": "Why not remove it through the scrotum?",
+        "row": "G8",
+        "expect": "Scrotal violation alters lymphatic drainage and risks local recurrence."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "\"The AFP is raised but the orchidectomy histology shows pure seminoma.\"",
+        "safeAnswer": "A significant AFP rise implies a non-seminomatous component; manage as non-seminoma with the MDT.",
+        "row": "G7"
+      },
+      {
+        "prompt": "\"Can I just wait and see if it goes down?\"",
+        "safeAnswer": "No: a solid lump in the testis needs prompt diagnosis; earlier treatment is simpler and more effective.",
+        "row": "G6"
+      },
+      {
+        "prompt": "\"Will I be able to have children?\"",
+        "safeAnswer": "Many men do with one testis; we'll offer sperm storage before treatment to protect that.",
+        "row": "G5"
+      }
+    ]
+  }
+}

@@ -1,0 +1,523 @@
+{
+  "id": "MB-285",
+  "exam": "MRCS-B",
+  "title": "History: unilateral leg swelling after knee replacement (suspected DVT)",
+  "type": "history",
+  "header": {
+    "domain": "Applied Skills",
+    "contentArea": "Communication skills in giving and receiving information and history taking",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "signalMinutes": 6,
+    "guidelineVersions": [
+      "NICE NG158 (March 2020; updated August 2023)"
+    ],
+    "related": [
+      {
+        "id": "MB-205 Perioperative anticoagulants",
+        "why": "Anticoagulant choice and timing around further surgery"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Emergency department",
+    "role": "Core surgical trainee on call for orthopaedics",
+    "scenario": "Mrs Maureen Aldridge, 58, had a left total knee replacement 4 weeks ago. She has come in with 3 days of increasing left calf pain and swelling.",
+    "task": "Take a focused history. You will be stopped at 6 minutes to summarise, then asked about her probability of DVT and how you would investigate and treat."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Recent major surgery plus a swollen calf: score it, screen for PE, and don't let the scan wait.",
+    "trap": "Putting all the swelling down to the operation.",
+    "firstMove": "Ask when the calf changed compared with how the knee was after surgery."
+  },
+  "flow": [
+    "Open and listen",
+    "Leg symptoms and alternatives",
+    "VTE risk factors",
+    "PE symptoms and bleeding risk",
+    "At 6 minutes: summarise",
+    "Wells score",
+    "Scan, anticoagulate, follow up"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "communication",
+      "label": "Opening and concerns",
+      "fail": "Starts with closed questions and never asks what worries her.",
+      "pass": "Introduces, confirms identity, open question, and asks her ideas and concerns.",
+      "high": "Picks up her worry about the new knee and explains the plan in plain words."
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-skill",
+      "label": "Leg symptoms and alternatives",
+      "fail": "Accepts \"it's just the operation\" without asking what changed.",
+      "pass": "Onset, site, swelling, pain, redness, warmth; change from her post-operative course; trauma, fever, wound problems.",
+      "high": "Asks the questions that separate alternatives: sudden pain behind the knee (Baker's cyst), fever and spreading redness (cellulitis), wound ooze."
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-skill",
+      "label": "VTE risk factors",
+      "fail": "Doesn't ask about thromboprophylaxis, hormones or previous clots.",
+      "pass": "Surgery and mobility since; prophylaxis given and completed; HRT or oestrogen; cancer; previous DVT or PE; family history.",
+      "high": "Defines active cancer as treated within 6 months or palliative, and checks whether prophylaxis was stopped early.",
+      "source": "NG158"
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-skill",
+      "label": "PE symptoms and bleeding risk (safety-critical)",
+      "fail": "Doesn't ask about breathlessness, chest pain or haemoptysis.",
+      "pass": "Asks breathlessness, pleuritic chest pain, haemoptysis, palpitations, collapse.",
+      "high": "Also asks bleeding risk before anticoagulation: ulcers, previous bleeding, kidney or liver disease, antiplatelets, falls."
+    },
+    {
+      "id": "G5",
+      "domain": "communication",
+      "label": "Summary at the signal",
+      "fail": "Presents it as post-operative swelling.",
+      "pass": "Summarises the leg symptoms, risk factors and PE screen, and states suspected left DVT.",
+      "high": "Leads with the timeline and key positives, and gives the important negatives for PE and cellulitis."
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-knowledge",
+      "label": "Two-level Wells score",
+      "fail": "Cannot score Wells, or treats any positive D-dimer as the diagnosis.",
+      "pass": "Scores the 2-level DVT Wells: 2 or more is likely, 1 or less unlikely.",
+      "high": "Scores her aloud: surgery within 12 weeks, calf 3 cm larger, pitting oedema, tenderness; an alternative diagnosis is less likely than DVT.",
+      "source": "NG158"
+    },
+    {
+      "id": "G7",
+      "domain": "professionalism",
+      "label": "Diagnostic pathway and interim treatment",
+      "fail": "Sends her home with a D-dimer or scan next week.",
+      "pass": "Wells likely: proximal leg vein ultrasound, result within 4 hours; if not possible, D-dimer, interim anticoagulation and scan within 24 hours.",
+      "high": "Takes baseline FBC, renal and liver function and clotting without waiting for results; if the scan is negative, D-dimer and repeat scan at 6 to 8 days if positive.",
+      "source": "NG158"
+    },
+    {
+      "id": "G8",
+      "domain": "clinical-knowledge",
+      "label": "Treatment if confirmed",
+      "fail": "Gives prophylactic dose only, or no end point for treatment.",
+      "pass": "Apixaban or rivaroxaban for at least 3 months; information on symptoms and bleeding.",
+      "high": "Provoked: consider stopping at 3 months if the provoking factor has gone and uncomplicated; addresses her HRT; no thrombophilia testing.",
+      "source": "NG158"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "candidate",
+        "text": "Your leg's swollen? That's normal after a knee replacement.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          },
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Any other medical problems? No? Good.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop there and summarise your history."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Mrs Aldridge has post-operative swelling of the left leg four weeks after a knee replacement.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How likely is a DVT, and how would you investigate?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd send a D-dimer. It'll be positive after surgery, so that confirms a clot. She can come back for a scan next week.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          },
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "candidate",
+        "text": "Hello, I'm Dr Patel, one of the surgical trainees. Can I confirm your name and date of birth? Tell me what's been happening. What are you worried it might be?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "How was the leg after the operation, and what changed three days ago? Is it the calf or the whole leg? Any redness, fever or problems with the wound?",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Did you have blood-thinning injections after surgery, and did you finish them? Are you on HRT? Any cancer, previous clots, or clots in the family?",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Any breathlessness, chest pain, coughing blood or blackouts?",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop there and summarise your history."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Mrs Aldridge, 58, four weeks after a left knee replacement, with three days of new left calf pain and swelling. She takes HRT. No breathlessness or chest pain. I suspect a left DVT.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "She has a tender calf, 3 cm larger than the right, with pitting oedema. Wells score and plan?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Surgery within 12 weeks, tenderness, calf swelling and pitting oedema: 4, so DVT likely. She needs a proximal leg vein ultrasound with the result within 4 hours; if that's not possible, a D-dimer, interim anticoagulation and a scan within 24 hours.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          },
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The scan confirms a popliteal DVT."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Apixaban or rivaroxaban for at least 3 months, with advice on symptoms and bleeding.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "candidate",
+        "text": "Hello, I'm Dr Patel, one of the surgical trainees. Can I confirm your name and date of birth? You're worried about your new knee. Let me find out what's happened and I'll explain what we'll do.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Did the pain start suddenly behind the knee, as if something popped? Any fever or spreading redness? Is the wound dry?",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Did you have all the injections, or were they stopped early? Any cancer treated in the last six months? Are you on HRT?",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Any breathlessness or chest pain? Before we start blood thinners: any stomach ulcers, bleeding problems, kidney or liver trouble, or falls? Do you take aspirin?",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop there and summarise your history."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Mrs Aldridge, 58: left knee replacement four weeks ago; three days of new calf pain and swelling after a normal recovery. Prophylaxis completed; on HRT. No breathlessness, chest pain, fever or wound problems, and no bleeding history. Suspected provoked left DVT.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "She has a tender calf, 3 cm larger than the right, with pitting oedema. Wells score and plan?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Surgery within 12 weeks, tenderness along the deep veins, calf 3 cm larger, pitting oedema: 4, and an alternative diagnosis is less likely than DVT. DVT likely. Proximal leg vein ultrasound with the result within 4 hours. If that can't happen, D-dimer, interim anticoagulation and a scan within 24 hours. I'd take FBC, renal and liver function and clotting, but not wait for them. If the scan is negative and the D-dimer positive, repeat the scan at 6 to 8 days.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          },
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The scan confirms a popliteal DVT."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Apixaban or rivaroxaban. It's provoked, so we'd consider stopping at 3 months if the provoking factor has gone and the course is uncomplicated. Her combined HRT is a provoking factor too, so it needs reviewing before then. No thrombophilia testing.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G4",
+      "move": "Not asking about breathlessness, chest pain or haemoptysis.",
+      "consequence": "Safety-critical: misses a PE, which changes the pathway to CTPA and urgent treatment."
+    },
+    {
+      "row": "G2",
+      "move": "Attributing all swelling to the operation.",
+      "consequence": "A DVT four weeks after major surgery goes undiagnosed."
+    },
+    {
+      "row": "G3",
+      "move": "Skipping prophylaxis, HRT, cancer and previous clots.",
+      "consequence": "Can't score Wells or judge whether the DVT is provoked."
+    },
+    {
+      "row": "G7",
+      "move": "Delaying the scan without interim anticoagulation.",
+      "consequence": "Safety-critical: an untreated proximal DVT can embolise while she waits."
+    },
+    {
+      "row": "G8",
+      "move": "Giving a prophylactic dose, or no planned review of duration.",
+      "consequence": "Undertreats the clot and leaves no decision point at 3 months."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You forgot the PE questions",
+      "line": "Before I finish: any breathlessness, chest pain or coughing up blood?"
+    },
+    {
+      "when": "Asked if a positive D-dimer confirms DVT",
+      "line": "No, it's often raised after surgery. It helps rule out, not in; the ultrasound decides."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Two-level DVT Wells: 1 point each for active cancer, paralysis or plaster, bedridden 3 days or surgery within 12 weeks, deep vein tenderness, whole leg swollen, calf 3 cm larger, pitting oedema, collateral veins, previous DVT; minus 2 if an alternative is at least as likely. 2 or more: likely.",
+      "source": "NG158"
+    },
+    {
+      "fact": "Likely: ultrasound within 4 hours, or D-dimer plus interim anticoagulation and scan within 24 hours. Unlikely: D-dimer within 4 hours; scan if positive.",
+      "source": "NG158"
+    },
+    {
+      "fact": "Confirmed proximal DVT: apixaban or rivaroxaban for at least 3 months; provoked, consider stopping at 3 months if the provoking factor has gone (combined HRT counts: review it).",
+      "source": "NG158"
+    }
+  ],
+  "recall": {
+    "think": "Proximal DVT and PE; also cellulitis, Baker's cyst, haematoma.",
+    "say": "\"Wells 4: DVT likely. She needs a proximal leg vein ultrasound today.\"",
+    "do": [
+      "Risk factors and PE screen",
+      "Score 2-level Wells",
+      "Scan in 4 hours or anticoagulate"
+    ],
+    "numbers": [
+      {
+        "value": "2 or more",
+        "meaning": "Wells score: DVT likely",
+        "source": "NG158"
+      },
+      {
+        "value": "4 hours",
+        "meaning": "target for ultrasound result; otherwise interim anticoagulation and scan within 24 hours",
+        "source": "NG158"
+      },
+      {
+        "value": "3 months",
+        "meaning": "minimum anticoagulation for confirmed proximal DVT",
+        "source": "NG158"
+      }
+    ],
+    "trap": "Swelling \"expected after a knee replacement\".",
+    "finish": "Ultrasound; DOAC for at least 3 months; review at 3 months."
+  },
+  "sources": [
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format: 9-minute stations with 1 minute's reading; introduce yourself and confirm identity"
+    },
+    {
+      "id": "NG158",
+      "name": "NICE NG158: Venous thromboembolic diseases: diagnosis, management and thrombophilia testing",
+      "version": "Published 26 March 2020; last updated 2 August 2023",
+      "url": "https://www.nice.org.uk/guidance/ng158/chapter/Recommendations",
+      "supports": "Two-level DVT Wells score (table 1); ultrasound within 4 hours or D-dimer, interim anticoagulation and scan within 24 hours (1.1.3-1.1.4); repeat scan at 6-8 days (1.1.6); baseline bloods without delaying treatment (1.3.4); at least 3 months, apixaban or rivaroxaban (1.3.5, 1.3.8); consider stopping at 3 months if provoked and the provoking factor is no longer present (1.4.2); no thrombophilia testing after provoked VTE (1.9.2)"
+    }
+  ],
+  "partner": {
+    "opening": "Please take a focused history from Mrs Aldridge. I'll stop you at 6 minutes to summarise.",
+    "actorBrief": "You are Maureen Aldridge, 58, a school administrator. You had your left knee replaced 4 weeks ago and were doing well until 3 days ago. Opening line: \"My left leg has swollen up and the calf really aches. It's worse when I stand.\" Worried and a little tearful. Hidden concern: \"Have I damaged the new knee?\" Say it only if asked what worries you. Volunteer nothing else; give facts only when asked (see reveals).",
+    "reveals": [
+      {
+        "trigger": "Asks what worries her",
+        "finding": "\"I'm scared I've wrecked the new knee.\"",
+        "row": "G1"
+      },
+      {
+        "trigger": "Asks what changed and where",
+        "finding": "Knee was settling; 3 days ago the calf became tight and aching; swelling from ankle to just below the knee. Gradual, no pop.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Asks about redness, fever or wound",
+        "finding": "No redness spreading, no fever; wound healed and dry.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Asks about prophylaxis and mobility",
+        "finding": "Had tablets for two weeks after surgery and finished them. Walking with a stick, mostly sitting.",
+        "row": "G3"
+      },
+      {
+        "trigger": "Asks about hormones, cancer, previous clots",
+        "finding": "On combined HRT for 5 years. No cancer. No previous clots; mother had a clot after a hip operation.",
+        "row": "G3"
+      },
+      {
+        "trigger": "Asks about breathlessness, chest pain, haemoptysis",
+        "finding": "None.",
+        "row": "G4"
+      },
+      {
+        "trigger": "Asks about bleeding risk",
+        "finding": "No ulcers, bleeding problems or falls. No aspirin.",
+        "row": "G4"
+      },
+      {
+        "trigger": "At 6 minutes",
+        "finding": "Say: \"Please stop there and summarise your history.\" Then give findings: tender along the deep veins, left calf 3 cm larger, pitting oedema to mid-shin; no redness; wound healed.",
+        "row": "G5"
+      }
+    ],
+    "push": [
+      {
+        "question": "What is her Wells score?",
+        "row": "G6",
+        "expect": "4 (surgery within 12 weeks, tenderness, calf 3 cm larger, pitting oedema): DVT likely."
+      },
+      {
+        "question": "The ultrasound can't be done until tomorrow morning. What now?",
+        "row": "G7",
+        "expect": "D-dimer, interim therapeutic anticoagulation, baseline bloods, scan within 24 hours."
+      },
+      {
+        "question": "The scan confirms a popliteal DVT. How would you treat her, and for how long?",
+        "row": "G8",
+        "expect": "Apixaban or rivaroxaban, at least 3 months; provoked, so consider stopping at 3 months if the provoking factor has gone; combined HRT is a provoking factor, so review it."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "\"The ultrasound is negative but the D-dimer is raised.\"",
+        "safeAnswer": "Stop interim anticoagulation and repeat the proximal ultrasound in 6 to 8 days.",
+        "row": "G7"
+      },
+      {
+        "prompt": "She becomes breathless with chest pain while waiting.",
+        "safeAnswer": "Treat as suspected PE: ABCDE, oxygen, senior help, and follow the PE pathway with CTPA.",
+        "row": "G4"
+      },
+      {
+        "prompt": "\"Should I have tests for a clotting disorder?\"",
+        "safeAnswer": "No: testing isn't offered after a DVT provoked by surgery.",
+        "row": "G8"
+      }
+    ]
+  }
+}

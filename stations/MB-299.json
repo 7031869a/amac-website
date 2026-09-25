@@ -1,0 +1,595 @@
+{
+  "id": "MB-299",
+  "exam": "MRCS-B",
+  "title": "Needlestick injury from an HIV-positive patient: first aid and PEP",
+  "type": "applied-knowledge",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "Professionalism and patient safety: occupational exposure to blood-borne viruses",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "BHIVA/BASHH UK guideline for the use of HIV post-exposure prophylaxis 2021 (current Sep 2026)",
+      "UKHSA Hepatitis B immunoglobulin (issued November 2023; updated Jul 2026)",
+      "UKHSA Green Book chapter 18: Hepatitis B (5 February 2026)"
+    ],
+    "related": [
+      {
+        "id": "MB-223",
+        "why": "Another theatre safety station: digital block and local anaesthetic doses"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Main theatre",
+    "role": "Core surgical trainee, assisting",
+    "scenario": "You are assisting at an open small bowel resection. While closing, a curved suture needle passes through both your gloves into your left index finger, and it bleeds. The patient is known to be HIV-positive.",
+    "task": "Tell the examiner what you would do immediately, and answer questions on risk assessment, post-exposure prophylaxis and follow-up."
+  },
+  "beforeYouWalkIn": {
+    "frame": "First aid, report now, risk assess, PEP within hours if indicated, then hepatitis B and C and follow-up.",
+    "trap": "Finishing the list first. Delay costs PEP efficacy.",
+    "firstMove": "\"I'd tell the surgeon, step away safely once someone takes over, and wash the wound under running water with soap.\""
+  },
+  "flow": [
+    "First aid",
+    "Report",
+    "Risk assessment",
+    "PEP: when and what",
+    "Hepatitis B and C",
+    "Source patient testing",
+    "Follow-up"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-skill",
+      "label": "First aid",
+      "fail": "Squeezes or sucks the wound, scrubs it with caustic agents, or keeps operating.",
+      "pass": "Tells the surgeon, hands over safely, removes gloves, washes under running water with soap, covers with a waterproof dressing.",
+      "high": "Knows squeezing is not recommended; irrigates eyes or mouth with water or saline for a splash; patient safety maintained while someone rescrubs.",
+      "source": "PEP"
+    },
+    {
+      "id": "G2",
+      "domain": "professionalism",
+      "label": "Report urgently",
+      "fail": "Waits until the end of the list or next day for occupational health.",
+      "pass": "Reports at once to occupational health, or the emergency department out of hours; completes an incident report.",
+      "high": "Occupational health follow-up within 72 hours; exposure to a BBV-positive source is reported to HSE (RIDDOR) and UKHSA surveillance.",
+      "source": "PEP"
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "Risk assessment",
+      "fail": "Quotes a percentage and stops, or never asks about the source's treatment.",
+      "pass": "Asks depth, visible blood, needle type, and the source's ART, adherence and latest viral load.",
+      "high": "Risk about 0.3% from an untreated source; deep injury raises it. On ART for 6 months, undetectable: PEP generally not indicated.",
+      "source": "PEP"
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-knowledge",
+      "label": "PEP: when and what (safety-critical)",
+      "fail": "Says PEP only works within 1 hour, or can start after a week; waits for results.",
+      "pass": "Starts as soon as possible, preferably within 24 hours, not beyond 72 hours; does not wait for source or baseline results.",
+      "high": "First line: tenofovir disoproxil/emtricitabine plus raltegravir 1200 mg once daily for 28 days; checks interactions and pregnancy.",
+      "source": "PEP"
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-knowledge",
+      "label": "Hepatitis B and C",
+      "fail": "Considers HIV only.",
+      "pass": "Checks own hepatitis B immunity; source tested for hepatitis B and C; baseline hepatitis C testing for the recipient.",
+      "high": "Source status unknown: responder, consider booster. If source HBsAg-positive and non-immune: vaccine plus HBIG, ideally within 48 h, no later than 1 week.",
+      "source": "HBIG"
+    },
+    {
+      "id": "G6",
+      "domain": "professionalism",
+      "label": "Testing the source patient",
+      "fail": "Asks the patient for consent himself, or tests without consent.",
+      "pass": "Another staff member seeks consent for HIV, hepatitis B and C testing; source testing must not delay PEP.",
+      "high": "If the patient lacks capacity, tests only if in the patient's best interests; keeps the exposure confidential and documented.",
+      "source": "PEP"
+    },
+    {
+      "id": "G7",
+      "domain": "communication",
+      "label": "Follow-up and advice",
+      "fail": "Gives no follow-up plan or advice.",
+      "pass": "Baseline HIV, renal and liver tests; occupational health follow-up; HIV test at least 45 days after finishing PEP.",
+      "high": "Advises condoms until follow-up testing is negative, adherence, side effects, and to report symptoms of seroconversion.",
+      "source": "PEP"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "The needle has gone through your gloves. What do you do?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd squeeze it to make it bleed, change gloves and finish closing. I'd go to occupational health tomorrow.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          },
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What is your risk?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "About 1 in 300, so it's low.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "When should PEP start?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "It has to be within an hour or it doesn't work, so it's probably too late by tomorrow.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Anything else to consider?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "No, it's HIV that matters here.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you find out more about the patient?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd ask him myself after surgery if I can test his blood.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Follow-up?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "If I feel fine, nothing more.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "examiner",
+        "text": "The needle has gone through your gloves. What do you do?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd tell the surgeon, step away once someone takes over, take my gloves off and wash the finger under running water with soap. No squeezing. Then a waterproof dressing.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd report it straight away to occupational health, or the emergency department out of hours, and fill in an incident report.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How do you assess the risk?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "How deep, whether there was visible blood, the type of needle, and the patient's treatment, adherence and latest viral load.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "He was diagnosed three weeks ago and has not started treatment. Viral load 45,000."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Then I need PEP, as soon as possible, preferably within 24 hours and not beyond 72. I wouldn't wait for his tests or my baseline bloods.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Anything else?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Hepatitis B and C. I'd check my hepatitis B immunity and have baseline hepatitis C testing.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Someone else from the team should ask him for consent to test for HIV, hepatitis B and C.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Follow-up?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Baseline HIV, kidney and liver tests, occupational health follow-up, and an HIV test at least 45 days after finishing PEP.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "examiner",
+        "text": "First aid?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Wash under running water with soap; squeezing isn't recommended. If blood had splashed my eye I'd irrigate with water or saline. The patient stays safe: someone rescrubs before I leave.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How quickly will you be seen?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Today, for PEP. Occupational health should follow me up within 72 hours. Because he has a blood-borne virus, the exposure is reportable to HSE and to UKHSA surveillance.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What is the risk?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "About 0.3% from an untreated source; a deep injury with visible blood raises it. If he'd been on treatment for six months with an undetectable load, PEP generally wouldn't be indicated, though a deep injury could still be discussed case by case.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What regimen?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Tenofovir disoproxil with emtricitabine, plus raltegravir 1200 mg once daily, for 28 days. I'd check interactions such as antacids and iron, and pregnancy status where relevant.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Your last hepatitis B antibody level was protective."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Then I'm a known responder. His hepatitis B status is unknown, so I'd consider a booster, as my last dose was over a year ago; no immunoglobulin. If he turned out to be HBsAg-positive and I weren't immune, I'd need vaccine plus HBIG, ideally within 48 hours and no later than a week.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "He is still under anaesthetic."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Then consent waits until he can decide, unless testing is in his best interests. It mustn't delay my PEP. I'd keep it confidential and document it.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Until my follow-up test is negative I'd use condoms, take every dose, and report any flu-like illness or rash.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G4",
+      "move": "Believing PEP is futile after 1 hour, or waiting for source results.",
+      "consequence": "PEP is started late or not at all when it could still work."
+    },
+    {
+      "row": "G2",
+      "move": "Finishing the list and reporting the next day.",
+      "consequence": "Hours lost in the window when PEP is most effective."
+    },
+    {
+      "row": "G1",
+      "move": "Squeezing the wound or scrubbing it with bleach.",
+      "consequence": "Tissue damage with no proven benefit."
+    },
+    {
+      "row": "G5",
+      "move": "Managing HIV only.",
+      "consequence": "Misses hepatitis B prophylaxis and hepatitis C follow-up."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "Asked 'Is it too late for PEP?'",
+      "line": "Not within 72 hours. Sooner is better, so I'd start it today."
+    },
+    {
+      "when": "Asked about a patient on suppressed treatment",
+      "line": "PEP is generally not indicated, but I'd still get urgent expert advice for a deep injury."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Wash with soap and running water; do not squeeze. Irrigate mucosa with water.",
+      "source": "PEP"
+    },
+    {
+      "fact": "HIV risk from a sharps injury, untreated source: about 0.3%. Deep injury and visible blood raise it.",
+      "source": "PEP"
+    },
+    {
+      "fact": "Source on ART at least 6 months, undetectable: PEP generally not indicated after sharps; case by case.",
+      "source": "PEP"
+    },
+    {
+      "fact": "Start PEP preferably within 24 hours, not beyond 72. Tenofovir disoproxil/emtricitabine plus raltegravir 1200 mg once daily, 28 days.",
+      "source": "PEP"
+    },
+    {
+      "fact": "Final HIV test at least 45 days after completing PEP.",
+      "source": "PEP"
+    },
+    {
+      "fact": "Hepatitis B, HBsAg-positive source: non-immune gets vaccine plus HBIG, ideally within 48 h, no later than 1 week.",
+      "source": "HBIG"
+    },
+    {
+      "fact": "Unknown source: responder, consider booster; HBIG only for known non-responders.",
+      "source": "GB18"
+    }
+  ],
+  "recall": {
+    "think": "HIV, hepatitis B and C.",
+    "say": "\"I need a PEP assessment today.\"",
+    "do": [
+      "Wash, don't squeeze",
+      "Report now",
+      "Start PEP if indicated"
+    ],
+    "numbers": [
+      {
+        "value": "72 hours",
+        "meaning": "latest PEP start; ideally within 24",
+        "source": "PEP"
+      },
+      {
+        "value": "28 days",
+        "meaning": "PEP course",
+        "source": "PEP"
+      },
+      {
+        "value": "45 days",
+        "meaning": "after PEP: final HIV test",
+        "source": "PEP"
+      }
+    ],
+    "trap": "Finishing the list first.",
+    "finish": "Occupational health follow-up and testing."
+  },
+  "sources": [
+    {
+      "id": "PEP",
+      "name": "Cresswell F, Asanati K, Bhagani S, et al. UK guideline for the use of HIV post-exposure prophylaxis 2021 (BHIVA/BASHH). HIV Med 2022;23:494-545",
+      "version": "2021 guideline, published 2022; current version on BHIVA site September 2026",
+      "url": "https://bhiva.org/clinical-guideline/pep-guidelines/",
+      "supports": "First aid; occupational health within 72 hours and reporting; 0.3% sharps risk and risk factors; PEP indications by source viral load; timing (preferably 24 h, not beyond 72 h); first-line regimen and 28-day course; source consent by another staff member and best-interests testing; baseline tests; HIV test at least 45 days after PEP; condom advice"
+    },
+    {
+      "id": "HBIG",
+      "name": "UK Health Security Agency. Immunoglobulin: when to use. Hepatitis B immunoglobulin (issued November 2023)",
+      "version": "Issued November 2023; updated 31 July 2026",
+      "url": "https://www.gov.uk/government/publications/immunoglobulin-when-to-use/hepatitis-b-immunoglobulin-issued-march-2021",
+      "supports": "Exposure to a known HBsAg-positive source: fully vaccinated, booster (no HBIG) unless boosted within the past year; non-responders HBIG plus vaccine; HBIG with vaccine as soon as possible, preferably within 24 hours, ideally within 48 hours, no later than a week"
+    },
+    {
+      "id": "GB18",
+      "name": "UK Health Security Agency. Immunisation against infectious disease (the Green Book), chapter 18: Hepatitis B",
+      "version": "5 February 2026",
+      "url": "https://assets.publishing.service.gov.uk/media/699c8d35e1c6bad1576fbc01/Green-book-on-immunisation-hepatitis-B-chapter_-_05022026.pdf",
+      "supports": "Table 18.8: unknown source, fully vaccinated: consider booster if last dose 1 year or more ago; unvaccinated: accelerated vaccine course; known non-responder: HBIG plus booster"
+    },
+    {
+      "id": "HSE",
+      "name": "Health and Safety Executive. Sharps injuries: actions to take (RIDDOR)",
+      "version": "Web guidance, current September 2026",
+      "url": "https://www.hse.gov.uk/healthservices/needlesticks/actions.htm",
+      "supports": "Injury from a sharp known to be contaminated with a blood-borne virus is reportable to HSE as a dangerous occurrence"
+    },
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format: 9 minutes with 1 minute's reading; examiner-led questioning in applied knowledge stations"
+    }
+  ],
+  "media": [],
+  "partner": {
+    "opening": "A suture needle has gone through both your gloves into your finger, and it is bleeding. The patient is HIV-positive. What do you do?",
+    "reveals": [
+      {
+        "trigger": "Candidate asks about the injury",
+        "finding": "Solid curved needle, through double gloves, moderately deep, visible blood on the needle.",
+        "row": "G3"
+      },
+      {
+        "trigger": "Candidate asks about the source's treatment",
+        "finding": "Diagnosed three weeks ago, not yet on ART. Viral load 45,000 copies/ml. Hepatitis B and C status unknown.",
+        "row": "G3"
+      },
+      {
+        "trigger": "Candidate asks about own hepatitis B status",
+        "finding": "Completed vaccination; documented protective antibody level two years ago; no booster since.",
+        "row": "G5"
+      }
+    ],
+    "push": [
+      {
+        "question": "What do you do first?",
+        "row": "G1",
+        "expect": "Hand over safely, wash with soap and running water, no squeezing."
+      },
+      {
+        "question": "Who do you tell and when?",
+        "row": "G2",
+        "expect": "Occupational health or ED now; incident report."
+      },
+      {
+        "question": "What determines the risk?",
+        "row": "G3",
+        "expect": "Depth, blood, needle type; source ART, adherence, viral load."
+      },
+      {
+        "question": "When must PEP start, and what is it?",
+        "row": "G4",
+        "expect": "Preferably within 24 h, not beyond 72 h; TDF/FTC plus raltegravir 1200 mg once daily, 28 days."
+      },
+      {
+        "question": "What about hepatitis?",
+        "row": "G5",
+        "expect": "Own HBV immunity, source HBV/HCV testing, HBV booster or HBIG as indicated."
+      },
+      {
+        "question": "How is the source tested?",
+        "row": "G6",
+        "expect": "Consent sought by another staff member; best interests if no capacity."
+      },
+      {
+        "question": "What follow-up do you need?",
+        "row": "G7",
+        "expect": "Baseline tests; HIV test at least 45 days after PEP; condoms until negative."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "He has been on ART for 3 years with an undetectable viral load last month.",
+        "safeAnswer": "PEP generally not indicated after a sharps injury; discuss case by case with an HIV clinician given the depth.",
+        "row": "G3"
+      },
+      {
+        "prompt": "It is now 80 hours since the injury.",
+        "safeAnswer": "PEP is not started beyond 72 hours; arrange baseline and follow-up testing and support.",
+        "row": "G4"
+      },
+      {
+        "prompt": "Your consultant says to finish closing first.",
+        "safeAnswer": "Explain PEP is time-critical; someone else closes; report now.",
+        "row": "G2"
+      },
+      {
+        "prompt": "You are pregnant.",
+        "safeAnswer": "Pregnancy does not change the decision to start PEP; the raltegravir dose changes to 400 mg twice daily; seek HIV specialist advice.",
+        "row": "G4"
+      }
+    ]
+  }
+}

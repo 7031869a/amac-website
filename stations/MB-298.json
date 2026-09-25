@@ -1,0 +1,637 @@
+{
+  "id": "MB-298",
+  "exam": "MRCS-B",
+  "title": "Postoperative pyrexia after emergency laparotomy",
+  "type": "data-interpretation",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "Perioperative care: postoperative complications (observations, bloods and CT released in stages)",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "NICE NG253 Suspected sepsis in people aged 16 or over (Nov 2025, updated Sep 2026)",
+      "WSES intra-abdominal infections guideline (Sartelli et al., 2017)",
+      "Mavros et al., Chest (2011)",
+      "Sawyer et al., N Engl J Med (2015)"
+    ],
+    "related": [
+      {
+        "id": "MB-163",
+        "why": "Referring a septic postoperative patient to the registrar by SBAR, with fluid and antibiotic detail"
+      },
+      {
+        "id": "MB-178",
+        "why": "Sepsis handover"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Surgical ward",
+    "role": "Core surgical trainee on call",
+    "scenario": "Mr Neville Ashdown, 68, had an emergency Hartmann's procedure for perforated sigmoid diverticulitis with purulent peritonitis. On the evening of day 1 the nurse calls you because his temperature is 38.2°C.",
+    "task": "The examiner will give you his observations, results and imaging in stages. Interpret each and tell the examiner what you would do."
+  },
+  "beforeYouWalkIn": {
+    "frame": "A temperature is a reason to assess the patient. Look for the source, grade the risk, act on it.",
+    "trap": "Naming 'day 1 atelectasis' or a calendar mnemonic instead of examining him.",
+    "firstMove": "\"I'd go and see him: full set of observations, NEWS2, then examine from chest to calves.\""
+  },
+  "flow": [
+    "Stage 1: day-1 fever",
+    "Differential by source",
+    "Stage 2: day-6 observations",
+    "Bloods",
+    "Imaging",
+    "CT and source control",
+    "Escalate and communicate"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-skill",
+      "label": "Assess the patient, not the number",
+      "fail": "Calls day-1 fever atelectasis, or starts antibiotics, without seeing him.",
+      "pass": "Sees him: observations and NEWS2, chest, abdomen, wound, stoma, lines, urine output, calves, drug and transfusion charts.",
+      "high": "Says atelectasis has not been shown to cause fever; early fever is often inflammatory. Sets repeat observations and a clear re-review trigger.",
+      "source": "MAVROS"
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-knowledge",
+      "label": "Differential by source",
+      "fail": "Recites a day-by-day mnemonic as the diagnosis.",
+      "pass": "Lists by source: chest, urine, wound, line, intra-abdominal collection, VTE, drug or transfusion reaction.",
+      "high": "Ties it to this operation: pelvic abscess or rectal stump leak; uses timing only to weight likelihood, never to exclude."
+    },
+    {
+      "id": "G3",
+      "domain": "professionalism",
+      "label": "Recognise sepsis (safety-critical)",
+      "fail": "Treats day-6 fever and tachycardia as routine; no NEWS2, no escalation.",
+      "pass": "NEWS2 7 with suspected infection: high risk. Senior review; venous gas with lactate, cultures; broad-spectrum IV antibiotics and IV fluid bolus within 1 hour.",
+      "high": "Gives 250 ml boluses over 10–15 minutes, reassessing after each, up to 1,000 ml; catheter, hourly urine output; outreach if not improving.",
+      "source": "NG253"
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-knowledge",
+      "label": "Interpret the bloods",
+      "fail": "Reads the CRP alone, or misses the creatinine rise.",
+      "pass": "Rising white count and CRP after an earlier fall, raised lactate and acute kidney injury: a septic complication.",
+      "high": "Notes no anastomosis after a Hartmann's; the trend matters: a second rise is a complication (stump leak or collection) until proven otherwise."
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-skill",
+      "label": "Choose the right imaging",
+      "fail": "Requests only an abdominal X-ray or ultrasound, or waits until tomorrow.",
+      "pass": "CT abdomen and pelvis with IV contrast today, once resuscitated; discusses the kidney injury with radiology rather than delaying.",
+      "high": "Asks radiology whether rectal contrast would help assess the rectal stump."
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-knowledge",
+      "label": "Interpret the CT and source control",
+      "fail": "Plans antibiotics alone for a large pelvic abscess in a septic patient.",
+      "pass": "Pelvic abscess by the rectal stump: image-guided percutaneous drainage plus antibiotics; pus sent for culture.",
+      "high": "Relaparotomy if not drainable, generalised peritonitis or no improvement; short antibiotic course once source control is adequate.",
+      "source": "WSES"
+    },
+    {
+      "id": "G7",
+      "domain": "communication",
+      "label": "Escalate and communicate",
+      "fail": "Does not inform the registrar or tell the patient what is happening.",
+      "pass": "Informs the registrar in a structured way, documents, and explains the concern and plan to the patient and nurse.",
+      "high": "Agrees a time for senior review and explicit triggers for critical care; is honest that a complication is suspected."
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "Day 1. Temperature 38.2°C. What do you think?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "It's day 1, so it's atelectasis. I'd ask for chest physio and start antibiotics to be safe.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What else causes postoperative fever?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Wind on day 1, water on day 3, wound on day 5, walking on day 7.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Day 6. Temperature 38.7, pulse 114, BP 102/64, RR 23, SpO2 94% on air."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Probably a wound infection. I'd swab it and see him on the ward round.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Bloods: CRP 290, white cells 19, creatinine 138."
+      },
+      {
+        "speaker": "candidate",
+        "text": "The CRP is high, so infection.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Imaging?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "An abdominal X-ray.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "CT shows a 6 cm pelvic collection with gas."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd continue antibiotics and repeat the scan in a week.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Anyone you would tell?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd hand it over in the morning.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "examiner",
+        "text": "Day 1. Temperature 38.2°C. What do you think?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd go and see him. Full observations and NEWS2, then examine chest, abdomen, wound, stoma, cannula sites and calves, check urine output, and look at the drug and transfusion charts.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What are you looking for?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "A source: chest, urine, wound, line, an intra-abdominal collection, VTE, or a drug or transfusion reaction.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Day 6. Temperature 38.7, pulse 114, BP 102/64, RR 23, SpO2 94% on air, alert."
+      },
+      {
+        "speaker": "candidate",
+        "text": "That's a NEWS2 of 7 with suspected infection, so high risk. I'd get senior review, do a venous blood gas with lactate and take blood cultures, and give broad-spectrum IV antibiotics and an IV fluid bolus within the hour.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Bloods: CRP 290, it was 110 on day 4. White cells 19.4, creatinine 138 from 82, lactate 2.6."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Inflammatory markers are rising again, lactate is up and he has an acute kidney injury. This is a septic complication until proven otherwise.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Imaging?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "CT abdomen and pelvis with IV contrast today, once resuscitated. I'd discuss the kidney injury with radiology rather than delay.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "CT: 6 cm rim-enhancing pelvic collection with gas beside the rectal stump."
+      },
+      {
+        "speaker": "candidate",
+        "text": "A pelvic abscess. I'd ask for image-guided percutaneous drainage, continue antibiotics and send the pus for culture.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Who needs to know?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "The registrar now, in a structured call. I'd document and explain to Mr Ashdown and his nurse what we think is happening.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "examiner",
+        "text": "Day 1. Temperature 38.2°C. Observations otherwise normal. Chest clear, wound clean."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Early fever after a laparotomy for peritonitis is often inflammatory. Atelectasis hasn't been shown to cause fever, so I won't label it that. I'd ask for four-hourly observations and to be called if NEWS2 rises.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Which cause worries you most in him?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "After a Hartmann's for pus, a pelvic abscess or a rectal stump leak. Timing only shifts likelihood; it never rules anything out.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Day 6. NEWS2 is 7."
+      },
+      {
+        "speaker": "candidate",
+        "text": "High risk. The fluid goes in as 250 ml boluses over 10 to 15 minutes, reassessing after each, up to 1,000 ml in total. A catheter for hourly urine, and critical care outreach if he doesn't respond.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "His CRP on day 3 was 150 and fell on day 4. Now it's 290."
+      },
+      {
+        "speaker": "candidate",
+        "text": "He has no anastomosis after a Hartmann's, so the trend is what matters: it fell and has now risen again. A second rise is a complication until proven otherwise, here a rectal stump leak or a pelvic collection.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Anything special about the CT?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd ask radiology whether rectal contrast would help show the stump.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What if drainage isn't possible?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Relaparotomy, or sooner if he develops generalised peritonitis or doesn't improve. Once source control is adequate, a short course of about four days of antibiotics is enough.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The registrar is in theatre for an hour."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd agree when they'll see him and involve outreach now if he stays high risk. And I'd tell Mr Ashdown honestly that we think there's a collection and what we plan to do.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G3",
+      "move": "Treating day-6 fever and tachycardia as a wound problem for the morning round.",
+      "consequence": "Delays antibiotics and source control in a patient at high risk of death from sepsis."
+    },
+    {
+      "row": "G1",
+      "move": "Diagnosing atelectasis from the calendar without examining him.",
+      "consequence": "Misses a treatable source and gives unneeded antibiotics."
+    },
+    {
+      "row": "G6",
+      "move": "Antibiotics alone for a large abscess in a septic patient.",
+      "consequence": "Without drainage the sepsis persists; he deteriorates."
+    },
+    {
+      "row": "G5",
+      "move": "Requesting an abdominal X-ray and waiting.",
+      "consequence": "Cannot show a collection; delays the CT that decides management."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "Asked 'Is it atelectasis?'",
+      "line": "I wouldn't assume that. I'd examine him and look for a source, because atelectasis hasn't been shown to cause fever."
+    },
+    {
+      "when": "Asked the CT is 'equivocal'",
+      "line": "Then I'd treat the physiology: he is high risk, so senior review now and repeat imaging or intervention guided by the registrar."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Atelectasis has not been shown to cause postoperative fever.",
+      "source": "MAVROS"
+    },
+    {
+      "fact": "NEWS2 of 7 or more with suspected infection is high risk: broad-spectrum IV antibiotics within 1 hour.",
+      "source": "NG253"
+    },
+    {
+      "fact": "High risk: IV fluid bolus within 1 hour; 250 ml over 10–15 minutes, reassess after each, up to 1,000 ml total.",
+      "source": "NG253"
+    },
+    {
+      "fact": "Well-defined abscesses: percutaneous drainage plus antibiotics; surgery if not drainable or peritonitis.",
+      "source": "WSES"
+    },
+    {
+      "fact": "After adequate source control, about 4 days of antibiotics was as good as longer courses.",
+      "source": "STOPIT"
+    }
+  ],
+  "recall": {
+    "think": "Sepsis from a pelvic abscess or leak.",
+    "say": "\"NEWS2 7: high risk, senior review now.\"",
+    "do": [
+      "See and examine him",
+      "Cultures, then IV antibiotics",
+      "Contrast CT abdomen and pelvis"
+    ],
+    "numbers": [
+      {
+        "value": "NEWS2 ≥ 7",
+        "meaning": "antibiotics within 1 hour",
+        "source": "NG253"
+      },
+      {
+        "value": "250 ml boluses, up to 1,000 ml",
+        "meaning": "reassess after each bolus",
+        "source": "NG253"
+      },
+      {
+        "value": "About 4 days",
+        "meaning": "antibiotics after source control",
+        "source": "STOPIT"
+      }
+    ],
+    "trap": "Calling fever atelectasis.",
+    "finish": "Image-guided drainage, or relaparotomy."
+  },
+  "sources": [
+    {
+      "id": "NG253",
+      "name": "NICE NG253. Suspected sepsis in people aged 16 or over: recognition, assessment and early management",
+      "version": "Published 19 November 2025, last updated 23 September 2026",
+      "url": "https://www.nice.org.uk/guidance/ng253",
+      "supports": "NEWS2 7 or more with suspected infection is high risk; high risk: venous blood gas with lactate and blood cultures (1.8.2), broad-spectrum IV antibiotics within 1 hour (1.8.3), IV fluid bolus within 1 hour (1.8.4), 250 ml over 10 to 15 minutes (1.8.6), further 250 ml boluses up to 1,000 ml total (1.8.7), reassess after each bolus (1.8.8); samples before antimicrobials and look for the source (1.8.1)"
+    },
+    {
+      "id": "MAVROS",
+      "name": "Mavros MN, Velmahos GC, Falagas ME. Atelectasis as a cause of postoperative fever: where is the clinical evidence? Chest 2011;140:418-24",
+      "version": "2011",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/21527508/",
+      "supports": "No clinical evidence that atelectasis causes early postoperative fever"
+    },
+    {
+      "id": "WSES",
+      "name": "Sartelli M, Chichom-Mefire A, Labricciosa FM, et al. The management of intra-abdominal infections from a global perspective: 2017 WSES guidelines. World J Emerg Surg 2017;12:29",
+      "version": "2017",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/28702076/",
+      "supports": "Source control; percutaneous drainage of well-defined abscesses; surgery when drainage is not feasible"
+    },
+    {
+      "id": "STOPIT",
+      "name": "Sawyer RG, Claridge JA, Nathens AB, et al. Trial of short-course antimicrobial therapy for intraabdominal infection. N Engl J Med 2015;372:1996-2005",
+      "version": "2015",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/25992746/",
+      "supports": "About 4 days of antibiotics after adequate source control was non-inferior to longer courses"
+    },
+    {
+      "id": "BL",
+      "name": "Bailey & Love's Short Practice of Surgery (O'Connell, McCaskie, Sayers, eds)",
+      "version": "28th edition, 2023",
+      "url": "https://www.routledge.com/Bailey--Loves-Short-Practice-of-Surgery---28th-Edition/OConnell-McCaskie-Sayers/p/book/9780367548117",
+      "supports": "Postoperative complications: causes of postoperative pyrexia; intra-abdominal collections after laparotomy"
+    },
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format: 9 minutes with 1 minute's reading; examiner-led questioning in applied knowledge stations"
+    }
+  ],
+  "media": [
+    {
+      "id": "obs-chart-day6",
+      "task": "Calculate NEWS2 and identify the deterioration",
+      "description": "NEWS2 observation chart for days 1 to 6 showing a day-1 temperature spike that settles, then rising temperature, pulse and respiratory rate on day 6",
+      "required": false,
+      "status": "needed"
+    },
+    {
+      "id": "ct-pelvic-collection",
+      "task": "Describe the abnormality and plan source control",
+      "description": "Axial contrast-enhanced CT of the pelvis showing a rim-enhancing gas-containing collection beside a stapled rectal stump",
+      "required": false,
+      "status": "needed"
+    }
+  ],
+  "partner": {
+    "opening": "Mr Ashdown is on day 1 after a Hartmann's procedure for purulent peritonitis. His temperature is 38.2°C. What would you do?",
+    "reveals": [
+      {
+        "trigger": "Candidate asks for observations or examines (stage 1, day 1)",
+        "finding": "T 38.2°C, HR 96, BP 128/76, RR 18, SpO2 97% on air, alert. NEWS2 2. Chest clear. Abdomen tender around the wound only. Wound clean. Stoma pink. Urine 50 ml/h. Cannula site clean. Calves soft. No transfusion.",
+        "row": "G1"
+      },
+      {
+        "trigger": "After the differential (stage 2, day 6)",
+        "finding": "T 38.7°C, HR 114, BP 102/64, RR 23, SpO2 94% on air, alert (NEWS2 7). Lower abdominal pain; stoma output has dropped. Wound slightly red, no discharge. Chest clear. Urine 20 ml/h for 2 hours.",
+        "row": "G3"
+      },
+      {
+        "trigger": "Candidate asks for bloods",
+        "finding": "WCC 19.4. CRP 290 mg/L (150 on day 3, 110 on day 4). Creatinine 138 µmol/L (baseline 82). Venous lactate 2.6 mmol/L. Blood cultures sent.",
+        "row": "G4"
+      },
+      {
+        "trigger": "Candidate requests CT (stage 3)",
+        "finding": "CT abdomen and pelvis with IV contrast: 6 cm rim-enhancing pelvic collection containing gas, beside the rectal stump. No free intraperitoneal gas. Stoma enhancing normally.",
+        "row": "G6"
+      }
+    ],
+    "push": [
+      {
+        "question": "Is day-1 fever atelectasis?",
+        "row": "G1",
+        "expect": "No: not proven to cause fever; examine and look for a source."
+      },
+      {
+        "question": "What causes fever after surgery?",
+        "row": "G2",
+        "expect": "By source: chest, urine, wound, line, collection or leak, VTE, drug or transfusion reaction."
+      },
+      {
+        "question": "What is his NEWS2 on day 6 and what does it mean?",
+        "row": "G3",
+        "expect": "7: high risk; senior review; venous gas with lactate, cultures; IV antibiotics and fluid bolus within 1 hour."
+      },
+      {
+        "question": "Interpret the bloods.",
+        "row": "G4",
+        "expect": "Second rise in CRP and white count, raised lactate, AKI: septic complication."
+      },
+      {
+        "question": "What imaging and when?",
+        "row": "G5",
+        "expect": "CT abdomen and pelvis with IV contrast today."
+      },
+      {
+        "question": "How will you treat the collection?",
+        "row": "G6",
+        "expect": "Image-guided drainage plus antibiotics; relaparotomy if not drainable or peritonitic."
+      },
+      {
+        "question": "Who do you tell?",
+        "row": "G7",
+        "expect": "Registrar now; patient and nurse; documented plan and triggers."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "Suppose he had spiked a fever during a blood transfusion on the ward.",
+        "safeAnswer": "Stop the transfusion if still running, check the patient and unit identity, observations, and follow the transfusion reaction protocol.",
+        "row": "G2"
+      },
+      {
+        "prompt": "The radiologist cannot drain it: it is behind loops of bowel.",
+        "safeAnswer": "Discuss with the consultant: consider transrectal/transgluteal access or relaparotomy; continue antibiotics.",
+        "row": "G6"
+      },
+      {
+        "prompt": "His NEWS2 is still 7 an hour after antibiotics and fluid.",
+        "safeAnswer": "Escalate to the registrar and critical care outreach now.",
+        "row": "G7"
+      },
+      {
+        "prompt": "What is the role of lactate?",
+        "safeAnswer": "It helps grade severity and response to treatment; a normal lactate does not exclude sepsis.",
+        "row": "G3"
+      }
+    ]
+  }
+}

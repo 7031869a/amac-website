@@ -1,0 +1,610 @@
+{
+  "id": "MB-301",
+  "exam": "MRCS-B",
+  "title": "The frail older surgical patient: frailty, CGA, POPS and delirium",
+  "type": "applied-knowledge",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "Perioperative care: the older patient",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "CPOC/BGS Perioperative care for people living with frailty (Sep 2021)",
+      "NICE CG103 Delirium (Jul 2010, updated Jan 2023)",
+      "Bellelli et al., Age Ageing (2014): 4AT validation"
+    ],
+    "related": [
+      {
+        "id": "MB-231",
+        "why": "Hip fracture: orthogeriatric care in the emergency pathway"
+      },
+      {
+        "id": "MB-163",
+        "why": "Referring a suspected anastomotic leak"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Preoperative assessment clinic, then the surgical ward",
+    "role": "Core surgical trainee",
+    "scenario": "Mr Cyril Pembury, 82, is listed for an elective laparoscopic right hemicolectomy for caecal cancer. He lives alone, walks with a stick, has fallen twice this year and his daughter says his memory is 'not what it was'. He takes eleven regular medicines.",
+    "task": "Answer the examiner's questions on assessing and optimising him before surgery, and on his care afterwards."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Screen for frailty, assess across domains, decide together, prevent delirium, and when it comes, find the cause.",
+    "trap": "Treating new postoperative confusion as dementia, or reaching for sedation first.",
+    "firstMove": "\"I'd score his frailty with the Clinical Frailty Scale and ask for a comprehensive geriatric assessment.\""
+  },
+  "flow": [
+    "Frailty",
+    "Comprehensive geriatric assessment",
+    "POPS and shared decisions",
+    "Delirium prevention",
+    "Day 2 confusion: assess",
+    "Find the cause and treat",
+    "Family and follow-up"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-knowledge",
+      "label": "Frailty and screening",
+      "fail": "Equates frailty with age, or does not screen.",
+      "pass": "Reduced reserve, vulnerable to minor stressors. CFS for all patients over 65, and younger patients at risk of frailty; 5 or more is frail.",
+      "high": "Distinguishes frailty from multimorbidity and disability; scores baseline function; uses it to inform, not replace, decisions.",
+      "source": "CPOC"
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-skill",
+      "label": "Comprehensive geriatric assessment",
+      "fail": "Lists his medical problems only.",
+      "pass": "Multidisciplinary, multidomain: medical, medicines, cognition, mood, function, mobility and falls, nutrition, continence, social; produces a plan.",
+      "high": "Applies it to him: deprescribe sedatives and anticholinergics, falls and nutrition plan, documented baseline cognition, early discharge planning.",
+      "source": "CPOC"
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "POPS and shared decisions",
+      "fail": "Cannot describe it, or claims it guarantees better outcomes.",
+      "pass": "Geriatrician-led perioperative service: CGA and optimisation before surgery, shared decisions, co-management after, discharge planning.",
+      "high": "Frames the decision around what matters to him, including alternatives and honest risk of losing independence.",
+      "source": "CPOC"
+    },
+    {
+      "id": "G4",
+      "domain": "professionalism",
+      "label": "Delirium prevention",
+      "fail": "No plan, or sedatives at night and a routine catheter.",
+      "pass": "Flags high risk (age, cognitive impairment); multicomponent prevention: orientation, glasses and hearing aids, sleep, fluids, nutrition, pain, early mobility.",
+      "high": "Adds avoiding unnecessary catheters and anticholinergics, reviewing medicines, and asking family to visit and help reorient.",
+      "source": "NICE"
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-skill",
+      "label": "Assess the confusion",
+      "fail": "Calls it dementia or 'sundowning' without assessment.",
+      "pass": "Acute onset and fluctuation; uses the 4AT; a score of 4 or more suggests delirium.",
+      "high": "Recognises hypoactive delirium; gets collateral history of baseline from his daughter.",
+      "source": "FOURAT"
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-knowledge",
+      "label": "Find the cause, then treat (safety-critical)",
+      "fail": "Gives haloperidol or a benzodiazepine as first treatment.",
+      "pass": "Searches for causes: infection, hypoxia, pain, retention, constipation, drugs, dehydration, electrolytes; treats them; non-drug measures first.",
+      "high": "Considers anastomotic leak. Haloperidol short-term only if distressed or at risk after de-escalation fails; in Parkinson's or Lewy body dementia avoid if possible, extreme caution.",
+      "source": "NICE"
+    },
+    {
+      "id": "G7",
+      "domain": "communication",
+      "label": "Family and follow-up",
+      "fail": "Does not tell his family or plan follow-up.",
+      "pass": "Explains delirium to his daughter, involves her in care and decisions, and assesses capacity for specific decisions.",
+      "high": "Tells the GP in the discharge summary and arranges cognitive follow-up, as delirium may unmask dementia.",
+      "source": "NICE"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "Is Mr Pembury frail?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "He's 82, so yes, he's frail.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you assess him?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Bloods, ECG and a chest X-ray, and list his medical problems.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What is POPS?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "It's a geriatric team that reduces mortality in older surgical patients.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you reduce his risk of delirium?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "A catheter so he doesn't have to get up, and zopiclone at night to help him sleep.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Day 2. He is pulling at his cannula and doesn't know where he is."
+      },
+      {
+        "speaker": "candidate",
+        "text": "That's his dementia. He's probably sundowning.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What would you do?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Haloperidol to settle him.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "His daughter is on the phone."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd tell her he's a bit confused but fine.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "examiner",
+        "text": "Is Mr Pembury frail?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Frailty is reduced physiological reserve, so minor stress causes a big decline. I'd score him on the Clinical Frailty Scale; all patients over 65, and younger patients at risk of frailty, should be screened, and 5 or more is frail.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "He needs help with shopping and finances. How would you assess him?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "That's a CFS of 5, so he needs a comprehensive geriatric assessment: medical problems, medicines, cognition, mood, function and falls, nutrition, continence and social support, leading to a plan.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What does a POPS service do?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "A geriatrician-led team assesses and optimises him before surgery, helps with shared decisions, co-manages him afterwards and plans discharge.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Delirium?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "He's high risk. Orientation, glasses and hearing aids, sleep, fluids and nutrition, good pain control and early mobilisation.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Day 2. He is pulling at his cannula and doesn't know where he is."
+      },
+      {
+        "speaker": "candidate",
+        "text": "New, fluctuating confusion: I'd do a 4AT. Four or more suggests delirium.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "4AT is 11."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Delirium. I'd look for the cause: infection, hypoxia, pain, urinary retention, constipation, drugs, fluids and electrolytes, and treat it. Non-drug measures first.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd explain delirium to his daughter, ask her to help, and assess his capacity for each decision.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "examiner",
+        "text": "Is frailty the same as being old or disabled?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "No. He could have several diseases or a disability without being frail. I'd score his usual function, and use it to inform the decision, not to make it.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "His medicines include oxybutynin, amitriptyline and zopiclone."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd ask the geriatrician and pharmacist to deprescribe those: they're anticholinergic or sedative and raise falls and delirium risk. I'd record a baseline cognitive score, plan for falls and nutrition, and start discharge planning now.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you discuss surgery with him?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Start with what matters to him, then the options including not operating, and be honest about the risk of losing independence.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Anything else to prevent delirium?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Avoid a catheter unless needed, avoid anticholinergics and night sedation, and ask his daughter to visit and bring familiar things.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "He is quiet and sleepy, not agitated."
+      },
+      {
+        "speaker": "candidate",
+        "text": "That can be hypoactive delirium, which is easily missed. His daughter can tell me what's normal for him.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "He is tachycardic at 104 with a temperature of 37.9."
+      },
+      {
+        "speaker": "candidate",
+        "text": "On day 2 after a hemicolectomy, I'd consider an anastomotic leak and tell the registrar. If he's distressed or at risk and de-escalation fails, short-term haloperidol at the lowest dose. In Parkinson's or Lewy body dementia I'd avoid it if possible; the MHRA advises extreme caution.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "And at discharge?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd tell his GP about the delirium and arrange cognitive follow-up, because it can unmask dementia.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G6",
+      "move": "Sedating new confusion before looking for a cause.",
+      "consequence": "Masks sepsis or a leak, and worsens falls and aspiration risk."
+    },
+    {
+      "row": "G5",
+      "move": "Labelling acute confusion as dementia.",
+      "consequence": "Delirium is missed and its cause untreated."
+    },
+    {
+      "row": "G4",
+      "move": "Routine catheter and night sedation.",
+      "consequence": "Both precipitate delirium."
+    },
+    {
+      "row": "G1",
+      "move": "Treating age as frailty.",
+      "consequence": "Mislabels robust patients and misses frail younger ones."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "Asked about new confusion",
+      "line": "Delirium until proven otherwise: I'd do a 4AT and look for the cause."
+    },
+    {
+      "when": "Pressed to sedate him",
+      "line": "I'd try de-escalation first and look for a cause; haloperidol only short-term if he's distressed or at risk."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Screen all patients over 65, and younger patients at risk of frailty, with the Clinical Frailty Scale; 5 or more triggers CGA and optimisation.",
+      "source": "CPOC"
+    },
+    {
+      "fact": "Delirium risk: age 65 or over, cognitive impairment, hip fracture, severe illness.",
+      "source": "NICE"
+    },
+    {
+      "fact": "Use the 4AT to assess suspected delirium outside critical care.",
+      "source": "NICE"
+    },
+    {
+      "fact": "4AT score 4 or more suggests delirium.",
+      "source": "FOURAT"
+    },
+    {
+      "fact": "If distressed or at risk and de-escalation fails, consider short-term haloperidol (usually a week or less); in Parkinson's or Lewy body dementia avoid if possible, extreme caution per MHRA (1.7.4).",
+      "source": "NICE"
+    }
+  ],
+  "recall": {
+    "think": "Delirium hides sepsis or a leak.",
+    "say": "\"New confusion is delirium until proven otherwise.\"",
+    "do": [
+      "Score frailty; request CGA",
+      "Prevent delirium",
+      "4AT, then find the cause"
+    ],
+    "numbers": [
+      {
+        "value": "CFS ≥ 5",
+        "meaning": "frail: needs CGA",
+        "source": "CPOC"
+      },
+      {
+        "value": "4AT ≥ 4",
+        "meaning": "possible delirium",
+        "source": "FOURAT"
+      }
+    ],
+    "trap": "Quiet and sleepy can be delirium.",
+    "finish": "Treat the cause; tell the GP."
+  },
+  "sources": [
+    {
+      "id": "CPOC",
+      "name": "Centre for Perioperative Care and British Geriatrics Society. Guideline for perioperative care for people living with frailty undergoing elective and emergency surgery",
+      "version": "September 2021",
+      "url": "https://cpoc.org.uk/guidelines-and-resources/guidelines/perioperative-care-people-living-frailty",
+      "supports": "Frailty definition; Clinical Frailty Scale screening of all patients over 65, and younger patients at risk of frailty; CFS 5 or more triggers CGA and optimisation; shared decision-making; perioperative geriatric (POPS-type) services; delirium prevention"
+    },
+    {
+      "id": "NICE",
+      "name": "NICE CG103. Delirium: prevention, diagnosis and management in hospital and long-term care",
+      "version": "Published 28 July 2010, last updated 18 January 2023",
+      "url": "https://www.nice.org.uk/guidance/cg103",
+      "supports": "Risk factors; multicomponent prevention; avoiding unnecessary catheterisation; 4AT for assessment; short-term haloperidol (usually 1 week or less), taking into account MHRA advice on cardiac and neurological risks, especially in Parkinson's disease or dementia with Lewy bodies (1.7.4); information for family"
+    },
+    {
+      "id": "FOURAT",
+      "name": "Bellelli G, Morandi A, Davis DH, et al. Validation of the 4AT, a new instrument for rapid delirium screening: a study in 234 hospitalised older people. Age Ageing 2014;43:496-502",
+      "version": "2014",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/24590568/",
+      "supports": "4AT items and cut-off of 4 or more for possible delirium"
+    },
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format: 9 minutes with 1 minute's reading; examiner-led questioning in applied knowledge stations"
+    }
+  ],
+  "media": [
+    {
+      "id": "4at-form",
+      "task": "Score the 4AT from the examiner's findings",
+      "description": "Blank 4AT assessment form (free to use; download from the4at.com)",
+      "required": false,
+      "status": "needed"
+    }
+  ],
+  "partner": {
+    "opening": "Mr Pembury is 82 and listed for a laparoscopic right hemicolectomy. Is he frail, and how would you find out?",
+    "reveals": [
+      {
+        "trigger": "Candidate asks about function",
+        "finding": "Washes and dresses himself; daughter does his shopping and finances; walks with a stick; two falls this year. (CFS 5.)",
+        "row": "G1"
+      },
+      {
+        "trigger": "Candidate asks about medicines",
+        "finding": "Eleven regular medicines including oxybutynin, amitriptyline 25 mg at night and zopiclone.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Candidate asks about cognition",
+        "finding": "Abbreviated mental test 8/10 in clinic; no formal dementia diagnosis.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Day 2: candidate performs a 4AT",
+        "finding": "Drowsy (alertness 4); two errors on age, date of birth, place, year (2); months backwards fewer than seven (1); acute change reported by nurses (4). Total 11.",
+        "row": "G5"
+      },
+      {
+        "trigger": "Candidate asks for observations and examination on day 2",
+        "finding": "T 37.9°C, HR 104, BP 118/70, RR 20, SpO2 93% on air. No bowels open since surgery. Catheter in situ. Abdomen tender; wounds clean. Had codeine and cyclizine overnight.",
+        "row": "G6"
+      }
+    ],
+    "push": [
+      {
+        "question": "What is frailty and how do you measure it?",
+        "row": "G1",
+        "expect": "Reduced reserve; CFS in all over 65 and younger people at risk; 5 or more frail."
+      },
+      {
+        "question": "What is a comprehensive geriatric assessment?",
+        "row": "G2",
+        "expect": "Multidisciplinary, multidomain assessment producing a plan."
+      },
+      {
+        "question": "What does a POPS service do?",
+        "row": "G3",
+        "expect": "Preoperative CGA and optimisation, shared decisions, postoperative co-management."
+      },
+      {
+        "question": "How would you prevent delirium?",
+        "row": "G4",
+        "expect": "Multicomponent: orientation, aids, sleep, fluids, nutrition, pain, mobility; avoid catheters and sedatives."
+      },
+      {
+        "question": "How do you assess his confusion?",
+        "row": "G5",
+        "expect": "Acute change and fluctuation; 4AT; 4 or more suggests delirium."
+      },
+      {
+        "question": "What is causing it and what do you do?",
+        "row": "G6",
+        "expect": "Search and treat causes including leak; non-drug first; haloperidol short-term only if needed."
+      },
+      {
+        "question": "What do you tell his daughter?",
+        "row": "G7",
+        "expect": "What delirium is, how she can help, capacity, GP and cognitive follow-up."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "He has Parkinson's disease and is agitated.",
+        "safeAnswer": "Avoid haloperidol if possible (extreme caution per MHRA; NICE CG103 1.7.4); do not omit his Parkinson's medicines; de-escalate and seek senior or geriatric advice.",
+        "row": "G6"
+      },
+      {
+        "prompt": "He wants to go home now and tries to leave.",
+        "safeAnswer": "Assess capacity for that decision; if he lacks it, act in his best interests under the Mental Capacity Act, least restrictive option.",
+        "row": "G7"
+      },
+      {
+        "prompt": "What is the difference between frailty and disability?",
+        "safeAnswer": "Frailty is lost reserve and vulnerability; disability is difficulty doing activities. They overlap but are not the same.",
+        "row": "G1"
+      }
+    ]
+  }
+}
