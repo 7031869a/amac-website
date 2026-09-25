@@ -1,0 +1,647 @@
+{
+  "id": "MB-205",
+  "exam": "MRCS-B",
+  "title": "Perioperative management of anticoagulants (warfarin and DOACs)",
+  "type": "applied-knowledge",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "Perioperative care: anticoagulation",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "BSH peri-operative anticoagulation guideline (Keeling et al., 2016)",
+      "BRIDGE trial (Douketis et al., NEJM 2015)",
+      "EHRA practical guide on NOACs (Steffel et al., 2021)"
+    ],
+    "related": [
+      {
+        "id": "MB-206",
+        "why": "The other common pre-assessment medication plan: diabetes and surgery"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Pre-operative assessment clinic",
+    "role": "Core surgical trainee",
+    "scenario": "Mr Graham Oakley, 68, is listed for elective laparoscopic cholecystectomy. He takes warfarin for atrial fibrillation (target INR 2.5; CHA2DS2-VASc score 4). His INR today is 2.5.",
+    "task": "Answer the examiner's questions on planning his anticoagulation around surgery, and on patients taking direct oral anticoagulants (DOACs)."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Two risks to weigh: clotting off anticoagulation, bleeding from the operation.",
+    "trap": "Bridging every AF patient with a high score. In AF, bridging adds bleeding without preventing strokes.",
+    "firstMove": "\"I'd weigh his thrombotic risk against the bleeding risk of the operation.\""
+  },
+  "flow": [
+    "Thrombotic risk",
+    "Bleeding risk",
+    "Stopping warfarin",
+    "Restarting",
+    "DOACs",
+    "High-risk exceptions",
+    "Written plan"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-knowledge",
+      "label": "Thrombotic risk and bridging",
+      "fail": "Plans bridging on the CHA2DS2-VASc score alone.",
+      "pass": "Asks about stroke or TIA. AF without stroke or TIA in the last 3 months: no bridging.",
+      "high": "Cites BRIDGE: no bridging was non-inferior for arterial thromboembolism and cut major bleeding by more than half (1.3% v 3.2%).",
+      "source": "BSH"
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-knowledge",
+      "label": "Bleeding risk of the operation",
+      "fail": "Continues warfarin or treats cholecystectomy as minor.",
+      "pass": "Classes laparoscopic cholecystectomy as abdominal surgery: high bleeding risk, so anticoagulation must stop.",
+      "high": "Adds patient factors: antiplatelets, NSAIDs, renal function, previous bleeding.",
+      "source": "EHRA"
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "Stopping warfarin",
+      "fail": "Stops warfarin 1 or 2 days before surgery.",
+      "pass": "Stops warfarin 5 days before (last dose day -6). INR the day before (oral phytomenadione if 1.5 or more) and on the day of surgery.",
+      "high": "Emergency reversal: 5 mg IV phytomenadione if surgery can wait 6-8 hours; otherwise four-factor PCC plus IV phytomenadione.",
+      "source": "BSH"
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-knowledge",
+      "label": "Restarting warfarin",
+      "fail": "Restarts with treatment-dose heparin immediately after surgery.",
+      "pass": "Restarts warfarin at the usual dose the evening of surgery or next day, if haemostasis is secure.",
+      "high": "Adds prophylactic-dose LMWH as indicated; full-dose heparin no sooner than 48 hours after high-bleeding-risk surgery.",
+      "source": "BSH"
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-knowledge",
+      "label": "Stopping a DOAC",
+      "fail": "Stops all DOACs 24 hours before any surgery, or bridges them with heparin.",
+      "pass": "High bleeding risk: last factor Xa inhibitor dose at least 48 hours before. Dabigatran by creatinine clearance: 48, 72 or 96 hours. No bridging.",
+      "high": "Uses Cockcroft-Gault creatinine clearance; adds 24 hours if under 50 kg or interacting drugs.",
+      "source": "EHRA"
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-knowledge",
+      "label": "Restarting a DOAC",
+      "fail": "Restarts full-dose DOAC the same evening after cholecystectomy.",
+      "pass": "After high-bleeding-risk surgery: full dose at 48-72 hours, once haemostasis is secure.",
+      "high": "Prophylactic-dose LMWH from 6-8 hours after surgery until then; heparin if he cannot take tablets.",
+      "source": "EHRA"
+    },
+    {
+      "id": "G7",
+      "domain": "professionalism",
+      "label": "Recognises high thrombotic risk",
+      "fail": "Cannot name any patient who might need bridging.",
+      "pass": "Considers bridging for stroke or TIA within 3 months, VTE within 3 months, or most mechanical valves; involves haematology.",
+      "high": "Treatment-dose enoxaparin (1.5 mg/kg daily or 1 mg/kg twice daily), last dose at least 24 hours pre-op; questions deferring elective surgery.",
+      "source": "BSH"
+    },
+    {
+      "id": "G8",
+      "domain": "communication",
+      "label": "Written plan",
+      "fail": "Gives verbal instructions only.",
+      "pass": "Gives him a written plan with dates for the last dose, INR check and restart; records it in the notes.",
+      "high": "Includes the discharge plan and informs his GP or anticoagulation clinic.",
+      "source": "BSH"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "How would you assess his thrombotic risk?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "His CHA2DS2-VASc is 4, so he's high risk and needs LMWH bridging.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Is this a high bleeding risk operation?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "No, it's keyhole. He could probably stay on warfarin.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "If you stop warfarin, when?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Two days before.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "And afterwards?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Treatment-dose enoxaparin that evening, then warfarin.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "If he were on apixaban?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Stop it 24 hours before, and cover with heparin.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "When would you restart it?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "The same evening.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Which patients need bridging?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'm not sure. Anyone with a high score?",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How will he know the plan?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'll tell him before he leaves clinic.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "examiner",
+        "text": "How would you assess his thrombotic risk?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Has he had a stroke or TIA? If not in the last 3 months, AF doesn't need bridging.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "And the bleeding risk?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Cholecystectomy is abdominal surgery: high bleeding risk, so warfarin must stop.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Last dose six days before, so it's stopped for five days. INR the day before, oral vitamin K if 1.5 or more, and INR again on the day of surgery.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "After surgery?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Warfarin at his usual dose that evening or the next day, if haemostasis is secure.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Suppose he took apixaban, creatinine clearance 60."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Last dose at least 48 hours before. Dabigatran depends on clearance: 48 hours above 80, 72 hours for 50 to 79, 96 hours for 30 to 49. No bridging.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Restart full dose at 48 to 72 hours, once haemostasis is secure.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Who might need bridging?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Stroke or TIA within 3 months, VTE within 3 months, or most mechanical valves. I'd involve haematology.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Anything else?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd give him the plan in writing, with dates, and document it.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "examiner",
+        "text": "Why not bridge him?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "In BRIDGE, no bridging was non-inferior for arterial thromboembolism and major bleeding fell by more than half, from 3.2% to 1.3%. BSH says AF without a recent stroke or TIA shouldn't be bridged.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd also ask about antiplatelets, NSAIDs, his renal function and any previous bleeding.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "If he needed surgery urgently?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "If it can wait 6 to 8 hours, 5 mg IV phytomenadione. If not, four-factor PCC 25 to 50 units per kg plus 5 mg IV phytomenadione, then check the INR.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What about clots after surgery?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Prophylactic LMWH as his VTE assessment indicates. If anyone needed full-dose heparin, not before 48 hours after high-bleeding-risk surgery.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How do you judge renal function for a DOAC?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Cockcroft-Gault creatinine clearance. I'd add 24 hours if he weighed under 50 kg or took interacting drugs.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Until full dose restarts, prophylactic LMWH from 6 to 8 hours after surgery; heparin if he can't take tablets.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "He had a TIA six weeks ago."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Then I'd question operating electively now. If we must, bridge with enoxaparin 1.5 mg/kg daily or 1 mg/kg twice daily, last dose at least 24 hours before.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "His written plan covers discharge too, and I'd copy it to his GP and anticoagulation clinic.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G1",
+      "move": "Bridging an AF patient because of a high CHA2DS2-VASc score.",
+      "consequence": "More major bleeding with no fewer strokes."
+    },
+    {
+      "row": "G3",
+      "move": "Stopping warfarin only 1-2 days before.",
+      "consequence": "INR still raised on the day: cancellation or bleeding."
+    },
+    {
+      "row": "G6",
+      "move": "Restarting a full-dose DOAC the same evening after high-bleeding-risk surgery.",
+      "consequence": "DOACs act within hours, so early full dosing risks haemorrhage."
+    },
+    {
+      "row": "G5",
+      "move": "Using one interruption time for every DOAC.",
+      "consequence": "Dabigatran accumulates in renal impairment; residual anticoagulation at surgery."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You blank on the bridging criteria",
+      "line": "In AF I bridge only after a recent stroke or TIA, and I'd discuss that with haematology."
+    },
+    {
+      "when": "Asked a DOAC time you can't recall",
+      "line": "It depends on the drug, renal function and bleeding risk; I'd check the EHRA table."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Stop warfarin 5 days before; INR the day before, phytomenadione if 1.5 or more; INR on the day; restart evening of surgery or next day.",
+      "source": "BSH"
+    },
+    {
+      "fact": "AF: bridge only after stroke or TIA within 3 months, or previous stroke or TIA plus three of heart failure, hypertension, age over 75, diabetes.",
+      "source": "BSH"
+    },
+    {
+      "fact": "BRIDGE: no bridging non-inferior for arterial thromboembolism; major bleeding 1.3% versus 3.2%.",
+      "source": "BRIDGE"
+    },
+    {
+      "fact": "High bleeding risk: factor Xa inhibitors at least 48 hours; dabigatran 48, 72, 96 hours for clearance 80 or more, 50-79, 30-49.",
+      "source": "EHRA"
+    },
+    {
+      "fact": "Abdominal surgery is high bleeding risk; restart full-dose DOAC at 48-72 hours.",
+      "source": "EHRA"
+    },
+    {
+      "fact": "Treatment-dose enoxaparin: 1.5 mg/kg once daily or 1 mg/kg twice daily.",
+      "source": "SMPC"
+    }
+  ],
+  "recall": {
+    "think": "Stroke if off too long; bleeding if on.",
+    "say": "\"AF without recent stroke: stop warfarin, no bridging.\"",
+    "do": [
+      "Ask stroke or TIA in last 3 months",
+      "Stop 5 days; INR day before",
+      "Written plan with dates"
+    ],
+    "numbers": [
+      {
+        "value": "5 days",
+        "meaning": "warfarin off before surgery",
+        "source": "BSH"
+      },
+      {
+        "value": "INR 1.5 or more",
+        "meaning": "day before: give phytomenadione",
+        "source": "BSH"
+      },
+      {
+        "value": "48 hours",
+        "meaning": "factor Xa inhibitor off before high-bleeding-risk surgery",
+        "source": "EHRA"
+      }
+    ],
+    "trap": "A high CHA2DS2-VASc score alone does not mean bridging.",
+    "finish": "Restart warfarin that evening or next day; DOAC full dose at 48-72 hours."
+  },
+  "sources": [
+    {
+      "id": "BSH",
+      "name": "Keeling D, Tait RC, Watson H; British Committee for Standards in Haematology. Peri-operative management of anticoagulation and antiplatelet therapy. Br J Haematol 2016;175:602-13",
+      "version": "2016 (published November 2016)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/27714755/",
+      "supports": "Warfarin stopped 5 days before; INR the day before with phytomenadione if 1.5 or more, and on the day; restart evening of surgery or next day at usual dose; Table I bridging criteria (AF: stroke or TIA in last 3 months, or previous stroke or TIA plus three or more of CCF, hypertension, age over 75, diabetes; VTE within 3 months; mechanical valves other than bileaflet aortic without risk factors); AF with CHADS2 4 or less and no stroke or TIA in 3 months should not be bridged (1A); last pre-op LMWH at least 24 hours before; post-op full-dose anticoagulation not before 48 hours after high-bleeding-risk surgery; plan recorded in the notes including discharge; emergency reversal with 5 mg IV phytomenadione if surgery can wait 6-8 hours, otherwise 25-50 u/kg four-factor PCC plus 5 mg IV phytomenadione"
+    },
+    {
+      "id": "BRIDGE",
+      "name": "Douketis JD, Spyropoulos AC, Kaatz S, et al; BRIDGE Investigators. Perioperative bridging anticoagulation in patients with atrial fibrillation. N Engl J Med 2015;373:823-33",
+      "version": "2015",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26095867/",
+      "supports": "No bridging non-inferior to dalteparin bridging for arterial thromboembolism (0.4% vs 0.3%) with less major bleeding (1.3% vs 3.2%); stroke or TIA within 12 weeks excluded"
+    },
+    {
+      "id": "EHRA",
+      "name": "Steffel J, Collins R, Antz M, et al. 2021 European Heart Rhythm Association Practical Guide on the use of non-vitamin K antagonist oral anticoagulants in patients with atrial fibrillation. Europace 2021;23:1612-76",
+      "version": "2021",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33895845/",
+      "supports": "Table 12: abdominal surgery is a high bleeding risk intervention; Figure 14: last intake before high-risk surgery at least 48 hours for apixaban, edoxaban and rivaroxaban, and for dabigatran at least 48, 72 and 96 hours for CrCl 80 or more, 50-79 and 30-49 ml/min; no bridging; consider 24 hours longer with weight under 50 kg or interactions; full-dose restart 48-72 hours after high-risk procedures, prophylactic LMWH 6-8 hours post-op in the meantime; written plan for the patient"
+    },
+    {
+      "id": "SMPC",
+      "name": "Clexane (enoxaparin sodium) pre-filled syringes: Summary of Product Characteristics, Sanofi (emc)",
+      "version": "Date of revision of text 6 February 2022",
+      "url": "https://www.medicines.org.uk/emc/product/4499/smpc",
+      "supports": "Treatment-dose enoxaparin 150 IU/kg (1.5 mg/kg) once daily or 100 IU/kg (1 mg/kg) twice daily"
+    },
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format: 9 minutes with 1 minute's reading; examiner-led questioning in applied knowledge stations"
+    }
+  ],
+  "partner": {
+    "opening": "Mr Oakley is on warfarin for atrial fibrillation and is listed for a laparoscopic cholecystectomy. How would you assess his thrombotic risk?",
+    "reveals": [
+      {
+        "trigger": "Asks about previous stroke or TIA",
+        "finding": "Never had a stroke or TIA.",
+        "row": "G1"
+      },
+      {
+        "trigger": "Asks about other risk factors",
+        "finding": "Hypertension, type 2 diabetes, previous MI. No heart failure.",
+        "row": "G1"
+      },
+      {
+        "trigger": "Asks about bleeding factors",
+        "finding": "No antiplatelets or NSAIDs. Creatinine clearance 60 ml/min. No previous bleeding.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Asks about the INR the day before surgery",
+        "finding": "INR 1.7.",
+        "row": "G3"
+      }
+    ],
+    "push": [
+      {
+        "question": "Does he need bridging?",
+        "row": "G1",
+        "expect": "No: AF without a stroke or TIA in the last 3 months."
+      },
+      {
+        "question": "What bleeding risk is this operation?",
+        "row": "G2",
+        "expect": "Abdominal surgery: high bleeding risk."
+      },
+      {
+        "question": "How and when do you stop warfarin?",
+        "row": "G3",
+        "expect": "Stop 5 days before; INR the day before; phytomenadione if 1.5 or more; INR on the day of surgery."
+      },
+      {
+        "question": "When does warfarin restart?",
+        "row": "G4",
+        "expect": "Evening of surgery or next day, usual dose, if haemostasis secure."
+      },
+      {
+        "question": "If he took dabigatran, creatinine clearance 60?",
+        "row": "G5",
+        "expect": "Last dose at least 72 hours before; no bridging."
+      },
+      {
+        "question": "When does a DOAC restart?",
+        "row": "G6",
+        "expect": "Full dose at 48-72 hours; prophylactic LMWH in between."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "His INR the day before surgery is 1.7.",
+        "safeAnswer": "Give oral phytomenadione and recheck the INR on the morning of surgery.",
+        "row": "G3"
+      },
+      {
+        "prompt": "He had a TIA six weeks ago.",
+        "safeAnswer": "High thrombotic risk: question deferring elective surgery; if not, consider bridging with haematology advice.",
+        "row": "G7"
+      },
+      {
+        "prompt": "He presents instead with perforated cholecystitis needing theatre tonight, INR 2.5.",
+        "safeAnswer": "If surgery can wait 6-8 hours, 5 mg IV phytomenadione; if not, four-factor PCC 25-50 u/kg plus 5 mg IV phytomenadione, then check INR.",
+        "row": "G3"
+      },
+      {
+        "prompt": "He has a mechanical mitral valve instead of AF.",
+        "safeAnswer": "Consider bridging with treatment-dose LMWH; involve haematology and cardiology.",
+        "row": "G7"
+      }
+    ]
+  }
+}

@@ -1,0 +1,586 @@
+{
+  "id": "MB-206",
+  "exam": "MRCS-B",
+  "title": "Diabetes and surgery: medication plan and variable-rate insulin",
+  "type": "applied-knowledge",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "Perioperative care: diabetes",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "CPOC perioperative diabetes guideline (version 3.0, October 2023)",
+      "NICE CG174 (updated May 2017)"
+    ],
+    "related": [
+      {
+        "id": "MB-205",
+        "why": "The other common pre-assessment medication plan: anticoagulants"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Pre-operative assessment clinic",
+    "role": "Core surgical trainee",
+    "scenario": "Mrs Janet Price, 62, has type 2 diabetes and is listed for an elective laparoscopic right hemicolectomy on a morning list. She takes Humalog Mix 25 twice daily, metformin 1 g twice daily and dapagliflozin 10 mg daily. Her HbA1c is 68 mmol/mol.",
+    "task": "Answer the examiner's questions on her perioperative diabetes management."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Each drug has its own rule; then glucose control while she can't eat.",
+    "trap": "Running insulin without a glucose-and-saline substrate, or forgetting the SGLT2 inhibitor.",
+    "firstMove": "\"Her HbA1c is below 69, so surgery can go ahead.\""
+  },
+  "flow": [
+    "Pre-op risk and HbA1c",
+    "Day-before and day-of drugs",
+    "Need for VRIII",
+    "Setting up VRIII",
+    "Targets and monitoring",
+    "Stopping VRIII"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-knowledge",
+      "label": "Pre-op risk and HbA1c",
+      "fail": "Doesn't use the HbA1c, or delays surgery for an HbA1c of 68.",
+      "pass": "HbA1c 68 is below 69 mmol/mol, so proceed; above 69, refer to the diabetes specialist team.",
+      "high": "Names the risks: infection, poor healing, hypoglycaemia, DKA; and flags her for the first slot on the list.",
+      "source": "CPOC"
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-knowledge",
+      "label": "Insulin and metformin",
+      "fail": "Omits all insulin on the day, or gives the full morning dose.",
+      "pass": "Premixed insulin: usual doses the day before; halve the morning dose on the day; glucose on admission. Metformin twice daily: take as normal.",
+      "high": "Adds that metformin is omitted on the day and for 48 hours if contrast is given and eGFR is under 60.",
+      "source": "CPOC"
+    },
+    {
+      "id": "G3",
+      "domain": "professionalism",
+      "label": "SGLT2 inhibitor (safety-critical)",
+      "fail": "Continues dapagliflozin, or doesn't mention it.",
+      "pass": "Omit dapagliflozin the day before and the day of surgery: risk of euglycaemic DKA.",
+      "high": "Restarts only when ketones are normal and she is eating normally; checks blood ketones if unwell, whatever the glucose.",
+      "source": "CPOC"
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-knowledge",
+      "label": "Need for VRIII",
+      "fail": "Plans subcutaneous insulin only through several days of fasting.",
+      "pass": "VRIII because she is insulin-treated and will miss more than one meal.",
+      "high": "Continues a long-acting analogue at 80% of the usual dose when a patient on basal insulin starts VRIII.",
+      "source": "CPOC"
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-knowledge",
+      "label": "VRIII prescription (safety-critical)",
+      "fail": "Gives insulin without substrate, or 10% glucose at 100 ml/h.",
+      "pass": "50 units soluble insulin in 49.5 ml 0.9% saline (1 unit/ml); 0.45% saline with 5% glucose and potassium alongside, at maintenance rate.",
+      "high": "Sets maintenance at 25-30 ml/kg/day and states the substrate rate isn't changed without senior advice.",
+      "source": "CPOC"
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-knowledge",
+      "label": "Targets and monitoring",
+      "fail": "Doesn't know the target, or checks glucose 4-hourly.",
+      "pass": "Hourly capillary glucose; target 6-10 mmol/l, up to 12 acceptable. Hypoglycaemia below 4.",
+      "high": "Daily electrolytes for potassium and sodium; treats hypoglycaemia and restarts insulin within 20 minutes.",
+      "source": "CPOC"
+    },
+    {
+      "id": "G7",
+      "domain": "clinical-knowledge",
+      "label": "Stopping VRIII",
+      "fail": "Stops the VRIII before any subcutaneous insulin is given.",
+      "pass": "When eating and drinking: usual insulin with a meal, then stop VRIII at least 30 minutes later.",
+      "high": "Involves the diabetes inpatient team; reduces premixed dose if she eats only half a meal.",
+      "source": "CPOC"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "Her HbA1c is 68. Can she go ahead?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd want it below 53 first, so I'd postpone.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What about her insulin on the day?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "She's nil by mouth, so no insulin that morning.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Her other tablets?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "She can take them all as normal.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How will you manage her glucose after surgery?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Her usual subcutaneous insulin when she's eating; until then, a correction dose if high.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "If she needed a VRIII?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Insulin infusion, and 10% glucose at 100 ml an hour.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How often do you check glucose?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Four-hourly. I'd aim for under 15.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "And when she's eating?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Stop the infusion, then start her usual insulin at the next meal.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "examiner",
+        "text": "Her HbA1c is 68. Can she go ahead?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Yes. It's below 69 mmol/mol. Above that I'd refer to the diabetes team first.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Her medication before surgery?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Usual insulin the day before. On the morning, halve her Humalog Mix 25 and check glucose on admission. Metformin twice daily: take as normal.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Dapagliflozin must be omitted the day before and the day of surgery, because of euglycaemic DKA.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Will she need a VRIII?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Yes. She's on insulin and will miss more than one meal.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you prescribe it?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "50 units of soluble insulin in 49.5 ml of 0.9% saline, 1 unit per ml. Alongside, 0.45% saline with 5% glucose and potassium at her maintenance rate.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Targets?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Hourly capillary glucose, target 6 to 10, up to 12 acceptable. Below 4 is hypoglycaemia.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "When does the VRIII stop?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "When she's eating and drinking: her usual insulin with a meal, and stop the VRIII at least 30 minutes later.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "examiner",
+        "text": "Why does glucose control matter?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Infection, poor wound healing, hypoglycaemia and DKA. I'd put her first on the list to shorten her fast.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "She may have contrast CT before discharge."
+      },
+      {
+        "speaker": "candidate",
+        "text": "If her eGFR were under 60, metformin is omitted that day and for 48 hours.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "When does dapagliflozin restart?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Only when her ketones are normal and she's eating normally. If she's unwell, I'd check blood ketones even if the glucose is normal.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "If she used a basal analogue like glargine?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd continue it at 80% of the usual dose alongside the VRIII.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What rate for the substrate?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Maintenance, 25 to 30 ml/kg/day, so about 70 ml an hour for her 60 kg. It isn't changed without senior advice.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Her potassium is 3.4 on day 1."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Insulin drives potassium into cells. I'd check electrolytes daily and adjust the potassium in the substrate. If glucose falls below 4, treat it and restart insulin within 20 minutes.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "She eats half her lunch."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Half her usual premixed dose with that meal, and I'd involve the diabetes inpatient team.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G5",
+      "move": "Running insulin without a glucose-and-saline substrate.",
+      "consequence": "Safety-critical: hypoglycaemia and hyponatraemia; 10% glucose alone gives no sodium."
+    },
+    {
+      "row": "G3",
+      "move": "Continuing dapagliflozin.",
+      "consequence": "Safety-critical: euglycaemic DKA, missed because the glucose looks normal."
+    },
+    {
+      "row": "G7",
+      "move": "Stopping the VRIII before subcutaneous insulin is given.",
+      "consequence": "An insulin gap: rebound hyperglycaemia and ketosis."
+    },
+    {
+      "row": "G2",
+      "move": "Omitting all insulin on the morning of surgery.",
+      "consequence": "Hyperglycaemia before she reaches theatre."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You can't recall the substrate",
+      "line": "Insulin always runs with a glucose-and-saline substrate, and potassium; I'd follow the CPOC prescription."
+    },
+    {
+      "when": "Asked about a drug you don't know",
+      "line": "I'd check the CPOC table for that drug and ask the diabetes team."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "HbA1c above 69 mmol/mol (8.5%): refer to the diabetes specialist team before elective surgery.",
+      "source": "CPOC"
+    },
+    {
+      "fact": "SGLT2 inhibitors: omit the day before and the day of surgery; restart when ketones are normal and eating.",
+      "source": "CPOC"
+    },
+    {
+      "fact": "Twice-daily premixed insulin: no change the day before; halve the morning dose on the day.",
+      "source": "CPOC"
+    },
+    {
+      "fact": "VRIII if insulin-treated and more than one missed meal: 50 units soluble insulin in 49.5 ml 0.9% saline.",
+      "source": "CPOC"
+    },
+    {
+      "fact": "Substrate: 0.45% saline with 5% glucose and 0.15% or 0.3% potassium chloride at maintenance rate.",
+      "source": "CPOC"
+    },
+    {
+      "fact": "Glucose target 6-10 mmol/l (up to 12 acceptable); hourly on VRIII.",
+      "source": "CPOC"
+    },
+    {
+      "fact": "Maintenance water 25-30 ml/kg/day.",
+      "source": "CG174"
+    }
+  ],
+  "recall": {
+    "think": "Hypoglycaemia, DKA (including euglycaemic), hyperglycaemia and infection.",
+    "say": "\"She needs a VRIII with a glucose-saline substrate.\"",
+    "do": [
+      "Omit SGLT2 inhibitor day before and day of",
+      "Halve morning premixed insulin",
+      "VRIII plus substrate; hourly glucose"
+    ],
+    "numbers": [
+      {
+        "value": "69 mmol/mol",
+        "meaning": "HbA1c above this: diabetes team first",
+        "source": "CPOC"
+      },
+      {
+        "value": "6-10 mmol/l",
+        "meaning": "glucose target (up to 12 acceptable)",
+        "source": "CPOC"
+      }
+    ],
+    "trap": "A normal glucose does not exclude DKA on an SGLT2 inhibitor.",
+    "finish": "Usual insulin with a meal; stop VRIII 30 minutes later."
+  },
+  "sources": [
+    {
+      "id": "CPOC",
+      "name": "Centre for Perioperative Care. Guideline for perioperative care for people with diabetes mellitus undergoing elective and emergency surgery",
+      "version": "Version 3.0, 4 October 2023 (first published March 2021; version 2.0 December 2022)",
+      "url": "https://cpoc.org.uk/guidelines-and-resources/guidelines/guideline-diabetes",
+      "supports": "Refer to the diabetes specialist team if HbA1c above 69 mmol/mol (8.5%); medication table: premixed twice-daily insulin no change the day before, halve the morning dose on the day and check glucose on admission, half dose with a half meal; metformin take as normal (omit on the day and for 48 hours if contrast and eGFR under 60); SGLT2 inhibitors omitted the day before and the day of surgery, restarted once ketones normal and eating; VRIII if insulin-treated with more than one missed meal; 50 units soluble human insulin in 49.5 ml 0.9% sodium chloride; substrate 5% dextrose in 0.45% saline with 0.15% or 0.3% KCl at maintenance rate, not altered without senior advice; long-acting analogues continued at 80%; hourly CBG, target 6-10 mmol/l (up to 12 acceptable); hypoglycaemia below 4 mmol/l, restart insulin within 20 minutes; subcutaneous insulin at least 30 minutes before stopping VRIII; first on the list"
+    },
+    {
+      "id": "CG174",
+      "name": "NICE CG174: Intravenous fluid therapy in adults in hospital",
+      "version": "Published December 2013; last updated 5 May 2017",
+      "url": "https://www.nice.org.uk/guidance/cg174",
+      "supports": "Routine maintenance 25-30 ml/kg/day of water with about 1 mmol/kg/day of sodium, potassium and chloride"
+    },
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format: 9 minutes with 1 minute's reading; examiner-led questioning in applied knowledge stations"
+    }
+  ],
+  "partner": {
+    "opening": "Mrs Price has insulin-treated type 2 diabetes and is listed for a laparoscopic right hemicolectomy. Her HbA1c is 68. Can she go ahead?",
+    "reveals": [
+      {
+        "trigger": "Asks about her weight and renal function",
+        "finding": "60 kg. eGFR 72.",
+        "row": "G5"
+      },
+      {
+        "trigger": "Asks about her usual glucose control",
+        "finding": "Home readings 7-11 mmol/l. No hypoglycaemia.",
+        "row": "G1"
+      },
+      {
+        "trigger": "Asks about glucose on the ward on day 1",
+        "finding": "Capillary glucose 9.2 mmol/l; potassium 3.4 mmol/l.",
+        "row": "G6"
+      }
+    ],
+    "push": [
+      {
+        "question": "Can she go ahead with this HbA1c?",
+        "row": "G1",
+        "expect": "Yes: below 69 mmol/mol."
+      },
+      {
+        "question": "What will you do with each of her medicines?",
+        "row": "G2",
+        "expect": "Halve morning premixed insulin; metformin as normal; omit dapagliflozin day before and day of."
+      },
+      {
+        "question": "Why does dapagliflozin matter?",
+        "row": "G3",
+        "expect": "Euglycaemic DKA."
+      },
+      {
+        "question": "Does she need a VRIII?",
+        "row": "G4",
+        "expect": "Yes: insulin-treated, more than one missed meal."
+      },
+      {
+        "question": "Write the VRIII prescription.",
+        "row": "G5",
+        "expect": "50 units in 49.5 ml 0.9% saline; 0.45% saline with 5% glucose and KCl at maintenance rate."
+      },
+      {
+        "question": "What glucose target?",
+        "row": "G6",
+        "expect": "6-10 mmol/l, up to 12 acceptable; hourly checks."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "The ward suggests 10% glucose at 100 ml/h as the substrate.",
+        "safeAnswer": "No: use 0.45% saline with 5% glucose and potassium at her maintenance rate, per CPOC.",
+        "row": "G5"
+      },
+      {
+        "prompt": "Day 2: glucose 8, she feels sick and breathless.",
+        "safeAnswer": "Check blood ketones and a gas for euglycaemic DKA; escalate and involve the diabetes team.",
+        "row": "G3"
+      },
+      {
+        "prompt": "Her HbA1c had been 85 mmol/mol.",
+        "safeAnswer": "Refer to the diabetes specialist team to optimise before surgery, weighing the urgency of the operation with the surgical team.",
+        "row": "G1"
+      },
+      {
+        "prompt": "Capillary glucose on the VRIII is 3.2 mmol/l.",
+        "safeAnswer": "Stop the insulin, treat the hypoglycaemia, recheck, and restart insulin within 20 minutes once glucose recovers.",
+        "row": "G6"
+      }
+    ]
+  }
+}

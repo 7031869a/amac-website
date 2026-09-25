@@ -1,0 +1,589 @@
+{
+  "id": "MB-202",
+  "exam": "MRCS-B",
+  "title": "Postoperative oliguria and acute kidney injury",
+  "type": "data-interpretation",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "Perioperative care (fluid balance chart, observations and U&E)",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "NICE NG148 (updated Oct 2024)",
+      "NICE CG174 (updated May 2017)",
+      "KDIGO AKI guideline (2012)"
+    ],
+    "related": [
+      {
+        "id": "MB-201",
+        "why": "Fluid assessment and goal-directed resuscitation in another surgical emergency"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Surgical ward",
+    "role": "Core surgical trainee on call",
+    "scenario": "Mr Dennis Holloway, 72, weighs 80 kg. He is day 1 after an emergency Hartmann's procedure for perforated diverticulitis. He has a urinary catheter and a nasogastric tube. The nurse is worried about his urine output. The examiner will show you his fluid balance chart, observations and blood results.",
+    "task": "Interpret the data, decide whether he has an acute kidney injury, and outline your management."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Convert urine output to mL/kg/h, compare creatinine with baseline, then look for why.",
+    "trap": "Quoting 15 mL/h without the weight, or giving furosemide.",
+    "firstMove": "\"15 mL/h in an 80 kg man is 0.19 mL/kg/h: he is oliguric.\""
+  },
+  "flow": [
+    "Read the fluid chart",
+    "Stage the AKI",
+    "Find the cause",
+    "Assess at the bedside",
+    "Fluid and medicines",
+    "Monitor and escalate"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-skill",
+      "label": "Reads the fluid chart",
+      "fail": "Calls 15 mL/h acceptable, or ignores the weight.",
+      "pass": "15 mL/h ÷ 80 kg is 0.19 mL/kg/h for 6 hours: oliguria, below 0.5 mL/kg/h.",
+      "high": "Totals output (urine, nasogastric, drain) against 1,500 mL in: about 900 mL negative before insensible losses; nasogastric loss not replaced.",
+      "source": "NG148"
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-knowledge",
+      "label": "Diagnoses and stages AKI",
+      "fail": "Says creatinine 145 is only mildly raised, so no AKI.",
+      "pass": "Rise of 60 µmol/L within 48 hours and 1.7 times baseline: AKI stage 1. Urine output also meets stage 1.",
+      "high": "Stage is the worse of the two criteria. Below 0.5 mL/kg/h for 12 hours or more would make it stage 2.",
+      "source": "KDIGO"
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "Identifies the causes",
+      "fail": "Offers a generic list without applying it to him.",
+      "pass": "Hypovolaemia from nasogastric losses, sepsis, and nephrotoxins: ibuprofen, gentamicin, ramipril. Excludes a blocked catheter.",
+      "high": "Considers a left ureteric injury after sigmoid resection, and a pelvic collection as an ongoing septic source."
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-skill",
+      "label": "Bedside assessment",
+      "fail": "Prescribes fluid or diuretic from the chart without seeing him.",
+      "pass": "Examines him: pulse, BP, capillary refill, JVP, chest, abdomen. Flushes the catheter and scans the bladder first.",
+      "high": "Uses a passive leg raise to test fluid responsiveness, and a venous gas for lactate and potassium.",
+      "source": "CG174"
+    },
+    {
+      "id": "G5",
+      "domain": "professionalism",
+      "label": "Fluid and medicines",
+      "fail": "Gives furosemide, or repeated boluses without reassessing.",
+      "pass": "500 mL crystalloid over under 15 minutes, then reassess. Stop ibuprofen; withhold ramipril; review gentamicin with a pharmacist.",
+      "high": "Replaces nasogastric losses in the plan, and explains that loop diuretics do not treat AKI.",
+      "source": "CG174"
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-knowledge",
+      "label": "Monitoring and investigation",
+      "fail": "Plans to recheck the bloods next week.",
+      "pass": "Hourly urine output, fluid balance, daily creatinine and potassium. Urine dipstick now.",
+      "high": "Ultrasound within 24 hours only if no cause is found or obstruction is possible.",
+      "source": "NG148"
+    },
+    {
+      "id": "G7",
+      "domain": "professionalism",
+      "label": "Escalation",
+      "fail": "Does not tell a senior, or refers to renal immediately for stage 1.",
+      "pass": "Informs the registrar; considers a CT for a septic source. Nephrology if stage 3, no clear cause or poor response.",
+      "high": "Knows when to refer immediately: refractory hyperkalaemia, acidosis, fluid overload, pulmonary oedema or uraemic complications.",
+      "source": "NG148"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "Here is his fluid chart."
+      },
+      {
+        "speaker": "candidate",
+        "text": "15 mL an hour. That's low but okay after surgery.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "His creatinine is 145."
+      },
+      {
+        "speaker": "candidate",
+        "text": "That's only mildly raised. I wouldn't call it AKI.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Why might he be oliguric?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Pre-renal, renal or post-renal.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What would you do?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Give 40 mg of furosemide to get the kidneys going.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          },
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "When would you recheck his bloods?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "At his next routine bloods later in the week.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Would you tell anyone?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "No, it's day 1. I'll see how he is tomorrow.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "examiner",
+        "text": "Here is his fluid chart."
+      },
+      {
+        "speaker": "candidate",
+        "text": "15 mL an hour for 6 hours in an 80 kg man is 0.19 mL/kg/h. He's oliguric.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "And his bloods?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Creatinine has risen from 85 to 145 within 48 hours, 1.7 times baseline. That's AKI stage 1, and his urine output also meets stage 1.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Why?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Hypovolaemia from nasogastric losses, possible sepsis, and nephrotoxins: ibuprofen, gentamicin and ramipril. I'd rule out a blocked catheter.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What would you do first?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "See him. Pulse, BP, capillary refill, JVP, chest and abdomen. I'd flush the catheter and scan his bladder.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "He's tachycardic with a capillary refill of 3 seconds."
+      },
+      {
+        "speaker": "candidate",
+        "text": "500 mL crystalloid over less than 15 minutes, then reassess. Stop ibuprofen, withhold ramipril, and review gentamicin with the pharmacist.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Hourly urine output, daily creatinine and potassium, and a urine dipstick now.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd tell my registrar and consider a CT for a septic source. Nephrology if he reaches stage 3 or doesn't respond.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "candidate",
+        "text": "He's had 1,500 mL in against 2,400 mL out, including 1,100 mL nasogastric: about 900 mL negative before insensible losses.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "The stage is the worse of creatinine and urine output. If he stays below 0.5 mL/kg/h for 12 hours, he becomes stage 2.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Anything specific to this operation?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "The left ureter is at risk in sigmoid resection. A pelvic collection could keep him septic.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you judge fluid responsiveness?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "A passive leg raise, and a venous gas for lactate and potassium.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The nurse asks for furosemide."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Loop diuretics don't treat AKI; I'd only use them for fluid overload. I'd build his nasogastric losses into the fluid plan.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Would you scan his kidneys?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Not routinely if the cause is clear. Ultrasound within 24 hours if no cause is found or obstruction is possible.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "When would you call the renal team urgently?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Hyperkalaemia, acidosis, fluid overload, pulmonary oedema or uraemic complications not responding to treatment.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G1",
+      "move": "Accepting 15 mL/h without dividing by weight.",
+      "consequence": "Misses oliguria that meets the AKI definition."
+    },
+    {
+      "row": "G5",
+      "move": "Giving furosemide to an oliguric, dry patient.",
+      "consequence": "Worsens hypovolaemia and the kidney injury."
+    },
+    {
+      "row": "G3",
+      "move": "Leaving ibuprofen, gentamicin and ramipril charted.",
+      "consequence": "Ongoing nephrotoxic injury while the cause is being treated."
+    },
+    {
+      "row": "G4",
+      "move": "Not checking the catheter first.",
+      "consequence": "Treats a blocked catheter as kidney failure."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You forget the thresholds",
+      "line": "Creatinine up 26 in 48 hours, 1.5 times in 7 days, or urine under 0.5 mL/kg/h for 6 hours."
+    },
+    {
+      "when": "Asked to 'just give a bolus'",
+      "line": "I'd examine him first, then give 500 mL and reassess."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "AKI: creatinine rise ≥26 µmol/L in 48 hours, ≥50% rise within 7 days, or urine <0.5 mL/kg/h for over 6 hours.",
+      "source": "NG148"
+    },
+    {
+      "fact": "Stage 1: 1.5–1.9 × baseline or <0.5 mL/kg/h for 6 to <12 hours. Stage 2: 2.0–2.9 × or <0.5 mL/kg/h for ≥12 hours. Stage 3: ≥3 × or <0.3 mL/kg/h for ≥24 hours.",
+      "source": "KDIGO"
+    },
+    {
+      "fact": "Resuscitation bolus: 500 mL crystalloid (sodium 130–154 mmol/L) over less than 15 minutes, then reassess.",
+      "source": "CG174"
+    },
+    {
+      "fact": "Do not routinely give loop diuretics for AKI. Urine dipstick for everyone with AKI.",
+      "source": "NG148"
+    },
+    {
+      "fact": "Consider stopping ACE inhibitors in vomiting or sepsis; seek pharmacist advice on nephrotoxins.",
+      "source": "NG148"
+    }
+  ],
+  "recall": {
+    "think": "Hypovolaemia, sepsis, nephrotoxins, obstruction.",
+    "say": "\"0.19 mL/kg/h and creatinine 1.7 times baseline: AKI stage 1.\"",
+    "do": [
+      "Examine him; flush the catheter",
+      "500 mL crystalloid, reassess",
+      "Stop nephrotoxins; dipstick; daily U&E"
+    ],
+    "numbers": [
+      {
+        "value": "<0.5 mL/kg/h for >6 h",
+        "meaning": "oliguria meeting AKI criteria",
+        "source": "NG148"
+      },
+      {
+        "value": "≥26 µmol/L in 48 h",
+        "meaning": "creatinine rise meeting AKI criteria",
+        "source": "NG148"
+      },
+      {
+        "value": "1.5–1.9 ×",
+        "meaning": "baseline creatinine: stage 1",
+        "source": "KDIGO"
+      }
+    ],
+    "trap": "Calling oliguria normal after surgery when the creatinine is rising.",
+    "finish": "Treat the cause; nephrology for stage 3, no clear cause or poor response."
+  },
+  "sources": [
+    {
+      "id": "NG148",
+      "name": "NICE NG148: Acute kidney injury: prevention, detection and management",
+      "version": "Published 18 December 2019; last updated 16 October 2024",
+      "url": "https://www.nice.org.uk/guidance/ng148",
+      "supports": "AKI definition (1.3.1); daily creatinine (1.3.2); ACE inhibitors in vomiting or sepsis (1.2.14); pharmacist advice (1.2.13); urine dipstick (1.4.2); ultrasound within 24 hours if no cause or risk of obstruction (1.4.4, 1.4.6); no routine loop diuretics (1.5.3); RRT referral criteria (1.5.8); nephrology discussion for stage 3, no clear cause or inadequate response (1.5.15)"
+    },
+    {
+      "id": "CG174",
+      "name": "NICE CG174: Intravenous fluid therapy in adults in hospital",
+      "version": "Published 10 December 2013; last updated 5 May 2017",
+      "url": "https://www.nice.org.uk/guidance/cg174",
+      "supports": "Signs of hypovolaemia including heart rate over 90 and capillary refill over 2 seconds; passive leg raising (1.2.1); fluid status examination (1.2.2); 500 mL crystalloid bolus over less than 15 minutes (1.3.1)"
+    },
+    {
+      "id": "KDIGO",
+      "name": "Kidney Disease: Improving Global Outcomes (KDIGO) Clinical Practice Guideline for Acute Kidney Injury. Kidney Int Suppl 2012;2:1–138",
+      "version": "March 2012",
+      "url": "https://kdigo.org/guidelines/acute-kidney-injury/",
+      "supports": "AKI staging by creatinine and urine output; stage assigned by the more severe criterion"
+    },
+    {
+      "id": "BL",
+      "name": "Bailey & Love's Short Practice of Surgery (O'Connell, McCaskie, Sayers, eds)",
+      "version": "28th edition, 2023",
+      "url": "https://www.routledge.com/Bailey--Loves-Short-Practice-of-Surgery---28th-Edition/OConnell-McCaskie-Sayers/p/book/9780367548117",
+      "supports": "Postoperative oliguria, ureteric injury in colorectal surgery and pelvic collections"
+    },
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format: 9 minutes with 1 minute's reading; examiner-led questioning in applied knowledge stations"
+    }
+  ],
+  "media": [
+    {
+      "id": "fluid-chart",
+      "task": "Read the fluid balance chart and calculate urine output in mL/kg/h",
+      "description": "24-hour fluid balance chart with hourly urine volumes, nasogastric and drain losses and IV input, plus observations and U&E",
+      "required": false,
+      "status": "needed"
+    }
+  ],
+  "partner": {
+    "opening": "Here is Mr Holloway's fluid balance chart. What does it show?",
+    "reveals": [
+      {
+        "trigger": "Start",
+        "finding": "Last 24 hours: IV maintenance fluid 1,500 mL in; nil by mouth. Out: urine 1,050 mL (about 53 mL/h until 6 hours ago), nasogastric 1,100 mL, drain 250 mL. Hourly urine for the last 6 hours: 20, 15, 15, 10, 15, 15 mL.",
+        "row": "G1"
+      },
+      {
+        "trigger": "Candidate asks for observations",
+        "finding": "HR 108, BP 102/60 (150/85 before surgery), RR 20, SpO2 96% on air, temperature 37.6°C, capillary refill 3 seconds.",
+        "row": "G4"
+      },
+      {
+        "trigger": "Candidate asks for bloods",
+        "finding": "Creatinine 145 µmol/L (85 on admission 30 hours ago), urea 13.9 (6.8), sodium 136, potassium 5.3, WCC 15.8, CRP 210.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Candidate asks for the drug chart",
+        "finding": "Ramipril 10 mg daily (given this morning), ibuprofen 400 mg three times daily, gentamicin once daily, co-amoxiclav, paracetamol.",
+        "row": "G3"
+      },
+      {
+        "trigger": "Candidate flushes the catheter or scans the bladder",
+        "finding": "Catheter flushes freely; bladder scan 40 mL.",
+        "row": "G4"
+      }
+    ],
+    "push": [
+      {
+        "question": "Is he oliguric?",
+        "row": "G1",
+        "expect": "0.19 mL/kg/h for 6 hours: yes."
+      },
+      {
+        "question": "Does he have AKI? What stage?",
+        "row": "G2",
+        "expect": "Stage 1 by creatinine (1.7 times, rise ≥26 in 48 hours) and by urine output."
+      },
+      {
+        "question": "What will you give him?",
+        "row": "G5",
+        "expect": "500 mL crystalloid over less than 15 minutes, reassess; stop nephrotoxins."
+      },
+      {
+        "question": "What monitoring do you want?",
+        "row": "G6",
+        "expect": "Hourly urine, fluid balance, daily U&E, urine dipstick."
+      },
+      {
+        "question": "When would you involve the renal team?",
+        "row": "G7",
+        "expect": "Stage 3, no clear cause, poor response, or RRT indications."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "After two boluses he is crackly at both bases with SpO2 91%.",
+        "safeAnswer": "Stop fluid: now overloaded. Oxygen, senior review, consider furosemide for overload, and critical care if not improving.",
+        "row": "G5"
+      },
+      {
+        "prompt": "Urine output stays at 15 mL/h for another 8 hours.",
+        "safeAnswer": "Now below 0.5 mL/kg/h for 14 hours, which is 12 hours or more: stage 2. Re-examine, escalate, look for sepsis or obstruction.",
+        "row": "G2"
+      },
+      {
+        "prompt": "His potassium is 6.8 with ECG changes.",
+        "safeAnswer": "Treat hyperkalaemia now and refer immediately if not responding: an indication for renal replacement therapy.",
+        "row": "G7"
+      },
+      {
+        "prompt": "Urine dipstick shows blood and protein.",
+        "safeAnswer": "Catheter trauma can cause this. Think of nephritis, and discuss with nephrology, only if there is no other cause.",
+        "row": "G6"
+      }
+    ]
+  }
+}
