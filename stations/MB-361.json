@@ -1,0 +1,422 @@
+{
+  "id": "MB-361",
+  "exam": "MRCS-B",
+  "title": "Consent: adjuvant radiotherapy",
+  "type": "communication",
+  "header": {
+    "domain": "Applied Skills",
+    "contentArea": "Consent for adjuvant breast radiotherapy",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "GMC: Decision making and consent (in effect 9 November 2020)",
+      "NICE NG101: Early and locally advanced breast cancer (published 18 July 2018; last updated 14 April 2025)"
+    ],
+    "related": [
+      {
+        "id": "MB-359",
+        "why": "The conversation where radiotherapy was first proposed"
+      },
+      {
+        "id": "MB-360",
+        "why": "A recognised complication of the axillary treatment combined with radiotherapy"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Clinical oncology pre-treatment clinic",
+    "role": "Trainee supporting the oncology consent process",
+    "scenario": "Ms Rachel Linford, 42, is due to start a course of adjuvant radiotherapy to the left breast following wide local excision.",
+    "task": "Consent her for radiotherapy. You have 7 minutes."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Confirm what she already understands about why radiotherapy is being given, then explain the course itself, then benefits, risks and alternatives.",
+    "trap": "Presenting radiotherapy as risk-free because it's \"just rays\", or omitting the option of declining it.",
+    "firstMove": "\"Can I check what you understand about why radiotherapy has been recommended?\""
+  },
+  "flow": [
+    "Check understanding of why radiotherapy is recommended",
+    "Explain the course: what happens, how long",
+    "Benefits",
+    "Risks, short and longer term",
+    "Alternatives, including declining treatment, then consent"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "communication",
+      "label": "Checking understanding first",
+      "fail": "Starts explaining the technical process without checking what she already knows.",
+      "pass": "Checks her understanding of why radiotherapy is recommended before explaining further.",
+      "high": "Links back explicitly to her earlier results (clear margins, negative node) to explain why radiotherapy still reduces recurrence risk."
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-knowledge",
+      "label": "Explaining the course",
+      "fail": "Cannot describe roughly what the course of treatment involves.",
+      "pass": "Explains that treatment is given as short daily sessions over a number of weeks, and that each session itself is quick and painless.",
+      "high": "Mentions planning steps (a planning scan, skin marking) so there are no surprises about the process before treatment starts."
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "Risks: short term",
+      "fail": "Mentions no short-term risks at all.",
+      "pass": "Covers skin reaction (redness, soreness, similar to sunburn) and fatigue as common short-term effects.",
+      "high": "Explains simple ways these are managed (skin care advice, pacing activity) so the risks feel manageable rather than frightening."
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-knowledge",
+      "label": "Risks: longer term",
+      "fail": "Omits any longer-term or rarer risk.",
+      "pass": "Mentions longer-term risks such as changes in breast texture/size and, for left-sided treatment, a small increased risk to the heart and lung, which modern planning techniques aim to minimise.",
+      "high": "Explains that treatment planning is specifically designed to reduce dose to the heart and lung, showing this has been actively considered for her.",
+      "source": "GMC"
+    },
+    {
+      "id": "G5",
+      "domain": "communication",
+      "label": "Alternatives and voluntariness",
+      "fail": "Implies radiotherapy is compulsory with no alternative.",
+      "pass": "Explains that declining radiotherapy is an option, but that it would carry a higher risk of local recurrence, and checks this is her decision.",
+      "high": "Offers more time to decide if she wants it, rather than assuming she must consent today."
+    },
+    {
+      "id": "G6",
+      "domain": "professionalism",
+      "label": "Documentation and closing",
+      "fail": "Obtains verbal agreement only with no mention of documentation.",
+      "pass": "Confirms she is happy to proceed, documents this appropriately, and explains what happens next practically (planning appointment, start date).",
+      "high": "Checks she has no further questions and knows who to contact if she has concerns before treatment starts."
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "candidate",
+        "text": "So you'll need radiotherapy, it's just rays, no real risks, sign here.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          },
+          {
+            "row": "G3",
+            "band": "fail"
+          },
+          {
+            "row": "G4",
+            "band": "fail"
+          },
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "Do I have to have it?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Yes, it's part of the plan.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "That's everything, you're all set.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "candidate",
+        "text": "Can I check what you understand about why radiotherapy has been recommended?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "To lower the chance of it coming back, I think."
+      },
+      {
+        "speaker": "candidate",
+        "text": "That's right. Treatment is given as short daily sessions, Monday to Friday, over a few weeks - each session itself only takes a few minutes and is painless.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Common effects include some skin redness and soreness, like sunburn, and tiredness during the course.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Longer term, there can be some change in the breast's texture or size, and because this is the left side, a small increased risk to the heart and lung, though planning techniques help reduce that.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "Do I have to have it?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "No, it's your choice - without it, there's a higher chance of the cancer coming back locally, but you can decide against it if you wish.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "If you're happy to proceed, I'll document your consent and the oncology team will arrange your planning scan.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "candidate",
+        "text": "Can I check your understanding of why radiotherapy is being offered, given your surgery results were good?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "I know my results were clear, so I'm not sure why I still need it."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Even with clear margins and a negative node, radiotherapy further lowers the chance of local recurrence, so it's still recommended. You'll first have a planning scan and some small skin marks made, then treatment itself is short daily sessions over a few weeks, each only a few minutes long.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          },
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "In the short term, expect some skin soreness, like sunburn, and tiredness, which usually settles with simple skin care and pacing yourself.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Longer term there can be some change in breast texture, and because this is left-sided, a small increased risk to the heart and lung - the planning team specifically shapes the treatment to keep the dose to those organs as low as possible.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "Can I say no?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Yes, that's entirely your choice - it would mean a higher chance of local recurrence, so we recommend it, but you don't have to decide today if you'd like more time to think it over.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "If you're ready, I'll document your consent, and let you know who to contact if any questions come up before your planning appointment.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G4",
+      "move": "Describing radiotherapy as risk-free.",
+      "consequence": "Omitting recognised risks (cardiac/pulmonary for left-sided treatment, skin and tissue changes) invalidates informed consent."
+    },
+    {
+      "row": "G5",
+      "move": "Implying treatment is compulsory.",
+      "consequence": "Removes her right to decline, which is hers to exercise even when the recommendation is strong."
+    },
+    {
+      "row": "G1",
+      "move": "Explaining the technical process before addressing why treatment is needed given good surgical results.",
+      "consequence": "Leaves the patient's most natural question (\"why, if results are clear?\") unanswered, undermining trust in the recommendation."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You implied there was no choice",
+      "line": "I should be clear - this is your decision, and you can decline if you wish."
+    },
+    {
+      "when": "You omitted the longer-term risks",
+      "line": "I should also mention some of the longer-term effects to make sure you have the full picture."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Adjuvant radiotherapy after breast-conserving surgery reduces local recurrence risk even when surgical margins are clear and nodes are negative.",
+      "source": "NG101"
+    },
+    {
+      "fact": "Left-sided breast radiotherapy carries a small increased long-term risk to the heart and lung; modern planning techniques are designed to minimise the dose these organs receive."
+    },
+    {
+      "fact": "Valid consent must include material risks and the option to decline treatment, judged from what matters to that particular patient.",
+      "source": "GMC"
+    }
+  ],
+  "recall": {
+    "think": "Why radiotherapy despite good results; short-term skin/fatigue effects; longer-term cardiac/lung risk; it's still her choice.",
+    "say": "\"You don't have to decide today if you'd like more time.\"",
+    "do": [
+      "Check her understanding of why radiotherapy is recommended despite clear results",
+      "Cover short-term (skin, fatigue) and longer-term (texture, cardiac/lung) risks, and explicitly offer the option to decline",
+      "Confirm documentation and next practical steps"
+    ],
+    "numbers": [
+      {
+        "value": "26 Gy in 5 fractions over 1 week",
+        "meaning": "the whole-breast radiotherapy course she is consenting to",
+        "source": "NG101"
+      }
+    ],
+    "trap": "Describing radiotherapy as risk-free or implying it is compulsory.",
+    "finish": "Documented, informed and voluntary consent, with the planning appointment arranged."
+  },
+  "sources": [
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format and timing"
+    },
+    {
+      "id": "GMC",
+      "name": "GMC: Decision making and consent",
+      "version": "In effect 9 November 2020",
+      "url": "https://www.gmc-uk.org/professional-standards/the-professional-standards/decision-making-and-consent",
+      "supports": "Requirement to disclose material risks, preserve the patient's right to decline treatment, and reconfirm consent rather than assume it carries over unchanged"
+    },
+    {
+      "id": "NG101",
+      "name": "NICE NG101: Early and locally advanced breast cancer: diagnosis and management",
+      "version": "Published 18 July 2018; last updated 14 April 2025",
+      "url": "https://www.nice.org.uk/guidance/ng101",
+      "supports": "Whole-breast radiotherapy 26 Gy in 5 fractions over 1 week after breast-conserving surgery (1.13.13)"
+    },
+    {
+      "id": "BLS28",
+      "name": "Bailey & Love's Short Practice of Surgery, 28th edition",
+      "version": "28th edition, 2023",
+      "url": "https://www.routledge.com/Bailey--Loves-Short-Practice-of-Surgery-28th-Edition/Williams-OConnell-McCaskie/p/book/9781032068666",
+      "supports": "Standard oncological practice that repeat radiotherapy to a previously irradiated breast is not usually given, making mastectomy the option for local control of local recurrence after breast-conserving therapy"
+    }
+  ],
+  "partner": {
+    "opening": "Please take consent from this patient for adjuvant radiotherapy. You have 7 minutes.",
+    "actorBrief": "You are Rachel Linford, 42, a primary school teacher with two children aged 8 and 11, due to start radiotherapy. You're relieved your surgery results were clear and slightly confused about why you still need more treatment. You're anxious about side effects and want to know if you can decline.",
+    "reveals": [
+      {
+        "trigger": "Candidate checks your understanding first",
+        "finding": "You admit you're not sure why radiotherapy is still needed given clear results.",
+        "row": "G1"
+      },
+      {
+        "trigger": "Candidate explains longer-term risks",
+        "finding": "You ask specifically about the heart/lung risk since it's your left side.",
+        "row": "G4"
+      },
+      {
+        "trigger": "Candidate mentions declining is an option",
+        "finding": "You ask directly, \"Can I say no?\"",
+        "row": "G5"
+      }
+    ],
+    "push": [
+      {
+        "question": "Why do I need this if my results were already clear?",
+        "row": "G1",
+        "expect": "Explain radiotherapy still reduces recurrence risk beyond what surgery alone achieves."
+      },
+      {
+        "question": "Can I say no?",
+        "row": "G5",
+        "expect": "Confirm it's her choice, with a higher recurrence risk if declined, and offer time to decide."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "I'm scared of the burns I've heard about.",
+        "safeAnswer": "Acknowledge the concern, clarify that skin reactions are usually mild to moderate and managed with skin care advice, and offer to discuss further with the oncology nursing team.",
+        "row": "G3"
+      },
+      {
+        "prompt": "Will this affect my heart long-term?",
+        "safeAnswer": "Explain the small increased long-term cardiac risk with left-sided treatment and that planning is specifically designed to minimise dose to the heart.",
+        "row": "G4"
+      }
+    ]
+  }
+}

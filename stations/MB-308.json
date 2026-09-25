@@ -1,0 +1,536 @@
+{
+  "id": "MB-308",
+  "exam": "MRCS-B",
+  "title": "History: perianal pain",
+  "type": "history",
+  "header": {
+    "domain": "Applied Skills",
+    "contentArea": "History taking",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "signalMinutes": 6,
+    "guidelineVersions": [
+      "ASCRS Clinical Practice Guidelines for the Management of Anorectal Abscess, Fistula-in-Ano, and Rectovaginal Fistula (2022)",
+      "ASCRS Clinical Practice Guidelines for the Management of Anal Fissures (2023)"
+    ],
+    "related": [
+      {
+        "id": "MB-167",
+        "why": "Incision and drainage of an abscess, the definitive treatment this history is screening for"
+      },
+      {
+        "id": "MB-192",
+        "why": "Applied anatomy of the anal canal, sphincters and fistula tracks"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Emergency surgical clinic",
+    "role": "Core surgical trainee",
+    "scenario": "Mr Lewis Harcourt, 41, has had severe perianal pain for 2 days and is struggling to sit down.",
+    "task": "Take a focused history. You will be asked your differential and what you would do next."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Pin down the pain pattern against defaecation, systemic features and risk factors, then plan an examination that respects how much pain allows.",
+    "trap": "Not every perianal lump is a haemorrhoid, and a painful abscess should not be forced through a full digital examination.",
+    "firstMove": "\"Can you tell me exactly where the pain is, and whether it changes when you open your bowels?\""
+  },
+  "flow": [
+    "Open and characterise the pain",
+    "Bleeding, swelling, discharge, systemic features",
+    "Bowel habit and risk factors",
+    "Plan a safe examination",
+    "At 6 minutes: present differential",
+    "Next steps"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "communication",
+      "label": "Opening and pain characterisation",
+      "fail": "Jumps to a diagnosis before asking about onset, timing or relation to defaecation.",
+      "pass": "Introduces self, asks onset, exact site, and whether pain is constant or worse with defaecation.",
+      "high": "Distinguishes sharp pain during defaecation with burning after (fissure) from constant throbbing pain (abscess)."
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-knowledge",
+      "label": "Bleeding, discharge and systemic features",
+      "fail": "Doesn't ask about bleeding, swelling, discharge or fever.",
+      "pass": "Asks about bright red bleeding, swelling, discharge and fever or rigors.",
+      "high": "Specifically checks whether pain now prevents sitting or opening the bowels, flagging possible same-day abscess assessment."
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "Bowel habit and risk factors",
+      "fail": "Omits bowel habit and risk factors entirely.",
+      "pass": "Asks about constipation, straining, and previous fissure, haemorrhoids, abscess or fistula.",
+      "high": "Screens specifically for Crohn's disease, immunosuppression, diabetes and recurrent perianal sepsis."
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-skill",
+      "label": "Planning a safe examination",
+      "fail": "Plans a forceful digital rectal examination despite severe acute pain.",
+      "pass": "Plans gentle inspection first, with consent and a chaperone, and would not force a painful internal examination if acute fissure or abscess is likely.",
+      "high": "Explains inspection alone may decide urgency, with fuller examination under analgesia or in theatre if needed."
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-knowledge",
+      "label": "Differential diagnosis",
+      "fail": "Assumes all perianal pain is haemorrhoids.",
+      "pass": "Differentiates anal fissure, perianal abscess and thrombosed external haemorrhoid by pain pattern and findings.",
+      "high": "States a deep or intersphincteric abscess can look fairly normal externally despite severe pain, so a reassuring look doesn't exclude one."
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-knowledge",
+      "label": "Managing a drainable abscess",
+      "fail": "Offers antibiotics alone for a clearly drainable abscess.",
+      "pass": "States a clearly drainable perianal abscess needs prompt surgical drainage, not antibiotics alone.",
+      "high": "Adds that antibiotics have a role for spreading cellulitis, sepsis or immunosuppression, but alongside drainage, not instead of it.",
+      "source": "ASCRSAB"
+    },
+    {
+      "id": "G7",
+      "domain": "communication",
+      "label": "Presentation and safety-netting",
+      "fail": "Presents findings without a working diagnosis or safety-netting.",
+      "pass": "Presents a focused summary with a working diagnosis and safety-nets for fever, spreading redness, urinary difficulty or worsening pain.",
+      "high": "Leads with the diagnosis and specifies escalation to urgent senior surgical review if signs of sepsis develop."
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "candidate",
+        "text": "So this sounds like piles then.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Anything else you want to ask?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "No, I think that's enough.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          },
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you examine him?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd go straight to a full digital rectal examination.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What's your differential?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "It's definitely a haemorrhoid.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "And if it turned out to be an abscess?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd start antibiotics and review in a week.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please summarise your findings."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Painful lump, probably piles. That's it.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "candidate",
+        "text": "Hello Mr Harcourt, I'm Dr Patel, one of the surgical trainees. Can I ask exactly where the pain is, when it started, and whether it's constant or worse with opening your bowels?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Mr Harcourt: \"It's constant now, and unbearable when I try to sit or go.\""
+      },
+      {
+        "speaker": "candidate",
+        "text": "Have you noticed any bleeding, swelling, discharge, or felt feverish or shivery?",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Mr Harcourt: \"A little blood on the paper, and I feel a bit hot.\""
+      },
+      {
+        "speaker": "candidate",
+        "text": "How are your bowels normally, any constipation or straining? Have you had a fissure, piles, abscess or fistula before, or any bowel condition like Crohn's?",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Mr Harcourt: \"I'm often constipated. No previous problems.\""
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd like to gently inspect with your consent and a chaperone present. If it looks like an acute fissure or a very tender abscess, I wouldn't force a full internal examination.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What's your differential?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "This could be an anal fissure, a perianal abscess, or a thrombosed external haemorrhoid. His constant throbbing pain, swelling and feeling feverish point more towards an abscess.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "If it is a drainable abscess?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "A clearly drainable abscess needs prompt surgical drainage; antibiotics alone aren't a substitute for that.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please summarise."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Two days of severe, constant perianal pain with swelling, minor bleeding and feeling feverish, no prior anorectal history: most consistent with a perianal abscess. I'd examine gently, arrange same-day surgical assessment, and safety-net for spreading redness, urinary difficulty or worsening pain.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "candidate",
+        "text": "Hello Mr Harcourt, I'm Dr Patel. Could you tell me exactly where the pain is, when it started, and whether it's sharp during defaecation with burning afterwards, or a constant throb?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Mr Harcourt: \"It's a constant, deep throb, especially when I sit.\""
+      },
+      {
+        "speaker": "candidate",
+        "text": "Are you managing to pass urine, and can you sit at all? Any swelling, discharge, fevers or shivers?",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Mr Harcourt: \"I can barely sit, and I felt shivery last night.\""
+      },
+      {
+        "speaker": "candidate",
+        "text": "Any bowel trouble like constipation or straining, previous fissures, piles, abscesses or fistulae, or a diagnosis like Crohn's, diabetes, or anything affecting your immune system?",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Mr Harcourt: \"None of that.\""
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'll inspect first; given how tender this sounds, I wouldn't force a digital examination, a look, with analgesia or in theatre if needed, may be enough to decide urgency.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "This fits a perianal abscess rather than a fissure or thrombosed haemorrhoid; even a deep or intersphincteric abscess can look fairly normal from outside despite severe pain, so a reassuring look wouldn't rule it out.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "If it's a drainable abscess?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "It needs surgical drainage, not antibiotics alone. Antibiotics have a role for spreading cellulitis, sepsis or immunosuppression, but alongside drainage, not instead of it.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please summarise."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Two days of worsening, constant perianal pain with swelling and rigors, otherwise well: I'd treat this as a perianal abscess until examined, arrange urgent surgical assessment today, and safety-net for spreading redness, urinary difficulty or systemic deterioration, which would need urgent senior review.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G4",
+      "move": "Forcing a digital rectal examination despite severe acute pain.",
+      "consequence": "Unnecessary pain, and a missed chance to assess more safely with analgesia or in theatre."
+    },
+    {
+      "row": "G5",
+      "move": "Assuming a painful perianal lump is a haemorrhoid without considering fissure or abscess.",
+      "consequence": "A drainable abscess is missed or delayed."
+    },
+    {
+      "row": "G6",
+      "move": "Treating a clearly drainable abscess with antibiotics alone.",
+      "consequence": "Antibiotics are not a substitute for drainage in an uncomplicated abscess."
+    },
+    {
+      "row": "G3",
+      "move": "Not asking about Crohn's disease, immunosuppression or diabetes.",
+      "consequence": "Recurrent or complex perianal disease needing a different pathway is missed."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You forgot to ask about systemic features",
+      "line": "Before I finish, has he had any fevers, rigors or felt generally unwell?"
+    },
+    {
+      "when": "Asked if you'd examine everyone the same way",
+      "line": "No, I'd tailor the examination to how much pain allows, and avoid forcing an internal examination if an abscess or fissure is likely."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Anal fissure: sharp pain during defaecation, often followed by persistent burning, with minor bright red bleeding.",
+      "source": "ASCRSFIS"
+    },
+    {
+      "fact": "Perianal abscess: progressive, often constant throbbing pain, swelling and tenderness, possible fever; a deep abscess may have few external findings.",
+      "source": "ASCRSAB"
+    },
+    {
+      "fact": "Thrombosed external haemorrhoid: an acute, painful perianal lump, often bluish and tender."
+    },
+    {
+      "fact": "A clearly drainable perianal abscess needs prompt surgical drainage; antibiotics are not a substitute for drainage in uncomplicated cases.",
+      "source": "ASCRSAB"
+    }
+  ],
+  "recall": {
+    "think": "Could this be a drainable abscess, and is a full examination safe as it stands?",
+    "say": "\"This is most consistent with a perianal abscess until proven otherwise.\"",
+    "do": [
+      "Onset and pattern against defaecation, bleeding/discharge/fever",
+      "Bowel habit, IBD, immunosuppression, diabetes",
+      "Inspect gently; don't force a painful PR exam"
+    ],
+    "numbers": [
+      {
+        "value": "6 min",
+        "meaning": "signal to stop and present",
+        "source": "ICBSE"
+      }
+    ],
+    "trap": "A reassuring look doesn't exclude a deep or intersphincteric abscess causing severe pain.",
+    "finish": "Drainage for a clearly drainable abscess; antibiotics don't replace it. Safety-net for spreading redness, urinary difficulty or systemic deterioration."
+  },
+  "sources": [
+    {
+      "id": "ASCRSAB",
+      "name": "American Society of Colon and Rectal Surgeons: Clinical Practice Guidelines for the Management of Anorectal Abscess, Fistula-in-Ano, and Rectovaginal Fistula",
+      "version": "Diseases of the Colon & Rectum, June 2022",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35732009/",
+      "supports": "Anorectal abscesses require prompt drainage; antibiotics are not a substitute for drainage in uncomplicated cases"
+    },
+    {
+      "id": "ASCRSFIS",
+      "name": "American Society of Colon and Rectal Surgeons: Clinical Practice Guidelines for the Management of Anal Fissures",
+      "version": "Diseases of the Colon & Rectum, February 2023",
+      "url": "https://journals.lww.com/dcrjournal/fulltext/2023/02000/the_american_society_of_colon_and_rectal_surgeons.8.aspx",
+      "supports": "History and inspection are central to diagnosis; acute fissure is usually associated with pain during and after defaecation"
+    },
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "6-minute signal in history and examination stations"
+    }
+  ],
+  "partner": {
+    "opening": "Please take a focused history from Mr Harcourt. I'll ask you some questions at the end.",
+    "actorBrief": "You are Lewis Harcourt, 41, an IT contractor. Perianal pain started 2 days ago, now constant and severe, much worse sitting or trying to open your bowels. A little bright red blood on the paper. Felt hot and shivery overnight. Often constipated; no previous fissure, piles, abscess, fistula, Crohn's, diabetes or immune problems. If examination is attempted without warning, wince and ask them to stop.",
+    "reveals": [
+      {
+        "trigger": "Asks onset, site and pattern against defaecation",
+        "finding": "Pain started 2 days ago, constant and severe, much worse sitting or trying to open the bowels.",
+        "row": "G1"
+      },
+      {
+        "trigger": "Asks about bleeding, swelling, discharge or systemic features",
+        "finding": "A little bright red blood on the paper; felt hot and shivery overnight; area feels swollen.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Asks about bowel habit and anorectal or medical history",
+        "finding": "Often constipated; no previous fissure, piles, abscess, fistula, Crohn's, diabetes or immunosuppression.",
+        "row": "G3"
+      },
+      {
+        "trigger": "Explains the planned examination",
+        "finding": "Agrees to gentle inspection but flinches and asks them to stop if it becomes very painful.",
+        "row": "G4"
+      }
+    ],
+    "push": [
+      {
+        "question": "What would you do if inspection shows a fluctuant, tender swelling?",
+        "row": "G6",
+        "expect": "Arrange prompt surgical assessment for drainage; antibiotics alone aren't sufficient for a clearly drainable abscess."
+      },
+      {
+        "question": "Would you perform a digital rectal examination now?",
+        "row": "G4",
+        "expect": "Not if it's very painful or an acute fissure or abscess is likely; inspect first, reassess under analgesia or in theatre if needed."
+      },
+      {
+        "question": "What if he were septic?",
+        "row": "G7",
+        "expect": "ABCDE assessment, sepsis management, and urgent senior surgical review for source control."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "He mentions he's had similar pain and swelling twice before, each settling after a course of antibiotics.",
+        "safeAnswer": "Recurrent perianal sepsis raises the possibility of a fistula-in-ano; arrange surgical assessment rather than repeating antibiotics alone.",
+        "row": "G3"
+      },
+      {
+        "prompt": "He says he also has bloody diarrhoea and abdominal cramps most weeks.",
+        "safeAnswer": "Raises concern for inflammatory bowel disease; include this in the referral and examine and investigate accordingly.",
+        "row": "G3"
+      },
+      {
+        "prompt": "On gentle inspection there's a fluctuant, exquisitely tender swelling and he can't tolerate any further examination.",
+        "safeAnswer": "Stop; this is consistent with an abscess needing drainage, arrange urgent surgical assessment rather than forcing further examination.",
+        "row": "G4"
+      },
+      {
+        "prompt": "He becomes tachycardic and feverish during the consultation.",
+        "safeAnswer": "Treat as possible sepsis: ABCDE, escalate for urgent senior surgical review and source control.",
+        "row": "G7"
+      }
+    ]
+  }
+}

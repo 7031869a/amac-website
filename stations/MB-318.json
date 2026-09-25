@@ -1,0 +1,205 @@
+{
+  "id": "MB-318",
+  "exam": "MRCS-B",
+  "title": "Preoperative anaemia: NICE NG24 and IV iron",
+  "type": "applied-knowledge",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "Perioperative medicine: patient blood management",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "NICE NG24: Blood transfusion (published 18 November 2015)",
+      "CPOC: Guideline for the Management of Anaemia in the Perioperative Pathway (republished March 2025, amended May and November 2025)"
+    ],
+    "related": [
+      { "id": "MB-205", "why": "Perioperative management of anticoagulants — another preoperative optimisation viva" },
+      { "id": "MB-300", "why": "Perioperative steroid cover — the same applied-knowledge structure for a different optimisation problem" }
+    ]
+  },
+  "brief": {
+    "setting": "Preoperative assessment viva",
+    "role": "Core surgical trainee",
+    "scenario": "Ms Hannah Loxley, 62, is listed for elective major surgery. Blood tests show anaemia with evidence of iron deficiency.",
+    "task": "Explain how you would assess and optimise her anaemia before surgery, and when you would use IV iron."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Confirm anaemia and its cause first, then match the treatment to the cause and the time available.",
+    "trap": "Giving IV iron to everyone anaemic, or treating a haemoglobin number rather than the patient.",
+    "firstMove": "\"I'd confirm the anaemia and find out why she's iron deficient before treating it.\""
+  },
+  "flow": [
+    "Confirm anaemia and investigate cause",
+    "Assess time available before surgery",
+    "Oral iron as first-line treatment",
+    "When IV iron is indicated",
+    "Other optimisation and coordination",
+    "Transfusion versus a laboratory number"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-knowledge",
+      "label": "Confirming anaemia and its cause",
+      "fail": "Treats all anaemia as iron deficiency without investigating.",
+      "pass": "Confirms anaemia, assesses iron status, and considers other causes such as bleeding, nutritional deficiency or chronic disease.",
+      "high": "Actively looks for an occult bleeding source when clinically indicated rather than assuming dietary iron deficiency alone.",
+      "source": "NG24"
+    },
+    {
+      "id": "G2",
+      "domain": "professionalism",
+      "label": "Time available before surgery",
+      "fail": "Doesn't consider whether surgery can safely be delayed for optimisation.",
+      "pass": "Considers whether the operation can safely be delayed to allow optimisation of anaemia.",
+      "high": "Weighs the urgency and type of surgery against the severity and cause of anaemia when deciding whether to delay.",
+      "source": "CPOC"
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "First-line treatment",
+      "fail": "Starts with IV iron or transfusion for straightforward iron-deficiency anaemia.",
+      "pass": "Offers oral iron before and after surgery for iron-deficiency anaemia.",
+      "high": "Explains oral iron should be tried first whenever there is enough time and no reason it can't be tolerated or absorbed.",
+      "source": "NG24"
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-knowledge",
+      "label": "When to use IV iron",
+      "fail": "Cannot give any specific indication for IV iron, or says it should be used for all preoperative anaemia.",
+      "pass": "Considers IV iron when oral iron isn't tolerated or absorbed, adherence isn't feasible, there is functional iron deficiency, or there is insufficient time before surgery for oral iron to work.",
+      "high": "Explains functional iron deficiency as iron unavailable for use despite adequate stores, distinct from true iron-deficiency anaemia.",
+      "source": "NG24"
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-knowledge",
+      "label": "Transfusion versus a number",
+      "fail": "Gives blood because the haemoglobin is below a personal arbitrary threshold.",
+      "pass": "Bases transfusion on clinical need rather than correcting a laboratory number alone.",
+      "high": "Explains that correcting the anaemia itself, where time allows, is preferable to transfusion for elective surgery."
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-knowledge",
+      "label": "Other reversible contributors",
+      "fail": "Ignores other treatable contributors once iron deficiency is found.",
+      "pass": "Optimises other reversible contributors relevant to the clinical picture.",
+      "high": "Names patient blood management as diagnosis, optimisation and blood-conservation strategy together, not iron alone."
+    },
+    {
+      "id": "G7",
+      "domain": "professionalism",
+      "label": "Coordination",
+      "fail": "Manages this alone without involving anaesthetics or perioperative medicine for major surgery.",
+      "pass": "Coordinates with anaesthetics or perioperative medicine for major surgery.",
+      "high": "Recognises when gastrointestinal investigation is needed for ongoing or unexplained bleeding and arranges it alongside surgical planning."
+    }
+  ],
+  "performances": {
+    "fail": [
+      { "speaker": "examiner", "text": "How would you manage this anaemia before surgery?" },
+      { "speaker": "candidate", "text": "She's anaemic and iron deficient, so I'd just start IV iron straight away.", "tags": [{ "row": "G1", "band": "fail" }, { "row": "G4", "band": "fail" }] },
+      { "speaker": "examiner", "text": "Why not oral iron first?" },
+      { "speaker": "candidate", "text": "IV is quicker and works for everyone, so there's no real reason to try tablets.", "tags": [{ "row": "G3", "band": "fail" }] },
+      { "speaker": "examiner", "text": "Would you delay surgery?" },
+      { "speaker": "candidate", "text": "No, I wouldn't think about that, I'd just proceed as listed.", "tags": [{ "row": "G2", "band": "fail" }] },
+      { "speaker": "examiner", "text": "Her haemoglobin is 95 g/L on the morning of surgery. What do you do?" },
+      { "speaker": "candidate", "text": "Anything under 100 needs a blood transfusion before theatre.", "tags": [{ "row": "G5", "band": "fail" }] },
+      { "speaker": "examiner", "text": "Who else would you involve?" },
+      { "speaker": "candidate", "text": "No one, I'd manage it myself.", "tags": [{ "row": "G7", "band": "fail" }, { "row": "G6", "band": "fail" }] }
+    ],
+    "pass": [
+      { "speaker": "candidate", "text": "First I'd confirm she is anaemic and iron deficient on the blood tests, and think about the likely cause — bleeding, nutritional deficiency or chronic disease.", "tags": [{ "row": "G1", "band": "pass" }] },
+      { "speaker": "examiner", "text": "How would timing affect your plan?" },
+      { "speaker": "candidate", "text": "I'd consider whether her surgery could safely be delayed to give time for optimisation, depending on urgency.", "tags": [{ "row": "G2", "band": "pass" }] },
+      { "speaker": "examiner", "text": "What treatment would you start?" },
+      { "speaker": "candidate", "text": "Oral iron before and after surgery, as first-line treatment for iron-deficiency anaemia.", "tags": [{ "row": "G3", "band": "pass" }] },
+      { "speaker": "examiner", "text": "When would you use IV iron instead?" },
+      { "speaker": "candidate", "text": "If she can't tolerate or absorb oral iron, can't adhere to it, has functional iron deficiency, or there isn't enough time before surgery for oral iron to work.", "tags": [{ "row": "G4", "band": "pass" }] },
+      { "speaker": "examiner", "text": "Her haemoglobin is 95 g/L on the morning of surgery — do you transfuse?" },
+      { "speaker": "candidate", "text": "Not just because of the number — I'd base transfusion on her clinical condition rather than correcting the result alone.", "tags": [{ "row": "G5", "band": "pass" }] },
+      { "speaker": "candidate", "text": "I'd also optimise any other reversible contributors and involve perioperative medicine given this is major surgery.", "tags": [{ "row": "G6", "band": "pass" }, { "row": "G7", "band": "pass" }] }
+    ],
+    "high": [
+      { "speaker": "candidate", "text": "I'd confirm the anaemia and iron-deficiency picture, then look actively for a cause — including an occult bleeding source if the history or picture suggests it, rather than assuming diet alone.", "tags": [{ "row": "G1", "band": "high" }] },
+      { "speaker": "examiner", "text": "Does timing matter?" },
+      { "speaker": "candidate", "text": "Yes — I'd weigh the urgency and type of surgery against how severe and treatable the anaemia is, and delay if that balance favours optimisation first.", "tags": [{ "row": "G2", "band": "high" }] },
+      { "speaker": "examiner", "text": "First-line treatment?" },
+      { "speaker": "candidate", "text": "Oral iron whenever there's enough time and no reason it can't be tolerated or absorbed — I'd try that before reaching for IV iron.", "tags": [{ "row": "G3", "band": "high" }] },
+      { "speaker": "examiner", "text": "When would IV iron be right?" },
+      { "speaker": "candidate", "text": "When oral iron isn't tolerated or absorbed, adherence isn't realistic, there's functional iron deficiency — iron that's present but unavailable for use — or too little time before surgery for oral iron to work.", "tags": [{ "row": "G4", "band": "high" }] },
+      { "speaker": "examiner", "text": "Haemoglobin 95 g/L on the day of surgery — transfuse?" },
+      { "speaker": "candidate", "text": "Not automatically — for elective surgery I'd rather correct the anaemia itself where time allows than transfuse to fix a number; transfusion should follow clinical need.", "tags": [{ "row": "G5", "band": "high" }] },
+      { "speaker": "candidate", "text": "I'd frame this as patient blood management — diagnosis, optimisation and blood-conservation together — optimise other reversible contributors, arrange GI investigation if bleeding is unexplained, and coordinate with perioperative medicine for major surgery.", "tags": [{ "row": "G6", "band": "high" }, { "row": "G7", "band": "high" }] }
+    ]
+  },
+  "failures": [
+    { "row": "G4", "move": "Giving IV iron to every anaemic preoperative patient.", "consequence": "Exposes patients to an unnecessary infusion and cost when oral iron would have worked with enough time." },
+    { "row": "G5", "move": "Transfusing because the haemoglobin is below a personal arbitrary threshold.", "consequence": "Exposes the patient to transfusion risks that clinical need alone would not have justified." },
+    { "row": "G1", "move": "Assuming all anaemia is iron deficiency without investigating the cause.", "consequence": "Delays finding a treatable cause such as occult bleeding, and may direct treatment at the wrong target." },
+    { "row": "G2", "move": "Proceeding to surgery as listed without considering whether it could be delayed for optimisation.", "consequence": "Misses a safe opportunity to reduce perioperative risk from unoptimised anaemia." }
+  ],
+  "recovery": [
+    { "when": "You've jumped straight to IV iron", "line": "Let me step back — I'd confirm the cause first and try oral iron unless there's a specific reason it wouldn't work in time." },
+    { "when": "You've anchored on the haemoglobin number", "line": "Actually, I'd base the transfusion decision on her clinical condition, not the number alone." }
+  ],
+  "knowledge": [
+    { "fact": "Offer oral iron before and after surgery for iron-deficiency anaemia.", "source": "NG24" },
+    { "fact": "Consider IV iron when oral iron can't be tolerated or absorbed, adherence isn't feasible, there is functional iron deficiency, or there's insufficient time for oral iron to work before surgery.", "source": "NG24" },
+    { "fact": "IV iron is not a universal treatment for all preoperative anaemia.", "source": "NG24" },
+    { "fact": "Preoperative anaemia should be identified early and optimised with a personalised plan as part of the perioperative pathway.", "source": "CPOC" }
+  ],
+  "recall": {
+    "think": "Untreated preoperative anaemia increases transfusion and complication risk; treating the wrong cause wastes the time available to fix it.",
+    "say": "\"I'd confirm the cause, then match treatment to the cause and the time before surgery.\"",
+    "do": [
+      "Confirm anaemia and investigate the cause",
+      "Offer oral iron first-line",
+      "Reserve IV iron for the specific indications"
+    ],
+    "numbers": [
+      { "value": "Recs 1.1.2–1.1.3", "meaning": "NICE NG24 recommendations on oral and IV iron for preoperative anaemia", "source": "NG24" }
+    ],
+    "trap": "Treating the haemoglobin number rather than the patient, with IV iron or transfusion.",
+    "finish": "Oral iron first-line; IV iron for its specific indications; transfusion by clinical need, not a number."
+  },
+  "sources": [
+    {
+      "id": "NG24",
+      "name": "NICE NG24: Blood transfusion — reducing the need for blood transfusion in people having surgery",
+      "version": "Published 18 November 2015",
+      "url": "https://www.nice.org.uk/guidance/ng24/chapter/recommendations",
+      "supports": "Recommendation 1.1.2: offer oral iron before and after surgery for iron-deficiency anaemia. Recommendation 1.1.3: consider IV iron before or after surgery when oral iron cannot be tolerated or absorbed, adherence is not possible, there is functional iron deficiency, or there is insufficient time before surgery for oral iron to be effective."
+    },
+    {
+      "id": "CPOC",
+      "name": "Centre for Perioperative Care: Guideline for the Management of Anaemia in the Perioperative Pathway",
+      "version": "Republished March 2025, amended May and November 2025",
+      "url": "https://cpoc.org.uk/guidelines-and-resources/guidelines/anaemia-perioperative-pathway",
+      "supports": "Preoperative anaemia should be identified early, its cause investigated, and a personalised optimisation plan agreed, with communication between primary and secondary care"
+    }
+  ],
+  "partner": {
+    "opening": "\"This patient is listed for elective major surgery and has been found to be anaemic with iron deficiency. How would you manage this before surgery?\"",
+    "actorBrief": "You are the examiner. Ask the flow questions in order, then use the push questions and curveballs to test the boundaries of the candidate's answer. Reveal the haemoglobin figure only if asked.",
+    "reveals": [
+      { "trigger": "Candidate asks for her haemoglobin and ferritin", "finding": "Haemoglobin 98 g/L, ferritin low, consistent with iron-deficiency anaemia.", "row": "G1" },
+      { "trigger": "Candidate asks how soon surgery is planned", "finding": "Surgery is booked in three weeks.", "row": "G2" },
+      { "trigger": "Candidate asks about bleeding symptoms", "finding": "No overt bleeding reported; asymptomatic finding on routine preoperative bloods.", "row": "G1" }
+    ],
+    "push": [
+      { "question": "Why not just start IV iron given the time pressure?", "row": "G3", "expect": "Three weeks may be enough for oral iron to help; IV iron is reserved for its specific indications, not simply for speed." },
+      { "question": "What is functional iron deficiency?", "row": "G4", "expect": "Iron present in stores but not available for use, so oral iron alone won't correct it; an indication for IV iron." },
+      { "question": "Her haemoglobin is 95 g/L on the morning of surgery — do you transfuse?", "row": "G5", "expect": "No, not on the number alone; base the decision on clinical need." }
+    ],
+    "curveballs": [
+      { "prompt": "\"Why not just transfuse now and save time?\"", "safeAnswer": "Explains that correcting anaemia itself is preferable when time allows, and transfusion should follow clinical need rather than convenience.", "row": "G5" },
+      { "prompt": "\"She says the iron tablets upset her stomach.\"", "safeAnswer": "Recognises this as a reason to consider IV iron given intolerance of oral iron.", "row": "G4" },
+      { "prompt": "\"Does IV iron replace finding the cause?\"", "safeAnswer": "No — the cause of the anaemia still needs assessment regardless of the iron formulation used.", "row": "G1" },
+      { "prompt": "\"Should all major surgery be delayed until haemoglobin is normal?\"", "safeAnswer": "Not automatically — the decision depends on urgency, type of surgery, severity and cause of anaemia, and time available for optimisation.", "row": "G2" }
+    ]
+  }
+}

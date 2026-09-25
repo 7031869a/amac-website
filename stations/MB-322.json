@@ -1,0 +1,487 @@
+{
+  "id": "MB-322",
+  "exam": "MRCS-B",
+  "title": "Clostridioides difficile infection in a surgical patient",
+  "type": "applied-knowledge",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "Postoperative care: infection",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "NICE NG199 (published 23 July 2021; current version dated 11 July 2024)"
+    ]
+  },
+  "brief": {
+    "setting": "Surgical ward",
+    "role": "Surgical trainee",
+    "scenario": "Mrs Laura Penrose, 73, has new frequent watery diarrhoea after a course of antibiotics.",
+    "task": "Assess suspected Clostridioides difficile infection and outline immediate management."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Assess severity and complications first; stop what's unnecessary; treat according to guidance; never reach for loperamide.",
+    "trap": "Reaching for an antimotility drug, or continuing the causative antibiotic without review.",
+    "firstMove": "\"I'd assess her ABCDE and hydration, then take a focused history of the diarrhoea and her recent antibiotics.\""
+  },
+  "flow": [
+    "Assess (ABCDE, hydration)",
+    "History and examination",
+    "Investigate and isolate",
+    "Stop/review contributing medicines",
+    "Assess severity and treat",
+    "Escalate if complicated"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-knowledge",
+      "label": "Initial assessment",
+      "fail": "Does not assess ABCDE or hydration before focusing only on the diarrhoea.",
+      "pass": "Assesses ABCDE and hydration status alongside the history.",
+      "high": "Links dehydration and electrolyte disturbance explicitly to the risk of deterioration in an older patient."
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-knowledge",
+      "label": "Focused history",
+      "fail": "Does not ask about antibiotic exposure or previous C. difficile.",
+      "pass": "Asks about onset, stool frequency, abdominal pain, fever, previous C. difficile, and reviews recent antibiotics, hospital exposure, laxatives and other medicines.",
+      "high": "Specifically identifies which antibiotic is the likely trigger and whether it, or any other non-essential medicine, can be stopped."
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-skill",
+      "label": "Examination for complications",
+      "fail": "Does not examine for distension, tenderness, ileus, toxic megacolon or peritonitis.",
+      "pass": "Assesses for abdominal distension, tenderness, ileus, toxic megacolon or peritonitis.",
+      "high": "Explains that a rigid or silent abdomen in this context changes management from ward-based treatment to urgent surgical involvement."
+    },
+    {
+      "id": "G4",
+      "domain": "professionalism",
+      "label": "Isolation and antibiotic stewardship",
+      "fail": "Continues the triggering antibiotic without review, and does not isolate the patient.",
+      "pass": "Isolates according to infection-control precautions, stops unnecessary antibiotics and checks whether an essential antibiotic could be changed to one with lower C. difficile risk.",
+      "high": "Records the diagnosis clearly for future antibiotic decisions and considers PPIs, laxatives and other medicines that could be worsening diarrhoea or dehydration."
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-knowledge",
+      "label": "Safe symptomatic management",
+      "fail": "Prescribes loperamide or another antimotility drug for the diarrhoea.",
+      "pass": "Does not offer antimotility medicines such as loperamide in suspected or confirmed C. difficile infection.",
+      "high": "Explains the mechanism: slowing transit keeps toxin in contact with the bowel for longer and can worsen the illness.",
+      "source": "NG199"
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-knowledge",
+      "label": "First-line treatment",
+      "fail": "Treats all diarrhoea as C. difficile without stool confirmation, or gives an outdated or unsupported treatment.",
+      "pass": "Obtains stool testing via the local diagnostic pathway and treats confirmed or strongly suspected infection according to current NICE guidance.",
+      "high": "Names oral vancomycin 125 mg four times daily for 10 days as first-line for a first episode, with fidaxomicin as an alternative if vancomycin is ineffective.",
+      "source": "NG199"
+    },
+    {
+      "id": "G7",
+      "domain": "professionalism",
+      "label": "Recognising when to escalate",
+      "fail": "Manages severe deterioration, ileus, toxic megacolon or peritonitis without escalating.",
+      "pass": "Seeks urgent specialist or surgical advice for severe deterioration, ileus, toxic megacolon, perforation or life-threatening infection.",
+      "high": "Also flags recurrent infection as a separate problem needing its own management plan and involves microbiology or gastroenterology proactively."
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "What would you do?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd focus on the diarrhoea itself and not worry about the rest of her observations.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Anything you'd ask her?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Not really, the diarrhoea speaks for itself.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you treat the diarrhoea?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd prescribe loperamide to settle the diarrhoea.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What antibiotics would you stop?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd carry on with whatever she's already on; not my decision to stop it.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you assess severity?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "If it's watery diarrhoea, it's C. difficile, and I'd treat it the same regardless.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Her abdomen becomes distended and silent."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'll keep treating on the ward and review again tomorrow.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "examiner",
+        "text": "What would you do?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Assess her ABCDE and hydration, then ask about onset, stool frequency, pain, fever, previous C. difficile and her recent antibiotics.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          },
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What antibiotics would you stop?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd review her recent antibiotics and stop anything unnecessary, isolate her per infection-control precautions, and check her PPIs and laxatives too.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you assess severity?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Examine for distension, tenderness, ileus or peritonitis, send stool testing, and treat according to current NICE guidance once confirmed or strongly suspected.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          },
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Would you give anything for the diarrhoea itself?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "No antimotility drugs like loperamide — they're not recommended in suspected or confirmed C. difficile.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Her abdomen becomes distended and silent."
+      },
+      {
+        "speaker": "candidate",
+        "text": "That would prompt urgent specialist or surgical advice given the risk of toxic megacolon or perforation.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "examiner",
+        "text": "What would you do?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "ABCDE and hydration first — dehydration and electrolyte loss can deteriorate quickly at her age — then a focused history including previous C. difficile and recent antibiotic exposure.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What antibiotics would you stop?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd identify the likely triggering antibiotic specifically and stop it unless essential, and if it is essential, consider switching to one with lower C. difficile risk. I'd isolate her and review PPIs and laxatives too.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          },
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you assess severity?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Examine for distension, tenderness, ileus or peritonitis — a rigid or silent abdomen would mean urgent surgical involvement, not ward observation. I'd send stool testing and treat with oral vancomycin 125 mg four times daily for 10 days if this is a first episode, with fidaxomicin as an alternative if that fails.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          },
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Anything for the diarrhoea directly?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "No antimotility drugs — slowing transit would keep the toxin in contact with the bowel for longer and could worsen things.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What if this happens again in future?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Recurrent infection is its own problem — I'd involve microbiology and gastroenterology and make sure the diagnosis is documented clearly for future antibiotic decisions.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G5",
+      "move": "Prescribing loperamide for the diarrhoea.",
+      "consequence": "Toxin stays in contact with the bowel for longer, worsening the infection."
+    },
+    {
+      "row": "G4",
+      "move": "Continuing the triggering antibiotic without review.",
+      "consequence": "The infection is perpetuated instead of settling."
+    },
+    {
+      "row": "G6",
+      "move": "Treating all diarrhoea as C. difficile, or using an outdated treatment.",
+      "consequence": "Misdiagnosis or ineffective, non-current treatment."
+    },
+    {
+      "row": "G7",
+      "move": "Continuing ward-based management despite abdominal distension and silence.",
+      "consequence": "Delayed recognition of toxic megacolon or perforation."
+    },
+    {
+      "row": "G3",
+      "move": "Not examining for peritonism or distension.",
+      "consequence": "A surgical complication is missed until it is advanced."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "Pushed to give loperamide for comfort",
+      "line": "I'd still avoid antimotility drugs here, because they can worsen suspected C. difficile infection."
+    },
+    {
+      "when": "Asked why you'd stop the antibiotic",
+      "line": "I'd still want to stop it unless it's essential, because ongoing exposure perpetuates the infection."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Do not offer antimotility medicines such as loperamide in suspected or confirmed C. difficile infection.",
+      "source": "NG199"
+    },
+    {
+      "fact": "Review existing antibiotics and stop unless essential; if essential, consider switching to lower-risk options.",
+      "source": "NG199"
+    },
+    {
+      "fact": "First-line treatment for a first episode in adults is oral vancomycin 125 mg four times daily for 10 days; fidaxomicin is an alternative if vancomycin fails.",
+      "source": "NG199"
+    },
+    {
+      "fact": "Toxic megacolon, ileus, perforation or peritonitis need urgent specialist or surgical advice."
+    }
+  ],
+  "recall": {
+    "think": "Toxic megacolon or perforation behind what looks like simple diarrhoea.",
+    "say": "\"I'd stop unnecessary antibiotics, avoid antimotility drugs, and treat according to current NICE guidance.\"",
+    "do": [
+      "ABCDE, hydration, isolate",
+      "Stop/review causative antibiotic and other contributing medicines",
+      "Stool test; examine for peritonism/distension"
+    ],
+    "numbers": [
+      {
+        "value": "Oral vancomycin 125 mg QDS x 10 days",
+        "meaning": "First-line adult treatment for a first episode",
+        "source": "NG199"
+      }
+    ],
+    "trap": "Loperamide for comfort, or leaving the causative antibiotic unchecked.",
+    "finish": "Urgent surgical/specialist advice for toxic megacolon, ileus, perforation or peritonitis."
+  },
+  "sources": [
+    {
+      "id": "NG199",
+      "name": "NICE NG199: Clostridioides difficile infection: antimicrobial prescribing",
+      "version": "Published 23 July 2021; current version dated 11 July 2024",
+      "url": "https://www.nice.org.uk/guidance/ng199/chapter/Recommendations",
+      "supports": "Do not offer antimotility drugs; stop unnecessary antibiotics; first-line adult treatment for a first episode is oral vancomycin 125 mg four times daily for 10 days, with fidaxomicin as an alternative"
+    }
+  ],
+  "partner": {
+    "opening": "\"She's had new frequent watery diarrhoea since a course of antibiotics. What would you do?\"",
+    "reveals": [
+      {
+        "trigger": "Candidate asks about antibiotic history",
+        "finding": "She completed a course of co-amoxiclav five days ago for a chest infection.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Candidate examines the abdomen",
+        "finding": "Mildly distended, soft, no peritonism yet.",
+        "row": "G3"
+      },
+      {
+        "trigger": "Candidate asks for observations",
+        "finding": "Heart rate 96, temperature 37.9°C, mildly dehydrated.",
+        "row": "G1"
+      },
+      {
+        "trigger": "Candidate asks about stool testing",
+        "finding": "Stool sample sent; result pending.",
+        "row": "G6"
+      }
+    ],
+    "push": [
+      {
+        "question": "Would you give loperamide while you wait for the stool result?",
+        "row": "G5",
+        "expect": "No — antimotility drugs are not recommended in suspected C. difficile."
+      },
+      {
+        "question": "What antibiotics would you stop?",
+        "row": "G4",
+        "expect": "Review and stop unnecessary antibiotics; consider switching an essential one to lower-risk."
+      },
+      {
+        "question": "What treatment would you start once confirmed?",
+        "row": "G6",
+        "expect": "Oral vancomycin 125 mg four times daily for 10 days first-line; fidaxomicin if that fails."
+      },
+      {
+        "question": "Her abdomen becomes distended and bowel sounds disappear. What now?",
+        "row": "G7",
+        "expect": "Urgent specialist/surgical advice for possible toxic megacolon or ileus."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "\"She's uncomfortable, can we just give loperamide?\"",
+        "safeAnswer": "No — it risks worsening the infection by keeping toxin in contact with the bowel.",
+        "row": "G5"
+      },
+      {
+        "prompt": "\"It's just diarrhoea, does the antibiotic really need stopping?\"",
+        "safeAnswer": "Yes, unless essential — ongoing exposure perpetuates the infection.",
+        "row": "G4"
+      },
+      {
+        "prompt": "The nurse says the abdomen is now silent and distended.",
+        "safeAnswer": "Treat as a possible toxic megacolon and get urgent surgical/specialist advice.",
+        "row": "G7"
+      }
+    ]
+  }
+}

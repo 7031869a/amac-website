@@ -1,0 +1,404 @@
+{
+  "id": "MB-364",
+  "exam": "MRCS-B",
+  "title": "Consent: salvage mastectomy with reconstruction options",
+  "type": "communication",
+  "header": {
+    "domain": "Applied Skills",
+    "contentArea": "Consent for mastectomy after local recurrence",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "GMC: Decision making and consent (in effect 9 November 2020)",
+      "NICE NG101: Early and locally advanced breast cancer (published 18 July 2018; last updated 14 April 2025)"
+    ],
+    "related": [
+      {
+        "id": "MB-363",
+        "why": "The conversation where mastectomy was first proposed"
+      },
+      {
+        "id": "MB-358",
+        "why": "The earlier consent conversation this one parallels"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Pre-operative clinic",
+    "role": "Core surgical trainee",
+    "scenario": "Staging has shown no evidence of distant spread. The breast MDT has recommended mastectomy for Ms Rachel Linford's local recurrence, with the option of immediate or delayed reconstruction.",
+    "task": "Consent her for surgery. You have 7 minutes."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Confirm her understanding of why mastectomy is now needed, then cover the procedure, reconstruction choice, risks, and confirm voluntariness.",
+    "trap": "Assuming she has already decided on reconstruction because it was mentioned in the earlier results conversation, rather than checking where she has landed.",
+    "firstMove": "\"Can I check where your thinking has got to on reconstruction since we last spoke?\""
+  },
+  "flow": [
+    "Check understanding of why mastectomy is now needed",
+    "Explain the procedure",
+    "Reconstruction: immediate vs delayed vs none",
+    "Risks, including reconstruction-specific risks",
+    "Confirm voluntariness and consent"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "communication",
+      "label": "Checking understanding first",
+      "fail": "Assumes she remembers and accepts everything discussed previously without checking.",
+      "pass": "Checks her current understanding and any questions since the last conversation.",
+      "high": "Explicitly asks how she's feeling about the decision now, recognising time may have changed her view."
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-knowledge",
+      "label": "Explaining the procedure",
+      "fail": "Cannot describe what mastectomy involves in plain terms.",
+      "pass": "Explains that all breast tissue on that side will be removed, and clarifies whether axillary surgery is also planned.",
+      "high": "Explains what the chest will look like immediately afterwards if no immediate reconstruction is chosen, so there are no surprises."
+    },
+    {
+      "id": "G3",
+      "domain": "communication",
+      "label": "Reconstruction choice",
+      "fail": "Presents reconstruction as compulsory or assumes a preference on her behalf.",
+      "pass": "Explains the choice between immediate reconstruction, delayed reconstruction, or no reconstruction, and that this is entirely her decision.",
+      "high": "Notes that reconstruction options can be constrained by prior radiotherapy to that side, and suggests plastic surgery input to discuss this fully."
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-knowledge",
+      "label": "Risks",
+      "fail": "Lists only generic surgical risks with nothing specific to mastectomy or reconstruction.",
+      "pass": "Covers risks such as altered chest wall sensation, wound-healing problems (higher in previously irradiated skin), and, if reconstruction chosen, implant- or flap-specific risks.",
+      "high": "Explains that previous radiotherapy specifically increases wound-healing and reconstruction-related risk, which is relevant to her particular case.",
+      "source": "NG101"
+    },
+    {
+      "id": "G5",
+      "domain": "professionalism",
+      "label": "Voluntariness",
+      "fail": "Does not check she is deciding freely or has had enough time.",
+      "pass": "Checks she has no further questions and is making a voluntary decision.",
+      "high": "Offers more time or a further discussion with the breast care nurse or plastic surgeon before finalising if she wants it."
+    },
+    {
+      "id": "G6",
+      "domain": "professionalism",
+      "label": "Documentation and closing",
+      "fail": "Completes consent with no mention of documentation or what happens next.",
+      "pass": "Confirms the plan, documents consent, and explains next practical steps (pre-assessment, marking, date).",
+      "high": "Checks in on how she's coping with this second round of treatment before closing."
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "candidate",
+        "text": "So as we discussed, mastectomy with reconstruction, same risks as before, sign here.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          },
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "Actually, I've been thinking I might not want reconstruction at all."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Oh - well, most people do choose it.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Anyway, that's you consented.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          },
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "candidate",
+        "text": "Can I check where your thinking has got to on reconstruction since we last spoke?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "I think I'd like reconstruction, but I'm not sure which type."
+      },
+      {
+        "speaker": "candidate",
+        "text": "The operation itself removes all the breast tissue on that side. For reconstruction, you can choose immediate reconstruction at the same time, delayed reconstruction later, or no reconstruction at all - that choice is entirely yours.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          },
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Risks include altered sensation on the chest wall and wound healing problems, which can be a bit higher given you've had radiotherapy here before; if you go ahead with reconstruction, there are also risks specific to that, like implant problems or flap complications.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Would it help to talk to the plastic surgery team before deciding on reconstruction type, or are you happy to proceed with a plan today?",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Once you've decided, I'll document your consent and go through the practical next steps with you.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "candidate",
+        "text": "How are you feeling about the decision now, and where has your thinking got to on reconstruction since we last talked?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "Honestly, I'm not sure I want reconstruction at all this time."
+      },
+      {
+        "speaker": "candidate",
+        "text": "That's completely your decision to make, and just as valid as choosing reconstruction. Mastectomy itself removes all the breast tissue on that side; without reconstruction, your chest on that side would be flat, and a prosthesis is an option if you'd like one later.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          },
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "What are the risks either way?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Without reconstruction, the main risks are altered chest wall sensation and wound healing issues - and because this area has already had radiotherapy, healing can be a little slower or more complicated than in skin that hasn't been irradiated. If you were to choose reconstruction later, that would carry its own separate risks we'd discuss at that point.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "There's no rush to finalise the reconstruction question today if you'd like more time or a conversation with the plastic surgery team - only the mastectomy itself needs deciding now.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'll document that, and before we finish, how are you finding going through all this a second time?",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G3",
+      "move": "Assuming she wants reconstruction, or implying it's the norm she should follow.",
+      "consequence": "Removes her right to decline reconstruction, which is a valid and common choice."
+    },
+    {
+      "row": "G4",
+      "move": "Not mentioning that prior radiotherapy increases wound-healing risk.",
+      "consequence": "Omits a risk specific and material to her case, undermining informed consent."
+    },
+    {
+      "row": "G1",
+      "move": "Assuming her view from the last conversation still holds without checking.",
+      "consequence": "Patients' preferences can genuinely change; consenting against an outdated assumption risks proceeding without true agreement."
+    },
+    {
+      "row": "G2",
+      "move": "Not explaining in plain terms what the mastectomy operation itself involves.",
+      "consequence": "Leaves her unclear about the basic procedure regardless of the reconstruction decision."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You assumed her reconstruction preference",
+      "line": "I shouldn't assume - what would you actually like to do about reconstruction?"
+    },
+    {
+      "when": "You omitted the radiotherapy-related risk",
+      "line": "I should mention that because you've had radiotherapy here, healing can be a bit more complicated than usual."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Reconstruction after mastectomy is an option, not an obligation; declining reconstruction is a valid and common patient choice.",
+      "source": "NG101"
+    },
+    {
+      "fact": "Prior radiotherapy to the chest wall increases the risk of wound-healing complications and can constrain reconstruction options, which should be discussed as part of consent.",
+      "source": "NG101"
+    },
+    {
+      "fact": "Valid consent should be reconfirmed at the time of the procedure decision, not assumed to carry over unchanged from an earlier conversation.",
+      "source": "GMC"
+    }
+  ],
+  "recall": {
+    "think": "Don't assume her earlier preference; reconstruction is optional; radiotherapy raises risk.",
+    "say": "\"That's completely your decision to make.\"",
+    "do": [
+      "Check her current view rather than assuming it",
+      "Present reconstruction (immediate/delayed/none) as an unpressured choice; mention radiotherapy raises wound-healing risk",
+      "Confirm voluntary, unhurried consent"
+    ],
+    "numbers": [
+      {
+        "value": "26 Gy in 5 fractions over 1 week",
+        "meaning": "her prior whole-breast radiotherapy, relevant to the higher wound-healing and reconstruction risk in previously irradiated skin",
+        "source": "NG101"
+      }
+    ],
+    "trap": "Assuming an earlier reconstruction preference still applies.",
+    "finish": "Documented, voluntary consent reflecting her current preference."
+  },
+  "sources": [
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format and timing"
+    },
+    {
+      "id": "GMC",
+      "name": "GMC: Decision making and consent",
+      "version": "In effect 9 November 2020",
+      "url": "https://www.gmc-uk.org/professional-standards/the-professional-standards/decision-making-and-consent",
+      "supports": "Requirement to disclose material risks, preserve the patient's right to decline treatment, and reconfirm consent rather than assume it carries over unchanged"
+    },
+    {
+      "id": "NG101",
+      "name": "NICE NG101: Early and locally advanced breast cancer: diagnosis and management",
+      "version": "Published 18 July 2018; last updated 14 April 2025",
+      "url": "https://www.nice.org.uk/guidance/ng101",
+      "supports": "Whole-breast radiotherapy 26 Gy in 5 fractions over 1 week after breast-conserving surgery (1.13.13)"
+    },
+    {
+      "id": "BLS28",
+      "name": "Bailey & Love's Short Practice of Surgery, 28th edition",
+      "version": "28th edition, 2023",
+      "url": "https://www.routledge.com/Bailey--Loves-Short-Practice-of-Surgery-28th-Edition/Williams-OConnell-McCaskie/p/book/9781032068666",
+      "supports": "Standard oncological practice that repeat radiotherapy to a previously irradiated breast is not usually given, making mastectomy the option for local control of local recurrence after breast-conserving therapy"
+    }
+  ],
+  "partner": {
+    "opening": "Please take consent from this patient for mastectomy following her recurrence. You have 7 minutes.",
+    "actorBrief": "You are Rachel Linford, 43, staging clear, due for mastectomy for recurrence. Since the last conversation, you've been reconsidering reconstruction and are now leaning towards not having it, though you haven't said this to anyone yet.",
+    "reveals": [
+      {
+        "trigger": "Candidate checks your current thinking rather than assuming",
+        "finding": "You reveal you've changed your mind and are now leaning against reconstruction.",
+        "row": "G1"
+      },
+      {
+        "trigger": "Candidate presents declining reconstruction as a valid choice",
+        "finding": "You feel relieved and more able to say what you actually want.",
+        "row": "G3"
+      },
+      {
+        "trigger": "Candidate mentions radiotherapy-related healing risk",
+        "finding": "You ask how much slower healing might be.",
+        "row": "G4"
+      }
+    ],
+    "push": [
+      {
+        "question": "Do I have to decide about reconstruction today?",
+        "row": "G5",
+        "expect": "Clarify that only the mastectomy itself needs deciding now; reconstruction can be discussed further before finalising."
+      },
+      {
+        "question": "Will the radiotherapy I already had make this harder?",
+        "row": "G4",
+        "expect": "Explain that prior radiotherapy can increase wound-healing complications and may affect reconstruction options."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "My family really want me to have reconstruction, but I don't think I do.",
+        "safeAnswer": "Affirm that this is her decision alone to make, and offer to help her think it through or talk to the breast care nurse if that would help.",
+        "row": "G3"
+      },
+      {
+        "prompt": "What if I change my mind again after surgery?",
+        "safeAnswer": "Explain that delayed reconstruction remains an option later if she changes her mind, so the decision today isn't necessarily final.",
+        "row": "G3"
+      }
+    ]
+  }
+}

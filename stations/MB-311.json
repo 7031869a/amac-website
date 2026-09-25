@@ -1,0 +1,541 @@
+{
+  "id": "MB-311",
+  "exam": "MRCS-B",
+  "title": "Examination of a pigmented skin lesion",
+  "type": "examination",
+  "header": {
+    "domain": "Applied Skills",
+    "contentArea": "Clinical and procedural skills",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "signalMinutes": 6,
+    "guidelineVersions": [
+      "NICE NG14: Melanoma: assessment and management (published 29 July 2015; last updated January 2024)",
+      "NICE QS130: Skin cancer quality standard, quality statement 3: dermoscopy (published 21 September 2016)",
+      "NICE NG12: Suspected cancer: recognition and referral (last updated May 2025)"
+    ],
+    "related": [
+      {
+        "id": "MB-143",
+        "why": "Excision of a skin lesion, the procedural counterpart"
+      },
+      {
+        "id": "MB-197",
+        "why": "Melanoma: reading the histology report, staging and margins, once a lesion is excised"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Skin clinic",
+    "role": "Core surgical trainee",
+    "scenario": "Ms Eleanor Rookwood, 49, has a pigmented lesion on her upper back that has changed.",
+    "task": "Examine the lesion and describe the features that concern you."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Describe the lesion systematically before interpreting it, then decide whether it needs urgent specialist assessment.",
+    "trap": "A reassuring 'ABCDE' checklist is not a diagnosis, and nodular melanoma may not fit the classic flat, asymmetric pattern.",
+    "firstMove": "\"Would it be alright if I have a look at the lesion on your back?\""
+  },
+  "flow": [
+    "Consent and exposure",
+    "Systematic description of the lesion",
+    "Evolution and history",
+    "Regional lymph nodes and rest of the skin",
+    "At 6 minutes: present findings",
+    "Plan"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "professionalism",
+      "label": "Consent and exposure",
+      "fail": "Examines the lesion without introducing himself or gaining consent.",
+      "pass": "Introduces self, confirms identity, gains consent, offers a chaperone, and exposes the back adequately with good lighting.",
+      "high": "Explains he will describe what he sees before giving an opinion, and checks she is comfortable throughout."
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-skill",
+      "label": "Systematic description",
+      "fail": "Gives an opinion ('this looks like melanoma') without describing the lesion first.",
+      "pass": "Describes site, size, colour, symmetry, border and surface in that order before interpreting.",
+      "high": "Uses precise descriptive terms (for example, irregular, notched border; two or more colours) rather than vague impressions."
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "Features concerning for melanoma",
+      "fail": "Uses ABCDE as a diagnostic rule and stops there.",
+      "pass": "Identifies asymmetry, irregular border, multiple colours, diameter change and evolution as concerning features, without treating them as diagnostic.",
+      "high": "Notes bleeding or crusting as additional concerning features, and that irregularity raises concern without being diagnostic on its own."
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-knowledge",
+      "label": "Atypical presentations",
+      "fail": "Assumes any melanoma will be a flat, asymmetric, multicoloured lesion.",
+      "pass": "Recognises nodular melanoma may not follow the classic flat pigmented pattern and can present as a raised, uniform lesion.",
+      "high": "Actively looks for a rapidly growing, raised, firm nodule as a distinct pattern warranting the same urgency."
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-skill",
+      "label": "History and associated examination",
+      "fail": "Doesn't ask about evolution, symptoms or family history, or skip regional nodes.",
+      "pass": "Asks about change over time, symptoms, previous melanoma, sun exposure and family history, and examines regional lymph nodes when clinically appropriate.",
+      "high": "Offers to examine the rest of the skin for other suspicious lesions when appropriate."
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-knowledge",
+      "label": "Dermoscopy and next steps",
+      "fail": "Says he will perform dermoscopy himself without training, or that a reassuring look excludes melanoma.",
+      "pass": "States dermoscopy should be performed by a healthcare professional trained in the technique, as part of specialist assessment.",
+      "high": "Adds that a suspicious lesion should not be reassured from visual appearance alone, and should go to urgent specialist assessment rather than routine review.",
+      "source": "QS130"
+    },
+    {
+      "id": "G7",
+      "domain": "communication",
+      "label": "Presentation and plan",
+      "fail": "Presents findings without a clear plan or gives a definitive diagnosis from appearance alone.",
+      "pass": "Presents a structured summary of findings and arranges appropriate urgent specialist assessment rather than reassurance or biopsy in clinic.",
+      "high": "Explains referral timescale reflects the level of concern and that specialist assessment, not clinic excision, decides management.",
+      "source": "NG12"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "candidate",
+        "text": "[Looks at the lesion without introducing himself.] Right, let's have a look then.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "That looks like melanoma to me.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What features are you looking for?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Just ABCDE, and if it ticks those boxes it's melanoma.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What if it were a smooth, raised, uniform nodule instead?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Then it wouldn't be melanoma, since it's not asymmetric or multicoloured.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Anything else you'd ask or examine?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "No, the lesion tells me everything I need.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Would you use dermoscopy?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'll just use my phone's magnifier, that's the same thing.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What would you do if you were concerned?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd biopsy it here in clinic today.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "candidate",
+        "text": "Hello Ms Rookwood, I'm Dr Patel. Would it be alright to examine the lesion on your back? I'll expose the area with good lighting; let me know if you'd like a chaperone.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Inspects.] It's on the upper back, about 8mm, with an irregular border, two shades of brown and asymmetric shape.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What features concern you?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "The asymmetry, irregular border, multiple colours and the fact it's changed in size, though none of these alone confirms melanoma.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Would a smooth, raised, uniform lesion reassure you?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Not necessarily. Nodular melanoma doesn't always follow that flat, multicoloured pattern.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Has it changed recently, is it itchy or bleeding, any previous melanoma, sun exposure or family history? I'd also examine the nearby lymph nodes.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Would you use dermoscopy?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "That's for a healthcare professional trained in the technique, usually as part of specialist assessment.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What would you do?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I wouldn't reassure her from appearance alone; I'd arrange urgent specialist assessment rather than biopsy it here.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "candidate",
+        "text": "Hello Ms Rookwood, I'm Dr Patel. Would it be alright to look at the lesion on your back? I'll describe what I see before giving you my thoughts, and let me know if you'd like a chaperone.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Inspects.] Upper back, roughly 9mm, asymmetric, an irregular, notched border, two to three colours including a darker area, and a slightly raised surface.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What features concern you?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Asymmetry, an irregular border, multiple colours, a change in size, and I'd also ask about bleeding or crusting. Irregularity raises concern but isn't diagnostic on its own.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What if it were a smooth, raised, uniform nodule instead?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd still be concerned. Nodular melanoma is often a rapidly growing, raised, firm, uniformly coloured lump, and needs the same urgency despite not fitting the classic pattern.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Has it changed recently, is it itchy or bleeding, any previous melanoma, sun exposure or family history? I'd examine the regional nodes, and offer to check the rest of her skin for other suspicious lesions.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Would you use dermoscopy?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "It should be done by a professional trained in the technique. I wouldn't reassure her from the naked-eye appearance alone, whichever way this looks.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What would you do?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd arrange urgent specialist assessment; the referral timescale reflects how concerning the lesion is, and specialist assessment, not excision in this clinic, decides the next step.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G3",
+      "move": "Treating the ABCDE features as a diagnostic checklist rather than a prompt for concern.",
+      "consequence": "A lesion that fails one criterion is wrongly dismissed, or one that meets several is wrongly called melanoma outright."
+    },
+    {
+      "row": "G4",
+      "move": "Reassuring because a lesion is smooth, raised and uniformly coloured.",
+      "consequence": "Nodular melanoma can be missed, since it doesn't follow the classic flat, multicoloured pattern."
+    },
+    {
+      "row": "G6",
+      "move": "Performing dermoscopy or an equivalent without training, or treating a naked-eye look as sufficient to reassure.",
+      "consequence": "Misses features only visible with trained dermoscopic assessment, delaying diagnosis."
+    },
+    {
+      "row": "G7",
+      "move": "Biopsying or excising the lesion in this clinic instead of referring.",
+      "consequence": "Bypasses the specialist pathway that plans margins and further management around a confirmed diagnosis."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You gave a definitive diagnosis from appearance",
+      "line": "I should be clearer: these features are concerning, but only specialist assessment, including dermoscopy, can take this further."
+    },
+    {
+      "when": "You forgot regional nodes",
+      "line": "I'd also like to examine the nearby lymph nodes before finishing."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Describe site, size, colour, symmetry, border, surface and evolution systematically before interpreting a pigmented lesion."
+    },
+    {
+      "fact": "Concerning features: asymmetry, irregular border, multiple colours, change in size, shape or colour, and bleeding or crusting; none is diagnostic alone."
+    },
+    {
+      "fact": "Nodular melanoma may present as a raised, firm, uniformly coloured, rapidly growing lesion rather than the classic flat, multicoloured pattern."
+    },
+    {
+      "fact": "Dermoscopy of a referred pigmented lesion should be performed by a healthcare professional trained in the technique.",
+      "source": "QS130"
+    },
+    {
+      "fact": "Do not reassure a patient about a suspicious pigmented lesion based on visual appearance alone; arrange specialist assessment.",
+      "source": "NG14"
+    }
+  ],
+  "recall": {
+    "think": "Could this be melanoma, including an atypical nodular pattern?",
+    "say": "\"These features are concerning and need urgent specialist assessment.\"",
+    "do": [
+      "Describe systematically before interpreting",
+      "Ask about evolution, symptoms, personal and family history",
+      "Examine regional nodes; consider the rest of the skin"
+    ],
+    "numbers": [
+      {
+        "value": "6 min",
+        "meaning": "signal to stop and present",
+        "source": "ICBSE"
+      }
+    ],
+    "trap": "A smooth, uniformly coloured, raised lesion is not automatically reassuring, nodular melanoma can look like this.",
+    "finish": "Urgent specialist assessment with trained dermoscopy; no reassurance or excision from appearance alone in this clinic."
+  },
+  "sources": [
+    {
+      "id": "NG14",
+      "name": "NICE NG14: Melanoma: assessment and management",
+      "version": "Published 29 July 2015; last updated January 2024",
+      "url": "https://www.nice.org.uk/guidance/ng14",
+      "supports": "Assessment of pigmented lesions; do not rely on visual appearance alone to reassure a patient about a suspicious lesion"
+    },
+    {
+      "id": "QS130",
+      "name": "NICE QS130: Skin cancer quality standard, quality statement 3: dermoscopy",
+      "version": "Published 21 September 2016",
+      "url": "https://www.nice.org.uk/guidance/qs130/chapter/Quality-statement-3-Dermoscopy",
+      "supports": "Pigmented lesions referred for specialist assessment should be assessed using dermoscopy by a healthcare professional trained in the technique"
+    },
+    {
+      "id": "NG12",
+      "name": "NICE NG12: Suspected cancer: recognition and referral",
+      "version": "Published 23 June 2015; last updated May 2025",
+      "url": "https://www.nice.org.uk/guidance/ng12",
+      "supports": "Suspected cancer referral pathways apply according to concerning skin features"
+    },
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "6-minute signal in examination stations"
+    }
+  ],
+  "partner": {
+    "opening": "Please examine this lady's pigmented lesion and describe what concerns you. I'll stop you at 6 minutes.",
+    "actorBrief": "You are Eleanor Rookwood, 49, an office manager. You noticed the mole on your upper back has grown and darkened over the last two months; a relative pointed it out. It isn't painful but occasionally itches. No bleeding. No previous melanoma or skin cancer. Your mother had a melanoma removed in her 60s. You use sunbeds occasionally and had bad sunburn as a teenager on holiday.",
+    "reveals": [
+      {
+        "trigger": "Inspects the lesion closely",
+        "finding": "Upper back, roughly 8 to 9mm, asymmetric, irregular notched border, two to three shades of brown, slightly raised in one area.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Asks about evolution and symptoms",
+        "finding": "Grown and darkened over about two months; occasionally itchy; no bleeding.",
+        "row": "G5"
+      },
+      {
+        "trigger": "Asks about personal and family history",
+        "finding": "No previous melanoma; mother had a melanoma removed in her 60s; occasional sunbed use; bad sunburn as a teenager.",
+        "row": "G5"
+      },
+      {
+        "trigger": "Examines regional lymph nodes",
+        "finding": "No palpable axillary or other regional lymphadenopathy.",
+        "row": "G5"
+      }
+    ],
+    "push": [
+      {
+        "question": "Is every irregular mole melanoma?",
+        "row": "G3",
+        "expect": "No, irregularity increases concern but is not diagnostic."
+      },
+      {
+        "question": "Can dermoscopy be done by anyone?",
+        "row": "G6",
+        "expect": "It should be performed by a healthcare professional trained in the technique."
+      },
+      {
+        "question": "What would you do if you were concerned?",
+        "row": "G7",
+        "expect": "Arrange urgent specialist assessment rather than reassure or biopsy in this clinic."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "She says a friend told her it's fine because it isn't bleeding.",
+        "safeAnswer": "Explains that absence of bleeding doesn't exclude melanoma; the changing size, colour and border are still concerning and warrant assessment.",
+        "row": "G3"
+      },
+      {
+        "prompt": "The lesion is actually a smooth, firm, raised nodule with one uniform dark colour.",
+        "safeAnswer": "Still treats it with the same urgency: nodular melanoma may present exactly this way despite lacking the classic flat, multicoloured pattern.",
+        "row": "G4"
+      },
+      {
+        "prompt": "She asks if you can just remove it today since she's worried.",
+        "safeAnswer": "Explains the lesion needs urgent specialist assessment, including trained dermoscopy, before any excision is planned.",
+        "row": "G7"
+      },
+      {
+        "prompt": "She mentions a second, different-looking mole on her arm that has also changed.",
+        "safeAnswer": "Offers to examine the rest of her skin, and includes both lesions in the urgent referral.",
+        "row": "G5"
+      }
+    ]
+  }
+}

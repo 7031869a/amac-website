@@ -1,0 +1,520 @@
+{
+  "id": "MB-329",
+  "exam": "MRCS-B",
+  "title": "Radial arterial blood gas sampling",
+  "type": "procedural",
+  "header": {
+    "domain": "Applied Skills",
+    "contentArea": "Practical procedures: radial arterial blood gas sampling",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "Resuscitation Council UK, The ABCDE Approach (last updated July 2024)",
+      "Health and Safety (Sharp Instruments in Healthcare) Regulations 2013"
+    ],
+    "related": [
+      {
+        "id": "MB-182",
+        "why": "Interpreting the arterial blood gas result this station's sample would produce"
+      },
+      {
+        "id": "MB-283",
+        "why": "Another aseptic vascular-access procedural station: ultrasound-guided central venous catheter insertion"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Acute surgical ward",
+    "role": "Surgical trainee",
+    "scenario": "Ms Grace Harmsworth, 69, has worsening breathlessness and needs an arterial blood gas.",
+    "task": "Perform radial arterial blood gas sampling safely on a manikin, talking the examiner through each step."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Consent and check, then a clean, safe puncture, then handle the sample and yourself safely.",
+    "trap": "Rushing to needle the wrist before confirming identity, consent and bleeding risk.",
+    "firstMove": "\"I'll confirm her identity, explain the procedure and gain consent before I start.\""
+  },
+  "flow": [
+    "Consent and safety check",
+    "Prepare and position",
+    "Puncture technique",
+    "Sample handling and documentation",
+    "Aftercare and disposal"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "professionalism",
+      "label": "Consent and identification",
+      "fail": "Proceeds without confirming identity or gaining consent.",
+      "pass": "Confirms patient identity, explains the indication and procedure, and gains consent.",
+      "high": "Checks the patient understands why the sample is needed and what it will show, and offers to answer questions before proceeding."
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-knowledge",
+      "label": "Safety check before puncture",
+      "fail": "Does not ask about anticoagulation, bleeding risk or local contraindications.",
+      "pass": "Checks anticoagulation/bleeding risk and any local contraindications to radial puncture before proceeding.",
+      "high": "Explains that a formal Allen test is not universally required when collateral circulation is otherwise clinically adequate, and follows local policy rather than treating it as a fixed rule."
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-skill",
+      "label": "Aseptic preparation and technique",
+      "fail": "Skips hand hygiene or skin preparation, or contaminates the needle/syringe.",
+      "pass": "Positions the wrist comfortably, identifies the radial pulse, prepares equipment and uses aseptic technique, with local anaesthetic where appropriate.",
+      "high": "Explains the choice of needle angle and technique for the self-filling syringe, and adapts positioning if the pulse is difficult to locate rather than repeatedly stabbing blindly."
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-skill",
+      "label": "Safe puncture and sample collection",
+      "fail": "Repeatedly punctures the artery without stopping to reassess or seek help.",
+      "pass": "Palpates the artery, inserts the needle with an appropriate angle, allows arterial blood to fill the syringe without forcing it, then removes the needle safely.",
+      "high": "Recognises early when a puncture is unsuccessful, stops, reassesses landmarks or asks for senior help rather than persisting."
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-knowledge",
+      "label": "Sample handling and documentation",
+      "fail": "Sends an unlabelled sample, or fails to record the oxygen therapy/device.",
+      "pass": "Mixes the sample per the device instructions, labels it, analyses it promptly, and documents the oxygen therapy or device and FiO2 at the time of sampling.",
+      "high": "Explains why oxygen therapy must be recorded: pulse oximetry does not detect hypercapnia, so the inspired oxygen and SpO2 both need documenting to interpret the gas correctly.",
+      "source": "RESUS"
+    },
+    {
+      "id": "G6",
+      "domain": "professionalism",
+      "label": "Aftercare, sharps safety and disposal (safety-critical)",
+      "fail": "Fails to apply pressure afterwards, or disposes of the needle unsafely.",
+      "pass": "Applies firm pressure until haemostasis is achieved, disposes of sharps safely at the point of use, and assesses the puncture site and distal circulation.",
+      "high": "States pressure needs to be longer if the patient is anticoagulated, and interprets the result alongside the clinical picture once available."
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "Perform an arterial blood gas from the radial artery."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'll just get the syringe ready and find the pulse.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Have you checked anything about her first?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Not really, I'll just go for the wrist.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Talk me through the procedure."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'll just clean the skin briefly and go straight in.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "You've missed the artery."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'll keep trying in roughly the same spot a few more times.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What do you do with the sample?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Send it to the lab, whoever's on oxygen doesn't really need noting.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What complications are you looking for?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd move on without pressing on the site or checking her hand.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "examiner",
+        "text": "Perform an arterial blood gas from the radial artery."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'll confirm her identity, explain the procedure and the reason for it, and gain her consent first.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Anything you'd check before you start?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Whether she's anticoagulated or has a bleeding risk, and any local contraindication to using this wrist.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Talk me through the procedure."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'll position her wrist comfortably, locate the radial pulse, prepare my equipment and use an aseptic technique, with local anaesthetic if appropriate.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Go on."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'll palpate the artery, insert the needle at an appropriate angle, and let the syringe fill on its own rather than pulling back forcefully. Then I'll withdraw the needle safely.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What do you do with the sample?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Mix it as the device instructs, label it correctly, and analyse it promptly. I'll document her oxygen therapy or device and the FiO2 at the time of sampling.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What complications are you looking for?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'll apply firm pressure until it's stopped bleeding, dispose of the sharp safely straight away, and check the site and her hand's circulation afterwards.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "examiner",
+        "text": "Perform an arterial blood gas from the radial artery."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'll confirm her identity and explain why we need the gas — to look at her oxygenation and ventilation given the breathlessness — and check she's happy to go ahead.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Would you do an Allen test first?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd check anticoagulation and local contraindications. A formal Allen test isn't universally required if collateral circulation looks clinically adequate — I'd follow local policy rather than treat it as a fixed rule.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The pulse is faint."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd reposition her wrist and re-palpate rather than needle blindly, and adjust my approach before attempting puncture.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "You've missed twice."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd stop, reassess my landmarks, and ask a senior colleague to try or to supervise rather than keep attempting it myself.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Why record the oxygen device?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Pulse oximetry doesn't detect hypercapnia, and the gas can only be interpreted properly if we know her inspired oxygen and SpO2 at the time of sampling.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Anything else on aftercare?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "If she were anticoagulated I'd hold pressure for longer, and once the result is back I'd interpret it alongside her clinical picture rather than in isolation.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G1",
+      "move": "Starting the procedure without consent.",
+      "consequence": "Breaches the patient's right to agree to the procedure and undermines trust."
+    },
+    {
+      "row": "G6",
+      "move": "Failing to use sharps safety.",
+      "consequence": "Risks a needlestick injury to the candidate or others."
+    },
+    {
+      "row": "G5",
+      "move": "Sending an unlabelled sample or omitting the oxygen device.",
+      "consequence": "The result may be rejected, or misinterpreted without knowing the inspired oxygen."
+    },
+    {
+      "row": "G4",
+      "move": "Repeatedly puncturing the artery without seeking help.",
+      "consequence": "Causes unnecessary pain, bruising and risks arterial or nerve injury."
+    },
+    {
+      "row": "G6",
+      "move": "Not applying pressure afterwards.",
+      "consequence": "Risks bleeding, haematoma and compromise of the distal circulation."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You blank on what to check first",
+      "line": "I'd like to structure this around immediate safety, assessment, escalation and definitive management."
+    },
+    {
+      "when": "Challenged on skipping the Allen test",
+      "line": "That wouldn't exclude an adequate collateral circulation, because I'd still assess it clinically and follow local policy before deciding."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Confirm identity, indication and consent, and check anticoagulation/bleeding risk before radial puncture.",
+      "source": "RESUS"
+    },
+    {
+      "fact": "Do not pull back forcefully on a self-filling blood-gas syringe; let it fill from arterial pressure.",
+      "source": "RESUS"
+    },
+    {
+      "fact": "Document the oxygen therapy/device and FiO2 at the time of sampling; pulse oximetry does not detect hypercapnia.",
+      "source": "RESUS"
+    },
+    {
+      "fact": "Dispose of sharps safely at the point of use.",
+      "source": "SHARPS"
+    }
+  ],
+  "recall": {
+    "think": "Bleeding/haematoma and distal neurovascular compromise after puncture.",
+    "say": "\"I'll confirm identity and consent, and check bleeding risk before I start.\"",
+    "do": [
+      "Consent, then check anticoagulation/contraindications",
+      "Aseptic puncture, let the syringe self-fill",
+      "Pressure to haemostasis, safe sharps disposal"
+    ],
+    "numbers": [
+      {
+        "value": "SpO2 target 94-98% (88-92% if at risk of hypercapnic failure)",
+        "meaning": "Target range to document alongside the gas",
+        "source": "RESUS"
+      },
+      {
+        "value": "2013",
+        "meaning": "Year of the UK regulations requiring safe sharps handling and disposal",
+        "source": "SHARPS"
+      }
+    ],
+    "trap": "Assuming pulse oximetry alone excludes CO2 retention.",
+    "finish": "Prompt analysis and documentation, interpreted alongside the clinical picture."
+  },
+  "sources": [
+    {
+      "id": "RESUS",
+      "name": "Resuscitation Council UK. The ABCDE Approach",
+      "version": "Last updated July 2024",
+      "url": "https://www.resus.org.uk/library/abcde-approach",
+      "supports": "Recording inspired oxygen concentration and SpO2; pulse oximetry does not detect hypercapnia; oxygen saturation targets 94-98% (88-92% if at risk of hypercapnic respiratory failure)"
+    },
+    {
+      "id": "SHARPS",
+      "name": "The Health and Safety (Sharp Instruments in Healthcare) Regulations 2013",
+      "version": "2013",
+      "url": "https://www.legislation.gov.uk/uksi/2013/645/made",
+      "supports": "Legal duty on employers and staff to use safer sharps and dispose of them safely at the point of use"
+    },
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format: 9 minutes with 1 minute's reading; practical/technical skills stations"
+    }
+  ],
+  "partner": {
+    "opening": "Ms Harmsworth, 69, has worsening breathlessness. \"Perform an arterial blood gas from the radial artery and talk me through it.\"",
+    "reveals": [
+      {
+        "trigger": "Candidate asks about anticoagulation/bleeding risk",
+        "finding": "No anticoagulants; no known bleeding disorder; no local contraindication at either wrist.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Candidate palpates the radial pulse",
+        "finding": "Radial pulse is easily palpable at the wrist crease, regular.",
+        "row": "G3"
+      },
+      {
+        "trigger": "Candidate asks about oxygen therapy",
+        "finding": "She is on 2 L/min via nasal cannulae, SpO2 91% at the time of sampling.",
+        "row": "G5"
+      }
+    ],
+    "push": [
+      {
+        "question": "Would you do an Allen test before this?",
+        "row": "G2",
+        "expect": "Not treated as a fixed rule; assess collateral circulation clinically and follow local policy."
+      },
+      {
+        "question": "What if you can't feel the pulse well?",
+        "row": "G3",
+        "expect": "Reposition the wrist and re-palpate rather than needling blindly."
+      },
+      {
+        "question": "What if the syringe won't fill?",
+        "row": "G4",
+        "expect": "Do not pull back forcefully; reassess needle position or try again rather than forcing it."
+      },
+      {
+        "question": "What must be recorded with the sample?",
+        "row": "G5",
+        "expect": "Oxygen therapy/device and FiO2 at the time of sampling, alongside patient identity and time."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "She says she's needle-phobic and anxious.",
+        "safeAnswer": "Acknowledge the anxiety, explain each step before doing it, and offer to pause if needed, without skipping consent or safety checks.",
+        "row": "G1"
+      },
+      {
+        "prompt": "You miss the artery on the first attempt.",
+        "safeAnswer": "Stop, reassess landmarks, and try again carefully or ask for senior help rather than repeatedly puncturing blindly.",
+        "row": "G4"
+      },
+      {
+        "prompt": "The sample has visible air bubbles.",
+        "safeAnswer": "Expel the air promptly and remix the sample before analysis, as bubbles distort the result.",
+        "row": "G5"
+      },
+      {
+        "prompt": "She is on warfarin.",
+        "safeAnswer": "Apply pressure for longer after the puncture and monitor the site closely before leaving her.",
+        "row": "G6"
+      }
+    ]
+  }
+}

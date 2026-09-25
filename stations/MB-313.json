@@ -1,0 +1,510 @@
+{
+  "id": "MB-313",
+  "exam": "MRCS-B",
+  "title": "Abdominal examination in a jaundiced patient",
+  "type": "examination",
+  "header": {
+    "domain": "Applied Skills",
+    "contentArea": "Clinical and procedural skills",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "signalMinutes": 6,
+    "guidelineVersions": [
+      "NICE NG12: Suspected cancer: recognition and referral (last updated May 2025)"
+    ],
+    "related": [
+      {
+        "id": "MB-153",
+        "why": "History: painless jaundice, the history counterpart to this examination"
+      },
+      {
+        "id": "MB-125",
+        "why": "Pathology: gallstones and cholecystitis, a common cause of obstructive jaundice"
+      },
+      {
+        "id": "MB-147",
+        "why": "Applied anatomy of Calot's triangle and the biliary tree"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Acute surgical clinic",
+    "role": "Core surgical trainee",
+    "scenario": "Mrs Rose Ellington, 67, is jaundiced and has noticed dark urine and weight loss.",
+    "task": "Examine her abdomen and identify findings relevant to obstructive jaundice."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Look for chronic liver disease and cachexia first, then examine systematically for hepatosplenomegaly, a palpable gallbladder and masses.",
+    "trap": "Not all jaundice is obstructive, and a diagnosis of pancreatic cancer cannot be made from jaundice alone.",
+    "firstMove": "\"Could I examine your tummy? I'll start by having a look at you generally first.\""
+  },
+  "flow": [
+    "Consent, exposure, general inspection",
+    "Inspect the abdomen",
+    "Palpate for organomegaly and masses",
+    "Percuss for ascites; examine nodes",
+    "At 6 minutes: present differential",
+    "Plan"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "professionalism",
+      "label": "Preparation and general inspection",
+      "fail": "Palpates the abdomen without a general inspection for jaundice, cachexia or scratch marks.",
+      "pass": "Introduces self, gains consent, exposes the abdomen, and inspects generally for jaundice, cachexia, scratch marks and confusion.",
+      "high": "Also looks for signs of chronic liver disease from the end of the bed before approaching the abdomen."
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-skill",
+      "label": "Abdominal inspection",
+      "fail": "Palpates before inspecting the abdomen for distension, scars or visible masses.",
+      "pass": "Inspects the abdomen for distension, scars and visible masses before palpating.",
+      "high": "Notes specific scars or asymmetry that would point towards previous biliary or gastric surgery."
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-skill",
+      "label": "Palpation for organomegaly",
+      "fail": "Fails to palpate for hepatosplenomegaly.",
+      "pass": "Palpates systematically and assesses the liver and spleen.",
+      "high": "Comments specifically on liver edge character (smooth versus irregular) as relevant to the differential."
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-knowledge",
+      "label": "Palpable gallbladder and masses",
+      "fail": "Doesn't look for a palpable gallbladder or other masses.",
+      "pass": "Looks for a palpable gallbladder and assesses for other abdominal masses and tenderness.",
+      "high": "States a palpable, non-tender gallbladder in a jaundiced patient raises the possibility of malignant distal biliary obstruction, while acknowledging it isn't diagnostic on its own.",
+      "source": "BL"
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-skill",
+      "label": "Ascites and lymph nodes",
+      "fail": "Doesn't check for ascites or examine lymph nodes when relevant.",
+      "pass": "Checks for ascites where appropriate and examines lymph nodes.",
+      "high": "Explains why these findings matter for staging rather than examining them as a reflex step."
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-knowledge",
+      "label": "Differential diagnosis",
+      "fail": "Calls all jaundice obstructive, or gives a diagnosis of pancreatic cancer from jaundice alone.",
+      "pass": "Gives a differential including gallstone obstruction, pancreatic or ampullary malignancy, cholangiocarcinoma, drug-related and hepatocellular causes.",
+      "high": "Weighs painless progressive jaundice with weight loss as concerning for malignant obstruction, while still keeping benign causes in the differential."
+    },
+    {
+      "id": "G7",
+      "domain": "communication",
+      "label": "Presentation and plan",
+      "fail": "Presents findings without a differential or a plan for blood tests and imaging.",
+      "pass": "Presents a structured summary with a differential and arranges appropriate blood tests and imaging.",
+      "high": "States she meets the threshold for an urgent suspected cancer pathway referral given her age and jaundice.",
+      "source": "NG12"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "candidate",
+        "text": "[Palpates the abdomen straight away without inspecting her generally or the abdomen first.]",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          },
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Palpates only in the right upper quadrant, doesn't feel for the spleen.]",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Anything else on palpation?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "No masses, didn't specifically check for the gallbladder.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Ascites or nodes?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Didn't check either.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What's your differential?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "She's jaundiced, so it must be obstructive, and given the weight loss it's pancreatic cancer.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What next?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Book her straight in for pancreatic surgery.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "candidate",
+        "text": "Hello Mrs Ellington, I'm Dr Patel. Could I examine your tummy? I'll start by having a general look at you. [Inspects for jaundice, cachexia, scratch marks and confusion.]",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Inspects the abdomen for distension, scars and visible masses before touching it.]",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Palpates systematically, then assesses the liver and spleen.]",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Feels specifically for a palpable gallbladder, and checks for other masses and tenderness.]",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Percusses for shifting dullness and examines the lymph nodes, including left supraclavicular.]",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What's your differential?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "This could be gallstone obstruction, pancreatic or ampullary malignancy, cholangiocarcinoma, a drug-related cause, or hepatocellular disease.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What next?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd arrange liver function tests, clotting, and an ultrasound of the liver and biliary tree as first-line imaging.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "candidate",
+        "text": "Hello Mrs Ellington, I'm Dr Patel. Could I examine your tummy? [Looks from the end of the bed for jaundice, cachexia, scratch marks, confusion and signs of chronic liver disease before approaching.]",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Inspects the abdomen for distension, scars and visible masses.] No previous scars visible, which makes prior biliary surgery less likely.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Palpates systematically.] The liver edge feels smooth rather than irregular, which is against widespread metastatic replacement.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Anything else on palpation?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "There's a palpable, non-tender gallbladder, which in a jaundiced patient raises the possibility of malignant distal biliary obstruction, though it isn't diagnostic on its own.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Checks for ascites and examines the lymph nodes, including left supraclavicular.] These matter for staging if this turns out to be malignant.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What's your differential?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Painless, progressive jaundice with weight loss and a palpable gallbladder is concerning for malignant biliary obstruction, most likely pancreatic or ampullary cancer or cholangiocarcinoma, though gallstone disease and hepatocellular causes stay on the list until investigated.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What next?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Liver function tests, clotting, and urgent ultrasound; given her age and jaundice, she meets the threshold for an urgent suspected cancer pathway referral.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G6",
+      "move": "Diagnosing pancreatic cancer from jaundice and weight loss alone.",
+      "consequence": "Overstates certainty before investigation, and other treatable causes are dismissed."
+    },
+    {
+      "row": "G3",
+      "move": "Not palpating for hepatosplenomegaly.",
+      "consequence": "Hepatomegaly from metastatic disease or splenomegaly from portal hypertension is missed."
+    },
+    {
+      "row": "G1",
+      "move": "Skipping general inspection for signs of chronic liver disease or cachexia.",
+      "consequence": "Findings that shift the differential towards hepatocellular disease are missed."
+    },
+    {
+      "row": "G4",
+      "move": "Not feeling specifically for a palpable gallbladder.",
+      "consequence": "A key sign pointing towards malignant obstruction is missed."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You forgot to check for ascites",
+      "line": "I should also percuss for shifting dullness before finishing."
+    },
+    {
+      "when": "Asked why you don't call this obstructive jaundice yet",
+      "line": "Because hepatocellular and drug-related causes can also cause jaundice, and I'd want the blood tests to help distinguish them."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Examine generally for jaundice, cachexia, scratch marks, confusion and signs of chronic liver disease before the abdomen."
+    },
+    {
+      "fact": "A palpable, non-tender gallbladder in a jaundiced patient raises the possibility of malignant distal biliary obstruction, but is not diagnostic on its own.",
+      "source": "BL"
+    },
+    {
+      "fact": "Refer people aged 40 and over with jaundice using a suspected cancer pathway referral for pancreatic cancer.",
+      "source": "NG12"
+    },
+    {
+      "fact": "Consider urgent direct access CT (or ultrasound if CT unavailable) for people aged 60 and over with weight loss and diarrhoea, back pain, abdominal pain, nausea, vomiting, constipation or new-onset diabetes.",
+      "source": "NG12"
+    }
+  ],
+  "recall": {
+    "think": "Is this obstructive, and could it be malignant biliary obstruction?",
+    "say": "\"Painless jaundice with weight loss and a palpable gallbladder is concerning for malignant biliary obstruction.\"",
+    "do": [
+      "General inspection, then abdominal inspection",
+      "Palpate liver, spleen, gallbladder, masses",
+      "Ascites, lymph nodes; blood tests and ultrasound"
+    ],
+    "numbers": [
+      {
+        "value": "40 years",
+        "meaning": "age threshold for a suspected cancer pathway referral with jaundice",
+        "source": "NG12"
+      }
+    ],
+    "trap": "Jaundice with weight loss is not a diagnosis of pancreatic cancer on its own.",
+    "finish": "Liver function tests, clotting, urgent ultrasound of the liver and biliary tree; suspected cancer pathway referral if criteria are met."
+  },
+  "sources": [
+    {
+      "id": "NG12",
+      "name": "NICE NG12: Suspected cancer: recognition and referral",
+      "version": "Published 23 June 2015; last updated May 2025",
+      "url": "https://www.nice.org.uk/guidance/ng12",
+      "supports": "Refer people aged 40 and over with jaundice using a suspected cancer pathway referral for pancreatic cancer; consider urgent direct access CT for people aged 60 and over with weight loss plus specified symptoms"
+    },
+    {
+      "id": "BL",
+      "name": "Bailey & Love's Short Practice of Surgery (O'Connell, McCaskie, Sayers, eds)",
+      "version": "28th edition, 2023",
+      "url": "https://www.routledge.com/Bailey--Loves-Short-Practice-of-Surgery---28th-Edition/OConnell-McCaskie-Sayers/p/book/9780367548117",
+      "supports": "Abdominal examination in jaundice, including Courvoisier's sign: a palpable non-tender gallbladder in a jaundiced patient suggests malignant obstruction rather than gallstones"
+    }
+  ],
+  "partner": {
+    "opening": "Please examine this lady's abdomen, focusing on findings relevant to her jaundice. I'll stop you at 6 minutes.",
+    "actorBrief": "You are Rose Ellington, 67, a retired librarian. You've noticed yellowing of your eyes over the last month, dark urine, pale stools and unintentional weight loss. Mild itching but no abdominal pain. No fevers or rigors. No previous surgery. No known liver disease and modest alcohol intake.",
+    "reveals": [
+      {
+        "trigger": "General inspection",
+        "finding": "Visibly jaundiced sclerae and skin, mild cachexia, no scratch marks, alert and orientated, no signs of chronic liver disease.",
+        "row": "G1"
+      },
+      {
+        "trigger": "Inspects the abdomen",
+        "finding": "No distension, no scars, no visible masses.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Palpates the liver and spleen",
+        "finding": "Liver edge palpable 2cm below the costal margin, smooth; spleen not palpable.",
+        "row": "G3"
+      },
+      {
+        "trigger": "Feels for the gallbladder and other masses",
+        "finding": "A palpable, non-tender, rounded mass in the right upper quadrant consistent with a distended gallbladder; no other masses.",
+        "row": "G4"
+      },
+      {
+        "trigger": "Checks for ascites and examines nodes",
+        "finding": "No shifting dullness; no palpable lymphadenopathy including left supraclavicular.",
+        "row": "G5"
+      }
+    ],
+    "push": [
+      {
+        "question": "What is Courvoisier's sign?",
+        "row": "G4",
+        "expect": "A palpable, non-tender gallbladder in a patient with obstructive jaundice raises the possibility of malignant distal biliary obstruction, but it is not diagnostic."
+      },
+      {
+        "question": "What makes cholangitis an emergency?",
+        "row": "G6",
+        "expect": "Systemic infection with biliary obstruction, needing urgent antibiotics, resuscitation and biliary drainage when indicated."
+      },
+      {
+        "question": "Would you refer her urgently?",
+        "row": "G7",
+        "expect": "Yes, she is aged 40 or over with jaundice, meeting the suspected cancer pathway referral threshold."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "She mentions she's had fevers and rigors for the last day.",
+        "safeAnswer": "Raises concern for ascending cholangitis: treat as an emergency with resuscitation, urgent antibiotics, and consideration of biliary drainage.",
+        "row": "G6"
+      },
+      {
+        "prompt": "The gallbladder is tender rather than painless.",
+        "safeAnswer": "A tender gallbladder points more towards gallstone-related disease such as cholecystitis than malignant obstruction, though it doesn't exclude it.",
+        "row": "G4"
+      },
+      {
+        "prompt": "She reports heavy alcohol use for many years.",
+        "safeAnswer": "Keeps hepatocellular or alcohol-related liver disease in the differential alongside biliary obstruction, and examines for signs of chronic liver disease.",
+        "row": "G6"
+      },
+      {
+        "prompt": "There is shifting dullness on percussion.",
+        "safeAnswer": "Ascites raises concern for more advanced or malignant disease and should be included in the summary and staging discussion.",
+        "row": "G5"
+      }
+    ]
+  }
+}

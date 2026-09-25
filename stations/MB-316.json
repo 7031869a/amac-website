@@ -1,0 +1,208 @@
+{
+  "id": "MB-316",
+  "exam": "MRCS-B",
+  "title": "Discussing ceilings of care with a patient",
+  "type": "communication",
+  "header": {
+    "domain": "Applied Skills",
+    "contentArea": "Communication skills in giving and receiving information; end of life and treatment escalation planning",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "GMC Treatment and care towards the end of life (in effect 1 July 2010; updated 15 March 2022 and 13 December 2024)",
+      "GMC Decision making and consent (in effect 9 November 2020)",
+      "Resuscitation Council UK, Decisions relating to CPR (3rd edition, 1st revision, 23 January 2016)"
+    ],
+    "related": [
+      { "id": "MB-211", "why": "A DNACPR discussion, the narrower decision this station distinguishes from a broader ceiling of care" },
+      { "id": "MB-162", "why": "Talking to a relative when the patient itself lacks capacity — for the contrasting scenario" }
+    ]
+  },
+  "brief": {
+    "setting": "Side room, medical ward",
+    "role": "Core surgical trainee",
+    "scenario": "Mrs Nadia Fairchild, 78, has advanced illness and repeated admissions. She asks what treatments would be offered if she became critically unwell.",
+    "task": "Discuss her goals of care and treatment escalation sensitively. The examiner may ask you questions at the end."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Start with what matters to her, then discuss treatments honestly in terms of benefit and burden.",
+    "trap": "Opening with \"we won't resuscitate you\", or treating a ceiling of care as withholding all treatment.",
+    "firstMove": "Ask her what she understands about her condition and what matters most to her."
+  },
+  "flow": [
+    "Open and establish understanding",
+    "Explore hopes, fears and goals",
+    "Explain the clinical picture honestly",
+    "Discuss treatments in terms of benefit and burden",
+    "Distinguish this from DNACPR",
+    "Agree, document and communicate the plan"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "communication",
+      "label": "Establishing understanding and what matters",
+      "fail": "Starts discussing treatments before finding out what she understands or what matters to her.",
+      "pass": "Asks what she understands about her condition and what matters most to her.",
+      "high": "Explores her hopes, fears and what an acceptable outcome would look like before moving to specifics."
+    },
+    {
+      "id": "G2",
+      "domain": "communication",
+      "label": "Explaining the clinical picture",
+      "fail": "Avoids the clinical reality, or is vague to the point of being unhelpful.",
+      "pass": "Explains her current clinical situation honestly, in terms she can follow.",
+      "high": "Checks her understanding as she goes and adjusts the pace and detail to her cues."
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "Discussing treatments",
+      "fail": "Opens with \"we will not resuscitate you\", or frames a ceiling as withholding all treatment.",
+      "pass": "Discusses treatments — ward-based care, antibiotics, IV fluids, non-invasive support, critical care, CPR — in terms of potential benefit, burden and likelihood of achieving her goals.",
+      "high": "Makes clear a ceiling can still include active ward-based treatment, and links each option back to what she said matters to her."
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-knowledge",
+      "label": "DNACPR versus ceiling of care",
+      "fail": "Treats DNACPR and a treatment ceiling as the same thing.",
+      "pass": "Distinguishes DNACPR, which concerns CPR specifically, from a broader ceiling describing the appropriate level of treatment.",
+      "high": "Explains CPR decisions should sit within this wider care-planning conversation, not stand alone.",
+      "source": "RESUS"
+    },
+    {
+      "id": "G5",
+      "domain": "professionalism",
+      "label": "Avoiding assumptions",
+      "fail": "Assumes age alone determines treatment, or discusses this only with relatives while she has capacity.",
+      "pass": "Discusses this directly with her as she has capacity, without assuming age alone decides the outcome.",
+      "high": "Explicitly separates her age from the clinical judgement being made, and checks who else she wants involved."
+    },
+    {
+      "id": "G6",
+      "domain": "communication",
+      "label": "Wishes if she can't speak for herself",
+      "fail": "Doesn't ask about this, or assumes relatives' wishes would apply instead of hers.",
+      "pass": "Asks what she would want if she became unable to speak for herself.",
+      "high": "Checks for any existing advance decisions or previously expressed wishes and records them."
+    },
+    {
+      "id": "G7",
+      "domain": "professionalism",
+      "label": "Documenting and communicating the plan",
+      "fail": "Ends without a clear plan, or doesn't tell the wider team.",
+      "pass": "Documents the agreed plan and communicates it to the multidisciplinary team.",
+      "high": "Explicitly notes the plan will be revisited if her clinical situation changes, and says who else should know."
+    }
+  ],
+  "performances": {
+    "fail": [
+      { "speaker": "examiner", "text": "Patient: \"If I became very ill, would you put me on a ventilator?\"" },
+      { "speaker": "candidate", "text": "Well, we wouldn't resuscitate you given your age, so that decides most of it.", "tags": [{ "row": "G1", "band": "fail" }, { "row": "G2", "band": "fail" }, { "row": "G3", "band": "fail" }, { "row": "G5", "band": "fail" }] },
+      { "speaker": "examiner", "text": "So you wouldn't treat me at all if I got worse?" },
+      { "speaker": "candidate", "text": "That's right — a ceiling of care means we'd keep you comfortable rather than actively treating you.", "tags": [{ "row": "G3", "band": "fail" }] },
+      { "speaker": "examiner", "text": "Is that the same as DNACPR?" },
+      { "speaker": "candidate", "text": "Yes, it's basically the same form.", "tags": [{ "row": "G4", "band": "fail" }] },
+      { "speaker": "examiner", "text": "What if I couldn't speak for myself later?" },
+      { "speaker": "candidate", "text": "We'd ask your family what they want then.", "tags": [{ "row": "G6", "band": "fail" }] },
+      { "speaker": "examiner", "text": "What will you do with this conversation?" },
+      { "speaker": "candidate", "text": "Nothing formal, I'll just remember it.", "tags": [{ "row": "G7", "band": "fail" }] }
+    ],
+    "pass": [
+      { "speaker": "candidate", "text": "Before we talk about specific treatments, can I ask what you understand about your condition at the moment, and what matters most to you?", "tags": [{ "row": "G1", "band": "pass" }] },
+      { "speaker": "examiner", "text": "Patient: \"I know I'm not getting better. I just want to be comfortable and not suffer.\"" },
+      { "speaker": "candidate", "text": "Thank you for telling me that. Honestly, your condition is advanced, and further serious illness could be hard for your body to recover from.", "tags": [{ "row": "G2", "band": "pass" }] },
+      { "speaker": "examiner", "text": "Patient: \"If I became very ill, would you put me on a ventilator?\"" },
+      { "speaker": "candidate", "text": "Let's go through the options — antibiotics, fluids, non-invasive breathing support, intensive care and CPR — and think about what each could realistically achieve for you, weighed against what it would involve.", "tags": [{ "row": "G3", "band": "pass" }] },
+      { "speaker": "examiner", "text": "Is a ceiling of care the same as DNACPR?" },
+      { "speaker": "candidate", "text": "No — DNACPR is specifically about CPR. A ceiling of care is broader and describes what level of treatment would be right for you overall.", "tags": [{ "row": "G4", "band": "pass" }] },
+      { "speaker": "candidate", "text": "This is your decision to discuss while you're able to, not just something for your family — what would you want if you became unable to tell us yourself?", "tags": [{ "row": "G5", "band": "pass" }, { "row": "G6", "band": "pass" }] },
+      { "speaker": "candidate", "text": "I'll write down what we've agreed today and make sure the rest of the team knows the plan.", "tags": [{ "row": "G7", "band": "pass" }] }
+    ],
+    "high": [
+      { "speaker": "candidate", "text": "Before we get into specific treatments, tell me what you understand about how things are going, and what matters most to you right now.", "tags": [{ "row": "G1", "band": "high" }] },
+      { "speaker": "examiner", "text": "Patient: \"I know I'm not getting better. I just don't want to suffer, and I'd like to see my grandson's wedding next spring.\"" },
+      { "speaker": "candidate", "text": "That's really helpful to know. Honestly, your condition has become advanced, and a further serious illness would be hard for your body to come back from — I want to be straight with you about that.", "tags": [{ "row": "G2", "band": "high" }] },
+      { "speaker": "examiner", "text": "Patient: \"If I became very ill, would you put me on a ventilator?\"" },
+      { "speaker": "candidate", "text": "Let's go through it: ward-based care and antibiotics could still help you recover from many things; intensive care or CPR are more burdensome and, given how frail you are, unlikely to get you back to the life you're describing — a ceiling doesn't mean we stop active treatment, it means we choose the treatments most likely to help you.", "tags": [{ "row": "G3", "band": "high" }] },
+      { "speaker": "examiner", "text": "Is that DNACPR?" },
+      { "speaker": "candidate", "text": "No — DNACPR only covers CPR. This is broader, and the CPR decision should really sit inside this wider conversation about your overall care.", "tags": [{ "row": "G4", "band": "high" }] },
+      { "speaker": "candidate", "text": "This is your choice, not one your age makes for you, and I want to hear it directly from you — do you have any wishes written down already, or is this the first time you've thought it through?", "tags": [{ "row": "G5", "band": "high" }, { "row": "G6", "band": "high" }] },
+      { "speaker": "candidate", "text": "I'll document exactly what we've agreed, share it with the team looking after you, and we'll revisit it together if anything changes.", "tags": [{ "row": "G7", "band": "high" }] }
+    ]
+  },
+  "failures": [
+    { "row": "G3", "move": "Opening with \"we will not resuscitate you\" or presenting a ceiling as withholding all treatment.", "consequence": "Frightens the patient and misrepresents a ceiling, which can still include active ward-based care." },
+    { "row": "G5", "move": "Assuming age alone determines the treatment offered.", "consequence": "Overrides an individualised clinical judgement and her own wishes with a blanket assumption." },
+    { "row": "G4", "move": "Conflating DNACPR with a broader ceiling of care.", "consequence": "Leaves the patient thinking one decision covers all treatments, when DNACPR concerns CPR alone." },
+    { "row": "G6", "move": "Assuming relatives' wishes would substitute for hers if she loses capacity.", "consequence": "Her own previously expressed wishes, not her family's preference, should guide care if she cannot speak for herself." }
+  ],
+  "recovery": [
+    { "when": "She asks if a ceiling means giving up on her", "line": "Not at all — it means choosing the treatments most likely to help you, based on what matters to you." },
+    { "when": "You've conflated DNACPR with the ceiling", "line": "Let me correct that — DNACPR is only about CPR; the ceiling is broader, covering what treatment overall would be right for you." }
+  ],
+  "knowledge": [
+    { "fact": "Discuss treatments in terms of potential benefit, burden and likelihood of achieving the patient's goals, not a blanket rule.", "source": "GMCEOL" },
+    { "fact": "A ceiling of care can still include active ward-based treatment; it is not a decision to withhold everything.", "source": "GMCEOL" },
+    { "fact": "DNACPR concerns CPR specifically; CPR decisions should be part of broader care planning and communication.", "source": "RESUS" },
+    { "fact": "Discuss directly with a patient who has capacity; age alone does not determine what is offered.", "source": "GMCDMC" }
+  ],
+  "recall": {
+    "think": "A ceiling of care is chosen with the patient, not imposed by age or assumption.",
+    "say": "\"Let's talk about what treatments could realistically achieve for you.\"",
+    "do": [
+      "Establish her understanding and what matters",
+      "Discuss options by benefit and burden",
+      "Separate this clearly from DNACPR"
+    ],
+    "numbers": [
+      { "value": "3rd edition (2016)", "meaning": "Current Resuscitation Council UK guidance on CPR decisions", "source": "RESUS" }
+    ],
+    "trap": "Treating a ceiling of care as the same as DNACPR, or as withholding all treatment.",
+    "finish": "Document the agreed plan, share it with the MDT, and revisit if her situation changes."
+  },
+  "sources": [
+    {
+      "id": "GMCEOL",
+      "name": "GMC: Treatment and care towards the end of life",
+      "version": "In effect 1 July 2010; updated 15 March 2022 and 13 December 2024",
+      "url": "https://www.gmc-uk.org/professional-standards/the-professional-standards/treatment-and-care-towards-the-end-of-life",
+      "supports": "Decisions should involve patients with capacity, weigh benefits and burdens of treatment, and respect patient preferences; escalation decisions should reflect what treatment can realistically achieve"
+    },
+    {
+      "id": "GMCDMC",
+      "name": "GMC: Decision making and consent",
+      "version": "In effect 9 November 2020",
+      "url": "https://www.gmc-uk.org/professional-standards/the-professional-standards/decision-making-and-consent",
+      "supports": "Patients should be supported to make informed decisions and given relevant information and time, without assumptions based on age"
+    },
+    {
+      "id": "RESUS",
+      "name": "Resuscitation Council UK: Decisions relating to Cardiopulmonary Resuscitation",
+      "version": "3rd edition, 1st revision, 23 January 2016",
+      "url": "https://www.resus.org.uk/publications/publication-decisions-relating-cardiopulmonary-resuscitation-3rd",
+      "supports": "CPR decisions should be individualised and form part of a broader care planning and communication process, distinct from wider treatment escalation decisions"
+    }
+  ],
+  "partner": {
+    "opening": "Mrs Fairchild is sitting in a chair by her bed. Please begin when you're ready.",
+    "actorBrief": "You are Nadia Fairchild, 78, with advanced chronic illness and several recent admissions. You have capacity. Opening line: \"If I became very ill, would you put me on a ventilator?\" You are thoughtful and direct, not frightened, and want an honest answer rather than reassurance for its own sake. If asked what matters to you, reveal: you don't want to suffer, and you'd like to see your grandson's wedding next spring. If the candidate opens by talking about resuscitation status or implies all treatment will stop, become anxious: \"So you're giving up on me?\" If treated honestly and given a say, you engage calmly and ask sensible follow-up questions.",
+    "reveals": [
+      { "trigger": "Asks what matters most to her", "finding": "\"I don't want to suffer, and I'd like to see my grandson's wedding next spring.\"", "row": "G1" },
+      { "trigger": "Asks about previously expressed wishes", "finding": "\"No, nobody's asked me this before — but I'd want to be kept comfortable if I couldn't come back to how I am now.\"", "row": "G6" },
+      { "trigger": "Explains that a ceiling can still include active treatment", "finding": "\"Oh — I thought it meant you'd stop treating me altogether.\"", "row": "G3" }
+    ],
+    "push": [
+      { "question": "Is a ceiling of care the same as a DNACPR decision?", "row": "G4", "expect": "No — DNACPR covers CPR specifically; a ceiling is broader and CPR decisions sit within it." },
+      { "question": "Why discuss this with her directly rather than her family?", "row": "G5", "expect": "She has capacity, so this is her decision; age alone doesn't determine the plan." },
+      { "question": "What will you do with this conversation?", "row": "G7", "expect": "Document the agreed plan, share it with the MDT, and revisit if her condition changes." }
+    ],
+    "curveballs": [
+      { "prompt": "\"So you're giving up on me?\"", "safeAnswer": "Reassures her this is about choosing treatments most likely to help her, not withdrawing care, and that active ward-based treatment continues.", "row": "G3" },
+      { "prompt": "Her son arrives and says: \"Just put her on everything, whatever it takes.\"", "safeAnswer": "Explains gently that, as she has capacity, the plan reflects her wishes and clinical judgement about what could help, while still listening to his concerns.", "row": "G5" },
+      { "prompt": "\"Does this mean you won't resuscitate me?\"", "safeAnswer": "Clarifies that CPR is one part of the wider discussion, addressed specifically and separately, not assumed from a general ceiling.", "row": "G4" },
+      { "prompt": "\"What if I change my mind next week?\"", "safeAnswer": "Reassures her the plan can be revisited any time her wishes or clinical situation change.", "row": "G7" }
+    ]
+  }
+}

@@ -1,0 +1,540 @@
+{
+  "id": "MB-309",
+  "exam": "MRCS-B",
+  "title": "History: weight loss, night sweats and a neck node",
+  "type": "history",
+  "header": {
+    "domain": "Applied Skills",
+    "contentArea": "History taking",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "signalMinutes": 6,
+    "guidelineVersions": [
+      "NICE NG12: Suspected cancer: recognition and referral (published 23 June 2015; last updated May 2025)",
+      "NICE NG52: Non-Hodgkin's lymphoma: diagnosis and management (published 26 July 2016)"
+    ],
+    "related": [
+      {
+        "id": "MB-215",
+        "why": "Examination of a neck lump (not thyroid), the examination counterpart to this history"
+      },
+      {
+        "id": "MB-292",
+        "why": "Examination for lymphadenopathy in the groin, the same reasoning applied to a different node group"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Outpatient clinic",
+    "role": "Core surgical trainee",
+    "scenario": "Ms Priya Oakden, 36, has a painless neck lump, weight loss and drenching night sweats.",
+    "task": "Take a focused history for suspected lymphoma and outline your initial assessment."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Characterise the node, screen for B symptoms and other node groups, then screen alternative causes before reaching for lymphoma.",
+    "trap": "Fine-needle aspiration alone does not exclude lymphoma; it usually needs tissue for architecture.",
+    "firstMove": "\"Can you tell me when you first noticed the lump, and how it has changed since?\""
+  },
+  "flow": [
+    "Open and characterise the node",
+    "B symptoms and other node groups",
+    "Infective, autoimmune and malignancy risk factors",
+    "Compressive and safety-netting features",
+    "At 6 minutes: present differential",
+    "Assessment plan"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "communication",
+      "label": "Opening and node characterisation",
+      "fail": "Asks only about the lump's size without onset, growth or pain.",
+      "pass": "Introduces self, establishes onset, duration, growth and whether the node is painful.",
+      "high": "Asks specifically whether the node is rubbery, matted or fixed, and whether it fluctuates."
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-knowledge",
+      "label": "B symptoms and other node groups",
+      "fail": "Doesn't ask about fever, night sweats, weight loss or other lumps.",
+      "pass": "Asks about fever, drenching night sweats, weight loss, and lumps elsewhere (axilla, groin).",
+      "high": "Asks about pruritus and alcohol-related node pain without treating either as diagnostic on its own."
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "Alternative causes: infection and autoimmune disease",
+      "fail": "Moves straight to lymphoma without screening for infection.",
+      "pass": "Asks about recent infection, TB exposure and travel, and autoimmune disease or relevant drugs.",
+      "high": "Asks about HIV risk sensitively and confidentially as part of the same screen."
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-knowledge",
+      "label": "Malignancy risk and examination plan",
+      "fail": "Doesn't ask about previous malignancy or plan to examine other node groups.",
+      "pass": "Asks about previous malignancy and plans to examine all accessible node groups, abdomen for organomegaly, and general observations.",
+      "high": "Explains tissue diagnosis, not FNA alone, is usually needed for architecture if lymphoma is suspected.",
+      "source": "NG52"
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-knowledge",
+      "label": "Compressive and safety-netting features",
+      "fail": "Doesn't ask about compressive symptoms or safety-net for deterioration.",
+      "pass": "Asks about dysphagia, dyspnoea or facial or neck swelling, and safety-nets for rapid enlargement or systemic deterioration.",
+      "high": "Links respiratory or swallowing symptoms to possible mediastinal disease needing more urgent assessment."
+    },
+    {
+      "id": "G6",
+      "domain": "communication",
+      "label": "Presentation and differential",
+      "fail": "States the diagnosis is lymphoma from the symptoms alone.",
+      "pass": "Presents a focused summary and a differential including lymphoma, metastatic malignancy, infection and autoimmune disease.",
+      "high": "Leads with the differential and the single feature (persistence, B symptoms, other nodes) that most raises concern."
+    },
+    {
+      "id": "G7",
+      "domain": "professionalism",
+      "label": "Referral pathway",
+      "fail": "Says routine referral is adequate regardless of the clinical picture.",
+      "pass": "States a suspected cancer pathway referral is appropriate for significant, unexplained persistent lymphadenopathy with concerning features.",
+      "high": "Adds safety-netting for referral even when criteria aren't clearly met but concern remains.",
+      "source": "NG12"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "candidate",
+        "text": "How big is the lump? Right, that's probably lymphoma then.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Anything else you'd ask?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "No, weight loss and sweats are enough to confirm it.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What about infection or travel?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Not needed, this is clearly lymphoma.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you confirm it?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd do a fine-needle aspiration, and that would exclude or confirm lymphoma on its own.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Anything else worrying you?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "No, just the neck lump.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please summarise."
+      },
+      {
+        "speaker": "candidate",
+        "text": "She has lymphoma, based on the lump and the sweats.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What next?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "A routine referral whenever there's capacity.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "candidate",
+        "text": "Hello Ms Oakden, I'm Dr Patel. Can you tell me when you first noticed the lump, how it's changed, and whether it's painful?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Ms Oakden: \"A few weeks now. It's not painful, just there.\""
+      },
+      {
+        "speaker": "candidate",
+        "text": "Have you had any fevers, drenching night sweats, weight loss, or noticed lumps anywhere else, under the arm or groin?",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Ms Oakden: \"Night sweats most nights, and I've lost weight without trying.\""
+      },
+      {
+        "speaker": "candidate",
+        "text": "Any recent infections, TB exposure or travel, or a diagnosis like an autoimmune condition, or new medications?",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Ms Oakden: \"No infections, no travel, nothing like that.\""
+      },
+      {
+        "speaker": "candidate",
+        "text": "Any previous cancer? I'd like to examine all the node areas, your tummy for the liver and spleen, and check you over generally.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Any trouble swallowing, breathing, or swelling of the face or neck? If anything grows quickly or you feel unwell, please seek help urgently.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What's your differential?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "A painless, persistent node with weight loss and drenching night sweats raises concern for lymphoma, though metastatic malignancy, infection such as TB or EBV, and autoimmune disease are also possible.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What would you do next?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Given the persistent node with these features, I'd arrange a suspected cancer pathway referral for urgent specialist assessment.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "candidate",
+        "text": "Hello Ms Oakden, I'm Dr Patel. When did you first notice the lump, how has it changed, and does it feel rubbery, matted or hard, and does it come and go?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Ms Oakden: \"It's firm and rubbery, hasn't gone away, and doesn't hurt.\""
+      },
+      {
+        "speaker": "candidate",
+        "text": "Any fevers, drenching night sweats, weight loss, itching, or pain in the node after alcohol, and any lumps elsewhere?",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Ms Oakden: \"Sweats most nights, weight down without trying, and I've been itchy too.\""
+      },
+      {
+        "speaker": "candidate",
+        "text": "Any recent infections, TB contact or travel, autoimmune disease, or medications? And, in confidence, any HIV risk factors I should know about?",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Ms Oakden: \"None of that.\""
+      },
+      {
+        "speaker": "candidate",
+        "text": "Any previous cancer? I'd examine all node regions, the abdomen for liver or spleen enlargement, and get a general assessment. If lymphoma is likely, an FNA alone usually isn't enough; a tissue sample preserving architecture is usually needed.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Any swallowing or breathing trouble, or facial or neck swelling? Those could mean disease in the chest and would need more urgent assessment.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What's your differential?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "A firm, persistent, painless node with drenching night sweats and weight loss is most concerning for lymphoma; the persistence and B symptoms together are what push this above infection or a reactive node.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What would you do next?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd arrange a suspected cancer pathway referral now. If she didn't quite meet the criteria but I remained concerned, I'd still safety-net and arrange review rather than discharge her.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G4",
+      "move": "Relying on FNA alone to exclude lymphoma.",
+      "consequence": "Lymphoma diagnosis usually needs tissue architecture; a negative FNA can be falsely reassuring."
+    },
+    {
+      "row": "G6",
+      "move": "Telling the patient she has lymphoma from the history alone.",
+      "consequence": "Overstates certainty before tissue diagnosis and causes unnecessary distress."
+    },
+    {
+      "row": "G3",
+      "move": "Not screening for infection, TB or autoimmune disease before assuming malignancy.",
+      "consequence": "A treatable alternative cause is missed or delayed."
+    },
+    {
+      "row": "G7",
+      "move": "Arranging only a routine referral for a persistent node with B symptoms.",
+      "consequence": "Delays diagnosis for a condition where a suspected cancer pathway referral is appropriate."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You forgot to ask about other node groups",
+      "line": "I should also ask whether she's noticed any lumps under the arms or in the groin."
+    },
+    {
+      "when": "Asked why FNA isn't enough",
+      "line": "It can sample cells, but lymphoma diagnosis usually needs tissue architecture, so a core or excision biopsy may be needed."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Consider a suspected cancer pathway referral for unexplained lymphadenopathy or splenomegaly, with attention to fever, night sweats, dyspnoea, pruritus and weight loss.",
+      "source": "NG12"
+    },
+    {
+      "fact": "Safety-net when referral criteria are not met but concern remains.",
+      "source": "NG12"
+    },
+    {
+      "fact": "Lymphoma diagnosis needs appropriate pathological assessment; the specialist pathway determines the biopsy strategy, usually beyond FNA alone.",
+      "source": "NG52"
+    }
+  ],
+  "recall": {
+    "think": "Persistent, painless node with B symptoms: could this be lymphoma, and does it need urgent referral?",
+    "say": "\"A persistent node with drenching night sweats and weight loss needs a suspected cancer pathway referral.\"",
+    "do": [
+      "Characterise the node and screen B symptoms",
+      "Screen infection, autoimmune disease, previous malignancy",
+      "Examine all node groups, liver, spleen; plan tissue diagnosis"
+    ],
+    "numbers": [
+      {
+        "value": "6 min",
+        "meaning": "signal to stop and present",
+        "source": "ICBSE"
+      }
+    ],
+    "trap": "A fine-needle aspiration alone does not exclude lymphoma.",
+    "finish": "Suspected cancer pathway referral; specialist pathway decides the biopsy method for tissue architecture."
+  },
+  "sources": [
+    {
+      "id": "NG12",
+      "name": "NICE NG12: Suspected cancer: recognition and referral",
+      "version": "Published 23 June 2015; last updated May 2025",
+      "url": "https://www.nice.org.uk/guidance/ng12",
+      "supports": "Consider a suspected cancer pathway referral for unexplained lymphadenopathy or splenomegaly, taking associated symptoms into account; safety-net when criteria are not met but concern remains"
+    },
+    {
+      "id": "NG52",
+      "name": "NICE NG52: Non-Hodgkin's lymphoma: diagnosis and management",
+      "version": "Published 26 July 2016",
+      "url": "https://www.nice.org.uk/guidance/ng52",
+      "supports": "Diagnosis requires appropriate pathological assessment; specialist pathway determines biopsy strategy for tissue architecture"
+    },
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "6-minute signal in history and examination stations"
+    }
+  ],
+  "partner": {
+    "opening": "Please take a focused history from Ms Oakden. I'll ask you some questions at the end.",
+    "actorBrief": "You are Priya Oakden, 36, a teacher. You noticed a firm, rubbery, painless lump in your neck a few weeks ago; it hasn't gone away. Drenching night sweats most nights, unintentional weight loss, and some itching. No fevers, infections, travel or autoimmune disease. No previous cancer. No breathing or swallowing trouble. Hidden concern, revealed only if asked what worries you: you're frightened it might be cancer and haven't told your family yet.",
+    "reveals": [
+      {
+        "trigger": "Asks onset, growth and pain of the node",
+        "finding": "Firm, rubbery lump noticed a few weeks ago; hasn't gone away; not painful.",
+        "row": "G1"
+      },
+      {
+        "trigger": "Asks about B symptoms and other node groups",
+        "finding": "Drenching night sweats most nights, unintentional weight loss, some itching; no lumps elsewhere noticed.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Asks about infection, travel or autoimmune disease",
+        "finding": "No recent infection, TB contact, travel or autoimmune diagnosis.",
+        "row": "G3"
+      },
+      {
+        "trigger": "Asks about compressive symptoms",
+        "finding": "No trouble swallowing or breathing, no facial swelling.",
+        "row": "G5"
+      }
+    ],
+    "push": [
+      {
+        "question": "Is FNA alone enough to diagnose or exclude lymphoma?",
+        "row": "G4",
+        "expect": "Not necessarily; lymphoma often needs tissue for architecture, and the specialist pathway determines the biopsy method."
+      },
+      {
+        "question": "Does night sweating diagnose lymphoma?",
+        "row": "G6",
+        "expect": "No, it's a systemic symptom seen in lymphoma and many other conditions; it raises concern rather than confirming a diagnosis."
+      },
+      {
+        "question": "How urgently would you refer her?",
+        "row": "G7",
+        "expect": "Suspected cancer pathway referral, given the persistent node with B symptoms."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "She mentions she's had a persistent dry cough and feels breathless climbing stairs.",
+        "safeAnswer": "Raises concern for mediastinal disease; escalates the urgency of assessment and imaging.",
+        "row": "G5"
+      },
+      {
+        "prompt": "She asks if she definitely has cancer.",
+        "safeAnswer": "Explains the node is concerning and needs urgent specialist assessment and tissue diagnosis, without stating a diagnosis she doesn't yet have.",
+        "row": "G6"
+      },
+      {
+        "prompt": "She says a friend suggested her GP just repeat the FNA if it comes back normal.",
+        "safeAnswer": "Explains a normal FNA doesn't exclude lymphoma and a tissue biopsy may still be needed via the specialist pathway.",
+        "row": "G4"
+      },
+      {
+        "prompt": "She mentions a swollen lump in her groin as well.",
+        "safeAnswer": "Widespread lymphadenopathy increases concern; examine all node groups and the abdomen, and still pursue urgent referral.",
+        "row": "G2"
+      }
+    ]
+  }
+}
