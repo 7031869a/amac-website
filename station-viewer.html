@@ -170,6 +170,9 @@ details p{margin-top:6px;color:var(--muted)}
 .timer{display:flex;flex-wrap:wrap;align-items:center;gap:12px;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
 .clock{font-family:var(--display);font-size:2.2rem;font-variant-numeric:tabular-nums;line-height:1;min-width:4.2ch}
 .phase{font-size:.8rem;color:var(--muted)}
+.timer.signal{border-color:var(--accent);background:var(--accent-soft)}
+.timer.signal .phase{color:var(--text);font-weight:600}
+.sigmark{font-size:.78rem;color:var(--muted);flex-basis:100%}
 .btn{border:1px solid var(--line);background:var(--surface-2);border-radius:8px;padding:7px 14px;font-weight:500}
 .btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
 .btn:disabled{opacity:.45;cursor:not-allowed}
@@ -350,17 +353,21 @@ details p{margin-top:6px;color:var(--muted)}
   function timerHTML(id){
     return `<div class="timer" id="${id}"><span class="clock" id="${id}-clock">1:00</span>
       <span class="phase" id="${id}-phase">Reading time</span>
-      <button class="btn primary" id="${id}-go">Start</button><button class="btn" id="${id}-reset">Reset</button></div>`;
+      <button class="btn primary" id="${id}-go">Start</button><button class="btn" id="${id}-reset">Reset</button>
+      ${S.header.signalMinutes?`<span class="sigmark">Signal at ${S.header.signalMinutes} minutes: stop and present your findings.</span>`:""}</div>`;
   }
   function bindTimer(id,onEnd){
     const total=[S.header.readingMinutes*60,S.header.minutes*60];
     let phase=0,left=total[0],running=false;
     const fmt=s=>`${Math.floor(s/60)}:${String(s%60).padStart(2,"0")}`;
-    const paint=()=>{$(`#${id}-clock`).textContent=fmt(left);$(`#${id}-phase`).textContent=phase===0?"Reading time":phase===1?"In the station":"Time";$(`#${id}-go`).textContent=running?"Pause":(phase===2?"Done":"Start");$(`#${id}-go`).disabled=phase===2;};
-    const tick=()=>{left--;if(left<=0){if(phase===0){phase=1;left=total[1];}else{phase=2;left=0;stop();onEnd&&onEnd();}}paint();};
+    const sig=S.header.signalMinutes?S.header.signalMinutes*60:null; let signalled=false;
+    // Short tone; allowed because the timer is started by a tap.
+    const beep=()=>{try{const C=window.AudioContext||window.webkitAudioContext;const c=new C();const o=c.createOscillator();const g=c.createGain();o.frequency.value=880;g.gain.value=0.15;o.connect(g);g.connect(c.destination);o.start();o.stop(c.currentTime+0.6);}catch(e){} try{navigator.vibrate&&navigator.vibrate(300);}catch(e){}};
+    const paint=()=>{$(`#${id}-clock`).textContent=fmt(left);const afterSig=phase===1&&sig&&(total[1]-left)>=sig;$(`#${id}`).classList.toggle("signal",!!afterSig);$(`#${id}-phase`).textContent=phase===0?"Reading time":phase===1?(afterSig?"Signal: present your findings":"In the station"):"Time";$(`#${id}-go`).textContent=running?"Pause":(phase===2?"Done":"Start");$(`#${id}-go`).disabled=phase===2;};
+    const tick=()=>{left--;if(phase===1&&sig&&!signalled&&(total[1]-left)>=sig){signalled=true;beep();}if(left<=0){if(phase===0){phase=1;left=total[1];}else{phase=2;left=0;stop();onEnd&&onEnd();}}paint();};
     const stop=()=>{clearInterval(timer);timer=null;running=false;};
     $(`#${id}-go`).addEventListener("click",()=>{if(running){stop();}else{running=true;timer=setInterval(tick,1000);}paint();});
-    $(`#${id}-reset`).addEventListener("click",()=>{stop();phase=0;left=total[0];paint();});
+    $(`#${id}-reset`).addEventListener("click",()=>{stop();phase=0;left=total[0];signalled=false;paint();});
     paint();
     return {skip(){stop();phase=2;left=0;paint();}};
   }

@@ -1,4 +1,4 @@
-# AMaC Station Template — Specification v1.1 (pilot)
+# AMaC Station Template — Specification v1.2 (pilot)
 
 **Status:** Pilot. Apply to four stations first (see §11). Do not convert the full bank until the pilot passes.
 **Applies to:** MRCS Part B first. PLAB 2 and UKMLA CPSA use the same skeleton with their own exam configuration (§8).
@@ -122,6 +122,17 @@ Each station is one JSON file validated against `station.schema.json`. Key ideas
 
 The viewer (`station-viewer.html`) renders all four views from this file. Guideline updates are made once, in the data.
 
+## 9a. Images and other props (v1.2)
+
+Anatomy, pathology and wound stations need images. Each station lists them under `media`, with an `id`, the `task` the candidate does with it, a `description`, `required` (true/false) and a `status`:
+
+- `needed`: not yet sourced. A required image with this status blocks publication.
+- `own` or `licensed`: must also record `source` and `licence`. Every image must be our own or properly licensed.
+
+The viewer does not show images yet. Anatomy and pathology stations stay unpublished until it does and their required images are sourced.
+
+`header.signalMinutes`: set to 6 for physical examination and history stations. The candidate guidance states a signal is given at 6 minutes, when the candidate presents findings. The viewer's timer shows it and sounds a short tone. Leave it out for other station types.
+
 ## 10. Validator checks
 
 `node validate-station.js <file.json>` fails the station if:
@@ -135,6 +146,9 @@ The viewer (`station-viewer.html`) renders all four views from this file. Guidel
 7. Candidate-facing text contains review-process terms (reviewed, reviewer, unreviewed, pending/under/awaiting review, review status, sign-off, editorial note). Clinical uses such as "review the patient" are allowed. Also fails on "instant fail", "kill zone" or "hurdle".
 8. A word budget is exceeded by more than 20% (warning, not failure).
 9. Curveballs exceed 4, or the recall card is missing a field.
+10. A source has no version or date.
+11. An image is marked own or licensed without a source and licence (error), or a required image is still needed (warning).
+12. Warnings for unsupported claims about exam marking ("examiners expect", "loses … marks", "caps the station", "commonest"). Station text shouldn't claim to know how marks are awarded.
 
 ## 11. Pilot
 
