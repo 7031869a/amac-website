@@ -1,0 +1,477 @@
+{
+  "id": "MB-257",
+  "exam": "MRCS-B",
+  "title": "Confidentiality: a police request about a stab wound",
+  "type": "communication",
+  "header": {
+    "domain": "Applied Skills",
+    "contentArea": "Communication skills in giving and receiving information; professionalism",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "GMC Confidentiality: reporting gunshot and knife wounds (in effect Apr 2017; updated May 2018 and Dec 2024)",
+      "GMC Confidentiality: good practice in handling patient information (in effect Apr 2017; updated May 2018 and Dec 2024)"
+    ],
+    "related": [
+      {
+        "id": "MB-164 Major trauma: primary survey",
+        "why": "The clinical priorities that come before any conversation with the police"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Emergency department",
+    "role": "Core surgical trainee on call",
+    "scenario": "Mr Liam Radcliffe, 24, was stabbed in the left upper abdomen in an assault an hour ago. He is alert, has capacity and is haemodynamically stable. Your consultant has booked him for theatre shortly. The emergency department has told the police that a man with a stab wound has arrived, without giving his name. A police officer asks to speak to you.",
+    "task": "Speak to the police officer."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Help the police manage risk without breaching confidentiality: patient first, consent, public interest, record.",
+    "trap": "Either giving his name and story on request, or refusing to engage at all.",
+    "firstMove": "\"Can we talk somewhere private? Tell me what you need and why.\""
+  },
+  "flow": [
+    "Private space; officer's concern",
+    "Patient care first",
+    "What can be shared now",
+    "Consent",
+    "Without consent: when",
+    "Court orders",
+    "Record and tell him"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "communication",
+      "label": "Engaging with the officer",
+      "fail": "Hostile or dismissive, or discusses the patient in a public corridor.",
+      "pass": "Courteous; moves somewhere private; acknowledges the police role; explains his duty of confidentiality.",
+      "high": "Asks what the officer's immediate concern is, such as a further risk to others, to judge whether there are public-interest grounds.",
+      "source": "GKW"
+    },
+    {
+      "id": "G2",
+      "domain": "professionalism",
+      "label": "Patient care first",
+      "fail": "Lets the officer interview him in resus, delaying theatre.",
+      "pass": "No police access that would delay or hamper treatment; he is going to theatre now.",
+      "high": "Offers to ask him, when his condition allows, whether he will speak to the police, and gives a named contact.",
+      "source": "GKW"
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "What may be shared now",
+      "fail": "Gives name and address on request, or says the police cannot be told anything.",
+      "pass": "Police should usually be told a knife-assault wound has presented; name and address not usually given in that initial contact.",
+      "high": "Knows accidental or self-inflicted wounds are not usually reported, and that under-18s raise child protection concerns.",
+      "source": "GKW"
+    },
+    {
+      "id": "G4",
+      "domain": "professionalism",
+      "label": "Seeking consent",
+      "fail": "Tells the officer what the patient said about his attacker without asking him.",
+      "pass": "Will ask the patient whether he consents to sharing details or speaking to the police, and respects his decision.",
+      "high": "Explains that a refusal stands unless disclosure is required by law or justified in the public interest.",
+      "source": "GKW"
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-knowledge",
+      "label": "Disclosure without consent",
+      "fail": "Cannot say when disclosure without consent is justified.",
+      "pass": "Public interest: risk of death or serious harm to others, or helps prevent, detect or prosecute a serious crime; minimum necessary.",
+      "high": "If in doubt, decides with the consultant or Caldicott guardian; weighs harm to him and to trust against harm to others.",
+      "source": "GKW"
+    },
+    {
+      "id": "G6",
+      "domain": "professionalism",
+      "label": "Court orders and the law",
+      "fail": "Refuses to comply with a court order, or hands over the whole record.",
+      "pass": "Must disclose if required by law or ordered by a judge; discloses only what is required.",
+      "high": "Would object to the judge if irrelevant information is demanded; knows the police can apply for an order or warrant.",
+      "source": "CONF"
+    },
+    {
+      "id": "G7",
+      "domain": "professionalism",
+      "label": "Recording and telling the patient",
+      "fail": "Makes no record of the request or any disclosure.",
+      "pass": "Documents what was disclosed, to whom and why, and the steps taken to seek consent.",
+      "high": "Tells the patient about any disclosure as soon as it is practicable and safe.",
+      "source": "GKW"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "Officer: \"I need the name and address of the lad with the stab wound, and what he's told you.\""
+      },
+      {
+        "speaker": "candidate",
+        "text": "Sure. He's Liam Radcliffe, 24. He said it was someone called Dean outside the bar.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          },
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Officer: \"Can I have a quick word with him now?\""
+      },
+      {
+        "speaker": "candidate",
+        "text": "Go ahead, he's in resus. Just be quick, theatre's waiting.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Officer: \"And if he won't talk to us?\""
+      },
+      {
+        "speaker": "candidate",
+        "text": "Then there's nothing more I can do. Get a court order if you want, but I won't hand anything over.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          },
+          {
+            "row": "G5",
+            "band": "fail"
+          },
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Right, I need to get on.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "candidate",
+        "text": "Hello, I'm Dr Patel, one of the surgical doctors. Shall we talk in the relatives' room? I know you need to assess the risk, but I have a duty of confidentiality to my patient.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "He needs an operation now, so I can't let anything delay that. He can't be interviewed before theatre.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "You've been told a man with a stab wound is here, which is right. I can't give his name or address at this stage.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'll ask him whether he's happy to share his details or speak to you, and I'll respect his answer.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Officer: \"What if he says no?\""
+      },
+      {
+        "speaker": "candidate",
+        "text": "I can still disclose without consent if others are at risk of death or serious harm, or if it would help prevent or detect a serious crime. I'd share only what's needed.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Officer: \"And if I get a court order?\""
+      },
+      {
+        "speaker": "candidate",
+        "text": "Then I must comply, but I'd disclose only what the order requires.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'll document your request, what I've shared and why, and my conversation with him.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "candidate",
+        "text": "Hello, I'm Dr Patel from the surgical team. Let's step into the relatives' room. What's your main concern right now: is anyone else at risk?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Officer: \"Another man was stabbed two streets away. We think it's the same attacker, and he's still out there.\""
+      },
+      {
+        "speaker": "candidate",
+        "text": "That matters. He's going to theatre now, so no one can interview him before then. Once his condition allows, I'll ask him whether he'll talk to you. Here's the direct number for the surgical registrar.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "You were right to be informed that he's here. At this stage, I won't give his name or address. If he were under 18, safeguarding would apply as well.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'll ask him now, before the anaesthetic, whether he'll let me share what he told us about the attacker. If he refuses, that stands, unless the law requires it or it's justified in the public interest.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "With an armed attacker still at large, there may be a public-interest case to share what he told us about him. That's not my decision alone: I'd discuss it with my consultant or the Caldicott guardian now, weigh the risks, and share only what's needed to protect others.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "If you get a court order, I'll comply with what it requires. If it asked for unrelated parts of his record, I'd raise that with the judge.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'll record your request, any disclosure and the reasons, and tell Mr Radcliffe what was shared as soon as it's practicable and safe.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G4",
+      "move": "Passing on what he said about his attacker without asking him.",
+      "consequence": "Breaches confidentiality where consent could have been sought, and damages his trust in doctors."
+    },
+    {
+      "row": "G2",
+      "move": "Letting the police interview him before theatre.",
+      "consequence": "Safety-critical: delays treatment of a penetrating abdominal injury."
+    },
+    {
+      "row": "G3",
+      "move": "Refusing to confirm anything, or treating the police as the enemy.",
+      "consequence": "The police need to know a knife assault has presented so that they can assess the risk to others."
+    },
+    {
+      "row": "G7",
+      "move": "No record of the request or the disclosure.",
+      "consequence": "The decision cannot be justified later, and he may never learn what was shared."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You've started to give his details",
+      "line": "Let me stop there. I need to ask him first, unless there's an immediate risk to others."
+    },
+    {
+      "when": "The officer insists",
+      "line": "I understand. If you think someone else is in danger, tell me, and I'll take it to my consultant straight away."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Police should usually be told when someone presents with a wound from an attack with a knife or blade, but not usually if it looks accidental or self-inflicted (paras 5-6). Name and address are not usually given in the initial contact (para 9).",
+      "source": "GKW"
+    },
+    {
+      "fact": "No police access that would delay or hamper treatment; the patient decides whether to speak to them (paras 10-11).",
+      "source": "GKW"
+    },
+    {
+      "fact": "Without consent: if required by law, or in the public interest (a risk of death or serious harm to others, or to help prevent, detect or prosecute serious crime). If in doubt, the consultant or Caldicott guardian decides. Record it and tell the patient (paras 13-17).",
+      "source": "GKW"
+    },
+    {
+      "fact": "Court orders: disclose only what is required; object to the judge if irrelevant information is demanded (paras 17, 91).",
+      "source": "CONF"
+    }
+  ],
+  "recall": {
+    "think": "An attacker may still be armed, and a patient in resus needs theatre.",
+    "say": "\"I can confirm a stab wound; I'll ask him before sharing more.\"",
+    "do": [
+      "Patient to theatre first",
+      "Ask his consent",
+      "Public interest? Consultant or Caldicott guardian"
+    ],
+    "numbers": [
+      {
+        "value": "Under 18",
+        "meaning": "knife wound likely raises child protection concerns",
+        "source": "GKW"
+      }
+    ],
+    "trap": "Handing over his name because the officer asked.",
+    "finish": "Record the request and any disclosure; tell the patient."
+  },
+  "sources": [
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format: 9 minutes with 1 minute's reading"
+    },
+    {
+      "id": "GKW",
+      "name": "GMC: Confidentiality: reporting gunshot and knife wounds (explanatory guidance)",
+      "version": "In effect 25 April 2017; updated 25 May 2018 and 13 December 2024",
+      "url": "https://www.gmc-uk.org/professional-standards/the-professional-standards/confidentiality---reporting-gunshot-and-knife-wounds/reporting-gunshot-and-knife-wounds",
+      "supports": "Police assess the risk of a further attack on the patient, to staff and to others (para 4); police should usually be informed when a person presents with a wound from an attack with a knife, blade or other sharp instrument (para 5), but not usually if accidental or self-harm (para 6); name and address not usually disclosed in the initial contact, and the police will respond anyway (para 9); no police access if it will delay or hamper treatment or compromise recovery (para 10); the patient decides whether to speak to the police (para 11); seek consent before disclosing personal information unless this would put people at risk or prejudice a serious crime investigation (para 12); disclose without consent if required by law or justified in the public interest (para 13): risk of death or serious harm to others, or likely to help prevent, detect or prosecute a serious crime (para 14); if in doubt, the consultant in charge or the Caldicott or data guardian decides (para 15); document reasons and steps to seek consent (para 16); tell the patient about disclosures as soon as possible (para 17); otherwise no further information; police may seek an order from a judge or a warrant (para 18, endnote 4); under-18s are likely to raise child protection concerns (paras 19-20); police can use powers to seize evidence such as clothing (endnote 4)"
+    },
+    {
+      "id": "CONF",
+      "name": "GMC: Confidentiality: good practice in handling patient information",
+      "version": "In effect 25 April 2017; updated 25 May 2018 and 13 December 2024",
+      "url": "https://www.gmc-uk.org/professional-standards/the-professional-standards/confidentiality",
+      "supports": "Must disclose if required by statute or ordered by a judge or presiding officer of a court (para 17); disclose only information relevant to the request (para 18); disclose only what the court requires and object to the judge if asked to disclose apparently irrelevant information (para 91); factors to weigh in a public-interest disclosure (para 68)"
+    }
+  ],
+  "partner": {
+    "opening": "The police officer is waiting to speak to you. Please begin when you're ready.",
+    "actorBrief": "You are PC Jo Maitland, a response officer, polite but under pressure. Opening line: \"Doctor, I need the name and address of the lad with the stab wound, what his injuries are, and whether he's said who did it. Can I have a word with him now?\" Hidden information: 30 minutes ago a second man was stabbed two streets away; you believe it was the same attacker, who is still at large. Reveal this only if the candidate asks what your concern is or whether anyone else is at risk. Later asks, in order: \"What if he won't talk to us?\", \"What if I come back with a court order?\", \"Can I at least take his clothes?\" If the candidate refuses everything without explaining, say \"I'll be speaking to your consultant, then.\" If the candidate explains clearly, accept it and ask when you can next check in.",
+    "reveals": [
+      {
+        "trigger": "Asks what the officer's concern is or whether others are at risk",
+        "finding": "\"Another man was stabbed two streets away half an hour ago. We think it's the same attacker, and he's still out there.\"",
+        "row": "G1"
+      },
+      {
+        "trigger": "Asks whether anyone has spoken to the patient",
+        "finding": "\"No. The nurse said he's going to theatre.\"",
+        "row": "G2"
+      },
+      {
+        "trigger": "Explains what can be shared now",
+        "finding": "\"So you can't even tell me his name?\"",
+        "row": "G3"
+      }
+    ],
+    "push": [
+      {
+        "question": "He refuses consent to any disclosure. What now?",
+        "row": "G5",
+        "expect": "Respect it unless required by law or justified in the public interest: a risk of death or serious harm to others, or serious crime. Decide with the consultant or Caldicott guardian; disclose the minimum; record it; tell him."
+      },
+      {
+        "question": "The officer returns with a court order. What do you do?",
+        "row": "G6",
+        "expect": "Comply, disclosing only what the order requires; object to the judge if irrelevant information is demanded; record it."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "The patient is 16.",
+        "safeAnswer": "A knife wound in someone under 18 is likely to raise child protection concerns; follow safeguarding procedures and involve the safeguarding lead.",
+        "row": "G3"
+      },
+      {
+        "prompt": "\"Can I take his clothes? They're evidence.\"",
+        "safeAnswer": "They are his property: I'll ask him, and not delay theatre. The police have their own powers to seize evidence, and I'd involve the nurse in charge.",
+        "row": "G4"
+      },
+      {
+        "prompt": "He becomes unconscious before you can ask him.",
+        "safeAnswer": "He cannot consent, but disclosure is still possible if required by law or justified in the public interest; decide with the consultant, and tell him afterwards.",
+        "row": "G5"
+      },
+      {
+        "prompt": "\"Off the record, did he say who did it?\"",
+        "safeAnswer": "Nothing is off the record. I need his consent unless there is a public-interest justification.",
+        "row": "G4"
+      }
+    ]
+  }
+}

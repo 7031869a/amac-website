@@ -1,0 +1,492 @@
+{
+  "id": "MB-256",
+  "exam": "MRCS-B",
+  "title": "Preoperative counselling for a stoma",
+  "type": "communication",
+  "header": {
+    "domain": "Applied Skills",
+    "contentArea": "Communication skills in giving and receiving information",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "NICE NG151 Colorectal cancer (Jan 2020; updated Dec 2021)",
+      "ASCN UK Stoma Care National Clinical Guidelines (2016)",
+      "Hsu et al., J Wound Ostomy Continence Nurs (2020)",
+      "Bailey & Love, 28th ed. (2023)"
+    ],
+    "related": [
+      {
+        "id": "MB-159 Examination of a stoma",
+        "why": "Identifying stoma types and their complications at the bedside"
+      },
+      {
+        "id": "MB-160 Consent: emergency laparotomy and possible stoma",
+        "why": "The consent conversation when a stoma is possible in an emergency"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Colorectal outpatient clinic",
+    "role": "Core surgical trainee",
+    "scenario": "Mr Thomas Pengelly, 58, has a cancer in the lower rectum. He is listed for a laparoscopic anterior resection with a planned temporary loop ileostomy. Your consultant has explained the operation. He sees the stoma care nurse next week.",
+    "task": "Explain the stoma to Mr Pengelly and answer his questions."
+  },
+  "beforeYouWalkIn": {
+    "frame": "What a stoma is, why he needs it, how long for, who helps, and what worries him.",
+    "trap": "Promising the stoma will definitely be reversed, or listing complications without finding out what he fears.",
+    "firstMove": "\"What have you been told about the stoma, and what worries you most?\""
+  },
+  "flow": [
+    "Introduce; his understanding",
+    "What and why",
+    "Temporary and reversal",
+    "Stoma nurse and siting",
+    "Living with it",
+    "His concerns",
+    "Check understanding; next steps"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "communication",
+      "label": "Opening and his understanding",
+      "fail": "Launches into facts about stomas without introducing himself or finding out what Mr Pengelly knows.",
+      "pass": "Introduces himself, confirms identity, asks what he understands about the stoma and what worries him.",
+      "high": "Asks early about his work, home and support, and offers to include his wife."
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-knowledge",
+      "label": "What a stoma is and why",
+      "fail": "Uses jargon (\"defunction\", \"anastomosis\") or cannot say why the stoma is needed.",
+      "pass": "Plain words: small bowel brought out onto the tummy into a bag, so the new join low in the bowel can heal.",
+      "high": "Contrasts ileostomy (right side, liquid output) with colostomy; says the surgeon confirms the need during the operation.",
+      "source": "BL"
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "Temporary, and reversal",
+      "fail": "Promises it will definitely be reversed, or says nothing about how long it stays.",
+      "pass": "Planned as temporary; reversal is a further, smaller operation once the join has healed and any other treatment is finished.",
+      "high": "Says some stomas are never reversed; after reversal, bowel habit may change (urgency, frequency), and help is available.",
+      "source": "NG151"
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-knowledge",
+      "label": "Stoma nurse and siting",
+      "fail": "Leaves out the stoma nurse or preoperative marking.",
+      "pass": "Stoma nurse sees him before surgery to mark the best site and teach bag care, so he goes home managing it himself.",
+      "high": "Explains siting: a place he can see, away from creases, scars and belt line; marking is linked to fewer complications; surgeon decides finally.",
+      "source": "ASCN"
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-knowledge",
+      "label": "Living with it: practical advice and complications",
+      "fail": "Gives no practical advice or warning signs.",
+      "pass": "Diet and extra fluids for a watery output; sore skin, leaks and hernia; avoid heavy lifting early.",
+      "high": "Explains high output (over 1.5 litres a day) and dehydration: thirst, dizziness, dark or little urine; seek help early.",
+      "source": "ASCN"
+    },
+    {
+      "id": "G6",
+      "domain": "communication",
+      "label": "Responding to his concerns",
+      "fail": "Dismisses concerns (\"you'll get used to it\") or misses the cue about his wife.",
+      "pass": "Picks up the cue; acknowledges his worry about intimacy and work; answers honestly.",
+      "high": "Normalises the worry; offers a joint visit with his wife and the stoma nurse; mentions Colostomy UK and the IA.",
+      "source": "ASCN"
+    },
+    {
+      "id": "G7",
+      "domain": "professionalism",
+      "label": "Checking understanding and next steps",
+      "fail": "Ends without checking understanding or giving written information.",
+      "pass": "Asks him to explain back; gives written information and stoma nurse contact; invites questions.",
+      "high": "Summarises next steps and offers a further conversation before surgery if he wants one."
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "candidate",
+        "text": "Hi, the consultant asked me to talk about your ileostomy. We bring a loop of ileum through the abdominal wall to defunction the anastomosis.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          },
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Mr Pengelly: \"So I'll have a bag? For how long?\""
+      },
+      {
+        "speaker": "candidate",
+        "text": "Yes, but don't worry, it'll be reversed in a few months. It's routine.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Mr Pengelly: \"I don't know what my wife's going to think.\""
+      },
+      {
+        "speaker": "candidate",
+        "text": "Lots of people have them, you'll get used to it. The nurses will sort out the bag after the operation.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          },
+          {
+            "row": "G4",
+            "band": "fail"
+          },
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Any questions? No? Great, see you on the day.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "candidate",
+        "text": "Hello, I'm Dr Patel, one of the surgical trainees. Can I check your name and date of birth? What have you been told about the stoma, and what worries you?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "During the operation we join the bowel low down. To let that join heal, we bring a loop of small bowel out onto your tummy, and it empties into a bag.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "It's planned to be temporary. Reversing it is a smaller operation, once the join has healed and any other treatment is done.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Before surgery the stoma nurse will mark the best spot and teach you to change the bag, so you're confident before going home.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "The output is watery, so you'll need to drink more. Problems include sore skin, leaks and a hernia, so avoid heavy lifting at first.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Mr Pengelly: \"I don't know what my wife's going to think.\""
+      },
+      {
+        "speaker": "candidate",
+        "text": "That's a really common worry. Can you tell me more? Many couples find their relationship carries on as before, and the stoma nurse can help with this too.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Could you tell me in your own words what we've discussed? Here's a leaflet and the stoma nurse's number. What questions do you have?",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "candidate",
+        "text": "Hello, I'm Dr Patel, a surgical trainee. Can I check your name and date of birth? What have you been told so far? Tell me a bit about your work and home. Would you like your wife involved?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "We'll remove the part of the bowel with the cancer and join it low down. To protect that join while it heals, we bring a loop of small bowel out on the right side into a bag. That's an ileostomy: the output is liquid, unlike a colostomy from the large bowel. The surgeon confirms it's needed during the operation.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "We plan to reverse it with a smaller operation later. I can't promise that, as some people keep theirs. After reversal your bowels may be more urgent or frequent for a while; tell us or your GP, as there's help.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "The stoma nurse will mark a spot you can see, away from creases, scars and your tool belt. Marking beforehand is linked to fewer stoma problems. The surgeon makes the final choice.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "If the bag fills a lot, over about one and a half litres a day, you can get dehydrated: thirsty, dizzy, passing little dark urine. Ring the stoma nurse or come in early.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Mr Pengelly: \"I don't know what my wife's going to think.\""
+      },
+      {
+        "speaker": "candidate",
+        "text": "Lots of people worry about that. Would it help if she came to see the stoma nurse with you? Colostomy UK and the IA, the Ileostomy and Internal Pouch Association, also support partners.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Can you tell me what you've understood? I'll write down the key points. If more questions come up before surgery, we can talk again.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G3",
+      "move": "Promising the stoma will definitely be reversed.",
+      "consequence": "Some stomas stay; a broken promise damages trust and leaves him unprepared."
+    },
+    {
+      "row": "G6",
+      "move": "Answering \"you'll get used to it\" to his worry about his wife.",
+      "consequence": "Shuts down the concern that matters most to him."
+    },
+    {
+      "row": "G4",
+      "move": "Leaving out the stoma nurse and preoperative siting.",
+      "consequence": "He does not know who will help him or why the site is marked beforehand."
+    },
+    {
+      "row": "G5",
+      "move": "Giving no warning about dehydration.",
+      "consequence": "A high-output ileostomy can dehydrate him at home without him recognising it."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "He says he'd rather not have a stoma at all",
+      "line": "That's your decision to make. Can I explain why we recommend it, and then you can talk it through with your consultant?"
+    },
+    {
+      "when": "You realise you implied reversal is certain",
+      "line": "I should be clear: we plan to reverse it, but I can't promise it for everyone."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Tell people with colorectal cancer the likelihood of a stoma, why it might be needed and how long for (1.2.2); before sphincter-preserving surgery, give information on low anterior resection syndrome (1.6.2).",
+      "source": "NG151"
+    },
+    {
+      "fact": "Siting is done before surgery by a trained nurse: a site the patient can see, avoiding scars, creases, skin folds, bony prominences, the umbilicus and the belt line. The surgeon makes the final choice.",
+      "source": "ASCN"
+    },
+    {
+      "fact": "Preoperative marking is associated with fewer stoma and peristomal complications (meta-analysis, OR 0.52).",
+      "source": "HSU"
+    },
+    {
+      "fact": "High output: more than 1500 mL in 24 hours; watch for thirst, dizziness, low urine output and low sodium, potassium or magnesium.",
+      "source": "ASCN"
+    }
+  ],
+  "recall": {
+    "think": "Unrecognised dehydration from a high-output ileostomy.",
+    "say": "\"It's planned to be temporary, but I can't promise it.\"",
+    "do": [
+      "Find out what he knows and fears",
+      "What, why, how long",
+      "Stoma nurse siting; dehydration warning"
+    ],
+    "numbers": [
+      {
+        "value": ">1500 mL/24 h",
+        "meaning": "high-output stoma",
+        "source": "ASCN"
+      },
+      {
+        "value": "OR 0.52",
+        "meaning": "complications with preoperative marking",
+        "source": "HSU"
+      }
+    ],
+    "trap": "\"It'll definitely be reversed.\"",
+    "finish": "Teach-back, leaflet and stoma nurse contact."
+  },
+  "sources": [
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format: 9 minutes with 1 minute's reading; introduce yourself and confirm identity"
+    },
+    {
+      "id": "NG151",
+      "name": "NICE guideline NG151: Colorectal cancer",
+      "version": "Published 29 January 2020; last updated 15 December 2021",
+      "url": "https://www.nice.org.uk/guidance/ng151/chapter/Recommendations",
+      "supports": "Give information on treatment options including possible effects on bowel and sexual function (1.2.1); the likelihood of having a stoma, why it might be necessary and for how long (1.2.2); give information on low anterior resection syndrome to people who will potentially have sphincter-preserving surgery: frequency, urgency, incomplete emptying, fragmentation (1.6.2)"
+    },
+    {
+      "id": "ASCN",
+      "name": "ASCN UK (Association of Stoma Care Nurses UK): Stoma Care National Clinical Guidelines",
+      "version": "2016 edition (openly available copy; the revised edition is available to ASCN members only)",
+      "url": "https://www.sath.nhs.uk/wp-content/uploads/2017/11/Stoma-Care-Guidelines.pdf",
+      "supports": "Stoma Siting: patients consented for a potential or definite stoma are sited by a registered nurse with the defined competency; avoid scars, skin folds, creases, bony prominences, umbilicus, belt/waistline and radiation sites; choose a site the patient can see; markings are a guide and the surgeon makes the final selection. High Output Stoma Management: output >1500 mL/24 hours; signs of dehydration (thirst, dizziness/faintness, low volume of concentrated urine, low Na, K, Mg). Discharge: patients discharged able to be independent with the stoma, with stoma care nurse contact details and information on support groups. Parastomal Hernia Prevention: advice on heavy lifting; avoid driving for about 4 weeks after laparoscopic and 6 weeks after open surgery, subject to the patient's insurance policy"
+    },
+    {
+      "id": "HSU",
+      "name": "Hsu MY, Lin JP, Hsu HH, Lai HL, Wu YL. Preoperative stoma site marking decreases stoma and peristomal complications: a meta-analysis. J Wound Ostomy Continence Nurs 2020;47(3):249-256",
+      "version": "May/June 2020",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/32118803/",
+      "supports": "10 studies, 2109 patients: preoperative marking associated with reduced stoma and peristomal complications (OR 0.52, 95% CI 0.42-0.64); authors conclude it should be standard preoperative care"
+    },
+    {
+      "id": "BL",
+      "name": "Bailey & Love's Short Practice of Surgery (O'Connell, McCaskie, Sayers, eds)",
+      "version": "28th edition, 2023",
+      "url": "https://www.routledge.com/Bailey--Loves-Short-Practice-of-Surgery---28th-Edition/OConnell-McCaskie-Sayers/p/book/9780367548117",
+      "supports": "Loop ileostomy to protect (defunction) a low colorectal anastomosis; ileostomy (spouted, usually right iliac fossa, liquid output) versus colostomy; stoma complications: skin problems, leakage, high output, parastomal hernia, prolapse, retraction"
+    }
+  ],
+  "partner": {
+    "opening": "Mr Pengelly is here to talk about his stoma. Please begin when you're ready.",
+    "actorBrief": "You are Thomas (Tom) Pengelly, 58, a self-employed plumber, married to Linda for 30 years. You were told last week you have rectal cancer and need an operation. You are anxious but polite. Opening line: \"The surgeon said something about a bag. Will I have a bag? For how long?\" Hidden concerns, in order: (1) Your wife: give the cue \"I don't know what my wife's going to think\" once; if explored, say you worry about intimacy and her seeing it. (2) Work: you kneel under sinks, carry boilers and wear a tool belt; you can't afford long off work. (3) Your late father had a colostomy \"for good\"; you fear yours will be permanent. If the candidate promises reversal, look relieved. If they use jargon, look confused and say \"Sorry, in English?\" If asked to explain back, give a fair summary but say \"and it'll definitely come back off\" unless the candidate has been clear it might not.",
+    "reveals": [
+      {
+        "trigger": "Asks about work and home",
+        "finding": "\"I'm a plumber, self-employed. Lots of lifting and kneeling. I wear a tool belt all day.\"",
+        "row": "G1"
+      },
+      {
+        "trigger": "Explores the cue about his wife",
+        "finding": "\"We've been married 30 years. I don't want her to find me... off-putting. And, you know, the bedroom side of things.\"",
+        "row": "G6"
+      },
+      {
+        "trigger": "Discusses how long the stoma will stay",
+        "finding": "\"My dad had a bag. They said it'd come off and it never did.\"",
+        "row": "G3"
+      },
+      {
+        "trigger": "Asks him to explain back",
+        "finding": "\"A bit of small bowel on my tummy into a bag, to protect the join. The nurse marks where. Drink plenty.\"",
+        "row": "G7"
+      }
+    ],
+    "push": [
+      {
+        "question": "Why does the stoma nurse mark the site before surgery?",
+        "row": "G4",
+        "expect": "A site he can see and manage, away from creases, scars and belt line; marking is linked to fewer stoma and skin complications."
+      },
+      {
+        "question": "What is a high-output stoma, and what would you tell him?",
+        "row": "G5",
+        "expect": "More than 1500 mL in 24 hours; risk of dehydration and low sodium, potassium and magnesium; he should seek help early if thirsty, dizzy or passing little urine."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "\"Can't you just join it up and not bother with a bag?\"",
+        "safeAnswer": "Explains the stoma protects a low join while it heals, and that a leak would be serious; the decision is his, and he can discuss it with his consultant before surgery.",
+        "row": "G2"
+      },
+      {
+        "prompt": "\"When can I drive the van and get back to work?\"",
+        "safeAnswer": "Driving usually after about 4 weeks following keyhole surgery (6 after open), after checking with his insurer; avoid heavy lifting early; the stoma nurse will advise on hernia prevention and a support garment.",
+        "row": "G5"
+      },
+      {
+        "prompt": "\"Will people be able to smell it?\"",
+        "safeAnswer": "Acknowledges the worry; modern bags are designed to contain odour, and the stoma nurse will help him find one that suits him.",
+        "row": "G6"
+      }
+    ]
+  }
+}
