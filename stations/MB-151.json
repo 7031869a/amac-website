@@ -1,0 +1,532 @@
+{
+  "id": "MB-151",
+  "exam": "MRCS-B",
+  "title": "Pathology: necrotising soft tissue infection",
+  "type": "data-interpretation",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "Pathology (observations and blood results)",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "NICE NG253 (November 2025)",
+      "IDSA skin and soft tissue infection guideline (2014)",
+      "NHS England policy 170070P (2018)",
+      "Wong et al., LRINEC (2004)"
+    ],
+    "related": [
+      {
+        "id": "MB-133",
+        "why": "Sepsis recognition and resuscitation in a surgical patient"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Pathology station",
+    "role": "Core surgical trainee",
+    "scenario": "A 55-year-old man with diabetes has severe pain in his left thigh, fever and low blood pressure. The pain is far worse than the redness suggests. The examiner will show you his observations and blood results.",
+    "task": "Interpret the results, and answer questions on the pathology and management of necrotising soft tissue infection."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Recognise it, explain it, score it, then go to theatre.",
+    "trap": "Waiting for a scan, or for the score, before calling the surgeon.",
+    "firstMove": "\"Pain out of proportion with shock is necrotising infection until proven otherwise.\""
+  },
+  "flow": [
+    "Recognise it from the data",
+    "Types and organisms",
+    "Pathophysiology",
+    "LRINEC from the bloods",
+    "Management",
+    "Prognosis and explaining it"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-skill",
+      "label": "Recognises it",
+      "fail": "Calls it cellulitis and plans IV antibiotics on the ward.",
+      "pass": "Pain out of proportion, rapid spread and hypotension in a diabetic: suspected necrotising soft tissue infection, a surgical emergency.",
+      "high": "Names late signs (bullae, dusky skin, crepitus, skin anaesthesia) and says their absence does not exclude it."
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-knowledge",
+      "label": "Types and organisms",
+      "fail": "Names only streptococcus.",
+      "pass": "Type I: polymicrobial aerobes and anaerobes, often in diabetics. Type II: group A streptococcus, sometimes with Staphylococcus aureus.",
+      "high": "Adds Clostridium perfringens gas gangrene, Vibrio vulnificus after seawater exposure, and Fournier's gangrene of the perineum."
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "Pathophysiology",
+      "fail": "Says the infection spreads without explaining how.",
+      "pass": "Toxins and enzymes spread along fascial planes; thrombosis of perforating vessels causes ischaemia and necrosis.",
+      "high": "Early pain from deep ischaemia, later skin anaesthesia as cutaneous nerves die; antibiotics cannot reach dead tissue."
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-skill",
+      "label": "LRINEC from the bloods",
+      "fail": "Does not know the score, or treats it as diagnostic.",
+      "pass": "Calculates LRINEC from CRP, white cells, haemoglobin, sodium, creatinine and glucose; 6 or more raises suspicion. His score is 11.",
+      "high": "States the score supports but never excludes the diagnosis: a low score with clinical suspicion still means theatre.",
+      "source": "WONG"
+    },
+    {
+      "id": "G5",
+      "domain": "professionalism",
+      "label": "Management",
+      "fail": "Waits for imaging, or for antibiotics to work.",
+      "pass": "Resuscitate; IV broad-spectrum antibiotics now; senior surgeon and anaesthetist; urgent debridement in theatre.",
+      "high": "Radical debridement to bleeding tissue, planned return to theatre, clindamycin for toxin suppression, critical care; hyperbaric oxygen is only an adjunct.",
+      "source": "IDSA"
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-knowledge",
+      "label": "Prognosis and explaining it",
+      "fail": "Tells the family it is a routine infection.",
+      "pass": "Mortality about 30%; limb loss possible; delay to debridement worsens the outcome.",
+      "high": "Explains to him and his family that repeated operations or amputation may be needed, and documents the discussion.",
+      "source": "NHSE"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "Here are his observations and bloods."
+      },
+      {
+        "speaker": "candidate",
+        "text": "This looks like cellulitis with sepsis. I'd start IV antibiotics on the ward.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Which organisms cause necrotising fasciitis?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Streptococcus.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Why is the tissue dying?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "The infection spreads.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What is the LRINEC score?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "If it's low, it isn't necrotising fasciitis.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What would you do now?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Get an MRI to confirm it before theatre.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "His wife asks how serious this is."
+      },
+      {
+        "speaker": "candidate",
+        "text": "It's an infection; the antibiotics should sort it out.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "examiner",
+        "text": "Here are his observations and bloods."
+      },
+      {
+        "speaker": "candidate",
+        "text": "He's tachycardic, hypotensive and febrile, with pain out of proportion in a diabetic. I'm worried about necrotising soft tissue infection. It's a surgical emergency.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What types are there?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Type I is polymicrobial, aerobes and anaerobes, often in diabetics. Type II is group A streptococcus, sometimes with Staphylococcus aureus.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What's happening in the tissue?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Toxins and enzymes spread along the fascial planes. The perforating vessels thrombose, so the tissue becomes ischaemic and necrotic.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Calculate his LRINEC."
+      },
+      {
+        "speaker": "candidate",
+        "text": "CRP 280 scores 4, white cells 22 score 1, haemoglobin 128 scores 1, sodium 131 scores 2, creatinine 160 scores 2, glucose 18 scores 1. That's 11. Six or more raises suspicion.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What will you do?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Resuscitate him, give IV broad-spectrum antibiotics within the hour, call my registrar and consultant and the anaesthetist, and get him to theatre for urgent debridement.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What's his prognosis?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Serious. Mortality is about 30%, and he may lose the limb. Delay to debridement makes it worse.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "examiner",
+        "text": "His skin looks fairly normal. Does that reassure you?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "No. Bullae, dusky skin, crepitus and numb skin are late signs. Their absence doesn't exclude it.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Also Clostridium perfringens in gas gangrene, Vibrio vulnificus after seawater exposure, and Fournier's gangrene when it's in the perineum.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Why is the pain so severe?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "The deep tissue is ischaemic early. Later the skin goes numb as the cutaneous nerves die. And antibiotics can't reach dead tissue, which is why he needs surgery.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What if his LRINEC had been 3?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "It wouldn't change my plan. The score supports the diagnosis but doesn't exclude it. With this clinical picture he still goes to theatre.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "In theatre?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Radical debridement to bleeding tissue, with a planned return to theatre. Clindamycin with the broad-spectrum cover for toxin suppression, and critical care afterwards. Hyperbaric oxygen is only an adjunct and mustn't delay surgery.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you explain this to his family?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd tell them honestly that he may need several operations and could lose the leg, and document that conversation.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G5",
+      "move": "Waiting for MRI or CT before theatre.",
+      "consequence": "Delays debridement in a condition where delay increases mortality."
+    },
+    {
+      "row": "G4",
+      "move": "Using a low LRINEC to rule it out.",
+      "consequence": "Misses the diagnosis in patients the score does not detect."
+    },
+    {
+      "row": "G1",
+      "move": "Treating it as cellulitis on the ward.",
+      "consequence": "Antibiotics alone cannot treat necrotic tissue."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You can't remember the LRINEC values",
+      "line": "It uses CRP, white cells, haemoglobin, sodium, creatinine and glucose; but clinical suspicion decides theatre."
+    },
+    {
+      "when": "Asked about imaging",
+      "line": "Imaging must not delay surgery."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "LRINEC: CRP ≥150 (4); WBC 15–25 (1), >25 (2); Hb 11–13.5 g/dL (1), <11 (2); Na <135 (2); creatinine >141 (2); glucose >10 (1). Score ≥6: suspicious.",
+      "source": "WONG"
+    },
+    {
+      "fact": "Surgical debridement is the definitive treatment; delay worsens outcome; clindamycin for toxin suppression in streptococcal infection.",
+      "source": "IDSA"
+    },
+    {
+      "fact": "High risk sepsis: IV antibiotics within 1 hour.",
+      "source": "NG253"
+    },
+    {
+      "fact": "Mortality about 30%. Hyperbaric oxygen is not routinely commissioned by NHS England for this condition.",
+      "source": "NHSE"
+    }
+  ],
+  "recall": {
+    "think": "Pain out of proportion with shock: necrotising infection until proven otherwise.",
+    "say": "\"This is a surgical emergency. He needs debridement now.\"",
+    "do": [
+      "Resuscitate and give antibiotics within 1 hour",
+      "Call senior surgeon and anaesthetist",
+      "Theatre; don't wait for imaging"
+    ],
+    "numbers": [
+      {
+        "value": "LRINEC ≥6",
+        "meaning": "raises suspicion; a low score does not exclude",
+        "source": "WONG"
+      },
+      {
+        "value": "About 30%",
+        "meaning": "mortality",
+        "source": "NHSE"
+      }
+    ],
+    "trap": "A low LRINEC or normal-looking skin does not exclude it.",
+    "finish": "Radical debridement, planned return to theatre, critical care."
+  },
+  "sources": [
+    {
+      "id": "WONG",
+      "name": "Wong CH, Khin LW, Heng KS, Tan KC, Low CO. The LRINEC (Laboratory Risk Indicator for Necrotizing Fasciitis) score: a tool for distinguishing necrotizing fasciitis from other soft tissue infections. Crit Care Med 2004;32:1535–41",
+      "version": "2004 (original derivation study)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/15241098/",
+      "supports": "LRINEC components and points; score of 6 or more as the threshold for suspicion"
+    },
+    {
+      "id": "IDSA",
+      "name": "Stevens DL, et al. Practice guidelines for the diagnosis and management of skin and soft tissue infections: 2014 update by the Infectious Diseases Society of America. Clin Infect Dis 2014;59:e10–52",
+      "version": "2014",
+      "url": "https://www.idsociety.org/practice-guideline/skin-and-soft-tissue-infections/",
+      "supports": "Urgent surgical debridement as definitive treatment; repeated debridement; clindamycin for toxin suppression"
+    },
+    {
+      "id": "NG253",
+      "name": "NICE NG253: Suspected sepsis in people aged 16 or over: recognition, assessment and early management",
+      "version": "Published 19 November 2025",
+      "url": "https://www.nice.org.uk/guidance/ng253",
+      "supports": "IV antibiotics within 1 hour for high risk sepsis; senior review; early surgical source control"
+    },
+    {
+      "id": "NHSE",
+      "name": "NHS England Clinical Commissioning Policy: Hyperbaric oxygen therapy for necrotising soft tissue infections (170070P)",
+      "version": "Published 20 July 2018",
+      "url": "https://www.england.nhs.uk/wp-content/uploads/2018/07/hbot-for-necrotising-soft-tissue-infections-v2.pdf",
+      "supports": "Mortality about 30%; hyperbaric oxygen not routinely commissioned for necrotising soft tissue infection"
+    },
+    {
+      "id": "BL",
+      "name": "Bailey & Love's Short Practice of Surgery (O'Connell, McCaskie, Sayers, eds)",
+      "version": "28th edition, 2023",
+      "url": "https://www.routledge.com/Bailey--Loves-Short-Practice-of-Surgery---28th-Edition/OConnell-McCaskie-Sayers/p/book/9780367548117",
+      "supports": "Types, organisms and pathophysiology of necrotising soft tissue infection; clinical signs"
+    },
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format: 9 minutes with 1 minute's reading; examiner-led questioning in applied knowledge stations"
+    }
+  ],
+  "media": [
+    {
+      "id": "nsti-photo",
+      "task": "Describe the skin changes and say what they mean",
+      "description": "Clinical photograph of the thigh with dusky skin and bullae, or an operative image of grey necrotic fascia",
+      "required": false,
+      "status": "needed"
+    }
+  ],
+  "partner": {
+    "opening": "Here are his observations and blood results. What do you think is going on?",
+    "reveals": [
+      {
+        "trigger": "Start",
+        "finding": "Temperature 38.9 °C, heart rate 125, BP 85/50, respiratory rate 26, SpO2 95% on air.",
+        "row": "G1"
+      },
+      {
+        "trigger": "Candidate asks for bloods",
+        "finding": "CRP 280 mg/L, WBC 22 ×10⁹/L, Hb 128 g/L (12.8 g/dL), Na 131 mmol/L, creatinine 160 µmol/L, glucose 18 mmol/L, lactate 4.2 mmol/L.",
+        "row": "G4"
+      },
+      {
+        "trigger": "Candidate asks about the skin",
+        "finding": "Poorly defined erythema over the lateral thigh; tender beyond its edge; no bullae yet.",
+        "row": "G1"
+      }
+    ],
+    "push": [
+      {
+        "question": "What types and organisms do you know?",
+        "row": "G2",
+        "expect": "Type I polymicrobial; type II group A strep ± Staph aureus; Clostridium, Vibrio, Fournier's."
+      },
+      {
+        "question": "Why does the tissue die?",
+        "row": "G3",
+        "expect": "Spread along fascial planes, thrombosis of perforators, ischaemia."
+      },
+      {
+        "question": "Calculate his LRINEC.",
+        "row": "G4",
+        "expect": "4+1+1+2+2+1 = 11. ≥6 suspicious; supports, never excludes."
+      },
+      {
+        "question": "What is the definitive treatment?",
+        "row": "G5",
+        "expect": "Urgent radical debridement with resuscitation and antibiotics."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "He swam in warm seawater last week with a cut on his leg.",
+        "safeAnswer": "Consider Vibrio vulnificus; discuss antibiotic cover with microbiology. Theatre still comes first.",
+        "row": "G2"
+      },
+      {
+        "prompt": "Should he have hyperbaric oxygen?",
+        "safeAnswer": "It is an adjunct only, not routinely commissioned by NHS England for this, and must never delay debridement.",
+        "row": "G5"
+      },
+      {
+        "prompt": "The radiologist offers an MRI in 3 hours.",
+        "safeAnswer": "Decline. Imaging must not delay surgery when the clinical picture is this clear.",
+        "row": "G5"
+      }
+    ]
+  }
+}

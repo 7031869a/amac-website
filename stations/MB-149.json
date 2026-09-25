@@ -1,0 +1,509 @@
+{
+  "id": "MB-149",
+  "exam": "MRCS-B",
+  "title": "Pathology: inflammatory bowel disease — Crohn's disease or ulcerative colitis?",
+  "type": "data-interpretation",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "Pathology (endoscopy and histology reports)",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "BSG colorectal surveillance in IBD (East et al., Gut 2025)",
+      "ECCO extraintestinal manifestations (2024)",
+      "Bailey & Love, 28th ed. (2023)"
+    ],
+    "related": []
+  },
+  "brief": {
+    "setting": "Pathology station",
+    "role": "Core surgical trainee",
+    "scenario": "A 28-year-old woman has a 3-month history of bloody diarrhoea, urgency and crampy abdominal pain. She has lost 4 kg. The examiner will show you her colonoscopy report, then her biopsy report.",
+    "task": "Interpret the reports, and compare the pathology of Crohn's disease and ulcerative colitis."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Read the data first. Then compare: distribution, depth, histology, beyond the gut, cancer risk.",
+    "trap": "Reciting a comparison table without committing to what her reports show.",
+    "firstMove": "\"This is continuous inflammation from the rectum with a normal ileum.\""
+  },
+  "flow": [
+    "Read the colonoscopy report",
+    "Read the biopsy report",
+    "Distribution and depth",
+    "Beyond the gut",
+    "Cancer risk and surveillance"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-skill",
+      "label": "Reads the colonoscopy",
+      "fail": "Calls it Crohn's disease, or ignores the normal ileum.",
+      "pass": "Continuous inflammation from the rectum to the splenic flexure, normal ileum: left-sided ulcerative colitis pattern.",
+      "high": "Says infection must still be excluded with stool culture and C. difficile testing."
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-knowledge",
+      "label": "Distribution",
+      "fail": "Says both are confined to the colon.",
+      "pass": "Crohn's: anywhere from mouth to anus, skip lesions, often terminal ileum. UC: rectum, then continuous proximally, colon only.",
+      "high": "Names UC extent classes (proctitis, left-sided, extensive) and backwash ileitis in extensive colitis."
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "Depth and complications",
+      "fail": "Says both are transmural.",
+      "pass": "Crohn's is transmural; UC is mucosal.",
+      "high": "Links depth to complications: Crohn's fistulae, strictures and abscesses; UC pseudopolyps and toxic megacolon."
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-skill",
+      "label": "Reads the biopsy",
+      "fail": "Cannot name a histological feature that separates them.",
+      "pass": "UC: crypt abscesses, goblet cell depletion, diffuse crypt distortion. Crohn's: non-caseating granulomas, transmural lymphoid aggregates, fissuring ulcers.",
+      "high": "Crypt distortion and basal plasmacytosis mean chronic IBD, not infection; absent granulomas do not exclude Crohn's."
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-knowledge",
+      "label": "Beyond the gut",
+      "fail": "Cannot name an extraintestinal manifestation.",
+      "pass": "Peripheral and axial arthritis, erythema nodosum, pyoderma gangrenosum, episcleritis, uveitis, primary sclerosing cholangitis (mostly with UC).",
+      "high": "Erythema nodosum settles when the gut is controlled; axial arthritis and PSC can run their own course.",
+      "source": "ECCO"
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-knowledge",
+      "label": "Cancer risk and surveillance",
+      "fail": "Says IBD carries no cancer risk.",
+      "pass": "Colitis raises colorectal cancer risk: surveillance colonoscopy from 8 years after symptom onset; from diagnosis if PSC.",
+      "high": "Interval set by risk (annual for PSC, dysplasia, stricture, moderate inflammation); dye-spray chromoendoscopy with targeted biopsies; proctitis alone not surveyed.",
+      "source": "BSGS"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "Here is her colonoscopy report."
+      },
+      {
+        "speaker": "candidate",
+        "text": "This is Crohn's colitis.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How does the distribution differ between Crohn's and UC?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "They both affect the colon, so it's hard to tell.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "And the depth?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Both are transmural.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Here is the biopsy report."
+      },
+      {
+        "speaker": "candidate",
+        "text": "It shows inflammation, which confirms IBD.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Any problems outside the gut?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I can't think of any.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Does she need surveillance?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "No, IBD isn't a cancer risk.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "examiner",
+        "text": "Here is her colonoscopy report."
+      },
+      {
+        "speaker": "candidate",
+        "text": "There's continuous inflammation from the rectum to the splenic flexure, and the ileum is normal. That's a left-sided ulcerative colitis pattern.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How does the distribution differ?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Crohn's can affect anywhere from mouth to anus, with skip lesions, often the terminal ileum. UC starts in the rectum and extends continuously proximally, and stays in the colon.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "And the depth?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Crohn's is transmural. UC is mucosal.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Here is the biopsy report."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Crypt abscesses, goblet cell depletion and diffuse crypt distortion, confined to the mucosa, with no granulomas. That fits UC. In Crohn's I'd expect non-caseating granulomas, transmural lymphoid aggregates and fissuring ulcers.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What happens outside the gut?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Arthritis, peripheral and axial, erythema nodosum, pyoderma gangrenosum, episcleritis and uveitis, and primary sclerosing cholangitis, mostly with UC.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What about cancer?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Colitis increases colorectal cancer risk. She'd be offered surveillance colonoscopy from 8 years after her symptoms started, or from diagnosis if she had PSC.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "examiner",
+        "text": "Is this definitely IBD?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "It looks like left-sided UC, but I'd exclude infection first with stool culture and C. difficile testing.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "UC is described by extent: proctitis, left-sided or extensive. In extensive colitis you can get backwash ileitis, which isn't Crohn's.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Why does depth matter to a surgeon?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Transmural Crohn's causes fistulae, strictures and abscesses. Mucosal UC gives pseudopolyps and, in acute severe colitis, toxic megacolon.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What tells you this is chronic, not infective?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Crypt distortion and basal plasmacytosis. And no granulomas doesn't exclude Crohn's, because biopsies often miss them.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Do those manifestations follow the gut?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Erythema nodosum usually settles when the gut is controlled. Axial arthritis and PSC can run their own course.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How is surveillance planned?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "The interval is set by risk. Annual if she has PSC, previous dysplasia, a stricture or moderate inflammation. Dye-spray chromoendoscopy with targeted biopsies. Proctitis alone isn't surveyed.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G1",
+      "move": "Calling continuous rectal disease with a normal ileum Crohn's.",
+      "consequence": "Misreads the data the station is built on."
+    },
+    {
+      "row": "G4",
+      "move": "Not naming granulomas or crypt distortion.",
+      "consequence": "Cannot separate Crohn's, UC and infection on histology."
+    },
+    {
+      "row": "G6",
+      "move": "Not knowing IBD needs cancer surveillance.",
+      "consequence": "Misses when to start and who needs it sooner."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You're not sure which it is",
+      "line": "Let me go by distribution, depth and histology in turn."
+    },
+    {
+      "when": "Asked for the diagnosis",
+      "line": "The pattern fits UC; I'd exclude infection before confirming it."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Crohn's: skip lesions, transmural, granulomas. UC: continuous from rectum, mucosal, crypt abscesses.",
+      "source": "BL"
+    },
+    {
+      "fact": "Crypt distortion and basal plasmacytosis indicate chronic IBD rather than infection.",
+      "source": "BL"
+    },
+    {
+      "fact": "Toxic megacolon: acute severe colitis with colonic dilatation over 6 cm.",
+      "source": "BL"
+    },
+    {
+      "fact": "Surveillance from 8 years after symptom onset; from diagnosis with PSC, then annually.",
+      "source": "BSGS"
+    },
+    {
+      "fact": "Isolated proctitis and terminal ileal Crohn's do not need colonoscopic surveillance.",
+      "source": "BSGS"
+    }
+  ],
+  "recall": {
+    "think": "Distribution, depth, histology. Then cancer risk.",
+    "say": "\"Continuous from the rectum, normal ileum, mucosal: ulcerative colitis.\"",
+    "do": [
+      "Read the colonoscopy",
+      "Read the biopsy",
+      "Exclude infection"
+    ],
+    "numbers": [
+      {
+        "value": "8 years",
+        "meaning": "from symptom onset: start surveillance",
+        "source": "BSGS"
+      },
+      {
+        "value": "Annual",
+        "meaning": "surveillance with PSC, from diagnosis",
+        "source": "BSGS"
+      }
+    ],
+    "trap": "No granulomas does not exclude Crohn's.",
+    "finish": "Exclude infection; plan surveillance by risk."
+  },
+  "sources": [
+    {
+      "id": "BSGS",
+      "name": "East JE, et al. British Society of Gastroenterology guidelines on colorectal surveillance in inflammatory bowel disease. Gut 2025 (doi:10.1136/gutjnl-2025-335023)",
+      "version": "2025",
+      "url": "https://www.bsg.org.uk/clinical-resource/bsg-guidelines-on-colorectal-surveillance-in-ibd",
+      "supports": "Start of surveillance 8 years after symptom onset; PSC from diagnosis and annually; risk-based intervals; dye-based chromoendoscopy; exclusion of proctitis and ileal Crohn's"
+    },
+    {
+      "id": "ECCO",
+      "name": "ECCO Guidelines on Extraintestinal Manifestations in Inflammatory Bowel Disease. J Crohns Colitis 2024;18:1–37",
+      "version": "2024",
+      "url": "https://academic.oup.com/ecco-jcc/article/18/1/1/7205776",
+      "supports": "Extraintestinal manifestations; erythema nodosum and intestinal activity; axial arthritis and PSC independent of gut activity"
+    },
+    {
+      "id": "BL",
+      "name": "Bailey & Love's Short Practice of Surgery (O'Connell, McCaskie, Sayers, eds)",
+      "version": "28th edition, 2023",
+      "url": "https://www.routledge.com/Bailey--Loves-Short-Practice-of-Surgery---28th-Edition/OConnell-McCaskie-Sayers/p/book/9780367548117",
+      "supports": "Distribution, depth, histology and complications of Crohn's disease and ulcerative colitis; toxic megacolon"
+    },
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format: 9 minutes with 1 minute's reading; examiner-led questioning in applied knowledge stations"
+    }
+  ],
+  "media": [
+    {
+      "id": "ibd-histology",
+      "task": "Describe the histology and say which disease it favours",
+      "description": "Paired biopsy images: UC (crypt abscess, goblet cell depletion, crypt distortion) and Crohn's (non-caseating granuloma)",
+      "required": false,
+      "status": "needed"
+    }
+  ],
+  "partner": {
+    "opening": "Here is her colonoscopy report. Tell me what it shows.",
+    "reveals": [
+      {
+        "trigger": "Start",
+        "finding": "Colonoscopy: continuous erythema, loss of vascular pattern and contact bleeding from the rectum to the splenic flexure. Normal mucosa beyond. Terminal ileum normal.",
+        "row": "G1"
+      },
+      {
+        "trigger": "After the colonoscopy is interpreted",
+        "finding": "Biopsies: diffuse crypt distortion, basal plasmacytosis, crypt abscesses and goblet cell depletion, confined to the mucosa. No granulomas.",
+        "row": "G4"
+      },
+      {
+        "trigger": "Candidate asks about stool tests",
+        "finding": "Stool culture and C. difficile toxin negative.",
+        "row": "G1"
+      }
+    ],
+    "push": [
+      {
+        "question": "How does the distribution differ?",
+        "row": "G2",
+        "expect": "Crohn's anywhere, skip lesions, terminal ileum. UC rectum then continuous, colon only."
+      },
+      {
+        "question": "How does depth affect complications?",
+        "row": "G3",
+        "expect": "Transmural: fistulae, strictures, abscesses. Mucosal: pseudopolyps, toxic megacolon."
+      },
+      {
+        "question": "What is toxic megacolon?",
+        "row": "G3",
+        "expect": "Acute severe colitis with colonic dilatation over 6 cm and systemic toxicity; risk of perforation."
+      },
+      {
+        "question": "When does surveillance start?",
+        "row": "G6",
+        "expect": "8 years after symptom onset; from diagnosis with PSC, annually."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "She develops a perianal fistula. Does that change your view?",
+        "safeAnswer": "It suggests Crohn's disease, because transmural inflammation forms fistulae. Review the whole bowel.",
+        "row": "G3"
+      },
+      {
+        "prompt": "Her ALP is raised. What do you worry about?",
+        "safeAnswer": "Primary sclerosing cholangitis: MRCP, and colonoscopic surveillance from diagnosis, annually.",
+        "row": "G6"
+      }
+    ]
+  }
+}
