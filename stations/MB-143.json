@@ -1,0 +1,473 @@
+{
+  "id": "MB-143",
+  "exam": "MRCS-B",
+  "title": "Excision of a skin lesion",
+  "type": "procedural",
+  "header": {
+    "domain": "Applied Skills",
+    "contentArea": "Procedural skills (on a skin model)",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "SIGN 146 (2016)",
+      "BAD BCC guidelines (2021)",
+      "Lidocaine with adrenaline SmPC (Jul 2026)",
+      "BNF: lidocaine maximum doses"
+    ],
+    "related": [
+      {
+        "id": "MB-139 Examination of a lump",
+        "why": "When a lump must not be excised locally"
+      },
+      {
+        "id": "MB-141 Instruments",
+        "why": "Blades, grips and sharps"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Minor operations, on a skin model",
+    "role": "Core surgical trainee",
+    "scenario": "A 60-year-old man has a pigmented lesion on his forearm that is suspicious for melanoma. Consent has been taken. Instruments, local anaesthetic and sutures are provided.",
+    "task": "Perform an excision biopsy on the model, talking the examiner through each step, and answer questions."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Mark, anaesthetise, excise full thickness, orientate, close, send.",
+    "trap": "Shaving or excising too narrowly, or sending the specimen without orientation.",
+    "firstMove": "\"I'll confirm the patient, the site and the consent before marking.\""
+  },
+  "flow": [
+    "Check and mark",
+    "Local anaesthetic",
+    "Excise",
+    "Orientate and send",
+    "Close",
+    "Sharps and aftercare"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "professionalism",
+      "label": "Checks before starting",
+      "fail": "Starts without confirming patient, site or consent.",
+      "pass": "Confirms patient, site and consent; checks allergies and anticoagulants; completes the safety checklist.",
+      "high": "Marks the site with the patient, and checks there's a plan for how results will be given.",
+      "source": "WHO"
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-knowledge",
+      "label": "Marking and margins",
+      "fail": "Marks too narrow a margin, or plans a shave.",
+      "pass": "Marks a 2 mm margin around the suspected melanoma, full thickness to include a cuff of fat.",
+      "high": "Plans an ellipse about three times as long as it is wide, along the relaxed skin tension lines.",
+      "source": "SIGN146"
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "Local anaesthetic",
+      "fail": "Injects without checking the maximum dose.",
+      "pass": "Checks allergy, calculates the maximum dose, aspirates before injecting.",
+      "high": "Knows both adult maximum doses: lidocaine 200 mg plain, 500 mg with adrenaline. Waits for it to work before incising.",
+      "source": "BNF"
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-skill",
+      "label": "Excision",
+      "fail": "Cuts at an angle or leaves the base in the dermis.",
+      "pass": "Incises perpendicular to the skin, full thickness into subcutaneous fat, and removes the ellipse.",
+      "high": "Holds the skin under tension, and handles the specimen only at its ends or with a skin hook to avoid crush."
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-knowledge",
+      "label": "Specimen (safety-critical)",
+      "fail": "Sends the specimen without orientation, or doesn't send it.",
+      "borderline": "Sends it for histology but doesn't orientate it.",
+      "pass": "Orientates with a marking suture, labels it and sends it for histology.",
+      "high": "Records site, orientation and the clinical question on the request form."
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-skill",
+      "label": "Closure",
+      "fail": "Closes under tension without undermining, or leaves inverted edges.",
+      "pass": "Achieves haemostasis; interrupted sutures with everted edges and even spacing.",
+      "high": "Undermines if tight, and chooses a monofilament non-absorbable skin suture or an absorbable subcuticular one."
+    },
+    {
+      "id": "G7",
+      "domain": "professionalism",
+      "label": "Sharps and aftercare",
+      "fail": "Leaves sharps on the field.",
+      "pass": "Disposes of sharps at the point of use; gives wound care and suture removal instructions.",
+      "high": "Arranges follow-up for histology and explains that further surgery may be needed depending on the result."
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "candidate",
+        "text": "[Starts marking without checking the patient or site.]",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'll shave it off level with the skin.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          },
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Injects local anaesthetic without checking a maximum dose.]",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Drops the specimen in a pot with no marking suture.]",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Leaves the scalpel on the drape.]",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "candidate",
+        "text": "I'll confirm the patient, the site and the consent, check for allergies and anticoagulants, and do the safety checklist.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Marks a 2 mm margin around the lesion.] This is an excision biopsy, so I'll go full thickness, with a cuff of fat.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "No allergies. I've worked out the maximum dose for his weight. [Aspirates, then infiltrates.]",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Incises perpendicular to the skin, full thickness into fat, removes the ellipse.]",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Places a marking suture at one end.] Labelled and sent for histology.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Haemostasis; interrupted sutures, edges everted.]",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Blade into the sharps bin.] I'll give written aftercare advice; the sutures come out at the practice.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "candidate",
+        "text": "I'll confirm his identity, the site with him, and the consent, check allergies and anticoagulants, and do the safety checklist. I'll also make sure there's a clear plan for how he gets his results.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "A 2 mm margin, full thickness with a cuff of fat, as an ellipse about three times as long as it is wide, along the skin tension lines of the forearm.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Lidocaine with adrenaline: the maximum is 500 mg, or 200 mg if plain, and he's well within that. [Aspirates, infiltrates, waits.] Can you feel this as sharp? Good.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Skin under tension, perpendicular incision into fat; lifts the specimen by one end with a skin hook.]",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Marking suture at the superior end, noted on the form with the site and the question: excision biopsy of a suspected melanoma.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Undermines slightly; interrupted monofilament nylon, everted edges.]",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Sharps disposed at point of use.] I'll explain the wound care, and we'll see him in clinic with the histology, as he may need a wider excision depending on the result.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G6",
+      "move": "Closing a tight wound without undermining.",
+      "consequence": "Wound tension, dehiscence and a wider scar."
+    },
+    {
+      "row": "G5",
+      "move": "No orientation suture.",
+      "consequence": "The pathologist can't say which margin is involved."
+    },
+    {
+      "row": "G1",
+      "move": "Injecting without checking allergy and anticoagulants.",
+      "consequence": "Safety-critical: risks anaphylaxis or uncontrolled bleeding."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You forget the margin",
+      "line": "For a suspected melanoma, it's a 2 mm margin with a cuff of fat."
+    },
+    {
+      "when": "You're asked the dose and aren't sure",
+      "line": "I'd check the product information and calculate the maximum for his weight before injecting."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Suspected melanoma: excision biopsy with a 2 mm margin and a cuff of fat; shave biopsy is inappropriate.",
+      "source": "SIGN146"
+    },
+    {
+      "fact": "Low-risk BCC: 4 mm peripheral margin; primary high-risk BCC: at least 5 mm.",
+      "source": "BADBCC"
+    },
+    {
+      "fact": "Adult maximum lidocaine dose: 200 mg plain, 500 mg with adrenaline. The preparation in your hand sets the ceiling; calculate for weight in smaller patients.",
+      "source": "BNF"
+    }
+  ],
+  "recall": {
+    "think": "Right patient, right margin, right orientation.",
+    "say": "\"A 2 mm margin, full thickness, with a cuff of fat.\"",
+    "do": [
+      "Check patient, site, consent",
+      "Mark, anaesthetise, excise full thickness",
+      "Orientate, label, send"
+    ],
+    "numbers": [
+      {
+        "value": "2 mm",
+        "meaning": "margin for suspected melanoma",
+        "source": "SIGN146"
+      },
+      {
+        "value": "4 mm",
+        "meaning": "margin for low-risk BCC",
+        "source": "BADBCC"
+      },
+      {
+        "value": "200 / 500 mg",
+        "meaning": "max lidocaine: plain / with adrenaline",
+        "source": "BNF"
+      }
+    ],
+    "trap": "Shaving a suspected melanoma.",
+    "finish": "Orientated specimen to histology; results and further plan arranged."
+  },
+  "sources": [
+    {
+      "id": "WHO",
+      "name": "WHO Surgical Safety Checklist",
+      "version": "2009",
+      "url": "https://www.who.int/teams/integrated-health-services/patient-safety/research/safe-surgery/tool-and-resources",
+      "supports": "Sign in, time out, sign out (including instrument, sponge and needle counts)"
+    },
+    {
+      "id": "SIGN146",
+      "name": "SIGN 146: Cutaneous melanoma (quick reference guide)",
+      "version": "September 2016",
+      "url": "https://www.sign.ac.uk/assets/qrg146.pdf",
+      "supports": "Excise a suspected melanoma with a 2 mm margin and a cuff of fat; shave biopsy inappropriate"
+    },
+    {
+      "id": "BADBCC",
+      "name": "BAD guidelines for the management of adults with basal cell carcinoma 2021 (Nasr I et al., Br J Dermatol 2021;185:899–920)",
+      "version": "2021",
+      "url": "https://onlinelibrary.wiley.com/doi/10.1111/bjd.20524",
+      "supports": "Peripheral margin 4 mm for low-risk BCC; at least 5 mm for primary high-risk BCC"
+    },
+    {
+      "id": "SMPC",
+      "name": "Lidocaine 1% with adrenaline 1:200,000 solution for injection: Summary of Product Characteristics (emc 2397)",
+      "version": "Revised July 2026",
+      "url": "https://www.medicines.org.uk/emc/product/2397/smpc",
+      "supports": "Maximum single dose of lidocaine given with adrenaline: 500 mg"
+    },
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "At every station: introduce yourself, explain the task, confirm identity, obtain consent, clean hands before and after patient contact; 6-minute signal in examination stations"
+    },
+    {
+      "id": "BNF",
+      "name": "British National Formulary: lidocaine hydrochloride",
+      "version": "Figures checked September 2026 via NHS trust guidance citing the BNF; confirm against the current BNF entry",
+      "url": "https://bnf.nice.org.uk/drugs/lidocaine-hydrochloride/",
+      "supports": "Adult maximum doses: 200 mg plain, 500 mg with adrenaline"
+    }
+  ],
+  "partner": {
+    "opening": "Please excise this lesion on the model, talking me through what you're doing.",
+    "reveals": [
+      {
+        "trigger": "Before marking",
+        "finding": "If they ask: patient confirmed, consent signed, no allergies, not anticoagulated, 70 kg.",
+        "row": "G1"
+      },
+      {
+        "trigger": "When they mark",
+        "finding": "Watch the margin they choose.",
+        "row": "G2"
+      },
+      {
+        "trigger": "After excision",
+        "finding": "Watch whether they orientate the specimen.",
+        "row": "G5"
+      }
+    ],
+    "push": [
+      {
+        "question": "What margin, and why?",
+        "row": "G2",
+        "expect": "2 mm with a cuff of fat for a suspected melanoma."
+      },
+      {
+        "question": "What's the maximum dose of your local anaesthetic?",
+        "row": "G3",
+        "expect": "Lidocaine 200 mg plain, 500 mg with adrenaline (adult maximum)."
+      },
+      {
+        "question": "What happens after the result?",
+        "row": "G7",
+        "expect": "Follow-up for histology; wider excision may be needed."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "It's a low-risk BCC instead. Different margin?",
+        "safeAnswer": "Yes: a 4 mm peripheral margin.",
+        "row": "G2"
+      },
+      {
+        "prompt": "Why not just shave it?",
+        "safeAnswer": "A shave loses the depth, which the pathologist needs for staging.",
+        "row": "G2"
+      }
+    ]
+  }
+}

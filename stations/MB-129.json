@@ -1,0 +1,448 @@
+{
+  "id": "MB-129",
+  "exam": "MRCS-B",
+  "title": "History: intermittent claudication",
+  "type": "history",
+  "header": {
+    "domain": "Applied Skills",
+    "contentArea": "History taking — peripheral arterial disease (intermittent claudication)",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "NICE CG147: Peripheral arterial disease — diagnosis and management, published 8 August 2012, last updated 11 December 2020"
+    ],
+    "related": [],
+    "signalMinutes": 6
+  },
+  "brief": {
+    "setting": "Vascular surgical outpatient clinic",
+    "role": "You are the CT/ST trainee in general surgery.",
+    "scenario": "A 64-year-old man has been referred by his GP with a 6-month history of pain in his left calf on walking.",
+    "task": "Take a focused history. You do not need to examine the patient. At the end, summarise your findings and state your working diagnosis and its severity."
+  },
+  "beforeYouWalkIn": {
+    "frame": "This is a focused exertional-leg-pain history that distinguishes claudication from spinal and other mimics, and screens for critical limb ischaemia.",
+    "trap": "Assuming vascular claudication without checking whether the pain truly resolves with rest alone, or screening for rest pain.",
+    "firstMove": "Ask him to describe exactly what happens to the pain when he walks and when he stops."
+  },
+  "flow": [
+    "Open with the walking-related pain",
+    "Characterise the pain and its relationship to exercise and rest",
+    "Screen for critical limb ischaemia and vascular risk factors",
+    "Take relevant background, medication and functional history",
+    "Summarise and state the working diagnosis and severity"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-skill",
+      "label": "Structures the exertional pain history",
+      "fail": "Asks disorganised questions and does not establish where the pain is or when it occurs.",
+      "pass": "Establishes the site of the pain, when it comes on, and what relieves it, in a structured way.",
+      "high": "Structures fluently and confirms the exercise-pain-rest-relief pattern explicitly rather than assuming it."
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-knowledge",
+      "label": "Establishes the relationship to exercise and rest",
+      "fail": "Does not establish whether the pain reliably resolves with rest, or confuses it with pain at rest.",
+      "pass": "Establishes the pain comes on after a consistent walking distance and is relieved by a short period of standing still.",
+      "high": "Establishes the pattern precisely, including an estimated claudication distance, and distinguishes it from pain that changes with position, which would suggest a spinal cause instead."
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "Screens for critical limb ischaemia",
+      "fail": "Does not ask about pain at rest, night pain, or any non-healing wounds or ulcers on the leg or foot.",
+      "pass": "Asks about pain at rest, pain waking him at night, and any ulcers or wounds that are not healing.",
+      "high": "Screens fully and recognises that any of these features would change this from stable claudication to a more urgent presentation needing prompt vascular assessment."
+    },
+    {
+      "id": "G4",
+      "domain": "professionalism",
+      "label": "Screens cardiovascular risk factors",
+      "fail": "Does not ask about smoking, diabetes, hypertension, hyperlipidaemia or previous cardiovascular events.",
+      "pass": "Asks about smoking history, diabetes, high blood pressure, cholesterol and any previous heart attack or stroke.",
+      "high": "Screens all major risk factors and explicitly links them to the wider cardiovascular risk that peripheral arterial disease represents, not just the leg symptom."
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-knowledge",
+      "label": "Assesses functional impact",
+      "fail": "Does not ask how the symptom affects his daily activities or work.",
+      "pass": "Asks how far he can walk before the pain starts and how this affects his daily life.",
+      "high": "Uses the functional impact to help judge severity and to frame why a supervised exercise programme is a realistic and evidence-based first-line option."
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-knowledge",
+      "label": "Takes relevant medication and background history",
+      "fail": "Does not ask about current medications or other relevant past medical history.",
+      "pass": "Asks about current medications, including any antiplatelet or statin therapy, and relevant past medical history.",
+      "high": "Uses the medication history to identify gaps in secondary prevention that should be addressed alongside the leg symptom."
+    },
+    {
+      "id": "G7",
+      "domain": "communication",
+      "label": "Summarises and states the working diagnosis",
+      "fail": "Gives no summary or diagnosis, or fails to mention the need for further assessment.",
+      "pass": "Summarises the history and states a working diagnosis of intermittent claudication due to peripheral arterial disease.",
+      "high": "Summarises fluently, states the diagnosis and its likely severity, and outlines the next steps including ABPI measurement and risk-factor management."
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "Go ahead when you're ready."
+      },
+      {
+        "speaker": "candidate",
+        "text": "So you get leg pain?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Yes, in my calf, when I walk."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Do you smoke?",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Yes, about 20 a day."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Okay, that's probably your arteries then, we'll sort you out with some tablets.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "examiner",
+        "text": "Go ahead when you're ready."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Hi, I'm one of the surgical doctors. Can you tell me about the pain in your leg — where is it, and when does it come on?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "It's in my left calf, comes on after I've walked a bit."
+      },
+      {
+        "speaker": "candidate",
+        "text": "About how far can you walk before it starts, and what happens if you stop and rest?",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Maybe a couple of hundred yards, and it goes away completely if I stand still for a minute or two."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Do you ever get pain in the leg at rest, or pain that wakes you at night, or any wounds or ulcers on your leg or foot that aren't healing?",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "No pain at rest, sleeps fine, no wounds that I've noticed."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Do you smoke, or have you ever been told you have diabetes, high blood pressure or high cholesterol? Any previous heart attack or stroke?",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "I smoke about 20 a day, and I'm on tablets for high blood pressure. No heart attack or stroke."
+      },
+      {
+        "speaker": "candidate",
+        "text": "How is this affecting your day-to-day life, and are you on any other regular medications?",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          },
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "It stops me walking the dog as far as I used to. I take amlodipine, nothing else regularly."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Thank you. So to summarise: six months of left calf pain that comes on after walking a consistent distance and fully resolves with rest, no rest pain, no ulcers, with smoking and treated hypertension as risk factors, and no antiplatelet or statin currently. This sounds like intermittent claudication from peripheral arterial disease. I'd want to check his pulses and ABPI and start him on a supervised exercise programme alongside risk-factor management.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "examiner",
+        "text": "Go ahead when you're ready."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Hello, I'm one of the surgical doctors. Could you describe the pain in your leg — whereabouts it is, and exactly what brings it on?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "It's in my left calf, comes on reliably after I've walked a certain distance."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Roughly how far can you walk before it starts, and does it go away completely with rest, or does it change if you sit down versus lean forward?",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "About two hundred yards, and it goes away completely just standing still — doesn't matter how I'm positioned."
+      },
+      {
+        "speaker": "candidate",
+        "text": "That's a helpful distinction — pain relieved by standing still, rather than by sitting or leaning forward, points away from a spinal cause. Do you ever get pain in the foot at rest, especially at night, or any ulcers or wounds on the leg or foot that aren't healing?",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "No rest pain, sleeps fine, no wounds or ulcers."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Do you smoke, and have you been told you have diabetes, high blood pressure or high cholesterol, or had a previous heart attack, stroke or angina?",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "About 20 a day, and I take tablets for blood pressure. No heart attack, stroke or angina."
+      },
+      {
+        "speaker": "candidate",
+        "text": "This isn't just a leg problem — peripheral arterial disease means his whole cardiovascular system is at higher risk, so I'll want to address that alongside the leg. How is the pain affecting what you can do day to day, and are you taking anything like a statin or aspirin already?",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          },
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "It's stopped me walking the dog as far. Just amlodipine, nothing else."
+      },
+      {
+        "speaker": "candidate",
+        "text": "So to summarise: a 64-year-old man with a six-month history of left calf pain reliably brought on after around two hundred yards of walking and fully relieved by rest, with no rest pain, night pain or ulceration — so this is stable claudication rather than critical limb ischaemia. Risk factors include ongoing smoking and treated hypertension, with no current antiplatelet or statin. I'd examine his pulses, arrange an ABPI, refer him to a supervised exercise programme, and start secondary prevention with an antiplatelet and a statin alongside smoking cessation support.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G2",
+      "move": "Does not confirm the pain fully resolves with rest, or accepts a vague answer.",
+      "consequence": "Risks mislabelling a non-vascular cause (such as spinal claudication) as peripheral arterial disease."
+    },
+    {
+      "row": "G3",
+      "move": "Does not screen for rest pain, night pain or non-healing ulcers.",
+      "consequence": "Could miss critical limb ischaemia, which needs urgent vascular referral rather than routine outpatient management."
+    },
+    {
+      "row": "G5",
+      "move": "Does not ask about functional impact.",
+      "consequence": "Leaves the severity and the case for a supervised exercise programme poorly justified when summarising."
+    },
+    {
+      "row": "G6",
+      "move": "Does not ask about current medications.",
+      "consequence": "Misses an opportunity to identify a gap in secondary prevention, such as absent antiplatelet or statin therapy."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You realise you haven't asked about rest or night pain.",
+      "line": "Can I just check — do you get any pain in the foot at rest, especially at night?"
+    },
+    {
+      "when": "The patient asks if he needs an operation.",
+      "line": "Not necessarily — first-line treatment is usually a supervised exercise programme and risk-factor control; surgery is only considered if that doesn't help enough."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Intermittent claudication is exertional muscle pain, most often in the calf, that is reliably brought on by a consistent walking distance and relieved completely by a short period of rest.",
+      "source": "CG147"
+    },
+    {
+      "fact": "Rest pain, pain waking the patient at night, or non-healing ulceration signal critical limb ischaemia, which needs urgent rather than routine vascular assessment.",
+      "source": "CG147"
+    },
+    {
+      "fact": "A supervised exercise programme is first-line treatment for intermittent claudication.",
+      "source": "CG147"
+    },
+    {
+      "fact": "Peripheral arterial disease is a marker of systemic atherosclerosis, so cardiovascular risk-factor management (smoking cessation, antiplatelet, statin) is as important as treating the leg symptom itself."
+    },
+    {
+      "fact": "Pain that varies with spinal position (worse standing or extending the back, eased by sitting or leaning forward) suggests spinal claudication rather than a vascular cause."
+    }
+  ],
+  "recall": {
+    "think": "Stable claudication vs critical limb ischaemia, and the heart attack or stroke risk behind it.",
+    "say": "This is intermittent claudication from peripheral arterial disease, with no features of critical ischaemia.",
+    "do": [
+      "Confirm the exercise-rest pain pattern",
+      "Screen for rest pain, night pain and ulceration",
+      "Screen cardiovascular risk factors and current medications"
+    ],
+    "numbers": [
+      {
+        "value": "2 hours/week for 3 months",
+        "meaning": "supervised exercise programme regimen considered for intermittent claudication",
+        "source": "CG147"
+      }
+    ],
+    "trap": "Treating the leg and forgetting secondary prevention.",
+    "finish": "ABPI, supervised exercise, antiplatelet, statin, stop smoking."
+  },
+  "sources": [
+    {
+      "id": "CG147",
+      "name": "NICE CG147: Peripheral arterial disease — diagnosis and management",
+      "version": "Published 8 August 2012, last updated 11 December 2020",
+      "url": "https://www.nice.org.uk/guidance/cg147",
+      "supports": "Definition of claudication, critical limb ischaemia red flags, and supervised exercise as first-line treatment"
+    }
+  ],
+  "partner": {
+    "opening": "You are a 64-year-old man with a 6-month history of left calf pain on walking. Give information naturally, only when asked the right question.",
+    "actorBrief": "Give information only when the candidate asks the specific question. If asked an open question, give a brief general answer and wait for follow-up.",
+    "reveals": [
+      {
+        "trigger": "asks about walking distance or relief with rest",
+        "finding": "About two hundred yards before the pain starts, resolves completely with a minute or two of standing still.",
+        "row": "G2"
+      },
+      {
+        "trigger": "asks about rest pain, night pain or ulcers/wounds",
+        "finding": "No pain at rest, sleeps fine, no wounds or ulcers on the leg or foot.",
+        "row": "G3"
+      },
+      {
+        "trigger": "asks about smoking, diabetes, blood pressure, cholesterol or cardiovascular events",
+        "finding": "Smokes about 20 a day, on treatment for high blood pressure, no previous heart attack, stroke or angina.",
+        "row": "G4"
+      },
+      {
+        "trigger": "asks about current medications",
+        "finding": "Takes amlodipine only; not on any antiplatelet or statin.",
+        "row": "G6"
+      }
+    ],
+    "push": [
+      {
+        "question": "Do I need surgery?",
+        "row": "G7",
+        "expect": "Explains first-line treatment is a supervised exercise programme and risk-factor management, with surgery reserved for cases that don't improve."
+      },
+      {
+        "question": "Is this going to turn into something worse?",
+        "row": "G3",
+        "expect": "Explains stable claudication can progress but reassures that today's history has no features of critical limb ischaemia, and describes what symptoms should prompt urgent review."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "Actually, now that you mention it, my foot has been a bit painful at night this past week.",
+        "row": "G3",
+        "safeAnswer": "Takes this seriously, explores it fully rather than dismissing it, and recognises this could indicate progression to critical limb ischaemia needing more urgent assessment."
+      },
+      {
+        "prompt": "I've tried to quit smoking before and it never works, so what's the point of asking again?",
+        "row": "G4",
+        "safeAnswer": "Responds supportively rather than judgementally, and offers to involve smoking cessation support without being dismissive of previous attempts."
+      }
+    ]
+  }
+}

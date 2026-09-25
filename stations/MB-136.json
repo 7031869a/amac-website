@@ -1,0 +1,559 @@
+{
+  "id": "MB-136",
+  "exam": "MRCS-B",
+  "title": "Head injury: GCS and when to scan",
+  "type": "applied-knowledge",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "Applied surgical science and critical care",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "NICE NG232 (May 2023)"
+    ],
+    "related": [
+      {
+        "id": "MB-135 Burns",
+        "why": "Primary survey in trauma"
+      },
+      {
+        "id": "Extradural haematoma",
+        "why": "The lucid interval and the CT"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Emergency department",
+    "role": "Core surgical trainee on call",
+    "scenario": "Mrs Lowe, 72, fell down a flight of 8 stairs 3 hours ago. She lost consciousness briefly. She takes apixaban for atrial fibrillation. She has vomited once. She opens her eyes spontaneously, is confused, and obeys commands.",
+    "task": "The examiner will ask about her GCS and whether and when she needs imaging."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Score the GCS by component, then match her to the NICE CT criteria and timings.",
+    "trap": "Choosing the 8-hour rule when a 1-hour criterion applies.",
+    "firstMove": "ABCDE with cervical spine protection."
+  },
+  "flow": [
+    "ABCDE, C-spine, glucose, pupils",
+    "GCS by component",
+    "CT head: 1-hour criteria",
+    "8-hour and anticoagulant criteria",
+    "C-spine imaging",
+    "Observations and deterioration",
+    "Neurosurgery and handover"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-skill",
+      "label": "Primary survey",
+      "fail": "Focuses on the head and ignores airway and cervical spine.",
+      "pass": "ABCDE with cervical spine protection; glucose; pupils; time of last apixaban dose.",
+      "high": "Looks for other injuries, such as a hip fracture; suspected neck injury with age 65+ or a fall over 5 stairs: CT cervical spine within 1 hour.",
+      "source": "NG232"
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-skill",
+      "label": "GCS technique",
+      "fail": "Gives only a total, or can't list the components.",
+      "borderline": "Scores correctly but reports only the total.",
+      "pass": "Eye 4, verbal 5, motor 6; scores each component, using the best motor response.",
+      "high": "Reports components with the total every time: E4 V4 M6, GCS 14.",
+      "source": "TJ"
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "CT within 1 hour",
+      "fail": "Doesn't know the 1-hour criteria.",
+      "pass": "GCS 12 or less initially; under 15 at 2 hours; open, depressed or basal skull fracture signs; seizure; focal deficit; more than 1 vomit.",
+      "high": "Spots that GCS 14 at 3 hours triggers a CT within 1 hour here, ahead of her age or apixaban.",
+      "source": "NG232"
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-knowledge",
+      "label": "CT within 8 hours and anticoagulants",
+      "fail": "Would observe without a scan because her GCS is 'nearly normal'.",
+      "pass": "Loss of consciousness or amnesia plus age 65+, a clotting disorder, dangerous mechanism or over 30 minutes' retrograde amnesia: CT within 8 hours.",
+      "high": "Anticoagulated with no other indication: consider CT within 8 hours. Knows she already qualifies on stronger criteria.",
+      "source": "NG232"
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-knowledge",
+      "label": "Observations and deterioration",
+      "fail": "No observation plan.",
+      "pass": "Half-hourly GCS until 15; then half-hourly for 2 hours, hourly for 4 hours, 2-hourly after.",
+      "high": "Names reassessment triggers: sustained 1-point GCS drop, motor drop of 2, new pupil asymmetry, worsening headache or vomiting.",
+      "source": "NG232"
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-knowledge",
+      "label": "Neurosurgery and reversal",
+      "fail": "Doesn't know when to involve neurosurgery.",
+      "pass": "Discuss with neurosurgery: GCS 8 or less, confusion over 4 hours, deterioration, progressive focal signs, CSF leak, penetrating injury.",
+      "high": "For a bleed on apixaban: reversal per NICE and local protocol with haematology; intubate GCS 8 or less for transfer.",
+      "source": "NG232"
+    },
+    {
+      "id": "G7",
+      "domain": "communication",
+      "label": "Handover and explanation",
+      "fail": "Doesn't explain or document the plan.",
+      "pass": "SBAR referral with GCS components, mechanism, anticoagulant and injury time.",
+      "high": "Explains to her family why she needs a scan now and what observations will follow."
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "How would you assess her?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd examine her head for injuries.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What is her GCS?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "About 14.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Does she need a CT?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "She's nearly normal, so I'd observe her on the ward.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          },
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you observe her?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Neuro obs as per the ward.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "When would you call neurosurgery?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "If the CT is bad.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Her son asks what's happening."
+      },
+      {
+        "speaker": "candidate",
+        "text": "We're keeping an eye on her.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "examiner",
+        "text": "How would you assess her?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "ABCDE with cervical spine protection, glucose and pupils. I'd find out when she last took apixaban.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What is her GCS?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Eyes open spontaneously 4, confused 4, obeys commands 6: E4 V4 M6, 14.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Does she need a CT?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Yes. Her GCS is under 15 more than 2 hours after the injury, so CT within 1 hour. Other 1-hour criteria are GCS 12 or less initially, skull fracture signs, seizure, focal deficit, or more than 1 vomit.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "She'd also meet the 8-hour criteria: loss of consciousness, age over 65 and a dangerous fall.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you observe her?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Half-hourly GCS until 15, then half-hourly for 2 hours, hourly for 4, then 2-hourly.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "When would you call neurosurgery?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "GCS 8 or less, confusion over 4 hours, deterioration, progressive focal signs, CSF leak or a penetrating injury.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Her son asks what's happening."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd refer with an SBAR giving the GCS components, the fall, the apixaban and the time.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "examiner",
+        "text": "How would you assess her?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "ABCDE with cervical spine protection. She's over 65 with a fall down more than 5 stairs, and her neck is tender, so she needs a CT cervical spine within the hour too. Glucose, pupils, her hips, and when she last took apixaban.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What is her GCS?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "E4 V4 M6, total 14. I'd always give the components with the total.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Does she need a CT?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Yes, within 1 hour: she's 3 hours from the injury and still GCS 14. That criterion comes first; her age and the apixaban would only give her 8 hours.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Even without that, loss of consciousness with age over 65 or a dangerous mechanism means CT within 8 hours, and apixaban alone would make me consider one.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you observe her?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Half-hourly until 15, then half-hourly for 2 hours, hourly for 4, then 2-hourly. I'd reassess urgently for a sustained 1-point drop, a 2-point motor drop, new pupil asymmetry, or worsening headache or vomiting.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "When would you call neurosurgery?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Any significant bleed on the scan, or deterioration, confusion over 4 hours, progressive focal signs or a CSF leak. With a bleed on apixaban, reversal per NICE and local protocol with haematology.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Her son asks what's happening."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Her scan is being done now because she's still a little confused 3 hours after the fall and takes a blood thinner. We'll check her closely afterwards and tell you as soon as we have the result.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G3",
+      "move": "Applying the 8-hour rule when she meets a 1-hour criterion.",
+      "consequence": "Delays finding a bleed in an anticoagulated patient."
+    },
+    {
+      "row": "G2",
+      "move": "Reporting a total GCS without components.",
+      "consequence": "Hides a falling motor score, the most important sign."
+    },
+    {
+      "row": "G1",
+      "move": "Forgetting the cervical spine.",
+      "consequence": "Safety-critical: moving an unprotected neck after a fall down stairs risks cord injury."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You gave only a total",
+      "line": "Let me break that down: E4 V4 M6, 14."
+    },
+    {
+      "when": "You chose 8 hours",
+      "line": "Actually she's GCS 14 at 3 hours, so she needs a CT within 1 hour."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "CT within 1 hour: GCS 12 or less initially; under 15 at 2 hours; suspected open, depressed or basal skull fracture; seizure; focal deficit; more than 1 vomit.",
+      "source": "NG232"
+    },
+    {
+      "fact": "CT within 8 hours: loss of consciousness or amnesia plus age 65+, bleeding disorder, dangerous mechanism, or over 30 minutes' retrograde amnesia.",
+      "source": "NG232"
+    },
+    {
+      "fact": "Anticoagulated with no other indication: consider CT within 8 hours of the injury.",
+      "source": "NG232"
+    },
+    {
+      "fact": "Always give GCS components with the total.",
+      "source": "NG232"
+    }
+  ],
+  "recall": {
+    "think": "Components, then the clock: 1 hour or 8 hours?",
+    "say": "\"E4 V4 M6, 14, three hours after injury: CT within the hour.\"",
+    "do": [
+      "ABCDE and C-spine",
+      "GCS by component",
+      "Match to 1-hour, then 8-hour criteria"
+    ],
+    "numbers": [
+      {
+        "value": "1 h",
+        "meaning": "CT if GCS < 15 at 2 h, ≤ 12 initially, and more",
+        "source": "NG232"
+      },
+      {
+        "value": "8 h",
+        "meaning": "CT if LOC/amnesia + age 65+ or other risk",
+        "source": "NG232"
+      },
+      {
+        "value": "≤ 8",
+        "meaning": "GCS: neurosurgery; intubate for transfer",
+        "source": "NG232"
+      }
+    ],
+    "trap": "Anticoagulant = 8 hours, even when a 1-hour criterion applies.",
+    "finish": "Neuro obs half-hourly until 15."
+  },
+  "sources": [
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format: 9 minutes with 1 minute's reading; examiner-led questioning in applied knowledge stations"
+    },
+    {
+      "id": "NG232",
+      "name": "NICE NG232: Head injury: assessment and early management",
+      "version": "Published 18 May 2023 (text checked on NCBI Bookshelf, 25 September 2026)",
+      "url": "https://www.nice.org.uk/guidance/ng232",
+      "supports": "GCS components with every total (1.3.3); neurosurgical discussion (1.4.16); CT head within 1 hour (1.5.8); within 8 hours with LOC or amnesia plus risk factor (1.5.9); anticoagulants: consider CT within 8 hours (1.5.13); CT cervical spine within 1 hour (1.6.2); intubate GCS 8 or less for transfer (1.8.7); observation frequency (1.9.11); urgent reassessment triggers (1.9.13)"
+    },
+    {
+      "id": "TJ",
+      "name": "Teasdale G, Jennett B. Assessment of coma and impaired consciousness. Lancet 1974;2(7872):81–4",
+      "version": "1974",
+      "url": "https://doi.org/10.1016/S0140-6736(74)91639-0",
+      "supports": "Glasgow Coma Scale: eye 1–4, verbal 1–5, motor 1–6"
+    }
+  ],
+  "partner": {
+    "opening": "This is Mrs Lowe, who fell down the stairs. How would you assess her?",
+    "reveals": [
+      {
+        "trigger": "Asks about airway and neck",
+        "finding": "Talking; collar in place; midline neck tenderness when asked.",
+        "row": "G1"
+      },
+      {
+        "trigger": "Asks for the GCS responses",
+        "finding": "Eyes open spontaneously; confused conversation; obeys commands.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Asks about pupils and limbs",
+        "finding": "Pupils equal and reactive; no focal weakness.",
+        "row": "G3"
+      },
+      {
+        "trigger": "Asks about skull fracture signs",
+        "finding": "Scalp laceration; no haemotympanum, CSF leak, periorbital or mastoid bruising.",
+        "row": "G3"
+      },
+      {
+        "trigger": "Asks when apixaban was last taken",
+        "finding": "This morning, 5 hours ago.",
+        "row": "G6"
+      },
+      {
+        "trigger": "Asks for the CT result",
+        "finding": "Small acute subdural haematoma, 4 mm, no midline shift.",
+        "row": "G6"
+      }
+    ],
+    "push": [
+      {
+        "question": "What is her GCS?",
+        "row": "G2",
+        "expect": "E4 V4 M6, 14."
+      },
+      {
+        "question": "How soon does she need a CT, and why?",
+        "row": "G3",
+        "expect": "Within 1 hour: GCS under 15 at 2 hours after the injury."
+      },
+      {
+        "question": "What are the reassessment triggers on observations?",
+        "row": "G5",
+        "expect": "Sustained 1-point drop, 2-point motor or 3-point eye/verbal drop, pupils, headache, vomiting, agitation."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "An hour later she's E3 V3 M5.",
+        "safeAnswer": "Deterioration: urgent reassessment, repeat CT and discuss with neurosurgery now.",
+        "row": "G6"
+      },
+      {
+        "prompt": "She had the fall yesterday and has only just come in.",
+        "safeAnswer": "Presenting over 8 hours after injury with a risk factor: CT within the hour.",
+        "row": "G4"
+      },
+      {
+        "prompt": "Her GCS is 15, no loss of consciousness, no other risk factors, but she takes apixaban.",
+        "safeAnswer": "Consider a CT within 8 hours of the injury.",
+        "row": "G4"
+      }
+    ]
+  }
+}

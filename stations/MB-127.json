@@ -1,0 +1,461 @@
+{
+  "id": "MB-127",
+  "exam": "MRCS-B",
+  "title": "History: change in bowel habit or rectal bleeding",
+  "type": "history",
+  "header": {
+    "domain": "Applied Skills",
+    "contentArea": "History taking — lower GI symptoms (bowel habit change and rectal bleeding)",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "NICE NG12: Suspected cancer recognition and referral — colorectal FIT recommendations updated August 2023; guideline last updated 15 April 2026"
+    ],
+    "related": [
+      {
+        "id": "MB-126",
+        "why": "Both use the NG12 red-flag framework for lower GI symptoms"
+      }
+    ],
+    "signalMinutes": 6
+  },
+  "brief": {
+    "setting": "General surgical outpatient clinic",
+    "role": "You are the core surgical trainee in the clinic.",
+    "scenario": "A 58-year-old man has been referred routinely by his GP with a 3-month history of looser, more frequent stools and intermittent rectal bleeding. No faecal test has been done.",
+    "task": "Take a focused history. You do not need to examine the patient. At the end, summarise your findings and explain to the examiner what NICE recommends to guide urgent referral for a patient like this."
+  },
+  "beforeYouWalkIn": {
+    "frame": "A focused red-flag history, then the NICE route: FIT first, and refer urgently if the result is 10 or more.",
+    "trap": "Quoting the pre-2023 rule that rectal bleeding at 50+ means referral straight to the urgent pathway.",
+    "firstMove": "Ask him to describe, in his own words, what has changed about his bowels."
+  },
+  "flow": [
+    "Open with the presenting bowel symptom",
+    "Characterise the bleeding",
+    "Characterise the change in bowel habit and its duration",
+    "Screen constitutional and red-flag symptoms, then background history",
+    "Summarise and state the NICE referral route"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-skill",
+      "label": "Structures the bowel-symptom history",
+      "fail": "Asks vague questions and does not establish what has actually changed about his bowels.",
+      "pass": "Establishes stool frequency, consistency and the presence of blood, systematically.",
+      "high": "Structures fluently and clarifies exactly what 'change in bowel habit' means to this patient before quantifying it."
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-knowledge",
+      "label": "Characterises the rectal bleeding",
+      "fail": "Does not characterise the bleeding — colour, amount, or whether it is on the paper or mixed with stool.",
+      "pass": "Establishes the bleeding is bright red, how often it occurs, and roughly how much.",
+      "high": "Characterises the bleeding fully and specifically asks whether it is separate from or mixed into the stool, since blood mixed with stool is more concerning for a proximal source."
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "Establishes duration and persistence of the bowel change",
+      "fail": "Does not establish how long the change has lasted or whether it is resolving.",
+      "pass": "Establishes the change has been persistent and unexplained for several weeks, not resolving.",
+      "high": "Establishes duration precisely and actively checks for an alternative explanation, such as a diet, medication or infective cause, before treating it as unexplained."
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-knowledge",
+      "label": "Screens constitutional and red-flag symptoms",
+      "fail": "Does not ask about weight loss, abdominal pain or symptoms of anaemia.",
+      "pass": "Asks about unintentional weight loss, abdominal pain and symptoms of anaemia such as fatigue or breathlessness.",
+      "high": "Screens systematically and links any positive finding directly to the urgency of referral rather than listing symptoms in isolation."
+    },
+    {
+      "id": "G5",
+      "domain": "professionalism",
+      "label": "Knows the NICE FIT-guided referral route",
+      "fail": "Does not know that NICE now uses a FIT result to guide urgent colorectal referral.",
+      "pass": "States that NICE recommends FIT for a patient aged 50+ with unexplained rectal bleeding, with suspected cancer pathway referral if FIT is 10 µg Hb/g or more.",
+      "high": "Gives the FIT route and threshold, and adds that a low FIT result must not delay referral if clinical concern stays strong, with safety-netting.",
+      "source": "NG12"
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-knowledge",
+      "label": "Takes relevant background history",
+      "fail": "Does not ask about family history, medications or relevant past history.",
+      "pass": "Asks about family history of bowel cancer, use of NSAIDs or anticoagulants, and relevant past medical history.",
+      "high": "Uses the background actively — for example asking about a first-degree relative diagnosed young — to inform urgency rather than just recording it."
+    },
+    {
+      "id": "G7",
+      "domain": "communication",
+      "label": "Summarises and states the referral decision",
+      "fail": "Gives no clear summary or referral decision.",
+      "pass": "Summarises the history and states clearly whether the patient meets criteria for urgent referral.",
+      "high": "Summarises fluently, states the referral decision with the correct timeframe, and names the safety-netting advice to give in the meantime."
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "Go ahead when you're ready."
+      },
+      {
+        "speaker": "candidate",
+        "text": "So what seems to be the problem?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "My bowels have been different the last few months, and I've seen some blood."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Okay, and do you feel otherwise well in yourself?",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "I suppose so, a bit tired maybe."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Right, well, it's probably just piles, but we'll get you seen at some point.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "examiner",
+        "text": "Go ahead when you're ready."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Hi, I'm one of the surgical doctors. Can you tell me, in your own words, what's changed with your bowels?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "My stools have gone looser and I'm going more often, and I've noticed some blood a few times."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Tell me about the blood — what colour is it, and is it on the paper or mixed in with the stool?",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Bright red, mostly on the paper, but a couple of times mixed in too."
+      },
+      {
+        "speaker": "candidate",
+        "text": "How long has the change in your bowels been going on for, and has anything like your diet or new medications changed around the same time?",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "About three months now, nothing's changed that I can think of."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Have you lost any weight without trying, had any tummy pain, or felt unusually tired or breathless?",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "I have felt more tired lately, no weight loss or pain that I've noticed."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Does anyone in your family have a history of bowel cancer, and are you on any regular medications like aspirin or blood thinners?",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "No family history that I know of. I take ibuprofen sometimes for my knee."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Thank you. So to summarise: three months of looser, more frequent stools with intermittent rectal bleeding, some mixed with stool, and increasing tiredness, with no clear alternative explanation. At your age, with rectal bleeding, NICE recommends a FIT test, and a result of 10 or more means an urgent suspected cancer pathway referral.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          },
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "examiner",
+        "text": "Go ahead when you're ready."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Hello, I'm one of the surgical doctors. Could you start by telling me, in your own words, what's changed with your bowels?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "My stools have gone looser and more frequent over the last few months, and I've had some bleeding."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Let's start with the bleeding — what colour is it, roughly how much, and is it on the paper, in the pan, or mixed into the stool itself?",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Bright red, not huge amounts, mostly on the paper but mixed in a couple of times."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Blood mixed into the stool itself is a little more concerning than blood only on the paper, which is more typically from piles — I'll bear that in mind. How long has the bowel change been going on, and has anything else changed — diet, travel, new medications?",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "About three months, nothing else has changed, no travel."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Have you noticed any weight loss you haven't tried for, any tummy pain, or symptoms like tiredness or breathlessness that might suggest low blood count?",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "More tired lately, no weight loss, no real pain."
+      },
+      {
+        "speaker": "candidate",
+        "text": "That tiredness could reflect ongoing blood loss, so I'll want a blood count. Is there any family history of bowel cancer, particularly in a close relative diagnosed at a younger age, and are you taking anything like aspirin, ibuprofen or blood thinners that could contribute to bleeding?",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "No family history I know of, I do take ibuprofen now and again for my knee."
+      },
+      {
+        "speaker": "candidate",
+        "text": "So to summarise: a 58-year-old man with a three-month history of looser, more frequent stools and intermittent rectal bleeding, some mixed with stool, with increasing tiredness that may reflect blood loss, occasional NSAID use and no clear alternative cause. At his age, with unexplained rectal bleeding, NICE recommends a FIT test to guide urgent referral: if it's 10 micrograms per gram or more, he goes on the suspected cancer pathway, and with blood mixed in the stool and new tiredness I wouldn't let a low result delay investigation if concern stays high. I'd send routine bloods including a full blood count, and safety-net him to seek urgent review if the bleeding worsens or he becomes unwell before being seen.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          },
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G2",
+      "move": "Does not characterise the bleeding beyond 'yes there's been some'.",
+      "consequence": "Misses whether the blood is mixed with stool, which changes how concerning the bleeding is and what it should prompt in the differential."
+    },
+    {
+      "row": "G3",
+      "move": "Does not establish how long the bowel change has lasted or check for an alternative explanation.",
+      "consequence": "Cannot state whether the symptom is genuinely unexplained, which is required before applying the referral criteria."
+    },
+    {
+      "row": "G5",
+      "move": "Reassures the patient, or quotes the outdated direct-referral rule instead of the FIT route.",
+      "consequence": "Delays diagnosis of a possible colorectal cancer; this is treated as a patient-safety failure regardless of how well the rest of the history is taken."
+    },
+    {
+      "row": "G6",
+      "move": "Does not ask about family history or medications that could explain or worsen bleeding.",
+      "consequence": "Misses information — such as regular NSAID use or a strong family history — that should shape both the differential and the urgency."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You realise you haven't asked whether the blood is mixed with the stool.",
+      "line": "Can I just check — is the blood ever mixed in with the stool itself, or only on the paper?"
+    },
+    {
+      "when": "The patient asks whether it's 'probably just piles'.",
+      "line": "Piles are common and possible, but I can't assume that without ruling out other causes first, so I'd still want you seen urgently."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "NICE NG12 (August 2023): offer FIT to adults aged 50 and over with unexplained rectal bleeding, and refer on the suspected cancer pathway if FIT is at least 10 µg haemoglobin per gram of faeces.",
+      "source": "NG12"
+    },
+    {
+      "fact": "A FIT result below 10 does not rule out cancer: refer anyway if clinical concern is strong, and safety-net every patient.",
+      "source": "NG12"
+    },
+    {
+      "fact": "Blood mixed into the stool is a more concerning finding than blood seen only on the toilet paper, which is more typical of a local anal cause such as haemorrhoids or a fissure."
+    },
+    {
+      "fact": "Iron-deficiency anaemia symptoms such as fatigue or breathlessness can be the only clue to occult chronic blood loss from a colorectal lesion."
+    },
+    {
+      "fact": "NSAID and anticoagulant use should always be asked about in a patient with rectal bleeding, as they can cause or worsen bleeding from an underlying lesion but do not exclude one."
+    },
+    {
+      "fact": "A first-degree relative diagnosed with colorectal cancer, particularly under 50, raises the index of suspicion and should be documented even when it does not change the immediate referral decision."
+    }
+  ],
+  "recall": {
+    "think": "Colorectal cancer dismissed as 'just piles'.",
+    "say": "At his age, NICE recommends a FIT test to guide urgent referral.",
+    "do": [
+      "Characterise the bleeding and bowel change",
+      "Screen weight loss, pain, anaemia symptoms",
+      "Apply the FIT route and safety-net"
+    ],
+    "numbers": [
+      {
+        "value": "FIT ≥ 10 µg Hb/g",
+        "meaning": "refer on the suspected cancer pathway",
+        "source": "NG12"
+      },
+      {
+        "value": "Age 50+",
+        "meaning": "unexplained rectal bleeding: offer FIT",
+        "source": "NG12"
+      }
+    ],
+    "trap": "A low FIT result or a well-looking patient is not a reason to ignore strong clinical concern.",
+    "finish": "FIT to guide referral, FBC, and clear safety-netting."
+  },
+  "sources": [
+    {
+      "id": "NG12",
+      "name": "NICE NG12: Suspected cancer recognition and referral",
+      "version": "Colorectal recommendations 1.3.1–1.3.4 updated August 2023; guideline last updated 15 April 2026",
+      "url": "https://www.nice.org.uk/guidance/ng12/chapter/recommendations-organised-by-site-of-cancer",
+      "supports": "FIT offer criteria (1.3.1), FIT ≥10 µg Hb/g referral threshold (1.3.2), safety-netting and strong clinical concern (1.3.3)"
+    }
+  ],
+  "partner": {
+    "opening": "You are a 58-year-old man with a 3-month history of looser, more frequent stools and intermittent rectal bleeding. Give information naturally, only when asked the right question, and play mild worry rather than distress.",
+    "actorBrief": "Give information only when the candidate asks the specific question. If asked an open question, give a brief general answer and wait for follow-up.",
+    "reveals": [
+      {
+        "trigger": "asks about the colour, amount or position of the bleeding",
+        "finding": "Bright red blood, small amounts, mostly on the paper but mixed with the stool a couple of times.",
+        "row": "G2"
+      },
+      {
+        "trigger": "asks how long the bowel change has lasted or about a possible cause",
+        "finding": "About three months, nothing else — diet, travel, medications — has changed.",
+        "row": "G3"
+      },
+      {
+        "trigger": "asks about weight loss, pain, tiredness or breathlessness",
+        "finding": "More tired lately, no weight loss, no significant abdominal pain.",
+        "row": "G4"
+      },
+      {
+        "trigger": "asks about family history or medications",
+        "finding": "No known family history of bowel cancer; takes ibuprofen occasionally for his knee.",
+        "row": "G6"
+      }
+    ],
+    "push": [
+      {
+        "question": "Do you think this is serious?",
+        "row": "G7",
+        "expect": "An honest, non-alarming explanation that this needs urgent assessment to rule out serious causes, without stating a diagnosis as certain."
+      },
+      {
+        "question": "Could this just be my piles playing up again?",
+        "row": "G5",
+        "expect": "Acknowledges haemorrhoids are possible but explains why his age and symptoms still need urgent assessment to rule out other causes first."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "I really don't want to be referred urgently, it'll worry my wife — can we just wait and see?",
+        "row": "G5",
+        "safeAnswer": "Empathises, explains that the test and any referral are there to catch serious causes early, and does not agree to wait and see."
+      },
+      {
+        "prompt": "My brother had something similar and it turned out to be nothing — so this is probably fine too, right?",
+        "row": "G6",
+        "safeAnswer": "Acknowledges the family experience without letting it override this assessment, and confirms the FIT test and follow-up will still go ahead."
+      }
+    ]
+  }
+}

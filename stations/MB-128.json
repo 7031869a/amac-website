@@ -1,0 +1,452 @@
+{
+  "id": "MB-128",
+  "exam": "MRCS-B",
+  "title": "History: breast lump",
+  "type": "history",
+  "header": {
+    "domain": "Applied Skills",
+    "contentArea": "History taking — breast lump",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "NICE NG12: Suspected cancer recognition and referral — breast recommendation 1.4.1; guideline last updated 15 April 2026"
+    ],
+    "related": [],
+    "signalMinutes": 6
+  },
+  "brief": {
+    "setting": "One-stop breast clinic",
+    "role": "You are the CT/ST trainee in general surgery.",
+    "scenario": "A 34-year-old woman has found a lump in her left breast, first noticed 3 weeks ago, and has been referred urgently by her GP.",
+    "task": "Take a focused history. You do not need to examine the patient. At the end, summarise your findings and state your assessment of urgency."
+  },
+  "beforeYouWalkIn": {
+    "frame": "This is a focused breast-lump history built around the features that separate a benign lump from one needing urgent triple assessment.",
+    "trap": "Reassuring her because of her age, before actually asking about the features that matter (fixity, skin/nipple change, axillary lump).",
+    "firstMove": "Ask her to describe the lump in her own words — when she found it and what made her come in."
+  },
+  "flow": [
+    "Open with how and when the lump was found",
+    "Characterise the lump itself",
+    "Screen skin, nipple and axillary features",
+    "Take menstrual, hormonal, family and risk-factor history",
+    "Summarise and state the assessment of urgency"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-skill",
+      "label": "Structures the lump history",
+      "fail": "Asks disorganised questions and does not establish when the lump was found or how it was noticed.",
+      "pass": "Establishes when and how the lump was found, and whether it has changed in size.",
+      "high": "Structures fluently and lets her description guide follow-up, rather than working through a fixed checklist."
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-knowledge",
+      "label": "Characterises the lump",
+      "fail": "Does not ask about size, consistency, mobility or tenderness.",
+      "pass": "Asks about size, whether it feels hard or soft, whether it moves freely, and whether it is painful.",
+      "high": "Characterises the lump fully and specifically asks whether it feels fixed to the skin or chest wall, since fixity is a key concerning feature."
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "Screens skin and nipple changes",
+      "fail": "Does not ask about skin dimpling, nipple retraction or nipple discharge.",
+      "pass": "Asks about skin changes, nipple retraction and any nipple discharge.",
+      "high": "Screens fully and, if discharge is present, characterises it (unilateral or bilateral, single or multiple ducts, blood-stained or not)."
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-knowledge",
+      "label": "Screens for an axillary lump and systemic symptoms",
+      "fail": "Does not ask about a lump or swelling in the armpit, or about weight loss or bone pain.",
+      "pass": "Asks whether she has noticed any lump or swelling in the axilla, and about unintentional weight loss.",
+      "high": "Screens for axillary lump, weight loss and bone pain, and explains why axillary involvement matters when summarising."
+    },
+    {
+      "id": "G5",
+      "domain": "professionalism",
+      "label": "Applies the correct referral threshold",
+      "fail": "Does not know or apply the age-and-feature threshold for a suspected cancer pathway referral.",
+      "pass": "States that an unexplained breast lump in a woman aged 30 or over meets NICE criteria for a suspected cancer pathway referral for suspected breast cancer.",
+      "high": "Applies the threshold correctly, notes it applies regardless of pain, and explains what would change the urgency (skin changes, nipple changes, axillary lump).",
+      "source": "NG12BREAST"
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-knowledge",
+      "label": "Takes relevant hormonal, family and risk-factor history",
+      "fail": "Does not ask about menstrual history, hormone use, or family history of breast or ovarian cancer.",
+      "pass": "Asks about menstrual cycle timing, use of the contraceptive pill or HRT, and family history of breast or ovarian cancer.",
+      "high": "Asks the relative's age at diagnosis to judge whether genetic assessment may be relevant later, without over-interpreting it now."
+    },
+    {
+      "id": "G7",
+      "domain": "communication",
+      "label": "Summarises and states the assessment of urgency",
+      "fail": "Gives no summary or urgency assessment, or gives false reassurance.",
+      "pass": "Summarises the history and states clearly that urgent assessment is needed, without confirming or denying a diagnosis.",
+      "high": "Summarises fluently, explains that most lumps in her age group are benign while confirming urgent triple assessment is still needed, and outlines what that involves."
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "Go ahead when you're ready."
+      },
+      {
+        "speaker": "candidate",
+        "text": "So you've found a lump?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Yes, about three weeks ago, in the shower."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Okay, and is it painful?",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Not really."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Well, at your age it's probably just a cyst or fibroadenoma, try not to worry too much.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "examiner",
+        "text": "Go ahead when you're ready."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Hi, I'm one of the surgical doctors. Can you tell me about the lump — when did you first notice it?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "About three weeks ago, I found it in the shower. It doesn't seem to have changed since."
+      },
+      {
+        "speaker": "candidate",
+        "text": "How would you describe it — hard or soft, does it move around, and is it painful?",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "It feels quite firm, doesn't seem to move much, and it's not painful."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Have you noticed any changes to the skin over it, any dimpling, or any changes to your nipple like discharge or it pulling in?",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "No skin changes, no nipple discharge or pulling in."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Have you felt any lump or swelling under your arm, or lost any weight without trying?",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "No lump under my arm, and no weight loss."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Does anyone in your family have a history of breast or ovarian cancer, and are you on the pill or any hormone treatment?",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "My aunt had breast cancer in her sixties. I'm on the combined pill."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Thank you. So to summarise: a firm, non-tender, poorly mobile lump found three weeks ago, no skin or nipple changes, no axillary lump, and a distant family history. At your age, an unexplained breast lump meets criteria for a suspected cancer pathway referral, so I'll make sure that's arranged.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          },
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "examiner",
+        "text": "Go ahead when you're ready."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Hello, I'm one of the surgical doctors. Could you tell me, in your own words, when you first noticed the lump and how you found it?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "About three weeks ago, in the shower — it hasn't seemed to change since."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Can you describe how it feels — hard or soft, does it move freely under your fingers, and does it feel fixed to the skin or chest wall at all?",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Firm, doesn't move much, but I don't think it's stuck to the skin."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Have you noticed any dimpling or puckering of the skin over it, or any changes to the nipple — discharge, or the nipple pulling inwards?",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "No skin changes, no discharge, nipple looks normal."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Any lump or swelling you've noticed under your arm, and any weight loss you haven't tried for, or bone pain anywhere?",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "No lump under the arm, no weight loss, no bone pain."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Where are you in your menstrual cycle, are you on the pill or any hormone treatment, and is there any family history of breast or ovarian cancer — if so, at what age were they diagnosed?",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Mid-cycle, on the combined pill, and my aunt had breast cancer in her sixties."
+      },
+      {
+        "speaker": "candidate",
+        "text": "A relative diagnosed in her sixties is much less concerning for an inherited pattern than one diagnosed young, but it's still worth documenting. So to summarise: a firm, non-tender, poorly mobile lump found three weeks ago with no skin, nipple or axillary changes, no systemic symptoms, and a distant family history. Most lumps at your age turn out to be benign, such as a fibroadenoma, but this still meets criteria for a suspected cancer pathway referral for full triple assessment — examination, imaging and, if needed, a biopsy — so I'll make sure that's arranged and explain what to expect.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          },
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G4",
+      "move": "Does not ask about an axillary lump.",
+      "consequence": "Misses axillary nodal involvement, which independently changes the urgency and pathway of assessment."
+    },
+    {
+      "row": "G2",
+      "move": "Does not ask whether the lump feels fixed to skin or chest wall.",
+      "consequence": "Misses a specific feature that raises concern for malignancy, weakening the assessment given to the examiner."
+    },
+    {
+      "row": "G3",
+      "move": "Does not screen for skin dimpling or nipple changes.",
+      "consequence": "Could miss signs such as peau d'orange or nipple retraction that would independently justify urgent referral."
+    },
+    {
+      "row": "G5",
+      "move": "Offers reassurance based on age alone, without applying the referral criteria.",
+      "consequence": "Delays a referral she is entitled to under NICE criteria; treated as a patient-safety failure regardless of how well the rest of the history is taken."
+    },
+    {
+      "row": "G6",
+      "move": "Does not ask about family history of breast or ovarian cancer.",
+      "consequence": "Misses information relevant to future risk assessment and follow-up, even where it does not change today's referral decision."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You realise you haven't asked about skin or nipple changes.",
+      "line": "Can I just check — have you noticed any changes to the skin over the lump, or to your nipple?"
+    },
+    {
+      "when": "She asks directly whether you think it's cancer.",
+      "line": "I can't tell you that from a history alone — most lumps like this turn out to be benign, but you still need the full assessment to know for certain."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "An unexplained breast lump in a woman aged 30 or over meets NICE criteria for a suspected cancer pathway referral for suspected breast cancer, regardless of pain.",
+      "source": "NG12BREAST"
+    },
+    {
+      "fact": "A lump fixed to the skin or underlying chest wall is a more concerning clinical feature than one that moves freely."
+    },
+    {
+      "fact": "Skin dimpling (peau d'orange), nipple retraction and unilateral blood-stained nipple discharge are each independently concerning features that should prompt urgent assessment."
+    },
+    {
+      "fact": "Most breast lumps in women under 40, such as fibroadenomas and cysts, are benign, but this does not remove the need to apply the referral criteria based on age and clinical features."
+    },
+    {
+      "fact": "A first-degree relative diagnosed with breast or ovarian cancer at a young age raises the possibility of a hereditary pattern and is worth documenting even when it does not change today's referral urgency."
+    }
+  ],
+  "recall": {
+    "think": "A breast cancer dismissed because she is young or the lump is painless.",
+    "say": "An unexplained lump at 30 or over needs urgent assessment.",
+    "do": [
+      "Characterise the lump (size, fixity, tenderness)",
+      "Screen skin, nipple and axillary changes",
+      "Take menstrual, hormonal and family history"
+    ],
+    "numbers": [
+      {
+        "value": "age 30+",
+        "meaning": "unexplained breast lump, with or without pain: suspected cancer pathway referral",
+        "source": "NG12BREAST"
+      }
+    ],
+    "trap": "Pain, or her age, does not change the referral.",
+    "finish": "Suspected cancer pathway referral for triple assessment."
+  },
+  "sources": [
+    {
+      "id": "NG12BREAST",
+      "name": "NICE NG12: Suspected cancer recognition and referral — breast cancer recommendations",
+      "version": "Recommendation 1.4.1; guideline last updated 15 April 2026",
+      "url": "https://www.nice.org.uk/guidance/ng12/chapter/recommendations-organised-by-site-of-cancer",
+      "supports": "Referral thresholds for an unexplained breast lump and nipple changes"
+    }
+  ],
+  "partner": {
+    "opening": "You are a 34-year-old woman who found a lump in your left breast three weeks ago. Give information naturally, only when asked the right question, and play mild anxiety rather than distress.",
+    "actorBrief": "Give information only when the candidate asks the specific question. If asked an open question, give a brief general answer and wait for follow-up.",
+    "reveals": [
+      {
+        "trigger": "asks about size, consistency, mobility or fixity of the lump",
+        "finding": "Firm, doesn't move much, but doesn't feel stuck to the skin.",
+        "row": "G2"
+      },
+      {
+        "trigger": "asks about skin or nipple changes",
+        "finding": "No skin dimpling, no nipple discharge, nipple looks normal.",
+        "row": "G3"
+      },
+      {
+        "trigger": "asks about an axillary lump or weight loss",
+        "finding": "No lump under the arm, no weight loss, no bone pain.",
+        "row": "G4"
+      },
+      {
+        "trigger": "asks about family history or hormone use",
+        "finding": "Aunt had breast cancer in her sixties; currently on the combined contraceptive pill.",
+        "row": "G6"
+      }
+    ],
+    "push": [
+      {
+        "question": "Do you think it's cancer?",
+        "row": "G7",
+        "expect": "Honest, non-alarming explanation that most lumps at her age are benign, but that urgent assessment is still needed to know for certain."
+      },
+      {
+        "question": "Why does it need to be urgent if you think it's probably nothing?",
+        "row": "G5",
+        "expect": "Explains the referral is based on the criteria (age plus an unexplained lump), not on a guess, and that timely assessment matters either way."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "I read online that if it doesn't hurt, it's probably fine — is that true?",
+        "row": "G2",
+        "safeAnswer": "Corrects the misconception clearly: pain is not a reliable indicator either way, and the referral still applies."
+      },
+      {
+        "prompt": "Can I just wait until after my holiday next month to get this looked at?",
+        "row": "G5",
+        "safeAnswer": "Empathises but explains why she should not delay assessment, and offers to help her understand the timeframe rather than agreeing to postpone."
+      }
+    ]
+  }
+}
