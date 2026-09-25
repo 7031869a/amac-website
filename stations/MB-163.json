@@ -1,0 +1,540 @@
+{
+  "id": "MB-163",
+  "exam": "MRCS-B",
+  "title": "Telephone referral to a senior (SBAR): suspected anastomotic leak",
+  "type": "communication",
+  "header": {
+    "domain": "Applied Skills",
+    "contentArea": "Communication skills in giving and receiving information and history taking",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "NICE NG253 (Nov 2025, updated Sep 2026)",
+      "RCP NEWS2 (Dec 2017)",
+      "NHS England SBAR tool (2020)"
+    ],
+    "related": [
+      {
+        "id": "MB-133 Perforated viscus and peritonitis",
+        "why": "The same sepsis bundle and the same escalation call"
+      },
+      {
+        "id": "MB-160 Consent for emergency laparotomy",
+        "why": "The conversation that may follow"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Surgical ward, 2 am",
+    "role": "Core surgical trainee on call",
+    "scenario": "Mr Graham Pollard, 64, is on day 2 after a laparoscopic anterior resection for rectal cancer, without a stoma. His NEWS2 was 2 at 8 pm. Now: RR 24, SpO2 95% on air, BP 98/60, pulse 118, alert, temperature 38.4°C. His abdomen is distended and tender with guarding. Urine output 10 ml/h for 3 hours. Venous lactate 3.9 mmol/L. You have taken blood cultures and bloods.",
+    "task": "Telephone the surgical registrar (the examiner), who is in the emergency department. Refer Mr Pollard and agree a plan."
+  },
+  "beforeYouWalkIn": {
+    "frame": "NEWS2 8 on day 2 after an anastomosis is a leak until proven otherwise. Say it first, ask clearly, read back.",
+    "trap": "A long chronological story that never says what you need.",
+    "firstMove": "Work out NEWS2 before you dial, and write your request down."
+  },
+  "flow": [
+    "Situation: who, where, concern",
+    "Background",
+    "Assessment",
+    "Recommendation with a time",
+    "Meanwhile",
+    "Read-back",
+    "Document"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "communication",
+      "label": "Situation",
+      "fail": "Starts with a long history and doesn't state the concern or the score.",
+      "pass": "Identifies himself, the ward and patient; states the concern and NEWS2 8 in the first sentence.",
+      "high": "Checks the registrar can talk now and names the suspected leak up front.",
+      "source": "SBAR"
+    },
+    {
+      "id": "G2",
+      "domain": "communication",
+      "label": "Background",
+      "fail": "Gives irrelevant history, or omits the operation and day.",
+      "pass": "Operation, day 2, no stoma; the rise from NEWS2 2 at 8 pm; relevant history and allergies.",
+      "high": "Only what changes decisions: anastomosis without a stoma, thromboprophylaxis timing, fitness for theatre.",
+      "source": "SBAR"
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "Assessment",
+      "fail": "Reads out observations without interpreting them.",
+      "pass": "Gives observations, examination, lactate and urine output; NEWS2 8 means high risk; working diagnosis: sepsis from an anastomotic leak.",
+      "high": "Names the emergency response threshold (7 or more) and a brief differential: bleeding, ileus, PE, MI.",
+      "source": "NEWS2"
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-knowledge",
+      "label": "Immediate treatment",
+      "fail": "Plans to wait for the registrar before treating.",
+      "borderline": "Gives antibiotics and fluid but no timeframe or volume.",
+      "pass": "IV antibiotics within 1 hour; 250 ml crystalloid bolus, reassess, repeat up to 1,000 ml; catheter and hourly urine.",
+      "high": "NEWS2 every 30 minutes; senior advice if not improved after 1,000 ml; nil by mouth, group and save, clotting for theatre.",
+      "source": "NG253"
+    },
+    {
+      "id": "G5",
+      "domain": "communication",
+      "label": "Recommendation",
+      "fail": "Ends with \"just letting you know\", with no request.",
+      "pass": "Asks the registrar to see him within a stated time, and asks whether to request a CT.",
+      "high": "Asks for critical care outreach now and for the consultant to be told, as NEWS2 7 or more needs critical care skills.",
+      "source": "NEWS2"
+    },
+    {
+      "id": "G6",
+      "domain": "professionalism",
+      "label": "Responding to a delay (safety-critical)",
+      "fail": "Accepts \"I'll come in an hour or so\" without escalating.",
+      "pass": "Restates the concern and asks who else can come now: another senior or critical care outreach.",
+      "high": "Agrees triggers for calling back; informs the consultant if he hasn't responded to treatment within 1 hour (or sooner if he deteriorates).",
+      "source": "NG253"
+    },
+    {
+      "id": "G7",
+      "domain": "communication",
+      "label": "Closed loop",
+      "fail": "Hangs up without confirming the plan.",
+      "pass": "Reads back the plan and the time the registrar will arrive.",
+      "high": "Allocates each task with a time, and confirms the registrar's bleep and name.",
+      "source": "SBAR"
+    },
+    {
+      "id": "G8",
+      "domain": "professionalism",
+      "label": "Documentation and handover",
+      "fail": "Doesn't document the call.",
+      "pass": "Records the time of the call, who, advice and plan; updates the nurse in charge.",
+      "high": "Records NEWS2 and antibiotic times, and updates Mr Pollard and his family.",
+      "source": "SBAR"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "candidate",
+        "text": "Hi, it's the F-one... sorry, the SHO. So Mr Pollard came in on Monday for his operation, it went fine, he was eating yesterday, and then tonight the nurse called me because his obs are a bit off.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          },
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Registrar: “What are his obs?”"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Pulse 118, BP 98 over 60, temperature 38.4.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Registrar: “What have you done?”"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I thought I'd wait for you to see him before starting anything.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Registrar: “I'm busy in resus. I'll come in an hour or so.”"
+      },
+      {
+        "speaker": "candidate",
+        "text": "OK, no problem, I was just letting you know. Bye.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          },
+          {
+            "row": "G6",
+            "band": "fail"
+          },
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "candidate",
+        "text": "Hi, it's Dr Mensah, surgical CT on Ward 7. I'm calling about Mr Pollard, 64. I'm worried he's septic: his NEWS2 is 8.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "He's day 2 after a laparoscopic anterior resection, no stoma. His NEWS2 was 2 at 8 pm. No allergies.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "RR 24, sats 95% on air, BP 98/60, pulse 118, temperature 38.4, alert. His abdomen is distended and tender with guarding. Lactate 3.9, urine 10 ml an hour. He's high risk; I think he has an anastomotic leak.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Cultures and bloods are sent. I'm giving antibiotics now, within the hour, and a 250 ml bolus, reassessing and repeating up to a litre. I'm catheterising him.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I need you to see him within 30 minutes. Should I request a CT?",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Registrar: “I'm stuck in resus. Maybe an hour.”"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'm worried he can't wait that long. Could another senior come, or should I call critical care outreach now?",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Registrar: “Call outreach, request a CT with contrast, I'll be there in 30.”"
+      },
+      {
+        "speaker": "candidate",
+        "text": "So: outreach now, CT with contrast, antibiotics and fluid going in, and you'll be here in 30 minutes.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Documents the call and plan; tells the nurse in charge.]",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "candidate",
+        "text": "Hi, it's Dr Mensah, surgical CT on Ward 7. Can you talk? I'm calling about Mr Pollard, 64; I think he's got an anastomotic leak. His NEWS2 is 8.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Day 2 after a laparoscopic anterior resection, no defunctioning stoma. NEWS2 was 2 at 8 pm. Last enoxaparin at 6 pm. No allergies; he was fit before surgery.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "RR 24, sats 95% on air, BP 98/60, pulse 118, 38.4, alert. Distended and guarding. Lactate 3.9, urine 10 ml an hour for 3 hours. That's above the emergency threshold of 7. Leak is most likely; bleeding, ileus, PE or MI are less likely.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Cultures are sent. Antibiotics going in now, within the hour. 250 ml boluses, reassessing each time, up to a litre, then I'll call you if he hasn't improved. Catheter, obs every 30 minutes, nil by mouth, group and save and clotting sent.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I need you to see him within 30 minutes. I'd like to call critical care outreach now. Should the consultant know?",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Registrar: “I'm stuck in resus. Maybe an hour.”"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I understand. He needs a senior in person sooner than that. Shall I ask outreach to come now and call the consultant? And I'll ring you straight back if his pressure falls below 90 or he becomes drowsy.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Registrar: “Yes, do both. CT with contrast. I'll be there in 30.”"
+      },
+      {
+        "speaker": "candidate",
+        "text": "To confirm: I call outreach and the consultant now; I request the CT; fluids and antibiotics continue; you're here by 2:45. Your bleep is 4410?",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Documents the time, advice, NEWS2 and antibiotic time; tells the nurse in charge and updates Mr Pollard.]",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G1",
+      "move": "Starting with the admission date and a chronological story.",
+      "consequence": "The registrar doesn't know it's urgent until the end of the call."
+    },
+    {
+      "row": "G4",
+      "move": "Waiting for the registrar before starting antibiotics and fluid.",
+      "consequence": "Safety-critical: delays sepsis treatment beyond the hour."
+    },
+    {
+      "row": "G6",
+      "move": "Accepting an hour's delay without escalating.",
+      "consequence": "Safety-critical: a NEWS2 of 8 needs an emergency response now, not when the registrar is free."
+    },
+    {
+      "row": "G7",
+      "move": "Hanging up without reading back.",
+      "consequence": "Tasks and times are lost; nobody knows who is doing what."
+    },
+    {
+      "row": "G8",
+      "move": "Not documenting the call.",
+      "consequence": "The next doctor can't tell what was advised, by whom, or when."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You've been talking for a minute without a request",
+      "line": "Sorry, the key point: his NEWS2 is 8 and I need you to see him within 30 minutes."
+    },
+    {
+      "when": "The registrar can't come",
+      "line": "Then I'd like to call critical care outreach now and let the consultant know. Is that OK?"
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "NEWS2 5–6: key threshold for urgent response. 7 or more: emergency response, registrar informed, team with critical care skills, continuous monitoring.",
+      "source": "NEWS2"
+    },
+    {
+      "fact": "NEWS2 7 or more with suspected infection: antibiotics within 1 hour (1.8.3); 250 ml bolus, repeated to 1,000 ml total (1.8.6–1.8.7); recalculate NEWS2 every 30 minutes (1.6.5); no response within 1 hour: senior in person, critical care, consultant informed (1.8.15).",
+      "source": "NG253"
+    },
+    {
+      "fact": "SBAR: say your concern first, be specific about the request and time frame, ask what to do meanwhile, and repeat back advice.",
+      "source": "SBAR"
+    }
+  ],
+  "recall": {
+    "think": "Anastomotic leak with sepsis, day 2.",
+    "say": "\"His NEWS2 is 8. I think he has a leak. I need you to see him within 30 minutes.\"",
+    "do": [
+      "Antibiotics within the hour; 250 ml bolus",
+      "Request with a time; outreach",
+      "Read back and document"
+    ],
+    "numbers": [
+      {
+        "value": "7+",
+        "meaning": "NEWS2 emergency response threshold",
+        "source": "NEWS2"
+      },
+      {
+        "value": "1 hour",
+        "meaning": "antibiotics in high-risk sepsis",
+        "source": "NG253"
+      },
+      {
+        "value": "250 ml",
+        "meaning": "bolus, repeat to 1,000 ml",
+        "source": "NG253"
+      }
+    ],
+    "trap": "\"Just letting you know.\"",
+    "finish": "Senior review, CT, source control."
+  },
+  "sources": [
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format; introduce yourself at every station"
+    },
+    {
+      "id": "NEWS2",
+      "name": "Royal College of Physicians: National Early Warning Score (NEWS) 2",
+      "version": "December 2017",
+      "url": "https://www.rcp.ac.uk/improving-care/resources/national-early-warning-score-news-2/",
+      "supports": "Parameter bands (Chart 1); aggregate 5–6: key threshold for urgent response; 7 or more: emergency response (Chart 2); 7 or more: inform medical team at least at specialist registrar level, emergency assessment by a team with critical care competencies, continuous monitoring (Chart 4)"
+    },
+    {
+      "id": "NG253",
+      "name": "NICE NG253: Suspected sepsis in people aged 16 or over: recognition, assessment and early management",
+      "version": "Published 19 November 2025; last updated 23 September 2026",
+      "url": "https://www.nice.org.uk/guidance/ng253",
+      "supports": "High risk = NEWS2 7 or more; urgent assessment by an FY2-or-above clinician, venous gas with lactate and cultures, and referral to the senior clinical decision maker as soon as possible (1.8.2); IV antibiotics within 1 hour of the NEWS2 score (1.8.3); fluid bolus within 1 hour (1.8.4): 250 ml crystalloid over 10–15 minutes, repeat up to 1,000 ml total including fluids already given, reassess after each (1.8.5–1.8.8); not improved after 1,000 ml: senior advice (1.8.9); no response within 1 hour: senior in person and critical care (1.8.15); early surgical team for source control (1.11.4); recalculate NEWS2 every 30 minutes if high risk (1.6.5); NEWS2 7 or more with suspected infection = high risk (1.6.2)"
+    },
+    {
+      "id": "SBAR",
+      "name": "NHS England and NHS Improvement: SBAR communication tool – situation, background, assessment, recommendation (Online library of Quality, Service Improvement and Redesign tools)",
+      "version": "April 2020 (PDF)",
+      "url": "https://aqua.nhs.uk/wp-content/uploads/2023/07/qsir-sbar-communication-tool.pdf",
+      "supports": "SBAR structure; state the concern and early warning score first; be specific about the request and time frame; ask what to do in the meantime; advice given by phone is repeated back; agreed recommendations are documented in the notes"
+    },
+    {
+      "id": "BL",
+      "name": "Bailey & Love's Short Practice of Surgery (O'Connell, McCaskie, Sayers, eds)",
+      "version": "28th edition, 2023",
+      "url": "https://www.routledge.com/Bailey--Loves-Short-Practice-of-Surgery---28th-Edition/OConnell-McCaskie-Sayers/p/book/9780367548117",
+      "supports": "Anastomotic leak after colorectal resection: sepsis, peritonitis, CT with contrast, source control"
+    }
+  ],
+  "media": [
+    {
+      "id": "news2-chart-trend",
+      "task": "Read the observation trend and calculate NEWS2 before phoning",
+      "description": "A NEWS2 observation chart for Mr Pollard showing 8 pm (NEWS2 2) and 2 am (RR 24, SpO2 95% on air, BP 98/60, pulse 118, alert, 38.4°C; NEWS2 8)",
+      "required": false,
+      "status": "needed"
+    }
+  ],
+  "partner": {
+    "opening": "You're on the phone to the registrar. Please begin when you're ready.",
+    "actorBrief": "You are the surgical registrar, in resus with a sick patient. Opening line: \"Surgical reg, go ahead.\" Emotional state: busy, polite but clipped. If the candidate hasn't said why they're calling within about 30 seconds, interrupt: \"What do you need from me?\" Ask \"What's his NEWS2?\" and \"What have you done so far?\" if not offered. When asked to come, say: \"I'm stuck in resus. Maybe an hour.\" If the candidate escalates (outreach, another senior or the consultant), agree, advise a CT abdomen and pelvis with IV contrast, and say you'll be there in 30 minutes. If the candidate accepts the hour, say \"OK\" and hang up. Give your bleep (4410) only if asked. Say nothing about treatment unless asked.",
+    "reveals": [
+      {
+        "trigger": "Candidate doesn't state the concern early",
+        "finding": "\"What do you need from me?\"",
+        "row": "G1"
+      },
+      {
+        "trigger": "Asks what to do while waiting",
+        "finding": "\"Antibiotics per trust guideline, fluid, catheter, keep him nil by mouth.\"",
+        "row": "G4"
+      },
+      {
+        "trigger": "Asks whether to request imaging",
+        "finding": "\"Yes, CT abdomen and pelvis with IV contrast.\"",
+        "row": "G5"
+      },
+      {
+        "trigger": "Escalates when told \"an hour\"",
+        "finding": "\"Fair enough. Call outreach and the consultant. I'll be there in 30.\"",
+        "row": "G6"
+      }
+    ],
+    "push": [
+      {
+        "question": "What would you do if he hadn't improved after a litre of fluid?",
+        "row": "G4",
+        "expect": "Senior advice now; if no response within 1 hour, senior in person, critical care and the consultant informed."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "\"Just give him a litre of saline quickly and I'll see him in the morning.\"",
+        "safeAnswer": "Disagree clearly: 250 ml boluses of balanced crystalloid (saline only if none is available) with reassessment; with NEWS2 8 he needs senior review now, so escalate to outreach and the consultant.",
+        "row": "G6"
+      },
+      {
+        "prompt": "\"Is he on anything that would stop us taking him to theatre?\"",
+        "safeAnswer": "States last enoxaparin dose and time, and that clotting and group and save are sent.",
+        "row": "G2"
+      }
+    ]
+  }
+}

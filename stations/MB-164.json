@@ -1,0 +1,600 @@
+{
+  "id": "MB-164",
+  "exam": "MRCS-B",
+  "title": "Major trauma: primary survey and tension pneumothorax",
+  "type": "applied-knowledge",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "Applied surgical science and critical care",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "NICE NG39 (Feb 2016, minor changes May 2025)",
+      "NICE NG41 (updated May 2021)",
+      "RCEMLearning thoracic trauma (Aug 2023)"
+    ],
+    "related": [
+      {
+        "id": "MB-136 Head injury",
+        "why": "Cervical spine and head injury in the same patient"
+      },
+      {
+        "id": "MB-135 Burns",
+        "why": "Another primary survey with its own priorities"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Emergency department resuscitation room",
+    "role": "Core surgical trainee on the trauma team",
+    "scenario": "Mr Jordan Hale, 34, came off his motorcycle at speed 40 minutes ago. He is on a scoop with a collar and head blocks. He is agitated and breathless. Pulse 132, BP 78/44, RR 36, SpO2 86% on 15 L oxygen by reservoir mask.",
+    "task": "The trauma team leader, an emergency medicine consultant trained in thoracostomy, is present. You will not perform procedures; the examiner will ask how you would assess and manage him, giving findings as you ask."
+  },
+  "beforeYouWalkIn": {
+    "frame": "A shocked, hypoxic trauma patient: work <C>ABCDE and treat each problem as you find it.",
+    "trap": "Sending him for a chest X-ray before decompressing a clinical tension pneumothorax.",
+    "firstMove": "\"Catastrophic haemorrhage, then airway with the cervical spine held in line.\""
+  },
+  "flow": [
+    "<C>ABCDE with spinal control",
+    "Recognise tension",
+    "Decompress",
+    "Chest drain",
+    "Haemorrhage control and TXA",
+    "Imaging or theatre",
+    "Team and handover"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-skill",
+      "label": "Primary survey with spinal control (safety-critical)",
+      "fail": "Starts with the chest or removes the head blocks to look at the neck.",
+      "pass": "Uses <C>ABCDE: catastrophic haemorrhage, then airway with manual in-line cervical spine immobilisation, breathing, circulation, disability, exposure.",
+      "high": "Keeps manual in-line stabilisation during any airway intervention, and treats each problem as found before moving on.",
+      "source": "NG41"
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-knowledge",
+      "label": "Recognising tension pneumothorax",
+      "fail": "Asks for a chest X-ray to confirm it.",
+      "pass": "Diagnoses it clinically: hypoxia, shock, absent breath sounds and hyper-resonance on one side; decompresses before imaging because he is unstable.",
+      "high": "Knows tracheal deviation and distended neck veins are late or unreliable, and hypotension is late; won't wait for them.",
+      "source": "RCEMT"
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-skill",
+      "label": "Decompression site (safety-critical)",
+      "fail": "Can't name a site, or picks one that would injure the heart or great vessels.",
+      "borderline": "Uses the 2nd intercostal space, mid-clavicular line, without knowing the cannula may not reach the pleura.",
+      "pass": "Adult site: 4th or 5th intercostal space, just anterior to the mid-axillary line, above the rib below.",
+      "high": "Decompresses without delay: open thoracostomy then drain where expertise is available; needle if that can't be done immediately. Knows a 2nd-space cannula may not reach.",
+      "source": "RCEMT"
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-knowledge",
+      "label": "Chest drain and reassessment",
+      "fail": "Decompresses and moves on without a drain.",
+      "pass": "Follows decompression with a chest drain through the thoracostomy; reassesses breathing and circulation.",
+      "high": "Watches for recurrence of tension, and for a large blood loss from the drain signalling haemothorax and theatre.",
+      "source": "NG39"
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-knowledge",
+      "label": "Haemorrhage control and tranexamic acid",
+      "fail": "Gives litres of crystalloid and no tranexamic acid.",
+      "pass": "IV tranexamic acid as soon as possible, within 3 hours of injury; major haemorrhage protocol; blood products, not crystalloid.",
+      "high": "Plasma to red cells 1:1; restrictive volume, titrated to keep a central circulation, until bleeding is controlled.",
+      "source": "NG39"
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-knowledge",
+      "label": "Imaging and definitive control",
+      "fail": "Sends an unstable, non-responding patient to CT.",
+      "pass": "Whole-body CT if he responds to resuscitation; if not, minimal imaging and straight to damage control surgery.",
+      "high": "Limits imaging to what directs intervention in a non-responder, and knows a negative FAST doesn't exclude abdominal bleeding.",
+      "source": "NG39"
+    },
+    {
+      "id": "G7",
+      "domain": "professionalism",
+      "label": "Team, leadership and escalation",
+      "fail": "Works alone and doesn't say findings aloud.",
+      "pass": "Reports each finding to the trauma team leader; calls for senior help and the consultant early.",
+      "high": "Gives a closed-loop summary: findings, interventions, response, and a clear next step with the teams needed."
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "How would you assess him?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd look at his chest first, and take the collar and blocks off to feel his neck properly.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Absent breath sounds on the right, hyper-resonant, BP 78/44."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd get a portable chest X-ray to confirm a pneumothorax.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Where would you decompress?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Somewhere on the front of the chest, maybe near the sternum.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "He improves after decompression. Next?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "That's fixed, so I'd move on to circulation.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "He's still hypotensive."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Two litres of saline, fast.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Then?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "CT from head to toe.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Who have you told?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "No one yet; I'll update the team once the scan's done.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "examiner",
+        "text": "How would you assess him?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "<C>ABCDE. Any catastrophic bleeding first, then the airway with his cervical spine held in line manually, then breathing, circulation, disability and exposure.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Absent breath sounds on the right, hyper-resonant, BP 78/44."
+      },
+      {
+        "speaker": "candidate",
+        "text": "That's a tension pneumothorax. He's unstable, so I decompress now, before any X-ray.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Where?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "4th or 5th intercostal space, just in front of the mid-axillary line, going over the top of the rib below.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "He improves. Next?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "A chest drain through the same site, and reassess his breathing and circulation.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "He's still hypotensive."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Activate the major haemorrhage protocol. Tranexamic acid now; he's within 3 hours. Blood products, not crystalloid.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Then?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "If he responds, whole-body CT. If he doesn't, he needs damage control surgery, not the scanner.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd tell the trauma team leader each finding as I go and ask for the consultant early.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "examiner",
+        "text": "How would you assess him?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "<C>ABCDE, treating as I go. No catastrophic bleeding. Talking, so airway patent; someone holds his head in line manually throughout, especially if anaesthesia need to intervene.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Absent breath sounds on the right, hyper-resonant, BP 78/44."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Right tension pneumothorax: hypoxic, shocked, with one-sided signs. I won't wait for a deviated trachea or distended neck veins; they're late and often absent, especially if he's bleeding. Decompress now, image later.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Where?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "4th or 5th intercostal space, just anterior to the mid-axillary line, without delay. Here, with the team leader able to do it, NICE recommends open thoracostomy followed by a chest drain. If that couldn't be done immediately, I'd needle-decompress at the same site rather than wait. A standard cannula in the 2nd space often doesn't reach the pleura.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "He improves. Next?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Chest drain through the thoracostomy, then reassess. I'd watch for the tension coming back, and if the drain loses a lot of blood, that's a haemothorax and a thoracotomy conversation.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "He's still hypotensive."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Major haemorrhage protocol. Tranexamic acid now: 40 minutes since injury, so well within 3 hours. Plasma and red cells 1:1, no crystalloid. I'd accept a lower pressure as long as he keeps a central pulse and mentation.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Then?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Transient or non-responder: minimal imaging, only what directs intervention, and damage control surgery. A negative FAST wouldn't reassure me. If he responds, whole-body CT.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Team leader, a summary: right tension decompressed, drain in, still shocked after two units, TXA given. I need the consultant surgeon and theatre alerted now.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G1",
+      "move": "Removing the collar and blocks to examine the neck without manual in-line stabilisation.",
+      "consequence": "Safety-critical: risks converting an unstable cervical fracture into a cord injury."
+    },
+    {
+      "row": "G2",
+      "move": "Waiting for a chest X-ray to confirm a tension pneumothorax in a shocked patient.",
+      "consequence": "Safety-critical: he can arrest while the film is taken."
+    },
+    {
+      "row": "G3",
+      "move": "Decompressing medial to the mid-clavicular line or near the sternum.",
+      "consequence": "Safety-critical: risks injury to the heart and internal mammary vessels."
+    },
+    {
+      "row": "G7",
+      "move": "Working through the survey silently, without telling the team leader.",
+      "consequence": "The team can't coordinate blood, theatre or imaging."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You went to the chest before the airway",
+      "line": "Let me restart: <C>ABCDE, with the cervical spine held in line throughout."
+    },
+    {
+      "when": "You're asked for an X-ray first",
+      "line": "He's hypoxic and hypotensive, so I'd decompress first and image afterwards."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "<C>ABCDE with manual in-line cervical spine immobilisation, particularly during airway interventions.",
+      "source": "NG41"
+    },
+    {
+      "fact": "Tension pneumothorax with haemodynamic instability or severe respiratory compromise: decompress without delay, before imaging (1.4.1). In hospital: open thoracostomy followed by a chest drain (1.4.2).",
+      "source": "NG39"
+    },
+    {
+      "fact": "Needle decompression remains the alternative when open thoracostomy can't be done immediately; decompression must not wait.",
+      "source": "RCEMT"
+    },
+    {
+      "fact": "Adult decompression site: 4th or 5th intercostal space, just anterior to the mid-axillary line. Children: 2nd space, mid-clavicular line.",
+      "source": "RCEMT"
+    },
+    {
+      "fact": "Tranexamic acid as soon as possible; not more than 3 hours after injury unless hyperfibrinolysis. No crystalloid in active bleeding; plasma to red cells 1:1.",
+      "source": "NG39"
+    },
+    {
+      "fact": "Tranexamic acid regimen: 1 g IV over 10 minutes, then 1 g over 8 hours.",
+      "source": "CRASH2"
+    }
+  ],
+  "recall": {
+    "think": "Tension pneumothorax and haemorrhage kill in minutes; a careless neck can paralyse.",
+    "say": "\"Tension pneumothorax: I'm decompressing now, before any X-ray.\"",
+    "do": [
+      "<C>ABCDE with in-line spinal control",
+      "Decompress, then chest drain",
+      "TXA, 1:1 blood, haemorrhage control"
+    ],
+    "numbers": [
+      {
+        "value": "4th/5th ICS",
+        "meaning": "just anterior to mid-axillary line (adults)",
+        "source": "RCEMT"
+      },
+      {
+        "value": "3 hours",
+        "meaning": "TXA limit after injury",
+        "source": "NG39"
+      },
+      {
+        "value": "1:1",
+        "meaning": "plasma to red cells",
+        "source": "NG39"
+      }
+    ],
+    "trap": "Waiting for tracheal deviation or an X-ray.",
+    "finish": "Chest drain, then CT if responding or damage control surgery if not."
+  },
+  "sources": [
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format: 9 minutes with 1 minute's reading; examiner-led questioning in applied knowledge stations"
+    },
+    {
+      "id": "NG39",
+      "name": "NICE NG39: Major trauma: assessment and initial management",
+      "version": "Published 17 February 2016; minor changes May 2025",
+      "url": "https://www.nice.org.uk/guidance/ng39",
+      "supports": "In hospital: decompress a tension pneumothorax before imaging only if haemodynamic instability or severe respiratory compromise (1.4.1); open thoracostomy followed by a chest drain (1.4.2); observe for recurrence after decompression (1.3.6); IV tranexamic acid as soon as possible in active or suspected active bleeding (1.5.4), not more than 3 hours after injury unless hyperfibrinolysis (1.5.5); major haemorrhage protocol on physiology and response to volume (1.5.13); restrictive volume resuscitation until bleeding controlled, titrated to maintain central circulation (1.5.18, 1.5.20); no crystalloids in active bleeding in hospital (1.5.23); plasma to red cells 1:1 in adults (1.5.24); limit imaging in non-responders (1.5.29); immediate CT if responding (1.5.31); whole-body CT in blunt multiple injury (1.5.34); a negative FAST does not exclude intraperitoneal or retroperitoneal haemorrhage (1.5.30); damage control surgery for non-responders (1.5.37); a senior nurse or trauma team leader receives the pre-alert, and the trauma team leader is easily identifiable to receive the handover (1.8.4-1.8.5)"
+    },
+    {
+      "id": "NG41",
+      "name": "NICE NG41: Spinal injury: assessment and initial management",
+      "version": "Published 17 February 2016; updated May 2021",
+      "url": "https://www.nice.org.uk/guidance/ng41",
+      "supports": "<C>ABCDE: catastrophic haemorrhage, airway with in-line spinal immobilisation, breathing, circulation, disability, exposure (1.1.1); manual in-line immobilisation of the cervical spine at all stages, particularly during airway intervention (1.1.2)"
+    },
+    {
+      "id": "RCEMT",
+      "name": "RCEMLearning reference: Thoracic trauma (Lloyd G; eds Kendall JM, McMorran S)",
+      "version": "Published 30 August 2023",
+      "url": "https://www.rcemlearning.co.uk/reference/thoracic-trauma/",
+      "supports": "Tension pneumothorax: hypoxia early, hypotension late; tracheal deviation and hyper-resonance are soft signs; neck veins may not be distended in haemorrhagic shock; open thoracostomy then chest drain where expertise is available, needle decompression the alternative when this is not immediately possible; do not X-ray first, decompress then image; adult needle site now the 4th-5th intercostal space just anterior to the mid-axillary line (children still 2nd space mid-clavicular); finger thoracostomy at the same site; a 4.5 cm cannula may not reach the pleura via the 2nd space"
+    },
+    {
+      "id": "AHMAD",
+      "name": "Ahmad SJS, Degiannis JR, et al. Meta-analysis of the optimal needle length and decompression site for tension pneumothorax and consensus recommendations on current ATLS and ETC guidelines. World J Emerg Surg 2025;20:39",
+      "version": "May 2025",
+      "url": "https://doi.org/10.1186/s13017-025-00613-7",
+      "supports": "Reports ATLS advice: 5 cm (small adults) or 8 cm needle at the 4th or 5th intercostal space in the anterior mid-axillary line; European Trauma Course: 2nd intercostal space mid-clavicular line"
+    },
+    {
+      "id": "CRASH2",
+      "name": "CRASH-2 trial collaborators. Effects of tranexamic acid on death, vascular occlusive events, and blood transfusion in trauma patients with significant haemorrhage (CRASH-2). Lancet 2010;376:23–32",
+      "version": "2010",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/20554319/",
+      "supports": "Tranexamic acid regimen: 1 g IV over 10 minutes, then 1 g over 8 hours"
+    }
+  ],
+  "partner": {
+    "opening": "Mr Hale has just arrived. You're on the trauma team. Talk me through your assessment and management.",
+    "reveals": [
+      {
+        "trigger": "Asks about catastrophic haemorrhage and airway",
+        "finding": "No external haemorrhage. He is talking in short phrases. Collar and blocks on.",
+        "row": "G1"
+      },
+      {
+        "trigger": "Examines the chest",
+        "finding": "Right side: reduced expansion, absent breath sounds, hyper-resonant. Trachea central. Neck veins not visible.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Decompresses at the correct site",
+        "finding": "Rush of air. SpO2 rises to 93%, BP 94/58, pulse 120.",
+        "row": "G4"
+      },
+      {
+        "trigger": "Assesses circulation after the drain",
+        "finding": "Five minutes later: BP 80/46, pulse 128, abdomen tender in the left upper quadrant, pelvis stable, binder on.",
+        "row": "G5"
+      },
+      {
+        "trigger": "Asks about response to blood",
+        "finding": "After two units of red cells and two of plasma: BP rises to 98/62, then falls to 82/48 within 10 minutes, pulse 126 (transient response).",
+        "row": "G6"
+      }
+    ],
+    "push": [
+      {
+        "question": "Why not confirm the pneumothorax on X-ray first?",
+        "row": "G2",
+        "expect": "He is unstable; NICE says decompress before imaging when there is haemodynamic instability or severe respiratory compromise."
+      },
+      {
+        "question": "Where and how would you decompress, and why there?",
+        "row": "G3",
+        "expect": "4th or 5th intercostal space just anterior to the mid-axillary line; open thoracostomy then drain with the expertise present, needle if that can't be done at once; thinner chest wall, away from the heart and great vessels."
+      },
+      {
+        "question": "When would you give tranexamic acid, and when not?",
+        "row": "G5",
+        "expect": "As soon as possible with active or suspected bleeding; not beyond 3 hours unless hyperfibrinolysis."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "He arrived 4 hours after the crash. Tranexamic acid?",
+        "safeAnswer": "Not routinely beyond 3 hours after injury unless there is evidence of hyperfibrinolysis.",
+        "row": "G5"
+      },
+      {
+        "prompt": "After the drain his SpO2 falls again and he becomes more breathless and hypotensive.",
+        "safeAnswer": "Recurrent tension or a blocked or displaced drain: reassess, check the drain, and decompress again.",
+        "row": "G4"
+      },
+      {
+        "prompt": "The ED registrar wants to take the collar off to intubate.",
+        "safeAnswer": "Remove the front of the collar only with someone holding manual in-line stabilisation throughout.",
+        "row": "G1"
+      }
+    ]
+  }
+}

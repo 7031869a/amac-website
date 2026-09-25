@@ -1,0 +1,595 @@
+{
+  "id": "MB-156",
+  "exam": "MRCS-B",
+  "title": "Scrotal examination",
+  "type": "examination",
+  "header": {
+    "domain": "Applied Skills",
+    "contentArea": "Clinical and procedural skills",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "signalMinutes": 6,
+    "guidelineVersions": [
+      "GMC intimate examinations and chaperones",
+      "NICE NG12 (updated Apr 2026)",
+      "HSIB testicular pain report (June 2021)"
+    ],
+    "related": [
+      {
+        "id": "MB-139 Examination of a lump",
+        "why": "The same lump description, applied to the scrotum"
+      },
+      {
+        "id": "MB-138 Breast examination",
+        "why": "Chaperone and consent for an intimate examination"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Urology outpatient clinic",
+    "role": "Core surgical trainee",
+    "scenario": "Mr Daniel Price, 29, noticed a lump in his right testicle four weeks ago. A chaperone is available. The scrotum is represented by a model; talk to the patient as you would in clinic.",
+    "task": "Examine his scrotum. You will be stopped at 6 minutes to present your findings and answer questions."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Chaperone and consent, then three questions: can I get above it, is it separate from the testis, does it transilluminate?",
+    "trap": "Examining the inguinal nodes and forgetting that the testis drains to the para-aortic nodes.",
+    "firstMove": "\"Before we start, I'd like to offer you a chaperone.\""
+  },
+  "flow": [
+    "Consent and chaperone",
+    "Inspect standing",
+    "Palpate, normal side first",
+    "Get above it, separate, transilluminate, cough",
+    "Abdomen and supraclavicular nodes",
+    "At 6 minutes: present"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "professionalism",
+      "label": "Consent and chaperone",
+      "fail": "Examines without explaining, gaining consent or offering a chaperone.",
+      "pass": "Explains the examination and why it's needed, gains consent, offers a chaperone, and records the discussion.",
+      "high": "Tells him he can ask to stop at any time, keeps him covered when not examining, and records the chaperone's name.",
+      "source": "GMC"
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-skill",
+      "label": "Inspection and position",
+      "fail": "Examines him lying down only.",
+      "pass": "Inspects standing: scrotal skin, swelling, asymmetry and the lie of each testis; then examines standing and lying.",
+      "high": "Explains why standing matters: a varicocele fills and a hernia descends when upright."
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-skill",
+      "label": "Palpating each testis",
+      "fail": "Goes straight to the lump, or starts on the symptomatic side.",
+      "pass": "Normal side first: testis between thumb and fingers, then epididymis and cord, comparing size and consistency.",
+      "high": "Steadies the testis with one hand and examines with the other, and localises the lump to the body of the testis."
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-skill",
+      "label": "Characterising the swelling",
+      "fail": "Doesn't check whether he can get above the swelling.",
+      "borderline": "Transilluminates, but doesn't say whether the lump is separate from the testis.",
+      "pass": "Checks he can get above it, whether it is separate from the testis, transillumination, and a cough impulse.",
+      "high": "Uses each answer to narrow the diagnosis: hernia, epididymal cyst, hydrocele or testicular tumour."
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-skill",
+      "label": "Nodes and completion",
+      "fail": "Feels only the inguinal nodes and stops.",
+      "pass": "Examines the abdomen for para-aortic nodes, explaining the testis drains there, not to the inguinal nodes.",
+      "high": "Adds the supraclavicular fossae and the chest for gynaecomastia.",
+      "source": "BL"
+    },
+    {
+      "id": "G6",
+      "domain": "communication",
+      "label": "Presentation at the signal",
+      "fail": "Says 'a lump' without saying where it arises.",
+      "pass": "Describes site, size, consistency, tenderness, relation to testis, getting above and transillumination, then gives a likely diagnosis.",
+      "high": "Leads with 'a hard, painless lump arising from the right testis', gives the key negatives, and names cancer as the concern."
+    },
+    {
+      "id": "G7",
+      "domain": "clinical-knowledge",
+      "label": "Next steps",
+      "fail": "Diagnoses epididymitis and gives antibiotics, or offers routine follow-up.",
+      "pass": "Meets NG12 suspected cancer criteria (non-painful change in testis shape or texture); arranges an urgent scrotal ultrasound.",
+      "high": "Adds tumour markers (AFP, hCG, LDH) before orchidectomy, and says orchidectomy is inguinal, not scrotal.",
+      "source": "NG12"
+    },
+    {
+      "id": "G8",
+      "domain": "clinical-knowledge",
+      "label": "Acute testicular pain (safety-critical)",
+      "fail": "Orders an ultrasound for suspected torsion before calling urology.",
+      "pass": "Treats sudden severe testicular pain as torsion until proven otherwise: immediate urology referral for scrotal exploration.",
+      "high": "States the testis is likely viable if untwisted within 4–6 hours of pain onset, so exploration is not delayed for imaging.",
+      "source": "HSSIB"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "candidate",
+        "text": "[Asks him to lie down and starts feeling the right testis without mentioning a chaperone.]",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          },
+          {
+            "row": "G2",
+            "band": "fail"
+          },
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "There's a lump. [Moves on without checking above it.]",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Feels the groins.] No inguinal nodes, so it hasn't spread.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop. Your findings?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "He's got a lump in his scrotum, probably epididymitis.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What would you do?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "A course of antibiotics and review in six weeks.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "A 15-year-old has sudden severe testicular pain. What do you do?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd get an urgent ultrasound first, then call urology if it shows torsion.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "candidate",
+        "text": "Hello, I'm Dr Patel, one of the surgical trainees. Can I check your name and date of birth? I'd like to examine your testicles to find out what the lump is. I'd like to offer you a chaperone; would you like one? Is it painful? [Consent; chaperone present; cleans hands; gloves.]",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Could you stand for me first? [Inspects the scrotum and the lie of the testes; examines standing, then lying.]",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'll start on the left side. [Testis, epididymis and cord; then the right.]",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Gets above the swelling; checks whether it is separate from the testis; transilluminates.] Could you cough for me?",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Examines the abdomen for para-aortic masses.] Thank you. Please get dressed and we'll talk. [Cleans hands; records chaperone.]",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop. Your findings?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Mr Price has a 2 cm hard, irregular, non-tender lump in the lower pole of the right testis. I can get above it, it isn't separate from the testis, it doesn't transilluminate and there's no cough impulse. The left testis is normal and there are no abdominal masses. This is most likely a testicular tumour.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What next?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "He meets the NG12 suspected cancer criteria, so he stays on that pathway. I'd arrange an urgent scrotal ultrasound myself.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "A 15-year-old has sudden severe testicular pain. What do you do?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Torsion until proven otherwise: I'd call the urology registrar immediately for scrotal exploration.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "candidate",
+        "text": "Hello, I'm Dr Patel, one of the surgical trainees. Can I check your name and date of birth? To find out what the lump is I need to look at and feel both testicles, and then your tummy. I'd like to offer you a chaperone. You can ask me to stop at any time, and I'll keep you covered as much as I can. [Chaperone present; cleans hands; gloves.]",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Could you stand first? A varicocele fills and a hernia comes down when you're upright. [Inspects; then examines standing and lying.]",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'll start with the left. [Steadies each testis with one hand and examines with the other; epididymis; cord.] On the right, the lump is in the body of the testis.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Gets above it, so it's not a hernia; not separate from the testis, so not an epididymal cyst; doesn't transilluminate, so not a hydrocele; no cough impulse.]",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Abdomen for para-aortic nodes; supraclavicular fossae; chest for gynaecomastia.] Thank you. [Cleans hands; records chaperone's name.]",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop. Your findings?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "The key finding is a hard, painless, irregular 2 cm lump arising from the lower pole of the right testis. I can get above it, and it doesn't transilluminate. The left testis is normal, and there are no para-aortic or supraclavicular nodes and no gynaecomastia. I'm concerned this is testicular cancer.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What next?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "He stays on the suspected cancer pathway. I'd arrange an urgent scrotal ultrasound, and AFP, hCG and LDH before surgery. If it's a tumour, the orchidectomy is done through the groin, not the scrotum.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "A 15-year-old has sudden severe testicular pain. What do you do?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Torsion until proven otherwise. I'd call urology straight away for exploration and not wait for an ultrasound: the testis is likely to survive if it's untwisted within 4 to 6 hours of the pain starting.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G1",
+      "move": "Starting an intimate examination without offering a chaperone.",
+      "consequence": "Breaches GMC guidance and leaves both patient and doctor without protection."
+    },
+    {
+      "row": "G5",
+      "move": "Checking only the inguinal nodes.",
+      "consequence": "The testis drains to the para-aortic nodes, so nodal disease in the abdomen is missed."
+    },
+    {
+      "row": "G7",
+      "move": "Treating a painless testicular lump as epididymitis.",
+      "consequence": "Delays the diagnosis of a treatable cancer."
+    },
+    {
+      "row": "G8",
+      "move": "Sending a suspected torsion for ultrasound before calling urology.",
+      "consequence": "Safety-critical: every hour of delay reduces the chance of saving the testis."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You started without offering a chaperone",
+      "line": "I'm sorry, before I go on I should have offered you a chaperone. Would you like one?"
+    },
+    {
+      "when": "You can't tell if it's separate from the testis",
+      "line": "I can't separate it from the testis, so I'll treat it as testicular until an ultrasound shows otherwise."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Offer a chaperone, explain the examination, gain consent, and record the discussion and the chaperone's identity.",
+      "source": "GMC"
+    },
+    {
+      "fact": "Can't get above it: inguinoscrotal hernia. Separate from the testis and transilluminates: epididymal cyst. Surrounds the testis and transilluminates: hydrocele. Hard and within the testis: tumour until proven otherwise.",
+      "source": "BL"
+    },
+    {
+      "fact": "The testis drains to the para-aortic nodes; scrotal skin drains to the inguinal nodes.",
+      "source": "BL"
+    },
+    {
+      "fact": "NG12 criteria to consider a suspected cancer pathway referral: non-painful enlargement or change in shape or texture of the testis.",
+      "source": "NG12"
+    },
+    {
+      "fact": "Measure AFP, hCG and LDH before orchidectomy; the cord is divided at the internal inguinal ring.",
+      "source": "EAU"
+    },
+    {
+      "fact": "Suspected torsion: exploration takes precedence over imaging; the testis is likely viable if untwisted within 4–6 hours of pain onset.",
+      "source": "HSSIB"
+    }
+  ],
+  "recall": {
+    "think": "Is it in the testis, and could this be torsion?",
+    "say": "\"I'd like to offer you a chaperone.\"",
+    "do": [
+      "Stand him up; normal side first",
+      "Above it? Separate? Transilluminates?",
+      "Abdomen for para-aortic nodes"
+    ],
+    "numbers": [
+      {
+        "value": "4–6 h",
+        "meaning": "from pain onset: torsion testis likely viable if untwisted",
+        "source": "HSSIB"
+      },
+      {
+        "value": "6 min",
+        "meaning": "signal to stop and present",
+        "source": "ICBSE"
+      }
+    ],
+    "trap": "Negative inguinal nodes don't mean no spread.",
+    "finish": "Suspected cancer pathway: urgent ultrasound, markers; inguinal orchidectomy."
+  },
+  "sources": [
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "At every station: introduce yourself, explain the task, confirm identity, obtain consent, clean hands before and after patient contact; 6-minute signal in examination stations"
+    },
+    {
+      "id": "GMC",
+      "name": "GMC: Intimate examinations and chaperones",
+      "version": "In effect from 30 January 2024; updated 13 December 2024",
+      "url": "https://www.gmc-uk.org/professional-standards/the-professional-standards/intimate-examinations-and-chaperones/intimate-examinations-and-chaperones",
+      "supports": "Explain the examination (para 8); consent and record it (para 9); offer a chaperone (para 16); record the chaperone discussion and identity (para 23)"
+    },
+    {
+      "id": "BL",
+      "name": "Bailey & Love's Short Practice of Surgery (O'Connell, McCaskie, Sayers, eds)",
+      "version": "28th edition, 2023",
+      "url": "https://www.routledge.com/Bailey--Loves-Short-Practice-of-Surgery---28th-Edition/OConnell-McCaskie-Sayers/p/book/9780367548117",
+      "supports": "Examination technique and clinical signs"
+    },
+    {
+      "id": "NG12",
+      "name": "NICE NG12: Suspected cancer: recognition and referral",
+      "version": "Published June 2015; last updated 15 April 2026",
+      "url": "https://www.nice.org.uk/guidance/ng12",
+      "supports": "Criteria to consider a suspected cancer pathway referral: non-painful enlargement or change in shape or texture of the testis (1.6.7); consider urgent direct access ultrasound for unexplained or persistent testicular symptoms (1.6.8)"
+    },
+    {
+      "id": "EAU",
+      "name": "European Association of Urology Guidelines on Testicular Cancer (online guideline, chapter 5: Diagnostic evaluation)",
+      "version": "2026",
+      "url": "https://uroweb.org/guidelines/testicular-cancer/chapter/diagnostic-evaluation",
+      "supports": "Examine supraclavicular, cervical, axillary and inguinal nodes, breast and testicles; bilateral testicular ultrasound; AFP, hCG and LDH before and after orchidectomy; orchidectomy dividing the cord at the internal inguinal ring, avoiding a scrotal approach"
+    },
+    {
+      "id": "HSSIB",
+      "name": "HSIB (now HSSIB) national investigation: Management of acute onset testicular pain",
+      "version": "Published 16 June 2021",
+      "url": "https://www.hssib.org.uk/patient-safety-investigations/management-of-acute-onset-testicular-pain/investigation-report/",
+      "supports": "Torsion is a urological emergency; when history and examination suggest torsion, immediate surgical consultation and exploration take precedence over diagnostic tests (1.3.2); testis likely to remain viable if treated within four to six hours after the onset of pain (1.1.4, 1.4.1)"
+    }
+  ],
+  "partner": {
+    "opening": "Please examine this patient's scrotum using the model. A chaperone is available. I'll stop you at 6 minutes.",
+    "actorBrief": "You are Mr Daniel Price, 29. You found a hard lump in your right testicle in the shower four weeks ago. It isn't painful; there's a slight dragging feeling. You're embarrassed and worried it's cancer. Accept a chaperone if offered. If asked: no injury, no urinary symptoms, no previous testicular problems.",
+    "reveals": [
+      {
+        "trigger": "Inspects standing",
+        "finding": "Right side of the scrotum slightly fuller. Skin normal. Both testes lie vertically.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Palpates the left testis",
+        "finding": "Normal size and consistency; epididymis and cord normal.",
+        "row": "G3"
+      },
+      {
+        "trigger": "Palpates the right testis",
+        "finding": "2 cm hard, irregular, non-tender lump in the lower pole, within the body of the testis.",
+        "row": "G3"
+      },
+      {
+        "trigger": "Tries to get above it and asks him to cough",
+        "finding": "Can get above it. No cough impulse.",
+        "row": "G4"
+      },
+      {
+        "trigger": "Transilluminates",
+        "finding": "Does not transilluminate.",
+        "row": "G4"
+      },
+      {
+        "trigger": "Examines the abdomen, supraclavicular fossae or chest",
+        "finding": "No abdominal mass, no supraclavicular nodes, no gynaecomastia.",
+        "row": "G5"
+      },
+      {
+        "trigger": "At 6 minutes",
+        "finding": "Say: \"Please stop there and present your findings.\"",
+        "row": "G6"
+      }
+    ],
+    "push": [
+      {
+        "question": "What's your differential?",
+        "row": "G6",
+        "expect": "Testicular tumour; less likely orchitis or haematoma."
+      },
+      {
+        "question": "Which nodes does the testis drain to?",
+        "row": "G5",
+        "expect": "Para-aortic, not inguinal."
+      },
+      {
+        "question": "What happens next?",
+        "row": "G7",
+        "expect": "Meets NG12 suspected cancer criteria; candidate arranges urgent ultrasound and tumour markers."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "A 15-year-old has had sudden severe left testicular pain and vomiting for three hours.",
+        "safeAnswer": "Torsion until proven otherwise: immediate urology referral for scrotal exploration; don't wait for ultrasound.",
+        "row": "G8"
+      },
+      {
+        "prompt": "The lump is separate from the testis, above it, and transilluminates.",
+        "safeAnswer": "Epididymal cyst; ultrasound if there is any doubt.",
+        "row": "G4"
+      },
+      {
+        "prompt": "You can't get above the swelling and it has a cough impulse.",
+        "safeAnswer": "Inguinoscrotal hernia: examine the groin.",
+        "row": "G4"
+      },
+      {
+        "prompt": "He declines a chaperone.",
+        "safeAnswer": "Respect his choice and record it; if you're not comfortable proceeding, offer to rearrange.",
+        "row": "G1"
+      }
+    ]
+  }
+}

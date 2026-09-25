@@ -1,0 +1,531 @@
+{
+  "id": "MB-155",
+  "exam": "MRCS-B",
+  "title": "History: back pain with red flags (suspected cauda equina syndrome)",
+  "type": "history",
+  "header": {
+    "domain": "Applied Skills",
+    "contentArea": "Communication skills in giving and receiving information and history taking",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "signalMinutes": 6,
+    "guidelineVersions": [
+      "GIRFT national suspected CES pathway (updated Mar 2026)",
+      "NICE NG59 (updated Jul 2026)",
+      "NICE NG234 (2023)"
+    ],
+    "related": [
+      {
+        "id": "Lower limb neurological examination",
+        "why": "The examination that follows this history"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Emergency department",
+    "role": "Core surgical trainee on call",
+    "scenario": "Ms Laura Bennett, 38, has come in with worsening low back pain and pain down both legs. Her GP prescribed co-codamol last week.",
+    "task": "Take a focused history. You will be stopped at 6 minutes to summarise your history, then asked about differential diagnosis, investigation and management."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Back pain plus both legs is a warning sign: ask the cauda equina questions directly, and early.",
+    "trap": "Asking vaguely about \"waterworks\" and accepting \"fine\".",
+    "firstMove": "Explain you need to ask some personal questions, then ask about sensation when wiping."
+  },
+  "flow": [
+    "Open and listen",
+    "Pain and sciatica",
+    "Cauda equina symptoms",
+    "Other red flags",
+    "Ideas, concerns, expectations",
+    "At 6 minutes: summarise",
+    "Emergency MRI and plan"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "communication",
+      "label": "Opening and sensitivity",
+      "fail": "Asks intimate questions without warning or explanation.",
+      "pass": "Introduces, confirms identity, open question; explains why personal questions are needed.",
+      "high": "Normalises the questions (\"I ask everyone with back and leg pain\") and uses plain words for saddle sensation."
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-skill",
+      "label": "Pain and sciatica",
+      "fail": "Doesn't establish that the leg pain is bilateral or when it spread.",
+      "pass": "Onset, mechanism, back versus leg pain, which legs, and progression from one leg to both.",
+      "high": "Recognises bilateral sciatica as a warning sign (urgent, not emergency, on its own) and asks about leg weakness or falls.",
+      "source": "GIRFTCES"
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-skill",
+      "label": "Cauda equina symptoms (safety-critical)",
+      "fail": "Asks only \"Any problems with your waterworks?\"",
+      "borderline": "Asks about bladder and bowel but not saddle sensation or sexual function.",
+      "pass": "Asks specifically: saddle or genital numbness, hesitancy or reduced sensation of flow, incontinence, bowel and sexual function.",
+      "high": "Dates each symptom: onset within 14 days or worsening makes it an emergency referral.",
+      "source": "GIRFTCES"
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-skill",
+      "label": "Red flags for other causes",
+      "fail": "Doesn't ask about cancer, infection or trauma.",
+      "pass": "Asks about cancer history, weight loss, night pain, fever, IV drug use, immunosuppression, trauma and steroids.",
+      "high": "Asks the pain features that suggest spinal metastases: unremitting, progressive, worse at night or on straining.",
+      "source": "NG234"
+    },
+    {
+      "id": "G5",
+      "domain": "communication",
+      "label": "Ideas, concerns, expectations",
+      "fail": "Doesn't ask, or agrees she can go home for the school run.",
+      "pass": "Asks what she thinks is wrong, what worries her and what she expects.",
+      "high": "Addresses the childcare problem practically so she can stay, and explains why without frightening her."
+    },
+    {
+      "id": "G6",
+      "domain": "communication",
+      "label": "Summary at the signal",
+      "fail": "Presents it as mechanical back pain or simple sciatica.",
+      "pass": "Summarises bilateral sciatica with saddle numbness and urinary hesitancy; suspected cauda equina syndrome.",
+      "high": "Leads with the timeline of neurological symptoms and the important negatives for other causes."
+    },
+    {
+      "id": "G7",
+      "domain": "professionalism",
+      "label": "Emergency MRI; not sending home (safety-critical)",
+      "fail": "Discharges with analgesia, or waits for a spinal opinion before requesting MRI.",
+      "pass": "Emergency MRI at this hospital, as soon as possible and within 4 hours of request; she stays.",
+      "high": "Discusses with a senior (ST4 or above), keeps her nil by mouth, and says a bladder scan won't decide the MRI.",
+      "source": "GIRFTCES"
+    },
+    {
+      "id": "G8",
+      "domain": "clinical-knowledge",
+      "label": "Next steps and safety-netting",
+      "fail": "Plans a rectal examination as the deciding test, or omits documentation.",
+      "pass": "Records perianal sensation and neurology; immediate spinal referral if compression is confirmed.",
+      "high": "If no compression: safety-net with warning card and video. Documents times of assessment and referral.",
+      "source": "GIRFTCES"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "candidate",
+        "text": "What's the problem? [Starts typing.] Any waterworks problems?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          },
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Where's the pain? OK.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop there and summarise your history."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Ms Bennett is 38 with mechanical back pain and sciatica after lifting.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What would you do?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Stronger painkillers and a GP follow-up. She needs to get home for her children. If she's worse, I'll call the spinal team before any scan.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          },
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "candidate",
+        "text": "Hello, I'm Dr Patel, one of the surgical trainees. Can I check your name and date of birth? Tell me what's been happening. Later I'll need to ask some personal questions; they're important.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "How did it start? Is the back or the legs worse? Which leg first, and when did the other one start?",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Any numbness around your bottom or between your legs? Any change when you wipe? Any difficulty starting to pass urine, or feeling it flow? Any leaking? Any change in your bowels or sex life?",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Have you ever had cancer? Any weight loss, night pain or fevers? Ever injected drugs, or take steroids? Any fall or injury?",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "What do you think is going on? What's worrying you? What were you hoping for?",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop there and summarise your history."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Ms Bennett, 38, has ten days of back pain, with bilateral sciatica, reduced sensation when wiping since yesterday and urinary hesitancy since this morning. No cancer, fever or trauma. I'm concerned about cauda equina syndrome.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What would you do?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "She needs an emergency MRI here, as soon as possible and within 4 hours of the request. She can't go home. I'd examine her, record perianal sensation, and refer immediately to the spinal team if there's compression.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          },
+          {
+            "row": "G8",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "candidate",
+        "text": "Hello, I'm Dr Patel, one of the surgical trainees. Can I check your name and date of birth? I ask everyone with back and leg pain some personal questions, because they help me spot a rare but serious nerve problem.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "The pain spreading to both legs is a warning sign, so I need to ask more. Any weakness, tripping, or legs giving way?",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "When did the numbness when wiping start? And the trouble passing urine? So both in the last two days.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Is the pain there all the time, worse at night or when you cough or strain?",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "You're worried about the school run. Is there someone who can collect the children? I want to keep you here for a scan today, because catching this early protects your bladder and legs.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop there and summarise your history."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Ms Bennett, 38: ten days of back pain after lifting; right sciatica for a week, bilateral for two days; saddle numbness since yesterday and urinary hesitancy since this morning. No cancer history, fever, IV drug use, steroids or trauma. This is suspected cauda equina syndrome.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What would you do?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Emergency MRI here within 4 hours of the request; I'd discuss with my registrar and keep her nil by mouth. A bladder scan helps but won't decide the MRI. I'd record perianal sensation and neurology with times. If there's no compression, she leaves with a warning card and the video.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          },
+          {
+            "row": "G8",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G3",
+      "move": "Asking only about \"waterworks\".",
+      "consequence": "Safety-critical: misses saddle numbness and reduced urinary sensation, the early features of cauda equina syndrome."
+    },
+    {
+      "row": "G7",
+      "move": "Sending her home with analgesia, or delaying MRI for a spinal opinion.",
+      "consequence": "Safety-critical: delay risks permanent bladder, bowel, sexual and leg dysfunction."
+    },
+    {
+      "row": "G4",
+      "move": "Skipping cancer, infection and trauma questions.",
+      "consequence": "Misses metastatic compression or epidural abscess, which change the pathway."
+    },
+    {
+      "row": "G8",
+      "move": "Relying on a normal rectal examination or bladder scan to exclude CES.",
+      "consequence": "Neither excludes it; MRI is the test."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You forgot saddle sensation",
+      "line": "One more important question: have you noticed any numbness when you wipe after the toilet?"
+    },
+    {
+      "when": "She insists on leaving",
+      "line": "I'm worried this could damage the nerves to your bladder. Can we sort out help with the children so you can stay for the scan?"
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Emergency referral: back or leg pain with urinary, saddle, rectal or sexual symptoms, or severe or progressive weakness of both legs, of onset within 14 days or worsening. Bilateral sciatica alone: urgent (2-week) MSK triage and safety-netting.",
+      "source": "GIRFTCES"
+    },
+    {
+      "fact": "Emergency MRI as soon as possible, and within 4 hours of request; at the presenting hospital is best practice. Spinal discussion is not needed first.",
+      "source": "GIRFTCES"
+    },
+    {
+      "fact": "PVR under 200 ml does not exclude CES; over 200 ml makes it 20 times more likely.",
+      "source": "GIRFTCES"
+    },
+    {
+      "fact": "Exclude specific causes: cancer, infection, trauma, inflammatory disease (1.1.1).",
+      "source": "NG59"
+    },
+    {
+      "fact": "Spinal metastasis pain: unremitting, progressive, night-time, worse on straining (Box 1).",
+      "source": "NG234"
+    }
+  ],
+  "recall": {
+    "think": "Cauda equina compression; metastases, abscess, fracture.",
+    "say": "\"This is suspected cauda equina syndrome; she needs an emergency MRI.\"",
+    "do": [
+      "Ask saddle, bladder, bowel, sex",
+      "Ask cancer, fever, trauma",
+      "MRI here; she stays"
+    ],
+    "numbers": [
+      {
+        "value": "4 hours",
+        "meaning": "from request to emergency MRI",
+        "source": "GIRFTCES"
+      },
+      {
+        "value": "14 days",
+        "meaning": "recent-onset CES symptoms: emergency referral",
+        "source": "GIRFTCES"
+      }
+    ],
+    "trap": "\"Waterworks fine\" and a normal bladder scan.",
+    "finish": "MRI; immediate spinal referral if compressed."
+  },
+  "sources": [
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format: 9-minute stations with 1 minute's reading; introduce yourself and confirm identity at every station"
+    },
+    {
+      "id": "GIRFTCES",
+      "name": "GIRFT (NHS England): Spinal surgery: National suspected cauda equina syndrome (CES) pathway",
+      "version": "February 2023; last updated March 2026",
+      "url": "https://gettingitrightfirsttime.co.uk/wp-content/uploads/2026/04/National-Suspected-Cauda-Equina-Pathway-March-2026.pdf",
+      "supports": "CES symptoms of recent onset (14 days or fewer) warrant emergency referral to the nearest hospital with emergency MRI; emergency MRI as soon as possible and within four hours of request; MRI at presenting hospital is best practice; bladder scan not a discriminator; DRE not necessary but record perianal sensation; senior (ST4 or above) discussion; nil by mouth; bilateral sciatica without CES symptoms as a warning sign needing urgent (two-week) MSK triage; safety-netting card and video"
+    },
+    {
+      "id": "NG59",
+      "name": "NICE NG59: Low back pain and sciatica in over 16s: assessment and management",
+      "version": "Published November 2016; last updated 29 July 2026",
+      "url": "https://www.nice.org.uk/guidance/ng59",
+      "supports": "Think about alternative diagnoses; exclude specific causes such as cancer, infection, trauma or inflammatory disease (1.1.1)"
+    },
+    {
+      "id": "NG234",
+      "name": "NICE NG234: Spinal metastases and metastatic spinal cord compression",
+      "version": "Published 6 September 2023",
+      "url": "https://www.nice.org.uk/guidance/ng234",
+      "supports": "Box 1 factors suggesting spinal metastases or MSCC: past or current cancer; severe unremitting, progressive, night-time or strain-aggravated pain; localised tenderness (1.3.1)"
+    }
+  ],
+  "partner": {
+    "opening": "Please take a focused history from Ms Bennett. I'll stop you at 6 minutes to summarise.",
+    "actorBrief": "You are Laura Bennett, 38, a warehouse supervisor and single mother of two (8 and 11). Opening line: \"My back's killing me and now both legs hurt. I just need something stronger.\" Emotional state: in pain, impatient, keen to leave by 3 pm for the school run. Volunteer only the back and leg pain. Release the other facts only when asked (see reveals). You are embarrassed about the numbness and won't mention it unless asked specifically about sensation when wiping or between the legs. Hidden fear: \"ending up in a wheelchair\"; say so only if asked what worries you. If told you must stay, ask who will fetch the children.",
+    "reveals": [
+      {
+        "trigger": "Asks how it started and which legs",
+        "finding": "Lifted a box 10 days ago; right leg pain a week ago; left leg too for two days.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Asks about weakness or falls",
+        "finding": "\"My legs feel heavy, but I haven't fallen.\"",
+        "row": "G2"
+      },
+      {
+        "trigger": "Asks about sensation when wiping or between the legs",
+        "finding": "\"It feels numb when I wipe, since yesterday.\"",
+        "row": "G3"
+      },
+      {
+        "trigger": "Asks about starting urination or feeling the flow",
+        "finding": "\"It's slow to start since this morning, and I can't really feel it.\" No leaking.",
+        "row": "G3"
+      },
+      {
+        "trigger": "Asks about bowels or sexual function",
+        "finding": "Bowels normal; no partner at present, so hasn't noticed.",
+        "row": "G3"
+      },
+      {
+        "trigger": "Asks about cancer, weight, fever, drugs, steroids, trauma",
+        "finding": "None. No night pain beyond the pain itself; no fever; no injury apart from lifting.",
+        "row": "G4"
+      },
+      {
+        "trigger": "Asks what worries her",
+        "finding": "\"My mum's friend ended up in a wheelchair after a back problem.\"",
+        "row": "G5"
+      },
+      {
+        "trigger": "At 6 minutes",
+        "finding": "Say: \"Please stop there and summarise your history.\"",
+        "row": "G6"
+      }
+    ],
+    "push": [
+      {
+        "question": "What is your differential?",
+        "row": "G6",
+        "expect": "Cauda equina syndrome from a disc prolapse; less likely metastasis, abscess or haematoma."
+      },
+      {
+        "question": "What would you do now, and how quickly?",
+        "row": "G7",
+        "expect": "Emergency MRI at this hospital within 4 hours of request; she stays; senior discussion."
+      },
+      {
+        "question": "Her post-void residual is 150 ml. Does that change anything?",
+        "row": "G7",
+        "expect": "No: a PVR under 200 ml doesn't exclude CES; MRI still needed."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "The on-call spinal registrar says to request the MRI in the morning.",
+        "safeAnswer": "Escalate: the pathway sets MRI within 4 hours of request; discuss with my consultant.",
+        "row": "G7"
+      },
+      {
+        "prompt": "\"I'm going home. I'll come back after the school run.\"",
+        "safeAnswer": "Explain the risk plainly, help arrange childcare, and document capacity and the discussion if she still leaves.",
+        "row": "G5"
+      },
+      {
+        "prompt": "She mentions she had breast cancer five years ago.",
+        "safeAnswer": "Consider metastatic spinal cord compression: contact the MSCC coordinator immediately; MRI still urgent.",
+        "row": "G4"
+      }
+    ]
+  }
+}

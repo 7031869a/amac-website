@@ -1,0 +1,522 @@
+{
+  "id": "MB-152",
+  "exam": "MRCS-B",
+  "title": "History: dyspepsia and weight loss",
+  "type": "history",
+  "header": {
+    "domain": "Applied Skills",
+    "contentArea": "Communication skills in giving and receiving information and history taking",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "signalMinutes": 6,
+    "guidelineVersions": [
+      "NICE NG12 (updated Apr 2026)",
+      "NICE CG184 (updated Oct 2019)"
+    ],
+    "related": [
+      {
+        "id": "MB-153 Painless jaundice",
+        "why": "Another upper GI cancer history built on NG12"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Surgical outpatient clinic",
+    "role": "Core surgical trainee",
+    "scenario": "Mr Derek Walsh, 64, has been referred by his GP with three months of indigestion.",
+    "task": "Take a focused history. You will be stopped at 6 minutes to summarise your history, then asked about differential diagnosis, investigation and management."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Indigestion at 64 is a cancer question until the alarm features are asked and answered.",
+    "trap": "Treating it as reflux because the pharmacy omeprazole partly helped.",
+    "firstMove": "Open question, then quantify the weight loss: how much, over how long?"
+  },
+  "flow": [
+    "Open and listen",
+    "Characterise the dyspepsia",
+    "Alarm features",
+    "Drugs and risk factors",
+    "Ideas, concerns, expectations",
+    "At 6 minutes: summarise",
+    "Referral and plan"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "communication",
+      "label": "Opening and rapport",
+      "fail": "Launches into closed questions without introduction or an open question.",
+      "pass": "Introduces, confirms identity, asks an open question and lets him finish.",
+      "high": "Picks up his cue about his wife early and signposts: \"I'll come back to that.\""
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-skill",
+      "label": "Presenting complaint",
+      "fail": "Records \"indigestion\" without site, timing or relation to food.",
+      "pass": "Site, character, relation to meals, duration, relieving factors; early satiety and vomiting.",
+      "high": "Quantifies weight loss in kilograms over a time period, and asks what the omeprazole changed."
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-skill",
+      "label": "Alarm features (safety-critical)",
+      "fail": "Omits dysphagia or GI bleeding.",
+      "borderline": "Asks about weight loss but not dysphagia or bleeding.",
+      "pass": "Asks directly about dysphagia, weight loss, vomiting, haematemesis, melaena and symptoms of anaemia.",
+      "high": "Asks about a lump in the abdomen, and states each negative back to him to confirm it."
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-skill",
+      "label": "Drugs and risk factors",
+      "fail": "Doesn't ask about over-the-counter medicines.",
+      "pass": "Asks about NSAIDs, aspirin, anticoagulants and over-the-counter PPIs; smoking, alcohol and family history.",
+      "high": "Adds other culprit drugs (bisphosphonates, steroids, calcium antagonists) and any previous endoscopy.",
+      "source": "CG184"
+    },
+    {
+      "id": "G5",
+      "domain": "communication",
+      "label": "Ideas, concerns, expectations",
+      "fail": "Doesn't ask what he thinks is wrong.",
+      "pass": "Asks what he thinks is causing it, what worries him, and what he hopes for today.",
+      "high": "Names his fear of cancer honestly and links his carer role to the plan."
+    },
+    {
+      "id": "G6",
+      "domain": "communication",
+      "label": "Summary at the signal",
+      "fail": "Retells the history in order, or gives no working diagnosis.",
+      "pass": "Concise summary with key positives and negatives, and a working diagnosis with differential.",
+      "high": "Leads with the alarm features and says gastric or oesophageal cancer must be excluded."
+    },
+    {
+      "id": "G7",
+      "domain": "clinical-knowledge",
+      "label": "Referral and investigation",
+      "fail": "Plans a longer PPI trial or H. pylori testing first.",
+      "pass": "Meets NG12 suspected cancer criteria (55 or over, weight loss, dyspepsia); books the urgent OGD directly.",
+      "high": "Says the suspected cancer pathway aims for diagnosis or exclusion within 28 days; adds FBC for anaemia.",
+      "source": "NG12"
+    },
+    {
+      "id": "G8",
+      "domain": "professionalism",
+      "label": "Management and safety-netting",
+      "fail": "Continues the ibuprofen, or gives no safety-net advice.",
+      "pass": "Stops the NSAID; safety-nets for vomiting blood, black stools or swallowing difficulty.",
+      "high": "Says acute GI bleeding means same-day referral, and considers cardiac or biliary causes.",
+      "source": "CG184"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "candidate",
+        "text": "So you've got indigestion. Is it burning?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          },
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Any heartburn at night? Do you drink much coffee?"
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop there and summarise your history."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Mr Walsh is a 64-year-old man with reflux, better on omeprazole.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What would you do?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Double his omeprazole for two months and test for H. pylori. He can carry on with ibuprofen for his knee.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          },
+          {
+            "row": "G8",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "candidate",
+        "text": "Hello, I'm Dr Shah, one of the surgical trainees. Can I check your name and date of birth? Tell me about the problem in your own words.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Where is the pain? Is it linked to eating? How long has it been going on? Do you feel full quickly? Any vomiting?",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Have you lost weight? Any difficulty swallowing? Have you vomited blood or passed black stools? Have you been more tired or breathless?",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "What medicines do you take, including from the chemist? Any ibuprofen or aspirin? Do you smoke or drink? Any stomach cancer in the family?",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "What do you think is going on? Is anything worrying you? What were you hoping for today?",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop there and summarise your history."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Mr Walsh is 64, with three months of epigastric pain, early satiety and 7 kg weight loss, taking ibuprofen and over-the-counter omeprazole. No dysphagia or bleeding. I'm worried about gastric cancer; the differential is peptic ulcer or NSAID gastropathy.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What would you do next?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "He meets the NG12 suspected cancer criteria: 55 or over with weight loss and dyspepsia. I'd book an urgent OGD myself. I'd stop the ibuprofen and tell him to come back at once if he vomits blood, has black stools or can't swallow.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          },
+          {
+            "row": "G8",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "candidate",
+        "text": "Hello, I'm Dr Shah, one of the surgical trainees. Can I check your name and date of birth? Tell me what's been happening. [Hears that he cares for his wife.] That sounds hard; I'll come back to that.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "How much weight, and over what time? And what difference has the omeprazole made?",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Any lump you've felt in your tummy? So, to check: no swallowing trouble, no blood in the vomit, no black stools?",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Any tablets for your bones, steroids, or blood pressure tablets like amlodipine? Have you ever had a camera test?",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "You mentioned your friend. Are you worried this could be cancer? I'll be honest: we need to rule that out quickly. Who looks after your wife if you have tests?",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop there and summarise your history."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Mr Walsh, 64, has alarm features: 7 kg weight loss in three months with dyspepsia and early satiety. He takes ibuprofen and has self-medicated with omeprazole. He has no dysphagia or GI bleeding. Gastric or oesophageal cancer must be excluded; peptic ulcer is the main alternative.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What would you do next?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "He meets the NG12 criteria, so he stays on the suspected cancer pathway, which aims to diagnose or exclude cancer within 28 days. I'd book an urgent OGD myself and check a full blood count for anaemia. I'd stop the ibuprofen. Vomiting blood or melaena would mean same-day referral. I'd keep cardiac and biliary causes in the differential.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          },
+          {
+            "row": "G8",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G3",
+      "move": "Not asking about dysphagia, haematemesis or melaena.",
+      "consequence": "Safety-critical: misses the features that change the referral route and urgency."
+    },
+    {
+      "row": "G4",
+      "move": "Asking about \"regular tablets\" only.",
+      "consequence": "Over-the-counter ibuprofen and omeprazole go unrecorded: the likely ulcer cause is missed, and so is a PPI that can ease symptoms and delay a cancer diagnosis."
+    },
+    {
+      "row": "G5",
+      "move": "Skipping ideas, concerns and expectations.",
+      "consequence": "His fear of cancer and his caring role stay hidden, and both affect whether he attends."
+    },
+    {
+      "row": "G7",
+      "move": "Extending the PPI trial because symptoms partly improved.",
+      "consequence": "Partial response does not exclude cancer; he already meets the NG12 suspected cancer criteria."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You forgot to ask about bleeding",
+      "line": "Before we finish, have you vomited blood or noticed black, tarry stools?"
+    },
+    {
+      "when": "He asks directly if it's cancer",
+      "line": "It's one of the things we need to rule out, and that's why I'm arranging tests quickly."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "NG12 suspected cancer pathway criteria for oesophageal or stomach cancer (primary care referral): dysphagia, or age 55+ with weight loss plus upper abdominal pain, reflux or dyspepsia (1.2.1, 1.2.7; amended 2025 from direct-access endoscopy).",
+      "source": "NG12"
+    },
+    {
+      "fact": "Non-urgent direct-access endoscopy at 55+ for treatment-resistant dyspepsia, or upper abdominal pain with low haemoglobin (1.2.3, 1.2.9).",
+      "source": "NG12"
+    },
+    {
+      "fact": "Unexplained weight loss over 5% in 6 months at 60+: assess for other features, then urgent investigation or referral (1.13.2, 2026).",
+      "source": "NG12"
+    },
+    {
+      "fact": "Review culprit drugs; suspend NSAIDs in people needing referral (1.3.2).",
+      "source": "CG184"
+    },
+    {
+      "fact": "With alarm symptoms, a PPI can ease symptoms and delay a cancer diagnosis: exclude malignancy.",
+      "source": "OMEP"
+    }
+  ],
+  "recall": {
+    "think": "Gastric or oesophageal cancer; upper GI bleeding.",
+    "say": "\"He meets suspected cancer criteria; I'll book an urgent OGD.\"",
+    "do": [
+      "Quantify weight loss",
+      "Ask dysphagia, bleeding, anaemia",
+      "Ask OTC drugs"
+    ],
+    "numbers": [
+      {
+        "value": "55+",
+        "meaning": "with weight loss and dyspepsia: suspected cancer criteria",
+        "source": "NG12"
+      },
+      {
+        "value": "28 days",
+        "meaning": "suspected cancer pathway: diagnosis or exclusion",
+        "source": "NG12"
+      }
+    ],
+    "trap": "Partial PPI response reassures.",
+    "finish": "Urgent OGD on the suspected cancer pathway; stop NSAID; safety-net."
+  },
+  "sources": [
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format: 9-minute stations with 1 minute's reading; introduce yourself and confirm identity at every station"
+    },
+    {
+      "id": "NG12",
+      "name": "NICE NG12: Suspected cancer: recognition and referral",
+      "version": "Published June 2015; last updated 15 April 2026",
+      "url": "https://www.nice.org.uk/guidance/ng12/resources/suspected-cancer-recognition-and-referral-pdf-1837268071621",
+      "supports": "Suspected cancer pathway referral for oesophageal (1.2.1) and stomach cancer (1.2.7), amended May 2025; non-urgent direct-access endoscopy (1.2.3, 1.2.9); unexplained weight loss at 60+ (1.13.2, April 2026); suspected cancer pathway definition (28 days)"
+    },
+    {
+      "id": "CG184",
+      "name": "NICE CG184: Gastro-oesophageal reflux disease and dyspepsia in adults: investigation and management",
+      "version": "Published September 2014; last updated 18 October 2019",
+      "url": "https://www.nice.org.uk/guidance/cg184",
+      "supports": "Same-day specialist referral for dyspepsia with significant acute GI bleeding (1.3.1); review drugs that cause dyspepsia and suspend NSAIDs in people needing referral (1.3.2); consider cardiac or biliary disease (1.3.3)"
+    },
+    {
+      "id": "OMEP",
+      "name": "Omeprazole: Summary of Product Characteristics (electronic medicines compendium), section 4.4",
+      "version": "Current SmPC, section 4.4",
+      "url": "https://www.medicines.org.uk/emc/product/15055/smpc",
+      "supports": "With alarm symptoms (weight loss, recurrent vomiting, dysphagia, haematemesis, melaena), exclude malignancy: treatment may ease symptoms and delay diagnosis"
+    }
+  ],
+  "partner": {
+    "opening": "Please take a focused history from Mr Walsh. I'll stop you at 6 minutes to summarise.",
+    "actorBrief": "You are Derek Walsh, 64, a retired bus driver. Opening line: \"It's this indigestion, doctor. It just won't go.\" Emotional state: matter-of-fact, but quietly frightened. Volunteer only that it's a gnawing pain under the ribs after meals for three months. Release the other facts only when asked the right question (see reveals). Hidden concern: a friend died of stomach cancer last year; you only say so if asked what worries you. You care for your wife, who has MS; mention \"I look after my wife\" early as a cue, and expand only if the candidate comes back to it. Expectation: \"a stronger tablet\".",
+    "reveals": [
+      {
+        "trigger": "Asks about eating or fullness",
+        "finding": "\"I feel full after half a plate. Sometimes I bring food back up.\"",
+        "row": "G2"
+      },
+      {
+        "trigger": "Asks about weight",
+        "finding": "\"My trousers are loose. About 7 kilos since the summer\" (three months; was 82 kg).",
+        "row": "G2"
+      },
+      {
+        "trigger": "Asks about swallowing, vomiting blood or black stools",
+        "finding": "No to all three.",
+        "row": "G3"
+      },
+      {
+        "trigger": "Asks about tiredness or breathlessness",
+        "finding": "\"I get puffed on the stairs lately.\"",
+        "row": "G3"
+      },
+      {
+        "trigger": "Asks about medicines, including over-the-counter",
+        "finding": "Ibuprofen 400 mg three times a day for his knee for a year; omeprazole from the chemist for two months, which \"takes the edge off\".",
+        "row": "G4"
+      },
+      {
+        "trigger": "Asks about smoking, alcohol, family",
+        "finding": "Smoked 20 a day for 40 years, stopped 5 years ago; 10 units a week; no family history of cancer.",
+        "row": "G4"
+      },
+      {
+        "trigger": "Asks what worries him",
+        "finding": "\"My mate Tony had this. It was stomach cancer.\"",
+        "row": "G5"
+      },
+      {
+        "trigger": "At 6 minutes",
+        "finding": "Say: \"Please stop there and summarise your history.\"",
+        "row": "G6"
+      }
+    ],
+    "push": [
+      {
+        "question": "What is your differential?",
+        "row": "G6",
+        "expect": "Gastric or oesophageal cancer; peptic ulcer; NSAID gastropathy."
+      },
+      {
+        "question": "What would you arrange, and how fast?",
+        "row": "G7",
+        "expect": "Meets NG12 suspected cancer criteria (55+, weight loss, dyspepsia); candidate books urgent OGD; 28-day diagnosis standard."
+      },
+      {
+        "question": "What would you do about his medicines?",
+        "row": "G8",
+        "expect": "Stop the NSAID; safety-net for bleeding and dysphagia."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "He mentions he passed a black, sticky stool yesterday.",
+        "safeAnswer": "Possible upper GI bleed: same-day assessment, not an outpatient referral.",
+        "row": "G8"
+      },
+      {
+        "prompt": "\"Can't I just have a stronger tablet?\"",
+        "safeAnswer": "Tablets may ease symptoms but won't tell us the cause; he needs a camera test first.",
+        "row": "G5"
+      },
+      {
+        "prompt": "The omeprazole has made him much better. Does he still need the OGD?",
+        "safeAnswer": "Yes. Symptom response doesn't exclude cancer, and he meets the criteria on age and weight loss; he still needs the urgent OGD.",
+        "row": "G7"
+      }
+    ]
+  }
+}

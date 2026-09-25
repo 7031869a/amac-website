@@ -1,0 +1,599 @@
+{
+  "id": "MB-165",
+  "exam": "MRCS-B",
+  "title": "Adhesional small bowel obstruction",
+  "type": "applied-knowledge",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "Applied surgical science and critical care",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "WSES Bologna ASBO guideline (2017 update, 2018)",
+      "NICE CG174 (updated May 2017)",
+      "RCS England High-Risk General Surgical Patient (2018)"
+    ],
+    "related": [
+      {
+        "id": "MB-133 Perforated viscus",
+        "why": "The same high-risk emergency laparotomy standards"
+      },
+      {
+        "id": "MB-166 Hyperkalaemia",
+        "why": "Electrolytes and AKI in the surgical patient"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Emergency surgical assessment unit",
+    "role": "Core surgical trainee on call",
+    "scenario": "Mrs Susan Whitlock, 64, has 2 days of colicky central abdominal pain, repeated bilious vomiting and distension. She has not opened her bowels or passed wind for 24 hours. She had an open appendicectomy as a child and an abdominal hysterectomy at 45. Pulse 108, BP 112/70, temperature 37.4°C.",
+    "task": "The examiner will ask you about your assessment and management, giving results as you ask."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Probable adhesional obstruction. Resuscitate, decompress, and decide early whether the bowel is at risk.",
+    "trap": "Starting 'drip and suck' without looking for strangulation or a hernia.",
+    "firstMove": "\"ABCDE, IV access, bloods with a lactate, then a fluid bolus.\""
+  },
+  "flow": [
+    "Resuscitate",
+    "Examine: hernias, peritonism",
+    "NG tube, fluids, electrolytes",
+    "CT",
+    "Contrast challenge",
+    "Decide on surgery",
+    "Senior and risk"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-skill",
+      "label": "Resuscitation",
+      "fail": "Writes up maintenance fluids only.",
+      "pass": "ABCDE; IV access; bloods including lactate, U&E, FBC, CRP, group and save; 500 ml crystalloid bolus over under 15 minutes, then reassess.",
+      "high": "Catheter and hourly urine output; fluid balance chart; replaces nasogastric losses on top of maintenance.",
+      "source": "CG174"
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-skill",
+      "label": "Examination for strangulation and hernia",
+      "fail": "Doesn't examine the hernial orifices or look for peritonism.",
+      "pass": "Examines the hernial orifices and scars; looks for peritonism, fever, tachycardia and a raised lactate.",
+      "high": "Knows examination misses about half of strangulations, so a normal abdomen doesn't exclude ischaemia.",
+      "source": "BOL17"
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "Decompression and electrolytes",
+      "fail": "Leaves her eating, or without a nasogastric tube while vomiting.",
+      "pass": "Nil by mouth; wide-bore nasogastric tube on free drainage; corrects electrolytes, especially potassium.",
+      "high": "Explains the tube reduces aspiration risk; checks renal function because dehydration causes AKI.",
+      "source": "BOL17"
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-knowledge",
+      "label": "Imaging",
+      "fail": "Relies on a plain abdominal X-ray to decide on surgery.",
+      "pass": "CT abdomen and pelvis with IV contrast to confirm obstruction, the transition point and any signs of strangulation.",
+      "high": "Names the signs needing surgery without delay: closed loop, ischaemia, free fluid.",
+      "source": "BOL17"
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-knowledge",
+      "label": "Water-soluble contrast challenge",
+      "fail": "Hasn't heard of the contrast challenge.",
+      "borderline": "Knows about the challenge but not the 24-hour film or what it shows.",
+      "pass": "Gastrografin orally or via the nasogastric tube; abdominal X-ray at 24 hours; contrast in the colon predicts resolution.",
+      "high": "Gives the dose (50–150 ml), and knows it is diagnostic and may also help the obstruction resolve.",
+      "source": "BOL13"
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-knowledge",
+      "label": "Indications for surgery (safety-critical)",
+      "fail": "Continues non-operative management despite peritonism or a rising lactate.",
+      "pass": "Surgery now for peritonitis, strangulation or ischaemia; a non-operative trial is safe for up to 72 hours, so reviews for surgery if unresolved by then.",
+      "high": "Laparoscopy only in selected cases; plans consent for resection and possible stoma.",
+      "source": "BOL17"
+    },
+    {
+      "id": "G7",
+      "domain": "professionalism",
+      "label": "Senior involvement and risk",
+      "fail": "Admits her without informing the registrar.",
+      "pass": "Registrar and consultant informed; risk of death documented by ST3 or above within 4 hours of admission.",
+      "high": "If predicted mortality is 5% or more: consultant surgeon and anaesthetist in theatre and critical care afterwards.",
+      "source": "RCS18"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "How would you manage Mrs Whitlock?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd put up maintenance fluids and see how she goes.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "It sounds like adhesions, so I wouldn't need to examine for hernias.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "She's still vomiting."
+      },
+      {
+        "speaker": "candidate",
+        "text": "An antiemetic, and she can have sips.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Imaging?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "An abdominal X-ray will tell me whether she needs an operation.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Have you heard of a contrast challenge?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Not really.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "She's now tender with guarding, lactate 4.2."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd keep going with drip and suck for a few more days.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Who would you tell?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd mention her on the ward round tomorrow.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "examiner",
+        "text": "How would you manage Mrs Whitlock?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "ABCDE. IV access, bloods including a lactate, U&E, FBC, CRP, group and save. A 500 ml crystalloid bolus over less than 15 minutes, then reassess.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd examine her scars and hernial orifices, and look for peritonism.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "She's still vomiting."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Nil by mouth, a nasogastric tube on free drainage, and I'd correct her electrolytes, especially potassium.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Imaging?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "CT abdomen and pelvis with IV contrast to confirm obstruction, find the transition point and look for strangulation.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "It shows adhesional obstruction without ischaemia. Then?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Gastrografin down the tube and an abdominal X-ray at 24 hours. If contrast reaches the colon, it's likely to settle.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "When would you operate?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Peritonitis, strangulation or ischaemia, or if it hasn't resolved after 72 hours.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd tell my registrar and consultant, and her risk of death needs documenting within 4 hours by ST3 or above.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "examiner",
+        "text": "How would you manage Mrs Whitlock?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "She's dehydrated and tachycardic. ABCDE, access, bloods with lactate, U&E, FBC, CRP, group and save. 500 ml Hartmann's over under 15 minutes, reassess. Catheter, hourly urine, and I'd replace her nasogastric losses on top of maintenance.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Two previous operations make adhesions likely, but I'd check her groins and scars for a hernia. Examination misses about half of strangulations, so a soft abdomen doesn't reassure me.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "She's still vomiting."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Nil by mouth and a wide-bore nasogastric tube on free drainage, mainly to stop her aspirating. Replace potassium, and watch her creatinine.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Imaging?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "CT abdomen and pelvis. I'm looking for a closed loop, poorly enhancing bowel or free fluid; any of those means theatre without delay.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "It shows adhesional obstruction without ischaemia. Then?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "A water-soluble contrast challenge: 50 to 150 ml of Gastrografin via the tube, and an abdominal X-ray at 24 hours. Contrast in the colon predicts resolution; it may also help it resolve.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "When would you operate?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Now if she develops peritonism, fever or a rising lactate. Otherwise, if it hasn't resolved by 72 hours. Laparoscopy only if she's suitable; I'd consent for resection and a possible stoma.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Registrar and consultant now. Risk documented within 4 hours; if it's 5% or more, consultant surgeon and anaesthetist in theatre and a critical care bed.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G6",
+      "move": "Continuing drip and suck in a patient with peritonism and a rising lactate.",
+      "consequence": "Safety-critical: strangulated bowel becomes gangrenous or perforates."
+    },
+    {
+      "row": "G2",
+      "move": "Not examining the groins in bowel obstruction.",
+      "consequence": "Misses an incarcerated hernia that needs surgery, not a contrast challenge."
+    },
+    {
+      "row": "G4",
+      "move": "Using a plain abdominal X-ray to decide whether to operate.",
+      "consequence": "It doesn't show strangulation; CT does."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You forgot the hernial orifices",
+      "line": "I'd also examine her groins and scars; a hernia changes the plan."
+    },
+    {
+      "when": "You can't remember the Gastrografin dose",
+      "line": "I'd follow the local protocol for the dose; the key is an abdominal film at 24 hours."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Non-operative management first unless peritonitis, strangulation or ischaemia: nil by mouth, nasogastric decompression, IV fluids and electrolytes.",
+      "source": "BOL17"
+    },
+    {
+      "fact": "Contrast in the colon on the 24-hour film predicts resolution. Non-operative trial is safe for up to 72 hours.",
+      "source": "BOL17"
+    },
+    {
+      "fact": "No resolution after 72 hours of non-operative management: surgery is recommended.",
+      "source": "BOL13"
+    },
+    {
+      "fact": "Gastrografin 50–150 ml orally or by nasogastric tube.",
+      "source": "BOL13"
+    },
+    {
+      "fact": "CT with IV contrast shows reduced bowel wall enhancement in ischaemia.",
+      "source": "BL"
+    },
+    {
+      "fact": "Predicted mortality of 5% or more is high risk.",
+      "source": "RCS18"
+    },
+    {
+      "fact": "Oral water-soluble contrast can be given with the CT or afterwards as the contrast challenge; take a 24-hour film either way.",
+      "source": "BOL17"
+    }
+  ],
+  "recall": {
+    "think": "Is the bowel strangulating?",
+    "say": "\"Resuscitate, decompress, CT, and theatre if there's any sign of ischaemia.\"",
+    "do": [
+      "Bolus, bloods with lactate, catheter",
+      "NG tube, nil by mouth, potassium",
+      "CT, then Gastrografin challenge"
+    ],
+    "numbers": [
+      {
+        "value": "24 h",
+        "meaning": "abdominal film after contrast",
+        "source": "BOL17"
+      },
+      {
+        "value": "72 h",
+        "meaning": "no resolution: surgery recommended",
+        "source": "BOL13"
+      },
+      {
+        "value": "4 h",
+        "meaning": "senior risk assessment recorded",
+        "source": "RCS18"
+      }
+    ],
+    "trap": "A soft abdomen does not exclude strangulation.",
+    "finish": "Adhesiolysis, with resection if non-viable, when it fails or strangulates."
+  },
+  "sources": [
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format: 9 minutes with 1 minute's reading; examiner-led questioning in applied knowledge stations"
+    },
+    {
+      "id": "BOL17",
+      "name": "ten Broek RPG, Krielen P, Di Saverio S, et al. Bologna guidelines for diagnosis and management of adhesive small bowel obstruction (ASBO): 2017 update of the evidence-based guidelines from the World Society of Emergency Surgery ASBO working group. World J Emerg Surg 2018;13:24",
+      "version": "2017 update, published June 2018",
+      "url": "https://doi.org/10.1186/s13017-018-0185-2",
+      "supports": "Non-operative management first unless peritonitis, strangulation or ischaemia; nil by mouth, nasogastric decompression, IV fluids and electrolytes (low potassium common); examination detects strangulation in only 48%; bloods incl. lactate, electrolytes, renal function; plain films of limited value; CT with oral water-soluble contrast preferred; closed loop, ischaemia and free fluid mean surgery without delay; abdominal X-ray 24 h after contrast: contrast in the colon predicts resolution; non-operative trial safe for 72 h; laparoscopy for selected cases"
+    },
+    {
+      "id": "BOL13",
+      "name": "Di Saverio S, Coccolini F, Galati M, et al. Bologna guidelines for diagnosis and management of adhesive small bowel obstruction (ASBO): 2013 update. World J Emerg Surg 2013;8:42",
+      "version": "2013",
+      "url": "https://doi.org/10.1186/1749-7922-8-42",
+      "supports": "Gastrografin 50-150 ml orally or via nasogastric tube, at admission or after 48 h of conservative treatment; after 72 h of non-operative management without resolution, surgery is recommended"
+    },
+    {
+      "id": "CG174",
+      "name": "NICE CG174: Intravenous fluid therapy in adults in hospital",
+      "version": "Published 10 December 2013; last updated 5 May 2017",
+      "url": "https://www.nice.org.uk/guidance/cg174",
+      "supports": "Resuscitation: crystalloid containing sodium 130-154 mmol/l, bolus of 500 ml over less than 15 minutes (1.3.1)"
+    },
+    {
+      "id": "RCS18",
+      "name": "RCS England: The High-Risk General Surgical Patient: Raising the Standard",
+      "version": "2018",
+      "url": "https://www.rcseng.ac.uk/-/media/files/rcs/news-and-events/media-centre/2018-press-releases-documents/rcs-report-the-highrisk-general-surgical-patient--raising-the-standard--december-2018.pdf",
+      "supports": "Standard 3: risk of death assessed and recorded by a senior surgeon (ST3 and above) within four hours of admission; standard 4: high risk = predicted hospital mortality 5% or more, and no recorded risk means treat as high risk; standard 8: consultant surgeon and consultant anaesthetist present, and immediate postoperative critical care admission"
+    },
+    {
+      "id": "BL",
+      "name": "Bailey & Love's Short Practice of Surgery (O'Connell, McCaskie, Sayers, eds)",
+      "version": "28th edition, 2023",
+      "url": "https://www.routledge.com/Bailey--Loves-Short-Practice-of-Surgery---28th-Edition/OConnell-McCaskie-Sayers/p/book/9780367548117",
+      "supports": "Examination of the hernial orifices in bowel obstruction; CT with IV contrast and bowel wall enhancement in ischaemia"
+    }
+  ],
+  "media": [
+    {
+      "id": "ct-sbo",
+      "task": "Describe the CT and say whether she needs theatre",
+      "description": "Coronal CT abdomen with IV contrast showing dilated small bowel loops with a transition point and collapsed distal bowel, no closed loop",
+      "required": false,
+      "status": "needed"
+    },
+    {
+      "id": "axr-gastrografin",
+      "task": "Say whether the contrast challenge predicts resolution",
+      "description": "Abdominal X-ray 24 hours after Gastrografin showing contrast in the colon",
+      "required": false,
+      "status": "needed"
+    }
+  ],
+  "partner": {
+    "opening": "Mrs Whitlock has just been referred to you from ED. How would you assess and manage her?",
+    "reveals": [
+      {
+        "trigger": "Asks for bloods and a gas",
+        "finding": "Lactate 1.8 mmol/L, K 3.2, Na 134, urea 11.8, creatinine 118 (baseline 70), WCC 12.4, CRP 48.",
+        "row": "G1"
+      },
+      {
+        "trigger": "Examines the abdomen",
+        "finding": "Distended, tympanic, mildly tender centrally, no guarding. Midline and gridiron scars. Hernial orifices clear. Tinkling bowel sounds.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Asks for CT",
+        "finding": "Dilated small bowel with a transition point in the pelvis and collapsed distal bowel. No closed loop, normal enhancement, no free fluid.",
+        "row": "G4"
+      },
+      {
+        "trigger": "Asks for the 24-hour film",
+        "finding": "Contrast has reached the colon.",
+        "row": "G5"
+      }
+    ],
+    "push": [
+      {
+        "question": "What on CT would make you operate now?",
+        "row": "G4",
+        "expect": "Closed loop, reduced wall enhancement or ischaemia, free fluid."
+      },
+      {
+        "question": "How long would you continue non-operative management?",
+        "row": "G6",
+        "expect": "Up to 72 hours if she has no signs of strangulation."
+      },
+      {
+        "question": "What standard applies to her risk assessment?",
+        "row": "G7",
+        "expect": "Documented by ST3 or above within 4 hours; high risk if 5% or more."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "On day 2 she spikes 38.5°C, is tachycardic and guarding, lactate 3.9.",
+        "safeAnswer": "Signs of strangulation: stop non-operative management, resuscitate and take her to theatre with the consultant.",
+        "row": "G6"
+      },
+      {
+        "prompt": "She has a tender irreducible lump below the groin crease.",
+        "safeAnswer": "Likely obstructed femoral hernia: this needs surgery, not a contrast challenge.",
+        "row": "G2"
+      },
+      {
+        "prompt": "She has never had an operation.",
+        "safeAnswer": "Adhesions are less likely: CT to look for another cause, such as a hernia or tumour.",
+        "row": "G4"
+      }
+    ]
+  }
+}

@@ -1,0 +1,528 @@
+{
+  "id": "MB-153",
+  "exam": "MRCS-B",
+  "title": "History: painless jaundice",
+  "type": "history",
+  "header": {
+    "domain": "Applied Skills",
+    "contentArea": "Communication skills in giving and receiving information and history taking",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "signalMinutes": 6,
+    "guidelineVersions": [
+      "NICE NG12 (updated Apr 2026)",
+      "NICE NG85 (2018; minor changes Jan 2026)"
+    ],
+    "related": [
+      {
+        "id": "MB-152 Dyspepsia and weight loss",
+        "why": "Another upper GI cancer history built on NG12"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Surgical assessment unit",
+    "role": "Core surgical trainee",
+    "scenario": "Mrs Margaret Ellis, 68, has been sent in by her GP because her husband noticed her eyes had turned yellow.",
+    "task": "Take a focused history. You will be stopped at 6 minutes to summarise your history, then asked about differential diagnosis, investigation and management."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Sort the jaundice: pre-hepatic, hepatic or post-hepatic. Then ask what makes it sinister.",
+    "trap": "Forgetting fever and rigors: cholangitis changes the urgency.",
+    "firstMove": "\"When did you first notice it, and have you had any pain?\""
+  },
+  "flow": [
+    "Open and listen",
+    "Characterise the jaundice",
+    "Pre-hepatic, hepatic, post-hepatic questions",
+    "Red flags and cholangitis",
+    "Ideas, concerns, expectations",
+    "At 6 minutes: summarise",
+    "Referral and imaging"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "communication",
+      "label": "Opening and rapport",
+      "fail": "Starts with a checklist of closed questions.",
+      "pass": "Introduces, confirms identity, asks an open question and listens.",
+      "high": "Acknowledges her husband's worry and asks her permission before sensitive questions."
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-skill",
+      "label": "Characterising the jaundice",
+      "fail": "Doesn't ask about urine, stools or itch.",
+      "pass": "Onset, pain, dark urine, pale stools and itch: recognises an obstructive pattern.",
+      "high": "Asks whether it is progressive or fluctuating: steady progression favours a tumour over stones."
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-skill",
+      "label": "Structured causes",
+      "fail": "Asks random questions without covering hepatic causes.",
+      "pass": "Asks alcohol, new drugs including antibiotics and herbal remedies, travel, blood-borne virus risks, previous gallstones.",
+      "high": "Signposts the pre-hepatic, hepatic and post-hepatic framework aloud to the examiner.",
+      "source": "BL"
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-skill",
+      "label": "Red flags and cholangitis (safety-critical)",
+      "fail": "Doesn't ask about fever, rigors or weight loss.",
+      "borderline": "Asks about weight loss but not fever or rigors.",
+      "pass": "Asks about fever and rigors, weight loss, appetite, back pain and new diabetes.",
+      "high": "Links new-onset diabetes and back pain to pancreatic cancer, and asks about family history of pancreatic cancer."
+    },
+    {
+      "id": "G5",
+      "domain": "communication",
+      "label": "Ideas, concerns, expectations",
+      "fail": "Reassures her it is probably a virus.",
+      "pass": "Asks what she thinks is causing it, what worries her, and what she expects.",
+      "high": "Addresses her wish to attend the wedding honestly, without false reassurance or premature diagnosis."
+    },
+    {
+      "id": "G6",
+      "domain": "communication",
+      "label": "Summary at the signal",
+      "fail": "Gives a diagnosis of hepatitis, or no diagnosis.",
+      "pass": "Summarises painless obstructive jaundice with weight loss; working diagnosis of pancreatic head cancer.",
+      "high": "Adds that a palpable gallbladder on examination would support malignancy (Courvoisier's law); differential includes cholangiocarcinoma and ampullary tumour.",
+      "source": "BL"
+    },
+    {
+      "id": "G7",
+      "domain": "clinical-knowledge",
+      "label": "Referral pathway",
+      "fail": "Arranges a routine clinic or GP follow-up.",
+      "pass": "Meets NG12 suspected cancer criteria (40 or over with jaundice); arranges the pancreatic protocol CT and HPB MDT referral.",
+      "high": "Notes that at 60 or over, weight loss with new-onset diabetes also meets the NG12 criteria to consider urgent direct-access CT.",
+      "source": "NG12"
+    },
+    {
+      "id": "G8",
+      "domain": "clinical-knowledge",
+      "label": "Imaging before drainage (safety-critical)",
+      "fail": "Books an ERCP and stent before cross-sectional imaging.",
+      "pass": "Pancreatic protocol CT before any biliary drainage, then discussion by the specialist team.",
+      "high": "Says if resectable, fit and not in a trial requiring drainage, resection is preferred to preoperative stenting; bloods include LFTs and clotting.",
+      "source": "NG85"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "candidate",
+        "text": "You're yellow. Have you been drinking a lot?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          },
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Any pain? No? Good, that's reassuring.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          },
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop there and summarise your history."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Mrs Ellis is 68 with painless jaundice. It's probably hepatitis.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What would you do?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd book an ERCP and stent to relieve the jaundice, and see her in clinic.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          },
+          {
+            "row": "G8",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "candidate",
+        "text": "Hello, I'm Dr Okafor, one of the surgical trainees. Can I check your name and date of birth? Tell me what's been happening.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "When did you notice it? Any pain? What colour is your urine, and your stools? Are you itching?",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "How much alcohol do you drink? Any new medicines, antibiotics or herbal remedies? Any travel, tattoos or blood transfusions? Ever had gallstones?",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Any fevers or shaking chills? Have you lost weight or your appetite? Any back pain? Any new diagnoses recently?",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "What did you think was causing this? What worries you? What were you hoping we'd do?",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop there and summarise your history."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Mrs Ellis, 68, has two weeks of painless jaundice with dark urine, pale stools and itch: an obstructive picture. She has lost 6 kg and was diagnosed with diabetes three months ago. No fever. My working diagnosis is pancreatic head cancer.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you proceed?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "She meets the NG12 suspected cancer criteria: 40 or over with jaundice, so she stays on the suspected cancer pathway. I'd arrange a pancreatic protocol CT myself, before anyone drains the bile duct, and refer to the HPB team.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          },
+          {
+            "row": "G8",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "candidate",
+        "text": "Hello, I'm Dr Okafor, one of the surgical trainees. Can I check your name and date of birth? Your husband spotted it first; he must be worried. Tell me what's happened. Is it all right if I ask some personal questions later?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Has the yellow been getting steadily deeper, or coming and going?",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'll ask about the blood, the liver and the bile ducts in turn. [To examiner: pre-hepatic, hepatic, post-hepatic.]",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "A new diabetes diagnosis and an ache into your back: that's helpful to know. Has anyone in your family had pancreatic cancer?",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I can hear how much the wedding matters. I can't promise yet, but we'll move quickly so you have answers.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop there and summarise your history."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Painless, progressive obstructive jaundice in a 68-year-old, with 6 kg weight loss, back ache and new diabetes. No fever, so cholangitis is unlikely. This is pancreatic head cancer until proven otherwise; the differential is cholangiocarcinoma or ampullary tumour. A palpable gallbladder would support malignancy.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you proceed?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "She meets the NG12 suspected cancer criteria, so she stays on that pathway; at 60-plus, weight loss with new diabetes also fits. Bloods: LFTs and clotting. I'd arrange a pancreatic protocol CT before drainage and refer to the HPB team. If it's resectable, she's fit and not in a trial that needs drainage, resection is preferred to preoperative stenting.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          },
+          {
+            "row": "G8",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G4",
+      "move": "Not asking about fever and rigors.",
+      "consequence": "Safety-critical: misses cholangitis, which needs same-day resuscitation, antibiotics and drainage."
+    },
+    {
+      "row": "G8",
+      "move": "Stenting the bile duct before CT.",
+      "consequence": "Safety-critical: stent artefact and inflammation degrade staging, and preoperative drainage may be avoidable."
+    },
+    {
+      "row": "G5",
+      "move": "Telling her it is probably a virus.",
+      "consequence": "False reassurance that has to be taken back once the CT is reported."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You forgot the stools and urine",
+      "line": "Can I go back: what colour are your stools and urine?"
+    },
+    {
+      "when": "You're asked about stenting",
+      "line": "I'd want the pancreatic protocol CT and a specialist team decision before any drainage."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Age 40+ with jaundice: NG12 criteria for a suspected cancer pathway referral for pancreatic cancer (1.2.4).",
+      "source": "NG12"
+    },
+    {
+      "fact": "Age 60+ with weight loss plus new-onset diabetes, back pain or other GI symptoms: consider urgent direct-access CT (1.2.5).",
+      "source": "NG12"
+    },
+    {
+      "fact": "Obstructive jaundice with suspected pancreatic cancer: pancreatic protocol CT before draining the bile duct (1.1.1).",
+      "source": "NG85"
+    },
+    {
+      "fact": "Resectable, fit and not in a trial requiring drainage: resection rather than preoperative biliary drainage (1.7.1).",
+      "source": "NG85"
+    },
+    {
+      "fact": "Courvoisier's law: painless jaundice with a palpable gallbladder is unlikely to be due to stones.",
+      "source": "BL"
+    }
+  ],
+  "recall": {
+    "think": "Pancreatic head cancer; cholangitis if fever and rigors.",
+    "say": "\"Painless obstructive jaundice: cancer until proven otherwise.\"",
+    "do": [
+      "Urine, stools, itch",
+      "Fever, weight, back pain, diabetes",
+      "CT before any stent"
+    ],
+    "numbers": [
+      {
+        "value": "40+",
+        "meaning": "with jaundice: suspected cancer criteria",
+        "source": "NG12"
+      }
+    ],
+    "trap": "\"No pain\" reassures.",
+    "finish": "Suspected cancer pathway; pancreatic protocol CT; specialist team decides drainage."
+  },
+  "sources": [
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format: 9-minute stations with 1 minute's reading; introduce yourself and confirm identity at every station"
+    },
+    {
+      "id": "BL",
+      "name": "Bailey & Love's Short Practice of Surgery (O'Connell, McCaskie, Sayers, eds)",
+      "version": "28th edition, 2023",
+      "url": "https://www.routledge.com/Bailey--Loves-Short-Practice-of-Surgery---28th-Edition/OConnell-McCaskie-Sayers/p/book/9780367548117",
+      "supports": "Pre-hepatic, hepatic and post-hepatic classification of jaundice; Courvoisier's law"
+    },
+    {
+      "id": "NG12",
+      "name": "NICE NG12: Suspected cancer: recognition and referral",
+      "version": "Published June 2015; last updated 15 April 2026",
+      "url": "https://www.nice.org.uk/guidance/ng12/resources/suspected-cancer-recognition-and-referral-pdf-1837268071621",
+      "supports": "Suspected cancer pathway criteria for pancreatic cancer at 40+ with jaundice (1.2.4); consider urgent direct-access CT at 60+ with weight loss plus new-onset diabetes or other features (1.2.5)"
+    },
+    {
+      "id": "NG85",
+      "name": "NICE NG85: Pancreatic cancer in adults: diagnosis and management",
+      "version": "Published 7 February 2018; minor changes, latest January 2026",
+      "url": "https://www.nice.org.uk/guidance/ng85",
+      "supports": "Pancreatic protocol CT before draining the bile duct in obstructive jaundice with suspected pancreatic cancer (1.1.1); resection rather than preoperative biliary drainage if resectable, fit and not in a trial requiring drainage (1.7.1); self-expanding metal stents if drainage needed (1.7.3); ask about first-degree relatives (1.1.14)"
+    }
+  ],
+  "partner": {
+    "opening": "Please take a focused history from Mrs Ellis. I'll stop you at 6 minutes to summarise.",
+    "actorBrief": "You are Margaret Ellis, 68, a retired school secretary. Opening line: \"My husband says I've gone yellow. I feel fine, really.\" Emotional state: a little embarrassed at the fuss, then anxious when asked about weight. Volunteer only that your husband noticed yellow eyes two weeks ago. Release the other facts only when asked (see reveals). Hidden concern: your granddaughter's wedding is in six weeks and you are afraid you'll miss it; say so only if asked what worries you. Your idea: \"a bug from a restaurant\". Expectation: tablets and home.",
+    "reveals": [
+      {
+        "trigger": "Asks about urine, stools or itch",
+        "finding": "Urine \"like tea\"; stools pale and hard to flush; itching, worse at night.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Asks whether it is changing",
+        "finding": "\"It's got steadily deeper.\"",
+        "row": "G2"
+      },
+      {
+        "trigger": "Asks about alcohol, drugs, travel, transfusion, gallstones",
+        "finding": "Two glasses of wine a week; no new medicines or remedies; no travel, tattoos or transfusions; no gallstones.",
+        "row": "G3"
+      },
+      {
+        "trigger": "Asks about fever or rigors",
+        "finding": "No.",
+        "row": "G4"
+      },
+      {
+        "trigger": "Asks about weight or appetite",
+        "finding": "\"About a stone in two months\" (6 kg); off her food.",
+        "row": "G4"
+      },
+      {
+        "trigger": "Asks about back pain or other new diagnoses",
+        "finding": "A dull ache through to her back; diabetes diagnosed three months ago, on metformin.",
+        "row": "G4"
+      },
+      {
+        "trigger": "Asks about family history",
+        "finding": "No pancreatic cancer in the family. Ex-smoker, 20 a day for 30 years.",
+        "row": "G4"
+      },
+      {
+        "trigger": "Asks what worries her",
+        "finding": "\"My granddaughter gets married in six weeks.\"",
+        "row": "G5"
+      },
+      {
+        "trigger": "At 6 minutes",
+        "finding": "Say: \"Please stop there and summarise your history.\"",
+        "row": "G6"
+      }
+    ],
+    "push": [
+      {
+        "question": "What is your differential?",
+        "row": "G6",
+        "expect": "Pancreatic head cancer; cholangiocarcinoma; ampullary tumour; stones less likely."
+      },
+      {
+        "question": "What would you arrange?",
+        "row": "G7",
+        "expect": "Meets NG12 suspected cancer criteria (40+ with jaundice); candidate arranges pancreatic protocol CT and HPB referral."
+      },
+      {
+        "question": "Should she have a stent now?",
+        "row": "G8",
+        "expect": "Not before CT; if resectable, fit and not in a trial requiring drainage, resection rather than preoperative drainage."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "She now says she had shivers and a temperature last night.",
+        "safeAnswer": "Possible cholangitis: admit, sepsis bundle, antibiotics, urgent senior review for drainage.",
+        "row": "G4"
+      },
+      {
+        "prompt": "\"Is it cancer?\"",
+        "safeAnswer": "It's something we need to rule out, and the scan will tell us more. I won't guess before then.",
+        "row": "G5"
+      },
+      {
+        "prompt": "Her CT shows a resectable mass. The endoscopist offers a stent tomorrow.",
+        "safeAnswer": "If she's fit and not in a trial requiring drainage, resection is preferred to preoperative drainage; discuss with the specialist team first.",
+        "row": "G8"
+      }
+    ]
+  }
+}

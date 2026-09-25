@@ -1,0 +1,554 @@
+{
+  "id": "MB-160",
+  "exam": "MRCS-B",
+  "title": "Consent: emergency laparotomy and possible stoma",
+  "type": "communication",
+  "header": {
+    "domain": "Applied Skills",
+    "contentArea": "Communication skills in giving and receiving information and history taking",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "GMC Decision making and consent (Nov 2020; updated Aug 2026)",
+      "Montgomery [2015] UKSC 11",
+      "RCS England Consent: Supported Decision-Making (Nov 2018)",
+      "NELA Tenth Patient Report (Oct 2025)",
+      "Mental Capacity Act 2005"
+    ],
+    "related": [
+      {
+        "id": "MB-133 Perforated viscus and peritonitis",
+        "why": "The resuscitation and decision to operate that come before this conversation"
+      },
+      {
+        "id": "MB-162 Relative when the patient lacks capacity",
+        "why": "What changes when the patient cannot decide"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Surgical assessment unit",
+    "role": "Core surgical trainee on call",
+    "scenario": "Mr Leonard Harris, 71, has perforated sigmoid diverticulitis with generalised peritonitis on CT. He has had IV antibiotics, fluids and analgesia and is alert. Your consultant has seen him and recommends an emergency laparotomy, probably a Hartmann's procedure. She has documented his predicted 30-day mortality as 10%. She will see him again before theatre.",
+    "task": "Discuss the proposed operation with Mr Harris and seek his consent. A consent form is available."
+  },
+  "beforeYouWalkIn": {
+    "frame": "A shared decision under time pressure: options including no operation, material risks, his values, and capacity.",
+    "trap": "Reading a list of complications and pushing for a signature without finding out why he is frightened.",
+    "firstMove": "Ask what he understands so far and who he would like with him."
+  },
+  "flow": [
+    "Introduce; what he knows",
+    "Diagnosis and operation",
+    "Options, including no operation",
+    "Material risks",
+    "His concerns",
+    "Check understanding and capacity",
+    "Form and record"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "communication",
+      "label": "Opening and agenda",
+      "fail": "Starts on risks without introducing himself or finding out what the patient knows.",
+      "pass": "Introduces himself, confirms identity, checks pain, asks what he understands and whether he wants anyone with him.",
+      "high": "Asks what matters most to him before giving options, and offers to phone his daughter.",
+      "source": "ICBSE"
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-knowledge",
+      "label": "Explaining the diagnosis and operation",
+      "fail": "Uses jargon (\"Hartmann's\", \"peritonitis\") without explanation.",
+      "pass": "Plain words: a hole in the bowel, infection in the abdomen; open operation to wash out, remove the diseased bowel and bring out a colostomy.",
+      "high": "Explains why joining the bowel is often unsafe with contamination, so the stoma decision is made during the operation.",
+      "source": "BL"
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "Options, including not operating",
+      "fail": "Presents surgery as the only choice, or omits the option of no operation.",
+      "pass": "Covers the operation, and antibiotics without an operation with its likely outcome; states he may refuse.",
+      "high": "Makes clear that refusing does not mean withdrawing care: he would get antibiotics and comfort-focused care.",
+      "source": "GMCDMC"
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-knowledge",
+      "label": "Material risks",
+      "fail": "Omits the risk of death, or says the operation is \"routine\".",
+      "borderline": "Lists complications but gives no figure for the risk of death.",
+      "pass": "Death: 8.1% at 30 days nationally, his own estimate 10%; ICU, wound and chest infection, clots, leak, stoma problems.",
+      "high": "Tailors risks to what matters to him; says stoma reversal is a further operation and not everyone has it.",
+      "source": "NELA"
+    },
+    {
+      "id": "G5",
+      "domain": "communication",
+      "label": "Responding to his concerns (ICE)",
+      "fail": "Dismisses the stoma as \"just a bag\" or ignores the cue about his wife.",
+      "pass": "Picks up the cue, acknowledges his fear, and explains stoma nurse support.",
+      "high": "Separates his wife's cancer from his situation and asks what he fears most about a stoma."
+    },
+    {
+      "id": "G6",
+      "domain": "professionalism",
+      "label": "Checking understanding and capacity",
+      "fail": "Assumes capacity without checking, or treats reluctance as lack of capacity.",
+      "pass": "Teach-back; confirms he can understand, retain, weigh and communicate the decision; would respect an unwise refusal.",
+      "high": "States capacity is decision-specific; if he refuses, documents the assessment, informs the consultant and keeps the door open.",
+      "source": "MCA"
+    },
+    {
+      "id": "G7",
+      "domain": "professionalism",
+      "label": "Consent form and documentation",
+      "fail": "Asks him to sign before any discussion, or makes no record of it.",
+      "pass": "Form names the operation, possible stoma and material risks; copy offered; discussion recorded in the notes.",
+      "high": "Records the mortality figure given and his concerns; confirms the consultant will see him before theatre, as the operating surgeon remains responsible for confirming consent (RCS 4.6; GMC para 45).",
+      "source": "RCSC"
+    },
+    {
+      "id": "G8",
+      "domain": "communication",
+      "label": "Summary and next steps",
+      "fail": "Leaves without checking for questions.",
+      "pass": "Summarises, invites questions, and explains what happens next: anaesthetist, consultant, stoma nurse, theatre.",
+      "high": "Offers a few minutes alone or with his daughter on the phone, within the time the operation allows."
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "candidate",
+        "text": "Hi, I'm here to do your consent form for the Hartmann's. The risks are bleeding, infection, and you might need a stoma.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          },
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Mr Harris: “Can't you just give me more antibiotics?”"
+      },
+      {
+        "speaker": "candidate",
+        "text": "No, you need the operation, there isn't really another option. It's quite routine.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          },
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Mr Harris: “My wife had one of those bags.”"
+      },
+      {
+        "speaker": "candidate",
+        "text": "It's just a bag, you get used to it. Can you sign here?",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          },
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Mr Harris: “I suppose so.”"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Great. Someone will take you down soon.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "candidate",
+        "text": "Hello, I'm Dr Mensah, one of the surgical trainees. Can I check your name and date of birth? Is your pain controlled? What have you been told so far? Would you like anyone with you?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "There's a hole in the lower part of your bowel, and infection has spread inside your abdomen. We recommend an operation through a cut in the middle of your tummy to wash it out and remove the damaged bowel. We'll probably bring the end out as a colostomy, a bag.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "The other option is antibiotics without an operation, but with infection this widespread you would very likely die. It's your decision, and you can say no.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "This is a big operation. Nationally about 8 in 100 people die within a month; your consultant estimates 10 in 100 for you. You may need intensive care. Other risks are wound and chest infection, clots, a leak, and problems with the stoma.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Mr Harris: “My wife had one of those bags.”"
+      },
+      {
+        "speaker": "candidate",
+        "text": "That sounds hard. Can you tell me about it? A specialist stoma nurse would help you look after it.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Can you tell me in your own words what we're proposing and why?",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Mr Harris: “Wash it out, take the bad bit out, maybe a bag. I could die without it.”"
+      },
+      {
+        "speaker": "candidate",
+        "text": "That's right. The form lists the operation, the possible colostomy and the risks we discussed. You can have a copy, and I'll write our discussion in your notes.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          },
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Any questions? Next, the anaesthetist and your consultant will see you, and a stoma nurse if there's time.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "candidate",
+        "text": "Hello, I'm Dr Mensah, one of the surgical trainees. Can I check your name and date of birth? Is the pain controlled? What have you been told? Before the options, what matters most to you? Shall I phone your daughter?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "There's a hole in your lower bowel, with infection inside your abdomen. The operation washes it out and removes that piece of bowel. Joining the ends in all that infection often isn't safe, so the surgeon decides during the operation; most likely you'd wake with a colostomy.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Without an operation, the infection would very likely kill you. If you decide against it, that's your right, and we'd still treat you with antibiotics and keep you comfortable.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "You said getting home to your dog matters. About 8 in 100 people die within a month of this kind of emergency operation; your consultant's estimate for you is 10 in 100. You'd probably need intensive care for a while, and recovery takes weeks. Reversing a colostomy is another big operation, and not everyone has it.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Mr Harris: “My wife had one of those bags. At the end.”"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'm sorry. Her bag was because of cancer; yours would be because of this infection. What worries you most about having one?",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Could you tell me what you've understood, and what you're weighing up? It's your decision, today, and I'll respect it. If you decline, I'll record that and ask the consultant to talk with you.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'll write on the form the operation, possible colostomy, and that we discussed a 10 in 100 risk of death, and note your worries in the record. Your consultant will see you before theatre.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Would you like a few minutes, or to call your daughter now, before the anaesthetist comes?",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G3",
+      "move": "Telling him there is no alternative to surgery.",
+      "consequence": "The option of no operation and his right to refuse are part of valid consent."
+    },
+    {
+      "row": "G4",
+      "move": "Leaving out the risk of death because it might frighten him.",
+      "consequence": "A reasonable person in his position would attach significance to it: a material risk."
+    },
+    {
+      "row": "G5",
+      "move": "Calling the stoma \"just a bag\".",
+      "consequence": "Shuts down the concern that is driving his hesitation."
+    },
+    {
+      "row": "G7",
+      "move": "Treating the signature as the consent.",
+      "consequence": "The form is evidence of a discussion, not the consent itself; without the discussion, consent is not valid, and without a record there is no evidence of what he was told or decided."
+    },
+    {
+      "row": "G6",
+      "move": "Assuming capacity without checking, or calling his reluctance a lack of capacity.",
+      "consequence": "Capacity is decision-specific; an unwise choice is not evidence that he lacks it."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "He says he'd rather die than have a bag",
+      "line": "That's a big thing to say. Can you tell me more about why the bag feels that way to you?"
+    },
+    {
+      "when": "You forgot the option of no operation",
+      "line": "I should also say: you could choose not to have the operation. Let me explain what that would mean."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Share options including taking no action, with the benefits and risks of each; share any risk of serious harm, however unlikely (paras 10, 21, 23).",
+      "source": "GMCDMC"
+    },
+    {
+      "fact": "A risk is material if a reasonable person in the patient's position would be likely to attach significance to it, or the doctor is or should reasonably be aware that this patient would.",
+      "source": "MONT"
+    },
+    {
+      "fact": "30-day mortality after emergency laparotomy was 8.1% in the tenth NELA report; risk rises with age and frailty.",
+      "source": "NELA"
+    },
+    {
+      "fact": "Capacity: understand, retain, use or weigh, communicate. An unwise decision is not evidence of incapacity (s1(4), s3(1)).",
+      "source": "MCA"
+    }
+  ],
+  "recall": {
+    "think": "He can die with or without this operation; he must choose.",
+    "say": "\"You could choose not to have the operation. Let me explain both.\"",
+    "do": [
+      "Options including none",
+      "Material risks with his own figure",
+      "Teach-back, form and record"
+    ],
+    "numbers": [
+      {
+        "value": "8.1%",
+        "meaning": "30-day mortality after emergency laparotomy",
+        "source": "NELA"
+      },
+      {
+        "value": "4",
+        "meaning": "capacity abilities: understand, retain, weigh, communicate",
+        "source": "MCA"
+      }
+    ],
+    "trap": "A signature is not consent.",
+    "finish": "Consultant sees him before theatre."
+  },
+  "sources": [
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format; introduce yourself and confirm identity"
+    },
+    {
+      "id": "BL",
+      "name": "Bailey & Love's Short Practice of Surgery (O'Connell, McCaskie, Sayers, eds)",
+      "version": "28th edition, 2023",
+      "url": "https://www.routledge.com/Bailey--Loves-Short-Practice-of-Surgery---28th-Edition/OConnell-McCaskie-Sayers/p/book/9780367548117",
+      "supports": "Hartmann's procedure for perforated diverticulitis with peritonitis: resection with end colostomy when primary anastomosis is unsafe"
+    },
+    {
+      "id": "GMCDMC",
+      "name": "GMC: Decision making and consent",
+      "version": "In effect 9 November 2020; updated 13 December 2024 and 3 August 2026",
+      "url": "https://www.gmc-uk.org/professional-standards/the-professional-standards/decision-making-and-consent",
+      "supports": "Options including no action (para 10); benefits and risks of each option (para 21); any risk of serious harm, however unlikely, and common side effects (para 23); check understanding (para 30); respect the patient's decision, an unwise choice is not incapacity (para 48); delegated discussions remain the treating doctor's responsibility (para 45); record decisions (para 51); a form is not a substitute for dialogue (paras 54–55)"
+    },
+    {
+      "id": "MONT",
+      "name": "Montgomery v Lanarkshire Health Board [2015] UKSC 11",
+      "version": "Judgment 11 March 2015",
+      "url": "https://supremecourt.uk/uploads/uksc_2013_0136_judgment_fd5635b4cd.pdf",
+      "supports": "Para 87: duty to take reasonable care that the patient is aware of any material risks and of reasonable alternative or variant treatments; test of materiality (reasonable person in the patient's position, or this particular patient)"
+    },
+    {
+      "id": "RCSC",
+      "name": "RCS England: Consent: Supported Decision-Making. A Guide to Good Practice",
+      "version": "November 2018",
+      "url": "https://www.rcseng.ac.uk/-/media/files/rcs/standards-and-research/standards-and-policy/good-practice-guides/new-docs-may-2019/rcs-_consent-supported-decision-making.pdf",
+      "supports": "Discussion lies with the responsible surgeon or an experienced team member; the same surgeon signs the form at the end of the discussion (4.6); the form alone is not valid consent; keep a contemporaneous decision-making record, including a decision to decline (4.10)"
+    },
+    {
+      "id": "NELA",
+      "name": "National Emergency Laparotomy Audit: Tenth Patient Report (patients admitted 1 April 2023 to 23 April 2024)",
+      "version": "Published October 2025 (cover dated October 2024)",
+      "url": "https://www.hqip.org.uk/wp-content/uploads/2025/09/Ref.-605-NELA-Tenth-Patient-Report-2025.pdf",
+      "supports": "30-day mortality after emergency laparotomy 8.1% (23,560 patients, England and Wales); mortality risk rises with age and frailty"
+    },
+    {
+      "id": "MCA",
+      "name": "Mental Capacity Act 2005 (c. 9)",
+      "version": "2005, as amended; in force 1 October 2007",
+      "url": "https://www.legislation.gov.uk/ukpga/2005/9/contents",
+      "supports": "Presumption of capacity; unwise decisions (s1(2), s1(4)); inability to decide: understand, retain, use or weigh, communicate (s3(1)); best interests: past wishes and feelings, consulting family (s4(6)–(7))"
+    }
+  ],
+  "partner": {
+    "opening": "Mr Harris is on the trolley. Please begin when you're ready.",
+    "actorBrief": "You are Leonard (Len) Harris, 71, a retired electrician, widowed, living alone with your dog; your daughter Karen lives ten minutes away. You are in pain but alert and fully able to follow. Opening line: \"The other doctor says I need an operation. Can't you just give me more antibiotics?\" Emotional state: frightened, a bit gruff. Hidden concern: your wife had a colostomy in the last months of her life with bowel cancer; to you, a bag means dying. Give the cue \"My wife had one of those bags\" once; say more only if the candidate explores it. Second concern: who will look after the dog. If the candidate lists risks without listening, say \"I'm not having it then.\" If they explain well and address your fear, agree to the operation. If asked to explain back, give a fair summary.",
+    "reveals": [
+      {
+        "trigger": "Asks what matters most to him",
+        "finding": "\"Getting home to my dog. And not ending up like my wife.\"",
+        "row": "G1"
+      },
+      {
+        "trigger": "Explores the cue about his wife",
+        "finding": "\"She had a bag at the end. Cancer. I nursed her. I don't want that.\"",
+        "row": "G5"
+      },
+      {
+        "trigger": "Offers to contact family",
+        "finding": "\"Karen, my daughter. She'd have the dog. Her number's in my phone.\"",
+        "row": "G8"
+      },
+      {
+        "trigger": "Asks about intensive care",
+        "finding": "\"If it gets me home, I'll put up with it.\"",
+        "row": "G4"
+      },
+      {
+        "trigger": "Asks him to explain back",
+        "finding": "\"Wash it out, take the bad bit out, probably a bag. I could die either way, but more likely without it.\"",
+        "row": "G6"
+      }
+    ],
+    "push": [
+      {
+        "question": "What would you do if he refused?",
+        "row": "G6",
+        "expect": "Check capacity; if he has it, respect the decision, document, inform the consultant, continue other treatment and keep the option open."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "\"Just tell me what you'd do, doctor.\"",
+        "safeAnswer": "Gives the team's recommendation and the reasons, while making clear the decision is his.",
+        "row": "G3"
+      },
+      {
+        "prompt": "\"Will the bag be permanent?\"",
+        "safeAnswer": "Possibly: reversal is a further major operation, and not everyone is fit for it or chooses it.",
+        "row": "G4"
+      },
+      {
+        "prompt": "He becomes drowsy and confused during the discussion.",
+        "safeAnswer": "Stop; reassess ABCDE and capacity. If he now lacks capacity, the consultant decides in his best interests as an emergency, taking account of what he said while he had capacity and, if practicable, his daughter's view (MCA s4(6)–(7)).",
+        "row": "G6"
+      }
+    ]
+  }
+}
