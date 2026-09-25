@@ -147,14 +147,18 @@ function validate(file) {
   return { errors, warnings };
 }
 
-const files = process.argv.slice(2);
-if (!files.length) { console.log('Usage: node validate-station.js <station.json> [...]'); process.exit(2); }
-let failed = false;
-for (const f of files) {
-  const { errors, warnings } = validate(f);
-  console.log(`\n${f}: ${errors.length ? 'FAIL' : 'PASS'} (${errors.length} errors, ${warnings.length} warnings)`);
-  errors.forEach(e => console.log(`  ✗ ${e}`));
-  warnings.forEach(w => console.log(`  ! ${w}`));
-  if (errors.length) failed = true;
+module.exports = { validate };
+
+if (require.main === module) {
+  const files = process.argv.slice(2);
+  if (!files.length) { console.log('Usage: node validate-station.js <station.json> [...]'); process.exit(2); }
+  let failed = false;
+  for (const f of files) {
+    const { errors, warnings } = validate(f);
+    console.log(`\n${f}: ${errors.length ? 'FAIL' : 'PASS'} (${errors.length} errors, ${warnings.length} warnings)`);
+    errors.forEach(e => console.log(`  ✗ ${e}`));
+    warnings.forEach(w => console.log(`  ! ${w}`));
+    if (errors.length) failed = true;
+  }
+  process.exit(failed ? 1 : 0);
 }
-process.exit(failed ? 1 : 0);

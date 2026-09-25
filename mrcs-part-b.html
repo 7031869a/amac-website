@@ -217,8 +217,57 @@
     font-weight:500;
   }
 
+  /* Practice stations (built from stations/index.json) */
+  .stations{padding:72px 0 56px;}
+  .stations h2{font-size:28px;}
+  .stations .station-count{color:#3C465C;margin:0;}
+  .station-filters{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px;}
+  .station-filters button{
+    font:inherit;
+    font-size:14.5px;
+    font-weight:500;
+    min-height:40px;
+    padding:8px 16px;
+    border:1px solid var(--line-soft);
+    border-radius:6px;
+    background:#fff;
+    color:var(--text-onLight);
+    cursor:pointer;
+  }
+  .station-filters button:hover{border-color:var(--accent);}
+  .station-filters button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff;}
+  .station-filters button:focus-visible{outline:3px solid var(--accent-soft);outline-offset:2px;}
+  .station-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+    gap:16px;
+    margin-top:24px;
+  }
+  .station-card{
+    display:block;
+    min-width:0;
+    text-decoration:none;
+    background:#fff;
+    border-top:3px solid var(--accent);
+    border-left:3px solid var(--accent);
+    border-right:1px solid var(--line-soft);
+    border-bottom:1px solid var(--line-soft);
+    border-radius:2px;
+    padding:18px 20px;
+    transition:box-shadow .2s;
+  }
+  .station-card:hover{box-shadow:0 4px 14px rgba(15,22,38,0.10);}
+  .station-card:focus-visible{outline:3px solid var(--accent-soft);outline-offset:3px;}
+  .station-card .station-meta{display:flex;justify-content:space-between;gap:12px;font-size:13px;color:#5A6378;margin-bottom:6px;}
+  .station-card .station-id{font-weight:600;color:var(--accent);}
+  .station-card h3{font-size:17px;margin-bottom:8px;overflow-wrap:anywhere;}
+  .station-card p{margin:0;font-size:14px;color:#3C465C;}
+  .station-note{color:#3C465C;margin-top:24px;}
+  .stations [hidden]{display:none;}
+
   @media (max-width:720px){
     .method .grid > p, .method .grid > .verdict-card{flex:1 1 100%;}
+    .station-grid{grid-template-columns:1fr;}
     .part-cell{flex:1 1 45%;}
     .chapter-item{flex:1 1 100%;}
     .hero .stats{gap:24px;}
@@ -324,6 +373,16 @@
   </div>
 </section>
 
+<section class="stations" id="stations" aria-labelledby="stations-title">
+  <div class="wrap">
+    <h2 id="stations-title">Practice stations</h2>
+    <p class="station-count" id="station-count" aria-live="polite">Loading stations…</p>
+    <div class="station-filters" id="station-filters" role="group" aria-label="Filter stations by type" hidden></div>
+    <div class="station-grid" id="station-grid"></div>
+    <noscript><p class="station-note">The station list needs JavaScript. You can still <a href="station-viewer.html?station=MB-099">open the first station</a>.</p></noscript>
+  </div>
+</section>
+
 <section class="chapters">
   <div class="wrap">
     <h2>Four ideas that apply everywhere.</h2>
@@ -388,6 +447,97 @@
   <div class="foot-bottom">&copy; 2026 A. Mansour &amp; Colleagues (AMaC). All rights reserved.</div>
 </footer>
 
+<script>
+(function(){
+  var TYPES=[
+    ["examination","Examination"],
+    ["history","History"],
+    ["communication","Communication"],
+    ["procedural","Procedural"],
+    ["data-interpretation","Data interpretation"],
+    ["applied-knowledge","Applied knowledge"]
+  ];
+  var LABEL={};
+  TYPES.forEach(function(t){LABEL[t[0]]=t[1];});
+  var countEl=document.getElementById("station-count");
+  var filtersEl=document.getElementById("station-filters");
+  var gridEl=document.getElementById("station-grid");
+  var stations=[];
+
+  function el(tag,cls,text){
+    var n=document.createElement(tag);
+    if(cls)n.className=cls;
+    if(text!=null)n.textContent=text;
+    return n;
+  }
+  function plural(n){return n+(n===1?" station":" stations");}
+
+  function card(s){
+    var a=el("a","station-card");
+    a.href="station-viewer.html?station="+encodeURIComponent(s.id);
+    a.dataset.type=s.type;
+    var meta=el("div","station-meta");
+    meta.appendChild(el("span","station-id",s.id));
+    meta.appendChild(el("span","station-type",LABEL[s.type]||s.type));
+    a.appendChild(meta);
+    a.appendChild(el("h3",null,s.title));
+    if(s.contentArea)a.appendChild(el("p",null,s.contentArea));
+    return a;
+  }
+
+  function show(type){
+    var shown=0;
+    Array.prototype.forEach.call(gridEl.children,function(c){
+      var on=type==="all"||c.dataset.type===type;
+      c.hidden=!on;
+      if(on)shown++;
+    });
+    Array.prototype.forEach.call(filtersEl.children,function(b){
+      b.setAttribute("aria-pressed",String(b.dataset.type===type));
+    });
+    countEl.textContent=type==="all"?plural(stations.length):shown+" of "+plural(stations.length)+" · "+LABEL[type];
+  }
+
+  function button(type,label){
+    var b=el("button",null,label);
+    b.type="button";
+    b.dataset.type=type;
+    b.addEventListener("click",function(){show(type);});
+    return b;
+  }
+
+  function render(){
+    filtersEl.appendChild(button("all","All"));
+    TYPES.forEach(function(t){
+      if(stations.some(function(s){return s.type===t[0];}))filtersEl.appendChild(button(t[0],t[1]));
+    });
+    filtersEl.hidden=false;
+    stations.forEach(function(s){gridEl.appendChild(card(s));});
+    show("all");
+  }
+
+  function fail(){
+    countEl.textContent="";
+    filtersEl.hidden=true;
+    gridEl.innerHTML="";
+    var p=el("p","station-note","We couldn't load the station list just now. Please refresh the page, or ");
+    var a=el("a",null,"open the first station");
+    a.href="station-viewer.html?station=MB-099";
+    p.appendChild(a);
+    p.appendChild(document.createTextNode("."));
+    gridEl.appendChild(p);
+  }
+
+  fetch("stations/index.json",{cache:"no-cache"})
+    .then(function(r){if(!r.ok)throw new Error(r.status);return r.json();})
+    .then(function(data){
+      if(!Array.isArray(data)||!data.length)throw new Error("empty");
+      stations=data;
+      render();
+    })
+    .catch(fail);
+})();
+</script>
 <script src="nav.js" defer></script>
 <script src="footer.js" defer></script>
 </body>
