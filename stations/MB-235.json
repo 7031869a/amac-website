@@ -1,0 +1,603 @@
+{
+  "id": "MB-235",
+  "exam": "MRCS-B",
+  "title": "Prostate cancer: PSA, Gleason/Grade Group and staging (NICE NG131)",
+  "type": "data-interpretation",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "Anatomy and surgical pathology",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "NICE NG131 (updated Dec 2021)",
+      "NICE NG12 (updated Apr 2026)",
+      "ISUP grade groups (2014 conference; Am J Surg Pathol 2016)",
+      "AJCC 8th edition prostate TNM (2017)"
+    ],
+    "related": [
+      {
+        "id": "MB-215 Neck lump (NG12)",
+        "why": "Suspected cancer pathway thresholds"
+      },
+      {
+        "id": "Consent for radical prostatectomy",
+        "why": "The counselling this station leads to"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Urology outpatient clinic",
+    "role": "Core surgical trainee in urology",
+    "scenario": "Mr Clive Hendry, 68, was referred by his GP on the suspected cancer pathway with nocturia, a raised PSA and an abnormal rectal examination. He has since had an MRI and a prostate biopsy. The examiner will give you his results in stages.",
+    "task": "Interpret each result, assign his risk group and outline his management options."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Read each result in order: PSA, MRI, histology. Combine them into a Cambridge Prognostic Group, then match the options.",
+    "trap": "Calling grade group 2 'CPG 2' without checking the PSA.",
+    "firstMove": "\"I'll take the PSA first, in the context of his age and examination.\""
+  },
+  "flow": [
+    "PSA and DRE",
+    "MRI: Likert and local extent",
+    "Histology: Gleason and grade group",
+    "Clinical TNM (T from the DRE)",
+    "Cambridge Prognostic Group",
+    "Options",
+    "Counselling"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-skill",
+      "label": "Interprets the PSA",
+      "fail": "Calls PSA 12 diagnostic of cancer, or uses one cut-off for every age.",
+      "pass": "Above the age-specific threshold for 60–69 (more than 4.5 micrograms/litre), so suspicious but not diagnostic: MRI next.",
+      "high": "Reads the PSA with the DRE: a malignant-feeling prostate alone warrants referral; knows NICE says not to automatically biopsy on PSA alone.",
+      "source": "NG12"
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-skill",
+      "label": "Reads the MRI",
+      "fail": "Ignores the Likert score, or goes straight to biopsy without MRI.",
+      "pass": "Multiparametric MRI first line; Likert 4 (3 or more) means MRI-influenced biopsy.",
+      "high": "Uses the MRI for local extent: lesion within the gland, capsule intact, seminal vesicles and nodes clear.",
+      "source": "NG131"
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "Gleason score and grade group",
+      "fail": "Treats 3+4 and 4+3 as the same because both total 7.",
+      "pass": "3+4=7: predominant pattern 3, next most common 4; ISUP grade group 2.",
+      "high": "Gives the scale: GG1 ≤6, GG2 3+4, GG3 4+3, GG4 8, GG5 9–10; 4+3 behaves worse than 3+4.",
+      "source": "ISUP"
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-knowledge",
+      "label": "TNM staging",
+      "fail": "Can't stage beyond 'localised'.",
+      "pass": "Clinical T from DRE: impalpable T1c; palpable and confined T2; T3a extraprostatic extension; T3b seminal vesicles; T4 adjacent organs; N1 nodes; M1 distant.",
+      "high": "Stages him cT2a from the DRE (half a lobe or less), N0 on MRI; knows cT reflects the DRE only.",
+      "source": "AJCC8"
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-knowledge",
+      "label": "Cambridge Prognostic Group",
+      "fail": "Calls him CPG 2 because he is grade group 2.",
+      "borderline": "Says 'intermediate risk' without assigning a Cambridge Prognostic Group.",
+      "pass": "Grade group 2 AND PSA 10–20 AND T1–T2: CPG 3.",
+      "high": "Explains the trap: GG2 or PSA 10–20 alone is CPG 2; both together is CPG 3, as is GG3 (4+3).",
+      "source": "NG131"
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-knowledge",
+      "label": "Management options for CPG 3",
+      "fail": "Offers active surveillance as the default, or hormone therapy alone.",
+      "pass": "Offer radical prostatectomy or radical radiotherapy; consider active surveillance if he chooses not to have immediate radical treatment.",
+      "high": "Radiotherapy with 6 months of ADT; hypofractionated 60 Gy in 20 fractions; knows bone scans are not routine in CPG 1–2.",
+      "source": "NG131"
+    },
+    {
+      "id": "G7",
+      "domain": "communication",
+      "label": "Counselling and shared decision",
+      "fail": "Doesn't mention continence, erections or fertility.",
+      "pass": "Explains effects on sexual, urinary and bowel function, loss of ejaculation and fertility; offers sperm storage; surgeon and clinical oncologist.",
+      "high": "Uses NICE's ProtecT figures: at 10 years, 98–99 of 100 alive without prostate-cancer death with any option; metastases 3 vs 8 of 100.",
+      "source": "NG131"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "His PSA is 12. What does that mean?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "That's prostate cancer; normal is under 4.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Here is his MRI."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd skip that and just do a biopsy.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Histology: Gleason 3+4=7."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Seven is seven; 3+4 or 4+3 doesn't matter.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Stage him."
+      },
+      {
+        "speaker": "candidate",
+        "text": "It's localised.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "His risk group?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Grade group 2, so CPG 2.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Options?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Active surveillance; we'd only treat if it grows.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Anything to tell him?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Surgery is the cure; side effects are rare.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "examiner",
+        "text": "His PSA is 12. What does that mean?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "For age 60 to 69 the NICE threshold is more than 4.5, so 12 is raised and suspicious, but not diagnostic. With the nodule on DRE, he needs an MRI next.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Here is his MRI."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Multiparametric MRI: a Likert 4 lesion, so he needs an MRI-influenced biopsy.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Histology: Gleason 3+4=7."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Mostly pattern 3 with some pattern 4: grade group 2.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Stage him."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Clinical T comes from the DRE: a palpable nodule confined to the prostate is T2; if impalpable it would be T1c. T3a is extraprostatic extension, T3b seminal vesicles, T4 adjacent organs; N1 nodes, M1 distant spread.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "His risk group?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Grade group 2 and PSA between 10 and 20, T2: that's CPG 3.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Options?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Offer radical prostatectomy or radical radiotherapy; consider active surveillance if he doesn't want immediate radical treatment.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Anything to tell him?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "The effects on erections, continence and bowels, loss of ejaculation and fertility, and sperm storage. He should see a surgeon and a clinical oncologist.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "examiner",
+        "text": "His PSA is 12. What does that mean?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "NICE's threshold for 60 to 69 is more than 4.5, so 12 is well above it, and a malignant-feeling prostate on DRE would justify referral on its own. Suspicious, not diagnostic: NICE says not to automatically biopsy on PSA alone. And PSA between 10 and 20 will count when we risk-group him.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Here is his MRI."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Likert 4 in the left peripheral zone: MRI-influenced biopsy. It also shows the local extent: capsule intact, seminal vesicles and nodes clear.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Histology: Gleason 3+4=7."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Predominant pattern 3, next most common 4: grade group 2. The scale runs GG1 for 6 or less, GG2 3+4, GG3 4+3, GG4 8, GG5 9 to 10. 4+3 behaves worse.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Stage him."
+      },
+      {
+        "speaker": "candidate",
+        "text": "cT2a: a palpable nodule in half a lobe or less, because clinical T reflects the DRE, not the MRI. N0 on MRI. T3 would make him CPG 4 and T4 CPG 5, whatever his grade.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "His risk group?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "CPG 3. The trap is that GG2 alone, or PSA 10 to 20 alone, is CPG 2; he has both. 4+3 would also be CPG 3.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Options?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Offer radical prostatectomy or radical radiotherapy; consider active surveillance if he declines immediate radical treatment. Radiotherapy would be 60 Gy in 20 fractions with 6 months of hormone therapy. Bone scans aren't routine in CPG 1 or 2; NICE makes CPG 3 staging a research question.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Anything to tell him?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd explain effects on erections, continence and bowels, loss of ejaculation and fertility, and offer sperm storage. From NICE's ProtecT summary: 98 or 99 in 100 hadn't died of prostate cancer at 10 years with any option, but metastases were 3 in 100 after radical treatment against 8 on surveillance.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G5",
+      "move": "Assigning CPG 2 from the grade group alone.",
+      "consequence": "Under-stages him: CPG 2 is offered active surveillance as an equal choice, whereas CPG 3 is offered radical treatment."
+    },
+    {
+      "row": "G3",
+      "move": "Treating 3+4 and 4+3 as equivalent.",
+      "consequence": "4+3 is grade group 3 and more aggressive; the risk group and options change."
+    },
+    {
+      "row": "G1",
+      "move": "Using a single PSA cut-off, or calling a raised PSA diagnostic.",
+      "consequence": "NICE uses age-specific thresholds, and PSA alone doesn't automatically justify biopsy."
+    },
+    {
+      "row": "G7",
+      "move": "Omitting sexual, urinary and fertility effects when discussing radical treatment.",
+      "consequence": "His decision isn't informed; NICE requires these to be explained and sperm storage offered."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You forgot the CPG criteria",
+      "line": "I'd combine three things: grade group, PSA and T stage. GG2 with PSA 10 to 20 is CPG 3."
+    },
+    {
+      "when": "You mixed up 3+4 and 4+3",
+      "line": "The first number is the predominant pattern: 3+4 is grade group 2; 4+3 is grade group 3."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Age-specific PSA thresholds: 50–59 more than 3.5; 60–69 more than 4.5; 70–79 more than 6.5 micrograms/litre.",
+      "source": "NG12"
+    },
+    {
+      "fact": "Grade groups: 1 = Gleason ≤6; 2 = 3+4; 3 = 4+3; 4 = 8; 5 = 9–10.",
+      "source": "ISUP"
+    },
+    {
+      "fact": "Clinical T is assigned from the DRE: T1c impalpable, found on biopsy; T2a palpable, half of one side or less; T2b more than half of one side; T2c both sides.",
+      "source": "AJCC8"
+    },
+    {
+      "fact": "CPG 2: GG2 or PSA 10–20 (T1–T2). CPG 3: GG2 and PSA 10–20, or GG3 (T1–T2). CPG 4: one of GG4, PSA over 20, T3. CPG 5: two or more, or GG5, or T4.",
+      "source": "NG131"
+    },
+    {
+      "fact": "CPG 3: offer prostatectomy or radiotherapy; consider surveillance. CPG 4–5: no active surveillance.",
+      "source": "NG131"
+    }
+  ],
+  "recall": {
+    "think": "Under-staging leads to under-treatment.",
+    "say": "\"Grade group 2 with PSA 12 and T2: Cambridge Prognostic Group 3.\"",
+    "do": [
+      "PSA against age threshold",
+      "MRI Likert, then biopsy; grade group",
+      "Assign CPG; offer options"
+    ],
+    "numbers": [
+      {
+        "value": "> 4.5",
+        "meaning": "PSA threshold, age 60–69",
+        "source": "NG12"
+      },
+      {
+        "value": "10–20",
+        "meaning": "PSA band that makes GG2 CPG 3",
+        "source": "NG131"
+      },
+      {
+        "value": "6 months",
+        "meaning": "ADT with radical radiotherapy (CPG 2–5)",
+        "source": "NG131"
+      }
+    ],
+    "trap": "GG2 is not automatically CPG 2.",
+    "finish": "Radical prostatectomy or radiotherapy with ADT, after MDT and shared decision."
+  },
+  "sources": [
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format: 9 minutes with 1 minute's reading; examiner-led questioning in applied knowledge stations"
+    },
+    {
+      "id": "NG131",
+      "name": "NICE NG131: Prostate cancer: diagnosis and management",
+      "version": "Published 9 May 2019; last updated 15 December 2021 (surveillance review May and August 2025: the localised and locally advanced section is to be updated)",
+      "url": "https://www.nice.org.uk/guidance/ng131",
+      "supports": "Offer multiparametric MRI first line for suspected clinically localised prostate cancer, reported on a 5-point Likert scale (1.2.2); MRI-influenced biopsy if Likert 3 or more (1.2.3); do not automatically offer biopsy on PSA alone (1.2.6); MDT assigns a Cambridge Prognostic Group (1.2.15, table 1): CPG 1 Gleason 6 (GG1) and PSA under 10 and T1-T2; CPG 2 Gleason 3+4 (GG2) or PSA 10-20, and T1-T2; CPG 3 Gleason 3+4 (GG2) and PSA 10-20 and T1-T2, or Gleason 4+3 (GG3) and T1-T2; CPG 4 one of Gleason 8 (GG4), PSA over 20, T3; CPG 5 two or more of those, or Gleason 9-10 (GG5), or T4; do not routinely offer bone scans in CPG 1 or 2 (1.2.16); staging for CPG 3 is a research recommendation; explain sexual, urinary, ejaculation and fertility effects and offer sperm storage (1.3.1-1.3.3); discussion with a specialist surgical oncologist and clinical oncologist (1.3.5); box 2 (ProtecT): at 10 years 98-99 of 100 had not died of prostate cancer with any option; distant metastases 8 of 100 with active surveillance vs 3 of 100 with prostatectomy or radiotherapy; CPG 1 offer active surveillance (1.3.8); CPG 2 offer a choice of active surveillance, radical prostatectomy or radical radiotherapy (1.3.9); CPG 3 offer radical prostatectomy or radical radiotherapy and consider active surveillance for those who choose not to have immediate radical treatment (1.3.10); no active surveillance in CPG 4 and 5 (1.3.11); hypofractionated 60 Gy in 20 fractions (1.3.19); radiotherapy plus androgen deprivation therapy for CPG 2-5 (1.3.21), 6 months of ADT (1.3.22); consider ADT up to 3 years in CPG 4-5 (1.3.23)"
+    },
+    {
+      "id": "NG12",
+      "name": "NICE NG12: Suspected cancer: recognition and referral",
+      "version": "Published 23 June 2015; last updated 15 April 2026",
+      "url": "https://www.nice.org.uk/guidance/ng12",
+      "supports": "Consider PSA and DRE for lower urinary tract symptoms, erectile dysfunction or visible haematuria (1.6.2); consider a suspected cancer pathway referral if PSA is above the age-specific threshold (1.6.3, table 2): 40-49 more than 2.5, 50-59 more than 3.5, 60-69 more than 4.5, 70-79 more than 6.5 micrograms/litre; clinical judgement under 40 and over 79"
+    },
+    {
+      "id": "ISUP",
+      "name": "Epstein JI, Egevad L, Amin MB, et al. The 2014 International Society of Urological Pathology (ISUP) Consensus Conference on Gleason Grading of Prostatic Carcinoma: definition of grading patterns and proposal for a new grading system. Am J Surg Pathol 2016;40(2):244-52 (PMID 26492179)",
+      "version": "February 2016",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26492179/",
+      "supports": "Gleason score is the sum of the most common (primary) and the next most common (secondary) pattern; Gleason 3+4=7 and 4+3=7 differ, with a significantly worse prognosis for 4+3; five prognostically distinct Grade Groups: 1 Gleason 6 or less, 2 Gleason 3+4=7, 3 Gleason 4+3=7, 4 Gleason 8, 5 Gleason 9-10; adopted by the WHO 2016 classification"
+    },
+    {
+      "id": "AJCC8",
+      "name": "Buyyounouski MK, et al. Prostate cancer: major changes in the American Joint Committee on Cancer eighth edition cancer staging manual. CA Cancer J Clin 2017;67(3):245-253 (PMID 28222223)",
+      "version": "Published online 21 February 2017; May 2017 issue",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/28222223/",
+      "supports": "Assigning the clinical T category uses the DRE and should always reflect DRE findings only; T1c tumour identified by needle biopsy but not palpable; T2 tumour palpable and confined within the prostate (T2a one-half of one side or less, T2b more than one-half of one side but not both sides, T2c both sides); T3a extraprostatic extension; T3b invasion of the seminal vesicle(s); T4 tumour fixed or invading adjacent structures other than the seminal vesicles, such as external sphincter, rectum, bladder, levator muscles or pelvic wall; N1 regional lymph node metastasis; M1 distant metastasis; MRI is the most valuable imaging modality for the local extent of the tumour"
+    }
+  ],
+  "media": [
+    {
+      "id": "mri-prostate",
+      "task": "Say what the Likert score means and whether the lesion is confined",
+      "description": "Axial T2-weighted prostate MRI with a single left peripheral zone lesion of about 1 cm, capsule intact, reported Likert 4; optional",
+      "required": false,
+      "status": "needed"
+    }
+  ],
+  "partner": {
+    "opening": "Here is Mr Hendry's GP referral. Please interpret his results as I give them to you.",
+    "reveals": [
+      {
+        "trigger": "Start",
+        "finding": "Age 68. PSA 12.0 micrograms/litre, repeat 11.6 two weeks later. Urine dip negative. DRE: moderately enlarged; a firm nodule in the left lobe, involving half of that lobe or less; not fixed, with no extension beyond the gland.",
+        "row": "G1"
+      },
+      {
+        "trigger": "After the PSA is interpreted",
+        "finding": "Multiparametric MRI: prostate volume 48 ml. 11 mm Likert 4 lesion, left peripheral zone. Capsule intact; seminal vesicles normal; no enlarged pelvic nodes; no bone lesions in the field.",
+        "row": "G2"
+      },
+      {
+        "trigger": "After the MRI is interpreted",
+        "finding": "MRI-targeted and systematic transperineal biopsy: adenocarcinoma, Gleason 3+4=7 (grade group 2) in 3 of 14 cores, all left-sided.",
+        "row": "G3"
+      },
+      {
+        "trigger": "Asks about his health and wishes",
+        "finding": "Fit and active; no significant comorbidity; married; wants to know his options and their side effects.",
+        "row": "G7"
+      }
+    ],
+    "push": [
+      {
+        "question": "Why is he CPG 3 and not CPG 2?",
+        "row": "G5",
+        "expect": "He has both grade group 2 and PSA 10–20 with T1–T2; either alone would be CPG 2."
+      },
+      {
+        "question": "What does NICE offer for CPG 3?",
+        "row": "G6",
+        "expect": "Radical prostatectomy or radical radiotherapy; consider active surveillance if he chooses not to have immediate radical treatment."
+      },
+      {
+        "question": "If he chose radiotherapy, what else would he need?",
+        "row": "G6",
+        "expect": "Androgen deprivation therapy for 6 months, before, during or after radiotherapy."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "What if his PSA had been 8?",
+        "safeAnswer": "GG2 with PSA under 10 and T2 is CPG 2: offer a choice of active surveillance, radical prostatectomy or radical radiotherapy.",
+        "row": "G5"
+      },
+      {
+        "prompt": "On re-examination the nodule feels irregular and extends beyond the left edge of the gland, and MRI shows extraprostatic extension.",
+        "safeAnswer": "cT3a: that makes him CPG 4, so active surveillance is not offered; radical treatment if the cancer can be controlled long term.",
+        "row": "G4"
+      },
+      {
+        "prompt": "Histology is Gleason 4+4=8.",
+        "safeAnswer": "Grade group 4: CPG 4. No active surveillance; radical treatment, and with radiotherapy consider continuing ADT for up to 3 years.",
+        "row": "G6"
+      }
+    ]
+  }
+}

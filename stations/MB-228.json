@@ -1,0 +1,620 @@
+{
+  "id": "MB-228",
+  "exam": "MRCS-B",
+  "title": "Surgical site infection prevention",
+  "type": "applied-knowledge",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "Applied surgical science and critical care",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "NICE NG125 (Apr 2019, updated Aug 2020, minor changes 2024)",
+      "NICE CG65 (updated Dec 2016)",
+      "NICE NG180 (Aug 2020, minor changes Jul 2025)"
+    ],
+    "related": [
+      {
+        "id": "MB-142 Sterile technique: scrub, gown and glove",
+        "why": "Hand decontamination, gowns and gloves from the same NICE guideline"
+      },
+      {
+        "id": "MB-180 Interrupted suturing and wound closure",
+        "why": "Closing and dressing the wound"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Preoperative assessment clinic",
+    "role": "Core surgical trainee",
+    "scenario": "Mrs Rosalind Wetherall, 64, is admitted tomorrow for an elective open right hemicolectomy for caecal cancer. She does not have diabetes. She has a hairy abdomen and asks whether she should shave it at home tonight. Your consultant has asked you to make sure everything is in place to reduce her risk of surgical site infection.",
+    "task": "The examiner will ask about preoperative, intraoperative and postoperative measures, and then about a wound problem after surgery."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Work through the phases in order: before, during and after surgery, then treatment. Give NICE's specific actions.",
+    "trap": "Saying 'shave the site' or 'a course of antibiotics to be safe'.",
+    "firstMove": "\"Please don't shave. A shower with soap tonight or tomorrow morning is what helps.\""
+  },
+  "flow": [
+    "Before: shower, hair, bowel prep",
+    "Antibiotic prophylaxis",
+    "Skin preparation",
+    "Warmth, oxygen, perfusion, glucose",
+    "Closure and dressing",
+    "Ward wound care",
+    "Suspected SSI"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-knowledge",
+      "label": "Preoperative preparation",
+      "fail": "Tells her to shave her abdomen at home the night before.",
+      "pass": "Shower or bath with soap the day before or on the day; no routine hair removal; if needed, single-use-head electric clippers on the day.",
+      "high": "Explains that razors increase infection; knows mechanical bowel preparation isn't used routinely to reduce SSI.",
+      "source": "NG125"
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-knowledge",
+      "label": "Antibiotic prophylaxis",
+      "fail": "Gives none, or a 5-day course 'to be safe'.",
+      "borderline": "Gives prophylaxis but can't say when, or continues it for days after surgery.",
+      "pass": "Clean-contaminated surgery needs prophylaxis: a single IV dose on starting anaesthesia, chosen from the local formulary.",
+      "high": "Repeats the dose if the operation outlasts the antibiotic's half-life; gives it earlier if a tourniquet is used; tells her she had antibiotics.",
+      "source": "NG125"
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-skill",
+      "label": "Skin preparation (safety-critical)",
+      "fail": "Pours on alcoholic preparation and uses diathermy while it is still pooled.",
+      "pass": "Antiseptic immediately before incision: alcohol-based chlorhexidine first, unless contraindicated or next to a mucous membrane.",
+      "high": "Knows the alternatives; lets alcohol dry by evaporation, with no pooling or soaked drapes, before diathermy: it is flammable.",
+      "source": "NG125"
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-knowledge",
+      "label": "Normothermia",
+      "fail": "Doesn't mention temperature, or thinks warming only matters in long cases.",
+      "pass": "Temperature 36.0°C or above before induction; forced-air warming from induction if anaesthesia will last over 30 minutes.",
+      "high": "Temperature every 30 minutes; forced-air set to keep her at least 36.5°C; fluids of 500 ml or more warmed to 37°C.",
+      "source": "CG65"
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-knowledge",
+      "label": "Oxygen, perfusion and glucose",
+      "fail": "Asks for an insulin infusion to keep her glucose tight.",
+      "pass": "Saturation over 95% during major surgery and in recovery; adequate perfusion; no routine insulin for a patient without diabetes.",
+      "high": "Explains that tight glucose control with insulin adds hypoglycaemia without reducing infection, as NICE perioperative guidance says.",
+      "source": "NG125"
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-knowledge",
+      "label": "Closure and dressing",
+      "fail": "Washes the wound out with antiseptic and puts antibiotic powder in before closing.",
+      "pass": "No wound irrigation or intracavity lavage to reduce SSI; interactive dressing at the end; antiseptic or antibiotic in the wound only in a trial.",
+      "high": "Considers triclosan-coated sutures; uses an iodophor-impregnated incise drape if one is needed; doesn't use diathermy for the incision to reduce SSI.",
+      "source": "NG125"
+    },
+    {
+      "id": "G7",
+      "domain": "clinical-knowledge",
+      "label": "Postoperative wound care",
+      "fail": "Lets the dressing be changed without aseptic technique, and applies antibiotic ointment.",
+      "pass": "Aseptic non-touch technique; sterile saline cleansing for the first 48 hours; showering safe after 48 hours; no topical antimicrobials.",
+      "high": "Tells her how to recognise infection and whom to contact, and how to care for the wound after discharge.",
+      "source": "NG125"
+    },
+    {
+      "id": "G8",
+      "domain": "clinical-knowledge",
+      "label": "Suspected surgical site infection",
+      "fail": "Prescribes antibiotic cream, or reassures without examining.",
+      "pass": "Cellulitis round the wound: swab, then a systemic antibiotic covering likely organisms, guided by local resistance and microbiology.",
+      "high": "Thinks beyond the skin: a collection or anastomotic leak after bowel surgery; senior review, sepsis assessment and imaging if unwell.",
+      "source": "NG125"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "She asks whether to shave her abdomen tonight. How would you prepare her?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Yes, a close shave tonight keeps the field clean.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Antibiotics?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Co-amoxiclav on the ward and then for five days afterwards, to be safe.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you prepare the skin?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Plenty of alcoholic chlorhexidine, and straight on with the diathermy so we don't lose time.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Anything else during the operation?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Theatre is warm enough. I'd ask for an insulin infusion to keep her sugars tight.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          },
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Closure?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "A big antiseptic washout, then antibiotic powder in the wound before closing.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "On the ward?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "The nurses can clean it daily, and I'd put antibiotic ointment on it.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Day 5: the wound is red, hot and tender."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Antibiotic cream should settle it.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "examiner",
+        "text": "She asks whether to shave her abdomen tonight. How would you prepare her?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Please don't shave. Shower or bathe with soap tonight or tomorrow. If hair has to come off, we'll use clippers on the day.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Antibiotics?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "It's clean-contaminated surgery, so prophylaxis: a single IV dose on starting anaesthesia, from our local formulary.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you prepare the skin?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Antiseptic immediately before incision. Alcohol-based chlorhexidine is first choice unless she's allergic or we're next to a mucous membrane.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Anything else during the operation?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Keep her warm: 36.0°C or above before induction, and forced-air warming from induction because this will take over 30 minutes.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Keep her saturation over 95% during surgery and recovery, maintain perfusion, and no routine insulin as she isn't diabetic.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Closure?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "No washout or lavage just to reduce infection, and nothing in the wound unless it's a trial. An interactive dressing at the end.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "On the ward?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Aseptic non-touch technique, sterile saline for the first 48 hours, shower after that, and no topical antimicrobials.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Day 5: the wound is red, hot and tender."
+      },
+      {
+        "speaker": "candidate",
+        "text": "That's cellulitis from a wound infection. I'd swab it and start an antibiotic covering the likely organisms, following local guidance.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "examiner",
+        "text": "She asks whether to shave her abdomen tonight. How would you prepare her?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Please don't: razors increase infection. Shower with soap tonight or tomorrow; if hair is in the way, we'll use clippers with a single-use head on the day. No routine bowel prep to prevent infection.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Antibiotics?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Single IV dose on starting anaesthesia, from the local formulary. If the operation runs longer than the drug's half-life, a repeat dose. I'd tell her afterwards that she had antibiotics.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you prepare the skin?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Alcohol-based chlorhexidine immediately before incision. If she were allergic to chlorhexidine, alcohol-based povidone-iodine. Let it dry by evaporation, no pooling or soaked drapes: alcohol is flammable with diathermy.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Anything else during the operation?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Temperature measured before induction and every 30 minutes; not below 36.0 at induction; forced-air warming set to keep her at least 36.5; warmed fluids.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Saturation over 95%, good perfusion. Tight glucose control with insulin would only add hypoglycaemia in a non-diabetic.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Closure?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "No irrigation or lavage, no antiseptic or antibiotic in the wound outside a trial. I'd consider triclosan-coated sutures, and an interactive dressing at the end. If an incise drape is needed, iodophor-impregnated.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "On the ward?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Aseptic non-touch dressing changes, saline for 48 hours, then she can shower. Before discharge I'd show her how to spot infection and whom to call.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Day 5: the wound is red, hot and tender."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Wound infection with cellulitis: swab and a systemic antibiotic per local resistance. After a hemicolectomy I'd also ask whether this is a deeper collection or a leak: full observations, bloods, senior review and a CT if she's unwell.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G3",
+      "move": "Using diathermy over pooled alcohol-based skin preparation or soaked drapes.",
+      "consequence": "Safety-critical: alcohol-based antiseptics are flammable and can cause burns."
+    },
+    {
+      "row": "G5",
+      "move": "Starting an insulin infusion for tight glucose control in a patient without diabetes.",
+      "consequence": "Safety-critical: it risks hypoglycaemia; NICE says not to do it to reduce infection."
+    },
+    {
+      "row": "G8",
+      "move": "Treating a red wound after bowel surgery with cream alone, without assessing for sepsis or a deeper collection.",
+      "consequence": "Safety-critical: a collection or anastomotic leak is missed."
+    },
+    {
+      "row": "G1",
+      "move": "Advising her to shave the site at home.",
+      "consequence": "Razors increase surgical site infection; NICE says not to use them."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You gave a multi-day antibiotic course",
+      "line": "Let me correct that: prophylaxis is a single IV dose on starting anaesthesia, repeated only for a long operation."
+    },
+    {
+      "when": "You lose the thread",
+      "line": "I'll go phase by phase: before surgery, in theatre, on the ward."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Prophylaxis for clean surgery with an implant, clean-contaminated and contaminated surgery; not routine for clean non-prosthetic surgery.",
+      "source": "NG125"
+    },
+    {
+      "fact": "Skin prep options: alcohol-based chlorhexidine; aqueous chlorhexidine near mucosa; alcohol-based povidone-iodine if chlorhexidine is contraindicated.",
+      "source": "NG125"
+    },
+    {
+      "fact": "Consider nasal mupirocin with chlorhexidine body wash where Staphylococcus aureus is a likely cause of SSI.",
+      "source": "NG125"
+    },
+    {
+      "fact": "Hypothermia is a core temperature below 36.0°C; no ward transfer from recovery below 36.0°C.",
+      "source": "CG65"
+    },
+    {
+      "fact": "Don't use glucose-lowering drugs for tight control (4–6 mmol/L) in people without diabetes or with type 2 diabetes.",
+      "source": "NG180"
+    }
+  ],
+  "recall": {
+    "think": "Each phase adds or removes risk; some extras harm.",
+    "say": "\"Clippers not razors; one dose at induction; alcoholic chlorhexidine left to dry.\"",
+    "do": [
+      "Shower with soap; clippers only if needed",
+      "Single IV dose on starting anaesthesia",
+      "Keep her warm, oxygenated and perfused"
+    ],
+    "numbers": [
+      {
+        "value": "36.0°C",
+        "meaning": "minimum temperature before induction",
+        "source": "CG65"
+      },
+      {
+        "value": "> 95%",
+        "meaning": "saturation during major surgery and recovery",
+        "source": "NG125"
+      },
+      {
+        "value": "48 h",
+        "meaning": "sterile saline cleansing; then she may shower",
+        "source": "NG125"
+      }
+    ],
+    "trap": "Topical antibiotics on a clean wound.",
+    "finish": "A systemic antibiotic for cellulitis, and look deeper after bowel surgery."
+  },
+  "sources": [
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format: 9 minutes with 1 minute's reading; examiner-led questioning in applied knowledge stations"
+    },
+    {
+      "id": "NG125",
+      "name": "NICE NG125: Surgical site infections: prevention and treatment",
+      "version": "Published 11 April 2019; last updated 19 August 2020; minor changes to table 1 January to April 2024; May 2023 surveillance: planned update not proceeding",
+      "url": "https://www.nice.org.uk/guidance/ng125",
+      "supports": "Shower or bath with soap the day before or on the day of surgery (1.2.1); consider nasal mupirocin with chlorhexidine body wash where Staphylococcus aureus is a likely cause of SSI (1.2.2); no routine hair removal (1.2.4); if needed, electric clippers with a single-use head on the day of surgery, not razors, which increase SSI risk (1.2.5); no routine mechanical bowel preparation to reduce SSI (1.2.9); antibiotic prophylaxis before clean surgery with a prosthesis or implant, clean-contaminated and contaminated surgery (1.2.12); not routinely for clean non-prosthetic uncomplicated surgery (1.2.13); local formulary (1.2.14); consider a single IV dose on starting anaesthesia, earlier if a tourniquet is used (1.2.15); repeat dose when the operation is longer than the antibiotic's half-life (1.2.16); treatment as well as prophylaxis for dirty or infected wounds (1.2.17); tell patients they had antibiotics (1.1.4, 1.2.18); iodophor-impregnated incise drape if one is needed (1.3.3-1.3.4); antiseptic skin preparation immediately before incision (1.3.7); alcohol-based chlorhexidine first choice unless contraindicated or next to a mucous membrane; aqueous chlorhexidine next to a mucous membrane; alcohol-based povidone-iodine if chlorhexidine is contraindicated (1.3.9, table 1); with diathermy, dry by evaporation and avoid pooling of alcohol-based preparations (1.3.10), which are flammable and can cause burns (rationale); no diathermy for incision to reduce SSI (1.3.11); maintain temperature per CG65 (1.3.12); saturation over 95% during major surgery and recovery (1.3.13); adequate perfusion (1.3.14); no routine insulin in people without diabetes to reduce SSI (1.3.15); no wound irrigation or intracavity lavage (1.3.16-1.3.17); antiseptic or antibiotic in the wound before closure only in a trial (1.3.18); consider triclosan-coated sutures (1.3.20); interactive dressing at the end of the operation (1.3.22); aseptic non-touch technique for dressings (1.4.1); sterile saline up to 48 hours (1.4.2); shower safely after 48 hours (1.4.3); no topical antimicrobials for primary-intention wounds (1.4.5); suspected SSI with cellulitis: antibiotic covering likely organisms, guided by local resistance and microbiology (1.4.9); wound classes (terms used)"
+    },
+    {
+      "id": "CG65",
+      "name": "NICE CG65: Hypothermia: prevention and management in adults having surgery",
+      "version": "Published 23 April 2008; last updated 14 December 2016",
+      "url": "https://www.nice.org.uk/guidance/cg65",
+      "supports": "Hypothermia = core temperature below 36.0°C; measure temperature in the hour before leaving the ward (1.2.2); if 36.0°C or above, active warming at least 30 minutes before induction unless it would delay emergency surgery (1.2.4); measure before induction and every 30 minutes (1.3.1); don't start induction below 36.0°C unless surgery is urgent (1.3.3); theatre at least 21°C while exposed (1.3.4); IV fluids of 500 ml or more and blood products warmed to 37°C (1.3.6); forced-air warming from induction if anaesthesia over 30 minutes, or under 30 minutes at higher risk (1.3.7); forced-air set to keep the patient at least 36.5°C (1.3.8); no ward transfer below 36.0°C (1.4.1)"
+    },
+    {
+      "id": "NG180",
+      "name": "NICE NG180: Perioperative care in adults",
+      "version": "Published 19 August 2020; minor changes July 2025",
+      "url": "https://www.nice.org.uk/guidance/ng180",
+      "supports": "Do not use glucose-lowering medicines to achieve tight blood glucose control (4 to 6 mmol/litre) for people having surgery who have type 2 diabetes or do not have diabetes (1.4.7); rationale: tight control increases hypoglycaemia without evidence of better outcomes"
+    }
+  ],
+  "media": [],
+  "partner": {
+    "opening": "Mrs Wetherall is having an open right hemicolectomy tomorrow. She asks whether she should shave her abdomen tonight. How would you prepare her?",
+    "reveals": [
+      {
+        "trigger": "Asks about her risk factors",
+        "finding": "BMI 31, non-smoker, no diabetes, no allergies. MRSA screen negative.",
+        "row": "G1"
+      },
+      {
+        "trigger": "Asks about temperature in the anaesthetic room",
+        "finding": "Her temperature is 35.8°C. Elective list; no clinical urgency.",
+        "row": "G4"
+      },
+      {
+        "trigger": "Asks about the length of surgery",
+        "finding": "The operation is expected to take about 3 hours.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Asks for day 5 findings",
+        "finding": "Erythema spreading 3 cm around the wound, tender, a little serous discharge. Temperature 37.9°C, pulse 98, BP 124/78, RR 18, SpO2 97% on air. She is eating and passing flatus.",
+        "row": "G8"
+      }
+    ],
+    "push": [
+      {
+        "question": "Her temperature in the anaesthetic room is 35.8°C. What happens now?",
+        "row": "G4",
+        "expect": "Don't start induction below 36.0°C in elective surgery; actively warm her first."
+      },
+      {
+        "question": "Why not use alcoholic preparation close to the anus or vagina?",
+        "row": "G3",
+        "expect": "Alcohol-based solutions shouldn't go on mucous membranes (risk of burns); use aqueous chlorhexidine there."
+      },
+      {
+        "question": "Would you give prophylaxis for an inguinal hernia repair with mesh?",
+        "row": "G2",
+        "expect": "Yes: clean surgery with a prosthesis or implant; not routinely for clean non-prosthetic uncomplicated surgery."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "She has a documented chlorhexidine allergy.",
+        "safeAnswer": "Alcohol-based povidone-iodine; if both alcohol and chlorhexidine are unsuitable, aqueous povidone-iodine.",
+        "row": "G3"
+      },
+      {
+        "prompt": "The anaesthetist suggests an insulin infusion to keep her glucose between 4 and 6.",
+        "safeAnswer": "Not for a patient without diabetes: NICE advises against tight control with glucose-lowering drugs; it risks hypoglycaemia.",
+        "row": "G5"
+      },
+      {
+        "prompt": "The operation takes much longer than planned.",
+        "safeAnswer": "Give a repeat dose when the operation is longer than the half-life of the antibiotic used.",
+        "row": "G2"
+      }
+    ]
+  }
+}

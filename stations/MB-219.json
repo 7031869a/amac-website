@@ -1,0 +1,513 @@
+{
+  "id": "MB-219",
+  "exam": "MRCS-B",
+  "title": "Patient wanting to leave against medical advice: capacity",
+  "type": "communication",
+  "header": {
+    "domain": "Applied Skills",
+    "contentArea": "Communication skills in giving and receiving information and history taking",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "Mental Capacity Act 2005"
+    ],
+    "related": [
+      {
+        "id": "MB-160 Consent for emergency laparotomy",
+        "why": "Capacity and the right to refuse"
+      },
+      {
+        "id": "MB-162 Relative when the patient lacks capacity",
+        "why": "Best interests when the patient cannot decide"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Surgical ward, 6 pm",
+    "role": "Core surgical trainee on call",
+    "scenario": "Mr Raymond Ashby, 61, was admitted two days ago with adhesional small bowel obstruction and is being managed with a nasogastric tube, IV fluids and analgesia. His nasogastric tube drained 1.4 litres overnight, and he has not passed wind. He has told the nurse he is taking his drip down and going home.",
+    "task": "Speak to Mr Ashby. The nurse would like to know whether he can leave."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Find out why, explain the risk, solve the problem if you can, then assess capacity for this decision.",
+    "trap": "Threatening to stop him, or calling him incapable because the choice is unwise.",
+    "firstMove": "Sit down: \"Tell me what's making you want to go home tonight.\""
+  },
+  "flow": [
+    "Introduce; listen",
+    "Explore why",
+    "Explain risks",
+    "Offer solutions",
+    "Assess capacity",
+    "Respect or act in best interests",
+    "Safety-net, escalate, record"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "communication",
+      "label": "Opening and exploring the reason",
+      "fail": "Opens with \"You can't leave\" or argues.",
+      "pass": "Sits down, introduces himself, asks why he wants to go, and listens.",
+      "high": "Finds the hidden fear behind the practical reason, and names it gently."
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-knowledge",
+      "label": "Explaining the risks",
+      "fail": "Gives no specific risks, or exaggerates to frighten him.",
+      "pass": "Plain words: the bowel is still blocked; risk of the bowel twisting or bursting, dehydration and kidney damage; he might need emergency surgery.",
+      "high": "Links the risk to his own signs: the tube output and no wind mean it hasn't settled yet.",
+      "source": "BL"
+    },
+    {
+      "id": "G3",
+      "domain": "communication",
+      "label": "Negotiating alternatives",
+      "fail": "Offers nothing but staying or leaving.",
+      "pass": "Tries to solve the problem: contacts family or social services for his mother; offers senior review.",
+      "high": "Offers a compromise that keeps him safe tonight, and asks what would make staying possible."
+    },
+    {
+      "id": "G4",
+      "domain": "professionalism",
+      "label": "Capacity assessment",
+      "fail": "Assumes incapacity because he disagrees, or doesn't check capacity at all.",
+      "borderline": "Asks \"Do you understand the risks?\" and accepts \"Yes\".",
+      "pass": "Presumes capacity; checks he can understand, retain, weigh and communicate this decision; an unwise choice isn't incapacity.",
+      "high": "Asks him to explain back the risks in his own words (s3(1)), and says capacity is specific to this decision now (s2(1)).",
+      "source": "MCA"
+    },
+    {
+      "id": "G5",
+      "domain": "professionalism",
+      "label": "If he has capacity and still leaves",
+      "fail": "Blocks the door, calls security, or refuses further care.",
+      "pass": "Respects his decision; removes the drip and tube safely; keeps the door open to return.",
+      "high": "Offers what reduces the risk anyway: GP letter, written advice, direct ward contact; asks him to reconsider tomorrow."
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-knowledge",
+      "label": "If he lacks capacity",
+      "fail": "Restrains without legal basis, or lets him go unassessed.",
+      "pass": "Best interests; least restrictive option; involve family; senior decision.",
+      "high": "Restraint only if necessary to prevent harm and proportionate to its likelihood and seriousness (s6); looks for a reversible cause.",
+      "source": "MCA"
+    },
+    {
+      "id": "G7",
+      "domain": "professionalism",
+      "label": "Escalation and documentation",
+      "fail": "Doesn't tell a senior or record anything.",
+      "pass": "Informs the registrar; records the capacity assessment, risks explained, his words and his decision.",
+      "high": "Records his reasons and the alternatives offered, and that he may return at any time."
+    },
+    {
+      "id": "G8",
+      "domain": "communication",
+      "label": "Safety-netting",
+      "fail": "Lets him go with no advice.",
+      "pass": "Return at once, or call an ambulance, for vomiting, worsening pain, swelling, or no wind or stool.",
+      "high": "Checks he has someone with him tonight and a way to get back, and teaches back the warning signs."
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "candidate",
+        "text": "You can't leave. You've got a blocked bowel.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          },
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Mr Ashby: “Watch me.”"
+      },
+      {
+        "speaker": "candidate",
+        "text": "If you go, you could die. Anyone who'd do that clearly lacks capacity.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          },
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Mr Ashby: “I'm going.”"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Then I'll call security to keep you here. [Leaves without telling the registrar or writing anything]",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          },
+          {
+            "row": "G6",
+            "band": "fail"
+          },
+          {
+            "row": "G7",
+            "band": "fail"
+          },
+          {
+            "row": "G8",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "candidate",
+        "text": "Hello Mr Ashby, I'm Dr Novak, one of the surgical doctors. Can I sit down? The nurse says you want to go home. Can you tell me why?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Mr Ashby: “My mum's 86 and has dementia. The neighbour can't stay with her tonight.”"
+      },
+      {
+        "speaker": "candidate",
+        "text": "That's a real worry. Your bowel is still blocked: the tube drained a lot overnight and you haven't passed wind. At home it could twist or burst, you could get dehydrated and damage your kidneys, and you might need emergency surgery.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Can we sort out your mum instead? I can ask the social care team to arrange emergency care, or ring your family. I'll also ask my registrar to see you.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Can you tell me in your own words what could happen if you go home, and how you're weighing that against your mum's care?",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Mr Ashby: “It could burst and I could end up having an operation, or worse. I get it.”"
+      },
+      {
+        "speaker": "candidate",
+        "text": "You clearly understand. It's your decision. If you go, the nurse will take the tube and drip out safely, and you can come back at any time.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What if he lacked capacity?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd act in his best interests, in the least restrictive way, involve his family and my senior.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'll tell my registrar and record the capacity assessment, the risks I explained, and his decision.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "If you're sick, the pain or swelling gets worse, or you stop passing wind, come straight back or call 999.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "candidate",
+        "text": "Hello Mr Ashby, I'm Dr Novak, one of the surgical doctors. Can I sit down? Tell me what's making you want to go tonight. [Listens] Is anything else worrying you about staying? [Listens] It sounds as if the thought of an operation frightens you, after what happened to your dad.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "The tube brought up 1.4 litres overnight and you haven't passed wind, so it hasn't settled yet. That's why I'm worried about home tonight.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "What would make staying possible? If your sister can come tonight, or social care can arrange a carer, would you stay while the bowel settles?",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "So I'm sure I've explained it well, tell me back what the risks are. [Listens] Thank you. This is about this decision, today. Disagreeing with me doesn't mean you can't decide.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "If you still decide to go, I'll respect that. I'll write to your GP, give you written advice and the ward number, and you can come back any time, tonight or tomorrow.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What if he lacked capacity?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd look for a reversible cause, such as delirium or low sodium, and act in his best interests with my senior. Restraint only if necessary to prevent harm and proportionate to how likely and serious that harm is.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'll tell my registrar, and record his reasons, the alternatives offered, his explanation back to me and that he can return.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Is someone with you tonight? How would you get back? Tell me which signs mean you come straight in.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G4",
+      "move": "Deciding he lacks capacity because his choice is unwise.",
+      "consequence": "An unwise decision is not evidence of incapacity; he must be presumed to have capacity."
+    },
+    {
+      "row": "G6",
+      "move": "Calling security to keep a patient with capacity on the ward.",
+      "consequence": "Safety-critical: restraining a patient who has capacity has no legal basis."
+    },
+    {
+      "row": "G3",
+      "move": "Not asking why he wants to leave.",
+      "consequence": "The problem that could be solved, care for his mother, is never found."
+    },
+    {
+      "row": "G7",
+      "move": "Letting him go without informing a senior or recording the assessment.",
+      "consequence": "No record of the capacity decision, the risks given or his choice."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "He stands up to leave mid-conversation",
+      "line": "I won't stop you, but can you give me two minutes to make sure you're safe to go?"
+    },
+    {
+      "when": "You've sounded like you're threatening him",
+      "line": "I'm sorry, that came out wrong. It's your decision; I just want you to have the full picture."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Five principles: presume capacity; help him decide; an unwise decision isn't incapacity; best interests; least restrictive (s1).",
+      "source": "MCA"
+    },
+    {
+      "fact": "Unable to decide if unable to understand, retain, use or weigh, or communicate, because of an impairment or disturbance of mind or brain (s2(1), s3(1)).",
+      "source": "MCA"
+    },
+    {
+      "fact": "Restraint in care is lawful only if he lacks capacity, it's necessary to prevent harm to him, and it's proportionate (s5, s6).",
+      "source": "MCA"
+    },
+    {
+      "fact": "Adhesional obstruction managed without surgery can progress to strangulation or perforation.",
+      "source": "BL"
+    }
+  ],
+  "recall": {
+    "think": "Strangulation at home, or an unlawful restraint on the ward.",
+    "say": "\"Tell me what's making you want to go.\"",
+    "do": [
+      "Find and solve the reason",
+      "Explain risks; teach-back",
+      "Capacity for this decision; record"
+    ],
+    "numbers": [
+      {
+        "value": "5",
+        "meaning": "MCA principles",
+        "source": "MCA"
+      },
+      {
+        "value": "4",
+        "meaning": "abilities: understand, retain, weigh, communicate",
+        "source": "MCA"
+      }
+    ],
+    "trap": "Unwise decision taken as incapacity.",
+    "finish": "Respect a capable choice; safety-net; senior informed; record."
+  },
+  "sources": [
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format; introduce yourself and confirm identity"
+    },
+    {
+      "id": "BL",
+      "name": "Bailey & Love's Short Practice of Surgery (O'Connell, McCaskie, Sayers, eds)",
+      "version": "28th edition, 2023",
+      "url": "https://www.routledge.com/Bailey--Loves-Short-Practice-of-Surgery---28th-Edition/OConnell-McCaskie-Sayers/p/book/9780367548117",
+      "supports": "Adhesional small bowel obstruction: non-operative management with nasogastric decompression and IV fluids; risks of strangulation, perforation and dehydration"
+    },
+    {
+      "id": "MCA",
+      "name": "Mental Capacity Act 2005 (c. 9)",
+      "version": "2005, as amended; main provisions in force 1 October 2007",
+      "url": "https://www.legislation.gov.uk/ukpga/2005/9/contents",
+      "supports": "Principles: capacity assumed (s1(2)); all practicable steps to help (s1(3)); an unwise decision is not incapacity (s1(4)); best interests (s1(5)); least restrictive option (s1(6)); lacks capacity in relation to a matter if, at the material time, unable to decide because of an impairment of, or disturbance in the functioning of, the mind or brain, permanent or temporary (s2(1)–(2)); not established by age, appearance or behaviour alone (s2(3)); unable to understand, retain, use or weigh, or communicate (s3(1)); retaining briefly is enough (s3(3)); relevant information includes foreseeable consequences of each choice (s3(4)); best interests: wishes, feelings, beliefs, consult carers and family (s4(6)–(7)); protection for acts in care after reasonable steps to establish incapacity (s5); restraint only if necessary to prevent harm and proportionate to its likelihood and seriousness (s6(1)–(4))"
+    }
+  ],
+  "partner": {
+    "opening": "Mr Ashby is sitting on the edge of his bed with his coat on. Please begin when you're ready.",
+    "actorBrief": "You are Raymond (Ray) Ashby, 61, a warehouse manager. Your nasogastric tube is taped in place. Opening line: \"I'm taking this drip out and going home. I feel fine.\" Emotional state: irritable and determined, but not confused. Reason given if asked: your mother, 86, has dementia and lives with you; a neighbour has sat with her for two days but can't tonight. Your sister lives 40 minutes away and could come if someone rang her. Hidden fear, only if asked what else worries you: your father died after a bowel operation, and you think staying means \"they'll cut me open\". If the candidate threatens or argues, stand up to leave. If they listen and help with your mother, agree to stay tonight. If asked to explain the risks back, do so accurately: you have capacity.",
+    "reveals": [
+      {
+        "trigger": "Asks why he wants to go",
+        "finding": "\"My mum's 86, she's got dementia. The neighbour can't stay tonight.\"",
+        "row": "G1"
+      },
+      {
+        "trigger": "Asks what else worries him",
+        "finding": "\"My dad went in for a bowel operation and never came out. I'm not having that.\"",
+        "row": "G1"
+      },
+      {
+        "trigger": "Asks about family who could help",
+        "finding": "\"My sister, Jean. She'd come if someone rang her.\"",
+        "row": "G3"
+      },
+      {
+        "trigger": "Asks him to explain the risks back",
+        "finding": "\"It could twist or burst, I'd get dry, and I might end up needing an operation anyway. Or worse.\"",
+        "row": "G4"
+      }
+    ],
+    "push": [
+      {
+        "question": "How do you assess his capacity?",
+        "row": "G4",
+        "expect": "Presume capacity; for this decision now: can he understand, retain, use or weigh the information, and communicate a decision? An unwise choice isn't incapacity."
+      },
+      {
+        "question": "What would you do if he lacked capacity?",
+        "row": "G6",
+        "expect": "Look for a reversible cause; best interests with a senior, involving family; least restrictive option; restraint only if necessary to prevent harm and proportionate (s6)."
+      },
+      {
+        "question": "He has capacity and still wants to go. What do you do?",
+        "row": "G5",
+        "expect": "Respect it; remove the tube and drip safely; senior informed; GP letter, written advice, safety-net; door open; record."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "He becomes confused, pulls at his tube and doesn't know where he is.",
+        "safeAnswer": "Reassess: likely delirium; if he now lacks capacity for this decision, act in his best interests with a senior; restraint only if necessary and proportionate.",
+        "row": "G6"
+      },
+      {
+        "prompt": "The nurse asks you to make him sign a self-discharge form first.",
+        "safeAnswer": "Offer it, but if he won't sign, he can still leave; record the discussion in the notes.",
+        "row": "G7"
+      },
+      {
+        "prompt": "\"If I stay, will you promise I won't need an operation?\"",
+        "safeAnswer": "Can't promise; many settle without one; if surgery is advised, it'll be discussed with him and it's his decision.",
+        "row": "G2"
+      }
+    ]
+  }
+}

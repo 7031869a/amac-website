@@ -1,0 +1,574 @@
+{
+  "id": "MB-216",
+  "exam": "MRCS-B",
+  "title": "History: dysphagia",
+  "type": "history",
+  "header": {
+    "domain": "Applied Skills",
+    "contentArea": "Communication skills in giving and receiving information and history taking",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "signalMinutes": 6,
+    "guidelineVersions": [
+      "NICE NG12 (updated Apr 2026)",
+      "NICE NG83 (2018; updated Jul 2023)"
+    ],
+    "related": [
+      {
+        "id": "MB-152 Dyspepsia and weight loss",
+        "why": "The other upper GI suspected cancer history"
+      },
+      {
+        "id": "MB-176 Breaking bad news",
+        "why": "The conversation after the biopsy result"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Upper GI surgical outpatient clinic",
+    "role": "Core surgical trainee",
+    "scenario": "Mr Alan Thorley, 67, has been referred by his GP on the suspected cancer pathway with difficulty swallowing.",
+    "task": "Take a focused history. You will be stopped at 6 minutes to summarise your history, then asked about differential diagnosis and investigation."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Dysphagia is cancer until proven otherwise: characterise it, quantify the weight loss, find the risk factors.",
+    "trap": "Accepting grief or reflux as the reason he has stopped eating.",
+    "firstMove": "\"Show me where the food sticks.\" Then: solids, liquids, or both from the start?"
+  },
+  "flow": [
+    "Open and listen",
+    "Characterise the dysphagia",
+    "Red flags and associated symptoms",
+    "Risk factors and drugs",
+    "Ideas, concerns, expectations",
+    "At 6 minutes: summarise",
+    "Differential and investigation"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "communication",
+      "label": "Opening and rapport",
+      "fail": "Starts with closed questions and interrupts his opening account.",
+      "pass": "Introduces, confirms identity, asks an open question and lets him finish.",
+      "high": "Notices the cue about his wife early and signposts: \"I'd like to come back to that.\""
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-skill",
+      "label": "Characterising the dysphagia",
+      "fail": "Records \"trouble swallowing\" without level, food type or progression.",
+      "pass": "Duration, solids versus liquids, progression, where it sticks, and pain on swallowing.",
+      "high": "Separates oropharyngeal from oesophageal causes: choking, coughing or nasal regurgitation on swallowing; gurgling or halitosis for a pouch.",
+      "source": "BL"
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-skill",
+      "label": "Red flags (safety-critical)",
+      "fail": "Doesn't quantify weight loss, or doesn't ask about bleeding or anaemia.",
+      "borderline": "Asks about weight loss but accepts \"a bit\" without a figure.",
+      "pass": "Weight loss in kilograms over time, vomiting, haematemesis, melaena, anaemia symptoms, hoarseness.",
+      "high": "Asks if he can swallow his saliva and fluids now, because complete dysphagia needs same-day admission.",
+      "source": "BL"
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-skill",
+      "label": "Risk factors, history and drugs",
+      "fail": "Omits smoking, alcohol or long-standing reflux.",
+      "pass": "Smoking, alcohol, reflux history, previous endoscopy, neurological history, current and over-the-counter medicines.",
+      "high": "Asks about Barrett's oesophagus, and about drugs that injure the oesophagus, such as NSAIDs and bisphosphonates.",
+      "source": "BL"
+    },
+    {
+      "id": "G5",
+      "domain": "communication",
+      "label": "Ideas, concerns, expectations",
+      "fail": "Doesn't ask what he thinks or fears.",
+      "pass": "Asks what he thinks is causing it, what worries him and what he hopes for today.",
+      "high": "Links his wife's death to his fear of cancer; asks how he is managing at home, alone."
+    },
+    {
+      "id": "G6",
+      "domain": "communication",
+      "label": "Summary at the signal",
+      "fail": "Retells the story in order, with no working diagnosis.",
+      "pass": "Concise summary with key positives and negatives; working diagnosis of oesophageal cancer, with a differential.",
+      "high": "Leads with progressive solid dysphagia and weight loss; names benign stricture and achalasia as the main alternatives, with reasons."
+    },
+    {
+      "id": "G7",
+      "domain": "clinical-knowledge",
+      "label": "Referral and investigation",
+      "fail": "Plans a PPI trial, or books a barium swallow instead of endoscopy.",
+      "pass": "Meets the NG12 criteria (dysphagia at any age) and stays on the suspected cancer pathway; books urgent OGD with biopsies.",
+      "high": "States the pathway target: diagnosis or ruling out within 28 days; adds FBC; if cancer, whole-body CT then MDT.",
+      "source": "NG12"
+    },
+    {
+      "id": "G8",
+      "domain": "clinical-knowledge",
+      "label": "Next steps if cancer is confirmed",
+      "fail": "Can't say what follows a positive biopsy.",
+      "pass": "Staging with whole-body CT; specialist MDT; dietetic assessment.",
+      "high": "PET-CT if suitable for radical treatment (not T1a); endoscopic ultrasound only if it will change management.",
+      "source": "NG83"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "candidate",
+        "text": "So you've got trouble swallowing. Any heartburn?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          },
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Lost any weight? A bit? Well, you said you've not been eating since your wife died.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Any other medical problems? OK.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          },
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop there and summarise your history."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Mr Thorley is 67 with reflux and some difficulty swallowing.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What would you do?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Double-dose omeprazole for eight weeks and a barium swallow. If that's normal, discharge.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "And if a biopsy did show cancer?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Refer him to the oncologists.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "candidate",
+        "text": "Hello, I'm Dr Moreau, one of the surgical trainees. Can I check your name and date of birth? Tell me about the swallowing in your own words.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "How long has it been going on? Is it solids, liquids or both? Is it getting worse? Show me where it sticks. Does it hurt to swallow?",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Have you lost weight? How much, and over how long? Any vomiting, vomiting blood or black stools? Are you tired or breathless? Any change in your voice?",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Do you smoke or drink? Any heartburn over the years? Ever had a camera test? Any strokes or nerve problems? What medicines do you take, including from the chemist?",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "What do you think is causing this? Is anything worrying you? What were you hoping for today?",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop there and summarise your history."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Mr Thorley is 67, with three months of progressive dysphagia to solids, sticking behind the lower sternum, and 8 kg weight loss. He smokes, drinks 30 units a week and has had heartburn for 20 years. No bleeding. My working diagnosis is oesophageal cancer; the differential is a benign peptic stricture.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you investigate?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "He meets the NG12 criteria because he has dysphagia, so he stays on the suspected cancer pathway. I'd book an urgent OGD with biopsies myself.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "And if it's cancer?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Staging with a whole-body CT, discussion at the upper GI MDT, and a dietitian.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "candidate",
+        "text": "Hello, I'm Dr Moreau, one of the surgical trainees. Can I check your name and date of birth? Tell me what's been happening. [Hears that his wife died two years ago.] I'm sorry. I'd like to come back to that.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "When you swallow, do you cough or choke, or does food come back through your nose? Any gurgling in your neck, or bad breath?",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Can you swallow your saliva and drinks now? That tells me how urgent this is.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Has anyone ever mentioned Barrett's oesophagus? Do you take anti-inflammatories or any weekly bone tablets?",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "You mentioned your wife. Are you worried this might be cancer too? And how are you managing at home on your own?",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop there and summarise your history."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Mr Thorley, 67, has progressive dysphagia to solids for three months with 8 kg weight loss, on a background of 20 years' reflux, smoking and alcohol. He can still manage fluids. This is oesophageal cancer, probably adenocarcinoma, until proven otherwise. Benign peptic stricture is the main alternative; achalasia is less likely because solids came first and liquids are fine.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you investigate?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Dysphagia meets the NG12 criteria at any age, so he stays on the suspected cancer pathway, which aims to diagnose or rule out cancer within 28 days. I'd book an urgent OGD with biopsies today and check a full blood count.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "And if it's cancer?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Whole-body CT, then the specialist MDT. If he's suitable for radical treatment, PET-CT; endoscopic ultrasound only if it would change management. And early dietetic support, because he's already lost weight.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G3",
+      "move": "Putting the weight loss down to grief without measuring it.",
+      "consequence": "Safety-critical: the main alarm feature is explained away instead of investigated."
+    },
+    {
+      "row": "G4",
+      "move": "Not asking about smoking, alcohol and long-standing reflux.",
+      "consequence": "Misses the risk factors that point to squamous cell carcinoma or adenocarcinoma."
+    },
+    {
+      "row": "G5",
+      "move": "Skipping his concerns.",
+      "consequence": "His fear of cancer after his wife's death, and his isolation at home, stay hidden."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You forgot to ask about fluids",
+      "line": "Before we go on: can you still swallow drinks and your own saliva?"
+    },
+    {
+      "when": "He asks if it's cancer",
+      "line": "It's one of the things we have to rule out, which is why I want the camera test done quickly."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "NG12: refer on the suspected cancer pathway for oesophageal or stomach cancer if there is dysphagia, at any age (1.2.1, 1.2.7; amended May 2025 from direct-access endoscopy).",
+      "source": "NG12"
+    },
+    {
+      "fact": "Suspected cancer pathway: diagnosis or ruling out within 28 days of referral.",
+      "source": "NG12"
+    },
+    {
+      "fact": "Solids first, then progressing: mechanical obstruction. Choking, coughing or nasal regurgitation: oropharyngeal cause. Gurgling, halitosis, regurgitated undigested food: pharyngeal pouch.",
+      "source": "BL"
+    },
+    {
+      "fact": "After histology and whole-body CT: PET-CT if suitable for radical treatment, except T1a (1.3.1); dietetic support (1.6.1).",
+      "source": "NG83"
+    }
+  ],
+  "recall": {
+    "think": "Oesophageal cancer; complete obstruction.",
+    "say": "\"He meets the NG12 criteria; I'll book an urgent OGD with biopsies.\"",
+    "do": [
+      "Level, solids or liquids, progression",
+      "Weight loss in kg over time",
+      "Smoking, alcohol, reflux"
+    ],
+    "numbers": [
+      {
+        "value": "Any age",
+        "meaning": "dysphagia meets NG12 suspected cancer criteria",
+        "source": "NG12"
+      },
+      {
+        "value": "28 days",
+        "meaning": "diagnosis or ruling out on the pathway",
+        "source": "NG12"
+      }
+    ],
+    "trap": "Blaming grief or reflux for weight loss.",
+    "finish": "Urgent OGD and biopsy; CT; MDT; dietitian."
+  },
+  "sources": [
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format: 9-minute stations with 1 minute's reading; introduce yourself and confirm identity at every station"
+    },
+    {
+      "id": "BL",
+      "name": "Bailey & Love's Short Practice of Surgery (O'Connell, McCaskie, Sayers, eds)",
+      "version": "28th edition, 2023",
+      "url": "https://www.routledge.com/Bailey--Loves-Short-Practice-of-Surgery---28th-Edition/OConnell-McCaskie-Sayers/p/book/9780367548117",
+      "supports": "Oropharyngeal versus oesophageal dysphagia; features of pharyngeal pouch and achalasia; risk factors for oesophageal cancer; drugs causing oesophageal injury"
+    },
+    {
+      "id": "NG12",
+      "name": "NICE NG12: Suspected cancer: recognition and referral",
+      "version": "Published 23 June 2015; last updated 15 April 2026",
+      "url": "https://www.nice.org.uk/guidance/ng12/resources/suspected-cancer-recognition-and-referral-pdf-1837268071621",
+      "supports": "Refer people using a suspected cancer pathway referral for oesophageal cancer (1.2.1) and stomach cancer (1.2.7) if they have dysphagia, or are 55 and over with weight loss and upper abdominal pain, reflux or dyspepsia (amended May 2025 from direct-access endoscopy); suspected cancer pathway referral: diagnosis or ruling out of cancer within 28 days of referral (terms used)"
+    },
+    {
+      "id": "NG83",
+      "name": "NICE NG83: Oesophago-gastric cancer: assessment and management in adults",
+      "version": "Published 24 January 2018; last updated 4 July 2023",
+      "url": "https://www.nice.org.uk/guidance/ng83",
+      "supports": "Assessment after histological confirmation by endoscopy and whole-body CT (section 1.3); offer F-18 FDG PET-CT to people with oesophageal and gastro-oesophageal junction tumours suitable for radical treatment, except T1a (1.3.1); endoscopic ultrasound only if it will guide management (1.3.3); review treatment in a multidisciplinary meeting (1.2.1–1.2.2); offer nutritional assessment and tailored specialist dietetic support (1.6.1)"
+    }
+  ],
+  "partner": {
+    "opening": "Please take a focused history from Mr Thorley. I'll stop you at 6 minutes to summarise.",
+    "actorBrief": "You are Alan Thorley, 67, a retired roofer who lives alone. Opening line: \"Food keeps getting stuck, doctor. The GP said I had to come.\" Emotional state: stoical, plays it down, quietly frightened. Volunteer only that meat and bread stick. Release other facts only when asked (see reveals). Early cue: \"I've not bothered much with food since my wife passed.\" If the candidate comes back to it: she died of lung cancer two years ago, and you're terrified this is the same. Expectation: \"Can't they just stretch it? My mate had that.\" Answer the summary questions honestly.",
+    "reveals": [
+      {
+        "trigger": "Asks duration and what sticks",
+        "finding": "Three months; meat and bread first, now even mashed potato. Soup and tea go down fine.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Asks where it sticks",
+        "finding": "Points to the lower breastbone.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Asks about choking, coughing or food through the nose",
+        "finding": "No. Sometimes food comes back up a few minutes later, undigested.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Asks how much weight",
+        "finding": "\"Belt's two notches in. About 8 kilos since the summer\" (was 78 kg, now 70 kg).",
+        "row": "G3"
+      },
+      {
+        "trigger": "Asks about bleeding, voice, tiredness",
+        "finding": "No vomiting blood or black stools; voice normal; more tired than usual.",
+        "row": "G3"
+      },
+      {
+        "trigger": "Asks about smoking, alcohol, reflux",
+        "finding": "Smokes 15 a day since 17; about 30 units a week; heartburn for 20 years, uses Gaviscon; never had a camera test.",
+        "row": "G4"
+      },
+      {
+        "trigger": "Asks about medicines",
+        "finding": "Amlodipine; ibuprofen from the chemist for his back, most days.",
+        "row": "G4"
+      },
+      {
+        "trigger": "Asks what worries him",
+        "finding": "\"My wife had cancer. I watched what it did.\"",
+        "row": "G5"
+      },
+      {
+        "trigger": "At 6 minutes",
+        "finding": "Say: \"Please stop there and summarise your history.\"",
+        "row": "G6"
+      }
+    ],
+    "push": [
+      {
+        "question": "What is your differential?",
+        "row": "G6",
+        "expect": "Oesophageal cancer; benign peptic stricture; achalasia less likely; extrinsic compression."
+      },
+      {
+        "question": "How would you investigate, and how quickly?",
+        "row": "G7",
+        "expect": "Meets NG12 criteria; stays on suspected cancer pathway (28 days); candidate books urgent OGD with biopsies; FBC."
+      },
+      {
+        "question": "The biopsy shows adenocarcinoma. What next?",
+        "row": "G8",
+        "expect": "Whole-body CT; MDT; PET-CT if suitable for radical treatment; dietitian."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "\"Since yesterday I can't even get water down. I'm spitting out my saliva.\"",
+        "safeAnswer": "Complete dysphagia: admit today for assessment, IV fluids and urgent endoscopy; don't send home.",
+        "row": "G3"
+      },
+      {
+        "prompt": "\"Can't you just stretch it?\"",
+        "safeAnswer": "Not until we know the cause: first the camera test and biopsies.",
+        "row": "G7"
+      },
+      {
+        "prompt": "He describes gurgling in his neck and regurgitating food from days ago.",
+        "safeAnswer": "Suspect a pharyngeal pouch: a contrast swallow first, and tell the endoscopist, because of the risk of perforation.",
+        "row": "G2"
+      }
+    ]
+  }
+}

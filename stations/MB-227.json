@@ -1,0 +1,650 @@
+{
+  "id": "MB-227",
+  "exam": "MRCS-B",
+  "title": "Coagulation results: DIC, liver disease and anticoagulants",
+  "type": "data-interpretation",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "Applied surgical science and critical care",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "BSH DIC guideline (February 2009; review date January 2012)",
+      "BSH platelet transfusion guideline (2017; review date January 2022)",
+      "ISTH overt DIC score (Taylor 2001, via Thachil & Iba 2023; ISTH 2025 update)",
+      "NICE NG24 (updated February 2026)",
+      "NICE NG89 (updated August 2019)",
+      "NICE NG253 (updated September 2026)"
+    ],
+    "related": [
+      {
+        "id": "MB-184 CT head after head injury",
+        "why": "Warfarin reversal with prothrombin complex concentrate"
+      },
+      {
+        "id": "MB-163 Telephone referral (SBAR): suspected anastomotic leak",
+        "why": "Escalating a septic postoperative patient"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Surgical ward, early evening",
+    "role": "Core surgical trainee on call",
+    "scenario": "Mr Stanley Cobb, 64, is on day 3 after an emergency laparotomy and Hartmann's procedure for faecal peritonitis. He is on prophylactic enoxaparin. This evening he is oozing from his wound, drain site and cannula sites. His coagulation results have just come back.",
+    "task": "The examiner will show you his results, then results from two other patients. Interpret them and explain your management."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Read every result against its range, name the pattern, score it, treat the cause, then products for bleeding only.",
+    "trap": "Transfusing to fix numbers while the septic source goes untreated, or giving the next enoxaparin dose.",
+    "firstMove": "\"I'll read each result against its range and his preoperative values.\""
+  },
+  "flow": [
+    "Read the results",
+    "Name DIC and score it",
+    "Treat the cause",
+    "Products for bleeding",
+    "Heparin",
+    "Liver disease",
+    "Warfarin"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-skill",
+      "label": "Systematic read",
+      "fail": "Picks out one abnormal value and stops.",
+      "pass": "Reads each result against its range: haemoglobin, platelets, PT, APTT, fibrinogen, D-dimer; asks about his drugs.",
+      "high": "Compares with preoperative values (platelets were 260) and asks for repeat tests to follow the trend.",
+      "source": "BSHDIC"
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-knowledge",
+      "label": "Recognising and scoring DIC",
+      "fail": "Calls it liver disease or heparin, or can't name a pattern.",
+      "pass": "Falling platelets, long PT and APTT, low fibrinogen, very high D-dimer in sepsis: DIC. ISTH (2001) score 7; 5 or more is overt DIC.",
+      "high": "Scores it aloud: platelets 42 = 2, PT 7.5 s long = 2, strong D-dimer rise = 3, fibrinogen 1.2 = 0.",
+      "source": "THIBA"
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-skill",
+      "label": "Treating the cause (safety-critical)",
+      "fail": "Transfuses and waits; doesn't see him or look for sepsis.",
+      "pass": "Sees him now; NEWS2 8 with suspected abdominal sepsis: IV antibiotics within 1 hour; 250 ml crystalloid boluses, reassessing each.",
+      "high": "Senior advice if no better after 1,000 ml; source control with the consultant, as products only buy time.",
+      "source": "NG253"
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-knowledge",
+      "label": "Plasma and cryoprecipitate",
+      "fail": "Gives nothing while he bleeds, or transfuses without rechecking.",
+      "pass": "Clinically significant bleeding with PT and APTT ratios above 1.5: consider FFP. Fibrinogen 1.2, below 1.5: consider cryoprecipitate, 2 pools.",
+      "high": "Rechecks clotting and fibrinogen after each and gives more if needed; wouldn't give either if he weren't bleeding.",
+      "source": "NG24"
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-knowledge",
+      "label": "Platelets",
+      "fail": "Ignores a platelet count of 42 in a bleeding patient, or transfuses a non-bleeding patient on numbers alone.",
+      "pass": "Bleeding DIC after surgery, platelets under 50: considers platelet transfusion (BSH DIC guideline), deciding with haematology.",
+      "high": "Knows NICE and BSH thresholds differ and depend on bleeding severity; wouldn't transfuse on the count alone or once bleeding stops.",
+      "source": "BSHDIC"
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-knowledge",
+      "label": "Heparin and tranexamic acid (safety-critical)",
+      "fail": "Gives tonight's enoxaparin, or tranexamic acid, without thinking.",
+      "pass": "Withholds prophylactic enoxaparin while he bleeds; keeps mechanical prophylaxis; reassesses VTE and bleeding risk.",
+      "high": "Restarts prophylaxis once bleeding stops, as DIC also clots; avoids antifibrinolytics unless haematology advises.",
+      "source": "BSHDIC"
+    },
+    {
+      "id": "G7",
+      "domain": "clinical-knowledge",
+      "label": "DIC or liver disease?",
+      "fail": "Calls Mrs Ellery's results DIC and orders plasma.",
+      "pass": "Known cirrhosis, raised bilirubin, low albumin: coagulopathy of liver disease; the clinical context decides.",
+      "high": "Knows factor VIII and the ISTH score don't reliably separate DIC from liver disease.",
+      "source": "ALLEN"
+    },
+    {
+      "id": "G8",
+      "domain": "clinical-knowledge",
+      "label": "Warfarin: pattern and reversal",
+      "fail": "Gives FFP, or waits for vitamin K alone.",
+      "pass": "Isolated high INR on warfarin with severe bleeding: stops warfarin; immediate prothrombin complex concentrate and IV vitamin K.",
+      "high": "No FFP to reverse warfarin (NICE); checks the INR confirms reversal and considers more PCC.",
+      "source": "NG24"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "Here are Mr Cobb's results."
+      },
+      {
+        "speaker": "candidate",
+        "text": "The platelets are low.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "It's probably the enoxaparin.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'll give two units of FFP and check again in the morning.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          },
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "His platelets are 42."
+      },
+      {
+        "speaker": "candidate",
+        "text": "They're above 20, so I'd leave them.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "His enoxaparin is due at six; I'll let that go ahead, and add tranexamic acid.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Mrs Ellery has cirrhosis and a PT of 17."
+      },
+      {
+        "speaker": "candidate",
+        "text": "That's DIC too. I'd give plasma.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Mr Quayle is on warfarin with an INR of 7.8 and melaena."
+      },
+      {
+        "speaker": "candidate",
+        "text": "FFP and vitamin K.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "examiner",
+        "text": "Here are Mr Cobb's results."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Haemoglobin 92, platelets 42, PT 19.5, APTT 52, fibrinogen 1.2, D-dimer 8,400. All abnormal. What is he on? Only prophylactic enoxaparin.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Low platelets, long PT and APTT, low fibrinogen, very high D-dimer in a septic patient: DIC. The ISTH 2001 score is 7, and 5 or more is overt DIC.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd see him now. NEWS2 8: antibiotics within the hour, 250 ml crystalloid boluses, reassessing each.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "He's bleeding, with PT and APTT ratios over 1.5, so I'd consider FFP. Fibrinogen is under 1.5, so I'd consider 2 pools of cryoprecipitate.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Platelets 42 after surgery with bleeding: I'd consider platelets and speak to haematology.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd hold tonight's enoxaparin and keep his compression devices on.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Mrs Ellery has cirrhosis and a PT of 17."
+      },
+      {
+        "speaker": "candidate",
+        "text": "With cirrhosis, jaundice and low albumin, that's liver disease, not DIC.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Mr Quayle is on warfarin with an INR of 7.8 and melaena."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Stop the warfarin; immediate prothrombin complex concentrate and IV vitamin K.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "examiner",
+        "text": "Here are Mr Cobb's results."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Haemoglobin 92, down from 118. Platelets 42, from 260 before surgery. PT 19.5 against a control of 12, APTT 52, fibrinogen 1.2, D-dimer 8,400. Only prophylactic enoxaparin on the chart. I'd repeat them to see the trend.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "DIC from sepsis. ISTH: platelets under 50, 2; PT 7.5 seconds long, 2; strong D-dimer rise, 3; fibrinogen above 1, 0. Total 7: overt DIC.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "NEWS2 8: antibiotics within the hour, 250 ml boluses to 1,000 ml, senior advice if no better. Products only buy time; he needs source control, so my consultant now.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "FFP for bleeding with ratios over 1.5, cryoprecipitate 2 pools for fibrinogen under 1.5, rechecking after each. If he weren't bleeding, I wouldn't give either.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Platelets 42, bleeding and postoperative: the BSH DIC guideline says consider platelets under 50, though NICE's threshold for this grade of bleeding is 30. I'd decide with haematology, not on the number alone.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Hold enoxaparin while he bleeds, mechanical prophylaxis continues, and restart once bleeding stops, because DIC also clots. No tranexamic acid unless haematology advises.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Mrs Ellery has cirrhosis and a PT of 17."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Liver disease, from context: cirrhosis, bilirubin up, albumin down. Factor VIII and the ISTH score don't reliably separate this from DIC.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Mr Quayle is on warfarin with an INR of 7.8 and melaena."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Stop warfarin; immediate PCC and IV vitamin K; not FFP for warfarin. Repeat the INR to confirm reversal, and more PCC if needed.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G3",
+      "move": "Transfusing products and leaving the septic source untreated.",
+      "consequence": "Safety-critical: the DIC continues while the cause is ignored."
+    },
+    {
+      "row": "G6",
+      "move": "Giving the next enoxaparin dose, or tranexamic acid, to a bleeding patient with DIC.",
+      "consequence": "Safety-critical: more bleeding; BSH advises against antifibrinolytics in DIC in general."
+    },
+    {
+      "row": "G8",
+      "move": "Giving FFP to reverse warfarin in a major bleed.",
+      "consequence": "Slower, incomplete reversal; NICE advises PCC instead."
+    },
+    {
+      "row": "G7",
+      "move": "Giving plasma to a non-bleeding patient with cirrhosis to correct the PT.",
+      "consequence": "Exposes her to transfusion risks with no benefit."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You forgot the ISTH points",
+      "line": "Platelets, PT prolongation, D-dimer and fibrinogen; 5 or more is overt DIC."
+    },
+    {
+      "when": "You only talked about products",
+      "line": "The cornerstone is treating the cause: his abdominal sepsis."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "ISTH 2001 overt DIC: platelets under 50 = 2, 50–99 = 1; D-dimer strong rise = 3, moderate = 2; PT 6 s or more long = 2, 3–6 s = 1; fibrinogen under 1 g/L = 1. Total 5 or more.",
+      "source": "THIBA"
+    },
+    {
+      "fact": "ISTH 2025: D-dimer over 3× and over 7× the upper limit score 2 and 3; his (about 17×) still scores 3.",
+      "source": "IBA"
+    },
+    {
+      "fact": "BSH DIC (2009): products for bleeding, not numbers; platelets considered under 50 if bleeding or postoperative; cryoprecipitate if fibrinogen stays under 1 g/L despite FFP.",
+      "source": "BSHDIC"
+    },
+    {
+      "fact": "NICE NG24: platelets if clinically significant bleeding and under 30, up to 100 if severe or critical-site; cryoprecipitate if bleeding and fibrinogen under 1.5 g/L.",
+      "source": "NG24"
+    },
+    {
+      "fact": "BSH platelets (2017): bleeding thresholds 30 (WHO grade 2), 50 (severe), 100 (trauma, brain, eye); a guide in DIC.",
+      "source": "BSHPLT"
+    },
+    {
+      "fact": "Abdominal surgery: stockings or intermittent pneumatic compression; reassess when the condition changes.",
+      "source": "NG89"
+    },
+    {
+      "fact": "PCC corrects warfarin in about 30 minutes; vitamin K takes 4–6 hours.",
+      "source": "BERI"
+    },
+    {
+      "fact": "Life-threatening bleeding on warfarin: stop it; phytomenadione 5–10 mg by slow IV injection with PCC.",
+      "source": "KONA"
+    }
+  ],
+  "recall": {
+    "think": "Uncontrolled sepsis; bleeding; thrombosis.",
+    "say": "\"This is DIC from abdominal sepsis: ISTH score 7. Treat the cause.\"",
+    "do": [
+      "Score it, repeat it",
+      "Antibiotics, fluids, source control",
+      "Products for bleeding only; hold enoxaparin"
+    ],
+    "numbers": [
+      {
+        "value": "≥ 5",
+        "meaning": "ISTH overt DIC score",
+        "source": "THIBA"
+      },
+      {
+        "value": "1.5",
+        "meaning": "PT/APTT ratio for FFP; fibrinogen g/L for cryo, if bleeding",
+        "source": "NG24"
+      },
+      {
+        "value": "< 50",
+        "meaning": "platelets: consider transfusion in bleeding DIC (BSH)",
+        "source": "BSHDIC"
+      }
+    ],
+    "trap": "Correcting the numbers while the septic source goes unchecked.",
+    "finish": "Source control, targeted products, and prophylaxis restarted when bleeding stops."
+  },
+  "sources": [
+    {
+      "id": "BSHDIC",
+      "name": "Levi M, Toh CH, Thachil J, Watson HG. Guidelines for the diagnosis and management of disseminated intravascular coagulation. British Committee for Standards in Haematology. Br J Haematol 2009;145:24-33 (BSH guideline summary)",
+      "version": "Published 13 February 2009; last review date 9 January 2012",
+      "url": "https://b-s-h.org.uk/guidelines/guidelines/guidelines-for-the-diagnosis-and-management-of-disseminated-intravascular-coagulation",
+      "supports": "Diagnosis uses clinical and laboratory information; the ISTH scoring system gives an objective measure; repeat the tests to follow the changing picture; treating the underlying condition is the cornerstone; platelets and plasma not given for laboratory results alone, generally only with bleeding; with bleeding or high bleeding risk (for example postoperative) and platelets under 50, consider platelet transfusion; FFP may help in bleeding patients with prolonged PT and APTT; severe hypofibrinogenaemia under 1 g/L persisting despite FFP may be treated with fibrinogen concentrate or cryoprecipitate; in critically ill, non-bleeding patients with DIC, prophylactic heparin or LMWH is recommended; in general, no antifibrinolytics in DIC"
+    },
+    {
+      "id": "THIBA",
+      "name": "Thachil J, Iba T. Designing the diagnostic criteria for disseminated intravascular coagulation (DIC). Juntendo Med J 2023;69(6):463-465, table 1 (ISTH overt DIC score of Taylor FB Jr et al, Thromb Haemost 2001;86:1327-30)",
+      "version": "Published online 20 December 2023",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38855069/",
+      "supports": "ISTH overt DIC score: platelets under 50 = 2, 50 to under 100 = 1; fibrin marker (D-dimer) strong increase = 3, moderate increase = 2; PT prolonged 6 s or more = 2, 3 to under 6 s = 1; fibrinogen under 1 g/L = 1; total 5 or more = overt DIC"
+    },
+    {
+      "id": "IBA",
+      "name": "Iba T, Maier CL, Scarlatescu E, Levy JH. Introducing the new definition and diagnostic criteria of disseminated intravascular coagulation released by the International Society on Thrombosis and Haemostasis in 2025. Semin Thromb Hemost 2026;52(1):10-17",
+      "version": "Published online 19 August 2025",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40829630/",
+      "supports": "ISTH 2025 update: phase-based classification (pre-DIC, early-phase, overt); the overt DIC score is refined, with D-dimer above 3 and above 7 times the upper limit of normal scoring 2 and 3 points; platelet count, PT-INR and fibrinogen remain key indicators"
+    },
+    {
+      "id": "BSHPLT",
+      "name": "Estcourt LJ, Birchall J, Allard S, et al. Guidelines for the use of platelet transfusions (British Committee for Standards in Haematology). Br J Haematol 2017;176:365-394, with BSH summary (appendix 1)",
+      "version": "Published online 23 December 2016; last review date 14 January 2022",
+      "url": "https://b-s-h.org.uk/guidelines/guidelines/use-of-platelet-transfusions",
+      "supports": "Therapeutic use (bleeding WHO grade 2 or above): bleeding not severe 30, severe bleeding 50, multiple trauma, brain or eye injury or spontaneous intracerebral haemorrhage 100 (x10^9/L); DIC: use the preprocedure or therapeutic thresholds as a guide with individual case review; prophylactic transfusion not indicated for platelet consumption such as DIC; in severe bleeding replace fibrinogen if below 1.5 g/L"
+    },
+    {
+      "id": "NG24",
+      "name": "NICE NG24: Blood transfusion",
+      "version": "Published 18 November 2015; last updated 26 February 2026",
+      "url": "https://www.nice.org.uk/guidance/ng24",
+      "supports": "Platelets: offer with clinically significant bleeding and count under 30; up to 100 for severe bleeding or critical sites (1.7.1-1.7.2); FFP: only consider with clinically significant bleeding and abnormal coagulation, for example PT or APTT ratio above 1.5 (1.9.1); do not offer FFP to correct abnormal coagulation in people who are not bleeding (unless a procedure with a risk of significant bleeding) or to reverse a vitamin K antagonist (1.9.2); reassess and repeat coagulation tests after FFP (1.10.1); cryoprecipitate: consider with clinically significant bleeding and fibrinogen under 1.5 g/L (1.11.1); adult dose 2 pools (1.12.1); repeat fibrinogen and give more if needed (1.12.2); immediate prothrombin complex concentrate for emergency warfarin reversal in severe bleeding (1.12.3); monitor the INR and consider further PCC (1.12.6)"
+    },
+    {
+      "id": "NG89",
+      "name": "NICE NG89: Venous thromboembolism in over 16s: reducing the risk of hospital-acquired deep vein thrombosis or pulmonary embolism",
+      "version": "Published 21 March 2018; last updated 13 August 2019",
+      "url": "https://www.nice.org.uk/guidance/ng89",
+      "supports": "Reassess VTE and bleeding risk when the clinical condition changes (1.1.8); abdominal surgery: mechanical prophylaxis with anti-embolism stockings or intermittent pneumatic compression (1.14.2); add pharmacological prophylaxis when VTE risk outweighs bleeding risk (1.14.3)"
+    },
+    {
+      "id": "NG253",
+      "name": "NICE NG253: Suspected sepsis in people aged 16 or over: recognition, assessment and early management",
+      "version": "Published 19 November 2025; last updated 23 September 2026",
+      "url": "https://www.nice.org.uk/guidance/ng253",
+      "supports": "High risk = NEWS2 7 or more; IV antibiotics within 1 hour (1.8.3); 250 ml crystalloid boluses up to 1,000 ml in total (1.8.6-1.8.7); senior advice if not improved after 1,000 ml (1.8.9); early surgical team for source control (1.11.4)"
+    },
+    {
+      "id": "NEWS2",
+      "name": "Royal College of Physicians: National Early Warning Score (NEWS) 2, chart 1: the NEWS scoring system",
+      "version": "December 2017",
+      "url": "https://www.rcp.ac.uk/improving-care/resources/national-early-warning-score-news-2/",
+      "supports": "NEWS2 parameter bands and aggregate score"
+    },
+    {
+      "id": "ALLEN",
+      "name": "Allen C, Heskel M, Butt A, et al. Factor VIII levels and ISTH disseminated intravascular coagulation scores do not distinguish disseminated intravascular coagulation from the coagulopathy of liver disease. Acta Haematol 2025;148(2):220-225",
+      "version": "Published online 16 July 2024; 2025 issue",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39004080/",
+      "supports": "In 123 patients with DIC, liver disease or both, factor VIII levels did not differ significantly; ISTH DIC scores are not predictive of DIC in liver disease"
+    },
+    {
+      "id": "BERI",
+      "name": "Beriplex P/N 1000 IU (human prothrombin complex): Summary of Product Characteristics (emc 3031)",
+      "version": "Revision of the text 21 January 2021",
+      "url": "https://www.medicines.org.uk/emc/product/3031/smpc",
+      "supports": "Correction of vitamin K antagonist-induced impairment is commonly reached about 30 minutes after injection; consider simultaneous vitamin K, which usually takes effect within 4-6 hours"
+    },
+    {
+      "id": "KONA",
+      "name": "Konakion MM 10 mg/ml solution for injection (phytomenadione): Summary of Product Characteristics (emc 9755)",
+      "version": "Revision of the text 5 February 2024",
+      "url": "https://www.medicines.org.uk/emc/product/9755/smpc",
+      "supports": "Severe or life-threatening haemorrhage during coumarin anticoagulant therapy: withdraw the coumarin and give phytomenadione 5-10 mg by slow intravenous injection (over at least 30 seconds) together with prothrombin complex concentrate (4.2)"
+    },
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format: 9 minutes with 1 minute's reading"
+    }
+  ],
+  "partner": {
+    "opening": "Mr Cobb's coagulation results have just come back. Please interpret them.",
+    "reveals": [
+      {
+        "trigger": "At the start",
+        "finding": "Hb 92 g/L (118 before surgery); platelets 42 ×10⁹/L (260); PT 19.5 s (range 10.5–13.5, control 12.0); APTT 52 s (range 25–35, ratio 1.7); fibrinogen 1.2 g/L (range 1.5–4.0); D-dimer 8,400 ng/ml FEU (under 500): the lab reports a strong increase.",
+        "row": "G1"
+      },
+      {
+        "trigger": "Asks about his drugs",
+        "finding": "Enoxaparin 40 mg daily, next dose due at 18:00. No antiplatelets or anticoagulants.",
+        "row": "G6"
+      },
+      {
+        "trigger": "Asks for observations or sees him",
+        "finding": "Temperature 38.6°C, pulse 118, BP 96/58, RR 24, SpO2 95% on air, alert: NEWS2 8. Abdomen distended and diffusely tender; turbid fluid in the drain.",
+        "row": "G3"
+      },
+      {
+        "trigger": "After his management",
+        "finding": "Say: \"Mrs Maureen Ellery, 58, has alcohol-related cirrhosis and is not bleeding.\" PT 17.0 s, APTT 38 s, platelets 78, fibrinogen 1.6 g/L, D-dimer 900 (under 500), bilirubin 44, albumin 27.",
+        "row": "G7"
+      },
+      {
+        "trigger": "After Mrs Ellery",
+        "finding": "Say: \"Mr Victor Quayle, 79, takes warfarin for AF. He has melaena, BP 88/50. INR 7.8; platelets and APTT normal.\"",
+        "row": "G8"
+      }
+    ],
+    "push": [
+      {
+        "question": "Calculate his ISTH DIC score.",
+        "row": "G2",
+        "expect": "Platelets 42 = 2, PT 7.5 s long = 2, strong D-dimer = 3, fibrinogen 1.2 = 0: 7, overt DIC."
+      },
+      {
+        "question": "What will you give him, and why?",
+        "row": "G4",
+        "expect": "He is bleeding: FFP for ratios above 1.5, cryoprecipitate 2 pools for fibrinogen under 1.5; consider platelets under 50 (BSH DIC; NICE uses 30 for this grade); recheck after each."
+      },
+      {
+        "question": "What about his enoxaparin?",
+        "row": "G6",
+        "expect": "Hold while bleeding, mechanical prophylaxis, restart when bleeding stops."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "The F1 asks to give Mrs Ellery plasma before tomorrow's ward round because her PT is long.",
+        "safeAnswer": "No: she isn't bleeding and no procedure is planned; NICE advises against FFP to correct numbers.",
+        "row": "G7"
+      },
+      {
+        "prompt": "The ward sister suggests tranexamic acid for Mr Cobb's oozing.",
+        "safeAnswer": "BSH advises against antifibrinolytics in DIC generally; only on haematology advice.",
+        "row": "G6"
+      },
+      {
+        "prompt": "After FFP and cryoprecipitate his fibrinogen is 0.8 and he's still bleeding.",
+        "safeAnswer": "More cryoprecipitate or fibrinogen concentrate with haematology, recheck, and push for source control.",
+        "row": "G4"
+      }
+    ]
+  }
+}

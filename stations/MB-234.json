@@ -1,0 +1,572 @@
+{
+  "id": "MB-234",
+  "exam": "MRCS-B",
+  "title": "Scaphoid and anatomical snuffbox (missed scaphoid fracture)",
+  "type": "applied-knowledge",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "Anatomy and surgical pathology",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "GIRFT/BSSH scaphoid fracture pathway (Apr 2024)",
+      "NICE NG38 (Feb 2016, minor changes Jun 2025)"
+    ],
+    "related": [
+      {
+        "id": "MB-120 The hand",
+        "why": "Neighbouring wrist anatomy: carpal tunnel and Guyon's canal"
+      },
+      {
+        "id": "MB-233 Hip and femoral head",
+        "why": "Retrograde blood supply and avascular necrosis"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Emergency department",
+    "role": "Core surgical trainee covering orthopaedics",
+    "scenario": "Mr Rhys Treharne, 22, a goalkeeper, fell on his outstretched right hand during a match yesterday. He has pain on the thumb side of his wrist. His scaphoid X-rays are reported as showing no fracture. The ED doctor wants to discharge him with a sprain.",
+    "task": "The examiner will ask about the anatomy of the anatomical snuffbox and scaphoid, and your management."
+  },
+  "beforeYouWalkIn": {
+    "frame": "A normal X-ray doesn't clear the scaphoid: examine, splint, and get an MRI.",
+    "trap": "Accepting 'sprain' because the film is normal.",
+    "firstMove": "\"I'd examine him first: the snuffbox, the scaphoid tubercle and scaphoid compression.\""
+  },
+  "flow": [
+    "Examine",
+    "Snuffbox anatomy",
+    "Scaphoid blood supply",
+    "Immobilise and image",
+    "Confirmed fracture",
+    "Complications",
+    "Explain to him"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-skill",
+      "label": "Clinical examination",
+      "fail": "Relies on the normal X-ray and doesn't examine the wrist.",
+      "pass": "Checks snuffbox and scaphoid tubercle tenderness and scaphoid compression; examines the distal radius and hand neurovascular status.",
+      "high": "Combines the signs, because each alone is sensitive but not specific; knows a fracture may not show on the first films.",
+      "source": "PARVIZI"
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-knowledge",
+      "label": "Borders and contents of the snuffbox",
+      "fail": "Swaps EPL and EPB, or can't name the contents.",
+      "pass": "Ulnar: EPL. Radial: EPB and APL. Proximal: radial styloid. Contains radial artery, cephalic vein and superficial radial nerve branches.",
+      "high": "Floor: scaphoid and trapezium, with the ECRL and ECRB tendons; the radial artery crosses the floor.",
+      "source": "GRAYS"
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "Scaphoid blood supply",
+      "fail": "Says blood enters proximally, or can't explain proximal pole necrosis.",
+      "pass": "Radial artery branches enter through the dorsal ridge and distal tubercle; the proximal pole is supplied retrogradely.",
+      "high": "So proximal and waist fractures cut off the proximal pole: avascular necrosis and non-union.",
+      "source": "GELBERMAN"
+    },
+    {
+      "id": "G4",
+      "domain": "professionalism",
+      "label": "Immobilise and image (safety-critical)",
+      "fail": "Discharges him as a sprain with no follow-up.",
+      "borderline": "Splints him but plans repeat X-rays at 10–14 days instead of MRI.",
+      "pass": "Splint now; MRI through the ED pathway if available, or specialist clinic within 7 days for urgent MRI.",
+      "high": "Cites NICE: consider MRI as first-line imaging after thorough examination; doesn't rely on repeat films.",
+      "source": "GIRFTSC"
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-knowledge",
+      "label": "Confirmed fracture",
+      "fail": "Doesn't know when a scaphoid fracture needs surgery.",
+      "pass": "Undisplaced waist fracture: below-elbow cast for 6 to 8 weeks, then assess union.",
+      "high": "A fracture seen on X-ray gets CT; fixation within 2 weeks of injury for waist displacement over 2 mm or any proximal pole displacement.",
+      "source": "GIRFTSC"
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-knowledge",
+      "label": "Complications of a missed fracture",
+      "fail": "Thinks a missed scaphoid fracture just heals slowly.",
+      "pass": "Non-union, avascular necrosis of the proximal pole, and later wrist arthritis.",
+      "high": "Knows untreated non-union progresses to arthritis in a predictable sequence, radioscaphoid then midcarpal: scaphoid nonunion advanced collapse.",
+      "source": "VENDER"
+    },
+    {
+      "id": "G7",
+      "domain": "communication",
+      "label": "Explaining to the patient",
+      "fail": "Tells him it's a sprain and to play on.",
+      "pass": "Explains why he's splinted despite a normal X-ray, and the plan for MRI and review.",
+      "high": "Safety-nets and gives specific advice: no goalkeeping until cleared, because a missed fracture can fail to heal."
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "The X-ray is normal. What would you do?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "If the film's normal, it's a sprain. He can go.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          },
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Describe the anatomical snuffbox."
+      },
+      {
+        "speaker": "candidate",
+        "text": "EPL on the thumb side, EPB on the other side. I'm not sure what's inside.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How is the scaphoid supplied?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "From the proximal end, like most bones.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "An MRI shows a waist fracture."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd put him in a tubigrip and see him in a month.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What if it's missed?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "It just takes longer to heal.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Tell him the plan."
+      },
+      {
+        "speaker": "candidate",
+        "text": "It's only a sprain. You'll be fine for Saturday.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "examiner",
+        "text": "The X-ray is normal. What would you do?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd examine him: snuffbox and scaphoid tubercle tenderness, scaphoid compression, the distal radius, and circulation and sensation in the hand.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "If he's tender, I'd treat it as a fracture: splint now, and MRI through the ED pathway, or fracture clinic within 7 days for an urgent MRI.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Describe the anatomical snuffbox."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Ulnar border EPL; radial border EPB and APL; proximally the radial styloid. It contains the radial artery, the cephalic vein and superficial radial nerve branches.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How is the scaphoid supplied?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Radial artery branches enter distally and flow backwards to the proximal pole.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "An MRI shows a waist fracture."
+      },
+      {
+        "speaker": "candidate",
+        "text": "If undisplaced, a below-elbow cast for 6 to 8 weeks, then assess union.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What if it's missed?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Non-union, avascular necrosis of the proximal pole, and wrist arthritis later.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Tell him the plan."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Mr Treharne, your X-ray looks normal, but some scaphoid fractures don't show at first. I'll splint it and arrange an MRI, and we'll review you.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "examiner",
+        "text": "The X-ray is normal. What would you do?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Examine him: snuffbox, scaphoid tubercle and scaphoid compression, plus the distal radius and hand neurovascular status. Each sign alone is sensitive but not specific, so I combine them, and a fracture may not show on the first films.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "So tender means splint. NICE says consider MRI as first-line imaging after examination; I'd use the ED MRI pathway, or fracture clinic within 7 days for urgent MRI, rather than waiting for repeat films.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Describe the anatomical snuffbox."
+      },
+      {
+        "speaker": "candidate",
+        "text": "EPL on the ulnar side, EPB and APL radially, radial styloid proximally. Floor: scaphoid and trapezium with the ECRL and ECRB tendons. It contains the radial artery, cephalic vein and superficial radial nerve branches.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How is the scaphoid supplied?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Radial artery branches enter distally, and flow runs retrograde. A waist or proximal fracture cuts the proximal pole off: avascular necrosis and non-union.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "An MRI shows a waist fracture."
+      },
+      {
+        "speaker": "candidate",
+        "text": "His was hidden on X-ray and is undisplaced: below-elbow cast for 6 to 8 weeks. A fracture seen on X-ray gets a CT; waist displacement over 2 mm or any proximal pole displacement means fixation within 2 weeks of injury.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What if it's missed?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Non-union and proximal pole necrosis. An untreated non-union then develops arthritis in a predictable sequence, radioscaphoid first, then midcarpal: scaphoid nonunion advanced collapse.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Tell him the plan."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Mr Treharne, some scaphoid fractures don't show at first, and a missed one can fail to heal. I'll splint it and arrange an MRI. No goalkeeping until we've cleared it; come back sooner if it gets worse.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G4",
+      "move": "Discharging a tender scaphoid as a sprain because the X-ray is normal.",
+      "consequence": "Safety-critical: an occult fracture goes untreated and can progress to non-union and avascular necrosis."
+    },
+    {
+      "row": "G3",
+      "move": "Saying the scaphoid is supplied from its proximal end.",
+      "consequence": "The candidate can't explain why proximal fractures do badly or why early diagnosis matters."
+    },
+    {
+      "row": "G5",
+      "move": "Treating a displaced proximal pole fracture in a cast.",
+      "consequence": "Displaced proximal fractures need fixation within 2 weeks; a cast risks non-union."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You said 'sprain' too quickly",
+      "line": "Let me correct that: a normal X-ray doesn't exclude a scaphoid fracture. I'd splint and get an MRI."
+    },
+    {
+      "when": "You mixed up the tendons",
+      "line": "EPL is alone on the ulnar side; EPB and APL run together on the radial side."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Snuffbox: EPL ulnar; EPB and APL radial; radial styloid proximal; floor scaphoid and trapezium. Contents: radial artery, cephalic vein, superficial radial nerve branches.",
+      "source": "GRAYS"
+    },
+    {
+      "fact": "Radial artery branches entering through the dorsal ridge supply 70–80% of the scaphoid, including the whole proximal pole; volar branches supply the distal tubercle.",
+      "source": "GELBERMAN"
+    },
+    {
+      "fact": "Snuffbox tenderness, scaphoid tubercle tenderness and pain on thumb compression were each 100% sensitive; combined within 24 hours, specificity rose to 74%.",
+      "source": "PARVIZI"
+    },
+    {
+      "fact": "Consider MRI as first-line imaging after thorough clinical examination.",
+      "source": "NG38"
+    },
+    {
+      "fact": "Normal films: splint; ED MRI or specialist clinic within 7 days. Undisplaced waist: cast 6–8 weeks. Waist displacement over 2 mm or proximal pole displacement: fix within 2 weeks.",
+      "source": "GIRFTSC"
+    }
+  ],
+  "recall": {
+    "think": "Non-union and proximal pole necrosis from a missed fracture.",
+    "say": "\"A normal X-ray doesn't exclude it: splint and MRI.\"",
+    "do": [
+      "Snuffbox, tubercle, compression",
+      "Splint",
+      "MRI, or fracture clinic within 7 days"
+    ],
+    "numbers": [
+      {
+        "value": "6–8 weeks",
+        "meaning": "below-elbow cast for an undisplaced waist fracture",
+        "source": "GIRFTSC"
+      },
+      {
+        "value": "7 days",
+        "meaning": "specialist clinic if no ED MRI",
+        "source": "GIRFTSC"
+      },
+      {
+        "value": "2 weeks",
+        "meaning": "fixation for displaced fractures",
+        "source": "GIRFTSC"
+      }
+    ],
+    "trap": "'Normal X-ray' in a tender snuffbox.",
+    "finish": "Cast for undisplaced waist fractures; fixation if displaced."
+  },
+  "sources": [
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format: 9 minutes with 1 minute's reading; examiner-led questioning in applied knowledge stations"
+    },
+    {
+      "id": "GIRFTSC",
+      "name": "GIRFT, NHS England and BSSH: Scaphoid fractures pathway (Hand surgery)",
+      "version": "April 2024",
+      "url": "https://www.bssh.ac.uk/_userfiles/pages/files/professionals/GIRFT/GIRFT-scaphoid.pdf",
+      "supports": "Suspected scaphoid fracture: request scaphoid radiographs; if no fracture is visible, immobilise in a splint and either MRI under a local ED policy or refer to the specialist clinic within 7 days, where urgent MRI is requested with review in 1 week; fracture confirmed on MRI after normal radiographs: below-elbow cast 6 to 8 weeks; fracture visible on radiographs: CT; waist fracture over 2 mm displacement or proximal pole fracture with any displacement: offer surgical fixation within 2 weeks of injury; otherwise below-elbow cast for 6 to 8 weeks, then assess union clinically and with radiographs and/or CT; scaphoid tubercle fracture: immobilise 4 to 6 weeks; delayed immobilisation over 4 weeks: CT, and fixation within 2 weeks if there is a clear fracture gap and the patient is skeletally mature"
+    },
+    {
+      "id": "NG38",
+      "name": "NICE NG38: Fractures (non-complex): assessment and management",
+      "version": "Published 17 February 2016; minor changes June 2025",
+      "url": "https://www.nice.org.uk/guidance/ng38",
+      "supports": "Consider MRI for first-line imaging in people with suspected scaphoid fractures following a thorough clinical examination (1.2.3)"
+    },
+    {
+      "id": "GRAYS",
+      "name": "Gray's Anatomy for Students (Drake, Vogl, Mitchell)",
+      "version": "5th edition, 2023",
+      "url": "https://shop.elsevier.com/books/grays-anatomy-for-students/drake/978-0-323-93423-7",
+      "supports": "Anatomical snuffbox: bounded by the tendons of extensor pollicis longus on the ulnar (medial) side and extensor pollicis brevis and abductor pollicis longus on the radial (lateral) side, with the radial styloid proximally; floor formed by the scaphoid and trapezium, with the distal ends of the extensor carpi radialis longus and brevis tendons; the radial artery passes across the floor; the cephalic vein and superficial branch of the radial nerve lie in the roof"
+    },
+    {
+      "id": "GELBERMAN",
+      "name": "Gelberman RH, Menon J. The vascularity of the scaphoid bone. J Hand Surg Am 1980;5(5):508-13 (PMID 7430591)",
+      "version": "September 1980",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/7430591/",
+      "supports": "The major blood supply to the scaphoid is from the radial artery; 70-80% of the intraosseous vascularity, including the entire proximal pole, comes from radial artery branches entering through the dorsal ridge; 20-30% of the bone, in the region of the distal tuberosity, is supplied by volar radial artery branches; this vascular anatomy explains proximal pole necrosis"
+    },
+    {
+      "id": "VENDER",
+      "name": "Vender MI, Watson HK, Wiener BD, Black DM. Degenerative change in symptomatic scaphoid nonunion. J Hand Surg Am 1987;12(4):514-9 (PMID 3611645)",
+      "version": "July 1987",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/3611645/",
+      "supports": "Symptomatic scaphoid nonunion leads to degenerative change in a predictable sequence: radioscaphoid changes first (75% at 4 years), then midcarpal changes (60% at 9 years); progressive instability; significant likelihood of arthritis"
+    },
+    {
+      "id": "PARVIZI",
+      "name": "Parvizi J, Wayman J, Kelly P, Moran CG. Combining the clinical signs improves diagnosis of scaphoid fractures: a prospective study with follow-up. J Hand Surg Br 1998;23(3):324-7 (PMID 9665518)",
+      "version": "June 1998",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/9665518/",
+      "supports": "Anatomical snuffbox tenderness, scaphoid tubercle tenderness and pain on longitudinal compression of the thumb were each 100% sensitive at first examination, with specificities of 9%, 30% and 48%; combined within 24 hours of injury, sensitivity 100% and specificity 74%; each sign alone is inadequate and they should be combined"
+    }
+  ],
+  "partner": {
+    "opening": "Mr Treharne's scaphoid X-rays are reported as normal. What would you do?",
+    "reveals": [
+      {
+        "trigger": "Examines the wrist",
+        "finding": "Tender in the anatomical snuffbox and over the scaphoid tubercle; scaphoid compression painful. Distal radius non-tender. Hand pink, sensation normal.",
+        "row": "G1"
+      },
+      {
+        "trigger": "Asks for the X-ray report",
+        "finding": "Four-view scaphoid series: no fracture seen. No carpal malalignment.",
+        "row": "G4"
+      },
+      {
+        "trigger": "After the imaging plan",
+        "finding": "MRI 3 days later: undisplaced fracture of the scaphoid waist with marrow oedema.",
+        "row": "G5"
+      }
+    ],
+    "push": [
+      {
+        "question": "Why not just repeat the X-ray in 10 to 14 days?",
+        "row": "G4",
+        "expect": "A fracture may not show on early films; NICE says consider MRI first line after examination; the GIRFT pathway uses MRI in ED or urgent MRI via specialist clinic."
+      },
+      {
+        "question": "Why does the proximal pole die?",
+        "row": "G3",
+        "expect": "Blood enters distally and flows retrograde; a waist or proximal fracture cuts off the proximal fragment."
+      },
+      {
+        "question": "When does a scaphoid fracture need surgery?",
+        "row": "G5",
+        "expect": "Waist displacement over 2 mm or any proximal pole displacement: fixation within 2 weeks of injury."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "He presents 6 weeks later: he played on, and the wrist still hurts.",
+        "safeAnswer": "Scaphoid X-rays. If a fracture shows, immobilisation was delayed over 4 weeks, so CT: a clear fracture gap in a skeletally mature patient means fixation within 2 weeks; otherwise a cast.",
+        "row": "G6"
+      },
+      {
+        "prompt": "MRI shows a bone bruise only, no fracture.",
+        "safeAnswer": "No scaphoid fracture: treat the soft tissue injury, remove the splint as symptoms allow, and discharge with advice.",
+        "row": "G7"
+      }
+    ]
+  }
+}
