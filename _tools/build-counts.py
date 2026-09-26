@@ -151,6 +151,7 @@ def measure():
     safe('actorTrapSimStations', lambda: count('actor-trap-simulator.html', 'ORDER'))
     safe('stationPlannerStations', lambda: count('station-planner.html', 'FREQ'))
     safe('mrcp1Questions', lambda: count('mrcp1-questions.js', 'MRCP1_QUESTIONS'))
+    safe('mrcsAppliedKnowledge', lambda: count('mrcs-a-applied-knowledge-questions.js', 'MRCSA_AK_QUESTIONS'))
     try:
         reviewed = load_json('data/reviewed.json')
         # the pending pool was withdrawn from the site on 24 Sep 2026
