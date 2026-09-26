@@ -1,0 +1,421 @@
+{
+  "id": "MB-408",
+  "exam": "MRCS-B",
+  "title": "Giving a benign result to an anxious patient",
+  "type": "communication",
+  "header": {
+    "domain": "Applied Skills",
+    "contentArea": "Communicating good news well after a cancer history",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "GMC: Good Medical Practice (In effect 30 January 2024)",
+      "NICE NG101: Early and locally advanced breast cancer (Published 18 July 2018; last updated 14 April 2025)"
+    ],
+    "related": [
+      {
+        "id": "MB-407",
+        "why": "The examination and assessment that led to this result"
+      },
+      {
+        "id": "MB-359",
+        "why": "An earlier results conversation this one contrasts with in tone"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Breast clinic, results appointment",
+    "role": "Core surgical trainee",
+    "scenario": "Ms Linford's triple assessment for her new lump confirms a fibroadenoma, a benign finding.",
+    "task": "Give her this result. You have 7 minutes.",
+    "note": "Good news is easy to under-deliver: rushing it, or failing to address the anxiety that led up to it, can leave a patient unsettled even after a reassuring result."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Give the result clearly and promptly, but don't assume good news needs no space - check how the waiting period has felt and address any lingering worry directly.",
+    "trap": "Treating a benign result as needing no discussion beyond the headline, when the anxiety leading up to it may not resolve immediately just because the news is good.",
+    "firstMove": "\"I've got good news for you today.\""
+  },
+  "flow": [
+    "Check how the waiting period has been",
+    "Give the result clearly",
+    "Explain what a fibroadenoma is and what it means going forward",
+    "Address any lingering anxiety",
+    "Confirm ongoing surveillance plan and closing"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "communication",
+      "label": "Checking in before the result",
+      "fail": "Delivers the result without acknowledging the wait she's had.",
+      "pass": "Briefly checks how the waiting period has felt for her before giving the result.",
+      "high": "Recognises this wait may have felt especially anxious given her personal history, without assuming this specific patient's reaction."
+    },
+    {
+      "id": "G2",
+      "domain": "communication",
+      "label": "Delivering the result",
+      "fail": "Delays or buries the good news behind unnecessary preamble.",
+      "pass": "States clearly and promptly that the result is benign, a fibroadenoma.",
+      "high": "Delivers this warmly and directly, matching the tone appropriately to good news rather than defaulting to a serious, guarded delivery style."
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "Explaining the finding",
+      "fail": "Cannot explain what a fibroadenoma is.",
+      "pass": "Explains simply that a fibroadenoma is a common, benign breast lump made of fibrous and glandular tissue, not cancer.",
+      "high": "Explains it in a way that reduces, rather than adds to, medical uncertainty for her (e.g. addressing whether it needs removal or will change)."
+    },
+    {
+      "id": "G4",
+      "domain": "communication",
+      "label": "Addressing lingering anxiety",
+      "fail": "Assumes the good news alone resolves all her anxiety and closes the conversation.",
+      "pass": "Checks explicitly whether she still has any worries despite the reassuring result.",
+      "high": "Validates that anxiety can persist even after good news, especially given her history, without pathologising this reaction."
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-knowledge",
+      "label": "Ongoing plan",
+      "fail": "Does not mention what happens with this lump or her ongoing surveillance going forward.",
+      "pass": "Confirms whether the lump needs any monitoring or intervention, and that her existing surveillance plan continues as before.",
+      "high": "Distinguishes clearly between monitoring this specific benign lump (if needed) and her separate, ongoing cancer surveillance plan, so she isn't confused between the two."
+    },
+    {
+      "id": "G6",
+      "domain": "professionalism",
+      "label": "Closing",
+      "fail": "Ends abruptly without checking her understanding or offering further contact.",
+      "pass": "Checks her understanding and confirms how to get in touch if any further worries or new symptoms arise.",
+      "high": "Ends warmly, acknowledging this must be a relief after the wait, without being dismissive of the anxiety it caused."
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "candidate",
+        "text": "Results are fine, it's a fibroadenoma, nothing to worry about, see you next year.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          },
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "So I don't need to worry about it at all?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "No, that's it, you're all done.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          },
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "candidate",
+        "text": "How has the wait for these results been for you?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "Honestly, pretty stressful, given everything before."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I've got good news - the lump is a fibroadenoma, which is benign.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "[Relieved.] Oh, thank goodness."
+      },
+      {
+        "speaker": "candidate",
+        "text": "A fibroadenoma is a common, non-cancerous lump made of normal breast tissue, and it doesn't usually need removing unless it's causing problems.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Even with good news like this, do you still have any worries or questions?",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "I think I'll just feel anxious about every lump from now on, if I'm honest."
+      },
+      {
+        "speaker": "candidate",
+        "text": "That's a really understandable response given what you've been through. Your ongoing cancer surveillance plan continues exactly as before - this result doesn't change that.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Do you have any other questions, and you know how to reach us if anything else comes up?",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "candidate",
+        "text": "How has this wait been for you, especially given everything you've already been through?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "Really hard, I've barely slept."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'm glad I can put your mind at ease - the lump is a fibroadenoma, and that's benign, not cancer.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "[Tearful with relief.] I can't tell you what that means to hear."
+      },
+      {
+        "speaker": "candidate",
+        "text": "A fibroadenoma is a really common, harmless kind of lump made of ordinary breast tissue - it doesn't need to be removed unless it grows or becomes uncomfortable, and it isn't linked to your previous cancer.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Even with a reassuring result like this, it's completely normal if the anxiety doesn't just switch off - do you still have any worries you'd like to talk through?",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "I think I'll worry about every new lump now."
+      },
+      {
+        "speaker": "candidate",
+        "text": "That's a very natural response after what you've been through, not something to feel bad about. Just to be clear - this doesn't change your existing cancer surveillance plan at all, that continues exactly as scheduled, separate from this finding.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "This must be a real relief after the wait you've had. Do you have everything you need, and do you know how to reach us if anything worries you before your next scheduled check?",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G4",
+      "move": "Assuming a benign result automatically resolves all anxiety.",
+      "consequence": "Dismisses a genuine, often persistent, psychological response to breast symptoms after a cancer history, leaving her unsupported despite good clinical news."
+    },
+    {
+      "row": "G5",
+      "move": "Not distinguishing between monitoring the benign lump and her separate ongoing cancer surveillance.",
+      "consequence": "Risks confusion about what follow-up, if any, is still needed and why."
+    },
+    {
+      "row": "G1",
+      "move": "Delivering the result with no acknowledgement of how difficult the waiting period may have been.",
+      "consequence": "Misses an opportunity to validate a genuinely stressful experience, even though the outcome was reassuring."
+    },
+    {
+      "row": "G2",
+      "move": "Delays or buries the good news behind unnecessary preamble.",
+      "consequence": "Prolongs her anxiety longer than necessary when the news is actually reassuring."
+    },
+    {
+      "row": "G3",
+      "move": "Cannot explain what a fibroadenoma actually is.",
+      "consequence": "Leaves her with a label but no understanding of why it isn't a threat."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You moved on too quickly after good news",
+      "line": "Even though this is good news, I want to check in properly - how are you feeling about it?"
+    },
+    {
+      "when": "You didn't clarify her ongoing surveillance plan",
+      "line": "I should be clear - this doesn't affect your existing follow-up plan, which continues as scheduled."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "A fibroadenoma is a common benign breast lesion composed of fibrous and glandular tissue and does not require removal unless symptomatic or enlarging.",
+      "source": "NG12"
+    },
+    {
+      "fact": "Anxiety after a benign result can persist in patients with a personal history of breast cancer, and acknowledging this is part of good communication, distinct from the clinical result itself."
+    },
+    {
+      "fact": "A benign finding on a new lump does not alter a patient's separate, ongoing risk-based cancer surveillance schedule."
+    }
+  ],
+  "recall": {
+    "think": "Good news still deserves space; anxiety doesn't switch off with reassurance; keep this result separate from her ongoing surveillance plan.",
+    "say": "\"It's completely normal if the anxiety doesn't just switch off.\"",
+    "do": [
+      "Acknowledge the waiting period, then deliver good news clearly and warmly",
+      "Check for lingering anxiety rather than assuming it's resolved",
+      "Clarify that ongoing surveillance is unaffected by this benign finding"
+    ],
+    "numbers": [
+      {
+        "value": "12 months",
+        "meaning": "interval of her ongoing BRCA2-tailored mammographic surveillance, unaffected by this benign finding",
+        "source": "CG164"
+      }
+    ],
+    "trap": "Assuming a benign result needs no further discussion or emotional acknowledgement.",
+    "finish": "A clearly delivered benign result, acknowledged anxiety, and clarity on her unchanged ongoing surveillance plan."
+  },
+  "sources": [
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Communication station format and structure, including timing"
+    },
+    {
+      "id": "NG12",
+      "name": "NICE NG12: Suspected cancer: recognition and referral",
+      "version": "Published June 2015; last updated May 2025",
+      "url": "https://www.nice.org.uk/guidance/ng12",
+      "supports": "Suspected cancer pathway referral (for an appointment within 2 weeks) for a new lump in a patient with a personal history of breast cancer; clinical features distinguishing likely benign from concerning breast lumps"
+    },
+    {
+      "id": "GMP",
+      "name": "GMC: Good Medical Practice",
+      "version": "In effect 30 January 2024",
+      "url": "https://www.gmc-uk.org/professional-standards/the-professional-standards/good-medical-practice",
+      "supports": "Honest, sensitive communication of results, including reassuring ones, and giving patients information in a way they can understand"
+    },
+    {
+      "id": "CG164",
+      "name": "NICE CG164: Familial breast cancer: classification, care and managing breast cancer and related risks in people with a family history of breast cancer",
+      "version": "Published June 2013; last updated November 2023",
+      "url": "https://www.nice.org.uk/guidance/cg164",
+      "supports": "Assessing likelihood of an inherited breast cancer predisposition, referral for genetic testing, implications of a pathogenic variant for the patient and relatives, and that first-degree relatives of a carrier have up to a 50% chance of carrying the same variant"
+    }
+  ],
+  "partner": {
+    "opening": "Please give this patient her results. You have 7 minutes.",
+    "actorBrief": "You are Rachel Linford, 45, back for results after a stressful wait. The result is benign (fibroadenoma), which is a huge relief, but you suspect you'll feel anxious about every future lump given your history.",
+    "reveals": [
+      {
+        "trigger": "Candidate checks how the wait has felt",
+        "finding": "You reveal the wait has been very stressful, with poor sleep.",
+        "row": "G1"
+      },
+      {
+        "trigger": "Candidate checks for lingering anxiety after the good news",
+        "finding": "You admit you think you'll worry about every future lump.",
+        "row": "G4"
+      },
+      {
+        "trigger": "Candidate clarifies her ongoing surveillance is unaffected",
+        "finding": "You feel clearer about what happens next.",
+        "row": "G5"
+      }
+    ],
+    "push": [
+      {
+        "question": "Does this mean I don't need to come back for my usual checks?",
+        "row": "G5",
+        "expect": "Clarify that her existing surveillance plan is unchanged and separate from this benign finding."
+      },
+      {
+        "question": "Will I always be this anxious about new lumps?",
+        "row": "G4",
+        "expect": "Validate this as a common and understandable response, without pathologising it, and offer support if it feels overwhelming."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "Can you just remove it anyway, so I don't have to think about it?",
+        "safeAnswer": "Explain that removal isn't clinically necessary for an asymptomatic fibroadenoma, discuss her reasoning, and offer to talk through her anxiety rather than simply agreeing to unnecessary surgery.",
+        "row": "G3"
+      },
+      {
+        "prompt": "I don't think I believe it's really benign.",
+        "safeAnswer": "Acknowledge this feeling without dismissing it, reassure her about how the diagnosis was reached (triple assessment), and offer to answer any further questions she has about the result.",
+        "row": "G4"
+      }
+    ]
+  }
+}

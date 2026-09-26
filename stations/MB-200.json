@@ -1,0 +1,450 @@
+{
+  "id": "MB-200",
+  "exam": "MRCS-B",
+  "title": "Acute cholangitis: Tokyo Guidelines 2018 diagnosis, grading and drainage timing",
+  "type": "applied-knowledge",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "Hepatobiliary emergencies: acute cholangitis",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "Tokyo Guidelines 2018 (TG18): diagnostic criteria and severity grading (Kiriyama et al., J Hepatobiliary Pancreat Sci 2018)",
+      "Tokyo Guidelines 2018 (TG18): initial management and flowchart (Miura et al., J Hepatobiliary Pancreat Sci 2018)",
+      "NICE QS104: Gallstone disease quality standard (published 3 December 2015)"
+    ],
+    "related": [
+      {
+        "id": "MB-125",
+        "why": "Pathology of gallstones and cholecystitis, a leading cause of biliary obstruction underlying cholangitis"
+      },
+      {
+        "id": "MB-147",
+        "why": "Applied anatomy of Calot's triangle and the biliary tree relevant to the site of obstruction"
+      },
+      {
+        "id": "MB-251",
+        "why": "Acute cholecystitis: a related but distinct biliary emergency with its own TG18 grading and timing"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Emergency department",
+    "role": "Core surgical trainee",
+    "scenario": "Mrs Ruth Calloway, 72, has had 2 days of fever, right upper quadrant pain and jaundice. She has known gallstones. She is confused, HR 118, BP 95/60, temperature 39.2°C.",
+    "task": "Diagnose the condition, apply the Tokyo Guidelines 2018 diagnostic criteria and severity grading, and outline immediate management including biliary drainage timing."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Work through TG18 systematically: confirm the diagnosis (A + B/C), grade the severity, then let the grade set the urgency of drainage.",
+    "trap": "Treating this as straightforward sepsis without naming organ dysfunction, which is what actually makes it Grade III and changes the drainage timeline.",
+    "firstMove": "\"This is acute cholangitis with sepsis; I want to apply the Tokyo Guidelines criteria and grade her severity.\""
+  },
+  "flow": [
+    "State the diagnosis",
+    "Apply the TG18 diagnostic criteria (A, B, C)",
+    "Grade severity (I/II/III)",
+    "Immediate management and resuscitation",
+    "Biliary drainage timing by grade",
+    "Respond to follow-up questions"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-knowledge",
+      "label": "Diagnosis and TG18 criteria (A/B/C)",
+      "fail": "Does not name acute cholangitis, or cannot structure the diagnosis around systemic inflammation, cholestasis and imaging.",
+      "pass": "States the diagnosis is acute cholangitis and applies TG18: A (systemic inflammation — fever/shivering, abnormal WBC or CRP), B (cholestasis — jaundice, deranged LFTs), C (imaging — duct dilation or evidence of the cause), with definite diagnosis needing A + B + C.",
+      "high": "Correctly distinguishes TG18 suspected diagnosis (A plus one of B or C) from definite diagnosis (A + B + C), and notes TG18 has no separate criterion for prior biliary disease — that history supports but does not itself complete the diagnosis.",
+      "source": "TG18-DX"
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-knowledge",
+      "label": "Severity grading",
+      "fail": "Does not grade severity, or grades using vague terms (\"looks septic\") rather than the TG18 criteria.",
+      "pass": "States Grade III requires new organ dysfunction in any system (e.g. hypotension needing vasopressors, altered consciousness, PaO2/FiO2 <300, oliguria or creatinine >2.0 mg/dL, INR >1.5, platelets <100,000/mm³); Grade II requires at least two of WBC >12,000 or <4,000/μL, temperature ≥39°C, age ≥75, bilirubin ≥5 mg/dL, albumin <25 g/L; Grade I meets neither.",
+      "high": "Correctly grades this patient as III on confusion (neurological dysfunction) and hypotension, and states severity should be reassessed through the admission as it can change.",
+      "source": "TG18-DX"
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "Immediate resuscitation and antibiotics",
+      "fail": "Delays antibiotics or fluid resuscitation, or treats this as a purely biliary problem without sepsis management.",
+      "pass": "Manages as sepsis: blood cultures before antibiotics where this doesn't delay treatment, broad-spectrum IV antibiotics covering gram-negatives and anaerobes within the first hour, IV fluid resuscitation, oxygen, and monitoring of lactate and urine output.",
+      "high": "Names a specific regimen appropriate to severity (e.g. piperacillin-tazobactam or a carbapenem for a Grade III/biliary-sepsis presentation) and adds vasopressor support if hypotension persists despite fluids."
+    },
+    {
+      "id": "G4",
+      "domain": "professionalism",
+      "label": "Escalation for Grade III disease",
+      "fail": "Manages Grade III cholangitis on a general ward without escalation.",
+      "pass": "States Grade III cholangitis needs critical care (ICU/HDU) referral alongside organ support.",
+      "high": "Explains escalation should happen in parallel with resuscitation and drainage planning, not sequentially after either."
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-knowledge",
+      "label": "Biliary drainage timing by grade",
+      "fail": "Applies the same drainage timeframe regardless of grade, or delays drainage in Grade III disease pending full recovery.",
+      "pass": "States drainage timing follows severity: Grade III needs urgent/emergency drainage once the patient is stable enough for the procedure; Grade II needs early drainage, commonly achieved within around 24–48 hours; Grade I is usually managed with antibiotics first, with drainage reserved for non-response.",
+      "high": "States ERCP is first-line for drainage, with percutaneous transhepatic drainage as the alternative if ERCP fails or is unavailable, and that NICE QS104 separately sets a 24-hour target for emergency ERCP in patients not responding to antibiotics and fluids.",
+      "source": "TG18-MGMT"
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-knowledge",
+      "label": "Safety-critical: recognising severe disease behind a reassuring history",
+      "fail": "Assumes the absence of a full Charcot's triad excludes cholangitis, or is reassured because no single feature is dramatic.",
+      "pass": "States that the complete Charcot's triad (fever, jaundice, right upper quadrant pain) is present in only a minority of cases in contemporary series, so its absence does not exclude the diagnosis.",
+      "high": "Adds that Reynolds' pentad (Charcot's triad plus hypotension and altered mental status) marks severe disease, and that reported mortality is substantially higher when bacteraemia or shock is present than in uncomplicated cases.",
+      "source": "BILIARY-REV"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "What's the diagnosis, and how would you confirm it?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Probably a chest infection with some jaundice on top; I wouldn't apply a specific scoring system.",
+        "tags": [{ "row": "G1", "band": "fail" }]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How severe is this?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "She looks pretty unwell, so I'd call it severe, but I don't grade it formally.",
+        "tags": [{ "row": "G2", "band": "fail" }]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What's your immediate management?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd get some bloods and see how she is in a few hours before starting antibiotics.",
+        "tags": [{ "row": "G3", "band": "fail" }]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Would you involve anyone else?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "No, I'd keep managing her on the surgical ward myself.",
+        "tags": [{ "row": "G4", "band": "fail" }]
+      },
+      {
+        "speaker": "examiner",
+        "text": "When would you drain the biliary system?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd wait until she's fully recovered from the infection before considering drainage.",
+        "tags": [{ "row": "G5", "band": "fail" }]
+      },
+      {
+        "speaker": "examiner",
+        "text": "She doesn't have the full triad of fever, jaundice and pain — does that change things?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "If the full triad isn't there, I'd look elsewhere for the diagnosis.",
+        "tags": [{ "row": "G6", "band": "fail" }]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "examiner",
+        "text": "What's the diagnosis, and how would you confirm it?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "This is acute cholangitis with sepsis. Using the Tokyo Guidelines, she has systemic inflammation — fever and likely an abnormal white count — cholestasis with jaundice, and known gallstone disease; I'd want imaging to confirm duct dilation or a stone, which would give a definite diagnosis of A, B and C.",
+        "tags": [{ "row": "G1", "band": "pass" }]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How severe is this?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Grade III, because she has organ dysfunction — confusion, which is neurological, and hypotension.",
+        "tags": [{ "row": "G2", "band": "pass" }]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What's your immediate management?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Blood cultures, then broad-spectrum IV antibiotics covering gram-negatives and anaerobes within the hour, IV fluid resuscitation, oxygen, and close monitoring of lactate and urine output.",
+        "tags": [{ "row": "G3", "band": "pass" }]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Would you involve anyone else?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Yes — Grade III cholangitis needs critical care referral alongside resuscitation.",
+        "tags": [{ "row": "G4", "band": "pass" }]
+      },
+      {
+        "speaker": "examiner",
+        "text": "When would you drain the biliary system?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Because this is Grade III, drainage should be urgent, once she's stable enough for the procedure — ERCP first-line, with percutaneous drainage if that's not possible.",
+        "tags": [{ "row": "G5", "band": "pass" }]
+      },
+      {
+        "speaker": "examiner",
+        "text": "She doesn't have the full triad of fever, jaundice and pain — does that change things?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "No — the complete triad is only present in a minority of patients, so its absence wouldn't reassure me.",
+        "tags": [{ "row": "G6", "band": "pass" }]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "examiner",
+        "text": "What's the diagnosis, and how would you confirm it?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Acute cholangitis with sepsis. TG18 needs A — systemic inflammation — plus B or C for a suspected diagnosis, or all three for a definite one; her known gallstones support the picture but aren't themselves one of the A/B/C criteria.",
+        "tags": [{ "row": "G1", "band": "high" }]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How severe is this?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Grade III on confusion and hypotension — either alone is enough, since Grade III only needs dysfunction in one system. I'd keep reassessing the grade through her admission, since it can worsen.",
+        "tags": [{ "row": "G2", "band": "high" }]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What's your immediate management?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Sepsis Six with blood cultures before antibiotics where that doesn't delay treatment, broad-spectrum cover such as piperacillin-tazobactam or a carbapenem, IV fluids, and vasopressor support if she stays hypotensive.",
+        "tags": [{ "row": "G3", "band": "high" }]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Would you involve anyone else?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Critical care from the outset, in parallel with resuscitation and planning drainage, not after either is finished.",
+        "tags": [{ "row": "G4", "band": "high" }]
+      },
+      {
+        "speaker": "examiner",
+        "text": "When would you drain the biliary system?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Urgently, once she's fit for the procedure — ERCP first-line, PTBD if ERCP isn't available. Separately, NICE's quality standard sets a 24-hour target for emergency ERCP if she isn't responding to antibiotics and fluids, which reinforces not deferring this.",
+        "tags": [{ "row": "G5", "band": "high" }]
+      },
+      {
+        "speaker": "examiner",
+        "text": "She doesn't have the full triad of fever, jaundice and pain — does that change things?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "No. The complete triad is only seen in a minority of patients, so it isn't reliable for ruling the diagnosis out. If she also became hypotensive and confused together, that's Reynolds' pentad, marking severe disease — which is exactly her picture.",
+        "tags": [{ "row": "G6", "band": "high" }]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G2",
+      "move": "Calling the case \"severe\" without applying the TG18 grading criteria.",
+      "consequence": "Grade drives the urgency of drainage; an ungraded judgement risks under- or over-treating."
+    },
+    {
+      "row": "G3",
+      "move": "Delaying antibiotics to wait for further results.",
+      "consequence": "Delayed source control and antibiotics in biliary sepsis increases the risk of deterioration and death."
+    },
+    {
+      "row": "G4",
+      "move": "Managing Grade III cholangitis without critical care involvement.",
+      "consequence": "Organ support is delayed in a patient who may need vasopressors or higher-level monitoring."
+    },
+    {
+      "row": "G5",
+      "move": "Waiting for full recovery before considering biliary drainage.",
+      "consequence": "The underlying obstruction persists, risking ongoing or recurrent sepsis and organ dysfunction."
+    },
+    {
+      "row": "G6",
+      "move": "Excluding cholangitis because the classic triad is incomplete.",
+      "consequence": "A real, potentially severe case is missed because most patients never have all three classic features together."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You're not sure which grade applies",
+      "line": "Let me check systematically: is there organ dysfunction anywhere? If not, does she meet two of the five Grade II criteria?"
+    },
+    {
+      "when": "Asked whether imaging is essential before treating",
+      "line": "I wouldn't delay antibiotics or resuscitation for imaging, but I would still arrange it to confirm criterion C and plan drainage."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "TG18 definite diagnosis of acute cholangitis needs one item from each of A (systemic inflammation), B (cholestasis) and C (imaging); a suspected diagnosis needs A plus one of B or C. There is no separate TG18 criterion for prior biliary disease.",
+      "source": "TG18-DX"
+    },
+    {
+      "fact": "TG18 Grade II (moderate) needs at least two of: WBC >12,000 or <4,000/μL, temperature ≥39°C, age ≥75, bilirubin ≥5 mg/dL, albumin <25 g/L.",
+      "source": "TG18-DX"
+    },
+    {
+      "fact": "TG18 Grade III (severe) is defined by new dysfunction in any one organ system (cardiovascular, neurological, respiratory, renal, hepatic or haematological).",
+      "source": "TG18-DX"
+    },
+    {
+      "fact": "TG18 links drainage urgency to grade: Grade III needs urgent/emergency drainage once the patient is fit for the procedure; Grade II needs early drainage, commonly achieved within around 24–48 hours; Grade I is usually treated with antibiotics first, reserving drainage for non-response.",
+      "source": "TG18-MGMT"
+    },
+    {
+      "fact": "NICE's gallstone disease quality standard states adults with common bile duct stones needing emergency ERCP should have it within 24 hours, for cholangitis or pancreatitis not responding to antibiotics or IV fluids.",
+      "source": "NICE-QS104"
+    },
+    {
+      "fact": "The complete Charcot's triad (jaundice, fever, right upper quadrant pain) is reported in only a minority of patients with acute cholangitis, so its absence does not exclude the diagnosis.",
+      "source": "BILIARY-REV"
+    }
+  ],
+  "recall": {
+    "think": "Could this deteriorate to organ failure, and does the grade change the urgency of drainage?",
+    "say": "\"This is acute cholangitis — I want to apply the Tokyo Guidelines to grade severity and set the drainage timeline.\"",
+    "do": [
+      "Diagnose with TG18 A/B/C; grade severity I–III",
+      "Sepsis Six: cultures, antibiotics within the hour, fluids, oxygen, lactate, urine output",
+      "Match drainage urgency to grade; escalate Grade III to critical care"
+    ],
+    "numbers": [
+      {
+        "value": "Grade III",
+        "meaning": "any one organ dysfunction → urgent/emergency drainage once stable",
+        "source": "TG18-MGMT"
+      },
+      {
+        "value": "24 h",
+        "meaning": "NICE QS104 target for emergency ERCP if not responding to antibiotics/fluids",
+        "source": "NICE-QS104"
+      }
+    ],
+    "trap": "Absence of the full Charcot's triad does not exclude cholangitis — most patients don't have all three features.",
+    "finish": "ERCP first-line for drainage (PTBD if unavailable); definitive cholecystectomy once recovered, for gallstone aetiology."
+  },
+  "sources": [
+    {
+      "id": "TG18-DX",
+      "name": "Kiriyama S, Kozaka K, Takada T, et al. Tokyo Guidelines 2018: diagnostic criteria and severity grading of acute cholangitis (with videos)",
+      "version": "Journal of Hepato-Biliary-Pancreatic Sciences, 2018;25(1):17–30",
+      "url": "https://onlinelibrary.wiley.com/doi/10.1002/jhbp.512",
+      "supports": "TG18 diagnostic criteria (A/B/C) and severity grading (Grade I/II/III) thresholds"
+    },
+    {
+      "id": "TG18-MGMT",
+      "name": "Miura F, Okamoto K, Takada T, et al. Tokyo Guidelines 2018: initial management of acute biliary infection and flowchart for acute cholangitis",
+      "version": "Journal of Hepato-Biliary-Pancreatic Sciences, 2018;25(1):31–40",
+      "url": "https://onlinelibrary.wiley.com/doi/10.1002/jhbp.509",
+      "supports": "Drainage urgency and modality by severity grade"
+    },
+    {
+      "id": "NICE-QS104",
+      "name": "NICE Quality Standard QS104: Gallstone disease",
+      "version": "Published 3 December 2015 (quality statement 3: emergency ERCP within 24 hours)",
+      "url": "https://www.nice.org.uk/guidance/qs104/chapter/quality-statement-3-emergency-endoscopic-retrograde-cholangiopancreatography-within-24-hours",
+      "supports": "24-hour target for emergency ERCP in cholangitis/pancreatitis not responding to antibiotics or fluids"
+    },
+    {
+      "id": "BILIARY-REV",
+      "name": "Nve E, Badia JM, Amillo-Zaragüeta M, Juvany M, Mourelo-Fariña M, Jorba R. Early Management of Severe Biliary Infection in the Era of the Tokyo Guidelines",
+      "version": "Journal of Clinical Medicine, 2023;12(14):4711 (published 16 July 2023)",
+      "url": "https://doi.org/10.3390/jcm12144711",
+      "supports": "Contemporary prevalence of Charcot's triad (reported 20–50%) and mortality figures for severe/bacteraemic cholangitis"
+    }
+  ],
+  "media": [],
+  "partner": {
+    "opening": "Present the scenario: Mrs Calloway, 72, fever, RUQ pain, jaundice, confused, HR 118, BP 95/60, temp 39.2°C. \"What's your diagnosis and how would you confirm it?\"",
+    "reveals": [
+      {
+        "trigger": "Candidate asks for bloods",
+        "finding": "WBC 16.2, CRP 210, bilirubin 68 µmol/L, ALP and GGT markedly raised, albumin 22 g/L.",
+        "row": "G1"
+      },
+      {
+        "trigger": "Candidate asks for imaging",
+        "finding": "Ultrasound shows a dilated common bile duct with a stone at the distal end.",
+        "row": "G1"
+      },
+      {
+        "trigger": "Candidate assesses for organ dysfunction",
+        "finding": "GCS 13 (confused), lactate 3.2, requiring a fluid bolus to maintain blood pressure.",
+        "row": "G2"
+      }
+    ],
+    "push": [
+      {
+        "question": "What if ERCP isn't available at your centre?",
+        "row": "G5",
+        "expect": "Percutaneous transhepatic biliary drainage as the alternative, with transfer considered if neither is available locally."
+      },
+      {
+        "question": "What if she were Grade I instead?",
+        "row": "G5",
+        "expect": "Antibiotics first-line, with drainage reserved for those who don't respond."
+      },
+      {
+        "question": "What's the definitive treatment once she recovers?",
+        "row": "G5",
+        "expect": "Cholecystectomy for gallstone aetiology once she has recovered from the acute episode."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "She has a biliary stent in situ from a previous ERCP.",
+        "safeAnswer": "Consider stent occlusion as the likely cause; the same TG18 diagnosis, grading and management principles still apply.",
+        "row": "G1"
+      },
+      {
+        "prompt": "Her blood pressure doesn't improve despite two fluid boluses.",
+        "safeAnswer": "Start vasopressor support and escalate urgently to critical care; this confirms Grade III disease.",
+        "row": "G4"
+      },
+      {
+        "prompt": "A junior colleague says she can't have cholangitis because she isn't in pain.",
+        "safeAnswer": "The full triad, including pain, is absent in many patients; her fever, jaundice and imaging findings are enough to proceed.",
+        "row": "G6"
+      },
+      {
+        "prompt": "The on-call endoscopist says ERCP can't happen for 72 hours.",
+        "safeAnswer": "For Grade III disease this delay isn't acceptable; escalate for urgent transfer to a centre that can drain her sooner, or arrange percutaneous drainage.",
+        "row": "G5"
+      }
+    ]
+  }
+}

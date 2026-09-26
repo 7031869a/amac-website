@@ -1,0 +1,440 @@
+{
+  "id": "MB-404",
+  "exam": "MRCS-B",
+  "title": "Post-operative surgical menopause and HRT discussion",
+  "type": "communication",
+  "header": {
+    "domain": "Applied Skills",
+    "contentArea": "Managing surgical menopause in a BRCA carrier with a breast cancer history",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "NICE CG164: Familial breast cancer (Published June 2013; last updated November 2023)",
+      "NICE NG101: Early and locally advanced breast cancer (Published 18 July 2018; last updated 14 April 2025)",
+      "RCOG Scientific Impact Paper No. 66 (1st edition, January 2023)",
+      "British Menopause Society: Tool for Clinicians — Surgical Menopause (September 2024)"
+    ],
+    "related": [
+      {
+        "id": "MB-403",
+        "why": "The surgery that has caused this surgical menopause"
+      },
+      {
+        "id": "MB-367",
+        "why": "The earlier discussion where this trade-off was first raised"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Post-operative follow-up clinic, four weeks after surgery",
+    "role": "Core surgical trainee, supporting the multidisciplinary follow-up",
+    "scenario": "Ms Linford, 44, is four weeks after risk-reducing bilateral salpingo-oophorectomy and reports significant hot flushes and low mood, and asks about hormone replacement therapy.",
+    "task": "Discuss her symptoms and the options for managing them, given her breast cancer history. You have 7 minutes."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Acknowledge the impact of her symptoms, be honest about the complexity of HRT given her ER-positive cancer history, and offer both hormonal and non-hormonal avenues without dismissing her request.",
+    "trap": "Refusing to discuss HRT outright because of her cancer history, rather than explaining the actual balance of considerations and referring appropriately.",
+    "firstMove": "\"Tell me more about how these symptoms have been affecting you day to day.\""
+  },
+  "flow": [
+    "Explore the impact of her symptoms",
+    "Explain the general principles around HRT and hormone-sensitive cancer",
+    "Discuss non-hormonal options",
+    "Discuss the possibility of specialist review for HRT",
+    "Agree next steps and closing"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "communication",
+      "label": "Exploring symptom impact",
+      "fail": "Moves straight to management without asking how symptoms are actually affecting her.",
+      "pass": "Asks about the nature and impact of her symptoms (e.g. frequency of flushes, sleep, mood, daily function) before discussing management.",
+      "high": "Explicitly validates that surgical menopause can be more sudden and intense than natural menopause, rather than treating her symptoms as routine."
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-knowledge",
+      "label": "Explaining the HRT complexity",
+      "fail": "Gives a blanket \"no\" or \"yes\" to HRT without explaining why it's more complex given her history.",
+      "pass": "Explains that HRT is generally more complex to consider in someone with a history of ER-positive breast cancer, and needs specialist input to weigh benefits and risks.",
+      "high": "Explains this without shutting down her question, framing it as a decision that deserves proper specialist assessment rather than a quick answer.",
+      "source": "RCOG66"
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "Non-hormonal options",
+      "fail": "Offers no alternative if HRT isn't straightforward.",
+      "pass": "Mentions non-hormonal options for menopausal symptoms, such as certain non-hormonal medications and lifestyle measures.",
+      "high": "Tailors the discussion to which of her symptoms (flushes vs mood) might respond to which options, rather than a generic list."
+    },
+    {
+      "id": "G4",
+      "domain": "professionalism",
+      "label": "Referral for specialist input",
+      "fail": "Does not offer any pathway to a more detailed HRT discussion.",
+      "pass": "Offers referral to an appropriate specialist (e.g. oncology or menopause specialist) to weigh up HRT in detail given her specific cancer history.",
+      "high": "Explains this referral will look at the full picture, including her cancer type and how long ago it was, rather than applying a blanket rule."
+    },
+    {
+      "id": "G5",
+      "domain": "communication",
+      "label": "Addressing low mood",
+      "fail": "Attributes low mood entirely to hormones without further exploration.",
+      "pass": "Asks further about her low mood specifically, rather than assuming it is only hormonal.",
+      "high": "Checks for broader wellbeing given her cumulative experience this year, and signposts to psychological support if appropriate, without diagnosing her."
+    },
+    {
+      "id": "G6",
+      "domain": "professionalism",
+      "label": "Closing and follow-up",
+      "fail": "Ends without a clear plan or follow-up.",
+      "pass": "Summarises the plan (referral, non-hormonal options to try in the meantime) and arranges follow-up.",
+      "high": "Checks she feels her concerns have been taken seriously before closing."
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "patient",
+        "text": "The hot flushes are awful, and I've been feeling really low. Can I have HRT?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "No, you can't have HRT, you've had breast cancer.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          },
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "There's not really anything else I can offer, I'm afraid.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          },
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "candidate",
+        "text": "Tell me more about how these symptoms have been affecting you day to day.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "The flushes wake me up most nights, and I've just felt really flat since the surgery."
+      },
+      {
+        "speaker": "candidate",
+        "text": "That sounds exhausting, and surgical menopause can hit harder and faster than the natural kind. On HRT - given your history of ER-positive breast cancer, it's more complicated than a simple yes or no, and needs specialist input to weigh up properly.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          },
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "Is there anything else that could help in the meantime?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Yes - there are non-hormonal medications that can help with hot flushes, and some lifestyle measures too, which we can start now.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'll refer you to the menopause specialist team to properly weigh up HRT given your specific history.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "On the low mood - is that mainly linked to the flushes and poor sleep, or is it more than that?",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "Probably a bit of both, if I'm honest."
+      },
+      {
+        "speaker": "candidate",
+        "text": "That makes sense given everything this year - let's start the non-hormonal options and the referral, and review how you're doing at follow-up.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "candidate",
+        "text": "Tell me more about how these symptoms have been affecting your day to day, and your sleep and mood specifically.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "The flushes are constant and wake me most nights, and I just feel flat and tearful a lot of the time."
+      },
+      {
+        "speaker": "candidate",
+        "text": "That's a genuinely hard combination, and I want to say - surgical menopause can be far more sudden and intense than the natural kind, so what you're feeling isn't unusual or something to just push through.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "Can I have hormone replacement therapy?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "It's a fair question to ask, and I don't want to just say no - HRT after ER-positive breast cancer is genuinely more complex, since hormones can be relevant to that type of cancer, so it needs a specialist to weigh your specific situation properly, rather than a blanket answer from me today.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "In the meantime, there are non-hormonal medications that can help with the flushes specifically, and some approaches like CBT or exercise that can help with both flushes and mood.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'll refer you to the menopause specialist team, who'll look at your full picture, including your cancer type and timeline, rather than a one-size-fits-all rule.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "On the low mood - is that mostly tied to the flushes and poor sleep, or does it feel bigger than that, given everything you've been through this year?",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "Honestly, it feels bigger than just the flushes."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Thank you for being honest about that - I'd like to make sure you have support for that too, alongside the physical symptoms, and we'll bring all of this together at your follow-up.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G2",
+      "move": "Giving a flat \"no\" to HRT without explanation or referral.",
+      "consequence": "Dismisses a legitimate question and denies her access to a properly weighed specialist opinion that could still lead to HRT in some circumstances."
+    },
+    {
+      "row": "G5",
+      "move": "Attributing low mood entirely to hormones without further exploration.",
+      "consequence": "Risks missing a broader wellbeing need that deserves its own attention, separate from the physical menopause symptoms."
+    },
+    {
+      "row": "G3",
+      "move": "Offering no alternative when HRT isn't straightforward.",
+      "consequence": "Leaves her without any options for genuinely distressing symptoms in the interim."
+    },
+    {
+      "row": "G6",
+      "move": "Ending the consultation with no summary or follow-up plan after declining to help further.",
+      "consequence": "She leaves without any plan, referral or safety-net despite highly distressing, unresolved symptoms."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You gave a flat no to HRT",
+      "line": "I shouldn't have just said no - let me explain why it's more complicated, and how we can get you a proper specialist opinion."
+    },
+    {
+      "when": "You assumed her low mood was only hormonal",
+      "line": "Let me ask a bit more - does this feel like just the flushes and sleep, or something wider?"
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "HRT after a diagnosis of ER-positive breast cancer requires careful, individualised specialist assessment rather than a blanket rule, given the hormone-sensitive nature of the cancer.",
+      "source": "NG101"
+    },
+    {
+      "fact": "Non-hormonal options, including certain medications and lifestyle or psychological approaches, can help manage menopausal symptoms such as hot flushes when HRT is not straightforward."
+    },
+    {
+      "fact": "Surgical menopause following bilateral oophorectomy tends to cause more sudden and severe symptoms than natural menopause.",
+      "source": "CG164"
+    }
+  ],
+  "recall": {
+    "think": "Don't dismiss the HRT question; explain the real complexity; offer non-hormonal help now; don't assume low mood is only hormonal.",
+    "say": "\"It's a fair question to ask, and I don't want to just say no.\"",
+    "do": [
+      "Explore the real impact of her symptoms, including low mood, before discussing management",
+      "Explain why HRT needs specialist assessment given her ER-positive history, rather than a blanket refusal",
+      "Offer non-hormonal options in the meantime"
+    ],
+    "numbers": [
+      {
+        "value": "Up to 51",
+        "meaning": "age up to which HRT is generally considered advisable after early or surgical menopause in women WITHOUT a breast cancer history; her own case needs individualised specialist assessment because of her ER-positive history",
+        "source": "RCOG66"
+      }
+    ],
+    "trap": "Refusing HRT outright without explanation or referral, or assuming low mood is only a hormonal symptom.",
+    "finish": "A specialist referral for HRT assessment, non-hormonal options started, and low mood explored rather than assumed."
+  },
+  "sources": [
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Communication station format and structure, including timing"
+    },
+    {
+      "id": "NG101",
+      "name": "NICE NG101: Early and locally advanced breast cancer: diagnosis and management",
+      "version": "Published 18 July 2018; last updated 14 April 2025",
+      "url": "https://www.nice.org.uk/guidance/ng101",
+      "supports": "Post-treatment surveillance model, symptoms warranting urgent re-referral, and the complexity of HRT use after ER-positive breast cancer"
+    },
+    {
+      "id": "CG164",
+      "name": "NICE CG164: Familial breast cancer: classification, care and managing breast cancer and related risks in people with a family history of breast cancer",
+      "version": "Published June 2013; last updated November 2023",
+      "url": "https://www.nice.org.uk/guidance/cg164",
+      "supports": "Assessing likelihood of an inherited breast cancer predisposition, referral for genetic testing, implications of a pathogenic variant for the patient and relatives, and that first-degree relatives of a carrier have up to a 50% chance of carrying the same variant"
+    },
+    {
+      "id": "RCOG66",
+      "name": "RCOG Scientific Impact Paper No. 66: Risk-reducing salpingo-oophorectomy and the use of hormone replacement therapy below the age of natural menopause",
+      "version": "1st edition, January 2023",
+      "url": "https://www.rcog.org.uk/guidance/browse-all-guidance/scientific-impact-papers/risk-reducing-salpingo-oophorectomy-and-the-use-of-hormone-replacement-therapy-below-the-age-of-natural-menopause-scientific-impact-paper-no-66/",
+      "supports": "HRT is usually advisable up to age 51 for women undergoing early or surgical menopause who have not had breast cancer; for a history of receptor-negative breast cancer, gynaecology liaises with oncology case-by-case; no blanket recommendation is given for ER-positive disease, reflecting the need for individualised specialist assessment"
+    },
+    {
+      "id": "BMSSM",
+      "name": "British Menopause Society: Tool for Clinicians — Surgical Menopause",
+      "version": "September 2024",
+      "url": "https://thebms.org.uk/wp-content/uploads/2024/10/13-BMS-TfC-Surgical-Menopause-SEPT2024-D.pdf",
+      "supports": "Surgical menopause causes a sudden, complete loss of ovarian hormone production and can produce more severe symptoms than gradual natural menopause; women with both an increased ovarian cancer risk and a personal history of breast cancer should discuss HRT with their breast cancer team before starting it; non-hormonal options include SSRIs, clonidine, gabapentin, fezolinetant and cognitive behavioural therapy"
+    }
+  ],
+  "partner": {
+    "opening": "This patient is four weeks post-oophorectomy with menopausal symptoms and a question about HRT. You have 7 minutes.",
+    "actorBrief": "You are Rachel Linford, 44, four weeks after surgery, with severe hot flushes disrupting sleep and a persistent low mood you suspect is more than just hormonal. You want to ask about HRT but worry you'll simply be told no because of your cancer history.",
+    "reveals": [
+      {
+        "trigger": "Candidate explores the impact of your symptoms in detail",
+        "finding": "You describe disrupted sleep and low mood, feeling more comfortable being open.",
+        "row": "G1"
+      },
+      {
+        "trigger": "Candidate explains the HRT complexity rather than a flat refusal",
+        "finding": "You feel taken seriously rather than dismissed.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Candidate asks whether your low mood is more than just the physical symptoms",
+        "finding": "You admit it feels bigger than just the flushes.",
+        "row": "G5"
+      }
+    ],
+    "push": [
+      {
+        "question": "Can I have HRT or not?",
+        "row": "G2",
+        "expect": "Explain this needs specialist assessment given her ER-positive history, rather than a simple yes or no, and arrange that referral."
+      },
+      {
+        "question": "Is there anything that can help until I see a specialist?",
+        "row": "G3",
+        "expect": "Offer non-hormonal options for symptom relief in the meantime."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "I feel like no one is taking my mood seriously, they just talk about the hot flushes.",
+        "safeAnswer": "Acknowledge this directly, apologise for any sense of that, and ensure her low mood is addressed as its own concern alongside the physical symptoms.",
+        "row": "G5"
+      },
+      {
+        "prompt": "What if the specialist also says no to HRT?",
+        "safeAnswer": "Acknowledge that's possible, but explain the assessment considers her individual case properly, and non-hormonal options remain available regardless of the outcome.",
+        "row": "G4"
+      }
+    ]
+  }
+}

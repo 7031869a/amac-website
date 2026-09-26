@@ -1,0 +1,411 @@
+{
+  "id": "MB-403",
+  "exam": "MRCS-B",
+  "title": "Consent: risk-reducing bilateral salpingo-oophorectomy",
+  "type": "communication",
+  "header": {
+    "domain": "Applied Skills",
+    "contentArea": "Consent for risk-reducing gynaecological surgery in a BRCA carrier",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "GMC: Decision making and consent (In effect 9 November 2020; updated 13 December 2024 and 3 August 2026)",
+      "NICE CG164: Familial breast cancer (Published June 2013; last updated November 2023)"
+    ],
+    "related": [
+      {
+        "id": "MB-367",
+        "why": "The earlier conversation where this option was first discussed"
+      },
+      {
+        "id": "MB-368",
+        "why": "The wider family context around her BRCA2 diagnosis"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Pre-operative gynaecology clinic",
+    "role": "Trainee supporting the gynaecology consent process",
+    "scenario": "Ms Linford, 44, a confirmed BRCA2 carrier who has completed her family, has decided to proceed with risk-reducing bilateral salpingo-oophorectomy.",
+    "task": "Consent her for this surgery. You have 7 minutes."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Confirm she has completed family planning and understands the procedure, then cover surgical menopause and HRT, then risks and voluntariness.",
+    "trap": "Explaining the surgical risks without discussing surgical menopause, which is often the aspect that most affects her day-to-day life afterwards.",
+    "firstMove": "\"Before we go through consent, can I check where things stand with family planning, since this surgery will end that permanently?\""
+  },
+  "flow": [
+    "Confirm family planning is complete",
+    "Explain the procedure",
+    "Explain surgical menopause and HRT",
+    "Risks",
+    "Confirm voluntariness and consent"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "communication",
+      "label": "Confirming family planning is complete",
+      "fail": "Does not check whether she has completed family planning before proceeding.",
+      "pass": "Explicitly confirms she has finished having children and understands this surgery is not reversible in that respect.",
+      "high": "Checks this sensitively, recognising it may carry emotional weight even if her family planning is genuinely complete."
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-knowledge",
+      "label": "Explaining the procedure",
+      "fail": "Cannot describe what the operation involves.",
+      "pass": "Explains that both ovaries and fallopian tubes will be removed, usually laparoscopically.",
+      "high": "Mentions that tissue removed will be examined for any early, currently undetected cancer, as this is standard practice in risk-reducing surgery."
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "Surgical menopause and HRT",
+      "fail": "Does not mention that this surgery causes immediate surgical menopause.",
+      "pass": "Explains that removing both ovaries causes immediate menopause, with symptoms such as hot flushes, and that hormone replacement therapy can be considered to manage this.",
+      "high": "Explains HRT is generally appropriate up to the natural age of menopause for BRCA carriers without hormone-sensitive cancer, and that her own breast cancer history will need individual thought.",
+      "source": "NG241"
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-knowledge",
+      "label": "Surgical risks",
+      "fail": "Lists only generic laparoscopic risks with nothing specific to this operation.",
+      "pass": "Covers risks including bleeding, infection, damage to surrounding organs, and the certainty of surgical menopause.",
+      "high": "Explains rare but recognised risks (e.g. conversion to open surgery, bowel or bladder injury) proportionate to what a reasonable patient would want to know.",
+      "source": "GMC"
+    },
+    {
+      "id": "G5",
+      "domain": "professionalism",
+      "label": "Voluntariness",
+      "fail": "Assumes her earlier interest in this option means consent is a formality today.",
+      "pass": "Checks she remains certain and is deciding voluntarily, without pressure.",
+      "high": "Explicitly offers to pause or delay if she has any hesitation, even at this late stage."
+    },
+    {
+      "id": "G6",
+      "domain": "professionalism",
+      "label": "Documentation and closing",
+      "fail": "Completes consent with no mention of documentation or what happens next.",
+      "pass": "Confirms her decision, documents consent, and explains next practical steps.",
+      "high": "Checks she has a plan in place for managing menopausal symptoms and support at home after surgery."
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "candidate",
+        "text": "So, ovaries and tubes out, standard risks, sign here.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          },
+          {
+            "row": "G3",
+            "band": "fail"
+          },
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "Will I go through menopause straight away?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'm not sure, probably eventually.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "candidate",
+        "text": "Before we go through consent, can I check - are you certain your family is complete? This surgery will end that permanently.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "Yes, I'm certain."
+      },
+      {
+        "speaker": "candidate",
+        "text": "We'll remove both ovaries and fallopian tubes, usually with keyhole surgery.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Removing your ovaries brings on immediate menopause, so you may notice symptoms like hot flushes straight away - hormone replacement therapy is an option to manage this, which we can discuss.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Risks include bleeding, infection, and a small risk of injury to nearby organs, alongside the certain effect of surgical menopause.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Are you still happy to go ahead, and is this entirely your own decision?",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'll document your consent, and let's talk about your plan for managing symptoms afterwards.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "candidate",
+        "text": "Before consent, I want to check sensitively - are you certain your family is complete? This will end that permanently, and I want to make sure that's something you've fully considered.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "Yes, completely certain, we've talked about it a lot."
+      },
+      {
+        "speaker": "candidate",
+        "text": "We'll remove both ovaries and tubes laparoscopically, and the tissue will be examined afterwards, as standard, in case there's any very early change not visible beforehand.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "This will bring on immediate surgical menopause, with symptoms like hot flushes. Given your history of breast cancer, we'll need to think carefully with you about whether hormone replacement is appropriate, which is a slightly different conversation than for someone without that history.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Beyond the certainty of surgical menopause, risks include bleeding, infection, and rarely, injury to the bowel or bladder or needing to convert to open surgery.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "I do still want to go ahead."
+      },
+      {
+        "speaker": "candidate",
+        "text": "That's good to hear, but I want you to know we can still pause or delay this even now if anything changes for you.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'll document your consent. Do you have a plan for support at home, and have you thought about how you'll manage symptoms in the early weeks?",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G3",
+      "move": "Failing to explain that surgical menopause is immediate and certain, not a possible future risk.",
+      "consequence": "Leaves her unprepared for symptoms that begin right after surgery, undermining informed consent for one of the most significant effects of the operation."
+    },
+    {
+      "row": "G1",
+      "move": "Not confirming family planning is complete before proceeding.",
+      "consequence": "Risks proceeding with an irreversible decision without confirming she has fully considered its permanence."
+    },
+    {
+      "row": "G5",
+      "move": "Treating consent as a formality because she expressed interest at an earlier appointment.",
+      "consequence": "Assumes consent carries over from an earlier conversation rather than being reconfirmed at the time of the decision."
+    },
+    {
+      "row": "G2",
+      "move": "Cannot describe what the operation actually involves, e.g. dismissing it as \"ovaries and tubes out\".",
+      "consequence": "Leaves her unable to picture the operation or ask informed questions before consenting."
+    },
+    {
+      "row": "G6",
+      "move": "Ending the consultation with no mention of documentation or next steps.",
+      "consequence": "No record of the discussion exists, and she is left without practical next steps before surgery."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You didn't mention surgical menopause is immediate",
+      "line": "I should be clear - this menopause starts right away after surgery, not gradually."
+    },
+    {
+      "when": "You assumed her earlier interest meant consent was settled",
+      "line": "Let me actually check with you now - are you still certain you want to go ahead?"
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Risk-reducing bilateral salpingo-oophorectomy causes immediate surgical menopause, distinct from the gradual onset of natural menopause.",
+      "source": "CG164"
+    },
+    {
+      "fact": "Hormone replacement therapy is generally considered appropriate for BRCA carriers up to the natural age of menopause, though individual factors, including personal cancer history, are taken into account.",
+      "source": "NG241"
+    },
+    {
+      "fact": "Removed ovarian and tubal tissue from risk-reducing surgery is routinely examined histologically for any early, occult malignancy."
+    }
+  ],
+  "recall": {
+    "think": "Confirm family planning is truly complete; surgical menopause is immediate, not gradual; consent must be reconfirmed now, not assumed from before.",
+    "say": "\"We can still pause or delay this even now if anything changes for you.\"",
+    "do": [
+      "Confirm family planning is genuinely complete before proceeding",
+      "Explain that surgical menopause begins immediately after surgery, and discuss HRT factoring in her cancer history",
+      "Reconfirm voluntary consent rather than assuming it from an earlier conversation"
+    ],
+    "numbers": [
+      {
+        "value": "No earlier than 40",
+        "meaning": "earliest recommended age for risk-reducing bilateral salpingo-oophorectomy in BRCA2 carriers, once family planning is complete",
+        "source": "NG241"
+      }
+    ],
+    "trap": "Treating consent as settled from an earlier discussion, or failing to flag that menopause will be immediate rather than gradual.",
+    "finish": "Reconfirmed, documented consent with a plan for managing surgical menopause afterwards."
+  },
+  "sources": [
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Communication station format and structure, including timing"
+    },
+    {
+      "id": "GMC",
+      "name": "GMC: Decision making and consent",
+      "version": "In effect 9 November 2020; updated 13 December 2024 and 3 August 2026",
+      "url": "https://www.gmc-uk.org/professional-standards/the-professional-standards/decision-making-and-consent",
+      "supports": "Requirement to reconfirm voluntary consent, disclose material risks, and preserve the patient's right to decline or delay treatment"
+    },
+    {
+      "id": "CG164",
+      "name": "NICE CG164: Familial breast cancer: classification, care and managing breast cancer and related risks in people with a family history of breast cancer",
+      "version": "Published June 2013; last updated November 2023",
+      "url": "https://www.nice.org.uk/guidance/cg164",
+      "supports": "Assessing likelihood of an inherited breast cancer predisposition, referral for genetic testing, implications of a pathogenic variant for the patient and relatives, and that first-degree relatives of a carrier have up to a 50% chance of carrying the same variant"
+    },
+    {
+      "id": "NG241",
+      "name": "NICE NG241: Ovarian cancer: identifying and managing familial and genetic risk",
+      "version": "Published 21 March 2024",
+      "url": "https://www.nice.org.uk/guidance/ng241",
+      "supports": "Risk-reducing bilateral salpingo-oophorectomy timing: no earlier than 35 years for BRCA1 carriers and no earlier than 40 years for BRCA2 carriers, once family planning is complete"
+    }
+  ],
+  "partner": {
+    "opening": "Please take consent from this patient for risk-reducing bilateral salpingo-oophorectomy. You have 7 minutes.",
+    "actorBrief": "You are Rachel Linford, 44, a confirmed BRCA2 carrier who has decided to proceed with this surgery, having completed your family. You are prepared for the operation but haven't fully thought through the immediacy of surgical menopause.",
+    "reveals": [
+      {
+        "trigger": "Candidate confirms family planning is complete",
+        "finding": "You confirm this with certainty, having discussed it with your partner.",
+        "row": "G1"
+      },
+      {
+        "trigger": "Candidate explains surgical menopause is immediate",
+        "finding": "You're surprised it starts right away rather than gradually, and ask more questions.",
+        "row": "G3"
+      },
+      {
+        "trigger": "Candidate reconfirms your voluntary decision rather than assuming it",
+        "finding": "You appreciate being asked again rather than assumed.",
+        "row": "G5"
+      }
+    ],
+    "push": [
+      {
+        "question": "Will I go into menopause straight away?",
+        "row": "G3",
+        "expect": "Confirm menopause begins immediately after surgery, not gradually, and discuss HRT as an option."
+      },
+      {
+        "question": "Can I take hormone replacement, given my breast cancer history?",
+        "row": "G3",
+        "expect": "Acknowledge this needs individual consideration given her cancer history, rather than a blanket yes or no."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "What if I change my mind on the operating table?",
+        "safeAnswer": "Confirm that consent can be withdrawn at any point up to the point of surgery.",
+        "row": "G5"
+      },
+      {
+        "prompt": "Will this surgery find anything unexpected?",
+        "safeAnswer": "Explain that tissue removed will be examined and, though uncommon, an early undetected cancer could occasionally be found, which is part of why the surgery is done as a preventive measure.",
+        "row": "G2"
+      }
+    ]
+  }
+}

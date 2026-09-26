@@ -1,0 +1,416 @@
+{
+  "id": "MB-406",
+  "exam": "MRCS-B",
+  "title": "Predictive genetic testing counselling for an at-risk relative",
+  "type": "communication",
+  "header": {
+    "domain": "Applied Skills",
+    "contentArea": "Pre-test counselling for predictive genetic testing",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "NICE CG164: Familial breast cancer (Published June 2013; last updated November 2023)",
+      "GMC: Decision making and consent (In effect 9 November 2020; updated 13 December 2024 and 3 August 2026)"
+    ],
+    "related": [
+      {
+        "id": "MB-368",
+        "why": "The conversation where her mother first considered telling her"
+      },
+      {
+        "id": "MB-366",
+        "why": "The original familial result this predictive test relates to"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Clinical genetics clinic",
+    "role": "Trainee supporting the genetics counselling team",
+    "scenario": "Freya, 20, is the daughter of a patient with a known BRCA2 pathogenic variant. She has come for pre-test counselling before deciding whether to have predictive genetic testing herself.",
+    "task": "Counsel her about predictive testing so she can make an informed decision. You have 7 minutes."
+  },
+  "beforeYouWalkIn": {
+    "frame": "This is about supporting her decision, not persuading her either way; explore her reasons for coming and what she already understands before explaining the test itself.",
+    "trap": "Assuming she has already decided to test just because she booked the appointment, and moving straight to practicalities.",
+    "firstMove": "\"Before we talk about the test itself, can I ask what's brought you here today, and what you already understand?\""
+  },
+  "flow": [
+    "Explore her reasons for attending and current understanding",
+    "Explain what predictive testing can and cannot tell her",
+    "Discuss possible outcomes and their implications",
+    "Explore how she might feel about each possible result",
+    "Confirm no pressure to decide today and closing"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "communication",
+      "label": "Exploring her starting point",
+      "fail": "Assumes she has already decided to test and moves straight to logistics.",
+      "pass": "Asks what has brought her here and what she already understands before explaining further.",
+      "high": "Explores whether this is her own decision or one influenced by family pressure, without being intrusive."
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-knowledge",
+      "label": "Explaining the test",
+      "fail": "Cannot explain what predictive testing involves or what it can tell her.",
+      "pass": "Explains that this is a specific test for the known familial variant, and that it can tell her whether she has inherited it or not.",
+      "high": "Clarifies a negative result means she hasn't inherited this variant, though her general population risk for other causes remains, avoiding false reassurance.",
+      "source": "CG164"
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "Explaining implications of each result",
+      "fail": "Only discusses one possible result (e.g. only what happens if positive).",
+      "pass": "Explains the implications of both a positive result (increased future risk, options for surveillance or risk-reducing measures) and a negative result.",
+      "high": "Explains a positive result now would mean starting surveillance discussions, while any risk-reducing surgery decisions wait until much later in life."
+    },
+    {
+      "id": "G4",
+      "domain": "communication",
+      "label": "Exploring emotional readiness",
+      "fail": "Does not explore how she thinks she would feel about either result.",
+      "pass": "Asks how she thinks she would feel about a positive or negative result, and what support she has around her.",
+      "high": "Explores this without assuming a young person's response should be uniform, allowing for however she genuinely feels."
+    },
+    {
+      "id": "G5",
+      "domain": "communication",
+      "label": "Insurance and practical implications",
+      "fail": "Does not mention any practical implications of testing, such as insurance.",
+      "pass": "Mentions that, under the Code on Genetic Testing and Insurance, insurers generally cannot require disclosure of a predictive genetic test result, so this is unlikely to affect standard insurance applications.",
+      "high": "Explains this reassuringly: insurers generally can't require predictive results, with a narrow exception only for Huntington's disease above high sums assured.",
+      "source": "ABI-CODE"
+    },
+    {
+      "id": "G6",
+      "domain": "professionalism",
+      "label": "Voluntariness and closing",
+      "fail": "Implies she must decide about testing today.",
+      "pass": "Confirms there is no pressure to decide today and that she can take as long as she needs.",
+      "high": "Offers a further appointment or written information, and confirms she knows how to get back in touch when and if she's ready."
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "candidate",
+        "text": "So you're here for your BRCA2 test, let's get the blood taken.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "I'm actually not sure I want to go ahead yet."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Oh. Well, it's a simple blood test either way.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          },
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "candidate",
+        "text": "Before we talk about the test itself, can I ask what's brought you here today, and what you already understand?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "My mum is BRCA2 positive, and I want to know if I have it too."
+      },
+      {
+        "speaker": "candidate",
+        "text": "This test looks specifically for the same gene change found in your mum, so it will tell us whether you've inherited it or not.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "If it's positive, that means an increased future cancer risk, and we'd talk about surveillance options; if it's negative, you haven't inherited this particular variant.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "How do you think you'd feel with either result, and do you have support around you?",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "I think I'd cope either way, my partner knows I'm here."
+      },
+      {
+        "speaker": "candidate",
+        "text": "It's also worth knowing a genetic result can affect things like life insurance applications, which is something to factor into your decision.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "There's no pressure to decide today - take whatever time you need, and get back in touch when you're ready.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "candidate",
+        "text": "Before we talk about the test, can I ask what's brought you here, and whether this feels like your own decision or one shaped by others around you too?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "It's my decision - my mum's been really careful not to push me either way."
+      },
+      {
+        "speaker": "candidate",
+        "text": "That's good to hear. This test looks specifically for your mum's known gene change, so a positive result means you've inherited it, and a negative result means you haven't - though it's worth knowing that a negative result doesn't remove all cancer risk, just this particular inherited cause.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "What would happen if it's positive?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "At your age, that would mean starting a surveillance conversation now, like earlier or more frequent breast checks, while decisions about anything like risk-reducing surgery would be much further down the line, not something needed immediately.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "How do you think you'd feel with either result, and who do you have around you for support, whatever the outcome?",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "I think I'd be okay, but I'd want to know either way rather than not knowing."
+      },
+      {
+        "speaker": "candidate",
+        "text": "That's a completely valid reason to test. One practical thing worth knowing - a genetic result, whatever it shows, can be relevant to things like life insurance applications in future, so it's worth factoring that into your decision too.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "There's absolutely no pressure to decide today. I can give you written information to take away, and you can contact us whenever, if or when you're ready.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G1",
+      "move": "Assuming she has already decided to test just because she attended the appointment.",
+      "consequence": "Removes the space for genuine informed decision-making, which pre-test counselling exists to protect."
+    },
+    {
+      "row": "G3",
+      "move": "Discussing only one possible result.",
+      "consequence": "Leaves her without a full picture to weigh her decision against, particularly the reassurance a negative result could offer."
+    },
+    {
+      "row": "G5",
+      "move": "Omitting practical implications such as insurance.",
+      "consequence": "Denies her a relevant practical factor that could reasonably affect her decision or its timing."
+    },
+    {
+      "row": "G2",
+      "move": "Cannot explain what predictive testing actually involves.",
+      "consequence": "Leaves her unable to weigh up whether to proceed with a test she doesn't understand."
+    },
+    {
+      "row": "G6",
+      "move": "Implies she must decide about testing today.",
+      "consequence": "Pressures a decision that should be entirely voluntary and unhurried."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You assumed she had already decided to test",
+      "line": "Let me step back - this is very much your decision, so tell me where you're at with it."
+    },
+    {
+      "when": "You only discussed a positive result",
+      "line": "I should also explain what a negative result would mean for you."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Predictive genetic testing for a known familial variant tells the individual whether they have inherited that specific variant, but a negative result does not eliminate all cancer risk from other causes.",
+      "source": "CG164"
+    },
+    {
+      "fact": "Pre-test genetic counselling should explore the individual's understanding, motivations, emotional readiness and support, without pressure to proceed.",
+      "source": "CG164"
+    },
+    {
+      "fact": "Under the Code on Genetic Testing and Insurance (ABI/UK Government), insurers generally cannot require or request disclosure of predictive genetic test results; the only exception is Huntington's disease for life insurance above a defined sum assured. This protection can be mentioned reassuringly during pre-test counselling.",
+      "source": "ABI-CODE"
+    }
+  ],
+  "recall": {
+    "think": "This is her decision, not a formality; explain both possible results; mention practical implications; no pressure to decide today.",
+    "say": "\"There's no pressure to decide today.\"",
+    "do": [
+      "Explore her own reasons and understanding before explaining the test",
+      "Explain both positive and negative result implications, including practical effects like insurance",
+      "Confirm she can take as much time as she needs"
+    ],
+    "numbers": [
+      {
+        "value": "50%",
+        "meaning": "chance a first-degree relative (such as a daughter) carries the same familial BRCA2 variant",
+        "source": "CG164"
+      }
+    ],
+    "trap": "Assuming attendance at the appointment means she has already decided to proceed with testing.",
+    "finish": "An informed, unpressured decision point, with written information and no obligation to decide today."
+  },
+  "sources": [
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Communication station format and structure, including timing"
+    },
+    {
+      "id": "CG164",
+      "name": "NICE CG164: Familial breast cancer: classification, care and managing breast cancer and related risks in people with a family history of breast cancer",
+      "version": "Published June 2013; last updated November 2023",
+      "url": "https://www.nice.org.uk/guidance/cg164",
+      "supports": "Assessing likelihood of an inherited breast cancer predisposition, referral for genetic testing, implications of a pathogenic variant for the patient and relatives, and that first-degree relatives of a carrier have up to a 50% chance of carrying the same variant"
+    },
+    {
+      "id": "GMC",
+      "name": "GMC: Decision making and consent",
+      "version": "In effect 9 November 2020; updated 13 December 2024 and 3 August 2026",
+      "url": "https://www.gmc-uk.org/professional-standards/the-professional-standards/decision-making-and-consent",
+      "supports": "Requirement to reconfirm voluntary consent, disclose material risks, and preserve the patient's right to decline or delay treatment"
+    },
+    {
+      "id": "ABI-CODE",
+      "name": "Code on Genetic Testing and Insurance (Association of British Insurers and UK Government/Department of Health and Social Care)",
+      "version": "Published October 2018; reaffirmed by the second 3-year review, published 5 March 2026",
+      "url": "https://www.abi.org.uk/globalassets/files/publications/public/genetics/code-on-genetic-testing-and-insurance-final.pdf",
+      "supports": "Moratorium preventing insurers from requiring disclosure of predictive genetic test results, subject to a narrow exception for Huntington's disease above defined sums assured"
+    }
+  ],
+  "partner": {
+    "opening": "Please provide pre-test genetic counselling for this patient considering predictive testing. You have 7 minutes.",
+    "actorBrief": "You are Freya, 20, daughter of a BRCA2-positive mother. This is genuinely your own decision, uninfluenced by family pressure, though you're anxious about what a positive result might mean for your future.",
+    "reveals": [
+      {
+        "trigger": "Candidate asks about your reasons and understanding",
+        "finding": "You explain you want to know either way rather than live with uncertainty.",
+        "row": "G1"
+      },
+      {
+        "trigger": "Candidate explains both possible results",
+        "finding": "You feel reassured to understand what a negative result would and wouldn't mean.",
+        "row": "G3"
+      },
+      {
+        "trigger": "Candidate confirms no pressure to decide today",
+        "finding": "You feel relieved rather than rushed.",
+        "row": "G6"
+      }
+    ],
+    "push": [
+      {
+        "question": "If it's positive, will I need surgery straight away?",
+        "row": "G3",
+        "expect": "Clarify that at her age, surveillance would be discussed first, with surgical decisions being for much later."
+      },
+      {
+        "question": "Could this affect my ability to get life insurance?",
+        "row": "G5",
+        "expect": "Confirm this is a genuine practical consideration worth factoring into her decision."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "My mum really wants me to test, but I'm not sure I'm ready.",
+        "safeAnswer": "Affirm that this must be her own decision regardless of her mother's wishes, and that there's no obligation to test on any particular timeline.",
+        "row": "G1"
+      },
+      {
+        "prompt": "What if I test negative but still get breast cancer one day?",
+        "safeAnswer": "Clarify that a negative result only rules out this specific inherited cause, not all future risk of breast cancer, and that general population screening would still apply to her.",
+        "row": "G2"
+      }
+    ]
+  }
+}

@@ -1,0 +1,431 @@
+{
+  "id": "MB-407",
+  "exam": "MRCS-B",
+  "title": "New lump in the unaffected breast",
+  "type": "examination",
+  "header": {
+    "domain": "Applied Skills",
+    "contentArea": "Clinical breast examination and differential diagnosis of a new lump",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "signalMinutes": 6,
+    "guidelineVersions": [
+      "NICE NG12: Suspected cancer: recognition and referral (Published June 2015; last updated May 2025)",
+      "NICE NG101: Early and locally advanced breast cancer (Published 18 July 2018; last updated 14 April 2025)"
+    ],
+    "related": [
+      {
+        "id": "MB-138",
+        "why": "The core examination technique now applied to a new site"
+      },
+      {
+        "id": "MB-362",
+        "why": "The contrasting history-taking approach to a lump near the original site"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Breast clinic, routine surveillance appointment",
+    "role": "Core surgical trainee",
+    "scenario": "Ms Linford, 45, now on annual surveillance for her unaffected side, reports a new lump in that breast, unrelated to her previous cancer site.",
+    "task": "Examine the lump and present your findings and differential diagnosis. You will be stopped at 6 minutes."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Examine systematically, characterise the lump fully, and generate a genuine differential rather than jumping to either reassurance or alarm.",
+    "trap": "Anchoring on malignancy because of her history, or dismissing the lump as benign because it's a different breast to her original cancer.",
+    "firstMove": "\"Before I examine, can I ask a few quick questions about the lump?\""
+  },
+  "flow": [
+    "Brief history: onset, change, pain, cyclical variation",
+    "Inspection: both breasts, skin, nipple",
+    "Palpation: characterise the lump systematically",
+    "Examine regional lymph nodes",
+    "At 6 minutes: present findings and differential"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-skill",
+      "label": "Brief focused history",
+      "fail": "Examines without any history of onset, change or associated symptoms.",
+      "pass": "Establishes onset, whether it varies with her cycle, and whether it has changed in size.",
+      "high": "Asks specifically whether this feels the same as, or different from, lumps she has had assessed before, given her cancer history."
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-skill",
+      "label": "Inspection",
+      "fail": "Does not inspect both breasts or check for skin/nipple changes.",
+      "pass": "Inspects both breasts systematically for symmetry, skin changes and nipple changes.",
+      "high": "Also inspects with arms raised and hands on hips to bring out any subtle skin tethering."
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-skill",
+      "label": "Characterising the lump",
+      "fail": "Palpates without describing size, shape, consistency, mobility or borders.",
+      "pass": "Systematically describes the lump's size, shape, consistency, mobility and border definition.",
+      "high": "Correlates findings with likely differentials as they go (e.g. smooth, mobile and well-defined suggesting a fibroadenoma) rather than describing features in isolation."
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-skill",
+      "label": "Regional examination",
+      "fail": "Does not examine the axilla or other nodal areas.",
+      "pass": "Examines the axilla and supraclavicular fossa for lymphadenopathy.",
+      "high": "Explains why this step matters regardless of how benign the breast lump itself appears."
+    },
+    {
+      "id": "G5",
+      "domain": "communication",
+      "label": "Presentation of findings",
+      "fail": "Gives either a confident diagnosis or excessive alarm without justification.",
+      "pass": "Presents findings clearly and gives a sensible differential, including benign causes such as fibroadenoma or cyst, without dismissing the need for further assessment.",
+      "high": "Explicitly explains why her cancer history changes the threshold for further assessment even if the lump has benign features."
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-knowledge",
+      "label": "Next steps",
+      "fail": "Offers no further plan.",
+      "pass": "Recommends triple assessment (imaging plus or minus biopsy) to confirm the nature of the lump, given her cancer history.",
+      "high": "Explains this is about confirming the diagnosis with appropriate urgency, not because the examination findings themselves are especially concerning.",
+      "source": "NG12"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "candidate",
+        "text": "[Palpates only the lump itself, no history, no nodal exam.]",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          },
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop. Your findings?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Given her history, this is probably cancer again.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What would you do?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Straight to mastectomy, I'd say.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "candidate",
+        "text": "Before I examine, can I ask - when did you notice this, has it changed, and does it vary with your cycle?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "About a month ago, feels the same size, doesn't seem to change with my cycle."
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Inspects both breasts for symmetry, skin and nipple changes.]",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Palpates the lump, describing it as smooth, mobile, well-defined and rubbery.]",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Examines the axilla; no palpable lymphadenopathy.]",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop. Your findings?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "A smooth, mobile, well-defined lump with no skin changes or lymphadenopathy - features suggesting a benign cause such as fibroadenoma, though given her history this still needs formal assessment rather than reassurance alone.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What would you do?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Arrange triple assessment with imaging, and biopsy if indicated, to confirm the diagnosis.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "candidate",
+        "text": "Before I examine, a few quick questions - when did this start, has it changed, does it vary with your cycle, and does it feel similar to or different from lumps you've had checked before?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "About a month ago, unchanged, doesn't vary with my cycle, and it feels different from what turned out to be my cancer before - softer, more mobile."
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Inspects both breasts, including with arms raised to check for subtle tethering, then systematically palpates.]",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Describes the lump as smooth, well-defined, mobile and rubbery, consistent with a fibroadenoma-type lesion rather than her previous, firmer, less mobile lump.]",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Examines axilla and supraclavicular fossa; no lymphadenopathy.] I'm checking these regardless of how benign the lump itself feels, since that's a separate part of a complete assessment.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop. Your findings?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "A smooth, mobile, well-defined lump, distinct in character from her original cancer, with no lymphadenopathy - most consistent with a benign cause such as fibroadenoma. However, given her personal history, I wouldn't reassure her based on examination alone; this still needs formal imaging and likely biopsy, with an appropriately urgent, though not panicked, timeframe.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What would you do?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Arrange urgent triple assessment - imaging and biopsy if indicated - explaining to her that this is standard practice given her history, not because the examination itself is especially worrying.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G5",
+      "move": "Assuming malignancy purely because of her cancer history, regardless of examination findings.",
+      "consequence": "Causes disproportionate distress and risks framing every future finding through the lens of her past diagnosis rather than what is actually found."
+    },
+    {
+      "row": "G4",
+      "move": "Omitting nodal examination because the breast lump seems benign.",
+      "consequence": "A complete breast assessment always includes regional nodes, regardless of how reassuring the primary lump appears."
+    },
+    {
+      "row": "G6",
+      "move": "Jumping to a major surgical plan (e.g. mastectomy) before any imaging or biopsy confirms the diagnosis.",
+      "consequence": "Proposes a drastic, irreversible intervention without the diagnostic basis to justify it."
+    },
+    {
+      "row": "G2",
+      "move": "Fails to inspect the breasts at all before palpating.",
+      "consequence": "Misses skin or nipple changes that could indicate a more concerning pathology."
+    },
+    {
+      "row": "G3",
+      "move": "Palpates the lump without describing its size, shape, consistency, mobility or borders.",
+      "consequence": "Gives no basis for a genuine differential diagnosis, however the case then unfolds."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You assumed malignancy without examination-based justification",
+      "line": "Let me be more precise about what the examination actually shows before drawing conclusions."
+    },
+    {
+      "when": "You skipped the nodal exam",
+      "line": "I should also check the nodal areas as part of a complete assessment."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "A smooth, mobile, well-defined, rubbery lump is a classical clinical description of a fibroadenoma, though examination alone cannot exclude malignancy.",
+      "source": "NG12"
+    },
+    {
+      "fact": "A personal history of breast cancer lowers the threshold for formal triple assessment of any new lump, regardless of how benign it appears clinically.",
+      "source": "NG101"
+    },
+    {
+      "fact": "A complete breast examination always includes assessment of the axillary and supraclavicular lymph nodes, regardless of the character of the primary finding."
+    }
+  ],
+  "recall": {
+    "think": "Describe what's actually found, not what her history suggests; nodes matter regardless of how the lump feels; confirm, don't assume.",
+    "say": "\"I wouldn't reassure her based on examination alone.\"",
+    "do": [
+      "Take a brief, focused history, including comparison to previous lumps",
+      "Systematically characterise the lump and examine regional nodes regardless of how benign it feels",
+      "Recommend triple assessment rather than either false reassurance or unjustified alarm"
+    ],
+    "numbers": [
+      {
+        "value": "2 weeks",
+        "meaning": "maximum wait for a suspected cancer pathway referral, given her personal history of breast cancer",
+        "source": "NG12"
+      }
+    ],
+    "trap": "Anchoring on malignancy purely because of her cancer history, without letting the examination findings speak for themselves.",
+    "finish": "A clear differential grounded in examination findings, with triple assessment arranged given her history."
+  },
+  "sources": [
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Examination station format and 6-minute signal to present findings"
+    },
+    {
+      "id": "NG12",
+      "name": "NICE NG12: Suspected cancer: recognition and referral",
+      "version": "Published June 2015; last updated May 2025",
+      "url": "https://www.nice.org.uk/guidance/ng12",
+      "supports": "Suspected cancer pathway referral (for an appointment within 2 weeks) for a new lump in a patient with a personal history of breast cancer; clinical features distinguishing likely benign from concerning breast lumps"
+    },
+    {
+      "id": "NG101",
+      "name": "NICE NG101: Early and locally advanced breast cancer: diagnosis and management",
+      "version": "Published 18 July 2018; last updated 14 April 2025",
+      "url": "https://www.nice.org.uk/guidance/ng101",
+      "supports": "Post-treatment surveillance model, symptoms warranting urgent re-referral, and the complexity of HRT use after ER-positive breast cancer"
+    }
+  ],
+  "partner": {
+    "opening": "Please examine this patient's new breast lump. I'll stop you at 6 minutes.",
+    "actorBrief": "You are Rachel Linford, 45, on routine surveillance, with a new lump in your previously unaffected breast, noticed a month ago, unchanged, not cycle-related. It feels different (softer, more mobile) from your original cancer, though you're anxious given your history.",
+    "reveals": [
+      {
+        "trigger": "Asks about onset, change and comparison to previous lumps",
+        "finding": "One month, unchanged, non-cyclical, feels softer and more mobile than the original cancer.",
+        "row": "G1"
+      },
+      {
+        "trigger": "Systematically palpates the lump",
+        "finding": "Smooth, well-defined, mobile, rubbery lump, roughly 2 cm.",
+        "row": "G3"
+      },
+      {
+        "trigger": "Examines axilla/supraclavicular nodes",
+        "finding": "No palpable lymphadenopathy.",
+        "row": "G4"
+      },
+      {
+        "trigger": "At 6 minutes",
+        "finding": "Say: \"Please stop there and present your findings.\"",
+        "row": "G5"
+      }
+    ],
+    "push": [
+      {
+        "question": "Is this the cancer coming back?",
+        "row": "G5",
+        "expect": "Explain the findings are more consistent with a benign cause, while being honest that formal assessment is still needed given her history."
+      },
+      {
+        "question": "What happens next?",
+        "row": "G6",
+        "expect": "Arrange triple assessment, framed as standard practice given her history rather than a sign of high suspicion."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "There's also been some dimpling of the skin over it that I only just noticed.",
+        "safeAnswer": "Take this seriously as a potential red-flag feature, examine it specifically, and factor it into a more cautious differential and more urgent assessment.",
+        "row": "G2"
+      },
+      {
+        "prompt": "Can you just tell me it's nothing so I can stop worrying?",
+        "safeAnswer": "Avoid false reassurance; explain honestly that the features seen are reassuring but that confirmation requires proper assessment, which will be arranged promptly.",
+        "row": "G5"
+      }
+    ]
+  }
+}
