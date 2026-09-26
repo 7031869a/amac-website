@@ -1,0 +1,192 @@
+{
+  "id": "MB-344",
+  "exam": "MRCS-B",
+  "title": "Parapneumonic effusion and empyema: when to drain",
+  "type": "applied-knowledge",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "Cardiothoracic and general surgery: pleural infection",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "BTS Guideline for Pleural Disease (Thorax, July 2023)"
+    ],
+    "related": [
+      { "id": "MB-179", "why": "Chest drain insertion technique, the practical skill this station's decision leads to" },
+      { "id": "MB-253", "why": "Another BTS 2023 pleural pathway station, on primary spontaneous pneumothorax" }
+    ]
+  },
+  "brief": {
+    "setting": "Respiratory/surgical ward round",
+    "role": "Core surgical trainee",
+    "scenario": "Mrs Helen Fairbourne, 58, remains febrile and breathless despite treatment for pneumonia. Imaging shows a loculated pleural effusion.",
+    "task": "Discuss what you are concerned about, what pleural investigations you would perform, and when you would drain."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Persisting sepsis on antibiotics plus a pleural collection means think pleural infection, then let the fluid itself (pH, appearance) decide drainage.",
+    "trap": "Quoting a pH number without saying what it's a threshold for, or treating drainage as automatic for any parapneumonic effusion.",
+    "firstMove": "\"I'm concerned this is a complicated parapneumonic effusion or empyema.\""
+  },
+  "flow": [
+    "State the concern",
+    "Investigate: clinical assessment, ultrasound, sampling",
+    "Interpret the pleural fluid",
+    "Decide on drainage",
+    "Manage a residual collection",
+    "Know when to involve surgery"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-knowledge",
+      "label": "Recognising pleural infection",
+      "fail": "Attributes ongoing fever and breathlessness to slow-resolving pneumonia alone, without considering a complicated effusion.",
+      "pass": "States concern for a complicated parapneumonic effusion (CPPE) or empyema in a patient failing to settle on antibiotics with a pleural collection.",
+      "high": "Explains the spectrum: simple parapneumonic effusion, to CPPE, to frank empyema, and why persistence despite antibiotics points along it."
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-skill",
+      "label": "Investigating the effusion",
+      "fail": "Would treat with antibiotics alone and not sample the fluid, or samples without any imaging guidance.",
+      "pass": "Performs clinical assessment and thoracic ultrasound, and obtains pleural fluid safely under image guidance where appropriate.",
+      "high": "Adds that ultrasound also assesses septation and drainable volume, which guides whether simple aspiration or drain insertion is feasible."
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "Interpreting pleural fluid pH",
+      "fail": "Cannot give a pH threshold, or quotes a number with no idea what it means for drainage.",
+      "pass": "States frank pus, or pleural fluid pH at or below 7.2, indicates a high risk of CPPE or pleural infection and should prompt drainage where safely accessible.",
+      "high": "Adds the intermediate zone: pH above 7.2 but below 7.4 is intermediate risk, and pleural fluid LDH above 900 IU/L in that band should also prompt considering drainage.",
+      "source": "BTS23"
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-knowledge",
+      "label": "Managing a residual infected collection",
+      "fail": "Would use intrapleural tPA alone, or would not consider intrapleural therapy at all for a persistent collection after drainage.",
+      "pass": "States that if drainage leaves a residual infected collection, intrapleural tPA plus DNase should be considered after discussing the risks and benefits, particularly bleeding risk.",
+      "high": "Gives the regimen: tPA 10 mg twice daily with DNase 5 mg twice daily for 3 days, with a reduced-dose regimen an option in patients at higher bleeding risk.",
+      "source": "BTS23"
+    },
+    {
+      "id": "G5",
+      "domain": "professionalism",
+      "label": "Escalating to surgery",
+      "fail": "Does not consider surgery at all, or cannot say what type of surgery is preferred when it is needed.",
+      "pass": "States that if medical management fails, thoracic surgery should be involved early.",
+      "high": "Adds that BTS favours a VATS approach over thoracotomy for adults when surgery for pleural infection is required.",
+      "source": "BTS23"
+    },
+    {
+      "id": "G6",
+      "domain": "professionalism",
+      "label": "Not over- or under-treating (safety-critical)",
+      "fail": "States every parapneumonic effusion needs draining, or says drainage can wait until the patient becomes septic.",
+      "pass": "States that drainage decisions depend on clinical context, imaging and pleural fluid characteristics, not on the presence of an effusion alone.",
+      "high": "Explains that this individualised approach is exactly why the pH/LDH thresholds and frank pus are used, rather than a fixed rule for every effusion."
+    }
+  ],
+  "performances": {
+    "fail": [
+      { "speaker": "examiner", "text": "What are you concerned about?" },
+      { "speaker": "candidate", "text": "Probably just slow-resolving pneumonia.", "tags": [{ "row": "G1", "band": "fail" }] },
+      { "speaker": "examiner", "text": "What pleural investigations would you perform?" },
+      { "speaker": "candidate", "text": "I'd just give more antibiotics and see how she does.", "tags": [{ "row": "G2", "band": "fail" }] },
+      { "speaker": "examiner", "text": "The fluid pH comes back at 7.1. What does that mean?" },
+      { "speaker": "candidate", "text": "I'm not sure what that number tells me.", "tags": [{ "row": "G3", "band": "fail" }] },
+      { "speaker": "examiner", "text": "There's a residual collection after the drain. What now?" },
+      { "speaker": "candidate", "text": "I'd give tPA on its own into the pleural space.", "tags": [{ "row": "G4", "band": "fail" }] },
+      { "speaker": "examiner", "text": "She isn't improving on medical management." },
+      { "speaker": "candidate", "text": "I wouldn't really think about surgery at this stage.", "tags": [{ "row": "G5", "band": "fail" }] },
+      { "speaker": "examiner", "text": "Does every parapneumonic effusion need a chest drain?" },
+      { "speaker": "candidate", "text": "Yes, drain every parapneumonic effusion.", "tags": [{ "row": "G6", "band": "fail" }] }
+    ],
+    "pass": [
+      { "speaker": "examiner", "text": "What are you concerned about?" },
+      { "speaker": "candidate", "text": "I am concerned about a complicated parapneumonic effusion or empyema.", "tags": [{ "row": "G1", "band": "pass" }] },
+      { "speaker": "examiner", "text": "What pleural investigations would you perform?" },
+      { "speaker": "candidate", "text": "I would perform clinical assessment and thoracic ultrasound, and obtain pleural fluid safely under image guidance where appropriate, sending it for microbiology and biochemistry.", "tags": [{ "row": "G2", "band": "pass" }] },
+      { "speaker": "examiner", "text": "The pleural fluid pH is 7.1." },
+      { "speaker": "candidate", "text": "A pH at or below 7.2 indicates high risk of complicated parapneumonic effusion or pleural infection and should prompt intercostal drainage where safely accessible.", "tags": [{ "row": "G3", "band": "pass" }] },
+      { "speaker": "examiner", "text": "There's a residual infected collection after drainage." },
+      { "speaker": "candidate", "text": "I would consider intrapleural tPA plus DNase, after discussing the risks and benefits including bleeding risk.", "tags": [{ "row": "G4", "band": "pass" }] },
+      { "speaker": "examiner", "text": "Medical management isn't working." },
+      { "speaker": "candidate", "text": "I would involve thoracic surgery early.", "tags": [{ "row": "G5", "band": "pass" }] },
+      { "speaker": "examiner", "text": "Does every parapneumonic effusion need a chest drain?" },
+      { "speaker": "candidate", "text": "No. Drainage depends on clinical context, imaging and pleural fluid characteristics.", "tags": [{ "row": "G6", "band": "pass" }] }
+    ],
+    "high": [
+      { "speaker": "examiner", "text": "What are you concerned about?" },
+      { "speaker": "candidate", "text": "This sits on the spectrum from simple parapneumonic effusion, through complicated parapneumonic effusion, to frank empyema, and her failing to settle on antibiotics with a persisting collection points further along it.", "tags": [{ "row": "G1", "band": "high" }] },
+      { "speaker": "examiner", "text": "What pleural investigations?" },
+      { "speaker": "candidate", "text": "Clinical assessment and thoracic ultrasound, which also tells me about septation and drainable volume, then image-guided sampling for microbiology and biochemistry.", "tags": [{ "row": "G2", "band": "high" }] },
+      { "speaker": "examiner", "text": "pH is 7.3." },
+      { "speaker": "candidate", "text": "That's intermediate risk. I'd want the LDH: above 900 IU/L in that band should also prompt considering drainage, whereas pH 7.2 or below, or frank pus, is an indication on its own.", "tags": [{ "row": "G3", "band": "high" }] },
+      { "speaker": "examiner", "text": "There's a residual collection." },
+      { "speaker": "candidate", "text": "Intrapleural tPA 10 mg with DNase 5 mg, both twice daily for three days, discussing bleeding risk first; a reduced-dose regimen is an option if that risk is higher.", "tags": [{ "row": "G4", "band": "high" }] },
+      { "speaker": "examiner", "text": "It fails." },
+      { "speaker": "candidate", "text": "Early thoracic surgery, and BTS favours VATS over thoracotomy for adults where surgery for pleural infection is needed.", "tags": [{ "row": "G5", "band": "high" }] },
+      { "speaker": "examiner", "text": "So does every effusion need draining?" },
+      { "speaker": "candidate", "text": "No — that's exactly why we use the pH and LDH thresholds and look for frank pus, rather than a fixed rule for every effusion.", "tags": [{ "row": "G6", "band": "high" }] }
+    ]
+  },
+  "failures": [
+    { "row": "G1", "move": "Assuming ongoing fever after pneumonia is simply slow to resolve.", "consequence": "A developing empyema is missed while it becomes harder to drain." },
+    { "row": "G3", "move": "Not knowing the pH threshold for drainage.", "consequence": "A high-risk effusion is left undrained while infection progresses." },
+    { "row": "G4", "move": "Using intrapleural tPA without DNase.", "consequence": "The combination, not tPA alone, is the evidence-based regimen for a residual infected collection." },
+    { "row": "G6", "move": "Treating every parapneumonic effusion as needing a drain.", "consequence": "Unnecessary invasive procedures are performed on effusions that would resolve with antibiotics alone." },
+    { "row": "G6", "move": "Waiting for the patient to become septic before draining.", "consequence": "Drainage is delayed past the point where it is safest and most effective." }
+  ],
+  "recovery": [
+    { "when": "You blank on the pH number", "line": "I'd want the pleural fluid pH and appearance before deciding — pus or a low pH points to drainage." },
+    { "when": "Asked \"anything else?\" after the drainage plan", "line": "Yes — I'd also consider bleeding risk before fibrinolytics, and early surgical input if she doesn't respond." }
+  ],
+  "knowledge": [
+    { "fact": "Pleural fluid pH 7.4 or above: low risk, no indication for immediate drain. pH above 7.2 but below 7.4: intermediate risk, check LDH, consider drainage if above 900 IU/L. pH 7.2 or below, or frank pus: high risk, drain.", "source": "BTS23" },
+    { "fact": "Residual infected collection after drainage: consider intrapleural tPA 10 mg plus DNase 5 mg, both twice daily for 3 days, after discussing bleeding risk.", "source": "BTS23" },
+    { "fact": "VATS is favoured over thoracotomy for adults needing surgery for pleural infection.", "source": "BTS23" }
+  ],
+  "recall": {
+    "think": "An undrained pleural infection that keeps her septic.",
+    "say": "\"I'm concerned about a complicated parapneumonic effusion or empyema.\"",
+    "do": [
+      "Clinical assessment, ultrasound, image-guided sampling",
+      "Check pH (and LDH if intermediate) and appearance",
+      "Drain if pH ≤7.2, frank pus, or LDH >900 in the intermediate band"
+    ],
+    "numbers": [
+      { "value": "pH ≤7.2", "meaning": "High risk of CPPE/pleural infection; drain", "source": "BTS23" },
+      { "value": "10 mg tPA + 5 mg DNase, both BD, 3 days", "meaning": "Intrapleural therapy for residual infected collection", "source": "BTS23" }
+    ],
+    "trap": "Treating any parapneumonic effusion as an automatic indication to drain.",
+    "finish": "Drainage guided by fluid characteristics; VATS over thoracotomy if surgery is needed."
+  },
+  "sources": [
+    {
+      "id": "BTS23",
+      "name": "British Thoracic Society. BTS Guideline for pleural disease",
+      "version": "Thorax 2023;78(Suppl 3):s1-s42, published July 2023",
+      "url": "https://doi.org/10.1136/thorax-2022-219784",
+      "supports": "Pleural fluid pH thresholds for drainage, intrapleural tPA/DNase regimen for residual pleural infection, and VATS preferred over thoracotomy for surgical management of pleural infection in adults"
+    }
+  ],
+  "partner": {
+    "opening": "Mrs Fairbourne, 58, remains febrile and breathless despite treatment for pneumonia. Imaging shows a loculated pleural effusion. \"What are you concerned about?\"",
+    "reveals": [
+      { "trigger": "Candidate asks for the pleural fluid appearance and pH", "finding": "Turbid fluid, pH 7.1.", "row": "G3" },
+      { "trigger": "Candidate asks what happened after drainage", "finding": "A residual loculated collection remains on repeat ultrasound.", "row": "G4" }
+    ],
+    "push": [
+      { "question": "What pleural investigations would you perform?", "row": "G2", "expect": "Clinical assessment, thoracic ultrasound, image-guided pleural fluid sampling for microbiology and biochemistry." },
+      { "question": "When would you drain?", "row": "G3", "expect": "Frank pus, or pH ≤7.2, or intermediate pH with LDH >900 IU/L." },
+      { "question": "Does every parapneumonic effusion need a chest drain?", "row": "G6", "expect": "No — depends on clinical context, imaging and pleural fluid characteristics." }
+    ],
+    "curveballs": [
+      { "prompt": "The pH is 7.35 and LDH is 1100 IU/L.", "safeAnswer": "Intermediate pH but a raised LDH above 900 IU/L — this should prompt considering drainage.", "row": "G3" },
+      { "prompt": "The patient has a known bleeding disorder and needs intrapleural therapy.", "safeAnswer": "Discuss the bleeding risk explicitly and consider a reduced-dose tPA/DNase regimen.", "row": "G4" },
+      { "prompt": "A colleague suggests tPA alone would be simpler.", "safeAnswer": "The evidence-based regimen combines tPA with DNase, not tPA alone.", "row": "G4" }
+    ]
+  }
+}

@@ -1,0 +1,188 @@
+{
+  "id": "MB-346",
+  "exam": "MRCS-B",
+  "title": "Arteriovenous fistula complications and steal syndrome",
+  "type": "applied-knowledge",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "Vascular surgery: dialysis access",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "ESVS 2018 Clinical Practice Guidelines on Vascular Access (Eur J Vasc Endovasc Surg, 2018)"
+    ],
+    "related": [
+      { "id": "MB-168", "why": "Peripheral arterial examination, the technique used to assess the distal limb here" }
+    ]
+  },
+  "brief": {
+    "setting": "Vascular surgery clinic",
+    "role": "Core surgical trainee",
+    "scenario": "Mrs Susan Brookfield, 63, has a haemodialysis arteriovenous fistula. She presents with a painful, cold hand and reports the fistula has become more prominent.",
+    "task": "Discuss what complications you would consider, what you would examine, and what steal syndrome is."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Examine the fistula itself and the distal limb separately, then match the pattern of change to a complication.",
+    "trap": "Using the fistula arm for blood pressure or venepuncture, or dismissing a cold, painful hand after dialysis as normal.",
+    "firstMove": "\"I would assess the fistula and the distal limb, and avoid using that arm for blood pressure or venepuncture.\""
+  },
+  "flow": [
+    "Avoid the fistula arm for routine measurements",
+    "Examine the fistula",
+    "Examine the distal limb",
+    "Consider the complications",
+    "Recognise steal syndrome",
+    "Escalate appropriately"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "professionalism",
+      "label": "Protecting the fistula arm",
+      "fail": "Would take blood pressure or blood samples from the fistula arm without a second thought.",
+      "pass": "States the fistula arm is not used unnecessarily for venepuncture or blood pressure measurement.",
+      "high": "Explains this is to protect the vessel from thrombosis or damage that would jeopardise dialysis access."
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-skill",
+      "label": "Examining the fistula",
+      "fail": "Cannot describe what to check on the fistula beyond 'looking at it'.",
+      "pass": "Checks the thrill and bruit, inspects for aneurysmal change, skin thinning or infection.",
+      "high": "Adds that a sudden loss of thrill can indicate thrombosis, and a new continuous high-pitched bruit can indicate abnormal flow."
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-skill",
+      "label": "Examining the distal limb",
+      "fail": "Does not examine the hand and fingers distal to the fistula.",
+      "pass": "Assesses distal pulses, perfusion, temperature, sensation and motor function.",
+      "high": "Explicitly compares findings with the other hand to judge whether perfusion is genuinely reduced rather than simply cool."
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-knowledge",
+      "label": "Recognising complications",
+      "fail": "Names only one complication or none at all.",
+      "pass": "Considers stenosis or thrombosis if the fistula's normal characteristics have changed, alongside infection and aneurysmal change.",
+      "high": "States that skin erosion over an aneurysmal fistula is a particularly concerning finding needing urgent assessment.",
+      "source": "ESVS18"
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-knowledge",
+      "label": "Steal syndrome",
+      "fail": "Cannot explain what steal syndrome is, or dismisses cold fingers as a normal finding after dialysis.",
+      "pass": "States that cold, painful fingers with reduced distal perfusion raise concern for dialysis access-associated steal syndrome, caused by blood diverted from the hand through the fistula.",
+      "high": "Explains that steal occurs because the fistula provides a low-resistance path that redirects arterial flow away from the distal limb."
+    },
+    {
+      "id": "G6",
+      "domain": "professionalism",
+      "label": "Escalation (safety-critical)",
+      "fail": "Would manage a threatened, painful hand in clinic without escalating.",
+      "pass": "Seeks urgent vascular access assessment where there is threatened hand viability or significant pain.",
+      "high": "States early escalation avoids the alternative of losing both the hand's function and, potentially, the access itself."
+    }
+  ],
+  "performances": {
+    "fail": [
+      { "speaker": "examiner", "text": "What would you examine?" },
+      { "speaker": "candidate", "text": "I'd take her blood pressure in that arm to start.", "tags": [{ "row": "G1", "band": "fail" }] },
+      { "speaker": "examiner", "text": "What about the fistula itself?" },
+      { "speaker": "candidate", "text": "It looks a bit big, that's all I'd note.", "tags": [{ "row": "G2", "band": "fail" }] },
+      { "speaker": "examiner", "text": "And the hand?" },
+      { "speaker": "candidate", "text": "Cold fingers are normal after dialysis.", "tags": [{ "row": "G3", "band": "fail" }, { "row": "G5", "band": "fail" }] },
+      { "speaker": "examiner", "text": "What complications can occur?" },
+      { "speaker": "candidate", "text": "I can't really think of any beyond it just wearing out.", "tags": [{ "row": "G4", "band": "fail" }] },
+      { "speaker": "examiner", "text": "What is steal syndrome?" },
+      { "speaker": "candidate", "text": "I'm not sure.", "tags": [{ "row": "G5", "band": "fail" }] },
+      { "speaker": "examiner", "text": "What would you do about her pain now?" },
+      { "speaker": "candidate", "text": "I'd just review her again in clinic in a few weeks.", "tags": [{ "row": "G6", "band": "fail" }] }
+    ],
+    "pass": [
+      { "speaker": "examiner", "text": "What would you examine?" },
+      { "speaker": "candidate", "text": "I would assess the fistula and the distal limb, and avoid using that arm for blood pressure or venepuncture.", "tags": [{ "row": "G1", "band": "pass" }] },
+      { "speaker": "examiner", "text": "The fistula?" },
+      { "speaker": "candidate", "text": "I'd check the thrill and bruit, inspect for aneurysmal change, skin thinning or infection.", "tags": [{ "row": "G2", "band": "pass" }] },
+      { "speaker": "examiner", "text": "The hand?" },
+      { "speaker": "candidate", "text": "Distal pulses, perfusion, temperature, sensation and motor function.", "tags": [{ "row": "G3", "band": "pass" }] },
+      { "speaker": "examiner", "text": "What complications can occur?" },
+      { "speaker": "candidate", "text": "Stenosis or thrombosis if the fistula's characteristics have changed, infection, and aneurysmal change.", "tags": [{ "row": "G4", "band": "pass" }] },
+      { "speaker": "examiner", "text": "What is steal syndrome?" },
+      { "speaker": "candidate", "text": "Cold, painful fingers with reduced distal perfusion raise concern for dialysis access-associated steal syndrome, where blood is diverted from the hand through the fistula.", "tags": [{ "row": "G5", "band": "pass" }] },
+      { "speaker": "examiner", "text": "What would you do now?" },
+      { "speaker": "candidate", "text": "I would seek urgent vascular access assessment given the threatened hand viability and significant pain.", "tags": [{ "row": "G6", "band": "pass" }] }
+    ],
+    "high": [
+      { "speaker": "examiner", "text": "What would you examine?" },
+      { "speaker": "candidate", "text": "The fistula and the distal limb — I wouldn't use that arm for blood pressure or venepuncture, to protect it from thrombosis or damage that would jeopardise her access.", "tags": [{ "row": "G1", "band": "high" }] },
+      { "speaker": "examiner", "text": "The fistula?" },
+      { "speaker": "candidate", "text": "Thrill and bruit, aneurysmal change, skin thinning or infection. A sudden loss of thrill would suggest thrombosis, and a new continuous high-pitched bruit abnormal flow.", "tags": [{ "row": "G2", "band": "high" }] },
+      { "speaker": "examiner", "text": "The hand?" },
+      { "speaker": "candidate", "text": "Distal pulses, perfusion, temperature, sensation and motor function, compared directly with the other hand.", "tags": [{ "row": "G3", "band": "high" }] },
+      { "speaker": "examiner", "text": "Complications?" },
+      { "speaker": "candidate", "text": "Stenosis, thrombosis, infection and aneurysmal change — skin erosion over an aneurysm is particularly concerning and needs urgent assessment.", "tags": [{ "row": "G4", "band": "high" }] },
+      { "speaker": "examiner", "text": "What is steal syndrome?" },
+      { "speaker": "candidate", "text": "The fistula gives a low-resistance path that diverts arterial flow away from the hand, causing cold, painful fingers with reduced perfusion.", "tags": [{ "row": "G5", "band": "high" }] },
+      { "speaker": "examiner", "text": "What now?" },
+      { "speaker": "candidate", "text": "Urgent vascular access assessment — waiting risks losing both hand function and potentially the access itself.", "tags": [{ "row": "G6", "band": "high" }] }
+    ]
+  },
+  "failures": [
+    { "row": "G1", "move": "Using the fistula arm for blood pressure or venepuncture.", "consequence": "Risks damaging or thrombosing the access she depends on for dialysis." },
+    { "row": "G3", "move": "Dismissing a cold hand as normal after dialysis.", "consequence": "A threatened, ischaemic hand from steal syndrome is missed." },
+    { "row": "G4", "move": "Naming only one complication when several are relevant.", "consequence": "Stenosis, thrombosis or infection can be overlooked in favour of a single diagnosis." },
+    { "row": "G6", "move": "Managing a painful, potentially threatened hand with routine review rather than escalation.", "consequence": "Delay risks permanent ischaemic damage to the hand." }
+  ],
+  "recovery": [
+    { "when": "You blank on what to examine", "line": "I'd like to structure this around the fistula itself, then the distal limb." },
+    { "when": "Asked \"anything else?\" after examining", "line": "Yes — I'd also check for skin erosion over any aneurysmal change and compare with the other hand." }
+  ],
+  "knowledge": [
+    { "fact": "Do not use the fistula arm for venepuncture or blood pressure measurement.", "source": "ESVS18" },
+    { "fact": "A sudden loss of thrill suggests thrombosis; a new continuous high-pitched bruit suggests abnormal flow.", "source": "ESVS18" },
+    { "fact": "Dialysis access-associated steal syndrome: the fistula diverts arterial flow away from the hand, causing cold, painful fingers with reduced perfusion.", "source": "ESVS18" },
+    { "fact": "Skin erosion over an aneurysmal fistula, or threatened hand viability, needs urgent vascular access assessment.", "source": "ESVS18" }
+  ],
+  "recall": {
+    "think": "A hand losing its blood supply to the fistula that is meant to serve dialysis, not the hand.",
+    "say": "\"This raises concern for dialysis access-associated steal syndrome.\"",
+    "do": [
+      "Protect the fistula arm from BP/venepuncture",
+      "Examine the fistula (thrill, bruit, aneurysm) and the hand (pulses, perfusion, sensation)",
+      "Escalate urgently if the hand is threatened"
+    ],
+    "numbers": [
+      { "value": "2018", "meaning": "Year of the ESVS Vascular Access clinical practice guidelines covering steal and other AV access complications", "source": "ESVS18" }
+    ],
+    "trap": "Assuming cold fingers after dialysis are always normal.",
+    "finish": "Urgent vascular access assessment for threatened hand viability or significant pain."
+  },
+  "sources": [
+    {
+      "id": "ESVS18",
+      "name": "Schmidli J, Widmer MK, Basile C, et al. Editor's Choice — Vascular Access: 2018 Clinical Practice Guidelines of the European Society for Vascular Surgery (ESVS)",
+      "version": "Eur J Vasc Endovasc Surg. 2018;55(6):757-818",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/29716827/",
+      "supports": "Recognised complications of AV fistula access including infection, thrombosis, aneurysm and dialysis access-associated steal syndrome, examination findings and indications for urgent assessment"
+    }
+  ],
+  "partner": {
+    "opening": "Mrs Brookfield, 63, has a haemodialysis AV fistula. She has a painful, cold hand and reports the fistula has become more prominent. \"What complications can occur?\"",
+    "reveals": [
+      { "trigger": "Candidate examines the fistula", "finding": "Thrill and bruit are present but altered; a new pulsatile, thin-skinned swelling is visible over part of the fistula.", "row": "G2" },
+      { "trigger": "Candidate examines the hand", "finding": "The hand is cold with reduced capillary refill and a weaker radial pulse than the other side; sensation is intact.", "row": "G3" }
+    ],
+    "push": [
+      { "question": "What would you examine?", "row": "G2", "expect": "Thrill and bruit, aneurysmal change, skin thinning or infection, then distal pulses, perfusion, temperature, sensation and motor function." },
+      { "question": "What is steal syndrome?", "row": "G5", "expect": "The fistula diverts arterial flow from the hand, causing cold, painful fingers with reduced perfusion." },
+      { "question": "What would you do next?", "row": "G6", "expect": "Urgent vascular access assessment given threatened hand viability or significant pain." }
+    ],
+    "curveballs": [
+      { "prompt": "A nurse asks to take blood pressure in the fistula arm because it's more convenient.", "safeAnswer": "Declines and uses the other arm, to protect the fistula from damage or thrombosis.", "row": "G1" },
+      { "prompt": "The thrill has suddenly disappeared.", "safeAnswer": "Raises concern for thrombosis and arranges urgent vascular assessment.", "row": "G2" },
+      { "prompt": "There is thin, shiny skin over an enlarging part of the fistula.", "safeAnswer": "Recognises skin erosion over an aneurysmal fistula as a particularly concerning finding needing urgent assessment.", "row": "G4" }
+    ]
+  }
+}

@@ -1,0 +1,185 @@
+{
+  "id": "MB-401",
+  "exam": "MRCS-B",
+  "title": "Elective abdominal aortic aneurysm: surveillance thresholds and referral for repair",
+  "type": "data-interpretation",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "Vascular surgery: elective AAA management",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "NICE NG156, Abdominal aortic aneurysm: diagnosis and management, published 19 March 2020",
+      "NHS Abdominal Aortic Aneurysm Screening Programme, information for health professionals"
+    ],
+    "related": [
+      { "id": "MB-185", "why": "The emergency pathway once an AAA is symptomatic or ruptured" }
+    ]
+  },
+  "brief": {
+    "setting": "Data-interpretation station",
+    "role": "Core surgical trainee in vascular clinic",
+    "scenario": "Harold Quenby, 72, has an asymptomatic abdominal aortic aneurysm found on ultrasound. The report states the aneurysm measures 5.6 cm using the recommended inner-to-inner maximum anterior-posterior measurement.",
+    "task": "Interpret the report and explain surveillance, referral and the principles of considering repair."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Read the diameter and the measurement method first, then map it to the correct surveillance, referral or repair pathway.",
+    "trap": "Treating diameter as the only factor, or quoting a rescan interval without checking which diameter band the report falls into.",
+    "firstMove": "\"He's asymptomatic, and at 5.6 cm this meets the threshold for referral to a regional vascular service.\""
+  },
+  "flow": [
+    "Read the report: diameter, method, symptomatic status",
+    "Match diameter to surveillance interval or referral timeframe",
+    "State when repair should be considered",
+    "Weigh factors beyond diameter alone"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-skill",
+      "label": "Reading the report",
+      "fail": "Does not check whether the AAA is symptomatic, or ignores the stated measurement method.",
+      "pass": "Confirms the aneurysm is asymptomatic and notes the measurement uses the recommended inner-to-inner maximum anterior-posterior method.",
+      "high": "Adds that the measurement method should always be stated because interpretation depends on it, and asks if this has changed from a prior scan."
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-knowledge",
+      "label": "Surveillance intervals",
+      "fail": "States surveillance intervals that do not match the NHS AAA screening programme bands, such as a fixed 2-yearly scan for a 3.0-4.4 cm aneurysm.",
+      "pass": "States surveillance uses the NHS AAA screening programme frequency: yearly ultrasound for an asymptomatic AAA of 3.0-4.4 cm, and 3-monthly for 4.5-5.4 cm.",
+      "high": "Adds that this is the same frequency NICE NG156 directs clinicians to for people with an asymptomatic AAA found outside the screening programme.",
+      "source": "NG156"
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "Referral threshold and timeframe",
+      "fail": "States repair or referral should wait until a larger diameter such as 6 cm, or gives no specific timeframe.",
+      "pass": "States NICE NG156 recommends referral to a regional vascular service within 2 weeks for an AAA of 5.5 cm or larger.",
+      "high": "Adds that NG156 also gives a 12-week referral for 3.0-5.4 cm, so referral isn't limited to large aneurysms alone.",
+      "source": "NG156"
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-knowledge",
+      "label": "When to consider repair",
+      "fail": "States that every AAA should be operated on, or that an asymptomatic AAA never needs treatment.",
+      "pass": "States repair should be considered for a symptomatic AAA, or an asymptomatic AAA of 5.5 cm or larger.",
+      "high": "Adds the growth criterion: asymptomatic, over 4.0 cm and grown more than 1 cm in 1 year, also warrants considering repair below 5.5 cm.",
+      "source": "NG156"
+    },
+    {
+      "id": "G5",
+      "domain": "professionalism",
+      "label": "Beyond diameter alone",
+      "fail": "Says diameter is the only factor relevant to the repair decision.",
+      "pass": "States the decision about repair is not based on diameter alone but includes morphology, symptoms, fitness, life expectancy and operative risk.",
+      "high": "Adds that this is why the same diameter can lead to different decisions in different patients, and that shared decision-making with the patient is part of the process."
+    },
+    {
+      "id": "G6",
+      "domain": "professionalism",
+      "label": "Symptomatic AAA is a different pathway",
+      "fail": "Applies the elective surveillance or referral pathway to a symptomatic or painful AAA.",
+      "pass": "States a symptomatic or ruptured AAA follows an emergency pathway, not routine surveillance.",
+      "high": "Adds that this distinction should be checked at every review, since a previously stable asymptomatic aneurysm can become symptomatic between scheduled scans."
+    }
+  ],
+  "performances": {
+    "fail": [
+      { "speaker": "examiner", "text": "What happens with a small asymptomatic AAA?" },
+      { "speaker": "candidate", "text": "Rescan every 2 years regardless of size, and don't worry about the measurement method.", "tags": [{ "row": "G2", "band": "fail" }] },
+      { "speaker": "examiner", "text": "When should repair be considered?" },
+      { "speaker": "candidate", "text": "Wait until it reaches 6 cm; every AAA should eventually be operated on.", "tags": [{ "row": "G4", "band": "fail" }] },
+      { "speaker": "examiner", "text": "What other factors influence the decision?" },
+      { "speaker": "candidate", "text": "Size is the only factor that matters.", "tags": [{ "row": "G5", "band": "fail" }] }
+    ],
+    "pass": [
+      { "speaker": "examiner", "text": "What do you note from the report?" },
+      { "speaker": "candidate", "text": "It's asymptomatic, and the report uses the recommended inner-to-inner maximum anterior-posterior measurement.", "tags": [{ "row": "G1", "band": "pass" }] },
+      { "speaker": "examiner", "text": "What happens with a small asymptomatic AAA?" },
+      { "speaker": "candidate", "text": "Surveillance follows the NHS AAA screening programme frequency: yearly for 3.0-4.4 cm, 3-monthly for 4.5-5.4 cm.", "tags": [{ "row": "G2", "band": "pass" }] },
+      { "speaker": "examiner", "text": "When should the patient be referred to vascular services?" },
+      { "speaker": "candidate", "text": "NICE recommends referral to a regional vascular service within 2 weeks for an AAA of 5.5 cm or larger, so at 5.6 cm he meets that now.", "tags": [{ "row": "G3", "band": "pass" }] },
+      { "speaker": "examiner", "text": "When should repair be considered?" },
+      { "speaker": "candidate", "text": "For a symptomatic AAA, or an asymptomatic AAA of 5.5 cm or larger, which he now meets.", "tags": [{ "row": "G4", "band": "pass" }] },
+      { "speaker": "examiner", "text": "What other factors influence the decision?" },
+      { "speaker": "candidate", "text": "Morphology, symptoms, fitness, life expectancy and operative risk, not diameter alone.", "tags": [{ "row": "G5", "band": "pass" }] },
+      { "speaker": "examiner", "text": "What if it became painful?" },
+      { "speaker": "candidate", "text": "A symptomatic AAA follows an emergency pathway rather than routine surveillance.", "tags": [{ "row": "G6", "band": "pass" }] }
+    ],
+    "high": [
+      { "speaker": "examiner", "text": "What do you note from the report?" },
+      { "speaker": "candidate", "text": "Asymptomatic, using the correct inner-to-inner method; I'd want to know if this has changed from any prior scan, since interpretation depends on the method used.", "tags": [{ "row": "G1", "band": "high" }] },
+      { "speaker": "examiner", "text": "What happens with a small asymptomatic AAA?" },
+      { "speaker": "candidate", "text": "Yearly ultrasound for 3.0-4.4 cm and 3-monthly for 4.5-5.4 cm, the same frequency NICE directs clinicians to whether the AAA was found through screening or incidentally.", "tags": [{ "row": "G2", "band": "high" }] },
+      { "speaker": "examiner", "text": "When should the patient be referred to vascular services?" },
+      { "speaker": "candidate", "text": "Within 2 weeks now at 5.6 cm, though NG156 also recommends referral within 12 weeks for anyone at 3.0-5.4 cm, so referral itself isn't limited to large aneurysms.", "tags": [{ "row": "G3", "band": "high" }] },
+      { "speaker": "examiner", "text": "When should repair be considered?" },
+      { "speaker": "candidate", "text": "Symptomatic, or 5.5 cm or larger; also an asymptomatic AAA over 4.0 cm that's grown more than 1 cm in a year, even below 5.5 cm.", "tags": [{ "row": "G4", "band": "high" }] },
+      { "speaker": "examiner", "text": "What other factors influence the decision?" },
+      { "speaker": "candidate", "text": "Morphology, fitness, life expectancy and operative risk; the same diameter can lead to different decisions in different patients, agreed with the patient.", "tags": [{ "row": "G5", "band": "high" }] },
+      { "speaker": "examiner", "text": "What if it became painful?" },
+      { "speaker": "candidate", "text": "That switches him to the emergency pathway, and I'd check for that change at every review, not just at scheduled scans.", "tags": [{ "row": "G6", "band": "high" }] }
+    ]
+  },
+  "failures": [
+    { "row": "G2", "move": "Quoting the wrong surveillance interval for the diameter band.", "consequence": "An aneurysm is rescanned too infrequently, delaying detection of growth that would change management." },
+    { "row": "G3", "move": "Delaying referral until an arbitrary larger diameter such as 6 cm.", "consequence": "Referral happens later than the NICE-recommended timeframe for his diameter." },
+    { "row": "G4", "move": "Treating every AAA as needing surgery, or none as ever needing it.", "consequence": "Either unnecessary operative risk is accepted, or a patient who meets the criteria for repair is not offered it." },
+    { "row": "G6", "move": "Applying the elective surveillance pathway to a symptomatic or painful aneurysm.", "consequence": "A potentially ruptured or symptomatic AAA is managed as routine rather than as an emergency." },
+    { "row": "G1", "move": "Ignoring the stated measurement method or the symptomatic status on the report.", "consequence": "The wrong pathway can be chosen from the outset, since interpretation depends on both." }
+  ],
+  "recovery": [
+    { "when": "Given a bare diameter with no measurement method", "line": "I'd want to know the measurement method before relying on the figure." },
+    { "when": "Asked for a rescan interval and unsure of the band", "line": "I'd check which diameter band it falls into before quoting an interval." }
+  ],
+  "knowledge": [
+    { "fact": "The recommended AAA measurement is the inner-to-inner maximum anterior-posterior diameter.", "source": "NG156" },
+    { "fact": "NHS AAA screening programme surveillance: yearly for 3.0-4.4 cm, 3-monthly for 4.5-5.4 cm; 5.5 cm or larger is referred to vascular surgery.", "source": "NG156" },
+    { "fact": "NICE NG156: refer 3.0-5.4 cm to a regional vascular service within 12 weeks, and 5.5 cm or larger within 2 weeks.", "source": "NG156" },
+    { "fact": "Consider repair for a symptomatic AAA, an asymptomatic AAA of 5.5 cm or larger, or an asymptomatic AAA over 4.0 cm that has grown more than 1 cm in 1 year.", "source": "NG156" }
+  ],
+  "recall": {
+    "think": "A symptomatic or rapidly growing AAA needing urgent action rather than routine surveillance.",
+    "say": "\"At 5.5 cm or larger, or if symptomatic, refer within 2 weeks and consider repair.\"",
+    "do": [
+      "Confirm symptomatic status and method",
+      "Match diameter to surveillance/referral timeframe",
+      "Weigh fitness and risk, not just size"
+    ],
+    "numbers": [
+      { "value": "5.5 cm", "meaning": "Referral within 2 weeks; threshold for repair", "source": "NG156" },
+      { "value": ">4cm +>1cm/yr", "meaning": "Growth criterion for repair below 5.5cm", "source": "NG156" }
+    ],
+    "trap": "Using diameter as the only factor.",
+    "finish": "Refer on the NG156 timeframe; repair weighs more than diameter alone."
+  },
+  "sources": [
+    {
+      "id": "NG156",
+      "name": "NICE NG156: Abdominal aortic aneurysm: diagnosis and management",
+      "version": "Published 19 March 2020",
+      "url": "https://www.nice.org.uk/guidance/ng156/chapter/recommendations",
+      "supports": "Referral timeframes (2 weeks at >=5.5cm, 12 weeks at 3.0-5.4cm), surveillance frequency matching the NHS AAA screening programme, and criteria for considering repair"
+    }
+  ],
+  "partner": {
+    "opening": "\"Harold Quenby, 72, has an asymptomatic AAA on ultrasound, measuring 5.6 cm by the inner-to-inner maximum anterior-posterior method. Interpret the report and explain surveillance, referral and the principles of considering repair.\" Hand over the report on request.",
+    "reveals": [
+      { "trigger": "Candidate asks for the previous scan", "finding": "A scan 14 months ago measured 4.6 cm by the same method.", "row": "G4" },
+      { "trigger": "Candidate asks about symptoms", "finding": "No abdominal or back pain; found incidentally on ultrasound for another reason.", "row": "G6" }
+    ],
+    "push": [
+      { "question": "A 5.3 cm asymptomatic AAA: operate immediately?", "row": "G4", "expect": "Not automatically; surveillance and referral follow the relevant interval, and repair depends on the full clinical picture." },
+      { "question": "A 4.2 cm AAA that has grown by 1.2 cm in a year?", "row": "G4", "expect": "Meets the NICE criterion for considering repair despite being below 5.5 cm." },
+      { "question": "What if the AAA is painful?", "row": "G6", "expect": "A symptomatic AAA needs urgent vascular assessment, not routine surveillance." }
+    ],
+    "curveballs": [
+      { "prompt": "The referral letter just says 'AAA, 5.6 cm' with no measurement method.", "safeAnswer": "Ask for the method used; interpretation and the referral decision depend on it.", "row": "G1" },
+      { "prompt": "A colleague says a 3.5 cm AAA should be rescanned in 2 years.", "safeAnswer": "Correct this: 3.0-4.4 cm is rescanned yearly under the NHS AAA screening programme frequency.", "row": "G2" },
+      { "prompt": "The patient asks why he isn't being referred for immediate surgery given the size.", "safeAnswer": "He does meet the referral and repair-consideration threshold, but the final decision weighs fitness, morphology and risk, not diameter alone.", "row": "G5" }
+    ]
+  }
+}

@@ -1,0 +1,196 @@
+{
+  "id": "MB-349",
+  "exam": "MRCS-B",
+  "title": "TUR syndrome after transurethral resection of the prostate",
+  "type": "applied-knowledge",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "Urology: postoperative complications",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "Rassweiler J, Teber D, Kuntz R, Hofmann R. Complications of transurethral resection of the prostate (TURP): incidence, management, and prevention. Eur Urol. 2006",
+      "Bailey & Love's Short Practice of Surgery, 28th edition (2023)"
+    ],
+    "related": [
+      { "id": "MB-275", "why": "Postoperative hyponatraemia presenting as new confusion, the same biochemical problem in a different setting" },
+      { "id": "MB-181", "why": "Male urethral catheterisation, a related lower urinary tract procedural skill" }
+    ]
+  },
+  "brief": {
+    "setting": "Urology ward, postoperative",
+    "role": "Core surgical trainee",
+    "scenario": "Mr Colin Westbrook, 71, becomes confused and nauseated shortly after a TURP. He is hypertensive and develops visual disturbance.",
+    "task": "Discuss what complication concerns you, what causes it, and how you would manage it."
+  },
+  "beforeYouWalkIn": {
+    "frame": "New confusion after TURP is dilutional hyponatraemia from irrigant absorption until proven otherwise, so assess and test for it in parallel, not in sequence.",
+    "trap": "Waiting for the sodium result before starting an A-E assessment, or attributing the picture to ordinary postoperative nausea.",
+    "firstMove": "\"I am concerned about TUR syndrome.\""
+  },
+  "flow": [
+    "State the concern",
+    "Explain the mechanism",
+    "A-E assessment",
+    "Investigate",
+    "Escalate",
+    "Treat according to severity"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-knowledge",
+      "label": "Recognising TUR syndrome",
+      "fail": "Attributes new confusion, hypertension and visual disturbance shortly after TURP to ordinary postoperative nausea.",
+      "pass": "States concern for TUR syndrome.",
+      "high": "Notes visual disturbance in particular is a recognised, distinctive feature that should prompt this diagnosis early."
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-knowledge",
+      "label": "Mechanism",
+      "fail": "Cannot explain what causes the syndrome.",
+      "pass": "States it results from systemic absorption of irrigating fluid, producing fluid overload and dilutional hyponatraemia.",
+      "high": "Explains this reflects the volume and duration of irrigation and the number of venous sinuses opened during resection, so risk rises with longer resections.",
+      "source": "RASS06"
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-skill",
+      "label": "Immediate assessment (safety-critical)",
+      "fail": "Waits for the sodium result before assessing the patient.",
+      "pass": "Performs an A-E assessment and stops the procedure or irrigation if it is still ongoing, without waiting for blood results.",
+      "high": "Explains assessment and sending investigations happen in parallel, not sequentially, given how quickly the picture can deteriorate."
+    },
+    {
+      "id": "G4",
+      "domain": "professionalism",
+      "label": "Escalation",
+      "fail": "Manages this alone without senior or critical care input.",
+      "pass": "Involves urology and anaesthetics or critical care early.",
+      "high": "States early critical care involvement matters because correction of severe hyponatraemia itself carries risk and needs careful, monitored management."
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-knowledge",
+      "label": "Investigations",
+      "fail": "Cannot name a relevant blood test.",
+      "pass": "Obtains urgent blood gas and blood tests including sodium, osmolality and haemoglobin.",
+      "high": "Explains sodium is followed serially, since both the degree of hyponatraemia and its rate of change matter to the risk of cerebral oedema."
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-knowledge",
+      "label": "Treatment and differential",
+      "fail": "Treats the confusion with more intravenous fluid.",
+      "pass": "Treats the physiological disturbance according to severity and biochemical findings, with senior or critical-care involvement.",
+      "high": "Considers other postoperative causes in the differential, such as bleeding, bladder perforation or sepsis, rather than assuming TUR syndrome explains everything."
+    }
+  ],
+  "performances": {
+    "fail": [
+      { "speaker": "examiner", "text": "What complication concerns you?" },
+      { "speaker": "candidate", "text": "It's probably just postoperative nausea.", "tags": [{ "row": "G1", "band": "fail" }] },
+      { "speaker": "examiner", "text": "What causes it?" },
+      { "speaker": "candidate", "text": "I'm not sure what's causing his symptoms.", "tags": [{ "row": "G2", "band": "fail" }] },
+      { "speaker": "examiner", "text": "What would you do first?" },
+      { "speaker": "candidate", "text": "I'd wait for the sodium result before assessing him.", "tags": [{ "row": "G3", "band": "fail" }] },
+      { "speaker": "examiner", "text": "Would you call anyone?" },
+      { "speaker": "candidate", "text": "Not at this stage.", "tags": [{ "row": "G4", "band": "fail" }] },
+      { "speaker": "examiner", "text": "What tests?" },
+      { "speaker": "candidate", "text": "I hadn't thought which tests to send.", "tags": [{ "row": "G5", "band": "fail" }] },
+      { "speaker": "examiner", "text": "How would you manage him?" },
+      { "speaker": "candidate", "text": "Give more IV fluid.", "tags": [{ "row": "G6", "band": "fail" }] }
+    ],
+    "pass": [
+      { "speaker": "examiner", "text": "What complication concerns you?" },
+      { "speaker": "candidate", "text": "I am concerned about TUR syndrome.", "tags": [{ "row": "G1", "band": "pass" }] },
+      { "speaker": "examiner", "text": "What causes it?" },
+      { "speaker": "candidate", "text": "It results from systemic absorption of irrigating fluid, producing fluid overload and dilutional hyponatraemia.", "tags": [{ "row": "G2", "band": "pass" }] },
+      { "speaker": "examiner", "text": "What would you do?" },
+      { "speaker": "candidate", "text": "An A-E assessment, and stop the procedure or irrigation if it's still going on.", "tags": [{ "row": "G3", "band": "pass" }] },
+      { "speaker": "examiner", "text": "Who would you involve?" },
+      { "speaker": "candidate", "text": "Urology and anaesthetics or critical care, early.", "tags": [{ "row": "G4", "band": "pass" }] },
+      { "speaker": "examiner", "text": "What tests?" },
+      { "speaker": "candidate", "text": "Urgent blood gas and blood tests including sodium, osmolality and haemoglobin.", "tags": [{ "row": "G5", "band": "pass" }] },
+      { "speaker": "examiner", "text": "How would you treat him?" },
+      { "speaker": "candidate", "text": "According to the severity and biochemical findings, with senior or critical-care involvement.", "tags": [{ "row": "G6", "band": "pass" }] }
+    ],
+    "high": [
+      { "speaker": "examiner", "text": "What complication concerns you?" },
+      { "speaker": "candidate", "text": "TUR syndrome — the visual disturbance in particular is a recognised, distinctive feature that should raise this early.", "tags": [{ "row": "G1", "band": "high" }] },
+      { "speaker": "examiner", "text": "What causes it?" },
+      { "speaker": "candidate", "text": "Systemic absorption of irrigating fluid through venous sinuses opened during resection, causing fluid overload and dilutional hyponatraemia — risk rises with a longer resection.", "tags": [{ "row": "G2", "band": "high" }] },
+      { "speaker": "examiner", "text": "First steps?" },
+      { "speaker": "candidate", "text": "A-E assessment and sending investigations happen in parallel, not one after the other, given how quickly this can deteriorate.", "tags": [{ "row": "G3", "band": "high" }] },
+      { "speaker": "examiner", "text": "Who's involved?" },
+      { "speaker": "candidate", "text": "Urology and critical care early, since correcting severe hyponatraemia itself carries risk and needs careful, monitored management.", "tags": [{ "row": "G4", "band": "high" }] },
+      { "speaker": "examiner", "text": "Tests?" },
+      { "speaker": "candidate", "text": "Blood gas, sodium, osmolality and haemoglobin — followed serially, since the rate of change in sodium matters as much as the level for the risk of cerebral oedema.", "tags": [{ "row": "G5", "band": "high" }] },
+      { "speaker": "examiner", "text": "Treatment?" },
+      { "speaker": "candidate", "text": "Guided by severity and biochemistry with critical care — and I'd keep bleeding, bladder perforation and sepsis in mind rather than assuming TUR syndrome explains everything.", "tags": [{ "row": "G6", "band": "high" }] }
+    ]
+  },
+  "failures": [
+    { "row": "G1", "move": "Attributing new confusion after TURP to ordinary postoperative nausea.", "consequence": "TUR syndrome is missed while it is still easiest to treat." },
+    { "row": "G3", "move": "Waiting for the sodium result before assessing the patient.", "consequence": "A rapidly deteriorating patient is not assessed or treated promptly." },
+    { "row": "G4", "move": "Not involving urology and anaesthetics/critical care early.", "consequence": "Correction of severe hyponatraemia is delayed or done without appropriate monitoring." },
+    { "row": "G6", "move": "Giving more intravenous fluid for new confusion after TURP.", "consequence": "Worsens fluid overload and dilutional hyponatraemia rather than treating the actual problem." }
+  ],
+  "recovery": [
+    { "when": "You blank on what's causing it", "line": "I'd like to structure this around immediate assessment, likely cause, investigation and escalation." },
+    { "when": "Asked \"anything else?\" after treatment", "line": "Yes — I'd also consider bleeding, bladder perforation or sepsis as other postoperative causes." }
+  ],
+  "knowledge": [
+    { "fact": "TUR syndrome results from systemic absorption of irrigating fluid, causing fluid overload and dilutional hyponatraemia; risk rises with longer resection time.", "source": "RASS06" },
+    { "fact": "Confusion, nausea, hypertension and visual disturbance shortly after TURP are recognised features.", "source": "RASS06" },
+    { "fact": "Manage with A-E assessment, stopping the procedure/irrigation if relevant, urgent blood gas and bloods (sodium, osmolality, haemoglobin), and early urology/anaesthetics or critical-care involvement.", "source": "BL" }
+  ],
+  "recall": {
+    "think": "Fluid overload and dilutional hyponatraemia from absorbed irrigant, causing confusion and visual disturbance.",
+    "say": "\"I am concerned about TUR syndrome.\"",
+    "do": [
+      "A-E assessment; stop irrigation/procedure if ongoing",
+      "Urgent blood gas, sodium, osmolality, haemoglobin",
+      "Involve urology and anaesthetics/critical care early"
+    ],
+    "numbers": [
+      { "value": "Sodium, osmolality, haemoglobin", "meaning": "Key blood tests to send urgently", "source": "RASS06" }
+    ],
+    "trap": "Waiting for the sodium result before assessing the patient, or treating with more IV fluid.",
+    "finish": "Treatment guided by severity and biochemistry, with senior/critical-care input."
+  },
+  "sources": [
+    {
+      "id": "RASS06",
+      "name": "Rassweiler J, Teber D, Kuntz R, Hofmann R. Complications of transurethral resection of the prostate (TURP): incidence, management, and prevention",
+      "version": "European Urology, 2006;50(5):969-980",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/16469429/",
+      "supports": "Mechanism, clinical features and risk factors for TUR syndrome"
+    },
+    {
+      "id": "BL",
+      "name": "Bailey & Love's Short Practice of Surgery (O'Connell, McCaskie, Sayers, eds)",
+      "version": "28th edition, 2023",
+      "url": "https://www.routledge.com/Bailey--Loves-Short-Practice-of-Surgery---28th-Edition/OConnell-McCaskie-Sayers/p/book/9780367548117",
+      "supports": "TURP complications and initial management approach"
+    }
+  ],
+  "partner": {
+    "opening": "Mr Westbrook, 71, becomes confused and nauseated shortly after TURP. He is hypertensive with visual disturbance. \"What complication concerns you?\"",
+    "reveals": [
+      { "trigger": "Candidate asks for observations", "finding": "Blood pressure 178/98, heart rate 54, oxygen saturations 96% on air.", "row": "G3" },
+      { "trigger": "Candidate requests blood gas/bloods", "finding": "Sodium 116 mmol/L, low plasma osmolality, haemoglobin dropped slightly from preoperative value.", "row": "G5" }
+    ],
+    "push": [
+      { "question": "What causes it?", "row": "G2", "expect": "Systemic absorption of irrigating fluid causing fluid overload and dilutional hyponatraemia." },
+      { "question": "What blood result is particularly important?", "row": "G5", "expect": "Serum sodium, alongside osmolality and haemoglobin." },
+      { "question": "How would you manage him?", "row": "G6", "expect": "According to severity and biochemistry, with senior/critical-care involvement." }
+    ],
+    "curveballs": [
+      { "prompt": "Sodium comes back at 108 mmol/L with seizure activity.", "safeAnswer": "Treats as severe, symptomatic hyponatraemia needing immediate critical-care-guided correction, not simple fluid restriction.", "row": "G6" },
+      { "prompt": "A nurse suggests giving a fluid bolus for his low heart rate.", "safeAnswer": "Declines — further fluid would worsen the dilutional hyponatraemia; treatment should be guided by biochemistry and senior input.", "row": "G6" },
+      { "prompt": "His abdomen becomes distended and tender.", "safeAnswer": "Considers bladder perforation as an alternative or additional diagnosis, rather than assuming TUR syndrome explains everything.", "row": "G6" }
+    ]
+  }
+}

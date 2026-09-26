@@ -1,0 +1,511 @@
+{
+  "id": "MB-341",
+  "exam": "MRCS-B",
+  "title": "Chronic subdural haematoma in an older anticoagulated patient",
+  "type": "applied-knowledge",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "Neurosurgical emergencies: chronic subdural haematoma and anticoagulation",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "Bailey & Love's Short Practice of Surgery, 28th edition (2023)",
+      "NICE NG232: Head injury: assessment and early management (dated 18 May 2023; updates and replaces CG176, January 2014)"
+    ],
+    "related": [
+      {
+        "id": "MB-184",
+        "why": "CT head interpretation, including subdural haematoma appearances"
+      },
+      {
+        "id": "MB-205",
+        "why": "Perioperative management of warfarin and DOACs, relevant to the reversal decision here"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Emergency department viva",
+    "role": "Core surgical trainee",
+    "scenario": "Mr George Castellan, 79, develops progressive confusion and unsteadiness several weeks after a minor fall. He takes anticoagulation for atrial fibrillation.",
+    "task": "Discuss your diagnosis, investigation and how his anticoagulation affects management."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Minor trauma, even weeks earlier, does not exclude a significant bleed; image first, then involve neurosurgery and haematology.",
+    "trap": "Assuming anticoagulation makes surgery impossible, or attributing the presentation to dementia.",
+    "firstMove": "\"I'm concerned about a chronic subdural haematoma; I'd arrange an urgent CT head.\""
+  },
+  "flow": [
+    "Recognise the diagnosis",
+    "Focused assessment",
+    "Investigate",
+    "Review the anticoagulant",
+    "Escalate to neurosurgery and haematology",
+    "Plan management and future anticoagulation"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-knowledge",
+      "label": "Recognising chronic subdural haematoma",
+      "fail": "Attributes progressive confusion after a fall solely to dementia, without considering intracranial haemorrhage.",
+      "pass": "Identifies chronic subdural haematoma as a concern, given progressive confusion and unsteadiness weeks after a fall.",
+      "high": "States minor trauma, even weeks earlier, does not exclude a clinically significant intracranial bleed, especially when anticoagulated.",
+      "source": "BL28"
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-skill",
+      "label": "Focused assessment",
+      "fail": "Does not assess GCS, focal neurology, gait or signs of raised intracranial pressure.",
+      "pass": "Assesses cognition, GCS, focal neurology, gait and signs of raised intracranial pressure.",
+      "high": "Specifically asks about headache, personality change and seizures, which can be subtle in a chronic presentation."
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "Investigation",
+      "fail": "Requests a non-urgent scan, or performs lumbar puncture as a first-line investigation.",
+      "pass": "Arranges urgent CT head.",
+      "high": "Explains why lumbar puncture is inappropriate here: it risks coning if there is a mass lesion with raised intracranial pressure."
+    },
+    {
+      "id": "G4",
+      "domain": "professionalism",
+      "label": "Reviewing anticoagulation (safety-critical)",
+      "fail": "States surgery is impossible because the patient is anticoagulated, or simply stops anticoagulation and discharges him.",
+      "pass": "Reviews the anticoagulant, timing of the last dose, renal function and the indication for anticoagulation.",
+      "high": "States that for traumatic intracranial haemorrhage, reversal of vitamin K antagonists or DOACs follows specialist haematology and NICE blood-transfusion guidance, not a fixed rule.",
+      "source": "NG232"
+    },
+    {
+      "id": "G5",
+      "domain": "professionalism",
+      "label": "Escalation",
+      "fail": "Manages a significant intracranial bleed without involving neurosurgery or haematology.",
+      "pass": "Involves neurosurgery and haematology, or the appropriate specialist team, if a clinically significant intracranial haemorrhage is confirmed.",
+      "high": "Recognises that reversal decisions and surgical timing need joint neurosurgical and haematology input, not either team acting alone."
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-knowledge",
+      "label": "Management and restarting anticoagulation",
+      "fail": "Assumes chronic subdural haematoma always needs surgery, or that anticoagulation can simply be restarted once it resolves.",
+      "pass": "States management depends on size, symptoms, mass effect and neurological state; symptomatic chronic subdural haematoma may need surgical evacuation.",
+      "high": "States that restarting anticoagulation afterwards balances bleeding risk against the thromboembolic indication, decided jointly with the relevant specialists."
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "What diagnosis are you concerned about?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "It's probably just dementia given his age.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you assess him?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I wouldn't examine him further; the history's enough.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What would you investigate?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd do a lumbar puncture first.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How does anticoagulation affect management?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Because he's anticoagulated, surgery is impossible, so I'd just stop it and discharge him.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The CT shows a large chronic subdural collection with midline shift."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'll manage this myself without involving neurosurgery or haematology.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What's your overall plan?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Every chronic subdural needs surgery, and I'd restart his anticoagulation as soon as it's evacuated.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "examiner",
+        "text": "What diagnosis are you concerned about?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'm concerned about a chronic subdural haematoma, given the progressive confusion and unsteadiness weeks after his fall.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you assess him?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Cognition, GCS, focal neurology, gait and signs of raised intracranial pressure.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What would you investigate?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Urgent CT head.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How does anticoagulation affect this?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd review the anticoagulant, timing of the last dose, renal function and the indication for anticoagulation.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "A clinically significant bleed is confirmed."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd involve neurosurgery and haematology, or the appropriate specialist team, regarding reversal.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What's the plan going forward?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Management depends on the size, symptoms, mass effect and neurological state; a symptomatic collection may need surgical evacuation.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "examiner",
+        "text": "What diagnosis are you concerned about?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Chronic subdural haematoma — minor trauma weeks ago doesn't exclude a clinically significant bleed, especially anticoagulated; it can take weeks to become symptomatic.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Assessment?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Cognition, GCS, focal neurology, gait and raised intracranial pressure signs, and specifically headache, personality change and seizures, which can be subtle here.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Investigation?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Urgent CT head — I wouldn't do a lumbar puncture, since that risks coning if there's a mass lesion with raised intracranial pressure.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Anticoagulation?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd review the anticoagulant, last dose, renal function and indication; reversal for traumatic intracranial haemorrhage follows specialist haematology and NICE blood-transfusion guidance, not a fixed rule.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Bleed confirmed."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Reversal and surgical timing need joint neurosurgical and haematology input, not either team acting alone.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Long-term plan?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Management depends on size, symptoms and mass effect; if anticoagulation is later restarted, that balances bleeding risk against his thromboembolic indication, decided with the relevant specialists.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G1",
+      "move": "Attributing progressive confusion after a fall to dementia without imaging.",
+      "consequence": "A treatable chronic subdural haematoma is missed."
+    },
+    {
+      "row": "G3",
+      "move": "Performing lumbar puncture before excluding a mass lesion.",
+      "consequence": "Risk of coning if there is raised intracranial pressure from a mass lesion."
+    },
+    {
+      "row": "G4",
+      "move": "Assuming anticoagulation makes surgery impossible.",
+      "consequence": "A patient who could be treated is denied appropriate specialist input."
+    },
+    {
+      "row": "G5",
+      "move": "Managing a significant intracranial bleed without neurosurgery or haematology input.",
+      "consequence": "Reversal and surgical decisions are made without the expertise needed to balance the risks."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You're not sure whether to stop anticoagulation",
+      "line": "I'd involve haematology rather than deciding alone, given the competing bleeding and thromboembolic risks."
+    },
+    {
+      "when": "Asked why he presented so late",
+      "line": "A chronic subdural collection can take weeks to become symptomatic as it slowly enlarges."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Minor trauma, even weeks earlier, does not exclude a clinically significant intracranial bleed.",
+      "source": "BL28"
+    },
+    {
+      "fact": "A chronic subdural haematoma takes a mean of 4 to 7 weeks after trauma to become symptomatic.",
+      "source": "EDLMANN17"
+    },
+    {
+      "fact": "Reversal of vitamin K antagonists or DOACs for traumatic intracranial haemorrhage follows specialist haematology and NICE blood-transfusion guidance, not a fixed rule.",
+      "source": "NG232"
+    },
+    {
+      "fact": "Management of chronic subdural haematoma depends on size, symptoms, mass effect and neurological state; a symptomatic collection may need surgical evacuation.",
+      "source": "BL28"
+    }
+  ],
+  "recall": {
+    "think": "Could this be a chronic subdural haematoma, and does anticoagulation change how urgently I act?",
+    "say": "\"I'm concerned about a chronic subdural haematoma; I need an urgent CT.\"",
+    "do": [
+      "Assess cognition, GCS, focal signs and gait",
+      "Arrange urgent CT head, not LP",
+      "Review anticoagulant, involve neurosurgery and haematology"
+    ],
+    "numbers": [
+      {
+        "value": "4-7 weeks",
+        "meaning": "Mean interval from trauma to a chronic subdural haematoma becoming symptomatic",
+        "source": "EDLMANN17"
+      }
+    ],
+    "trap": "Assuming anticoagulation rules out surgery, or attributing the presentation to dementia.",
+    "finish": "Specialist neurosurgical and haematology input; evacuation if symptomatic, with anticoagulation decisions made jointly."
+  },
+  "sources": [
+    {
+      "id": "BL28",
+      "name": "Bailey & Love's Short Practice of Surgery (O'Connell, McCaskie, Sayers, eds)",
+      "version": "28th edition, 2023",
+      "url": "https://www.routledge.com/Bailey--Loves-Short-Practice-of-Surgery---28th-Edition/OConnell-McCaskie-Sayers/p/book/9780367548117",
+      "supports": "Traumatic intracranial haemorrhage, chronic subdural haematoma presentation and management"
+    },
+    {
+      "id": "NG232",
+      "name": "NICE NG232: Head injury: assessment and early management",
+      "version": "Dated 18 May 2023; updates and replaces CG176 (January 2014)",
+      "url": "https://www.nice.org.uk/guidance/ng232",
+      "supports": "Anticoagulation and traumatic intracranial haemorrhage: reversal follows NICE's blood transfusion guideline and technology appraisal guidance, not a fixed rule stated here"
+    },
+    {
+      "id": "EDLMANN17",
+      "name": "Edlmann E, Giorgi-Coll S, Whitfield PC, Carpenter KLH, Hutchinson PJ. Pathophysiology of chronic subdural haematoma: inflammation, angiogenesis and implications for pharmacotherapy",
+      "version": "Journal of Neuroinflammation, 14:108, 2017",
+      "url": "https://doi.org/10.1186/s12974-017-0881-y",
+      "supports": "Mean interval of 4 to 7 weeks from trauma to chronic subdural haematoma becoming symptomatic"
+    }
+  ],
+  "media": [
+    {
+      "id": "IMG-341-1",
+      "task": "Optional: illustrate the appearance discussed during the viva.",
+      "description": "Non-contrast CT head showing a crescentic, hypodense-to-mixed-density chronic subdural collection with mass effect.",
+      "required": false,
+      "status": "needed"
+    }
+  ],
+  "partner": {
+    "opening": "Mr Castellan, 79, has developed progressive confusion and unsteadiness several weeks after a minor fall. He takes anticoagulation for atrial fibrillation. \"What's your assessment and plan?\"",
+    "reveals": [
+      {
+        "trigger": "Candidate asks about the anticoagulant",
+        "finding": "Takes a direct oral anticoagulant for atrial fibrillation; last dose taken this morning; renal function previously normal.",
+        "row": "G4"
+      },
+      {
+        "trigger": "Candidate asks about neurological symptoms",
+        "finding": "Mild left-sided weakness and unsteady gait; GCS 14, no severe headache.",
+        "row": "G2"
+      }
+    ],
+    "push": [
+      {
+        "question": "Why can the patient present weeks after the fall?",
+        "row": "G1",
+        "expect": "A chronic subdural collection enlarges gradually."
+      },
+      {
+        "question": "Would you do a lumbar puncture?",
+        "row": "G3",
+        "expect": "No, risk of coning with a mass lesion present."
+      },
+      {
+        "question": "How does anticoagulation affect management?",
+        "row": "G4",
+        "expect": "Review the drug, timing, renal function and indication; involve haematology for reversal."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "The family asks if the fall caused this straight away.",
+        "safeAnswer": "The collection typically takes weeks to become symptomatic as it slowly enlarges.",
+        "row": "G1"
+      },
+      {
+        "prompt": "A junior colleague wants to do an LP to help with diagnosis.",
+        "safeAnswer": "Advise against it before CT excludes a mass lesion, given the risk of coning.",
+        "row": "G3"
+      },
+      {
+        "prompt": "The GP asks if anticoagulation should just be stopped indefinitely.",
+        "safeAnswer": "Restarting is a joint decision balancing bleeding risk against his thromboembolic risk, not an automatic indefinite stop.",
+        "row": "G6"
+      },
+      {
+        "prompt": "He deteriorates with reducing GCS during assessment.",
+        "safeAnswer": "Treat as a neurosurgical emergency, escalate immediately, and involve neurosurgery without delay.",
+        "row": "G5"
+      }
+    ]
+  }
+}
