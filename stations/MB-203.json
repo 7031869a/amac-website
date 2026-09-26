@@ -61,8 +61,8 @@
       "domain": "clinical-knowledge",
       "label": "Identity checks, samples and reporting",
       "fail": "Does not check the patient's identity against the unit, does not return the unit to the laboratory, or does not report the reaction.",
-      "pass": "Checks patient identity against the unit and compatibility label, visually inspects the remaining component, disconnects and returns the unit and giving set to the transfusion laboratory, sends repeat group and crossmatch samples plus a direct antiglobulin test (DAT), and completes a reaction report.",
-      "high": "Adds that reactions (other than mild febrile or allergic ones) are reported through local incident processes and, where applicable, to SHOT and the MHRA, so the event contributes to national surveillance.",
+      "pass": "Checks identity against the unit/label, visually inspects the remaining component, returns the unit and giving set to the lab, sends repeat group/crossmatch and DAT, and completes a reaction report.",
+      "high": "Adds that reactions other than mild febrile/allergic ones are reported via local incident processes and, where applicable, SHOT and the MHRA, contributing to national surveillance.",
       "source": "BSH-ATR"
     },
     {
@@ -78,8 +78,8 @@
       "domain": "clinical-knowledge",
       "label": "Causes of acute transfusion reactions",
       "fail": "Cannot categorise causes beyond \"an allergic reaction\", or states incorrect timeframes for TRALI/TACO.",
-      "pass": "Groups causes as: red cell incompatibility (ABO or another red cell antibody) causing an acute haemolytic reaction; febrile non-haemolytic reactions; allergic reactions including anaphylaxis; transfusion-related acute lung injury (TRALI), presenting with respiratory distress typically within 6 hours; and transfusion-associated circulatory overload (TACO) from volume overload.",
-      "high": "States that recent UK surveillance data show most acute haemolytic reactions are due to red cell antibodies other than ABO (e.g. Jk\u1d43, S, Fy\u1d47), and that ABO-incompatible transfusions \u2014 almost always caused by an identification error somewhere in the process \u2014 are tracked as a separate, rarer category.",
+      "pass": "Groups causes as: red cell incompatibility (ABO or other antibody) causing haemolytic reaction; febrile non-haemolytic reactions; allergic reactions/anaphylaxis; TRALI (respiratory distress within 6 hours); and TACO from volume overload.",
+      "high": "States recent UK data show most acute haemolytic reactions are non-ABO (e.g. Jk\u1d43, S, Fy\u1d47); ABO-incompatible transfusions \u2014 almost always an identification error \u2014 are a separate, rarer category.",
       "source": "SHOT-2025"
     },
     {
@@ -87,8 +87,8 @@
       "domain": "clinical-knowledge",
       "label": "Major haemorrhage protocol activation",
       "fail": "Gives no clear activation trigger, or defers entirely to unspecified \"local criteria\" without describing any clinical threshold.",
-      "pass": "States activation is based on clinical status and response to resuscitation \u2014 for example, systolic BP <90 mmHg and/or heart rate >110 bpm with ongoing bleeding \u2014 and that activation should trigger immediate, protocolised release of blood components without waiting for prior haematologist approval.",
-      "high": "Notes these signs can be masked in some patients (e.g. extremes of age, pregnancy), so a low threshold for activation is appropriate, and that protocols should also anticipate ongoing high-volume transfusion needs as a general escalation point, without citing a specific quantified national audit figure.",
+      "pass": "States activation is based on clinical status/resuscitation response (e.g. SBP <90 mmHg or HR >110 bpm with ongoing bleeding), triggering immediate, protocolised component release without haematologist approval.",
+      "high": "Notes these signs can be masked (e.g. extremes of age, pregnancy), so a low activation threshold is appropriate; protocols should also anticipate ongoing high-volume transfusion needs as an escalation point.",
       "source": "AAGBI-BC"
     },
     {
@@ -369,19 +369,19 @@
   ],
   "knowledge": [
     {
-      "fact": "Immediate management of a suspected acute transfusion reaction: stop the transfusion, maintain IV access with saline via a new giving set, check identity against the unit, disconnect and return the unit and giving set to the laboratory, and send samples for repeat group/crossmatch and DAT.",
+      "fact": "For a suspected acute transfusion reaction: stop transfusion, maintain IV access with saline via new giving set, check identity against unit, return unit/giving set to lab, send repeat group/crossmatch and DAT.",
       "source": "BSH-ATR"
     },
     {
-      "fact": "TRALI typically presents with respiratory distress during or within about 6 hours of transfusion; TACO presents with pulmonary oedema from volume overload and, unlike TRALI, usually improves with diuretics.",
+      "fact": "TRALI presents with respiratory distress within 6 hours of transfusion; TACO causes pulmonary oedema from overload and, unlike TRALI, improves with diuretics.",
       "source": "BSH-ATR"
     },
     {
-      "fact": "Recent UK haemovigilance data show most reported acute haemolytic transfusion reactions are caused by non-ABO red cell antibodies (for example anti-Jk\u1d43, anti-S, anti-Fy\u1d47); ABO-incompatible transfusions are captured as a separate, less common category, almost always due to an identification error in the transfusion process.",
+      "fact": "Recent UK haemovigilance data show most acute haemolytic reactions are non-ABO (e.g. anti-Jk\u1d43, anti-S, anti-Fy\u1d47); ABO-incompatible transfusions are a separate, less common, error-driven category.",
       "source": "SHOT-2025"
     },
     {
-      "fact": "Major haemorrhage protocol activation is based on clinical status and response to resuscitation (e.g. hypotension and tachycardia with ongoing bleeding), triggering immediate protocolised release of blood components without prior haematologist approval.",
+      "fact": "Major haemorrhage protocol activation is based on clinical status/resuscitation response (e.g. hypotension and tachycardia with ongoing bleeding), triggering immediate protocolised component release without haematologist approval.",
       "source": "AAGBI-BC"
     },
     {
@@ -389,36 +389,36 @@
       "source": "CRYOSTAT2"
     },
     {
-      "fact": "E-FIT 1, a UK pilot trial of early fibrinogen concentrate in trauma haemorrhage, showed early administration was not feasible within its target timeframe and was not powered to detect a mortality difference.",
+      "fact": "E-FIT 1, a UK pilot trial of early fibrinogen concentrate in trauma haemorrhage, found early administration infeasible in its target timeframe and underpowered for mortality.",
       "source": "EFIT1"
     },
     {
-      "fact": "SWiFT, a UK randomised trial of prehospital whole blood versus standard component therapy in trauma, found no difference in the combined outcome of mortality or massive transfusion at 24 hours.",
+      "fact": "SWiFT, a UK randomised trial of prehospital whole blood versus standard therapy in trauma, found no difference in mortality or massive transfusion at 24 hours.",
       "source": "SWIFT"
     }
   ],
   "recall": {
-    "think": "Could this be an acute haemolytic reaction, and is he heading towards shock needing the major haemorrhage protocol?",
-    "say": "\"I'm stopping the transfusion now and treating this as a possible acute haemolytic reaction.\"",
+    "think": "Could this be haemolysis, and is he heading towards shock needing the MHP?",
+    "say": "\"I'm stopping the transfusion and treating this as a possible haemolytic reaction.\"",
     "do": [
       "Stop transfusion; ABCDE; new saline giving set",
-      "Check identity vs unit; return unit/giving set; DAT + repeat crossmatch; report",
+      "Check identity vs unit; return unit/set; DAT + repeat crossmatch; report",
       "Supportive care; escalate for vasopressors or MHP if shocked"
     ],
     "numbers": [
       {
         "value": "SBP <90 / HR >110",
-        "meaning": "clinical trigger for major haemorrhage protocol activation with ongoing bleeding",
+        "meaning": "trigger for MHP with ongoing bleeding",
         "source": "AAGBI-BC"
       },
       {
         "value": "~6 h",
-        "meaning": "typical onset window for TRALI after transfusion",
+        "meaning": "onset window for TRALI after transfusion",
         "source": "BSH-ATR"
       }
     ],
-    "trap": "Explaining rigors, loin pain and dark urine away as \"just a febrile reaction\" instead of excluding haemolysis first.",
-    "finish": "Confirm or exclude haemolysis with DAT and repeat crossmatch; support organs as needed; report every reaction that isn't a mild febrile or allergic one."
+    "trap": "Explaining rigors, loin pain and dark urine as febrile, not excluding haemolysis first.",
+    "finish": "Confirm/exclude haemolysis with DAT/crossmatch; support organs; report beyond mild febrile/allergic reactions."
   },
   "sources": [
     {

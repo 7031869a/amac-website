@@ -53,8 +53,8 @@
       "domain": "clinical-knowledge",
       "label": "Diagnosis and TG18 criteria (A/B/C)",
       "fail": "Does not name acute cholangitis, or cannot structure the diagnosis around systemic inflammation, cholestasis and imaging.",
-      "pass": "States the diagnosis is acute cholangitis and applies TG18: A (systemic inflammation — fever/shivering, abnormal WBC or CRP), B (cholestasis — jaundice, deranged LFTs), C (imaging — duct dilation or evidence of the cause), with definite diagnosis needing A + B + C.",
-      "high": "Correctly distinguishes TG18 suspected diagnosis (A plus one of B or C) from definite diagnosis (A + B + C), and notes TG18 has no separate criterion for prior biliary disease — that history supports but does not itself complete the diagnosis.",
+      "pass": "Diagnoses acute cholangitis via TG18: A (systemic inflammation — fever, abnormal WBC/CRP), B (cholestasis — jaundice, deranged LFTs), C (imaging — duct dilation/cause); definite diagnosis needs all three.",
+      "high": "Distinguishes TG18 suspected diagnosis (A plus B or C) from definite (A+B+C); notes TG18 has no separate criterion for prior biliary disease — it supports, not completes, the diagnosis.",
       "source": "TG18-DX"
     },
     {
@@ -62,7 +62,7 @@
       "domain": "clinical-knowledge",
       "label": "Severity grading",
       "fail": "Does not grade severity, or grades using vague terms (\"looks septic\") rather than the TG18 criteria.",
-      "pass": "States Grade III requires new organ dysfunction in any system (e.g. hypotension needing vasopressors, altered consciousness, PaO2/FiO2 <300, oliguria or creatinine >2.0 mg/dL, INR >1.5, platelets <100,000/mm³); Grade II requires at least two of WBC >12,000 or <4,000/μL, temperature ≥39°C, age ≥75, bilirubin ≥5 mg/dL, albumin <25 g/L; Grade I meets neither.",
+      "pass": "Grade III: any one new dysfunction (vasopressors, altered consciousness, PaO2/FiO2<300, oliguria/creatinine>2.0 mg/dL, INR>1.5, platelets<100,000/mm³). Grade II: two of WBC>12,000 or <4,000/μL, temp≥39°C, age≥75, bilirubin≥5 mg/dL, albumin<25 g/L. Grade I: neither.",
       "high": "Correctly grades this patient as III on confusion (neurological dysfunction) and hypotension, and states severity should be reassessed through the admission as it can change.",
       "source": "TG18-DX"
     },
@@ -71,7 +71,7 @@
       "domain": "clinical-knowledge",
       "label": "Immediate resuscitation and antibiotics",
       "fail": "Delays antibiotics or fluid resuscitation, or treats this as a purely biliary problem without sepsis management.",
-      "pass": "Manages as sepsis: blood cultures before antibiotics where this doesn't delay treatment, broad-spectrum IV antibiotics covering gram-negatives and anaerobes within the first hour, IV fluid resuscitation, oxygen, and monitoring of lactate and urine output.",
+      "pass": "Manages as sepsis: cultures before antibiotics if this doesn't delay treatment, broad-spectrum IV antibiotics (gram-negative/anaerobic cover) within the hour, IV fluids, oxygen, and monitoring lactate/urine output.",
       "high": "Names a specific regimen appropriate to severity (e.g. piperacillin-tazobactam or a carbapenem for a Grade III/biliary-sepsis presentation) and adds vasopressor support if hypotension persists despite fluids."
     },
     {
@@ -87,8 +87,8 @@
       "domain": "clinical-knowledge",
       "label": "Biliary drainage timing by grade",
       "fail": "Applies the same drainage timeframe regardless of grade, or delays drainage in Grade III disease pending full recovery.",
-      "pass": "States drainage timing follows severity: Grade III needs urgent/emergency drainage once the patient is stable enough for the procedure; Grade II needs early drainage, commonly achieved within around 24–48 hours; Grade I is usually managed with antibiotics first, with drainage reserved for non-response.",
-      "high": "States ERCP is first-line for drainage, with percutaneous transhepatic drainage as the alternative if ERCP fails or is unavailable, and that NICE QS104 separately sets a 24-hour target for emergency ERCP in patients not responding to antibiotics and fluids.",
+      "pass": "States drainage follows severity: Grade III needs urgent drainage once stable; Grade II needs early drainage, commonly within 24–48h; Grade I is antibiotics first, drainage reserved for non-response.",
+      "high": "States ERCP is first-line, PTBD the alternative if ERCP fails/unavailable, and NICE QS104 sets a 24-hour target for emergency ERCP if not responding to antibiotics/fluids.",
       "source": "TG18-MGMT"
     },
     {
@@ -96,8 +96,8 @@
       "domain": "clinical-knowledge",
       "label": "Safety-critical: recognising severe disease behind a reassuring history",
       "fail": "Assumes the absence of a full Charcot's triad excludes cholangitis, or is reassured because no single feature is dramatic.",
-      "pass": "States that the complete Charcot's triad (fever, jaundice, right upper quadrant pain) is present in only a minority of cases in contemporary series, so its absence does not exclude the diagnosis.",
-      "high": "Adds that Reynolds' pentad (Charcot's triad plus hypotension and altered mental status) marks severe disease, and that reported mortality is substantially higher when bacteraemia or shock is present than in uncomplicated cases.",
+      "pass": "States the complete Charcot's triad (fever, jaundice, RUQ pain) is present in only a minority of contemporary cases, so its absence doesn't exclude the diagnosis.",
+      "high": "Adds that Reynolds' pentad (triad plus hypotension and altered mental status) marks severe disease, and mortality is substantially higher with bacteraemia or shock than uncomplicated cases.",
       "source": "BILIARY-REV"
     }
   ],
@@ -310,37 +310,37 @@
   ],
   "knowledge": [
     {
-      "fact": "TG18 definite diagnosis of acute cholangitis needs one item from each of A (systemic inflammation), B (cholestasis) and C (imaging); a suspected diagnosis needs A plus one of B or C. There is no separate TG18 criterion for prior biliary disease.",
+      "fact": "TG18 definite diagnosis needs one item from each of A (systemic inflammation), B (cholestasis) and C (imaging); suspected diagnosis needs A plus B or C. There is no separate criterion for prior biliary disease.",
       "source": "TG18-DX"
     },
     {
-      "fact": "TG18 Grade II (moderate) needs at least two of: WBC >12,000 or <4,000/μL, temperature ≥39°C, age ≥75, bilirubin ≥5 mg/dL, albumin <25 g/L.",
+      "fact": "TG18 Grade II (moderate) needs two of: WBC >12,000 or <4,000/μL, temperature ≥39°C, age ≥75, bilirubin ≥5 mg/dL, albumin <25 g/L.",
       "source": "TG18-DX"
     },
     {
-      "fact": "TG18 Grade III (severe) is defined by new dysfunction in any one organ system (cardiovascular, neurological, respiratory, renal, hepatic or haematological).",
+      "fact": "TG18 Grade III (severe) is new dysfunction in any one organ system (cardiovascular, neurological, respiratory, renal, hepatic or haematological).",
       "source": "TG18-DX"
     },
     {
-      "fact": "TG18 links drainage urgency to grade: Grade III needs urgent/emergency drainage once the patient is fit for the procedure; Grade II needs early drainage, commonly achieved within around 24–48 hours; Grade I is usually treated with antibiotics first, reserving drainage for non-response.",
+      "fact": "TG18 links drainage urgency to grade: Grade III needs urgent/emergency drainage once fit for the procedure; Grade II needs early drainage, commonly within 24–48 hours; Grade I is treated with antibiotics first, drainage reserved for non-response.",
       "source": "TG18-MGMT"
     },
     {
-      "fact": "NICE's gallstone disease quality standard states adults with common bile duct stones needing emergency ERCP should have it within 24 hours, for cholangitis or pancreatitis not responding to antibiotics or IV fluids.",
+      "fact": "NICE's gallstone quality standard states adults with common bile duct stones needing emergency ERCP should have it within 24 hours, for cholangitis/pancreatitis not responding to antibiotics or IV fluids.",
       "source": "NICE-QS104"
     },
     {
-      "fact": "The complete Charcot's triad (jaundice, fever, right upper quadrant pain) is reported in only a minority of patients with acute cholangitis, so its absence does not exclude the diagnosis.",
+      "fact": "The complete Charcot's triad (jaundice, fever, RUQ pain) is reported in only a minority of acute cholangitis patients, so its absence does not exclude the diagnosis.",
       "source": "BILIARY-REV"
     }
   ],
   "recall": {
-    "think": "Could this deteriorate to organ failure, and does the grade change the urgency of drainage?",
-    "say": "\"This is acute cholangitis — I want to apply the Tokyo Guidelines to grade severity and set the drainage timeline.\"",
+    "think": "Could this progress to organ failure? Does grade set drainage urgency?",
+    "say": "\"Acute cholangitis — Tokyo Guidelines set severity grade and drainage timeline.\"",
     "do": [
-      "Diagnose with TG18 A/B/C; grade severity I–III",
-      "Sepsis Six: cultures, antibiotics within the hour, fluids, oxygen, lactate, urine output",
-      "Match drainage urgency to grade; escalate Grade III to critical care"
+      "Diagnose via TG18 A/B/C; grade I–III",
+      "Sepsis Six: cultures, antibiotics within the hour, fluids, oxygen, lactate/urine output",
+      "Match drainage urgency to grade; escalate Grade III urgently"
     ],
     "numbers": [
       {
@@ -350,12 +350,12 @@
       },
       {
         "value": "24 h",
-        "meaning": "NICE QS104 target for emergency ERCP if not responding to antibiotics/fluids",
+        "meaning": "target for emergency ERCP if not responding to antibiotics/fluids",
         "source": "NICE-QS104"
       }
     ],
-    "trap": "Absence of the full Charcot's triad does not exclude cholangitis — most patients don't have all three features.",
-    "finish": "ERCP first-line for drainage (PTBD if unavailable); definitive cholecystectomy once recovered, for gallstone aetiology."
+    "trap": "Absent Charcot's triad doesn't exclude cholangitis — most patients lack all three features.",
+    "finish": "ERCP first-line for drainage (PTBD if unavailable); cholecystectomy once recovered, for gallstone cause."
   },
   "sources": [
     {
