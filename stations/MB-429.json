@@ -1,0 +1,454 @@
+{
+ "id": "MB-429",
+ "exam": "MRCS-B",
+ "title": "Suspected male breast cancer",
+ "type": "history",
+ "header": {
+  "domain": "Applied Skills",
+  "contentArea": "History and red-flag assessment of a male breast lump",
+  "minutes": 9,
+  "readingMinutes": 1,
+  "signalMinutes": 6,
+  "guidelineVersions": [
+   "NICE NG12 (updated May 2025)",
+   "NICE NG101 Early and locally advanced breast cancer (current)"
+  ],
+  "related": [
+   {
+    "id": "MB-138",
+    "why": "The core examination technique applied here to a male patient"
+   }
+  ]
+ },
+ "brief": {
+  "setting": "GP surgical referral clinic",
+  "role": "Core surgical trainee",
+  "scenario": "Mr Harrow, 68, presents with a hard lump beneath his left nipple, present for three months, which he initially assumed was just gynaecomastia.",
+  "task": "Take a focused history to assess whether this could be male breast cancer rather than benign gynaecomastia. You will be stopped at 6 minutes."
+ },
+ "beforeYouWalkIn": {
+  "frame": "Don't let an assumption of gynaecomastia, made by the patient or based on his sex, delay proper red-flag assessment of a discrete lump.",
+  "trap": "Accepting the patient's own assumption that this is gynaecomastia without independently assessing the lump's specific features.",
+  "firstMove": "\"Can you describe the lump itself to me - what does it feel like, and has it changed?\""
+ },
+ "flow": [
+  "Characterise the lump: laterality, consistency, fixation",
+  "Associated symptoms: nipple discharge, retraction, skin change",
+  "Risk factors: family history, prior radiation, relevant medical history",
+  "Systemic symptoms",
+  "At 6 minutes: present findings and differential"
+ ],
+ "grid": [
+  {
+   "id": "G1",
+   "domain": "clinical-skill",
+   "label": "Characterising the lump",
+   "fail": "Does not establish consistency, fixation or laterality of the lump.",
+   "pass": "Establishes that the lump is unilateral, hard, and asks whether it feels fixed to underlying tissue.",
+   "high": "Explicitly contrasts this with the typical soft, symmetric, bilateral pattern of gynaecomastia to justify why further assessment is needed."
+  },
+  {
+   "id": "G2",
+   "domain": "clinical-skill",
+   "label": "Associated symptoms",
+   "fail": "Does not ask about nipple discharge, retraction, or skin changes.",
+   "pass": "Asks about nipple discharge (including blood), nipple retraction, and skin changes such as dimpling or ulceration.",
+   "high": "Recognises that nipple involvement occurs earlier and more often in male breast cancer than female breast cancer, given men's smaller breast tissue volume."
+  },
+  {
+   "id": "G3",
+   "domain": "clinical-knowledge",
+   "label": "Risk factor history",
+   "fail": "Does not ask about family history or other relevant risk factors.",
+   "pass": "Asks about family history of breast or ovarian cancer, and any known genetic predisposition (e.g. BRCA2, which is more strongly linked to male breast cancer than BRCA1).",
+   "high": "Also asks about relevant risk factors such as prior chest wall radiation, testicular conditions (e.g. undescended testes, Klinefelter syndrome), or significant liver disease.",
+   "source": "NICE CKS"
+  },
+  {
+   "id": "G4",
+   "domain": "clinical-skill",
+   "label": "Systemic and nodal screen",
+   "fail": "Does not ask about systemic symptoms or examine for axillary lymphadenopathy.",
+   "pass": "Asks about weight loss and examines or asks about any lump in the axilla.",
+   "high": "Explains that axillary nodal involvement is relatively more common at presentation in male breast cancer than in female breast cancer, given later average presentation."
+  },
+  {
+   "id": "G5",
+   "domain": "communication",
+   "label": "Presentation of findings",
+   "fail": "Accepts the patient's own working assumption of gynaecomastia without further scrutiny.",
+   "pass": "Presents findings clearly, noting features atypical for gynaecomastia and consistent with possible malignancy.",
+   "high": "Explains sensitively why male breast cancer, though rare, must be actively excluded, without dismissing the patient's own reasonable initial assumption."
+  },
+  {
+   "id": "G6",
+   "domain": "clinical-knowledge",
+   "label": "Next steps",
+   "fail": "Recommends reassurance or routine review based on the assumption of gynaecomastia.",
+   "pass": "Recommends urgent triple assessment as for suspected breast cancer, given the atypical features found.",
+   "high": "Explains that male breast cancer often presents later than female breast cancer, partly due to delayed presentation from assumptions like this, making timely assessment important.",
+   "source": "NG12"
+  }
+ ],
+ "performances": {
+  "fail": [
+   {
+    "speaker": "patient",
+    "text": "I assumed it was just gynaecomastia, like some of my friends have had."
+   },
+   {
+    "speaker": "candidate",
+    "text": "That's probably right then, nothing to worry about.",
+    "tags": [
+     {
+      "row": "G1",
+      "band": "fail"
+     },
+     {
+      "row": "G5",
+      "band": "fail"
+     },
+     {
+      "row": "G6",
+      "band": "fail"
+     }
+    ]
+   }
+  ],
+  "pass": [
+   {
+    "speaker": "candidate",
+    "text": "Can you describe the lump itself to me - what does it feel like, and has it changed?",
+    "tags": [
+     {
+      "row": "G1",
+      "band": "pass"
+     }
+    ]
+   },
+   {
+    "speaker": "patient",
+    "text": "It's just on the left, feels quite hard, and seems fixed in place. It's grown a bit."
+   },
+   {
+    "speaker": "candidate",
+    "text": "Any discharge from the nipple, any pulling in of the nipple, or changes to the skin over it?",
+    "tags": [
+     {
+      "row": "G2",
+      "band": "pass"
+     }
+    ]
+   },
+   {
+    "speaker": "patient",
+    "text": "Actually, yes, some blood-stained discharge, and the nipple has pulled in slightly."
+   },
+   {
+    "speaker": "candidate",
+    "text": "Any family history of breast or ovarian cancer, or any known gene changes like BRCA in the family?",
+    "tags": [
+     {
+      "row": "G3",
+      "band": "pass"
+     }
+    ]
+   },
+   {
+    "speaker": "patient",
+    "text": "My sister had breast cancer in her 40s."
+   },
+   {
+    "speaker": "candidate",
+    "text": "Any weight loss, and have you noticed any lump in your armpit?",
+    "tags": [
+     {
+      "row": "G4",
+      "band": "pass"
+     }
+    ]
+   },
+   {
+    "speaker": "patient",
+    "text": "No weight loss, but yes, I think there might be something in my left armpit too."
+   },
+   {
+    "speaker": "examiner",
+    "text": "Please stop. Your assessment?"
+   },
+   {
+    "speaker": "candidate",
+    "text": "This is unilateral, hard, fixed, with blood-stained discharge, nipple retraction, a family history of breast cancer, and a possible axillary node - this is not typical of gynaecomastia and needs urgent assessment for male breast cancer.",
+    "tags": [
+     {
+      "row": "G5",
+      "band": "pass"
+     }
+    ]
+   },
+   {
+    "speaker": "examiner",
+    "text": "What would you do?"
+   },
+   {
+    "speaker": "candidate",
+    "text": "Urgent triple assessment, as for suspected breast cancer in a woman.",
+    "tags": [
+     {
+      "row": "G6",
+      "band": "pass"
+     }
+    ]
+   }
+  ],
+  "high": [
+   {
+    "speaker": "candidate",
+    "text": "I understand why you thought of gynaecomastia, but can you describe this lump to me in detail - is it soft or hard, and does it move freely or feel fixed?",
+    "tags": [
+     {
+      "row": "G1",
+      "band": "high"
+     }
+    ]
+   },
+   {
+    "speaker": "patient",
+    "text": "It's hard, and it doesn't seem to move much - feels stuck in place."
+   },
+   {
+    "speaker": "candidate",
+    "text": "That's quite different from typical gynaecomastia, which is usually soft and symmetric on both sides. Any nipple discharge, especially blood-stained, any pulling in of the nipple, or skin changes?",
+    "tags": [
+     {
+      "row": "G1",
+      "band": "high"
+     },
+     {
+      "row": "G2",
+      "band": "high"
+     }
+    ]
+   },
+   {
+    "speaker": "patient",
+    "text": "Yes, actually - some blood-stained discharge and the nipple has changed shape recently."
+   },
+   {
+    "speaker": "candidate",
+    "text": "Any family history of breast or ovarian cancer, or a known genetic risk like BRCA2 in the family - that's particularly relevant for men?",
+    "tags": [
+     {
+      "row": "G3",
+      "band": "high"
+     }
+    ]
+   },
+   {
+    "speaker": "patient",
+    "text": "My sister had breast cancer, and I think she was tested for something genetic, though I'm not sure of the details."
+   },
+   {
+    "speaker": "candidate",
+    "text": "Any unexplained weight loss, and have you noticed, or can I check, for any lump in your armpit?",
+    "tags": [
+     {
+      "row": "G4",
+      "band": "high"
+     }
+    ]
+   },
+   {
+    "speaker": "patient",
+    "text": "No weight loss, but I think I've felt something in my left armpit too."
+   },
+   {
+    "speaker": "examiner",
+    "text": "Please stop. Your assessment?"
+   },
+   {
+    "speaker": "candidate",
+    "text": "This picture - a hard, fixed, unilateral lump with blood-stained discharge, nipple retraction, a possible axillary node, and a family history suggestive of a genetic predisposition - is not typical gynaecomastia at all, and I wouldn't let his own reasonable initial assumption delay proper assessment here.",
+    "tags": [
+     {
+      "row": "G5",
+      "band": "high"
+     }
+    ]
+   },
+   {
+    "speaker": "examiner",
+    "text": "What would you do?"
+   },
+   {
+    "speaker": "candidate",
+    "text": "Urgent triple assessment, exactly as for suspected breast cancer in a woman. It's worth noting that male breast cancer, though rare, is often diagnosed later than in women, partly because presentations like this can be assumed benign for too long - so timely assessment here really matters.",
+    "tags": [
+     {
+      "row": "G6",
+      "band": "high"
+     }
+    ]
+   }
+  ]
+ },
+ "failures": [
+  {
+   "row": "G1",
+   "move": "Accepting the patient's own assumption of gynaecomastia without independently characterising the lump.",
+   "consequence": "Male breast cancer, though rare, can present very differently from gynaecomastia, and this assumption can delay diagnosis."
+  },
+  {
+   "row": "G2",
+   "move": "Not asking about nipple discharge or retraction.",
+   "consequence": "Misses features that occur relatively early and commonly in male breast cancer, given the small volume of breast tissue in men."
+  },
+  {
+   "row": "G3",
+   "move": "Not asking about family history or genetic risk factors such as BRCA2.",
+   "consequence": "Misses a strong risk marker for male breast cancer and fails to flag a patient who may need genetic assessment."
+  },
+  {
+   "row": "G4",
+   "move": "Not asking about systemic symptoms or checking for axillary lymphadenopathy.",
+   "consequence": "Misses nodal spread, which is relatively more common at presentation in male breast cancer and affects staging and urgency."
+  },
+  {
+   "row": "G6",
+   "move": "Reassuring or arranging only routine review based on an assumed benign diagnosis.",
+   "consequence": "Male breast cancer is often diagnosed at a later stage partly due to delayed presentation and assessment, making timely referral particularly important."
+  }
+ ],
+ "recovery": [
+  {
+   "when": "You accepted the gynaecomastia assumption uncritically",
+   "line": "Let me actually assess this properly rather than assuming it's gynaecomastia."
+  },
+  {
+   "when": "You didn't ask about nipple changes",
+   "line": "I should also ask specifically about nipple discharge or changes in shape."
+  }
+ ],
+ "knowledge": [
+  {
+   "fact": "Male breast cancer typically presents as a hard, painless, unilateral, subareolar mass, often with nipple retraction or discharge, in contrast to the soft, symmetric enlargement typical of gynaecomastia.",
+   "source": "NICE CKS"
+  },
+  {
+   "fact": "BRCA2 mutations carry a stronger association with male breast cancer than BRCA1, and a relevant family history should be actively sought.",
+   "source": "NICE CKS"
+  },
+  {
+   "fact": "Male breast cancer is often diagnosed at a later stage than female breast cancer, partly due to lower awareness and delayed presentation or assessment.",
+   "source": "NG101"
+  }
+ ],
+ "recall": {
+  "think": "Don't accept gynaecomastia uncritically; hard, fixed, unilateral lump with nipple change signals malignancy.",
+  "say": "\"I wouldn't let his own reasonable initial assumption delay proper assessment here.\"",
+  "do": [
+   "Characterise the lump properly rather than assuming",
+   "Ask about nipple discharge and retraction",
+   "Arrange urgent triple assessment"
+  ],
+  "numbers": [
+   {
+    "value": "<1%",
+    "meaning": "of all breast cancers occur in men",
+    "source": "NICE CKS"
+   },
+   {
+    "value": "60-70",
+    "meaning": "typical age in years at presentation",
+    "source": "NICE CKS"
+   },
+   {
+    "value": "2-week wait",
+    "meaning": "urgent referral pathway for suspected cancer",
+    "source": "NG12"
+   }
+  ],
+  "trap": "Accepting a gynaecomastia assumption without assessing red-flag features.",
+  "finish": "Urgent triple assessment arranged for suspected male breast cancer."
+ },
+ "sources": [
+  {
+   "id": "ICBSE",
+   "name": "ICBSE Guide to the intercollegiate MRCS examination",
+   "version": "August 2021",
+   "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+   "supports": "History-taking station format and 6-minute signal to present findings"
+  },
+  {
+   "id": "NICE CKS",
+   "name": "NICE Clinical Knowledge Summaries: Gynaecomastia",
+   "version": "NICE CKS, consulted 2026",
+   "url": "https://cks.nice.org.uk/topics/gynaecomastia/",
+   "supports": "Features distinguishing male breast cancer from gynaecomastia and relevant risk factors"
+  },
+  {
+   "id": "NG12",
+   "name": "NICE NG12: Suspected cancer: recognition and referral",
+   "version": "Published June 2015; last updated May 2025",
+   "url": "https://www.nice.org.uk/guidance/ng12",
+   "supports": "Urgent referral criteria applicable to suspected male breast cancer"
+  },
+  {
+   "id": "NG101",
+   "name": "NICE NG101: Early and locally advanced breast cancer: diagnosis and management",
+   "version": "Published July 2018; current",
+   "url": "https://www.nice.org.uk/guidance/ng101",
+   "supports": "Later stage at presentation typical of male breast cancer"
+  }
+ ],
+ "partner": {
+  "opening": "Please take a history from this patient about his breast lump. I'll stop you at 6 minutes.",
+  "actorBrief": "You are Mr Harrow, 68, with a three-month history of a hard, fixed lump under your left nipple, which you assumed was gynaecomastia. On direct questioning, you reveal blood-stained nipple discharge, nipple retraction, a possible axillary lump, and a sister with breast cancer in her 40s.",
+  "reveals": [
+   {
+    "trigger": "Asks about the lump's consistency and fixation",
+    "finding": "Hard and fixed, unlike typical gynaecomastia.",
+    "row": "G1"
+   },
+   {
+    "trigger": "Asks about nipple discharge or retraction",
+    "finding": "Blood-stained discharge and nipple retraction.",
+    "row": "G2"
+   },
+   {
+    "trigger": "Asks about family history",
+    "finding": "Sister diagnosed with breast cancer in her 40s.",
+    "row": "G3"
+   },
+   {
+    "trigger": "Asks about axillary lump/systemic symptoms",
+    "finding": "Possible lump in the left armpit, no weight loss.",
+    "row": "G4"
+   }
+  ],
+  "push": [
+   {
+    "question": "But I thought this was just gynaecomastia like my friends have - could it really be something else?",
+    "row": "G5",
+    "expect": "Explain gently but clearly that the specific features found here are atypical for gynaecomastia and need urgent assessment."
+   },
+   {
+    "question": "Is male breast cancer even a real thing?",
+    "row": "G6",
+    "expect": "Confirm that although rare, male breast cancer does occur and needs the same urgent assessment pathway as in women."
+   }
+  ],
+  "curveballs": [
+   {
+    "prompt": "My GP already told me not to worry since men don't really get breast cancer.",
+    "safeAnswer": "Acknowledge this common misconception sensitively, while being clear that the specific findings here warrant urgent reassessment regardless of how rare the condition is.",
+    "row": "G5"
+   },
+   {
+    "prompt": "Could this be linked to my sister's cancer somehow?",
+    "safeAnswer": "Explain that a family history of breast cancer, especially with a known or suspected genetic link, is relevant and worth exploring alongside the urgent assessment of his own lump.",
+    "row": "G3"
+   }
+  ]
+ }
+}

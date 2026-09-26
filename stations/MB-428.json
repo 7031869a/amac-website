@@ -1,0 +1,450 @@
+{
+ "id": "MB-428",
+ "exam": "MRCS-B",
+ "title": "Axillary lump with no obvious breast lesion",
+ "type": "history",
+ "header": {
+  "domain": "Applied Skills",
+  "contentArea": "Assessment of axillary lymphadenopathy with possible occult breast primary",
+  "minutes": 9,
+  "readingMinutes": 1,
+  "signalMinutes": 6,
+  "guidelineVersions": [
+   "NICE NG12 (updated May 2025)",
+   "NICE NG101 Early and locally advanced breast cancer (current)"
+  ],
+  "related": [
+   {
+    "id": "MB-138",
+    "why": "The examination technique extended here to the axilla in the absence of an obvious breast lump"
+   },
+   {
+    "id": "MB-360",
+    "why": "A contrasting axillary presentation in a different clinical context"
+   }
+  ]
+ },
+ "brief": {
+  "setting": "Breast clinic, urgent referral",
+  "role": "Core surgical trainee",
+  "scenario": "Mrs Delgado, 55, has noticed a lump in her right armpit over the past month. She reports no breast lump on self-examination.",
+  "task": "Take a focused history to assess this axillary lump, including possible occult breast malignancy. You will be stopped at 6 minutes."
+ },
+ "beforeYouWalkIn": {
+  "frame": "An axillary lump without an obvious breast lesion still requires careful breast-focused assessment, since an occult primary is an important cause not to miss.",
+  "trap": "Assuming the absence of a breast lump on self-examination excludes a breast primary, and focusing only on other causes of lymphadenopathy.",
+  "firstMove": "\"Can you tell me more about the lump itself, and anything else you've noticed?\""
+ },
+ "flow": [
+  "Characterise the axillary lump",
+  "Screen for a breast primary despite no self-detected lump",
+  "Screen for other causes of lymphadenopathy (infection, skin, systemic)",
+  "Systemic symptoms and risk factors",
+  "At 6 minutes: present findings and differential"
+ ],
+ "grid": [
+  {
+   "id": "G1",
+   "domain": "clinical-skill",
+   "label": "Characterising the axillary lump",
+   "fail": "Does not establish onset, size change, or consistency of the lump.",
+   "pass": "Establishes onset, whether it has grown, and whether it feels hard, fixed or mobile.",
+   "high": "Uses these features to help judge how concerning the lump is (e.g. hard, fixed, enlarging nodes being more concerning than soft, mobile ones)."
+  },
+  {
+   "id": "G2",
+   "domain": "clinical-skill",
+   "label": "Screening for a breast primary",
+   "fail": "Accepts that there's no breast lump at face value and moves on without further breast-focused questioning.",
+   "pass": "Asks specifically about any breast skin changes, nipple changes, or subtle symptoms she may not have recognised as significant.",
+   "high": "Explains that a breast primary can be too small to feel, or hidden in dense breast tissue, so a normal self-examination doesn't exclude it, and imaging is still needed."
+  },
+  {
+   "id": "G3",
+   "domain": "clinical-skill",
+   "label": "Alternative causes of lymphadenopathy",
+   "fail": "Does not consider or ask about other causes of axillary lymphadenopathy.",
+   "pass": "Asks about recent skin infections or injuries to the arm/hand, and any other lumps elsewhere (e.g. neck, groin).",
+   "high": "Considers a broader differential including infective, dermatological, and other malignant causes (e.g. lymphoma, melanoma) alongside occult breast cancer."
+  },
+  {
+   "id": "G4",
+   "domain": "clinical-knowledge",
+   "label": "Systemic symptoms",
+   "fail": "Does not screen for systemic symptoms.",
+   "pass": "Asks about fever, night sweats, weight loss and fatigue.",
+   "high": "Uses the presence or absence of systemic B symptoms to help weigh lymphoma against other causes in the differential."
+  },
+  {
+   "id": "G5",
+   "domain": "communication",
+   "label": "Presentation of findings",
+   "fail": "Concludes this is unlikely to be breast-related simply because she found no lump herself.",
+   "pass": "Presents a differential that includes occult breast malignancy alongside infective and other causes, without dismissing the breast as a source.",
+   "high": "Explicitly explains why occult breast primary remains an important differential despite a normal self-examination, avoiding false reassurance."
+  },
+  {
+   "id": "G6",
+   "domain": "clinical-knowledge",
+   "label": "Next steps",
+   "fail": "Recommends only observation or antibiotics without breast-specific imaging.",
+   "pass": "Recommends urgent triple assessment of the breast (including imaging) alongside assessment of the axillary node itself (ultrasound plus core biopsy), reflecting the NG12 referral threshold plus standard investigation practice.",
+   "high": "Explains that if breast imaging is normal, further investigation for other causes of lymphadenopathy, including lymphoma, would then be pursued.",
+   "source": "NG12"
+  }
+ ],
+ "performances": {
+  "fail": [
+   {
+    "speaker": "candidate",
+    "text": "If there's no lump in the breast itself, it's probably not breast-related, likely just a reactive node.",
+    "tags": [
+     {
+      "row": "G2",
+      "band": "fail"
+     },
+     {
+      "row": "G5",
+      "band": "fail"
+     }
+    ]
+   },
+   {
+    "speaker": "examiner",
+    "text": "What would you do?"
+   },
+   {
+    "speaker": "candidate",
+    "text": "Just review in a few weeks to see if it settles.",
+    "tags": [
+     {
+      "row": "G6",
+      "band": "fail"
+     }
+    ]
+   }
+  ],
+  "pass": [
+   {
+    "speaker": "candidate",
+    "text": "Can you tell me more about the lump itself, and anything else you've noticed?",
+    "tags": [
+     {
+      "row": "G1",
+      "band": "pass"
+     }
+    ]
+   },
+   {
+    "speaker": "patient",
+    "text": "It's been there about a month, feels firm, and seems to have grown slightly."
+   },
+   {
+    "speaker": "candidate",
+    "text": "Even though you haven't felt a breast lump, have you noticed any skin changes, nipple changes, or anything subtle in that breast?",
+    "tags": [
+     {
+      "row": "G2",
+      "band": "pass"
+     }
+    ]
+   },
+   {
+    "speaker": "patient",
+    "text": "Not that I've noticed, no."
+   },
+   {
+    "speaker": "candidate",
+    "text": "Any recent skin infections or cuts on that arm or hand, or any other lumps elsewhere, like your neck?",
+    "tags": [
+     {
+      "row": "G3",
+      "band": "pass"
+     }
+    ]
+   },
+   {
+    "speaker": "patient",
+    "text": "No infections, no other lumps that I've noticed."
+   },
+   {
+    "speaker": "candidate",
+    "text": "Any fevers, night sweats, weight loss, or feeling more tired than usual?",
+    "tags": [
+     {
+      "row": "G4",
+      "band": "pass"
+     }
+    ]
+   },
+   {
+    "speaker": "patient",
+    "text": "No, none of that."
+   },
+   {
+    "speaker": "examiner",
+    "text": "Please stop. Your assessment?"
+   },
+   {
+    "speaker": "candidate",
+    "text": "A firm, enlarging axillary node with no obvious infective cause or systemic symptoms - even without a felt breast lump, an occult breast primary needs to be actively excluded, alongside considering other causes like lymphoma.",
+    "tags": [
+     {
+      "row": "G5",
+      "band": "pass"
+     }
+    ]
+   },
+   {
+    "speaker": "examiner",
+    "text": "What would you do?"
+   },
+   {
+    "speaker": "candidate",
+    "text": "Urgent triple assessment of the breast with imaging, plus ultrasound and core biopsy of the axillary node itself.",
+    "tags": [
+     {
+      "row": "G6",
+      "band": "pass"
+     }
+    ]
+   }
+  ],
+  "high": [
+   {
+    "speaker": "candidate",
+    "text": "Can you tell me more about the lump - how long it's been there, whether it's changed, and how it feels?",
+    "tags": [
+     {
+      "row": "G1",
+      "band": "high"
+     }
+    ]
+   },
+   {
+    "speaker": "patient",
+    "text": "About a month, firm, and it does seem a bit bigger than when I first noticed it."
+   },
+   {
+    "speaker": "candidate",
+    "text": "Even without a lump you've felt in the breast itself, have you noticed anything subtle - skin dimpling, nipple changes, or any asymmetry?",
+    "tags": [
+     {
+      "row": "G2",
+      "band": "high"
+     }
+    ]
+   },
+   {
+    "speaker": "patient",
+    "text": "No, nothing like that, and I checked myself carefully."
+   },
+   {
+    "speaker": "candidate",
+    "text": "Any recent cuts, infections or skin problems on that arm or hand, or any other lumps you've noticed elsewhere, like your neck or groin?",
+    "tags": [
+     {
+      "row": "G3",
+      "band": "high"
+     }
+    ]
+   },
+   {
+    "speaker": "patient",
+    "text": "No, nothing like that anywhere else."
+   },
+   {
+    "speaker": "candidate",
+    "text": "Any fevers, drenching night sweats, unexplained weight loss, or unusual tiredness?",
+    "tags": [
+     {
+      "row": "G4",
+      "band": "high"
+     }
+    ]
+   },
+   {
+    "speaker": "patient",
+    "text": "No, I feel otherwise well."
+   },
+   {
+    "speaker": "examiner",
+    "text": "Please stop. Your assessment?"
+   },
+   {
+    "speaker": "candidate",
+    "text": "A firm, enlarging axillary node without an obvious infective trigger, other lymph node sites, or systemic B symptoms. Even though she's found nothing on breast self-examination, a breast primary can be too small to feel, or hidden within dense tissue, so this alone doesn't exclude an occult breast cancer as the cause - which needs to be actively investigated, not assumed away.",
+    "tags": [
+     {
+      "row": "G2",
+      "band": "high"
+     },
+     {
+      "row": "G5",
+      "band": "high"
+     }
+    ]
+   },
+   {
+    "speaker": "examiner",
+    "text": "What would you do?"
+   },
+   {
+    "speaker": "candidate",
+    "text": "Urgent triple assessment of the breast including imaging, alongside ultrasound and core biopsy of the axillary node itself. If breast imaging comes back normal, I'd then pursue further investigation for other causes such as lymphoma.",
+    "tags": [
+     {
+      "row": "G6",
+      "band": "high"
+     }
+    ]
+   }
+  ]
+ },
+ "failures": [
+  {
+   "row": "G1",
+   "move": "Moves straight into the differential or management plan without asking how long the lump has been present, whether it has changed, or how it feels.",
+   "consequence": "Without these features, the candidate cannot judge how concerning the node is or track relevant change over time."
+  },
+  {
+   "row": "G4",
+   "move": "Does not ask about fever, night sweats, weight loss or fatigue.",
+   "consequence": "Missing systemic B symptoms means lymphoma cannot be properly weighed against other causes in the differential."
+  },
+  {
+   "row": "G2",
+   "move": "Accepting a normal breast self-examination as excluding a breast primary.",
+   "consequence": "An occult breast primary can be small, deep, or in dense tissue and undetectable by self-examination, so this reasoning risks missing the diagnosis."
+  },
+  {
+   "row": "G6",
+   "move": "Recommending watchful waiting without any breast imaging or axillary node assessment.",
+   "consequence": "Delays diagnosis and treatment of a potentially serious underlying cause, whether malignant or otherwise."
+  },
+  {
+   "row": "G3",
+   "move": "Not considering alternative causes of axillary lymphadenopathy.",
+   "consequence": "Narrows the differential prematurely, risking a missed diagnosis such as lymphoma if breast causes are excluded."
+  }
+ ],
+ "recovery": [
+  {
+   "when": "You dismissed a breast cause due to normal self-examination",
+   "line": "Let me reconsider - a breast primary can still be present even without a lump she's been able to feel."
+  },
+  {
+   "when": "You recommended watchful waiting only",
+   "line": "Actually, given this is firm and enlarging, I should arrange proper investigation now rather than just observing."
+  }
+ ],
+ "knowledge": [
+  {
+   "fact": "An occult breast primary should be actively considered and investigated with breast imaging in a woman presenting with an axillary lymph node metastasis, even without a palpable breast lump.",
+   "source": "NG101"
+  },
+  {
+   "fact": "A firm, enlarging axillary lymph node without an obvious infective cause warrants urgent assessment including ultrasound and core biopsy of the node itself, alongside breast imaging.",
+   "source": "NG12"
+  },
+  {
+   "fact": "Other important causes of axillary lymphadenopathy to consider include infection (e.g. from a skin lesion on the arm or hand) and lymphoma, particularly when systemic B symptoms are present."
+  }
+ ],
+ "recall": {
+  "think": "No felt lump doesn't exclude a breast primary; assess the node and image the breast.",
+  "say": "\"This doesn't exclude an occult breast cancer.\"",
+  "do": [
+   "Characterise the lump; screen for subtle breast changes",
+   "Screen for infective and other causes of lymphadenopathy",
+   "Arrange breast imaging plus axillary node ultrasound and biopsy"
+  ],
+  "numbers": [
+   {
+    "value": "2 weeks",
+    "meaning": "target wait for urgent cancer referral",
+    "source": "NG12"
+   },
+   {
+    "value": "30",
+    "meaning": "age threshold for urgent axillary lump referral",
+    "source": "NG12"
+   }
+  ],
+  "trap": "Excluding a breast primary based on normal self-exam alone.",
+  "finish": "Urgent, parallel assessment of breast and node, with malignancy considered."
+ },
+ "sources": [
+  {
+   "id": "ICBSE",
+   "name": "ICBSE Guide to the intercollegiate MRCS examination",
+   "version": "August 2021",
+   "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+   "supports": "History-taking station format and 6-minute signal to present findings"
+  },
+  {
+   "id": "NG12",
+   "name": "NICE NG12: Suspected cancer: recognition and referral",
+   "version": "Published June 2015; last updated May 2025",
+   "url": "https://www.nice.org.uk/guidance/ng12",
+   "supports": "Assessment pathway for a suspicious axillary lymph node"
+  },
+  {
+   "id": "NG101",
+   "name": "NICE NG101: Early and locally advanced breast cancer: diagnosis and management",
+   "version": "Published July 2018; last updated current",
+   "url": "https://www.nice.org.uk/guidance/ng101",
+   "supports": "Investigation of occult breast primary presenting as axillary nodal disease"
+  }
+ ],
+ "partner": {
+  "opening": "Please take a history from this patient about her axillary lump. I'll stop you at 6 minutes.",
+  "actorBrief": "You are Mrs Delgado, 55, with a one-month history of a firm, slightly enlarging right axillary lump. You have checked your breast carefully yourself and found nothing. No skin infections, no other lumps, no systemic symptoms.",
+  "reveals": [
+   {
+    "trigger": "Asks about the lump's characteristics",
+    "finding": "One month, firm, slightly enlarging.",
+    "row": "G1"
+   },
+   {
+    "trigger": "Asks about subtle breast changes despite normal self-exam",
+    "finding": "No skin, nipple or breast changes noticed.",
+    "row": "G2"
+   },
+   {
+    "trigger": "Asks about infection or other lumps",
+    "finding": "No recent skin infections, no other lumps elsewhere.",
+    "row": "G3"
+   },
+   {
+    "trigger": "Asks about systemic symptoms",
+    "finding": "No fever, night sweats, weight loss or fatigue.",
+    "row": "G4"
+   }
+  ],
+  "push": [
+   {
+    "question": "If I've checked my breast and found nothing, could it still be from there?",
+    "row": "G2",
+    "expect": "Explain that a breast primary can be too small to feel or hidden in dense tissue, so imaging is still needed despite normal self-examination."
+   },
+   {
+    "question": "What tests will I need?",
+    "row": "G6",
+    "expect": "Explain that both breast imaging and assessment of the axillary node (ultrasound and biopsy) will be arranged."
+   }
+  ],
+  "curveballs": [
+   {
+    "prompt": "I also noticed a small scratch on that arm from my cat a few weeks ago - could that be it?",
+    "safeAnswer": "Consider this as a possible contributing or alternative cause, but continue with full assessment rather than assuming it fully explains a firm, enlarging node.",
+    "row": "G3"
+   },
+   {
+    "prompt": "What if the breast scans come back completely normal?",
+    "safeAnswer": "Explain that if breast imaging is normal, further assessment for other causes of the node, including biopsy for lymphoma, would then be pursued.",
+    "row": "G6"
+   }
+  ]
+ }
+}

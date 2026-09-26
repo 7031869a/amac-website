@@ -1,0 +1,406 @@
+{
+ "id": "MB-432",
+ "exam": "MRCS-B",
+ "title": "Explaining a diagnosis of DCIS",
+ "type": "communication",
+ "header": {
+  "domain": "Applied Skills",
+  "contentArea": "Explaining ductal carcinoma in situ and its management",
+  "minutes": 9,
+  "readingMinutes": 1,
+  "guidelineVersions": [
+   "NICE NG101 Early and locally advanced breast cancer (updated 2026)"
+  ],
+  "related": [
+   {
+    "id": "MB-431",
+    "why": "The screening pathway through which DCIS is commonly detected"
+   }
+  ]
+ },
+ "brief": {
+  "setting": "Breast clinic, results appointment following screening-detected microcalcification",
+  "role": "Core surgical trainee",
+  "scenario": "Mrs Yilmaz, 49, was recalled after screening microcalcification and has had a core biopsy confirming ductal carcinoma in situ (DCIS), intermediate grade.",
+  "task": "Explain this diagnosis and the treatment options. You have 7 minutes."
+ },
+ "beforeYouWalkIn": {
+  "frame": "DCIS is a cancer diagnosis, but a distinct one from invasive cancer, with a different, generally better prognosis - explain this distinction clearly without minimising or over-alarming.",
+  "trap": "Either calling it \"not really cancer\" in a way that later feels misleading, or delivering it exactly like an invasive cancer diagnosis without explaining the important differences.",
+  "firstMove": "\"Your biopsy has confirmed a finding called DCIS - can I explain exactly what that means?\""
+ },
+ "flow": [
+  "Deliver the result clearly",
+  "Explain what DCIS actually is",
+  "Explain why it still needs treatment despite being non-invasive",
+  "Explain the treatment options",
+  "Address concerns and next steps"
+ ],
+ "grid": [
+  {
+   "id": "G1",
+   "domain": "communication",
+   "label": "Delivering the result",
+   "fail": "Delivers the result in a way that either omits it's a form of cancer, or delivers it exactly as an invasive cancer diagnosis with no distinction.",
+   "pass": "States clearly that the biopsy shows DCIS, a form of early, non-invasive breast cancer.",
+   "high": "Pauses briefly after using the word \"cancer\" to let this land, recognising the word itself carries weight regardless of the important distinctions to follow."
+  },
+  {
+   "id": "G2",
+   "domain": "clinical-knowledge",
+   "label": "Explaining what DCIS is",
+   "fail": "Cannot explain what makes DCIS different from invasive cancer.",
+   "pass": "Explains that DCIS means abnormal cells are confined within the milk ducts and have not spread into surrounding breast tissue, unlike invasive cancer.",
+   "high": "Explains that this is why DCIS cannot spread elsewhere in the body while it remains in this form, which is an important reassurance, without saying it therefore doesn't matter.",
+   "source": "NG101"
+  },
+  {
+   "id": "G3",
+   "domain": "clinical-knowledge",
+   "label": "Explaining why treatment is still needed",
+   "fail": "Cannot explain why DCIS needs treatment if it hasn't spread.",
+   "pass": "Explains that DCIS is treated to prevent it progressing to invasive cancer over time, which it can do if left untreated.",
+   "high": "Explains that grade (as in her case, intermediate) helps estimate this risk, without overstating certainty about an individual's specific risk."
+  },
+  {
+   "id": "G4",
+   "domain": "clinical-knowledge",
+   "label": "Explaining treatment options",
+   "fail": "Presents only one treatment option as though it were the only choice.",
+   "pass": "Explains that treatment usually involves surgery (breast-conserving surgery or mastectomy depending on extent), often with radiotherapy after breast-conserving surgery.",
+   "high": "Explains that axillary surgery (e.g. sentinel node biopsy) isn't routinely needed for pure DCIS, distinguishing this from invasive cancer management.",
+   "source": "NG101"
+  },
+  {
+   "id": "G5",
+   "domain": "communication",
+   "label": "Addressing concerns",
+   "fail": "Dismisses her confusion about whether this is \"really\" cancer.",
+   "pass": "Responds patiently and honestly to her confusion about the nature of the diagnosis.",
+   "high": "Validates that this distinction is genuinely confusing for many patients, without making her feel she should have understood it immediately."
+  },
+  {
+   "id": "G6",
+   "domain": "professionalism",
+   "label": "Next steps and closing",
+   "fail": "Ends without a clear next step or referral.",
+   "pass": "Confirms referral to the breast MDT/surgical team to plan treatment and arranges a further discussion of specifics.",
+   "high": "Checks how she's feeling about everything before closing, recognising a cancer diagnosis, even a favourable one, is still significant news."
+  }
+ ],
+ "performances": {
+  "fail": [
+   {
+    "speaker": "candidate",
+    "text": "Good news really, it's not proper cancer, it's just DCIS, you'll just need a small operation.",
+    "tags": [
+     {
+      "row": "G1",
+      "band": "fail"
+     },
+     {
+      "row": "G2",
+      "band": "fail"
+     }
+    ]
+   },
+   {
+    "speaker": "patient",
+    "text": "So I don't have cancer?"
+   },
+   {
+    "speaker": "candidate",
+    "text": "Not really, no, don't worry about it.",
+    "tags": [
+     {
+      "row": "G5",
+      "band": "fail"
+     }
+    ]
+   },
+   {
+    "speaker": "candidate",
+    "text": "Right, that's everything - you can head back to the waiting room now.",
+    "tags": [
+     {
+      "row": "G6",
+      "band": "fail"
+     }
+    ]
+   }
+  ],
+  "pass": [
+   {
+    "speaker": "candidate",
+    "text": "Your biopsy has confirmed a finding called DCIS - can I explain exactly what that means?",
+    "tags": [
+     {
+      "row": "G1",
+      "band": "pass"
+     }
+    ]
+   },
+   {
+    "speaker": "patient",
+    "text": "Please do, the letter mentioned cancer and I've been so worried."
+   },
+   {
+    "speaker": "candidate",
+    "text": "DCIS stands for ductal carcinoma in situ - it means there are abnormal cells confined within the milk ducts, which haven't spread into the surrounding breast tissue, unlike invasive cancer.",
+    "tags": [
+     {
+      "row": "G2",
+      "band": "pass"
+     }
+    ]
+   },
+   {
+    "speaker": "patient",
+    "text": "So why do I need treatment if it hasn't spread?"
+   },
+   {
+    "speaker": "candidate",
+    "text": "Because if left untreated, DCIS can develop into invasive cancer over time, so treatment now aims to prevent that.",
+    "tags": [
+     {
+      "row": "G3",
+      "band": "pass"
+     }
+    ]
+   },
+   {
+    "speaker": "candidate",
+    "text": "Treatment usually involves surgery - either removing the affected area with breast-conserving surgery, often followed by radiotherapy, or mastectomy if the area is more extensive.",
+    "tags": [
+     {
+      "row": "G4",
+      "band": "pass"
+     }
+    ]
+   },
+   {
+    "speaker": "patient",
+    "text": "I'm confused whether I actually have cancer or not."
+   },
+   {
+    "speaker": "candidate",
+    "text": "That confusion makes complete sense - it is a form of cancer, but a very early, non-invasive one, which is an important distinction for how it behaves and how we treat it.",
+    "tags": [
+     {
+      "row": "G5",
+      "band": "pass"
+     }
+    ]
+   },
+   {
+    "speaker": "candidate",
+    "text": "I'll refer you to our surgical team to discuss the specific treatment plan for you.",
+    "tags": [
+     {
+      "row": "G6",
+      "band": "pass"
+     }
+    ]
+   }
+  ],
+  "high": [
+   {
+    "speaker": "candidate",
+    "text": "Your biopsy has confirmed a diagnosis called DCIS - I want to take a moment to properly explain what that means, since it's a form of cancer, but a quite specific and different one.",
+    "tags": [
+     {
+      "row": "G1",
+      "band": "high"
+     }
+    ]
+   },
+   {
+    "speaker": "patient",
+    "text": "[Pauses.] Okay - I did see the word cancer in the letter and it's been on my mind constantly."
+   },
+   {
+    "speaker": "candidate",
+    "text": "That's completely understandable. DCIS means abnormal cells are present, but they're confined within the milk ducts and haven't broken through into the surrounding breast tissue - which is what makes invasive cancer able to spread elsewhere in the body. While it stays in this form, it can't do that.",
+    "tags": [
+     {
+      "row": "G2",
+      "band": "high"
+     }
+    ]
+   },
+   {
+    "speaker": "patient",
+    "text": "Then why treat it at all?"
+   },
+   {
+    "speaker": "candidate",
+    "text": "Because DCIS can progress into invasive cancer over time if left untreated, and the grade found on your biopsy - intermediate, in your case - helps give a sense of that risk, though it's not possible to predict this with certainty for any individual.",
+    "tags": [
+     {
+      "row": "G3",
+      "band": "high"
+     }
+    ]
+   },
+   {
+    "speaker": "candidate",
+    "text": "Treatment is usually surgical - either removing the affected area with breast-conserving surgery, often with radiotherapy afterward, or mastectomy if it's more widespread. Because it's non-invasive, axillary surgery like sentinel node biopsy isn't usually needed, unlike with invasive cancer.",
+    "tags": [
+     {
+      "row": "G4",
+      "band": "high"
+     }
+    ]
+   },
+   {
+    "speaker": "patient",
+    "text": "I still don't fully understand if I actually have 'cancer' cancer."
+   },
+   {
+    "speaker": "candidate",
+    "text": "Honestly, this is one of the most confusing distinctions in breast medicine, and it's completely reasonable to find it hard to hold both things at once - yes, it's technically cancer, and yes, it behaves very differently from the invasive cancer people usually picture when they hear that word.",
+    "tags": [
+     {
+      "row": "G5",
+      "band": "high"
+     }
+    ]
+   },
+   {
+    "speaker": "candidate",
+    "text": "I'll refer you to our surgical team to plan the specifics with you. Before we finish, how are you feeling, taking all of this in?",
+    "tags": [
+     {
+      "row": "G6",
+      "band": "high"
+     }
+    ]
+   }
+  ]
+ },
+ "failures": [
+  {
+   "row": "G2",
+   "move": "Describing DCIS as \"not really cancer\" without explaining the actual distinction (confined to ducts, non-invasive).",
+   "consequence": "Can feel misleading later if the patient later learns it is classified as a cancer, undermining trust in how the diagnosis was communicated."
+  },
+  {
+   "row": "G3",
+   "move": "Failing to explain why treatment is needed if the condition hasn't spread.",
+   "consequence": "Leaves the patient's most natural question unanswered, risking confusion about or reluctance toward treatment."
+  },
+  {
+   "row": "G4",
+   "move": "Presenting only one treatment option as if it were the only choice.",
+   "consequence": "Removes the patient's ability to weigh breast-conserving surgery against mastectomy as genuine options depending on extent of disease."
+  }
+ ],
+ "recovery": [
+  {
+   "when": "You said this wasn't really cancer",
+   "line": "I should be more precise - this is a form of cancer, but a distinct, non-invasive one, and that distinction matters."
+  },
+  {
+   "when": "You didn't explain why treatment is needed",
+   "line": "Let me explain why we still treat this, even though it hasn't spread."
+  }
+ ],
+ "knowledge": [
+  {
+   "fact": "Ductal carcinoma in situ (DCIS) refers to abnormal cells confined within the breast ducts, without invasion into surrounding breast tissue, distinguishing it from invasive breast cancer.",
+   "source": "NG101"
+  },
+  {
+   "fact": "Untreated DCIS can progress to invasive breast cancer over time; the grade of DCIS found on biopsy helps estimate, though not precisely predict, this risk.",
+   "source": "NG101"
+  },
+  {
+   "fact": "Treatment for DCIS is generally surgical (breast-conserving surgery, often with radiotherapy, or mastectomy for more extensive disease); axillary staging surgery is not routinely required for pure DCIS.",
+   "source": "NG101"
+  }
+ ],
+ "recall": {
+  "think": "DCIS is cancer, but non-invasive; explain why treatment matters; offer real options.",
+  "say": "\"Yes, it's technically cancer, and it behaves very differently from invasive cancer.\"",
+  "do": [
+   "DCIS cells are confined to the ducts",
+   "Explain why treatment still matters",
+   "Present surgery options: BCS or mastectomy"
+  ],
+  "numbers": [
+   {
+    "value": "~20%",
+    "meaning": "of screen-detected breast cancers are DCIS",
+    "source": "NG101"
+   },
+   {
+    "value": "20-50%",
+    "meaning": "estimated risk of progression to invasive cancer if untreated, varying by grade",
+    "source": "NG101"
+   }
+  ],
+  "trap": "Calling it \"not really cancer\" or skipping why treatment matters",
+  "finish": "Clear DCIS understanding, real options, referral arranged."
+ },
+ "sources": [
+  {
+   "id": "ICBSE",
+   "name": "ICBSE Guide to the intercollegiate MRCS examination",
+   "version": "August 2021",
+   "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+   "supports": "Communication station format and structure, including timing"
+  },
+  {
+   "id": "NG101",
+   "name": "NICE NG101: Early and locally advanced breast cancer: diagnosis and management",
+   "version": "Published July 2018; last updated 2026",
+   "url": "https://www.nice.org.uk/guidance/ng101",
+   "supports": "Definition, natural history, and management options for DCIS"
+  }
+ ],
+ "partner": {
+  "opening": "Please explain this patient's DCIS diagnosis and treatment options. You have 7 minutes.",
+  "actorBrief": "You are Mrs Yilmaz, 49, recalled after screening, with a core biopsy confirming intermediate-grade DCIS. You saw the word 'cancer' in your results letter and have been very anxious, and you're confused about whether you actually 'have cancer'.",
+  "reveals": [
+   {
+    "trigger": "Candidate delivers the result carefully, acknowledging the word cancer",
+    "finding": "You reveal you've been anxious since seeing that word in your letter.",
+    "row": "G1"
+   },
+   {
+    "trigger": "Candidate explains the distinction between DCIS and invasive cancer clearly",
+    "finding": "You understand better but remain confused about the terminology.",
+    "row": "G2"
+   },
+   {
+    "trigger": "Candidate patiently addresses your confusion about whether this 'counts' as cancer",
+    "finding": "You feel more settled, even if the distinction still feels odd to you.",
+    "row": "G5"
+   }
+  ],
+  "push": [
+   {
+    "question": "Do I actually have cancer or not?",
+    "row": "G5",
+    "expect": "Give an honest, patient answer: yes, it is a form of cancer, but a distinct, non-invasive one, without contradicting this later."
+   },
+   {
+    "question": "Why do I need surgery if it hasn't spread anywhere?",
+    "row": "G3",
+    "expect": "Explain that DCIS can progress to invasive cancer over time if untreated, which is why treatment is still recommended."
+   }
+  ],
+  "curveballs": [
+   {
+    "prompt": "A friend told me DCIS is basically nothing to worry about - is that true?",
+    "safeAnswer": "Gently correct this oversimplification, explaining that while DCIS has a better prognosis than invasive cancer, it is still a diagnosis that needs proper treatment and follow-up.",
+    "row": "G3"
+   },
+   {
+    "prompt": "Could this have already turned into something worse without me knowing?",
+    "safeAnswer": "Reassure her that the biopsy specifically assessed for this, and if there had been invasive elements, the report would have said so, without offering false absolute certainty.",
+    "row": "G4"
+   }
+  ]
+ }
+}

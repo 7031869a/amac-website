@@ -1,0 +1,433 @@
+{
+ "id": "MB-427",
+ "exam": "MRCS-B",
+ "title": "Breast cyst: to aspirate or not to aspirate",
+ "type": "communication",
+ "header": {
+  "domain": "Applied Skills",
+  "contentArea": "Assessment and management decision-making for a simple breast cyst",
+  "minutes": 9,
+  "readingMinutes": 1,
+  "guidelineVersions": [
+   "NICE NG12 (updated May 2025)",
+   "Association of Breast Surgery: standard UK one-stop breast clinic practice (current)"
+  ],
+  "related": [
+   {
+    "id": "MB-138",
+    "why": "The examination that identified this lump as cystic in nature"
+   },
+   {
+    "id": "MB-407",
+    "why": "A contrasting solid-lump presentation assessed with a similar structured approach"
+   }
+  ]
+ },
+ "brief": {
+  "setting": "Breast clinic, one-stop assessment",
+  "role": "Core surgical trainee",
+  "scenario": "Mrs Stallworth, 47, has been found on ultrasound to have a simple breast cyst, 3 cm, causing some discomfort but with no concerning features on imaging.",
+  "task": "Discuss the findings and whether aspiration is needed. You have 7 minutes."
+ },
+ "beforeYouWalkIn": {
+  "frame": "A simple, asymptomatic cyst doesn't need aspiration; a symptomatic or anxiety-provoking one reasonably can be. This is a shared decision, not a fixed rule.",
+  "trap": "Insisting all cysts must be aspirated, or refusing aspiration outright because it isn't strictly necessary, without discussing her actual preference.",
+  "firstMove": "\"The scan shows this is a simple, fluid-filled cyst - can I explain what that means and then talk through the options?\""
+ },
+ "flow": [
+  "Explain the diagnosis in plain terms",
+  "Explain when aspiration is and isn't necessary",
+  "Explore her symptoms and preference",
+  "Explain what aspiration involves if chosen",
+  "Agree a plan and closing"
+ ],
+ "grid": [
+  {
+   "id": "G1",
+   "domain": "communication",
+   "label": "Explaining the diagnosis",
+   "fail": "Uses technical language without checking she understands what a cyst is.",
+   "pass": "Explains in plain terms that this is a simple, fluid-filled sac, not a solid lump, and not cancer.",
+   "high": "Reassures her using the imaging findings specifically (simple, no concerning features), rather than a generic reassurance."
+  },
+  {
+   "id": "G2",
+   "domain": "clinical-knowledge",
+   "label": "Explaining when aspiration is needed",
+   "fail": "States that all cysts must be aspirated regardless of symptoms.",
+   "pass": "Explains that a simple, asymptomatic cyst doesn't need aspiration, but that aspiration can be offered for discomfort or if she would prefer it resolved.",
+   "high": "Explains this as a genuine choice based on her symptoms and preference, not a fixed clinical rule.",
+   "source": "ABS"
+  },
+  {
+   "id": "G3",
+   "domain": "communication",
+   "label": "Exploring her preference",
+   "fail": "Decides on her behalf without asking about her symptoms or preference.",
+   "pass": "Asks about the degree of discomfort and how she feels about leaving it versus having it aspirated.",
+   "high": "Explores whether her preference is driven by symptoms, anxiety about the lump being present, or both, since this shapes the discussion differently."
+  },
+  {
+   "id": "G4",
+   "domain": "clinical-knowledge",
+   "label": "Explaining the aspiration procedure",
+   "fail": "Cannot describe what aspiration involves if she chooses it.",
+   "pass": "Explains that a fine needle would be used to drain the fluid, usually with local anaesthetic or ultrasound guidance, and that this is usually quick with immediate symptom relief.",
+   "high": "Mentions that fluid is not routinely sent for analysis unless blood-stained or the cyst doesn't fully resolve, and explains why."
+  },
+  {
+   "id": "G5",
+   "domain": "clinical-knowledge",
+   "label": "Explaining recurrence and follow-up",
+   "fail": "Implies aspiration is a permanent, one-time fix with no possibility of recurrence.",
+   "pass": "Explains that cysts can recur after aspiration and that this doesn't necessarily mean anything has gone wrong.",
+   "high": "Explains what would prompt further assessment (e.g. persistent solid residual lump, blood-stained aspirate, or rapid recurrence) versus straightforward re-aspiration."
+  },
+  {
+   "id": "G6",
+   "domain": "professionalism",
+   "label": "Agreeing a plan and closing",
+   "fail": "Ends without a clear, agreed plan.",
+   "pass": "Confirms her preferred option and next steps clearly before closing.",
+   "high": "Checks she feels informed and comfortable with the decision, whichever option she chooses, without any implied judgement either way."
+  }
+ ],
+ "performances": {
+  "fail": [
+   {
+    "speaker": "candidate",
+    "text": "You've got a lesion that's anechoic on ultrasound, so it's benign.",
+    "tags": [
+     {
+      "row": "G1",
+      "band": "fail"
+     }
+    ]
+   },
+   {
+    "speaker": "patient",
+    "text": "Sorry, what does that mean?"
+   },
+   {
+    "speaker": "candidate",
+    "text": "It's a cyst, we always drain those, let's do it now.",
+    "tags": [
+     {
+      "row": "G2",
+      "band": "fail"
+     },
+     {
+      "row": "G3",
+      "band": "fail"
+     }
+    ]
+   },
+   {
+    "speaker": "patient",
+    "text": "Actually, it's not really bothering me that much."
+   },
+   {
+    "speaker": "candidate",
+    "text": "It's still best practice to drain it regardless.",
+    "tags": [
+     {
+      "row": "G2",
+      "band": "fail"
+     }
+    ]
+   },
+   {
+    "speaker": "patient",
+    "text": "What would actually happen during the procedure?"
+   },
+   {
+    "speaker": "candidate",
+    "text": "I'm not sure of the exact details, but it's a minor procedure.",
+    "tags": [
+     {
+      "row": "G4",
+      "band": "fail"
+     }
+    ]
+   }
+  ],
+  "pass": [
+   {
+    "speaker": "candidate",
+    "text": "The scan shows this is a simple, fluid-filled cyst - can I explain what that means and then talk through the options?",
+    "tags": [
+     {
+      "row": "G1",
+      "band": "pass"
+     }
+    ]
+   },
+   {
+    "speaker": "patient",
+    "text": "Please do."
+   },
+   {
+    "speaker": "candidate",
+    "text": "It's a fluid-filled sac, not a solid lump, and the scan shows no concerning features - it isn't cancer. It doesn't have to be drained just because it's there, but we can offer to drain it if it's uncomfortable or if you'd simply prefer it gone.",
+    "tags": [
+     {
+      "row": "G1",
+      "band": "pass"
+     },
+     {
+      "row": "G2",
+      "band": "pass"
+     }
+    ]
+   },
+   {
+    "speaker": "candidate",
+    "text": "How much discomfort is it actually causing you, and how do you feel about either leaving it or having it drained?",
+    "tags": [
+     {
+      "row": "G3",
+      "band": "pass"
+     }
+    ]
+   },
+   {
+    "speaker": "patient",
+    "text": "It's a bit uncomfortable, I think I'd like it drained if that's straightforward."
+   },
+   {
+    "speaker": "candidate",
+    "text": "That's straightforward - a fine needle is used to drain the fluid, usually quickly with immediate relief, sometimes with ultrasound guidance.",
+    "tags": [
+     {
+      "row": "G4",
+      "band": "pass"
+     }
+    ]
+   },
+   {
+    "speaker": "candidate",
+    "text": "It's worth knowing cysts can come back after draining, which doesn't necessarily mean anything's wrong - it can just be re-drained.",
+    "tags": [
+     {
+      "row": "G5",
+      "band": "pass"
+     }
+    ]
+   },
+   {
+    "speaker": "candidate",
+    "text": "So we'll go ahead with aspiration today - does that feel like the right plan for you?",
+    "tags": [
+     {
+      "row": "G6",
+      "band": "pass"
+     }
+    ]
+   }
+  ],
+  "high": [
+   {
+    "speaker": "candidate",
+    "text": "The scan shows this is a simple cyst - a fluid-filled sac - with none of the features that would worry us. Can I explain what that means for you, and then we can talk through what you'd like to do?",
+    "tags": [
+     {
+      "row": "G1",
+      "band": "high"
+     }
+    ]
+   },
+   {
+    "speaker": "patient",
+    "text": "Yes, please."
+   },
+   {
+    "speaker": "candidate",
+    "text": "It's not cancer, and a simple cyst like this doesn't need to be drained just because it's there - some women prefer to leave it, others want it drained for comfort or peace of mind. Both are completely reasonable.",
+    "tags": [
+     {
+      "row": "G1",
+      "band": "high"
+     },
+     {
+      "row": "G2",
+      "band": "high"
+     }
+    ]
+   },
+   {
+    "speaker": "candidate",
+    "text": "How much is it actually bothering you day to day, and is it more the discomfort, or more just knowing it's there, that makes you want it dealt with?",
+    "tags": [
+     {
+      "row": "G3",
+      "band": "high"
+     }
+    ]
+   },
+   {
+    "speaker": "patient",
+    "text": "Honestly, it's a bit of both - some discomfort, and I'd just feel better without it."
+   },
+   {
+    "speaker": "candidate",
+    "text": "That's a completely valid reason either way. If we drain it, we'd use a fine needle, often with ultrasound guidance, and you'd usually feel relief straight away - we wouldn't routinely send the fluid off unless it looked blood-stained or the cyst didn't fully go away.",
+    "tags": [
+     {
+      "row": "G4",
+      "band": "high"
+     }
+    ]
+   },
+   {
+    "speaker": "candidate",
+    "text": "One thing worth knowing - cysts can recur even after draining, and that on its own isn't a concern; we'd only look further into it if there were a persistent solid lump afterward, blood in the fluid, or it kept coming back quickly.",
+    "tags": [
+     {
+      "row": "G5",
+      "band": "high"
+     }
+    ]
+   },
+   {
+    "speaker": "candidate",
+    "text": "So it sounds like draining it today makes sense for you - how does that feel, and do you have any other questions before we go ahead?",
+    "tags": [
+     {
+      "row": "G6",
+      "band": "high"
+     }
+    ]
+   }
+  ]
+ },
+ "failures": [
+  {
+   "row": "G6",
+   "move": "Ending the consultation without a clear, agreed plan.",
+   "consequence": "Leaves her unclear what happens next, risking a missed or delayed decision."
+  },
+  {
+   "row": "G2",
+   "move": "Insisting all cysts must be drained regardless of symptoms or preference.",
+   "consequence": "Removes patient choice over an elective, symptom-driven decision with no fixed clinical requirement either way."
+  },
+  {
+   "row": "G3",
+   "move": "Deciding on her behalf without exploring her actual symptoms or preference.",
+   "consequence": "Risks a mismatch between the plan and what she actually wants or needs, since this is fundamentally a shared decision."
+  },
+  {
+   "row": "G5",
+   "move": "Implying aspiration permanently resolves the cyst with no possibility of recurrence.",
+   "consequence": "Sets unrealistic expectations, potentially causing alarm if the cyst recurs later despite this being a normal, expected possibility."
+  }
+ ],
+ "recovery": [
+  {
+   "when": "You insisted on draining regardless of her preference",
+   "line": "Actually, this should really be your choice - let me explain the options properly."
+  },
+  {
+   "when": "You implied aspiration was a permanent fix",
+   "line": "I should mention - cysts can come back even after draining, which is normal and not a sign anything's wrong."
+  }
+ ],
+ "knowledge": [
+  {
+   "fact": "A simple breast cyst with no concerning features on imaging does not require aspiration unless symptomatic or by patient preference.",
+   "source": "NG12"
+  },
+  {
+   "fact": "Aspirated cyst fluid is not routinely sent for cytology unless blood-stained, or the lump does not completely resolve after aspiration."
+  },
+  {
+   "fact": "Breast cysts can recur after aspiration; recurrence alone is not concerning, but a residual solid mass, blood-stained aspirate, or rapid recurrence warrants further assessment."
+  }
+ ],
+ "recall": {
+  "think": "Aspiration is a choice, not a rule; find out what she wants; recurrence is normal, not a red flag.",
+  "say": "\"Both are completely reasonable.\"",
+  "do": [
+   "Explain the diagnosis; present aspiration as optional, not routine",
+   "Explore what she actually wants before deciding",
+   "Set realistic expectations about recurrence"
+  ],
+  "numbers": [
+   {
+    "value": "up to 1 in 4",
+    "meaning": "breast cysts recur after aspiration",
+    "source": "ABS"
+   }
+  ],
+  "trap": "Treating aspiration as mandatory or unavailable, rather than a genuine shared decision.",
+  "finish": "An agreed plan reflecting her preference, with realistic expectations about recurrence."
+ },
+ "sources": [
+  {
+   "id": "ICBSE",
+   "name": "ICBSE Guide to the intercollegiate MRCS examination",
+   "version": "August 2021",
+   "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+   "supports": "Consent/decision-making station format and structure, including timing"
+  },
+  {
+   "id": "NG12",
+   "name": "NICE NG12: Suspected cancer: recognition and referral",
+   "version": "Published June 2015; last updated May 2025",
+   "url": "https://www.nice.org.uk/guidance/ng12",
+   "supports": "Management approach to a simple breast cyst with no concerning features"
+  },
+  {
+   "id": "ABS",
+   "name": "Association of Breast Surgery: standard UK one-stop breast clinic practice",
+   "version": "current as of April 2026",
+   "url": "https://associationofbreastsurgery.org.uk/",
+   "supports": "Standard one-stop-clinic practice for management of simple breast cysts, including aspiration and recurrence"
+  }
+ ],
+ "partner": {
+  "opening": "Please discuss this patient's simple breast cyst and whether to aspirate it. You have 7 minutes.",
+  "actorBrief": "You are Mrs Stallworth, 47, with a 3 cm simple cyst on ultrasound, causing mild discomfort. You're relieved it isn't cancer and would like it drained, partly for the discomfort and partly just to feel better without it there.",
+  "reveals": [
+   {
+    "trigger": "Candidate explains the diagnosis clearly",
+    "finding": "You feel reassured this isn't cancer.",
+    "row": "G1"
+   },
+   {
+    "trigger": "Candidate presents aspiration as a genuine choice",
+    "finding": "You express that you'd like it drained, for both comfort and peace of mind.",
+    "row": "G3"
+   },
+   {
+    "trigger": "Candidate explains recurrence is possible and not a concern on its own",
+    "finding": "You feel informed rather than alarmed if it does come back.",
+    "row": "G5"
+   }
+  ],
+  "push": [
+   {
+    "question": "Do I have to have it drained?",
+    "row": "G2",
+    "expect": "Clarify that draining is optional and based on her symptoms or preference, not mandatory."
+   },
+   {
+    "question": "Will it just come back afterward?",
+    "row": "G5",
+    "expect": "Explain that recurrence is possible and not itself concerning, with clear guidance on what would need further assessment."
+   }
+  ],
+  "curveballs": [
+   {
+    "prompt": "Actually, I've changed my mind, I don't want it drained after all.",
+    "safeAnswer": "Respect this change of mind without pressure, and offer routine reassurance and follow-up as an alternative to aspiration.",
+    "row": "G6"
+   },
+   {
+    "prompt": "What if it turns out not to be a simple cyst when you try to drain it?",
+    "safeAnswer": "Explain that if aspiration reveals blood-stained fluid or a residual solid lump, further assessment such as biopsy would then be arranged.",
+    "row": "G5"
+   }
+  ]
+ }
+}

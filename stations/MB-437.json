@@ -1,0 +1,431 @@
+{
+ "id": "MB-437",
+ "exam": "MRCS-B",
+ "title": "Consent for participation in a breast cancer clinical trial",
+ "type": "communication",
+ "header": {
+  "domain": "Applied Skills",
+  "contentArea": "Informed consent principles for clinical trial participation",
+  "minutes": 9,
+  "readingMinutes": 1,
+  "guidelineVersions": [
+   "GMC Good Practice in Research and Consent to Research (current)",
+   "NICE NG101 Early and locally advanced breast cancer (updated 2026)"
+  ],
+  "related": [
+   {
+    "id": "MB-436",
+    "why": "A plausible context in which trial participation might be offered"
+   },
+   {
+    "id": "MB-358",
+    "why": "The general consent principles this conversation extends to a research context"
+   }
+  ]
+ },
+ "brief": {
+  "setting": "Oncology clinic",
+  "role": "Trainee supporting the research team",
+  "scenario": "Mrs Osei-Bonsu, 50, has been offered participation in a randomised clinical trial comparing a new drug combination against standard treatment for her breast cancer.",
+  "task": "Discuss trial participation and support her informed decision. You have 7 minutes."
+ },
+ "beforeYouWalkIn": {
+  "frame": "Be clear that participation is voluntary and standard treatment remains fully available regardless of her decision, and explain randomisation honestly.",
+  "trap": "Implying or allowing her to believe that trial participation is expected of her, or that declining will affect the quality of her standard care.",
+  "firstMove": "\"I'd like to talk you through the trial you've been offered, and I want to be clear from the start that taking part is completely your choice.\""
+ },
+ "flow": [
+  "Explain the trial exists and that participation is voluntary",
+  "Explain what the trial involves, including randomisation",
+  "Explain potential benefits and uncertainties",
+  "Address the alternative of standard treatment",
+  "Confirm voluntariness and closing"
+ ],
+ "grid": [
+  {
+   "id": "G1",
+   "domain": "communication",
+   "label": "Establishing voluntariness upfront",
+   "fail": "Does not make clear at the outset that participation is optional.",
+   "pass": "States clearly and early that taking part is entirely her choice.",
+   "high": "Explicitly reassures her that her standard care will be exactly the same whether or not she takes part, addressing an unspoken but common worry."
+  },
+  {
+   "id": "G2",
+   "domain": "clinical-knowledge",
+   "label": "Explaining the trial and randomisation",
+   "fail": "Cannot explain what the trial involves or what randomisation means.",
+   "pass": "Explains that the trial compares a new drug combination against standard treatment, and that which group she is allocated to is decided by chance (randomisation), not choice.",
+   "high": "Explains why randomisation is used, to fairly compare outcomes between the two approaches, in a way that makes the process feel scientifically grounded rather than arbitrary.",
+   "source": "GMC"
+  },
+  {
+   "id": "G3",
+   "domain": "clinical-knowledge",
+   "label": "Explaining benefits and uncertainty",
+   "fail": "Overstates the likely benefit of the new treatment, implying it is known to be better.",
+   "pass": "Explains honestly that it isn't yet known whether the new combination is better, worse, or the same as standard treatment - that's exactly what the trial aims to find out.",
+   "high": "Explains this without discouraging her, framing genuine uncertainty as the reason the trial is ethically being run, not as a reason to be pessimistic about either arm."
+  },
+  {
+   "id": "G4",
+   "domain": "communication",
+   "label": "Addressing the alternative",
+   "fail": "Implies that not joining the trial means missing out on good treatment.",
+   "pass": "Confirms that declining the trial means she will simply receive standard treatment, which remains a good and fully supported option.",
+   "high": "Explicitly normalises declining as an equally respected choice to accepting, avoiding any framing that participation is the 'better' or expected option."
+  },
+  {
+   "id": "G5",
+   "domain": "professionalism",
+   "label": "Addressing concerns and withdrawal rights",
+   "fail": "Does not mention she can withdraw from the trial later if she changes her mind.",
+   "pass": "Explains that she can withdraw from the trial at any point without it affecting her ongoing care.",
+   "high": "Reassures her that withdrawal requires no justification and would not be held against her in any way by the clinical team."
+  },
+  {
+   "id": "G6",
+   "domain": "professionalism",
+   "label": "Closing and time to decide",
+   "fail": "Implies she must decide immediately.",
+   "pass": "Confirms she can take time to consider, read the patient information sheet, and ask further questions before deciding.",
+   "high": "Offers a specific point of contact for questions and checks she doesn't feel any pressure, from the team or from wanting to \"help research\", to decide a particular way."
+  }
+ ],
+ "performances": {
+  "fail": [
+   {
+    "speaker": "candidate",
+    "text": "We'd like you to join this trial, it could really help you and future patients, here's the form to sign.",
+    "tags": [
+     {
+      "row": "G1",
+      "band": "fail"
+     },
+     {
+      "row": "G3",
+      "band": "fail"
+     }
+    ]
+   },
+   {
+    "speaker": "patient",
+    "text": "What if I don't want to?"
+   },
+   {
+    "speaker": "candidate",
+    "text": "It would really be better if you did.",
+    "tags": [
+     {
+      "row": "G4",
+      "band": "fail"
+     }
+    ]
+   },
+   {
+    "speaker": "candidate",
+    "text": "It's basically like flipping a coin - you don't need to understand the details, just trust us.",
+    "tags": [
+     {
+      "row": "G2",
+      "band": "fail"
+     }
+    ]
+   },
+   {
+    "speaker": "candidate",
+    "text": "Once you're in the trial, you're committed to seeing it through to the end.",
+    "tags": [
+     {
+      "row": "G5",
+      "band": "fail"
+     }
+    ]
+   },
+   {
+    "speaker": "candidate",
+    "text": "I'll need you to sign this before you leave today.",
+    "tags": [
+     {
+      "row": "G6",
+      "band": "fail"
+     }
+    ]
+   }
+  ],
+  "pass": [
+   {
+    "speaker": "candidate",
+    "text": "I'd like to talk you through the trial you've been offered, and I want to be clear from the start that taking part is completely your choice.",
+    "tags": [
+     {
+      "row": "G1",
+      "band": "pass"
+     }
+    ]
+   },
+   {
+    "speaker": "patient",
+    "text": "Okay, what does it actually involve?"
+   },
+   {
+    "speaker": "candidate",
+    "text": "It compares a new drug combination against standard treatment. Which group you'd be in is decided by chance - that's called randomisation - not something either of us chooses.",
+    "tags": [
+     {
+      "row": "G2",
+      "band": "pass"
+     }
+    ]
+   },
+   {
+    "speaker": "patient",
+    "text": "Is the new treatment better?"
+   },
+   {
+    "speaker": "candidate",
+    "text": "Honestly, we don't know yet - that's exactly what this trial is trying to find out. It could turn out to be better, worse, or about the same as standard treatment.",
+    "tags": [
+     {
+      "row": "G3",
+      "band": "pass"
+     }
+    ]
+   },
+   {
+    "speaker": "patient",
+    "text": "What happens if I say no?"
+   },
+   {
+    "speaker": "candidate",
+    "text": "You'd simply receive standard treatment, which remains a good and fully supported option regardless of your decision about the trial.",
+    "tags": [
+     {
+      "row": "G4",
+      "band": "pass"
+     }
+    ]
+   },
+   {
+    "speaker": "candidate",
+    "text": "If you do join and change your mind later, you can withdraw at any point without it affecting your care.",
+    "tags": [
+     {
+      "row": "G5",
+      "band": "pass"
+     }
+    ]
+   },
+   {
+    "speaker": "candidate",
+    "text": "There's no need to decide today - take the patient information sheet, think it over, and let us know when you're ready.",
+    "tags": [
+     {
+      "row": "G6",
+      "band": "pass"
+     }
+    ]
+   }
+  ],
+  "high": [
+   {
+    "speaker": "candidate",
+    "text": "I'd like to talk you through a trial you've been offered - the most important thing to say first is that taking part is entirely up to you, and your standard care will be exactly the same either way.",
+    "tags": [
+     {
+      "row": "G1",
+      "band": "high"
+     }
+    ]
+   },
+   {
+    "speaker": "patient",
+    "text": "Okay, that's good to know. What would it involve?"
+   },
+   {
+    "speaker": "candidate",
+    "text": "It compares a new drug combination against standard treatment. Which one you'd receive is decided randomly, not chosen by you or by us, which is how trials fairly compare whether one approach is genuinely better than the other.",
+    "tags": [
+     {
+      "row": "G2",
+      "band": "high"
+     }
+    ]
+   },
+   {
+    "speaker": "patient",
+    "text": "So is the new one likely to work better for me?"
+   },
+   {
+    "speaker": "candidate",
+    "text": "Honestly, nobody knows that yet - that genuine uncertainty is exactly why this trial exists and is considered ethical to run, rather than a reason to think one option is secretly better.",
+    "tags": [
+     {
+      "row": "G3",
+      "band": "high"
+     }
+    ]
+   },
+   {
+    "speaker": "patient",
+    "text": "And if I decide not to take part?"
+   },
+   {
+    "speaker": "candidate",
+    "text": "Then you'd have standard treatment, which is a completely respected choice, just as valid as joining the trial - neither option is seen as better by us.",
+    "tags": [
+     {
+      "row": "G4",
+      "band": "high"
+     }
+    ]
+   },
+   {
+    "speaker": "candidate",
+    "text": "And if you do join, you're free to withdraw at any point, for any reason or none at all, without it affecting your care or how the team treats you going forward.",
+    "tags": [
+     {
+      "row": "G5",
+      "band": "high"
+     }
+    ]
+   },
+   {
+    "speaker": "candidate",
+    "text": "There's absolutely no pressure to decide today - take the information sheet, discuss it with anyone you'd like, and get in touch with any questions whenever you're ready.",
+    "tags": [
+     {
+      "row": "G6",
+      "band": "high"
+     }
+    ]
+   }
+  ]
+ },
+ "failures": [
+  {
+   "row": "G1",
+   "move": "Presenting trial participation as expected or strongly encouraged rather than voluntary.",
+   "consequence": "Undermines the voluntary nature of research consent, which is a fundamental ethical requirement."
+  },
+  {
+   "row": "G3",
+   "move": "Implying the new treatment is known to be better.",
+   "consequence": "Misrepresents genuine clinical equipoise (uncertainty) that justifies the trial, and could bias her decision on false grounds."
+  },
+  {
+   "row": "G4",
+   "move": "Implying that declining means missing out on good treatment.",
+   "consequence": "Pressures her decision unfairly and misrepresents that standard treatment remains a fully valid, well-supported choice."
+  }
+ ],
+ "recovery": [
+  {
+   "when": "You implied participation was expected",
+   "line": "I should be clear - there's no expectation either way, this is entirely your decision."
+  },
+  {
+   "when": "You implied the new treatment was better",
+   "line": "Actually, I should be honest - we genuinely don't know which is better, that's the point of the trial."
+  }
+ ],
+ "knowledge": [
+  {
+   "fact": "Consent to research must be entirely voluntary, with standard care unaffected by a patient's decision to participate or decline.",
+   "source": "GMC"
+  },
+  {
+   "fact": "Randomisation in a clinical trial allocates participants to treatment groups by chance, to allow a fair, unbiased comparison of outcomes between treatments.",
+   "source": "GMC"
+  },
+  {
+   "fact": "Participants can withdraw from a clinical trial at any time, without needing to give a reason, and without this affecting their ongoing clinical care."
+  }
+ ],
+ "recall": {
+  "think": "Voluntary throughout; randomisation is chance not choice; uncertainty justifies the trial; withdrawal is always available.",
+  "say": "\"Neither option is seen as better by us.\"",
+  "do": [
+   "State voluntariness and unaffected care early",
+   "Explain randomisation as chance, not choice",
+   "Confirm withdrawal rights and unhurried decision time"
+  ],
+  "numbers": [
+   {
+    "value": "any time",
+    "meaning": "a trial participant may withdraw without giving a reason",
+    "source": "GMC"
+   }
+  ],
+  "trap": "Implying participation is expected, or that the new treatment is known to be better.",
+  "finish": "A voluntary, unpressured decision with clear understanding of randomisation and withdrawal rights."
+ },
+ "sources": [
+  {
+   "id": "ICBSE",
+   "name": "ICBSE Guide to the intercollegiate MRCS examination",
+   "version": "August 2021",
+   "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+   "supports": "Consent-taking station format and structure, including timing"
+  },
+  {
+   "id": "GMC",
+   "name": "GMC: Good Practice in Research and Consent to Research",
+   "version": "Published 2010, in effect from 4 May 2010; folded into GMC Good Medical Practice 2024's more detailed guidance",
+   "url": "https://www.gmc-uk.org/professional-standards/the-professional-standards/good-practice-in-research-and-consent-to-research",
+   "supports": "Principles of voluntary, informed consent for clinical trial participation, including randomisation and withdrawal rights"
+  },
+  {
+   "id": "NG101",
+   "name": "NICE NG101: Early and locally advanced breast cancer: diagnosis and management",
+   "version": "Published July 2018; last updated 2026",
+   "url": "https://www.nice.org.uk/guidance/ng101",
+   "supports": "Context in which clinical trials may be offered as part of standard oncology care"
+  }
+ ],
+ "partner": {
+  "opening": "Please discuss clinical trial participation with this patient. You have 7 minutes.",
+  "actorBrief": "You are Mrs Osei-Bonsu, 50, offered participation in a randomised trial comparing a new drug combination against standard treatment. You're unsure whether declining might mean you get worse care, and you assume the new treatment is probably better since it's newer.",
+  "reveals": [
+   {
+    "trigger": "Candidate clarifies your care is unaffected either way",
+    "finding": "You feel relieved this isn't a hidden expectation.",
+    "row": "G1"
+   },
+   {
+    "trigger": "Candidate explains genuine uncertainty about which treatment is better",
+    "finding": "You reconsider your assumption that newer automatically means better.",
+    "row": "G3"
+   },
+   {
+    "trigger": "Candidate confirms declining means good standard treatment, not lesser care",
+    "finding": "You feel free to decide without fear of being penalised either way.",
+    "row": "G4"
+   }
+  ],
+  "push": [
+   {
+    "question": "Will I get worse treatment if I say no?",
+    "row": "G4",
+    "expect": "Confirm firmly that standard treatment is a fully supported, equally respected option regardless of her decision."
+   },
+   {
+    "question": "Isn't the new drug obviously better, since it's newer?",
+    "row": "G3",
+    "expect": "Explain honestly that it isn't known whether the new combination is better, worse, or the same, which is exactly why the trial is being conducted."
+   }
+  ],
+  "curveballs": [
+   {
+    "prompt": "What if I join and then want to stop halfway through?",
+    "safeAnswer": "Confirm she can withdraw at any point, for any reason, without it affecting her ongoing clinical care.",
+    "row": "G5"
+   },
+   {
+    "prompt": "Will the doctors think badly of me if I say no?",
+    "safeAnswer": "Reassure her firmly that declining is a completely respected choice and will not affect how she is viewed or cared for by the team.",
+    "row": "G4"
+   }
+  ]
+ }
+}

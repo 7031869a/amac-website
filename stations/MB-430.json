@@ -1,0 +1,436 @@
+{
+ "id": "MB-430",
+ "exam": "MRCS-B",
+ "title": "New lump after breast trauma: fat necrosis or cancer?",
+ "type": "history",
+ "header": {
+  "domain": "Applied Skills",
+  "contentArea": "Assessment of a post-traumatic breast lump, including fat necrosis",
+  "minutes": 9,
+  "readingMinutes": 1,
+  "signalMinutes": 6,
+  "guidelineVersions": [
+   "NICE NG12 (updated May 2025)",
+   "Association of Breast Surgery guidance on benign breast disease (current)"
+  ],
+  "related": [
+   {
+    "id": "MB-138",
+    "why": "The core examination technique applied here to a post-traumatic lump"
+   }
+  ]
+ },
+ "brief": {
+  "setting": "GP surgical referral clinic",
+  "role": "Core surgical trainee",
+  "scenario": "Mrs Kowalska, 44, presents with a firm lump in her left breast, first noticed a few weeks after a seatbelt injury from a car accident two months ago.",
+  "task": "Take a focused history to assess this lump, including whether trauma reliably explains it. You will be stopped at 6 minutes."
+ },
+ "beforeYouWalkIn": {
+  "frame": "Trauma explains why a lump was noticed, not what it is - fat necrosis can't be assumed without proper assessment.",
+  "trap": "Assuming fat necrosis from the trauma story alone, since it can feel identical to cancer.",
+  "firstMove": "\"Tell me about the accident, and when exactly you first noticed the lump.\""
+ },
+ "flow": [
+  "Detail of the trauma and timeline to noticing the lump",
+  "Characterise the lump: site relative to injury, consistency, change",
+  "Associated symptoms: bruising resolution, skin change, pain",
+  "Screen for any lump present before the injury",
+  "At 6 minutes: present findings and next steps"
+ ],
+ "grid": [
+  {
+   "id": "G1",
+   "domain": "clinical-skill",
+   "label": "Trauma and timeline",
+   "fail": "Does not establish the specific timing between the injury and noticing the lump.",
+   "pass": "Establishes the mechanism of injury and that the lump was noticed some weeks after the trauma, once bruising began to settle.",
+   "high": "Explains that this delayed appearance, after bruising resolves, is a recognised pattern in fat necrosis, though this timeline alone is not diagnostic."
+  },
+  {
+   "id": "G2",
+   "domain": "clinical-skill",
+   "label": "Characterising the lump",
+   "fail": "Does not describe the lump's location relative to the injury or its physical characteristics.",
+   "pass": "Establishes that the lump is at the site of the injury, and describes its consistency (fat necrosis is often firm and can mimic a hard cancer on palpation).",
+   "high": "Explicitly notes that fat necrosis can feel clinically identical to malignancy - hard, irregular, and sometimes with skin tethering - meaning clinical examination alone cannot reliably distinguish them."
+  },
+  {
+   "id": "G3",
+   "domain": "clinical-skill",
+   "label": "Associated features",
+   "fail": "Does not ask about skin changes or whether bruising has fully resolved.",
+   "pass": "Asks whether the original bruising has settled, and whether there is any skin dimpling or nipple change.",
+   "high": "Recognises that skin dimpling can occur in fat necrosis as well as cancer, due to fibrous scarring, so its presence doesn't reliably discriminate between them either."
+  },
+  {
+   "id": "G4",
+   "domain": "clinical-skill",
+   "label": "Pre-existing lump",
+   "fail": "Does not ask whether she is certain there was no lump there before the injury.",
+   "pass": "Asks specifically whether she had checked or was aware of any lump in that area before the accident.",
+   "high": "Recognises that a pre-existing, previously unnoticed lump could coincidentally become apparent after trauma draws attention to the area, which is an important possibility to consider."
+  },
+  {
+   "id": "G5",
+   "domain": "communication",
+   "label": "Presentation of findings",
+   "fail": "Concludes definitively that this is fat necrosis based on the trauma history alone.",
+   "pass": "Presents the history clearly, stating that fat necrosis is a plausible explanation but cannot be assumed clinically, and that cancer must still be properly excluded.",
+   "high": "Explains this clearly to avoid both false reassurance and unnecessary alarm, emphasising that the trauma history explains the timing but not necessarily the diagnosis."
+  },
+  {
+   "id": "G6",
+   "domain": "clinical-knowledge",
+   "label": "Next steps",
+   "fail": "Recommends only observation given the plausible traumatic explanation.",
+   "pass": "Recommends urgent triple assessment, since fat necrosis and malignancy cannot be reliably distinguished on history and examination alone.",
+   "high": "Explains that even if imaging suggests fat necrosis, a biopsy is often still needed for definitive confirmation, given how closely it can mimic cancer on imaging too.",
+   "source": "ABS"
+  }
+ ],
+ "performances": {
+  "fail": [
+   {
+    "speaker": "candidate",
+    "text": "So it's just from the accident then - I won't worry about exactly when the lump showed up or what it feels like.",
+    "tags": [
+     {
+      "row": "G1",
+      "band": "fail"
+     },
+     {
+      "row": "G2",
+      "band": "fail"
+     },
+     {
+      "row": "G3",
+      "band": "fail"
+     }
+    ]
+   },
+   {
+    "speaker": "candidate",
+    "text": "That makes sense, it's just fat necrosis from the accident, nothing to worry about.",
+    "tags": [
+     {
+      "row": "G5",
+      "band": "fail"
+     },
+     {
+      "row": "G6",
+      "band": "fail"
+     }
+    ]
+   }
+  ],
+  "pass": [
+   {
+    "speaker": "candidate",
+    "text": "Can you tell me more about the accident, and exactly when you first noticed the lump afterwards?",
+    "tags": [
+     {
+      "row": "G1",
+      "band": "pass"
+     }
+    ]
+   },
+   {
+    "speaker": "patient",
+    "text": "A car accident two months ago, seatbelt across that side. I noticed the lump a few weeks later, once the bruising had faded."
+   },
+   {
+    "speaker": "candidate",
+    "text": "Is the lump exactly where the seatbelt injury was, and how does it feel - hard, soft, or somewhere in between?",
+    "tags": [
+     {
+      "row": "G2",
+      "band": "pass"
+     }
+    ]
+   },
+   {
+    "speaker": "patient",
+    "text": "Yes, right where the bruise was. It feels quite firm."
+   },
+   {
+    "speaker": "candidate",
+    "text": "Has the original bruising fully settled now, and have you noticed any dimpling of the skin or changes to your nipple?",
+    "tags": [
+     {
+      "row": "G3",
+      "band": "pass"
+     }
+    ]
+   },
+   {
+    "speaker": "patient",
+    "text": "Bruising's gone, no nipple changes, though the skin does look slightly puckered there."
+   },
+   {
+    "speaker": "candidate",
+    "text": "Before the accident, are you confident there was no lump there that you might not have noticed?",
+    "tags": [
+     {
+      "row": "G4",
+      "band": "pass"
+     }
+    ]
+   },
+   {
+    "speaker": "patient",
+    "text": "I don't check myself regularly, so I honestly can't be completely sure."
+   },
+   {
+    "speaker": "examiner",
+    "text": "Please stop. Your assessment?"
+   },
+   {
+    "speaker": "candidate",
+    "text": "A firm lump at the site of trauma, appearing as bruising settled, with some skin puckering - fat necrosis is plausible, but this can't be assumed clinically, since fat necrosis and cancer can feel very similar.",
+    "tags": [
+     {
+      "row": "G5",
+      "band": "pass"
+     }
+    ]
+   },
+   {
+    "speaker": "examiner",
+    "text": "What would you do?"
+   },
+   {
+    "speaker": "candidate",
+    "text": "Urgent triple assessment to properly distinguish fat necrosis from malignancy.",
+    "tags": [
+     {
+      "row": "G6",
+      "band": "pass"
+     }
+    ]
+   }
+  ],
+  "high": [
+   {
+    "speaker": "candidate",
+    "text": "Can you talk me through the accident in detail, and tell me exactly when the lump first appeared relative to the injury?",
+    "tags": [
+     {
+      "row": "G1",
+      "band": "high"
+     }
+    ]
+   },
+   {
+    "speaker": "patient",
+    "text": "Two months ago, seatbelt injury, quite a bad bruise at the time. The lump became noticeable a few weeks later as the bruise faded."
+   },
+   {
+    "speaker": "candidate",
+    "text": "Is the lump exactly at the site of the seatbelt injury, and does it feel hard, or does it have any irregular or fixed quality to it?",
+    "tags": [
+     {
+      "row": "G2",
+      "band": "high"
+     }
+    ]
+   },
+   {
+    "speaker": "patient",
+    "text": "Yes, exactly there, and it does feel quite hard and slightly irregular, if I'm honest."
+   },
+   {
+    "speaker": "candidate",
+    "text": "Has the bruising fully resolved, and have you noticed any skin dimpling, tethering, or nipple changes over the area?",
+    "tags": [
+     {
+      "row": "G3",
+      "band": "high"
+     }
+    ]
+   },
+   {
+    "speaker": "patient",
+    "text": "Bruising's gone completely, but yes, there is some puckering of the skin there now."
+   },
+   {
+    "speaker": "candidate",
+    "text": "This is an important question - before the accident, were you confident there was definitely no lump there, even one you hadn't paid attention to?",
+    "tags": [
+     {
+      "row": "G4",
+      "band": "high"
+     }
+    ]
+   },
+   {
+    "speaker": "patient",
+    "text": "Honestly, I don't check regularly, so I can't be certain there wasn't something there before."
+   },
+   {
+    "speaker": "examiner",
+    "text": "Please stop. Your assessment?"
+   },
+   {
+    "speaker": "candidate",
+    "text": "The timeline - a firm, irregular lump appearing at the injury site as bruising resolved, with skin puckering - is consistent with fat necrosis, but I want to be clear that fat necrosis can feel clinically identical to cancer, including the hard consistency and skin changes she's describing, and imaging can also be difficult to interpret. The trauma explains why she noticed it now, but it doesn't reliably explain what it actually is, and she also can't be certain there wasn't something there beforehand.",
+    "tags": [
+     {
+      "row": "G5",
+      "band": "high"
+     }
+    ]
+   },
+   {
+    "speaker": "examiner",
+    "text": "What would you do?"
+   },
+   {
+    "speaker": "candidate",
+    "text": "Urgent triple assessment, and I'd anticipate that even if imaging is suggestive of fat necrosis, a core biopsy is often still needed for definitive confirmation, given how closely the two conditions can mimic each other both clinically and radiologically.",
+    "tags": [
+     {
+      "row": "G6",
+      "band": "high"
+     }
+    ]
+   }
+  ]
+ },
+ "failures": [
+  {
+   "row": "G5",
+   "move": "Accepting a plausible trauma history as sufficient explanation for the lump without further investigation.",
+   "consequence": "Fat necrosis and cancer can be clinically and even radiologically indistinguishable, so a compelling story alone is not diagnostic."
+  },
+  {
+   "row": "G6",
+   "move": "Recommending observation only, given the reassuring-sounding trauma history.",
+   "consequence": "Risks delayed diagnosis of an underlying cancer that happens to have been noticed around the time of an unrelated or coincidentally related injury."
+  },
+  {
+   "row": "G4",
+   "move": "Not checking whether the patient can be certain there was no pre-existing lump.",
+   "consequence": "Misses the possibility that trauma simply drew attention to a lump that was already present beforehand, unrelated to the injury itself."
+  }
+ ],
+ "recovery": [
+  {
+   "when": "You accepted the trauma explanation without further investigation",
+   "line": "Let me be clearer - the trauma history explains the timing, but I can't assume it explains the diagnosis without proper assessment."
+  },
+  {
+   "when": "You recommended observation only",
+   "line": "Actually, given how similar fat necrosis and cancer can appear, I should arrange proper assessment now rather than just watching."
+  }
+ ],
+ "knowledge": [
+  {
+   "fact": "Fat necrosis typically presents as a firm, sometimes irregular lump appearing days to weeks after breast trauma, often as associated bruising resolves.",
+   "source": "NG12"
+  },
+  {
+   "fact": "Fat necrosis can be clinically and radiologically indistinguishable from malignancy, including mimicking hard consistency, irregular borders, and skin tethering or dimpling."
+  },
+  {
+   "fact": "A history of trauma explaining the timing of noticing a lump does not exclude malignancy, and such lumps still require full triple assessment, sometimes including biopsy even when imaging suggests fat necrosis.",
+   "source": "ABS"
+  }
+ ],
+ "recall": {
+  "think": "Trauma explains timing, not diagnosis; fat necrosis can mimic cancer exactly.",
+  "say": "\"This explains why you noticed it now, not necessarily what it is.\"",
+  "do": [
+   "Establish the trauma-to-lump timeline",
+   "Fat necrosis can feel identical to cancer",
+   "Arrange urgent triple assessment"
+  ],
+  "numbers": [
+   {
+    "value": "2 weeks",
+    "meaning": "target wait for urgent suspected-cancer referral",
+    "source": "NG12"
+   },
+   {
+    "value": "6 min",
+    "meaning": "signal to stop and present findings in this station",
+    "source": "ICBSE"
+   }
+  ],
+  "trap": "Assuming trauma explains the lump without further assessment.",
+  "finish": "Urgent triple assessment arranged; fat necrosis not assumed."
+ },
+ "sources": [
+  {
+   "id": "ICBSE",
+   "name": "ICBSE Guide to the intercollegiate MRCS examination",
+   "version": "August 2021",
+   "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+   "supports": "History-taking station format and 6-minute signal to present findings"
+  },
+  {
+   "id": "NG12",
+   "name": "NICE NG12: Suspected cancer: recognition and referral",
+   "version": "Published June 2015; last updated May 2025",
+   "url": "https://www.nice.org.uk/guidance/ng12",
+   "supports": "Requirement for full assessment of a new breast lump regardless of a plausible alternative explanation"
+  },
+  {
+   "id": "ABS",
+   "name": "Association of Breast Surgery: standard practice for assessment of a new breast lump",
+   "version": "current, consulted 2026",
+   "url": "https://associationofbreastsurgery.org.uk/",
+   "supports": "Need for biopsy even when imaging suggests a benign post-traumatic lesion such as fat necrosis"
+  }
+ ],
+ "partner": {
+  "opening": "Please take a history from this patient about a lump found after a car accident. I'll stop you at 6 minutes.",
+  "actorBrief": "You are Mrs Kowalska, 44, with a firm, slightly irregular lump at the site of a seatbelt injury from two months ago, noticed a few weeks after the accident as bruising resolved. Skin over the area is slightly puckered. You don't check your breasts regularly, so you can't be sure there wasn't something there before the accident.",
+  "reveals": [
+   {
+    "trigger": "Asks about the trauma and timeline to noticing the lump",
+    "finding": "Seatbelt injury two months ago, lump noticed weeks later as bruising faded.",
+    "row": "G1"
+   },
+   {
+    "trigger": "Asks about the lump's location and consistency",
+    "finding": "At the exact injury site, firm and slightly irregular.",
+    "row": "G2"
+   },
+   {
+    "trigger": "Asks about bruising resolution and skin changes",
+    "finding": "Bruising fully resolved, but skin puckering present.",
+    "row": "G3"
+   },
+   {
+    "trigger": "Asks whether there could have been a pre-existing lump",
+    "finding": "Admits she doesn't check regularly and can't be certain.",
+    "row": "G4"
+   }
+  ],
+  "push": [
+   {
+    "question": "So it's definitely just from the accident, right?",
+    "row": "G5",
+    "expect": "Explain that the trauma explains the timing of noticing it, but not necessarily what it actually is, and further assessment is needed."
+   },
+   {
+    "question": "Will I need any tests if it's probably just fat necrosis?",
+    "row": "G6",
+    "expect": "Explain that full triple assessment, and possibly biopsy, is needed regardless, since fat necrosis can closely mimic cancer."
+   }
+  ],
+  "curveballs": [
+   {
+    "prompt": "It's actually got a bit bigger since I first noticed it, is that normal for a bruise-related lump?",
+    "safeAnswer": "Take this as a relevant finding that increases the importance of prompt formal assessment, rather than being reassured that growth is expected or benign.",
+    "row": "G2"
+   },
+   {
+    "prompt": "My friend had exactly this after a similar injury and it was nothing.",
+    "safeAnswer": "Acknowledge this without letting it reduce the need for her own individual assessment, since each case needs to be evaluated on its own findings.",
+    "row": "G5"
+   }
+  ]
+ }
+}

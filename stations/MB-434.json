@@ -1,0 +1,400 @@
+{
+ "id": "MB-434",
+ "exam": "MRCS-B",
+ "title": "Breast reduction consultation for macromastia",
+ "type": "communication",
+ "header": {
+  "domain": "Applied Skills",
+  "contentArea": "Assessment and consent discussion for reduction mammoplasty",
+  "minutes": 9,
+  "readingMinutes": 1,
+  "guidelineVersions": [
+   "GMC Decision making and consent (2020, current)",
+   "Royal College of Surgeons commissioning guidance on breast reduction (current)"
+  ],
+  "related": []
+ },
+ "brief": {
+  "setting": "Breast clinic, surgical referral for symptomatic macromastia",
+  "role": "Core surgical trainee",
+  "scenario": "Mrs Appiah, 38, has been referred with large, heavy breasts causing back, neck and shoulder pain and skin irritation under the breast fold, seeking breast reduction surgery.",
+  "task": "Assess her suitability and discuss the surgery and its implications. You have 7 minutes."
+ },
+ "beforeYouWalkIn": {
+  "frame": "This is a functional, symptom-driven consultation, not purely cosmetic - explore her symptoms and their impact properly before discussing surgery and its trade-offs.",
+  "trap": "Treating the request as purely cosmetic and glossing over her genuine physical symptoms, or promising surgery without covering scarring, sensation change, and breastfeeding implications.",
+  "firstMove": "\"Can you tell me more about the symptoms you've been having because of your breast size?\""
+ },
+ "flow": [
+  "Explore her symptoms and their impact",
+  "Explore what conservative measures have already been tried",
+  "Explain the surgery in broad terms",
+  "Discuss key risks and implications",
+  "Agree next steps and closing"
+ ],
+ "grid": [
+  {
+   "id": "G1",
+   "domain": "communication",
+   "label": "Exploring symptoms and impact",
+   "fail": "Does not explore her specific symptoms or their functional impact.",
+   "pass": "Asks about back, neck and shoulder pain, skin irritation, and how these affect her daily activities.",
+   "high": "Explores the psychological and social impact too (e.g. difficulty exercising, clothing, self-consciousness), recognising this is a whole-person issue, not just orthopaedic."
+  },
+  {
+   "id": "G2",
+   "domain": "clinical-knowledge",
+   "label": "Conservative measures tried",
+   "fail": "Does not ask what has already been tried for her symptoms.",
+   "pass": "Asks whether she has tried supportive bras, physiotherapy, or pain management, and how effective these were.",
+   "high": "Uses this to build a case for surgical referral criteria, recognising that documented failure of conservative measures often supports funding or eligibility decisions."
+  },
+  {
+   "id": "G3",
+   "domain": "clinical-knowledge",
+   "label": "Explaining the surgery",
+   "fail": "Cannot describe what reduction mammoplasty involves in broad terms.",
+   "pass": "Explains that the surgery removes excess breast tissue and skin, and repositions the nipple, aiming to reduce breast size and relieve symptoms.",
+   "high": "Explains this is tailored to achieve a size proportionate to her frame and symptom relief, not a specific cosmetic target size chosen in isolation."
+  },
+  {
+   "id": "G4",
+   "domain": "clinical-knowledge",
+   "label": "Key risks and implications",
+   "fail": "Mentions only generic surgical risks with nothing specific to this operation.",
+   "pass": "Covers scarring (which can be significant), change in nipple sensation, and possible difficulty or inability to breastfeed afterward.",
+   "high": "Explains these with enough detail that she can weigh them meaningfully against her symptoms, rather than as a brief list.",
+   "source": "GMC"
+  },
+  {
+   "id": "G5",
+   "domain": "communication",
+   "label": "Addressing her specific concerns",
+   "fail": "Dismisses a concern she raises (e.g. about future breastfeeding) without addressing it.",
+   "pass": "Responds honestly to a specific concern she raises about the trade-offs of surgery.",
+   "high": "Helps her weigh this concern against her current symptom burden, without deciding on her behalf."
+  },
+  {
+   "id": "G6",
+   "domain": "professionalism",
+   "label": "Next steps and closing",
+   "fail": "Ends without a clear next step.",
+   "pass": "Confirms referral to a specialist team (plastic or breast surgery, depending on local pathway) for definitive planning.",
+   "high": "Explains any relevant assessment criteria or waiting factors (e.g. BMI, smoking status) that might affect timing, framed supportively rather than as an obstacle."
+  }
+ ],
+ "performances": {
+  "fail": [
+   {
+    "speaker": "candidate",
+    "text": "So you want smaller breasts, that's understandable, I'll refer you.",
+    "tags": [
+     {
+      "row": "G1",
+      "band": "fail"
+     },
+     {
+      "row": "G2",
+      "band": "fail"
+     }
+    ]
+   },
+   {
+    "speaker": "patient",
+    "text": "Will there be much scarring?"
+   },
+   {
+    "speaker": "candidate",
+    "text": "Not much to worry about really.",
+    "tags": [
+     {
+      "row": "G4",
+      "band": "fail"
+     }
+    ]
+   }
+  ],
+  "pass": [
+   {
+    "speaker": "candidate",
+    "text": "Can you tell me more about the symptoms you've been having because of your breast size?",
+    "tags": [
+     {
+      "row": "G1",
+      "band": "pass"
+     }
+    ]
+   },
+   {
+    "speaker": "patient",
+    "text": "Constant back and shoulder pain, and sore, irritated skin under the fold."
+   },
+   {
+    "speaker": "candidate",
+    "text": "Have you tried things like a well-fitted supportive bra, physiotherapy, or pain relief, and how much have they helped?",
+    "tags": [
+     {
+      "row": "G2",
+      "band": "pass"
+     }
+    ]
+   },
+   {
+    "speaker": "patient",
+    "text": "Yes, all of those, but it's still a real problem day to day."
+   },
+   {
+    "speaker": "candidate",
+    "text": "Reduction surgery removes excess breast tissue and skin and repositions the nipple, aiming for a size proportionate to your frame and relief of these symptoms.",
+    "tags": [
+     {
+      "row": "G3",
+      "band": "pass"
+     }
+    ]
+   },
+   {
+    "speaker": "candidate",
+    "text": "Important things to know - there's usually significant scarring, some change in nipple sensation, and it can affect your ability to breastfeed in future.",
+    "tags": [
+     {
+      "row": "G4",
+      "band": "pass"
+     }
+    ]
+   },
+   {
+    "speaker": "patient",
+    "text": "I'm not sure I've decided about having more children yet, so that worries me."
+   },
+   {
+    "speaker": "candidate",
+    "text": "That's an important factor to weigh - it's worth thinking through against how much your current symptoms are affecting you, and there's no need to decide today.",
+    "tags": [
+     {
+      "row": "G5",
+      "band": "pass"
+     }
+    ]
+   },
+   {
+    "speaker": "candidate",
+    "text": "I'll refer you on to the specialist team for detailed planning once you've had time to consider everything.",
+    "tags": [
+     {
+      "row": "G6",
+      "band": "pass"
+     }
+    ]
+   }
+  ],
+  "high": [
+   {
+    "speaker": "candidate",
+    "text": "Can you tell me about the symptoms from your breast size, and how they're affecting your day to day life, including things like exercise or how you feel generally?",
+    "tags": [
+     {
+      "row": "G1",
+      "band": "high"
+     }
+    ]
+   },
+   {
+    "speaker": "patient",
+    "text": "Constant back and shoulder pain, sore skin under the fold, and honestly it stops me exercising and makes me self-conscious."
+   },
+   {
+    "speaker": "candidate",
+    "text": "Thank you for sharing all of that. Have you tried supportive bras, physiotherapy, or pain relief, and how much difference did they actually make?",
+    "tags": [
+     {
+      "row": "G2",
+      "band": "high"
+     }
+    ]
+   },
+   {
+    "speaker": "patient",
+    "text": "I've tried all of that for over a year now, without real improvement."
+   },
+   {
+    "speaker": "candidate",
+    "text": "Given that, reduction surgery removes excess tissue and skin and repositions the nipple, aiming to reach a size proportionate to your frame that relieves these symptoms, rather than any specific cosmetic size chosen separately from that goal.",
+    "tags": [
+     {
+      "row": "G3",
+      "band": "high"
+     }
+    ]
+   },
+   {
+    "speaker": "candidate",
+    "text": "There are some important trade-offs to weigh - noticeable scarring, some change in nipple sensation, and possible difficulty breastfeeding in future, which I want you to have a real sense of, not just a brief mention.",
+    "tags": [
+     {
+      "row": "G4",
+      "band": "high"
+     }
+    ]
+   },
+   {
+    "speaker": "patient",
+    "text": "I haven't decided if I want more children, so the breastfeeding part really worries me."
+   },
+   {
+    "speaker": "candidate",
+    "text": "That's a genuinely difficult thing to weigh against how much you're struggling day to day right now, and it's not something I can decide for you - it's worth taking real time with, and there's no pressure to decide today.",
+    "tags": [
+     {
+      "row": "G5",
+      "band": "high"
+     }
+    ]
+   },
+   {
+    "speaker": "candidate",
+    "text": "I'll refer you for specialist assessment and planning. It's worth knowing that things like BMI or smoking status can sometimes affect timing or suitability, which the specialist team will go through supportively with you, not as a barrier but as part of getting you the best outcome.",
+    "tags": [
+     {
+      "row": "G6",
+      "band": "high"
+     }
+    ]
+   }
+  ]
+ },
+ "failures": [
+  {
+   "row": "G1",
+   "move": "Treating the consultation as purely cosmetic without exploring genuine physical symptoms and impact.",
+   "consequence": "Fails to properly assess and document the functional basis for surgery, which is often important both clinically and for referral/funding purposes."
+  },
+  {
+   "row": "G3",
+   "move": "Failing to give any concrete explanation of what reduction mammoplasty actually involves.",
+   "consequence": "Leaves her unable to give truly informed consent or decide whether to proceed, since she has no real picture of the operation itself."
+  },
+  {
+   "row": "G4",
+   "move": "Understating key risks such as scarring, sensation change and breastfeeding implications.",
+   "consequence": "Undermines informed consent for a significant, life-altering elective procedure with real trade-offs."
+  },
+  {
+   "row": "G5",
+   "move": "Dismissing a specific fertility/breastfeeding-related concern without addressing it.",
+   "consequence": "Leaves an important personal consideration unexplored, risking a decision she may later regret without having properly weighed it."
+  },
+  {
+   "row": "G6",
+   "move": "Ending the consultation without confirming a referral or clear next step.",
+   "consequence": "Leaves her without a pathway forward despite having disclosed significant symptoms and concerns, delaying her care."
+  }
+ ],
+ "recovery": [
+  {
+   "when": "You treated this as purely cosmetic",
+   "line": "Let me properly explore the physical symptoms you're actually experiencing, since this is about more than appearance."
+  },
+  {
+   "when": "You understated the risks",
+   "line": "I should give you a fuller picture of what this surgery actually involves, including the scarring and sensation changes."
+  }
+ ],
+ "knowledge": [
+  {
+   "fact": "Symptomatic macromastia causing back, neck or shoulder pain and skin irritation, where conservative measures have failed, is a recognised functional indication for reduction mammoplasty, distinct from purely cosmetic breast surgery."
+  },
+  {
+   "fact": "Reduction mammoplasty carries risks including significant scarring, altered or reduced nipple sensation, and potential impairment of future breastfeeding ability."
+  },
+  {
+   "fact": "Assessment for reduction mammoplasty often considers factors such as BMI and smoking status, which can affect surgical risk and healing, and are addressed supportively as part of pre-operative optimisation."
+  }
+ ],
+ "recall": {
+  "think": "Functional, not cosmetic - document failed conservative measures and weigh the risks, especially breastfeeding.",
+  "say": "\"This is about more than appearance.\"",
+  "do": [
+   "Explore physical, functional and psychosocial impact in detail",
+   "Establish conservative measures tried and their effectiveness",
+   "Give full weight to risks - scarring, sensation change, breastfeeding - and support her own concerns"
+  ],
+  "numbers": [
+   {
+    "value": "7 minutes",
+    "meaning": "station time to assess and discuss surgery",
+    "source": "ICBSE"
+   }
+  ],
+  "trap": "Treating this as purely cosmetic, or understating breastfeeding and scarring risks.",
+  "finish": "A documented functional case, honest risk discussion, and referral for specialist planning."
+ },
+ "sources": [
+  {
+   "id": "ICBSE",
+   "name": "ICBSE Guide to the intercollegiate MRCS examination",
+   "version": "August 2021",
+   "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+   "supports": "Consent/decision-making station format and structure, including timing"
+  },
+  {
+   "id": "GMC",
+   "name": "GMC: Decision making and consent",
+   "version": "In effect from 9 November 2020",
+   "url": "https://www.gmc-uk.org/professional-standards/the-professional-standards/decision-making-and-consent",
+   "supports": "Full disclosure of material risks for an elective surgical decision"
+  },
+  {
+   "id": "RCS-BR",
+   "name": "Royal College of Surgeons: commissioning guidance for breast reduction surgery",
+   "version": "current (2026)",
+   "url": "https://www.rcseng.ac.uk/",
+   "supports": "Assessment criteria (e.g. failed conservative measures, BMI, smoking status) for referral for reduction mammoplasty"
+  }
+ ],
+ "partner": {
+  "opening": "Please assess this patient for possible breast reduction surgery. You have 7 minutes.",
+  "actorBrief": "You are Mrs Appiah, 38, with symptomatic macromastia causing significant back, neck and shoulder pain, skin irritation, and difficulty exercising, unresolved despite a well-fitted bra, physiotherapy and pain relief tried over more than a year. You are undecided about having more children and worried about the impact on breastfeeding.",
+  "reveals": [
+   {
+    "trigger": "Candidate explores your symptoms and their full impact",
+    "finding": "You describe pain, skin irritation, and difficulty exercising and feeling self-conscious.",
+    "row": "G1"
+   },
+   {
+    "trigger": "Candidate asks what's already been tried",
+    "finding": "You confirm over a year of supportive bras, physiotherapy and pain relief with limited benefit.",
+    "row": "G2"
+   },
+   {
+    "trigger": "Candidate gives full weight to breastfeeding risk",
+    "finding": "You reveal your uncertainty about future children and specific worry about this trade-off.",
+    "row": "G5"
+   }
+  ],
+  "push": [
+   {
+    "question": "Will this definitely fix my back pain?",
+    "row": "G3",
+    "expect": "Explain the surgery aims to relieve these symptoms but cannot guarantee complete resolution, being honest rather than overpromising."
+   },
+   {
+    "question": "How bad will the scarring actually be?",
+    "row": "G4",
+    "expect": "Give an honest, realistic description of typically significant scarring associated with this procedure."
+   }
+  ],
+  "curveballs": [
+   {
+    "prompt": "My GP said this is 'just cosmetic' and wouldn't refer me before.",
+    "safeAnswer": "Acknowledge this experience without criticising the previous clinician, and explain clearly why her documented symptoms and failed conservative measures support a functional, not purely cosmetic, case for referral.",
+    "row": "G2"
+   },
+   {
+    "prompt": "What if I regret it because of the scarring?",
+    "safeAnswer": "Acknowledge this is a genuine and common concern, encourage her to take real time to weigh this against her current symptom burden, and avoid pressuring her toward a decision.",
+    "row": "G5"
+   }
+  ]
+ }
+}

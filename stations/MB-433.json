@@ -1,0 +1,416 @@
+{
+ "id": "MB-433",
+ "exam": "MRCS-B",
+ "title": "An incidental high-risk finding: atypical hyperplasia",
+ "type": "communication",
+ "header": {
+  "domain": "Applied Skills",
+  "contentArea": "Explaining a high-risk (non-cancer) breast biopsy finding",
+  "minutes": 9,
+  "readingMinutes": 1,
+  "guidelineVersions": [
+   "NICE NG101 Early and locally advanced breast cancer (updated 2026)"
+  ],
+  "related": [
+   {
+    "id": "MB-432",
+    "why": "A contrasting biopsy result this conversation is often confused with"
+   },
+   {
+    "id": "MB-427",
+    "why": "Another benign breast finding requiring careful, proportionate explanation"
+   }
+  ]
+ },
+ "brief": {
+  "setting": "Breast clinic, results appointment",
+  "role": "Core surgical trainee",
+  "scenario": "Mrs Petrov, 45, had a core biopsy for a screening-detected finding, which shows atypical ductal hyperplasia (ADH), with no cancer present.",
+  "task": "Explain this result and its implications. You have 7 minutes."
+ },
+ "beforeYouWalkIn": {
+  "frame": "Not cancer, but a marker of increased future risk - stay clear and calm, since patients often misread this result either way.",
+  "trap": "Reassuring her so strongly she ignores the future risk, or explaining it so it sounds like an active cancer diagnosis.",
+  "firstMove": "\"Your result is good news in one way, but there's more to explain - can I go through it?\""
+ },
+ "flow": [
+  "Deliver the result: no cancer found",
+  "Explain what atypical ductal hyperplasia actually is",
+  "Explain what it means for future risk",
+  "Explain the plan (excision biopsy and/or increased surveillance)",
+  "Address concerns and closing"
+ ],
+ "grid": [
+  {
+   "id": "G1",
+   "domain": "communication",
+   "label": "Delivering the headline result",
+   "fail": "Buries the fact that no cancer was found behind a confusing explanation of the finding.",
+   "pass": "States clearly and early that no cancer was found on the biopsy.",
+   "high": "Delivers this warmly, while flagging there is more nuance to explain, so she doesn't switch off before the rest of the explanation."
+  },
+  {
+   "id": "G2",
+   "domain": "clinical-knowledge",
+   "label": "Explaining what ADH is",
+   "fail": "Cannot explain what atypical ductal hyperplasia actually is.",
+   "pass": "Explains that this means some cells in the duct look mildly abnormal under the microscope, but are not cancerous.",
+   "high": "Distinguishes clearly from both normal tissue and DCIS, avoiding the common confusion between these terms.",
+   "source": "NG101"
+  },
+  {
+   "id": "G3",
+   "domain": "clinical-knowledge",
+   "label": "Explaining future risk",
+   "fail": "Either omits the increased future risk entirely, or presents it in a way that sounds like an active cancer diagnosis.",
+   "pass": "Explains that this finding is associated with a moderately increased future risk of developing breast cancer, in either breast, compared to the general population.",
+   "high": "Puts this risk into context proportionately, avoiding both false reassurance and disproportionate alarm.",
+   "source": "ADH-lit"
+  },
+  {
+   "id": "G4",
+   "domain": "clinical-knowledge",
+   "label": "Explaining the plan",
+   "fail": "Offers no clear plan following this result.",
+   "pass": "Explains that a small excision biopsy is usually recommended, since ADH can occasionally coexist with cancer missed on core biopsy alone.",
+   "high": "Explains that ongoing surveillance and, depending on her broader risk profile, consideration of risk-reducing strategies may also be discussed as part of long-term management."
+  },
+  {
+   "id": "G5",
+   "domain": "communication",
+   "label": "Addressing concerns",
+   "fail": "Dismisses her confusion between this and an actual cancer diagnosis.",
+   "pass": "Responds patiently to her question about whether this means she has, or will get, cancer.",
+   "high": "Validates that this is a genuinely confusing category of result for many patients to take in."
+  },
+  {
+   "id": "G6",
+   "domain": "professionalism",
+   "label": "Closing",
+   "fail": "Ends without confirming next steps or her understanding.",
+   "pass": "Confirms the excision biopsy plan and checks her understanding before closing.",
+   "high": "Checks how she's feeling about the news overall, recognising that even a reassuring-sounding result can still be unsettling."
+  }
+ ],
+ "performances": {
+  "fail": [
+   {
+    "speaker": "candidate",
+    "text": "Your biopsy shows atypical ductal hyperplasia, which increases your cancer risk significantly, so we need to watch you closely.",
+    "tags": [
+     {
+      "row": "G1",
+      "band": "fail"
+     },
+     {
+      "row": "G3",
+      "band": "fail"
+     }
+    ]
+   },
+   {
+    "speaker": "patient",
+    "text": "[Alarmed.] So do I have cancer?"
+   },
+   {
+    "speaker": "candidate",
+    "text": "Not exactly, it's complicated.",
+    "tags": [
+     {
+      "row": "G5",
+      "band": "fail"
+     }
+    ]
+   }
+  ],
+  "pass": [
+   {
+    "speaker": "candidate",
+    "text": "Your biopsy result is actually good news in an important way - no cancer was found. There is a bit more detail worth explaining though, is that alright?",
+    "tags": [
+     {
+      "row": "G1",
+      "band": "pass"
+     }
+    ]
+   },
+   {
+    "speaker": "patient",
+    "text": "Oh, that's a relief - yes, please explain."
+   },
+   {
+    "speaker": "candidate",
+    "text": "The biopsy shows something called atypical ductal hyperplasia - this means some cells in the duct look mildly abnormal under the microscope, but they aren't cancer cells.",
+    "tags": [
+     {
+      "row": "G2",
+      "band": "pass"
+     }
+    ]
+   },
+   {
+    "speaker": "patient",
+    "text": "So what does that actually mean for me?"
+   },
+   {
+    "speaker": "candidate",
+    "text": "It means you have a moderately increased future risk of developing breast cancer compared to the general population, in either breast, though it's not a cancer diagnosis itself.",
+    "tags": [
+     {
+      "row": "G3",
+      "band": "pass"
+     }
+    ]
+   },
+   {
+    "speaker": "candidate",
+    "text": "We'd usually recommend a small surgical biopsy to fully sample the area, since occasionally a small area of cancer can be found alongside this that wasn't picked up on the original sample.",
+    "tags": [
+     {
+      "row": "G4",
+      "band": "pass"
+     }
+    ]
+   },
+   {
+    "speaker": "patient",
+    "text": "I'm confused whether this means I have cancer or not."
+   },
+   {
+    "speaker": "candidate",
+    "text": "That's a really common point of confusion - to be clear, this is not cancer, but it is a marker that raises your future risk, which is why we still act on it.",
+    "tags": [
+     {
+      "row": "G5",
+      "band": "pass"
+     }
+    ]
+   },
+   {
+    "speaker": "candidate",
+    "text": "I'll arrange the excision biopsy, and we'll talk through ongoing monitoring after that. Does that all make sense?",
+    "tags": [
+     {
+      "row": "G6",
+      "band": "pass"
+     }
+    ]
+   }
+  ],
+  "high": [
+   {
+    "speaker": "candidate",
+    "text": "I have good news to start with - your biopsy shows no cancer. There's an important detail to explain properly though, so let's go through it together.",
+    "tags": [
+     {
+      "row": "G1",
+      "band": "high"
+     }
+    ]
+   },
+   {
+    "speaker": "patient",
+    "text": "Thank goodness - please, go ahead."
+   },
+   {
+    "speaker": "candidate",
+    "text": "The finding is called atypical ductal hyperplasia - some of the cells lining the duct look mildly abnormal under the microscope, but they're not cancer cells, and this is quite different from something like DCIS, which does contain cancer cells confined to the duct.",
+    "tags": [
+     {
+      "row": "G2",
+      "band": "high"
+     }
+    ]
+   },
+   {
+    "speaker": "patient",
+    "text": "So does this mean anything for my future?"
+   },
+   {
+    "speaker": "candidate",
+    "text": "It does mean a moderately increased future risk of breast cancer compared to the general population, affecting either breast, not just this area - I want to be honest about that without it sounding like a cancer diagnosis itself, because it isn't one.",
+    "tags": [
+     {
+      "row": "G3",
+      "band": "high"
+     }
+    ]
+   },
+   {
+    "speaker": "candidate",
+    "text": "The usual next step is a small surgical excision biopsy to fully sample the area, since a small proportion of these findings turn out to have a tiny area of cancer nearby that a core biopsy alone can miss. After that, we'd talk about ongoing monitoring, and depending on your wider risk profile, whether anything else is worth discussing long-term.",
+    "tags": [
+     {
+      "row": "G4",
+      "band": "high"
+     }
+    ]
+   },
+   {
+    "speaker": "patient",
+    "text": "I still find it hard to know whether to be relieved or worried."
+   },
+   {
+    "speaker": "candidate",
+    "text": "That's such an understandable place to be - this really does sit in an in-between category that's hard to file neatly as either good or bad news, and both relief and concern make sense here.",
+    "tags": [
+     {
+      "row": "G5",
+      "band": "high"
+     }
+    ]
+   },
+   {
+    "speaker": "candidate",
+    "text": "I'll arrange the excision biopsy. Before we finish, how are you feeling about everything we've discussed?",
+    "tags": [
+     {
+      "row": "G6",
+      "band": "high"
+     }
+    ]
+   }
+  ]
+ },
+ "failures": [
+  {
+   "row": "G2",
+   "move": "Cannot explain what atypical ductal hyperplasia actually is.",
+   "consequence": "Leaves the patient without any real understanding of her own result, undermining informed decision-making about the excision biopsy."
+  },
+  {
+   "row": "G6",
+   "move": "Ending without confirming next steps or checking her understanding.",
+   "consequence": "Risks her leaving unclear about the excision biopsy plan or still confused about the result."
+  },
+  {
+   "row": "G3",
+   "move": "Explaining the increased risk in a way that sounds like an active cancer diagnosis.",
+   "consequence": "Causes disproportionate alarm and can be experienced similarly to a cancer diagnosis, when the actual finding and its implications are quite different."
+  },
+  {
+   "row": "G1",
+   "move": "Burying the fact that no cancer was found behind technical explanation.",
+   "consequence": "Leaves the patient unnecessarily anxious for longer than needed before reaching the reassuring headline."
+  },
+  {
+   "row": "G4",
+   "move": "Offering no clear plan following the result.",
+   "consequence": "Leaves an important next step (excision biopsy, given the risk of a missed nearby cancer) unaddressed, risking delayed diagnosis if cancer is in fact present nearby."
+  }
+ ],
+ "recovery": [
+  {
+   "when": "You made the risk sound like a cancer diagnosis",
+   "line": "I want to be clear - this is not a cancer diagnosis, though it does raise your future risk, and I don't want to conflate the two."
+  },
+  {
+   "when": "You didn't explain next steps",
+   "line": "I should also explain what usually happens next after a result like this."
+  }
+ ],
+ "knowledge": [
+  {
+   "fact": "Atypical ductal hyperplasia (ADH) is a benign but atypical finding, distinct from both normal tissue and DCIS, and is not itself a cancer diagnosis.",
+   "source": "NG101"
+  },
+  {
+   "fact": "ADH is associated with a moderately increased future risk of breast cancer in either breast compared to the general population.",
+   "source": "ADH-lit"
+  },
+  {
+   "fact": "Surgical excision biopsy is generally recommended after a core biopsy diagnosis of ADH, since a small proportion of cases are found to have an adjacent area of DCIS or invasive cancer not sampled on the original core biopsy."
+  }
+ ],
+ "recall": {
+  "think": "Not cancer, but a moderate risk marker - explain plainly; excision biopsy is next.",
+  "say": "\"This sits in-between - hard to file as good or bad news.\"",
+  "do": [
+   "Deliver \"no cancer found\" clearly",
+   "Explain ADH, distinguishing it from DCIS",
+   "Explain future risk and arrange excision biopsy"
+  ],
+  "numbers": [
+   {
+    "value": "~4x",
+    "meaning": "Relative risk of future breast cancer with ADH, vs general population.",
+    "source": "ADH-lit"
+   },
+   {
+    "value": "10-20%",
+    "meaning": "Proportion of ADH cases upgraded to cancer on excision.",
+    "source": "ADH-lit"
+   }
+  ],
+  "trap": "Making the risk sound like an active cancer diagnosis, or omitting the excision biopsy.",
+  "finish": "Clear, proportionate understanding of the finding, risk, and biopsy plan."
+ },
+ "sources": [
+  {
+   "id": "ICBSE",
+   "name": "ICBSE Guide to the intercollegiate MRCS examination",
+   "version": "August 2021",
+   "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+   "supports": "Communication station format and structure, including timing"
+  },
+  {
+   "id": "NG101",
+   "name": "NICE NG101: Early and locally advanced breast cancer: diagnosis and management",
+   "version": "Published July 2018; last updated 2026",
+   "url": "https://www.nice.org.uk/guidance/ng101",
+   "supports": "Classification and management of atypical ductal hyperplasia and its distinction from DCIS"
+  },
+  {
+   "id": "ADH-lit",
+   "name": "Dupont & Page cohort studies on atypical hyperplasia and breast cancer risk (as summarised in standard breast pathology teaching)",
+   "version": "established cohort literature (1985 onward)",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/3821469/",
+   "supports": "Relative risk of future breast cancer and excision-upgrade rate associated with atypical ductal hyperplasia"
+  }
+ ],
+ "partner": {
+  "opening": "Please explain this patient's atypical ductal hyperplasia result. You have 7 minutes.",
+  "actorBrief": "You are Mrs Petrov, 45, whose core biopsy shows ADH with no cancer. You're initially relieved to hear no cancer was found, but confused about what the finding actually means and whether you should be worried.",
+  "reveals": [
+   {
+    "trigger": "Candidate delivers the headline that no cancer was found",
+    "finding": "You feel an immediate wave of relief.",
+    "row": "G1"
+   },
+   {
+    "trigger": "Candidate explains the future risk without overstating it as a diagnosis",
+    "finding": "You understand it's a risk marker, not a diagnosis, though you remain a little uncertain how to feel.",
+    "row": "G3"
+   },
+   {
+    "trigger": "Candidate validates the confusing, in-between nature of the result",
+    "finding": "You feel understood rather than judged for finding this hard to categorise emotionally.",
+    "row": "G5"
+   }
+  ],
+  "push": [
+   {
+    "question": "So do I have cancer or not?",
+    "row": "G5",
+    "expect": "Clarify firmly that this is not a cancer diagnosis, while being honest about the increased future risk it represents."
+   },
+   {
+    "question": "Why do I need more surgery if there's no cancer?",
+    "row": "G4",
+    "expect": "Explain that excision biopsy is recommended because a small proportion of these findings turn out to have nearby cancer not captured on the original sample."
+   }
+  ],
+  "curveballs": [
+   {
+    "prompt": "Does this mean I should have my breasts removed to be safe?",
+    "safeAnswer": "Explain that risk-reducing surgery is not typically indicated for this finding alone, and that increased surveillance and the planned excision biopsy are the appropriate next steps, with any broader risk-reduction discussion depending on her overall risk profile.",
+    "row": "G4"
+   },
+   {
+    "prompt": "Could I have avoided this somehow?",
+    "safeAnswer": "Reassure her that ADH is not caused by anything she did or didn't do, and that its cause is not attributable to lifestyle factors in the way she may be imagining.",
+    "row": "G5"
+   }
+  ]
+ }
+}
