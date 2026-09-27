@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AMaC MRCS Part A &mdash; Applied Knowledge Bank</title>
-<meta data-count-content="mrcsAppliedKnowledge:single-best-answer questions" name="description" content="MRCS Part A Applied Knowledge Bank &mdash; 4352 single-best-answer questions by subject, with the reasoning, exam trap, takeaway and source shown after each question.">
+<meta data-count-content="mrcsAppliedKnowledge:single-best-answer questions" name="description" content="MRCS Part A Applied Knowledge Bank &mdash; 4674 single-best-answer questions by subject, with the reasoning, exam trap, takeaway and source shown after each question.">
 <!-- ══════════════════════════════════════════════════════════════
      AMaC — SHARED HEAD BLOCK
      Paste this inside <head> on EVERY page, just after <title>.
@@ -26,7 +26,7 @@
 <meta property="og:site_name" content="AMaC">
 <meta property="og:locale" content="en_GB">
 <meta property="og:title" content="AMaC MRCS Part A — Applied Knowledge Bank">
-<meta data-count-content="mrcsAppliedKnowledge:single-best-answer questions" property="og:description" content="MRCS Part A Applied Knowledge Bank: 4352 single-best-answer questions with the reasoning, exam trap and source for each.">
+<meta data-count-content="mrcsAppliedKnowledge:single-best-answer questions" property="og:description" content="MRCS Part A Applied Knowledge Bank: 4674 single-best-answer questions with the reasoning, exam trap and source for each.">
 <meta property="og:url" content="https://amac-medical.com/mrcs-a-applied-knowledge.html">
 <meta property="og:image" content="https://amac-medical.com/og-image.png">
 <meta property="og:image:width" content="1200">
@@ -36,7 +36,7 @@
 <!-- ── Twitter/X card ─────────────────────────────────────────── -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="AMaC MRCS Part A — Applied Knowledge Bank">
-<meta data-count-content="mrcsAppliedKnowledge:single-best-answer questions" name="twitter:description" content="MRCS Part A Applied Knowledge Bank: 4352 single-best-answer questions with the reasoning, exam trap and source for each.">
+<meta data-count-content="mrcsAppliedKnowledge:single-best-answer questions" name="twitter:description" content="MRCS Part A Applied Knowledge Bank: 4674 single-best-answer questions with the reasoning, exam trap and source for each.">
 <meta name="twitter:image" content="https://amac-medical.com/og-image.png">
 
 <!-- ── Structured data: helps Google understand the site ──────── -->
@@ -122,6 +122,10 @@ h1,h2,h3{font-family:'Fraunces',Georgia,serif;color:var(--navy);}
 .expl-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;margin-bottom:5px;}
 .expl-correct{background:#e6f4ec;border-left-color:var(--ok);}
 .expl-correct .expl-label{color:var(--ok);}
+.expl-wrong{background:#fff3e0;border-left-color:#e67e22;}
+.expl-wrong .expl-label{color:var(--amber);}
+.expl-wrong ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px;}
+.expl-wrong .opt-letter{margin-right:4px;}
 .expl-trap{background:#fbeceb;border-left-color:var(--bad);}
 .expl-trap .expl-label{color:var(--bad);}
 .expl-takeaway{background:#ebf5fb;border-left-color:#1a5276;font-weight:600;}
@@ -311,6 +315,18 @@ function render(){
     const bannerTxt = isCorrect ? '&#10003; Correct' : '&#10007; Incorrect &mdash; correct answer: ' + shownLetter(q.correct_letter);
     explHtml = '<div class="result-banner ' + bannerCls + '">' + bannerTxt + '</div><div class="expl-wrap">';
     if (q.why_correct) explHtml += '<div class="expl expl-correct"><div class="expl-label">Why</div>'          + esc(q.why_correct) + '</div>';
+    // why_others_wrong is keyed by stored option letter; list the wrong options
+    // in display order under the letters the candidate actually sees.
+    if (q.why_others_wrong){
+      const wrong = keys.filter(function(k){ return k !== q.correct_letter && q.why_others_wrong[k]; });
+      if (wrong.length){
+        explHtml += '<div class="expl expl-wrong"><div class="expl-label">Why the others are wrong</div><ul>'
+          + wrong.map(function(k){
+              return '<li><span class="opt-letter">' + shownLetter(k) + '.</span> <strong>' + esc(q.options[k]) + '</strong> &mdash; ' + esc(q.why_others_wrong[k]) + '</li>';
+            }).join('')
+          + '</ul></div>';
+      }
+    }
     if (q.exam_trap)   explHtml += '<div class="expl expl-trap"><div class="expl-label">Exam trap</div>'       + esc(q.exam_trap)   + '</div>';
     if (q.takeaway)    explHtml += '<div class="expl expl-takeaway"><div class="expl-label">AMaC takeaway</div>' + esc(q.takeaway)  + '</div>';
     if (q.source)      explHtml += '<div class="expl expl-source"><div class="expl-label">Source</div>'        + esc(q.source)      + '</div>';
