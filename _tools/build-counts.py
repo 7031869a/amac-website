@@ -160,6 +160,9 @@ def measure():
         counts['mrcsReviewed'] = len(reviewed)
     except Exception as exc:  # noqa: BLE001
         problems.append('mrcs: %s: %s' % (type(exc).__name__, exc))
+    # all MRCS Part A questions on the site: the main bank plus the Applied Knowledge Bank
+    if 'mrcsReviewed' in counts and 'mrcsAppliedKnowledge' in counts:
+        counts['mrcsPartATotal'] = counts['mrcsReviewed'] + counts['mrcsAppliedKnowledge']
     return counts, problems
 
 
