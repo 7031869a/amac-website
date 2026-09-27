@@ -152,6 +152,8 @@ def measure():
     safe('stationPlannerStations', lambda: count('station-planner.html', 'FREQ'))
     safe('mrcp1Questions', lambda: count('mrcp1-questions.js', 'MRCP1_QUESTIONS'))
     safe('mrcsAppliedKnowledge', lambda: count('mrcs-a-applied-knowledge-questions.js', 'MRCSA_AK_QUESTIONS'))
+    # the station list on mrcs-part-b.html is built from this index (build-station-index.js)
+    safe('mrcsPartBStations', lambda: len(load_json('stations/index.json')))
     try:
         reviewed = load_json('data/reviewed.json')
         # the pending pool was withdrawn from the site on 24 Sep 2026
