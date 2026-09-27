@@ -32,7 +32,7 @@ while read -r local_ref local_sha remote_ref remote_sha; do
   fi
 
   tmp=$(mktemp -d) || exit 1
-  git archive "$local_sha" -- "$script" data '*.html' '*.js' | tar -x -C "$tmp"
+  git archive "$local_sha" -- "$script" data stations/index.json '*.html' '*.js' | tar -x -C "$tmp"
   if ! out=$("$py" "$tmp/$script" --check 2>&1); then
     echo "pre-push: counts are stale in $local_ref ($local_sha):" >&2
     echo "$out" | grep -E 'stale:|MARKUP PROBLEMS|COULD NOT COUNT|^  - ' >&2
