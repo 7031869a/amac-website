@@ -661,16 +661,21 @@ function optionEntries(q) {
 // The full explanation panel for a question: the correct option's reasoning,
 // each wrong option's reasoning, then exam trap / takeaway / source if present
 // (older Bank 1 questions don't have these three — rows are simply omitted).
+// Options are shown shuffled and unlettered, so each explanation is labelled
+// with its option text rather than the stored letter.
+function esc(s) {
+  return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
 function buildExplainHTML(q) {
-  const rows = [`<div class="row"><b>${q.correct_letter}:</b> ${q.why_correct}</div>`];
+  const rows = [`<div class="row"><b>✓ ${esc(q.options[q.correct_letter])}:</b> ${esc(q.why_correct)}</div>`];
   Object.keys(q.options).forEach(letter => {
     if (letter === q.correct_letter) return;
     const text = q.why_others_wrong && q.why_others_wrong[letter];
-    if (text) rows.push(`<div class="row"><b>${letter}:</b> ${text}</div>`);
+    if (text) rows.push(`<div class="row"><b>${esc(q.options[letter])}:</b> ${esc(text)}</div>`);
   });
-  if (q.exam_trap) rows.push(`<div class="row"><b>Exam trap:</b> ${q.exam_trap}</div>`);
-  if (q.takeaway) rows.push(`<div class="row"><b>Takeaway:</b> ${q.takeaway}</div>`);
-  if (q.source) rows.push(`<div class="row"><b>Source:</b> ${q.source}</div>`);
+  if (q.exam_trap) rows.push(`<div class="row"><b>Exam trap:</b> ${esc(q.exam_trap)}</div>`);
+  if (q.takeaway) rows.push(`<div class="row"><b>Takeaway:</b> ${esc(q.takeaway)}</div>`);
+  if (q.source) rows.push(`<div class="row"><b>Source:</b> ${esc(q.source)}</div>`);
   return rows.join('');
 }
 
@@ -975,13 +980,13 @@ function renderReview(filter) {
   listEl.innerHTML = items.map((a) => {
     const idx = sessionLog.indexOf(a) + 1;
     const answeredText = a.selected
-      ? `<p class="a ${a.isCorrect ? 'right' : 'wrong'}">Your answer: ${a.selected}. ${a.options[a.selected]} ${a.isCorrect ? '\u2713' : '\u2717'}</p>`
+      ? `<p class="a ${a.isCorrect ? 'right' : 'wrong'}">Your answer: ${esc(a.options[a.selected])} ${a.isCorrect ? '\u2713' : '\u2717'}</p>`
       : `<p class="a wrong">Not answered</p>`;
     return `
     <div class="review-item ${a.isCorrect ? 'correct' : 'incorrect'}">
-      <p class="q"><b>Q${idx}.</b> ${a.stem}</p>
+      <p class="q"><b>Q${idx}.</b> ${esc(a.stem)}</p>
       ${answeredText}
-      ${!a.isCorrect ? `<p class="a right">Correct answer: ${a.correct_answer}</p>` : ''}
+      ${!a.isCorrect ? `<p class="a right">Correct answer: ${esc(a.options[a.correct_letter])}</p>` : ''}
       ${a.flagged ? '<p class="flag-note">Flagged during exam</p>' : ''}
     </div>`;
   }).join('');
