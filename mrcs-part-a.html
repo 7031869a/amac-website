@@ -532,17 +532,21 @@
      - Mock exam: one continuous 180-question/180-minute
        sitting representing Paper 1 as it is actually sat —
        deliberately NOT split into two fake half-length papers.
-   Both modes draw from data/reviewed.json. There is no second
-   pool: the previously held set was withdrawn from the site.
+   Both modes draw from data/mrcs-part-a-combined.json, the
+   single merged Part A bank (originally reviewed.json's 318
+   plus the Applied Knowledge Bank's 4,661 — merged 30 Sep 2026,
+   each question now carrying a letter-keyed options object,
+   correct_letter, why_correct, why_others_wrong per wrong
+   letter, and optional exam_trap/takeaway/source). That JSON
+   file is generated from mrcs-part-a-combined-questions.js —
+   regenerate it from that source file after any future edit.
    ========================================================= */
 
-const DATA_FILES = {
-  reviewed: 'data/reviewed.json',
-};
+const DATA_FILE = 'data/mrcs-part-a-combined.json';
 const MOCK_QUESTION_COUNT = 180;
 const MOCK_SECONDS = 180 * 60;
 
-let reviewedData = [];
+let bankData = [];
 
 let quizPool = [];
 let currentIndex = 0;
@@ -585,7 +589,7 @@ function shuffle(arr) {
 
 async function loadData() {
   try {
-    reviewedData = await fetch(DATA_FILES.reviewed).then(r => r.json());
+    bankData = await fetch(DATA_FILE).then(r => r.json());
   } catch (e) {
     document.getElementById('bank-size-note').textContent =
       'Could not load question data. This page must be served over http(s) — opening the file directly will not work.';
@@ -595,14 +599,14 @@ async function loadData() {
   populateSubjects();
 
   const mockNote = document.getElementById('mock-availability-note');
-  if (reviewedData.length < MOCK_QUESTION_COUNT) {
-    mockNote.textContent = `Only ${reviewedData.length} questions are available so far — a full ${MOCK_QUESTION_COUNT}-question mock needs more before it can run.`;
+  if (bankData.length < MOCK_QUESTION_COUNT) {
+    mockNote.textContent = `Only ${bankData.length} questions are available so far — a full ${MOCK_QUESTION_COUNT}-question mock needs more before it can run.`;
     document.getElementById('start-mock-btn').disabled = true;
   } else {
-    mockNote.textContent = `Drawing from ${reviewedData.length} questions.`;
+    mockNote.textContent = `Drawing from ${bankData.length} questions.`;
   }
-  // Which subjects the mock currently covers, derived from the reviewed pool.
-  const mockSubjects = [...new Set(reviewedData.map(d => d.subject))].sort();
+  // Which subjects the mock currently covers, derived from the whole bank.
+  const mockSubjects = [...new Set(bankData.map(d => d.subject))].sort();
   document.getElementById('mock-subject-coverage').textContent =
     ` — currently covering ${mockSubjects.length} subjects: ${mockSubjects.join(', ')}`;
 }
@@ -610,10 +614,10 @@ async function loadData() {
 function populateSubjects() {
   const select = document.getElementById('subject-select');
   const previous = select.value;
-  const subjects = [...new Set(reviewedData.map(d => d.subject))].sort();
+  const subjects = [...new Set(bankData.map(d => d.subject))].sort();
   select.innerHTML = '<option value="all">All subjects</option>' +
     subjects.map(s => {
-      const n = reviewedData.filter(d => d.subject === s).length;
+      const n = bankData.filter(d => d.subject === s).length;
       return `<option value="${s}">${s} (${n})</option>`;
     }).join('');
   if (previous && subjects.includes(previous)) select.value = previous;
@@ -626,8 +630,8 @@ const SMALL_SUBJECT_THRESHOLD = 10;
 function updateBankNote() {
   const subject = document.getElementById('subject-select').value;
   const n = subject === 'all'
-    ? reviewedData.length
-    : reviewedData.filter(d => d.subject === subject).length;
+    ? bankData.length
+    : bankData.filter(d => d.subject === subject).length;
   let text = `${n} question${n !== 1 ? 's' : ''} available`;
   if (subject !== 'all' && n < SMALL_SUBJECT_THRESHOLD) text += ' (a smaller question set)';
   text += '.';
@@ -648,8 +652,30 @@ document.getElementById('mode-mock-btn').addEventListener('click', () => {
   document.getElementById('practice-options').style.display = 'none';
 });
 
+// A question's options as a shuffled array of {letter, text} pairs — display
+// order is randomised, but the letter (matched against correct_letter) is not.
+function optionEntries(q) {
+  return shuffle(Object.entries(q.options).map(([letter, text]) => ({ letter, text })));
+}
+
+// The full explanation panel for a question: the correct option's reasoning,
+// each wrong option's reasoning, then exam trap / takeaway / source if present
+// (older Bank 1 questions don't have these three — rows are simply omitted).
+function buildExplainHTML(q) {
+  const rows = [`<div class="row"><b>${q.correct_letter}:</b> ${q.why_correct}</div>`];
+  Object.keys(q.options).forEach(letter => {
+    if (letter === q.correct_letter) return;
+    const text = q.why_others_wrong && q.why_others_wrong[letter];
+    if (text) rows.push(`<div class="row"><b>${letter}:</b> ${text}</div>`);
+  });
+  if (q.exam_trap) rows.push(`<div class="row"><b>Exam trap:</b> ${q.exam_trap}</div>`);
+  if (q.takeaway) rows.push(`<div class="row"><b>Takeaway:</b> ${q.takeaway}</div>`);
+  if (q.source) rows.push(`<div class="row"><b>Source:</b> ${q.source}</div>`);
+  return rows.join('');
+}
+
 document.getElementById('start-btn').addEventListener('click', () => {
-  const pool = reviewedData;
+  const pool = bankData;
   const subject = document.getElementById('subject-select').value;
   const countSel = document.getElementById('count-select').value;
 
@@ -679,14 +705,15 @@ function renderQuestion() {
   document.getElementById('q-score').textContent = `Score: ${score}`;
   document.getElementById('progress-fill').style.width = `${(currentIndex / total) * 100}%`;
   document.getElementById('q-topic').textContent = q.topic;
-  document.getElementById('q-text').textContent = q.question;
+  document.getElementById('q-text').textContent = q.stem;
 
   const optionsEl = document.getElementById('q-options');
   optionsEl.innerHTML = '';
-  shuffle(q.options).forEach(opt => {
+  optionEntries(q).forEach(({ letter, text }) => {
     const li = document.createElement('li');
-    li.textContent = opt;
-    li.addEventListener('click', () => selectAnswer(opt));
+    li.textContent = text;
+    li.dataset.letter = letter;
+    li.addEventListener('click', () => selectAnswer(letter));
     optionsEl.appendChild(li);
   });
 
@@ -699,28 +726,26 @@ function renderQuestion() {
     currentIndex === total - 1 ? 'See results' : 'Next question';
 }
 
-function selectAnswer(selected) {
+function selectAnswer(selectedLetter) {
   if (answered) return;
   answered = true;
   const q = quizPool[currentIndex];
-  const isCorrect = selected === q.correct_answer;
+  const isCorrect = selectedLetter === q.correct_letter;
   if (isCorrect) score++;
 
   document.querySelectorAll('#q-options li').forEach(li => {
     li.classList.add('disabled');
-    if (li.textContent === q.correct_answer) li.classList.add('correct');
-    if (li.textContent === selected && !isCorrect) li.classList.add('incorrect');
+    if (li.dataset.letter === q.correct_letter) li.classList.add('correct');
+    if (li.dataset.letter === selectedLetter && !isCorrect) li.classList.add('incorrect');
   });
 
   const explainEl = document.getElementById('q-explain');
-  explainEl.innerHTML = Object.entries(q.explanations).map(([opt, text]) =>
-    `<div class="row"><b>${opt}:</b> ${text}</div>`
-  ).join('');
+  explainEl.innerHTML = buildExplainHTML(q);
   explainEl.classList.add('show');
 
   sessionLog.push({
-    question: q.question, options: q.options, correct_answer: q.correct_answer,
-    selected, isCorrect, reviewed: q.reviewed, flagged: false,
+    stem: q.stem, options: q.options, correct_letter: q.correct_letter, correct_answer: q.correct_answer,
+    selected: selectedLetter, isCorrect, flagged: false,
   });
 
   document.getElementById('q-score').textContent = `Score: ${score}`;
@@ -754,9 +779,9 @@ function showPracticeResults() {
 }
 
 document.getElementById('start-mock-btn').addEventListener('click', () => {
-  if (reviewedData.length < MOCK_QUESTION_COUNT) return;
-  mockPool = shuffle(reviewedData).slice(0, MOCK_QUESTION_COUNT).map(q => ({
-    ...q, shuffledOptions: shuffle(q.options),
+  if (bankData.length < MOCK_QUESTION_COUNT) return;
+  mockPool = shuffle(bankData).slice(0, MOCK_QUESTION_COUNT).map(q => ({
+    ...q, shuffledEntries: optionEntries(q),
   }));
   mockIndex = 0;
   mockAnswers = {};
@@ -797,16 +822,17 @@ function renderMockQuestion() {
   document.getElementById('mock-answered-count').textContent =
     `Answered: ${Object.keys(mockAnswers).length} / ${mockPool.length}`;
   document.getElementById('mock-topic').textContent = q.topic;
-  document.getElementById('mock-text').textContent = q.question;
+  document.getElementById('mock-text').textContent = q.stem;
 
   const optsEl = document.getElementById('mock-options-list');
   optsEl.innerHTML = '';
-  q.shuffledOptions.forEach(opt => {
+  q.shuffledEntries.forEach(({ letter, text }) => {
     const li = document.createElement('li');
-    li.textContent = opt;
-    if (mockAnswers[mockIndex] === opt) li.classList.add('selected');
+    li.textContent = text;
+    li.dataset.letter = letter;
+    if (mockAnswers[mockIndex] === letter) li.classList.add('selected');
     li.addEventListener('click', () => {
-      mockAnswers[mockIndex] = opt;
+      mockAnswers[mockIndex] = letter;
       renderMockQuestion();
       updatePalette();
     });
@@ -869,12 +895,12 @@ function submitMockExam(autoSubmitted) {
   let correct = 0;
   const log = mockPool.map((q, i) => {
     const selected = mockAnswers[i];
-    const isCorrect = selected === q.correct_answer;
+    const isCorrect = selected === q.correct_letter;
     if (isCorrect) correct++;
     return {
-      question: q.question, options: q.shuffledOptions, correct_answer: q.correct_answer,
+      stem: q.stem, options: q.options, correct_letter: q.correct_letter, correct_answer: q.correct_answer,
       selected: selected || null, isCorrect: !!selected && isCorrect,
-      reviewed: q.reviewed, flagged: !!mockFlags[i],
+      flagged: !!mockFlags[i],
     };
   });
   sessionLog = log;
@@ -949,11 +975,11 @@ function renderReview(filter) {
   listEl.innerHTML = items.map((a) => {
     const idx = sessionLog.indexOf(a) + 1;
     const answeredText = a.selected
-      ? `<p class="a ${a.isCorrect ? 'right' : 'wrong'}">Your answer: ${a.selected} ${a.isCorrect ? '\u2713' : '\u2717'}</p>`
+      ? `<p class="a ${a.isCorrect ? 'right' : 'wrong'}">Your answer: ${a.selected}. ${a.options[a.selected]} ${a.isCorrect ? '\u2713' : '\u2717'}</p>`
       : `<p class="a wrong">Not answered</p>`;
     return `
     <div class="review-item ${a.isCorrect ? 'correct' : 'incorrect'}">
-      <p class="q"><b>Q${idx}.</b> ${a.question}</p>
+      <p class="q"><b>Q${idx}.</b> ${a.stem}</p>
       ${answeredText}
       ${!a.isCorrect ? `<p class="a right">Correct answer: ${a.correct_answer}</p>` : ''}
       ${a.flagged ? '<p class="flag-note">Flagged during exam</p>' : ''}
