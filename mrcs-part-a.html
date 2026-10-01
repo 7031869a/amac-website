@@ -6,355 +6,289 @@
 <title>MRCS Part A Question Bank — AMaC</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --bg: #0c1526;
-    --card: #16233F;
-    --card-border: #2b3752;
-    --accent: #A6373F;
-    --accent-soft: #3a1f24;
-    --text: #EDEEF2;
-    --text-dim: #9AA4BD;
-    --green: #2FB48C;
-    --red: #D9635C;
-    --amber: #D9A23B;
-    --font-head: 'Fraunces', serif;
-    --font-body: 'Outfit', sans-serif;
-  }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--text);
-    font-family: var(--font-body);
-    line-height: 1.5;
-  }
-  a { color: inherit; }
+/* Same design language as plab1.html / questions.html (light paper bank,
+   navy hero, colour-coded explanation blocks), with the MRCS door's red. */
+:root{
+  --navy:#0d2247;--navy-deep:#091629;--navy-mid:#112a55;
+  --gold:#c9a227;--gold-soft:#e0c45a;
+  --mrcs:#A6373F;--mrcs-soft:#EA8A94;--mrcs-bg:#fbeef0;
+  --cream:#f7f4ec;--paper:#fffdf8;--ink:#1a1d24;--muted:#5d6470;--line:#e4ddcd;
+  --green:#1a7a4a;--green-bg:#e8f8f0;
+  --amber:#b45309;--amber-bg:#fff3e0;
+  --red:#c0392b;--red-bg:#fdecea;
+  --blue:#1a5276;--blue-bg:#ebf5fb;
+  --indigo:#1a3ab0;--indigo-bg:#f0f4ff;
+  --gold-bg:#fffbee;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Outfit',sans-serif;background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+button{font-family:'Outfit',sans-serif;}
 
-  main {
-    max-width: 720px;
-    margin: 0 auto;
-    padding: 36px 20px 80px;
-  }
-  main.wide { max-width: 1040px; }
+/* HERO */
+.hero{background:radial-gradient(circle at 80% -20%,rgba(166,55,63,0.22),transparent 50%),linear-gradient(160deg,var(--navy),var(--navy-deep));color:#fff;padding:64px 32px 56px;text-align:center;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.04) 1px,transparent 1px);background-size:22px 22px;pointer-events:none;}
+.hero-inner{max-width:1000px;margin:0 auto;position:relative;}
+.hero-kick{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:rgba(234,138,148,0.85);border:1px solid rgba(234,138,148,0.35);padding:6px 16px;border-radius:2px;display:inline-block;margin-bottom:20px;}
+.big-line{font-family:'Fraunces',serif;font-size:clamp(80px,16vw,180px);font-weight:500;line-height:.88;letter-spacing:-4px;color:#fff;display:block;}
+.big-line span{color:var(--mrcs-soft);}
+.big-sub{font-family:'Fraunces',serif;font-style:italic;font-size:clamp(22px,4vw,40px);color:rgba(255,255,255,0.7);font-weight:300;margin-top:8px;display:block;letter-spacing:-.5px;}
+.hero p{margin:22px auto 0;color:rgba(200,212,228,0.75);font-weight:300;font-size:clamp(14px,1.6vw,16px);max-width:60ch;line-height:1.7;}
+.hero .credit{margin-top:8px;font-size:13px;color:rgba(200,212,228,0.55);}
+.hero-actions{margin-top:24px;display:flex;gap:12px;flex-wrap:wrap;justify-content:center;}
+.hero-btn{display:inline-block;padding:13px 28px;border-radius:4px;font-weight:700;font-size:15px;letter-spacing:.4px;cursor:pointer;border:none;transition:filter .2s;}
+.hero-btn:hover{filter:brightness(1.1);}
+.hero-btn.primary{background:var(--mrcs);color:#fff;}
+.hero-btn.ghost{background:transparent;border:2px solid rgba(255,255,255,.55);color:#fff;font-weight:600;}
+.stats-row{display:flex;gap:40px;justify-content:center;margin-top:34px;flex-wrap:wrap;padding-top:30px;border-top:1px solid rgba(255,255,255,0.08);}
+.stat-num{font-family:'Fraunces',serif;font-size:32px;color:var(--gold-soft);font-weight:500;line-height:1;}
+.stat-label{font-size:10px;color:rgba(255,255,255,0.35);text-transform:uppercase;letter-spacing:.8px;margin-top:4px;}
 
-  .screen { display: none; }
-  .screen.active { display: block; }
+/* MODE BAR */
+.mode-bar{background:#fff;border-bottom:1px solid var(--line);padding:14px 32px;}
+.mode-bar-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
+.mode-toggle-group{display:flex;align-items:center;gap:10px;margin-left:auto;}
+.mode-label-text{font-size:13px;font-weight:500;color:var(--ink);}
+.toggle-wrap{position:relative;width:48px;height:26px;cursor:pointer;flex-shrink:0;}
+.toggle-wrap input{opacity:0;width:0;height:0;position:absolute;}
+.toggle-track{position:absolute;inset:0;background:var(--line);border-radius:13px;transition:background .2s;}
+.toggle-thumb{position:absolute;width:20px;height:20px;background:#fff;border-radius:50%;top:3px;left:3px;transition:transform .2s;box-shadow:0 1px 3px rgba(0,0,0,0.2);}
+.toggle-wrap input:checked ~ .toggle-track{background:var(--navy);}
+.toggle-wrap input:checked ~ .toggle-thumb{transform:translateX(22px);}
+.exam-pill{display:none;background:var(--navy);color:var(--gold-soft);font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:4px 12px;border-radius:20px;}
+.exam-pill.show{display:inline-block;}
+.progress-bar-wrap{display:flex;align-items:center;gap:10px;flex:1;min-width:220px;}
+.progress-label{font-size:12px;color:var(--muted);white-space:nowrap;}
+.progress-track{flex:1;height:5px;background:var(--line);border-radius:3px;overflow:hidden;}
+.progress-fill{height:100%;background:var(--navy);border-radius:3px;transition:width .3s;width:0%;}
+.progress-count{font-size:12px;color:var(--navy);font-weight:600;white-space:nowrap;}
 
-  h1, h2 {
-    font-family: var(--font-head);
-    font-weight: 600;
-    font-size: 26px;
-    margin: 0 0 8px;
-  }
-  .lede { color: var(--text-dim); font-size: 15px; margin: 0 0 28px; }
-  .review-credit { color: var(--text-dim); font-size: 13px; margin: -20px 0 28px; }
+/* CONTROLS */
+.controls{background:var(--cream);border-bottom:1px solid var(--line);padding:12px 32px;}
+.controls-inner{max-width:1200px;margin:0 auto;display:flex;gap:10px;align-items:center;flex-wrap:wrap;}
+.search-wrap{flex:1;min-width:180px;position:relative;}
+.search-wrap input{width:100%;padding:8px 12px 8px 34px;font-family:'Outfit',sans-serif;font-size:13px;border:1px solid var(--line);border-radius:4px;background:#fff;color:var(--ink);outline:none;}
+.search-wrap input:focus{border-color:var(--mrcs);}
+.search-icon{position:absolute;left:11px;top:50%;transform:translateY(-50%);width:12px;height:12px;border:2px solid var(--muted);border-radius:50%;pointer-events:none;}
+.search-icon::after{content:'';position:absolute;width:2px;height:6px;background:var(--muted);right:-4px;bottom:-5px;transform:rotate(-45deg);}
+select{font-family:'Outfit',sans-serif;font-size:13px;padding:8px 12px;border:1px solid var(--line);border-radius:4px;background:#fff;color:var(--ink);outline:none;cursor:pointer;}
+select:focus{border-color:var(--mrcs);}
+#q-count{font-size:13px;color:var(--muted);white-space:nowrap;margin-left:auto;}
 
-  .card {
-    background: var(--card);
-    border-top: 3px solid var(--accent);
-    border-left: 3px solid var(--accent);
-    border-right: 1px solid var(--card-border);
-    border-bottom: 1px solid var(--card-border);
-    border-radius: 6px;
-    padding: 22px 24px;
-    margin-bottom: 16px;
-    transition: transform 0.15s ease;
-  }
-  .card.interactive:hover { transform: translateY(-3px); }
+/* BANK */
+.main{max-width:1200px;margin:0 auto;padding:28px 32px;}
+.domain-section{margin-bottom:36px;}
+.domain-header{background:linear-gradient(135deg,var(--navy),var(--navy-mid));padding:14px 22px;border-radius:8px 8px 0 0;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;border-top:3px solid var(--mrcs);}
+.domain-title{font-family:'Fraunces',serif;font-size:18px;color:var(--gold-soft);font-weight:500;}
+.domain-meta{display:flex;align-items:center;gap:16px;}
+.domain-count{font-size:12px;color:rgba(255,255,255,0.45);text-transform:uppercase;letter-spacing:1px;}
+.domain-progress{font-size:12px;color:var(--gold-soft);font-weight:600;display:none;}
+.domain-progress.show{display:block;}
+.questions-list{border:1px solid var(--line);border-top:none;border-radius:0 0 8px 8px;overflow:hidden;}
+.show-more{display:block;width:100%;padding:12px;background:var(--cream);border:none;border-top:1px solid var(--line);color:var(--navy);font-size:13px;font-weight:600;cursor:pointer;}
+.show-more:hover{background:#efe9da;}
 
-  label {
-    display: block;
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--text-dim);
-    margin: 18px 0 6px;
-  }
-  label:first-of-type { margin-top: 0; }
+.q-card{border-bottom:1px solid var(--line);background:#fff;}
+.q-card:last-child{border-bottom:none;}
+.q-header{padding:14px 18px;cursor:pointer;display:flex;align-items:flex-start;gap:12px;transition:background .15s;user-select:none;}
+.q-header:hover{background:var(--cream);}
+.q-answered-badge{width:20px;height:20px;border-radius:50%;flex-shrink:0;margin-top:1px;align-items:center;justify-content:center;font-size:11px;display:none;}
+.q-card.correct-ans .q-answered-badge{display:flex;background:var(--green-bg);color:var(--green);}
+.q-card.wrong-ans .q-answered-badge{display:flex;background:var(--red-bg);color:var(--red);}
+.q-num{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;white-space:nowrap;padding-top:2px;min-width:74px;}
+.q-stem-preview{flex:1;font-size:14px;color:var(--ink);line-height:1.5;}
+.q-diff{font-size:11px;font-weight:700;padding:3px 8px;border-radius:10px;white-space:nowrap;flex-shrink:0;}
+.diff-easy{background:#e8f8f0;color:#1a7a4a;}
+.diff-moderate{background:#fff3e0;color:#b45309;}
+.diff-difficult{background:#fdecea;color:#c0392b;}
+.q-chevron{font-size:11px;color:var(--muted);flex-shrink:0;transition:transform .2s;padding-top:4px;}
+.q-card.open .q-chevron{transform:rotate(180deg);}
+.q-body{display:none;padding:0 18px 20px;}
+.q-card.open .q-body{display:block;}
 
-  select {
-    width: 100%;
-    padding: 10px 12px;
-    border-radius: 6px;
-    border: 1px solid var(--card-border);
-    background: #0e1a30;
-    color: var(--text);
-    font-family: var(--font-body);
-    font-size: 14px;
-  }
+.learn-obj{background:var(--cream);border-left:3px solid var(--navy);padding:10px 14px;margin-bottom:14px;border-radius:0 4px 4px 0;}
+.learn-obj-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--navy);margin-bottom:3px;}
+.learn-obj-text{font-size:13px;color:var(--muted);line-height:1.5;}
+body.exam-mode .learn-obj{display:none;}
 
-  .checkbox-row {
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    margin-top: 20px;
-    padding: 12px 14px;
-    background: #0e1a30;
-    border-radius: 6px;
-    border: 1px solid var(--card-border);
-  }
-  .checkbox-row input { margin-top: 3px; }
-  .checkbox-row .label-main { font-size: 14px; }
-  .checkbox-row .label-sub { font-size: 12px; color: var(--text-dim); margin-top: 2px; }
+.q-stem-full{font-size:15px;color:var(--ink);line-height:1.65;margin-bottom:14px;padding:14px;background:var(--cream);border-radius:4px;border-left:3px solid var(--mrcs);}
 
-  button {
-    font-family: var(--font-body);
-    font-weight: 600;
-    font-size: 14px;
-    border: none;
-    border-radius: 6px;
-    padding: 12px 22px;
-    cursor: pointer;
-    transition: filter 0.15s ease;
-  }
-  button:hover { filter: brightness(1.12); }
-  button:disabled { opacity: 0.4; cursor: default; filter: none; }
+.options{display:flex;flex-direction:column;gap:7px;margin-bottom:14px;}
+.opt{display:flex;align-items:flex-start;gap:10px;padding:10px 14px;border:1px solid var(--line);border-radius:6px;cursor:pointer;background:#fff;transition:border-color .15s,background .15s;user-select:none;}
+.opt:hover:not(.locked){border-color:#aaa;background:var(--cream);}
+.opt.selected{border-color:var(--navy);background:#eef2ff;}
+.opt.correct{border-color:var(--green);background:var(--green-bg);}
+.opt.wrong{border-color:var(--red);background:var(--red-bg);}
+.opt.locked{cursor:default;}
+.opt-letter{font-size:13px;font-weight:700;min-width:18px;color:var(--muted);padding-top:1px;flex-shrink:0;}
+.opt.selected .opt-letter{color:var(--navy);}
+.opt.correct .opt-letter{color:var(--green);}
+.opt.wrong .opt-letter{color:var(--red);}
+.opt-text{font-size:14px;line-height:1.5;color:var(--ink);flex:1;}
+.opt-icon{margin-left:auto;font-size:15px;flex-shrink:0;}
 
-  .btn-primary { background: var(--accent); color: #fff; }
-  .btn-secondary { background: transparent; color: var(--text); border: 1px solid var(--card-border); }
-  .btn-danger { background: var(--red); color: #fff; }
+.result-row{display:flex;align-items:center;gap:8px;padding:9px 14px;border-radius:6px;font-size:14px;font-weight:600;margin-bottom:12px;}
+.result-row.pass{background:var(--green-bg);color:var(--green);}
+.result-row.fail{background:var(--red-bg);color:var(--red);}
+.result-icon{font-size:18px;}
 
-  #start-btn { margin-top: 24px; }
+.action-row{display:flex;gap:10px;margin-bottom:14px;}
+.btn-submit{padding:9px 22px;background:var(--navy);color:#fff;border:none;border-radius:4px;font-size:13px;font-weight:600;cursor:pointer;transition:opacity .15s;}
+.btn-submit:disabled{opacity:.35;cursor:not-allowed;}
+.btn-submit:not(:disabled):hover{opacity:.85;}
+.btn-reset{padding:9px 16px;background:transparent;color:var(--muted);border:1px solid var(--line);border-radius:4px;font-size:13px;cursor:pointer;transition:border-color .15s;}
+.btn-reset:hover{border-color:var(--navy);color:var(--navy);}
 
-  .mode-toggle {
-    display: flex;
-    gap: 6px;
-    background: #0e1a30;
-    border: 1px solid var(--card-border);
-    border-radius: 8px;
-    padding: 4px;
-    margin-bottom: 24px;
-  }
-  .mode-btn {
-    flex: 1;
-    background: transparent;
-    color: var(--text-dim);
-    padding: 10px;
-    border-radius: 6px;
-  }
-  .mode-btn.active { background: var(--card); color: var(--text); }
-  .mode-btn:hover { filter: none; }
+/* EXPLANATION BLOCKS (as plab1.html) */
+.explanation{display:flex;flex-direction:column;gap:9px;}
+.exp-block{padding:11px 14px;border-left:3px solid transparent;}
+.exp-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;margin-bottom:5px;}
+.exp-text{font-size:13.5px;line-height:1.65;color:var(--ink);}
+.exp-text b{font-weight:600;}
+.ww-row{margin-bottom:6px;}
+.ww-row:last-child{margin-bottom:0;}
+.exp-why-correct{background:var(--green-bg);border-left-color:var(--green);}
+.exp-why-correct .exp-label{color:var(--green);}
+.exp-why-wrong{background:var(--amber-bg);border-left-color:#e67e22;}
+.exp-why-wrong .exp-label{color:var(--amber);}
+.exp-pearl{background:var(--gold-bg);border-left-color:var(--gold);}
+.exp-pearl .exp-label{color:#7d6608;}
+.exp-thinking{background:var(--indigo-bg);border-left-color:#2d5bf0;}
+.exp-thinking .exp-label{color:var(--indigo);}
+.thinking-chain{font-size:13.5px;line-height:1.9;color:var(--ink);}
+.thinking-arrow{color:#2d5bf0;font-weight:600;margin:0 3px;}
+.exp-trap{background:var(--red-bg);border-left-color:var(--red);}
+.exp-trap .exp-label{color:var(--red);}
+.exp-takeaway{background:var(--blue-bg);border-left-color:var(--blue);border-radius:0 4px 4px 0;}
+.exp-takeaway .exp-label{color:var(--blue);}
+.exp-takeaway .exp-text{font-weight:600;}
+.exp-source{background:var(--cream);border-left-color:var(--line);}
+.exp-source .exp-label{color:var(--muted);}
+.exp-source .exp-text{font-size:12.5px;color:var(--muted);}
 
-  .info-list { margin: 0; padding-left: 18px; color: var(--text-dim); font-size: 14px; }
-  .info-list li { margin-bottom: 6px; }
+.empty{text-align:center;padding:64px 32px;color:var(--muted);}
 
-  .progress-track {
-    height: 5px;
-    background: var(--card-border);
-    border-radius: 3px;
-    overflow: hidden;
-    margin-bottom: 18px;
-  }
-  .progress-fill {
-    height: 100%;
-    background: var(--accent);
-    width: 0%;
-    transition: width 0.25s ease;
-  }
-  .quiz-meta {
-    display: flex;
-    justify-content: space-between;
-    font-size: 13px;
-    color: var(--text-dim);
-    margin-bottom: 14px;
-  }
-  .topic-tag {
-    display: inline-block;
-    font-size: 12px;
-    color: var(--accent);
-    background: var(--accent-soft);
-    padding: 3px 10px;
-    border-radius: 20px;
-    margin-bottom: 12px;
-  }
-  .question-text {
-    font-size: 17px;
-    line-height: 1.55;
-    margin: 0 0 20px;
-  }
-  .options { list-style: none; padding: 0; margin: 0 0 8px; }
-  .options li {
-    border: 1px solid var(--card-border);
-    border-radius: 6px;
-    padding: 13px 16px;
-    margin-bottom: 8px;
-    cursor: pointer;
-    font-size: 15px;
-    transition: border-color 0.15s ease, background 0.15s ease;
-  }
-  .options li:hover { border-color: var(--accent); }
-  .options li.correct { border-color: var(--green); background: rgba(47,180,140,0.12); }
-  .options li.incorrect { border-color: var(--red); background: rgba(217,99,92,0.12); }
-  .options li.selected { border-color: var(--accent); background: var(--accent-soft); }
-  .options li.disabled { cursor: default; pointer-events: none; }
+/* SESSIONS (timed practice + mock exam) */
+#session-view{display:none;}
+body.in-session #bank-view{display:none;}
+body.in-session #session-view{display:block;}
+.session-main{max-width:760px;margin:0 auto;padding:30px 20px 80px;}
+.session-main.wide{max-width:1080px;}
+.back-link{display:inline-block;background:none;border:none;color:var(--muted);font-size:13px;cursor:pointer;margin-bottom:18px;padding:0;}
+.back-link:hover{color:var(--navy);}
+.screen{display:none;}
+.screen.active{display:block;}
+.session-main h1,.session-main h2{font-family:'Fraunces',serif;font-weight:500;font-size:28px;color:var(--navy);margin-bottom:6px;}
+.lede{color:var(--muted);font-size:15px;margin:0 0 22px;line-height:1.6;}
+.card{background:#fff;border:1px solid var(--line);border-top:3px solid var(--mrcs);border-radius:8px;padding:22px 24px;margin-bottom:16px;}
+.card label{display:block;font-size:13px;font-weight:600;color:var(--navy);margin:16px 0 6px;}
+.card label:first-of-type{margin-top:0;}
+.card select{width:100%;padding:10px 12px;font-size:14px;}
+.btn-primary,.btn-secondary,.btn-danger{font-weight:600;font-size:14px;border-radius:4px;padding:11px 22px;cursor:pointer;transition:filter .15s;border:none;}
+.btn-primary{background:var(--navy);color:#fff;}
+.btn-primary:hover,.btn-danger:hover{filter:brightness(1.15);}
+.btn-secondary{background:#fff;color:var(--navy);border:1px solid var(--line);}
+.btn-secondary:hover{border-color:var(--navy);}
+.btn-danger{background:var(--mrcs);color:#fff;}
+button:disabled{opacity:.4;cursor:default;filter:none;}
+#start-btn,#start-mock-btn{margin-top:20px;}
+.mode-switch{display:flex;gap:6px;background:var(--cream);border:1px solid var(--line);border-radius:8px;padding:4px;margin-bottom:18px;}
+.mode-btn{flex:1;background:transparent;color:var(--muted);padding:10px;border-radius:6px;border:none;font-weight:600;font-size:14px;cursor:pointer;}
+.mode-btn.active{background:#fff;color:var(--navy);box-shadow:0 1px 3px rgba(0,0,0,0.08);}
+.info-list{padding-left:18px;color:var(--muted);font-size:14px;line-height:1.6;}
+.info-list li{margin-bottom:6px;}
+.info-list b{color:var(--ink);}
+.note{color:var(--muted);font-size:13px;margin-top:4px;}
 
-  .explain {
-    display: none;
-    margin-top: 16px;
-    padding-top: 16px;
-    border-top: 1px dashed var(--card-border);
-    font-size: 14px;
-    color: var(--text-dim);
-  }
-  .explain.show { display: block; }
-  .explain .row { margin-bottom: 8px; }
-  .explain .row b { color: var(--text); }
-  .quiz-controls {
-    display: flex;
-    justify-content: flex-end;
-    gap: 10px;
-    margin-top: 20px;
-  }
+.quiz-progress{height:5px;background:var(--line);border-radius:3px;overflow:hidden;margin-bottom:14px;}
+.quiz-progress div{height:100%;background:var(--mrcs);width:0%;transition:width .25s;}
+.quiz-meta{display:flex;justify-content:space-between;font-size:13px;color:var(--muted);margin-bottom:12px;}
+.topic-tag{display:inline-block;font-size:12px;font-weight:600;color:var(--mrcs);background:var(--mrcs-bg);padding:3px 10px;border-radius:20px;margin-bottom:12px;}
+.question-text{font-size:16px;line-height:1.65;margin-bottom:16px;}
+.quiz-controls{display:flex;justify-content:flex-end;gap:10px;margin-top:18px;}
 
-  .mock-layout {
-    display: flex;
-    gap: 20px;
-    align-items: flex-start;
-    flex-wrap: wrap;
-  }
-  .mock-main { flex: 1 1 480px; min-width: 0; }
-  .mock-side {
-    flex: 0 0 260px;
-    background: var(--card);
-    border: 1px solid var(--card-border);
-    border-radius: 6px;
-    padding: 16px;
-    position: sticky;
-    top: 76px;
-  }
-  .mock-header {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 10px;
-    font-size: 13px;
-    color: var(--text-dim);
-    margin-bottom: 16px;
-  }
-  .mock-timer { font-variant-numeric: tabular-nums; font-weight: 600; color: var(--text); }
-  .mock-timer.warning { color: var(--amber); }
-  .mock-timer.danger { color: var(--red); }
+.mock-layout{display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap;}
+.mock-main{flex:1 1 480px;min-width:0;}
+.mock-side{flex:0 0 270px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:16px;position:sticky;top:84px;}
+.mock-header{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:13px;color:var(--muted);margin-bottom:14px;}
+.mock-timer{font-variant-numeric:tabular-nums;font-weight:700;color:var(--navy);}
+.mock-timer.warning{color:var(--amber);}
+.mock-timer.danger{color:var(--red);}
+.mock-side h3{font-size:13px;color:var(--navy);margin-bottom:10px;}
+.palette-wrap{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:14px;max-height:420px;overflow-y:auto;}
+.palette-btn{width:32px;height:32px;padding:0;font-size:12px;font-weight:500;background:var(--cream);color:var(--muted);border:1px solid var(--line);border-radius:4px;cursor:pointer;}
+.palette-btn.answered{background:var(--green-bg);color:var(--green);border-color:var(--green);}
+.palette-btn.flagged{background:var(--amber-bg);color:var(--amber);border-color:var(--amber);}
+.palette-btn.current{outline:2px solid var(--mrcs);outline-offset:1px;}
+.palette-legend{font-size:12px;color:var(--muted);}
+.palette-legend div{display:flex;align-items:center;gap:8px;margin-bottom:5px;}
+.legend-dot{width:10px;height:10px;border-radius:3px;display:inline-block;}
+.mock-controls{display:flex;justify-content:space-between;gap:10px;margin-top:18px;flex-wrap:wrap;}
+.mock-controls .left-group,.mock-controls .right-group{display:flex;gap:10px;}
+#mock-flag-btn.active{background:var(--amber-bg);color:var(--amber);border-color:var(--amber);}
 
-  .mock-side h3 {
-    font-family: var(--font-body);
-    font-size: 13px;
-    text-transform: none;
-    color: var(--text-dim);
-    margin: 0 0 10px;
-  }
-  .palette-wrap {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
-    margin-bottom: 14px;
-  }
-  .palette-btn {
-    width: 32px;
-    height: 32px;
-    padding: 0;
-    font-size: 12px;
-    font-weight: 500;
-    background: #0e1a30;
-    color: var(--text-dim);
-    border: 1px solid var(--card-border);
-    border-radius: 4px;
-  }
-  .palette-btn.answered { background: rgba(47,180,140,0.18); color: var(--green); border-color: var(--green); }
-  .palette-btn.flagged { background: rgba(217,162,59,0.18); color: var(--amber); border-color: var(--amber); }
-  .palette-btn.current { outline: 2px solid var(--accent); outline-offset: 1px; }
+.score-display{font-family:'Fraunces',serif;font-size:46px;font-weight:500;margin:8px 0;}
+.score-display.pass{color:var(--green);}
+.score-display.fail{color:var(--red);}
+.results-actions{display:flex;gap:10px;margin-top:22px;flex-wrap:wrap;}
+.results-meta{color:var(--muted);font-size:14px;margin:4px 0;}
+.review-filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px;}
+.filter-btn{background:#fff;color:var(--muted);border:1px solid var(--line);padding:8px 14px;font-size:13px;font-weight:500;border-radius:4px;cursor:pointer;}
+.filter-btn.active{color:var(--navy);border-color:var(--navy);}
+.review-item{border:1px solid var(--line);border-left:3px solid var(--line);padding:14px 16px;margin-bottom:10px;background:#fff;border-radius:6px;font-size:14px;}
+.review-item.correct{border-left-color:var(--green);}
+.review-item.incorrect{border-left-color:var(--red);}
+.review-item .q{margin-bottom:6px;line-height:1.55;}
+.review-item .a{margin:3px 0;color:var(--muted);}
+.review-item .a.right{color:var(--green);}
+.review-item .a.wrong{color:var(--red);}
+.review-item .flag-note{font-size:12px;color:var(--amber);margin-top:4px;}
+.review-item details{margin-top:8px;}
+.review-item summary{cursor:pointer;color:var(--navy);font-size:13px;font-weight:600;margin-bottom:8px;}
+.empty-state{text-align:center;color:var(--muted);padding:50px 0;font-size:14px;}
 
-  .palette-legend { font-size: 12px; color: var(--text-dim); }
-  .palette-legend div { display: flex; align-items: center; gap: 8px; margin-bottom: 5px; }
-  .legend-dot { width: 10px; height: 10px; border-radius: 3px; display: inline-block; }
+/* TRUSTBAND + FOOTER (house structure, as mrcp.html; footer.js appends the global band below) */
+.trustband{background:var(--navy);color:#fff;text-align:center;padding:44px 32px;}
+.trustband .slogan{font-family:'Fraunces',serif;font-style:italic;color:var(--gold-soft);font-size:clamp(17px,2.4vw,24px);margin-bottom:12px;}
+.trustband p{max-width:64ch;margin:0 auto;font-weight:300;color:rgba(221,226,236,0.8);font-size:15px;}
+.site-foot{background:#0C1526;border-top:1px solid #1A2740;padding:34px 26px 26px;font-family:'Outfit',sans-serif;text-align:left;}
+.site-foot .foot-inner{max-width:1180px;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:28px;border-bottom:1px solid #1E2C46;padding-bottom:26px;}
+.site-foot .foot-brand{font-weight:600;letter-spacing:.1em;color:#C9A227;font-size:18px;}
+.site-foot .foot-brand p{font-size:13px;color:#8593AE;margin:9px 0 0;max-width:36ch;font-weight:300;letter-spacing:normal;line-height:1.6;}
+.site-foot .foot-col h4{color:#fff;font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin:0 0 12px;}
+.site-foot .foot-col a{display:block;color:#C7D0E2;font-size:13.5px;margin-bottom:8px;font-weight:300;text-decoration:none;transition:.2s;}
+.site-foot .foot-col a:hover{color:#EA8A94;}
+.site-foot .foot-legal{max-width:74ch;margin:22px auto 0;font-size:11.5px;line-height:1.65;color:#6B7794;text-align:center;}
+.site-foot .foot-bottom{max-width:1180px;margin:10px auto 0;font-size:12px;color:#6B7794;text-align:center;}
 
-  .mock-controls {
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
-    margin-top: 20px;
-    flex-wrap: wrap;
-  }
-  .mock-controls .left-group, .mock-controls .right-group { display: flex; gap: 10px; }
+/* NAV (static JS-off fallback; nav.js replaces it with the shared MRCS nav).
+   Scoped to .nav-fallback so none of it reaches nav.js's .amac-nav. */
+.nav-fallback{position:sticky;top:0;z-index:100;background:#0F1A2E;border-bottom:1px solid #1E2C46;font-family:'Outfit',sans-serif;}
+.nav-fallback .nav-inner{max-width:1180px;margin:0 auto;padding:13px 26px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;}
+.nav-fallback .nav-l{display:flex;align-items:center;gap:13px;}
+.nav-fallback .brand{font-weight:600;letter-spacing:.1em;color:#C9A227;font-size:16px;text-decoration:none;}
+.nav-fallback .door-tag{font-size:11px;color:#EA8A94;border-left:1px solid #28385A;padding-left:13px;letter-spacing:.1em;}
+.nav-fallback .nav-links{display:flex;align-items:center;gap:16px;list-style:none;margin:0;padding:0;font-size:12.5px;flex-wrap:wrap;}
+.nav-fallback .nav-links a{color:#C7D0E2;text-decoration:none;}
+.nav-fallback .nav-links a:hover{color:#fff;}
+.nav-fallback .nav-exit{color:#8593AE;font-size:11.5px;border-left:1px solid #28385A;padding-left:13px;}
 
-  #mock-flag-btn.active { background: rgba(217,162,59,0.18); color: var(--amber); border-color: var(--amber); }
-
-  .score-display {
-    font-family: var(--font-head);
-    font-size: 44px;
-    font-weight: 600;
-    margin: 8px 0;
-  }
-  .score-display.pass { color: var(--green); }
-  .score-display.fail { color: var(--red); }
-  .results-actions { display: flex; gap: 10px; margin-top: 24px; flex-wrap: wrap; }
-  .results-meta { color: var(--text-dim); font-size: 14px; margin: 4px 0; }
-
-  .review-filters { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 18px; }
-  .filter-btn {
-    background: transparent;
-    color: var(--text-dim);
-    border: 1px solid var(--card-border);
-    padding: 8px 14px;
-    font-size: 13px;
-    font-weight: 500;
-  }
-  .filter-btn.active { background: var(--card); color: var(--text); border-color: var(--accent); }
-
-  .review-item {
-    border-left: 3px solid var(--card-border);
-    padding: 14px 16px;
-    margin-bottom: 10px;
-    background: var(--card);
-    border-radius: 6px;
-    font-size: 14px;
-  }
-  .review-item.correct { border-left-color: var(--green); }
-  .review-item.incorrect { border-left-color: var(--red); }
-  .review-item .q { margin: 0 0 6px; }
-  .review-item .a { margin: 3px 0; color: var(--text-dim); }
-  .review-item .a.right { color: var(--green); }
-  .review-item .a.wrong { color: var(--red); }
-  .review-item .flag-note { font-size: 12px; color: var(--amber); margin-top: 4px; }
-
-  .empty-state {
-    text-align: center;
-    color: var(--text-dim);
-    padding: 50px 0;
-    font-size: 14px;
-  }
-
-  /* ── FOOTER (house structure, as mrcp.html; footer.js appends the global band below) ── */
-  .site-foot{background:#0C1526;border-top:1px solid #1A2740;padding:34px 26px 26px;font-family:'Outfit',sans-serif;text-align:left;}
-  .site-foot .foot-inner{max-width:1180px;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:28px;border-bottom:1px solid #1E2C46;padding-bottom:26px;}
-  .site-foot .foot-brand{font-weight:600;letter-spacing:.1em;color:#C9A227;font-size:18px;}
-  .site-foot .foot-brand p{font-size:13px;color:#8593AE;margin:9px 0 0;max-width:36ch;font-weight:300;letter-spacing:normal;line-height:1.6;}
-  .site-foot .foot-col h4{color:#fff;font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin:0 0 12px;}
-  .site-foot .foot-col a{display:block;color:#C7D0E2;font-size:13.5px;margin-bottom:8px;font-weight:300;text-decoration:none;transition:.2s;}
-  .site-foot .foot-col a:hover{color:#EA8A94;}
-  .site-foot .foot-legal{max-width:74ch;margin:22px auto 0;font-size:11.5px;line-height:1.65;color:#6B7794;text-align:center;}
-  .site-foot .foot-bottom{max-width:1180px;margin:10px auto 0;font-size:12px;color:#6B7794;text-align:center;}
-
-  @media (max-width: 800px) {
-    .mock-side { position: static; flex-basis: 100%; }
-  }
-  @media (max-width: 600px) {
-    main { padding: 24px 16px 60px; }
-    .card { padding: 18px; }
-    .question-text { font-size: 16px; }
-  }
-
-  /* ── NAV (static JS-off fallback; nav.js replaces it with the shared MRCS nav) ──
-     Scoped to .nav-fallback so none of it reaches nav.js's .amac-nav. */
-  .nav-fallback{position:sticky;top:0;z-index:100;background:#0F1A2E;border-bottom:1px solid #1E2C46;font-family:'Outfit',sans-serif;}
-  .nav-fallback .nav-inner{max-width:1180px;margin:0 auto;padding:13px 26px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;}
-  .nav-fallback .nav-l{display:flex;align-items:center;gap:13px;}
-  .nav-fallback .brand{font-weight:600;letter-spacing:.1em;color:#C9A227;font-size:16px;text-decoration:none;}
-  .nav-fallback .door-tag{font-size:11px;color:#EA8A94;border-left:1px solid #28385A;padding-left:13px;letter-spacing:.1em;}
-  .nav-fallback .nav-links{display:flex;align-items:center;gap:16px;list-style:none;margin:0;padding:0;font-size:12.5px;flex-wrap:wrap;}
-  .nav-fallback .nav-links a{color:#C7D0E2;text-decoration:none;}
-  .nav-fallback .nav-links a:hover{color:#fff;}
-  .nav-fallback .nav-exit{color:#8593AE;font-size:11.5px;border-left:1px solid #28385A;padding-left:13px;}
+@media(max-width:800px){
+  .mock-side{position:static;flex-basis:100%;}
+}
+@media(max-width:760px){
+  .main{padding:16px;}
+  .hero{padding:48px 18px 44px;}
+  .mode-bar,.controls{padding-left:16px;padding-right:16px;}
+  .q-header{padding:12px 14px;gap:10px;}
+  .q-num{min-width:0;}
+  .q-body{padding:0 14px 18px;}
+  .stats-row{gap:26px;}
+  .card{padding:18px;}
+}
 </style>
 </head>
 <body>
@@ -373,15 +307,84 @@
   </ul>
 </div></nav>
 
-<main id="main-el">
+<!-- ═══════════════ QUESTION BANK (browse, learning and exam mode) ═══════════════ -->
+<div id="bank-view">
+  <header class="hero">
+    <div class="hero-inner">
+      <span class="hero-kick">SBA Question Bank · Applied Basic Science · AMaC Format</span>
+      <span class="big-line">MRCS <span>A</span></span>
+      <span class="big-sub">Question Bank</span>
+      <p><span id="hero-count">5,156</span> single-best-answer questions for Paper 1, each with why the answer is right, why every other option is wrong, the exam trap and the key takeaway.</p>
+      <p class="credit">Reviewed by the AMaC team, September 2026.</p>
+      <div class="hero-actions">
+        <button class="hero-btn primary" id="hero-mock-btn">Mock exam — 180 questions, 3 hours</button>
+        <button class="hero-btn ghost" id="hero-practice-btn">Timed practice by subject</button>
+      </div>
+      <div class="stats-row">
+        <div class="stat"><div class="stat-num" id="total-count">5,156</div><div class="stat-label">Questions</div></div>
+        <div class="stat"><div class="stat-num" id="subject-count">32</div><div class="stat-label">Subjects</div></div>
+        <div class="stat"><div class="stat-num" id="answered-count">0</div><div class="stat-label">Answered</div></div>
+        <div class="stat"><div class="stat-num" id="correct-count">0</div><div class="stat-label">Correct</div></div>
+      </div>
+    </div>
+  </header>
+
+  <div class="mode-bar">
+    <div class="mode-bar-inner">
+      <span class="exam-pill" id="exam-pill">Exam mode</span>
+      <div class="progress-bar-wrap">
+        <span class="progress-label">Overall progress</span>
+        <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
+        <span class="progress-count" id="progress-text">0 / 0</span>
+      </div>
+      <div class="mode-toggle-group">
+        <span class="mode-label-text" id="mode-label-text">Learning mode</span>
+        <label class="toggle-wrap" aria-label="Toggle exam mode">
+          <input type="checkbox" id="mode-toggle">
+          <div class="toggle-track"></div>
+          <div class="toggle-thumb"></div>
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <div class="controls">
+    <div class="controls-inner">
+      <div class="search-wrap">
+        <span class="search-icon"></span>
+        <input type="text" id="search" placeholder="Search questions, topics, keywords…">
+      </div>
+      <select id="subject-filter"><option value="">All subjects</option></select>
+      <select id="diff-filter" style="display:none;">
+        <option value="">All difficulties</option>
+        <option value="Easy">Easy</option>
+        <option value="Moderate">Moderate</option>
+        <option value="Difficult">Difficult</option>
+      </select>
+      <select id="status-filter">
+        <option value="">All questions</option>
+        <option value="unanswered">Unanswered</option>
+        <option value="correct">Correct</option>
+        <option value="wrong">Wrong</option>
+      </select>
+      <span id="q-count"></span>
+    </div>
+  </div>
+
+  <div class="main" id="bank"><div class="empty"><p>Loading questions…</p></div></div>
+</div>
+
+<!-- ═══════════════ TIMED SESSIONS (practice + 180-question mock) ═══════════════ -->
+<div id="session-view">
+<main class="session-main" id="main-el">
+  <button class="back-link" id="back-to-bank">← Back to the question bank</button>
 
   <section id="setup-screen" class="screen active">
     <h1>Practise for Part A</h1>
     <p class="lede">Applied Basic Science — pick a mode and go.</p>
-    <p class="review-credit">Reviewed by the AMaC team, September 2026.</p>
 
-    <div class="mode-toggle">
-      <button id="mode-practice-btn" class="mode-btn active">Practice</button>
+    <div class="mode-switch">
+      <button id="mode-practice-btn" class="mode-btn active">Timed practice</button>
       <button id="mode-mock-btn" class="mode-btn">Mock exam</button>
     </div>
 
@@ -399,41 +402,39 @@
           <option value="all">All available</option>
         </select>
 
-
-        <button id="start-btn" class="btn-primary">Start practice</button>
+        <button id="start-btn" class="btn-danger">Start practice</button>
       </div>
-      <p class="lede" id="bank-size-note"></p>
+      <p class="note" id="bank-size-note"></p>
     </div>
 
     <div id="mock-options" style="display:none;">
       <div class="card">
         <ul class="info-list">
-          <li><b style="color:var(--text)">180 questions</b>, drawn at random from the question bank<span id="mock-subject-coverage"></span></li>
-          <li><b style="color:var(--text)">180 minutes</b>, one continuous sitting — this mirrors Paper 1 (Applied Basic Science) as it is actually sat, not a split into two half-length papers</li>
+          <li><b>180 questions</b>, drawn at random from the question bank<span id="mock-subject-coverage"></span></li>
+          <li><b>180 minutes</b>, one continuous sitting — this mirrors Paper 1 (Applied Basic Science) as it is actually sat, not a split into two half-length papers</li>
           <li>No feedback until you finish, same as the real exam</li>
           <li>Flag questions and jump between them freely using the palette</li>
           <li>Auto-submits if time runs out; you can submit early at any point</li>
         </ul>
-        <button id="start-mock-btn" class="btn-primary">Start mock exam</button>
+        <button id="start-mock-btn" class="btn-danger">Start mock exam</button>
       </div>
-      <p class="lede" id="mock-availability-note"></p>
+      <p class="note" id="mock-availability-note"></p>
     </div>
   </section>
 
   <section id="quiz-screen" class="screen">
-    <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
+    <div class="quiz-progress"><div id="quiz-progress-fill"></div></div>
     <div class="quiz-meta">
       <span id="q-counter">Question 1 of 20</span>
       <span id="q-score">Score: 0</span>
     </div>
-
     <div class="card">
       <span class="topic-tag" id="q-topic"></span>
       <p class="question-text" id="q-text"></p>
-      <ul class="options" id="q-options"></ul>
-      <div class="explain" id="q-explain"></div>
+      <div class="options" id="q-options"></div>
+      <div id="q-result"></div>
+      <div class="explanation" id="q-explain"></div>
     </div>
-
     <div class="quiz-controls">
       <button id="finish-early-btn" class="btn-secondary">Finish now</button>
       <button id="next-btn" class="btn-primary" disabled>Next question</button>
@@ -446,15 +447,13 @@
       <span>Time remaining: <span class="mock-timer" id="mock-timer">180:00</span></span>
       <span id="mock-answered-count">Answered: 0 / 180</span>
     </div>
-
     <div class="mock-layout">
       <div class="mock-main">
         <div class="card">
           <span class="topic-tag" id="mock-topic"></span>
           <p class="question-text" id="mock-text"></p>
-          <ul class="options" id="mock-options-list"></ul>
+          <div class="options" id="mock-options-list"></div>
         </div>
-
         <div class="mock-controls">
           <div class="left-group">
             <button id="mock-prev-btn" class="btn-secondary">Previous</button>
@@ -466,14 +465,13 @@
           </div>
         </div>
       </div>
-
       <div class="mock-side">
         <h3>Question palette</h3>
         <div class="palette-wrap" id="palette-wrap"></div>
         <div class="palette-legend">
-          <div><span class="legend-dot" style="background:rgba(47,180,140,0.4);border:1px solid var(--green);"></span>Answered</div>
-          <div><span class="legend-dot" style="background:rgba(217,162,59,0.4);border:1px solid var(--amber);"></span>Flagged</div>
-          <div><span class="legend-dot" style="background:#0e1a30;border:1px solid var(--card-border);"></span>Unanswered</div>
+          <div><span class="legend-dot" style="background:var(--green-bg);border:1px solid var(--green);"></span>Answered</div>
+          <div><span class="legend-dot" style="background:var(--amber-bg);border:1px solid var(--amber);"></span>Flagged</div>
+          <div><span class="legend-dot" style="background:var(--cream);border:1px solid var(--line);"></span>Unanswered</div>
         </div>
       </div>
     </div>
@@ -486,7 +484,7 @@
     <p class="results-meta" id="results-meta"></p>
     <div class="results-actions">
       <button id="review-btn" class="btn-secondary">Review answers</button>
-      <button id="restart-btn" class="btn-primary">Back to setup</button>
+      <button id="restart-btn" class="btn-primary">New session</button>
     </div>
   </section>
 
@@ -495,11 +493,16 @@
     <div class="review-filters" id="review-filters" style="display:none;"></div>
     <div id="review-list"></div>
     <div class="results-actions">
-      <button id="back-to-setup-btn" class="btn-primary">Back to setup</button>
+      <button id="back-to-setup-btn" class="btn-primary">New session</button>
     </div>
   </section>
-
 </main>
+</div>
+
+<div class="trustband">
+  <p class="slogan">Think Like an Examiner · Speak Like a Surgeon · Perform With Confidence</p>
+  <p>Every question explained from the examiner's side: why the answer is right, why each distractor is tempting, and the trap that catches candidates.</p>
+</div>
 
 <footer class="site-foot">
   <div class="foot-inner">
@@ -526,28 +529,320 @@
 
 <script>
 /* =========================================================
-   AMaC MRCS Part A — Question Bank Engine
-   Two modes:
-     - Practice: instant feedback, any subject/length.
-     - Mock exam: one continuous 180-question/180-minute
-       sitting representing Paper 1 as it is actually sat —
-       deliberately NOT split into two fake half-length papers.
-   Both modes draw from data/mrcs-part-a-combined.json, the
-   single merged Part A bank (originally reviewed.json's 318
-   plus the Applied Knowledge Bank's 4,661 — merged 30 Sep 2026,
-   each question now carrying a letter-keyed options object,
-   correct_letter, why_correct, why_others_wrong per wrong
-   letter, and optional exam_trap/takeaway/source). That JSON
-   file is generated from mrcs-part-a-combined-questions.js —
-   regenerate it from that source file after any future edit.
+   AMaC MRCS Part A — Question Bank
+   Three ways in, one bank (data/mrcs-part-a-combined.json):
+     - Question bank: browse/search/filter every question, answer
+       it in place and read the full explanation (same layout as
+       plab1.html / questions.html). Progress is kept in this
+       browser (localStorage).
+     - Timed practice: a subject-filtered run with instant feedback.
+     - Mock exam: one continuous 180-question/180-minute sitting
+       representing Paper 1 as it is actually sat — deliberately
+       NOT split into two fake half-length papers.
+   Each question carries a letter-keyed options object,
+   correct_letter, why_correct, why_others_wrong per wrong letter,
+   and optional exam_trap / takeaway / source. Optional thinking
+   (steps separated by "↓"), pearl and difficulty are shown when
+   present. The JSON is generated from
+   mrcs-part-a-combined-questions.js — regenerate it from that
+   source file after any future edit.
+   Options are displayed in a shuffled order and lettered A–E by
+   display position; explanations use the same display letters.
    ========================================================= */
 
 const DATA_FILE = 'data/mrcs-part-a-combined.json';
 const MOCK_QUESTION_COUNT = 180;
 const MOCK_SECONDS = 180 * 60;
+const SHOW_STEP = 25;          // cards shown per subject before "Show more"
+const STORE_KEY = 'amac_mrcs_a_state_v1';
+const LETTERS = ['A', 'B', 'C', 'D', 'E', 'F'];
 
 let bankData = [];
+const byId = {};
 
+/* ---------- shared helpers ---------- */
+function esc(s) {
+  return String(s == null ? '' : s).trim()
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+function fmt(n) { return Number(n).toLocaleString('en-GB'); }
+
+function shuffle(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+// Stable per-question order for the bank view (same order on every visit),
+// so a saved answer and its explanation letters always line up.
+function seededOrder(id, keys) {
+  let h = 2166136261;
+  for (let i = 0; i < id.length; i++) { h ^= id.charCodeAt(i); h = Math.imul(h, 16777619); }
+  const rand = () => { h ^= h << 13; h ^= h >>> 17; h ^= h << 5; return ((h >>> 0) % 100000) / 100000; };
+  const a = [...keys];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(rand() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+// layout = { order: [stored letters in display order], disp: {stored: display letter} }
+function makeLayout(order) {
+  const disp = {};
+  order.forEach((stored, i) => { disp[stored] = LETTERS[i]; });
+  return { order, disp };
+}
+const bankLayouts = {};
+function bankLayout(q) {
+  if (!bankLayouts[q.id]) bankLayouts[q.id] = makeLayout(seededOrder(q.id, Object.keys(q.options)));
+  return bankLayouts[q.id];
+}
+
+function diffClass(d) {
+  const l = (d || '').toLowerCase();
+  if (l.includes('easy')) return 'diff-easy';
+  if (l.includes('diff') || l.includes('hard')) return 'diff-difficult';
+  return 'diff-moderate';
+}
+
+function buildThinkingChain(text) {
+  return String(text).split(/↓/).map(s => s.trim()).filter(Boolean)
+    .map(esc).join(' <span class="thinking-arrow">↓</span> ');
+}
+
+// The colour-coded explanation blocks (same order and labels as plab1.html),
+// with "why the others are wrong" one line per option, in display order.
+function buildExplanation(q, layout) {
+  const out = [];
+  const cDisp = layout.disp[q.correct_letter];
+  out.push(`<div class="exp-block exp-why-correct"><div class="exp-label">Why it is correct</div><div class="exp-text"><b>${cDisp}. ${esc(q.options[q.correct_letter])}</b> — ${esc(q.why_correct)}</div></div>`);
+  const ww = q.why_others_wrong || {};
+  const rows = layout.order.filter(l => l !== q.correct_letter && ww[l])
+    .map(l => `<div class="ww-row"><b>${layout.disp[l]}. ${esc(q.options[l])}</b> — ${esc(ww[l])}</div>`);
+  if (rows.length) out.push(`<div class="exp-block exp-why-wrong"><div class="exp-label">Why the other options are wrong</div><div class="exp-text">${rows.join('')}</div></div>`);
+  if (q.pearl) out.push(`<div class="exp-block exp-pearl"><div class="exp-label">AMaC clinical pearl</div><div class="exp-text">${esc(q.pearl)}</div></div>`);
+  if (q.thinking) out.push(`<div class="exp-block exp-thinking"><div class="exp-label">AMaC exam thinking</div><div class="thinking-chain">${buildThinkingChain(q.thinking)}</div></div>`);
+  if (q.exam_trap) out.push(`<div class="exp-block exp-trap"><div class="exp-label">Exam trap</div><div class="exp-text">${esc(q.exam_trap)}</div></div>`);
+  if (q.takeaway) out.push(`<div class="exp-block exp-takeaway"><div class="exp-label">Key takeaway</div><div class="exp-text">${esc(q.takeaway)}</div></div>`);
+  if (q.source) out.push(`<div class="exp-block exp-source"><div class="exp-label">Source</div><div class="exp-text">${esc(q.source)}</div></div>`);
+  return out.join('');
+}
+
+function topicLabel(q) {
+  const t = q.title || q.topic || '';
+  return t && t.toLowerCase() !== 'unlabelled' ? t : '';
+}
+
+/* =========================================================
+   QUESTION BANK VIEW
+   ========================================================= */
+const state = { answered: {}, examMode: false, openCard: null, shown: {} };
+
+function save() { try { localStorage.setItem(STORE_KEY, JSON.stringify(state.answered)); } catch (e) {} }
+function load() { try { const d = localStorage.getItem(STORE_KEY); if (d) state.answered = JSON.parse(d) || {}; } catch (e) {} }
+
+function cardStatus(id) {
+  const a = state.answered[id];
+  if (!a) return 'unanswered';
+  return a.correct ? 'correct' : 'wrong';
+}
+
+function buildCard(q) {
+  const ans = state.answered[q.id];
+  const layout = bankLayout(q);
+  const status = ans ? (ans.correct ? 'correct-ans' : 'wrong-ans') : '';
+  const icon = ans ? (ans.correct ? '✓' : '✗') : '';
+  const stem = q.stem || '';
+  const preview = stem.length > 120 ? stem.slice(0, 120) + '…' : stem;
+  const topic = topicLabel(q);
+  const open = state.openCard === q.id ? ' open' : '';
+
+  const opts = layout.order.map(l => {
+    let cls = '', mark = '';
+    if (ans) {
+      cls = ' locked';
+      if (l === q.correct_letter) { cls += ' correct'; mark = ' <span class="opt-icon">✓</span>'; }
+      else if (l === ans.chosen) { cls += ' wrong'; mark = ' <span class="opt-icon">✗</span>'; }
+    }
+    return `<div class="opt${cls}" data-letter="${l}" data-qid="${esc(q.id)}"><span class="opt-letter">${layout.disp[l]}</span><span class="opt-text">${esc(q.options[l])}</span>${mark}</div>`;
+  }).join('');
+
+  const cDisp = layout.disp[q.correct_letter] + '. ' + (q.options[q.correct_letter] || '');
+  const after = ans
+    ? `<div class="result-row ${ans.correct ? 'pass' : 'fail'}"><span class="result-icon">${ans.correct ? '✓' : '✗'}</span>${ans.correct ? 'Correct' : 'Incorrect — the answer is ' + esc(cDisp)}</div>
+       <div class="action-row"><button class="btn-reset" data-qid="${esc(q.id)}">Try again</button></div>
+       <div class="explanation">${buildExplanation(q, layout)}</div>`
+    : `<div class="action-row"><button class="btn-submit" data-qid="${esc(q.id)}" disabled>Submit answer</button></div>`;
+
+  return `<div class="q-card ${status}${open}" id="qc-${esc(q.id)}">
+    <div class="q-header" data-qid="${esc(q.id)}">
+      <div class="q-answered-badge">${icon}</div>
+      <span class="q-num">${esc(q.id)}</span>
+      <span class="q-stem-preview">${esc(preview)}</span>
+      ${q.difficulty ? `<span class="q-diff ${diffClass(q.difficulty)}">${esc(q.difficulty)}</span>` : ''}
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="q-body">
+      ${topic ? `<div class="learn-obj"><div class="learn-obj-label">Topic</div><div class="learn-obj-text">${esc(topic)}</div></div>` : ''}
+      <div class="q-stem-full">${esc(stem)}</div>
+      <div class="options" id="opts-${esc(q.id)}">${opts}</div>
+      ${after}
+    </div>
+  </div>`;
+}
+
+function subjectKey(s) { return 'sp-' + s.replace(/\W/g, '_'); }
+
+function renderBank(qs) {
+  const bank = document.getElementById('bank');
+  document.getElementById('q-count').textContent = `${fmt(qs.length)} question${qs.length !== 1 ? 's' : ''}`;
+  updateStats();
+  if (!qs.length) {
+    bank.innerHTML = '<div class="empty"><p>No questions match your filters.</p></div>';
+    return;
+  }
+  const grouped = {};
+  qs.forEach(q => { (grouped[q.subject] = grouped[q.subject] || []).push(q); });
+  bank.innerHTML = Object.keys(grouped).sort().map(subject => {
+    const sqs = grouped[subject];
+    const all = bankData.filter(q => q.subject === subject);
+    const done = all.filter(q => state.answered[q.id]).length;
+    const limit = state.shown[subject] || SHOW_STEP;
+    const more = sqs.length - limit;
+    return `<div class="domain-section">
+      <div class="domain-header">
+        <span class="domain-title">${esc(subject)}</span>
+        <div class="domain-meta">
+          <span class="domain-progress ${done ? 'show' : ''}" id="${subjectKey(subject)}">${done} / ${all.length} answered</span>
+          <span class="domain-count">${fmt(sqs.length)} question${sqs.length !== 1 ? 's' : ''}</span>
+        </div>
+      </div>
+      <div class="questions-list">
+        ${sqs.slice(0, limit).map(buildCard).join('')}
+        ${more > 0 ? `<button class="show-more" data-subject="${esc(subject)}">Show ${fmt(Math.min(more, SHOW_STEP * 4))} more of ${fmt(more)} remaining</button>` : ''}
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function updateStats() {
+  const total = bankData.length;
+  const answered = Object.keys(state.answered).filter(id => byId[id]).length;
+  const correct = Object.entries(state.answered).filter(([id, a]) => byId[id] && a.correct).length;
+  document.getElementById('answered-count').textContent = fmt(answered);
+  document.getElementById('correct-count').textContent = fmt(correct);
+  document.getElementById('progress-fill').style.width = (total ? Math.round(answered / total * 100) : 0) + '%';
+  document.getElementById('progress-text').textContent = `${fmt(answered)} / ${fmt(total)}`;
+}
+
+function updateSubjectProgress(subject) {
+  const el = document.getElementById(subjectKey(subject));
+  if (!el) return;
+  const all = bankData.filter(q => q.subject === subject);
+  const done = all.filter(q => state.answered[q.id]).length;
+  el.textContent = `${done} / ${all.length} answered`;
+  el.classList.toggle('show', done > 0);
+}
+
+function redrawCard(q) {
+  const card = document.getElementById('qc-' + q.id);
+  if (card) card.outerHTML = buildCard(q);
+}
+
+function toggleCard(id) {
+  const card = document.getElementById('qc-' + id);
+  if (!card) return;
+  const isOpen = card.classList.contains('open');
+  if (state.openCard && state.openCard !== id) {
+    const prev = document.getElementById('qc-' + state.openCard);
+    if (prev) prev.classList.remove('open');
+  }
+  card.classList.toggle('open', !isOpen);
+  state.openCard = isOpen ? null : id;
+}
+
+function selectOpt(qid, letter) {
+  document.querySelectorAll(`#opts-${CSS.escape(qid)} .opt`).forEach(o => o.classList.toggle('selected', o.dataset.letter === letter));
+  const btn = document.querySelector(`#qc-${CSS.escape(qid)} .btn-submit`);
+  if (btn) { btn.disabled = false; btn.dataset.chosen = letter; }
+}
+
+function submitAnswer(qid, chosen) {
+  const q = byId[qid];
+  if (!q || !chosen) return;
+  state.answered[qid] = { chosen, correct: chosen === q.correct_letter };
+  state.openCard = qid;
+  save();
+  redrawCard(q);
+  updateStats();
+  updateSubjectProgress(q.subject);
+}
+
+function resetAnswer(qid) {
+  const q = byId[qid];
+  if (!q) return;
+  delete state.answered[qid];
+  state.openCard = qid;
+  save();
+  redrawCard(q);
+  updateStats();
+  updateSubjectProgress(q.subject);
+}
+
+document.getElementById('bank').addEventListener('click', e => {
+  const more = e.target.closest('.show-more');
+  if (more) {
+    const s = more.dataset.subject;
+    state.shown[s] = (state.shown[s] || SHOW_STEP) + SHOW_STEP * 4;
+    filter();
+    return;
+  }
+  const head = e.target.closest('.q-header');
+  if (head) { toggleCard(head.dataset.qid); return; }
+  const opt = e.target.closest('.opt');
+  if (opt && !opt.classList.contains('locked')) { selectOpt(opt.dataset.qid, opt.dataset.letter); return; }
+  const sub = e.target.closest('.btn-submit');
+  if (sub) { submitAnswer(sub.dataset.qid, sub.dataset.chosen); return; }
+  const rst = e.target.closest('.btn-reset');
+  if (rst) { resetAnswer(rst.dataset.qid); }
+});
+
+function filter() {
+  const search = document.getElementById('search').value.trim().toLowerCase();
+  const subject = document.getElementById('subject-filter').value;
+  const diff = document.getElementById('diff-filter').value;
+  const status = document.getElementById('status-filter').value;
+  const qs = bankData.filter(q => {
+    if (subject && q.subject !== subject) return false;
+    if (diff && (q.difficulty || '') !== diff) return false;
+    if (status && cardStatus(q.id) !== status) return false;
+    if (search) {
+      const hay = q._hay || (q._hay = [q.id, q.stem, q.subject, q.topic, q.title, q.why_correct, q.takeaway, Object.values(q.options).join(' ')].join(' ').toLowerCase());
+      if (!hay.includes(search)) return false;
+    }
+    return true;
+  });
+  renderBank(qs);
+}
+
+let searchTimer = null;
+document.getElementById('search').addEventListener('input', () => { clearTimeout(searchTimer); searchTimer = setTimeout(filter, 150); });
+['subject-filter', 'diff-filter', 'status-filter'].forEach(id => document.getElementById(id).addEventListener('change', () => { state.shown = {}; filter(); }));
+
+document.getElementById('mode-toggle').addEventListener('change', function () {
+  state.examMode = this.checked;
+  document.body.classList.toggle('exam-mode', state.examMode);
+  document.getElementById('mode-label-text').textContent = state.examMode ? 'Exam mode' : 'Learning mode';
+  document.getElementById('exam-pill').classList.toggle('show', state.examMode);
+});
+
+/* =========================================================
+   TIMED SESSIONS (practice + mock)
+   ========================================================= */
 let quizPool = [];
 let currentIndex = 0;
 let score = 0;
@@ -573,126 +868,77 @@ const screens = {
 const mainEl = document.getElementById('main-el');
 
 function showScreen(name) {
+  if (name === 'bank') {
+    document.body.classList.remove('in-session');
+    filter();
+    window.scrollTo(0, 0);
+    return;
+  }
+  document.body.classList.add('in-session');
   Object.values(screens).forEach(s => s.classList.remove('active'));
   screens[name].classList.add('active');
   mainEl.classList.toggle('wide', name === 'mock');
+  window.scrollTo(0, 0);
 }
 
-function shuffle(arr) {
-  const a = [...arr];
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [a[i], a[j]] = [a[j], a[i]];
-  }
-  return a;
+function setSetupMode(mode) {
+  const mock = mode === 'mock';
+  document.getElementById('mode-mock-btn').classList.toggle('active', mock);
+  document.getElementById('mode-practice-btn').classList.toggle('active', !mock);
+  document.getElementById('mock-options').style.display = mock ? '' : 'none';
+  document.getElementById('practice-options').style.display = mock ? 'none' : '';
 }
-
-async function loadData() {
-  try {
-    bankData = await fetch(DATA_FILE).then(r => r.json());
-  } catch (e) {
-    document.getElementById('bank-size-note').textContent =
-      'Could not load question data. This page must be served over http(s) — opening the file directly will not work.';
-    console.error(e);
-    return;
+document.getElementById('mode-practice-btn').addEventListener('click', () => setSetupMode('practice'));
+document.getElementById('mode-mock-btn').addEventListener('click', () => setSetupMode('mock'));
+document.getElementById('hero-practice-btn').addEventListener('click', () => { setSetupMode('practice'); showScreen('setup'); });
+document.getElementById('hero-mock-btn').addEventListener('click', () => { setSetupMode('mock'); showScreen('setup'); });
+document.getElementById('back-to-bank').addEventListener('click', () => {
+  if (screens.mock.classList.contains('active') && document.body.classList.contains('in-session')) {
+    if (!confirm('Leave the mock exam? Your answers in this sitting will be lost.')) return;
+    clearInterval(mockTimer);
   }
-  populateSubjects();
+  showScreen('bank');
+});
 
-  const mockNote = document.getElementById('mock-availability-note');
-  if (bankData.length < MOCK_QUESTION_COUNT) {
-    mockNote.textContent = `Only ${bankData.length} questions are available so far — a full ${MOCK_QUESTION_COUNT}-question mock needs more before it can run.`;
-    document.getElementById('start-mock-btn').disabled = true;
-  } else {
-    mockNote.textContent = `Drawing from ${bankData.length} questions.`;
-  }
-  // Which subjects the mock currently covers, derived from the whole bank.
-  const mockSubjects = [...new Set(bankData.map(d => d.subject))].sort();
+function populateSubjects() {
+  const subjects = [...new Set(bankData.map(d => d.subject))].sort();
+  const count = s => bankData.filter(d => d.subject === s).length;
+  document.getElementById('subject-select').innerHTML = '<option value="all">All subjects</option>' +
+    subjects.map(s => `<option value="${esc(s)}">${esc(s)} (${count(s)})</option>`).join('');
+  document.getElementById('subject-filter').innerHTML = '<option value="">All subjects</option>' +
+    subjects.map(s => `<option value="${esc(s)}">${esc(s)} (${count(s)})</option>`).join('');
+  updateBankNote();
+  const mockSubjects = subjects;
   document.getElementById('mock-subject-coverage').textContent =
     ` — currently covering ${mockSubjects.length} subjects: ${mockSubjects.join(', ')}`;
 }
 
-function populateSubjects() {
-  const select = document.getElementById('subject-select');
-  const previous = select.value;
-  const subjects = [...new Set(bankData.map(d => d.subject))].sort();
-  select.innerHTML = '<option value="all">All subjects</option>' +
-    subjects.map(s => {
-      const n = bankData.filter(d => d.subject === s).length;
-      return `<option value="${s}">${s} (${n})</option>`;
-    }).join('');
-  if (previous && subjects.includes(previous)) select.value = previous;
-  updateBankNote();
-}
-
-// Live count for the current practice selection (as questions.html's #q-count).
-// Subjects below SMALL_SUBJECT_THRESHOLD get a qualifier so a short run isn't a surprise.
+// Live count for the current practice selection.
 const SMALL_SUBJECT_THRESHOLD = 10;
 function updateBankNote() {
   const subject = document.getElementById('subject-select').value;
-  const n = subject === 'all'
-    ? bankData.length
-    : bankData.filter(d => d.subject === subject).length;
-  let text = `${n} question${n !== 1 ? 's' : ''} available`;
+  const n = subject === 'all' ? bankData.length : bankData.filter(d => d.subject === subject).length;
+  let text = `${fmt(n)} question${n !== 1 ? 's' : ''} available`;
   if (subject !== 'all' && n < SMALL_SUBJECT_THRESHOLD) text += ' (a smaller question set)';
-  text += '.';
-  document.getElementById('bank-size-note').textContent = text;
+  document.getElementById('bank-size-note').textContent = text + '.';
 }
 document.getElementById('subject-select').addEventListener('change', updateBankNote);
 
-document.getElementById('mode-practice-btn').addEventListener('click', () => {
-  document.getElementById('mode-practice-btn').classList.add('active');
-  document.getElementById('mode-mock-btn').classList.remove('active');
-  document.getElementById('practice-options').style.display = '';
-  document.getElementById('mock-options').style.display = 'none';
-});
-document.getElementById('mode-mock-btn').addEventListener('click', () => {
-  document.getElementById('mode-mock-btn').classList.add('active');
-  document.getElementById('mode-practice-btn').classList.remove('active');
-  document.getElementById('mock-options').style.display = '';
-  document.getElementById('practice-options').style.display = 'none';
-});
-
-// A question's options as a shuffled array of {letter, text} pairs — display
-// order is randomised, but the letter (matched against correct_letter) is not.
-function optionEntries(q) {
-  return shuffle(Object.entries(q.options).map(([letter, text]) => ({ letter, text })));
-}
-
-// The full explanation panel for a question: the correct option's reasoning,
-// each wrong option's reasoning, then exam trap / takeaway / source if present
-// (older Bank 1 questions don't have these three — rows are simply omitted).
-// Options are shown shuffled and unlettered, so each explanation is labelled
-// with its option text rather than the stored letter.
-function esc(s) {
-  return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
-}
-function buildExplainHTML(q) {
-  const rows = [`<div class="row"><b>✓ ${esc(q.options[q.correct_letter])}:</b> ${esc(q.why_correct)}</div>`];
-  Object.keys(q.options).forEach(letter => {
-    if (letter === q.correct_letter) return;
-    const text = q.why_others_wrong && q.why_others_wrong[letter];
-    if (text) rows.push(`<div class="row"><b>${esc(q.options[letter])}:</b> ${esc(text)}</div>`);
-  });
-  if (q.exam_trap) rows.push(`<div class="row"><b>Exam trap:</b> ${esc(q.exam_trap)}</div>`);
-  if (q.takeaway) rows.push(`<div class="row"><b>Takeaway:</b> ${esc(q.takeaway)}</div>`);
-  if (q.source) rows.push(`<div class="row"><b>Source:</b> ${esc(q.source)}</div>`);
-  return rows.join('');
+function renderOptionList(el, q, layout, onPick, picked) {
+  el.innerHTML = layout.order.map(l =>
+    `<div class="opt${picked === l ? ' selected' : ''}" data-letter="${l}"><span class="opt-letter">${layout.disp[l]}</span><span class="opt-text">${esc(q.options[l])}</span></div>`
+  ).join('');
+  el.querySelectorAll('.opt').forEach(o => o.addEventListener('click', () => onPick(o.dataset.letter)));
 }
 
 document.getElementById('start-btn').addEventListener('click', () => {
-  const pool = bankData;
   const subject = document.getElementById('subject-select').value;
   const countSel = document.getElementById('count-select').value;
-
-  let filtered = subject === 'all' ? pool : pool.filter(d => d.subject === subject);
+  let filtered = subject === 'all' ? bankData : bankData.filter(d => d.subject === subject);
   filtered = shuffle(filtered);
-  quizPool = countSel === 'all' ? filtered : filtered.slice(0, parseInt(countSel, 10));
-
-  if (quizPool.length === 0) {
-    alert('No questions available for that combination. Try a different subject.');
-    return;
-  }
-
+  quizPool = (countSel === 'all' ? filtered : filtered.slice(0, parseInt(countSel, 10)))
+    .map(q => ({ q, layout: makeLayout(shuffle(Object.keys(q.options))) }));
+  if (!quizPool.length) { alert('No questions available for that combination. Try a different subject.'); return; }
   currentIndex = 0;
   score = 0;
   sessionLog = [];
@@ -702,70 +948,45 @@ document.getElementById('start-btn').addEventListener('click', () => {
 });
 
 function renderQuestion() {
-  const q = quizPool[currentIndex];
+  const { q, layout } = quizPool[currentIndex];
   const total = quizPool.length;
   answered = false;
-
   document.getElementById('q-counter').textContent = `Question ${currentIndex + 1} of ${total}`;
   document.getElementById('q-score').textContent = `Score: ${score}`;
-  document.getElementById('progress-fill').style.width = `${(currentIndex / total) * 100}%`;
-  document.getElementById('q-topic').textContent = q.topic;
+  document.getElementById('quiz-progress-fill').style.width = `${(currentIndex / total) * 100}%`;
+  document.getElementById('q-topic').textContent = q.subject;
   document.getElementById('q-text').textContent = q.stem;
-
-  const optionsEl = document.getElementById('q-options');
-  optionsEl.innerHTML = '';
-  optionEntries(q).forEach(({ letter, text }) => {
-    const li = document.createElement('li');
-    li.textContent = text;
-    li.dataset.letter = letter;
-    li.addEventListener('click', () => selectAnswer(letter));
-    optionsEl.appendChild(li);
-  });
-
-  const explainEl = document.getElementById('q-explain');
-  explainEl.classList.remove('show');
-  explainEl.innerHTML = '';
-
+  renderOptionList(document.getElementById('q-options'), q, layout, selectAnswer);
+  document.getElementById('q-result').innerHTML = '';
+  document.getElementById('q-explain').innerHTML = '';
   document.getElementById('next-btn').disabled = true;
-  document.getElementById('next-btn').textContent =
-    currentIndex === total - 1 ? 'See results' : 'Next question';
+  document.getElementById('next-btn').textContent = currentIndex === total - 1 ? 'See results' : 'Next question';
 }
 
-function selectAnswer(selectedLetter) {
+function selectAnswer(selected) {
   if (answered) return;
   answered = true;
-  const q = quizPool[currentIndex];
-  const isCorrect = selectedLetter === q.correct_letter;
+  const { q, layout } = quizPool[currentIndex];
+  const isCorrect = selected === q.correct_letter;
   if (isCorrect) score++;
-
-  document.querySelectorAll('#q-options li').forEach(li => {
-    li.classList.add('disabled');
-    if (li.dataset.letter === q.correct_letter) li.classList.add('correct');
-    if (li.dataset.letter === selectedLetter && !isCorrect) li.classList.add('incorrect');
+  document.querySelectorAll('#q-options .opt').forEach(o => {
+    o.classList.add('locked');
+    if (o.dataset.letter === q.correct_letter) o.classList.add('correct');
+    if (o.dataset.letter === selected && !isCorrect) o.classList.add('wrong');
   });
-
-  const explainEl = document.getElementById('q-explain');
-  explainEl.innerHTML = buildExplainHTML(q);
-  explainEl.classList.add('show');
-
-  sessionLog.push({
-    stem: q.stem, options: q.options, correct_letter: q.correct_letter, correct_answer: q.correct_answer,
-    selected: selectedLetter, isCorrect, flagged: false,
-  });
-
+  const cDisp = layout.disp[q.correct_letter] + '. ' + q.options[q.correct_letter];
+  document.getElementById('q-result').innerHTML =
+    `<div class="result-row ${isCorrect ? 'pass' : 'fail'}"><span class="result-icon">${isCorrect ? '✓' : '✗'}</span>${isCorrect ? 'Correct' : 'Incorrect — the answer is ' + esc(cDisp)}</div>`;
+  document.getElementById('q-explain').innerHTML = buildExplanation(q, layout);
+  sessionLog.push({ q, layout, selected, isCorrect, flagged: false });
   document.getElementById('q-score').textContent = `Score: ${score}`;
   document.getElementById('next-btn').disabled = false;
 }
 
 document.getElementById('next-btn').addEventListener('click', () => {
   currentIndex++;
-  if (currentIndex >= quizPool.length) {
-    showPracticeResults();
-  } else {
-    renderQuestion();
-  }
+  if (currentIndex >= quizPool.length) showPracticeResults(); else renderQuestion();
 });
-
 document.getElementById('finish-early-btn').addEventListener('click', () => {
   if (confirm('End this session now and see your score?')) showPracticeResults();
 });
@@ -775,8 +996,7 @@ function showPracticeResults() {
   lastReviewMode = 'practice';
   const total = sessionLog.length;
   const pct = total ? Math.round((score / total) * 100) : 0;
-  document.getElementById('results-summary').textContent =
-    `You answered ${total} question${total === 1 ? '' : 's'}.`;
+  document.getElementById('results-summary').textContent = `You answered ${total} question${total === 1 ? '' : 's'}.`;
   document.getElementById('results-meta').textContent = '';
   const scoreEl = document.getElementById('score-display');
   scoreEl.textContent = `${score} / ${total} (${pct}%)`;
@@ -785,15 +1005,13 @@ function showPracticeResults() {
 
 document.getElementById('start-mock-btn').addEventListener('click', () => {
   if (bankData.length < MOCK_QUESTION_COUNT) return;
-  mockPool = shuffle(bankData).slice(0, MOCK_QUESTION_COUNT).map(q => ({
-    ...q, shuffledEntries: optionEntries(q),
-  }));
+  mockPool = shuffle(bankData).slice(0, MOCK_QUESTION_COUNT)
+    .map(q => ({ q, layout: makeLayout(shuffle(Object.keys(q.options))) }));
   mockIndex = 0;
   mockAnswers = {};
   mockFlags = {};
   mockTimeLeft = MOCK_SECONDS;
   mockSubmitted = null;
-
   buildPalette();
   showScreen('mock');
   renderMockQuestion();
@@ -806,53 +1024,33 @@ function startMockTimer() {
   mockTimer = setInterval(() => {
     mockTimeLeft--;
     updateTimerDisplay();
-    if (mockTimeLeft <= 0) {
-      clearInterval(mockTimer);
-      submitMockExam(true);
-    }
+    if (mockTimeLeft <= 0) { clearInterval(mockTimer); submitMockExam(true); }
   }, 1000);
 }
 
 function updateTimerDisplay() {
-  const m = Math.floor(mockTimeLeft / 60);
-  const s = mockTimeLeft % 60;
+  const m = Math.floor(mockTimeLeft / 60), s = mockTimeLeft % 60;
   const el = document.getElementById('mock-timer');
   el.textContent = `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
   el.className = 'mock-timer' + (mockTimeLeft <= 600 ? ' danger' : mockTimeLeft <= 1800 ? ' warning' : '');
 }
 
 function renderMockQuestion() {
-  const q = mockPool[mockIndex];
+  const { q, layout } = mockPool[mockIndex];
   document.getElementById('mock-counter').textContent = `Question ${mockIndex + 1} of ${mockPool.length}`;
-  document.getElementById('mock-answered-count').textContent =
-    `Answered: ${Object.keys(mockAnswers).length} / ${mockPool.length}`;
-  document.getElementById('mock-topic').textContent = q.topic;
+  document.getElementById('mock-answered-count').textContent = `Answered: ${Object.keys(mockAnswers).length} / ${mockPool.length}`;
+  document.getElementById('mock-topic').textContent = q.subject;
   document.getElementById('mock-text').textContent = q.stem;
-
-  const optsEl = document.getElementById('mock-options-list');
-  optsEl.innerHTML = '';
-  q.shuffledEntries.forEach(({ letter, text }) => {
-    const li = document.createElement('li');
-    li.textContent = text;
-    li.dataset.letter = letter;
-    if (mockAnswers[mockIndex] === letter) li.classList.add('selected');
-    li.addEventListener('click', () => {
-      mockAnswers[mockIndex] = letter;
-      renderMockQuestion();
-      updatePalette();
-    });
-    optsEl.appendChild(li);
-  });
-
+  renderOptionList(document.getElementById('mock-options-list'), q, layout, letter => {
+    mockAnswers[mockIndex] = letter;
+    renderMockQuestion();
+  }, mockAnswers[mockIndex]);
   const flagBtn = document.getElementById('mock-flag-btn');
   flagBtn.classList.toggle('active', !!mockFlags[mockIndex]);
-  flagBtn.textContent = mockFlags[mockIndex] ? 'Flagged \u2713' : 'Flag this question';
-
+  flagBtn.textContent = mockFlags[mockIndex] ? 'Flagged ✓' : 'Flag this question';
   document.getElementById('mock-prev-btn').disabled = mockIndex === 0;
-  document.getElementById('mock-next-btn').textContent =
-    mockIndex === mockPool.length - 1 ? 'Last question' : 'Next';
   document.getElementById('mock-next-btn').disabled = mockIndex === mockPool.length - 1;
-
+  document.getElementById('mock-next-btn').textContent = mockIndex === mockPool.length - 1 ? 'Last question' : 'Next';
   updatePalette();
 }
 
@@ -877,16 +1075,9 @@ function updatePalette() {
   });
 }
 
-document.getElementById('mock-prev-btn').addEventListener('click', () => {
-  if (mockIndex > 0) { mockIndex--; renderMockQuestion(); }
-});
-document.getElementById('mock-next-btn').addEventListener('click', () => {
-  if (mockIndex < mockPool.length - 1) { mockIndex++; renderMockQuestion(); }
-});
-document.getElementById('mock-flag-btn').addEventListener('click', () => {
-  mockFlags[mockIndex] = !mockFlags[mockIndex];
-  renderMockQuestion();
-});
+document.getElementById('mock-prev-btn').addEventListener('click', () => { if (mockIndex > 0) { mockIndex--; renderMockQuestion(); } });
+document.getElementById('mock-next-btn').addEventListener('click', () => { if (mockIndex < mockPool.length - 1) { mockIndex++; renderMockQuestion(); } });
+document.getElementById('mock-flag-btn').addEventListener('click', () => { mockFlags[mockIndex] = !mockFlags[mockIndex]; renderMockQuestion(); });
 document.getElementById('mock-submit-btn').addEventListener('click', () => {
   const unanswered = mockPool.length - Object.keys(mockAnswers).length;
   const msg = unanswered > 0
@@ -898,17 +1089,12 @@ document.getElementById('mock-submit-btn').addEventListener('click', () => {
 function submitMockExam(autoSubmitted) {
   clearInterval(mockTimer);
   let correct = 0;
-  const log = mockPool.map((q, i) => {
-    const selected = mockAnswers[i];
-    const isCorrect = selected === q.correct_letter;
+  sessionLog = mockPool.map(({ q, layout }, i) => {
+    const selected = mockAnswers[i] || null;
+    const isCorrect = !!selected && selected === q.correct_letter;
     if (isCorrect) correct++;
-    return {
-      stem: q.stem, options: q.options, correct_letter: q.correct_letter, correct_answer: q.correct_answer,
-      selected: selected || null, isCorrect: !!selected && isCorrect,
-      flagged: !!mockFlags[i],
-    };
+    return { q, layout, selected, isCorrect, flagged: !!mockFlags[i] };
   });
-  sessionLog = log;
   score = correct;
   mockSubmitted = {
     total: mockPool.length, timeUsed: MOCK_SECONDS - mockTimeLeft, autoSubmitted,
@@ -924,27 +1110,21 @@ function showMockResults() {
   const { total, timeUsed, autoSubmitted, unanswered, flaggedCount } = mockSubmitted;
   const pct = Math.round((score / total) * 100);
   const mins = Math.floor(timeUsed / 60), secs = timeUsed % 60;
-
   document.getElementById('results-summary').textContent = autoSubmitted
-    ? 'Time ran out \u2014 your exam was submitted automatically.'
+    ? 'Time ran out — your exam was submitted automatically.'
     : 'Mock exam submitted.';
   document.getElementById('results-meta').textContent =
-    `Time used: ${mins}m ${secs}s \u00b7 Unanswered: ${unanswered} \u00b7 Flagged: ${flaggedCount}`;
-
+    `Time used: ${mins}m ${secs}s · Unanswered: ${unanswered} · Flagged: ${flaggedCount}`;
   const scoreEl = document.getElementById('score-display');
   scoreEl.textContent = `${score} / ${total} (${pct}%)`;
   scoreEl.className = 'score-display ' + (pct >= 70 ? 'pass' : 'fail');
 }
 
-document.getElementById('review-btn').addEventListener('click', () => {
-  showScreen('review');
-  renderReview('all');
-});
+document.getElementById('review-btn').addEventListener('click', () => { showScreen('review'); renderReview('all'); });
 
-function renderReview(filter) {
+function renderReview(filterName) {
   const filtersEl = document.getElementById('review-filters');
   const listEl = document.getElementById('review-list');
-
   if (lastReviewMode === 'mock') {
     filtersEl.style.display = 'flex';
     const counts = {
@@ -955,39 +1135,33 @@ function renderReview(filter) {
       unanswered: sessionLog.filter(a => !a.selected).length,
     };
     filtersEl.innerHTML = Object.entries(counts).map(([key, n]) =>
-      `<button class="filter-btn ${filter === key ? 'active' : ''}" data-filter="${key}">
-        ${key[0].toUpperCase() + key.slice(1)} (${n})
-      </button>`
+      `<button class="filter-btn ${filterName === key ? 'active' : ''}" data-filter="${key}">${key[0].toUpperCase() + key.slice(1)} (${n})</button>`
     ).join('');
-    filtersEl.querySelectorAll('.filter-btn').forEach(btn => {
-      btn.addEventListener('click', () => renderReview(btn.dataset.filter));
-    });
+    filtersEl.querySelectorAll('.filter-btn').forEach(btn => btn.addEventListener('click', () => renderReview(btn.dataset.filter)));
   } else {
     filtersEl.style.display = 'none';
   }
 
   let items = sessionLog;
-  if (filter === 'incorrect') items = items.filter(a => a.selected && !a.isCorrect);
-  if (filter === 'correct') items = items.filter(a => a.isCorrect);
-  if (filter === 'flagged') items = items.filter(a => a.flagged);
-  if (filter === 'unanswered') items = items.filter(a => !a.selected);
+  if (filterName === 'incorrect') items = items.filter(a => a.selected && !a.isCorrect);
+  if (filterName === 'correct') items = items.filter(a => a.isCorrect);
+  if (filterName === 'flagged') items = items.filter(a => a.flagged);
+  if (filterName === 'unanswered') items = items.filter(a => !a.selected);
+  if (!items.length) { listEl.innerHTML = '<div class="empty-state">Nothing to show for this filter.</div>'; return; }
 
-  if (items.length === 0) {
-    listEl.innerHTML = '<div class="empty-state">Nothing to show for this filter.</div>';
-    return;
-  }
-
-  listEl.innerHTML = items.map((a) => {
+  listEl.innerHTML = items.map(a => {
+    const { q, layout } = a;
     const idx = sessionLog.indexOf(a) + 1;
+    const opt = l => `${layout.disp[l]}. ${esc(q.options[l])}`;
     const answeredText = a.selected
-      ? `<p class="a ${a.isCorrect ? 'right' : 'wrong'}">Your answer: ${esc(a.options[a.selected])} ${a.isCorrect ? '\u2713' : '\u2717'}</p>`
-      : `<p class="a wrong">Not answered</p>`;
-    return `
-    <div class="review-item ${a.isCorrect ? 'correct' : 'incorrect'}">
-      <p class="q"><b>Q${idx}.</b> ${esc(a.stem)}</p>
+      ? `<p class="a ${a.isCorrect ? 'right' : 'wrong'}">Your answer: ${opt(a.selected)} ${a.isCorrect ? '✓' : '✗'}</p>`
+      : '<p class="a wrong">Not answered</p>';
+    return `<div class="review-item ${a.isCorrect ? 'correct' : 'incorrect'}">
+      <p class="q"><b>Q${idx}.</b> ${esc(q.stem)}</p>
       ${answeredText}
-      ${!a.isCorrect ? `<p class="a right">Correct answer: ${esc(a.options[a.correct_letter])}</p>` : ''}
+      ${!a.isCorrect ? `<p class="a right">Correct answer: ${opt(q.correct_letter)}</p>` : ''}
       ${a.flagged ? '<p class="flag-note">Flagged during exam</p>' : ''}
+      <details><summary>Show explanation</summary><div class="explanation">${buildExplanation(q, layout)}</div></details>
     </div>`;
   }).join('');
 }
@@ -995,12 +1169,44 @@ function renderReview(filter) {
 document.getElementById('restart-btn').addEventListener('click', () => showScreen('setup'));
 document.getElementById('back-to-setup-btn').addEventListener('click', () => showScreen('setup'));
 
-window.addEventListener('beforeunload', (e) => {
-  if (screens.mock.classList.contains('active')) {
+window.addEventListener('beforeunload', e => {
+  if (document.body.classList.contains('in-session') && screens.mock.classList.contains('active')) {
     e.preventDefault();
     e.returnValue = '';
   }
 });
+
+/* =========================================================
+   LOAD
+   ========================================================= */
+async function loadData() {
+  try {
+    bankData = await fetch(DATA_FILE).then(r => r.json());
+  } catch (e) {
+    document.getElementById('bank').innerHTML =
+      '<div class="empty"><p>Could not load question data. This page must be served over http(s) — opening the file directly will not work.</p></div>';
+    console.error(e);
+    return;
+  }
+  bankData.forEach(q => { byId[q.id] = q; });
+  load();
+  const n = fmt(bankData.length);
+  document.getElementById('hero-count').textContent = n;
+  document.getElementById('total-count').textContent = n;
+  document.getElementById('subject-count').textContent = new Set(bankData.map(q => q.subject)).size;
+  // The difficulty filter appears once questions carry a difficulty rating.
+  if (bankData.some(q => q.difficulty)) document.getElementById('diff-filter').style.display = '';
+  populateSubjects();
+
+  const mockNote = document.getElementById('mock-availability-note');
+  if (bankData.length < MOCK_QUESTION_COUNT) {
+    mockNote.textContent = `Only ${bankData.length} questions are available so far — a full ${MOCK_QUESTION_COUNT}-question mock needs more before it can run.`;
+    document.getElementById('start-mock-btn').disabled = true;
+  } else {
+    mockNote.textContent = `Drawing from ${n} questions.`;
+  }
+  filter();
+}
 
 loadData();
 </script>
