@@ -460,7 +460,7 @@ function buildCard(q) {
   const preview = (q.stem||'').slice(0, 110) + ((q.stem||'').length > 110 ? '…' : '');
   const dc = diffClass(q.difficulty);
 
-  const learnObjHtml = q.presentation ? `
+  const learnObjHtml = (q.presentation && ans) ? `
     <div class="learn-obj" id="lo-${q.id}">
       <div class="learn-obj-label">Learning objective</div>
       <div class="learn-obj-text">Understand and apply the correct management of: ${esc(q.presentation)}.</div>
@@ -513,7 +513,6 @@ function buildCard(q) {
     <div class="q-body">
       ${learnObjHtml}
       <div class="q-stem-full">${esc(q.stem)}</div>
-      <div class="q-stem-q">${esc(q.presentation ? 'What is the most appropriate management?' : '')}</div>
       <div class="options" id="opts-${q.id}">${optionsHtml}</div>
       ${resultHtml}
       ${submitBtn}
@@ -602,6 +601,14 @@ function submitAnswer(qid) {
 
   const exp = document.getElementById('exp-' + qid);
   if (exp) exp.classList.add('show');
+
+  // The learning objective names the presentation, which is often the answer, so it is shown only after answering.
+  const loCard = document.getElementById('qc-' + qid);
+  if (q.presentation && loCard && !loCard.querySelector('.learn-obj')) {
+    const stemEl = loCard.querySelector('.q-stem-full');
+    if (stemEl) stemEl.insertAdjacentHTML('beforebegin', `<div class="learn-obj" id="lo-${q.id}"><div class="learn-obj-label">Learning objective</div><div class="learn-obj-text">Understand and apply the correct management of: ${esc(q.presentation)}.</div></div>`);
+    applyExamModeCard(loCard);
+  }
 
   const card = document.getElementById('qc-' + qid);
   if (card) {

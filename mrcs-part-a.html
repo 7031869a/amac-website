@@ -658,7 +658,8 @@ function buildCard(q) {
   const icon = ans ? (ans.correct ? '✓' : '✗') : '';
   const stem = q.stem || '';
   const preview = stem.length > 120 ? stem.slice(0, 120) + '…' : stem;
-  const topic = topicLabel(q);
+  // The topic often names the answer, so it is shown only after answering.
+  const topic = ans ? topicLabel(q) : '';
   const open = state.openCard === q.id ? ' open' : '';
 
   const opts = layout.order.map(l => {
