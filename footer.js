@@ -105,6 +105,7 @@
   var cols = ""
     + col("Exams", [
         { href: "ukmla.html",     label: "UKMLA" },
+        { href: "foundation.html", label: "Foundation F1 & F2" },
         { href: "plab2.html",     label: "PLAB 2" },
         { href: "plab1-hub.html", label: "PLAB 1" },
         { href: "frcs.html",      label: "FRCS Part 2" },
