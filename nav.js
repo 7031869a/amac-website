@@ -31,6 +31,15 @@
         { href: "ukmla.html#toolkit-extended", label: "Study Tools" }
       ]
     },
+    foundation: {
+      tag: "FOUNDATION",
+      accent: "#E5793B", accentText: "#F0A46E",
+      links: [
+        { href: "foundation.html#toolkit",  label: "Available tools" },
+        { href: "foundation.html#in-build", label: "What's planned" },
+        { href: "tools.html#clinical-reference", label: "Clinical reference" }
+      ]
+    },
     plab1: {
       tag: "PLAB 1",
       accent: "#4F97DD", accentText: "#85B7EB",
