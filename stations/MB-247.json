@@ -1,0 +1,530 @@
+{
+  "id": "MB-247",
+  "exam": "MRCS-B",
+  "title": "Septic arthritis of the native knee",
+  "type": "applied-knowledge",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "Trauma and orthopaedics: musculoskeletal infection (clinical scenario with examiner-supplied findings)",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "BOASt: Management of musculoskeletal soft tissue infections, including native large joint infections (July 2025)",
+      "BOASt: Acute Management of Peri-Prosthetic Joint Infection (October 2023)",
+      "BSR guideline scope: septic arthritis in adults with a hot swollen joint (Arumalla et al., 2025)"
+    ]
+  },
+  "brief": {
+    "setting": "Emergency department",
+    "role": "Core surgical trainee on call for orthopaedics",
+    "scenario": "Mr Callum Strachan, 55, has type 2 diabetes. His GP injected steroid into his right knee for osteoarthritis five days ago. For two days the knee has been hot, swollen and too painful to bear weight. Temperature 38.3°C.",
+    "task": "Answer the examiner's questions on his assessment and immediate management."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Septic arthritis until proven otherwise. Is he septic? That decides antibiotics or aspiration first.",
+    "trap": "Starting antibiotics in a stable patient before the joint is aspirated.",
+    "firstMove": "\"This is septic arthritis until proven otherwise. First I'd check whether he has sepsis.\""
+  },
+  "flow": [
+    "Working diagnosis",
+    "Sepsis screen",
+    "Aspirate or treat first",
+    "Antibiotics",
+    "Washout",
+    "Prompts"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-knowledge",
+      "label": "Working diagnosis and differentials",
+      "fail": "Calls it a post-injection flare or gout and plans discharge.",
+      "pass": "Septic arthritis until proven otherwise. Differentials: gout, calcium pyrophosphate disease, post-injection flare, haemarthrosis, reactive or inflammatory arthritis.",
+      "high": "Adds that normal inflammatory markers do not exclude septic arthritis; the aspirate decides.",
+      "source": "BL"
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-skill",
+      "label": "History and risk factors",
+      "fail": "Does not ask about the injection or his diabetes.",
+      "pass": "Recent joint injection, diabetes, rheumatoid arthritis, prosthetic joint, previous surgery, immunosuppression, skin infection.",
+      "high": "Looks for another source and a cardiovascular examination for endocarditis; asks about recent antibiotics, which reduce culture yield.",
+      "source": "BL"
+    },
+    {
+      "id": "G3",
+      "domain": "professionalism",
+      "label": "Assesses for sepsis",
+      "fail": "Does not check observations or lactate before deciding.",
+      "pass": "Full observations and lactate; if septic, Sepsis Six now and inform the on-call orthopaedic team.",
+      "high": "States the sepsis decision changes the order: septic patients get antibiotics after blood cultures, without waiting for aspiration.",
+      "source": "BOASTPJI"
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-skill",
+      "label": "Aspirates before antibiotics when stable",
+      "fail": "Gives antibiotics first 'to be safe' in a stable patient.",
+      "pass": "Not septic: no antibiotics until aspirated. Aseptic aspiration, avoiding cellulitic skin; Gram stain, culture, cell count and crystals. Blood cultures.",
+      "high": "Would use ultrasound guidance if the aspirate is dry, and records the colour and turbidity of the fluid.",
+      "source": "BOASTSTI"
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-knowledge",
+      "label": "Antibiotics",
+      "fail": "Gives oral antibiotics, or delays them after sampling.",
+      "pass": "Once samples are taken, IV antibiotics per local microbiology policy, covering staphylococci and streptococci; adjust to culture.",
+      "high": "Covers MRSA if he is colonised or at risk; notes a prolonged course, initially IV, guided by microbiology.",
+      "source": "BL"
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-skill",
+      "label": "Washout",
+      "fail": "Treats with antibiotics alone and no orthopaedic plan.",
+      "pass": "Urgent orthopaedic washout, arthroscopic or open. If septic and acutely unwell, surgery within 6 hours unless there is a specific reason not to.",
+      "high": "Explains cartilage damage is time-critical; repeat washout if local or systemic signs persist.",
+      "source": "BOASTPJI"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "What is your diagnosis?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "A flare after the steroid injection. Probably fine to go home with anti-inflammatories.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What would you ask him?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "How bad the pain is.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you decide how unwell he is?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "He looks OK, so I'd just carry on.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "If you suspected infection?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "IV antibiotics straight away to be safe, and aspirate later.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Which antibiotic?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Oral flucloxacillin, like cellulitis.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Then?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Continue antibiotics and see if it settles on the ward.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "examiner",
+        "text": "What is your diagnosis?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Septic arthritis until proven otherwise. Differentials are gout, calcium pyrophosphate disease, a post-injection flare, haemarthrosis, and reactive or inflammatory arthritis.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What would you ask?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "About the injection, his diabetes, any rheumatoid arthritis, joint replacement, previous surgery, immunosuppression or skin infection.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you proceed?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Full observations and a lactate. If he's septic, Sepsis Six immediately and I'd inform the on-call orthopaedic team.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Heart rate 96, BP 136/84, lactate 1.2. Alert."
+      },
+      {
+        "speaker": "candidate",
+        "text": "He isn't septic, so no antibiotics until I've aspirated the knee. Aseptic technique, away from any cellulitis, for Gram stain, culture, cell count and crystals, plus blood cultures.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The fluid is turbid. Then?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "IV antibiotics per local microbiology policy, covering staphylococci and streptococci, and adjusted once cultures are back.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Does he need anything else?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Urgent orthopaedic washout, arthroscopic or open. If he were septic and acutely unwell, within 6 hours.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "examiner",
+        "text": "His CRP is only 18."
+      },
+      {
+        "speaker": "candidate",
+        "text": "That doesn't exclude it. Normal inflammatory markers don't rule out septic arthritis; the aspirate decides.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Anything else in the history or examination?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Any other infection source, a cardiovascular examination for endocarditis, and whether he's had antibiotics recently, because that lowers the culture yield.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Why does sepsis matter for the order of things?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "If he's septic, blood cultures then antibiotics straight away; I wouldn't wait for aspiration. If he's stable, I aspirate first.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "You get a dry tap."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Ultrasound-guided aspiration, or sampling in theatre. I'd record the colour and turbidity whenever fluid comes.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "He's had MRSA before."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Then the empirical regimen must cover MRSA. The course is prolonged, initially IV, with microbiology guiding it.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Why hurry the washout?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Cartilage damage is time-critical. If he doesn't improve, he may need a repeat washout.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G4",
+      "move": "Starting antibiotics before aspirating a stable patient's joint.",
+      "consequence": "Cultures may be sterile, so the organism and the right antibiotic are never identified."
+    },
+    {
+      "row": "G3",
+      "move": "Delaying antibiotics in a septic patient to aspirate first.",
+      "consequence": "Sepsis progresses; septic patients need cultures and antibiotics immediately."
+    },
+    {
+      "row": "G1",
+      "move": "Labelling it a post-injection flare and discharging him.",
+      "consequence": "Untreated infection destroys cartilage and can cause sepsis."
+    },
+    {
+      "row": "G6",
+      "move": "Relying on antibiotics without washout.",
+      "consequence": "Pus stays in the joint and cartilage loss continues."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "Asked 'antibiotics or aspiration first?'",
+      "line": "It depends on sepsis: septic, cultures and antibiotics now; stable, aspirate first."
+    },
+    {
+      "when": "Told the CRP is normal",
+      "line": "Normal markers don't exclude septic arthritis; the aspirate decides."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Native joint infections follow the peri-prosthetic joint infection BOASt standards; the aspirate includes crystals.",
+      "source": "BOASTSTI"
+    },
+    {
+      "fact": "Septic: Sepsis Six, blood cultures, then antibiotics; surgery within 6 hours if acutely unwell.",
+      "source": "BOASTPJI"
+    },
+    {
+      "fact": "Not septic: no antibiotics until deep samples are taken.",
+      "source": "BOASTPJI"
+    },
+    {
+      "fact": "Risk factors: joint injection or surgery, rheumatoid arthritis, prosthesis, skin infection, diabetes, immunosuppression.",
+      "source": "BSRSCOPE"
+    },
+    {
+      "fact": "Normal inflammatory markers do not exclude septic arthritis.",
+      "source": "BSRSCOPE"
+    }
+  ],
+  "recall": {
+    "think": "Sepsis, and cartilage destroyed within days.",
+    "say": "\"Septic arthritis until proven otherwise. Is he septic?\"",
+    "do": [
+      "Observations and lactate",
+      "Aspirate before antibiotics if stable",
+      "IV antibiotics and orthopaedic washout"
+    ],
+    "numbers": [
+      {
+        "value": "Within 6 hours",
+        "meaning": "surgery if septic and acutely unwell",
+        "source": "BOASTPJI"
+      }
+    ],
+    "trap": "A normal CRP does not exclude septic arthritis.",
+    "finish": "Arthroscopic or open washout, repeated if needed; microbiology-guided antibiotics."
+  },
+  "sources": [
+    {
+      "id": "BOASTSTI",
+      "name": "BOASt: Management of musculoskeletal soft tissue infections: life-threatening conditions including necrotising fasciitis and myositis; native large joint infections; abscesses and cellulitis (British Orthopaedic Association)",
+      "version": "July 2025",
+      "url": "https://www.boa.ac.uk/resource/management-of-musculoskeletal-soft-tissue-infections.html",
+      "supports": "Sepsis Six immediately for sepsis; native joint infections treated to the peri-prosthetic joint infection BOASt standards, recognising the time-critical nature of chondral injury; aspirate to include samples for crystallography"
+    },
+    {
+      "id": "BOASTPJI",
+      "name": "BOASt: Acute Management of Peri-Prosthetic Joint Infection (British Orthopaedic Association)",
+      "version": "October 2023",
+      "url": "https://www.boa.ac.uk/resource/boast-acute-management-of-peri-prosthetic-joint-infection.html",
+      "supports": "Sepsis Six and inform on-call orthopaedics; blood cultures then parenteral antibiotics; surgery within 6 hours in an acutely unwell patient unless specific reasons; no antibiotics in a non-septic patient until deep samples taken; assess for other infection sources and endocarditis; record recent antibiotics"
+    },
+    {
+      "id": "BSRSCOPE",
+      "name": "Arumalla N, Allen VB, Shah K, et al. Management of septic arthritis in adults with a hot swollen joint: British Society for Rheumatology guideline scope. Rheumatol Adv Pract 2025;9(3):rkaf058",
+      "version": "2025",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40524816/",
+      "supports": "Risk factors (previous joint surgery, RA, prosthetic joints, recent joint injection, skin infection, diabetes, immunosuppression); differentials of a hot swollen joint; normal inflammatory markers do not exclude septic arthritis; empirical broad-spectrum antibiotics covering staphylococci and streptococci, varied for MRSA risk and directed by local microbiology; prolonged course, initially IV; washout often needed and repeated if treatment fails"
+    },
+    {
+      "id": "BL",
+      "name": "Bailey & Love's Short Practice of Surgery (O'Connell, McCaskie, Sayers, eds)",
+      "version": "28th edition, 2023",
+      "url": "https://www.routledge.com/Bailey--Loves-Short-Practice-of-Surgery---28th-Edition/OConnell-McCaskie-Sayers/p/book/9780367548117",
+      "supports": "Septic arthritis: differentials of the acute hot swollen joint; risk factors; assessment for another source including endocarditis; joint aspiration before antibiotics; empirical IV antibiotics covering staphylococci and streptococci, including MRSA when at risk, adjusted to culture, with a prolonged course"
+    },
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format: 9 minutes with 1 minute's reading; examiner-led questioning in applied knowledge stations"
+    }
+  ],
+  "partner": {
+    "opening": "Mr Strachan's knee is hot and swollen. What is your working diagnosis?",
+    "reveals": [
+      {
+        "trigger": "Candidate asks for observations and lactate",
+        "finding": "Heart rate 96, BP 136/84, RR 18, SpO2 97% on air, alert. Lactate 1.2 mmol/L.",
+        "row": "G3"
+      },
+      {
+        "trigger": "Candidate examines the knee",
+        "finding": "Large effusion, warm, painful on any movement; no overlying cellulitis; the injection site has healed.",
+        "row": "G4"
+      },
+      {
+        "trigger": "Candidate aspirates",
+        "finding": "Turbid yellow fluid. Gram stain awaited.",
+        "row": "G4"
+      },
+      {
+        "trigger": "Candidate asks for bloods",
+        "finding": "WCC 13.8, CRP 18, glucose 14.",
+        "row": "G1"
+      }
+    ],
+    "push": [
+      {
+        "question": "What is the working diagnosis?",
+        "row": "G1",
+        "expect": "Septic arthritis until proven otherwise; list differentials."
+      },
+      {
+        "question": "What decides whether you aspirate or give antibiotics first?",
+        "row": "G3",
+        "expect": "Sepsis. Septic: cultures and antibiotics now. Stable: aspirate first."
+      },
+      {
+        "question": "What do you send the aspirate for?",
+        "row": "G4",
+        "expect": "Gram stain, culture, cell count, crystals."
+      },
+      {
+        "question": "Which antibiotic?",
+        "row": "G5",
+        "expect": "IV, local policy, covering staphylococci and streptococci."
+      },
+      {
+        "question": "Does he need surgery?",
+        "row": "G6",
+        "expect": "Urgent washout; within 6 hours if septic and acutely unwell."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "While you wait for the aspiration kit, his BP falls to 88/50, HR 124, and he is confused.",
+        "safeAnswer": "Now septic: Sepsis Six, blood cultures and IV antibiotics immediately; don't wait to aspirate; emergency washout within 6 hours; senior help.",
+        "row": "G3"
+      },
+      {
+        "prompt": "The aspirate shows negatively birefringent needle-shaped crystals.",
+        "safeAnswer": "Gout, but await Gram stain and culture before excluding infection given his risk factors.",
+        "row": "G1"
+      },
+      {
+        "prompt": "The knee is a total knee replacement.",
+        "safeAnswer": "Peri-prosthetic joint infection: follow the PJI BOASt. Don't aspirate in ED; urgent orthopaedic review; aspiration by the orthopaedic team under strict asepsis; no antibiotics until deep samples unless septic; assess for endocarditis.",
+        "row": "G4"
+      }
+    ]
+  }
+}

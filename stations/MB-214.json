@@ -1,0 +1,557 @@
+{
+  "id": "MB-214",
+  "exam": "MRCS-B",
+  "title": "Diabetic foot examination: neuropathy, ischaemia and infection",
+  "type": "examination",
+  "header": {
+    "domain": "Applied Skills",
+    "contentArea": "Clinical and procedural skills",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "signalMinutes": 6,
+    "guidelineVersions": [
+      "NICE NG19 (last updated Oct 2019)",
+      "IWGDF practical guidelines (2023 update)"
+    ],
+    "related": [
+      {
+        "id": "MB-168 Peripheral arterial examination",
+        "why": "Pulses and the ABPI"
+      },
+      {
+        "id": "MB-213 Lower limb neurological examination",
+        "why": "Sensory testing"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Surgical assessment unit",
+    "role": "Core surgical trainee",
+    "scenario": "Mr Trevor Oakes, 63, has had type 2 diabetes for 15 years. He has had an ulcer under the ball of his right foot for three weeks. Two days ago his wife noticed the foot was red and swollen. He feels well otherwise.",
+    "task": "Examine his feet. You will be stopped at 6 minutes to present your findings and answer questions."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Both feet bare: look, neuropathy, circulation, infection; then the urgency.",
+    "trap": "Sending home an infected ulcer that probes to bone with a routine podiatry appointment.",
+    "firstMove": "\"Could I take off both shoes and socks, and the dressing, so I can compare your feet?\""
+  },
+  "flow": [
+    "Introduce, consent, remove shoes, socks, dressing",
+    "Inspect both feet and shoes",
+    "Monofilament and tuning fork",
+    "Temperature, capillary refill, pulses",
+    "Infection and probe",
+    "At 6 minutes: present"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "professionalism",
+      "label": "Preparation and exposure",
+      "fail": "Rolls down one sock and looks at the ulcer only.",
+      "pass": "Introduces, confirms identity, gains consent, cleans hands, and removes both shoes and socks and the dressing.",
+      "high": "Inspects his shoes for fit, wear and foreign bodies, and examines the feet lying and standing.",
+      "source": "IWGDF"
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-skill",
+      "label": "Inspection and ulcer description",
+      "fail": "Says 'there's an ulcer' without describing it or looking between the toes.",
+      "pass": "Inspects both feet, heels and between toes for callus, deformity, skin, nails and gangrene; describes the ulcer's site, size, depth, base and edge.",
+      "high": "Documents the ulcer with SINBAD or the University of Texas system, not Wagner.",
+      "source": "NG19"
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-skill",
+      "label": "Neuropathy testing",
+      "fail": "Uses cotton wool only, or presses the monofilament on callus.",
+      "pass": "Tests a 10 g monofilament at three sites on each foot, avoiding callus, and vibration with a 128 Hz tuning fork at the hallux.",
+      "high": "Demonstrates on the hand first, tests with his eyes closed including a mock application, and scores two of three answers per site.",
+      "source": "IWGDF"
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-skill",
+      "label": "Vascular assessment",
+      "fail": "Doesn't feel the foot pulses.",
+      "pass": "Compares temperature and capillary refill, and palpates dorsalis pedis and posterior tibial pulses, then popliteal and femoral if absent.",
+      "high": "States that calcified arteries can falsely raise the ABPI in diabetes; toe brachial index below 0.7 is abnormal.",
+      "source": "IWGDF"
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-skill",
+      "label": "Infection and probe-to-bone",
+      "fail": "Misses the cellulitis, or doesn't probe the ulcer.",
+      "pass": "Looks for redness, warmth, swelling, tenderness and pus, and probes the ulcer base with a sterile probe.",
+      "high": "Diagnoses infection from two or more signs of inflammation or pus, grades it mild, moderate or severe, and checks for systemic signs.",
+      "source": "IWGDF"
+    },
+    {
+      "id": "G6",
+      "domain": "communication",
+      "label": "Presentation at the signal",
+      "fail": "Says 'diabetic foot ulcer' and stops.",
+      "pass": "Presents the ulcer, neuropathy, vascular and infection findings, and a diagnosis.",
+      "high": "Leads with 'infected neuropathic plantar ulcer, probes to bone, pulses present: suspected osteomyelitis'."
+    },
+    {
+      "id": "G7",
+      "domain": "clinical-knowledge",
+      "label": "Urgency of referral (safety-critical)",
+      "fail": "Discharges him with a routine podiatry appointment.",
+      "borderline": "Refers within 1 working day, missing that suspected bone infection needs immediate referral.",
+      "pass": "Treats suspected bone or deep infection as limb-threatening: admits via acute services and informs the multidisciplinary foot care service.",
+      "high": "Contrasts other active problems: referral within 1 working day for triage within 1 further working day.",
+      "source": "NG19"
+    },
+    {
+      "id": "G8",
+      "domain": "clinical-knowledge",
+      "label": "First investigations and treatment",
+      "fail": "Takes a surface swab, and doesn't plan imaging.",
+      "pass": "Sends tissue from the debrided ulcer base, X-rays the foot, offloads it, and starts antibiotics as soon as possible after sampling.",
+      "high": "Considers MRI if the X-ray doesn't confirm osteomyelitis, and reviews IV antibiotics by 48 hours.",
+      "source": "NG19"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "candidate",
+        "text": "[Rolls down the right sock; lifts the dressing.] There's an ulcer.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          },
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Can you feel this? [Touches with cotton wool over the callus.]",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "The foot is warm, so the circulation is fine. [Doesn't feel the pulses.]",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "It looks a bit red. [Doesn't probe.]",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop. Your findings?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "He has a diabetic foot ulcer.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What would you do?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "A swab, oral antibiotics, and a routine podiatry referral.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          },
+          {
+            "row": "G8",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "candidate",
+        "text": "Hello, I'm Dr Haldane, one of the surgical trainees. Can I check your name and date of birth? I'd like to examine both feet. Could we take off both shoes and socks, and the dressing? [Consent; cleans hands.]",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Inspects both feet, heels and between the toes.] Clawed toes and callus under both first metatarsal heads. On the right, a 1.5 by 1 centimetre ulcer under the first metatarsal head, with a sloughy base and a callus rim. No gangrene.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'll use this filament. [10 g monofilament, three sites each foot, avoiding callus.] [128 Hz tuning fork on each big toe.]",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Compares temperature, capillary refill; feels dorsalis pedis and posterior tibial pulses on both feet.]",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Looks for redness, swelling, tenderness and pus; probes the ulcer base with a sterile probe.] Thank you. [Cleans hands.]",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop. Your findings?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Mr Oakes has a right plantar ulcer under the first metatarsal head with surrounding cellulitis and pus, and the probe reaches bone. He has loss of protective sensation in both feet, and his foot pulses are present. This is an infected neuropathic ulcer with suspected osteomyelitis.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What would you do?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Suspected bone infection is limb-threatening, so he stays under the acute team and I'd inform the multidisciplinary foot care service. I'd send tissue from the debrided ulcer base, X-ray the foot, offload it, and start antibiotics as soon as possible after sampling.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          },
+          {
+            "row": "G8",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "candidate",
+        "text": "Hello, I'm Dr Haldane, one of the surgical trainees. Can I check your name and date of birth? I'll take off both shoes and socks and the dressing. [Checks inside the shoes: worn, no foreign body.] I'll look with you lying and then standing. [Cleans hands.]",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Inspects.] Using SINBAD: forefoot, plantar; 1.5 by 1 centimetres; deep to bone on probing; infected; neuropathic; pulses present.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Filament on his hand first.] Eyes closed; say yes when you feel it, and where. [Three sites each foot, including a mock application; two of three wrong at every site.]",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Pulses present both feet.] I'd still interpret any ABPI carefully, because calcified arteries can falsely raise it; a toe brachial index below 0.7 would be abnormal.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Probes.] Redness 1.5 centimetres around the ulcer, warmth, swelling and pus: at least two signs, so infected, and moderate because it's deeper than skin. No systemic signs. [Cleans hands.]",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop. Your findings?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Mr Oakes has an infected neuropathic plantar ulcer that probes to bone, with pulses present: suspected osteomyelitis. He has loss of protective sensation in both feet and is not septic.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What would you do?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Suspected bone infection is limb-threatening: acute admission, and I'd inform the multidisciplinary foot care service. Other active problems, like a clean ulcer, need referral within 1 working day. I'd take tissue before antibiotics, X-ray the foot, consider MRI if the X-ray doesn't confirm osteomyelitis, and review IV antibiotics by 48 hours.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          },
+          {
+            "row": "G8",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G1",
+      "move": "Examining with socks on, or only the ulcerated foot.",
+      "consequence": "Ulcers between the toes, heel ulcers and changes in the other foot are missed."
+    },
+    {
+      "row": "G3",
+      "move": "Testing the monofilament over callus.",
+      "consequence": "Callus blunts sensation, so the result is unreliable."
+    },
+    {
+      "row": "G5",
+      "move": "Not probing the ulcer.",
+      "consequence": "Suspected osteomyelitis isn't recognised, so the urgency and imaging are wrong."
+    },
+    {
+      "row": "G7",
+      "move": "Routine podiatry referral for an infected ulcer that probes to bone.",
+      "consequence": "Safety-critical: NICE classes suspected deep or bone infection as limb-threatening, needing immediate acute referral."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You forgot to look between the toes",
+      "line": "Before I finish, I'd like to look between the toes and at the heels."
+    },
+    {
+      "when": "The examiner says the pulses are present",
+      "line": "That helps, but I'd still interpret any ABPI carefully in diabetes and use toe pressures if in doubt."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Examine both feet bare for neuropathy (10 g monofilament), ischaemia, ulceration, callus, infection, deformity, gangrene and Charcot.",
+      "source": "NG19"
+    },
+    {
+      "fact": "Limb-threatening (fever or sepsis, ischaemia, suspected deep or bone infection, gangrene): refer immediately to acute services. Other active problems: within 1 working day.",
+      "source": "NG19"
+    },
+    {
+      "fact": "Osteomyelitis can be present despite normal markers, X-ray or probe-to-bone test.",
+      "source": "NG19"
+    },
+    {
+      "fact": "Monofilament: three sites per foot, not on callus; two of three answers correct means sensation present.",
+      "source": "IWGDF"
+    },
+    {
+      "fact": "Acute Charcot: red, warm, swollen foot, often with intact skin; non-weight-bearing and referral within 1 working day.",
+      "source": "NG19"
+    }
+  ],
+  "recall": {
+    "think": "Limb-threatening infection or ischaemia?",
+    "say": "\"Infected neuropathic ulcer, probes to bone: suspected osteomyelitis.\"",
+    "do": [
+      "Both feet bare, and the shoes",
+      "Monofilament, tuning fork, pulses",
+      "Signs of infection; probe to bone"
+    ],
+    "numbers": [
+      {
+        "value": "10 g",
+        "meaning": "monofilament, three sites per foot",
+        "source": "IWGDF"
+      },
+      {
+        "value": "1 working day",
+        "meaning": "referral for other active foot problems",
+        "source": "NG19"
+      },
+      {
+        "value": "48 hours",
+        "meaning": "review IV antibiotics",
+        "source": "NG19"
+      }
+    ],
+    "trap": "Palpable pulses or a normal ABPI don't exclude ischaemia in diabetes.",
+    "finish": "Admit, sample, X-ray, offload, antibiotics; foot care team."
+  },
+  "sources": [
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Introduce yourself, confirm identity, obtain consent and clean hands at every station; 6-minute signal in examination stations"
+    },
+    {
+      "id": "NG19",
+      "name": "NICE NG19: Diabetic foot problems: prevention and management",
+      "version": "Published 26 August 2015; last updated 11 October 2019 (risk assessment evidence re-examined January 2023; minor changes September 2024)",
+      "url": "https://www.nice.org.uk/guidance/ng19",
+      "supports": "Remove shoes, socks, bandages and dressings and examine both feet for neuropathy (10 g monofilament), limb ischaemia, ulceration, callus, infection or inflammation, deformity, gangrene and Charcot arthropathy (1.3.4); interpret ABPI carefully because calcified arteries may falsely elevate results (1.3.5); risk stratification including active diabetic foot problem (1.3.6); foot protection service assessment within 2 to 4 weeks (high risk) or 6 to 8 weeks (moderate risk) (1.3.9); limb- or life-threatening problems (ulceration with fever or sepsis, ulceration with limb ischaemia, suspected deep-seated soft tissue or bone infection, gangrene): refer immediately to acute services and inform the multidisciplinary foot care service (1.4.1); other active problems: refer within 1 working day for triage within 1 further working day (1.4.2); document ulcer size, depth and position (1.5.1); use SINBAD or University of Texas, not Wagner (1.5.2–1.5.3); soft tissue or bone sample from the base of the debrided wound, or a deep swab (1.6.1); consider X-ray (1.6.2); osteomyelitis possible despite normal markers, X-ray or probe-to-bone test (1.6.4); consider MRI if suspected but not confirmed on X-ray (1.6.5); start antibiotics as soon as possible, sampling before or close to the start (1.6.6); review IV antibiotics by 48 hours (1.6.11); suspected acute Charcot: refer within 1 working day for triage within 1 further working day, non-weight-bearing meanwhile (1.7.3), weight-bearing X-ray (1.7.4)"
+    },
+    {
+      "id": "IWGDF",
+      "name": "Schaper NC, et al. Practical guidelines on the prevention and management of diabetes-related foot disease (IWGDF 2023 update). Diabetes Metab Res Rev 2024;40(3):e3657",
+      "version": "2023 update; journal version March 2024",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37243927/",
+      "supports": "Screen for loss of protective sensation with a 10 g monofilament or 128 Hz tuning fork, and palpate pedal pulses (3.1); examine footwear and the feet lying and standing (3.2); infection needs at least two signs of inflammation or purulence, graded mild, moderate or severe; probe-to-bone test (4.1.1); PAD less likely with ABI 0.9–1.3 and TBI 0.70 or more; TBI below 0.7 abnormal (4.1.1, Appendix 2); monofilament: demonstrate on the hand, three sites on each foot, avoid ulcer, callus, scar or necrotic tissue, include a mock application, sensation present if two of three answers correct (Appendix 1); tuning fork on the dorsum of the distal phalanx of the hallux (Appendix 1)"
+    }
+  ],
+  "media": [
+    {
+      "id": "IMG-214-1",
+      "task": "Optional: describe an ulcer as if examining it",
+      "description": "Clinical photograph of a neuropathic plantar forefoot ulcer under the first metatarsal head with a callus rim and surrounding cellulitis",
+      "required": false,
+      "status": "needed"
+    }
+  ],
+  "partner": {
+    "opening": "Please examine this patient's feet. I'll stop you at 6 minutes.",
+    "actorBrief": "You are Mr Trevor Oakes, 63, a retired lorry driver with type 2 diabetes for 15 years. The ulcer under the ball of your right foot has been there three weeks and doesn't hurt. Your wife noticed the foot was red and swollen two days ago. You feel well, with no fevers. You can't feel much in either foot: when tested with eyes closed, say 'no' to most touches on the soles.",
+    "reveals": [
+      {
+        "trigger": "Removes shoes, socks and dressing; looks at the shoes",
+        "finding": "Worn shoes, no foreign body. Dressing lightly stained with pus.",
+        "row": "G1"
+      },
+      {
+        "trigger": "Inspects both feet",
+        "finding": "Dry skin, clawed toes, callus under both first metatarsal heads. Right: 1.5 × 1 cm ulcer under the first metatarsal head, sloughy base, callus rim. No gangrene; no ulcers between the toes or at the heels.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Tests monofilament and vibration",
+        "finding": "Monofilament not felt at any of three sites on either foot. Vibration absent at both big toes, present at the medial malleoli.",
+        "row": "G3"
+      },
+      {
+        "trigger": "Checks temperature, capillary refill and pulses",
+        "finding": "Right forefoot warmer than left. Capillary refill 2 seconds. Dorsalis pedis and posterior tibial pulses palpable on both feet.",
+        "row": "G4"
+      },
+      {
+        "trigger": "Examines for infection and probes the ulcer",
+        "finding": "Redness 1.5 cm around the ulcer, warmth, swelling and a little pus. Sterile probe reaches bone. Temperature 37.2°C; no other systemic signs.",
+        "row": "G5"
+      },
+      {
+        "trigger": "At 6 minutes",
+        "finding": "Say: \"Please stop there and present your findings.\"",
+        "row": "G6"
+      }
+    ],
+    "push": [
+      {
+        "question": "How urgent is this, and why?",
+        "row": "G7",
+        "expect": "Suspected bone or deep infection is limb-threatening: immediate acute referral (he stays admitted) and inform the multidisciplinary foot care service."
+      },
+      {
+        "question": "What investigations would you do first?",
+        "row": "G8",
+        "expect": "Tissue or bone from the debrided ulcer base (deep swab if not possible) before antibiotics; foot X-ray; consider MRI if X-ray doesn't confirm osteomyelitis; bloods."
+      },
+      {
+        "question": "How do you test for neuropathy?",
+        "row": "G3",
+        "expect": "10 g monofilament at three sites per foot, not on callus, with a mock application; 128 Hz tuning fork on the hallux."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "His ABPI comes back at 1.5.",
+        "safeAnswer": "Calcified arteries can falsely raise it in diabetes: ask for toe pressures and a toe brachial index (below 0.7 is abnormal).",
+        "row": "G4"
+      },
+      {
+        "prompt": "A different patient has a hot, red, swollen foot with intact skin and neuropathy.",
+        "safeAnswer": "Suspect acute Charcot arthropathy: non-weight-bearing, weight-bearing X-ray, and referral within 1 working day to the multidisciplinary foot care service.",
+        "row": "G7"
+      },
+      {
+        "prompt": "He now has a temperature of 38.6°C and is confused.",
+        "safeAnswer": "Ulceration with signs of sepsis is life-threatening: start the sepsis pathway and involve seniors and the foot care team now.",
+        "row": "G7"
+      },
+      {
+        "prompt": "His X-ray of the foot is normal.",
+        "safeAnswer": "Osteomyelitis isn't excluded: consider MRI.",
+        "row": "G8"
+      }
+    ]
+  }
+}

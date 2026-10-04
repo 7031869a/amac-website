@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MRCP Preparation &mdash; In Development | AMaC</title>
+<!-- ══════════════════════════════════════════════════════════════
+     AMaC — SHARED HEAD BLOCK
+     Paste this inside <head> on EVERY page, just after <title>.
+     Change ONLY the 4 marked lines per page.
+     ══════════════════════════════════════════════════════════════ -->
+
+<!-- ── Favicon & icons ────────────────────────────────────────── -->
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#0C1526">
+
+<!-- ── Canonical (CHANGE per page) ────────────────────────────── -->
+<link rel="canonical" href="https://amac-medical.com/mrcp.html">
+
+<!-- ── Open Graph: how the link looks in WhatsApp / Facebook ──── -->
+<!--    (CHANGE og:title, og:description, og:url per page)         -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AMaC">
+<meta property="og:locale" content="en_GB">
+<meta property="og:title" content="MRCP — coming to AMaC">
+<meta property="og:description" content="AMaC is building MRCP preparation around the exam room — examiner reasoning, failure recovery and spoken performance. MRCP Part 1, Part 2 Written and PACES are in development. Join the waitlist to hear when it goes live.">
+<meta property="og:url" content="https://amac-medical.com/mrcp.html">
+<meta property="og:image" content="https://amac-medical.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="AMaC — Think like an examiner. Pass with confidence.">
+
+<!-- ── Twitter/X card ─────────────────────────────────────────── -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="MRCP — coming to AMaC">
+<meta name="twitter:description" content="AMaC is building MRCP preparation around the exam room — examiner reasoning, failure recovery and spoken performance. MRCP Part 1, Part 2 Written and PACES are in development. Join the waitlist to hear when it goes live.">
+<meta name="twitter:image" content="https://amac-medical.com/og-image.png">
+
+<!-- ── Structured data: helps Google understand the site ──────── -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  "name": "AMaC",
+  "alternateName": "A. Mansour & Colleagues",
+  "url": "https://amac-medical.com/",
+  "logo": "https://amac-medical.com/apple-touch-icon.png",
+  "description": "Preparation for the UK medical and surgical examinations: UKMLA, PLAB 1, PLAB 2 and FRCS Part 2.",
+  "slogan": "Think like an examiner. Pass with confidence."
+}
+</script>
+
+<!-- Analytics: Cloudflare Web Analytics (privacy-friendly; no cookie banner needed). -->
+<!-- Cloudflare Web Analytics -->
+<script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "f077e68b0cf042c1b887d06c6b866acd"}'></script>
+<!-- End Cloudflare Web Analytics -->
+
+<meta name="description" content="AMaC is building MRCP preparation around the exam room — examiner reasoning, failure recovery and spoken performance. MRCP Part 1, Part 2 Written and PACES are in development. Join the waitlist to hear when Part 1, Part 2 Written and PACES material goes live.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0d2247;--navy-deep:#091629;--gold:#c9a227;--gold-soft:#e0c45a;
+  --cream:#f7f4ec;--paper:#fffdf8;--ink:#1a1d24;--muted:#5d6470;--line:#e4ddcd;
+  /* dark-premium house tokens */
+  --bg:#0C1526;--panel:#0F1A2E;--card:#16233F;--card-deep:#111E33;
+  --edge:#1E2C46;--edge-soft:#28385A;--edge-line:#243149;
+  --txt:#F6F4EE;--txt-soft:#AEB9D0;--txt-mute:#8593AE;--txt-faint:#6B7794;
+  /* MRCP door accent (violet) */
+  --door:#8A6FD1;--door-deep:#6B52AC;--door-text:#B79EE8;
+  --neutral:#888780;
+}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--txt);line-height:1.6;-webkit-font-smoothing:antialiased;}
+h1,h2,h3,.serif{font-family:'Fraunces',serif;}
+a{text-decoration:none;color:inherit;}
+
+/* ── NAV (pure-separation; nav.js arrives in Layer 3) ── */
+nav{position:sticky;top:0;z-index:100;background:var(--panel);border-bottom:1px solid var(--edge);backdrop-filter:blur(8px);}
+.nav-inner{max-width:1180px;margin:0 auto;padding:13px 26px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;}
+.nav-l{display:flex;align-items:center;gap:13px;}
+.brand{font-weight:600;letter-spacing:.1em;color:var(--gold);font-size:16px;}
+.door-tag{font-size:11px;color:var(--door-text);border-left:1px solid var(--edge-soft);padding-left:13px;letter-spacing:.1em;}
+.nav-links{display:flex;align-items:center;gap:16px;list-style:none;font-size:12.5px;color:#C7D0E2;flex-wrap:wrap;}
+.nav-links a{transition:color .2s;}
+.nav-links a:hover{color:#fff;}
+.nav-links a.here{color:var(--door-text);}
+.nav-exit{color:var(--txt-mute);font-size:11.5px;border-left:1px solid var(--edge-soft);padding-left:13px;}
+.nav-exit:hover{color:var(--door-text);}
+
+/* ── HERO ── */
+.hero{position:relative;padding:62px 26px 44px;text-align:center;border-bottom:1px solid #1A2740;overflow:hidden;}
+.hero-glow{position:absolute;top:46px;left:50%;transform:translateX(-50%);width:540px;max-width:92%;height:200px;background:radial-gradient(ellipse,rgba(138,111,209,0.15),transparent 70%);pointer-events:none;}
+.hero-inner{position:relative;max-width:760px;margin:0 auto;}
+.hero-kick{font-size:11px;letter-spacing:.2em;color:var(--door-text);font-weight:600;}
+.hero h1{font-size:clamp(30px,5vw,46px);color:var(--txt);font-weight:600;margin:16px 0 12px;line-height:1.1;}
+.hero-sub{font-size:clamp(14px,1.7vw,16px);color:var(--txt-soft);margin:0 auto;max-width:46ch;line-height:1.6;}
+
+/* ── INTRO ── */
+.intro{max-width:780px;margin:40px auto 0;padding:0 26px;}
+.intro p{font-size:15px;color:var(--txt-soft);line-height:1.75;margin-bottom:15px;}
+.intro p:last-child{margin-bottom:0;}
+.intro strong{color:var(--door-text);font-weight:500;}
+
+/* ── STATUS CARDS (locked two-border L-shape) ── */
+.wrap{max-width:1180px;margin:0 auto;padding:34px 26px 14px;}
+.sec-label{font-size:11px;letter-spacing:.14em;color:var(--txt-mute);margin-bottom:16px;}
+.tool-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;}
+.tool-card{
+  background:var(--card);
+  border-top:3px solid var(--door);border-left:3px solid var(--door);
+  border-right:1px solid var(--edge-soft);border-bottom:1px solid var(--edge-soft);
+  border-radius:9px;padding:20px 19px;display:block;transition:transform .15s;
+}
+.tool-card:hover{transform:translateY(-3px);}
+.tc-name{font-family:'Fraunces',serif;font-size:19px;color:var(--txt);margin-bottom:6px;}
+.tc-desc{font-size:13px;color:var(--txt-soft);line-height:1.55;}
+/* status chip — house pill idiom (cf. .tc-badge on the other hubs) */
+.tc-chip{display:inline-block;font-size:10.5px;font-weight:600;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--door-text);
+  background:rgba(138,111,209,0.10);border:1px solid rgba(138,111,209,0.28);
+  padding:3px 10px;border-radius:20px;margin-bottom:11px;}
+
+/* ── WAITLIST radio group (lives inside .amac-capture form) ── */
+.wl-q{flex:1 1 100%;font-size:13.5px;color:var(--txt-soft);margin-bottom:2px;}
+.wl-opts{flex:1 1 100%;display:flex;flex-wrap:wrap;gap:9px 20px;margin-bottom:6px;}
+.wl-opts label{display:inline-flex;align-items:center;gap:8px;font-size:13.5px;color:var(--txt-soft);cursor:pointer;}
+.wl-opts input[type=radio]{accent-color:var(--gold);width:15px;height:15px;cursor:pointer;}
+
+/* ── sticky-nav anchor offset ──
+   nav.js's .amac-nav measures 56.75px and is position:sticky above 760px
+   (below that nav.js switches it to position:relative, so no offset is needed
+   there, and the value is harmless). 72px = measured height + a 15px gap. */
+#parts,#waitlist{scroll-margin-top:72px;}
+
+/* ── REUSABLE affiliation / trade-mark note (liftable sitewide) ── */
+.amac-legal-note{max-width:74ch;margin:22px auto 0;font-size:11.5px;line-height:1.65;
+  color:var(--txt-faint);text-align:center;}
+
+/* ── FOOTER ── */
+footer{margin-top:40px;border-top:1px solid #1A2740;padding:34px 26px 26px;}
+.foot-inner{max-width:1180px;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:28px;border-bottom:1px solid var(--edge);padding-bottom:26px;}
+.foot-brand{font-weight:600;letter-spacing:.1em;color:var(--gold);font-size:18px;}
+.foot-brand p{font-size:13px;color:var(--txt-mute);margin-top:9px;max-width:36ch;font-weight:300;line-height:1.6;}
+.foot-col h4{color:#fff;font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px;}
+.foot-col a{display:block;color:#C7D0E2;font-size:13.5px;margin-bottom:8px;font-weight:300;transition:.2s;}
+.foot-col a:hover{color:var(--door-text);}
+.foot-bottom{max-width:1180px;margin:20px auto 0;font-size:12px;color:var(--txt-faint);text-align:center;}
+.foot-tag{text-align:center;font-size:11.5px;color:var(--txt-faint);letter-spacing:.03em;margin-top:6px;}
+
+@media(max-width:640px){
+  .nav-links{gap:13px;font-size:12px;}
+}
+</style>
+<style>
+.amac-capture{
+  max-width:780px;margin:60px auto;padding:34px 32px;
+  background:linear-gradient(180deg,#111E36,var(--panel,#0F1A2E));
+  border:1px solid rgba(201,162,39,.28);
+  border-top:3px solid var(--gold,#c9a227);
+  border-radius:16px;box-shadow:0 18px 46px rgba(0,0,0,.34);
+}
+.amac-capture .eyebrow{
+  font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--gold,#c9a227);font-weight:600;margin-bottom:10px;
+}
+.amac-capture h3{
+  font-family:'Fraunces',serif;font-size:26px;line-height:1.25;
+  color:var(--txt,#F6F4EE);margin:0 0 10px;font-weight:600;
+}
+.amac-capture p.sub{
+  color:var(--txt-soft,#AEB9D0);font-size:15px;margin:0 0 20px;max-width:62ch;
+}
+.amac-capture form{display:flex;gap:10px;flex-wrap:wrap;}
+.amac-capture input[type=email]{
+  flex:1 1 260px;min-width:0;background:#0B1524;
+  border:1px solid rgba(174,185,208,.25);border-radius:10px;
+  padding:14px 16px;color:var(--txt,#F6F4EE);
+  font-family:'Outfit',sans-serif;font-size:15px;
+  transition:border-color .2s,box-shadow .2s;
+}
+.amac-capture input[type=email]::placeholder{color:var(--txt-faint,#6B7794);}
+.amac-capture input[type=email]:focus{
+  outline:none;border-color:var(--gold,#c9a227);
+  box-shadow:0 0 0 3px rgba(201,162,39,.16);
+}
+.amac-capture button{
+  background:var(--gold,#c9a227);color:#0B1220;border:none;border-radius:10px;
+  padding:14px 26px;font-family:'Outfit',sans-serif;font-weight:600;font-size:15px;
+  cursor:pointer;transition:transform .08s,background .2s;flex:0 0 auto;
+}
+.amac-capture button:hover{background:var(--gold-soft,#e0c45a);}
+.amac-capture button:active{transform:translateY(1px);}
+.amac-capture .promise{margin-top:14px;font-size:12.5px;color:var(--txt-faint,#6B7794);}
+.amac-capture .thanks{display:none;color:var(--txt,#F6F4EE);font-size:16px;line-height:1.6;}
+.amac-capture.done form,.amac-capture.done p.sub{display:none;}
+.amac-capture.done .thanks{display:block;}
+@media(max-width:560px){
+  .amac-capture{padding:26px 20px;margin:44px 16px;}
+  .amac-capture h3{font-size:21px;}
+  .amac-capture button{width:100%;}
+}
+</style>
+
+</head>
+<body>
+
+<!-- NAV (pure-separation, MRCP door; Layer 3 replaces with shared nav.js) -->
+<nav data-door="mrcp"><div class="nav-inner">
+  <div class="nav-l">
+    <a href="index.html" class="brand">AMaC</a>
+    <span class="door-tag">MRCP</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#parts">The three exams</a></li>
+    <li><a href="#waitlist">Join the waitlist</a></li>
+    <li><a href="index.html" class="nav-exit">← all exams</a></li>
+  </ul>
+</div></nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-glow"></div>
+  <div class="hero-inner">
+    <div class="hero-kick">THE PHYSICIAN EXAMS</div>
+    <h1>MRCP &mdash; coming to AMaC</h1>
+    <p class="hero-sub">Part 1 &middot; Part 2 Written &middot; PACES &mdash; in development.</p>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="intro">
+  <p>AMaC is building for MRCP, and it will be built the way everything here is built: around <strong>the exam room</strong>, not around the syllabus.</p>
+  <p>There is no shortage of MRCP question banks. Thousands of stems, thousands of explanations, and candidates who still walk out of PACES unsure why they lost the marks. That gap is what AMaC works on. The material will start from the examiner&rsquo;s side of the table &mdash; what is actually being scored, what quietly fails a competent doctor, and what separates a borderline performance from a clear one.</p>
+  <p>For the written papers that means reasoning you can reconstruct under time pressure, not answers you have memorised. For PACES it means the spoken performance itself: how you structure what you say, how you recover when an encounter goes wrong, and how you sound to someone marking you.</p>
+  <p>MRCP Part 1, Part 2 Written and PACES are in development. AMaC is not promising dates. If you want to know when that changes, leave your email below.</p>
+</section>
+
+<!-- STATUS CARDS -->
+<div class="wrap">
+  <div class="sec-label" id="parts">WHAT IS PLANNED</div>
+  <div class="tool-grid">
+
+    <div class="tool-card">
+      <span class="tc-chip">Planned</span>
+      <div class="tc-name">MRCP Part 1</div>
+      <div class="tc-desc">The first written hurdle. The intention is to train the reasoning path rather than the recall &mdash; why a tempting option is wrong, and what makes the correct one correct under time pressure.</div>
+    </div>
+
+    <div class="tool-card">
+      <span class="tc-chip">Planned</span>
+      <div class="tc-name">MRCP Part 2 Written</div>
+      <div class="tc-desc">The second written paper. The intention is to work through clinical decision-making the way a physician sequences it: what you do next, and why that rather than the alternative.</div>
+    </div>
+
+    <div class="tool-card">
+      <span class="tc-chip">Planned</span>
+      <div class="tc-name">PACES</div>
+      <div class="tc-desc">The clinical examination, and the closest fit to work AMaC already does &mdash; spoken performance, examiner reasoning, and recovering an encounter that has gone wrong. Format details will be confirmed against the Federation&rsquo;s published specification before any material is written.</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- WAITLIST -->
+<section class="amac-capture" id="waitlist">
+  <div class="eyebrow">Waitlist &middot; no spam &middot; unsubscribe anytime</div>
+  <h3>Tell me when MRCP goes live</h3>
+  <p class="sub">
+    One email, when there is something real to open. No drip sequence, no
+    countdown, nothing until the first MRCP material is actually published.
+  </p>
+  <form class="amac-form" action="https://formsubmit.co/info@amac-medical.com" method="POST">
+    <div class="wl-q">Which part are you sitting next?</div>
+    <div class="wl-opts">
+      <label><input type="radio" name="part" value="Part 1" checked> Part 1</label>
+      <label><input type="radio" name="part" value="Part 2 Written"> Part 2 Written</label>
+      <label><input type="radio" name="part" value="PACES"> PACES</label>
+      <label><input type="radio" name="part" value="Not decided yet"> Not decided yet</label>
+    </div>
+    <input type="email" name="email" required placeholder="your@email.com" aria-label="Email address">
+    <input type="hidden" name="_subject" value="MRCP waitlist signup">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_template" value="table">
+    <input type="text" name="_honey" style="display:none">
+    <button type="submit">Join the waitlist &rarr;</button>
+  </form>
+  <div class="thanks">
+    <strong>Thank you &mdash; you are on the list.</strong><br>
+    We will email you once, when MRCP material goes live.
+  </div>
+  <p class="promise">Your email is used only to announce the MRCP launch &mdash; nothing else, no other use. Unsubscribe any time.</p>
+</section>
+
+<footer>
+  <div class="foot-inner">
+    <div class="foot-brand">
+      AMaC
+      <p>Examiner-led preparation for the UK medical and surgical examinations. Making the difficult, easy.</p>
+    </div>
+    <div class="foot-col">
+      <h4>MRCP</h4>
+      <a href="#parts">What is planned</a>
+      <a href="#waitlist">Join the waitlist</a>
+    </div>
+    <div class="foot-col">
+      <h4>AMaC</h4>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="index.html">← All exams</a>
+    </div>
+  </div>
+  <p class="amac-legal-note">AMaC Publishing is not affiliated with, endorsed by, or connected to the Federation of the Royal Colleges of Physicians of the United Kingdom, or any Royal College. MRCP and PACES are used here only to identify the examinations to which this material relates.</p>
+  <div class="foot-bottom">© 2026 A. Mansour &amp; Colleagues (AMaC). All rights reserved.</div>
+  <div class="foot-tag">Written by doctors, for doctors who want to excel · free while we grow</div>
+</footer>
+
+<script src="nav.js" defer></script>
+<script>
+document.addEventListener('submit', function(e){
+  var f = e.target;
+  if(!f.classList || !f.classList.contains('amac-form')) return;
+  e.preventDefault();
+  var box = f.closest('.amac-capture');
+  fetch(f.action, {method:'POST', body:new FormData(f), headers:{'Accept':'application/json'}})
+    .then(function(){ box.classList.add('done'); })
+    .catch(function(){ box.classList.add('done'); });
+});
+</script>
+
+<script src="footer.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,214 @@
+{
+  "id": "MB-315",
+  "exam": "MRCS-B",
+  "title": "Explaining a coroner referral and post-mortem to a family",
+  "type": "communication",
+  "header": {
+    "domain": "Applied Skills",
+    "contentArea": "Communication skills in giving and receiving information; bereavement care",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "GOV.UK: What to do after someone dies — When a death is reported to a coroner (updated 2 December 2024)",
+      "Coroners and Justice Act 2009, section 14",
+      "GMC Good medical practice (effective 30 January 2024)"
+    ],
+    "related": [
+      { "id": "MB-282", "why": "Breaking news of a sudden death after trauma — the conversation that usually precedes this one" },
+      { "id": "MB-211", "why": "Another structured, sensitive conversation with a relative about a patient's care" }
+    ]
+  },
+  "brief": {
+    "setting": "Quiet room, ward",
+    "role": "Core surgical trainee",
+    "scenario": "Mr George Farrant has died unexpectedly as an inpatient. The death has been referred to the coroner.",
+    "task": "Explain the coroner process and possible post-mortem to his family. The examiner may ask you questions at the end."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Acknowledge the loss first, then explain the coroner's role plainly and honestly.",
+    "trap": "Implying the family can stop a coroner's post-mortem, or speculating about the cause of death.",
+    "firstMove": "Sit down, use his name, and check what they already know."
+  },
+  "flow": [
+    "Open and acknowledge the loss",
+    "Explain why the coroner is involved",
+    "Explain the post-mortem process",
+    "Answer concerns and offer support",
+    "Close and safety-net"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "communication",
+      "label": "Opening",
+      "fail": "Launches into the coroner process without acknowledging the family's loss or distress.",
+      "pass": "Introduces self, sits down, expresses sympathy, and checks what they already know.",
+      "high": "Uses his name throughout, gives a warning shot before explaining the coroner's involvement, and paces the conversation to their reaction."
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-knowledge",
+      "label": "Why the coroner is involved",
+      "fail": "Implies the referral means something went wrong, or cannot explain why it happened.",
+      "pass": "Explains the coroner is independent and investigates certain deaths to establish who died and how, when and where.",
+      "high": "Reassures that referral is a routine legal process for deaths meeting set criteria, not an accusation, while not pre-empting the coroner's findings.",
+      "source": "CJA2009"
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "The post-mortem",
+      "fail": "Says the family can object to or stop a coroner's post-mortem.",
+      "pass": "Explains a coroner's post-mortem may be ordered to establish the cause of death, and the family cannot object to it.",
+      "high": "Explains they can still ask to be told when and where it will take place, and can raise concerns with the coroner even though they cannot veto it.",
+      "source": "GOVUK"
+    },
+    {
+      "id": "G4",
+      "domain": "communication",
+      "label": "Avoiding speculation",
+      "fail": "Guesses at or promises a particular cause of death.",
+      "pass": "Avoids speculating about the cause of death and says this will follow the coroner's process.",
+      "high": "Offers to explain the medical aspects of the death separately from the legal process, without pre-empting either."
+    },
+    {
+      "id": "G5",
+      "domain": "professionalism",
+      "label": "Release of the body",
+      "fail": "Gives a firm date for the funeral or release of the body.",
+      "pass": "Explains the coroner controls release of the body while the coronial process is ongoing.",
+      "high": "Acknowledges the uncertainty this causes for funeral planning and offers to update them as soon as there's news."
+    },
+    {
+      "id": "G6",
+      "domain": "communication",
+      "label": "Faith, culture and support",
+      "fail": "Doesn't ask about faith or cultural needs, or dismisses their importance.",
+      "pass": "Asks about faith and cultural needs and explains the coroner will consider these where possible.",
+      "high": "Signposts the Coroners' Courts Support Service and offers practical support without overpromising."
+    },
+    {
+      "id": "G7",
+      "domain": "professionalism",
+      "label": "Scope of role",
+      "fail": "Gives legal advice beyond his role, or states whether there will be an inquest.",
+      "pass": "Explains the coroner decides whether an inquest is needed, without giving legal advice himself.",
+      "high": "Explains an inquest may not be needed if the cause of death becomes clear, while being clear this is the coroner's decision, not his."
+    }
+  ],
+  "performances": {
+    "fail": [
+      { "speaker": "examiner", "text": "Family member: \"Why has the coroner been involved? Can we stop the post-mortem?\"" },
+      { "speaker": "candidate", "text": "It's just procedure because he died unexpectedly. You can object to the post-mortem if you want and they'll take that into account.", "tags": [{ "row": "G1", "band": "fail" }, { "row": "G3", "band": "fail" }] },
+      { "speaker": "examiner", "text": "What will it show?" },
+      { "speaker": "candidate", "text": "It's probably his heart, that's usually what it is at his age.", "tags": [{ "row": "G4", "band": "fail" }] },
+      { "speaker": "examiner", "text": "When can we arrange the funeral?" },
+      { "speaker": "candidate", "text": "You can book it for next week, that should be fine.", "tags": [{ "row": "G5", "band": "fail" }] },
+      { "speaker": "examiner", "text": "Will there be an inquest?" },
+      { "speaker": "candidate", "text": "Yes, there's always an inquest after a coroner referral.", "tags": [{ "row": "G7", "band": "fail" }] },
+      { "speaker": "examiner", "text": "Anything else you'd like to know?" },
+      { "speaker": "candidate", "text": "No, that's everything.", "tags": [{ "row": "G6", "band": "fail" }, { "row": "G2", "band": "fail" }] }
+    ],
+    "pass": [
+      { "speaker": "candidate", "text": "I'm so sorry for your loss. My name is Dr Patel. Can I ask what you've already been told about what happens next?", "tags": [{ "row": "G1", "band": "pass" }] },
+      { "speaker": "examiner", "text": "Family member: \"Why has the coroner been involved?\"" },
+      { "speaker": "candidate", "text": "Because his death was unexpected, it's been referred to the coroner, who is independent of the hospital and looks into certain deaths to establish who he was and how, when and where he died.", "tags": [{ "row": "G2", "band": "pass" }] },
+      { "speaker": "examiner", "text": "Can we stop the post-mortem?" },
+      { "speaker": "candidate", "text": "I understand that's difficult to hear, but a coroner's post-mortem is different from a hospital one — you can't object to it, though you can ask to be told when and where it happens.", "tags": [{ "row": "G3", "band": "pass" }] },
+      { "speaker": "examiner", "text": "What will it show?" },
+      { "speaker": "candidate", "text": "I can't say at this stage what caused his death — that's exactly what the post-mortem is there to establish.", "tags": [{ "row": "G4", "band": "pass" }] },
+      { "speaker": "examiner", "text": "When can we arrange the funeral?" },
+      { "speaker": "candidate", "text": "The coroner controls the release of his body while this is ongoing, so I can't give you a date yet, I'm sorry.", "tags": [{ "row": "G5", "band": "pass" }] },
+      { "speaker": "candidate", "text": "Is there anything about his faith or your family's wishes I should be aware of? The coroner will try to take these into account.", "tags": [{ "row": "G6", "band": "pass" }] },
+      { "speaker": "examiner", "text": "Will there be an inquest?" },
+      { "speaker": "candidate", "text": "That's the coroner's decision, not mine — they may decide one isn't needed if the cause of death becomes clear.", "tags": [{ "row": "G7", "band": "pass" }] }
+    ],
+    "high": [
+      { "speaker": "candidate", "text": "I'm so sorry — losing him like this must be a huge shock. I'm Dr Patel. Before I go on, can you tell me what you already know?", "tags": [{ "row": "G1", "band": "high" }] },
+      { "speaker": "examiner", "text": "Family member: \"Only that the coroner's involved. Why?\"" },
+      { "speaker": "candidate", "text": "There's something important I need to explain. Because George's death was unexpected, it's been referred to the coroner, who is independent and investigates certain deaths to establish who he was and how, when and where he died — this is a routine legal process, not an accusation.", "tags": [{ "row": "G2", "band": "high" }] },
+      { "speaker": "examiner", "text": "Can we stop the post-mortem?" },
+      { "speaker": "candidate", "text": "I know that's hard to hear. A coroner's post-mortem isn't like a hospital one you'd consent to — you can't object to it, but you can still ask to be told when and where it takes place, and raise any concerns with the coroner directly.", "tags": [{ "row": "G3", "band": "high" }] },
+      { "speaker": "examiner", "text": "What caused it?" },
+      { "speaker": "candidate", "text": "I don't want to guess before the post-mortem, but once we know more I'm happy to talk through the medical side separately from the legal process, whenever you're ready.", "tags": [{ "row": "G4", "band": "high" }] },
+      { "speaker": "examiner", "text": "The funeral?" },
+      { "speaker": "candidate", "text": "The coroner controls release of his body until this is resolved, so I can't give a date — I know that's unsettling for planning, and I'll make sure you're updated as soon as there's news.", "tags": [{ "row": "G5", "band": "high" }] },
+      { "speaker": "candidate", "text": "Is there anything about his faith or your family's wishes the coroner should know? The Coroners' Courts Support Service can also help with practical questions along the way.", "tags": [{ "row": "G6", "band": "high" }] },
+      { "speaker": "examiner", "text": "Will there be an inquest?" },
+      { "speaker": "candidate", "text": "That's for the coroner to decide, not me — sometimes an inquest isn't needed once the cause of death is clear, and they'll let you know either way.", "tags": [{ "row": "G7", "band": "high" }] }
+    ]
+  },
+  "failures": [
+    { "row": "G3", "move": "Saying the family can object to or stop a coroner's post-mortem.", "consequence": "Gives false hope and misinforms them about a process they cannot control, which damages trust when the post-mortem goes ahead anyway." },
+    { "row": "G4", "move": "Guessing at the likely cause of death.", "consequence": "A wrong guess can be distressing to retract and may conflict with the eventual coroner's findings." },
+    { "row": "G7", "move": "Stating an inquest will definitely happen.", "consequence": "That decision belongs to the coroner alone and may not be correct; the family is given inaccurate information about a legal process." },
+    { "row": "G5", "move": "Giving a funeral date before the body is released.", "consequence": "Sets an expectation the family may plan around, then have to unwind, adding distress." }
+  ],
+  "recovery": [
+    { "when": "Asked if the family can refuse the post-mortem", "line": "A coroner's post-mortem isn't consent-based like a hospital one — you can't object, but you can ask to be told when and where it happens." },
+    { "when": "Asked if the referral means something went wrong", "line": "No — a coroner referral is a legal process for deaths meeting certain criteria, not a finding that anything was done wrong." }
+  ],
+  "knowledge": [
+    { "fact": "A coroner is independent and investigates certain deaths to establish who the deceased was and how, when and where they died.", "source": "CJA2009" },
+    { "fact": "A coroner's post-mortem may be ordered to establish the cause of death; the family cannot object to it, though they can ask to be told when and where it takes place.", "source": "GOVUK" },
+    { "fact": "The coroner controls release of the body while the coronial process is ongoing.", "source": "GOVUK" },
+    { "fact": "The coroner decides whether an inquest is needed; one may not be required if the cause of death becomes clear.", "source": "GOVUK" }
+  ],
+  "recall": {
+    "think": "A grieving family needs honesty, not speculation or false hope of a veto.",
+    "say": "\"The coroner is independent and looks into deaths like this.\"",
+    "do": [
+      "Acknowledge the loss; check what they know",
+      "Explain coroner and post-mortem plainly",
+      "Avoid guessing the cause"
+    ],
+    "numbers": [
+      { "value": "s.14", "meaning": "Coroners and Justice Act 2009: power to request a post-mortem", "source": "CJA2009" }
+    ],
+    "trap": "Implying the family can veto the post-mortem, or naming a likely cause.",
+    "finish": "Support them; signpost the Coroners' Courts Support Service; update as the process moves."
+  },
+  "sources": [
+    {
+      "id": "GOVUK",
+      "name": "GOV.UK: What to do after someone dies — When a death is reported to a coroner",
+      "version": "Page updated 2 December 2024",
+      "url": "https://www.gov.uk/after-a-death/when-a-death-is-reported-to-a-coroner",
+      "supports": "The coroner investigates relevant deaths and may order a post-mortem; the family cannot object to a coroner's post-mortem, but must be told when and where it will take place if they ask; the coroner controls release of the body while the investigation continues"
+    },
+    {
+      "id": "CJA2009",
+      "name": "Coroners and Justice Act 2009, section 14",
+      "version": "2009 c.25, as in force",
+      "url": "https://www.legislation.gov.uk/ukpga/2009/25/section/14",
+      "supports": "Statutory power for a senior coroner to request a post-mortem examination as part of investigating a death"
+    },
+    {
+      "id": "GMCGMP",
+      "name": "GMC: Good medical practice",
+      "version": "Effective 30 January 2024",
+      "url": "https://www.gmc-uk.org/professional-standards/the-professional-standards/good-medical-practice",
+      "supports": "Communication with people close to a patient should be compassionate, respectful and honest"
+    }
+  ],
+  "partner": {
+    "opening": "You are meeting Mr Farrant's family in a quiet room after his unexpected death. Please begin when you're ready.",
+    "actorBrief": "You are a close relative of George Farrant, 74, who died unexpectedly overnight as an inpatient. You are shocked and want answers. Opening line: \"Why has the coroner been involved? Can we stop the post-mortem?\" You are polite but anxious, and want practical information: when the funeral can happen, and what caused his death. If the candidate is vague or bureaucratic, push: \"So can we say no to it or not?\" Hidden concerns, revealed only if asked: (1) the family follows a faith that prefers burial within a few days, and the delay is distressing; (2) you're worried the hospital is hiding something because he seemed fine the day before. If told honestly and sympathetically that referral is routine and not an accusation, you become calmer.",
+    "reveals": [
+      { "trigger": "Asks what the family already knows", "finding": "\"Only that the coroner's involved. Nobody's really explained why.\"", "row": "G1" },
+      { "trigger": "Asks about faith or cultural needs", "finding": "\"We'd normally want the burial within a few days — this delay is very hard.\"", "row": "G6" },
+      { "trigger": "Reassures that referral isn't an accusation", "finding": "\"I was worried something was being hidden from us, since he seemed fine yesterday.\"", "row": "G2" }
+    ],
+    "push": [
+      { "question": "Can the family object to the post-mortem?", "row": "G3", "expect": "No, but they can ask to be told when and where it takes place, and can raise concerns with the coroner." },
+      { "question": "When can they arrange the funeral?", "row": "G5", "expect": "Not yet — the coroner controls release of the body until the process concludes." },
+      { "question": "Will there be an inquest?", "row": "G7", "expect": "That is the coroner's decision; one may not be needed if the cause of death becomes clear." }
+    ],
+    "curveballs": [
+      { "prompt": "\"So you're saying we have no say at all?\"", "safeAnswer": "Clarifies they cannot object to the post-mortem itself, but they do have a say in being kept informed, raising concerns with the coroner, and their faith and wishes being considered where possible.", "row": "G3" },
+      { "prompt": "\"Did the hospital make a mistake?\"", "safeAnswer": "Doesn't speculate or deny prematurely; explains the referral is routine for an unexpected death and that this is exactly what the coroner's process will establish.", "row": "G2" },
+      { "prompt": "\"Our religion needs burial within days — can you speed this up?\"", "safeAnswer": "Acknowledges the distress this causes, explains the coroner will consider faith and cultural needs where possible, and offers to pass this on and signpost support.", "row": "G6" },
+      { "prompt": "\"What exactly will they find in the post-mortem?\"", "safeAnswer": "Avoids speculating about the cause of death and explains this is precisely what the post-mortem is there to establish.", "row": "G4" }
+    ]
+  }
+}

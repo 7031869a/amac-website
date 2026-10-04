@@ -1,0 +1,443 @@
+{
+  "id": "MB-333",
+  "exam": "MRCS-B",
+  "title": "Peritonsillar abscess (quinsy)",
+  "type": "applied-knowledge",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "ENT emergencies: deep neck-space infection",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "INTEGRATE (UK ENT Trainee Research Network). Admission avoidance in tonsillitis and peritonsillar abscess (Clinical Otolaryngology, 2021)",
+      "Bailey & Love's Short Practice of Surgery, 28th edition (2023)"
+    ],
+    "related": [
+      {
+        "id": "MB-326",
+        "why": "Post-tonsillectomy haemorrhage: another tonsil/oropharynx ENT emergency"
+      },
+      {
+        "id": "MB-327",
+        "why": "Stridor and upper airway obstruction: shares the airway-first approach to a deep neck-space threat"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Emergency department",
+    "role": "Surgical trainee",
+    "scenario": "Ms Aisha Merritt, 24, has severe unilateral throat pain, difficulty swallowing and a muffled voice.",
+    "task": "Assess the likely diagnosis and explain your initial management."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Airway and swallowing first, then the clinical diagnosis, then complications, then management.",
+    "trap": "Treating this as simple tonsillitis and sending her home on oral antibiotics without assessing airway risk.",
+    "firstMove": "\"I'd assess her airway, hydration and systemic illness first, before confirming the diagnosis.\""
+  },
+  "flow": [
+    "Airway and systemic assessment",
+    "Clinical diagnosis and examining findings",
+    "Ask about drooling and swallowing saliva",
+    "Complications to consider",
+    "Management and specialist involvement"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "professionalism",
+      "label": "Airway-first assessment (safety-critical)",
+      "fail": "Goes straight to naming the diagnosis or starting treatment without first assessing airway, hydration and systemic illness.",
+      "pass": "Assesses airway, hydration and systemic illness first, before confirming the diagnosis and starting treatment.",
+      "high": "Explains that a toxic patient unable to swallow saliva needs urgent senior ENT review before anything else is arranged."
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-knowledge",
+      "label": "Clinical diagnosis",
+      "fail": "Diagnoses simple tonsillitis despite unilateral swelling and trismus, or cannot name the diagnosis.",
+      "pass": "Recognises this as a peritonsillar abscess (quinsy), looking for unilateral peritonsillar swelling, uvular deviation, trismus and muffled voice.",
+      "high": "Correlates the examination with the history rather than assuming every case of uvular deviation is a quinsy, and considers alternative causes of a similar picture."
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-skill",
+      "label": "Targeted airway-risk questions",
+      "fail": "Does not ask specifically about drooling, breathing difficulty or the ability to swallow saliva.",
+      "pass": "Specifically asks about drooling, breathing difficulty and inability to swallow saliva, because these increase concern about significant upper-airway disease.",
+      "high": "Uses the answers to these questions to decide how urgently to escalate, rather than asking them as a checklist."
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-knowledge",
+      "label": "Complications",
+      "fail": "Names no complication beyond \"it could get worse\", or does not consider deep neck-space infection.",
+      "pass": "Considers deep neck-space infection and dehydration as complications, and recognises trismus can make examination and drainage difficult.",
+      "high": "Explains that airway compromise or deep neck-space spread turns this into an airway emergency requiring urgent specialist management."
+    },
+    {
+      "id": "G5",
+      "domain": "professionalism",
+      "label": "Management and escalation (safety-critical)",
+      "fail": "Gives oral antibiotics alone and discharges her, or attempts drainage without considering the airway.",
+      "pass": "Gives analgesia and appropriate antimicrobial treatment, assesses for aspiration or drainage depending on severity and response, and involves ENT.",
+      "high": "States that airway compromise or deep neck-space infection escalates this to an airway emergency needing urgent specialist management, not routine ENT referral."
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "What is the diagnosis?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "It's just tonsillitis.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What would you check before deciding how to manage her?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Nothing else — I'd just examine her throat and decide from that.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Anything specific you'd ask about?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Not really, the sore throat tells me enough.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What complications concern you?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'm not sure it has any real complications.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you manage her?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Give oral antibiotics and send her home.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "examiner",
+        "text": "What is the diagnosis?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "This is highly suggestive of a peritonsillar abscess, or quinsy, but I'd assess her airway, hydration and systemic illness first.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          },
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What features support that?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Unilateral peritonsillar swelling, uvular deviation, trismus, muffled voice and difficulty swallowing.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Anything specific you'd ask her about?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd specifically ask about drooling, breathing difficulty and whether she can swallow saliva, because these increase concern about significant upper-airway disease.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What complications concern you?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Deep neck-space infection and dehydration, and I'd remember that trismus can make examination and drainage difficult.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you manage her?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Analgesia and appropriate antimicrobial treatment, assessing for aspiration or drainage depending on severity and response, with ENT involved.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "examiner",
+        "text": "What is the diagnosis?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "This looks like a peritonsillar abscess, but I'd correlate the examination with the history rather than assume every case of uvular deviation is a quinsy, and I'd assess her airway, hydration and systemic illness before anything else.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          },
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What would make you more or less concerned?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd specifically ask about drooling, breathing difficulty and whether she can swallow her own saliva — the answers directly change how urgently I escalate, not just tick a box.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What complications concern you?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Deep neck-space infection and dehydration, remembering that trismus can make both examination and drainage difficult, so I'd plan for that in advance.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you manage her, and how urgently?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Analgesia, appropriate antimicrobial treatment and assessment for aspiration or drainage with ENT, but if there's airway compromise or evidence of deep neck-space spread this becomes an airway emergency needing urgent specialist management, not a routine referral, and a toxic patient unable to swallow saliva needs senior ENT review straight away.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G1",
+      "move": "Deciding management before assessing airway, hydration and systemic illness.",
+      "consequence": "A deteriorating airway or systemic sepsis can be missed until it becomes an emergency."
+    },
+    {
+      "row": "G5",
+      "move": "Attempting drainage or examination (for example with a tongue depressor) without considering the airway first.",
+      "consequence": "Can precipitate airway obstruction or bleeding in a patient with trismus and a compromised airway."
+    },
+    {
+      "row": "G5",
+      "move": "Treating with oral antibiotics alone and discharging home.",
+      "consequence": "Untreated or undertreated abscess can progress to deep neck-space infection or airway compromise."
+    },
+    {
+      "row": "G3",
+      "move": "Not asking about drooling or the ability to swallow saliva.",
+      "consequence": "A key marker of significant upper-airway disease is missed, delaying escalation."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You blank on what to do next",
+      "line": "I'd like to structure this around immediate safety, assessment, escalation and definitive management."
+    },
+    {
+      "when": "Asked \"anything else?\"",
+      "line": "Yes — I'd also consider deep neck-space spread, safety-netting and who else to inform."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Quinsy presents with unilateral peritonsillar swelling, uvular deviation, trismus, muffled voice and difficulty swallowing.",
+      "source": "BL"
+    },
+    {
+      "fact": "The INTEGRATE audit found that ability to swallow fluids or medication was the key triage and discharge criterion for tonsillitis and peritonsillar abscess admissions.",
+      "source": "INTEGRATE"
+    },
+    {
+      "fact": "Management is analgesia and antimicrobial treatment, with aspiration or drainage depending on severity and response, and ENT involvement.",
+      "source": "INTEGRATE"
+    },
+    {
+      "fact": "Airway compromise or deep neck-space infection makes this an airway emergency needing urgent specialist management.",
+      "source": "BL"
+    }
+  ],
+  "recall": {
+    "think": "Airway compromise from deep neck-space spread.",
+    "say": "\"This looks like a quinsy — assessing airway, hydration and systemic illness first.\"",
+    "do": [
+      "Ask about drooling, breathing difficulty, swallowing saliva",
+      "Analgesia, antimicrobials, assess for drainage",
+      "Involve ENT; escalate if airway is threatened"
+    ],
+    "numbers": [
+      {
+        "value": "Unilateral swelling + uvular deviation + trismus",
+        "meaning": "Core clinical triad supporting quinsy over simple tonsillitis",
+        "source": "BL"
+      }
+    ],
+    "trap": "Assuming every sore throat with uvular deviation is a quinsy without correlating with the history.",
+    "finish": "Aspiration or surgical drainage under specialist care, with urgent escalation if the airway is threatened."
+  },
+  "sources": [
+    {
+      "id": "INTEGRATE",
+      "name": "INTEGRATE (UK ENT Trainee Research Network). Admission avoidance in tonsillitis and peritonsillar abscess: a prospective national audit during the initial peak of the COVID-19 pandemic",
+      "version": "Clinical Otolaryngology, 2021 (vol. 46, issue 2)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7753410/",
+      "supports": "UK national guidance on assessment (swallowing ability as the key triage marker) and management (antibiotics, aspiration/drainage) of tonsillitis and peritonsillar abscess"
+    },
+    {
+      "id": "BL",
+      "name": "Bailey & Love's Short Practice of Surgery (O'Connell, McCaskie, Sayers, eds)",
+      "version": "28th edition, 2023",
+      "url": "https://www.routledge.com/Bailey--Loves-Short-Practice-of-Surgery---28th-Edition/OConnell-McCaskie-Sayers/p/book/9780367548117",
+      "supports": "Clinical features of peritonsillar abscess, deep neck-space infection and airway-emergency escalation"
+    },
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format: 9 minutes with 1 minute's reading; examiner-led questioning in applied knowledge stations"
+    }
+  ],
+  "partner": {
+    "opening": "Ms Aisha Merritt, 24, has severe unilateral throat pain, difficulty swallowing and a muffled voice. \"Assess the likely diagnosis and explain your initial management.\"",
+    "reveals": [
+      {
+        "trigger": "Candidate asks about airway/swallowing symptoms",
+        "finding": "She is drooling slightly and finds it hard to swallow her own saliva.",
+        "row": "G3"
+      },
+      {
+        "trigger": "Candidate examines the oropharynx",
+        "finding": "Unilateral peritonsillar swelling with contralateral uvular deviation and trismus limiting mouth opening.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Candidate asks about systemic illness",
+        "finding": "She is febrile and tachycardic but able to protect her airway at present.",
+        "row": "G1"
+      }
+    ],
+    "push": [
+      {
+        "question": "Is every sore throat with uvular deviation a quinsy?",
+        "row": "G2",
+        "expect": "No — correlate the examination with the history and consider other causes."
+      },
+      {
+        "question": "What is your first priority?",
+        "row": "G1",
+        "expect": "Airway assessment and recognition of severe systemic illness before confirming the diagnosis."
+      },
+      {
+        "question": "Why does trismus matter for your plan?",
+        "row": "G4",
+        "expect": "It can make both examination and drainage more difficult, so this is planned for in advance."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "She becomes unable to swallow her own saliva and starts drooling more.",
+        "safeAnswer": "This is a marker of significant upper-airway disease — escalate for urgent senior ENT review.",
+        "row": "G3"
+      },
+      {
+        "prompt": "A nurse asks if you can just prescribe oral antibiotics and send her home.",
+        "safeAnswer": "No — assess for aspiration or drainage and involve ENT; oral antibiotics alone are not sufficient here.",
+        "row": "G5"
+      },
+      {
+        "prompt": "She develops increasing neck swelling beyond the tonsillar area.",
+        "safeAnswer": "Consider deep neck-space spread and escalate urgently rather than treating this as simple quinsy.",
+        "row": "G4"
+      }
+    ]
+  }
+}

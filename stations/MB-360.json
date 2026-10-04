@@ -1,0 +1,425 @@
+{
+  "id": "MB-360",
+  "exam": "MRCS-B",
+  "title": "Arm swelling after axillary surgery",
+  "type": "examination",
+  "header": {
+    "domain": "Applied Skills",
+    "contentArea": "Assessment and management of lymphoedema",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "signalMinutes": 6,
+    "guidelineVersions": [
+      "NICE NG101: Early and locally advanced breast cancer (published 18 July 2018; last updated 14 April 2025)",
+      "British Lymphology Society: Lymphoedema Clinical Definitions and Assessment Guide (5S) (September 2025)"
+    ],
+    "related": [
+      {
+        "id": "MB-358",
+        "why": "The axillary surgery that put her at risk of this complication"
+      },
+      {
+        "id": "MB-359",
+        "why": "The adjuvant radiotherapy that adds further lymphoedema risk"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Breast follow-up clinic, three months after surgery and during radiotherapy",
+    "role": "Core surgical trainee",
+    "scenario": "Ms Rachel Linford, 42, reports her left arm feels heavier and looks slightly swollen since starting radiotherapy after her wide local excision and sentinel node biopsy.",
+    "task": "Assess her arm, explain your findings, and discuss initial management. You will be stopped at 6 minutes to present."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Rule out red flags first (infection, DVT, recurrence), then examine and stage the swelling, then discuss conservative management.",
+    "trap": "Labelling any swelling as lymphoedema without excluding cellulitis or a DVT first.",
+    "firstMove": "\"Before I examine your arm, can I ask a few quick questions about how it started?\""
+  },
+  "flow": [
+    "History: onset, red flags (pain, redness, fever, calf swelling)",
+    "Inspect both arms for size, colour, pitting",
+    "Measure and compare limb circumference",
+    "Check for cellulitis or DVT signs",
+    "At 6 minutes: present findings and management plan"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-skill",
+      "label": "Red flag history",
+      "fail": "Goes straight to examination without asking about pain, redness, fever or calf symptoms.",
+      "pass": "Asks about redness, warmth, fever and calf pain/swelling to screen for cellulitis or DVT before attributing swelling to lymphoedema.",
+      "high": "Also asks specifically about any new breast lump, skin change or systemic symptoms to screen for recurrence."
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-skill",
+      "label": "Inspection",
+      "fail": "Examines only the affected arm.",
+      "pass": "Compares both arms side by side for size, colour and any pitting oedema.",
+      "high": "Also inspects the surgical/radiotherapy field for skin changes and checks for any restriction in shoulder movement."
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-skill",
+      "label": "Measurement",
+      "fail": "Estimates swelling by eye only, with no objective measurement.",
+      "pass": "Measures and compares limb circumference at fixed points on both arms.",
+      "high": "Documents the measurement in a way that allows tracking over time (e.g. a fixed distance from a bony landmark)."
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-skill",
+      "label": "Excluding differentials",
+      "fail": "Does not consider cellulitis or DVT as differentials.",
+      "pass": "Actively examines for warmth, tenderness and any skin break to exclude cellulitis, and asks about calf symptoms to consider DVT.",
+      "high": "States clearly what would prompt same-day escalation (e.g. spreading erythema, fever, calf swelling) rather than routine follow-up."
+    },
+    {
+      "id": "G5",
+      "domain": "communication",
+      "label": "Presentation of findings",
+      "fail": "Lists actions rather than findings, or fails to give a working diagnosis.",
+      "pass": "Describes the degree of swelling, absence of red flags, and gives lymphoedema secondary to axillary surgery and radiotherapy as the likely cause.",
+      "high": "States the finding as the leading diagnosis while explicitly naming why cellulitis and DVT have been excluded."
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-knowledge",
+      "label": "Management",
+      "fail": "Offers no plan beyond \"keep an eye on it\".",
+      "pass": "Refers to a lymphoedema service, advises compression garment fitting, and gives basic skin care and arm protection advice.",
+      "high": "Explains the rationale (reducing infection risk, avoiding cannulation/blood pressure cuffs on that arm) and mentions early physiotherapy input.",
+      "source": "BLS"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "candidate",
+        "text": "[Examines only the left arm and measures nothing.]",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          },
+          {
+            "row": "G2",
+            "band": "fail"
+          },
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop. Your findings?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Her arm looks a bit bigger, probably nothing serious.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What would you do about it?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Nothing for now, review in a few months.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "candidate",
+        "text": "Before I examine, can I ask - any redness, warmth, fever, or pain or swelling in your calf?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "No, none of that, just heaviness."
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Compares both arms for size and colour, then measures circumference at a fixed point on each arm.]",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          },
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Checks for warmth, tenderness and skin breaks; no cellulitis signs found.]",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop. Your findings?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Mild swelling of the left arm, 2 cm greater circumference than the right, no redness, warmth or calf symptoms. This is likely lymphoedema following axillary surgery and radiotherapy.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What would you do?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Refer to the lymphoedema service for a compression garment, and advise on skin care and avoiding cannulation or blood pressure cuffs on that arm.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "candidate",
+        "text": "Before I examine, a few quick questions - any redness, warmth, fever, calf pain or swelling, or anything new in the breast itself?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "No, nothing like that."
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Compares arms, inspects the radiotherapy field for skin changes, checks shoulder movement, then measures circumference at a marked, reproducible point.]",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          },
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[No warmth, tenderness or skin break; no calf swelling on inspection.]",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop. Your findings?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Mild left arm lymphoedema, 2 cm larger in circumference than the right, with no signs of cellulitis or DVT and no new breast findings, so I don't think this is infection, clot or recurrence - it fits with lymphoedema after her axillary surgery and radiotherapy.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What would you do?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Refer to the lymphoedema service for compression garment fitting and early physiotherapy, advise on skin care to reduce infection risk, and make sure that arm is flagged to avoid cannulation and blood pressure cuffs going forward.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G1",
+      "move": "Assuming lymphoedema without asking about red flags.",
+      "consequence": "Cellulitis and DVT are both more urgent and treatable causes of arm swelling that would be missed."
+    },
+    {
+      "row": "G3",
+      "move": "Estimating swelling by eye with no measurement.",
+      "consequence": "Without a baseline measurement, it's impossible to track progression or response to treatment."
+    },
+    {
+      "row": "G6",
+      "move": "Offering no active management plan.",
+      "consequence": "Delays compression and lymphoedema-service input, when earlier intervention improves long-term outcomes."
+    },
+    {
+      "row": "G4",
+      "move": "Not actively examining for warmth, tenderness or skin breaks, or asking about calf symptoms, to exclude cellulitis or DVT.",
+      "consequence": "A treatable infection or clot could be missed and inappropriately managed as routine lymphoedema."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You didn't ask about red flags first",
+      "line": "Before I go further, let me just check - any fever, redness or calf symptoms?"
+    },
+    {
+      "when": "You didn't measure the arm",
+      "line": "Let me take a proper measurement so we have something to compare against next time."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Lymphoedema risk increases with the combination of axillary surgery and axillary/breast radiotherapy.",
+      "source": "BLS"
+    },
+    {
+      "fact": "Cellulitis and DVT are important differentials for arm swelling after axillary surgery and should be actively excluded before attributing swelling to lymphoedema."
+    },
+    {
+      "fact": "Once lymphoedema is diagnosed, the affected arm should be protected from cannulation, blood pressure cuffs and injections where possible to reduce infection and worsening risk.",
+      "source": "BLS"
+    }
+  ],
+  "recall": {
+    "think": "Red flags first; measure, don't guess; protect the arm going forward.",
+    "say": "\"Any redness, warmth, fever, or calf pain or swelling?\"",
+    "do": [
+      "Screen for cellulitis and DVT before diagnosing lymphoedema",
+      "Compare and measure both arms",
+      "Refer to lymphoedema services and advise arm protection"
+    ],
+    "numbers": [
+      {
+        "value": "26 Gy in 5 fractions over 1 week",
+        "meaning": "her ongoing whole-breast radiotherapy course, a contributing risk factor for lymphoedema alongside axillary surgery",
+        "source": "NG101"
+      }
+    ],
+    "trap": "Diagnosing lymphoedema without first excluding cellulitis or DVT.",
+    "finish": "Lymphoedema service referral, compression and arm-protection advice, with red flags excluded."
+  },
+  "sources": [
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format and timing"
+    },
+    {
+      "id": "NG101",
+      "name": "NICE NG101: Early and locally advanced breast cancer: diagnosis and management",
+      "version": "Published 18 July 2018; last updated 14 April 2025",
+      "url": "https://www.nice.org.uk/guidance/ng101",
+      "supports": "Whole-breast radiotherapy 26 Gy in 5 fractions over 1 week after breast-conserving surgery (1.13.13)"
+    },
+    {
+      "id": "BLS28",
+      "name": "Bailey & Love's Short Practice of Surgery, 28th edition",
+      "version": "28th edition, 2023",
+      "url": "https://www.routledge.com/Bailey--Loves-Short-Practice-of-Surgery-28th-Edition/Williams-OConnell-McCaskie/p/book/9781032068666",
+      "supports": "Standard oncological practice that repeat radiotherapy to a previously irradiated breast is not usually given, making mastectomy the option for local control of local recurrence after breast-conserving therapy"
+    },
+    {
+      "id": "BLS",
+      "name": "British Lymphology Society: Lymphoedema Clinical Definitions and Assessment Guide (5S)",
+      "version": "September 2025",
+      "url": "https://www.thebls.com/public/uploads/documents/document-18211759236848.pdf",
+      "supports": "Risk factors, clinical assessment and initial management of cancer-treatment-related lymphoedema"
+    }
+  ],
+  "partner": {
+    "opening": "Please assess this patient's arm swelling. I'll stop you at 6 minutes.",
+    "actorBrief": "You are Rachel Linford, 42, a primary school teacher with two children aged 8 and 11, three months post-surgery and midway through radiotherapy. Your left arm feels heavier and looks slightly puffy over the past two weeks. No pain, redness, fever or calf symptoms. No new breast lump.",
+    "reveals": [
+      {
+        "trigger": "Asks about red flags",
+        "finding": "No redness, warmth, fever or calf symptoms.",
+        "row": "G1"
+      },
+      {
+        "trigger": "Compares and measures both arms",
+        "finding": "Left arm circumference 2 cm greater than right at a matched point, mild pitting, no skin changes.",
+        "row": "G3"
+      },
+      {
+        "trigger": "Checks for cellulitis/DVT signs",
+        "finding": "No warmth, tenderness or skin break; no calf swelling.",
+        "row": "G4"
+      },
+      {
+        "trigger": "At 6 minutes",
+        "finding": "Say: \"Please stop there and present your findings.\"",
+        "row": "G5"
+      }
+    ],
+    "push": [
+      {
+        "question": "Could this be the cancer coming back?",
+        "row": "G5",
+        "expect": "Explain that the findings fit lymphoedema, not recurrence, and that any new breast lump or skin change would be assessed separately."
+      },
+      {
+        "question": "What can be done about it?",
+        "row": "G6",
+        "expect": "Referral to lymphoedema service for compression and advice on arm protection."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "The arm is now red and warm today.",
+        "safeAnswer": "Treat as possible cellulitis: examine for extent/systemic signs and arrange same-day assessment and likely antibiotics rather than routine lymphoedema referral alone.",
+        "row": "G4"
+      },
+      {
+        "prompt": "She asks if she can ever have blood taken from that arm again.",
+        "safeAnswer": "Advise avoiding cannulation, blood tests and blood pressure cuffs on the affected arm where possible, and to flag this to future healthcare staff.",
+        "row": "G6"
+      }
+    ]
+  }
+}

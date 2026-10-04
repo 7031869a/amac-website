@@ -1,0 +1,549 @@
+{
+  "id": "MB-154",
+  "exam": "MRCS-B",
+  "title": "History: visible haematuria",
+  "type": "history",
+  "header": {
+    "domain": "Applied Skills",
+    "contentArea": "Communication skills in giving and receiving information and history taking",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "signalMinutes": 6,
+    "guidelineVersions": [
+      "NICE NG12 (updated Apr 2026)",
+      "Renal Association/BAUS haematuria consensus (2008)",
+      "GIRFT Urology emergency haematuria pathway (Jan 2025)"
+    ],
+    "related": [
+      {
+        "id": "Flexible cystoscopy consent",
+        "why": "The next step in his pathway"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Urology outpatient clinic",
+    "role": "Core surgical trainee",
+    "scenario": "Mr Keith Barlow, 62, has been referred by his GP after passing blood in his urine.",
+    "task": "Take a focused history. You will be stopped at 6 minutes to summarise your history, then asked about differential diagnosis, investigation and management."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Painless visible haematuria at 62 is bladder or kidney cancer until proven otherwise.",
+    "trap": "Blaming the anticoagulant.",
+    "firstMove": "Ask whether he is passing urine now, then open the history."
+  },
+  "flow": [
+    "Open and listen",
+    "Characterise the bleeding",
+    "Voiding and clots",
+    "Other causes",
+    "Risk factors",
+    "Concerns and the anticoagulant",
+    "At 6 minutes: summarise",
+    "Referral and tests"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "communication",
+      "label": "Opening and rapport",
+      "fail": "Closed questions from the start, without introduction.",
+      "pass": "Introduces, confirms identity, asks an open question and listens.",
+      "high": "Uses his words (\"red wine colour\") and checks what he means before moving on."
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-skill",
+      "label": "Characterising the haematuria",
+      "fail": "Doesn't establish that it was visible and painless.",
+      "pass": "Colour, painless or painful, number of episodes, clots, timing in the stream.",
+      "high": "Explains why timing matters: initial suggests a urethral source; terminal suggests the bladder neck or prostate; total suggests the bladder or above."
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-skill",
+      "label": "Voiding and clot retention (safety-critical)",
+      "fail": "Never asks whether he can pass urine.",
+      "pass": "Asks about clots, difficulty passing urine and lower abdominal pain now.",
+      "high": "States the plan if he couldn't void: 3-way catheter, clot washout and irrigation, with bloods including clotting.",
+      "source": "GIRFTU"
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-skill",
+      "label": "Other causes",
+      "fail": "Accepts an infection explanation without asking about urinary symptoms.",
+      "pass": "Asks about dysuria, frequency, fever, loin pain, trauma, recent sore throat, beetroot or rifampicin.",
+      "high": "Explains that UTI must be excluded, and that visible haematuria persisting after treatment still needs investigation.",
+      "source": "BAUS"
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-skill",
+      "label": "Risk factors",
+      "fail": "Asks about smoking without quantifying it, or omits occupation.",
+      "pass": "Smoking in pack-years; occupation with dyes, rubber or textiles; previous pelvic radiotherapy.",
+      "high": "Explains the long latency of occupational exposure, so he asks about jobs decades ago.",
+      "source": "CRUK"
+    },
+    {
+      "id": "G6",
+      "domain": "communication",
+      "label": "The anticoagulant and his concerns",
+      "fail": "Agrees it's the blood thinner, or tells him to stop it.",
+      "pass": "Explains that anticoagulants don't explain haematuria away; advises him not to stop apixaban himself.",
+      "high": "Explores his concern about work and names the need to rule out cancer honestly.",
+      "source": "BAUS"
+    },
+    {
+      "id": "G7",
+      "domain": "communication",
+      "label": "Summary at the signal",
+      "fail": "Retells the history without a working diagnosis.",
+      "pass": "Concise summary with key positives and negatives; working diagnosis of bladder or renal cancer.",
+      "high": "Leads with risk: smoker, rubber-industry exposure, painless clots; then lists benign alternatives."
+    },
+    {
+      "id": "G8",
+      "domain": "clinical-knowledge",
+      "label": "Referral and investigation",
+      "fail": "Sends urine for culture only and plans GP review.",
+      "pass": "Meets NG12 suspected cancer criteria (45 or over, unexplained visible haematuria); arranges flexible cystoscopy and upper-tract imaging.",
+      "high": "Adds renal function before contrast, and that urine biomarkers don't replace cystoscopy.",
+      "source": "NG12"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "candidate",
+        "text": "You've had blood in your water. Any stinging?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          },
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "No? It might be a water infection anyway.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Do you smoke? OK.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "You're on apixaban, so that'll be the cause. Maybe stop it for a week.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop there and summarise your history."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Mr Barlow has had haematuria, probably from his apixaban. I'd send an MSU and ask the GP to review.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          },
+          {
+            "row": "G8",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "candidate",
+        "text": "Hello, I'm Dr Evans, one of the surgical trainees. Can I check your name and date of birth? Tell me what happened.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "What colour was it? Was it painful? How many times? Any clots? Was it at the start, the end, or all the way through?",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Are you passing urine normally now? Any difficulty or tummy pain?",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Any stinging, frequency or fever? Pain in your side? Any injury, sore throat, or beetroot? Any antibiotics like rifampicin?",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "How many a day do you smoke, and for how long? What work have you done? Ever had radiotherapy to your pelvis?",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "The apixaban can make bleeding more obvious, but it doesn't explain it, so we still need to find the cause. Please don't stop it yourself.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop there and summarise your history."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Mr Barlow, 62, has had two episodes of painless visible haematuria with clots over three weeks. He's voiding normally. No UTI symptoms. He has a 40 pack-year history and worked in a rubber factory, and takes apixaban. I'm concerned about bladder cancer; the differential includes renal cancer, prostate bleeding or stones.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What would you do?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "He meets the NG12 suspected cancer criteria: 45 or over with unexplained visible haematuria, so he stays on that pathway. I'd arrange flexible cystoscopy and upper-tract imaging.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "candidate",
+        "text": "Hello, I'm Dr Evans, one of the surgical trainees. Can I check your name and date of birth? First: are you able to pass urine at the moment? Good. Tell me what happened. When you say \"red wine\", was it dark red throughout?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Timing tells me where it's from: at the start suggests the urethra; at the end, the bladder neck or prostate; all the way through, the bladder or above.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[To examiner] If he couldn't void, I'd arrange a 3-way catheter, clot washout and irrigation, with FBC, renal function and clotting.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Any stinging or fever? If an infection is found, we'd treat it, but if the blood persists afterwards you still need the tests.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "That rubber factory: 25 years ago? That still matters; these chemicals can take decades to cause problems.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "You were worried about time off work. The tests are quick, usually as outpatient visits. I'd be wrong not to say we need to rule out a growth in the bladder or kidney.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop there and summarise your history."
+      },
+      {
+        "speaker": "candidate",
+        "text": "A 62-year-old smoker with occupational rubber exposure and painless visible haematuria with clots. He's voiding, has no UTI features, and his apixaban doesn't explain it. Bladder cancer is my main concern, then renal or upper-tract tumour; benign causes are prostate bleeding and stones.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What would you do?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "He stays on the suspected cancer pathway. I'd arrange flexible cystoscopy and upper-tract imaging, ultrasound or CT urogram by local protocol, with renal function checked before contrast. A urine biomarker wouldn't replace cystoscopy.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G3",
+      "move": "Not asking whether he can pass urine.",
+      "consequence": "Safety-critical: misses clot retention, which needs a 3-way catheter, washout and irrigation now."
+    },
+    {
+      "row": "G6",
+      "move": "Attributing the bleeding to apixaban, or advising him to stop it.",
+      "consequence": "Safety-critical: delays a cancer diagnosis and exposes him to stroke risk from unplanned anticoagulant withdrawal."
+    },
+    {
+      "row": "G5",
+      "move": "Asking only about his current job.",
+      "consequence": "Misses a past occupational exposure that raises his risk."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You forgot to ask about voiding",
+      "line": "Before we go on: are you able to pass urine normally now?"
+    },
+    {
+      "when": "He asks if it's the blood thinner",
+      "line": "It can make bleeding more noticeable, but we still need to find where it's coming from."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "NG12 suspected cancer pathway criteria for bladder and renal cancer: 45+ with unexplained visible haematuria without UTI, or persisting or recurring after UTI treatment (1.6.4, 1.6.6).",
+      "source": "NG12"
+    },
+    {
+      "fact": "Any single episode of visible haematuria is significant; do not attribute it to anticoagulant or antiplatelet therapy.",
+      "source": "BAUS"
+    },
+    {
+      "fact": "Clot retention: 3-way catheter, washout, irrigation; assess anticoagulation.",
+      "source": "GIRFTU"
+    },
+    {
+      "fact": "About half of UK bladder cancers are caused by smoking; dye, rubber and textile chemicals take 30 to 40+ years.",
+      "source": "CRUK"
+    }
+  ],
+  "recall": {
+    "think": "Bladder or renal cancer; clot retention.",
+    "say": "\"Painless visible haematuria: cystoscopy and upper-tract imaging on the suspected cancer pathway.\"",
+    "do": [
+      "Ask: can you pass urine now?",
+      "Pack-years and past jobs",
+      "Don't blame or stop the anticoagulant"
+    ],
+    "numbers": [
+      {
+        "value": "45+",
+        "meaning": "unexplained visible haematuria: suspected cancer criteria",
+        "source": "NG12"
+      }
+    ],
+    "trap": "\"He's on apixaban, so that explains it.\"",
+    "finish": "Cystoscopy plus upper-tract imaging."
+  },
+  "sources": [
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format: 9-minute stations with 1 minute's reading; introduce yourself and confirm identity at every station"
+    },
+    {
+      "id": "NG12",
+      "name": "NICE NG12: Suspected cancer: recognition and referral",
+      "version": "Published June 2015; last updated 15 April 2026",
+      "url": "https://www.nice.org.uk/guidance/ng12/resources/suspected-cancer-recognition-and-referral-pdf-1837268071621",
+      "supports": "Suspected cancer pathway criteria for bladder cancer (1.6.4) and renal cancer (1.6.6) at 45+ with unexplained visible haematuria"
+    },
+    {
+      "id": "BAUS",
+      "name": "Renal Association and BAUS: Joint consensus statement on the initial assessment of haematuria",
+      "version": "Issued July 2008",
+      "url": "https://www.baus.org.uk/_userfiles/pages/files/Publications/haematuria_consensus_guidelines_July_2008.pdf",
+      "supports": "Any single episode of visible haematuria is significant; exclude UTI and transient causes; haematuria should not be attributed to anticoagulant or antiplatelet therapy; pseudo-haematuria (beetroot, rifampicin); all visible haematuria referred to urology"
+    },
+    {
+      "id": "GIRFTU",
+      "name": "GIRFT Urology: Urgent and emergency care and SDEC pathways (emergency haematuria pathway)",
+      "version": "Pathway dated January 2025; published March 2025",
+      "url": "https://gettingitrightfirsttime.co.uk/wp-content/uploads/2025/03/FINAL-GIRFT-Urology-UEC-and-SDEC-pathway-diagrams-March-2025.pdf",
+      "supports": "Unable to void: 3-way urethral catheter, washout of clots, irrigation; assess anticoagulation; imaging by ultrasound or CT urogram per local policy; investigate on the Faster Diagnosis Standard pathway"
+    },
+    {
+      "id": "NG2",
+      "name": "NICE NG2: Bladder cancer: diagnosis and management",
+      "version": "Published 25 February 2015; minor changes, latest April 2026",
+      "url": "https://www.nice.org.uk/guidance/ng2",
+      "supports": "Do not substitute urinary biomarkers for cystoscopy (1.2.1)"
+    },
+    {
+      "id": "CRUK",
+      "name": "Cancer Research UK: Bladder cancer risks and causes",
+      "version": "Web page dated 6 August 2026 (next update due August 2029)",
+      "url": "https://www.cancerresearchuk.org/about-cancer/bladder-cancer/risks-causes",
+      "supports": "About half of UK bladder cancers caused by smoking; workplace chemicals (dyes, rubber, textiles) with a latency of 30 to 40 years or more"
+    }
+  ],
+  "partner": {
+    "opening": "Please take a focused history from Mr Barlow. I'll stop you at 6 minutes to summarise.",
+    "actorBrief": "You are Keith Barlow, 62, a delivery driver. Opening line: \"I've been passing blood. The GP says it's probably my blood thinner.\" Emotional state: keen to play it down. Volunteer only that your urine looked \"like red wine\" twice. Release the other facts only when asked (see reveals). Hidden concern: you are self-employed and can't afford time off; say so only if asked what worries you. Idea: it's the apixaban. Expectation: to be told to stop the apixaban.",
+    "reveals": [
+      {
+        "trigger": "Asks about pain, episodes, clots, timing",
+        "finding": "Painless; two episodes over three weeks; small clots once; red all the way through. Clear since.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Asks whether he can pass urine now",
+        "finding": "\"Yes, fine now.\" No lower abdominal pain.",
+        "row": "G3"
+      },
+      {
+        "trigger": "Asks about urinary symptoms, fever, loin pain, trauma, diet, drugs",
+        "finding": "Gets up once at night; no stinging, fever, loin pain or injury; no beetroot; no rifampicin.",
+        "row": "G4"
+      },
+      {
+        "trigger": "Asks about smoking",
+        "finding": "20 a day for 40 years; still smokes.",
+        "row": "G5"
+      },
+      {
+        "trigger": "Asks about past occupation",
+        "finding": "Worked in a tyre and rubber factory for 12 years, until 25 years ago.",
+        "row": "G5"
+      },
+      {
+        "trigger": "Asks about medicines",
+        "finding": "Apixaban for atrial fibrillation, started 6 months ago; ramipril.",
+        "row": "G6"
+      },
+      {
+        "trigger": "Asks what worries him",
+        "finding": "\"I'm self-employed. If I'm off, I don't get paid.\"",
+        "row": "G6"
+      },
+      {
+        "trigger": "At 6 minutes",
+        "finding": "Say: \"Please stop there and summarise your history.\"",
+        "row": "G7"
+      }
+    ],
+    "push": [
+      {
+        "question": "What is your differential?",
+        "row": "G7",
+        "expect": "Bladder cancer; renal or upper-tract tumour; prostate bleeding; stones; UTI."
+      },
+      {
+        "question": "How would you investigate him?",
+        "row": "G8",
+        "expect": "Meets NG12 suspected cancer criteria (45+); candidate arranges flexible cystoscopy and upper-tract imaging."
+      },
+      {
+        "question": "Should he stop his apixaban?",
+        "row": "G6",
+        "expect": "Not on his own; the anticoagulant doesn't explain the bleeding."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "He says he hasn't passed urine for 8 hours and his lower tummy hurts.",
+        "safeAnswer": "Clot retention: 3-way catheter, washout, irrigation, bloods including clotting; admit.",
+        "row": "G3"
+      },
+      {
+        "prompt": "His GP's urine dip showed nitrites and leucocytes.",
+        "safeAnswer": "Treat the infection, but investigate if haematuria persists or recurs afterwards.",
+        "row": "G4"
+      },
+      {
+        "prompt": "\"Can't I just have a urine test instead of the camera?\"",
+        "safeAnswer": "Urine tests don't replace cystoscopy, which is how we look inside the bladder.",
+        "row": "G8"
+      }
+    ]
+  }
+}

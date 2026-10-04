@@ -1,0 +1,405 @@
+{
+  "id": "MB-363",
+  "exam": "MRCS-B",
+  "title": "Confirmed local recurrence: results and options",
+  "type": "communication",
+  "header": {
+    "domain": "Applied Skills",
+    "contentArea": "Discussing confirmed local recurrence",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "NICE NG101: Early and locally advanced breast cancer (published 18 July 2018; last updated 14 April 2025)",
+      "GMC: Good Medical Practice (in effect 30 January 2024)"
+    ],
+    "related": [
+      {
+        "id": "MB-362",
+        "why": "The assessment that led to this result"
+      },
+      {
+        "id": "MB-357",
+        "why": "The earlier diagnosis conversation this one echoes"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Breast clinic, results appointment",
+    "role": "Core surgical trainee",
+    "scenario": "Ms Rachel Linford, 43, had urgent triple assessment for a new lump near her previous scar. Core biopsy confirms local recurrence of invasive carcinoma. Because she has already had radiotherapy to this breast, salvage mastectomy is the recommended option.",
+    "task": "Give her these results and discuss the recommended next steps. You have 7 minutes."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Warning shot, deliver the result plainly, respond to her reaction, then explain why mastectomy (not repeat conservation) is now recommended.",
+    "trap": "Assuming this news lands the same way as the first diagnosis, when in fact recurrence after treatment often carries a distinct sense of having \"done everything right\" and still facing this.",
+    "firstMove": "\"I'm afraid the biopsy has confirmed the cancer has come back in the same area.\""
+  },
+  "flow": [
+    "Check how she's been since the biopsy",
+    "Warning shot, then deliver the result",
+    "Respond to her reaction",
+    "Explain why mastectomy is now recommended",
+    "Next steps and support"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "professionalism",
+      "label": "Warning shot",
+      "fail": "States the result without any warning shot.",
+      "pass": "Gives a clear warning shot before confirming recurrence.",
+      "high": "Acknowledges the specific difficulty of this news coming after she has already completed treatment, before delivering it."
+    },
+    {
+      "id": "G2",
+      "domain": "communication",
+      "label": "Delivering the result",
+      "fail": "Uses vague language that leaves her unsure whether this is confirmed cancer.",
+      "pass": "States plainly that the biopsy confirms the cancer has returned in the same area.",
+      "high": "Pauses to let this land, recognising this news may feel different from her original diagnosis."
+    },
+    {
+      "id": "G3",
+      "domain": "communication",
+      "label": "Responding to emotion",
+      "fail": "Moves straight to the management plan without acknowledging her reaction.",
+      "pass": "Acknowledges her reaction and gives her time before continuing.",
+      "high": "Explicitly validates a feeling she may not say aloud (e.g. \"you did everything right, and this still happened\") without assuming what she feels."
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-knowledge",
+      "label": "Explaining why mastectomy now",
+      "fail": "Cannot explain why breast-conserving surgery isn't repeated.",
+      "pass": "Explains that because she has already had radiotherapy to this breast, it cannot usually be given again to the same area, making mastectomy the recommended option for local control.",
+      "high": "Also mentions reconstruction as something that can be discussed and planned as part of this decision.",
+      "source": "BLS28"
+    },
+    {
+      "id": "G5",
+      "domain": "communication",
+      "label": "Addressing prognosis honestly",
+      "fail": "Either avoids the question of prognosis entirely or gives a falsely definitive answer.",
+      "pass": "Acknowledges that local recurrence raises the importance of finding out whether there's any spread elsewhere, and that this will be assessed before final planning.",
+      "high": "Balances honesty about the seriousness of recurrence with avoiding premature certainty about outcome before staging is complete."
+    },
+    {
+      "id": "G6",
+      "domain": "professionalism",
+      "label": "Support and closing",
+      "fail": "Closes without naming next steps or support.",
+      "pass": "Explains referral to the breast MDT, further staging, and continued support from the breast care nurse.",
+      "high": "Checks she has support around her and offers a follow-up point of contact before she leaves."
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "candidate",
+        "text": "So the biopsy shows it's come back, you'll need a mastectomy this time since you've already had radiotherapy.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          },
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "[Sits in stunned silence.]"
+      },
+      {
+        "speaker": "candidate",
+        "text": "We'll get you booked in soon, that's really all there is to it.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          },
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "candidate",
+        "text": "I'm afraid I have difficult news. The biopsy has confirmed that the cancer has come back in the same area.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          },
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "[Quiet, tearful.] I really thought I was through this."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I can only imagine how hard this is to hear, especially after everything you've already been through. Take whatever time you need.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "What happens now?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Because you've already had radiotherapy to this breast, we can't usually repeat it to the same area, so the recommended option now is to remove the breast, mastectomy, for the best chance of controlling this locally.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "Has it spread anywhere else?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "That's an important question we still need to answer - we'll arrange further tests to check, and this will all be discussed at our breast MDT before we finalise the plan.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Your breast care nurse will stay involved through this, and I'll make sure you have a way to reach us with any questions.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "candidate",
+        "text": "I'm afraid I have some difficult news, and I know this may be especially hard given everything you've already been through - the biopsy confirms the cancer has come back in the same area.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          },
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "[Cries.] I did everything I was supposed to. Why is this happening?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "That's such an understandable thing to feel - you followed every part of the plan, and this still happened. That's not something you did wrong.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "What do we do now?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Because you've already had radiotherapy here, we wouldn't usually give it again to the same area, so mastectomy is the recommended way to control this locally - and reconstruction, if you'd want it, is something we can plan for as part of that.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "Is this going to be worse than last time? Has it spread?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I understand why you'd want to know that now, but I don't want to guess before we've done the proper tests - we'll check for any spread elsewhere, and everything will be discussed at the breast MDT so the plan is built on a full picture, not assumptions.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Your breast care nurse remains your contact through all of this, and I'd like to check - do you have someone to talk to today, and is it okay if we follow up with you soon?",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G1",
+      "move": "Delivering recurrence news the same way as a first diagnosis, with no acknowledgement of what she's already been through.",
+      "consequence": "Fails to meet the patient where she is; recurrence after completed treatment often carries a distinct sense of injustice or failure that generic delivery misses."
+    },
+    {
+      "row": "G5",
+      "move": "Guessing at prognosis or spread before staging is complete.",
+      "consequence": "Risks giving false reassurance or unnecessary despair, either of which she may act or plan on before the full picture is known."
+    },
+    {
+      "row": "G4",
+      "move": "Failing to explain why mastectomy, not repeat conservation, is now recommended.",
+      "consequence": "Leaves her without the clinical reasoning she needs to understand and accept a bigger operation than before."
+    },
+    {
+      "row": "G2",
+      "move": "Delivering the result bluntly in the same breath as the management plan, without confirming she has taken it in.",
+      "consequence": "Risks her missing or misunderstanding the core result amid the shock of the delivery."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You delivered the news without acknowledging what she's already been through",
+      "line": "I realise this must feel especially hard, given everything you've already gone through."
+    },
+    {
+      "when": "You speculated about spread before staging",
+      "line": "I shouldn't guess at that before we've done the proper tests - let's find out properly first."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Repeat radiotherapy to a previously irradiated breast is not usually given, making mastectomy the standard option for local control of an in-breast recurrence after prior breast-conserving therapy and radiotherapy.",
+      "source": "BLS28"
+    },
+    {
+      "fact": "Local recurrence should prompt staging to exclude distant metastatic disease before finalising the management plan.",
+      "source": "NG101"
+    },
+    {
+      "fact": "Breast reconstruction can be discussed and planned alongside mastectomy for recurrence, as it would be for a primary mastectomy."
+    }
+  ],
+  "recall": {
+    "think": "May differ from first diagnosis; explain mastectomy; don't guess staging.",
+    "say": "\"I know this may be hard, after all you've been through.\"",
+    "do": [
+      "Give a warning shot; acknowledge recurrence's emotional weight",
+      "Explain repeat radiotherapy isn't possible; mastectomy recommended",
+      "Avoid speculating on staging or prognosis"
+    ],
+    "numbers": [
+      {
+        "value": "26 Gy in 5 fractions over 1 week",
+        "meaning": "the whole-breast radiotherapy dose she already received to this breast, relevant to the mastectomy decision",
+        "source": "NG101"
+      }
+    ],
+    "trap": "Assuming recurrence news lands like the original diagnosis.",
+    "finish": "Mastectomy explained, staging arranged, support named."
+  },
+  "sources": [
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format and timing"
+    },
+    {
+      "id": "NG101",
+      "name": "NICE NG101: Early and locally advanced breast cancer: diagnosis and management",
+      "version": "Published 18 July 2018; last updated 14 April 2025",
+      "url": "https://www.nice.org.uk/guidance/ng101",
+      "supports": "Whole-breast radiotherapy 26 Gy in 5 fractions over 1 week after breast-conserving surgery (1.13.13); staging to exclude distant metastatic disease before finalising management of a suspected local recurrence"
+    },
+    {
+      "id": "BLS28",
+      "name": "Bailey & Love's Short Practice of Surgery, 28th edition",
+      "version": "28th edition, 2023",
+      "url": "https://www.routledge.com/Bailey--Loves-Short-Practice-of-Surgery-28th-Edition/Williams-OConnell-McCaskie/p/book/9781032068666",
+      "supports": "Standard oncological practice that repeat radiotherapy to a previously irradiated breast is not usually given, making mastectomy the option for local control of local recurrence after breast-conserving therapy"
+    },
+    {
+      "id": "GMC",
+      "name": "GMC: Good Medical Practice",
+      "version": "In effect 30 January 2024",
+      "url": "https://www.gmc-uk.org/professional-standards/the-professional-standards/good-medical-practice",
+      "supports": "Honest, sensitive communication of serious news and giving patients the information they need in a way they can understand"
+    }
+  ],
+  "partner": {
+    "opening": "Please give this patient her results and discuss next steps. You have 7 minutes.",
+    "actorBrief": "You are Rachel Linford, 43, back for biopsy results after finding a new lump near your scar. You completed treatment 18 months ago and felt you had \"got through it\". You are devastated at the possibility of recurrence and specifically fear it means the cancer has spread.",
+    "reveals": [
+      {
+        "trigger": "Candidate acknowledges what you've already been through",
+        "finding": "You visibly soften and become more able to engage with the rest of the conversation.",
+        "row": "G1"
+      },
+      {
+        "trigger": "Candidate explains delivery abruptly with no acknowledgement",
+        "finding": "You go quiet and withdrawn for the rest of the station.",
+        "row": "G1"
+      },
+      {
+        "trigger": "Candidate is asked about spread and avoids guessing",
+        "finding": "You accept this and ask what tests will be done instead of pressing for a guess.",
+        "row": "G5"
+      }
+    ],
+    "push": [
+      {
+        "question": "Why is a mastectomy needed this time when it wasn't before?",
+        "row": "G4",
+        "expect": "Explain that repeat radiotherapy to the same breast isn't usually possible, making mastectomy the recommended route to local control."
+      },
+      {
+        "question": "Has it spread? Am I going to be okay?",
+        "row": "G5",
+        "expect": "Avoid guessing; explain that staging tests are needed before this can be answered, and that the plan will be built on that full picture."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "I don't think I can go through all this again.",
+        "safeAnswer": "Acknowledge how exhausting this must feel, without minimising it, and offer to involve the breast care nurse or psychological support alongside the medical plan.",
+        "row": "G3"
+      },
+      {
+        "prompt": "Can I just have another lumpectomy instead of losing the whole breast?",
+        "safeAnswer": "Explain gently why repeat breast-conserving surgery with radiotherapy to the same area isn't the recommended option here, while acknowledging this is a hard trade-off to accept.",
+        "row": "G4"
+      }
+    ]
+  }
+}

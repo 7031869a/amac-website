@@ -1,0 +1,542 @@
+{
+  "id": "MB-272",
+  "exam": "MRCS-B",
+  "title": "Dog bite to the forearm: wound care, antibiotics and tetanus",
+  "type": "applied-knowledge",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "Wounds and soft tissue: animal bites (emergency management viva)",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "NICE NG184 Human and animal bites: antimicrobial prescribing (published 4 November 2020)",
+      "UKHSA guidance on suspected tetanus and tetanus-prone wounds (last updated 12 August 2026)",
+      "UKHSA Green Book chapter 30: Tetanus (last updated 14 August 2026)"
+    ],
+    "related": [
+      {
+        "id": "MB-180",
+        "why": "Wound closure technique, once you have decided a wound can be closed"
+      },
+      {
+        "id": "MB-151",
+        "why": "Necrotising soft tissue infection: the bite that comes back infected and systemically unwell"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Emergency department",
+    "role": "Core surgical trainee",
+    "scenario": "Mr Winstanley, 35, was bitten on the right forearm by his neighbour's pet dog 3 hours ago. There are two puncture wounds and a 2 cm ragged laceration that bled. He is otherwise well and takes no regular medicines. He grew up in the UK and had a tetanus booster 15 years ago.",
+    "task": "Discuss your assessment and management with the examiner."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Three separate decisions: the wound, antibiotics, and tetanus.",
+    "trap": "Treating tetanus as the whole answer, or giving immunoglobulin to every bite.",
+    "firstMove": "\"I'd examine for tendon, nerve and vessel injury, then irrigate thoroughly.\""
+  },
+  "flow": [
+    "Assess the bite",
+    "Clean and debride",
+    "Antibiotic decision",
+    "Classify tetanus risk",
+    "Vaccine and immunoglobulin",
+    "Safety-net"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-skill",
+      "label": "Assesses the bite",
+      "fail": "Cleans and dresses it without checking depth or hand function.",
+      "pass": "Checks depth, tendon function, sensation and circulation; asks about the dog and time since the bite.",
+      "high": "Refers for specialist exploration if a penetrating wound involves tendon, nerve, artery, joint or bone; X-ray if a tooth fragment is suspected.",
+      "source": "NG184"
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-skill",
+      "label": "Wound care",
+      "fail": "Sutures the laceration closed without irrigating it.",
+      "pass": "Thorough irrigation and debridement of devitalised tissue under local anaesthetic.",
+      "high": "Leaves the punctures open; leaves the laceration open or closes it loosely, and arranges early wound review.",
+      "source": "BL"
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "Antibiotic prophylaxis",
+      "fail": "Gives no antibiotics, or says every bite needs them.",
+      "pass": "Offers prophylaxis: the dog bite broke the skin, drew blood and includes puncture wounds. Co-amoxiclav for 3 days.",
+      "high": "Doxycycline plus metronidazole if penicillin-allergic. Would also consider prophylaxis for hand, foot or face bites, diabetes, immunosuppression or asplenia.",
+      "source": "NG184"
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-knowledge",
+      "label": "Classifies the tetanus risk",
+      "fail": "Calls it a clean wound, or calls every bite high risk.",
+      "pass": "Tetanus-prone (animal bite with punctures) but low risk: no heavy contamination, extensive devitalised tissue or surgery delayed beyond 6 hours.",
+      "high": "Knows pet saliva should not carry spores unless the dog roots in soil or lives on a farm; individual risk assessment decides.",
+      "source": "UKTET"
+    },
+    {
+      "id": "G5",
+      "domain": "professionalism",
+      "label": "Tetanus vaccine and immunoglobulin",
+      "fail": "Gives immunoglobulin for this wound, or nothing because he 'had all his jabs'.",
+      "pass": "Adequately primed but last dose over 10 years ago: immediate reinforcing dose of vaccine (Td/IPV); no immunoglobulin.",
+      "high": "For a high-risk wound would add tetanus immunoglobulin 250 IU (500 IU if over 24 hours) at a different site.",
+      "source": "UKTET"
+    },
+    {
+      "id": "G6",
+      "domain": "professionalism",
+      "label": "Safety-netting and wider risks",
+      "fail": "Discharges him without advice.",
+      "pass": "Explains signs of infection and to return if they appear, worsen, or fail to improve within 24 to 48 hours of antibiotics.",
+      "high": "Asks where it happened: a bite abroad or from a bat needs a rabies risk assessment; considers safeguarding in children or vulnerable adults.",
+      "source": "NG184"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "How would you manage this bite?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Clean it, put in a few stitches and a dressing.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          },
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Does he need antibiotics?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "No, it's only a small bite and the dog is a pet.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Is this a tetanus-prone wound?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "No, it's a clean cut.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "If it were, what would he need?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Nothing: he had all his childhood jabs and a booster. Actually, to be safe I'd give tetanus immunoglobulin too.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Anything before he goes?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "No, he can go home.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "examiner",
+        "text": "How would you assess this bite?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd look at the depth, test tendon function, sensation and circulation in the hand, and ask about the dog and when it happened.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "And the wound itself?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Thorough irrigation and debridement of any devitalised tissue under local anaesthetic.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Does he need antibiotics?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Yes. It's a dog bite that has broken the skin and drawn blood, with puncture wounds, so I'd offer co-amoxiclav for 3 days.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Is it tetanus-prone?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Yes, an animal bite with punctures. But there's no heavy contamination, no extensive devitalised tissue and no delay to surgery, so it's low risk.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What tetanus treatment does he need?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "He's adequately primed but his last dose was over 10 years ago, so an immediate reinforcing dose of Td/IPV. No immunoglobulin.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Anything else?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd tell him to come back if it becomes red, swollen or discharges, or isn't improving within 24 to 48 hours on antibiotics.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "examiner",
+        "text": "How would you assess this bite?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Depth, tendon function, sensation and circulation. If it penetrated a tendon, nerve, artery, joint or bone, it needs specialist exploration; an X-ray if I suspected a tooth fragment.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "He'd like it stitched neatly."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd irrigate and debride it first. The punctures stay open; the laceration I'd leave open or close loosely, because closing a contaminated bite traps bacteria. I'd arrange early review.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "He says he's allergic to penicillin."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Then doxycycline with metronidazole. And even for a smaller bite, I'd consider prophylaxis on the hand, foot or face, or if he were diabetic, immunosuppressed or asplenic.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Why isn't this a high-risk tetanus wound?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Pet saliva shouldn't contain spores unless the dog roots in soil or lives on a farm. Here there's no heavy contamination or extensive devitalised tissue, and he'll be treated within 6 hours.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What would change your tetanus management?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "A high-risk wound. He'd need the reinforcing dose plus tetanus immunoglobulin, 250 IU, or 500 IU if more than 24 hours had passed, in a different site.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Anything else?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Where it happened. A bite abroad or from a bat needs a rabies risk assessment with UKHSA. And if the patient were a child, I'd think about safeguarding.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G2",
+      "move": "Suturing a bite laceration closed without irrigation and debridement.",
+      "consequence": "Traps bacteria in a contaminated wound; infection and breakdown follow."
+    },
+    {
+      "row": "G3",
+      "move": "Withholding antibiotics from a dog bite that broke the skin with puncture wounds.",
+      "consequence": "Misses prophylaxis that NICE recommends offering for this wound."
+    },
+    {
+      "row": "G5",
+      "move": "Giving tetanus immunoglobulin for a low-risk wound in a primed adult.",
+      "consequence": "Uses a blood product without indication; the reinforcing vaccine dose is what he needs."
+    },
+    {
+      "row": "G1",
+      "move": "Dressing the wound without testing tendon function or sensation.",
+      "consequence": "A divided tendon or nerve is missed until repair is harder."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You have only discussed tetanus",
+      "line": "Separately from tetanus, I need to decide on antibiotics for the bite itself, and on how to manage the wound."
+    },
+    {
+      "when": "Asked to close the wound",
+      "line": "I'd irrigate and debride first, then leave it open or close it loosely, because it's a contaminated bite."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Dog bite that broke the skin and drew blood: offer prophylaxis if deep, puncture or crush, significant tissue damage, visibly contaminated, or penetrating bone, joint, tendon or vessels. Consider it for high-risk sites or comorbidities.",
+      "source": "NG184"
+    },
+    {
+      "fact": "Co-amoxiclav first choice; doxycycline with metronidazole if penicillin-allergic. Prophylaxis 3 days, treatment 5 days.",
+      "source": "NG184"
+    },
+    {
+      "fact": "High-risk tetanus-prone: heavy contamination with spore-containing material, extensive devitalised tissue, or surgery delayed over 6 hours.",
+      "source": "UKTET"
+    },
+    {
+      "fact": "Adequate priming is 3 or more doses. Last dose over 10 years ago: reinforcing dose, plus immunoglobulin only if high risk. Unprimed or uncertain: vaccine and immunoglobulin for any tetanus-prone wound.",
+      "source": "UKTET"
+    },
+    {
+      "fact": "UK terrestrial animals are rabies-free; bats and bites abroad need a risk assessment.",
+      "source": "RAB"
+    }
+  ],
+  "recall": {
+    "think": "Missed tendon injury; wound infection; tetanus.",
+    "say": "\"Low-risk tetanus-prone: booster, no immunoglobulin, plus antibiotics.\"",
+    "do": [
+      "Examine tendons, nerves, vessels",
+      "Irrigate, debride, leave open",
+      "Co-amoxiclav; Td/IPV now"
+    ],
+    "numbers": [
+      {
+        "value": "3 days",
+        "meaning": "bite prophylaxis course",
+        "source": "NG184"
+      },
+      {
+        "value": "10 years",
+        "meaning": "since last dose: give a booster",
+        "source": "UKTET"
+      },
+      {
+        "value": "250 IU / 500 IU",
+        "meaning": "immunoglobulin, high-risk wounds only",
+        "source": "UKTET"
+      }
+    ],
+    "trap": "\"He had all his jabs.\"",
+    "finish": "Clean wound, antibiotics, booster, safety-net."
+  },
+  "sources": [
+    {
+      "id": "NG184",
+      "name": "NICE guideline NG184: Human and animal bites: antimicrobial prescribing",
+      "version": "Published 4 November 2020",
+      "url": "https://www.nice.org.uk/guidance/ng184",
+      "supports": "Assessment including tetanus and rabies risk, irrigation and debridement (1.1.1); prophylaxis criteria for dog bites (1.1.10–1.1.12); advice and 24–48 hour reassessment (1.1.15–1.1.16); referral for penetrating wounds involving tendons, nerves, arteries, joints or bone (1.1.19); co-amoxiclav first choice, doxycycline with metronidazole if allergic, 3-day prophylaxis and 5-day treatment (table 1)"
+    },
+    {
+      "id": "UKTET",
+      "name": "UKHSA. Guidance on the management of suspected tetanus cases and the assessment and management of tetanus-prone wounds",
+      "version": "Last updated 12 August 2026 (guidance updated July 2026)",
+      "url": "https://www.gov.uk/government/publications/tetanus-advice-for-health-professionals/guidance-on-the-management-of-suspected-tetanus-cases-and-the-assessment-and-management-of-tetanus-prone-wounds",
+      "supports": "Tetanus-prone and high-risk wound definitions, including pet saliva note and 6-hour surgical delay (section 7.2); Table 4 immunisation and immunoglobulin by priming status; adequate priming defined as at least 3 doses; IM tetanus immunoglobulin 250 IU, or 500 IU if over 24 hours, heavy contamination or burns"
+    },
+    {
+      "id": "GB30",
+      "name": "UKHSA. Tetanus: the Green Book, chapter 30",
+      "version": "Chapter dated 2 June 2025; page last updated 14 August 2026",
+      "url": "https://www.gov.uk/government/publications/tetanus-the-green-book-chapter-30",
+      "supports": "Td/IPV for those aged 10 or over; Table 30.1 matching the UKHSA wound guidance"
+    },
+    {
+      "id": "RAB",
+      "name": "UKHSA. Guidelines on rabies post-exposure treatment",
+      "version": "January 2023 (collection page last updated 30 June 2025)",
+      "url": "https://www.gov.uk/government/publications/rabies-post-exposure-prophylaxis-management-guidelines",
+      "supports": "UK free of rabies in terrestrial animals; bats and exposures abroad need risk assessment"
+    },
+    {
+      "id": "BL",
+      "name": "Bailey & Love's Short Practice of Surgery (O'Connell, McCaskie, Sayers, eds)",
+      "version": "28th edition, 2023",
+      "url": "https://www.routledge.com/Bailey--Loves-Short-Practice-of-Surgery---28th-Edition/OConnell-McCaskie-Sayers/p/book/9780367548117",
+      "supports": "Bite wounds: irrigation, debridement, and leaving contaminated bite wounds open or loosely closed"
+    },
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format: 9 minutes with 1 minute's reading; examiner-led questioning in applied knowledge stations"
+    }
+  ],
+  "partner": {
+    "opening": "This man has been bitten on the forearm by a dog. Talk me through how you would manage him.",
+    "reveals": [
+      {
+        "trigger": "Candidate examines the forearm and hand",
+        "finding": "Two puncture wounds and a 2 cm ragged laceration on the volar mid-forearm, with a narrow rim of bruised skin edge. No visible dirt. Full finger flexion against resistance; sensation and radial pulse normal.",
+        "row": "G1"
+      },
+      {
+        "trigger": "Candidate asks about the dog",
+        "finding": "The neighbour's vaccinated pet, lives in a town flat. The bite happened in the neighbour's garden in the UK.",
+        "row": "G6"
+      },
+      {
+        "trigger": "Candidate asks about vaccinations and allergies",
+        "finding": "Full childhood vaccinations in the UK; tetanus booster at 20 after a cut. No allergies. No diabetes or immunosuppression.",
+        "row": "G5"
+      }
+    ],
+    "push": [
+      {
+        "question": "Would you close the laceration?",
+        "row": "G2",
+        "expect": "Irrigate and debride first; leave open or close loosely."
+      },
+      {
+        "question": "Does he need antibiotics?",
+        "row": "G3",
+        "expect": "Yes: offer co-amoxiclav for 3 days for a dog bite that drew blood with punctures."
+      },
+      {
+        "question": "Is the wound tetanus-prone, and how risky?",
+        "row": "G4",
+        "expect": "Tetanus-prone but low risk."
+      },
+      {
+        "question": "What does he need for tetanus?",
+        "row": "G5",
+        "expect": "Reinforcing dose of Td/IPV now; no immunoglobulin."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "He's allergic to penicillin.",
+        "safeAnswer": "Doxycycline with metronidazole.",
+        "row": "G3"
+      },
+      {
+        "prompt": "The dog lives on a farm and the wound is packed with soil and manure.",
+        "safeAnswer": "High-risk tetanus-prone: reinforcing vaccine dose plus tetanus immunoglobulin 250 IU at a different site; thorough debridement.",
+        "row": "G5"
+      },
+      {
+        "prompt": "Actually, he was bitten by a street dog on holiday in Thailand two days ago.",
+        "safeAnswer": "Wash the wound thoroughly and get an urgent rabies risk assessment with UKHSA for post-exposure treatment.",
+        "row": "G6"
+      },
+      {
+        "prompt": "He can't bend the tip of his ring finger.",
+        "safeAnswer": "Possible flexor tendon injury: refer to the hand team for exploration and repair in theatre.",
+        "row": "G1"
+      }
+    ]
+  }
+}

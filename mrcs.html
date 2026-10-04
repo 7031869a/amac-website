@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MRCS A&amp;B — AMaC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0c1526;
+    --card: #16233F;
+    --card-border: #2b3752;
+    --accent: #A6373F;
+    --accent-soft: #301619;
+    --text: #EDEEF2;
+    --text-dim: #9AA4BD;
+    --accent-text: #E06070;
+    --font-head: 'Fraunces', serif;
+    --font-body: 'Outfit', sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    line-height: 1.5;
+  }
+  a { color: inherit; }
+
+  main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 56px 20px 90px;
+  }
+
+  .hero h1 {
+    font-family: var(--font-head);
+    font-weight: 700;
+    font-size: 34px;
+    margin: 0 0 12px;
+    max-width: 20ch;
+  }
+  .hero p {
+    color: var(--text-dim);
+    font-size: 16px;
+    max-width: 56ch;
+    margin: 0 0 44px;
+  }
+
+  .door-grid {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .door {
+    flex: 1 1 320px;
+    display: flex;
+    flex-direction: column;
+    background: var(--card);
+    border-top: 3px solid var(--accent);
+    border-left: 3px solid var(--accent);
+    border-right: 1px solid var(--card-border);
+    border-bottom: 1px solid var(--card-border);
+    border-radius: 8px;
+    padding: 28px 26px;
+    text-decoration: none;
+    color: var(--text);
+    transition: transform 0.15s ease, border-color 0.15s ease;
+  }
+  .door:hover {
+    transform: translateY(-4px);
+  }
+
+  .door .eyebrow {
+    font-size: 12px;
+    color: var(--accent-text);
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  .door h3 {
+    font-family: var(--font-head);
+    font-weight: 600;
+    font-size: 22px;
+    margin: 0 0 10px;
+  }
+  .door p.desc {
+    color: var(--text-dim);
+    font-size: 14px;
+    margin: 0 0 20px;
+    flex-grow: 1;
+  }
+
+  .door .stat-row {
+    display: flex;
+    gap: 22px;
+    margin-bottom: 20px;
+    padding-top: 18px;
+    border-top: 1px dashed var(--card-border);
+  }
+  .door .stat b {
+    display: block;
+    font-family: var(--font-head);
+    font-size: 22px;
+    font-weight: 600;
+  }
+  .door .stat span {
+    display: block;
+    font-size: 12px;
+    color: var(--text-dim);
+    margin-top: 2px;
+  }
+
+  .door .cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--accent-text);
+  }
+  .door:hover .cta { text-decoration: underline; }
+
+  /* status chip — house pill idiom (as .tc-chip on mrcp.html, MRCS accent) */
+  .door .chip {
+    align-self: flex-start;
+    display: inline-block;
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--accent-text);
+    background: rgba(166,55,63,0.10);
+    border: 1px solid rgba(166,55,63,0.28);
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-bottom: 11px;
+  }
+
+  .below-note {
+    margin-top: 36px;
+    color: var(--text-dim);
+    font-size: 13px;
+  }
+
+  /* ── FOOTER (house structure, as mrcp.html; footer.js appends the global band below) ── */
+  .site-foot{background:#0C1526;border-top:1px solid #1A2740;padding:34px 26px 26px;font-family:'Outfit',sans-serif;text-align:left;}
+  .site-foot .foot-inner{max-width:1180px;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:28px;border-bottom:1px solid #1E2C46;padding-bottom:26px;}
+  .site-foot .foot-brand{font-weight:600;letter-spacing:.1em;color:#C9A227;font-size:18px;}
+  .site-foot .foot-brand p{font-size:13px;color:#8593AE;margin:9px 0 0;max-width:36ch;font-weight:300;letter-spacing:normal;line-height:1.6;}
+  .site-foot .foot-col h4{color:#fff;font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin:0 0 12px;}
+  .site-foot .foot-col a{display:block;color:#C7D0E2;font-size:13.5px;margin-bottom:8px;font-weight:300;text-decoration:none;transition:.2s;}
+  .site-foot .foot-col a:hover{color:#EA8A94;}
+  .site-foot .foot-legal{max-width:74ch;margin:22px auto 0;font-size:11.5px;line-height:1.65;color:#6B7794;text-align:center;}
+  .site-foot .foot-bottom{max-width:1180px;margin:10px auto 0;font-size:12px;color:#6B7794;text-align:center;}
+
+  @media (max-width: 600px) {
+    main { padding: 40px 16px 60px; }
+    .hero h1 { font-size: 28px; }
+    .door { padding: 22px 20px; }
+  }
+
+  /* ── NAV (static JS-off fallback; nav.js replaces it with the shared MRCS nav) ──
+     Scoped to .nav-fallback so none of it reaches nav.js's .amac-nav. */
+  .nav-fallback{position:sticky;top:0;z-index:100;background:#0F1A2E;border-bottom:1px solid #1E2C46;font-family:'Outfit',sans-serif;}
+  .nav-fallback .nav-inner{max-width:1180px;margin:0 auto;padding:13px 26px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;}
+  .nav-fallback .nav-l{display:flex;align-items:center;gap:13px;}
+  .nav-fallback .brand{font-weight:600;letter-spacing:.1em;color:#C9A227;font-size:16px;text-decoration:none;}
+  .nav-fallback .door-tag{font-size:11px;color:#EA8A94;border-left:1px solid #28385A;padding-left:13px;letter-spacing:.1em;}
+  .nav-fallback .nav-links{display:flex;align-items:center;gap:16px;list-style:none;margin:0;padding:0;font-size:12.5px;flex-wrap:wrap;}
+  .nav-fallback .nav-links a{color:#C7D0E2;text-decoration:none;}
+  .nav-fallback .nav-links a:hover{color:#fff;}
+  .nav-fallback .nav-exit{color:#8593AE;font-size:11.5px;border-left:1px solid #28385A;padding-left:13px;}
+</style>
+</head>
+<body>
+
+<!-- NAV (MRCS door; static fallback, nav.js replaces it with the shared nav) -->
+<nav data-door="mrcs" class="nav-fallback"><div class="nav-inner">
+  <div class="nav-l">
+    <a href="index.html" class="brand">AMaC</a>
+    <span class="door-tag">MRCS</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="mrcs-part-a.html">MRCS A question bank</a></li>
+    <li><a href="mrcs-part-b.html">MRCS B preview</a></li>
+    <li><a href="mrcs.html">MRCS overview</a></li>
+    <li><a href="index.html" class="nav-exit">← all exams</a></li>
+  </ul>
+</div></nav>
+
+<main>
+  <div class="hero">
+    <h1>MRCS exam preparation</h1>
+    <p>Two exams, two very different formats. Pick the one you're preparing for.</p>
+  </div>
+
+  <div class="door-grid">
+    <a class="door" href="mrcs-part-a.html">
+      <div class="eyebrow">PAPERS 1 &amp; 2 — APPLIED BASIC SCIENCE &amp; PRINCIPLES OF SURGERY</div>
+      <h3>MRCS A</h3>
+      <p class="desc">Single-best-answer questions across anatomy, physiology, pathology, microbiology, pharmacology, statistics, ENT, trauma and the surgical principles papers, with the reasoning, exam trap, takeaway and source after every question. Practise by subject, or sit a full timed mock.</p>
+      <div class="stat-row">
+        <div class="stat"><b><span data-count="mrcsPartATotal">4,642</span></b><span>questions</span></div>
+        <div class="stat"><b>180</b><span>min mock exam</span></div>
+      </div>
+      <span class="cta">Start MRCS A →</span>
+    </a>
+
+    <a class="door" href="mrcs-part-b.html">
+      <div class="eyebrow">CLINICAL &amp; COMMUNICATION SKILLS — OSCE</div>
+      <h3>MRCS B</h3>
+      <p class="desc">Practice stations with full marking guidance, plus the four transferable chapters, how Part B is scored, the rules that apply at every station and a mark-weighted study plan.</p>
+      <div class="stat-row">
+        <div class="stat"><b><span data-count="mrcsPartBStations">219</span></b><span>practice stations</span></div>
+      </div>
+      <span class="cta">Open MRCS B →</span>
+    </a>
+  </div>
+
+  <p class="below-note">Not sure which one you need first? MRCS A is sat before MRCS B in the exam sequence — most candidates work through the question bank first.</p>
+</main>
+
+<footer class="site-foot">
+  <div class="foot-inner">
+    <div class="foot-brand">
+      AMaC
+      <p>Examiner-led preparation for the UK medical and surgical examinations. Making the difficult, easy.</p>
+    </div>
+    <div class="foot-col">
+      <h4>MRCS</h4>
+      <a href="mrcs-part-a.html">MRCS A question bank</a>
+      <a href="mrcs-part-b.html">MRCS B preview</a>
+      <a href="mrcs.html">MRCS overview</a>
+    </div>
+    <div class="foot-col">
+      <h4>AMaC</h4>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="index.html">← All exams</a>
+    </div>
+  </div>
+  <p class="foot-legal">Not affiliated with or endorsed by the Royal Colleges of Surgeons.</p>
+  <div class="foot-bottom">&copy; 2026 A. Mansour &amp; Colleagues (AMaC). All rights reserved.</div>
+</footer>
+
+<script src="nav.js" defer></script>
+<script src="footer.js" defer></script>
+<script src="counts.js" defer></script>
+</body>
+</html>

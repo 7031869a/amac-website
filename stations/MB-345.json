@@ -1,0 +1,197 @@
+{
+  "id": "MB-345",
+  "exam": "MRCS-B",
+  "title": "Major lower-limb amputation: level, consent and rehabilitation",
+  "type": "applied-knowledge",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "Vascular surgery: chronic limb-threatening ischaemia",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "BACPAR Clinical guidelines for the pre and post operative physiotherapy management of adults with lower limb amputations, 3rd edition (2025)",
+      "Bailey & Love's Short Practice of Surgery, 28th edition (2023)"
+    ],
+    "related": [
+      { "id": "MB-187", "why": "Acute limb ischaemia, the emergency counterpart to this chronic presentation" },
+      { "id": "MB-168", "why": "Peripheral arterial examination of the lower limb, used to assess viability before amputation" },
+      { "id": "MB-214", "why": "Diabetic foot examination: neuropathy, ischaemia and infection, a common route to this decision" }
+    ]
+  },
+  "brief": {
+    "setting": "Vascular surgery clinic",
+    "role": "Core surgical trainee",
+    "scenario": "Mr Alan Prescott, 68, has severe chronic limb-threatening ischaemia and is being considered for major lower-limb amputation.",
+    "task": "Discuss how you would approach consent, how the amputation level is chosen, and what happens after surgery."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Confirm nothing revascularisable remains, then let tissue viability and function (not just anatomical length) pick the level, then plan rehabilitation from before the operation.",
+    "trap": "Assuming the lowest possible level is always best, or treating consent as covering only bleeding and infection.",
+    "firstMove": "\"I would first establish the indication and confirm vascular and multidisciplinary options have been considered.\""
+  },
+  "flow": [
+    "Confirm the indication and options considered",
+    "Approach to consent",
+    "Choosing the level",
+    "Preoperative rehabilitation planning",
+    "Postoperative care",
+    "Functional outcome versus limb length"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-knowledge",
+      "label": "Confirming the indication",
+      "fail": "Moves straight to discussing amputation level without checking whether revascularisation or other options were considered.",
+      "pass": "Establishes the indication for amputation and confirms that vascular and multidisciplinary options have been explored first.",
+      "high": "Notes this should have been discussed at a vascular multidisciplinary meeting, given the irreversible nature of the decision."
+    },
+    {
+      "id": "G2",
+      "domain": "communication",
+      "label": "Consent discussion",
+      "fail": "Describes consent as covering only bleeding and infection.",
+      "pass": "Discusses the operation, alternatives, risks including pain and phantom limb pain, wound complications, the possibility of further surgery, mobility implications and rehabilitation.",
+      "high": "Frames these as a two-way discussion about what matters most to this patient's daily life and goals, not a list read out to them."
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "Choosing the amputation level",
+      "fail": "States the level should simply be as low (distal) as possible.",
+      "pass": "States the level is selected according to tissue viability, perfusion, infection, likelihood of healing and the functional potential of the remaining limb.",
+      "high": "Explains a higher level that heals reliably and rehabilitates well can outperform a lower level that fails to heal or cannot be fitted properly."
+    },
+    {
+      "id": "G4",
+      "domain": "professionalism",
+      "label": "Preoperative rehabilitation planning",
+      "fail": "Says rehabilitation is something to think about only after the wound has healed.",
+      "pass": "Involves the specialist amputee rehabilitation team, including physiotherapy, before surgery where possible.",
+      "high": "Adds that pre-operative assessment considers mobility goals, the contralateral limb, and psychological preparation, which shapes the rehabilitation plan made afterwards.",
+      "source": "BACPAR"
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-knowledge",
+      "label": "Postoperative care",
+      "fail": "Names only wound care as the postoperative priority.",
+      "pass": "Lists pain management including phantom limb pain, wound care, nutrition, VTE prevention, pressure area care, psychological support and rehabilitation.",
+      "high": "Explains phantom limb pain is addressed with a structured rehabilitation approach, and links psychological support explicitly to adjustment after limb loss.",
+      "source": "BACPAR"
+    },
+    {
+      "id": "G6",
+      "domain": "professionalism",
+      "label": "Function versus anatomical length (safety-critical)",
+      "fail": "States prosthesis fitting alone will resolve function regardless of level or wound healing.",
+      "pass": "States functional outcome depends as much on healing and rehabilitation potential as on how much limb length is preserved.",
+      "high": "Adds that disease in the contralateral limb is assessed too, since it affects overall mobility and the choice of prosthesis and rehabilitation plan."
+    }
+  ],
+  "performances": {
+    "fail": [
+      { "speaker": "examiner", "text": "How would you approach consent?" },
+      { "speaker": "candidate", "text": "I'd consent him for bleeding and infection.", "tags": [{ "row": "G2", "band": "fail" }] },
+      { "speaker": "examiner", "text": "What about the indication itself?" },
+      { "speaker": "candidate", "text": "It's already been decided, I'd just go ahead.", "tags": [{ "row": "G1", "band": "fail" }] },
+      { "speaker": "examiner", "text": "How do you choose the level?" },
+      { "speaker": "candidate", "text": "Amputate as low as possible.", "tags": [{ "row": "G3", "band": "fail" }] },
+      { "speaker": "examiner", "text": "What happens after surgery?" },
+      { "speaker": "candidate", "text": "Prosthesis will solve the problem.", "tags": [{ "row": "G4", "band": "fail" }, { "row": "G6", "band": "fail" }] },
+      { "speaker": "examiner", "text": "Anything about his recovery on the ward?" },
+      { "speaker": "candidate", "text": "Just wound checks, really.", "tags": [{ "row": "G5", "band": "fail" }] }
+    ],
+    "pass": [
+      { "speaker": "examiner", "text": "How would you approach consent?" },
+      { "speaker": "candidate", "text": "I would first establish the indication and confirm vascular and multidisciplinary options have been considered.", "tags": [{ "row": "G1", "band": "pass" }] },
+      { "speaker": "examiner", "text": "And the consent conversation itself?" },
+      { "speaker": "candidate", "text": "I would discuss the operation, alternatives, risks including pain and phantom limb pain, wound complications, further surgery, mobility implications and rehabilitation.", "tags": [{ "row": "G2", "band": "pass" }] },
+      { "speaker": "examiner", "text": "How do you choose the level?" },
+      { "speaker": "candidate", "text": "By tissue viability, perfusion, infection, likelihood of healing and the functional potential of the remaining limb.", "tags": [{ "row": "G3", "band": "pass" }] },
+      { "speaker": "examiner", "text": "What about before surgery?" },
+      { "speaker": "candidate", "text": "I would involve the specialist amputee rehabilitation team, including physiotherapy, before surgery where possible.", "tags": [{ "row": "G4", "band": "pass" }] },
+      { "speaker": "examiner", "text": "What happens after surgery?" },
+      { "speaker": "candidate", "text": "Pain management including phantom limb pain, wound care, nutrition, VTE prevention, pressure area care, psychological support and rehabilitation.", "tags": [{ "row": "G5", "band": "pass" }] },
+      { "speaker": "examiner", "text": "Why not always preserve maximum limb length?" },
+      { "speaker": "candidate", "text": "Because functional outcome depends as much on healing and rehabilitation potential as on how much length is preserved.", "tags": [{ "row": "G6", "band": "pass" }] }
+    ],
+    "high": [
+      { "speaker": "examiner", "text": "How would you approach consent?" },
+      { "speaker": "candidate", "text": "First I'd confirm this has gone through a vascular multidisciplinary discussion, given how irreversible the decision is, then establish the indication before consenting him.", "tags": [{ "row": "G1", "band": "high" }] },
+      { "speaker": "examiner", "text": "What does the consent conversation cover?" },
+      { "speaker": "candidate", "text": "The operation, alternatives, risks including phantom limb pain, wound complications, further surgery, mobility and rehabilitation — but as a two-way discussion about what matters most to him day to day, not a list I read out.", "tags": [{ "row": "G2", "band": "high" }] },
+      { "speaker": "examiner", "text": "How do you choose the level?" },
+      { "speaker": "candidate", "text": "Tissue viability, perfusion, infection, healing likelihood and functional potential — a higher level that heals reliably and rehabilitates well can outperform a lower level that fails to heal or can't be fitted properly.", "tags": [{ "row": "G3", "band": "high" }] },
+      { "speaker": "examiner", "text": "Before surgery?" },
+      { "speaker": "candidate", "text": "I'd involve the amputee rehabilitation team early, assessing his mobility goals, the contralateral limb and his psychological readiness, so the postoperative plan is already shaped.", "tags": [{ "row": "G4", "band": "high" }] },
+      { "speaker": "examiner", "text": "After surgery?" },
+      { "speaker": "candidate", "text": "Pain including phantom limb pain managed through the structured rehabilitation programme, wound care, nutrition, VTE prevention, pressure areas, and psychological support for adjustment to limb loss.", "tags": [{ "row": "G5", "band": "high" }] },
+      { "speaker": "examiner", "text": "Why not always preserve maximum limb length?" },
+      { "speaker": "candidate", "text": "Function depends on healing and rehabilitation potential, and on the other leg too — significant contralateral disease changes what level and prosthesis will actually work for him.", "tags": [{ "row": "G6", "band": "high" }] }
+    ]
+  },
+  "failures": [
+    { "row": "G1", "move": "Proceeding straight to level and technique without confirming the indication and that alternatives were considered.", "consequence": "An irreversible operation goes ahead without the multidisciplinary safeguard it needs." },
+    { "row": "G2", "move": "Limiting consent to bleeding and infection.", "consequence": "He is not prepared for phantom limb pain, mobility change or the possibility of further surgery." },
+    { "row": "G3", "move": "Choosing the lowest possible level regardless of viability.", "consequence": "A stump that fails to heal, requiring revision surgery and delaying rehabilitation." },
+    { "row": "G4", "move": "Leaving rehabilitation planning until after the wound has healed.", "consequence": "Time preparing him physically and psychologically for recovery is lost." },
+    { "row": "G6", "move": "Assuming a prosthesis alone will restore function.", "consequence": "Poor healing or unaddressed contralateral disease means the prosthesis cannot be used well." }
+  ],
+  "recovery": [
+    { "when": "You blank on what consent should cover", "line": "I'd like to structure this around the indication, the procedure, its risks and alternatives, and what recovery will involve." },
+    { "when": "Asked \"anything else?\" after level selection", "line": "Yes — I'd also consider the contralateral limb and involve rehabilitation early, since that shapes the whole recovery." }
+  ],
+  "knowledge": [
+    { "fact": "Amputation level is chosen on tissue viability, perfusion, infection, likelihood of healing and functional potential, not simply the lowest possible level.", "source": "BL" },
+    { "fact": "Consent covers the operation, alternatives, risks (including phantom limb pain), wound complications, further surgery, mobility change and rehabilitation.", "source": "BL" },
+    { "fact": "The specialist amputee rehabilitation team, including physiotherapy, prosthetics, occupational therapy and psychological support, is involved before surgery where possible and continues afterwards.", "source": "BACPAR" }
+  ],
+  "recall": {
+    "think": "An irreversible decision made without confirming options or planning rehabilitation.",
+    "say": "\"The level is chosen on viability, healing and function, not maximum length.\"",
+    "do": [
+      "Confirm indication and that alternatives were considered",
+      "Consent for phantom pain, mobility change and further surgery",
+      "Involve amputee rehabilitation before surgery"
+    ],
+    "numbers": [
+      { "value": "3rd edition, 2025", "meaning": "Current BACPAR pre- and post-operative amputee rehabilitation guideline", "source": "BACPAR" }
+    ],
+    "trap": "Assuming the lowest possible level, or a prosthesis alone, guarantees the best function.",
+    "finish": "Level chosen for viability and function; rehabilitation and psychological support started early and continued postoperatively."
+  },
+  "sources": [
+    {
+      "id": "BACPAR",
+      "name": "British Association of Chartered Physiotherapists in Amputee Rehabilitation. Clinical guidelines for the pre and post operative physiotherapy management of adults with lower limb amputations",
+      "version": "3rd edition, 2025",
+      "url": "https://www.bacpar.org/Data/Resource_Downloads/FINALpreandpostopProcessdocument3rdedition.pdf",
+      "supports": "Pre-operative involvement of the amputee rehabilitation team, and postoperative management of phantom limb pain and psychological adjustment"
+    },
+    {
+      "id": "BL",
+      "name": "Bailey & Love's Short Practice of Surgery (O'Connell, McCaskie, Sayers, eds)",
+      "version": "28th edition, 2023",
+      "url": "https://www.routledge.com/Bailey--Loves-Short-Practice-of-Surgery---28th-Edition/OConnell-McCaskie-Sayers/p/book/9780367548117",
+      "supports": "Principles of amputation level selection and consent for major lower-limb amputation"
+    }
+  ],
+  "partner": {
+    "opening": "Mr Prescott, 68, has severe chronic limb-threatening ischaemia and is being considered for major lower-limb amputation. \"How would you approach consent?\"",
+    "reveals": [
+      { "trigger": "Candidate asks whether revascularisation has been considered", "finding": "He has been discussed at the vascular MDT; no further revascularisation options remain.", "row": "G1" },
+      { "trigger": "Candidate asks about the contralateral limb", "finding": "The other leg also has significant peripheral arterial disease, currently stable.", "row": "G6" }
+    ],
+    "push": [
+      { "question": "How do you choose the level?", "row": "G3", "expect": "Tissue viability, perfusion, infection, healing likelihood and functional potential." },
+      { "question": "What happens after surgery?", "row": "G5", "expect": "Pain including phantom limb pain, wound care, nutrition, VTE prevention, pressure areas, psychological support, rehabilitation." },
+      { "question": "Why not always preserve maximum limb length?", "row": "G6", "expect": "The level must balance tissue viability, healing and the patient's expected functional outcome." }
+    ],
+    "curveballs": [
+      { "prompt": "He asks whether he'll definitely walk again with a prosthesis.", "safeAnswer": "Explains this depends on healing, fitness, rehabilitation and the contralateral limb, and cannot be guaranteed, rather than promising a prosthesis will resolve everything.", "row": "G6" },
+      { "prompt": "He says he's worried about pain after the operation but no one has mentioned phantom limb pain.", "safeAnswer": "Explains phantom limb pain explicitly as part of consent and describes the rehabilitation approach used to manage it.", "row": "G2" },
+      { "prompt": "The surgical team wants to proceed to theatre this week without rehabilitation input.", "safeAnswer": "Requests specialist amputee rehabilitation involvement before surgery where feasible, rather than deferring it to after the wound heals.", "row": "G4" }
+    ]
+  }
+}

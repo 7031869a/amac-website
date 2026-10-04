@@ -1,0 +1,535 @@
+{
+  "id": "MB-300",
+  "exam": "MRCS-B",
+  "title": "Perioperative steroid cover for a patient on long-term prednisolone",
+  "type": "applied-knowledge",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "Perioperative care: preoperative assessment and medicines management",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "Association of Anaesthetists/RCP/Society for Endocrinology glucocorticoid guideline (Woodcock et al., Anaesthesia 2020; corrected Jun 2020)",
+      "NHS National Patient Safety Alert NatPSA/2020/005/NHSPS Steroid Emergency Card (Aug 2020)",
+      "Society for Endocrinology/RCP adrenal insufficiency guidance (Simpson et al., Clin Med 2020)"
+    ],
+    "related": [
+      {
+        "id": "MB-206",
+        "why": "The other common medicines problem in pre-assessment: diabetes"
+      },
+      {
+        "id": "MB-205",
+        "why": "Perioperative anticoagulant management"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Preoperative assessment clinic",
+    "role": "Core surgical trainee",
+    "scenario": "Mrs Hester Halloran, 68, is listed for an elective total hip replacement. She has taken prednisolone 10 mg each morning for three years for rheumatoid arthritis. She has never been told she has adrenal problems.",
+    "task": "Answer the examiner's questions on her perioperative steroid management."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Is she at risk? Then cover induction, cover the fasting period, double the oral dose, and watch for crisis.",
+    "trap": "Stopping or omitting her usual prednisolone on the day of surgery.",
+    "firstMove": "\"Ten milligrams for three years puts her at risk of adrenal insufficiency, so she needs steroid cover.\""
+  },
+  "flow": [
+    "Who is at risk",
+    "Before surgery",
+    "At induction",
+    "After surgery",
+    "Adrenal crisis",
+    "Patient information"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-knowledge",
+      "label": "Who is at risk",
+      "fail": "Says she needs nothing extra because she has no adrenal disease.",
+      "pass": "Prednisolone 5 mg or more daily for 4 weeks or longer can suppress the HPA axis: treat her as at risk.",
+      "high": "Separates primary adrenal insufficiency (mineralocorticoid also lost) from suppression by prescribed steroids; notes inhaled, topical and injected routes count.",
+      "source": "WOODCOCK"
+    },
+    {
+      "id": "G2",
+      "domain": "professionalism",
+      "label": "Before surgery",
+      "fail": "Stops or omits prednisolone on the morning of surgery.",
+      "pass": "Takes her usual morning dose; plan agreed with the anaesthetist and written in the notes and drug chart.",
+      "high": "Minimises fasting and asks for an early slot on the list; checks she has a Steroid Emergency Card.",
+      "source": "NATPSA"
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "At induction",
+      "fail": "No extra steroid, or an arbitrary dose.",
+      "pass": "Hydrocortisone 100 mg IV at induction, then an infusion of 200 mg over 24 hours.",
+      "high": "Knows dexamethasone 6–8 mg IV covers 24 hours in her, but is inadequate in primary adrenal insufficiency (no mineralocorticoid effect).",
+      "source": "WOODCOCK"
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-knowledge",
+      "label": "After surgery",
+      "fail": "Restarts her usual dose at once, or stops steroids after surgery.",
+      "pass": "Hydrocortisone 200 mg per 24 hours while nil by mouth, then double her usual oral dose for 48 hours if uncomplicated.",
+      "high": "Continues double dose up to a week after complicated surgery; alternative 50 mg IM 6-hourly; no reduction while pyrexial.",
+      "source": "WOODCOCK"
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-skill",
+      "label": "Recognise adrenal crisis (safety-critical)",
+      "fail": "Treats postoperative hypotension with fluids alone and waits for a cortisol level.",
+      "pass": "Unexplained hypotension, drowsiness, vomiting or low sodium: hydrocortisone 100 mg IV at once, IV fluids, senior help.",
+      "high": "Looks for orthostatic hypotension early; takes a cortisol sample only if it causes no delay; involves endocrinology.",
+      "source": "WOODCOCK"
+    },
+    {
+      "id": "G6",
+      "domain": "communication",
+      "label": "Informing the patient",
+      "fail": "Gives her no explanation of the extra steroid.",
+      "pass": "Explains why extra steroid is given, and that she must not stop prednisolone suddenly.",
+      "high": "Covers sick day rules and carrying the Steroid Emergency Card; confirms her understanding.",
+      "source": "SFE"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "Does she need steroid cover?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "She hasn't got Addison's, so no. She's just on it for her arthritis.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What about the day of surgery?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "She'd be nil by mouth, so she'd miss her prednisolone that morning.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Anything at induction?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Maybe some hydrocortisone if the anaesthetist wants it.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "After the operation?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Back on her normal 10 mg when she's eating.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Six hours later her BP is 78/40 and she is drowsy. The drain is dry."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd give fluid boluses and send a cortisol level before giving any steroid.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What would you tell her?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Nothing in particular; the anaesthetist handles it.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "examiner",
+        "text": "Does she need steroid cover?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Yes. Prednisolone 5 mg or more for four weeks or longer can suppress the HPA axis, so at 10 mg for three years I'd treat her as at risk of adrenal insufficiency.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What happens on the day?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "She takes her usual morning prednisolone. I'd agree the plan with the anaesthetist and write it in the notes and on the drug chart.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "At induction?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Hydrocortisone 100 mg IV, then an infusion of 200 mg over 24 hours.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "After surgery?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Continue 200 mg per 24 hours while she's nil by mouth, then double her usual oral dose, 20 mg, for 48 hours if she recovers well, then back to 10 mg.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Six hours later her BP is 78/40 and she is drowsy. The drain is dry."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Possible adrenal crisis. Hydrocortisone 100 mg IV now, IV fluids, and call for senior help while I look for other causes.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What would you tell her?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "That she'll get extra steroid because her body may not make enough under stress, and that she must never stop prednisolone suddenly.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "examiner",
+        "text": "Is she the same as a patient with Addison's disease?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "No. In primary adrenal insufficiency mineralocorticoid is lost too. Hers is suppression by prescribed steroid. Inhaled, topical and injected steroids can do the same.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How can you reduce her risk before surgery?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Keep fasting short and put her early on the list. I'd check she has a Steroid Emergency Card.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The anaesthetist is giving dexamethasone 8 mg for nausea. Does she still need hydrocortisone at induction?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Dexamethasone 6 to 8 mg covers her for 24 hours. It wouldn't be enough in primary adrenal insufficiency because it has no mineralocorticoid effect.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "She develops a chest infection on day 2."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Then I'd keep her on double dose for up to a week, and not reduce it while she's pyrexial. If there's no IV access, hydrocortisone 50 mg IM six-hourly.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What are early signs of crisis?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Malaise, drowsiness, confusion and a postural drop before frank hypotension. I'd take a cortisol sample only if it doesn't delay treatment, and involve endocrinology.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "At discharge I'd go through sick day rules and ask her to carry the card, then check she can explain it back.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G5",
+      "move": "Giving fluids alone for postoperative hypotension in a steroid-treated patient.",
+      "consequence": "An adrenal crisis progresses to refractory shock and death."
+    },
+    {
+      "row": "G2",
+      "move": "Omitting the usual morning prednisolone because she is fasting.",
+      "consequence": "Removes her baseline steroid just before a major stress."
+    },
+    {
+      "row": "G1",
+      "move": "Assuming only patients with adrenal disease need cover.",
+      "consequence": "No cover given to a patient with a suppressed HPA axis."
+    },
+    {
+      "row": "G4",
+      "move": "Stopping steroid supplements after theatre.",
+      "consequence": "Crisis risk continues through the postoperative stress response."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "Unsure of her risk",
+      "line": "Five milligrams or more for four weeks: I'd treat her as at risk and give cover."
+    },
+    {
+      "when": "Asked about unexplained postoperative hypotension",
+      "line": "In anyone on long-term steroids I'd give hydrocortisone 100 mg IV while I look for other causes."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "At risk: prednisolone 5 mg or more daily for 4 weeks or longer, any route.",
+      "source": "WOODCOCK"
+    },
+    {
+      "fact": "Major surgery: hydrocortisone 100 mg IV at induction, then 200 mg per 24 hours while nil by mouth.",
+      "source": "WOODCOCK"
+    },
+    {
+      "fact": "Then double usual oral dose for 48 hours; up to a week if complicated.",
+      "source": "WOODCOCK"
+    },
+    {
+      "fact": "Dexamethasone 6–8 mg IV covers 24 hours, but not in primary adrenal insufficiency.",
+      "source": "WOODCOCK"
+    },
+    {
+      "fact": "Patients at risk should carry an NHS Steroid Emergency Card.",
+      "source": "NATPSA"
+    }
+  ],
+  "recall": {
+    "think": "Adrenal crisis: refractory shock.",
+    "say": "\"She is at risk of adrenal insufficiency.\"",
+    "do": [
+      "Usual dose that morning",
+      "Hydrocortisone at induction",
+      "Double oral dose after"
+    ],
+    "numbers": [
+      {
+        "value": "5 mg for 4 weeks",
+        "meaning": "prednisolone: at risk",
+        "source": "WOODCOCK"
+      },
+      {
+        "value": "100 mg IV",
+        "meaning": "hydrocortisone at induction",
+        "source": "WOODCOCK"
+      },
+      {
+        "value": "200 mg/24 h",
+        "meaning": "while nil by mouth",
+        "source": "WOODCOCK"
+      }
+    ],
+    "trap": "No Addison's does not mean no risk.",
+    "finish": "Back to usual dose; Steroid Emergency Card."
+  },
+  "sources": [
+    {
+      "id": "WOODCOCK",
+      "name": "Woodcock T, Barker P, Daniel S, et al. Guidelines for the management of glucocorticoids during the peri-operative period for patients with adrenal insufficiency: Association of Anaesthetists, Royal College of Physicians and Society for Endocrinology UK. Anaesthesia 2020;75:654-63",
+      "version": "2020 (Table 2 corrected 25 June 2020)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/32017012/",
+      "supports": "At-risk threshold (prednisolone 5 mg or more for 4 weeks or longer); hydrocortisone 100 mg IV at induction and 200 mg/24 h; 50 mg IM 6-hourly alternative; double oral dose for 48 h or up to a week; dexamethasone 6-8 mg sufficient for 24 h but inadequate in primary adrenal insufficiency; do not reduce while pyrexial; features of impending crisis"
+    },
+    {
+      "id": "NATPSA",
+      "name": "NHS England/NHS Improvement. National Patient Safety Alert: Steroid Emergency Card to support early recognition and treatment of adrenal crisis in adults. NatPSA/2020/005/NHSPS",
+      "version": "13 August 2020",
+      "url": "https://www.england.nhs.uk/publication/national-patient-safety-alert-steroid-emergency-card-to-support-early-recognition-and-treatment-of-adrenal-crisis-in-adults/",
+      "supports": "Steroid Emergency Card for patients at risk, including those on prescribed oral, inhaled or topical steroids; perioperative plans for increased steroid doses"
+    },
+    {
+      "id": "SFE",
+      "name": "Simpson H, Tomlinson J, Wass J, Dean J, Arlt W. Guidance for the prevention and emergency management of adult patients with adrenal insufficiency. Clin Med (Lond) 2020;20:371-8",
+      "version": "2020",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/32675141/",
+      "supports": "Groups at risk; sick day rules; emergency card; emergency management of adrenal crisis"
+    },
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format: 9 minutes with 1 minute's reading; examiner-led questioning in applied knowledge stations"
+    }
+  ],
+  "media": [],
+  "partner": {
+    "opening": "Mrs Halloran takes prednisolone 10 mg daily for rheumatoid arthritis and is listed for a hip replacement. Does she need anything extra?",
+    "reveals": [
+      {
+        "trigger": "Candidate asks about steroid history",
+        "finding": "Prednisolone 10 mg every morning for three years. No inhalers. Never had an adrenal crisis. No Steroid Emergency Card.",
+        "row": "G1"
+      },
+      {
+        "trigger": "Candidate asks about the postoperative course",
+        "finding": "Six hours after surgery: BP 78/40, HR 112, drowsy, sodium 129. Drain dry, haemoglobin unchanged.",
+        "row": "G5"
+      }
+    ],
+    "push": [
+      {
+        "question": "Is she at risk of adrenal insufficiency?",
+        "row": "G1",
+        "expect": "Yes: prednisolone 5 mg or more for 4 weeks or longer."
+      },
+      {
+        "question": "What happens on the morning of surgery?",
+        "row": "G2",
+        "expect": "Usual prednisolone; written plan with the anaesthetist."
+      },
+      {
+        "question": "What do you give at induction?",
+        "row": "G3",
+        "expect": "Hydrocortisone 100 mg IV, then 200 mg/24 h."
+      },
+      {
+        "question": "And after surgery?",
+        "row": "G4",
+        "expect": "200 mg/24 h while nil by mouth; double oral dose 48 h, up to a week if complicated."
+      },
+      {
+        "question": "She is hypotensive and drowsy with a dry drain. What now?",
+        "row": "G5",
+        "expect": "Hydrocortisone 100 mg IV now, fluids, senior help."
+      },
+      {
+        "question": "What does she need to know?",
+        "row": "G6",
+        "expect": "Never stop suddenly; sick day rules; Steroid Emergency Card."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "She has Addison's disease instead, on hydrocortisone and fludrocortisone.",
+        "safeAnswer": "Same hydrocortisone cover; dexamethasone is not adequate; restart fludrocortisone when eating.",
+        "row": "G3"
+      },
+      {
+        "prompt": "She stopped prednisolone two months ago after a six-month course.",
+        "safeAnswer": "The axis may still be suppressed: discuss with the anaesthetist and endocrinology, and give cover if in doubt, as short-term cover carries little risk.",
+        "row": "G1"
+      },
+      {
+        "prompt": "The ward has no hydrocortisone infusion set up and she is vomiting.",
+        "safeAnswer": "Hydrocortisone 50 mg IM or IV six-hourly until the infusion runs; do not omit.",
+        "row": "G4"
+      }
+    ]
+  }
+}

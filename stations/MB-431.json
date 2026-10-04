@@ -1,0 +1,430 @@
+{
+ "id": "MB-431",
+ "exam": "MRCS-B",
+ "title": "Recalling a patient after an abnormal screening mammogram",
+ "type": "communication",
+ "header": {
+  "domain": "Applied Skills",
+  "contentArea": "Communicating an abnormal screening result and the assessment process",
+  "minutes": 9,
+  "readingMinutes": 1,
+  "guidelineVersions": [
+   "NHS Breast Screening Programme guidance (current)",
+   "NICE NG12 (updated May 2025)"
+  ],
+  "related": [
+   {
+    "id": "MB-138",
+    "why": "The examination that forms part of the assessment clinic this recall leads to"
+   },
+   {
+    "id": "MB-408",
+    "why": "A related scenario of managing anxiety around an uncertain breast finding"
+   }
+  ]
+ },
+ "brief": {
+  "setting": "Breast screening assessment clinic",
+  "role": "Core surgical trainee",
+  "scenario": "Mrs Beaumont, 56, attended routine NHS breast screening and has been recalled after her mammogram showed an area needing further assessment. She has no symptoms and is understandably anxious.",
+  "task": "Explain the recall and the assessment process to her. You have 7 minutes."
+ },
+ "beforeYouWalkIn": {
+  "frame": "Be clear that recall does not mean cancer is likely, most recalls are not cancer, but that proper assessment is still needed to find out either way.",
+  "trap": "Either overstating reassurance (\"it's definitely nothing\") or underplaying it in a way that causes disproportionate alarm before any further tests are done.",
+  "firstMove": "\"I know being called back can feel worrying - can I explain what this recall actually means?\""
+ },
+ "flow": [
+  "Acknowledge her anxiety about being recalled",
+  "Explain what the mammogram showed in plain terms",
+  "Explain what recall does and doesn't mean statistically",
+  "Explain the assessment process she'll go through today",
+  "Address concerns and closing"
+ ],
+ "grid": [
+  {
+   "id": "G1",
+   "domain": "communication",
+   "label": "Acknowledging her anxiety",
+   "fail": "Moves straight into technical explanation without acknowledging how worrying this can feel.",
+   "pass": "Explicitly acknowledges that being recalled can feel worrying before explaining further.",
+   "high": "Validates this without assuming the degree of her anxiety, leaving room for her to describe how she's actually feeling."
+  },
+  {
+   "id": "G2",
+   "domain": "clinical-knowledge",
+   "label": "Explaining the mammogram finding",
+   "fail": "Uses technical radiological language she is unlikely to understand.",
+   "pass": "Explains in plain terms that the mammogram showed an area that needs a closer look, without yet saying what it is.",
+   "high": "Avoids naming a specific worrying-sounding term (e.g. mass, mcircumscribed) until it can be properly explained with context."
+  },
+  {
+   "id": "G3",
+   "domain": "clinical-knowledge",
+   "label": "Explaining recall statistics",
+   "fail": "States or implies that being recalled means she likely has cancer.",
+   "pass": "Explains that most people recalled for further assessment do not turn out to have cancer.",
+   "high": "Gives this context without over-reassuring either, being clear that assessment is still needed to know for certain either way.",
+   "source": "BCN"
+  },
+  {
+   "id": "G4",
+   "domain": "clinical-knowledge",
+   "label": "Explaining the assessment process",
+   "fail": "Cannot describe what will happen at the assessment clinic.",
+   "pass": "Explains that she may have further mammogram views, an ultrasound, and possibly a needle biopsy, often all on the same day.",
+   "high": "Explains roughly when she can expect results, and that a same-day answer isn't always possible if biopsy is needed."
+  },
+  {
+   "id": "G5",
+   "domain": "communication",
+   "label": "Addressing concerns",
+   "fail": "Dismisses a specific worry she raises without addressing it.",
+   "pass": "Responds honestly and sensitively to a specific concern she raises.",
+   "high": "Checks in on how she's feeling about the plan before moving forward, rather than only providing facts."
+  },
+  {
+   "id": "G6",
+   "domain": "professionalism",
+   "label": "Closing",
+   "fail": "Ends without confirming she understands what happens next.",
+   "pass": "Checks her understanding and confirms the next steps in the assessment clinic before proceeding.",
+   "high": "Offers ongoing support (e.g. a chaperone, a support leaflet, or a contact) through what may be an anxious wait for results."
+  }
+ ],
+ "performances": {
+  "fail": [
+   {
+    "speaker": "candidate",
+    "text": "Your mammogram showed an abnormality, we need to do more tests to see if it's cancer.",
+    "tags": [
+     {
+      "row": "G1",
+      "band": "fail"
+     },
+     {
+      "row": "G3",
+      "band": "fail"
+     }
+    ]
+   },
+   {
+    "speaker": "patient",
+    "text": "[Visibly frightened.] Oh no."
+   },
+   {
+    "speaker": "candidate",
+    "text": "Don't worry, it's probably fine.",
+    "tags": [
+     {
+      "row": "G5",
+      "band": "fail"
+     }
+    ]
+   },
+   {
+    "speaker": "candidate",
+    "text": "There's a mass with irregular margins on the mammogram, so we need further imaging and probably a core biopsy.",
+    "tags": [
+     {
+      "row": "G2",
+      "band": "fail"
+     }
+    ]
+   },
+   {
+    "speaker": "candidate",
+    "text": "Right, that's everything - the nurse will call you through shortly.",
+    "tags": [
+     {
+      "row": "G6",
+      "band": "fail"
+     }
+    ]
+   }
+  ],
+  "pass": [
+   {
+    "speaker": "candidate",
+    "text": "I know being called back can feel worrying - can I explain what this recall actually means?",
+    "tags": [
+     {
+      "row": "G1",
+      "band": "pass"
+     }
+    ]
+   },
+   {
+    "speaker": "patient",
+    "text": "Yes, please - I've been really anxious since the letter came."
+   },
+   {
+    "speaker": "candidate",
+    "text": "Your mammogram showed an area that needs a closer look, which is why you've been asked to come in today.",
+    "tags": [
+     {
+      "row": "G2",
+      "band": "pass"
+     }
+    ]
+   },
+   {
+    "speaker": "candidate",
+    "text": "It's worth knowing that most people who are recalled like this do not turn out to have cancer, though we do need to assess it properly to know for sure.",
+    "tags": [
+     {
+      "row": "G3",
+      "band": "pass"
+     }
+    ]
+   },
+   {
+    "speaker": "patient",
+    "text": "What will happen today?"
+   },
+   {
+    "speaker": "candidate",
+    "text": "You may have some extra mammogram pictures, an ultrasound scan, and possibly a small needle sample, often all in the same visit.",
+    "tags": [
+     {
+      "row": "G4",
+      "band": "pass"
+     }
+    ]
+   },
+   {
+    "speaker": "patient",
+    "text": "Will I get the results today?"
+   },
+   {
+    "speaker": "candidate",
+    "text": "Sometimes yes, but if a needle sample is taken, that can take a bit longer to come back - we'll let you know clearly either way before you leave.",
+    "tags": [
+     {
+      "row": "G5",
+      "band": "pass"
+     }
+    ]
+   },
+   {
+    "speaker": "candidate",
+    "text": "Does that make sense so far, and do you have any questions before we start?",
+    "tags": [
+     {
+      "row": "G6",
+      "band": "pass"
+     }
+    ]
+   }
+  ],
+  "high": [
+   {
+    "speaker": "candidate",
+    "text": "I imagine getting that recall letter felt quite frightening - how have you been feeling since?",
+    "tags": [
+     {
+      "row": "G1",
+      "band": "high"
+     }
+    ]
+   },
+   {
+    "speaker": "patient",
+    "text": "Honestly, I've barely slept, I've been assuming the worst."
+   },
+   {
+    "speaker": "candidate",
+    "text": "That's such a common reaction, and understandable. Your mammogram showed an area that needs a closer look - that's genuinely all we know at this point, nothing more specific than that yet.",
+    "tags": [
+     {
+      "row": "G2",
+      "band": "high"
+     }
+    ]
+   },
+   {
+    "speaker": "candidate",
+    "text": "I want to say clearly - most people who come back for assessment like this do not turn out to have cancer, but I also don't want to promise you an answer before we've actually looked properly, which is what today is for.",
+    "tags": [
+     {
+      "row": "G3",
+      "band": "high"
+     }
+    ]
+   },
+   {
+    "speaker": "patient",
+    "text": "What exactly happens today?"
+   },
+   {
+    "speaker": "candidate",
+    "text": "You'll likely have some further mammogram views and an ultrasound, and depending on what those show, possibly a small needle sample from the area - often all done in one visit, though not always.",
+    "tags": [
+     {
+      "row": "G4",
+      "band": "high"
+     }
+    ]
+   },
+   {
+    "speaker": "patient",
+    "text": "I'm terrified of the waiting if I don't get an answer today."
+   },
+   {
+    "speaker": "candidate",
+    "text": "That's completely understandable, and I don't want to pretend that wait is easy if it happens - we'll be as clear as possible today about what's been found and when you'll hear back, and there's support available if the wait feels hard.",
+    "tags": [
+     {
+      "row": "G5",
+      "band": "high"
+     }
+    ]
+   },
+   {
+    "speaker": "candidate",
+    "text": "Does all of that make sense, and is there anything else on your mind before we get started today?",
+    "tags": [
+     {
+      "row": "G6",
+      "band": "high"
+     }
+    ]
+   }
+  ]
+ },
+ "failures": [
+  {
+   "row": "G3",
+   "move": "Implying recall means cancer is likely.",
+   "consequence": "Causes disproportionate distress before any actual assessment has taken place, when most recalls are not cancer."
+  },
+  {
+   "row": "G5",
+   "move": "Offering blanket reassurance (\"probably fine\") rather than addressing her specific fear honestly.",
+   "consequence": "Can feel dismissive and may not actually reduce her anxiety if it doesn't address what she's specifically worried about."
+  },
+  {
+   "row": "G4",
+   "move": "Failing to explain that results might not be available the same day.",
+   "consequence": "Leaves her unprepared for a potentially anxious wait, which could otherwise be softened by clear expectation-setting."
+  }
+ ],
+ "recovery": [
+  {
+   "when": "You implied recall meant likely cancer",
+   "line": "I should be clearer - most people recalled like this don't turn out to have cancer, though we do need to check properly."
+  },
+  {
+   "when": "You gave only blanket reassurance",
+   "line": "Let me actually address what's specifically worrying you, rather than just saying it's probably fine."
+  }
+ ],
+ "knowledge": [
+  {
+   "fact": "The majority of women recalled for further assessment after routine breast screening do not have breast cancer.",
+   "source": "BCN"
+  },
+  {
+   "fact": "Assessment following an abnormal screening mammogram commonly includes further mammographic views, ultrasound, and needle biopsy, often performed in a single visit."
+  },
+  {
+   "fact": "Results are not always available on the same day as assessment, particularly if a needle biopsy sample requires laboratory processing."
+  }
+ ],
+ "recall": {
+  "think": "Recall isn't a diagnosis; assessment is needed.",
+  "say": "\"I can't promise an answer before proper assessment.\"",
+  "do": [
+   "Acknowledge her anxiety, then explain plainly",
+   "Give honest context: most recalls aren't cancer",
+   "Set expectations for assessment and any wait"
+  ],
+  "numbers": [
+   {
+    "value": "around 1 in 25",
+    "meaning": "women screened are recalled",
+    "source": "BCN"
+   },
+   {
+    "value": "3 in 4",
+    "meaning": "recalled women don't have cancer",
+    "source": "BCN"
+   },
+   {
+    "value": "a few weeks",
+    "meaning": "typically within a few weeks to the assessment appointment",
+    "source": "BCN"
+   }
+  ],
+  "trap": "Implying cancer is likely, or empty reassurance.",
+  "finish": "Clear explanation, honest statistics, realistic expectations."
+ },
+ "sources": [
+  {
+   "id": "ICBSE",
+   "name": "ICBSE Guide to the intercollegiate MRCS examination",
+   "version": "August 2021",
+   "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+   "supports": "Communication station format and structure, including timing"
+  },
+  {
+   "id": "BCN",
+   "name": "Breast Cancer Now: information on breast screening recall",
+   "version": "current, consulted 2026",
+   "url": "https://breastcancernow.org/about-breast-cancer/breast-screening/what-happens-after-breast-screening/being-recalled-for-more-tests",
+   "supports": "Recall statistics and the standard breast screening assessment pathway"
+  },
+  {
+   "id": "NG12",
+   "name": "NICE NG12: Suspected cancer: recognition and referral",
+   "version": "Published June 2015; last updated May 2025",
+   "url": "https://www.nice.org.uk/guidance/ng12",
+   "supports": "Assessment pathway following an abnormal screening finding"
+  }
+ ],
+ "partner": {
+  "opening": "Please explain this patient's screening recall and the assessment process to her. You have 7 minutes.",
+  "actorBrief": "You are Mrs Beaumont, 56, recalled after routine screening, with no symptoms yourself. You've been very anxious and have barely slept since receiving the recall letter, assuming the worst.",
+  "reveals": [
+   {
+    "trigger": "Candidate acknowledges your anxiety",
+    "finding": "You admit to barely sleeping and assuming the worst.",
+    "row": "G1"
+   },
+   {
+    "trigger": "Candidate explains recall statistics honestly, without over-promising",
+    "finding": "You feel somewhat reassured but still anxious about the wait.",
+    "row": "G3"
+   },
+   {
+    "trigger": "Candidate addresses your fear of not getting same-day results",
+    "finding": "You feel more prepared for the possibility of waiting.",
+    "row": "G5"
+   }
+  ],
+  "push": [
+   {
+    "question": "Does being recalled mean I probably have cancer?",
+    "row": "G3",
+    "expect": "Explain that most recalls are not cancer, while being honest that assessment is needed to know for certain."
+   },
+   {
+    "question": "Will I definitely know today?",
+    "row": "G4",
+    "expect": "Explain that results are sometimes available same-day, but not always, particularly if biopsy is needed."
+   }
+  ],
+  "curveballs": [
+   {
+    "prompt": "My mother died of breast cancer, so this feels especially frightening for me.",
+    "safeAnswer": "Acknowledge this personal context with genuine care, without letting it change the honest clinical information given, and offer additional support given her personal history.",
+    "row": "G1"
+   },
+   {
+    "prompt": "Can you just tell me now if you think it's cancer or not?",
+    "safeAnswer": "Be honest that this cannot be judged from the mammogram alone before proper assessment, avoiding both false reassurance and speculative alarm.",
+    "row": "G2"
+   }
+  ]
+ }
+}

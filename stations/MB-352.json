@@ -1,0 +1,498 @@
+{
+  "id": "MB-352",
+  "exam": "MRCS-B",
+  "title": "Phimosis and the request for circumcision",
+  "type": "applied-knowledge",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "Paediatric urology",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "BAUS: Tight foreskin (phimosis) patient information (dated March 2024; review due August 2026)",
+      "BAPS statement on non-therapeutic circumcision, endorsed by BAUS and BAPU (published 27 October 2025; updated 2 June 2026)",
+      "GMC: 0-18 years - guidance for all doctors (in effect from 15 October 2007)"
+    ],
+    "related": [
+      {
+        "id": "MB-328",
+        "why": "Another foreskin/genital emergency: paraphimosis and priapism"
+      },
+      {
+        "id": "MB-220",
+        "why": "Involving a child/young person in their own care, met again here"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Paediatric surgical outpatient clinic",
+    "role": "Core surgical trainee",
+    "scenario": "Adam Wilkes, 7, is brought by his mother because his foreskin does not retract. She is asking for circumcision.",
+    "task": "Discuss how you would assess him and approach the request with the examiner."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Physiological versus pathological first, then a gentle examination, then a discussion that includes the child.",
+    "trap": "Treating the child's age or the parent's request as itself an indication for circumcision.",
+    "firstMove": "\"Non-retractility is common at his age - I'd want to know if this is physiological or pathological.\""
+  },
+  "flow": [
+    "Physiological versus pathological phimosis",
+    "Focused history",
+    "Gentle examination",
+    "Management options",
+    "Involving Adam in the discussion"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-knowledge",
+      "label": "Physiological vs pathological phimosis",
+      "fail": "Assumes a non-retractile foreskin at 7 is automatically pathological and needs circumcision.",
+      "pass": "Distinguishes physiological non-retractility, common in young children, from pathological scarring.",
+      "high": "Adds that full retraction is often not possible in young children, and circumcision treats symptomatic/pathological disease.",
+      "source": "BAUS-PHIMOSIS"
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-skill",
+      "label": "Assessment",
+      "fail": "Takes no history of symptoms before offering a management plan.",
+      "pass": "Asks about pain, recurrent balanitis, urinary problems, previous infection, scarring and paraphimosis, and examines gently.",
+      "high": "Distinguishes phimosis from paraphimosis and looks specifically for BXO/lichen sclerosus."
+    },
+    {
+      "id": "G3",
+      "domain": "professionalism",
+      "label": "Not forcing retraction (safety-critical)",
+      "fail": "Forcibly retracts the foreskin to assess or treat it.",
+      "pass": "Examines gently and would not forcibly retract the foreskin.",
+      "high": "Explains forcible retraction is specifically advised against because it risks tearing and scarring.",
+      "source": "BAUS-PHIMOSIS"
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-knowledge",
+      "label": "Management options",
+      "fail": "Proceeds straight to circumcision because of the child's age or the parent's request.",
+      "pass": "Discusses conservative management where appropriate, and refers for specialist assessment if pathological phimosis or significant symptoms are present.",
+      "high": "Explains cultural or cosmetic circumcision is a different discussion from treating pathological phimosis, and the two should not be conflated."
+    },
+    {
+      "id": "G5",
+      "domain": "professionalism",
+      "label": "Involving the child",
+      "fail": "States only the parent's understanding and consent are needed.",
+      "pass": "Ensures Adam is appropriately involved in the discussion according to his age and understanding, alongside his mother.",
+      "high": "Explains this reflects considering the child's own views, not just parental consent.",
+      "source": "GMC-0-18"
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-knowledge",
+      "label": "Non-therapeutic requests",
+      "fail": "Agrees automatically to a non-therapeutic circumcision without further discussion.",
+      "pass": "Recognises that a non-therapeutic (cultural/cosmetic) request is different from treating pathological phimosis.",
+      "high": "Cites that current professional guidance addresses how to respond to such requests and any complications.",
+      "source": "BAUS-STATEMENT"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "Adam is 7. His mother is worried his foreskin doesn't retract and wants him circumcised. What are your thoughts?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "He's seven, so circumcision is needed - that's not normal at his age.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you examine him?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd forcibly retract the foreskin to see how bad it is.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          },
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What would you offer?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Straight to circumcision, since that's what she's asked for.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Would you speak to Adam about it?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "No, his mother's consent is all that's needed.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What about requests just for cultural or cosmetic reasons?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "That's fine, I'd go ahead the same way as any other circumcision.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "examiner",
+        "text": "Adam is 7. His mother is worried his foreskin doesn't retract and wants him circumcised. What are your thoughts?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Non-retractability is common at his age and doesn't automatically mean he needs circumcision - I'd want to know if it's physiological or pathological.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you assess him?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd ask about pain, recurrent balanitis, urinary problems, previous infection, scarring and paraphimosis, and examine gently.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Would you retract it to check?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "No, I wouldn't forcibly retract the foreskin.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What would you offer?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "If there's no pathology I'd discuss conservative management, and refer for specialist assessment if there is significant pathology.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Would you speak to Adam about it?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Yes, I'd involve him in the discussion appropriately for his age, alongside his mother.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What about a purely cultural or cosmetic request?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd address that as a distinct discussion from treating pathological phimosis.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "examiner",
+        "text": "Adam is 7. His mother is worried his foreskin doesn't retract and wants him circumcised. What are your thoughts?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Full retraction is often not possible at his age, so this is likely physiological; circumcision is for symptomatic or pathological disease, not this alone.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you assess him?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "History for pain, balanitis, urinary problems, scarring and paraphimosis, and I'd specifically look for BXO or lichen sclerosus and distinguish this from paraphimosis.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Would you retract it to check?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "No - forcible retraction is specifically advised against, since it risks tearing and scarring without benefit.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What would you offer?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Conservative management if there's no pathology; a cultural or cosmetic request is a separate conversation from treating pathological phimosis and shouldn't be conflated with it.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Would you speak to Adam about it?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Yes - his own views and understanding should be considered, not just his mother's consent.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What about a purely cultural or cosmetic request?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Current professional guidance specifically addresses how to respond to non-therapeutic requests and any complications from them.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G3",
+      "move": "Forcibly retracting the foreskin to assess or treat it.",
+      "consequence": "Risks tearing and scarring without evidence of benefit."
+    },
+    {
+      "row": "G1",
+      "move": "Treating age alone as an indication for circumcision.",
+      "consequence": "Physiological non-retractility is treated as pathology needlessly."
+    },
+    {
+      "row": "G5",
+      "move": "Treating parental consent as sufficient without involving the child.",
+      "consequence": "The child's own views and understanding are not considered."
+    },
+    {
+      "row": "G6",
+      "move": "Treating a non-therapeutic request the same as treatment of pathological phimosis.",
+      "consequence": "Blurs a cosmetic/cultural request with clinical treatment of disease."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "Asked if you'd retract the foreskin to check",
+      "line": "No - I'd examine gently and wouldn't force retraction."
+    },
+    {
+      "when": "Asked if the mother's consent is enough",
+      "line": "I'd also want to involve Adam himself, appropriate to his age and understanding."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Full foreskin retraction is often not possible before age 5, and in some children not until age 10; this is usually physiological.",
+      "source": "BAUS-PHIMOSIS"
+    },
+    {
+      "fact": "Forcible retraction of a child's foreskin should be avoided; it lacks evidence of benefit and risks scarring.",
+      "source": "BAUS-PHIMOSIS"
+    },
+    {
+      "fact": "Circumcision treats pathological/symptomatic phimosis (e.g. BXO, recurrent balanitis, paraphimosis), not physiological non-retractility.",
+      "source": "BAUS-PHIMOSIS"
+    },
+    {
+      "fact": "Children should be involved in decisions about their own care appropriate to their age and understanding, alongside parental consent.",
+      "source": "GMC-0-18"
+    },
+    {
+      "fact": "Non-therapeutic circumcision raises professional considerations distinct from treating pathological phimosis.",
+      "source": "BAUS-STATEMENT"
+    }
+  ],
+  "recall": {
+    "think": "Treating a normal childhood foreskin as a surgical problem.",
+    "say": "\"Physiological non-retractility - not an automatic indication for circumcision.\"",
+    "do": [
+      "Ask about pain, balanitis, paraphimosis, scarring",
+      "Examine gently, never force retraction",
+      "Involve the child in the discussion, not just the parent"
+    ],
+    "numbers": [
+      {
+        "value": "age 5-10",
+        "meaning": "Typical age range by which the foreskin becomes fully retractable; earlier non-retraction is usually physiological",
+        "source": "BAUS-PHIMOSIS"
+      }
+    ],
+    "trap": "Assuming a parental request for circumcision settles the matter without assessing or involving the child.",
+    "finish": "Conservative management or specialist referral for genuinely pathological phimosis; non-therapeutic requests handled as a distinct discussion."
+  },
+  "sources": [
+    {
+      "id": "BAUS-PHIMOSIS",
+      "name": "British Association of Urological Surgeons: Tight foreskin (phimosis)",
+      "version": "Dated March 2024; review due August 2026",
+      "url": "https://www.baus.org.uk/patients/conditions/13/tight_foreskin_phimosis/",
+      "supports": "Physiological non-retractility in young children; forcible retraction advised against; circumcision for pathological disease"
+    },
+    {
+      "id": "BAUS-STATEMENT",
+      "name": "British Association of Paediatric Surgeons statement on non-therapeutic circumcision, endorsed by BAUS and BAPU",
+      "version": "Published 27 October 2025; updated 2 June 2026",
+      "url": "https://www.baus.org.uk/professionals/baus_business/publications/93/nontherapeutic_circumcision/",
+      "supports": "Distinguishing non-therapeutic circumcision from treatment of pathological phimosis"
+    },
+    {
+      "id": "GMC-0-18",
+      "name": "General Medical Council: 0-18 years - guidance for all doctors",
+      "version": "In effect from 15 October 2007",
+      "url": "https://www.gmc-uk.org/professional-standards/the-professional-standards/0-18-years/about--the-guidance",
+      "supports": "Involving children in decisions about their own care appropriate to age and understanding"
+    }
+  ],
+  "partner": {
+    "opening": "Adam, 7, is brought by his mother because his foreskin doesn't retract. She is asking for circumcision. How would you assess him and approach this?",
+    "reveals": [
+      {
+        "trigger": "Candidate asks about symptoms",
+        "finding": "No pain, no recurrent infections, no ballooning, no episodes of paraphimosis.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Candidate asks to examine gently",
+        "finding": "The foreskin is supple, unscarred, and retracts partially without force.",
+        "row": "G1"
+      },
+      {
+        "trigger": "Candidate asks Adam directly",
+        "finding": "Adam says it doesn't bother him and he doesn't understand why he needs an operation.",
+        "row": "G5"
+      }
+    ],
+    "push": [
+      {
+        "question": "Would you retract it further to check?",
+        "row": "G3",
+        "expect": "No - gentle examination only, no forcible retraction."
+      },
+      {
+        "question": "Is circumcision reasonable since the mother is worried?",
+        "row": "G4",
+        "expect": "Not for physiological non-retractility alone; discuss conservative management and reassurance."
+      },
+      {
+        "question": "Does Adam need to be part of this discussion?",
+        "row": "G5",
+        "expect": "Yes, appropriate to his age and understanding, alongside his mother."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "On examination there is whitish scarring around the tip, typical of BXO.",
+        "safeAnswer": "This supports pathological phimosis; refer for specialist assessment rather than reassurance alone.",
+        "row": "G2"
+      },
+      {
+        "prompt": "The mother says this is for religious or cultural reasons, not a medical problem.",
+        "safeAnswer": "Recognise this as a non-therapeutic request, distinct from treating pathological phimosis, and respond accordingly.",
+        "row": "G6"
+      },
+      {
+        "prompt": "Adam says he doesn't want the operation.",
+        "safeAnswer": "His views matter and should be considered alongside his mother's; this doesn't automatically end the discussion but must be taken into account.",
+        "row": "G5"
+      }
+    ]
+  }
+}

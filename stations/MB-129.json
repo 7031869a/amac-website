@@ -1,0 +1,614 @@
+{
+  "id": "MB-129",
+  "exam": "MRCS-B",
+  "title": "History: intermittent claudication",
+  "type": "history",
+  "header": {
+    "domain": "Applied Skills",
+    "contentArea": "Communication skills in giving and receiving information and history taking",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "signalMinutes": 6,
+    "guidelineVersions": [
+      "NICE CG147 (updated Dec 2020; minor changes Jul 2026)",
+      "NICE NG238 (Dec 2023)",
+      "NICE TA210 (Dec 2010)",
+      "ESVS PAD and claudication guideline (2024)"
+    ],
+    "related": [
+      {
+        "id": "MB-172 Ulcer examination",
+        "why": "Arterial ulcers and tissue loss"
+      },
+      {
+        "id": "MB-168 Peripheral arterial examination",
+        "why": "Pulses, Buerger's test and ABPI"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Vascular outpatient clinic",
+    "role": "Core surgical trainee",
+    "scenario": "Mr Keith Brennan, 66, has been referred by his GP with pain in his right calf when he walks.",
+    "task": "Take a focused history. You will be stopped at 6 minutes to summarise your history, then asked about management."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Is it claudication, is the limb threatened, and what are his risk factors?",
+    "trap": "Missing rest pain or tissue loss, which changes the urgency completely.",
+    "firstMove": "\"How far can you walk before the pain stops you?\""
+  },
+  "flow": [
+    "Open and listen",
+    "Characterise the pain",
+    "Rest pain and tissue loss",
+    "Spinal and other causes",
+    "Risk factors",
+    "Impact and concerns",
+    "At 6 minutes: summarise",
+    "Management"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "communication",
+      "label": "Opening and rapport",
+      "fail": "Opens with a list of closed questions.",
+      "pass": "Introduces, confirms identity, asks an open question and listens.",
+      "high": "Picks up his cue about his dog walks and returns to it when asking about impact."
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-skill",
+      "label": "Characterising the pain",
+      "fail": "Records 'leg pain on walking' without distance or relief.",
+      "pass": "Site, walking distance, relief by rest, time to relief, reproducibility, duration and progression.",
+      "high": "Asks whether standing still relieves it, and whether hills or pace shorten the distance, to confirm arterial claudication."
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-skill",
+      "label": "Limb-threatening features (safety-critical)",
+      "fail": "Doesn't ask about rest pain or skin breakdown.",
+      "pass": "Asks about night pain in the foot, relief by hanging the leg down, ulcers, colour change and gangrene.",
+      "high": "States that rest pain or tissue loss is chronic limb-threatening ischaemia needing urgent vascular assessment, not an exercise programme.",
+      "source": "CG147"
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-skill",
+      "label": "Differential diagnosis",
+      "fail": "Doesn't consider spinal stenosis.",
+      "pass": "Asks about back pain, numbness, relief by sitting or bending forward, and pain on standing still.",
+      "high": "Contrasts neurogenic claudication (relief by sitting or stooping) with arterial (relief by standing still), and asks about hip pain.",
+      "source": "BL"
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-skill",
+      "label": "Risk factors",
+      "fail": "Asks 'do you smoke?' and stops.",
+      "pass": "Smoking quantified, diabetes, blood pressure, cholesterol and statin use, heart disease, stroke, family history.",
+      "high": "Calculates pack-years, and asks why he stopped his statin, which changes the plan."
+    },
+    {
+      "id": "G6",
+      "domain": "communication",
+      "label": "Impact, ideas and concerns",
+      "fail": "Doesn't ask how it affects him.",
+      "pass": "Asks about the effect on daily life, what he thinks is wrong, what worries him and what he hopes for.",
+      "high": "Names his fear of amputation and explains that most people with claudication don't lose their leg, if he stops smoking."
+    },
+    {
+      "id": "G7",
+      "domain": "communication",
+      "label": "Summary at the signal",
+      "fail": "Retells the history in order with no diagnosis.",
+      "pass": "Concise summary: claudication distance, key negatives (no rest pain or tissue loss) and risk factors.",
+      "high": "Leads with 'stable right calf claudication without limb-threatening features', then the modifiable risk factors."
+    },
+    {
+      "id": "G8",
+      "domain": "clinical-knowledge",
+      "label": "Best medical therapy",
+      "fail": "Offers an operation and doesn't mention smoking or statins.",
+      "pass": "Stop-smoking support; atorvastatin 80 mg; clopidogrel; diabetes and blood pressure control.",
+      "high": "Aims for LDL 2.0 mmol/L or less, and offers a lower atorvastatin dose because of his previous statin muscle aches.",
+      "source": "NG238"
+    },
+    {
+      "id": "G9",
+      "domain": "clinical-knowledge",
+      "label": "Exercise and revascularisation",
+      "fail": "Refers straight for angioplasty.",
+      "pass": "Offers supervised exercise to everyone; NICE suggests 2 hours a week for 3 months, walking to maximal pain.",
+      "high": "Angioplasty only after failed exercise, reinforced risk-factor advice and suitable imaging; naftidrofuryl if exercise fails and he prefers not to be referred, stopped without benefit by 3–6 months.",
+      "source": "CG147"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "candidate",
+        "text": "You've got leg pain. Do you smoke?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          },
+          {
+            "row": "G2",
+            "band": "fail"
+          },
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Is it worse when you walk? Right.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          },
+          {
+            "row": "G4",
+            "band": "fail"
+          },
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop there and summarise your history."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Mr Brennan is 66 and gets leg pain when he walks. He smokes.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you manage him?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Refer for an angiogram and angioplasty to open the artery.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "fail"
+          },
+          {
+            "row": "G9",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "candidate",
+        "text": "Hello, I'm Dr Shah, one of the surgical trainees. Can I check your name and date of birth? Tell me about the pain.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Where is it? How far can you walk before it starts? What happens when you stop, and how quickly does it go? Same distance each time? How long, and is it getting worse?",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Do you get pain in your foot at night or at rest? Any sores, ulcers or colour change in your toes?",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Any back pain or numbness in your legs? Does sitting down or bending forward help more than standing still?",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "How much do you smoke, and for how long? Any diabetes, high blood pressure or cholesterol? On a statin? Any heart problems or strokes, or in the family?",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "How is this affecting you? What do you think is going on? Is anything worrying you? What are you hoping for?",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop there and summarise your history."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Mr Brennan is 66, with eight months of right calf pain after about 200 yards, relieved by standing still for two minutes and getting worse. No rest pain, ulcers or spinal symptoms. He smokes 20 a day and has type 2 diabetes and hypertension; he stopped simvastatin. This is right-sided intermittent claudication.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you manage him?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Best medical therapy: stop-smoking support, atorvastatin 80 mg, clopidogrel, and good diabetes and blood pressure control. And a supervised exercise programme: 2 hours a week for 3 months, walking to maximal pain.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "pass"
+          },
+          {
+            "row": "G9",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "candidate",
+        "text": "Hello, I'm Dr Shah, one of the surgical trainees. Can I check your name and date of birth? Tell me what's been happening. [Hears he can't walk the dog.] I'll come back to that.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Does standing still ease it, or do you need to sit? Is it worse up hills or walking fast?",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Any pain in your foot at night that makes you hang your leg out of bed? Any sores or black areas on your toes? Those would make this much more urgent.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Does it come on just standing, or ease only if you sit or lean on a trolley? That would point to your back rather than your arteries. Any hip pain?",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Twenty a day for 45 years: that's 45 pack-years. Why did you stop the simvastatin?",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "You said the dog walks have stopped. Are you worried about losing your leg? Most people with this don't, especially if they stop smoking.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop there and summarise your history."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Mr Brennan, 66, has stable right calf claudication without limb-threatening features: pain at about 200 yards, eased by standing still, for eight months. No rest pain, tissue loss or spinal features. His modifiable risk factors are 45 pack-years of current smoking, type 2 diabetes, hypertension, and no statin since muscle aches.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you manage him?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Stop-smoking support first. A statin aiming for LDL of 2.0 or less: atorvastatin 80 mg, or a lower dose given his aches. Clopidogrel, and diabetes and blood pressure control. Then supervised exercise, 2 hours a week for 3 months. Angioplasty only if that fails, with risk factors addressed and suitable imaging. If exercise doesn't help and he prefers not to be referred for intervention, I'd consider naftidrofuryl, stopped if no benefit by 3 to 6 months.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "high"
+          },
+          {
+            "row": "G9",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G3",
+      "move": "Not asking about rest pain, ulcers or gangrene.",
+      "consequence": "Safety-critical: chronic limb-threatening ischaemia is missed and he is sent for exercise instead of urgent vascular assessment."
+    },
+    {
+      "row": "G4",
+      "move": "Not asking about back pain or relief by sitting.",
+      "consequence": "Spinal stenosis is mistaken for arterial disease."
+    },
+    {
+      "row": "G5",
+      "move": "Recording 'smoker' without quantity or statin history.",
+      "consequence": "Misses the main modifiable risks and the reason he stopped his statin."
+    },
+    {
+      "row": "G9",
+      "move": "Referring straight for angioplasty.",
+      "consequence": "Skips supervised exercise, which NICE offers to everyone with claudication first."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You forgot to ask about rest pain",
+      "line": "Before we finish, do you ever get pain in your foot at night, or any sores on your feet or toes?"
+    },
+    {
+      "when": "He asks if he'll lose his leg",
+      "line": "Most people with this kind of pain don't. Stopping smoking and exercising give you the best chance."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Offer supervised exercise to all (1.5.1); consider 2 hours a week for 3 months, to maximal pain (1.5.2).",
+      "source": "CG147"
+    },
+    {
+      "fact": "Angioplasty only after risk-factor advice, failed supervised exercise and suitable imaging (1.5.3). Naftidrofuryl: review at 3–6 months (1.5.9). Cilostazol not recommended (1.5.10).",
+      "source": "CG147"
+    },
+    {
+      "fact": "Atorvastatin 80 mg for people with CVD (1.7.2), lower if side effects or interactions (1.7.3); target LDL 2.0 mmol/L or less (1.7.1).",
+      "source": "NG238"
+    },
+    {
+      "fact": "Clopidogrel is an option for peripheral arterial disease (1.1).",
+      "source": "TA210"
+    },
+    {
+      "fact": "Clopidogrel dose: 75 mg once daily.",
+      "source": "SMPC"
+    },
+    {
+      "fact": "ABPI 0.90 or less confirms PAD.",
+      "source": "ESVS24"
+    },
+    {
+      "fact": "Rivaroxaban plus aspirin is an option for symptomatic PAD at high risk of ischaemic events (CG147 1.2.3).",
+      "source": "CG147"
+    }
+  ],
+  "recall": {
+    "think": "Is the limb threatened? Rest pain or tissue loss means urgent vascular review.",
+    "say": "\"Stable claudication without rest pain or tissue loss.\"",
+    "do": [
+      "Walking distance and what relieves it",
+      "Rest pain, ulcers, gangrene; spinal symptoms",
+      "Quantify smoking; statin history"
+    ],
+    "numbers": [
+      {
+        "value": "2 h/week × 3 months",
+        "meaning": "supervised exercise programme",
+        "source": "CG147"
+      },
+      {
+        "value": "80 mg",
+        "meaning": "atorvastatin for secondary prevention",
+        "source": "NG238"
+      },
+      {
+        "value": "75 mg",
+        "meaning": "clopidogrel once daily",
+        "source": "SMPC"
+      }
+    ],
+    "trap": "Angioplasty first.",
+    "finish": "Best medical therapy and supervised exercise; intervention only if these fail."
+  },
+  "sources": [
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format: 9-minute stations with 1 minute's reading; introduce yourself and confirm identity at every station"
+    },
+    {
+      "id": "CG147",
+      "name": "NICE CG147: Peripheral arterial disease: diagnosis and management",
+      "version": "Published 8 August 2012; last updated 11 December 2020; minor changes July 2026",
+      "url": "https://www.nice.org.uk/guidance/cg147",
+      "supports": "Secondary prevention: tobacco dependence, diet and exercise, lipid modification and statins, diabetes and blood pressure in line with NICE guidance (1.2.1); rivaroxaban plus aspirin as an option for people with symptomatic PAD at high risk of ischaemic events (1.2.3); clopidogrel as an option (1.2.4); ABPI measurement (1.3.3); duplex ultrasound as first-line imaging when revascularisation is considered (1.4.1); offer supervised exercise to all with claudication (1.5.1); consider a programme of 2 hours a week for 3 months, exercising to maximal pain (1.5.2); angioplasty only when risk factor advice reinforced, supervised exercise has failed and imaging confirms suitability (1.5.3); bypass for severe lifestyle-limiting claudication only if angioplasty unsuccessful or unsuitable (1.5.7); consider naftidrofuryl only if supervised exercise has failed and the person prefers not to be referred for revascularisation, stopped if no benefit after 3 to 6 months (1.5.9); cilostazol not recommended (1.5.10); critical limb ischaemia assessed by a vascular MDT (1.6.1)"
+    },
+    {
+      "id": "NG238",
+      "name": "NICE NG238: Cardiovascular disease: risk assessment and reduction, including lipid modification",
+      "version": "Published 14 December 2023; minor changes October 2025",
+      "url": "https://www.nice.org.uk/guidance/ng238",
+      "supports": "Secondary prevention target LDL cholesterol 2.0 mmol/L or less, or non-HDL 2.6 mmol/L or less (1.7.1); offer atorvastatin 80 mg to people with CVD whatever their cholesterol (1.7.2); lower dose if drug interactions, high risk of adverse effects or patient preference (1.7.3); don't delay statins (1.7.4)"
+    },
+    {
+      "id": "TA210",
+      "name": "NICE TA210: Clopidogrel and modified-release dipyridamole for the prevention of occlusive vascular events",
+      "version": "Published 15 December 2010",
+      "url": "https://www.nice.org.uk/guidance/ta210",
+      "supports": "Clopidogrel recommended as an option to prevent occlusive vascular events in people with peripheral arterial disease (1.1); least costly licensed preparation (1.4)"
+    },
+    {
+      "id": "SMPC",
+      "name": "Clopidogrel (Plavix) summary of product characteristics, EMA product information",
+      "version": "Product information last updated 14 July 2025",
+      "url": "https://www.ema.europa.eu/en/medicines/human/EPAR/plavix",
+      "supports": "Established peripheral arterial disease: single daily dose of 75 mg"
+    },
+    {
+      "id": "BL",
+      "name": "Bailey & Love's Short Practice of Surgery (O'Connell, McCaskie, Sayers, eds)",
+      "version": "28th edition, 2023",
+      "url": "https://www.routledge.com/Bailey--Loves-Short-Practice-of-Surgery---28th-Edition/OConnell-McCaskie-Sayers/p/book/9780367548117",
+      "supports": "Neurogenic claudication from lumbar spinal stenosis: relief by sitting or flexing the spine, versus vascular claudication relieved by standing still"
+    },
+    {
+      "id": "ESVS24",
+      "name": "Nordanstig J et al. European Society for Vascular Surgery (ESVS) 2024 Clinical Practice Guidelines on the Management of Asymptomatic Lower Limb Peripheral Arterial Disease and Intermittent Claudication. Eur J Vasc Endovasc Surg 2024;67(1):9–96",
+      "version": "2024",
+      "url": "https://www.ejves.com/article/S1078-5884(23)00741-4/fulltext",
+      "supports": "Examine femoral, popliteal, posterior tibial and dorsalis pedis pulses bilaterally, plus brachial pulses and the abdominal aorta (3.1.2.1); arterial bruits increase the likelihood of PAD (3.1.2.2); Table 6: ABI 0.90 or less confirms PAD; post-exercise ABI drop of 20% or more confirms PAD; ABI 1.40 or more with suspected PAD: use toe brachial index or other tests; Recommendations 9 and 11"
+    }
+  ],
+  "partner": {
+    "opening": "Please take a focused history from Mr Brennan. I'll stop you at 6 minutes to summarise.",
+    "actorBrief": "You are Keith Brennan, 66, a retired lorry driver. Opening line: \"It's my right calf, doctor. It cramps up when I walk.\" Emotional state: gruff, worried underneath. Early cue: \"I can't even walk the dog to the park now.\" Release other facts only when asked (see reveals). Hidden concern: your brother-in-law lost a leg last year; say so only if asked what worries you. Expectation: \"an operation to unblock it\".",
+    "reveals": [
+      {
+        "trigger": "Asks about distance and relief",
+        "finding": "\"About 200 yards, less up a hill. I stand still for a couple of minutes and it goes.\" Same distance each time.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Asks about duration and progression",
+        "finding": "Eight months; the distance used to be about 400 yards.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Asks about night pain, ulcers or colour change",
+        "finding": "No pain at rest or at night. No sores. Feet a bit cold.",
+        "row": "G3"
+      },
+      {
+        "trigger": "Asks about back pain or relief by sitting",
+        "finding": "Occasional low back ache, but the calf pain goes when he stands still; sitting makes no difference. No numbness.",
+        "row": "G4"
+      },
+      {
+        "trigger": "Asks about smoking",
+        "finding": "20 a day since he was 21 (45 years). Still smoking.",
+        "row": "G5"
+      },
+      {
+        "trigger": "Asks about other conditions and medicines",
+        "finding": "Type 2 diabetes on metformin; hypertension on amlodipine. Stopped simvastatin two years ago because of aching muscles. No angina or stroke. Father had a heart attack at 60.",
+        "row": "G5"
+      },
+      {
+        "trigger": "Asks what worries him",
+        "finding": "\"My brother-in-law had his leg off last year.\"",
+        "row": "G6"
+      },
+      {
+        "trigger": "At 6 minutes",
+        "finding": "Say: \"Please stop there and summarise your history.\"",
+        "row": "G7"
+      }
+    ],
+    "push": [
+      {
+        "question": "What is your diagnosis, and what is the main differential?",
+        "row": "G4",
+        "expect": "Right calf intermittent claudication (probably femoropopliteal disease); spinal stenosis."
+      },
+      {
+        "question": "How would you manage him?",
+        "row": "G8",
+        "expect": "Smoking cessation, atorvastatin 80 mg (lower dose if intolerant), clopidogrel, diabetes and BP control."
+      },
+      {
+        "question": "When would you offer angioplasty?",
+        "row": "G9",
+        "expect": "Only if supervised exercise hasn't helped, risk-factor advice has been reinforced and imaging confirms suitability."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "He now has pain in his right foot every night, eased by hanging it out of bed, and a sore on his toe.",
+        "safeAnswer": "Chronic limb-threatening ischaemia: urgent vascular assessment by the MDT for revascularisation, not an exercise programme.",
+        "row": "G3"
+      },
+      {
+        "prompt": "His ABPI is 0.62 on the right.",
+        "safeAnswer": "An ABPI of 0.62 confirms peripheral arterial disease (0.90 or less), consistent with claudication; duplex ultrasound first if revascularisation is being considered.",
+        "row": "G7"
+      },
+      {
+        "prompt": "\"Can't I just have tablets for the pain in my calf?\"",
+        "safeAnswer": "Supervised exercise works best. Naftidrofuryl is an option only if exercise hasn't helped and he doesn't want intervention; stop it if no benefit by 3–6 months.",
+        "row": "G9"
+      },
+      {
+        "prompt": "The pain comes on standing and eases only when he sits or bends forward.",
+        "safeAnswer": "Suggests neurogenic claudication from lumbar spinal stenosis: still check the pulses and ABPI, and assess the spine.",
+        "row": "G4"
+      }
+    ]
+  }
+}

@@ -1,0 +1,460 @@
+{
+  "id": "MB-307",
+  "exam": "MRCS-B",
+  "title": "Taking blood cultures",
+  "type": "procedural",
+  "header": {
+    "domain": "Applied Skills",
+    "contentArea": "Clinical and procedural skills: infection",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "UK SMI S 12 Sepsis and systemic or disseminated infections (issue 1.1, April 2025)",
+      "DH Saving Lives: Taking blood cultures – a summary of best practice (revised 2010)",
+      "NICE NG253 Suspected sepsis in people aged 16 or over (November 2025, updated September 2026)"
+    ],
+    "related": [
+      {
+        "id": "MB-142",
+        "why": "Aseptic technique"
+      },
+      {
+        "id": "MB-163",
+        "why": "Escalating a deteriorating postoperative patient"
+      },
+      {
+        "id": "MB-178",
+        "why": "Handing over a septic patient"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Surgical ward, with a venepuncture manikin arm",
+    "role": "Core surgical trainee on call",
+    "scenario": "Mr Colin Tranter, 72, is day 2 after an emergency laparotomy. He has a temperature of 38.8°C, heart rate 118 and blood pressure 104/66. The nurse has asked you to see him. Blood culture bottles, a winged collection set, chlorhexidine-alcohol swabs, gloves, a tourniquet and a sharps bin are provided.",
+    "task": "Take blood cultures from the manikin arm, talking the examiner through each step, and answer questions."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Sepsis first, fresh stab, clean skin and bottles, fill properly, right order, send fast.",
+    "trap": "Delaying antibiotics to get cultures, or touching the vein again after cleaning.",
+    "firstMove": "\"He may be septic: I'll take cultures now so antibiotics aren't delayed.\""
+  },
+  "flow": [
+    "Sepsis and consent",
+    "Choose the site",
+    "Clean hands and skin",
+    "Prepare bottles",
+    "Collect and fill",
+    "Label, document, send"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "professionalism",
+      "label": "Sepsis priority and consent",
+      "fail": "Takes cultures but ignores his sepsis, or delays antibiotics for them.",
+      "pass": "Confirms identity and allergies, explains and consents; recognises possible sepsis: senior review and, if high risk, antibiotics within 1 hour.",
+      "high": "Takes cultures first without delaying antibiotics; thinks about the source: anastomotic leak, chest, wound, urine, lines.",
+      "source": "NG253"
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-skill",
+      "label": "Site",
+      "fail": "Samples from the existing cannula or the femoral vein.",
+      "pass": "Fresh venepuncture of a peripheral vein, not an existing cannula or above a drip; identifies the vein before cleaning.",
+      "high": "If line infection is suspected, takes cultures from the line and a peripheral vein, peripheral first.",
+      "source": "S12"
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-skill",
+      "label": "Hands and skin (safety-critical)",
+      "fail": "Doesn't disinfect the skin, or palpates the vein again after cleaning.",
+      "pass": "Hand hygiene; cleans the skin with 2% chlorhexidine in 70% isopropyl alcohol and lets it dry; clean gloves; doesn't palpate again.",
+      "high": "Explains skin flora cause false positives and unnecessary antibiotics; contamination target below 3%.",
+      "source": "DH"
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-skill",
+      "label": "Bottles",
+      "fail": "Inoculates bottles without cleaning the tops.",
+      "pass": "Checks expiry; removes caps; cleans tops with chlorhexidine-alcohol and lets them dry; marks fill lines; doesn't cover barcodes.",
+      "high": "Uses the adapter only with a winged set; winged set: aerobic bottle first; needle and syringe: anaerobic first.",
+      "source": "DH"
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-knowledge",
+      "label": "Volume and number",
+      "fail": "Takes one set, or underfills the bottles.",
+      "pass": "Two sets (four bottles) from separate venepunctures, about 10 ml per bottle, 20–30 ml per set; cultures before other tubes.",
+      "high": "Volume is the biggest factor in yield, about 3% more per ml; three sets over 24 hours if endocarditis is suspected.",
+      "source": "S12"
+    },
+    {
+      "id": "G6",
+      "domain": "professionalism",
+      "label": "Label, document, send",
+      "fail": "Leaves bottles on the ward or puts them in the fridge.",
+      "pass": "Sharps disposed; site dressed; labels at the bedside; documents date, time, site and indication; sends promptly.",
+      "high": "On the analyser within 4 hours, never refrigerated; records antibiotics already given on the request.",
+      "source": "S12"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "candidate",
+        "text": "I'll take the cultures first; antibiotics can wait until the results are back.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Draws blood from the existing cannula.]",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Wipes the skin, then feels for the vein again with a gloved finger.]",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Pierces the bottle tops without cleaning them.]",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Puts about 3 ml in each bottle; one set only.]",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Puts the bottles in the ward fridge for the morning.]",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "candidate",
+        "text": "Mr Tranter, can I check your name and date of birth, and any allergies? I'd like to take some blood to look for infection. Is that all right? [To examiner:] He may be septic, so I'd ask for senior review and, if he's high risk, antibiotics within the hour.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Chooses a vein in the other arm, away from the cannula, and identifies it before cleaning.]",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Hand hygiene; cleans the skin with 2% chlorhexidine in 70% alcohol; lets it dry; puts on clean gloves.] I won't touch the site again.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Checks expiry, removes the caps, cleans the tops and lets them dry; marks the 10 ml fill lines.]",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Inserts the winged needle and fills each bottle to about 10 ml.] Two sets in total, the second from a separate venepuncture site, and cultures before any other tubes.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Disposes of sharps, dresses the site, labels at the bedside.] I'll document date, time, site and indication, and send them straight to the lab.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "candidate",
+        "text": "I'll take cultures now, but not at the expense of antibiotics within the hour. Could this be a leak, chest, wound or urine? I'll look for the source.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "He has a central line. If I suspected line infection, I'd take one set from the line and one peripherally, peripheral first.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Skin flora are the usual contaminants. False positives mean unnecessary antibiotics; we aim for contamination below 3%.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "With the winged set I fill the aerobic bottle first, because the tubing contains air. With a syringe I'd fill the anaerobic first.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Volume matters most: each extra ml adds about 3% to the yield. If I suspected endocarditis, I'd take three sets over 24 hours.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "They need to be on the analyser within 4 hours, never in the fridge. I'll note on the form that he's had antibiotics if he has.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G1",
+      "move": "Delaying antibiotics to wait for cultures.",
+      "consequence": "Safety-critical: delay increases the risk of death in high-risk sepsis."
+    },
+    {
+      "row": "G3",
+      "move": "Palpating the vein again after cleaning.",
+      "consequence": "Contaminates the site with skin flora: a false positive and unnecessary treatment."
+    },
+    {
+      "row": "G5",
+      "move": "Underfilling bottles or taking one set.",
+      "consequence": "False negatives, and contaminants can't be told from true bacteraemia."
+    },
+    {
+      "row": "G2",
+      "move": "Sampling from an existing cannula.",
+      "consequence": "Higher contamination and a misleading result."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You touched the site after cleaning",
+      "line": "I've touched the site, so I'll clean it again and let it dry."
+    },
+    {
+      "when": "Asked which bottle first",
+      "line": "Winged set: aerobic first. Syringe: anaerobic first."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Skin and bottle tops: 2% chlorhexidine in 70% isopropyl alcohol, allowed to dry; don't palpate after cleaning.",
+      "source": "DH"
+    },
+    {
+      "fact": "Winged set: aerobic bottle first; needle and syringe: anaerobic first; adapter caps only with winged sets.",
+      "source": "DH"
+    },
+    {
+      "fact": "Adults: 20–30 ml per set; 2 sets for most patients; 3 sets over 24 h for endocarditis.",
+      "source": "S12"
+    },
+    {
+      "fact": "Contamination target below 3%; bottles on the analyser within 4 h, not refrigerated.",
+      "source": "S12"
+    },
+    {
+      "fact": "High-risk sepsis: IV antibiotics within 1 hour.",
+      "source": "NG253"
+    }
+  ],
+  "recall": {
+    "think": "Sepsis after laparotomy: anastomotic leak until proven otherwise.",
+    "say": "\"Cultures now, antibiotics within the hour.\"",
+    "do": [
+      "Fresh peripheral stab",
+      "Chlorhexidine-alcohol, dry, no touch",
+      "Two sets, about 10 ml per bottle"
+    ],
+    "numbers": [
+      {
+        "value": "20–30 ml",
+        "meaning": "blood per set in adults",
+        "source": "S12"
+      },
+      {
+        "value": "< 3%",
+        "meaning": "contamination target",
+        "source": "S12"
+      },
+      {
+        "value": "4 h",
+        "meaning": "maximum time to the analyser",
+        "source": "S12"
+      }
+    ],
+    "trap": "Delaying antibiotics to get cultures.",
+    "finish": "Documented, sent promptly, source sought, antibiotics given."
+  },
+  "sources": [
+    {
+      "id": "S12",
+      "name": "UK Health Security Agency. UK Standards for Microbiology Investigations S 12: Sepsis and systemic or disseminated infections",
+      "version": "Issue 1.1, 24 April 2025 (replaced SMI B 37, withdrawn August 2024)",
+      "url": "https://www.rcpath.org/static/3f51b8e5-1ebe-469d-a79f3a3323bfaec9/uk-smi-s-12i1-1-sepsis-and-systemic-or-disseminated-infection-april-2025-pdf.pdf",
+      "supports": "Volume the most significant factor, about 3% more yield per ml; adults 20–30 ml per set, usually 10 ml per bottle; 2 sets for most patients; 3 sets over 24 h for endocarditis; contamination target below 3%; peripheral venepuncture preferred to catheters; inoculate culture bottles before other tests; collect before antimicrobials where possible without significantly delaying them; load on analyser within 4 h; do not refrigerate; 2 consecutive sets from 2 separate venepuncture sites per 24 h; with a central line, line and separate peripheral site, peripheral first; adapters not recommended without winged sets; if volume insufficient, inoculate the aerobic bottle first; collection following DH guidance (Taking blood cultures, cited as DH 2011)"
+    },
+    {
+      "id": "DH",
+      "name": "Department of Health. Saving Lives: Taking blood cultures – a summary of best practice",
+      "version": "revised 2010 (cited in UK SMI S 12 as DH 2011)",
+      "url": "https://webarchive.nationalarchives.gov.uk/ukgwa/20120118164404/http://hcai.dh.gov.uk/files/2011/03/Document_Blood_culture_FINAL_100826.pdf",
+      "supports": "Fresh venepuncture, not existing cannulae; line and peripheral cultures with peripheral first for suspected line infection; avoid femoral vein; identify vein before disinfecting; 2% chlorhexidine in 70% isopropyl alcohol for skin and bottle tops, allowed to dry; do not palpate after disinfection; clean gloves; don't cover barcodes; adapter caps only with winged sets; winged set aerobic first, syringe anaerobic first; blood cultures before other tubes; document indication, time and site"
+    },
+    {
+      "id": "NG253",
+      "name": "NICE NG253. Suspected sepsis in people aged 16 or over: recognition, assessment and early management",
+      "version": "Published 19 November 2025; last updated 23 September 2026",
+      "url": "https://www.nice.org.uk/guidance/ng253",
+      "supports": "High risk (NEWS2 7 or more with suspected infection): venous blood tests including blood culture (1.8.2); broad-spectrum IV antibiotics within 1 hour (1.8.3)"
+    },
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format: 9 minutes with 1 minute's reading; examiner-led questioning in applied knowledge stations"
+    }
+  ],
+  "partner": {
+    "opening": "Mr Tranter has a temperature of 38.8 and a heart rate of 118. Please take blood cultures from this arm, talking me through it.",
+    "reveals": [
+      {
+        "trigger": "Candidate asks about allergies and observations",
+        "finding": "No allergies. RR 24, SpO2 94% on air, new confusion since this morning. NEWS2 10 (temperature 1, heart rate 2, systolic BP 1, respiratory rate 2, SpO2 1, new confusion 3).",
+        "row": "G1"
+      },
+      {
+        "trigger": "Candidate asks about lines",
+        "finding": "Peripheral cannula in the left forearm; right internal jugular central line inserted in theatre.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Candidate inserts the needle",
+        "finding": "Say: \"Blood flashes back into the tubing.\"",
+        "row": "G4"
+      }
+    ],
+    "push": [
+      {
+        "question": "Why not sample from his cannula?",
+        "row": "G2",
+        "expect": "Higher contamination; use a fresh peripheral stab."
+      },
+      {
+        "question": "Which bottle first, and why?",
+        "row": "G4",
+        "expect": "Winged set: aerobic first (air in tubing); syringe: anaerobic first."
+      },
+      {
+        "question": "How much blood?",
+        "row": "G5",
+        "expect": "About 10 ml per bottle; 20–30 ml per set; two sets."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "The first venepuncture fails and antibiotics are due now.",
+        "safeAnswer": "Give the antibiotics on time; take cultures as soon as possible afterwards and record that antibiotics were given.",
+        "row": "G1"
+      },
+      {
+        "prompt": "The nurse offers the bottles to go in the fridge until the morning run.",
+        "safeAnswer": "No: never refrigerate; they need to reach the analyser within 4 hours.",
+        "row": "G6"
+      },
+      {
+        "prompt": "You can only get 8 ml of blood in total.",
+        "safeAnswer": "Put it in the aerobic bottle rather than splitting it between both.",
+        "row": "G5"
+      }
+    ]
+  }
+}

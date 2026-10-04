@@ -1,0 +1,557 @@
+{
+  "id": "MB-176",
+  "exam": "MRCS-B",
+  "title": "Breaking bad news: colorectal cancer after colonoscopy",
+  "type": "communication",
+  "header": {
+    "domain": "Applied Skills",
+    "contentArea": "Communication skills in giving and receiving information and history taking",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "SPIKES protocol (Baile et al., 2000)",
+      "NHS England cancer waiting times standards (from Oct 2023)",
+      "NHS England timed colorectal cancer pathway v3.2 (Apr 2023)",
+      "NICE NG151 (Jan 2020; updated Dec 2021)"
+    ],
+    "related": [
+      {
+        "id": "MB-160 Consent for emergency laparotomy",
+        "why": "Another conversation where risk and uncertainty must be shared honestly"
+      },
+      {
+        "id": "MB-177 Angry relative after a delayed diagnosis",
+        "why": "Staying honest when the news is hard to hear"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Colorectal outpatient clinic",
+    "role": "Core surgical trainee in the colorectal team",
+    "scenario": "Mr Brian Fletcher, 63, was referred urgently by his GP 18 days ago with a change in bowel habit and a positive faecal immunochemical test. Colonoscopy 6 days ago showed a tumour in the sigmoid colon, and biopsies were taken. The histology today confirms adenocarcinoma. A staging CT has been requested and is booked for tomorrow. He has come alone. The colorectal clinical nurse specialist is with you.",
+    "task": "Explain the result to Mr Fletcher and discuss what happens next."
+  },
+  "beforeYouWalkIn": {
+    "frame": "SPIKES. Say \"cancer\" clearly, then stop and listen. Be honest that the stage is not yet known.",
+    "trap": "Filling the silence with detail, or promising a cure before the CT and team meeting.",
+    "firstMove": "Sit down, introduce the nurse, and ask what he understood from the colonoscopy."
+  },
+  "flow": [
+    "Set up; what he knows",
+    "Warning shot; how much he wants",
+    "The news, in plain words",
+    "Silence; respond to emotion",
+    "What we don't know yet",
+    "Next steps and timings",
+    "Support, safety-net, check understanding"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "communication",
+      "label": "Setting and perception",
+      "fail": "Gives the result standing up, or before finding out what he knows.",
+      "pass": "Private room; sits; introduces himself and the nurse; confirms identity; offers to bring someone in; asks what he understands so far.",
+      "high": "Asks what he was told at colonoscopy and what he has been thinking it might be; hands over his bleep first.",
+      "source": "SPIKES"
+    },
+    {
+      "id": "G2",
+      "domain": "communication",
+      "label": "Invitation and warning shot",
+      "fail": "Launches into the result with no warning.",
+      "pass": "Asks how much detail he wants, then gives a warning shot: \"I'm afraid the results are not what we'd hoped.\"",
+      "high": "After the warning shot, pauses until he signals he is ready; offers to cover the details now or later.",
+      "source": "SPIKES"
+    },
+    {
+      "id": "G3",
+      "domain": "communication",
+      "label": "Giving the news",
+      "fail": "Uses jargon (\"adenocarcinoma\", \"lesion\", \"neoplasm\") or never says \"cancer\".",
+      "pass": "Says clearly that it is a bowel cancer, in plain words and small chunks, then stops.",
+      "high": "Uses his own words (\"the growth\"), says \"cancer\" once, clearly, and checks understanding before moving on.",
+      "source": "SPIKES"
+    },
+    {
+      "id": "G4",
+      "domain": "communication",
+      "label": "Emotion and silence",
+      "fail": "Fills the silence with facts, or gives false reassurance (\"It'll be fine\").",
+      "borderline": "Acknowledges he is upset, then moves straight on to the CT scan.",
+      "pass": "Allows silence; acknowledges the emotion; picks up the cue about his father.",
+      "high": "Explores his father's illness and separates it from his own situation honestly, without promising a different outcome.",
+      "source": "SPIKES"
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-knowledge",
+      "label": "Honesty about uncertainty (safety-critical)",
+      "fail": "Promises a cure, or guesses the stage, before staging.",
+      "pass": "Explains that the stage, and so the treatment plan, depend on the CT scan and the team meeting; doesn't guess.",
+      "high": "Explains what staging looks for (spread to lymph glands, liver or lungs) and when he will have the answer.",
+      "source": "TCP"
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-knowledge",
+      "label": "Next steps and timings",
+      "fail": "Gives no plan or timescale.",
+      "pass": "CT of chest, abdomen and pelvis and a CEA blood test, discussion at the colorectal team meeting, then a clinic to agree treatment.",
+      "high": "Gives the national standards: first treatment within 62 days of the urgent referral, and within 31 days of agreeing treatment.",
+      "source": "CWT"
+    },
+    {
+      "id": "G7",
+      "domain": "communication",
+      "label": "Support and relatives",
+      "fail": "Leaves him with no named contact or written information.",
+      "pass": "Introduces the nurse specialist as his key contact, gives her number and written information; offers to see his wife too.",
+      "high": "Offers a holistic needs assessment with the nurse; asks who is at home and whom he will tell.",
+      "source": "TCP"
+    },
+    {
+      "id": "G8",
+      "domain": "professionalism",
+      "label": "Safety-net, understanding and close",
+      "fail": "Ends without checking understanding or safety-netting.",
+      "pass": "Teach-back; safety-nets for heavy bleeding, or colicky pain with vomiting or no wind; letter to the GP; records the discussion.",
+      "high": "Explains why: a blockage or bleed needs the emergency department, not waiting for clinic; summarises and books the next contact.",
+      "source": "BL"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "candidate",
+        "text": "[Standing at the door] Hi, your biopsies are back. It's an adenocarcinoma of the sigmoid.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          },
+          {
+            "row": "G2",
+            "band": "fail"
+          },
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Mr Fletcher: “A what?”"
+      },
+      {
+        "speaker": "candidate",
+        "text": "A malignant lesion. We'll stage it with a CT.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Mr Fletcher: “[Quietly] My dad had bowel cancer.”"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Don't worry, it looks early. We should be able to cure it.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          },
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Mr Fletcher: “What happens now?”"
+      },
+      {
+        "speaker": "candidate",
+        "text": "The MDT will decide. Any questions? No? We'll send you a letter.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          },
+          {
+            "row": "G8",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "candidate",
+        "text": "Hello, I'm Dr Mensah, one of the surgeons, and this is Jo, a specialist nurse. Can I check your name and date of birth? Would you like anyone with you? What did they tell you after the camera test?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Mr Fletcher: “That they'd found a growth and taken samples.”"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Would you like me to go through the results in detail? [He nods] I'm afraid the results are not what we'd hoped.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "The samples show that the growth is a bowel cancer. [Stops]",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Mr Fletcher: “[Long silence] My dad had bowel cancer.”"
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Pauses] This is a real shock. Tell me about your dad.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "We don't yet know whether it has spread, so I can't tell you the treatment until we have the scan and the team has discussed it.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Next is a CT scan of your chest, tummy and pelvis, booked for tomorrow, and a blood test. The bowel cancer team meets to discuss the results, and then we see you to agree a plan.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Jo will be your main contact; here's her number and some written information. Would it help to see your wife too?",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Can you tell me what you've understood? If you have heavy bleeding, or cramping pain with vomiting, go to the emergency department. I'll write to your GP and record our talk.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "candidate",
+        "text": "Hello, I'm Dr Mensah, one of the surgeons, and this is Jo, a specialist nurse. [Hands bleep to a colleague] Can I check your name and date of birth? Would you like anyone with you? What were you told after the camera test, and what have you been thinking it might be?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Mr Fletcher: “A growth. I've been telling myself it's a polyp.”"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'm afraid the results are not what we'd hoped. [Pauses; he nods] Shall I go through them now, or would you rather have the main points first?",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "The samples show that the growth is a cancer, a bowel cancer. Can I check that's clear before I go on?",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Mr Fletcher: “[Long silence] My dad had bowel cancer.”"
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Waits] What happened with your dad? [Listens] He was diagnosed after it had reached his liver. We don't know yet whether yours has spread, so I can't say whether yours is the same or different, but we'll find out quickly.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "The scan looks at the lymph glands, liver and lungs. The stage decides the treatment, so I won't guess today. You'll have the answer at your next appointment.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "The national standards are to start treatment within 62 days of your GP's urgent referral, so in about six weeks, and within 31 days of agreeing a plan with you.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Jo is your key contact from today. She'll go through a questionnaire about what support you need. Who's at home, and who will you tell?",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Can you tell me what happens next, in your own words? Heavy bleeding, or cramping pain with vomiting and no wind, could mean bleeding or a blockage: go to the emergency department, don't wait for clinic. Your scan is tomorrow; Jo will confirm the time.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G5",
+      "move": "Telling him it looks early and curable before staging.",
+      "consequence": "Safety-critical: false reassurance that may have to be withdrawn, and a loss of trust at the next appointment."
+    },
+    {
+      "row": "G3",
+      "move": "Saying \"adenocarcinoma\" or \"lesion\" without ever saying \"cancer\".",
+      "consequence": "He may leave not knowing he has cancer."
+    },
+    {
+      "row": "G4",
+      "move": "Talking straight through the silence after the news.",
+      "consequence": "He hears nothing after the word \"cancer\" and the cue about his father is lost."
+    },
+    {
+      "row": "G7",
+      "move": "Leaving without a named contact or written information.",
+      "consequence": "He goes home frightened with no one to call before the next appointment."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "He asks if it has spread",
+      "line": "I don't know yet, and I don't want to guess. The scan will tell us, and you'll have the answer at your next appointment."
+    },
+    {
+      "when": "You used a medical word",
+      "line": "Sorry, let me put that more simply: it is a cancer of the bowel."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "SPIKES: Setting, Perception, Invitation, Knowledge, Emotions, Strategy and summary. Warn first, use plain words, give small chunks, check understanding.",
+      "source": "SPIKES"
+    },
+    {
+      "fact": "Timed pathway: staging contrast CT of chest, abdomen and pelvis plus bloods including CEA, completed in 7 days; diagnosis given in person with a CNS and next of kin.",
+      "source": "TCP"
+    },
+    {
+      "fact": "Standards: 28 days from urgent referral to being told the diagnosis; 62 days from urgent referral to first treatment; 31 days from decision to treat to treatment.",
+      "source": "CWT"
+    },
+    {
+      "fact": "Explain why the plan may change, and the likelihood of a stoma, why and for how long (1.2.2).",
+      "source": "NG151"
+    }
+  ],
+  "recall": {
+    "think": "Cancer confirmed, stage unknown: honesty, then a plan.",
+    "say": "\"I'm afraid it's not good news. The samples show a bowel cancer.\"",
+    "do": [
+      "Warning shot, say \"cancer\", then silence",
+      "Stage unknown until CT and team meeting",
+      "Key contact, timings, safety-net"
+    ],
+    "numbers": [
+      {
+        "value": "28 days",
+        "meaning": "urgent referral to being told the diagnosis",
+        "source": "CWT"
+      },
+      {
+        "value": "62 days",
+        "meaning": "urgent referral to first treatment",
+        "source": "CWT"
+      },
+      {
+        "value": "7 days",
+        "meaning": "to complete staging CT and bloods",
+        "source": "TCP"
+      }
+    ],
+    "trap": "Promising a cure before staging.",
+    "finish": "CT and CEA, team meeting, results clinic with the nurse specialist."
+  },
+  "sources": [
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format; introduce yourself and confirm identity"
+    },
+    {
+      "id": "SPIKES",
+      "name": "Baile WF, Buckman R, Lenzi R, Glober G, Beale EA, Kudelka AP. SPIKES—a six-step protocol for delivering bad news: application to the patient with cancer. The Oncologist 2000;5(4):302–311",
+      "version": "2000 (volume 5, issue 4)",
+      "url": "https://academic.oup.com/oncolo/article/5/4/302/6386019",
+      "supports": "Six steps: Setting up the interview; the patient's Perception; the patient's Invitation; giving Knowledge; addressing Emotions with empathic responses; Strategy and summary. Warn that bad news is coming; use nontechnical words ('spread' rather than 'metastasized'); give information in small chunks and check understanding periodically"
+    },
+    {
+      "id": "CWT",
+      "name": "NHS England: Cancer waiting times review",
+      "version": "August 2023 (standards in force from 1 October 2023)",
+      "url": "https://www.england.nhs.uk/long-read/cancer-waiting-times-review/",
+      "supports": "Three standards replaced all previous cancer waiting time standards from 1 October 2023: 28-day Faster Diagnosis Standard (maximum 28-day wait to communication of a definitive cancer or not-cancer diagnosis for urgent referrals, including breast symptoms, and NHS screening); 62-day standard (maximum two-month wait to first treatment from urgent GP referral, NHS cancer screening and consultant upgrade); 31-day standard (maximum one-month wait from decision to treat to any cancer treatment, for all cancer patients)"
+    },
+    {
+      "id": "TCP",
+      "name": "NHS England: Implementing a timed colorectal cancer diagnostic pathway. Guidance for local health and care systems (PR2119)",
+      "version": "Version 3.2, April 2023",
+      "url": "https://www.england.nhs.uk/wp-content/uploads/2018/04/B2119-implementing-timed-colorectal-cancer-diagnostic-pathway-2.pdf",
+      "supports": "28-day best practice timed pathway: straight-to-staging contrast CT of chest, abdomen and pelvis and bloods including CEA, requested as soon as the diagnosis is available and completed in seven days (note 6); specialist colorectal MDT including CNSs (note 7); colorectal cancer is best explained in person with the support of a CNS and next of kin, when the Faster Diagnosis Standard clock stops and the 62-day standard continues (note 5); caseworker or navigator contact details and signposting to support (note 3); holistic needs assessment with the CNS soon after diagnosis (note 8)"
+    },
+    {
+      "id": "NG151",
+      "name": "NICE NG151: Colorectal cancer",
+      "version": "Published 29 January 2020; last updated 15 December 2021",
+      "url": "https://www.nice.org.uk/guidance/ng151",
+      "supports": "Give information on all treatment options, their benefits and risks (1.2.1); advise why the treatment plan may change and the likelihood of a stoma, why it might be needed and for how long (1.2.2)"
+    },
+    {
+      "id": "BL",
+      "name": "Bailey & Love's Short Practice of Surgery (O'Connell, McCaskie, Sayers, eds)",
+      "version": "28th edition, 2023",
+      "url": "https://www.routledge.com/Bailey--Loves-Short-Practice-of-Surgery---28th-Edition/OConnell-McCaskie-Sayers/p/book/9780367548117",
+      "supports": "Presentation of colorectal cancer with obstruction or bleeding"
+    }
+  ],
+  "partner": {
+    "opening": "Mr Fletcher is in the clinic room. Please begin when you're ready.",
+    "actorBrief": "You are Brian Fletcher, 63, a bus depot manager, married to Sue, who is at work. Opening line: \"So, have my results come back?\" You have been telling yourself the growth is a polyp. Emotional state: matter-of-fact at first; when you hear the word \"cancer\", go silent for about ten seconds, then say \"Right.\" Hidden concern: your father died of bowel cancer at 66; it was in his liver when it was found and he died within six months. Give the cue \"My dad had bowel cancer\" once; say more only if the candidate explores it. Second concern: your daughter's wedding is in ten weeks. If the candidate uses jargon, look confused and say nothing. If they promise a cure, accept it, then later ask: \"How can you know that already?\" If they fill your silence with facts, stop listening and look at the floor. If asked to explain back, give a fair summary.",
+    "reveals": [
+      {
+        "trigger": "Asks what he understands so far",
+        "finding": "\"They said there was a growth and they'd taken samples. I've been telling myself it's a polyp.\"",
+        "row": "G1"
+      },
+      {
+        "trigger": "Asks how much he wants to know",
+        "finding": "\"Just tell me straight.\"",
+        "row": "G2"
+      },
+      {
+        "trigger": "Explores the cue about his father",
+        "finding": "\"Dad had bowel cancer. It was in his liver when they found it. Six months, that's all he got.\"",
+        "row": "G4"
+      },
+      {
+        "trigger": "Asks who is at home or whom he will tell",
+        "finding": "\"My wife, Sue. She's at work. I told her not to come because I thought it was nothing.\"",
+        "row": "G7"
+      },
+      {
+        "trigger": "Asks if anything is coming up that matters to him",
+        "finding": "\"My daughter's getting married in ten weeks. Will I be all right for that?\"",
+        "row": "G5"
+      }
+    ],
+    "push": [
+      {
+        "question": "What national standards apply to his pathway from here?",
+        "row": "G6",
+        "expect": "62 days from urgent GP referral to first treatment; 31 days from decision to treat to treatment. The 28-day Faster Diagnosis Standard stops today, when he is told."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "\"Has it spread?\"",
+        "safeAnswer": "Honest: we don't know until the CT; that's why it is done quickly; no guessing.",
+        "row": "G5"
+      },
+      {
+        "prompt": "\"Will I need a bag?\"",
+        "safeAnswer": "Possibly; it depends on the operation, which is decided after staging; the surgeon will explain the likelihood, why and for how long.",
+        "row": "G6"
+      },
+      {
+        "prompt": "\"Please don't tell my wife.\"",
+        "safeAnswer": "Respects his confidentiality; explores why; offers help to tell her when he's ready.",
+        "row": "G7"
+      },
+      {
+        "prompt": "\"Will I be well for my daughter's wedding in ten weeks?\"",
+        "safeAnswer": "Can't promise; the team will know the date and plan around it where it is safe to.",
+        "row": "G5"
+      }
+    ]
+  }
+}

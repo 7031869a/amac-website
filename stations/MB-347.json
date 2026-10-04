@@ -1,0 +1,187 @@
+{
+  "id": "MB-347",
+  "exam": "MRCS-B",
+  "title": "The obstructed, infected kidney",
+  "type": "applied-knowledge",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "Urology: upper tract obstruction and sepsis",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "NICE NG148, Acute kidney injury: prevention, detection and management (published 18 December 2019; last updated 16 October 2024)"
+    ],
+    "related": [
+      { "id": "MB-194", "why": "Applied anatomy of the kidney and ureter, relevant to how the obstruction is decompressed" },
+      { "id": "MB-288", "why": "History of loin pain and suspected renal colic, the presentation that can lead to this emergency" }
+    ]
+  },
+  "brief": {
+    "setting": "Emergency department / surgical assessment unit",
+    "role": "Core surgical trainee",
+    "scenario": "Mr Michael Renshaw, 55, presents with fever, rigors and severe flank pain. Imaging shows an obstructed ureteric system.",
+    "task": "Discuss the diagnosis, your priorities, and how you would achieve source control."
+  },
+  "beforeYouWalkIn": {
+    "frame": "An infected obstructed kidney is a urological emergency: treat sepsis and decompress, in parallel, without waiting for one before the other.",
+    "trap": "Treating the infection first and planning decompression later, or trying definitive stone treatment in a septic patient.",
+    "firstMove": "\"This is an infected obstructed upper urinary tract, potentially pyonephrosis, and it's a urological emergency.\""
+  },
+  "flow": [
+    "State the diagnosis",
+    "Sepsis assessment (A-E)",
+    "Urgent urology involvement",
+    "Source control by decompression",
+    "Choose the decompression method",
+    "Separate decompression from definitive stone treatment"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-knowledge",
+      "label": "Naming the diagnosis",
+      "fail": "Describes this only as a urinary tract infection or renal colic.",
+      "pass": "States this is an infected, obstructed upper urinary tract, potentially pyonephrosis, and a urological emergency.",
+      "high": "Explains why the combination of infection and obstruction, rather than either alone, makes this an emergency."
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-skill",
+      "label": "Sepsis assessment",
+      "fail": "Starts antibiotics without any structured assessment.",
+      "pass": "Assesses for sepsis using an A-E approach, obtains cultures and starts appropriate antibiotics promptly.",
+      "high": "Explains cultures are taken without delaying antibiotics, since prompt treatment matters more than a perfect sample."
+    },
+    {
+      "id": "G3",
+      "domain": "professionalism",
+      "label": "Urgent urology involvement",
+      "fail": "Manages this alone without involving urology, or refers routinely.",
+      "pass": "Involves urology urgently.",
+      "high": "States that pyonephrosis, an obstructed solitary kidney, bilateral upper tract obstruction, or AKI caused by the obstruction all warrant immediate urological referral.",
+      "source": "NG148"
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-knowledge",
+      "label": "Source control (safety-critical)",
+      "fail": "Treats antibiotics as sufficient on their own, or plans decompression only if antibiotics fail.",
+      "pass": "States the key issue is source control: the obstructed system requires urgent decompression, and antibiotics alone do not achieve this.",
+      "high": "States decompression should be carried out as soon as possible and within 12 hours of diagnosis when indicated for obstruction-related AKI.",
+      "source": "NG148"
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-skill",
+      "label": "Choosing the decompression method",
+      "fail": "Cannot name a method of decompression.",
+      "pass": "States decompression can be achieved by ureteric stenting or nephrostomy, depending on the clinical and anatomical circumstances.",
+      "high": "Notes nephrostomy avoids instrumenting an infected, obstructed system retrogradely and is often favoured when there is doubt about safely passing a stent."
+    },
+    {
+      "id": "G6",
+      "domain": "professionalism",
+      "label": "Separating decompression from definitive treatment",
+      "fail": "Would perform definitive stone treatment immediately in the septic patient.",
+      "pass": "States definitive stone treatment is usually separate from, and comes after, emergency decompression.",
+      "high": "Adds that renal function and urine output are monitored in the interim, since AKI can persist after decompression."
+    }
+  ],
+  "performances": {
+    "fail": [
+      { "speaker": "examiner", "text": "What is the diagnosis?" },
+      { "speaker": "candidate", "text": "Just a urinary tract infection.", "tags": [{ "row": "G1", "band": "fail" }] },
+      { "speaker": "examiner", "text": "What are your priorities?" },
+      { "speaker": "candidate", "text": "Give antibiotics and wait for the stone to pass.", "tags": [{ "row": "G2", "band": "fail" }] },
+      { "speaker": "examiner", "text": "Would you involve anyone else?" },
+      { "speaker": "candidate", "text": "I'd treat the infection first and decompress later if needed.", "tags": [{ "row": "G3", "band": "fail" }, { "row": "G4", "band": "fail" }] },
+      { "speaker": "examiner", "text": "How do you achieve source control?" },
+      { "speaker": "candidate", "text": "I'd just continue antibiotics.", "tags": [{ "row": "G5", "band": "fail" }] },
+      { "speaker": "examiner", "text": "What about the stone itself?" },
+      { "speaker": "candidate", "text": "I'd perform definitive stone treatment immediately, while he's septic.", "tags": [{ "row": "G6", "band": "fail" }] }
+    ],
+    "pass": [
+      { "speaker": "examiner", "text": "What is the diagnosis?" },
+      { "speaker": "candidate", "text": "This is an infected, obstructed upper urinary tract, potentially pyonephrosis, and it's a urological emergency.", "tags": [{ "row": "G1", "band": "pass" }] },
+      { "speaker": "examiner", "text": "What are your priorities?" },
+      { "speaker": "candidate", "text": "I would assess for sepsis using an A-E approach, obtain cultures and start appropriate antibiotics promptly.", "tags": [{ "row": "G2", "band": "pass" }] },
+      { "speaker": "examiner", "text": "Who else is involved?" },
+      { "speaker": "candidate", "text": "I would involve urology urgently.", "tags": [{ "row": "G3", "band": "pass" }] },
+      { "speaker": "examiner", "text": "How do you achieve source control?" },
+      { "speaker": "candidate", "text": "The key issue is source control — the obstructed system requires urgent decompression, which antibiotics alone don't provide.", "tags": [{ "row": "G4", "band": "pass" }] },
+      { "speaker": "examiner", "text": "How is that done?" },
+      { "speaker": "candidate", "text": "By ureteric stenting or nephrostomy, depending on the clinical and anatomical circumstances.", "tags": [{ "row": "G5", "band": "pass" }] },
+      { "speaker": "examiner", "text": "And the stone?" },
+      { "speaker": "candidate", "text": "Definitive stone treatment is usually separate from, and comes after, emergency decompression.", "tags": [{ "row": "G6", "band": "pass" }] }
+    ],
+    "high": [
+      { "speaker": "examiner", "text": "What is the diagnosis?" },
+      { "speaker": "candidate", "text": "An infected, obstructed upper urinary tract — the combination of the two, rather than either alone, is what makes this a urological emergency.", "tags": [{ "row": "G1", "band": "high" }] },
+      { "speaker": "examiner", "text": "Priorities?" },
+      { "speaker": "candidate", "text": "A-E sepsis assessment, cultures taken without delaying antibiotics, since prompt treatment matters more than a perfect sample.", "tags": [{ "row": "G2", "band": "high" }] },
+      { "speaker": "examiner", "text": "Referral?" },
+      { "speaker": "candidate", "text": "Immediate urological referral — pyonephrosis, an obstructed solitary kidney, bilateral obstruction or AKI from the obstruction all warrant that.", "tags": [{ "row": "G3", "band": "high" }] },
+      { "speaker": "examiner", "text": "Source control?" },
+      { "speaker": "candidate", "text": "Urgent decompression, carried out as soon as possible and within 12 hours of diagnosis for obstruction-related AKI.", "tags": [{ "row": "G4", "band": "high" }] },
+      { "speaker": "examiner", "text": "Which method?" },
+      { "speaker": "candidate", "text": "Stent or nephrostomy — nephrostomy avoids retrograde instrumentation of an infected system and is often favoured if stenting can't be done safely.", "tags": [{ "row": "G5", "band": "high" }] },
+      { "speaker": "examiner", "text": "The stone?" },
+      { "speaker": "candidate", "text": "Definitive treatment comes later, once decompressed, while I monitor renal function and urine output since AKI can persist afterwards.", "tags": [{ "row": "G6", "band": "high" }] }
+    ]
+  },
+  "failures": [
+    { "row": "G3", "move": "Not involving urology urgently.", "consequence": "Decompression is delayed past the window in which source control is most effective." },
+    { "row": "G4", "move": "Treating antibiotics as sufficient on their own.", "consequence": "The obstruction remains, and sepsis is not controlled at its source." },
+    { "row": "G4", "move": "Planning decompression only after antibiotics have had time to work.", "consequence": "Delay beyond 12 hours worsens outcomes in obstruction-related AKI." },
+    { "row": "G6", "move": "Performing definitive stone treatment while the patient is septic.", "consequence": "Adds procedural risk before source control and sepsis have been addressed." }
+  ],
+  "recovery": [
+    { "when": "You blank on what to do next", "line": "I'd like to structure this around immediate safety, assessment, escalation and definitive management." },
+    { "when": "Asked \"anything else?\" after decompression", "line": "Yes — I'd also monitor renal function and urine output, and keep definitive stone treatment for later." }
+  ],
+  "knowledge": [
+    { "fact": "Immediate urological referral is required for pyonephrosis, an obstructed solitary kidney, bilateral upper urinary tract obstruction, or AKI caused by obstruction.", "source": "NG148" },
+    { "fact": "When nephrostomy or stenting is used for AKI from upper tract obstruction, decompression should be carried out as soon as possible and within 12 hours of diagnosis.", "source": "NG148" },
+    { "fact": "Antibiotics alone do not achieve source control; the obstructed system needs decompression. Definitive stone treatment is usually separate and later." }
+  ],
+  "recall": {
+    "think": "An infected, obstructed kidney that antibiotics alone cannot fix.",
+    "say": "\"This is a urological emergency — source control means decompressing the obstruction.\"",
+    "do": [
+      "A-E sepsis assessment, cultures, prompt antibiotics",
+      "Urgent urology referral",
+      "Decompress by stent or nephrostomy within 12 hours"
+    ],
+    "numbers": [
+      { "value": "12 hours", "meaning": "Target time to decompress obstruction-related AKI once indicated", "source": "NG148" }
+    ],
+    "trap": "Treating the infection first and planning decompression later.",
+    "finish": "Decompression for source control; definitive stone treatment deferred until after recovery."
+  },
+  "sources": [
+    {
+      "id": "NG148",
+      "name": "NICE NG148: Acute kidney injury: prevention, detection and management",
+      "version": "Published 18 December 2019; last updated 16 October 2024",
+      "url": "https://www.nice.org.uk/guidance/ng148/chapter/Recommendations",
+      "supports": "Rec 1.5.1: immediate urological referral for pyonephrosis, obstructed solitary kidney, bilateral obstruction or AKI from obstruction; Rec 1.5.2: decompression as soon as possible and within 12 hours of diagnosis"
+    }
+  ],
+  "partner": {
+    "opening": "Mr Renshaw, 55, has fever, rigors and severe flank pain, with imaging showing an obstructed ureteric system. \"What is the diagnosis?\"",
+    "reveals": [
+      { "trigger": "Candidate asks for observations or sepsis markers", "finding": "Temperature 39.1°C, heart rate 118, blood pressure 98/58, lactate 3.2.", "row": "G2" },
+      { "trigger": "Candidate asks about the imaging in more detail", "finding": "Moderate right hydronephrosis with a 7mm obstructing ureteric calculus; no solitary or contralateral kidney abnormality.", "row": "G5" }
+    ],
+    "push": [
+      { "question": "What are your priorities?", "row": "G2", "expect": "A-E sepsis assessment, cultures, prompt antibiotics." },
+      { "question": "How do you achieve source control?", "row": "G4", "expect": "Urgent decompression by stent or nephrostomy; antibiotics alone are not enough." },
+      { "question": "Is stone removal or drainage the priority?", "row": "G6", "expect": "In the septic obstructed system, urgent drainage/source control comes first; definitive stone treatment is separate and later." }
+    ],
+    "curveballs": [
+      { "prompt": "He has only one functioning kidney.", "safeAnswer": "This alone warrants immediate urological referral, regardless of severity of infection.", "row": "G3" },
+      { "prompt": "The urology team asks whether to stent or nephrostomy him.", "safeAnswer": "Explains the choice depends on clinical and anatomical circumstances, and nephrostomy may be preferred to avoid retrograde instrumentation of the infected system.", "row": "G5" },
+      { "prompt": "He remains oliguric 24 hours after decompression.", "safeAnswer": "Continues monitoring renal function and urine output, since AKI can persist after source control is achieved.", "row": "G6" }
+    ]
+  }
+}

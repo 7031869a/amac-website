@@ -1,0 +1,632 @@
+{
+  "id": "MB-195",
+  "exam": "MRCS-B",
+  "title": "Colorectal cancer: adenoma–carcinoma sequence, TNM staging and the histology report",
+  "type": "data-interpretation",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "Pathology (histology report with a clinical scenario)",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "UICC TNM Classification, 8th ed. (2017)",
+      "NICE NG151 (January 2020, updated December 2021)",
+      "NICE DG27 / HTG430 (February 2017)",
+      "ESMO localised colon cancer guideline (2020)"
+    ],
+    "related": [
+      {
+        "id": "MB-192",
+        "why": "Anatomy of the rectum and anal canal"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Colorectal clinic",
+    "role": "Core surgical trainee",
+    "scenario": "Mr Thomas Wright, 62, was referred on the suspected cancer pathway with rectal bleeding and change in bowel habit. Colonoscopy showed a sigmoid adenocarcinoma. He has had a sigmoid colectomy. The examiner will give you his staging and histology results in stages.",
+    "task": "Explain how this cancer developed, interpret the staging and histology results, and say what happens next."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Sequence, then read the report: T, N, M, stage, then MMR, then what next.",
+    "trap": "Calling a tumour through the visceral peritoneum T3, or ignoring node yield.",
+    "firstMove": "\"I'll read the T, N and M stage, the node count and the margins.\""
+  },
+  "flow": [
+    "Adenoma–carcinoma sequence",
+    "Read T stage",
+    "Read N stage and yield",
+    "M stage and overall stage",
+    "Adjuvant treatment",
+    "Revised report",
+    "Mismatch repair result"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-knowledge",
+      "label": "Adenoma–carcinoma sequence",
+      "fail": "Cannot describe how a polyp becomes a cancer.",
+      "pass": "Stepwise: normal mucosa, adenoma, dysplasia, carcinoma; APC loss early, then KRAS, then TP53 late (chromosomal instability).",
+      "high": "Names the mismatch repair-deficient pathway and the serrated pathway (BRAF, CpG methylation); explains why removing adenomas prevents cancer.",
+      "source": "FEARON"
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-knowledge",
+      "label": "T stage",
+      "fail": "Calls a tumour through the visceral peritoneum T3.",
+      "pass": "T3 into pericolorectal tissue; T4a penetrates the visceral peritoneum; T4b invades or adheres to other organs. This is pT4a.",
+      "high": "Links pT4 to peritoneal recurrence, and knows NICE NG151 suggests considering preoperative chemotherapy for cT4 colon cancer.",
+      "source": "TNM"
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "N stage and node yield",
+      "fail": "Miscounts the node stage or ignores how many nodes were examined.",
+      "pass": "2 of 16 nodes positive: N1b. N1 is 1–3 nodes, N2 is 4 or more. Checks at least 12 nodes were examined.",
+      "high": "Gives N1a one node, N1c tumour deposits without nodes, N2a 4–6, N2b 7 or more.",
+      "source": "TNM"
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-knowledge",
+      "label": "M stage and overall stage",
+      "fail": "Stages the tumour without chest imaging or M stage.",
+      "pass": "CT chest, abdomen and pelvis shows no metastases: pT4a N1b M0, stage III (IIIB).",
+      "high": "M1a one organ, M1b more than one organ, M1c peritoneal metastases.",
+      "source": "TNM"
+    },
+    {
+      "id": "G5",
+      "domain": "professionalism",
+      "label": "Adjuvant treatment",
+      "fail": "Says no further treatment is needed because the tumour is out.",
+      "pass": "Stage III: MDT and oncology referral. NICE NG151 offers CAPOX for 3 months; FOLFOX or capecitabine alone if unsuitable.",
+      "high": "Notes NG151 bases the choice on pT4 and/or pN2, fitness, comorbidity and preference.",
+      "source": "NG151"
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-knowledge",
+      "label": "Revised report: stage II",
+      "fail": "Calls pT4a N0 with 9 nodes examined low risk.",
+      "pass": "pT4a N0 is stage II; pT4 and fewer than 12 nodes are high-risk features, so adjuvant chemotherapy is discussed at MDT.",
+      "high": "Knows NG151 makes no stage II recommendation; ESMO: high-risk stage II may add oxaliplatin; MMR deficiency lowers fluoropyrimidine benefit.",
+      "source": "ESMO"
+    },
+    {
+      "id": "G7",
+      "domain": "clinical-knowledge",
+      "label": "Mismatch repair testing",
+      "fail": "Does not test for mismatch repair, or delays treatment waiting for it.",
+      "pass": "All colorectal cancers tested at diagnosis (NICE DG27). MLH1 and PMS2 lost: BRAF V600E test, then MLH1 promoter hypermethylation if BRAF negative.",
+      "high": "Refers for germline Lynch testing if both are negative; MSH2, MSH6 or PMS2 loss goes straight to germline testing.",
+      "source": "DG27"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "How does colorectal cancer develop?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "It just grows from the bowel lining.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The report says the tumour penetrates the visceral peritoneum. T stage?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "T3, it's through the wall.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Two of 16 nodes are positive."
+      },
+      {
+        "speaker": "candidate",
+        "text": "N2, because nodes are involved.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What is the overall stage?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Stage II. I don't think we need more scans.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What happens now?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "It's been removed, so follow-up only.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "If it had been N0 with only 9 nodes?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Then it's low risk.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Immunohistochemistry shows loss of MLH1 and PMS2."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'm not sure; I'd wait for that before planning treatment.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "examiner",
+        "text": "How does colorectal cancer develop?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Mostly stepwise: normal mucosa, adenoma, dysplasia, carcinoma. APC is lost early, then KRAS, then TP53 late.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Read the T stage."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Through the visceral peritoneum is T4a. T3 would be into pericolorectal fat; T4b into another organ.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "And the nodes?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "2 of 16 positive: N1b. N1 is 1 to 3 nodes, N2 is 4 or more. 16 nodes is an adequate yield.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "CT chest, abdomen and pelvis is clear. Overall stage?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "pT4a N1b M0: stage III, IIIB.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What next?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "MDT discussion and oncology referral. NICE recommends CAPOX for 3 months, or FOLFOX or capecitabine alone if that's unsuitable.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "If it had been N0 with 9 nodes?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Stage II, but pT4 and fewer than 12 nodes are both high-risk, so adjuvant chemotherapy would be discussed at MDT.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "MLH1 and PMS2 are lost."
+      },
+      {
+        "speaker": "candidate",
+        "text": "That's mismatch repair deficiency. Next is BRAF V600E, then MLH1 promoter hypermethylation if BRAF is negative.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "examiner",
+        "text": "Are there other pathways?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Yes. Mismatch repair-deficient tumours are microsatellite unstable, as in Lynch syndrome. The serrated pathway involves BRAF and CpG methylation. Because most cancers pass through an adenoma, removing adenomas prevents cancer.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Why does T4a matter?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Peritoneal penetration raises the risk of peritoneal recurrence. If CT had shown cT4 before surgery, NICE NG151 says consider preoperative chemotherapy.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Subdivide N."
+      },
+      {
+        "speaker": "candidate",
+        "text": "N1a one node, N1b two or three, N1c tumour deposits without nodal disease. N2a 4 to 6, N2b 7 or more.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "And M?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "M1a one organ, M1b more than one, M1c peritoneal.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you choose his regimen?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "NICE NG151 bases it on pT4 and/or pN2, performance status, comorbidity and his preference. He's pT4, so oncology will weigh that.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "And for high-risk stage II?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "NG151 has no stage II recommendation. ESMO suggests high-risk stage II may add oxaliplatin, and mismatch repair deficiency reduces fluoropyrimidine benefit.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "BRAF and methylation are both negative."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Then this may be Lynch syndrome: refer for germline testing, with counselling. Loss of MSH2 or MSH6 would have gone straight to germline testing.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G2",
+      "move": "Calling peritoneal penetration T3.",
+      "consequence": "Understages the tumour and misses a high-risk feature."
+    },
+    {
+      "row": "G5",
+      "move": "Offering follow-up only for node-positive disease.",
+      "consequence": "Denies him adjuvant chemotherapy that NICE recommends for stage III."
+    },
+    {
+      "row": "G6",
+      "move": "Ignoring a node yield below 12.",
+      "consequence": "Treats a possibly understaged tumour as low risk."
+    },
+    {
+      "row": "G7",
+      "move": "Not acting on MLH1 loss.",
+      "consequence": "Misses Lynch syndrome in him and his relatives."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You blank on the report",
+      "line": "I'll go through T, N with node yield, M, margins, then mismatch repair."
+    },
+    {
+      "when": "Asked about stage II chemotherapy",
+      "line": "That depends on high-risk features and mismatch repair status, and is an MDT decision."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "T4a: through visceral peritoneum. T4b: into other organs.",
+      "source": "TNM"
+    },
+    {
+      "fact": "N1: 1–3 nodes (N1c deposits only). N2: 4 or more. M1a one organ, M1b more than one, M1c peritoneum.",
+      "source": "TNM"
+    },
+    {
+      "fact": "Stage III colon: CAPOX 3 months; FOLFOX or capecitabine alone if unsuitable.",
+      "source": "NG151"
+    },
+    {
+      "fact": "Stage II high-risk: pT4, fewer than 12 nodes.",
+      "source": "ESMO"
+    },
+    {
+      "fact": "Test all colorectal cancers for mismatch repair at diagnosis; MLH1 loss: BRAF, then methylation, then germline.",
+      "source": "DG27"
+    }
+  ],
+  "recall": {
+    "think": "Understaging; missed Lynch syndrome.",
+    "say": "\"pT4a N1b M0: stage III, for MDT and adjuvant chemotherapy.\"",
+    "do": [
+      "Read T, N, yield, M",
+      "Stage and refer to MDT",
+      "Act on mismatch repair result"
+    ],
+    "numbers": [
+      {
+        "value": "12 nodes",
+        "meaning": "fewer is a high-risk feature",
+        "source": "ESMO"
+      },
+      {
+        "value": "N1 1–3, N2 4+",
+        "meaning": "positive regional nodes",
+        "source": "TNM"
+      },
+      {
+        "value": "3 months",
+        "meaning": "CAPOX for stage III colon cancer",
+        "source": "NG151"
+      }
+    ],
+    "trap": "Peritoneal penetration is T4a, not T3.",
+    "finish": "Adjuvant chemotherapy; germline testing if Lynch suspected."
+  },
+  "sources": [
+    {
+      "id": "FEARON",
+      "name": "Fearon ER, Vogelstein B. A genetic model for colorectal tumorigenesis. Cell 1990;61:759-67",
+      "version": "1990",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/2188735/",
+      "supports": "Adenoma–carcinoma sequence with APC, KRAS and TP53 alterations"
+    },
+    {
+      "id": "TNM",
+      "name": "Brierley JD, Gospodarowicz MK, Wittekind C (eds). UICC TNM Classification of Malignant Tumours",
+      "version": "8th edition, 2017",
+      "url": "https://www.uicc.org/resources/tnm-classification-malignant-tumours-8th-edition",
+      "supports": "Colorectal T, N and M categories and stage groups (T4a, T4b, N1a–c, N2a–b, M1a–c; T4a N1 M0 = IIIB)"
+    },
+    {
+      "id": "NG151",
+      "name": "NICE guideline NG151: Colorectal cancer",
+      "version": "Published 29 January 2020, last updated 15 December 2021",
+      "url": "https://www.nice.org.uk/guidance/ng151",
+      "supports": "Stage III colon cancer adjuvant options (CAPOX 3 months; FOLFOX 3–6 months or single-agent fluoropyrimidine 6 months if unsuitable) chosen by pT4 and/or pN2, fitness and preference; consider preoperative systemic therapy for cT4 colon cancer"
+    },
+    {
+      "id": "DG27",
+      "name": "NICE diagnostics guidance DG27 (now HealthTech guidance HTG430): Molecular testing strategies for Lynch syndrome in people with colorectal cancer",
+      "version": "22 February 2017",
+      "url": "https://www.nice.org.uk/guidance/htg430",
+      "supports": "Test all colorectal cancers at diagnosis by MMR immunohistochemistry or MSI; MLH1 loss: BRAF V600E then MLH1 promoter hypermethylation; germline testing if negative or if MSH2, MSH6 or PMS2 abnormal; do not delay treatment"
+    },
+    {
+      "id": "ESMO",
+      "name": "Argilés G, et al. Localised colon cancer: ESMO Clinical Practice Guidelines for diagnosis, treatment and follow-up. Ann Oncol 2020;31:1291-1305",
+      "version": "2020",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/32702383/",
+      "supports": "At least 12 lymph nodes; pT4 and fewer than 12 nodes as major stage II risk factors; high-risk stage II may add oxaliplatin; MSI/dMMR gives better prognosis and less benefit from adjuvant therapy"
+    },
+    {
+      "id": "BL",
+      "name": "Bailey & Love's Short Practice of Surgery (O'Connell, McCaskie, Sayers, eds)",
+      "version": "28th edition, 2023",
+      "url": "https://www.routledge.com/Bailey--Loves-Short-Practice-of-Surgery---28th-Edition/OConnell-McCaskie-Sayers/p/book/9780367548117",
+      "supports": "Colorectal cancer presentation, staging investigations and multidisciplinary management"
+    }
+  ],
+  "media": [
+    {
+      "id": "histology-report",
+      "task": "Read the T, N and M stage, node yield and margins",
+      "description": "Mock resection histology report for a sigmoid adenocarcinoma: pT4a, 2 of 16 nodes positive, margins clear; followed by an MMR immunohistochemistry result",
+      "required": false,
+      "status": "needed"
+    },
+    {
+      "id": "he-section",
+      "task": "Identify tumour breaching the serosal surface",
+      "description": "H&E section of colonic adenocarcinoma penetrating the visceral peritoneum",
+      "required": false,
+      "status": "needed"
+    }
+  ],
+  "partner": {
+    "opening": "Mr Wright has had a sigmoid colectomy for adenocarcinoma. First, how does colorectal cancer develop?",
+    "reveals": [
+      {
+        "trigger": "Stage 1, after the sequence",
+        "finding": "Histology: moderately differentiated adenocarcinoma, 42 mm, extending through the muscularis propria and penetrating the visceral peritoneal surface. Margins clear.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Candidate asks about nodes",
+        "finding": "Two of 16 regional nodes contain metastatic carcinoma. No tumour deposits.",
+        "row": "G3"
+      },
+      {
+        "trigger": "Candidate asks for staging imaging",
+        "finding": "Preoperative CT chest, abdomen and pelvis: no distant metastases.",
+        "row": "G4"
+      },
+      {
+        "trigger": "Stage 2, examiner revises the report",
+        "finding": "Revised: 0 of 9 nodes involved; everything else unchanged.",
+        "row": "G6"
+      },
+      {
+        "trigger": "Stage 3",
+        "finding": "MMR immunohistochemistry: loss of MLH1 and PMS2; MSH2 and MSH6 retained.",
+        "row": "G7"
+      }
+    ],
+    "push": [
+      {
+        "question": "What is the T stage?",
+        "row": "G2",
+        "expect": "pT4a: penetrates visceral peritoneum."
+      },
+      {
+        "question": "What is the N stage?",
+        "row": "G3",
+        "expect": "N1b (2 nodes); yield adequate."
+      },
+      {
+        "question": "What is the overall stage?",
+        "row": "G4",
+        "expect": "pT4a N1b M0, stage IIIB."
+      },
+      {
+        "question": "What happens next?",
+        "row": "G5",
+        "expect": "MDT; adjuvant CAPOX per NICE NG151."
+      },
+      {
+        "question": "What does loss of MLH1 and PMS2 mean?",
+        "row": "G7",
+        "expect": "dMMR; BRAF then methylation; germline if negative."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "The tumour was stuck to the bladder and removed en bloc, with tumour in the bladder wall.",
+        "safeAnswer": "That is T4b: direct invasion of another organ.",
+        "row": "G2"
+      },
+      {
+        "prompt": "There are tumour deposits in the mesentery but no positive nodes.",
+        "safeAnswer": "N1c; still stage III.",
+        "row": "G3"
+      },
+      {
+        "prompt": "BRAF V600E is positive.",
+        "safeAnswer": "Points to a sporadic tumour from MLH1 methylation; Lynch syndrome is unlikely and further germline testing is not routinely needed.",
+        "row": "G7"
+      },
+      {
+        "prompt": "Should we wait for the MMR result before starting chemotherapy?",
+        "safeAnswer": "No. NICE DG27 says do not wait for results before starting treatment.",
+        "row": "G7"
+      }
+    ]
+  }
+}

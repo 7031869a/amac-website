@@ -1,0 +1,521 @@
+{
+  "id": "MB-140",
+  "exam": "MRCS-B",
+  "title": "Hip examination",
+  "type": "examination",
+  "header": {
+    "domain": "Applied Skills",
+    "contentArea": "Physical examination (musculoskeletal)",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "signalMinutes": 6,
+    "guidelineVersions": [
+      "NICE NG226 (Oct 2022)"
+    ],
+    "related": [
+      {
+        "id": "Knee examination station",
+        "why": "The joint below"
+      },
+      {
+        "id": "Hip replacement consent",
+        "why": "Dislocation, leg length and VTE"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Orthopaedic clinic",
+    "role": "Core surgical trainee",
+    "scenario": "Mr Jones, 68, has had worsening right groin pain on walking for a year.",
+    "task": "Examine his right hip. You will be stopped at 6 minutes to present your findings and answer questions."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Gait first, then look, feel, measure, move, and the Thomas test.",
+    "trap": "Getting the Trendelenburg side wrong: the pelvis drops on the side of the lifted leg.",
+    "firstMove": "\"Could I watch you walk to the end of the room and back?\""
+  },
+  "flow": [
+    "Introduce, consent, clean hands",
+    "Gait and Trendelenburg",
+    "Look and feel",
+    "Leg lengths",
+    "Move and Thomas test",
+    "At 6 minutes: present"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "professionalism",
+      "label": "Preparation",
+      "fail": "Starts moving the hip without asking about pain.",
+      "pass": "Introduces, confirms identity, explains, gains consent, asks about pain, cleans hands, exposes to shorts.",
+      "high": "Watches his face for pain throughout and moves the hip only within comfort.",
+      "source": "ICBSE"
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-skill",
+      "label": "Gait and Trendelenburg",
+      "fail": "Omits gait, or gets the Trendelenburg interpretation backwards.",
+      "borderline": "Performs the test correctly but can't say which side is abnormal.",
+      "pass": "Observes gait; performs the Trendelenburg test standing on each leg.",
+      "high": "Explains a positive test: standing on the right, the left side of the pelvis drops, meaning weak right abductors."
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-skill",
+      "label": "Look and feel",
+      "fail": "Skips inspection.",
+      "pass": "Inspects for scars, wasting and deformity; palpates the greater trochanter for tenderness.",
+      "high": "Compares with the other side, and palpates the lumbar spine and sacroiliac joints."
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-skill",
+      "label": "Leg lengths",
+      "fail": "Measures without squaring the pelvis.",
+      "pass": "True length: ASIS to medial malleolus. Apparent length: umbilicus to medial malleolus.",
+      "high": "Squares the pelvis first, and explains apparent shortening from fixed adduction or tilt."
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-skill",
+      "label": "Movement and Thomas test",
+      "fail": "Moves the hip without stabilising the pelvis.",
+      "pass": "Flexion, abduction, adduction, internal and external rotation; Thomas test for fixed flexion deformity.",
+      "high": "Feels the lumbar lordosis flatten during the Thomas test, and notes internal rotation is often lost first in osteoarthritis."
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-skill",
+      "label": "Completing the examination",
+      "fail": "Stops at the hip.",
+      "pass": "Says they would examine the lumbar spine and knee, and check distal neurovascular status.",
+      "high": "Explains why: hip pain can be referred to the knee, and spinal pathology can mimic hip pain."
+    },
+    {
+      "id": "G7",
+      "domain": "communication",
+      "label": "Presentation at the signal",
+      "fail": "Lists actions rather than findings.",
+      "pass": "Summarises the positive findings and gives a most likely diagnosis.",
+      "high": "Leads with the key findings, states the important negatives, and commits."
+    },
+    {
+      "id": "G8",
+      "domain": "clinical-knowledge",
+      "label": "Diagnosis and referral",
+      "fail": "Insists on an X-ray before any diagnosis, or uses age alone to refuse surgery.",
+      "pass": "Diagnoses osteoarthritis clinically at 45 or over with activity-related pain and morning stiffness of 30 minutes or less.",
+      "high": "Refers for joint replacement on symptoms and failed non-surgical care, not scores, age or BMI.",
+      "source": "NG226"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "candidate",
+        "text": "[Asks him to lie down and starts rotating the hip without asking about pain.]",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          },
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Skips gait.] He's fine walking.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Measures leg lengths with the pelvis tilted.]",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop. Your findings?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I moved his hip and it hurt.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you confirm the diagnosis?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "He needs an MRI before I can say.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "candidate",
+        "text": "Hello, I'm Dr Patel. Can I confirm your name and date of birth? I'd like to examine your right hip. Where does it hurt? [Consent; cleans hands; exposes to shorts.]",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Could you walk to the end of the room and back? … Now stand on your right leg, holding my hands, and lift the left. [Then the other side.]",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Inspects front, side and back; palpates the greater trochanter.]",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Measures ASIS to medial malleolus, then umbilicus to medial malleolus, both sides.]",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Tests each movement.] Now I'll bend your left hip right up. [Thomas test.]",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd also examine the lumbar spine and knee and check the pulses and sensation. Thank you. [Cleans hands.]",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop. Your findings?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Mr Jones has an antalgic gait, a positive Trendelenburg test on the right, 2 cm apparent shortening on the right, a fixed flexion deformity on the Thomas test, and painful restriction of internal rotation. This is most likely right hip osteoarthritis.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you confirm it?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "It can be diagnosed clinically: he's over 45 with activity-related pain and short morning stiffness.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "candidate",
+        "text": "Hello, I'm Dr Patel. Can I confirm your name and date of birth? I'd like to watch you walk and then examine your right hip. Tell me straight away if anything hurts. [Cleans hands; exposes to shorts; watches his face.]",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Antalgic gait.] Stand on your right leg and lift the left… the left side of your pelvis drops, so your right hip abductors are weak.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Inspects all sides; palpates trochanter, lumbar spine, sacroiliac joints; compares with the left.]",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Squares the pelvis.] True lengths are equal; the right is apparently shorter, which suggests fixed adduction.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Movements; hand under the lumbar spine during the Thomas test until the lordosis flattens.] Internal rotation is the most restricted.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd complete this with the spine and knee, because hip pain is often felt in the knee, and check distal neurovascular status. Thank you. [Cleans hands.]",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop. Your findings?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Right hip: antalgic gait, positive Trendelenburg, apparent but not true shortening, a fixed flexion deformity, and restricted, painful internal rotation. No scars and no spinal tenderness. This is right hip osteoarthritis.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you manage him?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "It's a clinical diagnosis. If his symptoms substantially affect his quality of life and non-surgical treatment hasn't worked, I'd refer for hip replacement, based on clinical assessment, not scores, age or BMI.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G3",
+      "move": "Skipping inspection and palpation.",
+      "consequence": "Misses scars from previous surgery and trochanteric tenderness."
+    },
+    {
+      "row": "G6",
+      "move": "Stopping at the hip.",
+      "consequence": "Misses referred pain from the spine and knee."
+    },
+    {
+      "row": "G4",
+      "move": "Measuring only apparent leg length.",
+      "consequence": "Can't separate true shortening at the hip from pelvic tilt."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You confuse the Trendelenburg side",
+      "line": "Let me restate: standing on the right, the left side dropped, so the right abductors are weak."
+    },
+    {
+      "when": "You forget the Thomas test",
+      "line": "Before I finish, I'd like to check for a fixed flexion deformity with the Thomas test."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Positive Trendelenburg: the pelvis drops on the side of the lifted leg; the abductors of the standing leg are weak.",
+      "source": "BL"
+    },
+    {
+      "fact": "True length: ASIS to medial malleolus. Apparent length: umbilicus to medial malleolus.",
+      "source": "BL"
+    },
+    {
+      "fact": "Diagnose osteoarthritis clinically, without imaging, at 45 or over with activity-related pain and morning stiffness of 30 minutes or less.",
+      "source": "NG226"
+    },
+    {
+      "fact": "Refer for joint replacement using clinical assessment, not scoring systems; do not exclude on age, smoking, comorbidity or BMI.",
+      "source": "NG226"
+    }
+  ],
+  "recall": {
+    "think": "Gait, then look, feel, measure, move.",
+    "say": "\"Could I watch you walk to the end of the room and back?\"",
+    "do": [
+      "Trendelenburg on each leg",
+      "Square the pelvis before measuring",
+      "Thomas test with a hand under the spine"
+    ],
+    "numbers": [
+      {
+        "value": "45+",
+        "meaning": "clinical OA diagnosis with activity-related pain",
+        "source": "NG226"
+      },
+      {
+        "value": "≤ 30 min",
+        "meaning": "morning stiffness in OA",
+        "source": "NG226"
+      },
+      {
+        "value": "6 min",
+        "meaning": "signal to stop and present",
+        "source": "ICBSE"
+      }
+    ],
+    "trap": "Trendelenburg side back to front.",
+    "finish": "Clinical diagnosis; refer on symptoms, not scores."
+  },
+  "sources": [
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "At every station: introduce yourself, explain the task, confirm identity, obtain consent, clean hands before and after patient contact; 6-minute signal in examination stations"
+    },
+    {
+      "id": "BL",
+      "name": "Bailey & Love's Short Practice of Surgery (O'Connell, McCaskie, Sayers, eds)",
+      "version": "28th edition, 2023",
+      "url": "https://www.routledge.com/Bailey--Loves-Short-Practice-of-Surgery---28th-Edition/OConnell-McCaskie-Sayers/p/book/9780367548117",
+      "supports": "Examination technique and clinical signs"
+    },
+    {
+      "id": "NG226",
+      "name": "NICE NG226: Osteoarthritis in over 16s: diagnosis and management",
+      "version": "Published October 2022",
+      "url": "https://www.nice.org.uk/guidance/ng226",
+      "supports": "Clinical diagnosis without imaging (1.1.1–1.1.2); referral for joint replacement (1.6.1–1.6.3)"
+    }
+  ],
+  "partner": {
+    "opening": "Please examine this patient's right hip. I'll stop you at 6 minutes.",
+    "actorBrief": "You are Mr Jones, 68. Right groin pain when walking, worse at the end of the day, stiffness for about 15 minutes in the morning. It hurts when your hip is turned inwards.",
+    "reveals": [
+      {
+        "trigger": "Watches the gait",
+        "finding": "Antalgic gait, shorter stance on the right.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Trendelenburg test, standing on the right",
+        "finding": "The left side of the pelvis drops.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Measures leg lengths",
+        "finding": "True lengths equal; right apparently 2 cm shorter.",
+        "row": "G4"
+      },
+      {
+        "trigger": "Thomas test",
+        "finding": "Right thigh lifts off the couch as the lordosis flattens: fixed flexion deformity.",
+        "row": "G5"
+      },
+      {
+        "trigger": "Tests rotation",
+        "finding": "Internal rotation markedly restricted and painful.",
+        "row": "G5"
+      },
+      {
+        "trigger": "At 6 minutes",
+        "finding": "Say: \"Please stop there and present your findings.\"",
+        "row": "G7"
+      }
+    ],
+    "push": [
+      {
+        "question": "What does a positive Trendelenburg test mean?",
+        "row": "G2",
+        "expect": "Weak abductors on the standing side."
+      },
+      {
+        "question": "How do you tell true from apparent shortening?",
+        "row": "G4",
+        "expect": "Square the pelvis; ASIS versus umbilicus to medial malleolus."
+      },
+      {
+        "question": "Does he need an X-ray to diagnose osteoarthritis?",
+        "row": "G8",
+        "expect": "No, it can be diagnosed clinically."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "His BMI is 38. Should he be refused referral?",
+        "safeAnswer": "No: BMI alone should not exclude referral for joint replacement.",
+        "row": "G8"
+      },
+      {
+        "prompt": "His pain is mainly in the knee.",
+        "safeAnswer": "Hip pain is often referred to the knee: examine both.",
+        "row": "G6"
+      }
+    ]
+  }
+}

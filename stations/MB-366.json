@@ -1,0 +1,428 @@
+{
+  "id": "MB-366",
+  "exam": "MRCS-B",
+  "title": "Disclosing a positive BRCA2 result",
+  "type": "communication",
+  "header": {
+    "domain": "Applied Skills",
+    "contentArea": "Disclosing genetic test results",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "NICE CG164: Familial breast cancer (published June 2013; last updated November 2023)",
+      "GMC: Good Medical Practice (in effect 30 January 2024)"
+    ],
+    "related": [
+      {
+        "id": "MB-365",
+        "why": "The referral and testing this result follows from"
+      },
+      {
+        "id": "MB-364",
+        "why": "The recent surgery whose recovery this result now sits alongside"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Joint breast/genetics clinic, six weeks after mastectomy",
+    "role": "Core surgical trainee, supporting the genetics team",
+    "scenario": "Ms Rachel Linford, 43, has recovered from her mastectomy. Her genetic test has come back positive for a BRCA2 pathogenic variant.",
+    "task": "Give her this result and discuss what it means. You have 7 minutes."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Check what she remembers about why testing was done, deliver the result plainly, then explain implications for her and her relatives without covering every future decision today.",
+    "trap": "Overloading her with every future option (contralateral surgery, ovarian screening, relative testing) in one sitting rather than pacing the conversation.",
+    "firstMove": "\"Do you remember what we were testing for when we sent that referral?\""
+  },
+  "flow": [
+    "Check recall of why testing was done",
+    "Deliver the result clearly",
+    "Respond to her reaction",
+    "Explain the main implications in broad terms",
+    "Plan for a further, focused discussion and closing"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "communication",
+      "label": "Checking recall before delivering",
+      "fail": "Delivers the result assuming she remembers exactly what was tested and why.",
+      "pass": "Briefly checks her recall of the earlier discussion before giving the result.",
+      "high": "Uses this check to gently prepare her that a result is now available, functioning as a soft warning shot."
+    },
+    {
+      "id": "G2",
+      "domain": "communication",
+      "label": "Delivering the result",
+      "fail": "Uses vague or overly technical language that leaves her unsure of the result.",
+      "pass": "States plainly that the test found a specific gene change, in the BRCA2 gene, that increases cancer risk.",
+      "high": "Pauses after the result to let it land before offering further explanation.",
+      "source": "CG164"
+    },
+    {
+      "id": "G3",
+      "domain": "communication",
+      "label": "Responding to emotion",
+      "fail": "Moves straight into a list of implications without checking her reaction.",
+      "pass": "Acknowledges her reaction and gives her space before continuing.",
+      "high": "Explicitly distinguishes this news from her cancer diagnosis itself, recognising it may feel like a second blow layered onto an already difficult year."
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-knowledge",
+      "label": "Explaining implications: for her",
+      "fail": "Cannot explain what a BRCA2 result means for her going forward.",
+      "pass": "Explains in broad terms that this increases future risk, including risk to the other breast and ovarian cancer risk, and that options exist to manage this.",
+      "high": "Names that these options will be discussed in detail at a dedicated follow-up appointment, rather than rushing through them now.",
+      "source": "CG164"
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-knowledge",
+      "label": "Explaining implications: for relatives",
+      "fail": "Omits any mention of relevance to family members.",
+      "pass": "Explains that close relatives (e.g. children, siblings) have a chance of carrying the same gene change and can be offered testing themselves.",
+      "high": "Offers to support her in how and when she shares this with relatives, recognising this can feel difficult, rather than leaving her to manage it alone."
+    },
+    {
+      "id": "G6",
+      "domain": "professionalism",
+      "label": "Pacing and closing",
+      "fail": "Tries to cover every future decision in this one appointment.",
+      "pass": "Confirms the headline result and implications, and arranges a further appointment to discuss options in detail.",
+      "high": "Checks how she's coping with everything at once and offers written information or a support contact before she leaves."
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "candidate",
+        "text": "Your test came back positive, BRCA2, so you're at higher risk of ovarian cancer too, you'll probably want your other breast and ovaries removed, plus your kids should get tested.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          },
+          {
+            "row": "G3",
+            "band": "fail"
+          },
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "[Overwhelmed, silent.]"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Any questions? No? Okay, we'll be in touch.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "candidate",
+        "text": "Do you remember what we were testing for when we made that referral?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "Yes, whether my cancer might be genetic."
+      },
+      {
+        "speaker": "candidate",
+        "text": "The test has found a change in a gene called BRCA2, which is linked to increased cancer risk.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "[Quiet.] I wasn't expecting that to actually come back positive."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Take a moment - I know this is a lot to take in on top of everything else this year.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "What does this mean for me?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "It means a higher future risk, including to your other breast and your ovaries, but there are ways of managing that risk, which we'll go through properly at a dedicated appointment rather than today.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "Does this affect my children?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "It can - close relatives have a chance of carrying the same gene change, and testing can be offered to them if they wish.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'll arrange a further appointment to go through your options in detail, once you've had time to take this in.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "candidate",
+        "text": "Do you remember what we were testing for when we sent that referral?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "Whether the cancer runs in the family, yes."
+      },
+      {
+        "speaker": "candidate",
+        "text": "The result has come back, and it's found a change in the BRCA2 gene that's linked to increased cancer risk.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "[Pauses, tearful.] This year just doesn't stop."
+      },
+      {
+        "speaker": "candidate",
+        "text": "It really doesn't feel fair, does it - this is different from your cancer diagnosis, but I understand it can feel like another blow on top of everything else.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "So what happens now?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "In broad terms, it means an increased future risk to your other breast and to your ovaries, and there are options to manage that - we won't go through all the detail today, but I want you to know there is a plan, and we'll arrange a dedicated appointment to talk it through properly.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          },
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "What about my children?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "They may have inherited the same change, and testing can be offered to them - I know that can feel like a hard thing to bring up, and we can support you in how and when you want to share this with them.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "How are you feeling about everything, taking it all together?",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G6",
+      "move": "Covering every future option (contralateral surgery, oophorectomy, relative testing) in a single appointment.",
+      "consequence": "Overwhelms a patient who cannot absorb this much information at once, and risks decisions made without adequate reflection."
+    },
+    {
+      "row": "G3",
+      "move": "Not acknowledging that this may feel like an additional blow on top of her cancer diagnosis and recent surgery.",
+      "consequence": "Fails to recognise the cumulative emotional burden, which can leave her feeling unsupported."
+    },
+    {
+      "row": "G5",
+      "move": "Omitting relevance to relatives.",
+      "consequence": "Denies her and her family the chance to consider testing that could be protective for them too."
+    },
+    {
+      "row": "G2",
+      "move": "Running the result into a list of implications without clearly separating out what the result itself means.",
+      "consequence": "She may leave unclear on the core fact (a BRCA2 variant was found) amid the flood of information."
+    },
+    {
+      "row": "G4",
+      "move": "Failing to explain in broad terms what the result means for her own future risk.",
+      "consequence": "Leaves her without any framework for the follow-up appointment, increasing anxiety."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You tried to cover everything in one appointment",
+      "line": "I'm giving you a lot at once - let's focus on the headline today, and go through the rest at a dedicated appointment."
+    },
+    {
+      "when": "You didn't acknowledge the cumulative burden",
+      "line": "I imagine this feels like a lot on top of everything else you've been through this year."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "A pathogenic BRCA2 variant increases lifetime risk of breast cancer (including in the contralateral breast) and ovarian cancer.",
+      "source": "CG164"
+    },
+    {
+      "fact": "First-degree relatives of a BRCA carrier have up to a 50% chance of carrying the same variant and can be offered predictive genetic testing.",
+      "source": "CG164"
+    },
+    {
+      "fact": "Genetic result disclosure is best paced across more than one appointment, separating the headline result from detailed discussion of risk-reducing options."
+    }
+  ],
+  "recall": {
+    "think": "Pace it; this may be another blow; relatives can wait for a focused talk.",
+    "say": "\"We'll go through options at a dedicated appointment.\"",
+    "do": [
+      "Check her recall of why testing was done",
+      "Give the result plainly, pause, and acknowledge this year's emotional weight",
+      "Defer detailed options to a further appointment"
+    ],
+    "numbers": [
+      {
+        "value": "50%",
+        "meaning": "chance a first-degree relative (e.g. a child or sibling) carries the same BRCA2 variant",
+        "source": "CG164"
+      }
+    ],
+    "trap": "Trying to cover every future decision in one appointment.",
+    "finish": "Result delivered, paced, further appointment arranged."
+  },
+  "sources": [
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format and timing"
+    },
+    {
+      "id": "CG164",
+      "name": "NICE CG164: Familial breast cancer: classification, care and managing breast cancer and related risks in people with a family history of breast cancer",
+      "version": "Published June 2013; last updated November 2023",
+      "url": "https://www.nice.org.uk/guidance/cg164",
+      "supports": "Assessing likelihood of an inherited breast cancer predisposition, referral for genetic testing, implications of a pathogenic variant for the patient and relatives, and that first-degree relatives of a carrier have up to a 50% chance of carrying the same variant"
+    },
+    {
+      "id": "GMC",
+      "name": "GMC: Good Medical Practice",
+      "version": "In effect 30 January 2024",
+      "url": "https://www.gmc-uk.org/professional-standards/the-professional-standards/good-medical-practice",
+      "supports": "Honest, sensitive communication of serious news and giving patients the information they need in a way they can understand"
+    }
+  ],
+  "partner": {
+    "opening": "Please give this patient her genetic test result. You have 7 minutes.",
+    "actorBrief": "You are Rachel Linford, 43, six weeks post-mastectomy, attending for your genetic result. You remember the referral was about whether your cancer might be genetic. You are emotionally worn out from this year and specifically worried about what this means for your children.",
+    "reveals": [
+      {
+        "trigger": "Candidate checks your recall before delivering",
+        "finding": "You confirm you remember the referral was about a possible genetic cause.",
+        "row": "G1"
+      },
+      {
+        "trigger": "Candidate acknowledges the cumulative burden of this year",
+        "finding": "You visibly relax slightly, feeling understood.",
+        "row": "G3"
+      },
+      {
+        "trigger": "Candidate paces information and defers detail to a further appointment",
+        "finding": "You feel relieved rather than overwhelmed.",
+        "row": "G6"
+      }
+    ],
+    "push": [
+      {
+        "question": "Does this mean I'll get cancer again for sure?",
+        "row": "G4",
+        "expect": "Clarify this means increased future risk, not certainty, and that risk-reducing options exist and will be discussed in detail separately."
+      },
+      {
+        "question": "Do my children need to be tested?",
+        "row": "G5",
+        "expect": "Explain relatives have a chance of carrying the same variant and can be offered testing, with support available for how to approach this."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "Can you just tell me everything today - the surgery options, all of it?",
+        "safeAnswer": "Gently explain that today is about the headline result, and a focused appointment will cover the detailed options so she isn't overwhelmed with everything at once.",
+        "row": "G6"
+      },
+      {
+        "prompt": "I don't want my sister to know, even though she might be at risk too.",
+        "safeAnswer": "Acknowledge this is a genuinely difficult tension, avoid pressuring her, and offer to discuss this further with the genetics counselling team who are equipped to support this specific dilemma.",
+        "row": "G5"
+      }
+    ]
+  }
+}

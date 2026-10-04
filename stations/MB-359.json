@@ -1,0 +1,552 @@
+{
+  "id": "MB-359",
+  "exam": "MRCS-B",
+  "title": "Results after breast-conserving surgery and the adjuvant plan",
+  "type": "communication",
+  "header": {
+    "domain": "Applied Skills",
+    "contentArea": "Communication: explaining histology results and adjuvant treatment",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "NICE NG101 (published 18 July 2018; last updated 14 April 2025)",
+      "NICE DG58 tumour profiling tests (May 2024)",
+      "EBCTCG meta-analyses (Lancet, 2011)",
+      "Tamoxifen SmPC (revised 14 May 2026)"
+    ],
+    "related": [
+      {
+        "id": "MB-358",
+        "why": "Ms Linford's consent for the operation whose results these are"
+      },
+      {
+        "id": "MB-357",
+        "why": "The consultation where she heard her diagnosis"
+      },
+      {
+        "id": "MB-356",
+        "why": "Reading the core biopsy report: receptors, staging and adjuvant therapy"
+      },
+      {
+        "id": "MB-138",
+        "why": "The breast examination that finds the lump"
+      },
+      {
+        "id": "MB-286",
+        "why": "Blood-stained nipple discharge: another route into the breast clinic"
+      },
+      {
+        "id": "MB-264",
+        "why": "Breast and axillary anatomy behind the operation"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Breast clinic, two weeks after surgery",
+    "role": "Core surgical trainee",
+    "scenario": "Ms Rachel Linford, 42, had a left wide local excision and sentinel lymph node biopsy. Histology: 19 mm invasive carcinoma (no special type, grade 2), ER positive, HER2 negative; all margins clear (nearest 2 mm); 0 of 2 sentinel nodes involved. A genomic test showed a low recurrence risk. The MDT recommends no further surgery and no chemotherapy, whole-breast radiotherapy, and endocrine therapy (probably tamoxifen), to be finalised with the oncologist.",
+    "task": "Explain the results and the plan to Ms Linford."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Headline first, then what it means, then why radiotherapy and tablets still matter.",
+    "trap": "Letting \"clear\" sound like \"cured, no more treatment\".",
+    "firstMove": "\"The results are good news. Can I go through them?\""
+  },
+  "flow": [
+    "Recovery and readiness",
+    "Headline result",
+    "What it means",
+    "Radiotherapy",
+    "Hormone tablets",
+    "Her concerns",
+    "Next steps and close"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "communication",
+      "label": "Opening and headline",
+      "fail": "Buries the result under a description of the laboratory process.",
+      "pass": "Asks about her recovery and wound, then gives the headline early: good news, the cancer was fully removed and nodes clear.",
+      "high": "Checks she is ready and who she would like present before giving results.",
+      "source": "GMP"
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-knowledge",
+      "label": "Explaining the results",
+      "fail": "Says \"it's clear\" without explaining, or implies she is cured.",
+      "pass": "Clear margins mean no further operation; nodes free of cancer mean no more armpit surgery.",
+      "high": "Explains the genomic test: low risk, so chemotherapy would add too little benefit to recommend.",
+      "source": "NG101"
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "Radiotherapy",
+      "fail": "Cannot say why radiotherapy is still needed after clear results.",
+      "pass": "Radiotherapy to the breast roughly halves the chance of the cancer coming back there; five daily treatments over one week.",
+      "high": "Mentions tiredness and skin redness, and a breath-hold technique to protect the heart as the cancer is left-sided.",
+      "source": "EBCTCGRT"
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-knowledge",
+      "label": "Endocrine therapy",
+      "fail": "Omits the tablets, or says a \"few months\".",
+      "pass": "Hormone-sensitive cancer: a daily tablet, probably tamoxifen, for at least 5 years lowers the risk of return.",
+      "high": "Explains the oncologist will discuss tamoxifen alone or with ovarian suppression, and that treatment may extend beyond 5 years.",
+      "source": "EBCTCGTAM"
+    },
+    {
+      "id": "G5",
+      "domain": "communication",
+      "label": "Her concern about side effects",
+      "fail": "Dismisses her worry as \"standard\" or tells her she must take them.",
+      "pass": "Asks what she has heard, acknowledges hot flushes, and says they can be managed.",
+      "high": "Adds: report unusual vaginal bleeding or leg swelling, use non-hormonal contraception, and never stop without discussing.",
+      "source": "SMPC"
+    },
+    {
+      "id": "G6",
+      "domain": "professionalism",
+      "label": "Continuity of care",
+      "fail": "Gives no referral or contact.",
+      "pass": "Oncology referral for radiotherapy planning and endocrine therapy; breast care nurse remains her named contact.",
+      "high": "Gives written information, and mentions follow-up with mammography.",
+      "source": "NG101"
+    },
+    {
+      "id": "G7",
+      "domain": "communication",
+      "label": "Understanding and closing",
+      "fail": "Closes without checking understanding.",
+      "pass": "Asks her to summarise, invites questions, closes clearly.",
+      "high": "Answers \"Am I cured?\" honestly: very reassuring results, treatment keeps recurrence risk as low as possible.",
+      "source": "GMP"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "candidate",
+        "text": "So, the pathologist looked at the specimen and the nodes under the microscope with various stains, and…",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Ms Linford: “Sorry, is it good or bad?”"
+      },
+      {
+        "speaker": "candidate",
+        "text": "It's clear. You're cured, basically.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          },
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Ms Linford: “Then why do I need radiotherapy?”"
+      },
+      {
+        "speaker": "candidate",
+        "text": "It's just protocol. And some tablets for a few months.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          },
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Ms Linford: “My sister had awful hot flushes on those.”"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Everyone gets side effects; you'll have to take them anyway. Oncology will be in touch.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          },
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "candidate",
+        "text": "Hello, I'm Dr Patel. Can I check your name and date of birth? How's the wound? I have your results, and it's good news: the cancer was removed completely and the lymph nodes were clear.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Ms Linford: “Oh, thank goodness.”"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Clear edges mean you don't need another operation. No cancer in the nodes means no more surgery under the arm.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Ms Linford: “So why more treatment?”"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Radiotherapy roughly halves the chance of the cancer coming back. It's five daily treatments over one week.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Your cancer is hormone-sensitive, so a daily tablet, probably tamoxifen, for at least 5 years lowers the risk of it returning.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Ms Linford: “My sister had awful hot flushes on those.”"
+      },
+      {
+        "speaker": "candidate",
+        "text": "What did she go through? Hot flushes do happen, and there are ways to manage them.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'll refer you to the oncologist, and Sarah stays your contact.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Can you tell me what you're taking away today? Any questions?",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "candidate",
+        "text": "Hello, I'm Dr Patel. Can I check your name and date of birth? How's the wound? Would you like anyone with you before we go through the results?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Ms Linford: “No, just tell me.”"
+      },
+      {
+        "speaker": "candidate",
+        "text": "It's good news. The cancer was removed completely, with clear edges, so no further operation. The two nodes were clear, so no more surgery under the arm. A genomic test showed a low risk, so chemotherapy would add too little to recommend.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Ms Linford: “So I'm done?”"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Two more things. Radiotherapy roughly halves the chance of it coming back: five daily treatments over one week. Tiredness and skin redness are usual, and as it's the left side, you'll hold your breath during treatment to protect the heart.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "It's hormone-sensitive, so a daily tablet for at least 5 years, maybe longer. The oncologist will discuss tamoxifen alone, or with treatment to switch off the ovaries.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Ms Linford: “My sister had awful hot flushes on those.”"
+      },
+      {
+        "speaker": "candidate",
+        "text": "What did she go through? Flushes can be managed. Tell us about unusual vaginal bleeding or a swollen leg, use non-hormonal contraception, and please don't stop without talking to us.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'll refer you to the oncologist; Sarah stays your named contact. Here's written information; you'll have regular mammograms.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Ms Linford: “Am I cured?”"
+      },
+      {
+        "speaker": "candidate",
+        "text": "These results are very reassuring, and the treatment keeps the risk of it coming back as low as possible. What will you tell your husband tonight?",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G1",
+      "move": "Describing the laboratory process before the result.",
+      "consequence": "Prolongs her anxiety; she hears nothing until she knows whether it is good or bad."
+    },
+    {
+      "row": "G2",
+      "move": "\"You're cured.\"",
+      "consequence": "False reassurance that makes radiotherapy and tablets seem pointless."
+    },
+    {
+      "row": "G3",
+      "move": "\"It's just protocol.\"",
+      "consequence": "Without a reason, she may decline radiotherapy that roughly halves recurrence."
+    },
+    {
+      "row": "G5",
+      "move": "Dismissing her sister's hot flushes.",
+      "consequence": "A known reason women stop tamoxifen early, left unexplored and unmanaged."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You started with the process",
+      "line": "Let me start with the most important part: it's good news."
+    },
+    {
+      "when": "\"Clear\" sounded like \"finished\"",
+      "line": "Clear means the operation worked; radiotherapy and tablets lower the risk further."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Invasive cancer: further surgery for tumour on ink (0 mm); consider it within 1 mm. A 2 mm margin is clear.",
+      "source": "NG101"
+    },
+    {
+      "fact": "Node-negative women: radiotherapy after conservation cut 10-year recurrence from 31% to 16%.",
+      "source": "EBCTCGRT"
+    },
+    {
+      "fact": "Five years of tamoxifen roughly halves recurrence in ER-positive disease during treatment and cuts breast cancer death by about a third.",
+      "source": "EBCTCGTAM"
+    },
+    {
+      "fact": "Premenopausal: tamoxifen alone, or ovarian suppression with tamoxifen or an aromatase inhibitor, by shared decision.",
+      "source": "NG101"
+    },
+    {
+      "fact": "Tamoxifen: hot flushes, thromboembolism, endometrial changes; avoid pregnancy, use non-hormonal contraception.",
+      "source": "SMPC"
+    }
+  ],
+  "recall": {
+    "think": "\"Clear\" is not \"cured\"; she may skip treatment she does not understand.",
+    "say": "\"It's good news: fully removed, nodes clear.\"",
+    "do": [
+      "Headline result first",
+      "Why radiotherapy and tablets",
+      "Explore her side-effect worry"
+    ],
+    "numbers": [
+      {
+        "value": "26 Gy in 5 fractions",
+        "meaning": "whole-breast radiotherapy over 1 week",
+        "source": "NG101"
+      },
+      {
+        "value": "31% to 16%",
+        "meaning": "10-year recurrence without and with radiotherapy (node-negative)",
+        "source": "EBCTCGRT"
+      },
+      {
+        "value": "5 years",
+        "meaning": "minimum endocrine therapy",
+        "source": "EBCTCGTAM"
+      }
+    ],
+    "trap": "Treating clear results as the end of treatment.",
+    "finish": "Oncology referral; nurse remains her contact."
+  },
+  "sources": [
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Communication station format: 9 minutes with 1 minute's reading; introduce yourself and confirm identity"
+    },
+    {
+      "id": "NG101",
+      "name": "NICE NG101: Early and locally advanced breast cancer: diagnosis and management",
+      "version": "Published 18 July 2018; last updated 14 April 2025 (links updated July 2026)",
+      "url": "https://www.nice.org.uk/guidance/ng101",
+      "supports": "Named clinical nurse specialist (1.1.1); further surgery only for tumour on ink (0 mm), considered for invasive cancer within 1 mm (1.4.3, 1.4.5); no further axillary treatment when sentinel nodes are negative; systemic therapy decisions by the MDT with the person (1.6.2); adjuvant endocrine therapy for ER-positive disease (1.11.5); premenopausal women: shared decision between tamoxifen alone and ovarian function suppression with tamoxifen or an aromatase inhibitor (1.11.6); consider tamoxifen beyond 5 years (1.11.16); breath-hold technique for left-sided cancer (1.13.2); whole-breast radiotherapy after breast-conserving surgery with clear margins (1.13.3); 26 Gy in 5 fractions over 1 week (1.13.13)"
+    },
+    {
+      "id": "DG58",
+      "name": "NICE DG58: Tumour profiling tests to guide adjuvant chemotherapy decisions in early breast cancer",
+      "version": "Published 9 May 2024 (incorporates DG34, 2018)",
+      "url": "https://www.nice.org.uk/guidance/dg58",
+      "supports": "Oncotype DX, EndoPredict and Prosigna as options to guide adjuvant chemotherapy decisions in ER-positive, HER2-negative, node-negative early breast cancer"
+    },
+    {
+      "id": "EBCTCGRT",
+      "name": "Early Breast Cancer Trialists' Collaborative Group (Darby S, et al.). Effect of radiotherapy after breast-conserving surgery on 10-year recurrence and 15-year breast cancer death. Lancet 2011;378:1707-1716",
+      "version": "2011",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/22019144/",
+      "supports": "In node-negative women, radiotherapy after breast-conserving surgery reduced the 10-year risk of any first recurrence from 31.0% to 15.6%, and reduced 15-year breast cancer death"
+    },
+    {
+      "id": "EBCTCGTAM",
+      "name": "Early Breast Cancer Trialists' Collaborative Group (Davies C, et al.). Relevance of breast cancer hormone receptors and other factors to the efficacy of adjuvant tamoxifen. Lancet 2011;378:771-784",
+      "version": "2011",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/21802721/",
+      "supports": "In ER-positive disease, about 5 years of tamoxifen roughly halved recurrence in years 0-4 (RR 0.53) and reduced breast cancer mortality by about a third over 15 years"
+    },
+    {
+      "id": "SMPC",
+      "name": "Tamoxifen 10 mg film-coated tablets: Summary of Product Characteristics (Wockhardt UK Ltd)",
+      "version": "Date of revision of the text 14 May 2026",
+      "url": "https://www.medicines.org.uk/emc/product/2247/smpc",
+      "supports": "Hot flushes and thromboembolic events are recognised adverse effects; endometrial changes, so abnormal vaginal bleeding must be investigated; avoid pregnancy and use barrier or other non-hormonal contraception"
+    },
+    {
+      "id": "GMP",
+      "name": "GMC: Good medical practice",
+      "version": "In effect 30 January 2024",
+      "url": "https://www.gmc-uk.org/professional-standards/the-professional-standards/good-medical-practice",
+      "supports": "Give patients the information they want or need in a way they can understand; be honest; support patients to make decisions"
+    }
+  ],
+  "partner": {
+    "opening": "Ms Linford is here for her results. Please begin when you're ready.",
+    "actorBrief": "You are Rachel Linford, 42, a primary school teacher with two children aged 8 and 11, two weeks after surgery to your left breast. Your wound has healed well. You have dreaded this appointment. Opening: \"Is it good or bad?\" If given the good news early, relax and engage. If told it is \"clear\", ask \"So I'm done?\" Hidden concern: your sister had bad hot flushes on hormone tablets and stopped them; say \"My sister had awful hot flushes on those\" once, and only say she stopped them if asked. Ask \"Am I cured?\" near the end. If asked to summarise, say: \"It's all out, glands clear, a week of radiotherapy, then tablets for years.\"",
+    "reveals": [
+      {
+        "trigger": "Asks about her recovery",
+        "finding": "\"The wound's fine. A bit numb under the arm.\"",
+        "row": "G1"
+      },
+      {
+        "trigger": "Asks what her sister experienced",
+        "finding": "\"Flushes all night, no sleep. She stopped them after a year.\"",
+        "row": "G5"
+      },
+      {
+        "trigger": "Asks whether she could be pregnant or plans a pregnancy",
+        "finding": "\"No, we're done. I'm on the pill, though.\"",
+        "row": "G5"
+      }
+    ],
+    "push": [
+      {
+        "question": "Why do I need radiotherapy if it's all out?",
+        "row": "G3",
+        "expect": "Microscopic disease may remain in the breast; radiotherapy roughly halves the risk of return."
+      },
+      {
+        "question": "How long will I take the tablets?",
+        "row": "G4",
+        "expect": "At least 5 years, possibly longer; the choice of tablet made with the oncologist."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "\"I'm on the combined pill. Is that OK?\"",
+        "safeAnswer": "Hormonal contraception is not advised with hormone-sensitive breast cancer; switch to a non-hormonal method such as a copper coil, discussed with the oncologist or GP.",
+        "row": "G5"
+      },
+      {
+        "prompt": "\"Can I just skip the tablets?\"",
+        "safeAnswer": "It is her choice; explain the benefit, and ask her to discuss side effects with oncology before deciding.",
+        "row": "G4"
+      },
+      {
+        "prompt": "\"Why no chemotherapy? My friend had it.\"",
+        "safeAnswer": "Her tumour's genomic test showed low risk, so chemotherapy would add little benefit for its side effects.",
+        "row": "G2"
+      }
+    ]
+  }
+}

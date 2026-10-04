@@ -1,0 +1,537 @@
+{
+  "id": "MB-320",
+  "exam": "MRCS-B",
+  "title": "Postoperative ileus vs early mechanical obstruction",
+  "type": "applied-knowledge",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "Postoperative care: abdominal complications",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "Wu Z et al., European Surgical Research 2015;54(3-4):127-138",
+      "Ong AW, Myers SR, American Journal of Surgery 2020;219(3):535-539",
+      "Sajja SB, Schein M, British Journal of Surgery 2004;91(6):683-691"
+    ],
+    "related": [
+      {
+        "id": "MB-165",
+        "why": "Adhesional small-bowel obstruction managed in detail"
+      },
+      {
+        "id": "MB-183",
+        "why": "Reading the abdominal film for obstruction and volvulus"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Surgical ward",
+    "role": "Surgical trainee",
+    "scenario": "Mrs Chloe Merriweather, 66, is 4 days after colorectal surgery with abdominal distension, vomiting and poor bowel function.",
+    "task": "Distinguish postoperative ileus from early mechanical obstruction and outline your assessment."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Systematic assessment first; ileus and early obstruction overlap, so let severity and trajectory guide imaging and escalation.",
+    "trap": "Using bowel sounds, or a fixed postoperative day, as the way to tell the two apart.",
+    "firstMove": "\"I'd start with ABCDE and a sepsis assessment, then take a focused history and examine her abdomen.\""
+  },
+  "flow": [
+    "Assess (ABCDE, sepsis screen)",
+    "History and examination",
+    "Bloods and further tests",
+    "Consider imaging",
+    "Differentiate ileus vs obstruction",
+    "Treat and escalate appropriately"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-knowledge",
+      "label": "Initial assessment and sepsis screen",
+      "fail": "Goes straight to a diagnosis without assessing for sepsis or shock.",
+      "pass": "Assesses ABCDE and screens for sepsis or shock before proceeding further.",
+      "high": "Explains why this matters here: a deteriorating, septic picture changes the differential and the urgency, regardless of the eventual diagnosis."
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-knowledge",
+      "label": "Focused history and examination",
+      "fail": "Does not ask about pain, vomiting, flatus/stool, fever or review the operation and medications.",
+      "pass": "Asks about pain, vomiting, distension, flatus and stool, fever and urinary output, and reviews the operation, timing and opioid use; examines for peritonism, focal tenderness, hernia and wound/stoma problems.",
+      "high": "Actively looks for physiological red flags (peritonism, focal tenderness, tachycardia, rising lactate) that would point away from simple ileus."
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "Distinguishing ileus from mechanical obstruction",
+      "fail": "Uses 'no bowel sounds' as a rule for diagnosing ileus, or gives a fixed postoperative day on which ileus becomes obstruction.",
+      "pass": "States that ileus is functional hypomotility after surgery, obstruction has a mechanical transition point, and that bowel sounds alone do not reliably separate the two.",
+      "high": "Explains that clinical endpoints such as bowel sounds and flatus are individually unreliable, so the diagnosis rests on the whole clinical picture and, when needed, imaging.",
+      "source": "WU2015"
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-skill",
+      "label": "Investigation choice",
+      "fail": "Sends no bloods, or requests imaging without a clear indication for it.",
+      "pass": "Checks FBC, U&E, CRP and lactate when indicated, and considers abdominal imaging, particularly CT when mechanical obstruction, leak or another complication is suspected.",
+      "high": "Justifies CT specifically over a plain film when strangulation, leak or an alternative diagnosis (collection, anastomotic problem) needs excluding."
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-knowledge",
+      "label": "Recognising early postoperative small-bowel obstruction",
+      "fail": "Assumes obstruction cannot occur this early after surgery.",
+      "pass": "Recognises that early postoperative small-bowel obstruction is a recognised entity within the first weeks after surgery.",
+      "high": "Notes it may need reoperation depending on the cause and clinical course, distinct from long-term adhesional obstruction managed initially non-operatively.",
+      "source": "ONG2020"
+    },
+    {
+      "id": "G6",
+      "domain": "professionalism",
+      "label": "Recognising when this is an emergency",
+      "fail": "Delays imaging or escalation despite peritonism or clinical deterioration.",
+      "pass": "Identifies peritonism, signs of strangulation or ischaemia, perforation, severe sepsis or persistent deterioration as reasons for urgent senior review.",
+      "high": "Frames the decision as ongoing reassessment rather than a one-off call, escalating early if the trajectory worsens rather than waiting for a fixed time point."
+    },
+    {
+      "id": "G7",
+      "domain": "clinical-skill",
+      "label": "Initial management",
+      "fail": "Treats all postoperative distension the same way regardless of cause.",
+      "pass": "Optimises fluids and electrolytes, minimises unnecessary opioids, encourages mobilisation and uses NG decompression when clinically indicated.",
+      "high": "Explicitly reviews the opioid burden and electrolyte abnormalities as contributors to ileus, and adjusts them rather than only treating the bowel."
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "What are your differential diagnoses?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "It's day 4, so it's obstruction, not ileus.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you assess her?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd listen for bowel sounds — if there are none, that confirms ileus.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          },
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "She's tender with guarding and tachycardic."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'll keep observing overnight, it's probably still just ileus.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What tests would you send?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "None needed yet.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you manage her?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Keep her nil by mouth and carry on with the opioids as charted — nothing else to change.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "examiner",
+        "text": "What are your differential diagnoses?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Postoperative ileus and early mechanical obstruction are top of my list, and I'd also keep anastomotic leak or collection in mind.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you assess her?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "ABCDE and a sepsis screen first, then a history covering pain, vomiting, flatus and stool, fever and her operation and opioid use, and an examination for peritonism, focal tenderness, hernia and wound or stoma problems.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          },
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Bowel sounds are absent. Does that settle it?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "No — bowel sounds alone don't reliably distinguish ileus from obstruction, and there's no fixed day when one becomes the other. I'd look at the whole picture.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What would you check?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "FBC, U&E, CRP and lactate if indicated, and I'd consider CT if I'm worried about mechanical obstruction, a leak or another complication.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "When would you worry?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Peritonism, signs of strangulation, perforation, severe sepsis or if she keeps deteriorating — that needs urgent senior review, not more waiting.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you manage her in the meantime?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Optimise fluids and electrolytes, cut back unnecessary opioids, mobilise her and use NG decompression if indicated.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "examiner",
+        "text": "What are your differential diagnoses?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Postoperative ileus and early mechanical small-bowel obstruction, which is a recognised entity in the first weeks after surgery and can occasionally need reoperation depending on the cause. I'd also consider anastomotic leak or an intra-abdominal collection.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you assess her?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "ABCDE and sepsis screen first — that changes the urgency whatever the eventual diagnosis. Then a focused history and examination for peritonism, focal tenderness, hernia or wound and stoma problems, plus reviewing her opioid burden.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          },
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "No bowel sounds and she hasn't passed flatus. Ileus?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Those signs are individually unreliable for telling ileus from obstruction — the evidence is that clinical endpoints like bowel sounds and flatus don't reliably define recovery. I'd weigh the whole trajectory and use imaging if there's any doubt.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What imaging, if any?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd have a low threshold for CT specifically if I'm worried about strangulation, a leak or another complication that a plain film wouldn't reliably show.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "When would you escalate?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Peritonism, strangulation, perforation, severe sepsis or ongoing deterioration — and I'd keep reassessing rather than fixing on a day or a single sign to decide.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Management while you wait for the picture to clarify?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Fluids and electrolytes optimised, opioids minimised, early mobilisation, and NG decompression if indicated — addressing the contributors to ileus, not just observing.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G3",
+      "move": "Using absent bowel sounds as proof of ileus, or naming a fixed postoperative day when obstruction takes over.",
+      "consequence": "A mechanical cause needing intervention is missed or diagnosed late."
+    },
+    {
+      "row": "G1",
+      "move": "Skipping the sepsis assessment to focus straight on the bowel differential.",
+      "consequence": "A deteriorating, septic patient is not recognised early."
+    },
+    {
+      "row": "G4",
+      "move": "Sending no tests and requesting no imaging despite clinical concern.",
+      "consequence": "A leak, strangulation or collection is missed."
+    },
+    {
+      "row": "G6",
+      "move": "Continuing to observe despite peritonism or deterioration.",
+      "consequence": "Delayed recognition of a surgical emergency such as strangulation or perforation."
+    },
+    {
+      "row": "G5",
+      "move": "Dismissing obstruction because it is 'too early' after surgery.",
+      "consequence": "A recognised, sometimes reoperable, complication is overlooked."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "Pushed on absent bowel sounds meaning ileus",
+      "line": "That wouldn't exclude obstruction, because bowel sounds alone aren't a reliable way to tell the two apart."
+    },
+    {
+      "when": "Asked for the day ileus becomes obstruction",
+      "line": "There isn't a fixed cut-off — I'd base it on the trajectory and examination, not the calendar."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Ileus is functional hypomotility after surgery; obstruction has a mechanical transition point.",
+      "source": "WU2015"
+    },
+    {
+      "fact": "Bowel sounds and flatus alone are unreliable clinical endpoints for distinguishing the two.",
+      "source": "WU2015"
+    },
+    {
+      "fact": "Early postoperative small-bowel obstruction is a recognised entity that can require reoperation depending on cause and course.",
+      "source": "ONG2020"
+    },
+    {
+      "fact": "Persistent failure of bowel function should prompt exclusion of a mechanical cause.",
+      "source": "SAJJA2004"
+    },
+    {
+      "fact": "CT is particularly useful when strangulation, leak or another complication is suspected."
+    }
+  ],
+  "recall": {
+    "think": "Strangulation, perforation or an anastomotic leak masquerading as 'just ileus'.",
+    "say": "\"I wouldn't rely on bowel sounds alone — I'd assess the whole picture and image if there's any doubt.\"",
+    "do": [
+      "ABCDE and sepsis screen",
+      "History, examination, bloods",
+      "CT if mechanical cause, leak or complication suspected"
+    ],
+    "numbers": [
+      {
+        "value": "1-12%",
+        "meaning": "Approximate rate of early postoperative small-bowel obstruction after abdominal surgery",
+        "source": "ONG2020"
+      }
+    ],
+    "trap": "Absent bowel sounds or a fixed postoperative day used to 'rule in' ileus.",
+    "finish": "Reassess continuously; escalate for peritonism, strangulation, perforation or deterioration rather than waiting."
+  },
+  "sources": [
+    {
+      "id": "WU2015",
+      "name": "Wu Z, Boersema GSA, Dereci A, Menon AG, Jeekel J, Lange JF. Clinical endpoint, early detection, and differential diagnosis of postoperative ileus: a systematic review of the literature",
+      "version": "European Surgical Research 2015;54(3-4):127-138",
+      "url": "https://doi.org/10.1159/000369529",
+      "supports": "Clinical signs such as bowel sounds and flatus do not reliably define recovery from ileus; CT has the best differential diagnostic value"
+    },
+    {
+      "id": "ONG2020",
+      "name": "Ong AW, Myers SR. Early postoperative small bowel obstruction: A review",
+      "version": "American Journal of Surgery 2020;219(3):535-539",
+      "url": "https://doi.org/10.1016/j.amjsurg.2019.11.008",
+      "supports": "Early postoperative small-bowel obstruction occurs in about 1-12% of abdominal operations and can require reoperation depending on cause and course"
+    },
+    {
+      "id": "SAJJA2004",
+      "name": "Sajja SB, Schein M. Early postoperative small bowel obstruction",
+      "version": "British Journal of Surgery 2004;91(6):683-691",
+      "url": "https://doi.org/10.1002/bjs.4589",
+      "supports": "Persistent failure of bowel function should prompt exclusion of a mechanical cause; management depends on the cause"
+    }
+  ],
+  "partner": {
+    "opening": "\"She's day 4 after colorectal surgery with distension, vomiting and poor bowel function. What are your differentials?\"",
+    "reveals": [
+      {
+        "trigger": "Candidate asks for observations",
+        "finding": "Heart rate 108, temperature 37.8°C, otherwise stable.",
+        "row": "G1"
+      },
+      {
+        "trigger": "Candidate examines the abdomen",
+        "finding": "Distended, mildly tender, no peritonism at this point.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Candidate asks about opioids",
+        "finding": "She has been on regular strong opioids since surgery.",
+        "row": "G7"
+      },
+      {
+        "trigger": "Candidate requests bloods",
+        "finding": "CRP rising from the day before; electrolytes mildly deranged.",
+        "row": "G4"
+      },
+      {
+        "trigger": "Candidate asks for a repeat review a few hours later",
+        "finding": "Now more tender with guarding.",
+        "row": "G6"
+      }
+    ],
+    "push": [
+      {
+        "question": "Bowel sounds are absent — does that mean ileus?",
+        "row": "G3",
+        "expect": "No; bowel sounds alone don't reliably distinguish ileus from obstruction."
+      },
+      {
+        "question": "What would make you request a CT rather than just observe?",
+        "row": "G4",
+        "expect": "Suspected mechanical obstruction, leak or another complication; new peritonism."
+      },
+      {
+        "question": "Could this be obstruction only 4 days after surgery?",
+        "row": "G5",
+        "expect": "Yes — early postoperative small-bowel obstruction is recognised and can occasionally need reoperation."
+      },
+      {
+        "question": "She's now more tender with guarding. What now?",
+        "row": "G6",
+        "expect": "Urgent senior review; treat as a possible surgical emergency, not routine observation."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "\"No bowel sounds means it's ileus, surely?\"",
+        "safeAnswer": "No — bowel sounds alone are an unreliable sign; assess the whole picture.",
+        "row": "G3"
+      },
+      {
+        "prompt": "\"Isn't it too early for obstruction after surgery?\"",
+        "safeAnswer": "No — early postoperative small-bowel obstruction is a recognised entity within the first weeks.",
+        "row": "G5"
+      },
+      {
+        "prompt": "\"Just give me the day ileus becomes obstruction.\"",
+        "safeAnswer": "There's no taught fixed cut-off; it's judged on the trajectory and findings, not the calendar day.",
+        "row": "G3"
+      },
+      {
+        "prompt": "She develops new severe pain out of proportion to findings.",
+        "safeAnswer": "Treat as a red flag for strangulation or ischaemia and escalate urgently.",
+        "row": "G6"
+      }
+    ]
+  }
+}

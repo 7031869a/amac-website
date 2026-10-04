@@ -1,0 +1,566 @@
+{
+  "id": "MB-284",
+  "exam": "MRCS-B",
+  "title": "History: preoperative assessment before elective laparoscopic cholecystectomy",
+  "type": "history",
+  "header": {
+    "domain": "Applied Skills",
+    "contentArea": "Communication skills in giving and receiving information and history taking",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "signalMinutes": 6,
+    "guidelineVersions": [
+      "NICE NG45 (April 2016)",
+      "CPOC diabetes guideline v3.0 (October 2023)",
+      "CPOC/BGS frailty guideline (September 2021)",
+      "NICE NG209 (updated February 2025)"
+    ],
+    "related": [
+      {
+        "id": "MB-206 Perioperative diabetes management",
+        "why": "The detailed medication and glucose plan once this history has found the diabetes"
+      },
+      {
+        "id": "MB-205 Perioperative anticoagulants",
+        "why": "What to do with anticoagulants or antiplatelets found in the drug history"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Preoperative assessment clinic",
+    "role": "Core surgical trainee",
+    "scenario": "Mr Gerald Pennington, 68, is listed for an elective laparoscopic cholecystectomy for recurrent biliary colic. His GP letter mentions hypertension, type 2 diabetes and that he smokes.",
+    "task": "Take a focused preoperative history. You will be stopped at 6 minutes to summarise, then asked about investigations and optimisation."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Find what makes this anaesthetic risky, then test only for what changes the plan.",
+    "trap": "Ordering the same full panel of tests, including a chest X-ray, for everyone.",
+    "firstMove": "Confirm the operation, then ask how far he can walk and climb before stopping."
+  },
+  "flow": [
+    "Open and confirm the operation",
+    "Heart, lungs and functional capacity",
+    "Anaesthetic history",
+    "Medicines and allergies",
+    "Smoking, alcohol, frailty, home",
+    "At 6 minutes: summarise",
+    "Investigations and optimisation"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "communication",
+      "label": "Opening and purpose",
+      "fail": "Launches into questions without confirming identity, operation or why the history matters.",
+      "pass": "Introduces, confirms identity and the planned operation; explains the aim is to make the anaesthetic and surgery safe.",
+      "high": "Asks what he understands about the operation and whether he has concerns, then signposts the sections."
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-skill",
+      "label": "Heart, lungs and functional capacity",
+      "fail": "Asks only \"Any heart or lung problems?\"",
+      "pass": "Asks chest pain, breathlessness, orthopnoea, palpitations, syncope, cough; how far he walks and whether he manages stairs.",
+      "high": "Pins functional capacity to a concrete task (stairs without stopping) and asks about snoring or daytime sleepiness."
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-skill",
+      "label": "Anaesthetic history",
+      "fail": "Does not ask about previous anaesthetics or family reactions.",
+      "pass": "Asks previous anaesthetics and problems; family history of anaesthetic problems; reflux, loose teeth, neck movement.",
+      "high": "Picks up the relative who was slow to wake and flags possible suxamethonium sensitivity or malignant hyperthermia to the anaesthetist."
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-skill",
+      "label": "Medicines and allergies",
+      "fail": "Takes no drug history, or records \"diabetes tablets\" without names.",
+      "pass": "Names every medicine and dose, asks specifically about blood thinners, and allergies with the reaction.",
+      "high": "Recognises dapagliflozin as an SGLT2 inhibitor: omitted the day before and the day of surgery for ketoacidosis risk.",
+      "source": "CPOCDM"
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-skill",
+      "label": "Smoking, alcohol, frailty and home",
+      "fail": "Doesn't ask about smoking quantity, alcohol or who is at home.",
+      "pass": "Quantifies smoking in pack-years, alcohol in units; asks about independence, falls and support at home.",
+      "high": "Screens frailty with the Clinical Frailty Scale (all over 65) and asks whether he would accept stop-smoking support.",
+      "source": "CPOCFR"
+    },
+    {
+      "id": "G6",
+      "domain": "communication",
+      "label": "Summary at the signal",
+      "fail": "Lists answers in the order asked, with no risk judgement.",
+      "pass": "Summarises operation, comorbidities, functional capacity, drugs of concern, smoking and anaesthetic history.",
+      "high": "Leads with the factors that change the plan: limited exercise tolerance, SGLT2 inhibitor, family anaesthetic reaction.",
+      "source": "CPOCDM"
+    },
+    {
+      "id": "G7",
+      "domain": "clinical-knowledge",
+      "label": "Investigations by surgery grade and ASA",
+      "fail": "Orders FBC, clotting, chest X-ray and urine dip for everyone.",
+      "pass": "Grades surgery and ASA; ECG and kidney function for his comorbidities; HbA1c if none within 3 months; no routine chest X-ray.",
+      "high": "Explains that clotting only follows liver disease or anticoagulants, and FBC only for symptoms not recently investigated.",
+      "source": "NG45"
+    },
+    {
+      "id": "G8",
+      "domain": "professionalism",
+      "label": "Optimisation and escalation",
+      "fail": "Postpones surgery until he has stopped smoking for a set time, or ignores diabetes control.",
+      "pass": "Refers to stop-smoking support without delaying surgery; optimises diabetes; informs the anaesthetist of risks found.",
+      "high": "If HbA1c is above 69 mmol/mol, seeks diabetes specialist input before surgery; documents shared decisions.",
+      "source": "CPOCDM"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "candidate",
+        "text": "Right, gallbladder. Any heart or lung problems?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          },
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "And you take some diabetes tablets. Fine.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop there and summarise your history."
+      },
+      {
+        "speaker": "candidate",
+        "text": "He has hypertension, diabetes and smokes. He answered all my questions.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What investigations would you request?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "The full pre-op panel: FBC, U&E, clotting, chest X-ray, ECG and urine dip. Everyone gets those.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What about his smoking?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "He needs to stop for a couple of months first, so I'd take him off the list until he has.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "candidate",
+        "text": "Hello, I'm Dr Patel, one of the surgical trainees. Can I confirm your name and date of birth? You're here before your keyhole gallbladder operation; I'd like to ask some questions to make the anaesthetic and surgery as safe as possible.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Any chest pain, breathlessness, palpitations or blackouts? Can you lie flat? How far can you walk, and can you manage a flight of stairs?",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Have you had an anaesthetic before? Any problems for you or anyone in your family? Any reflux, loose teeth or stiff neck?",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Which medicines do you take, and what doses? Any blood thinners? Any allergies, and what happened?",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "How many cigarettes a day, and for how long? How much alcohol? Who is at home, and do you manage on your own?",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop there and summarise your history."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Mr Pennington, 68, for elective laparoscopic cholecystectomy. Hypertension and type 2 diabetes on four medicines; breathless after one flight of stairs; 40 pack-years, still smoking. His brother was slow to wake after an anaesthetic.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What would you request, and what would you do?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd grade the surgery and his ASA. With his comorbidities: ECG and kidney function, and HbA1c if none in the last 3 months. No routine chest X-ray. I'd refer him to stop-smoking support without delaying surgery, and tell the anaesthetist.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          },
+          {
+            "row": "G8",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "candidate",
+        "text": "Hello, I'm Dr Patel, one of the surgical trainees. Can I confirm your name and date of birth? What do you understand about the operation, and is anything worrying you? I'll ask about your heart and lungs, previous anaesthetics, medicines, then home life.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Can you climb a flight of stairs without stopping? Does anyone say you snore loudly or stop breathing at night? Are you sleepy in the day?",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Your brother took hours to wake up after an operation? Do you know if he was told why? I'll make sure the anaesthetist knows; it can mean a sensitivity to one muscle relaxant.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Dapagliflozin is one to plan: it's stopped the day before and the day of surgery, because it can cause ketoacidosis when you're not eating.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd like to score how you manage day to day, which I do for everyone over 65. Would you accept help to stop smoking before the operation?",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop there and summarise your history."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Mr Pennington, 68, for elective laparoscopic cholecystectomy. Three things change the plan: he's breathless after one flight and snores, so reduced functional capacity and possible sleep apnoea; he takes dapagliflozin; and his brother had a delayed wake-up, so possible suxamethonium sensitivity. Also hypertension, 40 pack-years current smoker, lives alone.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What would you request, and what would you do?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "By NICE NG45, grade of surgery and ASA: ECG and kidney function, and HbA1c if none within 3 months. No routine chest X-ray; clotting only for liver disease or anticoagulants. If his HbA1c is above 69, I'd ask the diabetes team to optimise him first. Stop-smoking referral now, surgery not delayed for it. I'd discuss the anaesthetic history and possible sleep apnoea with the anaesthetist and document what we agree.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          },
+          {
+            "row": "G8",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G3",
+      "move": "Not asking about family anaesthetic reactions.",
+      "consequence": "Safety-critical: misses possible suxamethonium sensitivity or malignant hyperthermia risk before he is anaesthetised."
+    },
+    {
+      "row": "G4",
+      "move": "Recording \"diabetes tablets\" without names.",
+      "consequence": "Misses the SGLT2 inhibitor, which risks euglycaemic ketoacidosis if continued around surgery."
+    },
+    {
+      "row": "G5",
+      "move": "Skipping frailty and home circumstances.",
+      "consequence": "Discharge planning and day-case suitability can't be judged, and frailty goes unrecorded."
+    },
+    {
+      "row": "G7",
+      "move": "Ordering a routine chest X-ray and clotting screen.",
+      "consequence": "Tests not recommended by NG45 add delay and cost without changing the plan."
+    },
+    {
+      "row": "G8",
+      "move": "Cancelling surgery until he has stopped smoking for a set period.",
+      "consequence": "Denies needed surgery; stopping at any point before surgery helps, so refer and proceed."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You forgot the family anaesthetic history",
+      "line": "One more thing: has anyone in your family had a bad reaction to an anaesthetic?"
+    },
+    {
+      "when": "Asked \"Does everyone need a chest X-ray?\"",
+      "line": "No. NICE doesn't recommend routine chest X-rays; I'd order one only if something in the history or examination needed it."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Preoperative tests depend on surgery grade and ASA grade; routine chest X-ray, urine dipstick and resting echo are not recommended (NG45).",
+      "source": "NG45"
+    },
+    {
+      "fact": "Intermediate surgery, ASA 3 or 4: ECG and kidney function offered; FBC considered for cardiovascular or renal symptoms not recently investigated. ASA 2: ECG considered for cardiovascular, renal or diabetes comorbidity.",
+      "source": "NG45"
+    },
+    {
+      "fact": "HbA1c for people with diabetes not tested in the last 3 months.",
+      "source": "NG45"
+    },
+    {
+      "fact": "HbA1c above 69 mmol/mol (8.5%): consider diabetes specialist referral to optimise before elective surgery. SGLT2 inhibitors: omit the day before and the day of surgery.",
+      "source": "CPOCDM"
+    },
+    {
+      "fact": "Assess frailty with the Clinical Frailty Scale in all patients over 65.",
+      "source": "CPOCFR"
+    },
+    {
+      "fact": "Encourage people referred for elective surgery to stop smoking and refer to local stop-smoking support.",
+      "source": "NG209"
+    }
+  ],
+  "recall": {
+    "think": "Hidden cardiorespiratory disease, anaesthetic reactions, SGLT2 ketoacidosis.",
+    "say": "\"His functional capacity, diabetes drugs and family anaesthetic history change the plan.\"",
+    "do": [
+      "Stairs, snoring, anaesthetic reactions",
+      "Name every drug; flag SGLT2i",
+      "Tests by NG45 grade and ASA"
+    ],
+    "numbers": [
+      {
+        "value": "3 months",
+        "meaning": "HbA1c needed if none within this time",
+        "source": "NG45"
+      },
+      {
+        "value": "69 mmol/mol",
+        "meaning": "HbA1c above this: diabetes specialist input",
+        "source": "CPOCDM"
+      },
+      {
+        "value": "65",
+        "meaning": "over this age: Clinical Frailty Scale for all",
+        "source": "CPOCFR"
+      }
+    ],
+    "trap": "A routine \"full panel\" including chest X-ray feels thorough.",
+    "finish": "Targeted tests, stop-smoking referral, anaesthetic review, then surgery."
+  },
+  "sources": [
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format: 9-minute stations with 1 minute's reading; introduce yourself and confirm identity"
+    },
+    {
+      "id": "NG45",
+      "name": "NICE NG45: Routine preoperative tests for elective surgery",
+      "version": "Published 5 April 2016",
+      "url": "https://www.nice.org.uk/guidance/ng45/chapter/Recommendations",
+      "supports": "Tests by surgery grade and ASA grade (tables 1-3); HbA1c if not tested in last 3 months (1.6.2); no routine chest X-ray (1.8.1), urine dipstick (1.7.1) or echo (1.9.1); haemostasis only in chronic liver disease or anticoagulant modification"
+    },
+    {
+      "id": "CPOCDM",
+      "name": "Centre for Perioperative Care: Guideline for perioperative care for people with diabetes mellitus undergoing elective and emergency surgery",
+      "version": "Version 3.0, October 2023",
+      "url": "https://cpoc.org.uk/sites/cpoc/files/documents/2024-03/CPOC-DiabetesGuideline2023.pdf",
+      "supports": "HbA1c within 3 months at referral; consider diabetes specialist referral if HbA1c above 69 mmol/mol (8.5%); omit SGLT2 inhibitors the day before and the day of surgery"
+    },
+    {
+      "id": "CPOCFR",
+      "name": "Centre for Perioperative Care and British Geriatrics Society: Guideline for perioperative care for people living with frailty undergoing elective and emergency surgery",
+      "version": "September 2021",
+      "url": "https://www.cpoc.org.uk/sites/cpoc/files/documents/2021-09/CPOC-BGS-Frailty-Guideline-2021.pdf",
+      "supports": "Assess and document frailty with the Clinical Frailty Scale in all patients over 65 and younger patients at risk"
+    },
+    {
+      "id": "NG209",
+      "name": "NICE NG209: Tobacco: preventing uptake, promoting quitting and treating dependence",
+      "version": "Published 30 November 2021; last updated 4 February 2025",
+      "url": "https://www.nice.org.uk/guidance/ng209/chapter/treating-tobacco-dependence",
+      "supports": "Encourage people referred for elective surgery to stop smoking before surgery and refer to local stop-smoking support; stopping at any time before surgery has no ill effects"
+    }
+  ],
+  "partner": {
+    "opening": "Please take a focused preoperative history from Mr Pennington. I'll stop you at 6 minutes to summarise.",
+    "actorBrief": "You are Gerald Pennington, 68, a retired bus driver who lives alone. You are having your gallbladder out after three attacks of pain. Opening line: \"I'm here for my gallbladder operation. I've got high blood pressure and diabetes. What do you need to know?\" Calm and cooperative, keen to get it done before winter. Volunteer nothing else; release facts only when asked (see reveals). If told to stop smoking, say you've tried before but would take help. Hidden worry: \"not waking up\" after the anaesthetic, because of your brother; say so only if asked about concerns.",
+    "reveals": [
+      {
+        "trigger": "Asks what he understands or what worries him",
+        "finding": "\"They take it out through small cuts. I'm a bit nervous about being put to sleep, after what happened to my brother.\"",
+        "row": "G1"
+      },
+      {
+        "trigger": "Asks about chest pain, breathlessness or exercise",
+        "finding": "No chest pain. Breathless after one flight of stairs; has to stop at the top. Sleeps on one pillow.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Asks about snoring or sleepiness",
+        "finding": "\"My late wife said I snored like a train and sometimes stopped breathing.\" Dozes in the afternoon.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Asks about previous anaesthetics",
+        "finding": "Hernia repair 20 years ago, no problems he knows of.",
+        "row": "G3"
+      },
+      {
+        "trigger": "Asks about family anaesthetic problems",
+        "finding": "\"My brother took hours to wake up after an operation and was on a breathing machine. They said something about a drug.\"",
+        "row": "G3"
+      },
+      {
+        "trigger": "Asks for medicine names",
+        "finding": "Amlodipine 10 mg, ramipril 5 mg, metformin 1 g twice daily, dapagliflozin 10 mg. No blood thinners. Allergy: penicillin (rash).",
+        "row": "G4"
+      },
+      {
+        "trigger": "Asks about smoking, alcohol, home",
+        "finding": "20 a day for 40 years; 10 units a week. Lives alone, independent, no falls; daughter nearby.",
+        "row": "G5"
+      },
+      {
+        "trigger": "At 6 minutes",
+        "finding": "Say: \"Please stop there and summarise your history.\"",
+        "row": "G6"
+      }
+    ],
+    "push": [
+      {
+        "question": "Which investigations would you request?",
+        "row": "G7",
+        "expect": "By NG45 grade and ASA: ECG, kidney function, HbA1c if none in 3 months; no routine chest X-ray or clotting."
+      },
+      {
+        "question": "What would you do about his smoking?",
+        "row": "G8",
+        "expect": "Encourage stopping and refer to stop-smoking support; don't delay surgery for it."
+      },
+      {
+        "question": "His HbA1c comes back at 78 mmol/mol. What now?",
+        "row": "G8",
+        "expect": "Above 69 mmol/mol: seek diabetes specialist optimisation before elective surgery."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "\"Do all patients need a chest X-ray before surgery?\"",
+        "safeAnswer": "No. NICE NG45 advises against routine chest X-rays; request one only for a specific clinical indication.",
+        "row": "G7"
+      },
+      {
+        "prompt": "\"My brother's problem: could it happen to me?\"",
+        "safeAnswer": "It can run in families, so the anaesthetist will review this and can avoid the drugs involved; testing may be arranged.",
+        "row": "G3"
+      },
+      {
+        "prompt": "\"Should I take my diabetes tablets on the day?\"",
+        "safeAnswer": "Not dapagliflozin: stop it the day before and the day of surgery. You'll get a written plan for the others.",
+        "row": "G4"
+      }
+    ]
+  }
+}

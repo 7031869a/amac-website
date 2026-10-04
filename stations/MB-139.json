@@ -1,0 +1,478 @@
+{
+  "id": "MB-139",
+  "exam": "MRCS-B",
+  "title": "Examination of a lump",
+  "type": "examination",
+  "header": {
+    "domain": "Applied Skills",
+    "contentArea": "Physical examination (lump)",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "signalMinutes": 6,
+    "guidelineVersions": [
+      "NICE NG12 (updated Apr 2026)",
+      "UK soft tissue sarcoma guidelines (2024)"
+    ],
+    "related": [
+      {
+        "id": "MB-143 Excision of a skin lesion",
+        "why": "When a lump is removed, and when it must not be"
+      },
+      {
+        "id": "MB-137 Thyroid examination",
+        "why": "The same description applied to the neck"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Surgical outpatient clinic",
+    "role": "Core surgical trainee",
+    "scenario": "Mr Owen, 50, has a lump on his upper back that he thinks has grown over the past six months.",
+    "task": "Examine the lump. You will be stopped at 6 minutes to present your findings and answer questions."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Describe everything before naming anything, then check for red flags.",
+    "trap": "Calling a soft lump a lipoma and missing that it's large and growing.",
+    "firstMove": "Measure it. \"May I measure the lump with a tape?\""
+  },
+  "flow": [
+    "Introduce, consent, clean hands",
+    "Inspect and measure",
+    "Palpate",
+    "Special tests",
+    "Nodes and neurovascular",
+    "At 6 minutes: present"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "professionalism",
+      "label": "Preparation",
+      "fail": "Starts palpating without introduction, consent or asking about pain.",
+      "pass": "Introduces, confirms identity, explains, gains consent, asks about pain, cleans hands, exposes adequately.",
+      "high": "Positions the patient so the lump and surrounding area are fully visible and relaxed.",
+      "source": "ICBSE"
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-skill",
+      "label": "Inspection",
+      "fail": "Estimates size by eye.",
+      "pass": "Site, size (measured), shape, colour, overlying skin, punctum, scars.",
+      "high": "Compares with the other side and inspects the draining lymph node area."
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-skill",
+      "label": "Palpation",
+      "fail": "Only presses on the lump.",
+      "borderline": "Checks consistency but not attachment to deeper structures.",
+      "pass": "Temperature, tenderness, surface, edge, consistency, fluctuance, attachment to skin and deeper tissues.",
+      "high": "Tests attachment to muscle with the muscle tensed, and checks the slip sign."
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-skill",
+      "label": "Special tests",
+      "fail": "Skips the special tests.",
+      "pass": "Transillumination, pulsatility, compressibility, reducibility, and auscultation.",
+      "high": "Explains what each separates, e.g. expansile pulsation suggests an aneurysm, transmitted pulsation does not."
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-skill",
+      "label": "Nodes and neurovascular",
+      "fail": "Doesn't examine the draining nodes.",
+      "pass": "Examines the draining lymph nodes.",
+      "high": "Checks distal neurovascular status for limb lumps, and says so for this site."
+    },
+    {
+      "id": "G6",
+      "domain": "communication",
+      "label": "Presentation and differential",
+      "fail": "Names a diagnosis without a description.",
+      "pass": "Describes the lump, then gives a differential: lipoma, epidermoid cyst, soft tissue sarcoma.",
+      "high": "Names the red flags present: over 5 cm, increasing in size, deep, painful.",
+      "source": "STS"
+    },
+    {
+      "id": "G7",
+      "domain": "clinical-knowledge",
+      "label": "Next steps",
+      "fail": "Plans to excise it in a minor operations list.",
+      "pass": "Unexplained lump increasing in size: urgent direct access ultrasound.",
+      "high": "Explains that if sarcoma is suspected, biopsy should be planned by the sarcoma service, not done as a local excision.",
+      "source": "NG12"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "candidate",
+        "text": "[Starts pressing on the lump without asking about pain.]",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          },
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "It's about the size of a golf ball.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop. Your findings?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "It's a lipoma.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What would you do?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Book it for excision on a minor ops list.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "candidate",
+        "text": "Hello, I'm Dr Patel. Can I confirm your name and date of birth? I'd like to examine the lump on your back; is it painful at all? [Consent; cleans hands; exposes the back.]",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Inspects.] May I measure it? [Measures 6 by 5 cm.] The skin over it looks normal, with no punctum or scars.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Temperature, tenderness, surface, edge, consistency, fluctuance; checks whether the skin moves over it and whether it moves over the deeper tissues.]",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Transilluminates; checks for pulsation, compressibility and reducibility; listens with the stethoscope.]",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Examines the axillary nodes.] Thank you. [Cleans hands.]",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop. Your findings?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "A 6 by 5 cm soft, lobulated, non-tender lump over the right scapula, not attached to skin, mobile over deeper tissues, not transilluminating or pulsatile, no nodes. The differential is lipoma, epidermoid cyst or soft tissue sarcoma.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What next?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "As it's unexplained and growing, an urgent direct access ultrasound.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "candidate",
+        "text": "Hello, I'm Dr Patel. Can I confirm your name and date of birth? I'd like to look at and feel the lump, and check the glands nearby. Is it sore? Could you sit forward with your arms relaxed? [Cleans hands.]",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Compares both sides; measures 6 by 5 cm; looks for punctum, scars, skin change; inspects the axillae.]",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Full palpation.] Could you push your hands together in front of you? [Tenses the underlying muscle; checks mobility; slip sign at the edge.]",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Transillumination, pulsatility, compressibility, reducibility, auscultation.] There's no pulsation, so an aneurysm is unlikely.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Axillary nodes.] As it's on the trunk, there's no distal neurovascular check to add. Thank you. [Cleans hands.]",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop. Your findings?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "A 6 by 5 cm soft, lobulated lump over the right scapula, mobile, not attached to skin, and it stays mobile with the muscle tensed. It feels like a lipoma, but it's over 5 cm and growing, which are red flags for sarcoma. I can't call it benign on examination.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What next?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "An urgent direct access ultrasound. If that suggests sarcoma, he needs a suspected cancer pathway referral, and any biopsy should be planned by the sarcoma service, not a local excision.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G4",
+      "move": "Skipping special tests.",
+      "consequence": "Misses the tests that separate cyst, vascular lesion and hernia."
+    },
+    {
+      "row": "G5",
+      "move": "Not examining the draining nodes.",
+      "consequence": "Misses a sign of malignancy."
+    },
+    {
+      "row": "G7",
+      "move": "Listing a large, deep lump for local excision without imaging.",
+      "consequence": "Risks an unplanned excision of a sarcoma, which compromises later curative surgery."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You named it too early",
+      "line": "Let me describe it properly first: size, shape, surface, edge, consistency and attachments."
+    },
+    {
+      "when": "You're not sure what it is",
+      "line": "It feels benign, but it has red flags, so I'd image it before anyone excises it."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Red flags for soft tissue sarcoma: increasing size, over 5 cm, deep, painful.",
+      "source": "STS"
+    },
+    {
+      "fact": "Consider urgent direct access ultrasound for an unexplained lump that is increasing in size.",
+      "source": "NG12"
+    },
+    {
+      "fact": "Lipoma: soft, lobulated, slip sign. Epidermoid cyst: attached to skin, often with a punctum.",
+      "source": "BL"
+    }
+  ],
+  "recall": {
+    "think": "Describe, test, then look for red flags.",
+    "say": "\"May I measure the lump?\"",
+    "do": [
+      "Measure it",
+      "Attachment to skin and to deeper tissue",
+      "Draining nodes"
+    ],
+    "numbers": [
+      {
+        "value": "> 5 cm",
+        "meaning": "sarcoma red flag",
+        "source": "STS"
+      },
+      {
+        "value": "6 min",
+        "meaning": "signal to stop and present",
+        "source": "ICBSE"
+      }
+    ],
+    "trap": "Soft and mobile ≠ benign.",
+    "finish": "Urgent ultrasound; no local excision if sarcoma is possible."
+  },
+  "sources": [
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "At every station: introduce yourself, explain the task, confirm identity, obtain consent, clean hands before and after patient contact; 6-minute signal in examination stations"
+    },
+    {
+      "id": "BL",
+      "name": "Bailey & Love's Short Practice of Surgery (O'Connell, McCaskie, Sayers, eds)",
+      "version": "28th edition, 2023",
+      "url": "https://www.routledge.com/Bailey--Loves-Short-Practice-of-Surgery---28th-Edition/OConnell-McCaskie-Sayers/p/book/9780367548117",
+      "supports": "Examination technique and clinical signs"
+    },
+    {
+      "id": "STS",
+      "name": "Hayes AJ et al. UK guidelines for the management of soft tissue sarcomas. Br J Cancer 2025;132:11–31",
+      "version": "Published online 2024",
+      "url": "https://www.nature.com/articles/s41416-024-02674-y",
+      "supports": "Clinical red flags: increasing size, over 5 cm, deep, painful"
+    },
+    {
+      "id": "NG12",
+      "name": "NICE NG12: Suspected cancer: recognition and referral",
+      "version": "Published June 2015; last updated 15 April 2026",
+      "url": "https://www.nice.org.uk/guidance/ng12",
+      "supports": "Urgent direct access ultrasound for an unexplained lump increasing in size (sarcoma recommendations, section 1.11)"
+    }
+  ],
+  "partner": {
+    "opening": "Please examine this lump. I'll stop you at 6 minutes.",
+    "actorBrief": "You are Mr Owen, 50. The lump appeared about a year ago and your wife says it's got bigger. It isn't painful. No weight loss.",
+    "reveals": [
+      {
+        "trigger": "Measures the lump",
+        "finding": "6 × 5 cm, over the right scapula.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Palpates",
+        "finding": "Soft, lobulated, non-tender, not attached to skin, mobile, including with muscle tensed.",
+        "row": "G3"
+      },
+      {
+        "trigger": "Performs special tests",
+        "finding": "Does not transilluminate; not pulsatile; not compressible or reducible.",
+        "row": "G4"
+      },
+      {
+        "trigger": "Examines the axillae",
+        "finding": "No nodes.",
+        "row": "G5"
+      },
+      {
+        "trigger": "At 6 minutes",
+        "finding": "Say: \"Please stop there and present your findings.\"",
+        "row": "G6"
+      }
+    ],
+    "push": [
+      {
+        "question": "What's your differential?",
+        "row": "G6",
+        "expect": "Lipoma, epidermoid cyst, soft tissue sarcoma."
+      },
+      {
+        "question": "Which features worry you?",
+        "row": "G6",
+        "expect": "Over 5 cm and increasing in size."
+      },
+      {
+        "question": "What would you do next?",
+        "row": "G7",
+        "expect": "Urgent direct access ultrasound; no local excision."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "The GP wants to remove it in the practice.",
+        "safeAnswer": "Not until imaging excludes sarcoma; an unplanned excision can compromise treatment.",
+        "row": "G7"
+      },
+      {
+        "prompt": "It pulsates.",
+        "safeAnswer": "I'd check whether it's expansile, which suggests an aneurysm, or transmitted.",
+        "row": "G4"
+      }
+    ]
+  }
+}

@@ -1,0 +1,516 @@
+{
+  "id": "MB-288",
+  "exam": "MRCS-B",
+  "title": "History: loin pain and suspected renal colic",
+  "type": "history",
+  "header": {
+    "domain": "Applied Skills",
+    "contentArea": "Communication skills in giving and receiving information and history taking",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "signalMinutes": 6,
+    "guidelineVersions": [
+      "NICE NG118 (January 2019)",
+      "EAU Guidelines on Urolithiasis, 2026 edition (full update)"
+    ],
+    "related": [
+      {
+        "id": "MB-194 Applied anatomy: the kidney and ureter",
+        "why": "Where ureteric stones impact and why"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Emergency department",
+    "role": "Core surgical trainee on call for urology",
+    "scenario": "Mr Colin Brackley, 56, has severe right-sided loin pain. Urine dipstick shows blood.",
+    "task": "Take a focused history. You will be stopped at 6 minutes to summarise, then asked about investigation and management."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Relieve pain, then hunt the two emergencies: infection behind a blocked kidney, and an aneurysm mimicking colic.",
+    "trap": "Blood on the dipstick taken as proof of a stone.",
+    "firstMove": "Offer analgesia before the detailed history."
+  },
+  "flow": [
+    "Open and offer analgesia",
+    "Pain history",
+    "Infection and obstruction",
+    "Background and drug safety",
+    "At 6 minutes: summarise",
+    "Differential, imaging, management"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "communication",
+      "label": "Opening and analgesia",
+      "fail": "Takes a long history while he is writhing, without offering pain relief.",
+      "pass": "Introduces, confirms identity, acknowledges the pain and arranges analgesia before continuing.",
+      "high": "Checks NSAID safety in a few quick questions so pain relief isn't delayed.",
+      "source": "NG118"
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-skill",
+      "label": "Pain history",
+      "fail": "Doesn't establish site, character or radiation.",
+      "pass": "Onset, site, colicky waves, radiation loin to groin, severity, nausea or vomiting, previous episodes.",
+      "high": "Asks about restlessness versus lying still, and pain tearing through to the back or collapse."
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-skill",
+      "label": "Infection and obstruction (safety-critical)",
+      "fail": "Doesn't ask about fever or rigors.",
+      "pass": "Fever, rigors, dysuria, frequency, cloudy urine; passing urine normally.",
+      "high": "Asks about a single kidney, transplant or reduced urine output, which make obstruction an emergency."
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-skill",
+      "label": "Background and drug safety",
+      "fail": "Takes no drug or past history.",
+      "pass": "Previous stones, kidney disease, gout, fluid intake; medicines, anticoagulants and allergies.",
+      "high": "Checks NSAID contraindications: peptic ulcer, asthma worsened by NSAIDs, kidney disease, heart failure."
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-knowledge",
+      "label": "Differential diagnosis",
+      "fail": "Assumes it is a stone because of the haematuria.",
+      "pass": "Ureteric stone; also pyelonephritis, leaking abdominal aortic aneurysm, appendicitis, biliary disease.",
+      "high": "Names leaking aneurysm as the must-not-miss mimic in a first episode over 50; asks vascular risk and examines for a mass.",
+      "source": "BL"
+    },
+    {
+      "id": "G6",
+      "domain": "communication",
+      "label": "Summary at the signal",
+      "fail": "Says \"renal colic\" without the pertinent negatives.",
+      "pass": "Summarises the pain pattern, haematuria, infection screen and background, and states suspected right ureteric colic.",
+      "high": "Leads with the features that change urgency: fever status, single kidney, age and aneurysm risk."
+    },
+    {
+      "id": "G7",
+      "domain": "clinical-knowledge",
+      "label": "Investigation",
+      "fail": "Requests a plain KUB film only, or no imaging.",
+      "pass": "Urinalysis and culture, FBC, creatinine and electrolytes, CRP; low-dose non-contrast CT within 24 hours.",
+      "high": "Ultrasound instead of CT in pregnancy; calcium and urate; blood cultures if febrile.",
+      "source": "NG118"
+    },
+    {
+      "id": "G8",
+      "domain": "professionalism",
+      "label": "Management and escalation",
+      "fail": "Gives antispasmodics, or discharges a febrile obstructed patient with antibiotics alone.",
+      "pass": "NSAID first, IV paracetamol next, opioid last; alpha blocker for distal stones under 10 mm; urgent decompression if infected and obstructed.",
+      "high": "Surgery within 48 hours if pain is not tolerated or passage unlikely; delays definitive stone treatment until sepsis resolves.",
+      "source": "NG118"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "candidate",
+        "text": "Tell me everything from the start. We'll sort pain relief after.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Where's the pain? OK.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop there and summarise your history."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Mr Brackley has renal colic; there's blood in the urine, so that confirms it.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          },
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you investigate and manage?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "A KUB X-ray, and buscopan for the spasm. He can go home with antibiotics if he gets a temperature.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          },
+          {
+            "row": "G8",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "candidate",
+        "text": "Hello, I'm Dr Patel, one of the urology trainees. Can I confirm your name and date of birth? You're in a lot of pain; I'll get you pain relief now, then ask some questions.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "When did it start? Does it come in waves? Where does it go? Any sickness? Had this before?",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Any fever or shivering? Burning or cloudy urine? Are you passing urine normally?",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Any kidney problems or stones before? What medicines do you take? Any blood thinners or allergies?",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop there and summarise your history."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Mr Brackley, 56, with two hours of colicky right loin-to-groin pain, vomiting and dipstick haematuria. No fever or urinary symptoms. Previous stone ten years ago. Suspected right ureteric colic; pyelonephritis and leaking aneurysm are the differentials.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          },
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you investigate and manage?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Urine culture, FBC, renal function and CRP; low-dose non-contrast CT within 24 hours. An NSAID first, IV paracetamol if not enough, then opioid. Alpha blocker for a distal stone under 10 mm. If infected and obstructed, antibiotics and urgent decompression.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          },
+          {
+            "row": "G8",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "candidate",
+        "text": "Hello, I'm Dr Patel, one of the urology trainees. Can I confirm your name and date of birth? Before pain relief, three quick checks: any stomach ulcers, asthma, or kidney problems?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Can you keep still, or do you have to move? Has the pain ever torn through to your back, or have you fainted?",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Do you have two working kidneys? Any kidney transplant? Has your urine dried up?",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Any heart failure? Do you smoke, or have high blood pressure or vascular disease?",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop there and summarise your history."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Mr Brackley, 56: two hours of restless, colicky right loin-to-groin pain with vomiting and dipstick haematuria. Afebrile, two kidneys, no NSAID contraindications. One previous stone. He's over 50 with hypertension and smokes, so I'd exclude a leaking aneurysm clinically and on imaging.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          },
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you investigate and manage?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Urine culture; FBC, creatinine, CRP, calcium and urate; blood cultures if he spikes. Low-dose non-contrast CT within 24 hours, which also shows the aorta. NSAID, then IV paracetamol, then opioid; no antispasmodics. Alpha blocker for a distal stone under 10 mm. If pain isn't tolerated or the stone is unlikely to pass, surgery within 48 hours. If infected and obstructed, antibiotics and urgent nephrostomy or stent, with the stone treated after sepsis resolves.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          },
+          {
+            "row": "G8",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G3",
+      "move": "Not asking about fever, rigors or a single kidney.",
+      "consequence": "Safety-critical: misses an infected obstructed kidney, which needs urgent decompression."
+    },
+    {
+      "row": "G5",
+      "move": "Taking dipstick haematuria as proof of a stone.",
+      "consequence": "Safety-critical: a leaking aneurysm can present the same way in an older patient."
+    },
+    {
+      "row": "G4",
+      "move": "Giving an NSAID without checking contraindications.",
+      "consequence": "Risks gastrointestinal bleeding, bronchospasm or worsening kidney function."
+    },
+    {
+      "row": "G8",
+      "move": "Using antispasmodics, or a fixed stone-size rule to decide intervention.",
+      "consequence": "Antispasmodics don't help; intervention depends on pain, infection, obstruction and likelihood of passage."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You forgot analgesia",
+      "line": "Let me stop and get you something for the pain first; then I'll carry on."
+    },
+    {
+      "when": "You forgot the infection screen",
+      "line": "One more important question: any fever, shivers or burning when you pass urine?"
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Adults: urgent low-dose non-contrast CT within 24 hours of presentation; ultrasound instead in pregnancy.",
+      "source": "NG118"
+    },
+    {
+      "fact": "Analgesia: NSAID by any route first; IV paracetamol if contraindicated or insufficient; opioids if both fail; no antispasmodics.",
+      "source": "NG118"
+    },
+    {
+      "fact": "Consider alpha blockers for distal ureteric stones under 10 mm. Surgery within 48 hours if pain is ongoing and not tolerated or the stone is unlikely to pass.",
+      "source": "NG118"
+    },
+    {
+      "fact": "Sepsis with an obstructing stone: urgent decompression (nephrostomy or stent), immediate antibiotics, definitive treatment after sepsis resolves.",
+      "source": "EAUURO"
+    }
+  ],
+  "recall": {
+    "think": "Infected obstructed kidney; leaking aortic aneurysm.",
+    "say": "\"Suspected right ureteric colic; I've excluded fever and a single kidney.\"",
+    "do": [
+      "Analgesia first: NSAID if safe",
+      "Fever, rigors, single kidney",
+      "Low-dose CT within 24 hours"
+    ],
+    "numbers": [
+      {
+        "value": "24 hours",
+        "meaning": "low-dose non-contrast CT for suspected renal colic",
+        "source": "NG118"
+      },
+      {
+        "value": "10 mm",
+        "meaning": "distal ureteric stones below this: consider alpha blocker",
+        "source": "NG118"
+      },
+      {
+        "value": "48 hours",
+        "meaning": "surgery if pain not tolerated or stone unlikely to pass",
+        "source": "NG118"
+      }
+    ],
+    "trap": "Haematuria on the dipstick feels like proof.",
+    "finish": "Analgesia, CT, then watchful waiting, alpha blocker, stone treatment or decompression."
+  },
+  "sources": [
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format: 9-minute stations with 1 minute's reading; introduce yourself and confirm identity"
+    },
+    {
+      "id": "NG118",
+      "name": "NICE NG118: Renal and ureteric stones: assessment and management",
+      "version": "Published 8 January 2019",
+      "url": "https://www.nice.org.uk/guidance/ng118/chapter/Recommendations",
+      "supports": "Low-dose non-contrast CT within 24 hours; ultrasound in pregnancy (1.1.1); NSAID first, IV paracetamol, then opioids, no antispasmodics (1.2.1-1.2.4); alpha blockers for distal ureteric stones under 10 mm (1.3.1); surgery within 48 hours if pain ongoing and not tolerated or stone unlikely to pass (1.5.4)"
+    },
+    {
+      "id": "EAUURO",
+      "name": "European Association of Urology: Guidelines on Urolithiasis",
+      "version": "2026 edition (full update)",
+      "url": "https://uroweb.org/guidelines/urolithiasis",
+      "supports": "Urgent decompression by percutaneous drainage or ureteral stenting for sepsis with obstructing stones; start antibiotics immediately; delay definitive stone treatment until sepsis resolves"
+    },
+    {
+      "id": "BL",
+      "name": "Bailey & Love's Short Practice of Surgery (O'Connell, McCaskie, Sayers, eds)",
+      "version": "28th edition, 2023",
+      "url": "https://www.routledge.com/Bailey--Loves-Short-Practice-of-Surgery---28th-Edition/OConnell-McCaskie-Sayers/p/book/9780367548117",
+      "supports": "Differential diagnosis of ureteric colic, including leaking abdominal aortic aneurysm in older patients"
+    }
+  ],
+  "partner": {
+    "opening": "Please take a focused history from Mr Brackley. I'll stop you at 6 minutes to summarise.",
+    "actorBrief": "You are Colin Brackley, 56, a delivery driver. Opening line: \"I've got terrible pain in my back going down to my groin. It comes in waves.\" Restless, can't sit still, grimacing; if not offered pain relief within the first minute, say \"Can I have something for the pain?\" Volunteer nothing else; give facts only when asked (see reveals).",
+    "reveals": [
+      {
+        "trigger": "Asks NSAID safety questions",
+        "finding": "No ulcers, no asthma, no kidney disease, no heart failure.",
+        "row": "G1"
+      },
+      {
+        "trigger": "Asks onset, character, radiation",
+        "finding": "Started suddenly two hours ago in the right loin; waves every few minutes; goes to the right groin and testicle. Vomited twice.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Asks about tearing pain or collapse",
+        "finding": "No tearing pain, no fainting.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Asks about fever and urinary symptoms",
+        "finding": "No fever or shivers; no burning; passing small amounts, normal colour to him.",
+        "row": "G3"
+      },
+      {
+        "trigger": "Asks about kidneys or transplant",
+        "finding": "Two kidneys as far as he knows; no transplant.",
+        "row": "G3"
+      },
+      {
+        "trigger": "Asks past history, drugs, allergies",
+        "finding": "Kidney stone ten years ago, passed on its own. Amlodipine for blood pressure. No blood thinners. No allergies.",
+        "row": "G4"
+      },
+      {
+        "trigger": "Asks smoking or vascular history",
+        "finding": "Smokes 15 a day. Father had an aortic aneurysm repair.",
+        "row": "G5"
+      },
+      {
+        "trigger": "At 6 minutes",
+        "finding": "Say: \"Please stop there and summarise your history.\"",
+        "row": "G6"
+      }
+    ],
+    "push": [
+      {
+        "question": "What is your differential diagnosis?",
+        "row": "G5",
+        "expect": "Right ureteric stone; pyelonephritis; leaking AAA (over 50, smoker, family history); appendicitis."
+      },
+      {
+        "question": "What is the investigation of choice?",
+        "row": "G7",
+        "expect": "Low-dose non-contrast CT within 24 hours."
+      },
+      {
+        "question": "CT shows a 6 mm distal right ureteric stone. His pain is controlled and he is afebrile. Plan?",
+        "row": "G8",
+        "expect": "Consider alpha blocker, analgesia, safety-net; surgery within 48 hours if pain not tolerated or unlikely to pass."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "His temperature is 38.9 °C and CT shows hydronephrosis.",
+        "safeAnswer": "Infected obstructed kidney: sepsis bundle, antibiotics, urgent nephrostomy or stent; urology registrar now.",
+        "row": "G8"
+      },
+      {
+        "prompt": "CT shows no stone but a 6 cm aorta with stranding.",
+        "safeAnswer": "Suspected leaking AAA: senior and vascular team immediately, resuscitate, avoid excessive fluids.",
+        "row": "G5"
+      },
+      {
+        "prompt": "\"Do all stones over 5 mm need an operation?\"",
+        "safeAnswer": "No: decide on pain, infection, obstruction and likelihood of passage.",
+        "row": "G8"
+      }
+    ]
+  }
+}

@@ -1,0 +1,222 @@
+{
+  "id": "MB-314",
+  "exam": "MRCS-B",
+  "title": "A patient with capacity refusing recommended surgery",
+  "type": "communication",
+  "header": {
+    "domain": "Applied Skills",
+    "contentArea": "Communication skills in giving and receiving information; consent and capacity",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "GMC Decision making and consent (in effect 9 November 2020)",
+      "Mental Capacity Act 2005",
+      "GMC Good medical practice (effective 30 January 2024)"
+    ],
+    "related": [
+      { "id": "MB-219", "why": "Capacity when a patient wants to leave against medical advice" },
+      { "id": "MB-160", "why": "Consent discussion for emergency surgery, including the no-surgery option" },
+      { "id": "MB-162", "why": "Talking to a relative when the patient itself lacks capacity — the contrasting case" }
+    ]
+  },
+  "brief": {
+    "setting": "Surgical assessment unit, bedside",
+    "role": "Core surgical trainee",
+    "scenario": "Mr Isaac Bellamy, 59, has acute cholecystitis. Surgery has been recommended and he understands the advice, but he does not want the operation.",
+    "task": "Discuss his decision with him respectfully, including assessing capacity if needed. The examiner may ask you questions at the end."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Understand why he's refusing, give him full information, then respect a capacitous choice.",
+    "trap": "Treating the refusal itself as proof he lacks capacity, or asking a relative to consent instead.",
+    "firstMove": "Sit down and ask what's worrying him about the operation."
+  },
+  "flow": [
+    "Open and explore his reasons",
+    "Check the refusal is voluntary",
+    "Give full information, including no treatment",
+    "Assess capacity only if in doubt",
+    "Respond to his decision",
+    "Document and safety-net"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "communication",
+      "label": "Exploring his reasons",
+      "fail": "Doesn't ask why he's refusing; moves straight to persuading him or warning of consequences.",
+      "pass": "Asks what's worrying him about the operation and listens without arguing.",
+      "high": "Explores his reasons, checks what matters most to him, and reflects his concerns back."
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-knowledge",
+      "label": "Presumption of capacity",
+      "fail": "Treats the refusal itself as proof he lacks capacity.",
+      "pass": "States capacity is presumed unless there is reason to doubt it; an unwise decision alone doesn't rebut this.",
+      "high": "Separates disagreeing with his decision from doubting his capacity to make it.",
+      "source": "MCA2005"
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "Assessing capacity",
+      "fail": "Skips assessment despite genuine doubt, or gives a vague, unstructured judgement.",
+      "pass": "If in doubt, assesses this specific decision at this time using the MCA functional test.",
+      "high": "Names the elements — understand, retain, weigh and communicate the decision — and checks for reversible causes first.",
+      "source": "MCA2005"
+    },
+    {
+      "id": "G4",
+      "domain": "communication",
+      "label": "Information given",
+      "fail": "Gives the recommendation without risks, alternatives or the option of no surgery.",
+      "pass": "Explains diagnosis, proposed treatment, expected benefit, material risks, reasonable alternatives and the option of no surgery.",
+      "high": "Tailors information to his concerns, checks understanding and invites questions before concluding."
+    },
+    {
+      "id": "G5",
+      "domain": "professionalism",
+      "label": "Checking the refusal is voluntary",
+      "fail": "Doesn't check whether the refusal is his own choice, or ignores signs of pressure.",
+      "pass": "Asks directly whether anyone is pressuring him and confirms the decision is voluntary.",
+      "high": "Probes gently for coercion or undue influence without accusing anyone."
+    },
+    {
+      "id": "G6",
+      "domain": "professionalism",
+      "label": "Respecting the refusal",
+      "fail": "Says a relative can consent instead, or proceeds to surgery against a capacitous refusal.",
+      "pass": "States a capacitous adult can refuse treatment, even one that risks serious harm or death, and will not override it.",
+      "high": "Offers a senior or second opinion and says he'll revisit the decision if things change, without pressuring him.",
+      "source": "GMCDMC"
+    },
+    {
+      "id": "G7",
+      "domain": "communication",
+      "label": "Documentation and safety-net",
+      "fail": "Leaves without a plan, or doesn't record the discussion.",
+      "pass": "Documents the discussion, information given, capacity status and an agreed safety-net.",
+      "high": "Also records who else was told and arranges a clear route back if he changes his mind."
+    },
+    {
+      "id": "G8",
+      "domain": "clinical-knowledge",
+      "label": "Reversible factors",
+      "fail": "Assumes the refusal is fixed without considering pain, delirium, intoxication or a communication barrier.",
+      "pass": "Considers whether pain, delirium, intoxication or a communication barrier could be affecting the discussion.",
+      "high": "Actively screens for these, offers an interpreter if needed, and would revisit once they resolve."
+    }
+  ],
+  "performances": {
+    "fail": [
+      { "speaker": "examiner", "text": "The patient refuses surgery. What do you do?" },
+      { "speaker": "candidate", "text": "He needs the operation, so I'd explain again why, and if he still says no I'd ask his daughter to consent instead.", "tags": [{ "row": "G1", "band": "fail" }, { "row": "G6", "band": "fail" }] },
+      { "speaker": "examiner", "text": "Patient: \"I understand what you've told me, but I don't want the operation.\"" },
+      { "speaker": "candidate", "text": "Refusing something this serious isn't really a rational choice, so I'm not sure he has capacity for this.", "tags": [{ "row": "G2", "band": "fail" }] },
+      { "speaker": "examiner", "text": "Would you operate anyway?" },
+      { "speaker": "candidate", "text": "Yes, it's in his best interests, so I'd go ahead with my consultant.", "tags": [{ "row": "G6", "band": "fail" }] },
+      { "speaker": "examiner", "text": "What would you tell him about not having surgery?" },
+      { "speaker": "candidate", "text": "I'd just say he needs it. I wouldn't go through all the alternatives.", "tags": [{ "row": "G4", "band": "fail" }] },
+      { "speaker": "examiner", "text": "Could anything else be affecting his decision, and what would you document?" },
+      { "speaker": "candidate", "text": "He seems fine to me, so no. I'd just note that he refused.", "tags": [{ "row": "G8", "band": "fail" }, { "row": "G7", "band": "fail" }] }
+    ],
+    "pass": [
+      { "speaker": "candidate", "text": "Hello Mr Bellamy, thank you for talking to me. Can I ask what's worrying you about the operation?", "tags": [{ "row": "G1", "band": "pass" }] },
+      { "speaker": "examiner", "text": "Patient: \"I lost my brother after a routine operation years ago. I don't trust surgery.\"" },
+      { "speaker": "candidate", "text": "I'm sorry to hear that. Is this decision entirely your own, or is anyone pressuring you either way?", "tags": [{ "row": "G5", "band": "pass" }] },
+      { "speaker": "examiner", "text": "Patient: \"No, it's my own decision.\"" },
+      { "speaker": "candidate", "text": "You clearly understand the recommendation, and disagreeing with me doesn't mean I think you lack the capacity to decide — an adult is presumed to have capacity.", "tags": [{ "row": "G2", "band": "pass" }] },
+      { "speaker": "candidate", "text": "You've explained your reasons clearly and consistently, so I have no reason to doubt you can understand, weigh and communicate this decision today.", "tags": [{ "row": "G3", "band": "pass" }] },
+      { "speaker": "candidate", "text": "You have acute inflammation of the gallbladder. Surgery is usual, with risks of bleeding, infection and bile duct injury; the alternatives are antibiotics and monitoring, or no treatment.", "tags": [{ "row": "G4", "band": "pass" }] },
+      { "speaker": "examiner", "text": "Would you operate anyway?" },
+      { "speaker": "candidate", "text": "No — you have capacity for this decision, and a capacitous adult can refuse treatment even if it risks serious harm. I'll respect that.", "tags": [{ "row": "G6", "band": "pass" }] },
+      { "speaker": "candidate", "text": "I'll document our discussion and the information I've given you, and offer a review with my consultant if you'd like a second opinion.", "tags": [{ "row": "G7", "band": "pass" }] },
+      { "speaker": "candidate", "text": "I'd also like to check you're not in pain or feeling unwell in a way that's affecting how you're thinking this through.", "tags": [{ "row": "G8", "band": "pass" }] }
+    ],
+    "high": [
+      { "speaker": "candidate", "text": "Hello Mr Bellamy, before we talk about the operation, can you tell me what's worrying you about it?", "tags": [{ "row": "G1", "band": "high" }] },
+      { "speaker": "examiner", "text": "Patient: \"I lost my brother after what should've been a simple operation. I don't trust it.\"" },
+      { "speaker": "candidate", "text": "That sounds hard to live with. Even though I think surgery is right, disagreeing with me doesn't mean I doubt your capacity — this choice, even if unwise, doesn't change the presumption.", "tags": [{ "row": "G2", "band": "high" }] },
+      { "speaker": "candidate", "text": "You've been consistent and clear throughout, so there's nothing here that makes me doubt you can understand, weigh and communicate this specific decision today — I don't need to formally reassess.", "tags": [{ "row": "G3", "band": "high" }] },
+      { "speaker": "candidate", "text": "Before we go further — is this entirely your own decision, or is anyone pushing you either way?", "tags": [{ "row": "G5", "band": "high" }] },
+      { "speaker": "examiner", "text": "Patient: \"No, nobody. It's just me.\"" },
+      { "speaker": "candidate", "text": "Then let me set it all out: acute cholecystitis, usually treated with surgery, with risks of bleeding, infection, bile duct injury and anaesthetic risk; alternatives are antibiotics and monitoring, or no treatment, which risks the infection worsening or the gallbladder rupturing.", "tags": [{ "row": "G4", "band": "high" }] },
+      { "speaker": "candidate", "text": "Would I operate anyway? No. You understand the situation, you're deciding freely, and I have no reason to doubt your capacity — I'll respect your refusal and keep the door open if you change your mind.", "tags": [{ "row": "G6", "band": "high" }] },
+      { "speaker": "candidate", "text": "I'll record exactly what we discussed, that you understood the risks of no surgery, and that this was voluntary, and I'll offer a senior review or second opinion.", "tags": [{ "row": "G7", "band": "high" }] },
+      { "speaker": "candidate", "text": "One more thing — are you in pain, or finding it hard to think clearly today? I want to be sure nothing like that is clouding this.", "tags": [{ "row": "G8", "band": "high" }] }
+    ]
+  },
+  "failures": [
+    { "row": "G2", "move": "Treating the refusal itself as evidence of incapacity.", "consequence": "An unwise decision does not by itself establish incapacity; risks unlawfully overriding a competent adult." },
+    { "row": "G6", "move": "Asking a relative to consent instead, or operating against a capacitous refusal.", "consequence": "No one else can consent for a capacitous adult; proceeding would be unlawful and breaches his autonomy." },
+    { "row": "G5", "move": "Not checking whether the refusal is voluntary.", "consequence": "A refusal made under pressure or coercion may not reflect his real wishes, and this is missed." },
+    { "row": "G3", "move": "Skipping a formal capacity assessment when there is genuine doubt.", "consequence": "Neither accepting nor overriding the refusal is safely justified without assessing this specific decision." }
+  ],
+  "recovery": [
+    { "when": "He says the refusal seems irrational", "line": "An unwise decision doesn't by itself mean he lacks capacity — I'd want to understand why he feels this way." },
+    { "when": "Asked whether you'd operate anyway", "line": "No — a capacitous adult can refuse even life-saving treatment, once I'm sure the refusal is informed and voluntary." }
+  ],
+  "knowledge": [
+    { "fact": "Adults are presumed to have capacity; refusal itself is not evidence against it.", "source": "MCA2005" },
+    { "fact": "Capacity is decision-specific and time-specific: assess this decision, now, not capacity in general.", "source": "MCA2005" },
+    { "fact": "A capacitous adult can refuse treatment even if it risks serious harm or death.", "source": "GMCDMC" },
+    { "fact": "Explain diagnosis, treatment, benefits, material risks, reasonable alternatives and the option of no treatment.", "source": "GMCDMC" }
+  ],
+  "recall": {
+    "think": "Overriding a capacitous refusal, or treating disagreement as incapacity, is unlawful.",
+    "say": "\"Help me understand your reasons — I want to make sure this is fully informed.\"",
+    "do": [
+      "Explore his reasons and check voluntariness",
+      "Give full information, including no treatment",
+      "Assess capacity only if genuinely in doubt"
+    ],
+    "numbers": [
+      { "value": "4", "meaning": "MCA functional test elements: understand, retain, weigh and communicate the decision", "source": "MCA2005" }
+    ],
+    "trap": "An unwise or seemingly irrational decision does not by itself prove lack of capacity.",
+    "finish": "Document discussion, information given, capacity status and an agreed safety-net; offer senior review."
+  },
+  "sources": [
+    {
+      "id": "GMCDMC",
+      "name": "GMC: Decision making and consent",
+      "version": "In effect 9 November 2020",
+      "url": "https://www.gmc-uk.org/professional-standards/the-professional-standards/decision-making-and-consent",
+      "supports": "Information a patient needs to decide (diagnosis, treatment, benefits, material risks, alternatives, option of no treatment); a capacitous adult may refuse treatment even where this may result in harm or death"
+    },
+    {
+      "id": "MCA2005",
+      "name": "Mental Capacity Act 2005",
+      "version": "2005 c.9, as in force, sections 1–3",
+      "url": "https://www.legislation.gov.uk/ukpga/2005/9/section/1",
+      "supports": "Presumption of capacity (s.1(2)); an unwise decision alone does not establish incapacity (s.1(4)); capacity is decision- and time-specific, assessed by the ability to understand, retain, use or weigh, and communicate the decision (ss.2–3)"
+    },
+    {
+      "id": "GMCGMP",
+      "name": "GMC: Good medical practice",
+      "version": "Effective 30 January 2024",
+      "url": "https://www.gmc-uk.org/professional-standards/the-professional-standards/good-medical-practice",
+      "supports": "Involving patients in decisions about their care and treating them with respect for their autonomy"
+    }
+  ],
+  "partner": {
+    "opening": "Mr Bellamy is sitting up in bed, alert and calm. Please begin when you're ready.",
+    "actorBrief": "You are Isaac Bellamy, 59, a capacitous man with acute cholecystitis who has decided against surgery. Opening line if not asked first: \"I understand what you've told me, but I don't want the operation.\" You are polite but firm. If asked what's worrying you, reveal: your brother died unexpectedly after what was described as routine surgery some years ago, and this has left you distrustful of operations. You are not being pressured by anyone. If told plainly and given full information respectfully, you remain calm and thoughtful, and you may ask what happens if you refuse. If the candidate assumes you lack capacity or suggests asking your daughter instead, become quietly firm: \"This is my decision, not hers.\"",
+    "reveals": [
+      { "trigger": "Asks what's worrying him about the operation", "finding": "\"I lost my brother after what was meant to be a routine operation. I don't trust surgery.\"", "row": "G1" },
+      { "trigger": "Checks whether anyone is pressuring him", "finding": "\"No, it's entirely my own decision.\"", "row": "G5" },
+      { "trigger": "Explains the option of no treatment", "finding": "\"So if I don't have it, what actually happens to me?\"", "row": "G4" }
+    ],
+    "push": [
+      { "question": "Would you operate anyway, since he needs it?", "row": "G6", "expect": "No — a capacitous refusal must be respected, even if it risks serious harm." },
+      { "question": "How would you assess his capacity if you weren't sure?", "row": "G3", "expect": "The MCA functional test for this specific decision, at this time: understand, retain, weigh, communicate." },
+      { "question": "What would you document?", "row": "G7", "expect": "The discussion, information given, capacity status if assessed, his decision and an agreed safety-net." }
+    ],
+    "curveballs": [
+      { "prompt": "\"Just get my daughter to decide for me.\"", "safeAnswer": "Explains that only he, as a capacitous adult, can consent to or refuse the operation; his daughter cannot decide for him, though he may involve her in the discussion.", "row": "G6" },
+      { "prompt": "He becomes drowsy and less coherent mid-conversation.", "safeAnswer": "Reassesses before accepting the refusal, since a change in conscious level may affect his capacity for this decision right now.", "row": "G3" },
+      { "prompt": "\"Just get him to sign something refusing it.\"", "safeAnswer": "A signature doesn't replace the discussion; documents the information given and that the refusal was informed and voluntary.", "row": "G7" },
+      { "prompt": "\"Are you angry with me for refusing?\"", "safeAnswer": "Reassures him it is his right to decide and that his care will continue and stay attentive whatever he chooses.", "row": "G1" }
+    ]
+  }
+}

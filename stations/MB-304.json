@@ -1,0 +1,563 @@
+{
+  "id": "MB-304",
+  "exam": "MRCS-B",
+  "title": "Malignant hyperthermia in theatre",
+  "type": "applied-knowledge",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "Perioperative emergencies",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "Association of Anaesthetists: Malignant hyperthermia 2020 (Anaesthesia 2021)",
+      "European Malignant Hyperthermia Group 2024 guideline (Br J Anaesth 2025), noted for comparison"
+    ],
+    "related": [
+      {
+        "id": "MB-204",
+        "why": "Another anaesthetic emergency the surgical team helps to manage"
+      },
+      {
+        "id": "MB-166",
+        "why": "Treating hyperkalaemia"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Emergency theatre",
+    "role": "Core surgical trainee, operating",
+    "scenario": "Mr Liam Hebditch, 23, weighs 80 kg and is having a laparoscopic appendicectomy. Anaesthesia was induced with suxamethonium and maintained with sevoflurane. Twenty minutes in, the anaesthetist says his end-tidal CO2 keeps rising despite increased ventilation and his heart rate is 130.",
+    "task": "Answer the examiner's questions on recognition and management."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Recognise, declare, stop the trigger, dantrolene, cool, treat the consequences, refer.",
+    "trap": "Waiting for the temperature to rise before calling it malignant hyperthermia.",
+    "firstMove": "\"This could be malignant hyperthermia. Let's declare it and call for help and the MH kit.\""
+  },
+  "flow": [
+    "Recognise",
+    "Declare and call for help",
+    "Remove the trigger",
+    "Dantrolene",
+    "Cooling and complications",
+    "Aftercare and referral"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-knowledge",
+      "label": "Recognition",
+      "fail": "Attributes the signs to light anaesthesia or sepsis and carries on.",
+      "pass": "Suspects MH: unexplained rising end-tidal CO2 and tachycardia after a volatile agent or suxamethonium, with rigidity and later rising temperature.",
+      "high": "Knows temperature often hasn't risen when the diagnosis is made; notes masseter spasm, hyperkalaemia, acidosis and arrhythmias.",
+      "source": "MH"
+    },
+    {
+      "id": "G2",
+      "domain": "professionalism",
+      "label": "Declare and call for help",
+      "fail": "Doesn't declare the emergency, or keeps operating as normal.",
+      "pass": "Declares suspected MH, calls for help and the MH kit, and finishes or stops the operation as quickly as safely possible.",
+      "high": "Takes a role: helps reconstitute dantrolene, sends a runner for ice and cold fluids, and follows the crisis card.",
+      "source": "MH"
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-skill",
+      "label": "Remove the trigger",
+      "fail": "Only turns the volatile agent down.",
+      "pass": "Turn off and remove the vaporiser; 100% oxygen at maximum flow; minute ventilation 2–3 times normal; activated charcoal filters.",
+      "high": "Filters go on both the inspiratory and expiratory limbs; no further volatile agents or suxamethonium.",
+      "source": "MH"
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-knowledge",
+      "label": "Dantrolene",
+      "fail": "Doesn't know dantrolene, or gives one small dose.",
+      "pass": "Dantrolene 2–3 mg/kg IV (actual body weight), then 1 mg/kg every 5 minutes until end-tidal CO2 is below 6 kPa and core temperature below 38.5°C.",
+      "high": "Each 20 mg vial needs 60 ml of sterile water, so several people mix it; reappraise the diagnosis after 10 mg/kg.",
+      "source": "MH"
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-skill",
+      "label": "Cooling and consequences",
+      "fail": "Doesn't cool, or gives calcium routinely for hyperkalaemia rather than only in extremis (UK 2020 guideline).",
+      "pass": "Active cooling; core temperature and arterial line; catheter; hyperkalaemia with insulin-glucose or bicarbonate; bicarbonate for acidosis.",
+      "high": "Calcium only in extremis (UK 2020 guideline); aims for urine over 2 ml/kg/h for myoglobinuria; watches for DIC and compartment syndrome.",
+      "source": "MH"
+    },
+    {
+      "id": "G6",
+      "domain": "professionalism",
+      "label": "After the crisis",
+      "fail": "Sends him back to the ward once he looks stable.",
+      "pass": "HDU or ICU for at least 24 hours if dantrolene was needed; watch for recrudescence.",
+      "high": "Recrudescence has been reported up to 14 hours later: further dantrolene if it recurs, not routinely as prophylaxis.",
+      "source": "MH"
+    },
+    {
+      "id": "G7",
+      "domain": "clinical-knowledge",
+      "label": "Referral and family",
+      "fail": "Doesn't tell the patient, GP or family.",
+      "pass": "Consultant anaesthetist refers him to the UK MH Unit in Leeds; patient and GP informed before discharge.",
+      "high": "Genetic basis (RYR1, CACNA1S, STAC3); blood relatives treated as at risk until tested; future anaesthetics avoid volatiles and suxamethonium.",
+      "source": "MH"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "What's happening?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "He's probably light. The anaesthetist should turn the gas up.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "His temperature is 38.2 and he's rigid."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'll carry on and finish the appendix; it may be sepsis.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "It's malignant hyperthermia. What's the first step?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Turn the sevoflurane down.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Is there a specific drug?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Paracetamol and cold fluids.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Potassium is 6.9."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Calcium gluconate first.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "He's stable now. Where does he go?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Back to the ward with regular observations.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "examiner",
+        "text": "What's happening?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Rising end-tidal CO2 and tachycardia after suxamethonium and sevoflurane: I'd suspect malignant hyperthermia, especially if he's rigid.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What do you do as the surgeon?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Declare it, call for help and the MH kit, and finish or stop the operation as quickly as safely possible.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How is the trigger removed?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Turn off and remove the vaporiser, 100% oxygen at maximum flow, increase ventilation two to three times, and put in charcoal filters.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Specific treatment?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Dantrolene 2 to 3 mg/kg IV on actual weight, so 160 to 240 mg, then 1 mg/kg every 5 minutes until end-tidal CO2 is below 6 kPa and temperature below 38.5.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What else?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Active cooling, core temperature and an arterial line, a catheter. Treat hyperkalaemia with insulin and glucose or bicarbonate, and acidosis with bicarbonate.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "He's stable. Where does he go?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "HDU or ICU for at least 24 hours, because it can recur.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Anything after that?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "The consultant anaesthetist refers him to the MH Unit in Leeds, and he and his GP are told before discharge.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "candidate",
+        "text": "His temperature may still be normal; that doesn't exclude it. I'd also ask about jaw stiffness after the suxamethonium, and check potassium and a blood gas.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'll pack and close quickly, then help mix dantrolene. Can someone bring ice and cold fluids, and read the crisis card?",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Charcoal filters on both the inspiratory and expiratory limbs. No more volatile or suxamethonium.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How much dantrolene is that practically?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Each 20 mg vial needs 60 ml of sterile water, so we need several people mixing. If we reach 10 mg/kg, we should rethink the diagnosis.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Potassium is 6.9. Calcium?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Only in extremis in MH; insulin-glucose and bicarbonate first. I'd aim for urine over 2 ml/kg/h because of myoglobinuria, and watch for DIC and compartment syndrome.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Would you give more dantrolene prophylactically?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "No, but recrudescence has been reported up to 14 hours later, so he needs close monitoring and more dantrolene if it recurs.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What about his family?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "It's genetic, usually RYR1, sometimes CACNA1S or STAC3. His blood relatives should be treated as at risk until tested, and he must avoid volatiles and suxamethonium in future.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G1",
+      "move": "Waiting for a high temperature before suspecting MH.",
+      "consequence": "Safety-critical: delay to treatment increases mortality and complications."
+    },
+    {
+      "row": "G4",
+      "move": "Not knowing dantrolene or under-dosing it.",
+      "consequence": "The hypermetabolic reaction continues: hyperkalaemia, arrhythmia and death."
+    },
+    {
+      "row": "G7",
+      "move": "Discharging without informing the patient, GP or family.",
+      "consequence": "Relatives may be exposed to triggering agents in future."
+    },
+    {
+      "row": "G2",
+      "move": "Continuing the operation as normal.",
+      "consequence": "Diverts the team from the crisis."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You forget the sequence",
+      "line": "Three things together: remove the trigger, give dantrolene, cool him."
+    },
+    {
+      "when": "Asked what you do as the surgeon",
+      "line": "Finish quickly and safely, then help mix dantrolene and cool him."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Triggers: potent inhalational agents and suxamethonium.",
+      "source": "MH"
+    },
+    {
+      "fact": "Dantrolene 2–3 mg/kg, then 1 mg/kg every 5 min until ETCO2 below 6 kPa and core temperature below 38.5°C.",
+      "source": "MH"
+    },
+    {
+      "fact": "Each 20 mg vial of dantrolene is mixed with 60 ml of sterile water; the 250 mg preparation (Ryanodex) is not licensed in the UK.",
+      "source": "MH"
+    },
+    {
+      "fact": "Calcium only in extremis; HDU or ICU for at least 24 h if dantrolene was needed.",
+      "source": "MH"
+    },
+    {
+      "fact": "Refer to the UK MH Unit in Leeds; warn blood relatives.",
+      "source": "MH"
+    },
+    {
+      "fact": "EMHG 2024 gives dantrolene 2–2.5 mg/kg repeated every 10 min; this UK station follows the Association of Anaesthetists 2020.",
+      "source": "EMHG"
+    }
+  ],
+  "recall": {
+    "think": "Hyperkalaemic arrest, acidosis, rhabdomyolysis.",
+    "say": "\"I suspect malignant hyperthermia: call for help and the MH kit.\"",
+    "do": [
+      "Vaporiser off, 100% oxygen, charcoal filters",
+      "Dantrolene 2–3 mg/kg",
+      "Active cooling"
+    ],
+    "numbers": [
+      {
+        "value": "2–3 mg/kg then 1 mg/kg",
+        "meaning": "dantrolene, every 5 min to goals",
+        "source": "MH"
+      },
+      {
+        "value": "< 6 kPa and < 38.5°C",
+        "meaning": "ETCO2 and core temperature goals",
+        "source": "MH"
+      },
+      {
+        "value": "24 h",
+        "meaning": "minimum HDU/ICU stay if dantrolene needed",
+        "source": "MH"
+      }
+    ],
+    "trap": "A normal temperature doesn't exclude MH.",
+    "finish": "HDU/ICU, referral to Leeds MH Unit, family warned."
+  },
+  "sources": [
+    {
+      "id": "MH",
+      "name": "Hopkins PM, Girard T, Dalay S, et al. Malignant hyperthermia 2020: guideline from the Association of Anaesthetists. Anaesthesia 2021;76:655–64",
+      "version": "October 2020 (published 2021)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33399225/",
+      "supports": "Triggers (potent inhalational agents, suxamethonium); rising ETCO2 and tachycardia; temperature often not raised at diagnosis; masseter spasm; remove vaporiser, 100% oxygen at maximum flow, minute ventilation 2–3 times normal, charcoal filters on inspiratory and expiratory limbs; dantrolene 2–3 mg/kg on actual body weight then 1 mg/kg every 5 min to ETCO2 <6 kPa and core temperature <38.5°C; reappraise at 10 mg/kg; 20 mg vials in 60 ml sterile water; Ryanodex 250 mg not licensed in UK; active cooling; hyperkalaemia with bicarbonate and/or insulin-glucose, calcium only in extremis; urine output >2 ml/kg/h; DIC; compartment syndrome; recrudescence up to 14 h, no prophylactic dantrolene; HDU/ICU at least 24 h if dantrolene given; referral to Leeds MH Unit; inform patient, GP and blood relatives; RYR1, CACNA1S, STAC3"
+    },
+    {
+      "id": "EMHG",
+      "name": "Glahn KPE, et al. Recognition and management of a malignant hyperthermia crisis: updated 2024 guideline from the European Malignant Hyperthermia Group. Br J Anaesth 2025;134:221–3",
+      "version": "2024 guideline (published online 30 October 2024)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39482150/",
+      "supports": "European guideline: dantrolene 2–2.5 mg/kg IV, repeated every 10 minutes until the hypermetabolic signs resolve; the UK station follows the Association of Anaesthetists 2020 guideline"
+    },
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format: 9 minutes with 1 minute's reading; examiner-led questioning in applied knowledge stations"
+    }
+  ],
+  "media": [
+    {
+      "id": "capnograph-mh",
+      "task": "Interpret the capnograph trend",
+      "description": "Anaesthetic monitor trend showing a progressive rise in end-tidal CO2 and heart rate over 20 minutes despite increased minute ventilation",
+      "required": false,
+      "status": "needed"
+    }
+  ],
+  "partner": {
+    "opening": "The anaesthetist tells you end-tidal CO2 keeps rising and heart rate is 130. What's happening?",
+    "reveals": [
+      {
+        "trigger": "Candidate asks about temperature and muscle tone",
+        "finding": "Temperature 37.6°C now 38.2°C. Jaw stiff after suxamethonium; limbs now rigid.",
+        "row": "G1"
+      },
+      {
+        "trigger": "Candidate asks for a blood gas",
+        "finding": "pH 7.12, PaCO2 9.8 kPa, lactate 6, K+ 6.9 mmol/L.",
+        "row": "G5"
+      },
+      {
+        "trigger": "Candidate asks about response to treatment",
+        "finding": "After 240 mg dantrolene: ETCO2 5.6 kPa, temperature 38.1°C, HR 95.",
+        "row": "G4"
+      }
+    ],
+    "push": [
+      {
+        "question": "How is the trigger removed?",
+        "row": "G3",
+        "expect": "Vaporiser off and removed, 100% O2 max flow, 2–3x ventilation, charcoal filters."
+      },
+      {
+        "question": "What dose of dantrolene?",
+        "row": "G4",
+        "expect": "2–3 mg/kg, then 1 mg/kg every 5 min to goals."
+      },
+      {
+        "question": "How do you treat the potassium?",
+        "row": "G5",
+        "expect": "Insulin-glucose or bicarbonate; calcium only in extremis."
+      },
+      {
+        "question": "Where does he go afterwards?",
+        "row": "G6",
+        "expect": "HDU/ICU for at least 24 h."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "Someone suggests the 250 mg dantrolene vial because it mixes faster.",
+        "safeAnswer": "That preparation isn't licensed in the UK; use the standard 20 mg vials with 60 ml sterile water each.",
+        "row": "G4"
+      },
+      {
+        "prompt": "His temperature is only 37.6°C. Could it still be MH?",
+        "safeAnswer": "Yes. Temperature often hasn't risen at diagnosis; treat on rising CO2 and tachycardia.",
+        "row": "G1"
+      },
+      {
+        "prompt": "Four hours later his end-tidal CO2 rises again on ICU.",
+        "safeAnswer": "Recrudescence: give further dantrolene, 1 mg/kg in the first instance.",
+        "row": "G6"
+      }
+    ]
+  }
+}

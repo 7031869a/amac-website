@@ -1,0 +1,419 @@
+{
+ "id": "MB-436",
+ "exam": "MRCS-B",
+ "title": "Newly diagnosed metastatic breast cancer",
+ "type": "communication",
+ "header": {
+  "domain": "Applied Skills",
+  "contentArea": "Breaking news of de novo metastatic disease and introducing goals of care",
+  "minutes": 9,
+  "readingMinutes": 1,
+  "guidelineVersions": [
+   "NICE NG101 Early and locally advanced breast cancer (updated 2026)",
+   "GMC Good Medical Practice"
+  ],
+  "related": [
+   {
+    "id": "MB-363",
+    "why": "A related but distinct scenario of recurrent, rather than newly metastatic, disease"
+   }
+  ]
+ },
+ "brief": {
+  "setting": "Breast clinic, results appointment following staging investigations",
+  "role": "Core surgical trainee",
+  "scenario": "Mrs Prentice, 58, presented with a breast lump and back pain. Staging has confirmed invasive breast cancer with bone metastases at diagnosis (de novo metastatic disease).",
+  "task": "Give her this diagnosis and begin a conversation about what happens next. You have 7 minutes.",
+  "note": "This station tests breaking serious news and introducing goals of care sensitively; it does not require detailed knowledge of specific palliative or systemic treatment regimens."
+ },
+ "beforeYouWalkIn": {
+  "frame": "This is life-changing news; deliver it honestly and compassionately, allow space for her reaction, and introduce that treatment can still achieve a great deal.",
+  "trap": "Softening or omitting 'incurable', or overloading her with treatment detail before she has had space to react.",
+  "firstMove": "\"I'm afraid I have very serious news to share with you today.\""
+ },
+ "flow": [
+  "Warning shot and delivering the diagnosis",
+  "Responding to her reaction",
+  "Explaining what this means in broad terms",
+  "Introducing the idea of treatment goals going forward",
+  "Next steps and closing"
+ ],
+ "grid": [
+  {
+   "id": "G1",
+   "domain": "professionalism",
+   "label": "Warning shot and delivery",
+   "fail": "Delivers the diagnosis abruptly with no warning shot, or buries it in technical detail.",
+   "pass": "Gives a clear warning shot and states plainly that the cancer has spread to the bone.",
+   "high": "Delivers this with appropriate gravity, matching tone to the seriousness of the news without being cold or clinical."
+  },
+  {
+   "id": "G2",
+   "domain": "communication",
+   "label": "Responding to her reaction",
+   "fail": "Moves straight to treatment discussion without allowing space for her reaction.",
+   "pass": "Pauses and responds to her emotional reaction before continuing.",
+   "high": "Sits with silence or distress without rushing to fill it with information or reassurance."
+  },
+  {
+   "id": "G3",
+   "domain": "clinical-knowledge",
+   "label": "Explaining what this means",
+   "fail": "Avoids stating clearly that this cancer cannot be cured.",
+   "pass": "Explains honestly, if she asks or when appropriate, that this cancer cannot be cured, though it can often be controlled and treated for a significant period of time.",
+   "high": "Balances this honesty with a clear, appropriately hopeful explanation of what treatment can still achieve, avoiding both false hope and unwarranted bleakness.",
+   "source": "CG81"
+  },
+  {
+   "id": "G4",
+   "domain": "communication",
+   "label": "Introducing goals of care",
+   "fail": "Presents this purely in terms of what cannot be done, with no forward focus.",
+   "pass": "Introduces the idea that the focus now shifts to controlling the cancer and managing symptoms to maintain quality of life for as long as possible.",
+   "high": "Frames this without rushing her into decisions today, acknowledging this is the start of an ongoing conversation, not a single appointment's work."
+  },
+  {
+   "id": "G5",
+   "domain": "communication",
+   "label": "Following her lead on detail",
+   "fail": "Gives either much more or much less detail than she is asking for or ready to hear.",
+   "pass": "Checks how much she wants to know today and paces information accordingly.",
+   "high": "Explicitly offers the choice of how much to discuss now versus at a further appointment, respecting her control over the pace of this conversation."
+  },
+  {
+   "id": "G6",
+   "domain": "professionalism",
+   "label": "Next steps and closing",
+   "fail": "Ends without a clear next step or means of support.",
+   "pass": "Confirms referral to the oncology team to discuss treatment options and introduces relevant support (e.g. clinical nurse specialist).",
+   "high": "Checks she has support around her for today and offers a way to reach the team with questions before the next appointment."
+  }
+ ],
+ "performances": {
+  "fail": [
+   {
+    "speaker": "candidate",
+    "text": "So the scans show the cancer has spread to your bones, it's not curable, but there are various treatment options including chemotherapy, hormone therapy, and radiotherapy for the bone pain, which we can discuss.",
+    "tags": [
+     {
+      "row": "G1",
+      "band": "fail"
+     },
+     {
+      "row": "G2",
+      "band": "fail"
+     }
+    ]
+   },
+   {
+    "speaker": "patient",
+    "text": "[Silent, stunned.]"
+   },
+   {
+    "speaker": "candidate",
+    "text": "So, shall we talk about which treatment to start with?",
+    "tags": [
+     {
+      "row": "G5",
+      "band": "fail"
+     }
+    ]
+   }
+  ],
+  "pass": [
+   {
+    "speaker": "candidate",
+    "text": "I'm afraid I have very serious news to share with you today. The scans show the cancer has spread to your bones.",
+    "tags": [
+     {
+      "row": "G1",
+      "band": "pass"
+     }
+    ]
+   },
+   {
+    "speaker": "patient",
+    "text": "[Long pause, tearful.] I don't know what to say."
+   },
+   {
+    "speaker": "candidate",
+    "text": "Take whatever time you need. There's no rush.",
+    "tags": [
+     {
+      "row": "G2",
+      "band": "pass"
+     }
+    ]
+   },
+   {
+    "speaker": "patient",
+    "text": "Does this mean I'm going to die?"
+   },
+   {
+    "speaker": "candidate",
+    "text": "I want to be honest with you - this cancer can't be cured, but it can often be controlled and treated for a significant period of time, and I don't want you to hear only the difficult part of that.",
+    "tags": [
+     {
+      "row": "G3",
+      "band": "pass"
+     }
+    ]
+   },
+   {
+    "speaker": "candidate",
+    "text": "Going forward, the focus is on controlling the cancer and managing any symptoms, like the bone pain, to help you live as well as possible for as long as possible.",
+    "tags": [
+     {
+      "row": "G4",
+      "band": "pass"
+     }
+    ]
+   },
+   {
+    "speaker": "candidate",
+    "text": "Would you like to talk more about treatment today, or would you rather take some time and come back to discuss the details at a further appointment?",
+    "tags": [
+     {
+      "row": "G5",
+      "band": "pass"
+     }
+    ]
+   },
+   {
+    "speaker": "patient",
+    "text": "I think I'd like more time before going into detail."
+   },
+   {
+    "speaker": "candidate",
+    "text": "That's completely understandable. I'll refer you to our oncology team, and our clinical nurse specialist will also be in touch to support you before then.",
+    "tags": [
+     {
+      "row": "G6",
+      "band": "pass"
+     }
+    ]
+   }
+  ],
+  "high": [
+   {
+    "speaker": "candidate",
+    "text": "I'm afraid I have very serious news for you today. [Pauses.] The scans show that the cancer has spread to your bones.",
+    "tags": [
+     {
+      "row": "G1",
+      "band": "high"
+     }
+    ]
+   },
+   {
+    "speaker": "patient",
+    "text": "[Long silence, then quietly crying.]"
+   },
+   {
+    "speaker": "candidate",
+    "text": "[Sits quietly with her, offering a tissue, without speaking immediately.] Take all the time you need.",
+    "tags": [
+     {
+      "row": "G2",
+      "band": "high"
+     }
+    ]
+   },
+   {
+    "speaker": "patient",
+    "text": "Is this going to kill me?"
+   },
+   {
+    "speaker": "candidate",
+    "text": "I want to answer you honestly, because you deserve that - this cancer can't be cured. But I also want you to hear this clearly: it can often be controlled and treated for a meaningful length of time, and many people live well for years with this kind of diagnosis. Both of those things are true at once.",
+    "tags": [
+     {
+      "row": "G3",
+      "band": "high"
+     }
+    ]
+   },
+   {
+    "speaker": "patient",
+    "text": "So what happens from here?"
+   },
+   {
+    "speaker": "candidate",
+    "text": "From here, the goal shifts to controlling the cancer for as long as possible and managing symptoms like your back pain, so you can live as well as possible - this isn't something we need to plan in full detail today.",
+    "tags": [
+     {
+      "row": "G4",
+      "band": "high"
+     }
+    ]
+   },
+   {
+    "speaker": "candidate",
+    "text": "There's a lot we could go into about treatment, but I don't want to overwhelm you right now - would you like to hear more today, or would it help to take some time first and go through the details at a dedicated appointment?",
+    "tags": [
+     {
+      "row": "G5",
+      "band": "high"
+     }
+    ]
+   },
+   {
+    "speaker": "patient",
+    "text": "I think I need some time first."
+   },
+   {
+    "speaker": "candidate",
+    "text": "That makes complete sense. I'll arrange your referral to the oncology team, and our clinical nurse specialist will reach out to support you in the meantime - please do get in touch with any questions before we next meet.",
+    "tags": [
+     {
+      "row": "G6",
+      "band": "high"
+     }
+    ]
+   }
+  ]
+ },
+ "failures": [
+  {
+   "row": "G2",
+   "move": "Moving straight into treatment options without allowing space for her reaction.",
+   "consequence": "Fails to acknowledge the enormity of the news, and information given during unprocessed shock is unlikely to be retained or feel supportive."
+  },
+  {
+   "row": "G3",
+   "move": "Avoiding a direct, honest answer about incurability when asked.",
+   "consequence": "Undermines trust and can leave the patient making decisions later based on a misunderstanding of her situation."
+  },
+  {
+   "row": "G5",
+   "move": "Proceeding immediately into detailed treatment planning regardless of her readiness.",
+   "consequence": "Overwhelms a patient who may need time to process the diagnosis before being able to meaningfully engage with treatment decisions."
+  },
+  {
+   "row": "G4",
+   "move": "Presenting the news purely in terms of what can no longer be done, with no forward focus.",
+   "consequence": "Leaves the patient feeling there is nothing left to hope for, when in fact meaningful disease control and symptom management remain achievable goals."
+  },
+  {
+   "row": "G6",
+   "move": "Ending the consultation without confirming a referral or naming a source of support.",
+   "consequence": "Leaves the patient without a clear next step or anyone to turn to while she processes a life-changing diagnosis."
+  }
+ ],
+ "recovery": [
+  {
+   "when": "You moved straight to treatment options",
+   "line": "I'm sorry, let's pause here - I moved too quickly. Take whatever time you need."
+  },
+  {
+   "when": "You avoided answering honestly about prognosis",
+   "line": "I want to be honest with you, since you deserve that, even though it's hard to hear."
+  }
+ ],
+ "knowledge": [
+  {
+   "fact": "De novo metastatic breast cancer, where distant spread is present at initial diagnosis, is not curable, but can often be controlled with systemic and symptom-directed treatment for a substantial period of time.",
+   "source": "CG81"
+  },
+  {
+   "fact": "Goals of care in metastatic breast cancer shift from cure to controlling disease progression and managing symptoms to maintain quality of life."
+  },
+  {
+   "fact": "Breaking serious news well involves a warning shot, plain language, space for the patient's reaction, and pacing further information according to the patient's readiness, rather than a fixed script.",
+   "source": "GMC"
+  }
+ ],
+ "recall": {
+  "think": "Warning shot, then space; honest yet hopeful; pace to her readiness.",
+  "say": "\"Both of those things are true at once.\"",
+  "do": [
+   "Give a clear warning shot first",
+   "Allow real space for her reaction",
+   "Be honest about incurability while offering realistic hope, at her pace"
+  ],
+  "numbers": [
+   {
+    "value": "~5%",
+    "meaning": "of breast cancers are metastatic at initial diagnosis (de novo stage IV)",
+    "source": "CG81"
+   }
+  ],
+  "trap": "Rushing to treatment, or avoiding honest prognosis talk.",
+  "finish": "Honest, paced diagnosis with oncology referral and CNS support arranged."
+ },
+ "sources": [
+  {
+   "id": "ICBSE",
+   "name": "ICBSE Guide to the intercollegiate MRCS examination",
+   "version": "August 2021",
+   "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+   "supports": "Communication station format and structure, including timing"
+  },
+  {
+   "id": "NG101",
+   "name": "NICE NG101: Early and locally advanced breast cancer: diagnosis and management",
+   "version": "Published July 2018; last updated 2026",
+   "url": "https://www.nice.org.uk/guidance/ng101",
+   "supports": "Broad principles of management goals in metastatic breast cancer"
+  },
+  {
+   "id": "GMC",
+   "name": "GMC: Good Medical Practice",
+   "version": "New edition, in effect from 30 January 2024",
+   "url": "https://www.gmc-uk.org/professional-standards/the-professional-standards/good-medical-practice",
+   "supports": "Principles of honest, sensitive, and appropriately paced communication of serious news"
+  },
+  {
+   "id": "CG81",
+   "name": "NICE CG81: Advanced breast cancer: diagnosis and treatment",
+   "version": "current (see 2023 joint surveillance review with NG101)",
+   "url": "https://www.nice.org.uk/guidance/cg81",
+   "supports": "Diagnosis, prognosis and goals-of-care principles for metastatic (advanced) breast cancer"
+  }
+ ],
+ "partner": {
+  "opening": "Please give this patient her diagnosis and begin discussing what happens next. You have 7 minutes.",
+  "actorBrief": "You are Mrs Prentice, 58, newly diagnosed with breast cancer that has already spread to bone at diagnosis. You are stunned by the news and want to know honestly whether this will kill you, but you feel unready to discuss detailed treatment plans today.",
+  "reveals": [
+   {
+    "trigger": "Candidate gives a clear warning shot before the diagnosis",
+    "finding": "You brace yourself slightly better than if it had come without warning.",
+    "row": "G1"
+   },
+   {
+    "trigger": "Candidate allows genuine silence and space after the diagnosis",
+    "finding": "You feel able to express your shock without being rushed.",
+    "row": "G2"
+   },
+   {
+    "trigger": "Candidate checks how much detail you want today",
+    "finding": "You reveal you need time before discussing detailed treatment plans.",
+    "row": "G5"
+   }
+  ],
+  "push": [
+   {
+    "question": "Is this going to kill me?",
+    "row": "G3",
+    "expect": "Answer honestly that the cancer cannot be cured, while conveying that it can often be controlled and treated for a meaningful period of time."
+   },
+   {
+    "question": "Do I need to decide on treatment today?",
+    "row": "G5",
+    "expect": "Confirm there's no need to decide today, and offer to continue the conversation at a further appointment when she feels ready."
+   }
+  ],
+  "curveballs": [
+   {
+    "prompt": "How long do I have?",
+    "safeAnswer": "Acknowledge this is a natural and important question, explain that individual prognosis varies considerably and is better addressed once more is known about her specific disease and response to treatment, and avoid giving a specific, unfounded timeframe.",
+    "row": "G3"
+   },
+   {
+    "prompt": "I don't want my children to know yet.",
+    "safeAnswer": "Respect this as her decision to make, without pressuring her either way, and offer support from the clinical nurse specialist if and when she wants help navigating that conversation.",
+    "row": "G4"
+   }
+  ]
+ }
+}

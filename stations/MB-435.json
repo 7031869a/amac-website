@@ -1,0 +1,414 @@
+{
+ "id": "MB-435",
+ "exam": "MRCS-B",
+ "title": "Breast cancer diagnosed during pregnancy",
+ "type": "communication",
+ "header": {
+  "domain": "Applied Skills",
+  "contentArea": "Discussing breast cancer diagnosis and treatment planning during pregnancy",
+  "minutes": 9,
+  "readingMinutes": 1,
+  "guidelineVersions": [
+   "NICE NG101 Early and locally advanced breast cancer (updated 2026)",
+   "GMC Good Medical Practice"
+  ],
+  "related": [
+   {
+    "id": "MB-124",
+    "why": "The general staging and management framework applied here with pregnancy-specific adjustments"
+   }
+  ]
+ },
+ "brief": {
+  "setting": "Joint obstetric/breast clinic",
+  "role": "Core surgical trainee",
+  "scenario": "Mrs Bianchi, 32, is 18 weeks pregnant. A core biopsy of a breast lump found earlier this month confirms invasive ductal carcinoma, ER positive, HER2 negative.",
+  "task": "Give her this result and discuss how treatment can be planned around her pregnancy. You have 7 minutes.",
+  "note": "This station tests communication and broad principles of balancing maternal treatment against fetal safety, not detailed oncological dosing or regimen selection."
+ },
+ "beforeYouWalkIn": {
+  "frame": "Deliver the diagnosis plainly, then explicitly address her fears about the pregnancy before broad treatment principles.",
+  "trap": "Assuming she must choose between treatment and the pregnancy, when many treatments can proceed safely alongside it.",
+  "firstMove": "\"I'm afraid I have difficult news, and I know your pregnancy is very much on your mind.\""
+ },
+ "flow": [
+  "Warning shot and delivering the diagnosis",
+  "Responding to her fears about the pregnancy",
+  "Explaining that treatment and pregnancy are not automatically incompatible",
+  "Broad principles of what can and can't proceed during pregnancy",
+  "Next steps and closing"
+ ],
+ "grid": [
+  {
+   "id": "G1",
+   "domain": "professionalism",
+   "label": "Warning shot and delivery",
+   "fail": "Delivers the diagnosis without acknowledging the pregnancy context at all.",
+   "pass": "Gives a clear warning shot and delivers the diagnosis, while acknowledging her pregnancy is highly relevant to what comes next.",
+   "high": "Delivers this without either minimising the cancer diagnosis or letting the pregnancy dominate the news before she's absorbed the diagnosis itself."
+  },
+  {
+   "id": "G2",
+   "domain": "communication",
+   "label": "Responding to her fears about the pregnancy",
+   "fail": "Does not address her likely fear that she must choose between her health and the pregnancy.",
+   "pass": "Directly and gently addresses whether she will need to end the pregnancy or forgo treatment, based on her reaction or question.",
+   "high": "Anticipates this fear proactively rather than waiting for her to ask, given how central it's likely to be for her."
+  },
+  {
+   "id": "G3",
+   "domain": "clinical-knowledge",
+   "label": "Explaining compatibility with pregnancy",
+   "fail": "Implies she must terminate the pregnancy to be treated, or that treatment must wait entirely until after delivery.",
+   "pass": "Explains that many aspects of breast cancer treatment, including surgery and, from a certain point in pregnancy, chemotherapy, can be given safely alongside a continuing pregnancy, with specialist input.",
+   "high": "Explains this is a genuinely multidisciplinary decision involving obstetrics, oncology and neonatology, not something to be decided in this one conversation.",
+   "source": "NG101"
+  },
+  {
+   "id": "G4",
+   "domain": "clinical-knowledge",
+   "label": "Explaining what needs to be adjusted",
+   "fail": "Implies every aspect of standard treatment can proceed completely unmodified.",
+   "pass": "Explains that some elements, such as certain imaging or specific drug treatments (e.g. radiotherapy, some targeted or hormonal therapies), are usually delayed until after delivery for fetal safety.",
+   "high": "Frames this as careful sequencing and timing of treatment around the pregnancy, rather than compromise or delay of her overall care."
+  },
+  {
+   "id": "G5",
+   "domain": "communication",
+   "label": "Addressing her emotional response",
+   "fail": "Moves through information without checking in on how she's coping with this dual burden.",
+   "pass": "Checks in on how she's feeling, acknowledging she is processing both a cancer diagnosis and concern for her baby simultaneously.",
+   "high": "Recognises this as a distinct and particularly heavy emotional load, without assuming how she specifically feels about either aspect."
+  },
+  {
+   "id": "G6",
+   "domain": "professionalism",
+   "label": "Next steps and closing",
+   "fail": "Ends without a clear next step involving the necessary specialist teams.",
+   "pass": "Confirms referral to a joint obstetric-oncology multidisciplinary team to plan treatment carefully around the pregnancy.",
+   "high": "Reassures her that this joint planning approach exists specifically because this situation, while frightening, is a recognised and actively managed one, not a novel dilemma she's facing alone."
+  }
+ ],
+ "performances": {
+  "fail": [
+   {
+    "speaker": "candidate",
+    "text": "I'm afraid it's cancer. Given you're pregnant, this is really complicated, you may need to consider ending the pregnancy to be treated properly.",
+    "tags": [
+     {
+      "row": "G1",
+      "band": "fail"
+     },
+     {
+      "row": "G3",
+      "band": "fail"
+     }
+    ]
+   },
+   {
+    "speaker": "patient",
+    "text": "[Distraught.] I don't want to lose the baby."
+   },
+   {
+    "speaker": "candidate",
+    "text": "We'll have to see what's possible.",
+    "tags": [
+     {
+      "row": "G2",
+      "band": "fail"
+     },
+     {
+      "row": "G5",
+      "band": "fail"
+     }
+    ]
+   },
+   {
+    "speaker": "candidate",
+    "text": "Don't worry, all your treatment will just carry on exactly as normal, nothing needs to change because of the pregnancy.",
+    "tags": [
+     {
+      "row": "G4",
+      "band": "fail"
+     }
+    ]
+   },
+   {
+    "speaker": "candidate",
+    "text": "Let's just leave it there for today and see how things go.",
+    "tags": [
+     {
+      "row": "G6",
+      "band": "fail"
+     }
+    ]
+   }
+  ],
+  "pass": [
+   {
+    "speaker": "candidate",
+    "text": "I'm afraid I have difficult news, and I know your pregnancy will be very much on your mind as I explain it - the biopsy confirms breast cancer.",
+    "tags": [
+     {
+      "row": "G1",
+      "band": "pass"
+     }
+    ]
+   },
+   {
+    "speaker": "patient",
+    "text": "[Tearful.] Does this mean I have to end the pregnancy?"
+   },
+   {
+    "speaker": "candidate",
+    "text": "No, that's not automatically the case at all - many parts of breast cancer treatment can be given safely alongside a continuing pregnancy, with the right specialist planning.",
+    "tags": [
+     {
+      "row": "G2",
+      "band": "pass"
+     },
+     {
+      "row": "G3",
+      "band": "pass"
+     }
+    ]
+   },
+   {
+    "speaker": "patient",
+    "text": "What would need to change because I'm pregnant?"
+   },
+   {
+    "speaker": "candidate",
+    "text": "Some elements, like radiotherapy and certain drug treatments, are usually delayed until after you've delivered, for your baby's safety, but other treatments, like surgery, can often proceed during pregnancy.",
+    "tags": [
+     {
+      "row": "G4",
+      "band": "pass"
+     }
+    ]
+   },
+   {
+    "speaker": "candidate",
+    "text": "I know you're taking in a cancer diagnosis and worrying about your baby at the same time - how are you doing with all of this?",
+    "tags": [
+     {
+      "row": "G5",
+      "band": "pass"
+     }
+    ]
+   },
+   {
+    "speaker": "candidate",
+    "text": "I'll refer you to our joint obstetric and oncology team, who specialise in planning treatment carefully around pregnancy.",
+    "tags": [
+     {
+      "row": "G6",
+      "band": "pass"
+     }
+    ]
+   }
+  ],
+  "high": [
+   {
+    "speaker": "candidate",
+    "text": "I'm afraid I have difficult news to share, and I know that alongside everything else, your pregnancy will be right at the front of your mind - the biopsy has confirmed breast cancer.",
+    "tags": [
+     {
+      "row": "G1",
+      "band": "high"
+     }
+    ]
+   },
+   {
+    "speaker": "patient",
+    "text": "[Pauses, then quietly:] Will I lose the baby because of this?"
+   },
+   {
+    "speaker": "candidate",
+    "text": "I want to answer that directly, because I imagine it's the first thing on your mind - no, a cancer diagnosis doesn't automatically mean ending the pregnancy. Many aspects of treatment, including surgery, can be given safely alongside a continuing pregnancy, with careful specialist planning.",
+    "tags": [
+     {
+      "row": "G2",
+      "band": "high"
+     },
+     {
+      "row": "G3",
+      "band": "high"
+     }
+    ]
+   },
+   {
+    "speaker": "patient",
+    "text": "So everything can just carry on as normal?"
+   },
+   {
+    "speaker": "candidate",
+    "text": "Not quite everything - some elements, like radiotherapy and certain drug treatments, are usually sequenced to happen after delivery to protect your baby, while other parts, such as surgery, can often go ahead now. Think of it as careful timing and coordination, rather than your care being compromised.",
+    "tags": [
+     {
+      "row": "G4",
+      "band": "high"
+     }
+    ]
+   },
+   {
+    "speaker": "candidate",
+    "text": "I want to check in properly - you're holding a cancer diagnosis and concern for your baby at the same time, which is an enormous amount to carry. How are you doing with all of this right now?",
+    "tags": [
+     {
+      "row": "G5",
+      "band": "high"
+     }
+    ]
+   },
+   {
+    "speaker": "candidate",
+    "text": "I'll refer you to our joint obstetric and oncology team - this is a situation they plan for specifically, so while it's frightening, you won't be navigating it alone or as something entirely new to figure out.",
+    "tags": [
+     {
+      "row": "G6",
+      "band": "high"
+     }
+    ]
+   }
+  ]
+ },
+ "failures": [
+  {
+   "row": "G3",
+   "move": "Implying she must choose between ending the pregnancy and receiving treatment.",
+   "consequence": "Causes severe, often unnecessary distress, since many treatment pathways can accommodate a continuing pregnancy with appropriate planning."
+  },
+  {
+   "row": "G2",
+   "move": "Not directly addressing her fear about the pregnancy's viability.",
+   "consequence": "Leaves her most pressing fear unaddressed, likely to dominate her thinking regardless of what other information is given."
+  },
+  {
+   "row": "G5",
+   "move": "Moving through clinical information without acknowledging the dual emotional burden she's carrying.",
+   "consequence": "Fails to recognise a particularly heavy and distinct emotional situation, risking the interaction feeling purely transactional."
+  }
+ ],
+ "recovery": [
+  {
+   "when": "You implied she must end the pregnancy",
+   "line": "I should be clear - that's not automatically the case, and I don't want to have suggested otherwise."
+  },
+  {
+   "when": "You didn't check in on her emotional state",
+   "line": "I realise I've given you a lot of information - how are you actually feeling, taking all of this in?"
+  }
+ ],
+ "knowledge": [
+  {
+   "fact": "A diagnosis of breast cancer during pregnancy does not automatically require termination of the pregnancy; treatment can often be planned to proceed safely alongside a continuing pregnancy.",
+   "source": "NG101"
+  },
+  {
+   "fact": "Surgery for breast cancer can generally be performed during pregnancy, while radiotherapy and certain systemic therapies are typically deferred until after delivery due to fetal safety considerations.",
+   "source": "NG101"
+  },
+  {
+   "fact": "Management of breast cancer in pregnancy requires joint planning between obstetric, oncology, and neonatology teams to balance maternal treatment needs with fetal safety."
+  }
+ ],
+ "recall": {
+  "think": "Pregnancy doesn't force a choice between mother and treatment; this is sequencing, not compromise.",
+  "say": "\"That's not automatically the case at all.\"",
+  "do": [
+   "Acknowledge the pregnancy when delivering the diagnosis",
+   "Address early whether treatment threatens the pregnancy",
+   "Explain what can proceed now vs after delivery"
+  ],
+  "numbers": [
+   {
+    "value": "~1 in 3,000 pregnancies",
+    "meaning": "affected by breast cancer",
+    "source": "RCOG-GTG12"
+   },
+   {
+    "value": "14 weeks gestation",
+    "meaning": "chemo often safer after this point (second trimester, post-organogenesis)",
+    "source": "RCOG-GTG12"
+   }
+  ],
+  "trap": "Implying a forced choice between ending pregnancy and treatment.",
+  "finish": "Referral to joint obstetric-oncology planning, pregnancy fear addressed early."
+ },
+ "sources": [
+  {
+   "id": "ICBSE",
+   "name": "ICBSE Guide to the intercollegiate MRCS examination",
+   "version": "August 2021",
+   "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+   "supports": "Communication station format and structure, including timing"
+  },
+  {
+   "id": "NG101",
+   "name": "NICE NG101: Early and locally advanced breast cancer: diagnosis and management",
+   "version": "Published July 2018; last updated 2026",
+   "url": "https://www.nice.org.uk/guidance/ng101",
+   "supports": "Broad principles of managing breast cancer diagnosed during pregnancy"
+  },
+  {
+   "id": "GMC",
+   "name": "GMC: Good Medical Practice",
+   "version": "2024 edition (in effect from 30 January 2024)",
+   "url": "https://www.gmc-uk.org/professional-standards/the-professional-standards/good-medical-practice",
+   "supports": "Sensitive, honest communication in a complex, emotionally significant clinical situation"
+  },
+  {
+   "id": "RCOG-GTG12",
+   "name": "RCOG Green-top Guideline No. 12: Pregnancy and Breast Cancer",
+   "version": "Current guideline (published 2011)",
+   "url": "https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/pregnancy-and-breast-cancer-green-top-guideline-no-12/",
+   "supports": "Incidence of breast cancer in pregnancy and gestational timing of chemotherapy safety"
+  }
+ ],
+ "partner": {
+  "opening": "Please give this patient her diagnosis and discuss treatment planning around her pregnancy. You have 7 minutes.",
+  "actorBrief": "You are Mrs Bianchi, 32, 18 weeks pregnant, with a new diagnosis of invasive breast cancer. Your immediate, overwhelming fear is that you will have to end the pregnancy to be treated.",
+  "reveals": [
+   {
+    "trigger": "Candidate delivers the diagnosis while acknowledging the pregnancy",
+    "finding": "You brace yourself but feel slightly less blindsided than if it had been ignored.",
+    "row": "G1"
+   },
+   {
+    "trigger": "Candidate directly addresses whether you must end the pregnancy",
+    "finding": "You feel immediate, significant relief that this isn't automatically required.",
+    "row": "G2"
+   },
+   {
+    "trigger": "Candidate explains treatment can be sequenced rather than compromised",
+    "finding": "You feel more hopeful about both your treatment and the pregnancy continuing.",
+    "row": "G4"
+   }
+  ],
+  "push": [
+   {
+    "question": "Will I have to end the pregnancy to get treated properly?",
+    "row": "G3",
+    "expect": "Clearly state this is not automatically required, and that many aspects of treatment can proceed alongside a continuing pregnancy."
+   },
+   {
+    "question": "What exactly can and can't happen while I'm still pregnant?",
+    "row": "G4",
+    "expect": "Explain in broad terms that surgery can often proceed now, while radiotherapy and certain drug treatments are usually deferred until after delivery."
+   }
+  ],
+  "curveballs": [
+   {
+    "prompt": "Will the treatment harm my baby even if I don't end the pregnancy?",
+    "safeAnswer": "Explain that treatment planning is specifically designed with fetal safety in mind, sequencing care to protect the baby while treating her cancer, and that specialists will guide this carefully.",
+    "row": "G4"
+   },
+   {
+    "prompt": "I feel like I have to choose between myself and my baby.",
+    "safeAnswer": "Gently reassure her that this framing, while an understandable fear, doesn't reflect how care is actually planned, since the aim is to protect both her health and the pregnancy together wherever possible.",
+    "row": "G2"
+   }
+  ]
+ }
+}

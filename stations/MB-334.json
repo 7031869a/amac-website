@@ -1,0 +1,498 @@
+{
+  "id": "MB-334",
+  "exam": "MRCS-B",
+  "title": "Tracheostomy emergencies",
+  "type": "applied-knowledge",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "Airway emergencies: tracheostomy and laryngectomy",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "McGrath BA, et al (National Tracheostomy Safety Project). Multidisciplinary guidelines for the management of tracheostomy and laryngectomy airway emergencies. Anaesthesia. 2012;67(9):1025-1041"
+    ],
+    "related": [
+      {
+        "id": "MB-238",
+        "why": "Applied anatomy of the larynx and emergency front-of-neck airway, which this emergency algorithm sits alongside"
+      },
+      {
+        "id": "MB-327",
+        "why": "Stridor and upper airway obstruction: another A-E airway emergency with a structured algorithm"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Surgical ward",
+    "role": "Surgical trainee",
+    "scenario": "Mr Martin Ellison, 67, has a tracheostomy and suddenly becomes breathless. His oxygen saturation is falling and he appears agitated.",
+    "task": "Describe your emergency management."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Call for help, A-E, establish tracheostomy versus laryngectomy from the bedhead information, then work through reversible causes before escalating.",
+    "trap": "Assuming this must be ventilated through the tracheostomy, or through the mouth, without first checking which type of airway the patient has.",
+    "firstMove": "\"I'd call for immediate help and start an A-E approach, prioritising airway and breathing.\""
+  },
+  "flow": [
+    "Call for help and A-E approach",
+    "Establish tracheostomy versus laryngectomy from bedhead information",
+    "High-concentration oxygen and reassess",
+    "Assess and clear the tube",
+    "Escalate using the structured emergency algorithm",
+    "Involve anaesthetics, ENT and critical care"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "professionalism",
+      "label": "Call for help and A-E approach (safety-critical)",
+      "fail": "Attempts to manage the deteriorating patient alone, or focuses only on the tracheostomy without an A-E approach.",
+      "pass": "Calls for immediate help and follows an A-E approach, prioritising airway and breathing.",
+      "high": "States this clearly enough that the team knows the priority and starts other tasks in parallel, such as fetching the emergency tracheostomy box."
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-knowledge",
+      "label": "Tracheostomy versus laryngectomy",
+      "fail": "Assumes the patient can always be ventilated through the mouth, or always through the tracheostomy, without checking which applies.",
+      "pass": "Identifies whether this is a tracheostomy or laryngectomy patient and establishes the patient's upper-airway anatomy from the bedhead information.",
+      "high": "Explains that a total laryngectomy separates the airway from the upper aerodigestive tract, so mouth ventilation is never possible in that patient."
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-skill",
+      "label": "High-concentration oxygen and reassessment",
+      "fail": "Increases oxygen without reassessing whether oxygenation actually improves, or delays oxygen while investigating the cause.",
+      "pass": "Gives high-concentration oxygen appropriately to both the face and the stoma/tube, and assesses whether oxygenation improves.",
+      "high": "Uses the response to oxygen to help decide whether the problem is likely tube-related or more proximal/distal, rather than treating oxygen alone as definitive management."
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-skill",
+      "label": "Assess and clear the tube",
+      "fail": "Removes the tracheostomy and waits, or assumes equipment familiarity replaces a structured A-E assessment.",
+      "pass": "Removes obvious reversible obstruction, checks the tube for blockage or displacement, and does not let equipment familiarity replace A-E assessment.",
+      "high": "Systematically considers mucus plugging, displacement, bleeding, cuff problems and pneumothorax rather than fixating on one cause."
+    },
+    {
+      "id": "G5",
+      "domain": "professionalism",
+      "label": "Use the structured emergency algorithm (safety-critical)",
+      "fail": "Improvises management rather than following a structured algorithm, or sends for an ENT review before doing anything else.",
+      "pass": "Uses the NTSP emergency algorithm rather than improvising, following its structured progression from simple reversible problems to more advanced interventions.",
+      "high": "Explains that the algorithm is followed precisely because it separates simple reversible problems from situations needing advanced airway intervention, reducing delay from improvisation.",
+      "source": "NTSP"
+    },
+    {
+      "id": "G6",
+      "domain": "professionalism",
+      "label": "Escalate to expert help and continue oxygenation",
+      "fail": "Waits for a single specialty to arrive before taking any further action, or has no plan for oxygenating through an alternative route.",
+      "pass": "If the tube is blocked or displaced and cannot be corrected, escalates to expert airway support and is prepared to oxygenate through the appropriate route depending on the patient's anatomy.",
+      "high": "Involves anaesthetics, ENT and critical care immediately and in parallel if the patient is deteriorating, rather than escalating to one specialty at a time."
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "What do you do immediately?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd just increase the oxygen and see how he does.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Is he a tracheostomy or laryngectomy patient?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'll always ventilate through the tracheostomy regardless.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Oxygen sats aren't improving."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'll keep the same oxygen going and wait a bit longer.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The tracheostomy appears blocked."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd remove the tracheostomy and wait.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How are you approaching this overall?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I know tracheostomies well, so I'll just improvise based on experience.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "You can't clear or replace the tube. What now?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'll send for an ENT review before doing anything else.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "examiner",
+        "text": "What do you do immediately?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd call for immediate help and follow an A-E approach, prioritising airway and breathing.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Is he a tracheostomy or laryngectomy patient?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd identify which he is and establish his upper-airway anatomy from the bedhead information.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What next?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "High-concentration oxygen to both the face and the tube, and I'd assess whether oxygenation improves.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The tracheostomy appears blocked."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd remove any obvious reversible obstruction and check the tube itself, without letting familiarity with the equipment replace a full A-E assessment.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How are you structuring this?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd use the NTSP emergency algorithm rather than improvising.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "You can't correct it. What now?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd escalate to expert airway support and be prepared to oxygenate through the appropriate route depending on his anatomy, involving anaesthetics, ENT and critical care.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "examiner",
+        "text": "What do you do immediately?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Call for immediate help and start an A-E approach, prioritising airway and breathing, and get the emergency tracheostomy box brought to the bedside in parallel.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Is he a tracheostomy or laryngectomy patient?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd establish that from the bedhead information — if he were a laryngectomy patient, mouth ventilation would never be possible because the airway is completely separated from the upper aerodigestive tract.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Oxygen sats aren't improving."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd give high-concentration oxygen to both the face and the tube, and use whether that helps to judge whether this is likely a tube problem or something more distal, rather than treating oxygen alone as the answer.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The tube seems blocked."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd systematically consider mucus plugging, displacement, bleeding, cuff problems and pneumothorax rather than fixating on one cause, while clearing any obvious reversible obstruction.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How are you structuring this?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd follow the NTSP algorithm precisely, because it moves in a structured progression from simple reversible problems to more advanced airway interventions, which stops me improvising and losing time.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "You can't correct it. What now?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd escalate to expert airway support immediately, calling anaesthetics, ENT and critical care in parallel rather than one after another, and be ready to oxygenate through whichever route his anatomy allows.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G2",
+      "move": "Attempting to ventilate a laryngectomy patient through the mouth.",
+      "consequence": "Ventilation fails completely because the airway is surgically separated from the upper aerodigestive tract."
+    },
+    {
+      "row": "G4",
+      "move": "Removing the tracheostomy tube and waiting rather than assessing and clearing it.",
+      "consequence": "Loses the established airway without addressing the reversible cause, risking complete obstruction."
+    },
+    {
+      "row": "G5",
+      "move": "Improvising management instead of following the structured emergency algorithm.",
+      "consequence": "Delays recognition of the correct next step and increases the risk of a prolonged hypoxic episode."
+    },
+    {
+      "row": "G6",
+      "move": "Waiting for a single specialty to arrive before taking further action.",
+      "consequence": "Delays definitive airway support in a rapidly deteriorating patient."
+    },
+    {
+      "row": "G1",
+      "move": "Managing the deteriorating patient alone rather than calling for help.",
+      "consequence": "No one is available to assist with oxygen, equipment or escalation while the patient continues to deteriorate."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You blank on what to do next",
+      "line": "I'd like to structure this around immediate safety, assessment, escalation and definitive management."
+    },
+    {
+      "when": "Challenged on which route to ventilate through",
+      "line": "That wouldn't be safe without confirming his airway anatomy first, because a laryngectomy changes what's possible."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Establish whether the patient has a tracheostomy or a laryngectomy from the bedhead information before deciding how to oxygenate or ventilate.",
+      "source": "NTSP"
+    },
+    {
+      "fact": "A total laryngectomy separates the airway from the upper aerodigestive tract, so ventilation through the mouth is never possible in that patient.",
+      "source": "NTSP"
+    },
+    {
+      "fact": "The NTSP algorithms progress in a structured way from simple reversible problems (oxygen, clearing obstruction) to more advanced airway interventions.",
+      "source": "NTSP"
+    },
+    {
+      "fact": "Consider mucus plugging, displacement, bleeding, cuff problems and pneumothorax as reversible causes of tracheostomy deterioration.",
+      "source": "NTSP"
+    }
+  ],
+  "recall": {
+    "think": "Complete airway obstruction from a blocked or displaced tube.",
+    "say": "\"Tracheostomy emergency — calling for help and starting A-E now.\"",
+    "do": [
+      "Call for help; high-flow oxygen to face and tube",
+      "Confirm tracheostomy vs laryngectomy from bedhead sign",
+      "Clear/assess tube using the NTSP algorithm"
+    ],
+    "numbers": [
+      {
+        "value": "2 algorithms",
+        "meaning": "Separate NTSP pathways for tracheostomy (patent upper airway) and laryngectomy (no upper airway continuity)",
+        "source": "NTSP"
+      }
+    ],
+    "trap": "Assuming equipment familiarity replaces a structured A-E assessment.",
+    "finish": "Expert airway support with anaesthetics, ENT and critical care if the tube cannot be corrected."
+  },
+  "sources": [
+    {
+      "id": "NTSP",
+      "name": "McGrath BA, Bates L, Atkinson D, Moore JA (National Tracheostomy Safety Project). Multidisciplinary guidelines for the management of tracheostomy and laryngectomy airway emergencies",
+      "version": "Anaesthesia, 2012, vol. 67, issue 9, pp. 1025-1041",
+      "url": "https://associationofanaesthetists-publications.onlinelibrary.wiley.com/doi/10.1111/j.1365-2044.2012.07217.x",
+      "supports": "Two structured algorithms (tracheostomy vs laryngectomy), bedhead sign concept, and stepwise progression from reversible causes to advanced airway intervention"
+    },
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format: 9 minutes with 1 minute's reading; examiner-led questioning in applied knowledge stations"
+    }
+  ],
+  "partner": {
+    "opening": "Mr Martin Ellison, 67, has a tracheostomy and suddenly becomes breathless. His oxygen saturation is falling and he appears agitated. \"Describe your emergency management.\"",
+    "reveals": [
+      {
+        "trigger": "Candidate calls for help and starts A-E",
+        "finding": "A colleague arrives with the emergency tracheostomy box while you continue assessing.",
+        "row": "G1"
+      },
+      {
+        "trigger": "Candidate checks the bedhead information",
+        "finding": "He is a tracheostomy patient (not a laryngectomy) with a patent upper airway.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Candidate gives high-concentration oxygen and reassesses",
+        "finding": "Saturations do not improve despite oxygen to the face and the tube.",
+        "row": "G3"
+      }
+    ],
+    "push": [
+      {
+        "question": "The tracheostomy appears blocked. What next?",
+        "row": "G4",
+        "expect": "Remove obvious reversible obstruction and check the tube, without letting equipment familiarity replace A-E assessment."
+      },
+      {
+        "question": "The tube is displaced. What next?",
+        "row": "G5",
+        "expect": "Continue through the NTSP algorithm's structured steps rather than improvising."
+      },
+      {
+        "question": "What if you cannot ventilate through the tube?",
+        "row": "G6",
+        "expect": "Escalate to expert airway support and be ready to oxygenate through the appropriate route for his anatomy."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "Can you ventilate a laryngectomy patient through the mouth?",
+        "safeAnswer": "No — a total laryngectomy separates the airway from the upper aerodigestive tract, so mouth ventilation is never possible.",
+        "row": "G2"
+      },
+      {
+        "prompt": "What is the most important resource in this situation?",
+        "safeAnswer": "The patient's airway information (bedhead sign) and the NTSP emergency algorithm, alongside immediate expert help.",
+        "row": "G5"
+      },
+      {
+        "prompt": "A nurse suggests just sending for an ENT review before doing anything else.",
+        "safeAnswer": "No — start immediate A-E management and the algorithm now, and call anaesthetics, ENT and critical care in parallel if he is deteriorating.",
+        "row": "G6"
+      }
+    ]
+  }
+}

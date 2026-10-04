@@ -1,0 +1,200 @@
+{
+  "id": "MB-324",
+  "exam": "MRCS-B",
+  "title": "Rhabdomyolysis after crush injury",
+  "type": "data-interpretation",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "Trauma and perioperative care: rhabdomyolysis after crush injury (observations, bloods and ECG released in stages)",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "Resuscitation Council UK, Special Circumstances Guidelines 2021 (published May 2021)",
+      "BOA, BOAST 10: Diagnosis and Management of Compartment Syndrome of the Limbs (published July 2014, last updated July 2025)",
+      "Bosch X, Poch E, Grau JM. Rhabdomyolysis and acute kidney injury. N Engl J Med 2009"
+    ],
+    "related": [
+      {
+        "id": "MB-099",
+        "why": "Compartment syndrome as a clinical diagnosis, met again here as a differential not to confuse with rhabdomyolysis"
+      },
+      {
+        "id": "MB-164",
+        "why": "Major trauma primary survey and haemorrhage control priorities that come first in a crush injury"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Emergency department, major trauma bay",
+    "role": "Surgical trainee in the trauma team",
+    "scenario": "Mr Callum Draycott, 33, was trapped under debris for two hours before extrication. He has painful, swollen limbs and dark urine.",
+    "task": "The examiner will give you his observations and results in stages. Interpret each and say what you would do."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Major trauma first, then think rhabdomyolysis: what it does to his potassium and his kidneys.",
+    "trap": "Waiting for a CK result before treating a compressed, injured patient.",
+    "firstMove": "\"I'd manage him as major trauma first: ABCDE, haemorrhage control, senior help.\""
+  },
+  "flow": [
+    "Primary survey and haemorrhage control",
+    "Suspect rhabdomyolysis from the mechanism",
+    "Bloods and ECG",
+    "Fluid resuscitation and monitoring",
+    "Exclude compartment syndrome separately",
+    "Escalate and plan ongoing care"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-skill",
+      "label": "Primary survey first",
+      "fail": "Requests a CK level before assessing airway, breathing, circulation or controlling haemorrhage in a major trauma patient.",
+      "pass": "Treats him as major trauma: ABCDE, haemorrhage control, early senior and trauma-team involvement, then targeted history and examination.",
+      "high": "Runs ABCDE and haemorrhage control while simultaneously flagging rhabdomyolysis risk from the crush mechanism, so monitoring starts without delaying resuscitation."
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-knowledge",
+      "label": "Suspect rhabdomyolysis",
+      "fail": "Assumes dark urine is simple haematuria and does not consider muscle breakdown after prolonged compression.",
+      "pass": "Suspects rhabdomyolysis from the mechanism and dark urine; requests CK, urea and electrolytes, calcium, phosphate and a blood gas for acid-base status.",
+      "high": "Explains that urine can test positive for blood on dipstick with no red cells on microscopy when myoglobin, not blood, is the cause.",
+      "source": "BOSCH"
+    },
+    {
+      "id": "G3",
+      "domain": "professionalism",
+      "label": "Recognise and treat hyperkalaemia (safety-critical)",
+      "fail": "Does not check potassium or an ECG, or ignores a potassium result that is returned.",
+      "pass": "Checks potassium and looks for ECG changes; if hyperkalaemia is confirmed, treats it urgently rather than waiting for it to settle.",
+      "high": "Gives 10 mL of 10% calcium chloride IV to stabilise the myocardium, then starts measures to shift and remove potassium, while continuing resuscitation.",
+      "source": "RCUK-SC"
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-skill",
+      "label": "Fluid resuscitation guided by response",
+      "fail": "Gives an arbitrary fixed fluid volume without considering his haemodynamic status or urine output.",
+      "pass": "Gives IV fluid resuscitation and monitors the response, renal function and electrolytes, adjusting to how he responds rather than a fixed regimen.",
+      "high": "Avoids nephrotoxic drugs where possible and involves critical care early if the acute kidney injury is evolving despite resuscitation."
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-knowledge",
+      "label": "Compartment syndrome is a separate, clinical diagnosis (safety-critical)",
+      "fail": "Confuses rhabdomyolysis with compartment syndrome, or plans a fasciotomy because the CK is high.",
+      "pass": "Assesses each limb clinically for compartment syndrome: pain out of proportion and pain on passive stretch, distinct from the CK result.",
+      "high": "States that compartment syndrome is a clinical diagnosis; if uncertain, involves orthopaedics or vascular surgery urgently rather than waiting for a fixed CK value.",
+      "source": "BOAST10"
+    },
+    {
+      "id": "G6",
+      "domain": "communication",
+      "label": "Escalate and plan ongoing care",
+      "fail": "Manages him alone without early senior, trauma-team or renal input, or does not set a monitoring plan.",
+      "pass": "Involves the senior/trauma team early, sets a monitoring plan for urine output, potassium and renal function, and documents clearly.",
+      "high": "Agrees explicit review and escalation triggers with the team and explains to Mr Draycott, in plain terms, what is being watched for and why."
+    }
+  ],
+  "performances": {
+    "fail": [
+      { "speaker": "examiner", "text": "You're the trauma team surgical trainee. Mr Draycott, 33, was trapped under debris for two hours. He has painful swollen limbs and dark urine. What are you concerned about?" },
+      { "speaker": "candidate", "text": "I'd send off a CK straight away to check for rhabdomyolysis.", "tags": [{ "row": "G1", "band": "fail" }] },
+      { "speaker": "examiner", "text": "What about the dark urine?" },
+      { "speaker": "candidate", "text": "That's probably just haematuria from the trauma.", "tags": [{ "row": "G2", "band": "fail" }] },
+      { "speaker": "examiner", "text": "His potassium comes back at 6.8 with tented T waves on the ECG." },
+      { "speaker": "candidate", "text": "I'll recheck it in an hour and see if it's come down.", "tags": [{ "row": "G3", "band": "fail" }] },
+      { "speaker": "examiner", "text": "How much fluid would you give?" },
+      { "speaker": "candidate", "text": "I'd just run two litres of saline in quickly.", "tags": [{ "row": "G4", "band": "fail" }] },
+      { "speaker": "examiner", "text": "His CK is very high. What would you do about his leg?" },
+      { "speaker": "candidate", "text": "With a CK that high he needs a fasciotomy.", "tags": [{ "row": "G5", "band": "fail" }] },
+      { "speaker": "examiner", "text": "Who else needs to know?" },
+      { "speaker": "candidate", "text": "I'll hand it over to the day team in the morning.", "tags": [{ "row": "G6", "band": "fail" }] }
+    ],
+    "pass": [
+      { "speaker": "examiner", "text": "What are you concerned about?" },
+      { "speaker": "candidate", "text": "I'd manage him as major trauma first: ABCDE, haemorrhage control, and early senior and trauma-team involvement, then look specifically for rhabdomyolysis given the crush mechanism.", "tags": [{ "row": "G1", "band": "pass" }] },
+      { "speaker": "examiner", "text": "Why rhabdomyolysis?" },
+      { "speaker": "candidate", "text": "The mechanism and dark urine suggest it. I'd check CK, urea and electrolytes, calcium, phosphate and a blood gas for his acid-base status.", "tags": [{ "row": "G2", "band": "pass" }] },
+      { "speaker": "examiner", "text": "Potassium is 6.8, with peaked T waves on the ECG." },
+      { "speaker": "candidate", "text": "That's hyperkalaemia with ECG changes, so it's urgent. I'd treat it now rather than wait for it to settle.", "tags": [{ "row": "G3", "band": "pass" }] },
+      { "speaker": "examiner", "text": "How would you manage his fluids?" },
+      { "speaker": "candidate", "text": "IV fluid resuscitation, then monitor his response, renal function and electrolytes, adjusting the rate rather than fixing a volume in advance.", "tags": [{ "row": "G4", "band": "pass" }] },
+      { "speaker": "examiner", "text": "His CK is markedly elevated. What about his leg?" },
+      { "speaker": "candidate", "text": "I'd assess each limb clinically for compartment syndrome separately: pain out of proportion and pain on passive stretch. A high CK on its own doesn't mean fasciotomy.", "tags": [{ "row": "G5", "band": "pass" }] },
+      { "speaker": "examiner", "text": "Anyone you'd tell?" },
+      { "speaker": "candidate", "text": "The trauma team and my senior now, with a monitoring plan for urine output, potassium and renal function, all documented.", "tags": [{ "row": "G6", "band": "pass" }] }
+    ],
+    "high": [
+      { "speaker": "examiner", "text": "What are you concerned about?" },
+      { "speaker": "candidate", "text": "I'd run ABCDE and control haemorrhage first, but flag rhabdomyolysis risk from the crush mechanism immediately, so monitoring for it starts alongside resuscitation rather than after it.", "tags": [{ "row": "G1", "band": "high" }] },
+      { "speaker": "examiner", "text": "The urine dipstick is positive for blood. What would make you think twice?" },
+      { "speaker": "candidate", "text": "If microscopy shows no red cells, that dipstick reaction is from myoglobin, not blood, and points to rhabdomyolysis rather than a urinary tract injury.", "tags": [{ "row": "G2", "band": "high" }] },
+      { "speaker": "examiner", "text": "Potassium 6.8, tented T waves." },
+      { "speaker": "candidate", "text": "I'd give 10 mL of 10% calcium chloride IV now to stabilise the myocardium, then start measures to shift and remove potassium, and keep resuscitating him.", "tags": [{ "row": "G3", "band": "high" }] },
+      { "speaker": "examiner", "text": "How do you avoid making his kidneys worse?" },
+      { "speaker": "candidate", "text": "I'd avoid nephrotoxic drugs where possible and bring critical care in early if the acute kidney injury doesn't settle with fluid and monitoring.", "tags": [{ "row": "G4", "band": "high" }] },
+      { "speaker": "examiner", "text": "His CK is very high. Fasciotomy?" },
+      { "speaker": "candidate", "text": "Not on the CK alone. Compartment syndrome is a clinical diagnosis; if I'm not sure I'd get orthopaedics or vascular surgery urgently rather than operate on a number.", "tags": [{ "row": "G5", "band": "high" }] },
+      { "speaker": "examiner", "text": "What's your plan going forward?" },
+      { "speaker": "candidate", "text": "I'd agree explicit review and escalation triggers with the team, and tell Mr Draycott plainly what we're watching for and why, so he understands the plan.", "tags": [{ "row": "G6", "band": "high" }] }
+    ]
+  },
+  "failures": [
+    { "row": "G1", "move": "Ordering a CK before completing the primary survey and controlling haemorrhage.", "consequence": "Life-threatening trauma injuries are missed while attention goes to a blood test." },
+    { "row": "G3", "move": "Delaying treatment of a high potassium with ECG changes to 'recheck in an hour'.", "consequence": "Risks a life-threatening arrhythmia before the result is repeated." },
+    { "row": "G5", "move": "Planning a fasciotomy because the CK is high, without clinical assessment.", "consequence": "An unnecessary operation, or a missed true compartment syndrome if the clinical signs are not actually examined." },
+    { "row": "G4", "move": "Giving a fixed fluid volume regardless of his response.", "consequence": "Under-resuscitates a hypotensive patient or fluid-overloads one with evolving kidney injury." }
+  ],
+  "recovery": [
+    { "when": "Asked why you didn't wait for the CK", "line": "Major trauma management doesn't wait for it; I treat what's in front of me and use the result to confirm, not to start." },
+    { "when": "Asked to justify calcium chloride", "line": "It's for cardiac membrane stabilisation, not to lower the potassium; I'd still need measures to shift and remove it." }
+  ],
+  "knowledge": [
+    { "fact": "Prolonged limb compression can cause rhabdomyolysis and systemic complications even after extrication.", "source": "BL" },
+    { "fact": "Muscle breakdown releases potassium, myoglobin and creatine kinase; hyperkalaemia is the immediate life threat.", "source": "BOSCH" },
+    { "fact": "Urine dipstick positive for blood with no red cells on microscopy suggests myoglobinuria, not haematuria.", "source": "BOSCH" },
+    { "fact": "Compartment syndrome is a clinical diagnosis (pain out of proportion, pain on passive stretch); CK elevation alone does not confirm it.", "source": "BOAST10" }
+  ],
+  "recall": {
+    "think": "Hyperkalaemia and acute kidney injury from crush-induced rhabdomyolysis.",
+    "say": "\"Major trauma first, then rhabdomyolysis: check potassium and an ECG.\"",
+    "do": [
+      "ABCDE and haemorrhage control",
+      "CK, U&E, calcium, phosphate, blood gas",
+      "Treat hyperkalaemia urgently if present"
+    ],
+    "numbers": [
+      { "value": "10 mL of 10% calcium chloride IV", "meaning": "cardiac membrane stabilisation in hyperkalaemia", "source": "RCUK-SC" }
+    ],
+    "trap": "Treating a high CK on its own as proof of compartment syndrome.",
+    "finish": "Fluid resuscitation guided by response, avoid nephrotoxins, monitor for AKI; involve ortho/vascular urgently if compartment syndrome is suspected clinically."
+  },
+  "sources": [
+    { "id": "RCUK-SC", "name": "Resuscitation Council UK. Special Circumstances Guidelines 2021: cardiac arrest in trauma and cardiac arrest associated with electrolyte disorders", "version": "Published May 2021", "url": "https://www.resus.org.uk/library/2021-resuscitation-guidelines/special-circumstances-guidelines", "supports": "Haemorrhage control priorities in trauma; 10 mL 10% calcium chloride IV for cardiac membrane stabilisation in hyperkalaemia" },
+    { "id": "BOAST10", "name": "British Orthopaedic Association. BOAST 10: Diagnosis and Management of Compartment Syndrome of the Limbs", "version": "Published July 2014, last updated July 2025", "url": "https://www.boa.ac.uk/resource/boast-10-pdf.html", "supports": "Compartment syndrome is a clinical diagnosis (pain out of proportion, pain on passive stretch); intracompartmental pressure monitoring used when the diagnosis is uncertain" },
+    { "id": "BOSCH", "name": "Bosch X, Poch E, Grau JM. Rhabdomyolysis and acute kidney injury. N Engl J Med 2009;361:62-72", "version": "2009", "url": "https://pubmed.ncbi.nlm.nih.gov/19571284/", "supports": "Pathophysiology of rhabdomyolysis: potassium, myoglobin and CK release; myoglobinuria mechanism; fluid resuscitation to reduce acute kidney injury risk" },
+    { "id": "BL", "name": "Bailey & Love's Short Practice of Surgery (O'Connell, McCaskie, Sayers, eds)", "version": "28th edition, 2023", "url": "https://www.routledge.com/Bailey--Loves-Short-Practice-of-Surgery---28th-Edition/OConnell-McCaskie-Sayers/p/book/9780367548117", "supports": "Crush injury, rhabdomyolysis and compartment syndrome: recognition and management overview" }
+  ],
+  "partner": {
+    "opening": "Mr Draycott, 33, was trapped under debris for two hours. He has painful, swollen limbs and dark urine. What are you concerned about?",
+    "reveals": [
+      { "trigger": "Candidate completes the primary survey and requests observations", "finding": "HR 108, BP 118/76, RR 20, SpO2 97% on air, GCS 15. Both thighs swollen and tender. Urine catheterised: dark brown, 25 mL in the first hour.", "row": "G1" },
+      { "trigger": "Candidate requests bloods", "finding": "CK 42,000 U/L. Potassium 6.8 mmol/L. Creatinine 210 µmol/L. Corrected calcium 1.9 mmol/L. Venous gas: pH 7.28, lactate 3.1 mmol/L.", "row": "G2" },
+      { "trigger": "Candidate requests an ECG", "finding": "Peaked T waves and a widened QRS.", "row": "G3" },
+      { "trigger": "Candidate asks about the limbs specifically", "finding": "Both thighs are tense and very tender; pain increases markedly on passive movement of the ankles. Distal pulses palpable. No paraesthesia yet.", "row": "G5" }
+    ],
+    "push": [
+      { "question": "What would make you suspect rhabdomyolysis here?", "row": "G2", "expect": "Mechanism (prolonged compression) plus dark urine; confirm with CK, U&E, calcium, phosphate, gas." },
+      { "question": "How urgently do you act on that potassium?", "row": "G3", "expect": "Immediately: ECG changes with hyperkalaemia is safety-critical." },
+      { "question": "How would you decide how much fluid to give?", "row": "G4", "expect": "Guided by haemodynamics and urine output, not a fixed volume." },
+      { "question": "Is a fasciotomy indicated?", "row": "G5", "expect": "Not on CK alone; assess clinically and involve ortho/vascular if compartment syndrome is suspected." }
+    ],
+    "curveballs": [
+      { "prompt": "His urine output falls to 10 mL/hour despite fluids.", "safeAnswer": "Reassess fluid status and haemodynamics, involve renal/critical care, and consider evolving acute kidney injury needing escalation.", "row": "G4" },
+      { "prompt": "The potassium comes back normal but the ECG still looks abnormal.", "safeAnswer": "Treat the ECG and clinical picture, not just the number; repeat the potassium and keep monitoring closely.", "row": "G3" },
+      { "prompt": "He develops new numbness in his foot.", "safeAnswer": "A new neurological deficit raises concern for compartment syndrome; escalate to orthopaedics/vascular urgently rather than waiting.", "row": "G5" },
+      { "prompt": "The registrar asks why you didn't just start antibiotics for a suspected wound infection.", "safeAnswer": "There's no sign of infection here; the priority is haemorrhage control, hyperkalaemia and renal protection, not empirical antibiotics.", "row": "G1" }
+    ]
+  }
+}

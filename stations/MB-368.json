@@ -1,0 +1,442 @@
+{
+  "id": "MB-368",
+  "exam": "MRCS-B",
+  "title": "Supporting family communication after a BRCA2 result",
+  "type": "communication",
+  "header": {
+    "domain": "Applied Skills",
+    "contentArea": "Cascade testing and family communication of genetic risk",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "NICE CG164: Familial breast cancer (published June 2013; last updated November 2023)",
+      "GMC: Confidentiality: good practice in handling patient information (in effect 25 April 2017; updated 13 December 2024)"
+    ],
+    "related": [
+      {
+        "id": "MB-366",
+        "why": "The original disclosure this conversation follows on from"
+      },
+      {
+        "id": "MB-367",
+        "why": "The personal risk-management decisions running alongside this family conversation"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Genetics counselling follow-up appointment",
+    "role": "Core surgical trainee, supporting the genetics counselling team",
+    "scenario": "Ms Rachel Linford, 43, has a confirmed BRCA2 pathogenic variant. She has a 19-year-old daughter, an adult, from a relationship before her marriage, as well as the two younger children (9 and 12) from her marriage. She has a sister she is not currently in close contact with. Both her daughter and her sister could be at risk.",
+    "task": "Support her in thinking through how to share this information with her family. You have 7 minutes."
+  },
+  "beforeYouWalkIn": {
+    "frame": "This is her decision to make about her own family relationships; your role is to inform and support, not to instruct or pressure her on what to tell whom.",
+    "trap": "Insisting she must tell her sister immediately, rather than supporting her through a difficult family relationship at her own pace.",
+    "firstMove": "\"How are you feeling about the idea of sharing this with your family?\""
+  },
+  "flow": [
+    "Explore her feelings about sharing the result",
+    "Explain the purpose and process of cascade testing",
+    "Discuss her daughter specifically",
+    "Discuss the more complex relationship with her sister",
+    "Offer practical support and closing"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "communication",
+      "label": "Exploring her feelings",
+      "fail": "Moves straight to explaining cascade testing without exploring how she feels about sharing the result.",
+      "pass": "Asks how she feels about sharing this information with family before explaining the process.",
+      "high": "Picks up on any hesitation or complexity in family relationships without assuming a simple, uniform reaction to all relatives."
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-knowledge",
+      "label": "Explaining cascade testing",
+      "fail": "Cannot explain what cascade testing is or why relatives might want it.",
+      "pass": "Explains that relatives can be offered testing for the specific familial variant, which is simpler and more informative than population-level testing.",
+      "high": "Explains that relatives themselves choose whether to be tested and to know the result; it's not compulsory for them either.",
+      "source": "CG164"
+    },
+    {
+      "id": "G3",
+      "domain": "communication",
+      "label": "Discussing her daughter",
+      "fail": "Assumes a plan for the daughter without asking how the patient feels about this specific relationship and conversation.",
+      "pass": "Discusses timing and support for telling her daughter, respecting that this is the patient's conversation to have in her own way.",
+      "high": "Offers a specific practical option (e.g. a joint conversation with the genetics counsellor, written information for the daughter) rather than leaving her to manage it alone."
+    },
+    {
+      "id": "G4",
+      "domain": "communication",
+      "label": "Discussing the more complex relationship",
+      "fail": "Pressures her to contact her sister despite the acknowledged difficulty of that relationship.",
+      "pass": "Acknowledges the difficulty without pressuring a particular outcome, while still noting the potential benefit of her sister knowing.",
+      "high": "Offers a low-pressure practical option, such as a letter prepared with genetics support, that doesn't require direct contact if she isn't ready for that."
+    },
+    {
+      "id": "G5",
+      "domain": "professionalism",
+      "label": "Confidentiality and boundaries",
+      "fail": "Suggests the team will contact relatives directly on her behalf without her involvement.",
+      "pass": "Clarifies that sharing this information with relatives is generally her choice, and the team can support but not act unilaterally.",
+      "high": "Explains, without being legalistic, that healthcare teams generally rely on the patient to share this information themselves, with support available, rather than approaching relatives directly.",
+      "source": "GMC"
+    },
+    {
+      "id": "G6",
+      "domain": "professionalism",
+      "label": "Practical support and closing",
+      "fail": "Ends without offering any practical support or resource.",
+      "pass": "Offers written information she can share with relatives, and confirms ongoing genetics counselling support is available.",
+      "high": "Checks she doesn't feel solely responsible for managing this alone, and offers a follow-up point of contact if family conversations raise further questions."
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "candidate",
+        "text": "You really need to tell your sister and daughter as soon as possible, it's important for their health.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          },
+          {
+            "row": "G4",
+            "band": "fail"
+          },
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "My sister and I aren't really in touch."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Well, you should really reach out regardless, it's for her own good.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "What would that even involve for them?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Don't worry about that - just tell them to get tested.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Anything else before we finish?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "No, that's everything.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "candidate",
+        "text": "How are you feeling about the idea of sharing this with your family?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "Fine with my daughter, but complicated with my sister - we're not close."
+      },
+      {
+        "speaker": "candidate",
+        "text": "That makes sense. Relatives can be offered testing for this specific gene change if they choose to - it's simpler than general testing, and entirely their decision whether to go ahead.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "How should I tell my daughter?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "That's really your conversation to have in whatever way feels right - the genetics counsellor can also join if you'd find that helpful, or provide some written information for her.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "I really don't know what to do about my sister."
+      },
+      {
+        "speaker": "candidate",
+        "text": "That's understandable given things aren't close between you - it would be helpful for her to know, but there's no pressure on how or whether you do this; a letter with support from the genetics team is one option if reaching out directly feels too hard right now.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "Would you contact her instead?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "That's generally something we'd support you to do yourself rather than approach her directly, but we can help you prepare for it.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'll give you some written information you can share, and the genetics team remain available if anything comes up as you have these conversations.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "candidate",
+        "text": "How are you feeling about sharing this with your family - I know that might feel different depending on who we're talking about?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "My daughter, I'll manage. My sister is much harder - we haven't spoken properly in years."
+      },
+      {
+        "speaker": "candidate",
+        "text": "That's a really understandable difference. In general, relatives can be offered testing for this specific familial variant, which is more straightforward than testing without a known family result, and it's entirely up to each of them whether they want to know.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "How should I approach my daughter?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "However feels right for you and her - some people prefer to do this alone, others find it helpful to have the genetics counsellor join, or to give some written information alongside the conversation. We can arrange whichever fits.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "I feel guilty not reaching out to my sister, but I'm just not ready to talk to her directly."
+      },
+      {
+        "speaker": "candidate",
+        "text": "That's a genuinely difficult position, and there's no requirement to resolve the relationship in order to share this - if it would help, a letter prepared with support from the genetics team is an option that doesn't require a direct conversation.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "Could the hospital just get in touch with her instead of me?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Generally we'd support you to share this yourself rather than contact her directly ourselves, since this is information about your test, but we can help you prepare whatever approach feels manageable for you.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'll give you written information for both of them, and I want you to know you're not managing this alone - the genetics team are there if anything comes up as these conversations happen, whenever that is.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G4",
+      "move": "Pressuring her to contact an estranged sister immediately.",
+      "consequence": "Adds guilt and pressure on top of an already difficult family relationship, without respecting her autonomy over how and when to share personal health information."
+    },
+    {
+      "row": "G5",
+      "move": "Offering to contact the relative directly without the patient's involvement.",
+      "consequence": "Oversteps the patient's role in deciding how her own genetic information is shared, which is generally hers to control."
+    },
+    {
+      "row": "G1",
+      "move": "Treating all family relationships the same, assuming a uniform, straightforward reaction.",
+      "consequence": "Misses that sharing genetic risk information can be far harder within some relationships than others, and risks making her feel judged rather than supported."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You pressured her about her sister",
+      "line": "I shouldn't put pressure on you here - this is genuinely your decision, in your own time."
+    },
+    {
+      "when": "You offered to contact the relative yourself",
+      "line": "Actually, this is best coming from you, though we can help you prepare for it."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Cascade testing offers relatives testing for a specific, already-identified familial variant, which is more straightforward and informative than testing without a known family result.",
+      "source": "CG164"
+    },
+    {
+      "fact": "Sharing personal genetic test results with relatives is generally left to the patient's own choice and timing, with healthcare teams offering support rather than approaching relatives directly.",
+      "source": "GMC"
+    },
+    {
+      "fact": "Genetics counselling services can offer written information or joint conversations to support patients in sharing results with family members."
+    }
+  ],
+  "recall": {
+    "think": "Her family, her choice, her pace; offer support, not pressure.",
+    "say": "\"No pressure on how or whether you do this.\"",
+    "do": [
+      "Explore feelings about each relative individually",
+      "Explain cascade testing; it's the relative's choice too",
+      "Offer low-pressure options (information, a letter) without contacting relatives yourself"
+    ],
+    "numbers": [
+      {
+        "value": "50%",
+        "meaning": "chance a first-degree relative carries the same familial variant, the basis for offering cascade testing",
+        "source": "CG164"
+      }
+    ],
+    "trap": "Pressuring contact with an estranged relative, or doing it for her.",
+    "finish": "Practical support offered, at her own pace, without pressure."
+  },
+  "sources": [
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format and timing"
+    },
+    {
+      "id": "CG164",
+      "name": "NICE CG164: Familial breast cancer: classification, care and managing breast cancer and related risks in people with a family history of breast cancer",
+      "version": "Published June 2013; last updated November 2023",
+      "url": "https://www.nice.org.uk/guidance/cg164",
+      "supports": "Assessing likelihood of an inherited breast cancer predisposition, referral for genetic testing, implications of a pathogenic variant for the patient and relatives, and that first-degree relatives of a carrier have up to a 50% chance of carrying the same variant"
+    },
+    {
+      "id": "GMC",
+      "name": "GMC: Confidentiality: good practice in handling patient information",
+      "version": "In effect 25 April 2017; updated 13 December 2024",
+      "url": "https://www.gmc-uk.org/professional-standards/the-professional-standards/confidentiality",
+      "supports": "Patient autonomy over sharing personal health and genetic information with relatives; disclosure without consent considered only exceptionally, where failure to disclose would leave others at risk of serious harm (paras 73-76)"
+    }
+  ],
+  "partner": {
+    "opening": "Please support this patient in thinking through how to share her genetic result with her family. You have 7 minutes.",
+    "actorBrief": "You are Rachel Linford, 43, with a 19-year-old daughter from a relationship before your marriage (your two younger children from your marriage, 9 and 12, are too young for this conversation to concern them yet), and a sister you are estranged from. You feel able to tell your daughter but feel guilty about not reaching out to your sister, and are not ready for direct contact. You wonder if the hospital could just tell her instead.",
+    "reveals": [
+      {
+        "trigger": "Candidate explores your feelings about each relative separately",
+        "finding": "You explain your daughter feels manageable but your sister feels much harder.",
+        "row": "G1"
+      },
+      {
+        "trigger": "Candidate offers a low-pressure option for your sister (letter, no direct contact required)",
+        "finding": "You feel relieved this doesn't require reconciling the relationship first.",
+        "row": "G4"
+      },
+      {
+        "trigger": "Candidate clarifies the team won't contact your sister directly",
+        "finding": "You accept this and ask for help preparing what to say instead.",
+        "row": "G5"
+      }
+    ],
+    "push": [
+      {
+        "question": "Could the hospital just tell my sister instead of me?",
+        "row": "G5",
+        "expect": "Explain this is generally the patient's own information to share, with support available, rather than the team contacting relatives directly."
+      },
+      {
+        "question": "What if my sister doesn't want to know?",
+        "row": "G2",
+        "expect": "Confirm that testing and knowing the result are her sister's own choice, not something imposed."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "What if my daughter doesn't want to be tested?",
+        "safeAnswer": "Affirm this is entirely her daughter's choice to make, now or in future, and that she cannot be pressured into it.",
+        "row": "G2"
+      },
+      {
+        "prompt": "I feel like this is my fault for passing it on.",
+        "safeAnswer": "Gently reframe that carrying and passing on a gene variant isn't something she chose or caused, and she shouldn't carry guilt for something inherited.",
+        "row": "G1"
+      }
+    ]
+  }
+}

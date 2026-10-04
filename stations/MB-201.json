@@ -1,0 +1,614 @@
+{
+  "id": "MB-201",
+  "exam": "MRCS-B",
+  "title": "Acute gallstone pancreatitis: reading the bloods and scoring severity",
+  "type": "data-interpretation",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "Emergency general surgery (blood results and arterial gas)",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "Revised Atlanta classification (Banks et al., Gut 2013)",
+      "UK guidelines for acute pancreatitis (Gut 2005)",
+      "NICE NG104 (updated Dec 2020)",
+      "IAP/APA guidelines (2013)",
+      "ACG guideline (2024)",
+      "WATERFALL trial (NEJM 2022)"
+    ],
+    "related": []
+  },
+  "brief": {
+    "setting": "Emergency department",
+    "role": "Core surgical trainee on call for general surgery",
+    "scenario": "Mrs Brenda Ashworth, 62, weighs 70 kg. She has had severe epigastric pain radiating to her back for 12 hours, with vomiting. She has known gallstones. HR 110, BP 105/65, RR 22, SpO2 95% on air, temperature 37.8°C. The examiner will show you her results in stages.",
+    "task": "Interpret the results, assess the severity of her illness, and outline your management."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Diagnose, find the cause, then predict severity from the numbers you are given.",
+    "trap": "Calling it mild on admission bloods. The Glasgow score is completed at 48 hours.",
+    "firstMove": "\"Typical pain with a lipase over three times normal: acute pancreatitis, probably gallstone.\""
+  },
+  "flow": [
+    "Read admission results",
+    "Diagnosis and cause",
+    "48-hour results: score severity",
+    "Classify by organ failure",
+    "Resuscitate and support",
+    "Imaging and gallstones"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-skill",
+      "label": "Reads the admission data",
+      "fail": "Calls it cholecystitis, or says a CT is needed to make the diagnosis.",
+      "pass": "Typical pain plus lipase over three times the upper limit: acute pancreatitis. Gallstones on ultrasound make a biliary cause likely.",
+      "high": "States two of three criteria (pain, enzymes, imaging) confirm it, so CT adds nothing now; notes the duct is not dilated.",
+      "source": "ATLANTA"
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-knowledge",
+      "label": "Predicts severity",
+      "fail": "Scores only the admission bloods and calls it mild, or cannot name the criteria.",
+      "pass": "Uses worst values in 48 hours: age, white cells, calcium, albumin and PaO2 score 5. Three or more, or CRP over 150, predicts severe.",
+      "high": "Names all eight Glasgow criteria with cut-offs, and says scores predict severity; they do not classify it.",
+      "source": "BSG"
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "Classifies by organ failure",
+      "fail": "Calls her severe on the score alone, or misses the respiratory failure.",
+      "pass": "PaO2 7.6 kPa on air is respiratory organ failure. Lasting over 48 hours makes it severe; resolving sooner, moderately severe.",
+      "high": "Works out PaO2/FiO2 about 270 mmHg, below 300. Mild means no organ failure and no local or systemic complications.",
+      "source": "ATLANTA"
+    },
+    {
+      "id": "G4",
+      "domain": "professionalism",
+      "label": "Fluid resuscitation",
+      "fail": "Runs 250–500 mL/h for hours, or gives large fixed volumes without reassessing.",
+      "pass": "Goal-directed, moderate: Hartmann's 10 mL/kg bolus if hypovolaemic, then 1.5 mL/kg/h, reassessing pulse, BP and urine output.",
+      "high": "Cites WATERFALL: aggressive fluid caused more fluid overload with no better outcome. Watches oxygen need closely as the PaO2 falls.",
+      "source": "WATERFALL"
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-knowledge",
+      "label": "Supportive care",
+      "fail": "Keeps her nil by mouth for days, or starts prophylactic antibiotics.",
+      "pass": "Oxygen, analgesia, catheter and fluid balance; eats if she can; no prophylactic antibiotics; critical care referral for organ failure.",
+      "high": "Enteral nutrition within 72 hours in moderately severe or severe disease; parenteral only if enteral fails or is contraindicated.",
+      "source": "NG104"
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-knowledge",
+      "label": "Imaging",
+      "fail": "Requests CT on admission to stage the pancreatitis.",
+      "pass": "No routine CT at presentation. Contrast CT from 72–96 hours if she is not improving, to look for necrosis or collections.",
+      "high": "Early CT underestimates necrosis. CT sooner only if the diagnosis is in doubt.",
+      "source": "IAPAPA"
+    },
+    {
+      "id": "G7",
+      "domain": "professionalism",
+      "label": "Gallstone plan",
+      "fail": "Books ERCP for pancreatitis alone, or discharges without a plan for her gallbladder.",
+      "pass": "ERCP only for cholangitis. Not a mild attack: delay cholecystectomy until any collections resolve or beyond 6 weeks.",
+      "high": "Same-admission cholecystectomy for mild attacks cuts readmission (PONCHO); in moderately severe or severe disease with collections, delay until they resolve or beyond 6 weeks.",
+      "source": "IAPAPA"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "Here are her admission results."
+      },
+      {
+        "speaker": "candidate",
+        "text": "The ALT is up and she has gallstones, so this is cholecystitis. I'd get a CT to be sure.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Her Glasgow score on these bloods is 2. Is she mild?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Yes, under 3, so it's mild pancreatitis.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "At 48 hours her PaO2 is 7.6 kPa on air."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd put her on oxygen. She's still mild on the score.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Fluids?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Hartmann's at 500 mL an hour for the first day.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Anything else?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Nil by mouth to rest the pancreas, and meropenem to prevent infected necrosis.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What about the gallstones?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "ERCP today to clear the duct.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "examiner",
+        "text": "Here are her admission results."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Typical pain with a lipase over three times the upper limit: acute pancreatitis. Gallstones on ultrasound make it biliary.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Here are her results at 48 hours."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Using the worst values: age, white cells, calcium, albumin and PaO2 make a Glasgow score of 5. With a CRP over 150, severe disease is predicted.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "A PaO2 of 7.6 on air is respiratory failure. If it lasts over 48 hours she has severe pancreatitis; if it resolves, moderately severe.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you resuscitate her?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Goal-directed and moderate: a 10 mL/kg Hartmann's bolus as she's hypovolaemic, then 1.5 mL/kg/h, reassessing pulse, BP and urine output.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Oxygen, analgesia and a catheter. She can eat if she tolerates it. No prophylactic antibiotics. I'd refer her to critical care.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Would you scan her?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Not routinely now. Contrast CT from 72 to 96 hours if she isn't improving.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "And her gallstones?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "ERCP only if she develops cholangitis. With organ failure this isn't a mild attack, so I'd delay cholecystectomy until any collections resolve or beyond 6 weeks.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "candidate",
+        "text": "Two of three criteria are met, pain and lipase, so CT isn't needed for diagnosis. The duct is 6 mm, so no obstruction yet.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Tell me the Glasgow criteria."
+      },
+      {
+        "speaker": "candidate",
+        "text": "PaO2 under 8 kPa, age over 55, white cells over 15, calcium under 2, urea over 16, LDH over 600, albumin under 32, glucose over 10. These predict severity; the Atlanta class depends on what actually happens.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How do you define organ failure?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "PaO2/FiO2 at or below 300 mmHg. Hers is about 270. Mild means no organ failure and no local or systemic complications.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Why not give fluid aggressively?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "In WATERFALL, aggressive fluid caused more fluid overload without better outcomes. With her PaO2 falling, I'd watch her oxygen needs closely.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "If this becomes moderately severe or severe, I'd start enteral feeding within 72 hours; parenteral only if enteral fails.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Early CT underestimates necrosis. I'd scan sooner only if the diagnosis were in doubt.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Her bilirubin rises and she has rigors."
+      },
+      {
+        "speaker": "candidate",
+        "text": "That's cholangitis: blood cultures, antibiotics and ERCP within 24 hours. Same-admission cholecystectomy is for mild attacks, where it cuts readmission. In moderately severe or severe disease with collections, I'd delay it until they resolve or beyond 6 weeks.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G2",
+      "move": "Scoring the admission bloods and calling her mild.",
+      "consequence": "Misses predicted severe disease; the score is only complete at 48 hours."
+    },
+    {
+      "row": "G4",
+      "move": "Running 250–500 mL/h without goals.",
+      "consequence": "Fluid overload and worse respiratory failure, with no gain in outcome."
+    },
+    {
+      "row": "G5",
+      "move": "Prophylactic antibiotics or prolonged nil by mouth.",
+      "consequence": "Against NICE advice; adds resistance and malnutrition risk without benefit."
+    },
+    {
+      "row": "G6",
+      "move": "CT on admission for staging.",
+      "consequence": "Underestimates necrosis and adds contrast load without changing early management."
+    },
+    {
+      "row": "G7",
+      "move": "ERCP for pancreatitis alone.",
+      "consequence": "Procedural risk with no benefit when there is no cholangitis."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You lose count of the Glasgow score",
+      "line": "PANCREAS: PaO2, Age, Neutrophils, Calcium, Renal (urea), Enzymes (LDH), Albumin, Sugar."
+    },
+    {
+      "when": "Asked whether she is severe",
+      "line": "The score predicts it; persistent organ failure over 48 hours defines it."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Diagnosis needs two of: typical pain, lipase or amylase at least three times the upper limit, typical imaging.",
+      "source": "ATLANTA"
+    },
+    {
+      "fact": "Glasgow: PaO2 <8 kPa, age >55, WCC >15, calcium <2, urea >16, LDH >600, albumin <32, glucose >10 mmol/L. Worst values over 48 hours; 3 or more predicts severe.",
+      "source": "GLASGOW"
+    },
+    {
+      "fact": "CRP over 150 mg/L at 48 hours predicts severe disease.",
+      "source": "BSG"
+    },
+    {
+      "fact": "Organ failure: modified Marshall score 2 or more (PaO2/FiO2 ≤300 mmHg). Persistent over 48 hours: severe.",
+      "source": "ATLANTA"
+    },
+    {
+      "fact": "About 15–20% of adults with severe acute pancreatitis die in hospital.",
+      "source": "NG104"
+    },
+    {
+      "fact": "Contrast CT from 72–96 hours after onset, not routinely at presentation.",
+      "source": "IAPAPA"
+    }
+  ],
+  "recall": {
+    "think": "Organ failure, especially respiratory, and cholangitis.",
+    "say": "\"Glasgow 5 and CRP over 150: predicted severe. She has respiratory failure.\"",
+    "do": [
+      "Oxygen, moderate goal-directed fluids, critical care referral",
+      "Feed; no prophylactic antibiotics",
+      "ERCP only for cholangitis"
+    ],
+    "numbers": [
+      {
+        "value": "Glasgow ≥3",
+        "meaning": "predicts severe (worst values over 48 hours)",
+        "source": "BSG"
+      },
+      {
+        "value": "CRP >150 mg/L",
+        "meaning": "at 48 hours predicts severe",
+        "source": "BSG"
+      },
+      {
+        "value": ">48 hours",
+        "meaning": "organ failure lasting this long means severe",
+        "source": "ATLANTA"
+      }
+    ],
+    "trap": "A low score on admission bloods does not mean mild.",
+    "finish": "Same-admission cholecystectomy only if mild; with collections, delay until they resolve or beyond 6 weeks."
+  },
+  "sources": [
+    {
+      "id": "ATLANTA",
+      "name": "Banks PA, Bollen TL, Dervenis C, et al. Classification of acute pancreatitis 2012: revision of the Atlanta classification and definitions by international consensus. Gut 2013;62:102–11",
+      "version": "2013",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23100216/",
+      "supports": "Diagnosis (two of three criteria, enzymes at least three times the upper limit); organ failure by modified Marshall score (PaO2/FiO2 ≤300); mild, moderately severe and severe definitions"
+    },
+    {
+      "id": "BSG",
+      "name": "Working Party of the British Society of Gastroenterology et al. UK guidelines for the management of acute pancreatitis. Gut 2005;54 Suppl 3:iii1–9",
+      "version": "2005",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/15831893/",
+      "supports": "Glasgow score 3 or more and CRP over 150 mg/L at 48 hours as predictors of a severe attack"
+    },
+    {
+      "id": "GLASGOW",
+      "name": "Blamey SL, Imrie CW, O'Neill J, et al. Prognostic factors in acute pancreatitis. Gut 1984;25:1340–6",
+      "version": "1984",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/6510766/",
+      "supports": "Eight-factor (modified Glasgow) score measured within 48 hours of admission; three or more factors predicts severe disease"
+    },
+    {
+      "id": "WATERFALL",
+      "name": "de-Madaria E, Buxbaum JL, Maisonneuve P, et al. Aggressive or moderate fluid resuscitation in acute pancreatitis (WATERFALL). N Engl J Med 2022;387:989–1000",
+      "version": "2022",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/36103415/",
+      "supports": "Moderate goal-directed regimen (10 mL/kg bolus if hypovolaemic, then 1.5 mL/kg/h); aggressive fluid increased fluid overload (20.5% v 6.3%) without improving outcomes"
+    },
+    {
+      "id": "NG104",
+      "name": "NICE NG104: Pancreatitis",
+      "version": "Published 5 September 2018; last updated 16 December 2020",
+      "url": "https://www.nice.org.uk/guidance/ng104",
+      "supports": "No prophylactic antimicrobials (1.2.3); not nil by mouth without a clear reason (1.2.5); enteral nutrition within 72 hours in moderately severe or severe disease (1.2.6); parenteral only if enteral fails (1.2.7); 15–20% in-hospital mortality in severe disease (1.1.5)"
+    },
+    {
+      "id": "IAPAPA",
+      "name": "Working Group IAP/APA Acute Pancreatitis Guidelines. IAP/APA evidence-based guidelines for the management of acute pancreatitis. Pancreatology 2013;13(4 Suppl 2):e1–15",
+      "version": "2013",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/24054878/",
+      "supports": "Initial contrast CT at least 72–96 hours after onset; early CT only for diagnostic doubt; no antibiotic prophylaxis; ERCP for cholangitis; same-admission cholecystectomy in mild biliary pancreatitis; in moderately severe or severe disease with peripancreatic collections, delay until collections resolve or beyond 6 weeks"
+    },
+    {
+      "id": "ACG",
+      "name": "Tenner S, Vege SS, Sheth SG, et al. American College of Gastroenterology guidelines: management of acute pancreatitis. Am J Gastroenterol 2024;119:419–37",
+      "version": "2024",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38857482/",
+      "supports": "ERCP within 24 hours for cholangitis; cholecystectomy before discharge in mild biliary pancreatitis; CT reserved for diagnostic doubt or failure to improve"
+    },
+    {
+      "id": "PONCHO",
+      "name": "da Costa DW, Bouwense SA, Schepers NJ, et al. Same-admission versus interval cholecystectomy for mild gallstone pancreatitis (PONCHO). Lancet 2015;386:1261–8",
+      "version": "2015",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26460661/",
+      "supports": "Same-admission cholecystectomy reduces readmission for recurrent gallstone-related complications"
+    },
+    {
+      "id": "BL",
+      "name": "Bailey & Love's Short Practice of Surgery (O'Connell, McCaskie, Sayers, eds)",
+      "version": "28th edition, 2023",
+      "url": "https://www.routledge.com/Bailey--Loves-Short-Practice-of-Surgery---28th-Edition/OConnell-McCaskie-Sayers/p/book/9780367548117",
+      "supports": "Presentation of acute pancreatitis, Glasgow criteria and supportive management"
+    },
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format: 9 minutes with 1 minute's reading; examiner-led questioning in applied knowledge stations"
+    }
+  ],
+  "media": [
+    {
+      "id": "results-sheet",
+      "task": "Read the admission and 48-hour results and score severity",
+      "description": "Results sheet laid out as a lab printout: admission bloods, ultrasound report and arterial gas, then the 48-hour set, with reference ranges",
+      "required": false,
+      "status": "needed"
+    }
+  ],
+  "partner": {
+    "opening": "These are Mrs Ashworth's admission results. Talk me through them.",
+    "reveals": [
+      {
+        "trigger": "Start",
+        "finding": "Admission (12 hours from onset): lipase 2,450 U/L (ref <60). WCC 16.4, glucose 8.1, urea 7.2, adjusted calcium 2.21, albumin 36, LDH 410, bilirubin 34, ALT 220, ALP 190, CRP 38.",
+        "row": "G1"
+      },
+      {
+        "trigger": "Candidate asks for imaging or the gas",
+        "finding": "Ultrasound: multiple gallbladder stones, common bile duct 6 mm, no duct stones seen. Arterial gas on air: PaO2 10.4 kPa.",
+        "row": "G1"
+      },
+      {
+        "trigger": "Candidate asks for repeat results or the 48-hour set",
+        "finding": "48 hours: WCC 15.2, glucose 9.2, urea 8.4, adjusted calcium 1.91, albumin 29, LDH 520, CRP 232. Gas on air: PaO2 7.6 kPa. HR 104, BP 112/70, urine output 0.6 mL/kg/h.",
+        "row": "G2"
+      }
+    ],
+    "push": [
+      {
+        "question": "What is her Glasgow score, and what does it mean?",
+        "row": "G2",
+        "expect": "5 on worst values (age, WCC, calcium, albumin, PaO2); 3 or more predicts severe."
+      },
+      {
+        "question": "Is she severe?",
+        "row": "G3",
+        "expect": "Respiratory organ failure now; severe if it lasts over 48 hours, otherwise moderately severe."
+      },
+      {
+        "question": "How much fluid would you give?",
+        "row": "G4",
+        "expect": "Moderate, goal-directed: 10 mL/kg bolus if hypovolaemic, then 1.5 mL/kg/h; reassess."
+      },
+      {
+        "question": "When would you scan her?",
+        "row": "G6",
+        "expect": "Not routinely now; contrast CT from 72–96 hours if not improving."
+      },
+      {
+        "question": "What about her gallbladder?",
+        "row": "G7",
+        "expect": "Not a mild attack: delay cholecystectomy until any collections resolve or beyond 6 weeks; same-admission surgery applies to mild attacks. ERCP only for cholangitis."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "Her bilirubin rises to 90 and she has rigors.",
+        "safeAnswer": "Cholangitis: cultures, antibiotics, ERCP within 24 hours.",
+        "row": "G7"
+      },
+      {
+        "prompt": "At 96 hours she still needs 40% oxygen for a PaO2 of 9 kPa.",
+        "safeAnswer": "PaO2/FiO2 about 170 mmHg: persistent organ failure, so severe. Critical care and specialist centre advice.",
+        "row": "G3"
+      },
+      {
+        "prompt": "The nurse asks whether to keep her nil by mouth.",
+        "safeAnswer": "No, unless she is vomiting. Enteral nutrition within 72 hours if moderately severe or severe.",
+        "row": "G5"
+      },
+      {
+        "prompt": "A colleague suggests starting meropenem.",
+        "safeAnswer": "No prophylactic antibiotics. Treat proven infection only.",
+        "row": "G5"
+      }
+    ]
+  }
+}

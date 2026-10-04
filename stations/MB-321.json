@@ -1,0 +1,496 @@
+{
+  "id": "MB-321",
+  "exam": "MRCS-B",
+  "title": "Postoperative pain management and opioid safety",
+  "type": "applied-knowledge",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "Postoperative care: analgesia and opioid safety",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "NICE NG180 (published 19 August 2020)",
+      "Faculty of Pain Medicine/RCoA/CPOC, Surgery and Opioids: Best Practice Guidelines (March 2021)",
+      "CPOC position statement on modified-release opioids (31 May 2023)"
+    ]
+  },
+  "brief": {
+    "setting": "Surgical ward",
+    "role": "Surgical trainee",
+    "scenario": "Mr Aaron Dunsford, 58, has severe postoperative pain despite regular non-opioid analgesia and has become drowsy after opioid doses.",
+    "task": "Assess his pain and the safety of his current opioid use."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Safety first (drowsiness after opioids), then find the cause of the pain, then treat it appropriately.",
+    "trap": "Giving more opioid because he's in pain without checking sedation and respiratory rate first.",
+    "firstMove": "\"Before anything else I'd check his airway, breathing, oxygen saturation and level of consciousness.\""
+  },
+  "flow": [
+    "ABCDE with focus on sedation and respiratory rate",
+    "Review opioid history and total dose",
+    "Reassess pain and look for a new cause",
+    "Manage safely (multimodal, escalate if needed)",
+    "Plan and stewardship"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-knowledge",
+      "label": "Recognising opioid-induced ventilatory impairment",
+      "fail": "Treats drowsiness after opioids as simply 'tired', without assessing ABCDE.",
+      "pass": "Assesses ABCDE first because drowsiness after opioids may indicate opioid-induced ventilatory impairment; checks respiratory rate, oxygen saturation and level of consciousness.",
+      "high": "Explains that oxygen saturation can look reassuring while hypoventilation and rising carbon dioxide continue, so clinical respiratory assessment is still needed."
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-knowledge",
+      "label": "Reviewing opioid and other CNS depressant use",
+      "fail": "Does not establish what opioid, route, dose or timing has been given, or ignores other sedatives.",
+      "pass": "Reviews opioid type, route, timing and total recent dose, plus sedatives and other CNS depressants.",
+      "high": "Also asks about chronic opioid use and tolerance, since this changes the risk and the expected response."
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "Reassessing pain and looking for a new cause",
+      "fail": "Assumes the severe pain is simply expected after this operation and treats it as such.",
+      "pass": "Reassesses pain (severity, function, likely cause) and actively looks for a new surgical complication rather than assuming pain is expected.",
+      "high": "Names specific complications to exclude, such as bleeding, sepsis or compartment syndrome, rather than a generic 'rule out complications'."
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-skill",
+      "label": "Choosing safe analgesia",
+      "fail": "Uses a modified-release opioid routinely for acute pain in an opioid-naive patient, or simply increases the opioid dose without addressing safety.",
+      "pass": "Uses multimodal analgesia where appropriate; prefers oral immediate-release opioids when an oral opioid is needed, titrated to functional recovery.",
+      "high": "Explicitly avoids unnecessary modified-release opioids in this opioid-naive patient and explains why immediate-release is preferred for acute, self-limiting postoperative pain.",
+      "source": "CPOC-MR"
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-skill",
+      "label": "Managing suspected opioid toxicity",
+      "fail": "Treats a normal oxygen saturation as proof that ventilation is safe.",
+      "pass": "Recognises that oxygen can mask hypoventilation and that clinical respiratory assessment (rate, depth, consciousness) is what confirms safety.",
+      "high": "If ventilatory impairment is significant, follows the local emergency protocol and reverses appropriately rather than simply observing."
+    },
+    {
+      "id": "G6",
+      "domain": "professionalism",
+      "label": "Escalation and stewardship",
+      "fail": "Manages complex or severe pain alone with no escalation and no plan beyond the ward round.",
+      "pass": "Escalates to the anaesthetic or acute pain team when pain is severe, complex, or opioid toxicity is suspected.",
+      "high": "Plans discharge opioid stewardship and patient education as part of the same review, not as an afterthought."
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "How would you manage him?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "He's in pain, so I'd just give him more opioid.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          },
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "His oxygen saturation is 97% on air."
+      },
+      {
+        "speaker": "candidate",
+        "text": "That's fine then, his breathing must be safe.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What has he actually had, and when?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'm not sure, I'd just chart the next dose on time.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What about the pain itself?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "It's expected after this operation, nothing more to check.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Would you involve anyone else?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "No, I'll manage it myself on the ward.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "examiner",
+        "text": "How would you manage him?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "ABCDE first, because drowsiness after opioids can mean opioid-induced ventilatory impairment — I'd check his respiratory rate, oxygen saturation and conscious level.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What else would you review?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "His opioid type, route, timing and total recent dose, and any other sedating drugs.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What are the opioid safety issues here?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "A normal oxygen saturation doesn't guarantee safe ventilation — oxygen can mask hypoventilation, so I'd assess him clinically as well.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Is the severe pain itself a concern?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Yes — I wouldn't just assume it's expected. I'd reassess it and look for a new surgical complication.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you treat the pain safely?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Multimodal analgesia, and if an oral opioid is still needed I'd use an immediate-release one titrated to his function, not a modified-release opioid.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Would you escalate?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Yes, to the acute pain or anaesthetic team, given the severity and the toxicity concern.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "examiner",
+        "text": "How would you manage him?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "ABCDE first — drowsiness after opioids needs checking as possible ventilatory impairment, and I wouldn't be reassured by a normal saturation alone, since oxygen can mask hypoventilation while carbon dioxide rises.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          },
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What's your review of his opioids?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Type, route, timing and total dose, plus other CNS depressants, and whether he's opioid-naive or has any tolerance from chronic use — that changes how I'd interpret this.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Is the pain itself just expected?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I wouldn't assume that — I'd specifically look for bleeding, sepsis or compartment syndrome before accepting 'expected postoperative pain' as the explanation.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you treat him safely?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Multimodal analgesia, immediate-release opioid titrated to function if still needed, and I'd specifically avoid a modified-release opioid in an opioid-naive patient — it adds risk without benefit for acute, self-limiting pain.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What's the bigger plan?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Escalate to the acute pain team now given the severity and toxicity signs, and build in opioid stewardship and patient education for discharge rather than leaving that until later.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G1",
+      "move": "Giving more opioid for reported pain without checking sedation or respiratory rate.",
+      "consequence": "Worsening opioid-induced ventilatory impairment is missed."
+    },
+    {
+      "row": "G5",
+      "move": "Treating a normal oxygen saturation as proof that ventilation is safe.",
+      "consequence": "Hypoventilation and rising carbon dioxide continue undetected."
+    },
+    {
+      "row": "G3",
+      "move": "Assuming severe pain is simply expected after surgery.",
+      "consequence": "A new complication such as bleeding or sepsis is missed."
+    },
+    {
+      "row": "G4",
+      "move": "Using a modified-release opioid routinely in an opioid-naive patient.",
+      "consequence": "Added toxicity risk with no benefit for acute, self-limiting pain."
+    },
+    {
+      "row": "G6",
+      "move": "Managing severe or complex pain alone with no escalation.",
+      "consequence": "Delayed specialist input for a patient who may need it."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "Pushed that saturation is normal so it's safe",
+      "line": "That wouldn't exclude opioid toxicity, because oxygen can mask hypoventilation — I'd still assess him clinically."
+    },
+    {
+      "when": "Asked why you won't just give more opioid",
+      "line": "I'd still want to check for a new complication and confirm it's safe to give more before increasing the dose."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Drowsiness after opioids needs ABCDE assessment before treating it as 'expected tiredness'.",
+      "source": "NG180"
+    },
+    {
+      "fact": "Oxygen saturation can be falsely reassuring in opioid-induced hypoventilation; assess clinically."
+    },
+    {
+      "fact": "Immediate-release opioids, titrated to function, are preferred over modified-release for acute postoperative pain in opioid-naive patients.",
+      "source": "CPOC-MR"
+    },
+    {
+      "fact": "Opioid stewardship continues from perioperative assessment through to discharge.",
+      "source": "SOBP2021"
+    },
+    {
+      "fact": "In a patient on therapeutic opioids, naloxone is titrated in small boluses rather than given at the full overdose dose, to avoid precipitating severe pain or withdrawal.",
+      "source": "NHSE-NLX"
+    }
+  ],
+  "recall": {
+    "think": "Opioid-induced ventilatory impairment behind a normal-looking oxygen saturation.",
+    "say": "\"I'd assess ABCDE first, because drowsiness after opioids may be ventilatory impairment, not just tiredness.\"",
+    "do": [
+      "ABCDE: respiratory rate, saturation, conscious level",
+      "Review opioid dose/route/timing and other CNS depressants",
+      "Reassess pain for a new surgical cause"
+    ],
+    "numbers": [
+      {
+        "value": "100-200 micrograms IV, titrated",
+        "meaning": "Naloxone starting dose for a patient on therapeutic opioids (not the larger overdose dose)",
+        "source": "NHSE-NLX"
+      }
+    ],
+    "trap": "A reassuring oxygen saturation taken as proof that ventilation is safe.",
+    "finish": "Multimodal, immediate-release analgesia with escalation to the acute pain team if severe, complex, or toxicity is suspected."
+  },
+  "sources": [
+    {
+      "id": "NG180",
+      "name": "NICE NG180: Perioperative care in adults",
+      "version": "Published 19 August 2020",
+      "url": "https://www.nice.org.uk/guidance/ng180/chapter/recommendations",
+      "supports": "Oral immediate-release opioids may be offered when postoperative pain is expected to be moderate to severe; dosing should support functional recovery"
+    },
+    {
+      "id": "SOBP2021",
+      "name": "Faculty of Pain Medicine, Royal College of Anaesthetists, Centre for Perioperative Care et al. Surgery and Opioids: Best Practice Guidelines",
+      "version": "March 2021",
+      "url": "https://www.cpoc.org.uk/sites/cpoc/files/documents/2021-03/surgery-and-opioids-2021.pdf",
+      "supports": "Opioid stewardship should continue from perioperative assessment through to discharge"
+    },
+    {
+      "id": "CPOC-MR",
+      "name": "Centre for Perioperative Care, position statement on Modified Release Opioids",
+      "version": "31 May 2023",
+      "url": "https://www.cpoc.org.uk/sites/cpoc/files/documents/2023-05/CPOC%20MR%20Opioid%20statement.pdf",
+      "supports": "Modified-release opioids confer no benefit and carry increased risk compared with immediate-release for postoperative pain in opioid-naive patients; avoid modified-release opioids perioperatively"
+    },
+    {
+      "id": "NHSE-NLX",
+      "name": "NHS England Patient Safety Alert: risk of death from inappropriate doses of naloxone",
+      "version": "20 November 2014",
+      "url": "https://www.england.nhs.uk/wp-content/uploads/2014/11/psa-inappropriate-doses-naloxone.pdf",
+      "supports": "In patients on therapeutic/chronic opioids, naloxone 100-200 micrograms IV titrated (not the 400 microgram-2 mg overdose dose) to avoid precipitating severe pain, withdrawal or arrhythmia"
+    }
+  ],
+  "partner": {
+    "opening": "\"He's had severe pain despite regular non-opioid analgesia and is drowsy after his opioid doses. How would you manage him?\"",
+    "reveals": [
+      {
+        "trigger": "Candidate asks for observations",
+        "finding": "Respiratory rate 9/min, oxygen saturation 97% on air, rousable but drowsy.",
+        "row": "G1"
+      },
+      {
+        "trigger": "Candidate asks about the opioid chart",
+        "finding": "He has had three doses of oral morphine in the last four hours, and has also been given a sedating antiemetic.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Candidate asks about the surgical site",
+        "finding": "The wound looks normal; abdomen soft, no new tenderness.",
+        "row": "G3"
+      },
+      {
+        "trigger": "Candidate asks about baseline opioid use",
+        "finding": "He is opioid-naive.",
+        "row": "G4"
+      }
+    ],
+    "push": [
+      {
+        "question": "His saturation is 97%. Is he safe?",
+        "row": "G5",
+        "expect": "Not necessarily — oxygen can mask hypoventilation; assess respiratory rate and conscious level."
+      },
+      {
+        "question": "What would you review about his opioids?",
+        "row": "G2",
+        "expect": "Type, route, timing, total dose, and other CNS depressants such as sedating antiemetics."
+      },
+      {
+        "question": "Would a modified-release opioid help his pain control?",
+        "row": "G4",
+        "expect": "No — avoid modified-release opioids in an opioid-naive patient; use immediate-release, multimodal analgesia."
+      },
+      {
+        "question": "Would you manage this alone?",
+        "row": "G6",
+        "expect": "No — escalate to the acute pain or anaesthetic team given the severity and toxicity concern."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "\"His oxygen saturation is fine, so he can't be opioid toxic.\"",
+        "safeAnswer": "Oxygen can mask hypoventilation; assess respiratory rate, depth and conscious level directly.",
+        "row": "G5"
+      },
+      {
+        "prompt": "\"Just give him more oral morphine, that's what he's written up for.\"",
+        "safeAnswer": "Not before reassessing sedation and respiratory rate and confirming it is safe to give more.",
+        "row": "G1"
+      },
+      {
+        "prompt": "\"He's opioid-naive — would a modified-release tablet make sense here?\"",
+        "safeAnswer": "No; modified-release opioids carry more risk with no benefit for acute pain in opioid-naive patients.",
+        "row": "G4"
+      }
+    ]
+  }
+}

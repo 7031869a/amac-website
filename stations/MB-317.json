@@ -1,0 +1,224 @@
+{
+  "id": "MB-317",
+  "exam": "MRCS-B",
+  "title": "Breaking bad news by telephone",
+  "type": "communication",
+  "header": {
+    "domain": "Applied Skills",
+    "contentArea": "Communication skills in giving and receiving information; confidentiality and remote consultation",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "GMC Good medical practice (effective 30 January 2024)",
+      "GMC Confidentiality: good practice in handling patient information (effective 25 April 2017; updated 25 May 2018 and 13 December 2024)",
+      "GMC: How our professional standards can be applied to remote consultations (last updated 13 December 2024)"
+    ],
+    "related": [
+      { "id": "MB-176", "why": "Breaking bad news face to face after colonoscopy — the same structure without the telephone constraints" },
+      { "id": "MB-357", "why": "Another breaking-bad-news station, for comparing structure and pacing" },
+      { "id": "MB-163", "why": "A different use of the telephone in surgical communication: an urgent SBAR referral" }
+    ]
+  },
+  "brief": {
+    "setting": "Telephone call from a side room",
+    "role": "Core surgical trainee",
+    "scenario": "Mr Felix Norwood, 64, is awaiting urgent histology results after a biopsy. Face-to-face review is not possible today.",
+    "task": "Explain the result to him safely by telephone. The examiner may ask you questions at the end."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Confirm who you're speaking to and that it's safe to talk, then give the news in small, clear steps.",
+    "trap": "Rushing to the diagnosis, or disclosing results before confirming identity and privacy.",
+    "firstMove": "Confirm his identity, then ask if it's a safe, private time to talk."
+  },
+  "flow": [
+    "Confirm identity and privacy",
+    "Check what he already knows",
+    "Give a warning shot",
+    "Deliver information in stages, with pauses",
+    "Explain next steps and safety-net",
+    "Document the call"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "professionalism",
+      "label": "Confirming identity and privacy",
+      "fail": "Discloses or discusses the result before confirming who he is speaking to.",
+      "pass": "Confirms his identity and asks whether it's a safe, private time to talk.",
+      "high": "Also asks whether anyone else is present whom he'd like involved before continuing.",
+      "source": "GMCCONF"
+    },
+    {
+      "id": "G2",
+      "domain": "communication",
+      "label": "Checking existing understanding",
+      "fail": "Assumes what he already knows and launches straight into the result.",
+      "pass": "Asks what he already understands about why he's having this call.",
+      "high": "Uses his answer to judge how much of a warning shot he needs and paces accordingly."
+    },
+    {
+      "id": "G3",
+      "domain": "communication",
+      "label": "Warning shot and clear language",
+      "fail": "Gives the result abruptly, or opens with technical pathology language.",
+      "pass": "Gives a warning shot, then uses clear, direct language and avoids jargon and euphemisms.",
+      "high": "Chooses words that are honest but not brutal, and checks he's ready before saying the actual result."
+    },
+    {
+      "id": "G4",
+      "domain": "communication",
+      "label": "Pacing and allowing reaction",
+      "fail": "Delivers all the information in one block without pausing.",
+      "pass": "Gives information in small sections, pausing between them and allowing silence.",
+      "high": "Actively listens for and responds to his emotional reaction before moving on."
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-knowledge",
+      "label": "Staying within known facts",
+      "fail": "Gives a prognosis or survival estimate not supported by the information available.",
+      "pass": "Gives only the information that is confirmed and avoids speculating on prognosis.",
+      "high": "Explains plainly what is and isn't known yet, without minimising or overstating either way."
+    },
+    {
+      "id": "G6",
+      "domain": "communication",
+      "label": "Checking understanding and closing",
+      "fail": "Ends the call without checking what he has understood.",
+      "pass": "Asks what he has understood and answers his questions before ending the call.",
+      "high": "Asks if he'd like a relative or friend involved going forward and checks how he wants to be contacted next."
+    },
+    {
+      "id": "G7",
+      "domain": "professionalism",
+      "label": "Next steps and safety-net",
+      "fail": "Ends the call without a follow-up plan or contact route.",
+      "pass": "Explains immediate next steps, who will contact him, and gives a reliable contact route.",
+      "high": "Arranges face-to-face follow-up where appropriate and recognises when the call should be escalated to a face-to-face review instead.",
+      "source": "GMCREMOTE"
+    },
+    {
+      "id": "G8",
+      "domain": "professionalism",
+      "label": "Documentation",
+      "fail": "Doesn't record that the conversation took place.",
+      "pass": "Documents the conversation, including what was said and his response.",
+      "high": "Also records the agreed follow-up plan and who else was informed."
+    }
+  ],
+  "performances": {
+    "fail": [
+      { "speaker": "examiner", "text": "The call connects. Patient: \"Is this about my biopsy?\"" },
+      { "speaker": "candidate", "text": "Yes, I'm afraid the biopsy shows cancer.", "tags": [{ "row": "G1", "band": "fail" }, { "row": "G2", "band": "fail" }, { "row": "G3", "band": "fail" }] },
+      { "speaker": "examiner", "text": "Patient goes quiet." },
+      { "speaker": "candidate", "text": "There's a mass with malignant histological features and likely lymphovascular invasion, so the staging will need further imaging.", "tags": [{ "row": "G4", "band": "fail" }] },
+      { "speaker": "examiner", "text": "Patient: \"How long have I got?\"" },
+      { "speaker": "candidate", "text": "Honestly, with this type it's usually only a matter of months.", "tags": [{ "row": "G5", "band": "fail" }] },
+      { "speaker": "examiner", "text": "What happens now?" },
+      { "speaker": "candidate", "text": "Someone will probably be in touch at some point. That's everything from me.", "tags": [{ "row": "G7", "band": "fail" }, { "row": "G6", "band": "fail" }] },
+      { "speaker": "examiner", "text": "Will you write this up?" },
+      { "speaker": "candidate", "text": "I don't think that's necessary, it was just a phone call.", "tags": [{ "row": "G8", "band": "fail" }] }
+    ],
+    "pass": [
+      { "speaker": "candidate", "text": "Hello, could I confirm I'm speaking with Mr Norwood, and is this a safe, private time for a call about your results?", "tags": [{ "row": "G1", "band": "pass" }] },
+      { "speaker": "examiner", "text": "Patient: \"Yes, that's fine. Is this about my biopsy?\"" },
+      { "speaker": "candidate", "text": "It is. Can I ask what you've been told so far about why we're doing this test?", "tags": [{ "row": "G2", "band": "pass" }] },
+      { "speaker": "examiner", "text": "Patient: \"Just that they were checking for something serious.\"" },
+      { "speaker": "candidate", "text": "I'm afraid I do have some difficult news about the result. The biopsy shows changes that are concerning for cancer.", "tags": [{ "row": "G3", "band": "pass" }] },
+      { "speaker": "examiner", "text": "Patient is silent for a moment." },
+      { "speaker": "candidate", "text": "I'll pause there — take your time. I know that's a lot to hear.", "tags": [{ "row": "G4", "band": "pass" }] },
+      { "speaker": "examiner", "text": "Patient: \"How long have I got?\"" },
+      { "speaker": "candidate", "text": "I understand why you're asking, but I don't have enough information yet to answer that — we need further tests before we know more.", "tags": [{ "row": "G5", "band": "pass" }] },
+      { "speaker": "candidate", "text": "Can you tell me what you've understood from what I've said, and do you have any questions right now?", "tags": [{ "row": "G6", "band": "pass" }] },
+      { "speaker": "candidate", "text": "The team will contact you within the next couple of days to arrange further tests and a face-to-face appointment, and here's a direct number if you need us before then.", "tags": [{ "row": "G7", "band": "pass" }] },
+      { "speaker": "candidate", "text": "I'll write up exactly what we've discussed today in your notes.", "tags": [{ "row": "G8", "band": "pass" }] }
+    ],
+    "high": [
+      { "speaker": "candidate", "text": "Hello, could I first confirm I'm speaking with Mr Norwood himself, and check this is a safe, private time to talk? Is anyone with you that you'd like involved?", "tags": [{ "row": "G1", "band": "high" }] },
+      { "speaker": "examiner", "text": "Patient: \"It's just me, that's fine. Is this about my biopsy?\"" },
+      { "speaker": "candidate", "text": "It is. Before I go on, what have you been told so far, and how have you been feeling waiting for this call?", "tags": [{ "row": "G2", "band": "high" }] },
+      { "speaker": "examiner", "text": "Patient: \"Just that they were checking for something serious. I've been dreading this.\"" },
+      { "speaker": "candidate", "text": "I'm sorry, I do have some difficult news. The biopsy result shows changes that are concerning for cancer.", "tags": [{ "row": "G3", "band": "high" }] },
+      { "speaker": "examiner", "text": "Patient is silent, then sighs." },
+      { "speaker": "candidate", "text": "I'll give you a moment — I can hear that's hit you hard.", "tags": [{ "row": "G4", "band": "high" }] },
+      { "speaker": "examiner", "text": "Patient: \"How long have I got?\"" },
+      { "speaker": "candidate", "text": "That's completely understandable to want to know, but honestly I don't have enough information yet — we need further scans and tests before anyone can give you a realistic answer, and I don't want to guess.", "tags": [{ "row": "G5", "band": "high" }] },
+      { "speaker": "candidate", "text": "Can you tell me in your own words what you've taken from this, and is there anything I can go over again?", "tags": [{ "row": "G6", "band": "high" }] },
+      { "speaker": "candidate", "text": "Given how much this is to take in over the phone, I'd like to arrange a face-to-face appointment soon so we can go through everything properly, with someone with you if you'd like; the team will call within two days, and here's a direct number in the meantime.", "tags": [{ "row": "G7", "band": "high" }] },
+      { "speaker": "candidate", "text": "I'll document today's call in full, including how you responded and the follow-up plan, so the whole team is aware.", "tags": [{ "row": "G8", "band": "high" }] }
+    ]
+  },
+  "failures": [
+    { "row": "G1", "move": "Discussing the result before confirming identity or privacy.", "consequence": "Confidential information may be disclosed to the wrong person, or in a setting that isn't safe for him to receive it." },
+    { "row": "G3", "move": "Opening with technical pathology language or no warning shot.", "consequence": "The patient is shocked by jargon before he has any chance to prepare for bad news." },
+    { "row": "G5", "move": "Giving a survival estimate not supported by the available information.", "consequence": "An unfounded prognosis can cause lasting harm and may be wrong once full staging is known." },
+    { "row": "G7", "move": "Ending the call without a follow-up plan or contact route.", "consequence": "Leaves him alone with serious news and no way to seek support or ask further questions." }
+  ],
+  "recovery": [
+    { "when": "You've launched into the result too fast", "line": "I should have checked first — is this a safe, private time, and can I ask what you already understood before I go further?" },
+    { "when": "Asked for a prognosis you can't support", "line": "I don't want to guess at something this important — we need more information before anyone can answer that properly." }
+  ],
+  "knowledge": [
+    { "fact": "Confirm identity and that it is a safe, private time before disclosing confidential information by phone.", "source": "GMCCONF" },
+    { "fact": "Give a warning shot, use clear language, and pause between sections to allow silence and reaction.", "source": "GMCGMP" },
+    { "fact": "Remote consultation is acceptable only when the mode is suitable for the purpose; escalate to face-to-face review when it is not.", "source": "GMCREMOTE" },
+    { "fact": "Document the conversation, including the information given and the patient's response.", "source": "GMCGMP" }
+  ],
+  "recall": {
+    "think": "Confidential, serious news given to the wrong person, or without support in place, causes real harm.",
+    "say": "\"I'm afraid I have some difficult news about your results.\"",
+    "do": [
+      "Confirm identity and privacy first",
+      "Warning shot, then clear language, paused",
+      "Arrange follow-up and a contact route"
+    ],
+    "numbers": [
+      { "value": "2024", "meaning": "Year GMC Good medical practice (communication standards) took effect", "source": "GMCGMP" }
+    ],
+    "trap": "Assuming feeling awkward about a difficult call justifies rushing through it.",
+    "finish": "Face-to-face follow-up arranged where appropriate; conversation documented."
+  },
+  "sources": [
+    {
+      "id": "GMCGMP",
+      "name": "GMC: Good medical practice",
+      "version": "Effective 30 January 2024",
+      "url": "https://www.gmc-uk.org/professional-standards/the-professional-standards/good-medical-practice",
+      "supports": "Doctors must communicate clearly, respectfully and in a way that supports patients to understand and make decisions, and must keep clear, accurate records"
+    },
+    {
+      "id": "GMCCONF",
+      "name": "GMC: Confidentiality — good practice in handling patient information",
+      "version": "Effective 25 April 2017; updated 25 May 2018 and 13 December 2024",
+      "url": "https://www.gmc-uk.org/professional-standards/the-professional-standards/confidentiality",
+      "supports": "Verify the identity of the person you are speaking to and satisfy yourself it is appropriate to disclose confidential information before doing so, including by telephone"
+    },
+    {
+      "id": "GMCREMOTE",
+      "name": "GMC: How our professional standards can be applied to remote consultations",
+      "version": "Page last updated 13 December 2024",
+      "url": "https://www.gmc-uk.org/professional-standards/ethical-hub/remote-consultations",
+      "supports": "Remote consultation is appropriate only when it is a suitable way of meeting the patient's needs; escalate to a face-to-face consultation when it is not"
+    }
+  ],
+  "partner": {
+    "opening": "The candidate is making a telephone call to Mr Norwood about an urgent histology result. Please begin when you're ready.",
+    "actorBrief": "You are Felix Norwood, 64, waiting anxiously for a biopsy result. You are alone at home. Opening line, once identity and privacy are confirmed: \"Is this about my biopsy?\" You are calm at first but become quiet and subdued once told it's cancer-related, and you ask directly how long you have left. If the candidate gives jargon or rushes, ask them to slow down or explain in plain terms. If handled with a warning shot, clear language and pauses, you become able to ask sensible questions about what happens next. Hidden concern, revealed only if asked how you're feeling or what worries you: you live alone and are frightened about managing at home if you need more treatment.",
+    "reveals": [
+      { "trigger": "Asks what he already knows or how he's been feeling", "finding": "\"Just that they were checking for something serious. I've been dreading this call.\"", "row": "G2" },
+      { "trigger": "Asks if he'd like anyone else involved", "finding": "\"It's just me here — I live alone.\"", "row": "G1" },
+      { "trigger": "Asks what worries him most", "finding": "\"I'm frightened about managing on my own if I need more treatment.\"", "row": "G7" }
+    ],
+    "push": [
+      { "question": "How long has he got?", "row": "G5", "expect": "Doesn't speculate; explains further tests are needed before anyone can answer that." },
+      { "question": "How will you follow this call up?", "row": "G7", "expect": "Arranges a face-to-face appointment, a contact route, and further tests, with a timeframe." },
+      { "question": "What will you record afterwards?", "row": "G8", "expect": "Documents the conversation, his response, and the agreed follow-up plan." }
+    ],
+    "curveballs": [
+      { "prompt": "A woman answers his phone and says: \"I'm his daughter, you can tell me.\"", "safeAnswer": "Doesn't disclose confidential information until speaking to Mr Norwood himself or confirming his consent for her to be told.", "row": "G1" },
+      { "prompt": "\"Just tell me straight — how long?\"", "safeAnswer": "Acknowledges the question honestly, explains this isn't yet known, and avoids giving an unsupported figure.", "row": "G5" },
+      { "prompt": "He starts crying and goes silent on the call.", "safeAnswer": "Pauses, allows the silence, and checks gently whether he wants to continue now or have someone call him back shortly.", "row": "G4" },
+      { "prompt": "\"Should this have been done face to face?\"", "safeAnswer": "Acknowledges telephone has limits, explains why it was necessary today, and offers a face-to-face follow-up soon.", "row": "G7" }
+    ]
+  }
+}

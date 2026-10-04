@@ -1,0 +1,200 @@
+{
+  "id": "MB-326",
+  "exam": "MRCS-B",
+  "title": "Post-tonsillectomy haemorrhage",
+  "type": "applied-knowledge",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "ENT emergencies: post-tonsillectomy haemorrhage",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "Resuscitation Council UK, Special Circumstances Guidelines 2021 (published May 2021)",
+      "Royal College of Surgeons of England, National Prospective Tonsillectomy Audit: Final Report (2005)"
+    ],
+    "related": [
+      { "id": "MB-238", "why": "The larynx and emergency front-of-neck airway, relevant if the airway is compromised by ongoing bleeding" }
+    ]
+  },
+  "brief": {
+    "setting": "Emergency department",
+    "role": "Surgical trainee",
+    "scenario": "Mr Jamie Underwood, 24, presents with fresh bleeding six days after tonsillectomy and reports coughing up blood for the last hour.",
+    "task": "Manage suspected post-tonsillectomy haemorrhage as the examiner questions your priorities."
+  },
+  "beforeYouWalkIn": {
+    "frame": "A tonsil bed bleed is an airway emergency until proven otherwise, not a routine ENT referral.",
+    "trap": "Discharging or reassuring him once visible bleeding has stopped.",
+    "firstMove": "\"I'd treat this as a potentially life-threatening airway and haemorrhage emergency and call for senior ENT and anaesthetic help now.\""
+  },
+  "flow": [
+    "Recognise the emergency",
+    "Sit forward, protect the airway, ABCDE",
+    "Avoid instrumenting the fossa",
+    "Prepare for theatre, not oral intake",
+    "Do not discharge on bleeding stopping",
+    "Definitive management and communication"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "professionalism",
+      "label": "Treat as an airway/haemorrhage emergency (safety-critical)",
+      "fail": "Treats him as a minor bleed and completes routine triage before senior review.",
+      "pass": "Recognises post-tonsillectomy haemorrhage as a potentially life-threatening airway and haemorrhage emergency; calls ENT senior and anaesthetic/resuscitation support early.",
+      "high": "Requests simultaneous ENT and anaesthetic attendance rather than sequential referral, anticipating a difficult airway."
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-skill",
+      "label": "Immediate positioning and ABCDE",
+      "fail": "Lies him flat to examine the throat, or leaves him unmonitored while arranging tests.",
+      "pass": "Sits him forward if conscious and bleeding, protects the airway, and runs ABCDE with attention to haemodynamic status.",
+      "high": "Anticipates that swallowed blood can mask the true extent of haemorrhage, so treats on clinical trajectory, not just visible loss."
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-skill",
+      "label": "Avoid instrumenting the fossa",
+      "fail": "Repeatedly examines or manipulates the tonsillar fossa with instruments.",
+      "pass": "Avoids blind manipulation of the tonsillar fossae; leaves definitive assessment to ENT.",
+      "high": "Explains that repeated examination can provoke further bleeding and rapid airway deterioration."
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-knowledge",
+      "label": "Prepare for theatre, not oral intake",
+      "fail": "Gives oral fluids or food despite likely need for theatre.",
+      "pass": "Keeps him nil by mouth, obtains IV access and blood tests/crossmatch as indicated, anticipating operative management.",
+      "high": "Flags him early to theatre and anaesthetics so a return to theatre isn't delayed by avoidable preparation steps."
+    },
+    {
+      "id": "G5",
+      "domain": "professionalism",
+      "label": "Does not discharge on bleeding stopping (safety-critical)",
+      "fail": "Discharges or reassures the patient because the visible bleeding has stopped.",
+      "pass": "Arranges urgent ENT assessment regardless of whether bleeding has stopped, because it can recur.",
+      "high": "Explains that bleeds serious enough to need hospital care can recur even after apparently settling, so admits for observation rather than discharging.",
+      "source": "NPTA"
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-knowledge",
+      "label": "Definitive management",
+      "fail": "Plans conservative management alone for ongoing or significant bleeding.",
+      "pass": "Recognises that recurrent or significant bleeding may need examination under anaesthesia and surgical haemostasis.",
+      "high": "Discusses with ENT the choice between EUA/haemostasis and conservative measures based on trajectory and severity, and ensures major haemorrhage support is available if bleeding is significant."
+    },
+    {
+      "id": "G7",
+      "domain": "communication",
+      "label": "Communicates the plan",
+      "fail": "Does not explain to Jamie why he needs to stay or proceed to theatre.",
+      "pass": "Explains clearly why he needs to stay for observation or theatre despite the bleeding stopping, and documents the discussion.",
+      "high": "Checks his understanding and directly addresses his concerns about repeat bleeding or theatre, using plain language."
+    }
+  ],
+  "performances": {
+    "fail": [
+      { "speaker": "examiner", "text": "What do you do first?" },
+      { "speaker": "candidate", "text": "I'd get some routine triage observations and see him in turn.", "tags": [{ "row": "G1", "band": "fail" }] },
+      { "speaker": "examiner", "text": "He says he's been coughing up blood for the last hour. What are the priorities?" },
+      { "speaker": "candidate", "text": "I'd lay him flat and have a look in his throat with a torch and tongue depressor.", "tags": [{ "row": "G2", "band": "fail" }] },
+      { "speaker": "candidate", "text": "I'd keep checking the fossa every few minutes to see if it's still bleeding.", "tags": [{ "row": "G3", "band": "fail" }] },
+      { "speaker": "examiner", "text": "He says he's hungry — anything to eat?" },
+      { "speaker": "candidate", "text": "Sure, a light meal while we wait for ENT.", "tags": [{ "row": "G4", "band": "fail" }] },
+      { "speaker": "examiner", "text": "The bleeding's stopped. Would you discharge him?" },
+      { "speaker": "candidate", "text": "Yes, if it's stopped I think he can go home with safety-netting advice.", "tags": [{ "row": "G5", "band": "fail" }] },
+      { "speaker": "examiner", "text": "What if it starts again at home?" },
+      { "speaker": "candidate", "text": "I wouldn't plan anything specific for that now — conservative measures only.", "tags": [{ "row": "G6", "band": "fail" }] },
+      { "speaker": "examiner", "text": "Does he understand the plan?" },
+      { "speaker": "candidate", "text": "I didn't really explain it, I just told him to wait.", "tags": [{ "row": "G7", "band": "fail" }] }
+    ],
+    "pass": [
+      { "speaker": "examiner", "text": "What do you do first?" },
+      { "speaker": "candidate", "text": "I'd treat this as a potentially life-threatening airway and haemorrhage emergency and call ENT senior help and anaesthetics/resuscitation early.", "tags": [{ "row": "G1", "band": "pass" }] },
+      { "speaker": "examiner", "text": "Priorities?" },
+      { "speaker": "candidate", "text": "Sit him forward if he's conscious and bleeding, protect his airway, and run ABCDE with a focus on his haemodynamic status.", "tags": [{ "row": "G2", "band": "pass" }] },
+      { "speaker": "candidate", "text": "I'd avoid manipulating the tonsillar fossae myself and leave a proper look to ENT.", "tags": [{ "row": "G3", "band": "pass" }] },
+      { "speaker": "examiner", "text": "He's hungry — anything by mouth?" },
+      { "speaker": "candidate", "text": "No, keep him nil by mouth, get IV access and crossmatch, because he's likely to need theatre.", "tags": [{ "row": "G4", "band": "pass" }] },
+      { "speaker": "examiner", "text": "The bleeding's stopped. Discharge?" },
+      { "speaker": "candidate", "text": "No — post-tonsillectomy bleeding can recur, so he needs urgent ENT assessment rather than discharge.", "tags": [{ "row": "G5", "band": "pass" }] },
+      { "speaker": "examiner", "text": "What if significant bleeding continues?" },
+      { "speaker": "candidate", "text": "Recurrent or significant bleeding may need examination under anaesthesia and haemostasis, with major haemorrhage support if it's severe.", "tags": [{ "row": "G6", "band": "pass" }] },
+      { "speaker": "examiner", "text": "Does he understand?" },
+      { "speaker": "candidate", "text": "I'd explain clearly why he needs to stay, and document that conversation.", "tags": [{ "row": "G7", "band": "pass" }] }
+    ],
+    "high": [
+      { "speaker": "examiner", "text": "What do you do first?" },
+      { "speaker": "candidate", "text": "Emergency call to ENT and anaesthetics together, not sequentially, because he may need a difficult airway managed urgently.", "tags": [{ "row": "G1", "band": "high" }] },
+      { "speaker": "examiner", "text": "Priorities?" },
+      { "speaker": "candidate", "text": "Swallowed blood can hide how much he's actually lost, so I'd treat his trajectory and observations, not just what's visible.", "tags": [{ "row": "G2", "band": "high" }] },
+      { "speaker": "candidate", "text": "Repeated throat examination can provoke more bleeding and a rapid airway deterioration, so I'd leave that to ENT under controlled conditions.", "tags": [{ "row": "G3", "band": "high" }] },
+      { "speaker": "examiner", "text": "Preparing for theatre?" },
+      { "speaker": "candidate", "text": "I'd flag him to theatre and anaesthetics early so a return to theatre isn't delayed by avoidable steps.", "tags": [{ "row": "G4", "band": "high" }] },
+      { "speaker": "examiner", "text": "He says the bleeding's definitely stopped now." },
+      { "speaker": "candidate", "text": "Bleeds serious enough to need hospital care can recur even after seeming to settle, so I'd still admit him for observation.", "tags": [{ "row": "G5", "band": "high" }] },
+      { "speaker": "examiner", "text": "How would ENT decide?" },
+      { "speaker": "candidate", "text": "Between EUA and haemostasis versus watching closely, based on how much he's bled and the trend, with major haemorrhage support ready if it's significant.", "tags": [{ "row": "G6", "band": "high" }] },
+      { "speaker": "examiner", "text": "His anxiety?" },
+      { "speaker": "candidate", "text": "I'd check what he's worried about — going back to theatre, more bleeding — and answer that directly in plain language.", "tags": [{ "row": "G7", "band": "high" }] }
+    ]
+  },
+  "failures": [
+    { "row": "G1", "move": "Treating a post-tonsillectomy bleed as routine triage rather than an emergency.", "consequence": "Delays senior ENT and anaesthetic input while the airway and haemorrhage risk are evolving." },
+    { "row": "G3", "move": "Repeatedly examining the fossa with instruments.", "consequence": "Can provoke further bleeding and rapid airway compromise." },
+    { "row": "G5", "move": "Discharging once visible bleeding has stopped.", "consequence": "Misses a recurrence that can be life-threatening at home." },
+    { "row": "G4", "move": "Giving oral fluids or food while awaiting ENT review.", "consequence": "Delays safe anaesthesia if he needs theatre." }
+  ],
+  "recovery": [
+    { "when": "Asked why not discharge if it's stopped", "line": "Because it can recur, and recurrence after apparent settling happens often enough that he needs urgent ENT assessment first." },
+    { "when": "Pushed to examine the throat again", "line": "I'd rather not repeat that myself — it risks provoking more bleeding; I'll let ENT assess it properly." }
+  ],
+  "knowledge": [
+    { "fact": "Post-tonsillectomy haemorrhage is a potentially life-threatening airway and haemorrhage emergency needing urgent senior ENT and anaesthetic involvement.", "source": "RCUK-SC" },
+    { "fact": "Swallowed blood can obscure the true amount of haemorrhage.", "source": "BL" },
+    { "fact": "About 3% of patients have a secondary haemorrhage needing hospital readmission; of 1,309 readmissions overall, 13% returned to theatre and 4% needed transfusion.", "source": "NPTA" },
+    { "fact": "Recurrent or significant bleeding may need examination under anaesthesia and surgical haemostasis.", "source": "BL" }
+  ],
+  "recall": {
+    "think": "Airway compromise from ongoing or recurrent haemorrhage.",
+    "say": "\"This is a potential airway/haemorrhage emergency — ENT and anaesthetics now.\"",
+    "do": [
+      "Sit forward, protect airway, ABCDE",
+      "IV access, bloods/crossmatch, nil by mouth",
+      "Urgent ENT assessment, even if bleeding has stopped"
+    ],
+    "numbers": [
+      { "value": "~3% secondary haemorrhage rate; of 1,309 readmissions overall, 13% returned to theatre", "meaning": "post-tonsillectomy bleeding is not rare and can need surgical haemostasis", "source": "NPTA" }
+    ],
+    "trap": "Assuming the bleeding has truly stopped because it isn't visible right now.",
+    "finish": "Urgent ENT review; examination under anaesthesia and haemostasis if bleeding is recurrent or significant."
+  },
+  "sources": [
+    { "id": "RCUK-SC", "name": "Resuscitation Council UK. Special Circumstances Guidelines 2021: major haemorrhage", "version": "Published May 2021", "url": "https://www.resus.org.uk/library/2021-resuscitation-guidelines/special-circumstances-guidelines", "supports": "Major haemorrhage requires early haemorrhage control, resuscitation and senior support" },
+    { "id": "NPTA", "name": "Royal College of Surgeons of England. National Prospective Tonsillectomy Audit: Final Report", "version": "2005", "url": "https://www.rcseng.ac.uk/-/media/files/rcs/library-and-publications/non-journal-publications/national-prospective-tonsillectomy-audit-final-report-2005.pdf", "supports": "3.0% of patients (1,033/33,921) had a secondary haemorrhage needing readmission; of 1,309 readmissions overall (all causes), 13% returned to theatre and 4% needed transfusion" },
+    { "id": "BL", "name": "Bailey & Love's Short Practice of Surgery (O'Connell, McCaskie, Sayers, eds)", "version": "28th edition, 2023", "url": "https://www.routledge.com/Bailey--Loves-Short-Practice-of-Surgery---28th-Edition/OConnell-McCaskie-Sayers/p/book/9780367548117", "supports": "Post-tonsillectomy haemorrhage: swallowed blood masking loss; indications for examination under anaesthesia and haemostasis" }
+  ],
+  "partner": {
+    "opening": "Mr Jamie Underwood, 24, presents with fresh bleeding six days after tonsillectomy. What do you do first?",
+    "reveals": [
+      { "trigger": "Candidate asks for observations or examines", "finding": "HR 118, BP 108/64, RR 22, SpO2 97% on air, alert. Active fresh bleeding visible from the left tonsillar fossa. Swallowing frequently.", "row": "G1" },
+      { "trigger": "Candidate positions him or asks about ongoing bleeding", "finding": "Sitting forward, the visible bleeding appears to slow but he continues swallowing; some fresh blood is still seen at the back of the throat.", "row": "G2" },
+      { "trigger": "Candidate asks for bloods and group and save", "finding": "Hb 128 g/L (baseline 142 last week). Group and save and crossmatch of 2 units requested.", "row": "G4" },
+      { "trigger": "Candidate asks again 10 minutes later", "finding": "Visible bleeding has stopped; he says he feels less anxious now.", "row": "G5" }
+    ],
+    "push": [
+      { "question": "Why not just observe him on the ward?", "row": "G1", "expect": "This is a potential airway/haemorrhage emergency needing urgent senior ENT and anaesthetic input, not routine observation." },
+      { "question": "Can you have a look in his throat to check?", "row": "G3", "expect": "Avoids blind instrumentation of the fossa; leaves formal assessment to ENT." },
+      { "question": "He wants a drink, is that OK?", "row": "G4", "expect": "No — nil by mouth, IV access and crossmatch, anticipating theatre." },
+      { "question": "The bleeding's stopped now, can he go home?", "row": "G5", "expect": "No — urgent ENT assessment regardless, because it can recur." }
+    ],
+    "curveballs": [
+      { "prompt": "He becomes acutely more breathless and the bleeding restarts heavily.", "safeAnswer": "Call for immediate senior anaesthetic and ENT help, sit him forward, give high-flow oxygen, and prepare for a difficult airway and probable emergency theatre.", "row": "G1" },
+      { "prompt": "ENT is currently in theatre with another patient.", "safeAnswer": "Escalate to the on-call consultant and anaesthetics directly given the airway risk; don't wait passively.", "row": "G1" },
+      { "prompt": "He asks to just go home because he's scared of surgery.", "safeAnswer": "Explain the risk of recurrent, potentially life-threatening bleeding and why urgent assessment is needed, and address his fear directly.", "row": "G7" },
+      { "prompt": "A nurse asks if she can offer him some water since he seems settled.", "safeAnswer": "No — keep him nil by mouth until ENT has assessed him and a plan for theatre is excluded.", "row": "G4" }
+    ]
+  }
+}

@@ -1,0 +1,562 @@
+{
+  "id": "MB-174",
+  "exam": "MRCS-B",
+  "title": "History: change in bowel habit and rectal bleeding in a younger patient",
+  "type": "history",
+  "header": {
+    "domain": "Applied Skills",
+    "contentArea": "Communication skills in giving and receiving information and history taking",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "signalMinutes": 6,
+    "guidelineVersions": [
+      "NICE NG12 (updated Apr 2026)",
+      "NICE HTG690, formerly DG56 (Aug 2023)",
+      "ACPGBI/BSG FIT guideline (Jul 2022)"
+    ],
+    "related": [
+      {
+        "id": "MB-152 Dyspepsia and weight loss",
+        "why": "Another NG12 history in clinic"
+      },
+      {
+        "id": "Digital rectal examination station",
+        "why": "The examination that completes this history"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Colorectal outpatient clinic",
+    "role": "Core surgical trainee",
+    "scenario": "Mrs Helen Marsh, 44, has been referred by her GP on the suspected cancer pathway. She has had six weeks of looser stools with dark blood. Her faecal immunochemical test (FIT) result is 86 µg Hb/g.",
+    "task": "Take a focused history. You will be stopped at 6 minutes to summarise your history, then asked about investigation and management."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Colorectal cancer and colitis both fit. Characterise the bleeding, ask the red flags, then take the family history.",
+    "trap": "Deciding she's too young for cancer, or blaming piles.",
+    "firstMove": "Open question, then: \"What is the blood like, and is it mixed in with the stool?\""
+  },
+  "flow": [
+    "Open and listen",
+    "Bowel habit and bleeding",
+    "Red flags",
+    "Colitis and infection questions",
+    "Family history, drugs",
+    "Ideas, concerns, expectations",
+    "At 6 minutes: summarise",
+    "Investigation"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "communication",
+      "label": "Opening and rapport",
+      "fail": "Starts with closed questions about piles.",
+      "pass": "Introduces, confirms identity, asks an open question and lets her finish.",
+      "high": "Acknowledges that bowel questions are embarrassing and asks permission before them."
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-skill",
+      "label": "Bowel habit and bleeding",
+      "fail": "Records 'bleeding' without its colour or relation to the stool.",
+      "pass": "Frequency and consistency now versus before, duration; blood colour, mixed in or on the paper; mucus, urgency, tenesmus.",
+      "high": "Uses dark blood mixed into the stool to place the source above the anal canal, and quantifies the change from her normal."
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-skill",
+      "label": "Red flags (safety-critical)",
+      "fail": "Omits weight loss or anaemia symptoms.",
+      "borderline": "Asks about weight loss but not anaemia symptoms or a lump.",
+      "pass": "Asks about weight loss, abdominal pain, a lump, tiredness or breathlessness, and anal pain or a lump.",
+      "high": "Quantifies weight loss in kilograms over time, and states the negatives back to her."
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-skill",
+      "label": "Colitis and infection",
+      "fail": "Doesn't consider inflammatory bowel disease or infection.",
+      "pass": "Asks about night-time symptoms, urgency, mouth ulcers, joint, eye or skin problems, travel, antibiotics and contacts.",
+      "high": "Explains that nocturnal diarrhoea and extra-intestinal features point to colitis rather than irritable bowel syndrome.",
+      "source": "BL"
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-skill",
+      "label": "Family history, drugs and risk",
+      "fail": "Doesn't ask about family history.",
+      "pass": "Family history of bowel cancer or IBD, with ages; anticoagulants, NSAIDs, iron; smoking and alcohol.",
+      "high": "Asks the age at diagnosis of each affected relative and whether anyone had polyps or womb cancer, for a possible inherited syndrome."
+    },
+    {
+      "id": "G6",
+      "domain": "communication",
+      "label": "Ideas, concerns, expectations",
+      "fail": "Doesn't ask what she is worried about.",
+      "pass": "Asks what she thinks is going on, what worries her and what she hopes for.",
+      "high": "Names her fear of cancer honestly and addresses her worry about the colonoscopy."
+    },
+    {
+      "id": "G7",
+      "domain": "communication",
+      "label": "Summary at the signal",
+      "fail": "Retells the history in order without a working diagnosis.",
+      "pass": "Concise summary with key positives and negatives, and a differential led by colorectal cancer and colitis.",
+      "high": "Leads with the positive FIT and red flags, names cancer first, colitis second, and states the family history."
+    },
+    {
+      "id": "G8",
+      "domain": "clinical-knowledge",
+      "label": "Investigation",
+      "fail": "Reassures her that she's too young, or offers a trial of treatment for irritable bowel.",
+      "pass": "FIT at least 10 µg Hb/g meets NG12, so she stays on the suspected cancer pathway (28 days); DRE and colonoscopy.",
+      "high": "Knows a change in bowel habit merits FIT at any adult age; a rectal mass needs no FIT; FIT below 10 doesn't stop referral if concern persists.",
+      "source": "NG12"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "candidate",
+        "text": "So you've got some bleeding. Is it bright red on the paper? Any straining?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          },
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Any pain when you open your bowels? Do you eat much fibre?",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          },
+          {
+            "row": "G5",
+            "band": "fail"
+          },
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop there and summarise your history."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Mrs Marsh is 44 with loose stools and some bleeding. It's probably piles or IBS.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What would you do?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "At her age cancer is unlikely. I'd try a fibre supplement and see her in three months.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "candidate",
+        "text": "Hello, I'm Dr Shah, one of the surgical trainees. Can I check your name and date of birth? Tell me what's been happening.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "How often are you going now, compared with before? What are the stools like? What does the blood look like? Is it mixed in, or on the paper? Any mucus, urgency, or feeling you haven't finished?",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Have you lost weight? Any tummy pain or lumps? Are you more tired or breathless? Any pain or lump around the back passage?",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Do you wake at night to open your bowels? Any mouth ulcers, joint pains, sore eyes or rashes? Any recent travel, antibiotics or ill contacts?",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Has anyone in the family had bowel cancer or colitis? Do you take blood thinners, anti-inflammatories or iron? Do you smoke or drink?",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "What do you think is causing this? Is anything worrying you? What were you hoping for today?",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop there and summarise your history."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Mrs Marsh is 44, with six weeks of looser stools three to four times a day, dark blood mixed in, night-time urgency and 3 kg weight loss. Her FIT is 86. Her father had bowel cancer at 62. The main concern is colorectal cancer; colitis is the main alternative.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What would you do next?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Her FIT is above 10, so she meets the NG12 criteria and stays on the suspected cancer pathway, with a diagnosis or exclusion within 28 days. I'd examine her, including a rectal examination, and book a colonoscopy myself.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "candidate",
+        "text": "Hello, I'm Dr Shah, one of the surgical trainees. Can I check your name and date of birth? Some of my questions are personal; is it all right to ask them? Tell me what's been happening.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "What were your bowels like before this, and now? Dark blood mixed through the stool usually comes from higher up than piles, so I'd like to understand it.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "How much weight, and over what time? So, to check: no lump in your tummy and nothing around the back passage?",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "You said you wake at night to go. That can happen with colitis, but it isn't typical of irritable bowel.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "How old was your dad when he was diagnosed? Has anyone had polyps, or womb cancer?",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "You mentioned your colleague. Are you worried this is cancer? I'll be honest: we need to rule it out quickly. What worries you about the camera test?",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop there and summarise your history."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Mrs Marsh, 44, has a FIT of 86 with six weeks of looser stools, dark blood mixed in, night-time urgency and 3 kg weight loss. Her father had bowel cancer at 62. There are no anal symptoms. Colorectal cancer must be excluded; colitis is the main alternative.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What would you do next?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "She meets the NG12 criteria and stays on the suspected cancer pathway: 28 days to diagnosis or exclusion. I'd examine her, including a rectal examination, and book a colonoscopy with biopsies, which answers both cancer and colitis. For her GP: a change in bowel habit merits FIT at any adult age, a rectal mass needs no FIT, and a FIT below 10 shouldn't stop referral if concern persists.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G3",
+      "move": "Not asking about weight loss or anaemia symptoms.",
+      "consequence": "Safety-critical: misses the features that raise concern for cancer."
+    },
+    {
+      "row": "G2",
+      "move": "Assuming blood is from piles without asking its colour or relation to the stool.",
+      "consequence": "Dark blood mixed in points above the anal canal; the source is missed."
+    },
+    {
+      "row": "G5",
+      "move": "Skipping the family history.",
+      "consequence": "Misses a first-degree relative with bowel cancer, and any pattern suggesting an inherited syndrome."
+    },
+    {
+      "row": "G8",
+      "move": "Reassuring her because of her age.",
+      "consequence": "A FIT at or above 10 means referral on the suspected cancer pathway whatever her age."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You forgot the family history",
+      "line": "Before we finish, has anyone in your family had bowel cancer, polyps or colitis?"
+    },
+    {
+      "when": "She asks if it's cancer",
+      "line": "It's one of the things we need to rule out, and that's why I'm arranging the camera test quickly."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Offer FIT to adults with a change in bowel habit at any age; under 50, rectal bleeding needs abdominal pain or weight loss as well (1.3.1).",
+      "source": "NG12"
+    },
+    {
+      "fact": "FIT at least 10 µg Hb/g: suspected cancer pathway (1.3.2). Rectal mass, anal mass or anal ulceration: no FIT needed (1.3.1, 1.3.5–1.3.6).",
+      "source": "NG12"
+    },
+    {
+      "fact": "FIT below 10 with strong clinical concern: don't delay referral (1.3.3).",
+      "source": "NG12"
+    },
+    {
+      "fact": "Persistent anorectal bleeding alone with FIT below 10: flexible sigmoidoscopy. CT colonography is equivalent to colonoscopy for detecting cancer.",
+      "source": "BSGFIT"
+    }
+  ],
+  "recall": {
+    "think": "Colorectal cancer, then colitis.",
+    "say": "\"She meets the NG12 criteria and stays on the suspected cancer pathway.\"",
+    "do": [
+      "Characterise blood: colour, mixed in?",
+      "Weight loss, anaemia, lumps",
+      "Family history with ages"
+    ],
+    "numbers": [
+      {
+        "value": "10 µg Hb/g",
+        "meaning": "FIT threshold for suspected cancer pathway",
+        "source": "NG12"
+      },
+      {
+        "value": "28 days",
+        "meaning": "suspected cancer pathway: diagnosis or exclusion",
+        "source": "NG12"
+      }
+    ],
+    "trap": "Age under 50 reassures.",
+    "finish": "Examination with DRE; colonoscopy with biopsies on the suspected cancer pathway."
+  },
+  "sources": [
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format: 9-minute stations with 1 minute's reading; introduce yourself and confirm identity at every station"
+    },
+    {
+      "id": "NG12",
+      "name": "NICE NG12: Suspected cancer: recognition and referral",
+      "version": "Published June 2015; last updated 15 April 2026",
+      "url": "https://www.nice.org.uk/guidance/ng12/resources/suspected-cancer-recognition-and-referral-pdf-1837268071621",
+      "supports": "Offer FIT to guide referral in adults with an abdominal mass, a change in bowel habit, iron-deficiency anaemia, aged 40+ with unexplained weight loss and abdominal pain, aged under 50 with rectal bleeding and unexplained abdominal pain or weight loss, aged 50+ with unexplained rectal bleeding, abdominal pain or weight loss, or aged 60+ with anaemia; FIT even after a negative screening FIT; no FIT needed before referral for a rectal mass, unexplained anal mass or anal ulceration (1.3.1, 2023); refer on a suspected cancer pathway if FIT at least 10 µg Hb/g (1.3.2); if FIT below 10 or not returned, safety-net and don't delay referral if strong clinical concern (1.3.3); consider referral for a rectal mass (1.3.5) or an unexplained anal mass or ulceration (1.3.6); suspected cancer pathway: diagnosis or exclusion within 28 days (glossary)"
+    },
+    {
+      "id": "HTG690",
+      "name": "NICE HTG690 (formerly DG56): Quantitative faecal immunochemical testing to guide colorectal cancer pathway referral in primary care",
+      "version": "Published 24 August 2023; migrated from DG56 December 2025",
+      "url": "https://www.nice.org.uk/guidance/htg690",
+      "supports": "FIT using HM-JACKarc or OC-Sensor recommended for the symptom groups later adopted into NG12 1.3.1 (1.1); suspected cancer pathway referral at 10 µg Hb/g or more (1.2); safety-netting below 10 µg Hb/g (1.3)"
+    },
+    {
+      "id": "BSGFIT",
+      "name": "Monahan KJ, Davies MM et al. Faecal immunochemical testing (FIT) in patients with signs or symptoms of suspected colorectal cancer: a joint guideline from ACPGBI and BSG. Gut 2022",
+      "version": "Published online 12 July 2022",
+      "url": "https://www.acpgbi.org.uk/_userfiles/pages/files/guidelines/gutjnl2022327985full.pdf",
+      "supports": "FIT used by primary care to prioritise patients with features of colorectal cancer (rec 1); threshold fHb 10 µg Hb/g or more for urgent referral (rec 2); patients not excluded from referral on FIT alone (rec 3); persistent unexplained symptoms with fHb below 10 referred if concern continues (rec 9); persistent or recurrent anorectal bleeding with fHb below 10: flexible sigmoidoscopy (rec 13); FIT may stratify adults under 50 (rec 17); anal or rectal mass or anal ulceration referred urgently without FIT; CT colonography equivalent to colonoscopy for detecting cancer (rec 19)"
+    },
+    {
+      "id": "BL",
+      "name": "Bailey & Love's Short Practice of Surgery (O'Connell, McCaskie, Sayers, eds)",
+      "version": "28th edition, 2023",
+      "url": "https://www.routledge.com/Bailey--Loves-Short-Practice-of-Surgery---28th-Edition/OConnell-McCaskie-Sayers/p/book/9780367548117",
+      "supports": "Colonic versus anal sources of bleeding; features of inflammatory bowel disease (nocturnal symptoms, urgency, extra-intestinal manifestations)"
+    }
+  ],
+  "partner": {
+    "opening": "Please take a focused history from Mrs Marsh. I'll stop you at 6 minutes to summarise.",
+    "actorBrief": "You are Helen Marsh, 44, a primary school teacher. Opening line: \"The GP sent me because of some bleeding. I'm sure it's nothing.\" Emotional state: brisk and a little embarrassed, anxious underneath. Volunteer only that your bowels have been looser for about six weeks. Release other facts only when asked (see reveals). Hidden concern: a colleague was diagnosed with bowel cancer at 46 last year; say so only if asked what worries you. You are also dreading \"the camera test\". Expectation: \"something to settle my stomach\".",
+    "reveals": [
+      {
+        "trigger": "Asks about frequency and consistency",
+        "finding": "\"Three or four times a day, soft or loose. I used to go once a day.\"",
+        "row": "G2"
+      },
+      {
+        "trigger": "Asks what the blood looks like",
+        "finding": "\"Dark red, mixed in with it. Most days.\" Some mucus. No blood on the paper alone.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Asks about weight, pain or tiredness",
+        "finding": "\"About 3 kilos in two months without trying.\" Mild cramping low on the left. A bit more tired. No lumps. No anal pain.",
+        "row": "G3"
+      },
+      {
+        "trigger": "Asks about night-time symptoms or urgency",
+        "finding": "\"I've been getting up once most nights to go, and I have to rush.\"",
+        "row": "G4"
+      },
+      {
+        "trigger": "Asks about mouth, joints, eyes, skin, travel or antibiotics",
+        "finding": "No to all. No travel, no antibiotics, no ill contacts.",
+        "row": "G4"
+      },
+      {
+        "trigger": "Asks about family history",
+        "finding": "\"My dad had bowel cancer at 62. He's fine now.\" No one with colitis, polyps or womb cancer.",
+        "row": "G5"
+      },
+      {
+        "trigger": "Asks about medicines, smoking, alcohol",
+        "finding": "No regular medicines. Ibuprofen occasionally. Non-smoker. About 6 units a week.",
+        "row": "G5"
+      },
+      {
+        "trigger": "Asks what worries her",
+        "finding": "\"A teacher at my school got bowel cancer at 46.\"",
+        "row": "G6"
+      },
+      {
+        "trigger": "At 6 minutes",
+        "finding": "Say: \"Please stop there and summarise your history.\"",
+        "row": "G7"
+      }
+    ],
+    "push": [
+      {
+        "question": "What is your differential?",
+        "row": "G7",
+        "expect": "Colorectal cancer; inflammatory bowel disease (colitis); less likely infection."
+      },
+      {
+        "question": "What would you arrange, and how fast?",
+        "row": "G8",
+        "expect": "FIT at least 10: she meets NG12 criteria and stays on the suspected cancer pathway (28 days); DRE and colonoscopy with biopsies."
+      },
+      {
+        "question": "Why does night-time urgency matter?",
+        "row": "G4",
+        "expect": "Nocturnal symptoms point to organic disease such as colitis, not irritable bowel syndrome."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "Her GP asks: \"She's 44 with bleeding only and no other symptoms. Should I have done a FIT?\"",
+        "safeAnswer": "Under 50, rectal bleeding alone isn't a FIT criterion; it needs unexplained abdominal pain or weight loss. A change in bowel habit merits FIT at any adult age.",
+        "row": "G8"
+      },
+      {
+        "prompt": "Her FIT had been 4 µg Hb/g, but the symptoms continue.",
+        "safeAnswer": "A low FIT doesn't exclude disease: with ongoing symptoms, weight loss and her family history, refer anyway and assess the whole colon; flexible sigmoidoscopy is suggested only for persistent anorectal bleeding alone.",
+        "row": "G8"
+      },
+      {
+        "prompt": "You feel a hard mass on rectal examination.",
+        "safeAnswer": "Suspected rectal cancer; no FIT needed. Stays on the suspected cancer pathway: colonoscopy with biopsy, then staging.",
+        "row": "G8"
+      },
+      {
+        "prompt": "\"Do I really need the camera? Can't I just have tablets?\"",
+        "safeAnswer": "Tablets won't tell us the cause; the colonoscopy looks for both cancer and colitis. Explain sedation and what to expect.",
+        "row": "G6"
+      }
+    ]
+  }
+}

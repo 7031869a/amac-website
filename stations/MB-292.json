@@ -1,0 +1,591 @@
+{
+  "id": "MB-292",
+  "exam": "MRCS-B",
+  "title": "Examination for lymphadenopathy: a groin lump that isn't a hernia",
+  "type": "examination",
+  "header": {
+    "domain": "Applied Skills",
+    "contentArea": "Clinical and procedural skills",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "signalMinutes": 6,
+    "guidelineVersions": [
+      "NICE NG12 (last updated April 2026)",
+      "NICE NG52 (July 2016)",
+      "GMC intimate examinations and chaperones (2024)"
+    ],
+    "related": [
+      {
+        "id": "MB-215 Neck lump examination",
+        "why": "The cervical nodes, mouth and throat in detail"
+      },
+      {
+        "id": "MB-170 Groin hernia examination",
+        "why": "The cough impulse and pubic tubercle"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "General surgery outpatient clinic",
+    "role": "Core surgical trainee",
+    "scenario": "Mr Terence Rutherglen, 57, a bus driver, has noticed a painless lump in his right groin for six weeks. His GP thought it might be a hernia. A chaperone is available.",
+    "task": "Examine the lump and his lymph node areas. You will be stopped at 6 minutes to present your findings and answer questions."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Is the lump a node? If so: its drainage area, every other node group, then liver and spleen.",
+    "trap": "Calling a painless groin lump a hernia, or examining the groin alone.",
+    "firstMove": "\"I'd like to offer you a chaperone. Could you stand while I look at the lump?\""
+  },
+  "flow": [
+    "Consent and chaperone",
+    "The lump: node or hernia?",
+    "Drainage area",
+    "All node groups",
+    "Liver and spleen",
+    "At 6 minutes: present"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "professionalism",
+      "label": "Consent and chaperone",
+      "fail": "Examines the groin and genitals without offering a chaperone.",
+      "pass": "Explains the examination, gains consent, offers a chaperone, and exposes one area at a time.",
+      "high": "Asks about night sweats, weight loss and itch before starting, and records the chaperone's name.",
+      "source": "GMC"
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-skill",
+      "label": "The presenting lump",
+      "fail": "Calls it a hernia without checking a cough impulse or its relation to the inguinal ligament.",
+      "pass": "Describes site, size, shape, consistency, tenderness, mobility and skin; checks for a cough impulse and reducibility.",
+      "high": "Places it below the inguinal ligament and notes it is rubbery, which suggests lymphoma more than metastasis.",
+      "source": "BL"
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-skill",
+      "label": "Drainage area",
+      "fail": "Doesn't look at the leg, perineum or genitals.",
+      "pass": "Examines the skin of the leg and foot, including soles and nails, the external genitalia and perianal skin; offers a rectal examination.",
+      "high": "Explains the anal canal below the dentate line drains to the superficial inguinal nodes.",
+      "source": "GRAYS"
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-skill",
+      "label": "All node groups",
+      "fail": "Examines the groin only.",
+      "pass": "Examines cervical nodes from behind in a set order, supraclavicular, axillary with the arm supported, epitrochlear and both groins.",
+      "high": "Checks all axillary walls with the arm supported and relaxed, and compares sides.",
+      "source": "BL"
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-skill",
+      "label": "Liver and spleen",
+      "fail": "Doesn't feel for the liver or spleen.",
+      "pass": "Palpates for splenomegaly starting in the right iliac fossa, and for hepatomegaly and abdominal masses.",
+      "high": "Confirms the spleen: can't get above it, has a notch, moves with respiration, and is dull to percussion.",
+      "source": "BL"
+    },
+    {
+      "id": "G6",
+      "domain": "communication",
+      "label": "Presentation at the signal",
+      "fail": "Presents 'a groin hernia'.",
+      "pass": "Presents generalised lymphadenopathy with splenomegaly; most likely lymphoma.",
+      "high": "Leads with the pattern and B symptoms, then the differential: lymphoma, leukaemia, infection including HIV, and metastatic disease."
+    },
+    {
+      "id": "G7",
+      "domain": "clinical-knowledge",
+      "label": "Investigation",
+      "fail": "Plans fine-needle aspiration alone to diagnose lymphoma.",
+      "pass": "Full blood count and film, renal and liver function, LDH, HIV test; tissue diagnosis by excision biopsy, or core biopsy if excision is risky.",
+      "high": "Explains fine-needle aspiration can't show node architecture, so NICE advises excision biopsy first; then CT or PET-CT staging.",
+      "source": "NG52"
+    },
+    {
+      "id": "G8",
+      "domain": "professionalism",
+      "label": "Referral (safety-critical)",
+      "fail": "Reassures him because the lump is painless and plans review in three months.",
+      "pass": "Refers on the suspected cancer pathway to haematology.",
+      "high": "Notes NICE NG12 asks you to weigh fever, night sweats, weight loss and itch; safety-nets and explains the plan to him.",
+      "source": "NG12"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "candidate",
+        "text": "Could you drop your trousers? [No chaperone offered.]",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Feels the lump.] It's a hernia.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Doesn't look at the leg, perineum or genitals.] [Examines the groin only.]",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          },
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Doesn't examine the abdomen.]",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop. Your findings?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "A right groin hernia.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "It has no cough impulse. How would you get a diagnosis?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "A fine-needle aspirate. It's painless, so I'd see him in three months.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          },
+          {
+            "row": "G8",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "candidate",
+        "text": "Hello, I'm Dr Patel, one of the surgical trainees. Can I check your name and date of birth? I'd like to examine the lump, your lymph glands and your tummy. I'd like to offer you a chaperone. [Consent; cleans hands.]",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Standing, then lying.] A 3 cm firm, rubbery, mobile, non-tender lump in the right groin, normal skin. No cough impulse, and it doesn't reduce.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Skin of both legs and feet, soles and nails; external genitalia; perianal skin.] I'd offer a rectal examination.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[From behind: cervical groups in order, supraclavicular; axillae with the arm supported; epitrochlear; left groin.]",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Palpates from the right iliac fossa towards the left upper quadrant; liver.] The spleen tip is palpable.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop. Your findings?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Mr Rutherglen has generalised lymphadenopathy, right inguinal, right axillary and left cervical, with a palpable spleen. The most likely diagnosis is lymphoma.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you investigate?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Full blood count and film, renal and liver function, LDH and an HIV test, then an excision biopsy, or a core biopsy if excision is too risky.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "And referral?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "A suspected cancer pathway referral to haematology.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "candidate",
+        "text": "Hello, I'm Dr Patel. Can I check your name and date of birth? Any night sweats, weight loss or itching? [Yes: night sweats, weight loss.] A chaperone is here; [records her name].",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "It lies below the inguinal ligament, with no cough impulse, and it's rubbery rather than hard, which suggests lymphoma more than metastasis.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd also offer proctoscopy, because the anal canal below the dentate line drains to these nodes.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Right axilla, arm supported and relaxed; all walls.] A 2 cm node. [Compares with the left: none.]",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Spleen confirmed: can't get above it, notch, moves with respiration, dull.]",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop. Your findings?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Generalised lymphadenopathy with splenomegaly and B symptoms. Lymphoma first, then leukaemia, infection including HIV, and metastatic disease.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Can we do an FNA?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "It can't show the node's architecture, so NICE advises excision biopsy as the first procedure, then staging with CT or PET-CT.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd refer on the suspected cancer pathway; NICE asks us to weigh his night sweats and weight loss. I'd explain the plan and tell him to come back sooner if he feels unwell.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G2",
+      "move": "Calling any groin lump a hernia.",
+      "consequence": "A node goes to hernia repair instead of diagnosis."
+    },
+    {
+      "row": "G4",
+      "move": "Examining the groin only.",
+      "consequence": "Misses generalised lymphadenopathy, the key clue to lymphoma."
+    },
+    {
+      "row": "G3",
+      "move": "Not examining the drainage area.",
+      "consequence": "Misses a melanoma, anal or genital cancer."
+    },
+    {
+      "row": "G8",
+      "move": "Reassuring a painless node.",
+      "consequence": "Safety-critical: delays a cancer diagnosis."
+    },
+    {
+      "row": "G7",
+      "move": "Relying on fine-needle aspiration for suspected lymphoma.",
+      "consequence": "Can't classify lymphoma, so diagnosis is delayed."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You examined the groin only",
+      "line": "I'd now like to examine his other lymph node groups, and his liver and spleen."
+    },
+    {
+      "when": "Unsure if it's a node or a femoral hernia",
+      "line": "I'd arrange an ultrasound, and treat a tender irreducible lump as a hernia until proven otherwise."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Adults with unexplained lymphadenopathy: consider a suspected cancer pathway referral for lymphoma, weighing fever, night sweats, breathlessness, itch, weight loss.",
+      "source": "NG12"
+    },
+    {
+      "fact": "Suspected non-Hodgkin lymphoma: excision biopsy first; core biopsy when surgery is too risky. Lymphoma is an HIV indicator condition.",
+      "source": "NG52"
+    },
+    {
+      "fact": "Superficial inguinal nodes drain the leg, perineum, external genitalia, lower abdominal wall and anal canal below the dentate line.",
+      "source": "GRAYS"
+    },
+    {
+      "fact": "Describe a node: site, size, consistency, tenderness, fixity, skin, drainage area.",
+      "source": "BL"
+    },
+    {
+      "fact": "Tender, irreducible groin lump with vomiting: treat as an incarcerated hernia; ultrasound if unsure.",
+      "source": "HS18"
+    }
+  ],
+  "recall": {
+    "think": "Is this lymphoma, or cancer spread from the leg, perineum or anus?",
+    "say": "\"Generalised lymphadenopathy with splenomegaly: likely lymphoma.\"",
+    "do": [
+      "Node or hernia: cough impulse, inguinal ligament",
+      "Drainage area; every node group",
+      "Liver and spleen"
+    ],
+    "numbers": [
+      {
+        "value": "6 min",
+        "meaning": "signal to stop and present",
+        "source": "ICBSE"
+      }
+    ],
+    "trap": "A painless lump is not a reassuring lump.",
+    "finish": "Suspected cancer pathway referral; bloods including HIV; excision biopsy, then staging."
+  },
+  "sources": [
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Introduce yourself, confirm identity, obtain consent and clean hands at every station; 6-minute signal in examination stations"
+    },
+    {
+      "id": "GMC",
+      "name": "GMC: Intimate examinations and chaperones",
+      "version": "In effect from 30 January 2024; updated 13 December 2024",
+      "url": "https://www.gmc-uk.org/professional-standards/the-professional-standards/intimate-examinations-and-chaperones/intimate-examinations-and-chaperones",
+      "supports": "Explain the examination; consent and record it; offer a chaperone; record the chaperone discussion and identity"
+    },
+    {
+      "id": "BL",
+      "name": "Bailey & Love's Short Practice of Surgery (O'Connell, McCaskie, Sayers, eds)",
+      "version": "28th edition, 2023",
+      "url": "https://www.routledge.com/Bailey--Loves-Short-Practice-of-Surgery---28th-Edition/OConnell-McCaskie-Sayers/p/book/9780367548117",
+      "supports": "Describing a lump and lymph node; examination of cervical, axillary, epitrochlear and inguinal nodes; palpation of the spleen and liver; distinguishing a node from a groin hernia; consistency of lymphomatous (rubbery) and metastatic (hard) nodes"
+    },
+    {
+      "id": "GRAYS",
+      "name": "Gray's Anatomy for Students (Drake, Vogl, Mitchell)",
+      "version": "5th edition, 2023",
+      "url": "https://shop.elsevier.com/books/grays-anatomy-for-students/drake/978-0-323-93423-7",
+      "supports": "Lymphatic drainage to the superficial inguinal nodes: lower limb, perineum, external genitalia, lower anterior abdominal wall and anal canal below the pectinate line"
+    },
+    {
+      "id": "NG12",
+      "name": "NICE NG12: Suspected cancer: recognition and referral",
+      "version": "Published 23 June 2015; last updated 15 April 2026",
+      "url": "https://www.nice.org.uk/guidance/ng12",
+      "supports": "Consider a suspected cancer pathway referral for non-Hodgkin lymphoma in adults with unexplained lymphadenopathy or splenomegaly (1.10.6), and for Hodgkin lymphoma in adults with unexplained lymphadenopathy (1.10.8), taking into account fever, night sweats, shortness of breath, pruritus, weight loss (and for Hodgkin, alcohol-induced node pain); consider a very urgent full blood count for leukaemia in adults with generalised lymphadenopathy or hepatosplenomegaly (1.10.1)"
+    },
+    {
+      "id": "NG52",
+      "name": "NICE NG52: Non-Hodgkin's lymphoma: diagnosis and management",
+      "version": "Published 20 July 2016",
+      "url": "https://www.nice.org.uk/guidance/ng52",
+      "supports": "Malignant lymphoma is an HIV indicator condition; consider excision biopsy as the first diagnostic procedure (1.1.1); needle core biopsy when the risk of surgery outweighs the benefit (1.1.2); excision biopsy in preference to repeat core biopsy if non-diagnostic (1.1.3); FDG-PET-CT staging in defined groups (1.2)"
+    },
+    {
+      "id": "HS18",
+      "name": "HerniaSurge Group. International guidelines for groin hernia management. Hernia 2018;22(1):1–165",
+      "version": "Published January 2018",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5809582/",
+      "supports": "Ultrasound when the diagnosis of a groin lump is uncertain; femoral hernias carry a high risk of incarceration and strangulation"
+    }
+  ],
+  "media": [
+    {
+      "id": "IMG-292-1",
+      "task": "Optional: revise the lymph node groups and inguinal drainage",
+      "description": "Own diagram of cervical, supraclavicular, axillary, epitrochlear and inguinal node groups, with the drainage territory of the superficial inguinal nodes",
+      "required": false,
+      "status": "needed"
+    }
+  ],
+  "partner": {
+    "opening": "Please examine this gentleman's groin lump and his lymph nodes. A chaperone is available. I'll stop you at 6 minutes.",
+    "actorBrief": "You are Mr Terence Rutherglen, 57, a bus driver. A painless lump in your right groin for six weeks. For a month you've had drenching night sweats and your trousers are looser. No cough, no fevers abroad, no skin moles you've noticed. Accept a chaperone. If asked about a rectal examination, say you'd rather not today but understand why.",
+    "reveals": [
+      {
+        "trigger": "Examines the lump standing and lying",
+        "finding": "3 cm oval, rubbery, mobile, non-tender lump below the right inguinal ligament. Normal skin. No cough impulse; not reducible.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Examines the legs, feet, genitals and perianal skin",
+        "finding": "No skin lesions on legs or feet, including soles and nail beds. Genitalia and perianal skin normal.",
+        "row": "G3"
+      },
+      {
+        "trigger": "Examines the other node groups",
+        "finding": "1.5 cm rubbery left posterior triangle node; 2 cm right axillary node. Supraclavicular, epitrochlear and left inguinal nodes not palpable.",
+        "row": "G4"
+      },
+      {
+        "trigger": "Palpates the abdomen",
+        "finding": "Spleen palpable 3 cm below the left costal margin, notched, dull, moves with respiration. Liver not enlarged. No masses.",
+        "row": "G5"
+      },
+      {
+        "trigger": "At 6 minutes",
+        "finding": "Say: \"Please stop there and present your findings.\"",
+        "row": "G6"
+      }
+    ],
+    "push": [
+      {
+        "question": "How do you know it isn't a hernia?",
+        "row": "G2",
+        "expect": "Below the inguinal ligament, no cough impulse, irreducible, discrete, rubbery; ultrasound if unsure."
+      },
+      {
+        "question": "What drains to the inguinal nodes?",
+        "row": "G3",
+        "expect": "Leg, perineum, external genitalia, lower abdominal wall, anal canal below the dentate line."
+      },
+      {
+        "question": "How would you get a diagnosis?",
+        "row": "G7",
+        "expect": "Excision biopsy (core if too risky), not FNA alone; bloods including HIV test."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "You find a pigmented lesion under his right big toenail.",
+        "safeAnswer": "Possible subungual melanoma with nodal spread: suspected cancer referral to skin cancer services.",
+        "row": "G3"
+      },
+      {
+        "prompt": "The lump is tender and irreducible and he has been vomiting.",
+        "safeAnswer": "Treat as an incarcerated femoral hernia until proven otherwise: emergency surgical review.",
+        "row": "G2"
+      },
+      {
+        "prompt": "He asks if you can just give him steroids to shrink it.",
+        "safeAnswer": "No treatment before a tissue diagnosis; explain the biopsy plan.",
+        "row": "G7"
+      },
+      {
+        "prompt": "He says it's painless so he'd rather wait and see.",
+        "safeAnswer": "Explain that painless nodes with night sweats and weight loss need urgent assessment; refer and safety-net.",
+        "row": "G8"
+      }
+    ]
+  }
+}

@@ -1,0 +1,616 @@
+{
+  "id": "MB-295",
+  "exam": "MRCS-B",
+  "title": "Wrong-site surgery near miss: stopping the procedure and reporting",
+  "type": "communication",
+  "header": {
+    "domain": "Applied Skills",
+    "contentArea": "Communication with colleagues; patient safety in theatre",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "CPOC NatSSIPs 2 (January 2023)",
+      "WHO Surgical Safety Checklist (2009)",
+      "NHS England Never Events list 2018 (updated Feb 2021); Never Events data Apr 2025–Mar 2026",
+      "GMC Good medical practice (2024) and Raising and acting on concerns",
+      "GMC/NMC Openness and honesty when things go wrong (updated 13 Dec 2024)",
+      "NHS England LFPSE; PSIRF (Aug 2022)"
+    ],
+    "related": [
+      {
+        "id": "MB-221 A colleague who smells of alcohol before theatre",
+        "why": "Speaking up to a colleague when patients are at risk"
+      },
+      {
+        "id": "MB-218 Duty of candour: explaining a retained swab",
+        "why": "What follows when a Never Event does happen"
+      },
+      {
+        "id": "MB-294 Disclosing a prescribing error",
+        "why": "When the statutory duty of candour may apply"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Orthopaedic day-surgery theatre",
+    "role": "Core surgical trainee, assisting",
+    "scenario": "Mr Gareth Brannigan, 46, is listed for a left knee arthroscopy. He is under general anaesthetic, and the left leg is prepared and draped. The Time Out has just been completed. As the consultant, Mr Kessington, picks up the scalpel for the first portal, you glance at the consent form on the trolley: it says right knee arthroscopy.",
+    "task": "Speak to Mr Kessington and agree what happens next. The examiner will then ask you some questions."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Nothing has been cut yet. Stop it, check the documents, and don't start on either knee while any doubt remains.",
+    "trap": "Accepting \"I marked him myself\" and staying quiet.",
+    "firstMove": "\"Stop, please. Before you start, the consent form says right knee.\""
+  },
+  "flow": [
+    "Stop before incision",
+    "State the discrepancy",
+    "Check the sources",
+    "Hold the line",
+    "Decide: wake if doubt",
+    "Report and tell the patient",
+    "Examiner questions"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "professionalism",
+      "label": "Stopping before the procedure starts (safety-critical)",
+      "fail": "Stays silent, hints, or raises it only after the incision.",
+      "pass": "Says \"stop\" clearly, before any incision, so the whole team hears.",
+      "high": "Uses a direct safety phrase (\"I'm concerned this may be the wrong side; we need to stop\") and asks the team to pause.",
+      "source": "NATSSIP"
+    },
+    {
+      "id": "G2",
+      "domain": "communication",
+      "label": "Stating the discrepancy",
+      "fail": "Vague (\"are you sure?\") or accusatory.",
+      "pass": "Specific and factual: the consent form says right knee; the list and the mark say left.",
+      "high": "Non-confrontational and shared: \"Can we all check this together before we go on?\""
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-skill",
+      "label": "Checking the source documents",
+      "fail": "Relies on memory, the theatre list or the mark alone.",
+      "pass": "Checks the signed consent, clinic letter, imaging report and wristband, not the list alone.",
+      "high": "Asks what the mark was based on, and spots that a mark copied from a wrong list is not independent confirmation."
+    },
+    {
+      "id": "G4",
+      "domain": "professionalism",
+      "label": "Holding the line under pressure",
+      "fail": "Backs down when the consultant says he marked it himself.",
+      "pass": "Politely repeats that the procedure should not begin until the discrepancy is resolved.",
+      "high": "Suggests advice from a senior clinician not involved in the case, and offers a way forward rather than an argument.",
+      "source": "NATSSIP"
+    },
+    {
+      "id": "G5",
+      "domain": "professionalism",
+      "label": "Decision when doubt remains",
+      "fail": "Agrees to operate on either knee while the sources still conflict.",
+      "pass": "As the patient said left at marking but the documents say right, no operation until he is woken and it is confirmed with him.",
+      "high": "Explains the principle: if any doubt remains, the patient is woken, seniors explain, and the case is rebooked with a fresh consent.",
+      "source": "NATSSIP"
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-knowledge",
+      "label": "Reporting and classification",
+      "fail": "Doesn't report it because no harm occurred, or calls it a Never Event.",
+      "pass": "Reports a near miss on the trust's system (feeds LFPSE) today; team debrief.",
+      "high": "Explains it isn't a Never Event: the procedure hadn't started (anatomy not yet permanently altered). The 2018 list still applies while NHS England explores a new approach.",
+      "source": "NEVER"
+    },
+    {
+      "id": "G7",
+      "domain": "clinical-knowledge",
+      "label": "NatSSIPs 2 and the WHO checklist",
+      "fail": "Cannot describe the checklist or what NatSSIPs are.",
+      "pass": "WHO checklist: Sign In, Time Out, Sign Out. NatSSIPs 2 (CPOC, 2023): national standards that local standards (LocSSIPs) build on.",
+      "high": "Names the sequential steps, from consent and site marking to debrief, and says where this case slipped: marking and Time Out.",
+      "source": "NATSSIP"
+    },
+    {
+      "id": "G8",
+      "domain": "communication",
+      "label": "Honesty with the patient",
+      "fail": "Suggests not telling him, since nothing was done.",
+      "pass": "Senior clinicians explain honestly why he woke without an operation, apologise, and complete the professional duty of candour.",
+      "high": "Explains why he must be told: he'll see the prepared left knee, and hiding a near miss he'd discover damages trust.",
+      "source": "CANDOUR"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "Mr Kessington: \"Right, knife please.\""
+      },
+      {
+        "speaker": "candidate",
+        "text": "Um, the consent form looks a bit different, but I'm sure it's fine.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          },
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Mr Kessington: \"I marked him myself this morning. The list says left.\""
+      },
+      {
+        "speaker": "candidate",
+        "text": "OK, sorry. The list and the mark both say left, so let's go ahead.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          },
+          {
+            "row": "G4",
+            "band": "fail"
+          },
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What would you do afterwards?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Nothing happened, so there's nothing to report. It isn't worth worrying him about it either.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          },
+          {
+            "row": "G8",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What does the WHO checklist involve?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "It's a form the nurses fill in. I'm not sure about NatSSIPs.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "candidate",
+        "text": "Stop, please. Before you start: the consent form says right knee arthroscopy.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Mr Kessington: \"The list says left, and I marked him myself this morning.\""
+      },
+      {
+        "speaker": "candidate",
+        "text": "The consent form says right, but the list and the mark say left. Can we check the clinic letter, the MRI report and his wristband?",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          },
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Scrub nurse: \"Clinic letter and MRI both say right medial meniscal tear.\""
+      },
+      {
+        "speaker": "examiner",
+        "text": "Mr Kessington: \"He told me left when I marked him. We're running late.\""
+      },
+      {
+        "speaker": "candidate",
+        "text": "Then we shouldn't start until it's resolved. He said left, but his consent and imaging say right.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "As the sources conflict, I don't think we can operate on either knee. We should wake him and confirm with him.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What next?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd report it as a near miss on the trust's incident system, which feeds LFPSE, and we'd debrief as a team. Mr Kessington should explain to Mr Brannigan when he's awake and apologise: the professional duty of candour applies to a near miss like this.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          },
+          {
+            "row": "G8",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What are NatSSIPs?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "NatSSIPs 2, from the Centre for Perioperative Care in 2023, are national standards for invasive procedures. Trusts build local standards, LocSSIPs, on them. They include the WHO checklist: Sign In, Time Out and Sign Out.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "candidate",
+        "text": "Stop, please. I'm concerned this may be the wrong side. Can everyone pause for a moment?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "The consent form says right knee. Can we all check this together before we go on? What was the mark based on?",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          },
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Mr Kessington: \"The list said left, and he agreed when I marked him.\""
+      },
+      {
+        "speaker": "candidate",
+        "text": "So the mark came from the list, which makes it not independent. His clinic letter and MRI say right.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Mr Kessington: \"We're running late.\""
+      },
+      {
+        "speaker": "candidate",
+        "text": "I understand. Could we ask the on-call consultant, who isn't involved, for a view? I'd rather lose the time than risk the wrong knee.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "If any doubt remains, he should be woken, you'd explain to him, and he'd be rebooked with a fresh consent and marking.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "He'll notice his left knee was prepared, so he needs an honest explanation and an apology. Keeping quiet would damage his trust.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Is this a Never Event?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "No. Wrong-site surgery counts from the start of the procedure, when anatomy is first permanently altered, and we stopped before the incision. It's a near miss, reported on LFPSE. The 2018 list still applies while NHS England explores a new approach.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Where did the safety steps fail?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "NatSSIPs 2 has eight sequential steps: consent and site marking, team brief, Sign In, Time Out, implant check, reconciliation, Sign Out and debrief. Here the marking was taken from the list, and the Time Out didn't compare the consent form with the site.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G1",
+      "move": "Keeping quiet because the consultant is senior.",
+      "consequence": "The last chance to prevent wrong-site surgery is lost; every team member has a duty to raise safety concerns."
+    },
+    {
+      "row": "G5",
+      "move": "Operating on the right knee on the documents alone while the patient said left.",
+      "consequence": "Doubt remains; the patient must be woken and the site confirmed before any operation."
+    },
+    {
+      "row": "G6",
+      "move": "Not reporting because no harm occurred.",
+      "consequence": "Near misses must be reported; this one shows the marking and Time Out barriers failed."
+    },
+    {
+      "row": "G8",
+      "move": "Saying nothing to the patient.",
+      "consequence": "He will know something happened; concealment damages trust."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "The consultant dismisses you",
+      "line": "I may be wrong, but I'd like us to check the consent and imaging before we start."
+    },
+    {
+      "when": "Asked whether it's a Never Event",
+      "line": "No: the procedure hadn't started. It's a near miss, and it still needs reporting."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Discrepancy between consent and planned procedure: stop; seek senior advice from someone not involved; if any doubt remains, wake the patient; senior clinicians then explain and complete the duty of candour.",
+      "source": "NATSSIP"
+    },
+    {
+      "fact": "NatSSIPs 2 sequential steps: consent and site marking, team brief, Sign In, Time Out, implant, reconciliation, Sign Out, debrief.",
+      "source": "NATSSIP"
+    },
+    {
+      "fact": "WHO checklist: Sign In before induction, Time Out before incision, Sign Out before leaving theatre.",
+      "source": "WHO"
+    },
+    {
+      "fact": "Wrong-site surgery is a Never Event only once the procedure has started: when anatomy begins to be permanently altered.",
+      "source": "NEVER"
+    },
+    {
+      "fact": "Report adverse incidents and near misses through local procedures (para 11).",
+      "source": "GMCRAC"
+    },
+    {
+      "fact": "The 2018 Never Events list still applies while NHS England explores a new approach.",
+      "source": "NEP"
+    }
+  ],
+  "recall": {
+    "think": "One cut away from a Never Event.",
+    "say": "\"Stop, please. The consent form says right knee.\"",
+    "do": [
+      "Stop before incision",
+      "Check consent, letter, imaging, wristband",
+      "Doubt remains: wake him and confirm"
+    ],
+    "numbers": [
+      {
+        "value": "3",
+        "meaning": "WHO checklist phases: Sign In, Time Out, Sign Out",
+        "source": "WHO"
+      },
+      {
+        "value": "8",
+        "meaning": "NatSSIPs 2 sequential steps, consent to debrief",
+        "source": "NATSSIP"
+      }
+    ],
+    "trap": "A mark copied from a wrong list confirms nothing.",
+    "finish": "Report the near miss, debrief, explain and apologise to him, rebook."
+  },
+  "sources": [
+    {
+      "id": "NATSSIP",
+      "name": "Centre for Perioperative Care: National Safety Standards for Invasive Procedures 2 (NatSSIPs 2)",
+      "version": "January 2023",
+      "url": "https://cpoc.org.uk/guidelines-resources-guidelines/national-safety-standards-invasive-procedures-natssips",
+      "supports": "Organisational and eight sequential standards (consent and site marking, team brief, Sign In, Time Out, implant, reconciliation, Sign Out, debrief); Time Out confirms concordance of identity, consent, imaging and site; concerns raised at Time Out must be resolved before starting; consent discrepancy: stop, seek senior advice from staff not directly involved, wake the patient if any doubt, followed by explanation by senior clinicians and completion of the duty of candour (Time Out standard); basis for enhanced local standards"
+    },
+    {
+      "id": "WHO",
+      "name": "World Health Organization: Surgical Safety Checklist",
+      "version": "Revised 1/2009",
+      "url": "https://www.who.int/docs/default-source/patient-safety/9789241598590-eng-checklist.pdf",
+      "supports": "Three phases: Sign In (before induction), Time Out (before skin incision), Sign Out (before the patient leaves theatre)"
+    },
+    {
+      "id": "NEVER",
+      "name": "NHS England: Never Events list 2018",
+      "version": "Published February 2018; updated February 2021",
+      "url": "https://www.england.nhs.uk/wp-content/uploads/2020/11/2018-Never-Events-List-updated-February-2021.pdf",
+      "supports": "Wrong-site surgery definition; the start of an invasive procedure is when the patient's anatomy begins to be permanently altered, e.g. the first incision"
+    },
+    {
+      "id": "NEP",
+      "name": "NHS England: Provisional publication of Never Events reported as occurring between April 2025 and March 2026",
+      "version": "Data extracted 21 April 2026",
+      "url": "https://www.england.nhs.uk/long-read/provisional-publication-of-never-events-reported-as-occurring-between-april-2025-and-march-2026/",
+      "supports": "Incidents still assessed against the 2018 list; consultation outcome (16 September 2025) begins a discovery phase to explore a new approach to the framework"
+    },
+    {
+      "id": "GMCRAC",
+      "name": "GMC: Raising and acting on concerns about patient safety (Part 1: Raising a concern)",
+      "version": "In effect 12 March 2012; updated 13 December 2024",
+      "url": "https://www.gmc-uk.org/professional-standards/the-professional-standards/raising-and-acting-on-concerns/part-1-raising-a-concern",
+      "supports": "Duty to raise concerns (para 7); follow local procedures for reporting incidents and near misses (para 11)"
+    },
+    {
+      "id": "GMP",
+      "name": "GMC: Good medical practice 2024 (Domain 3: Colleagues, culture and safety)",
+      "version": "In effect 30 January 2024; updated 13 December 2024",
+      "url": "https://www.gmc-uk.org/professional-standards/the-professional-standards/good-medical-practice/domain-3-colleagues-culture-and-safety",
+      "supports": "Act promptly if patient safety is or may be seriously compromised (para 75)"
+    },
+    {
+      "id": "CANDOUR",
+      "name": "GMC and NMC: Openness and honesty when things go wrong: the professional duty of candour",
+      "version": "In effect 29 June 2015; updated 13 December 2024",
+      "url": "https://www.gmc-uk.org/professional-standards/the-professional-standards/candour---openness-and-honesty-when-things-go-wrong",
+      "supports": "Near misses: use professional judgement; tell the patient if not telling them could damage trust (paras 21–22); report near misses (paras 23–25, LFPSE in England)"
+    },
+    {
+      "id": "LFPSE",
+      "name": "NHS England: Learn from patient safety events (LFPSE) service",
+      "version": "National reporting system replacing NRLS (decommissioned 30 June 2024)",
+      "url": "https://www.england.nhs.uk/patient-safety/patient-safety-insight/learning-from-patient-safety-events/learn-from-patient-safety-events-service/",
+      "supports": "Records patient safety events with and without harm, including near misses"
+    },
+    {
+      "id": "PSIRF",
+      "name": "NHS England: Patient Safety Incident Response Framework (PSIRF)",
+      "version": "Version 1, August 2022",
+      "url": "https://www.england.nhs.uk/patient-safety/patient-safety-insight/incident-response-framework/",
+      "supports": "Proportionate, system-focused learning responses such as team debriefs"
+    },
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format: 9 minutes with 1 minute's reading; examiner-led questioning in applied knowledge stations"
+    }
+  ],
+  "media": [
+    {
+      "id": "consent-and-list",
+      "task": "Compare the consent form with the theatre list",
+      "description": "Consent form reading 'right knee arthroscopy' beside a theatre list entry reading 'left knee arthroscopy' for the same patient",
+      "required": false,
+      "status": "needed"
+    }
+  ],
+  "partner": {
+    "opening": "The patient is anaesthetised and draped. Mr Kessington, the consultant, is holding the scalpel over the left knee. Please begin.",
+    "actorBrief": "You play Mr Kessington, a consultant orthopaedic surgeon, 20 minutes behind on a busy list, competent and normally reasonable but irritated by delays. Opening line: \"Right, knife please.\" First response to any concern: \"I marked him myself this morning. The list says left.\" If the candidate only hints (\"are you sure?\"), say \"Yes\" and carry on. If they clearly say stop and name the consent form, pause and look. If they ask to check the documents, let the scrub nurse (examiner) reveal the clinic letter and MRI. Push once: \"We're running late. He told me left when I marked him.\" (The truth, which you realise only if asked what the mark was based on: you read the side off the list and asked him to confirm; he was anxious and nodded.) If the candidate holds the line politely, agree to stop and wake him. If they suggest proceeding on the right knee, say \"Fine, re-prep the right,\" and see whether they object.",
+    "reveals": [
+      {
+        "trigger": "Asks to check the clinic letter and imaging",
+        "finding": "Scrub nurse: \"Clinic letter and MRI report both say right medial meniscal tear.\"",
+        "row": "G3"
+      },
+      {
+        "trigger": "Asks what the mark was based on",
+        "finding": "Mr Kessington: \"I read the side off the list and asked him to confirm. He was nervous and nodded.\"",
+        "row": "G3"
+      },
+      {
+        "trigger": "Checks the wristband",
+        "finding": "Correct patient: name, date of birth and hospital number match the consent form.",
+        "row": "G3"
+      },
+      {
+        "trigger": "Suggests a senior opinion",
+        "finding": "Mr Kessington: \"Fine. Ask the on-call consultant to come in.\"",
+        "row": "G4"
+      }
+    ],
+    "push": [
+      {
+        "question": "Is this a Never Event?",
+        "row": "G6",
+        "expect": "No: the procedure hadn't started; a near miss, reported on the trust's system (LFPSE); debrief."
+      },
+      {
+        "question": "What are NatSSIPs, and how do they relate to the WHO checklist?",
+        "row": "G7",
+        "expect": "NatSSIPs 2 (CPOC 2023): national standards, locally implemented as LocSSIPs; include the WHO checklist's Sign In, Time Out and Sign Out."
+      },
+      {
+        "question": "Would you tell the patient?",
+        "row": "G8",
+        "expect": "Yes: senior clinicians explain honestly and apologise (professional duty of candour); he'll notice the prepared left knee. Statutory notification is unlikely with no harm."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "Mr Kessington: \"The documents all say right. Re-prep the right knee and let's crack on.\"",
+        "safeAnswer": "Not while the patient's own account conflicts: wake him and confirm, then rebook with fresh consent and marking.",
+        "row": "G5"
+      },
+      {
+        "prompt": "\"Who's going to tell him?\"",
+        "safeAnswer": "The consultant, as the responsible senior clinician, with the candidate offering to be present; the duty of candour is completed and recorded.",
+        "row": "G8"
+      },
+      {
+        "prompt": "\"You'll make us look bad on the incident system.\"",
+        "safeAnswer": "Reporting is for learning, not blame; near misses show where barriers failed.",
+        "row": "G6"
+      }
+    ]
+  }
+}

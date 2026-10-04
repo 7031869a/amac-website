@@ -1,0 +1,509 @@
+{
+  "id": "MB-150",
+  "exam": "MRCS-B",
+  "title": "Pathology: testicular tumours",
+  "type": "data-interpretation",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "Pathology (ultrasound report and tumour markers)",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "EAU Guidelines on Testicular Cancer (2026)",
+      "Bailey & Love, 28th ed. (2023)"
+    ],
+    "related": []
+  },
+  "brief": {
+    "setting": "Pathology station",
+    "role": "Core surgical trainee",
+    "scenario": "A 32-year-old man has a painless lump in his right testis. He is otherwise well. The examiner will show you his ultrasound report and his tumour marker results.",
+    "task": "Interpret the results, and answer questions on the classification, pathology and management of testicular tumours."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Read the markers first. They tell you the tumour family before the histology does.",
+    "trap": "Calling it a seminoma when the AFP is raised.",
+    "firstMove": "\"An intratesticular mass with a raised AFP is a non-seminomatous germ cell tumour until proven otherwise.\""
+  },
+  "flow": [
+    "Read the ultrasound and markers",
+    "Classification",
+    "Histology",
+    "Markers before and after surgery",
+    "Orchidectomy and staging",
+    "Treatment and fertility"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-skill",
+      "label": "Reads the data",
+      "fail": "Calls it a seminoma, or ignores the AFP.",
+      "pass": "Intratesticular mass with raised AFP and hCG: germ cell tumour with a non-seminomatous component.",
+      "high": "States a significantly raised AFP means non-seminomatous management even if the histology reads seminoma.",
+      "source": "EAU"
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-knowledge",
+      "label": "Classification",
+      "fail": "Says all testicular tumours are germ cell tumours.",
+      "pass": "Germ cell (seminoma and non-seminoma), sex cord-stromal (Leydig, Sertoli), lymphoma, metastases.",
+      "high": "Lists non-seminoma types: embryonal carcinoma, yolk sac tumour, choriocarcinoma, teratoma, mixed; lymphoma in older men."
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "Histology",
+      "fail": "Cannot describe the histology of any germ cell tumour.",
+      "pass": "Seminoma: sheets of uniform cells with clear cytoplasm, fibrous septa with lymphocytes, sometimes granulomas.",
+      "high": "Yolk sac tumour: Schiller-Duval bodies. Choriocarcinoma: syncytiotrophoblast and haemorrhage. Teratoma: tissues from several germ layers."
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-knowledge",
+      "label": "Tumour markers",
+      "fail": "Cannot say which cells produce AFP or hCG.",
+      "pass": "AFP from yolk sac elements, hCG from syncytiotrophoblast, LDH reflects tumour bulk. Measure before orchidectomy and repeat after.",
+      "high": "Half-lives: AFP 5–7 days, hCG 1–3 days; a slow fall or a rise suggests metastases; hCG can be raised in pure seminoma.",
+      "source": "EAU"
+    },
+    {
+      "id": "G5",
+      "domain": "professionalism",
+      "label": "Orchidectomy and staging",
+      "fail": "Plans a scrotal approach or a biopsy through the scrotum.",
+      "pass": "Radical inguinal orchidectomy, dividing the cord at the internal ring; contrast CT of chest, abdomen and pelvis.",
+      "high": "Explains why: the testis drains to para-aortic nodes, and a scrotal incision opens a new lymphatic route to the groin.",
+      "source": "EAU"
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-knowledge",
+      "label": "Treatment and fertility",
+      "fail": "Does not mention fertility.",
+      "pass": "Discusses sperm banking before treatment; treatment set by histology, stage and prognostic group.",
+      "high": "Stage I seminoma: surveillance preferred, or one dose of carboplatin. Stage I non-seminoma: surveillance or risk-adapted one course of BEP.",
+      "source": "EAU"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "Here are his ultrasound and marker results."
+      },
+      {
+        "speaker": "candidate",
+        "text": "A solid mass in a young man. It's most likely a seminoma.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How are testicular tumours classified?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "They're all germ cell tumours.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Describe the histology of a seminoma."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'm not sure.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Where does AFP come from?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "From the seminoma cells.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you get tissue?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "A biopsy through the scrotum first, then decide.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Anything to discuss before treatment?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Just the operation risks.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "examiner",
+        "text": "Here are his ultrasound and marker results."
+      },
+      {
+        "speaker": "candidate",
+        "text": "There's an intratesticular mass with raised AFP and hCG. That's a germ cell tumour with a non-seminomatous component.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How are testicular tumours classified?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Germ cell tumours, divided into seminoma and non-seminoma. Then sex cord-stromal tumours such as Leydig and Sertoli cell tumours, lymphoma, and metastases.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Describe a seminoma."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Sheets of uniform cells with clear cytoplasm, divided by fibrous septa containing lymphocytes. There can be granulomas.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Tell me about the markers."
+      },
+      {
+        "speaker": "candidate",
+        "text": "AFP comes from yolk sac elements and hCG from syncytiotrophoblast. LDH reflects tumour bulk. They're measured before orchidectomy and repeated afterwards.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What operation?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "A radical inguinal orchidectomy, dividing the cord at the internal ring. Then a contrast CT of the chest, abdomen and pelvis to stage.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What else would you discuss?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Sperm banking before treatment. Further treatment depends on the histology, stage and prognostic group.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "examiner",
+        "text": "What if the histology comes back as pure seminoma?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "With a significantly raised AFP I'd still manage him as a non-seminomatous tumour. Pure seminoma doesn't make significant AFP.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Non-seminoma includes embryonal carcinoma, yolk sac tumour, choriocarcinoma, teratoma and mixed tumours. In an older man, lymphoma becomes more likely.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "And the non-seminoma histology?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Yolk sac tumour has Schiller-Duval bodies. Choriocarcinoma has syncytiotrophoblast and haemorrhage. Teratoma contains tissues from several germ layers.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How do you use the repeat markers?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "AFP has a half-life of 5 to 7 days and hCG 1 to 3 days. If they fall slowly or rise, that suggests metastatic disease. hCG can be raised in pure seminoma too.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Why inguinal and not scrotal?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "The testis drains to the para-aortic nodes. A scrotal incision opens a new lymphatic route to the inguinal nodes.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "And for stage I disease?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Stage I seminoma: surveillance is preferred, or a single dose of carboplatin. Stage I non-seminoma: surveillance, or one course of BEP depending on lymphovascular invasion.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G1",
+      "move": "Calling it a seminoma despite a raised AFP.",
+      "consequence": "Undertreats a non-seminomatous tumour."
+    },
+    {
+      "row": "G5",
+      "move": "Proposing a scrotal approach.",
+      "consequence": "Opens a second lymphatic route and complicates later treatment."
+    },
+    {
+      "row": "G6",
+      "move": "Forgetting sperm banking.",
+      "consequence": "Misses fertility preservation before treatment that may affect it."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You forget the classification",
+      "line": "Germ cell or not; if germ cell, seminoma or not. The markers help decide."
+    },
+    {
+      "when": "Asked about the operation",
+      "line": "Always inguinal, never scrotal."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Measure AFP, hCG and LDH before orchidectomy and repeat after.",
+      "source": "EAU"
+    },
+    {
+      "fact": "Half-lives: AFP 5–7 days, hCG 1–3 days.",
+      "source": "EAU"
+    },
+    {
+      "fact": "Significant AFP rise in seminoma suggests a non-seminomatous component; hCG can rise in pure seminoma.",
+      "source": "EAU"
+    },
+    {
+      "fact": "Orchidectomy dividing the cord at the internal inguinal ring is standard; discuss sperm banking before treatment.",
+      "source": "EAU"
+    },
+    {
+      "fact": "Stage I seminoma: surveillance preferred, or one dose of carboplatin; routine adjuvant radiotherapy not recommended.",
+      "source": "EAU"
+    }
+  ],
+  "recall": {
+    "think": "Which markers are up, and what does that make the tumour?",
+    "say": "\"Raised AFP means a non-seminomatous component.\"",
+    "do": [
+      "Read the markers",
+      "Inguinal orchidectomy",
+      "Stage with CT; discuss sperm banking"
+    ],
+    "numbers": [
+      {
+        "value": "5–7 days",
+        "meaning": "AFP half-life",
+        "source": "EAU"
+      },
+      {
+        "value": "1–3 days",
+        "meaning": "hCG half-life",
+        "source": "EAU"
+      }
+    ],
+    "trap": "A seminoma report does not override a raised AFP.",
+    "finish": "Treatment by histology, stage and prognostic group."
+  },
+  "sources": [
+    {
+      "id": "EAU",
+      "name": "European Association of Urology Guidelines on Testicular Cancer",
+      "version": "2026",
+      "url": "https://uroweb.org/guidelines/testicular-cancer",
+      "supports": "Markers before and after orchidectomy, AFP and hCG half-lives, AFP in seminoma, hCG in pure seminoma, inguinal orchidectomy, CT staging, sperm banking, stage I seminoma and non-seminoma management"
+    },
+    {
+      "id": "BL",
+      "name": "Bailey & Love's Short Practice of Surgery (O'Connell, McCaskie, Sayers, eds)",
+      "version": "28th edition, 2023",
+      "url": "https://www.routledge.com/Bailey--Loves-Short-Practice-of-Surgery---28th-Edition/OConnell-McCaskie-Sayers/p/book/9780367548117",
+      "supports": "Classification and histology of testicular tumours, lymphatic drainage, lymphoma in older men"
+    },
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format: 9 minutes with 1 minute's reading; examiner-led questioning in applied knowledge stations"
+    }
+  ],
+  "media": [
+    {
+      "id": "testis-histology",
+      "task": "Describe the histology and name the tumour",
+      "description": "Seminoma (clear cells with lymphocytic septa) and yolk sac tumour (Schiller-Duval body) at medium power",
+      "required": false,
+      "status": "needed"
+    }
+  ],
+  "partner": {
+    "opening": "Here is his ultrasound report and his tumour markers. What do they show?",
+    "reveals": [
+      {
+        "trigger": "Start",
+        "finding": "Ultrasound: 2.5 cm hypoechoic, heterogeneous intratesticular mass in the right testis; left testis normal.",
+        "row": "G1"
+      },
+      {
+        "trigger": "With the ultrasound",
+        "finding": "Markers before surgery: AFP 850 kU/L (normal under 10), hCG 120 IU/L (normal under 5), LDH 1.4 times the upper limit of normal.",
+        "row": "G1"
+      },
+      {
+        "trigger": "Candidate asks about staging",
+        "finding": "CT chest, abdomen and pelvis: no enlarged nodes, no metastases.",
+        "row": "G5"
+      }
+    ],
+    "push": [
+      {
+        "question": "How are testicular tumours classified?",
+        "row": "G2",
+        "expect": "Germ cell (seminoma, non-seminoma), sex cord-stromal, lymphoma, metastases."
+      },
+      {
+        "question": "Where do AFP and hCG come from?",
+        "row": "G4",
+        "expect": "Yolk sac elements; syncytiotrophoblast. Measure before and after orchidectomy."
+      },
+      {
+        "question": "Why is the operation inguinal?",
+        "row": "G5",
+        "expect": "Para-aortic drainage; a scrotal incision adds a groin route."
+      },
+      {
+        "question": "What would you discuss before treatment?",
+        "row": "G6",
+        "expect": "Sperm banking; plan by histology, stage and prognostic group."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "Histology says pure seminoma. Do you believe it?",
+        "safeAnswer": "Not with a significantly raised AFP. Manage as non-seminomatous.",
+        "row": "G1"
+      },
+      {
+        "prompt": "After orchidectomy, his markers are normal. Is he cured?",
+        "safeAnswer": "Not necessarily. Normal markers do not exclude metastases; staging CT and follow-up decide.",
+        "row": "G4"
+      },
+      {
+        "prompt": "A 70-year-old has a testicular mass. What changes?",
+        "safeAnswer": "Lymphoma becomes more likely than a germ cell tumour.",
+        "row": "G2"
+      }
+    ]
+  }
+}

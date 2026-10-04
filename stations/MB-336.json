@@ -1,0 +1,443 @@
+{
+  "id": "MB-336",
+  "exam": "MRCS-B",
+  "title": "Flexor sheath infection",
+  "type": "applied-knowledge",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "Hand surgery: flexor sheath infection",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "BSSH Trauma Standards: Flexor Sheath Infection (British Society for Surgery of the Hand)"
+    ],
+    "related": [
+      {
+        "id": "MB-337",
+        "why": "Flexor tendon injury in the hand: shares the flexor sheath anatomy and urgent hand-surgery referral pathway"
+      },
+      {
+        "id": "MB-151",
+        "why": "Necrotising soft tissue infection: another hand/limb infection where delay causes rapid tissue loss"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Emergency department",
+    "role": "Surgical trainee",
+    "scenario": "Ms Laura Tavistock, 42, has an increasingly painful, swollen index finger after a small puncture wound.",
+    "task": "Assess the likely diagnosis and explain your management."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Diagnose from Kanavel's signs, assess neurovascular status, then first aid and urgent hand surgery referral.",
+    "trap": "Waiting for imaging before referring, when the clinical picture already strongly suggests flexor sheath infection.",
+    "firstMove": "\"This is flexor sheath infection, or pyogenic flexor tenosynovitis, until proven otherwise.\""
+  },
+  "flow": [
+    "Recognise the diagnosis from Kanavel's signs",
+    "Assess neurovascular status and systemic infection",
+    "Elevate, splint and start empirical antibiotics",
+    "Urgent hand-surgery referral",
+    "Decide between antibiotics alone and surgical washout"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-knowledge",
+      "label": "Diagnosis from Kanavel's signs",
+      "fail": "Cannot name the diagnosis, or does not look for Kanavel's signs.",
+      "pass": "Diagnoses flexor sheath infection (pyogenic flexor tenosynovitis), looking for Kanavel's signs: fusiform swelling, tenderness along the flexor sheath, pain with passive extension and a flexed resting posture.",
+      "high": "States the diagnosis is assumed until proven otherwise, so management is not delayed while waiting for confirmation."
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-skill",
+      "label": "Neurovascular and systemic assessment",
+      "fail": "Does not assess neurovascular status or look for signs of systemic infection.",
+      "pass": "Assesses neurovascular status and looks for systemic infection.",
+      "high": "Specifically asks about bites, punctures, diabetes and immunosuppression, since these change organism risk and threshold for escalation."
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-skill",
+      "label": "First-aid management",
+      "fail": "Gives oral antibiotics and arranges review next week.",
+      "pass": "Elevates and immobilises the hand appropriately, obtains relevant microbiology where appropriate, and starts empirical IV antibiotics according to local protocol.",
+      "high": "Splints the hand in a position of safe immobilisation as part of first aid rather than leaving it in whatever position is comfortable.",
+      "source": "BSSH"
+    },
+    {
+      "id": "G4",
+      "domain": "professionalism",
+      "label": "Urgent hand-surgery referral (safety-critical)",
+      "fail": "Waits for an MRI before referring, or incises the abscess in the emergency department.",
+      "pass": "Refers urgently to the hand surgery team without waiting for imaging, since the clinical picture strongly suggests flexor sheath infection.",
+      "high": "Explains that delay risks adhesions, necrosis and loss of function, so referral is not deferred pending further tests."
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-knowledge",
+      "label": "Antibiotics alone versus surgical washout",
+      "fail": "States that all cases need immediate surgery regardless of presentation, or that antibiotics alone are always sufficient.",
+      "pass": "Recognises that most patients require urgent surgical washout, and that a selected very early, mild presentation may be managed initially with IV antibiotics under close specialist supervision.",
+      "high": "States this is a difficult decision requiring senior surgical review rather than one a junior clinician makes independently.",
+      "source": "BSSH"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "What is the diagnosis?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'm not sure — maybe just an infected cut.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What else would you check?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Nothing else, the finger looks the main problem.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you manage it initially?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Give oral antibiotics and review next week.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Would you refer now?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd wait for an MRI first before deciding.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Does everyone need surgery?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "No, I'd just give antibiotics regardless of how it looks.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "examiner",
+        "text": "What is the diagnosis?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "This is flexor sheath infection, or pyogenic flexor tenosynovitis, until proven otherwise, based on Kanavel's signs: fusiform swelling, tenderness along the sheath, pain on passive extension and a flexed resting posture.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What else would you check?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Neurovascular status and signs of systemic infection.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you manage it initially?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Elevate and immobilise the hand, take relevant microbiology, and start empirical IV antibiotics according to local protocol.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Would you refer now?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Yes, urgently to hand surgery — I wouldn't wait for imaging when the clinical picture is this clear.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Does everyone need surgery?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Most patients require urgent surgical washout, though a selected very early, mild case may have a trial of IV antibiotics under close specialist supervision.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "examiner",
+        "text": "What is the diagnosis?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Flexor sheath infection until proven otherwise — Kanavel's signs of fusiform swelling, sheath tenderness, pain on passive extension and a flexed posture — and I'd manage on that assumption rather than delay for confirmation.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What else would you check?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Neurovascular status and systemic infection, and specifically ask about bites, punctures, diabetes and immunosuppression, since these change the likely organisms and how quickly I'd escalate.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you manage it initially?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Elevate and splint in a position of safe immobilisation, take microbiology where appropriate, and start empirical IV antibiotics per local protocol, rather than leaving the hand in whatever position is comfortable.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Would you refer now?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Yes, urgently — delay risks adhesions, necrosis and loss of function, so I wouldn't defer referral pending further tests.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Does everyone need surgery?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Most need urgent washout, but a very early, mild presentation might get a trial of IV antibiotics — that's a difficult decision I'd want senior surgical input on, not one I'd make alone.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G3",
+      "move": "Giving oral antibiotics and arranging review next week.",
+      "consequence": "Undertreats a sheath infection that can progress rapidly to necrosis and adhesions."
+    },
+    {
+      "row": "G4",
+      "move": "Waiting for an MRI before referring to hand surgery.",
+      "consequence": "Delays urgent treatment while imaging is arranged, when the clinical diagnosis is already sufficient to act on."
+    },
+    {
+      "row": "G4",
+      "move": "Incising the abscess in the emergency department.",
+      "consequence": "Inadequate drainage outside a controlled surgical setting and risk of iatrogenic injury to the tendon or neurovascular structures."
+    },
+    {
+      "row": "G1",
+      "move": "Failing to recognise Kanavel's signs and missing the diagnosis.",
+      "consequence": "Treatment is delayed while a more benign diagnosis is pursued, risking tendon and functional loss."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You blank on what to do next",
+      "line": "I'd like to structure this around immediate safety, assessment, escalation and definitive management."
+    },
+    {
+      "when": "Challenged on waiting for imaging",
+      "line": "That wouldn't exclude the diagnosis, because Kanavel's signs are clinical — I'd refer urgently rather than wait."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Kanavel's signs: fusiform swelling, tenderness along the flexor sheath, pain with passive extension and a flexed resting posture.",
+      "source": "BSSH"
+    },
+    {
+      "fact": "First aid is elevation, splinting in a position of safe immobilisation, and empirical IV antibiotics per local protocol, with urgent hand-surgery referral.",
+      "source": "BSSH"
+    },
+    {
+      "fact": "Most patients require urgent surgical washout; a selected very early, mild presentation may have a trial of IV antibiotics under close specialist supervision.",
+      "source": "BSSH"
+    },
+    {
+      "fact": "Delay risks adhesions, necrosis and loss of function, so referral is not deferred pending imaging.",
+      "source": "BSSH"
+    }
+  ],
+  "recall": {
+    "think": "Rapid tendon destruction and loss of hand function from untreated sheath infection.",
+    "say": "\"Flexor sheath infection until proven otherwise — referring urgently to hand surgery.\"",
+    "do": [
+      "Elevate, splint in position of safe immobilisation",
+      "Empirical IV antibiotics per local protocol",
+      "Refer urgently to hand surgery"
+    ],
+    "numbers": [
+      {
+        "value": "4 signs",
+        "meaning": "Kanavel's signs: fusiform swelling, sheath tenderness, pain on passive extension, flexed posture",
+        "source": "BSSH"
+      }
+    ],
+    "trap": "Waiting for imaging before referring when the clinical picture already strongly suggests the diagnosis.",
+    "finish": "Urgent surgical washout for most patients, under specialist hand-surgery care."
+  },
+  "sources": [
+    {
+      "id": "BSSH",
+      "name": "British Society for Surgery of the Hand. BSSH Trauma Standards: Flexor Sheath Infection",
+      "version": "Current edition (document scheduled for revision 2025)",
+      "url": "https://www.bssh.ac.uk/_userfiles/pages/files/professionals/Trauma%20standards/10%20Flexor%20sheath%20infection.pdf",
+      "supports": "Kanavel's signs, first-aid management (elevation, splinting, empirical IV antibiotics), urgent referral, and the antibiotics-alone versus surgical washout decision"
+    },
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format: 9 minutes with 1 minute's reading; examiner-led questioning in applied knowledge stations"
+    }
+  ],
+  "partner": {
+    "opening": "Ms Laura Tavistock, 42, has an increasingly painful, swollen index finger after a small puncture wound. \"Assess the likely diagnosis and explain your management.\"",
+    "reveals": [
+      {
+        "trigger": "Candidate examines the finger",
+        "finding": "Fusiform swelling of the whole finger, held slightly flexed, with pain on passive extension.",
+        "row": "G1"
+      },
+      {
+        "trigger": "Candidate asks about relevant history",
+        "finding": "She is otherwise well, with no diabetes or immunosuppression, and the puncture was from a rose thorn two days ago.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Candidate assesses neurovascular status",
+        "finding": "Sensation and capillary refill are intact distally.",
+        "row": "G2"
+      }
+    ],
+    "push": [
+      {
+        "question": "Do you wait for imaging?",
+        "row": "G4",
+        "expect": "Not when the clinical picture strongly suggests flexor sheath infection; urgent specialist assessment should not be delayed."
+      },
+      {
+        "question": "What first-aid measures would you start now?",
+        "row": "G3",
+        "expect": "Elevate, splint in a position of safe immobilisation, and start empirical IV antibiotics per local protocol."
+      },
+      {
+        "question": "Does she need surgery today?",
+        "row": "G5",
+        "expect": "Most patients require urgent washout; a very early, mild presentation may warrant a closely supervised trial of antibiotics instead, decided by a senior."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "She presented within a few hours, with only mild, early signs.",
+        "safeAnswer": "A very early, mild presentation may be given a trial of IV antibiotics under close specialist supervision, decided by a senior clinician.",
+        "row": "G5"
+      },
+      {
+        "prompt": "A colleague suggests incising it now in the department.",
+        "safeAnswer": "No — refer urgently to hand surgery for surgical washout rather than draining it outside theatre.",
+        "row": "G4"
+      },
+      {
+        "prompt": "She mentions she is a gardener and has diabetes.",
+        "safeAnswer": "Consider a broader range of organisms and have a lower threshold for escalation given her risk factors.",
+        "row": "G2"
+      }
+    ]
+  }
+}

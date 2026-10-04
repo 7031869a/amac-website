@@ -1,0 +1,546 @@
+{
+  "id": "MB-251",
+  "exam": "MRCS-B",
+  "title": "Acute cholecystitis: diagnosis, severity and timing of cholecystectomy",
+  "type": "applied-knowledge",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "Emergency general surgery (hepatobiliary)",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "NICE CG188 Gallstone disease (October 2014)",
+      "Tokyo Guidelines 2018",
+      "GIRFT Delivering an emergency gallbladder service (July 2026)"
+    ],
+    "related": []
+  },
+  "brief": {
+    "setting": "Surgical assessment unit",
+    "role": "Core surgical trainee in general surgery",
+    "scenario": "Mrs Angela Quinlan, 52, has had constant right upper quadrant pain for 36 hours. Temperature 38.2°C, pulse 96. She catches her breath when you press under the right costal margin. Ultrasound shows gallstones and a thickened gallbladder wall.",
+    "task": "Discuss the diagnosis and management of her condition with the examiner."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Diagnose with the Tokyo criteria, grade severity, then plan early surgery.",
+    "trap": "Planning to 'cool it down' and list her for surgery in six weeks.",
+    "firstMove": "\"This is acute calculous cholecystitis: local signs, systemic signs and imaging all fit.\""
+  },
+  "flow": [
+    "Diagnose",
+    "Grade severity",
+    "Initial treatment",
+    "Timing of surgery",
+    "Consent and safe surgery",
+    "The unfit patient"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-knowledge",
+      "label": "Diagnosis",
+      "fail": "Calls it biliary colic, or diagnoses on pain alone.",
+      "pass": "Tokyo criteria: local signs (Murphy's sign, RUQ pain or mass), systemic signs (fever, raised CRP or white count) and imaging: definite cholecystitis.",
+      "high": "Checks liver function and duct diameter to look for bile duct stones or cholangitis before planning surgery.",
+      "source": "TG18DX"
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-knowledge",
+      "label": "Severity grading",
+      "fail": "Does not grade severity, or treats every case the same.",
+      "pass": "Grade III: organ dysfunction. Grade II: white count above 18, tender RUQ mass, over 72 hours, or marked local inflammation. Grade I: neither.",
+      "high": "Grades her as Grade I and uses grade, comorbidity and fitness to choose early surgery or drainage.",
+      "source": "TG18DX"
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-skill",
+      "label": "Initial treatment",
+      "fail": "Discharges her with oral analgesia, or gives no antibiotics.",
+      "pass": "Admits; analgesia, IV fluids, blood cultures and IV antibiotics per local policy; bloods including LFTs, lipase or amylase.",
+      "high": "Watches for deterioration to Grade III or cholangitis, and escalates to a senior if organ dysfunction develops."
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-knowledge",
+      "label": "Timing of surgery",
+      "fail": "Plans to settle her and list for interval cholecystectomy at six weeks.",
+      "pass": "Early laparoscopic cholecystectomy within 1 week of diagnosis (NICE).",
+      "high": "Knows national GIRFT guidance now makes cholecystectomy during the index admission the default, rather than interval surgery.",
+      "source": "CG188"
+    },
+    {
+      "id": "G5",
+      "domain": "professionalism",
+      "label": "Consent and safe surgery",
+      "fail": "Does not mention bile duct injury or conversion.",
+      "pass": "Consents for bleeding, bile leak, bile duct injury, retained stones and conversion to open; critical view of safety before dividing structures.",
+      "high": "Knows bail-out options if the critical view cannot be achieved: subtotal cholecystectomy (fenestrating or reconstituting) or conversion.",
+      "source": "TG18LC"
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-knowledge",
+      "label": "The unfit patient",
+      "fail": "Operates regardless of fitness, or has no plan for a patient too sick for surgery.",
+      "pass": "Antibiotics and percutaneous cholecystostomy as a bridge if too unwell for surgery; reconsider cholecystectomy when fit.",
+      "high": "Cites NICE: cholecystostomy for empyema when surgery is contraindicated and conservative treatment fails; involves seniors and critical care in the decision.",
+      "source": "CG188"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "What is the diagnosis?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Biliary colic from gallstones.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How severe is it?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I wouldn't grade it; all cholecystitis is treated the same.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What would you do now?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Oral painkillers and home, with a clinic appointment.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "When should her gallbladder come out?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Let it settle and list her in six weeks.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What would you consent her for?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Wound infection and scarring.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What if she were too unwell for surgery?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Operate anyway; it's the only cure.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "examiner",
+        "text": "What is the diagnosis?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Acute calculous cholecystitis. By the Tokyo criteria she has a local sign, a positive Murphy's; systemic signs, fever; and ultrasound findings. That's a definite diagnosis.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How severe is it?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Grade III has organ dysfunction. Grade II has a white count over 18, a tender mass, symptoms over 72 hours or marked local inflammation. Otherwise Grade I.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What would you do now?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Admit her, analgesia, IV fluids, blood cultures and IV antibiotics per local policy, and bloods including liver function.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "When should her gallbladder come out?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "NICE says early laparoscopic cholecystectomy within 1 week of diagnosis.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What would you consent her for?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Bleeding, bile leak, bile duct injury, retained stones and conversion to open. I'd achieve the critical view of safety before dividing anything.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What if she were too unwell for surgery?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Antibiotics and a percutaneous cholecystostomy as a bridge, then reconsider cholecystectomy when she's fit.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "examiner",
+        "text": "Her LFTs come back normal and the duct is 5 mm."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Good, that makes duct stones and cholangitis less likely, so I can plan cholecystectomy without an MRCP first.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "So what grade is she?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Grade I: no organ dysfunction and none of the Grade II features. With her fitness that points to early laparoscopic cholecystectomy.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "She becomes hypotensive and confused overnight."
+      },
+      {
+        "speaker": "candidate",
+        "text": "That's organ dysfunction, so now Grade III. I'd resuscitate, escalate to my registrar and consultant, and involve critical care.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Why not wait?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "GIRFT's July 2026 guidance makes cholecystectomy during the index admission the default. Delaying surgery leads to 20 to 30% readmissions.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "In theatre you cannot get a critical view."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd bail out rather than push on: subtotal cholecystectomy, fenestrating or reconstituting, or conversion, with senior help.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "NICE reserves cholecystostomy for empyema when surgery is contraindicated and conservative treatment fails. Tokyo allows surgery for Grade III only in advanced centres with strict criteria.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G4",
+      "move": "Settling the attack and listing for interval surgery.",
+      "consequence": "Readmission with recurrent cholecystitis, pancreatitis or duct stones, and a harder operation later."
+    },
+    {
+      "row": "G1",
+      "move": "Not checking liver function or duct diameter.",
+      "consequence": "Bile duct stones or cholangitis are missed before surgery."
+    },
+    {
+      "row": "G5",
+      "move": "Dividing structures without a critical view of safety.",
+      "consequence": "Risk of common bile duct injury."
+    },
+    {
+      "row": "G6",
+      "move": "Operating on a patient with organ dysfunction outside a specialist setting.",
+      "consequence": "High perioperative risk when drainage could bridge her to safer surgery."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "Asked about timing",
+      "line": "Early: within a week of diagnosis, ideally during this admission."
+    },
+    {
+      "when": "Asked about a difficult gallbladder",
+      "line": "No critical view, no division: I'd bail out with a subtotal cholecystectomy or convert."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Tokyo diagnosis: local signs plus systemic signs plus imaging = definite.",
+      "source": "TG18DX"
+    },
+    {
+      "fact": "Grade III: organ dysfunction. Grade II: white count over 18, tender RUQ mass, over 72 hours, or marked local inflammation.",
+      "source": "TG18DX"
+    },
+    {
+      "fact": "Offer early laparoscopic cholecystectomy within 1 week of diagnosis.",
+      "source": "CG188"
+    },
+    {
+      "fact": "Cholecystectomy during the index admission is the default; delayed surgery brings 20–30% readmissions.",
+      "source": "GIRFT"
+    },
+    {
+      "fact": "Critical view of safety before dividing any structure; subtotal cholecystectomy as a bail-out.",
+      "source": "TG18LC"
+    },
+    {
+      "fact": "Cholecystostomy for empyema when surgery is contraindicated and conservative treatment fails.",
+      "source": "CG188"
+    }
+  ],
+  "recall": {
+    "think": "Empyema, perforation, cholangitis, and bile duct injury at surgery.",
+    "say": "\"Acute calculous cholecystitis, Tokyo Grade I.\"",
+    "do": [
+      "Antibiotics, fluids, analgesia, LFTs",
+      "Grade severity",
+      "Early laparoscopic cholecystectomy this admission"
+    ],
+    "numbers": [
+      {
+        "value": "Within 1 week",
+        "meaning": "of diagnosis: early laparoscopic cholecystectomy",
+        "source": "CG188"
+      },
+      {
+        "value": "20–30%",
+        "meaning": "readmission with delayed surgery",
+        "source": "GIRFT"
+      },
+      {
+        "value": "WCC > 18, > 72 h",
+        "meaning": "Tokyo Grade II features",
+        "source": "TG18DX"
+      }
+    ],
+    "trap": "'Cool it down and operate in six weeks.'",
+    "finish": "Laparoscopic cholecystectomy with a critical view of safety; cholecystostomy if unfit."
+  },
+  "sources": [
+    {
+      "id": "CG188",
+      "name": "NICE CG188. Gallstone disease: diagnosis and management",
+      "version": "October 2014",
+      "url": "https://www.nice.org.uk/guidance/cg188/chapter/Recommendations",
+      "supports": "LFTs and ultrasound (1.1.1); early laparoscopic cholecystectomy within 1 week of diagnosis (1.2.4); percutaneous cholecystostomy for empyema when surgery contraindicated and conservative management unsuccessful (1.2.5); reconsider cholecystectomy when fit (1.2.6)"
+    },
+    {
+      "id": "GIRFT",
+      "name": "Getting It Right First Time (NHS England). Delivering an emergency gallbladder service",
+      "version": "July 2026",
+      "url": "https://gettingitrightfirsttime.co.uk/wp-content/uploads/2026/07/Delivering-an-emergency-gallbladder-service-FINAL-July-2026.pdf",
+      "supports": "Emergency cholecystectomy during the index admission as the default; early surgery ideally within seven days; delayed surgery leads to 20–30% readmission; cholecystostomy as a bridge in patients too unwell for surgery; subtotal cholecystectomy as a bail-out"
+    },
+    {
+      "id": "TG18DX",
+      "name": "Yokoe M, Hata J, Takada T, et al. Tokyo Guidelines 2018: diagnostic criteria and severity grading of acute cholecystitis. J Hepatobiliary Pancreat Sci 2018;25:41–54",
+      "version": "2018",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/29032636/",
+      "supports": "Diagnostic criteria (local signs, systemic signs, imaging) and severity grades I–III"
+    },
+    {
+      "id": "TG18FC",
+      "name": "Okamoto K, Suzuki K, Takada T, et al. Tokyo Guidelines 2018: flowchart for the management of acute cholecystitis. J Hepatobiliary Pancreat Sci 2018;25:55–72",
+      "version": "2018",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/29045062/",
+      "supports": "Early laparoscopic cholecystectomy for Grade I and II in fit patients; Grade III surgery only in advanced centres with strict criteria; otherwise drainage then delayed surgery"
+    },
+    {
+      "id": "TG18LC",
+      "name": "Wakabayashi G, Iwashita Y, Hibi T, et al. Tokyo Guidelines 2018: surgical management of acute cholecystitis: safe steps in laparoscopic cholecystectomy. J Hepatobiliary Pancreat Sci 2018;25:73–86",
+      "version": "2018",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/29095575/",
+      "supports": "Critical view of safety before dividing structures; bail-out procedures including subtotal cholecystectomy and conversion"
+    },
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format: 9 minutes with 1 minute's reading; examiner-led questioning in applied knowledge stations"
+    }
+  ],
+  "media": [
+    {
+      "id": "us-cholecystitis",
+      "task": "Describe the ultrasound findings that support acute cholecystitis",
+      "description": "Right upper quadrant ultrasound showing gallstones with acoustic shadowing, a thickened gallbladder wall and a small rim of pericholecystic fluid; common bile duct not dilated",
+      "required": false,
+      "status": "needed"
+    }
+  ],
+  "partner": {
+    "opening": "Here is her ultrasound report. What is going on, and how would you manage her?",
+    "reveals": [
+      {
+        "trigger": "Candidate asks for bloods",
+        "finding": "WCC 15, CRP 140, bilirubin, ALP and ALT normal, amylase normal.",
+        "row": "G1"
+      },
+      {
+        "trigger": "Candidate asks about the bile duct on ultrasound",
+        "finding": "Common bile duct 5 mm, no duct stones seen.",
+        "row": "G1"
+      },
+      {
+        "trigger": "Candidate asks about fitness",
+        "finding": "Well controlled asthma only. Independent.",
+        "row": "G2"
+      }
+    ],
+    "push": [
+      {
+        "question": "What severity grade is she?",
+        "row": "G2",
+        "expect": "Grade I: no organ dysfunction, none of the Grade II features."
+      },
+      {
+        "question": "When should she have her cholecystectomy?",
+        "row": "G4",
+        "expect": "Within 1 week of diagnosis; index admission by default."
+      },
+      {
+        "question": "What would you consent her for?",
+        "row": "G5",
+        "expect": "Bleeding, bile leak, duct injury, retained stones, conversion; critical view of safety."
+      },
+      {
+        "question": "What if she were too unwell for surgery?",
+        "row": "G6",
+        "expect": "Antibiotics and percutaneous cholecystostomy as a bridge."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "Her bilirubin is 60 and the duct is 10 mm.",
+        "safeAnswer": "Suspect duct stones: MRCP, and clear the duct by ERCP or at surgery alongside cholecystectomy.",
+        "row": "G1"
+      },
+      {
+        "prompt": "She is 88, on noradrenaline in ICU, with an empyema.",
+        "safeAnswer": "Grade III: percutaneous cholecystostomy as a bridge; reconsider surgery when she recovers.",
+        "row": "G6"
+      },
+      {
+        "prompt": "The next list is five days away.",
+        "safeAnswer": "Still within a week of diagnosis; keep her in and do it this admission rather than discharge.",
+        "row": "G4"
+      }
+    ]
+  }
+}

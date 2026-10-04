@@ -1,0 +1,197 @@
+{
+  "id": "MB-325",
+  "exam": "MRCS-B",
+  "title": "Trauma in pregnancy",
+  "type": "applied-knowledge",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "Trauma: the pregnant trauma patient",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "NICE NG40, Major trauma: service delivery (published 17 February 2016)",
+      "Resuscitation Council UK, Special Circumstances Guidelines 2021 (published May 2021)",
+      "Qureshi H et al. BCSH guideline for the use of anti-D immunoglobulin. Transfus Med 2014 (dosing superseded)",
+      "SHOT/BSH, Anti-D immunoglobulin (Ig) administration in pregnancy: an aide-memoire (updated August 2023)"
+    ],
+    "related": [
+      { "id": "MB-164", "why": "Major trauma primary survey priorities, applied here to a high-risk population" },
+      { "id": "MB-302", "why": "Assessing abdominal pathology in a pregnant patient without letting the pregnancy delay appropriate imaging" }
+    ]
+  },
+  "brief": {
+    "setting": "Emergency department, major trauma team",
+    "role": "Surgical trainee in the major trauma team",
+    "scenario": "Ms Sophie Ravenscroft, 29 and 28 weeks pregnant, was the restrained driver in a road traffic collision.",
+    "task": "Describe your initial approach as the examiner questions you on assessment, priorities and investigations."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Mother first: treating her shock or hypoxia is the fastest way to help the fetus too.",
+    "trap": "Withholding necessary imaging or delaying maternal resuscitation because she is pregnant.",
+    "firstMove": "\"I'd assess her with a structured ABCDE approach, treating her as the priority.\""
+  },
+  "flow": [
+    "Structured maternal ABCDE",
+    "Early multidisciplinary call",
+    "Positioning to relieve aortocaval compression",
+    "Imaging as clinically indicated",
+    "Pregnancy-specific complications",
+    "Anti-D if indicated"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-skill",
+      "label": "Structured maternal assessment first",
+      "fail": "Assesses fetal wellbeing before completing the maternal ABCDE, or delays maternal resuscitation to reassure about the pregnancy.",
+      "pass": "Assesses and treats the mother first with a structured ABCDE approach, while recognising she is a high-risk trauma patient because of the pregnancy.",
+      "high": "Explains that maternal hypoxia and shock threaten the fetus directly, so optimising the mother is also the fastest way to help both."
+    },
+    {
+      "id": "G2",
+      "domain": "professionalism",
+      "label": "Early multidisciplinary involvement",
+      "fail": "Manages her alone without early senior trauma, obstetric or anaesthetic input.",
+      "pass": "Calls for senior trauma, obstetric and anaesthetic support early, in parallel with the primary survey.",
+      "high": "Agrees explicit roles and a plan for both maternal and fetal deterioration with the team before either occurs."
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "Aortocaval compression",
+      "fail": "Leaves her supine throughout assessment, or ignores positioning entirely.",
+      "pass": "Considers manual uterine displacement or lateral tilt to reduce aortocaval compression once spinal precautions allow, without delaying trauma priorities.",
+      "high": "States the optimal tilt angle is not firmly established but aims for around 15 to 30 degrees, or uses manual displacement if tilt isn't possible.",
+      "source": "RCUK-SC"
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-skill",
+      "label": "Imaging is not withheld for pregnancy",
+      "fail": "Withholds clinically indicated CT because the patient is pregnant.",
+      "pass": "Uses appropriate imaging when clinically indicated, applying radiation-minimisation principles rather than omitting necessary scans.",
+      "high": "Explains that an undiagnosed life-threatening maternal injury is a greater fetal risk than the radiation dose from clinically indicated imaging."
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-knowledge",
+      "label": "Pregnancy-specific complications",
+      "fail": "Does not consider placental abruption, uterine injury, fetomaternal haemorrhage or preterm labour as possibilities.",
+      "pass": "Considers placental abruption, uterine injury, fetomaternal haemorrhage and preterm labour, and arranges gestation-appropriate obstetric assessment once the mother is stable.",
+      "high": "Flags that placental abruption can occur even after apparently minor trauma, so a reassuring initial abdomen doesn't exclude it."
+    },
+    {
+      "id": "G6",
+      "domain": "professionalism",
+      "label": "Anti-D prophylaxis",
+      "fail": "Does not consider anti-D for an RhD-negative mother after a potentially sensitising trauma.",
+      "pass": "Gives anti-D immunoglobulin for an RhD-negative mother after a potentially sensitising event, with a Kleihauer test if she is past 20 weeks.",
+      "high": "Gives at least 500 IU regardless of gestation (250 IU vials no longer available), with a Kleihauer test after 20 weeks, within 72 hours.",
+      "source": "BSH-2023"
+    }
+  ],
+  "performances": {
+    "fail": [
+      { "speaker": "examiner", "text": "How would you assess her?" },
+      { "speaker": "candidate", "text": "I'd check the CTG and fetal heart rate first to make sure the baby's OK.", "tags": [{ "row": "G1", "band": "fail" }] },
+      { "speaker": "examiner", "text": "Does pregnancy change the trauma priorities?" },
+      { "speaker": "candidate", "text": "I'd manage her the same as anyone else and wait for obstetrics to call me back.", "tags": [{ "row": "G2", "band": "fail" }] },
+      { "speaker": "examiner", "text": "How would you position her?" },
+      { "speaker": "candidate", "text": "Flat on her back like a standard trauma patient.", "tags": [{ "row": "G3", "band": "fail" }] },
+      { "speaker": "examiner", "text": "She needs a CT. Any concerns?" },
+      { "speaker": "candidate", "text": "I'd avoid the CT because she's pregnant and do an ultrasound instead.", "tags": [{ "row": "G4", "band": "fail" }] },
+      { "speaker": "examiner", "text": "Her abdomen seems soft. Anything else on your mind?" },
+      { "speaker": "candidate", "text": "No, if the abdomen's soft I don't think there's anything obstetric to worry about.", "tags": [{ "row": "G5", "band": "fail" }] },
+      { "speaker": "examiner", "text": "She's RhD-negative. Anything to arrange?" },
+      { "speaker": "candidate", "text": "Nothing specific unless she starts bleeding vaginally.", "tags": [{ "row": "G6", "band": "fail" }] }
+    ],
+    "pass": [
+      { "speaker": "examiner", "text": "How would you assess her?" },
+      { "speaker": "candidate", "text": "Mother first, with a structured ABCDE approach; she's high risk because of the pregnancy.", "tags": [{ "row": "G1", "band": "pass" }] },
+      { "speaker": "examiner", "text": "Does pregnancy change the priorities?" },
+      { "speaker": "candidate", "text": "Not who comes first, but I'd get senior trauma, obstetric and anaesthetic support involved early, alongside the primary survey.", "tags": [{ "row": "G2", "band": "pass" }] },
+      { "speaker": "examiner", "text": "How would you position her?" },
+      { "speaker": "candidate", "text": "Once spinal precautions allow, manual uterine displacement or a lateral tilt to reduce aortocaval compression.", "tags": [{ "row": "G3", "band": "pass" }] },
+      { "speaker": "examiner", "text": "She needs imaging. Any hesitation?" },
+      { "speaker": "candidate", "text": "No, I'd image based on clinical need, using radiation-minimisation principles rather than withholding a necessary scan.", "tags": [{ "row": "G4", "band": "pass" }] },
+      { "speaker": "examiner", "text": "Anything obstetric on your mind?" },
+      { "speaker": "candidate", "text": "Placental abruption, uterine injury, fetomaternal haemorrhage and preterm labour, even if the abdomen seems soft. I'd arrange obstetric assessment once she's stable.", "tags": [{ "row": "G5", "band": "pass" }] },
+      { "speaker": "examiner", "text": "She's RhD-negative." },
+      { "speaker": "candidate", "text": "I'd give anti-D after this potentially sensitising event, with a Kleihauer test since she's past 20 weeks.", "tags": [{ "row": "G6", "band": "pass" }] }
+    ],
+    "high": [
+      { "speaker": "examiner", "text": "How would you assess her?" },
+      { "speaker": "candidate", "text": "ABCDE, mother first — her hypoxia and shock are the biggest threats to the fetus too, so optimising her is what helps both of them.", "tags": [{ "row": "G1", "band": "high" }] },
+      { "speaker": "examiner", "text": "Priorities?" },
+      { "speaker": "candidate", "text": "I'd agree explicit roles with trauma, obstetric and anaesthetic teams now, including a plan for what happens if either she or the fetus deteriorates.", "tags": [{ "row": "G2", "band": "high" }] },
+      { "speaker": "examiner", "text": "Positioning?" },
+      { "speaker": "candidate", "text": "Manual displacement or tilt around 15 to 30 degrees — the exact angle isn't firmly established, but even a small tilt is better than none, without compromising the primary survey.", "tags": [{ "row": "G3", "band": "high" }] },
+      { "speaker": "examiner", "text": "Reluctant about the CT?" },
+      { "speaker": "candidate", "text": "No — an undiagnosed life-threatening injury in her is a bigger risk to the fetus than the radiation from imaging that's clinically indicated.", "tags": [{ "row": "G4", "band": "high" }] },
+      { "speaker": "examiner", "text": "Obstetric complications?" },
+      { "speaker": "candidate", "text": "Placental abruption can follow even apparently minor trauma, so a reassuring abdomen now doesn't exclude it; I'd still arrange monitoring.", "tags": [{ "row": "G5", "band": "high" }] },
+      { "speaker": "examiner", "text": "RhD-negative and past 20 weeks." },
+      { "speaker": "candidate", "text": "At least 500 IU anti-D with a Kleihauer test to see if she needs more, given within 72 hours of the collision.", "tags": [{ "row": "G6", "band": "high" }] }
+    ]
+  },
+  "failures": [
+    { "row": "G1", "move": "Assessing fetal wellbeing before completing the maternal primary survey.", "consequence": "Delays recognition and treatment of maternal life threats that also put the fetus at risk." },
+    { "row": "G3", "move": "Leaving her supine throughout assessment.", "consequence": "Aortocaval compression can reduce venous return and worsen maternal haemodynamics." },
+    { "row": "G4", "move": "Withholding a clinically indicated CT because of the pregnancy.", "consequence": "A maternal injury is missed or found too late." },
+    { "row": "G6", "move": "Not considering anti-D after a potentially sensitising trauma.", "consequence": "Risks RhD sensitisation and haemolytic disease in a future pregnancy." }
+  ],
+  "recovery": [
+    { "when": "Asked if you're worried about radiation", "line": "Clinically indicated imaging isn't withheld for pregnancy; I'd use radiation-minimisation principles, not omission." },
+    { "when": "Asked why the mother comes first", "line": "Because treating her shock and hypoxia is also how I protect the fetus." }
+  ],
+  "knowledge": [
+    { "fact": "Pregnant women are a high-risk population in major trauma and should be factored into triage.", "source": "NG40" },
+    { "fact": "Aortocaval compression can be reduced by manual uterine displacement or lateral tilt once trauma priorities allow.", "source": "RCUK-SC" },
+    { "fact": "Clinically indicated imaging, including CT, is not withheld solely because of pregnancy.", "source": "NG40" },
+    { "fact": "RhD-negative women get anti-D after a potentially sensitising event: current UK practice (SHOT/BSH, updated August 2023) is a minimum 500 IU regardless of gestation, since 250 IU vials are no longer available; a Kleihauer test is not needed before 20 weeks but is required after 20 weeks, with anti-D given within 72 hours.", "source": "BSH-2023" }
+  ],
+  "recall": {
+    "think": "Maternal shock or hypoxia threatens the fetus more than almost anything else.",
+    "say": "\"Mother first: ABCDE, then gestation-appropriate obstetric assessment.\"",
+    "do": [
+      "ABCDE and haemorrhage control",
+      "Senior trauma, obstetric, anaesthetic input",
+      "Displace uterus/tilt once precautions allow"
+    ],
+    "numbers": [
+      { "value": "15-30° left lateral tilt (or manual displacement)", "meaning": "reduces aortocaval compression", "source": "RCUK-SC" },
+      { "value": "Minimum 500 IU anti-D within 72 hours, any gestation", "meaning": "RhD-negative mother after sensitising trauma; Kleihauer needed only after 20 weeks", "source": "BSH-2023" }
+    ],
+    "trap": "Delaying maternal resuscitation to reassure about the fetus, or withholding imaging for the pregnancy.",
+    "finish": "Stabilise the mother, gestation-appropriate obstetric review, anti-D if indicated."
+  },
+  "sources": [
+    { "id": "NG40", "name": "NICE NG40. Major trauma: service delivery", "version": "Published 17 February 2016", "url": "https://www.nice.org.uk/guidance/ng40", "supports": "Recommendation 1.1.2: pre-hospital major trauma triage tools should take into account high-risk populations including pregnant women" },
+    { "id": "RCUK-SC", "name": "Resuscitation Council UK. Special Circumstances Guidelines 2021: cardiac arrest in pregnancy", "version": "Published May 2021", "url": "https://www.resus.org.uk/library/2021-resuscitation-guidelines/special-circumstances-guidelines", "supports": "Manual uterine displacement or left lateral tilt (15-30°, optimal angle not firmly established) to relieve aortocaval compression" },
+    { "id": "BCSH", "name": "Qureshi H, Massey E, Kirwan D, et al. BCSH guideline for the use of anti-D immunoglobulin for the prevention of haemolytic disease of the fetus and newborn. Transfus Med 2014;24:8-20", "version": "2014", "url": "https://onlinelibrary.wiley.com/doi/10.1111/tme.12091", "supports": "Background rationale for anti-D prophylaxis after a potentially sensitising event; original dosing recommendations for this era (250 IU before 20 weeks, 500 IU after) have since been superseded — see BSH-2023" },
+    { "id": "BSH-2023", "name": "British Society for Haematology / SHOT, Anti-D immunoglobulin (Ig) administration in pregnancy: an aide-memoire", "version": "Updated August 2023", "url": "https://www.shotuk.org/resources/anti-d-immunoglobulin-ig-administration-in-pregnancy-an-aide-memoire/", "supports": "Current UK dosing: minimum 500 IU anti-D Ig after a potentially sensitising event regardless of gestation (250 IU vials no longer available); Kleihauer/FMH testing not required before 20 weeks but required after 20 weeks; anti-D given within 72 hours of the event" }
+  ],
+  "partner": {
+    "opening": "Ms Ravenscroft, 29, is 28 weeks pregnant and was the restrained driver in a road traffic collision. How would you assess her?",
+    "reveals": [
+      { "trigger": "Candidate completes the primary survey / asks for observations", "finding": "HR 112, BP 98/62, RR 22, SpO2 96% on air, GCS 15. Seatbelt bruising across the abdomen. Abdomen soft, mildly tender. Uterus firm, fundal height consistent with dates.", "row": "G1" },
+      { "trigger": "Candidate asks for fetal assessment", "finding": "Fetal heart rate 150 bpm by handheld Doppler once the mother is stabilised; no CTG available yet.", "row": "G5" },
+      { "trigger": "Candidate asks about vaginal loss or uterine tenderness", "finding": "No vaginal bleeding. Some uterine irritability on palpation but no rigid, woody abdomen.", "row": "G5" },
+      { "trigger": "Candidate asks her blood group", "finding": "RhD-negative.", "row": "G6" }
+    ],
+    "push": [
+      { "question": "Why treat the mother first?", "row": "G1", "expect": "Maternal shock/hypoxia is the biggest fetal threat; optimising her helps both." },
+      { "question": "What extra team members do you want?", "row": "G2", "expect": "Senior trauma, obstetrics, anaesthetics, early." },
+      { "question": "How would you position her?", "row": "G3", "expect": "Manual uterine displacement or 15-30° left lateral tilt once precautions allow." },
+      { "question": "Would you still CT her abdomen and pelvis?", "row": "G4", "expect": "Yes if clinically indicated; use radiation-minimisation principles, don't withhold." },
+      { "question": "What pregnancy-specific complications worry you?", "row": "G5", "expect": "Placental abruption, uterine injury, fetomaternal haemorrhage, preterm labour." },
+      { "question": "She's RhD-negative — anything to give?", "row": "G6", "expect": "Anti-D, dose and Kleihauer depending on gestation, within 72 hours." }
+    ],
+    "curveballs": [
+      { "prompt": "The obstetric team is 20 minutes away and she's deteriorating.", "safeAnswer": "Continue maternal resuscitation and escalate; don't wait for obstetrics to start necessary trauma management.", "row": "G2" },
+      { "prompt": "She refuses the CT because she's worried about the baby.", "safeAnswer": "Explain the fetal risk of a missed maternal injury versus the radiation dose, and support her in an informed decision.", "row": "G4" },
+      { "prompt": "There's no vaginal bleeding, so is abruption excluded?", "safeAnswer": "No — abruption can be concealed with no visible bleeding; uterine tenderness or irritability still needs monitoring.", "row": "G5" },
+      { "prompt": "She's 18 weeks, not 28.", "safeAnswer": "The dose is the same — at least 500 IU anti-D is given after a sensitising event regardless of gestation (250 IU vials are no longer available); a Kleihauer test isn't required before 20 weeks.", "row": "G6" }
+    ]
+  }
+}

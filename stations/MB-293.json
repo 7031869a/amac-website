@@ -1,0 +1,587 @@
+{
+  "id": "MB-293",
+  "exam": "MRCS-B",
+  "title": "Incisional hernia examination",
+  "type": "examination",
+  "header": {
+    "domain": "Applied Skills",
+    "contentArea": "Clinical and procedural skills",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "signalMinutes": 6,
+    "guidelineVersions": [
+      "EHS midline incisional hernia guidelines (BJS, 2023)",
+      "EHS emergency ventral and incisional hernia guidelines (JAWS, 2026)",
+      "EHS classification of abdominal wall hernias (Hernia, 2009)"
+    ],
+    "related": [
+      {
+        "id": "MB-170 Groin hernia examination",
+        "why": "Same standing-then-lying approach"
+      },
+      {
+        "id": "MB-159 Stoma examination",
+        "why": "Parastomal hernia and old stoma sites"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "General surgery outpatient clinic",
+    "role": "Core surgical trainee",
+    "scenario": "Mrs Janice Holbrook, 64, had an emergency laparotomy for perforated diverticulitis three years ago; her wound became infected. For a year she has had a swelling at her scar that aches by the evening and is bigger when she stands. A chaperone is available.",
+    "task": "Examine her abdominal wall. You will be stopped at 6 minutes to present your findings and answer questions."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Standing then lying; the whole scar; cough impulse, reducibility, tenderness; head lift to find the defect edges; the rest of the abdominal wall.",
+    "trap": "Examining only the obvious bulge and missing a second defect or an old stoma-site hernia.",
+    "firstMove": "\"Could you stand for me first? I'll look at the whole of your tummy.\""
+  },
+  "flow": [
+    "Consent and chaperone",
+    "Inspect standing; cough",
+    "Lying: tenderness, reduce, head lift",
+    "Rest of the abdominal wall",
+    "At 6 minutes: present",
+    "Plan and emergencies"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "professionalism",
+      "label": "Consent and exposure",
+      "fail": "Examines through clothing, or exposes her without explanation or chaperone offer.",
+      "pass": "Explains, gains consent, offers a chaperone, and exposes from the lower chest to the groins.",
+      "high": "Asks whether the lump is painful now before touching it, and keeps her covered where possible.",
+      "source": "GMC"
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-skill",
+      "label": "Inspection standing and lying",
+      "fail": "Examines her lying only.",
+      "pass": "Inspects standing, then lying: scars, the swelling, skin changes (thinning, redness, ulceration), and a cough impulse.",
+      "high": "Asks her to lift her head off the pillow to tense the recti, showing the defect and separating it from divarication.",
+      "source": "BL"
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-skill",
+      "label": "Palpation",
+      "fail": "Pushes hard to reduce a tender lump.",
+      "pass": "Checks tenderness, temperature and cough impulse; asks her to reduce it; feels the edges of the fascial defect.",
+      "high": "Estimates defect width and uses the EHS width classes: W1 under 4 cm, W2 4–10 cm, W3 10 cm or more.",
+      "source": "EHSCLASS"
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-skill",
+      "label": "The rest of the abdominal wall",
+      "fail": "Examines only the obvious bulge.",
+      "pass": "Examines the full scar length, old drain and stoma sites, the umbilicus and both groins; listens over the swelling.",
+      "high": "Notes skin quality and whether the contents seem to live outside the abdomen, which affect repair planning.",
+      "source": "BL"
+    },
+    {
+      "id": "G5",
+      "domain": "communication",
+      "label": "Presentation at the signal",
+      "fail": "Presents 'a lump on her tummy'.",
+      "pass": "Presents a reducible, non-tender midline incisional hernia, with site, size and estimated defect width.",
+      "high": "Links her risk factors: previous wound infection, obesity and smoking; mentions divarication as a differential.",
+      "source": "EHS23"
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-knowledge",
+      "label": "Imaging",
+      "fail": "Plans repair with no imaging.",
+      "pass": "CT (or MRI) to plan surgery; imaging to confirm the diagnosis if examination is uncertain.",
+      "high": "States CT is the most sensitive test; ultrasound or MRI with Valsalva if radiation or cost is a concern.",
+      "source": "EHS23"
+    },
+    {
+      "id": "G7",
+      "domain": "clinical-knowledge",
+      "label": "Elective management",
+      "fail": "Says every incisional hernia needs urgent repair, or ignores optimisation.",
+      "pass": "Discusses watchful waiting versus repair based on quality of life; optimises weight, diabetes and smoking; mesh repair if operating.",
+      "high": "Quotes acute complication risk about 1% at 1 year and 2.5% at 5 years; retromuscular mesh with defect closure.",
+      "source": "EHS23"
+    },
+    {
+      "id": "G8",
+      "domain": "clinical-knowledge",
+      "label": "Emergency presentation (safety-critical)",
+      "fail": "Books a clinic for a tender, irreducible hernia with vomiting.",
+      "pass": "Tender, irreducible hernia with obstruction: resuscitate, nil by mouth, bloods, CT, senior review, emergency surgery.",
+      "high": "EHS emergency guidance: damage control if unstable; mesh-based repair where the defect can be closed, whatever the contamination grade; staged if not.",
+      "source": "EHSEM"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "candidate",
+        "text": "Lie down and lift your top, please. [No explanation or chaperone offer.]",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          },
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Presses firmly on the lump.] Let me push it back. [She winces.]",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Examines only the bulge.]",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop. Your findings?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "A lump on her tummy near the scar.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What would you do?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "List her for urgent repair; she doesn't need a scan.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          },
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "If it became tender and irreducible and she was vomiting?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd see her in clinic next week.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "candidate",
+        "text": "Hello, I'm Dr Patel, one of the surgical trainees. Can I check your name and date of birth? I'd like to examine your tummy and scar, from your lower chest to your groins. Would you like a chaperone? [Consent; cleans hands.]",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Could you stand? [Inspects: scars, swelling, skin.] Cough, please. [Impulse.] Now lie down. [Inspects again.]",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Is it sore? Could you push it back? [Reduces.] [Feels defect edges.] About 6 cm across.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Full scar length, old stoma site, umbilicus, both groins; listens over the swelling.]",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop. Your findings?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Mrs Holbrook has a reducible, non-tender midline incisional hernia in the upper part of her laparotomy scar, with an estimated 6 cm defect.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What next?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "A CT to plan surgery. It aches daily, so I'd discuss repair against watchful waiting, help her lose weight and stop smoking first, and use a mesh repair if we operate.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          },
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "If it became tender and irreducible and she was vomiting?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Obstruction or strangulation: resuscitate, nil by mouth, bloods, CT, senior review and emergency surgery.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "candidate",
+        "text": "Hello, I'm Dr Patel. Can I check your name and date of birth? Is the lump sore right now? [No.] I'll keep you covered where I can.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Standing and lying.] Could you lift your head off the pillow? [Defect edges show; the recti are otherwise together.] That's a hernia, not a divarication.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Reduces; defect edges.] About 6 cm wide, so W2 in the EHS classification.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Whole wall.] The skin is healthy, and the contents stay reducible, so it isn't losing domain.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop. Your findings?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "A reducible midline incisional hernia, W2. Her risk factors are the wound infection, her weight and smoking.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Imaging?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "CT is the most sensitive and helps plan repair; ultrasound or MRI with Valsalva if radiation is a concern.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Does she need surgery?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Not necessarily. The risk of an acute complication is about 1% at 1 year and 2.5% at 5 years, so it depends on her quality of life. If we repair it: optimise first, close the defect and place a retromuscular mesh.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "And an emergency?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Resuscitate, CT and emergency surgery. EHS emergency guidance favours damage control if she's unstable, and mesh-based repair where the defect can be closed, whatever the contamination grade, after source control if contaminated. If it can't be closed, a staged repair.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G2",
+      "move": "Examining lying only.",
+      "consequence": "The hernia reduces and is under-called."
+    },
+    {
+      "row": "G4",
+      "move": "Examining the obvious bulge only.",
+      "consequence": "Misses a second defect along the scar or at an old stoma site."
+    },
+    {
+      "row": "G7",
+      "move": "Listing every incisional hernia for surgery without optimisation.",
+      "consequence": "Higher wound complication and recurrence risk in smokers and obese patients."
+    },
+    {
+      "row": "G8",
+      "move": "Treating a tender, irreducible hernia with vomiting as routine.",
+      "consequence": "Safety-critical: strangulated bowel becomes non-viable."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You started lying",
+      "line": "Could you stand up for me? The swelling may disappear when you lie down."
+    },
+    {
+      "when": "Unsure if it's a hernia or divarication",
+      "line": "I'd ask her to lift her head: a divarication bulges along the midline without a discrete defect edge."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Risk factors: high BMI, smoking, diabetes, immunosuppression, midline incision; surgical site infection has the largest impact.",
+      "source": "EHS23"
+    },
+    {
+      "fact": "Reducible incisional hernia: acute complication about 1% at 1 year, 2.5% at 5 years; repair if symptoms affect quality of life.",
+      "source": "EHS23"
+    },
+    {
+      "fact": "Pre-optimise: weight, HbA1c, smoking cessation (over 4 weeks), fitness. Midline repair: close the defect, retromuscular mesh.",
+      "source": "EHS23"
+    },
+    {
+      "fact": "EHS width: W1 under 4 cm, W2 4–10 cm, W3 10 cm or more.",
+      "source": "EHSCLASS"
+    }
+  ],
+  "recall": {
+    "think": "Is it tender and irreducible? Is there more than one defect?",
+    "say": "\"Reducible midline incisional hernia, defect about 6 cm.\"",
+    "do": [
+      "Stand, cough; then lie",
+      "Reduce; feel defect edges; head lift",
+      "Whole scar, stoma sites, groins"
+    ],
+    "numbers": [
+      {
+        "value": "1% / 2.5%",
+        "meaning": "acute complication risk at 1 and 5 years",
+        "source": "EHS23"
+      },
+      {
+        "value": "W1 <4, W2 4–10, W3 ≥10 cm",
+        "meaning": "EHS defect width classes",
+        "source": "EHSCLASS"
+      }
+    ],
+    "trap": "Not every incisional hernia needs surgery; optimise first.",
+    "finish": "Optimise, CT planning, mesh repair if symptomatic; emergency surgery if strangulated."
+  },
+  "sources": [
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Introduce yourself, confirm identity, obtain consent and clean hands at every station; 6-minute signal in examination stations"
+    },
+    {
+      "id": "GMC",
+      "name": "GMC: Intimate examinations and chaperones",
+      "version": "In effect from 30 January 2024; updated 13 December 2024",
+      "url": "https://www.gmc-uk.org/professional-standards/the-professional-standards/intimate-examinations-and-chaperones/intimate-examinations-and-chaperones",
+      "supports": "Explain the examination; consent and record it; offer a chaperone; record the chaperone discussion and identity"
+    },
+    {
+      "id": "BL",
+      "name": "Bailey & Love's Short Practice of Surgery (O'Connell, McCaskie, Sayers, eds)",
+      "version": "28th edition, 2023",
+      "url": "https://www.routledge.com/Bailey--Loves-Short-Practice-of-Surgery---28th-Edition/OConnell-McCaskie-Sayers/p/book/9780367548117",
+      "supports": "Examination of an incisional hernia standing and lying; head-lift test and divarication of the recti; examining the full scar, stoma sites and groins; emergency management of an obstructed or strangulated hernia"
+    },
+    {
+      "id": "EHS23",
+      "name": "Sanders DL, Pawlak MM, et al. Midline incisional hernia guidelines: the European Hernia Society. Br J Surg 2023;110(12):1732–68",
+      "version": "2023 (Br J Surg volume 110, issue 12, November 2023)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10638550/",
+      "supports": "Risk factors (high BMI, smoking, diabetes, immunosuppression, midline incision; SSI largest impact); imaging if examination is not definitive, CT most sensitive, ultrasound or MRI with Valsalva if cost or radiation a concern; CT or MRI for preoperative planning; reducible hernia: acute hernia accident about 1% in the first year and 2.5% by 5 years; repair when symptoms adversely affect quality of life after discussing watchful waiting; pre-optimisation (weight, HbA1c, smoking cessation, pulmonary fitness), smoking cessation over 4 weeks; mesh-based repair recommended; retromuscular mesh; close the fascial defect, avoid bridging"
+    },
+    {
+      "id": "EHSCLASS",
+      "name": "Muysoms FE, et al. Classification of primary and incisional abdominal wall hernias. Hernia 2009;13(4):407–14",
+      "version": "2009",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/19495920/",
+      "supports": "Incisional hernia width classes: W1 under 4 cm, W2 4 to 10 cm, W3 10 cm or more"
+    },
+    {
+      "id": "EHSEM",
+      "name": "Stabilini C, Theodorou A, Pawlak M, et al. EHS guidelines on the management of primary ventral and incisional hernias under emergency conditions. J Abdom Wall Surg 2026;5:16228 (PMID 41938186)",
+      "version": "Published 11 March 2026",
+      "url": "https://www.frontierspartnerships.org/journals/journal-of-abdominal-wall-surgery/articles/10.3389/jaws.2026.16228/full",
+      "supports": "Damage-control approach prioritising physiological stability; mesh-based repair suggested over primary fascial closure where the defect can be closed, whatever the contamination grade (CDC I, and CDC II or above once source control is achieved); staged repair, deferring definitive reconstruction, for large defects not amenable to closure"
+    }
+  ],
+  "media": [
+    {
+      "id": "IMG-293-1",
+      "task": "Optional: revise the EHS midline zones and width classes",
+      "description": "Own diagram of the anterior abdominal wall showing midline zones M1–M5 and defect width classes W1–W3",
+      "required": false,
+      "status": "needed"
+    }
+  ],
+  "partner": {
+    "opening": "Please examine this lady's abdominal wall. A chaperone is available. I'll stop you at 6 minutes.",
+    "actorBrief": "You are Mrs Janice Holbrook, 64. Emergency bowel operation three years ago for a burst diverticulum; the wound got infected and took weeks to heal. You had a stoma that was later reversed. For a year a lump at the top of your scar aches by the evening and gets bigger when you stand. You smoke 15 a day and have been told you are overweight. No vomiting; bowels normal. Push the lump back yourself when asked.",
+    "reveals": [
+      {
+        "trigger": "Inspects standing and asks her to cough",
+        "finding": "Long midline laparotomy scar and a healed left iliac fossa stoma scar. 8 cm swelling in the upper part of the midline scar, bigger on standing, with a visible cough impulse. Skin healthy.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Palpates and asks her to reduce it",
+        "finding": "Non-tender, not warm. Reduces fully lying. Fascial defect edges palpable, about 6 cm across.",
+        "row": "G3"
+      },
+      {
+        "trigger": "Head lift",
+        "finding": "Defect edges become clearer; no separation of the recti elsewhere.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Examines the rest of the wall",
+        "finding": "No hernia at the old stoma site, umbilicus or groins. Bowel sounds normal over the swelling.",
+        "row": "G4"
+      },
+      {
+        "trigger": "At 6 minutes",
+        "finding": "Say: \"Please stop there and present your findings.\"",
+        "row": "G5"
+      }
+    ],
+    "push": [
+      {
+        "question": "How do you tell an incisional hernia from divarication?",
+        "row": "G2",
+        "expect": "Head lift: divarication bulges along the midline without a discrete defect edge."
+      },
+      {
+        "question": "Would you image her?",
+        "row": "G6",
+        "expect": "CT to plan surgery; CT most sensitive if the diagnosis is uncertain."
+      },
+      {
+        "question": "Should she have an operation?",
+        "row": "G7",
+        "expect": "Depends on quality of life; optimise weight and smoking first; mesh repair."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "The swelling is tender and irreducible, and she has vomited three times.",
+        "safeAnswer": "Obstructed or strangulated: resuscitate, nil by mouth, bloods, CT, senior review, emergency surgery.",
+        "row": "G8"
+      },
+      {
+        "prompt": "She says it hardly bothers her.",
+        "safeAnswer": "Watchful waiting is reasonable: low acute risk; advise her to return with pain, irreducibility or vomiting.",
+        "row": "G7"
+      },
+      {
+        "prompt": "She has been told she needs to lose weight first but hasn't managed to.",
+        "safeAnswer": "If a dedicated programme fails, the risks of delay may outweigh further waiting: discuss repair.",
+        "row": "G7"
+      },
+      {
+        "prompt": "She asks why she got it.",
+        "safeAnswer": "The wound infection is the biggest factor; smoking and weight also contribute.",
+        "row": "G5"
+      }
+    ]
+  }
+}

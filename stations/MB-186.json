@@ -1,0 +1,639 @@
+{
+  "id": "MB-186",
+  "exam": "MRCS-B",
+  "title": "Acute upper gastrointestinal bleed",
+  "type": "applied-knowledge",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "Applied surgical science and critical care",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "NICE CG141 (updated Aug 2016, minor changes Mar 2025)",
+      "BSG AUGIB care bundle (Mar 2020)",
+      "Glasgow-Blatchford score (Lancet 2000)",
+      "BSH andexanet alfa position statement (Apr 2026)"
+    ],
+    "related": [
+      {
+        "id": "MB-133 Perforated viscus",
+        "why": "NSAIDs and peptic ulcer complications"
+      },
+      {
+        "id": "MB-185 Ruptured AAA",
+        "why": "Major haemorrhage protocol"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Emergency department",
+    "role": "Core surgical trainee on call",
+    "scenario": "Mr Derek Hollis, 67, vomited blood twice this morning and has passed black stool since last night. He takes naproxen for osteoarthritis and aspirin 75 mg daily after a stroke. He hasn't fainted. He has no known liver disease or heart failure. Pulse 104, BP 104/66.",
+    "task": "The examiner will ask about your assessment and management, giving results as you ask."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Resuscitate, score the risk, correct clotting, and get the right endoscopy at the right time.",
+    "trap": "Starting a PPI before endoscopy, or transfusing to a 'normal' haemoglobin.",
+    "firstMove": "\"ABCDE, two large-bore cannulas, bloods including crossmatch, then I'll calculate his Glasgow-Blatchford score.\""
+  },
+  "flow": [
+    "Resuscitate",
+    "Glasgow-Blatchford score",
+    "Transfusion and clotting",
+    "Drugs: PPI, NSAID, aspirin",
+    "Varices?",
+    "Endoscopy timing",
+    "Re-bleed: escalate"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-skill",
+      "label": "Assessment and resuscitation",
+      "fail": "Starts with a PPI infusion and waits for bloods.",
+      "pass": "ABCDE; observations with NEWS2; two large-bore cannulas; FBC, U&E, LFT, clotting, crossmatch; IV fluids.",
+      "high": "If unstable, a 500 ml crystalloid bolus in under 15 minutes, reassess; critical care review if instability persists.",
+      "source": "BSG"
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-knowledge",
+      "label": "Glasgow-Blatchford score",
+      "fail": "Can't name a pre-endoscopy score, or uses Rockall before endoscopy.",
+      "pass": "Calculates the Glasgow-Blatchford score at presentation; full Rockall after endoscopy.",
+      "high": "Works it aloud: urea 4, haemoglobin 3, systolic 1, pulse 1, melaena 1: total 10, high risk.",
+      "source": "GBS"
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "Disposition and endoscopy timing",
+      "fail": "Plans an outpatient endoscopy, or doesn't say when.",
+      "pass": "Admits him; endoscopy within 24 hours of admission; immediately after resuscitation if unstable with severe bleeding.",
+      "high": "Knows NICE considers early discharge only at GBS 0; the BSG bundle considers outpatient care at GBS 1 or less.",
+      "source": "CG141"
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-knowledge",
+      "label": "Red cell transfusion",
+      "fail": "Transfuses to a normal haemoglobin, or not at all when he's bleeding heavily.",
+      "pass": "Restrictive: transfuse below 70 g/L, target 70–100 g/L; higher trigger in ischaemic heart disease or instability.",
+      "high": "Says over-transfusion may be as harmful as under-transfusion; massive bleeding follows the major haemorrhage protocol instead.",
+      "source": "BSG"
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-knowledge",
+      "label": "Clotting and anticoagulants",
+      "fail": "Gives platelets or plasma with normal results, or doesn't know when they are needed.",
+      "pass": "Actively bleeding: platelets if under 50, FFP if PT or APTT over 1.5 times normal, PCC for warfarin.",
+      "high": "Cryoprecipitate if fibrinogen stays under 1.5 g/L; life-threatening GI bleed on apixaban or rivaroxaban: involves haematology (NICE TA697 lists andexanet; BSH 2026: thrombotic risks appear to outweigh benefits).",
+      "source": "CG141"
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-knowledge",
+      "label": "PPI, NSAIDs and aspirin",
+      "fail": "Starts a PPI before endoscopy and stops all antiplatelets indefinitely.",
+      "pass": "No PPI before endoscopy; PPI after endoscopy if stigmata of recent haemorrhage; stop naproxen.",
+      "high": "Continues low-dose aspirin for his stroke once haemostasis is achieved.",
+      "source": "CG141"
+    },
+    {
+      "id": "G7",
+      "domain": "clinical-knowledge",
+      "label": "Suspected variceal bleeding",
+      "fail": "Gives a PPI and nothing else to a patient with cirrhosis.",
+      "pass": "Suspected variceal bleed: terlipressin and prophylactic antibiotics at presentation; band ligation at endoscopy.",
+      "high": "Gives the bundle dose (terlipressin 2 mg IV four times a day), with caution in ischaemic heart or peripheral vascular disease.",
+      "source": "BSG"
+    },
+    {
+      "id": "G8",
+      "domain": "professionalism",
+      "label": "Re-bleed and escalation (safety-critical)",
+      "fail": "Keeps him on the ward waiting for the morning list.",
+      "pass": "Unstable re-bleed: major haemorrhage protocol, resuscitate, immediate endoscopy; tells registrar, endoscopist and critical care.",
+      "high": "Plans ahead: repeat endoscopy for re-bleeding; if unstable after endoscopic treatment, interventional radiology, or surgery if IR isn't promptly available.",
+      "source": "CG141"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "How would you manage Mr Hollis?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd start an omeprazole infusion straight away and wait for his bloods.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          },
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Any risk score?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "The Rockall score, now, before endoscopy.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "When should he be scoped?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "He could go home and come back for an outpatient OGD.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "His haemoglobin is 112."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd give two units to get him above 130.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Platelets 236, INR 1.1."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd give FFP and a pool of platelets anyway, to be safe.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Suppose he had alcohol-related cirrhosis."
+      },
+      {
+        "speaker": "candidate",
+        "text": "The PPI will cover it.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Overnight he vomits blood again; BP 82/50."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'll ask the endoscopist to add him to tomorrow's list.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "examiner",
+        "text": "How would you manage Mr Hollis?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "ABCDE, observations with NEWS2, two large-bore cannulas; FBC, U&E, LFTs, clotting and crossmatch; IV fluids.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Any risk score?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "The Glasgow-Blatchford score now; the full Rockall score after endoscopy.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Urea 11.2, Hb 112. When should he be scoped?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "His score is high, so he's admitted, with endoscopy within 24 hours of admission.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I wouldn't transfuse at 112. Restrictive: transfuse below 70, aiming for 70 to 100.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Platelets 236, INR 1.1."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Those are normal, so nothing now. If he were actively bleeding, platelets under 50; FFP only if his clotting times were over 1.5 times normal.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "No PPI before endoscopy; a PPI afterwards if there are stigmata of recent bleeding. I'd stop the naproxen.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Suppose he had alcohol-related cirrhosis."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Then variceal bleeding is possible: terlipressin and antibiotics now, and band ligation at endoscopy.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Overnight he vomits blood again; BP 82/50."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Major haemorrhage protocol, resuscitate, and endoscopy immediately after resuscitation. I'd call my registrar, the endoscopist and critical care.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "examiner",
+        "text": "How would you manage Mr Hollis?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "ABCDE and NEWS2. He's tachycardic, so two large-bore cannulas, bloods with clotting and crossmatch, and a 500 ml crystalloid bolus in under 15 minutes if he becomes unstable, then reassess.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Any risk score?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Glasgow-Blatchford at presentation, Rockall after endoscopy.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Urea 11.2, Hb 112. When should he be scoped?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Blatchford: urea 11.2 scores 4, male haemoglobin 112 scores 3, systolic 104 scores 1, pulse 104 scores 1, melaena 1. Total 10, high risk.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Admit, endoscopy within 24 hours. NICE would consider discharge only at 0; the BSG bundle at 1 or less. He's nowhere near.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "No transfusion at 112: trigger 70, target 70 to 100. Over-transfusion can be as harmful as under-transfusion, unless he bleeds massively.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Platelets 236, INR 1.1."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Normal, so no platelets or plasma. If actively bleeding: platelets under 50; FFP only for clotting over 1.5 times normal, cryoprecipitate if fibrinogen stays under 1.5. If he were on apixaban with a life-threatening bleed, I'd involve haematology: NICE lists andexanet alfa for GI bleeds, but the BSH now advises caution because of thrombosis.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "No PPI before endoscopy. Stop the naproxen. Continue his aspirin once haemostasis is achieved, because it's protecting him from another stroke.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Suppose he had alcohol-related cirrhosis."
+      },
+      {
+        "speaker": "candidate",
+        "text": "His Blatchford would be 12, with 2 for liver disease. Terlipressin 2 mg IV four times a day, watching for cardiac or peripheral ischaemia, and IV antibiotics now; band ligation at endoscopy.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Overnight he vomits blood again; BP 82/50."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Major haemorrhage protocol and immediate endoscopy after resuscitation; critical care now. If he re-bleeds after endoscopic treatment and stays unstable, interventional radiology, or surgery if IR isn't available promptly.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G8",
+      "move": "Leaving an unstable re-bleed for the next day's list.",
+      "consequence": "Safety-critical: he can exsanguinate; unstable patients need endoscopy immediately after resuscitation."
+    },
+    {
+      "row": "G7",
+      "move": "Treating a known cirrhotic with a PPI alone.",
+      "consequence": "Safety-critical: variceal bleeding without terlipressin and antibiotics carries higher re-bleeding and death rates."
+    },
+    {
+      "row": "G6",
+      "move": "Starting a PPI before endoscopy.",
+      "consequence": "NICE advises against it for suspected non-variceal bleeding; it delays nothing useful and doesn't replace endoscopy."
+    },
+    {
+      "row": "G4",
+      "move": "Transfusing to a normal haemoglobin.",
+      "consequence": "Over-transfusion may be as damaging as under-transfusion."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You can't remember the score bands",
+      "line": "I'd calculate the Glasgow-Blatchford score from his urea, haemoglobin, BP, pulse and presentation; a score above 0 means admission by NICE, above 1 by the BSG bundle."
+    },
+    {
+      "when": "You mentioned a PPI first",
+      "line": "Correction: no PPI before endoscopy; a PPI afterwards if there are stigmata."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Blatchford at first assessment, full Rockall after endoscopy; consider early discharge at Blatchford 0.",
+      "source": "CG141"
+    },
+    {
+      "fact": "Blatchford bands: urea 10.0–24.9 scores 4; male Hb 100–119 scores 3; systolic 100–109 scores 1; pulse 100 or more 1; melaena 1; syncope, liver disease, cardiac failure 2 each.",
+      "source": "GBS"
+    },
+    {
+      "fact": "Endoscopy immediately after resuscitation if unstable; within 24 hours for everyone else.",
+      "source": "CG141"
+    },
+    {
+      "fact": "Restrictive transfusion: trigger Hb under 70 g/L, target 70–100 g/L. Outpatient care at GBS 1 or less.",
+      "source": "BSG"
+    },
+    {
+      "fact": "Suspected variceal bleed: terlipressin and prophylactic antibiotics at presentation; band ligation for oesophageal varices.",
+      "source": "CG141"
+    },
+    {
+      "fact": "BSH (2026): the risks of andexanet alfa appear to outweigh its benefits; involve haematology.",
+      "source": "BSHAX"
+    }
+  ],
+  "recall": {
+    "think": "Exsanguination, especially from varices or a re-bleeding ulcer.",
+    "say": "\"Glasgow-Blatchford 10: high risk. Admit, endoscopy within 24 hours, sooner if unstable.\"",
+    "do": [
+      "Resuscitate; crossmatch; restrictive transfusion",
+      "Score Blatchford; correct clotting",
+      "No PPI before endoscopy; terlipressin if varices"
+    ],
+    "numbers": [
+      {
+        "value": "0 / ≤ 1",
+        "meaning": "Blatchford for early discharge (NICE) / outpatient care (BSG)",
+        "source": "CG141"
+      },
+      {
+        "value": "< 70 g/L",
+        "meaning": "transfuse; target 70–100 g/L",
+        "source": "BSG"
+      },
+      {
+        "value": "24 h",
+        "meaning": "endoscopy for stable patients",
+        "source": "CG141"
+      }
+    ],
+    "trap": "A normal-looking haemoglobin early on; it lags behind the bleed.",
+    "finish": "Endoscopic haemostasis; interventional radiology or surgery for re-bleeding."
+  },
+  "sources": [
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format: 9 minutes with 1 minute's reading; examiner-led questioning in applied knowledge stations"
+    },
+    {
+      "id": "CG141",
+      "name": "NICE CG141: Acute upper gastrointestinal bleeding in over 16s: management",
+      "version": "Published 13 June 2012; last updated 25 August 2016; minor changes March 2025",
+      "url": "https://www.nice.org.uk/guidance/cg141",
+      "supports": "Blatchford score at first assessment and full Rockall score after endoscopy (1.1.1); consider early discharge with pre-endoscopy Blatchford 0 (1.1.2); massive bleeding: blood, platelets and clotting factors per local protocol (1.2.1); over-transfusion may be as damaging as under-transfusion (1.2.2); platelets if actively bleeding and count under 50 x 10^9/L (1.2.4); FFP if actively bleeding and PT (or INR) or APTT over 1.5 times normal; cryoprecipitate if fibrinogen stays under 1.5 g/L (1.2.4); PCC for patients on warfarin who are actively bleeding (1.2.5); DOAC reversal per MHRA list; andexanet alfa per TA697 (1.2.8); endoscopy immediately after resuscitation if unstable with severe bleeding (1.3.1); within 24 hours of admission for all others (1.3.2); no PPI or H2RA before endoscopy for suspected non-variceal bleeding (1.4.3); PPI if stigmata of recent haemorrhage at endoscopy (1.4.4); repeat endoscopy for re-bleeding (1.4.6); interventional radiology for unstable re-bleeding after endoscopic treatment, or urgent surgery if not promptly available (1.4.7); terlipressin at presentation for suspected variceal bleeding (1.5.1); prophylactic antibiotics at presentation for suspected or confirmed variceal bleeding (1.5.2); band ligation for oesophageal varices (1.5.3); continue low-dose aspirin once haemostasis is achieved (1.6.1); stop other NSAIDs (1.6.2)"
+    },
+    {
+      "id": "BSG",
+      "name": "Siau K, Hearnshaw S, Stanley AJ, et al. British Society of Gastroenterology (BSG)-led multisociety consensus care bundle for the early clinical management of acute upper gastrointestinal bleeding. Frontline Gastroenterol 2020;11(4):311-323",
+      "version": "Published online 27 March 2020",
+      "url": "https://doi.org/10.1136/flgastro-2019-101395",
+      "supports": "Observations with a validated early warning score such as NEWS; IV fluids for all, unstable patients a 500 ml crystalloid bolus in under 15 minutes; restrictive red cell transfusion: trigger Hb under 70 g/L, target 70-100 g/L, higher trigger in ischaemic heart disease or haemodynamic instability; critical care review for ongoing instability; GBS at presentation; consider outpatient management if GBS 1 or less; IV terlipressin 2 mg four times a day and IV antibiotics for suspected variceal bleeding; interrupt warfarin and DOACs at presentation; endoscopy within 24 hours, earlier after resuscitation if unstable; high-dose PPI after endoscopy for high-risk ulcer stigmata"
+    },
+    {
+      "id": "GBS",
+      "name": "Blatchford O, Murray WR, Blatchford M. A risk score to predict need for treatment for upper-gastrointestinal haemorrhage. Lancet 2000;356:1318-21",
+      "version": "October 2000",
+      "url": "https://doi.org/10.1016/S0140-6736(00)02816-6",
+      "supports": "Glasgow-Blatchford score: urea (mmol/L) 6.5-7.9 = 2, 8.0-9.9 = 3, 10.0-24.9 = 4, 25 or more = 6; haemoglobin men 120-129 g/L = 1, 100-119 = 3, under 100 = 6; women 100-119 = 1, under 100 = 6; systolic BP 100-109 = 1, 90-99 = 2, under 90 = 3; pulse 100 or more = 1; melaena = 1; syncope = 2; hepatic disease = 2; cardiac failure = 2"
+    },
+    {
+      "id": "TA697",
+      "name": "NICE TA697: Andexanet alfa for reversing anticoagulation from apixaban or rivaroxaban",
+      "version": "Published 12 May 2021; last updated 15 January 2025",
+      "url": "https://www.nice.org.uk/guidance/ta697",
+      "supports": "Andexanet alfa recommended for life-threatening or uncontrolled bleeding on apixaban or rivaroxaban only if the bleed is in the gastrointestinal tract (1.1)"
+    },
+    {
+      "id": "BSHAX",
+      "name": "Buka RJ, et al. Use of andexanet alfa: a British Society for Haematology position statement. Br J Haematol 2026;208:1939–41",
+      "version": "April 2026",
+      "url": "https://b-s-h.org.uk/guidelines/guidelines/use-of-andexanet-alfa-a-british-society-for-haematology-position-statement",
+      "supports": "Risks of andexanet alfa appear to outweigh benefits for factor Xa inhibitor-associated bleeding"
+    }
+  ],
+  "partner": {
+    "opening": "Mr Hollis has just been referred to you. How would you assess and manage him?",
+    "reveals": [
+      {
+        "trigger": "Asks about observations and examination",
+        "finding": "Pulse 104, BP 104/66, RR 20, SpO2 97% on air, temperature 36.8°C, alert. Melaena on rectal examination. No signs of chronic liver disease.",
+        "row": "G1"
+      },
+      {
+        "trigger": "Asks for bloods",
+        "finding": "Hb 112 g/L, urea 11.2 mmol/L, creatinine 96 µmol/L, platelets 236 x 10^9/L, INR 1.1, APTT normal.",
+        "row": "G2"
+      },
+      {
+        "trigger": "After the drugs are discussed",
+        "finding": "Say: \"Suppose he had alcohol-related cirrhosis.\" (He has none in this case; this tests the variceal pathway.)",
+        "row": "G7"
+      },
+      {
+        "trigger": "After the endoscopy plan",
+        "finding": "Overnight: further haematemesis. Pulse 128, BP 82/50, Hb 74 g/L.",
+        "row": "G8"
+      }
+    ],
+    "push": [
+      {
+        "question": "What is his Glasgow-Blatchford score?",
+        "row": "G2",
+        "expect": "10: urea 4, Hb 3, systolic 1, pulse 1, melaena 1."
+      },
+      {
+        "question": "Would you start a PPI now?",
+        "row": "G6",
+        "expect": "No: not before endoscopy for suspected non-variceal bleeding; after endoscopy if stigmata."
+      },
+      {
+        "question": "When would you transfuse him?",
+        "row": "G4",
+        "expect": "Hb under 70 g/L, target 70–100; higher trigger if ischaemic heart disease or unstable; massive bleeding follows the major haemorrhage protocol."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "He is on warfarin, INR 3.8, and still bleeding.",
+        "safeAnswer": "Stop warfarin and give prothrombin complex concentrate because he is actively bleeding; involve haematology.",
+        "row": "G5"
+      },
+      {
+        "prompt": "A 24-year-old with one small haematemesis after retching, normal observations and bloods: Blatchford 0.",
+        "safeAnswer": "Consider early discharge with outpatient follow-up and clear safety-netting.",
+        "row": "G3"
+      },
+      {
+        "prompt": "After two endoscopic treatments he re-bleeds and is unstable.",
+        "safeAnswer": "Interventional radiology for embolisation; urgent surgery if IR isn't promptly available.",
+        "row": "G8"
+      }
+    ]
+  }
+}

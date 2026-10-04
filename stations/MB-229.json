@@ -1,0 +1,580 @@
+{
+  "id": "MB-229",
+  "exam": "MRCS-B",
+  "title": "Refeeding syndrome and postoperative nutrition",
+  "type": "applied-knowledge",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "Applied surgical science and critical care",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "NICE CG32 (Feb 2006, updated Aug 2017)",
+      "Khan et al., refeeding syndrome review (2010)"
+    ],
+    "related": [
+      {
+        "id": "MB-160 Consent: emergency laparotomy and possible stoma",
+        "why": "The operation before this nutritional problem"
+      },
+      {
+        "id": "MB-133 Perforated viscus and peritonitis",
+        "why": "Postoperative care after emergency laparotomy"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Surgical ward",
+    "role": "Core surgical trainee",
+    "scenario": "Mr Dennis Fothergill, 61, is on day 3 after an emergency laparotomy and small bowel resection for adhesional obstruction. He vomited and ate almost nothing for 4 days before admission and has eaten almost nothing since. He weighs 52 kg; BMI 17.6. He has no history of alcohol misuse. His bowels have opened, but he is eating very little. The team plans nasogastric feeding today.",
+    "task": "The examiner will ask about his refeeding risk and how you would start and monitor his feeding."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Classify his risk with the NICE criteria, then prescribe cautiously: slow calories, thiamine first, electrolytes, close monitoring.",
+    "trap": "Calling him low risk because his BMI is above 16.",
+    "firstMove": "\"He's malnourished and has eaten almost nothing for 7 days: high risk of refeeding problems.\""
+  },
+  "flow": [
+    "Nutritional screen",
+    "Refeeding risk",
+    "Why it happens",
+    "Start rate",
+    "Thiamine and vitamins",
+    "Electrolytes",
+    "Monitoring",
+    "Recognise and escalate"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-knowledge",
+      "label": "Nutritional assessment",
+      "fail": "Doesn't recognise that he is malnourished, or ignores how long he has gone without food.",
+      "pass": "Malnourished (BMI under 18.5) and at risk: little or nothing eaten for more than 5 days.",
+      "high": "Uses a screening tool such as MUST; asks about unintentional weight loss over 3–6 months.",
+      "source": "CG32"
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-knowledge",
+      "label": "Refeeding risk category",
+      "fail": "Calls him low risk because his BMI is over 16.",
+      "borderline": "Knows he is at risk but can't say which NICE criteria make him high risk.",
+      "pass": "High risk: two of the 'two or more' criteria (BMI under 18.5; little or no intake for more than 5 days).",
+      "high": "Knows the single criteria: BMI under 16, weight loss over 15%, over 10 days' poor intake, or low potassium, phosphate or magnesium.",
+      "source": "CG32"
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "Pathophysiology",
+      "fail": "Thinks refeeding syndrome is overfeeding causing diarrhoea.",
+      "pass": "Insulin surge on refeeding drives potassium, phosphate and magnesium into cells; sodium and water are retained.",
+      "high": "Explains depleted stores despite normal serum levels, rising thiamine demand, and the risks: arrhythmia, heart and respiratory failure, delirium.",
+      "source": "KHAN"
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-knowledge",
+      "label": "Starting the feed (safety-critical)",
+      "fail": "Starts full feed at 25–35 kcal/kg/day.",
+      "pass": "Starts at a maximum of 10 kcal/kg/day (about 520 kcal/day for 52 kg); increases slowly to full needs by 4–7 days.",
+      "high": "Knows 5 kcal/kg/day for extreme cases (BMI under 14, negligible intake over 15 days) with continuous cardiac monitoring.",
+      "source": "CG32"
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-knowledge",
+      "label": "Thiamine and vitamins",
+      "fail": "Gives thiamine only to people who drink, or after the feed has started.",
+      "pass": "Immediately before feeding and for 10 days: thiamin 200–300 mg daily, vitamin B co strong 1–2 tablets three times daily, and a daily multivitamin.",
+      "high": "Uses a full-dose IV vitamin B preparation if oral absorption is doubtful; links thiamine to Wernicke's encephalopathy.",
+      "source": "CG32"
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-knowledge",
+      "label": "Electrolytes",
+      "fail": "Delays feeding until potassium, phosphate and magnesium are 'normalised'.",
+      "pass": "Supplements potassium, phosphate and magnesium unless pre-feeding levels are high; correcting them before feeding isn't necessary.",
+      "high": "Knows likely needs per day: potassium 2–4, phosphate 0.3–0.6, magnesium 0.2 IV or 0.4 oral mmol/kg.",
+      "source": "CG32"
+    },
+    {
+      "id": "G7",
+      "domain": "clinical-skill",
+      "label": "Monitoring",
+      "fail": "Checks bloods weekly.",
+      "pass": "Daily U&E, magnesium and phosphate while at risk; glucose once or twice daily until stable; daily fluid balance.",
+      "high": "Confirms nasogastric tube position before each use (aspirate and pH paper, X-ray if needed); cardiac monitoring if an arrhythmia develops.",
+      "source": "CG32"
+    },
+    {
+      "id": "G8",
+      "domain": "professionalism",
+      "label": "Team and escalation",
+      "fail": "Runs the feed alone and doesn't act on a falling phosphate.",
+      "pass": "Involves the dietitian and nutrition support team; recognises refeeding syndrome and tells the senior.",
+      "high": "On a falling phosphate: replaces electrolytes, reviews the feed rate with the nutrition team, monitors fluids and ECG, documents."
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "Is he at risk of refeeding syndrome?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "His BMI is 17.6, which is above 16, so he's low risk.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          },
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What is refeeding syndrome?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Overfeeding, so he gets diarrhoea.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you start the feed?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Full target straight away, 30 kcal per kilo, because he's been starved long enough.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Any vitamins?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "He doesn't drink, so he doesn't need thiamine.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "His potassium is 3.6."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd hold the feed until all his electrolytes are perfect.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Monitoring?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Weekly bloods should be enough.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "examiner",
+        "text": "Is he at risk of refeeding syndrome?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "He's malnourished with a BMI under 18.5, and he's eaten little or nothing for 7 days.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "That's two of NICE's 'two or more' criteria, so he's high risk.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What is refeeding syndrome?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "When feeding restarts, insulin rises and drives potassium, phosphate and magnesium into cells, and he retains salt and water.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you start the feed?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "A maximum of 10 kcal per kilo per day, so about 520 kcal, building up slowly to full needs over 4 to 7 days.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Any vitamins?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Yes, before the feed starts and for 10 days: thiamin 200 to 300 mg daily, vitamin B co strong 1 or 2 tablets three times a day, and a multivitamin.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "His potassium is 3.6."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd supplement potassium, phosphate and magnesium alongside the feed; I don't need to correct them first.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Monitoring?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Daily U&E, magnesium and phosphate, glucose once or twice a day, and a fluid balance chart.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "On day 2 of feeding his phosphate is 0.38."
+      },
+      {
+        "speaker": "candidate",
+        "text": "That's refeeding syndrome. I'd tell my registrar and the nutrition team and replace it.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "examiner",
+        "text": "Is he at risk of refeeding syndrome?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "He's malnourished: BMI 17.6. I'd complete a MUST screen and ask about weight loss over the last 3 to 6 months.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "He's high risk: BMI under 18.5 and 7 days of little or no intake. He'd also be high risk on one criterion alone, such as BMI under 16, weight loss over 15%, over 10 days without intake, or low potassium, phosphate or magnesium.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What is refeeding syndrome?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Starvation depletes intracellular potassium, phosphate and magnesium, though serum levels can look normal. Feeding triggers insulin, which drives them into cells, and the serum levels fall fast. Thiamine demand rises. The risks are arrhythmia, heart and respiratory failure, and delirium.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you start the feed?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Ten kcal per kilo per day at most: about 520 kcal. Full needs by day 4 to 7. If his BMI were under 14, or he'd barely eaten for over 15 days, I'd use 5 kcal per kilo with continuous cardiac monitoring.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Any vitamins?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Thiamin 200 to 300 mg daily, vitamin B co strong and a multivitamin, starting before the feed and continuing for 10 days. I'd use a full-dose IV vitamin B preparation if I doubted absorption. Thiamine prevents Wernicke's.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "His potassium is 3.6."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Supplement as we feed: roughly potassium 2 to 4, phosphate 0.3 to 0.6, magnesium 0.2 IV per kilo per day. No need to delay feeding to correct first.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Monitoring?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Daily U&E, magnesium and phosphate, glucose, and fluid balance. The NG tube position is checked before every use with aspirate and pH paper.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "On day 2 of feeding his phosphate is 0.38."
+      },
+      {
+        "speaker": "candidate",
+        "text": "That's refeeding syndrome. I'd call my registrar and the nutrition team: replace phosphate, potassium and magnesium, review the feed rate, and check his ECG, fluids and ankles. I'd document it.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G4",
+      "move": "Starting full-strength feeding in a high-risk patient.",
+      "consequence": "Safety-critical: a rapid fall in phosphate, potassium and magnesium can cause arrhythmia, heart failure and death."
+    },
+    {
+      "row": "G5",
+      "move": "Starting the feed without thiamine.",
+      "consequence": "Safety-critical: rising thiamine demand can precipitate Wernicke's encephalopathy."
+    },
+    {
+      "row": "G8",
+      "move": "Ignoring a falling phosphate on day 2 of feeding.",
+      "consequence": "Safety-critical: established refeeding syndrome goes untreated."
+    },
+    {
+      "row": "G2",
+      "move": "Calling him low risk because his BMI is over 16.",
+      "consequence": "The 'two or more' criteria are missed, and he is fed too fast."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You forget the high-risk criteria",
+      "line": "He's malnourished and hasn't eaten for a week, so I'll treat him as high risk and start slowly."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Malnourished: BMI under 18.5, over 10% weight loss in 3–6 months, or BMI under 20 with over 5% loss.",
+      "source": "CG32"
+    },
+    {
+      "fact": "Anyone who has eaten little or nothing for over 5 days: no more than 50% of requirements for the first 2 days.",
+      "source": "CG32"
+    },
+    {
+      "fact": "General surgical patients shouldn't have enteral tube feeding within 48 hours of surgery unless they meet NICE's criteria.",
+      "source": "CG32"
+    },
+    {
+      "fact": "Hypophosphataemia is the usual surrogate marker of refeeding syndrome; normal phosphate 0.8–1.45 mmol/L.",
+      "source": "KHAN"
+    }
+  ],
+  "recall": {
+    "think": "Electrolyte shifts and thiamine deficiency on refeeding.",
+    "say": "\"He's high risk: start at 10 kcal per kilo, thiamine first.\"",
+    "do": [
+      "Classify risk (NICE criteria)",
+      "Thiamine before feeding",
+      "Daily U&E, phosphate, magnesium"
+    ],
+    "numbers": [
+      {
+        "value": "10 kcal/kg/day",
+        "meaning": "maximum starting rate if high risk",
+        "source": "CG32"
+      },
+      {
+        "value": "10 days",
+        "meaning": "thiamine and vitamins from before feeding",
+        "source": "CG32"
+      },
+      {
+        "value": "2 of 4",
+        "meaning": "BMI < 18.5 plus > 5 days poor intake: high risk",
+        "source": "CG32"
+      }
+    ],
+    "trap": "A BMI over 16 does not make him low risk.",
+    "finish": "Full needs by 4–7 days, with the nutrition team."
+  },
+  "sources": [
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format: 9 minutes with 1 minute's reading; examiner-led questioning in applied knowledge stations"
+    },
+    {
+      "id": "CG32",
+      "name": "NICE CG32: Nutrition support for adults: oral nutrition support, enteral tube feeding and parenteral nutrition",
+      "version": "Published 22 February 2006; last updated 4 August 2017",
+      "url": "https://www.nice.org.uk/guidance/cg32",
+      "supports": "Screening with BMI and unintentional weight loss, e.g. MUST (1.2.6); malnourished = BMI under 18.5, weight loss over 10% in 3-6 months, or BMI under 20 with weight loss over 5% (1.3.1); at risk = eaten little or nothing for more than 5 days or likely to for 5 more days (1.3.2); not at refeeding risk: 25-35 kcal/kg/day (1.4.2); seriously ill: start at no more than 50% of target, build up over 24-48 hours (1.4.4); little or nothing for more than 5 days: no more than 50% for the first 2 days (1.4.5); high-risk criteria (box 1): one or more of BMI under 16, weight loss over 15% in 3-6 months, little or no intake for more than 10 days, low potassium, phosphate or magnesium before feeding; or two or more of BMI under 18.5, weight loss over 10% in 3-6 months, little or no intake for more than 5 days, history of alcohol abuse or drugs including insulin, chemotherapy, antacids or diuretics (1.4.6); skilled professionals (1.4.7); high-risk prescription: start at a maximum of 10 kcal/kg/day, increase slowly to full needs by 4-7 days; 5 kcal/kg/day in extreme cases (e.g. BMI under 14 or negligible intake over 15 days) with continuous cardiac monitoring in these and anyone with arrhythmias; restore circulatory volume and monitor fluid balance; immediately before and during the first 10 days: oral thiamin 200-300 mg daily, vitamin B co strong 1-2 tablets three times a day (or full-dose daily IV vitamin B), and a balanced multivitamin or trace element supplement daily; potassium 2-4, phosphate 0.3-0.6, magnesium 0.2 (IV) or 0.4 (oral) mmol/kg/day unless pre-feeding levels are high; pre-feeding correction unnecessary (1.4.8); laboratory monitoring (table 2): sodium, potassium, urea and creatinine daily until stable; glucose 1-2 times a day until stable; magnesium and phosphate daily if at risk of refeeding syndrome; fluid balance daily initially (table 1); no enteral tube feeding within 48 hours of general surgery unless criteria in 1.7.1 are met (1.7.5); feed into the stomach unless upper GI dysfunction (1.7.6); confirm nasogastric tube position after placement and before each use by aspiration and pH-graded paper, with X-ray if needed (1.7.17)"
+    },
+    {
+      "id": "KHAN",
+      "name": "Khan LUR, et al. Refeeding syndrome: a literature review. Gastroenterol Res Pract 2011;2011:410971",
+      "version": "Published online 25 August 2010",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/20886063/",
+      "supports": "In starvation, intracellular potassium, phosphate and magnesium are depleted while serum levels may stay normal; on refeeding, insulin rises and drives potassium, phosphate and magnesium into cells, so serum levels fall rapidly; sodium and water retention; thiamine demand rises as carbohydrate metabolism restarts; hypophosphataemia is the usual surrogate marker; features range from nausea and lethargy to respiratory insufficiency, cardiac failure, hypotension, arrhythmias, delirium, coma and death; thiamine deficiency presents as Wernicke-Korsakoff syndrome; prevention: identify at-risk patients, monitor and use a cautious feeding regimen; phosphate normal range 0.8-1.45 mmol/L"
+    }
+  ],
+  "media": [],
+  "partner": {
+    "opening": "Mr Fothergill is starting nasogastric feeding today. Is he at risk of refeeding syndrome?",
+    "reveals": [
+      {
+        "trigger": "Asks for his pre-feeding bloods",
+        "finding": "Na 137, K 3.6, urea 4.1, creatinine 68, phosphate 0.86, magnesium 0.78, glucose 5.4. Pulse 84, regular.",
+        "row": "G6"
+      },
+      {
+        "trigger": "Asks how the NG tube position was checked",
+        "finding": "The tube was placed an hour ago. No aspirate or X-ray check has been recorded yet.",
+        "row": "G7"
+      },
+      {
+        "trigger": "Asks about day 2 of feeding",
+        "finding": "He feels weak and breathless; ankles puffy. Pulse 104, BP 112/70. Phosphate 0.38, potassium 3.1, magnesium 0.58. Fluid balance +1.8 L.",
+        "row": "G8"
+      }
+    ],
+    "push": [
+      {
+        "question": "Why can his electrolytes be normal before feeding but fall afterwards?",
+        "row": "G3",
+        "expect": "Intracellular stores are depleted while serum is maintained; insulin on refeeding shifts ions into cells."
+      },
+      {
+        "question": "What would you do if his BMI were 13?",
+        "row": "G4",
+        "expect": "Extreme case: 5 kcal/kg/day with continuous cardiac monitoring."
+      },
+      {
+        "question": "When would you use IV vitamin B?",
+        "row": "G5",
+        "expect": "If oral or enteral absorption is doubtful: a full-dose daily IV vitamin B preparation."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "The nurse wants to start the feed now; the tube position hasn't been confirmed.",
+        "safeAnswer": "Not until the position is confirmed by aspirate and pH-graded paper, or X-ray if needed.",
+        "row": "G7"
+      },
+      {
+        "prompt": "The dietitian is away until Monday.",
+        "safeAnswer": "Start cautiously at no more than 10 kcal/kg/day with thiamine and electrolytes; involve the nutrition support team or on-call senior.",
+        "row": "G8"
+      }
+    ]
+  }
+}

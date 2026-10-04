@@ -1,0 +1,526 @@
+{
+  "id": "MB-162",
+  "exam": "MRCS-B",
+  "title": "Talking to a relative when the patient lacks capacity",
+  "type": "communication",
+  "header": {
+    "domain": "Applied Skills",
+    "contentArea": "Communication skills in giving and receiving information and history taking",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "Mental Capacity Act 2005",
+      "MCA Code of Practice (2007)",
+      "GMC Confidentiality (2017; updated 2024)",
+      "GMC Decision making and consent (Nov 2020; updated Aug 2026)"
+    ],
+    "related": [
+      {
+        "id": "MB-160 Consent for emergency laparotomy",
+        "why": "The same decision when the patient can consent"
+      },
+      {
+        "id": "MB-163 Telephone referral (SBAR)",
+        "why": "Escalating to the consultant who makes the decision"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Orthopaedic ward, relatives' room",
+    "role": "Core surgical trainee, general surgery",
+    "scenario": "Mrs Edna Marsh, 84, is three days after fixation of a hip fracture. She has delirium. Her abdomen has become very distended and CT shows acute colonic pseudo-obstruction. She has not settled with a nasogastric tube and stopping opioids. Your consultant recommends colonoscopic decompression tomorrow. The team has assessed that Mrs Marsh lacks capacity to make this decision. Her daughter, Mrs Claire Dawson, has arrived.",
+    "task": "Speak to Mrs Dawson about her mother's condition and the proposed procedure."
+  },
+  "beforeYouWalkIn": {
+    "frame": "The daughter informs the decision; she doesn't make it, unless she holds a valid health and welfare LPA covering it. Also check for an advance decision or a deputy.",
+    "trap": "Handing her the consent form because she is next of kin.",
+    "firstMove": "Confirm who she is, what she knows, and whether there is a power of attorney."
+  },
+  "flow": [
+    "Introduce; confirm relationship",
+    "What she knows",
+    "Delirium and the bowel",
+    "Capacity and who decides",
+    "Her mother's wishes",
+    "Concerns",
+    "Plan and record"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "communication",
+      "label": "Opening and confidentiality",
+      "fail": "Discusses the patient without confirming who she is.",
+      "pass": "Introduces himself, confirms her name and relationship, checks what she knows; shares general condition, as her mother would likely want.",
+      "high": "Asks whether her mother ever said who should, or shouldn't, be told about her health.",
+      "source": "GMCCONF"
+    },
+    {
+      "id": "G2",
+      "domain": "communication",
+      "label": "Explaining the situation",
+      "fail": "Uses jargon (\"Ogilvie's\", \"pseudo-obstruction\") without explanation.",
+      "pass": "Plain words: delirium is a temporary confusion; the large bowel has stopped working and swollen; a camera test can let the gas out.",
+      "high": "Explains the risk of the bowel tearing if it keeps swelling, which is why the decision can't wait long.",
+      "source": "BL"
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "Capacity",
+      "fail": "Says she lacks capacity because she's old or confused.",
+      "pass": "Capacity is decision-specific: delirium means she can't understand, retain or weigh this information now.",
+      "high": "Adds that we'll reassess, involve her as far as she can, and ask her if she regains capacity in time.",
+      "source": "MCA"
+    },
+    {
+      "id": "G4",
+      "domain": "professionalism",
+      "label": "Who decides (safety-critical)",
+      "fail": "Asks the daughter to sign the consent form as next of kin.",
+      "pass": "Explains that next of kin can't consent for an adult; the consultant responsible for the procedure decides in her best interests after consulting family.",
+      "high": "Asks about a lasting power of attorney: only a registered health and welfare LPA covers this; property and finance does not.",
+      "source": "MCA"
+    },
+    {
+      "id": "G5",
+      "domain": "communication",
+      "label": "Best interests: her mother's wishes",
+      "fail": "Asks \"What do you want us to do?\", putting the decision on her.",
+      "pass": "Asks what her mother would want: past wishes, values and beliefs; who else should be consulted.",
+      "high": "Picks up \"no more big operations\" and says it will shape the plan if the bowel tears; asks about the brother.",
+      "source": "MCA"
+    },
+    {
+      "id": "G6",
+      "domain": "communication",
+      "label": "Responding to her concerns",
+      "fail": "Ignores her distress or guilt.",
+      "pass": "Acknowledges her distress; explains delirium often improves.",
+      "high": "Explores the hidden fear that her mother won't get home; answers honestly without false reassurance."
+    },
+    {
+      "id": "G7",
+      "domain": "professionalism",
+      "label": "Disagreement and safeguards",
+      "fail": "Agrees to whatever the daughter wants, or dismisses her view.",
+      "pass": "If they disagree: consultant discussion and a second opinion; the decision is still best interests.",
+      "high": "Knows an IMCA is needed for serious treatment only if no family or friend is appropriate to consult, unless urgent.",
+      "source": "MCA"
+    },
+    {
+      "id": "G8",
+      "domain": "professionalism",
+      "label": "Documentation and next steps",
+      "fail": "Makes no record of the discussion.",
+      "pass": "Records the capacity assessment, her views and the best-interests decision; informs the consultant; agrees when to update her.",
+      "high": "Records the capacity assessment and best-interests decision (usually on the trust's form for adults who lack capacity); plans daily capacity reassessment and a call to the brother.",
+      "source": "MCACOP"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "candidate",
+        "text": "Are you family? Right. Your mum's bowel is blocked with Ogilvie's, so she needs a colonoscopy.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          },
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Mrs Dawson: “I'm her next of kin. Give me the form.”"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Great, that makes it easy. She's too confused to decide anything at her age anyway. Sign here.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          },
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Mrs Dawson: “Is she going to be like this for good?”"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Hard to say. So are you happy to go ahead?",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          },
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "candidate",
+        "text": "Hello, I'm Dr Mensah, from the general surgical team. Can I check your name and how you're related to Mrs Marsh? What have you been told so far?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Your mum has delirium: a temporary confusion that's common after a hip operation. Separately, her large bowel has stopped working and swollen with gas. We'd like to pass a camera to let the gas out.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Mrs Dawson: “I'm her next of kin. I'll sign.”"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Being next of kin doesn't allow you to consent for an adult. Capacity is about this decision; because of the delirium, she can't understand or weigh it at the moment. So the consultant decides in her best interests, and your view really matters.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          },
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "What would your mum want? Has she said anything about treatment like this? Is there anyone else we should speak to?",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Mrs Dawson: “Is she going to be like this for good?”"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I can see this is really hard. Delirium often improves as the cause is treated.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "If you disagreed with the plan, I'd ask the consultant to meet you, and we could get a second opinion.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'll record our discussion, your views and the decision, tell the consultant, and ring you after the procedure.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "candidate",
+        "text": "Hello, I'm Dr Mensah, from the general surgeons. Can I check your name and how you're related to Mrs Marsh? What have you been told? Did your mum ever say who she wanted told about her health?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Two things are going on. She has delirium, a temporary confusion. And her large bowel has stopped working and blown up with gas. If it keeps stretching it can tear, which is why we'd like to let the gas out with a camera tomorrow.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Mrs Dawson: “I'm her next of kin. I'll sign.”"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Thank you. Do you have a lasting power of attorney? Only a registered health and welfare one would let you decide this; one for property and money wouldn't. Without that, the consultant decides in your mum's best interests, and what you tell us about her is central.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Capacity is about this decision at this time. Today she can't hold on to or weigh the information. We'll check again tomorrow, involve her as much as she can manage, and if she can decide, she will.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "What would she want? Her values, anything she's said?",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Mrs Dawson: “After the hip she said, \"No more big operations.\"”"
+      },
+      {
+        "speaker": "candidate",
+        "text": "That's really important. The camera test isn't a big operation, but if the bowel tore, that wish would shape what we do. Should we speak to your brother too?",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "You look worried. What's on your mind? [Listens] Many people recover from delirium, but some take weeks and some don't get back to how they were. We'll know more over the coming days.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "If there were no family or friends to ask, the hospital would involve an independent mental capacity advocate. You're here, so we don't need one.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'll record the capacity assessment, your views and her wishes on the form for adults who can't consent, tell the consultant, reassess her daily and call you and your brother tomorrow.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G4",
+      "move": "Accepting the daughter's signature as consent.",
+      "consequence": "Safety-critical: no legal authority for the procedure; next of kin cannot consent for an adult without a valid LPA."
+    },
+    {
+      "row": "G5",
+      "move": "Asking her to decide rather than asking what her mother would want.",
+      "consequence": "Puts an unfair burden on her and skips the best-interests test."
+    },
+    {
+      "row": "G7",
+      "move": "Agreeing to whatever the relative wants to avoid conflict.",
+      "consequence": "The decision is no longer made in the patient's best interests."
+    },
+    {
+      "row": "G8",
+      "move": "Making no record of the capacity assessment or the discussion.",
+      "consequence": "Nobody can see how the best-interests decision was reached."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "She insists on signing",
+      "line": "I know you want to do the right thing for her. What will help most is telling me what she would want."
+    },
+    {
+      "when": "You forgot to ask about an LPA",
+      "line": "Can I ask: has your mum ever made a lasting power of attorney?"
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Lacks capacity: unable to decide because of an impairment of, or a disturbance in the functioning of, the mind or brain (s2(1)); unable to understand, retain, use or weigh, or communicate (s3(1)).",
+      "source": "MCA"
+    },
+    {
+      "fact": "Best interests: consider whether she may regain capacity (s4(3)); her past wishes and values (s4(6)); consult carers, family and any attorney (s4(7)).",
+      "source": "MCA"
+    },
+    {
+      "fact": "A registered health and welfare LPA applies only when she lacks capacity; life-sustaining treatment needs express authority (s9, s11(7)–(8)).",
+      "source": "MCA"
+    },
+    {
+      "fact": "IMCA for serious medical treatment if nobody appropriate to consult, unless urgent (s37).",
+      "source": "MCA"
+    }
+  ],
+  "recall": {
+    "think": "Who can legally decide, and what would she want?",
+    "say": "\"The consultant decides in her best interests; your view of what she'd want really matters.\"",
+    "do": [
+      "Confirm relationship and ask about an LPA",
+      "Explain capacity and best interests",
+      "Elicit her wishes; record"
+    ],
+    "numbers": [
+      {
+        "value": "4",
+        "meaning": "functional test: understand, retain, weigh, communicate",
+        "source": "MCA"
+      },
+      {
+        "value": "5",
+        "meaning": "statutory principles of the Act (s1(2)–(6))",
+        "source": "MCA"
+      }
+    ],
+    "trap": "\"Next of kin\" has no legal power to consent.",
+    "finish": "Best-interests record; reassess capacity daily."
+  },
+  "sources": [
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format; introduce yourself and confirm identity"
+    },
+    {
+      "id": "MCA",
+      "name": "Mental Capacity Act 2005 (c. 9)",
+      "version": "2005, as amended; in force 1 October 2007",
+      "url": "https://www.legislation.gov.uk/ukpga/2005/9/contents",
+      "supports": "Five principles (s1(2)–(6)); lack of capacity (s2(1)); inability to decide (s3(1)); best interests: regaining capacity, participation, past wishes, consulting carers, family and attorneys (s4(3), (4), (6), (7)); LPA must be registered (s9(2)); welfare LPA only when P lacks capacity, life-sustaining treatment only with express provision (s11(7)–(8)); IMCA for serious medical treatment when nobody appropriate to consult, unless urgent (s37)"
+    },
+    {
+      "id": "MCACOP",
+      "name": "Mental Capacity Act 2005 Code of Practice",
+      "version": "2007",
+      "url": "https://www.gov.uk/government/publications/mental-capacity-act-code-of-practice",
+      "supports": "Statutory guidance on assessing capacity and best interests"
+    },
+    {
+      "id": "GMCCONF",
+      "name": "GMC: Confidentiality: good practice in handling patient information",
+      "version": "In effect 25 April 2017; updated 25 May 2018 and 13 December 2024",
+      "url": "https://www.gmc-uk.org/professional-standards/the-professional-standards/confidentiality/using-and-disclosing-patient-information-for-direct-care",
+      "supports": "If a patient lacks capacity, it is reasonable to assume they would want those closest to them kept informed of their general condition and prognosis, unless they indicate or have indicated otherwise (para 38); listen to those close to the patient (paras 39–40)"
+    },
+    {
+      "id": "GMCDMC",
+      "name": "GMC: Decision making and consent",
+      "version": "In effect 9 November 2020; updated 13 December 2024 and 3 August 2026",
+      "url": "https://www.gmc-uk.org/professional-standards/the-professional-standards/decision-making-and-consent",
+      "supports": "Consult those close to a patient who lacks capacity, take account of their views on what the patient would want, and aim for agreement (para 89)"
+    },
+    {
+      "id": "BL",
+      "name": "Bailey & Love's Short Practice of Surgery (O'Connell, McCaskie, Sayers, eds)",
+      "version": "28th edition, 2023",
+      "url": "https://www.routledge.com/Bailey--Loves-Short-Practice-of-Surgery---28th-Edition/OConnell-McCaskie-Sayers/p/book/9780367548117",
+      "supports": "Acute colonic pseudo-obstruction: conservative management, then colonoscopic decompression; risk of caecal perforation"
+    }
+  ],
+  "partner": {
+    "opening": "Mrs Dawson is in the relatives' room. Please begin when you're ready.",
+    "actorBrief": "You are Claire Dawson, 56, Mrs Marsh's daughter. Opening line: \"Nobody's told me anything. Is she going to be all right?\" When the procedure is mentioned, say firmly: \"I'm her next of kin. Just give me the form and I'll sign it.\" Emotional state: anxious, tired, guilty; you were on holiday when she fell. Hidden concern: your mum called you by her sister's name today, and you are frightened she now has dementia and will never go home. Give the cue \"She's not herself at all\"; say more only if the candidate explores it. You hold a lasting power of attorney for property and financial affairs only; say so only if asked about power of attorney. Your brother lives in Australia. If asked what your mother would want: after the hip operation she said \"No more big operations\", and she has always hated hospitals. If the candidate lets you sign, sign.",
+    "reveals": [
+      {
+        "trigger": "Asks about power of attorney",
+        "finding": "\"I've got power of attorney for her money. Isn't that the same?\" (It is property and financial affairs only.)",
+        "row": "G4"
+      },
+      {
+        "trigger": "Asks what her mother would want",
+        "finding": "\"After the hip she said, 'No more big operations.' She hates hospitals.\"",
+        "row": "G5"
+      },
+      {
+        "trigger": "Asks about other family",
+        "finding": "\"My brother, Paul. He's in Australia, but he'd want to know.\"",
+        "row": "G5"
+      },
+      {
+        "trigger": "Explores \"She's not herself\"",
+        "finding": "\"She called me by her sister's name. Is this dementia? Will she ever go home?\"",
+        "row": "G6"
+      }
+    ],
+    "push": [
+      {
+        "question": "Who makes this decision, and on what basis?",
+        "row": "G4",
+        "expect": "The consultant responsible for the procedure, in her best interests, after consulting those close to her; unless a valid advance decision applies or someone has legal authority (a registered health and welfare LPA covering it, or a court-appointed deputy)."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "\"I've got a health and welfare power of attorney. Here it is.\"",
+        "safeAnswer": "Check it is registered and covers this decision; if valid, she is the decision-maker, still acting in her mother's best interests.",
+        "row": "G4"
+      },
+      {
+        "prompt": "\"I don't want her to have it. Leave her alone.\"",
+        "safeAnswer": "Explore why and what her mother would want; involve the consultant; the decision remains best interests, with a second opinion if disagreement persists.",
+        "row": "G7"
+      },
+      {
+        "prompt": "\"She has no family except me, and I'm moving abroad tomorrow.\"",
+        "safeAnswer": "Consult her by phone; an IMCA is needed only if nobody appropriate can be consulted.",
+        "row": "G7"
+      }
+    ]
+  }
+}

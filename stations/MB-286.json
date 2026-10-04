@@ -1,0 +1,518 @@
+{
+  "id": "MB-286",
+  "exam": "MRCS-B",
+  "title": "History: blood-stained nipple discharge",
+  "type": "history",
+  "header": {
+    "domain": "Applied Skills",
+    "contentArea": "Communication skills in giving and receiving information and history taking",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "signalMinutes": 6,
+    "guidelineVersions": [
+      "NICE NG12 (updated April 2026)",
+      "RCR Guidance on screening and symptomatic breast imaging, 5th ed (October 2025)",
+      "ABS-supported best practice diagnostic guidelines for breast symptoms (November 2010)"
+    ],
+    "related": []
+  },
+  "brief": {
+    "setting": "Breast clinic",
+    "role": "Core surgical trainee",
+    "scenario": "Mrs Fiona Kettering, 48, has been referred by her GP with discharge from her right nipple.",
+    "task": "Take a focused history. You will be stopped at 6 minutes to summarise, then asked about the differential diagnosis and investigation."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Characterise the discharge first: spontaneous, one side, one duct, blood. Then look for a lump or nipple change.",
+    "trap": "Reassuring because she is under 50 and has no lump.",
+    "firstMove": "\"Does it come out on its own, or only when you squeeze?\""
+  },
+  "flow": [
+    "Open and hear her worry",
+    "Characterise the discharge",
+    "Lump, pain, nipple and skin",
+    "Hormones, drugs, risk",
+    "At 6 minutes: summarise",
+    "Differential and triple assessment"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "communication",
+      "label": "Opening and her fear",
+      "fail": "Ignores or dismisses her worry about cancer.",
+      "pass": "Introduces, confirms identity, open question, and asks what she is worried about.",
+      "high": "Acknowledges the fear of cancer honestly, without promising it isn't, and explains today's tests."
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-skill",
+      "label": "Characterising the discharge",
+      "fail": "Doesn't establish whether it is spontaneous, unilateral or blood-stained.",
+      "pass": "Asks spontaneous or expressed, one or both sides, one or many ducts, colour and blood, frequency and duration.",
+      "high": "Asks her to show on the nipple where it comes from, and whether it stains her bra without touching it."
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-skill",
+      "label": "Associated breast symptoms",
+      "fail": "Doesn't ask about a lump or nipple change.",
+      "pass": "Asks about lump in breast or axilla, pain, nipple retraction, nipple eczema and skin change.",
+      "high": "Distinguishes recent nipple retraction from lifelong inversion, and asks about redness or abscess (periductal mastitis)."
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-skill",
+      "label": "Hormonal, drug and risk history",
+      "fail": "Takes no menstrual, drug or family history.",
+      "pass": "Last period, pregnancy, breastfeeding; HRT and other drugs; smoking; family history of breast or ovarian cancer; previous breast problems.",
+      "high": "Asks the galactorrhoea questions (milky, both sides, headaches, visual change) to exclude an endocrine cause."
+    },
+    {
+      "id": "G5",
+      "domain": "communication",
+      "label": "Summary at the signal",
+      "fail": "Summarises as \"nipple discharge, probably hormonal\".",
+      "pass": "Summarises spontaneous, unilateral, single-duct, blood-stained discharge with no lump, and relevant risk factors.",
+      "high": "States why this pattern needs full assessment even though she is under 50 with no lump.",
+      "source": "ABS"
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-knowledge",
+      "label": "Differential diagnosis",
+      "fail": "Gives galactorrhoea or infection as the main cause.",
+      "pass": "Intraductal papilloma, ductal carcinoma in situ or invasive cancer, duct ectasia; galactorrhoea separately if milky and bilateral.",
+      "high": "Links pattern to cause: single-duct blood suggests papilloma or DCIS; multiple-duct coloured discharge suggests duct ectasia.",
+      "source": "BL"
+    },
+    {
+      "id": "G7",
+      "domain": "clinical-knowledge",
+      "label": "Triple assessment",
+      "fail": "Plans only discharge cytology, or no imaging.",
+      "pass": "Examines both breasts and axillae; mammography (40 and over) and targeted ultrasound; core biopsy of any lesion.",
+      "high": "If imaging is normal but the single-duct blood-stained discharge persists, discusses microdochectomy for diagnosis.",
+      "source": "RCR"
+    },
+    {
+      "id": "G8",
+      "domain": "professionalism",
+      "label": "Referral pathway and honesty",
+      "fail": "Discharges her because she is under 50, or says it cannot be cancer.",
+      "pass": "Treats spontaneous unilateral blood-stained discharge as needing urgent specialist assessment regardless of age.",
+      "high": "Knows NICE's nipple criterion is 50 and over, and explains why her pattern still needs assessment; arranges results follow-up.",
+      "source": "NG12"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "candidate",
+        "text": "You've got some discharge. Is it both sides? OK.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          },
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Any family history? No. Good.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop there and summarise your history."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Mrs Kettering, 48, with nipple discharge, probably hormonal around the menopause.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What is your differential, and how would you investigate?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Probably galactorrhoea. I'd send the fluid for cytology. She's under 50 with no lump, so she can go back to her GP.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          },
+          {
+            "row": "G7",
+            "band": "fail"
+          },
+          {
+            "row": "G8",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "candidate",
+        "text": "Hello, I'm Dr Patel, one of the surgical trainees. Can I confirm your name and date of birth? Tell me what you've noticed. What worries you most?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Does it come out on its own or only when squeezed? One side or both? From one spot on the nipple or several? What colour, and is there blood? How often, and for how long?",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Any lump in the breast or armpit? Pain? Any change in the nipple's shape, or a rash on it?",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "When was your last period? Any chance of pregnancy? Do you take HRT or other medicines? Do you smoke? Any breast or ovarian cancer in the family?",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop there and summarise your history."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Mrs Kettering, 48, with four months of spontaneous, right-sided, single-duct, blood-stained discharge. No lump, pain or nipple change. Her aunt had breast cancer.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Differential and investigation?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Intraductal papilloma, DCIS or invasive cancer, and duct ectasia. I'd examine both breasts and axillae, then mammography and targeted ultrasound, and biopsy anything found. This needs urgent specialist assessment despite her age.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          },
+          {
+            "row": "G7",
+            "band": "pass"
+          },
+          {
+            "row": "G8",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "candidate",
+        "text": "Hello, I'm Dr Patel, one of the surgical trainees. Can I confirm your name and date of birth? You're worried it might be cancer. That's understandable, and today we'll do the tests to find out.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Can you show me where on the nipple it comes from? Do you find blood on your bra without touching the nipple?",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Has the nipple always turned in, or is that new? Any redness or abscesses?",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Is it ever milky, from both sides? Any headaches or change in your vision?",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop there and summarise your history."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Mrs Kettering, 48: four months of spontaneous blood-stained discharge from a single duct on the right, staining her bra. No lump, nipple retraction or skin change; not milky, no endocrine symptoms. Aunt had breast cancer at 60. The pattern needs full assessment even though she's under 50 with no lump.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Differential and investigation?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Single-duct blood suggests papilloma or DCIS; cancer must be excluded; duct ectasia is less likely with one duct. Triple assessment: examination, mammography and targeted ultrasound, core biopsy of any lesion. NICE's nipple referral criterion is 50 and over, but this pattern warrants urgent assessment at any age. If imaging is normal and it persists, I'd discuss microdochectomy to get a diagnosis.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          },
+          {
+            "row": "G7",
+            "band": "high"
+          },
+          {
+            "row": "G8",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G8",
+      "move": "Discharging her to the GP because she is under 50 with no lump.",
+      "consequence": "Safety-critical: DCIS or cancer presenting as blood-stained discharge is missed."
+    },
+    {
+      "row": "G2",
+      "move": "Not establishing spontaneous, unilateral, single-duct, blood-stained discharge.",
+      "consequence": "Can't separate pathological discharge from physiological or hormonal discharge."
+    },
+    {
+      "row": "G3",
+      "move": "Not asking about lump or nipple change.",
+      "consequence": "Misses features that make cancer more likely and change urgency."
+    },
+    {
+      "row": "G7",
+      "move": "Relying on discharge cytology.",
+      "consequence": "A negative result doesn't exclude cancer; imaging and biopsy are needed."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "She asks \"Is it cancer?\"",
+      "line": "Most causes of this are benign, but I can't rule cancer out without the scans, so we'll do those today."
+    },
+    {
+      "when": "You forgot to ask about the nipple",
+      "line": "One more question: has your nipple changed shape or turned in recently?"
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Suspected cancer pathway referral: aged 30 and over with an unexplained breast lump, or 50 and over with discharge, retraction or other change in one nipple only.",
+      "source": "NG12"
+    },
+    {
+      "fact": "Spontaneous unilateral blood-stained nipple discharge: urgent referral. Under 50 with multiple-duct, intermittent, non-blood-stained discharge: GP can manage initially.",
+      "source": "ABS"
+    },
+    {
+      "fact": "Nipple symptoms: mammography at 40 and over; targeted ultrasound for single-duct clear or blood-stained discharge.",
+      "source": "RCR"
+    },
+    {
+      "fact": "Microdochectomy excises a single discharging duct for diagnosis and treatment; total duct excision suits multiple-duct discharge.",
+      "source": "BL"
+    }
+  ],
+  "recall": {
+    "think": "DCIS or invasive cancer behind a blood-stained single duct.",
+    "say": "\"Spontaneous, unilateral, single-duct, blood-stained: she needs triple assessment.\"",
+    "do": [
+      "Spontaneous? One side? One duct? Blood?",
+      "Lump, nipple change, family history",
+      "Examine, image, biopsy"
+    ],
+    "numbers": [
+      {
+        "value": "50",
+        "meaning": "NICE nipple-symptom referral age, not a reason to reassure younger women",
+        "source": "NG12"
+      },
+      {
+        "value": "40",
+        "meaning": "mammography from this age for nipple symptoms, plus targeted ultrasound",
+        "source": "RCR"
+      }
+    ],
+    "trap": "Under 50, no lump, \"probably hormonal\".",
+    "finish": "Triple assessment; microdochectomy if persistent with normal imaging."
+  },
+  "sources": [
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format: 9-minute stations with 1 minute's reading; introduce yourself and confirm identity"
+    },
+    {
+      "id": "NG12",
+      "name": "NICE NG12: Suspected cancer: recognition and referral",
+      "version": "Published 23 June 2015; last updated 15 April 2026",
+      "url": "https://www.nice.org.uk/guidance/ng12/chapter/Recommendations-organised-by-site-of-cancer",
+      "supports": "Breast cancer 1.4.1: suspected cancer pathway referral at 30 and over with unexplained breast lump, or 50 and over with discharge, retraction or other changes of concern in one nipple only"
+    },
+    {
+      "id": "ABS",
+      "name": "Best practice diagnostic guidelines for patients presenting with breast symptoms (Willett, Michell, Lee, eds; supported by the Association of Breast Surgery, RCR and RCGP)",
+      "version": "November 2010",
+      "url": "https://associationofbreastsurgery.org.uk/media/cvtju1zs/best-practice-diagnostic-guidelines-for-patients-presenting-with-breast-symptoms.pdf",
+      "supports": "Urgent referral for spontaneous unilateral blood-stained nipple discharge; women under 50 with multiple-duct, intermittent, non-blood-stained discharge can be managed initially by the GP"
+    },
+    {
+      "id": "RCR",
+      "name": "Royal College of Radiologists: Guidance on screening and symptomatic breast imaging",
+      "version": "Fifth edition, October 2025",
+      "url": "https://www.rcr.ac.uk/media/043jyjqj/guidance-on-screening-and-symptomatic-breast-imaging-2025.pdf",
+      "supports": "Nipple symptoms: mammography in women aged 40 and over; targeted ultrasound for single-duct clear or blood-stained discharge"
+    },
+    {
+      "id": "BL",
+      "name": "Bailey & Love's Short Practice of Surgery (O'Connell, McCaskie, Sayers, eds)",
+      "version": "28th edition, 2023",
+      "url": "https://www.routledge.com/Bailey--Loves-Short-Practice-of-Surgery---28th-Edition/OConnell-McCaskie-Sayers/p/book/9780367548117",
+      "supports": "Causes of nipple discharge (intraductal papilloma, duct ectasia, carcinoma, galactorrhoea); microdochectomy and total duct excision"
+    }
+  ],
+  "partner": {
+    "opening": "Please take a focused history from Mrs Kettering. I'll stop you at 6 minutes to summarise.",
+    "actorBrief": "You are Fiona Kettering, 48, a pharmacist. Opening line: \"I've been getting blood from my right nipple for about four months. I'm worried it's cancer.\" Anxious but articulate. Your aunt had breast cancer, which is why you're frightened; say so if asked about worries or family. Volunteer nothing else; give facts only when asked (see reveals). If told \"it's probably nothing\" without tests, ask \"How can you know that?\"",
+    "reveals": [
+      {
+        "trigger": "Asks what worries her",
+        "finding": "\"My aunt had breast cancer. I keep thinking this is how it starts.\"",
+        "row": "G1"
+      },
+      {
+        "trigger": "Asks spontaneous or expressed, sides, colour",
+        "finding": "Comes out on its own, right side only, dark red or brown, a few times a week; spots on her bra.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Asks where on the nipple",
+        "finding": "Always the same spot, at about 10 o'clock on the nipple.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Asks about lump, pain, nipple or skin change",
+        "finding": "No lump, no pain, nipple unchanged, no rash or redness.",
+        "row": "G3"
+      },
+      {
+        "trigger": "Asks about periods, pregnancy, drugs",
+        "finding": "Periods irregular for a year; not pregnant; not breastfeeding. No HRT or regular medicines.",
+        "row": "G4"
+      },
+      {
+        "trigger": "Asks about smoking and family history",
+        "finding": "Non-smoker. Maternal aunt had breast cancer at 60. No ovarian cancer.",
+        "row": "G4"
+      },
+      {
+        "trigger": "Asks if milky, headaches or vision",
+        "finding": "Never milky; no headaches or visual problems.",
+        "row": "G4"
+      },
+      {
+        "trigger": "At 6 minutes",
+        "finding": "Say: \"Please stop there and summarise your history.\" Examination (if asked): no mass; blood-stained discharge from a single duct on pressure at 10 o'clock.",
+        "row": "G5"
+      }
+    ],
+    "push": [
+      {
+        "question": "What is your differential diagnosis?",
+        "row": "G6",
+        "expect": "Intraductal papilloma, DCIS or invasive cancer, duct ectasia."
+      },
+      {
+        "question": "How would you investigate?",
+        "row": "G7",
+        "expect": "Triple assessment: examination, mammography and targeted ultrasound, biopsy of any lesion."
+      },
+      {
+        "question": "Her imaging is normal. What next?",
+        "row": "G7",
+        "expect": "Persistent single-duct blood-stained discharge: discuss microdochectomy for a diagnosis."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "\"I'm under 50 and there's no lump. Do I really need all this?\"",
+        "safeAnswer": "Yes: blood from one duct needs full assessment at any age, even though most causes are benign.",
+        "row": "G8"
+      },
+      {
+        "prompt": "\"Can't you just test the fluid?\"",
+        "safeAnswer": "A normal result wouldn't exclude cancer, so we rely on examination, imaging and biopsy.",
+        "row": "G7"
+      },
+      {
+        "prompt": "\"Is it cancer?\"",
+        "safeAnswer": "I can't say yet; papilloma is a common benign cause, but we'll check properly today and give you results.",
+        "row": "G1"
+      }
+    ]
+  }
+}

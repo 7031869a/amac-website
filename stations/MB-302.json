@@ -1,0 +1,576 @@
+{
+  "id": "MB-302",
+  "exam": "MRCS-B",
+  "title": "Appendicitis in pregnancy",
+  "type": "applied-knowledge",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "Emergency general surgery in pregnancy",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "WSES Jerusalem guidelines on acute appendicitis (2020)",
+      "SAGES guidelines for laparoscopy during pregnancy (2017)",
+      "McGory et al., J Am Coll Surg (2007)"
+    ],
+    "related": [
+      {
+        "id": "MB-126",
+        "why": "Taking the history of acute right iliac fossa pain"
+      },
+      {
+        "id": "MB-220",
+        "why": "Consent for appendicectomy in a patient with particular needs"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Emergency department",
+    "role": "Core surgical trainee on call",
+    "scenario": "Mrs Nadia Kershaw, 29, is 20 weeks pregnant. She has had 18 hours of right-sided abdominal pain, nausea and a temperature of 38.1°C. The examiner will give you further findings.",
+    "task": "Answer the examiner's questions on her assessment and management."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Mother first, image to confirm, then operate without delay, with obstetrics alongside.",
+    "trap": "Delaying surgery because she is pregnant: perforation is the bigger risk to the baby.",
+    "firstMove": "\"I'd assess and resuscitate her with ABCDE, in left lateral tilt, and call obstetrics.\""
+  },
+  "flow": [
+    "Resuscitate the mother",
+    "Differential diagnosis",
+    "Imaging",
+    "Decision to operate",
+    "Operative approach",
+    "Fetal risk and team"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-skill",
+      "label": "Mother first",
+      "fail": "Focuses on the fetus before assessing and resuscitating the mother.",
+      "pass": "ABCDE of the mother first, in left lateral tilt; IV access, fluids, analgesia, antiemetic; early obstetric involvement.",
+      "high": "Explains fetal wellbeing depends on maternal perfusion, and a supine gravid uterus compresses the vena cava.",
+      "source": "SAGES"
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-knowledge",
+      "label": "Differential diagnosis",
+      "fail": "Diagnoses or excludes appendicitis on symptoms and signs alone.",
+      "pass": "Signs are less reliable in pregnancy; considers pyelonephritis, ovarian torsion, placental abruption and preterm labour; urine and pregnancy-adjusted bloods.",
+      "high": "Notes clinical scores are less accurate in pregnancy because white cells and nausea are often raised anyway, so imaging is needed.",
+      "source": "WSES"
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "Imaging",
+      "fail": "Requests CT first, or refuses any imaging because she is pregnant.",
+      "pass": "Graded compression ultrasound first; MRI if ultrasound is inconclusive and available.",
+      "high": "CT is acceptable in an emergency when MRI is unavailable and the result will change management; discusses with a radiologist.",
+      "source": "SAGES"
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-knowledge",
+      "label": "Decision to operate",
+      "fail": "Delays surgery until after delivery, or treats with antibiotics alone.",
+      "pass": "Confirmed appendicitis needs appendicectomy without delay; non-operative treatment is not recommended in pregnancy.",
+      "high": "A short in-hospital period of observation with repeat ultrasound is acceptable when equivocal; delay to perforation is the greater danger.",
+      "source": "WSES"
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-knowledge",
+      "label": "Operative approach",
+      "fail": "Says laparoscopy is contraindicated in pregnancy.",
+      "pass": "Laparoscopic appendicectomy is safe in any trimester where expertise exists; left lateral tilt; port entry adjusted to fundal height.",
+      "high": "Insufflation at 10–15 mmHg adjusted to her physiology; mechanical thromboprophylaxis and early mobilisation.",
+      "source": "SAGES"
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-knowledge",
+      "label": "Fetal risk",
+      "fail": "Cannot state the risks to the pregnancy, or quotes one fixed figure without context.",
+      "pass": "Fetal loss and preterm delivery, both higher with complicated (perforated) appendicitis.",
+      "high": "Fetal loss about 2% with simple, 4% with a negative operation and 6% with complicated appendicitis: accurate diagnosis matters both ways.",
+      "source": "MCGORY"
+    },
+    {
+      "id": "G7",
+      "domain": "professionalism",
+      "label": "Team and fetal monitoring",
+      "fail": "Operates without involving obstetrics or anaesthesia.",
+      "pass": "Obstetric and anaesthetic involvement; fetal heart documented (Doppler) before and after surgery; consent covers risks to the pregnancy.",
+      "high": "No prophylactic tocolytics: obstetrics treats signs of preterm labour; senior surgeon involved; documents the shared plan.",
+      "source": "SAGES"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "How would you approach her?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd get a CTG on the baby straight away and then examine her.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Her pain is in the right iliac fossa. What next?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "It's clearly appendicitis, the signs are typical.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Would you image her?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "A CT abdomen, it's the most accurate.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "MRI shows an inflamed appendix. How do you manage it?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd give antibiotics and try to hold off surgery until she has delivered.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "If you did operate, how?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "It would have to be open. Laparoscopy isn't safe in pregnancy.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Who else would you involve?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd tell obstetrics after the operation.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "examiner",
+        "text": "How would you approach her?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "ABCDE for her first, in left lateral tilt. IV access, fluids, analgesia and an antiemetic, and I'd call obstetrics early.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What is your differential?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Appendicitis, but signs are less reliable in pregnancy. I'd consider pyelonephritis, ovarian torsion, abruption and preterm labour, and send urine and bloods.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you image her?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Graded compression ultrasound first. If it's inconclusive, MRI.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "MRI shows acute appendicitis. What now?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "She needs an appendicectomy without delay. Antibiotics alone aren't recommended in pregnancy.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Open or laparoscopic?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Laparoscopic is safe in any trimester if we have the expertise. Left lateral tilt, and I'd place the first port according to the fundal height.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What are the risks to the baby?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Miscarriage and preterm delivery, both more likely if the appendix perforates.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Who else is involved?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Obstetrics and anaesthetics. At 20 weeks the baby isn't yet viable, so obstetrics document the fetal heart with a Doppler before and after surgery, and I'd include the pregnancy risks in her consent.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "candidate",
+        "text": "Resuscitating her is the best thing for the baby. Lying flat, the uterus compresses the vena cava, so I'd keep her tilted to the left.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Would a scoring system help?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Less so in pregnancy: white cell count and nausea are often raised anyway. I'd image her rather than rely on a score.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "MRI isn't available tonight."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Then CT is acceptable if the result will change management. I'd discuss it with the radiologist rather than delay.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The ultrasound was equivocal and she's settling."
+      },
+      {
+        "speaker": "candidate",
+        "text": "A short period of in-hospital observation with repeat ultrasound is reasonable. But I wouldn't let her drift towards perforation.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Any technical points?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd keep the pneumoperitoneum at 10 to 15 millimetres of mercury, adjusted to her physiology, with calf compression and early mobilisation.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Can you put numbers on the fetal risk?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "In one large series, fetal loss was about 2% with simple appendicitis, 6% with complicated, and 4% with a negative appendicectomy. So we need an accurate diagnosis both ways.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Should she have tocolytics?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Not prophylactically. Obstetrics would treat signs of preterm labour if they appear. I'd involve my consultant and document the joint plan.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G4",
+      "move": "Delaying appendicectomy until after delivery.",
+      "consequence": "Safety-critical: risks perforation, maternal sepsis and fetal loss."
+    },
+    {
+      "row": "G3",
+      "move": "Requesting CT first-line without trying ultrasound.",
+      "consequence": "Unnecessary fetal radiation when ultrasound and MRI can answer the question."
+    },
+    {
+      "row": "G6",
+      "move": "Unable to explain the risks to the pregnancy.",
+      "consequence": "Cannot consent her properly or justify timely surgery."
+    },
+    {
+      "row": "G1",
+      "move": "Leaving her supine and focusing on the fetus.",
+      "consequence": "Caval compression and maternal hypotension harm both mother and fetus."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "Asked whether pregnancy changes the urgency",
+      "line": "It doesn't delay surgery: the risk to the baby comes mainly from perforation."
+    },
+    {
+      "when": "Asked about radiation",
+      "line": "Ultrasound, then MRI; CT if it's needed and MRI isn't available."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Imaging: graded compression ultrasound first; MRI if inconclusive; don't diagnose on symptoms and signs alone.",
+      "source": "WSES"
+    },
+    {
+      "fact": "Non-operative treatment is not recommended in pregnancy; laparoscopic appendicectomy is preferred when surgery is indicated.",
+      "source": "WSES"
+    },
+    {
+      "fact": "Laparoscopy is safe in any trimester; left lateral tilt after the first trimester; entry adjusted to fundal height; CO2 at 10–15 mmHg.",
+      "source": "SAGES"
+    },
+    {
+      "fact": "Fetal loss: about 2% simple, 4% negative, 6% complicated appendicitis.",
+      "source": "MCGORY"
+    }
+  ],
+  "recall": {
+    "think": "Perforation and maternal sepsis threaten both lives.",
+    "say": "\"Pregnancy doesn't delay her appendicectomy.\"",
+    "do": [
+      "ABCDE in left lateral tilt; call obstetrics",
+      "Ultrasound, then MRI",
+      "Laparoscopic appendicectomy without delay"
+    ],
+    "numbers": [
+      {
+        "value": "2% vs 6%",
+        "meaning": "fetal loss, simple vs complicated appendicitis",
+        "source": "MCGORY"
+      },
+      {
+        "value": "10–15 mmHg",
+        "meaning": "insufflation pressure in pregnancy",
+        "source": "SAGES"
+      }
+    ],
+    "trap": "Treating with antibiotics to buy time until delivery.",
+    "finish": "Laparoscopic appendicectomy with obstetric and anaesthetic support; fetal heart documented (Doppler) before and after."
+  },
+  "sources": [
+    {
+      "id": "WSES",
+      "name": "Di Saverio S, Podda M, De Simone B, et al. Diagnosis and treatment of acute appendicitis: 2020 update of the WSES Jerusalem guidelines. World J Emerg Surg 2020;15:27",
+      "version": "2020",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/32295644/",
+      "supports": "Pregnancy: do not diagnose on symptoms and signs alone; clinical scores less accurate; graded compression ultrasound first; MRI after inconclusive ultrasound if available; short in-hospital observation with repeat ultrasound acceptable when equivocal; against non-operative treatment in pregnancy; laparoscopic appendicectomy preferred to open"
+    },
+    {
+      "id": "SAGES",
+      "name": "Pearl JP, Price RR, Tonkin AE, Richardson WS, Stefanidis D. SAGES guidelines for the use of laparoscopy during pregnancy. Surg Endosc 2017;31:3767–82",
+      "version": "2017",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/28643072/",
+      "supports": "Laparoscopy safe in any trimester; left lateral decubitus beyond the first trimester to avoid caval compression; entry adjusted to fundal height; CO2 10–15 mmHg adjusted to physiology; fetal heart rate monitoring before and after urgent surgery for a viable fetus, lower limit of viability 22 to 24 weeks (guideline 21); mechanical VTE prophylaxis and early ambulation; no prophylactic tocolytics; ultrasound first, MRI preferred to CT; CT may be used in emergency situations but should not be the initial imaging test (guideline 3)"
+    },
+    {
+      "id": "MCGORY",
+      "name": "McGory ML, Zingmond DS, Tillou A, et al. Negative appendectomy in pregnant women is associated with a substantial risk of fetal loss. J Am Coll Surg 2007;205:534–40",
+      "version": "2007",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/17903726/",
+      "supports": "Fetal loss 2% simple, 4% negative and 6% complicated appendicitis in 3,133 pregnant women"
+    },
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format: 9 minutes with 1 minute's reading; examiner-led questioning in applied knowledge stations"
+    }
+  ],
+  "media": [
+    {
+      "id": "mri-appendix-pregnancy",
+      "task": "Recognise an inflamed appendix on MRI in a pregnant patient",
+      "description": "Axial or coronal T2 MRI at about 20 weeks' gestation showing a thickened, fluid-filled appendix with periappendiceal fluid, and the gravid uterus",
+      "required": false,
+      "status": "needed"
+    }
+  ],
+  "partner": {
+    "opening": "Mrs Kershaw is 20 weeks pregnant with right-sided pain and fever. How would you approach her?",
+    "reveals": [
+      {
+        "trigger": "Candidate assesses ABCDE",
+        "finding": "HR 108, BP 112/68, RR 20, SpO2 98% on air, temperature 38.1°C. Tender right flank and right iliac fossa.",
+        "row": "G1"
+      },
+      {
+        "trigger": "Candidate asks for tests",
+        "finding": "WCC 16, CRP 98. Urine dipstick: trace leucocytes, nitrite negative. No vaginal bleeding.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Candidate requests ultrasound",
+        "finding": "Appendix not seen. Small amount of free fluid in the right iliac fossa. Fetal heart present.",
+        "row": "G3"
+      },
+      {
+        "trigger": "Candidate requests MRI",
+        "finding": "Thickened, fluid-filled appendix with surrounding inflammation. No abscess.",
+        "row": "G4"
+      }
+    ],
+    "push": [
+      {
+        "question": "Why not rely on examination?",
+        "row": "G2",
+        "expect": "Signs and scores less reliable in pregnancy; imaging needed."
+      },
+      {
+        "question": "How would you image her?",
+        "row": "G3",
+        "expect": "Ultrasound first; MRI if inconclusive."
+      },
+      {
+        "question": "Could you treat her with antibiotics?",
+        "row": "G4",
+        "expect": "Not recommended in pregnancy; appendicectomy without delay."
+      },
+      {
+        "question": "Is laparoscopy safe?",
+        "row": "G5",
+        "expect": "Yes, any trimester; tilt, fundal-height entry, 10–15 mmHg."
+      },
+      {
+        "question": "What are the risks to the baby?",
+        "row": "G6",
+        "expect": "Fetal loss and preterm delivery, higher with perforation."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "She asks whether the operation could make her miscarry.",
+        "safeAnswer": "There is a small risk, but it is higher if the appendix perforates; the obstetric team will check the baby before and after.",
+        "row": "G6"
+      },
+      {
+        "prompt": "MRI isn't available until tomorrow and she looks septic.",
+        "safeAnswer": "Don't wait: CT if it will change management, or proceed to surgery on clinical grounds with senior input.",
+        "row": "G3"
+      },
+      {
+        "prompt": "She starts having regular tightenings after surgery.",
+        "safeAnswer": "Urgent obstetric review; tocolysis is their decision, not prophylactic.",
+        "row": "G7"
+      }
+    ]
+  }
+}

@@ -1,0 +1,436 @@
+{
+  "id": "MB-367",
+  "exam": "MRCS-B",
+  "title": "Risk-reducing surgery options after a BRCA2 result",
+  "type": "communication",
+  "header": {
+    "domain": "Applied Skills",
+    "contentArea": "Risk-reducing surgery counselling",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "NICE CG164: Familial breast cancer (published June 2013; last updated November 2023)",
+      "GMC: Decision making and consent (in effect 9 November 2020)",
+      "NICE NG241: Ovarian cancer: identifying and managing familial and genetic risk (published 21 March 2024)"
+    ],
+    "related": [
+      {
+        "id": "MB-366",
+        "why": "The result that prompted this dedicated options discussion"
+      },
+      {
+        "id": "MB-364",
+        "why": "Her earlier mastectomy, relevant to how she weighs contralateral surgery"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Dedicated follow-up appointment after genetic result disclosure",
+    "role": "Core surgical trainee, supporting the breast/genetics team",
+    "scenario": "Ms Rachel Linford, 43, has a confirmed BRCA2 pathogenic variant, following her earlier mastectomy. She has returned to discuss her options for managing future risk.",
+    "task": "Discuss her risk-reducing options for the remaining breast and for ovarian cancer risk. You have 7 minutes."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Present options, not a single recommendation, covering both breast and ovarian risk, and be clear about which decisions can wait.",
+    "trap": "Presenting contralateral risk-reducing mastectomy as something she \"should\" do rather than one option among several including surveillance.",
+    "firstMove": "\"There's no single right answer here - I'd like to talk through the options so you can decide what's right for you.\""
+  },
+  "flow": [
+    "Check how she's been since the result",
+    "Options for the remaining breast",
+    "Options for ovarian cancer risk",
+    "Timing and reversibility of decisions",
+    "Address concerns and next steps"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "communication",
+      "label": "Checking in first",
+      "fail": "Launches straight into options without checking how she's coping since the result.",
+      "pass": "Checks in on how she's been since the last appointment before discussing options.",
+      "high": "Explicitly frames this appointment as her choice to make, at her pace, rather than a checklist to complete today."
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-knowledge",
+      "label": "Breast risk options",
+      "fail": "Presents only one option (e.g. surgery) as though it were the only path.",
+      "pass": "Explains both contralateral risk-reducing mastectomy and enhanced breast surveillance (e.g. annual MRI) as valid alternatives.",
+      "high": "Discusses how her prior experience of mastectomy might inform, but not dictate, her view on this decision.",
+      "source": "CG164"
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "Ovarian risk options",
+      "fail": "Omits ovarian cancer risk or management entirely.",
+      "pass": "Explains that BRCA2 also raises ovarian cancer risk, and that risk-reducing salpingo-oophorectomy is generally offered once family planning is complete, usually from around age 40.",
+      "high": "Explains that surveillance for ovarian cancer is less effective than for breast cancer, which is part of why risk-reducing surgery is more strongly considered here once she reaches that age.",
+      "source": "NG241"
+    },
+    {
+      "id": "G4",
+      "domain": "communication",
+      "label": "Timing and reversibility",
+      "fail": "Implies she must decide on all options today.",
+      "pass": "Clarifies which decisions are time-sensitive and which can be considered over a longer period.",
+      "high": "Distinguishes surgical decisions (less easily reversed) from surveillance (which can be changed later) to help her weigh the decision."
+    },
+    {
+      "id": "G5",
+      "domain": "communication",
+      "label": "Addressing concerns",
+      "fail": "Dismisses a stated worry (e.g. menopause from oophorectomy) without addressing it.",
+      "pass": "Responds honestly to a specific concern she raises about a particular option.",
+      "high": "Proactively mentions relevant considerations (e.g. surgical menopause and hormone replacement discussion) even if she hasn't asked, without making the decision for her."
+    },
+    {
+      "id": "G6",
+      "domain": "professionalism",
+      "label": "Next steps and support",
+      "fail": "Ends without a clear next step or means of further discussion.",
+      "pass": "Offers referral to the relevant specialist teams (gynaecology, breast, genetics counselling) depending on what she wants to pursue.",
+      "high": "Offers written information or peer/support resources, and checks she doesn't feel rushed into any decision."
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "candidate",
+        "text": "Given your result, you should really have the other breast removed and your ovaries out too.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          },
+          {
+            "row": "G2",
+            "band": "fail"
+          },
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "I'm not sure I'm ready for more surgery."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Well, it's the safest option, so I'd recommend it.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "candidate",
+        "text": "How have you been since we last spoke about your result?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "Still processing it, but ready to talk about what's next."
+      },
+      {
+        "speaker": "candidate",
+        "text": "For your remaining breast, the options are risk-reducing surgery, or careful surveillance with regular MRI scans - both are reasonable, and it's your choice.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "What about ovarian cancer?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "BRCA2 also raises ovarian cancer risk. Risk-reducing surgery to remove the ovaries and tubes is generally offered once you've completed any family planning, usually from around age 40.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "Do I need to decide all of this today?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Not at all - surveillance can continue while you take your time deciding on surgery, though it's worth discussing timing for the ovarian side given your age.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "I'm worried about early menopause if I have my ovaries removed."
+      },
+      {
+        "speaker": "candidate",
+        "text": "That's a real consideration, and hormone replacement therapy can be discussed with the gynaecology team as part of that decision.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I can refer you to gynaecology to talk through the ovarian side in more detail, and you can take your time with the breast decision - there's no rush today.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "candidate",
+        "text": "How have you been since your result, and are you feeling ready to talk through options, or would you rather more time first?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "I'd like to talk it through, though I know I don't have to decide today."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Exactly right - there's no single correct answer here, it's about what's right for you. For your remaining breast, that's a choice between risk-reducing surgery or ongoing MRI surveillance; given what you've already been through with your other side, it's worth thinking about what feels right this time, not what you feel you 'should' do.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          },
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "And the ovarian side?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "BRCA2 raises ovarian cancer risk too, and because screening for ovarian cancer isn't as reliable as breast screening, risk-reducing removal of the ovaries and tubes is more strongly considered, usually once you've finished having children, generally not before age 40.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "That's a lot to weigh up. Do I need to decide it all now?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "No - surveillance can bridge the breast decision for as long as you need, while the ovarian decision is worth timing more actively given your age, but neither has to be decided today.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "I'm scared of an early menopause if I have my ovaries out."
+      },
+      {
+        "speaker": "candidate",
+        "text": "That's a completely valid concern, and one the gynaecology team can talk through in detail, including hormone replacement options to manage that.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'll refer you to gynaecology for the ovarian discussion, and there's no pressure on the breast decision - we can also connect you with support from others who've faced this same choice, if that would help.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G2",
+      "move": "Presenting risk-reducing surgery as the only option for the remaining breast.",
+      "consequence": "Removes her right to choose surveillance, a genuinely valid alternative for many women."
+    },
+    {
+      "row": "G4",
+      "move": "Implying every decision must be made in this appointment.",
+      "consequence": "Pressures her into a permanent, irreversible decision before she's ready, when most of these decisions can be paced."
+    },
+    {
+      "row": "G5",
+      "move": "Dismissing her concern about surgical menopause.",
+      "consequence": "Leaves a legitimate and manageable concern unaddressed, which could deter her from a genuinely beneficial risk-reducing option."
+    },
+    {
+      "row": "G3",
+      "move": "Omitting ovarian cancer risk and management entirely from the discussion.",
+      "consequence": "Leaves a time-sensitive decision unaddressed, since ovarian risk-reducing surgery has a narrower recommended age window than the breast decision."
+    },
+    {
+      "row": "G6",
+      "move": "Ending without offering any onward referral or further support.",
+      "consequence": "Leaves her without a route to the specialist teams needed to act on either decision."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You presented surgery as the only option",
+      "line": "I should be clear - surveillance is also a genuinely reasonable choice, not just surgery."
+    },
+    {
+      "when": "You implied she must decide everything today",
+      "line": "None of this needs to be decided right now - let's take it at your pace."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "For BRCA2 carriers, options for the unaffected breast include risk-reducing mastectomy or enhanced surveillance (e.g. annual MRI); both are considered appropriate depending on patient choice.",
+      "source": "CG164"
+    },
+    {
+      "fact": "For BRCA2 carriers, risk-reducing bilateral salpingo-oophorectomy is generally recommended no earlier than age 40, once family planning is complete (the threshold is age 35 for BRCA1 carriers); ovarian cancer surveillance is less effective than breast surveillance.",
+      "source": "NG241"
+    },
+    {
+      "fact": "Surgical menopause following oophorectomy can be managed with hormone replacement therapy, discussed individually with the gynaecology team."
+    }
+  ],
+  "recall": {
+    "think": "Options, not a recommendation; breast timing flexible; ovarian risk time-sensitive.",
+    "say": "\"There's no single right answer here.\"",
+    "do": [
+      "Check in on how she's coping first",
+      "Present surgery and surveillance for the breast; explain ovarian risk timing",
+      "Address concerns like surgical menopause honestly"
+    ],
+    "numbers": [
+      {
+        "value": "No earlier than 40",
+        "meaning": "earliest recommended age for risk-reducing bilateral salpingo-oophorectomy in BRCA2 carriers (35 for BRCA1), once family planning is complete",
+        "source": "NG241"
+      }
+    ],
+    "trap": "Presenting surgery as the expected or only choice.",
+    "finish": "Paced options discussed, with referrals and no pressure."
+  },
+  "sources": [
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format and timing"
+    },
+    {
+      "id": "CG164",
+      "name": "NICE CG164: Familial breast cancer: classification, care and managing breast cancer and related risks in people with a family history of breast cancer",
+      "version": "Published June 2013; last updated November 2023",
+      "url": "https://www.nice.org.uk/guidance/cg164",
+      "supports": "Assessing likelihood of an inherited breast cancer predisposition, referral for genetic testing, implications of a pathogenic variant for the patient and relatives, and that first-degree relatives of a carrier have up to a 50% chance of carrying the same variant"
+    },
+    {
+      "id": "GMC",
+      "name": "GMC: Decision making and consent",
+      "version": "In effect 9 November 2020",
+      "url": "https://www.gmc-uk.org/professional-standards/the-professional-standards/decision-making-and-consent",
+      "supports": "Requirement to disclose material risks, preserve the patient's right to decline treatment, and reconfirm consent rather than assume it carries over unchanged"
+    },
+    {
+      "id": "NG241",
+      "name": "NICE NG241: Ovarian cancer: identifying and managing familial and genetic risk",
+      "version": "Published 21 March 2024",
+      "url": "https://www.nice.org.uk/guidance/ng241",
+      "supports": "Risk-reducing bilateral salpingo-oophorectomy timing: no earlier than 35 years for BRCA1 carriers and no earlier than 40 years for BRCA2 carriers, once family planning is complete"
+    }
+  ],
+  "partner": {
+    "opening": "This patient has returned to discuss risk-reducing options after her BRCA2 result. You have 7 minutes.",
+    "actorBrief": "You are Rachel Linford, 43, back for a dedicated discussion after your BRCA2 result. You feel some pressure (real or imagined) to have more surgery but aren't sure you're ready. You are specifically worried about early menopause if your ovaries are removed.",
+    "reveals": [
+      {
+        "trigger": "Candidate checks in on how you're coping before options",
+        "finding": "You reveal you're still processing but ready to discuss options at your own pace.",
+        "row": "G1"
+      },
+      {
+        "trigger": "Candidate presents surveillance as a genuine alternative to surgery",
+        "finding": "You feel relieved that surgery isn't being presented as obligatory.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Candidate addresses your menopause concern directly",
+        "finding": "You engage further and ask about hormone replacement.",
+        "row": "G5"
+      }
+    ],
+    "push": [
+      {
+        "question": "Do I have to decide about my other breast today?",
+        "row": "G4",
+        "expect": "Clarify that surveillance can continue while she takes time to decide; nothing is being forced today."
+      },
+      {
+        "question": "Won't removing my ovaries put me into early menopause?",
+        "row": "G5",
+        "expect": "Acknowledge the concern honestly and mention hormone replacement therapy as something to discuss with gynaecology."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "My aunt had her ovaries removed and it was awful for her.",
+        "safeAnswer": "Acknowledge her aunt's experience without dismissing it, while gently noting that experiences vary and that management options like HRT can be discussed with the specialist team.",
+        "row": "G5"
+      },
+      {
+        "prompt": "What would you do if you were me?",
+        "safeAnswer": "Acknowledge this is a very personal decision that depends on her own values and circumstances, and offer to help her think through what matters most to her rather than giving a personal opinion.",
+        "row": "G1"
+      }
+    ]
+  }
+}

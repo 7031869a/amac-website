@@ -1,0 +1,403 @@
+{
+ "id": "MB-426",
+ "exam": "MRCS-B",
+ "title": "Mastitis that isn't settling: inflammatory breast cancer",
+ "type": "history",
+ "header": {
+  "domain": "Applied Skills",
+  "contentArea": "Distinguishing inflammatory breast cancer from mastitis in a non-lactating woman",
+  "minutes": 9,
+  "readingMinutes": 1,
+  "signalMinutes": 6,
+  "guidelineVersions": [
+   "NICE NG12 (updated May 2025)",
+   "NICE NG101 Early and locally advanced breast cancer (current)"
+  ],
+  "related": [
+   {
+    "id": "MB-138",
+    "why": "The examination technique applied to this inflamed, non-lactating breast"
+   }
+  ]
+ },
+ "brief": {
+  "setting": "GP surgical referral clinic",
+  "role": "Core surgical trainee",
+  "scenario": "Mrs Ibekwe, 61, not breastfeeding, has been treated twice by her GP for \"mastitis\" of the right breast over the past six weeks with two courses of antibiotics, with only partial and temporary improvement.",
+  "task": "Take a focused history to assess whether this could be something other than simple mastitis. You will be stopped at 6 minutes."
+ },
+ "beforeYouWalkIn": {
+  "frame": "Recognise that mastitis in a non-lactating woman that fails to resolve with antibiotics is inflammatory breast cancer until proven otherwise, and ask the specific questions that support or refute this.",
+  "trap": "Prescribing a third course of antibiotics without pausing to reconsider the diagnosis given lack of full resolution.",
+  "firstMove": "\"Can I ask more about how this has responded to the treatments you've already had?\""
+ },
+ "flow": [
+  "Timeline and response to previous antibiotic courses",
+  "Character of the skin change: redness, warmth, texture",
+  "Associated symptoms: lump, nipple change, systemic symptoms",
+  "Risk factors: age, menopausal status, breastfeeding status",
+  "At 6 minutes: present findings and next steps"
+ ],
+ "grid": [
+  {
+   "id": "G1",
+   "domain": "clinical-skill",
+   "label": "Response to previous treatment",
+   "fail": "Does not establish how the breast responded to the previous antibiotic courses.",
+   "pass": "Establishes that symptoms only partially and temporarily improved with antibiotics, recurring each time treatment stopped.",
+   "high": "Recognises that incomplete or temporary response to appropriate antibiotics for mastitis is itself a significant red flag requiring reconsideration of the diagnosis."
+  },
+  {
+   "id": "G2",
+   "domain": "clinical-skill",
+   "label": "Character of the skin change",
+   "fail": "Does not ask about the specific appearance and texture of the skin.",
+   "pass": "Asks about the appearance of the skin (redness, warmth) and whether it has a thickened, pitted texture.",
+   "high": "Specifically asks about a peau d'orange (orange-peel) appearance, a classical feature of inflammatory breast cancer caused by dermal lymphatic obstruction."
+  },
+  {
+   "id": "G3",
+   "domain": "clinical-skill",
+   "label": "Associated symptoms",
+   "fail": "Does not ask about an underlying lump, nipple change, or systemic symptoms.",
+   "pass": "Asks about a discrete underlying lump, nipple retraction, and systemic symptoms such as weight loss.",
+   "high": "Notes that inflammatory breast cancer often presents without a discrete palpable lump, since it spreads diffusely through the skin lymphatics, so its absence doesn't exclude the diagnosis."
+  },
+  {
+   "id": "G4",
+   "domain": "clinical-knowledge",
+   "label": "Risk context",
+   "fail": "Does not consider that this presentation is atypical for simple mastitis given her age and non-lactating status.",
+   "pass": "Recognises that mastitis is uncommon in a postmenopausal, non-breastfeeding woman, which itself should raise suspicion of an alternative diagnosis.",
+   "high": "Explains this explicitly as a key reason for reconsidering the working diagnosis, rather than continuing to treat empirically."
+  },
+  {
+   "id": "G5",
+   "domain": "communication",
+   "label": "Presentation of findings",
+   "fail": "Concludes this is still likely simple mastitis needing further antibiotics.",
+   "pass": "Presents the findings and states that inflammatory breast cancer must be considered and actively excluded, given the atypical, non-resolving presentation.",
+   "high": "Explains this clearly and directly, avoiding both false reassurance and unnecessary alarm, while being unambiguous about the need for urgent assessment."
+  },
+  {
+   "id": "G6",
+   "domain": "clinical-knowledge",
+   "label": "Next steps",
+   "fail": "Recommends a further course of antibiotics without arranging urgent assessment.",
+   "pass": "Arranges urgent triple assessment, including a skin punch biopsy where inflammatory breast cancer is suspected.",
+   "high": "Explains that inflammatory breast cancer is often diagnosed on clinical grounds supported by skin biopsy demonstrating dermal lymphatic invasion, and treatment usually starts with systemic therapy rather than surgery first.",
+   "source": "NG101"
+  }
+ ],
+ "performances": {
+  "fail": [
+   {
+    "speaker": "candidate",
+    "text": "Sounds like the antibiotics just weren't strong enough, let's try a different one.",
+    "tags": [
+     {
+      "row": "G1",
+      "band": "fail"
+     },
+     {
+      "row": "G5",
+      "band": "fail"
+     },
+     {
+      "row": "G6",
+      "band": "fail"
+     }
+    ]
+   }
+  ],
+  "pass": [
+   {
+    "speaker": "candidate",
+    "text": "Can I ask more about how this has responded to the treatments you've already had?",
+    "tags": [
+     {
+      "row": "G1",
+      "band": "pass"
+     }
+    ]
+   },
+   {
+    "speaker": "patient",
+    "text": "It gets a bit better each time, but never fully goes away, and comes back once I finish the tablets."
+   },
+   {
+    "speaker": "candidate",
+    "text": "What does the skin actually look and feel like - is it just red, or does it feel thickened or dimpled, like orange peel?",
+    "tags": [
+     {
+      "row": "G2",
+      "band": "pass"
+     }
+    ]
+   },
+   {
+    "speaker": "patient",
+    "text": "Now that you mention it, it does look a bit dimpled, like orange peel."
+   },
+   {
+    "speaker": "candidate",
+    "text": "Have you noticed a distinct lump underneath, any change to your nipple, or any weight loss?",
+    "tags": [
+     {
+      "row": "G3",
+      "band": "pass"
+     }
+    ]
+   },
+   {
+    "speaker": "patient",
+    "text": "No obvious lump, no weight loss, but the nipple has pulled in slightly."
+   },
+   {
+    "speaker": "examiner",
+    "text": "Please stop. Your assessment?"
+   },
+   {
+    "speaker": "candidate",
+    "text": "This is unusual - mastitis is uncommon in a postmenopausal woman who isn't breastfeeding, and it hasn't fully resolved with two courses of antibiotics, with skin dimpling and new nipple retraction. This raises real concern for inflammatory breast cancer rather than simple mastitis.",
+    "tags": [
+     {
+      "row": "G4",
+      "band": "pass"
+     },
+     {
+      "row": "G5",
+      "band": "pass"
+     }
+    ]
+   },
+   {
+    "speaker": "examiner",
+    "text": "What would you do?"
+   },
+   {
+    "speaker": "candidate",
+    "text": "Urgent triple assessment, including a skin punch biopsy to look for inflammatory breast cancer.",
+    "tags": [
+     {
+      "row": "G6",
+      "band": "pass"
+     }
+    ]
+   }
+  ],
+  "high": [
+   {
+    "speaker": "candidate",
+    "text": "Can you tell me exactly how this has responded each time - has it ever fully settled between courses of antibiotics?",
+    "tags": [
+     {
+      "row": "G1",
+      "band": "high"
+     }
+    ]
+   },
+   {
+    "speaker": "patient",
+    "text": "Never fully - it improves a bit, then comes straight back once I stop the tablets."
+   },
+   {
+    "speaker": "candidate",
+    "text": "Can you describe the skin in detail - is it smooth, or does it feel thickened, pitted, like the skin of an orange?",
+    "tags": [
+     {
+      "row": "G2",
+      "band": "high"
+     }
+    ]
+   },
+   {
+    "speaker": "patient",
+    "text": "Yes, actually, it does look and feel like that - dimpled, like orange peel."
+   },
+   {
+    "speaker": "candidate",
+    "text": "Is there a distinct lump you can feel underneath, has your nipple changed shape or pulled in, and has your weight changed?",
+    "tags": [
+     {
+      "row": "G3",
+      "band": "high"
+     }
+    ]
+   },
+   {
+    "speaker": "patient",
+    "text": "No clear lump, but yes, my nipple has pulled in a bit recently, no weight change."
+   },
+   {
+    "speaker": "examiner",
+    "text": "Please stop. Your assessment?"
+   },
+   {
+    "speaker": "candidate",
+    "text": "This presentation doesn't fit simple mastitis well at all - she's postmenopausal and not breastfeeding, which is already atypical, the area has never fully settled despite two adequate courses of antibiotics, and she has peau d'orange skin changes with new nipple retraction, but no discrete palpable lump. The absence of a lump doesn't reassure me here - inflammatory breast cancer characteristically infiltrates the dermal lymphatics diffusely rather than forming a discrete mass, so this pattern is actually classic for it, not against it.",
+    "tags": [
+     {
+      "row": "G4",
+      "band": "high"
+     },
+     {
+      "row": "G5",
+      "band": "high"
+     }
+    ]
+   },
+   {
+    "speaker": "examiner",
+    "text": "What would you do?"
+   },
+   {
+    "speaker": "candidate",
+    "text": "Urgent triple assessment with a skin punch biopsy to demonstrate dermal lymphatic invasion, which is how inflammatory breast cancer is typically confirmed - and I would not give further antibiotics on the assumption this is simple mastitis.",
+    "tags": [
+     {
+      "row": "G6",
+      "band": "high"
+     }
+    ]
+   }
+  ]
+ },
+ "failures": [
+  {
+   "row": "G1",
+   "move": "Prescribing further antibiotics without questioning the diagnosis, despite incomplete and temporary response.",
+   "consequence": "Delays diagnosis and treatment of a fast-growing, aggressive form of breast cancer, where delay significantly worsens outcomes."
+  },
+  {
+   "row": "G3",
+   "move": "Being reassured by the absence of a discrete palpable lump.",
+   "consequence": "Inflammatory breast cancer characteristically presents without a discrete mass, so its absence should not be reassuring in this clinical picture."
+  },
+  {
+   "row": "G4",
+   "move": "Not recognising that mastitis is atypical in a postmenopausal, non-breastfeeding woman.",
+   "consequence": "Misses an important contextual clue that should prompt reconsideration of the working diagnosis from the outset."
+  },
+  {
+   "row": "G2",
+   "move": "Accepts a vague description of redness without asking about skin texture or a peau d'orange appearance.",
+   "consequence": "Misses the classical dermal lymphatic infiltration sign that distinguishes inflammatory breast cancer from simple mastitis."
+  }
+ ],
+ "recovery": [
+  {
+   "when": "You suggested a further course of antibiotics",
+   "line": "Actually, given this hasn't fully settled twice already, I should reconsider the diagnosis rather than treat again."
+  },
+  {
+   "when": "You were reassured by no palpable lump",
+   "line": "I shouldn't be reassured by that - this type of cancer often doesn't form a discrete lump."
+  }
+ ],
+ "knowledge": [
+  {
+   "fact": "Inflammatory breast cancer classically presents with erythema, warmth, and peau d'orange skin changes, often without a discrete palpable mass, due to diffuse dermal lymphatic infiltration.",
+   "source": "NG101"
+  },
+  {
+   "fact": "Mastitis in a non-lactating, postmenopausal woman that fails to fully resolve with appropriate antibiotics should prompt urgent reassessment to exclude inflammatory breast cancer.",
+   "source": "NG12"
+  },
+  {
+   "fact": "Diagnosis of inflammatory breast cancer is supported by skin punch biopsy demonstrating dermal lymphatic tumour invasion, and treatment typically begins with systemic (neoadjuvant) therapy rather than upfront surgery.",
+   "source": "NG101"
+  }
+ ],
+ "recall": {
+  "think": "Mastitis that won't fully clear in a non-lactating woman is inflammatory breast cancer until proven otherwise.",
+  "say": "\"I would not give further antibiotics on the assumption this is simple mastitis.\"",
+  "do": [
+   "Ask about full vs partial response to antibiotics",
+   "Ask about peau d'orange skin change",
+   "Arrange urgent triple assessment, not more antibiotics"
+  ],
+  "numbers": [
+   {
+    "value": "2-week wait",
+    "meaning": "suspected cancer referral",
+    "source": "NG12"
+   },
+   {
+    "value": "6 min",
+    "meaning": "stop and present",
+    "source": "ICBSE"
+   }
+  ],
+  "trap": "Repeating antibiotics despite an atypical, non-resolving picture.",
+  "finish": "Urgent triple assessment arranged; inflammatory breast cancer actively considered, not dismissed."
+ },
+ "sources": [
+  {
+   "id": "ICBSE",
+   "name": "ICBSE Guide to the intercollegiate MRCS examination",
+   "version": "August 2021",
+   "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+   "supports": "History-taking station format and 6-minute signal to present findings"
+  },
+  {
+   "id": "NG12",
+   "name": "NICE NG12: Suspected cancer: recognition and referral",
+   "version": "Published June 2015; last updated May 2025",
+   "url": "https://www.nice.org.uk/guidance/ng12",
+   "supports": "Recognition of atypical, non-resolving breast inflammation warranting urgent referral"
+  },
+  {
+   "id": "NG101",
+   "name": "NICE NG101: Early and locally advanced breast cancer: diagnosis and management",
+   "version": "Published July 2018; last updated current",
+   "url": "https://www.nice.org.uk/guidance/ng101",
+   "supports": "Clinical and histological features and initial management approach for inflammatory breast cancer"
+  }
+ ],
+ "partner": {
+  "opening": "Please take a history from this patient about her non-resolving 'mastitis'. I'll stop you at 6 minutes.",
+  "actorBrief": "You are Mrs Ibekwe, 61, postmenopausal, not breastfeeding, with six weeks of right breast redness and warmth, only partially and temporarily improved by two courses of antibiotics. On direct questioning you describe orange-peel skin texture and recent nipple retraction, with no discrete lump and no weight loss.",
+  "reveals": [
+   {
+    "trigger": "Asks about response to previous antibiotics",
+    "finding": "Only partial, temporary improvement each time, recurring after stopping treatment.",
+    "row": "G1"
+   },
+   {
+    "trigger": "Asks about the specific skin texture",
+    "finding": "Orange-peel (peau d'orange) appearance on direct questioning.",
+    "row": "G2"
+   },
+   {
+    "trigger": "Asks about lump, nipple change and weight loss",
+    "finding": "No discrete lump, but recent nipple retraction; no weight loss.",
+    "row": "G3"
+   }
+  ],
+  "push": [
+   {
+    "question": "Could this really be cancer if I don't have a lump?",
+    "row": "G3",
+    "expect": "Explain that this type of cancer often doesn't form a discrete lump, so its absence doesn't rule it out."
+   },
+   {
+    "question": "Should I just try a different antibiotic?",
+    "row": "G6",
+    "expect": "Explain that further antibiotics aren't appropriate here; urgent assessment including skin biopsy is needed instead."
+   }
+  ],
+  "curveballs": [
+   {
+    "prompt": "My GP said it's definitely just mastitis and I shouldn't worry.",
+    "safeAnswer": "Acknowledge the previous assessment without dismissing it, but explain clearly why the lack of full resolution and specific skin findings now warrant urgent reassessment.",
+    "row": "G5"
+   },
+   {
+    "prompt": "I've also noticed some swelling under my arm.",
+    "safeAnswer": "Take this as a significant additional finding suggesting axillary nodal involvement, reinforcing the need for urgent assessment rather than reassurance.",
+    "row": "G3"
+   }
+  ]
+ }
+}

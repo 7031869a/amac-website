@@ -1,0 +1,547 @@
+{
+  "id": "MB-277",
+  "exam": "MRCS-B",
+  "title": "History: acute urinary retention in an older man",
+  "type": "history",
+  "header": {
+    "domain": "Applied Skills",
+    "contentArea": "Urology: lower urinary tract symptoms and urinary retention",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "signalMinutes": 6,
+    "guidelineVersions": [
+      "NICE CG97 Lower urinary tract symptoms in men (May 2010, updated June 2015)",
+      "McNeill et al., ALFAUR trial, J Urol (2004)"
+    ],
+    "related": [
+      {
+        "id": "MB-155",
+        "why": "Cauda equina syndrome, the neurological cause of retention to exclude"
+      },
+      {
+        "id": "MB-154",
+        "why": "Visible haematuria history: the urological red flag"
+      },
+      {
+        "id": "MB-202",
+        "why": "Acute kidney injury, including obstructive causes"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Emergency department",
+    "role": "Core surgical trainee in urology",
+    "scenario": "Mr Trevor Haslam, 68, came in at 06:00 unable to pass urine since the previous evening. A urethral catheter has been passed by the nurse and 850 ml of clear urine drained. He is now comfortable.",
+    "task": "Take a focused history. At 6 minutes you will be asked to summarise, then to discuss examination and management."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Why now? Find the background obstruction, the trigger and any red flag.",
+    "trap": "Skipping over-the-counter medicines and the cauda equina questions.",
+    "firstMove": "\"I'm Dr Patel. Glad you're more comfortable. Can you tell me what happened?\""
+  },
+  "flow": [
+    "Open and listen",
+    "Voiding and storage symptoms",
+    "Triggers",
+    "Red flags",
+    "Background and concerns",
+    "At 6 minutes: summarise",
+    "Examination and plan"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "communication",
+      "label": "Rapport and concerns",
+      "fail": "Fires closed questions without introduction or acknowledging his distress.",
+      "pass": "Introduces self, confirms identity, opens with an open question, and asks what worries him.",
+      "high": "Picks up his fear of cancer after his father's illness and answers honestly without false reassurance."
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-skill",
+      "label": "Lower urinary tract symptoms",
+      "fail": "Asks only whether he can pass urine now.",
+      "pass": "Voiding (hesitancy, poor stream, straining, terminal dribble, incomplete emptying) and storage (frequency, nocturia, urgency) symptoms, with duration and trend.",
+      "high": "Establishes months of worsening voiding symptoms and their effect on his life, pointing to benign prostatic obstruction."
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "Triggers",
+      "fail": "Does not look for a precipitant.",
+      "pass": "Asks about new medicines including over-the-counter remedies, alcohol, constipation, urinary infection, recent anaesthetic or immobility.",
+      "high": "Identifies the decongestant and constipation as reversible triggers and plans to stop and treat them."
+    },
+    {
+      "id": "G4",
+      "domain": "professionalism",
+      "label": "Red flags (safety-critical)",
+      "fail": "Does not ask about haematuria or neurological symptoms.",
+      "pass": "Asks about visible haematuria, weight loss, bone or back pain, leg weakness, saddle numbness and bowel control.",
+      "high": "Explains the saddle and bowel questions: cauda equina syndrome can present as painless retention."
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-skill",
+      "label": "Background",
+      "fail": "Omits drugs, past history or family history.",
+      "pass": "Past history including diabetes and neurological disease, previous retention, regular drugs, anticoagulants, allergies, family history, home situation.",
+      "high": "Links his father's prostate cancer to his worry and plans informed discussion before any PSA test."
+    },
+    {
+      "id": "G6",
+      "domain": "communication",
+      "label": "Summary at 6 minutes",
+      "fail": "Repeats the history in order, or gives no working diagnosis.",
+      "pass": "Acute retention on a background of voiding symptoms, likely benign prostatic obstruction, triggered by decongestant and constipation; red flags negative.",
+      "high": "Adds the drained volume and names what would change the picture: large residual, raised creatinine or neurological signs."
+    },
+    {
+      "id": "G7",
+      "domain": "clinical-skill",
+      "label": "Examination and investigations",
+      "fail": "Omits the DRE or neurological check.",
+      "pass": "Abdomen, DRE for prostate size, nodules and anal tone, perianal sensation, lower limb neurology; urine dip and renal function.",
+      "high": "Knows a residual over 1 litre means chronic retention: check creatinine and image the upper tracts.",
+      "source": "CG97"
+    },
+    {
+      "id": "G8",
+      "domain": "professionalism",
+      "label": "Management and trial without catheter",
+      "fail": "Removes the catheter today, or plans a long-term catheter without a trial.",
+      "pass": "Catheter stays; alfuzosin started; trial without catheter after about 3 days; decongestant stopped, constipation treated.",
+      "high": "Knows age and a drained volume of 1 litre or more predict failure; failed or recurrent retention goes to urology.",
+      "source": "ALFAUR"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "Please take a history."
+      },
+      {
+        "speaker": "candidate",
+        "text": "So you couldn't pee. Have you had this before? Any burning?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          },
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "No, never."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Any other illnesses? No? Right.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop there and summarise."
+      },
+      {
+        "speaker": "candidate",
+        "text": "He's 68, went into retention, catheterised. Probably an infection.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you examine him and what's the plan?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Feel his tummy, then take the catheter out this afternoon and see if he can go.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          },
+          {
+            "row": "G8",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "candidate",
+        "text": "Hello, I'm Dr Patel, one of the surgical doctors. Can I check your name and date of birth? Tell me what happened last night. Is anything worrying you?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Before this, how was your stream? Any hesitancy, straining, dribbling, or feeling you haven't emptied? How often do you go, and at night?",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Have you taken anything new, including from the chemist? Any alcohol, constipation, or burning when you pass urine?",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Any blood in the urine, weight loss, bone or back pain? Any leg weakness, numbness around the back passage, or trouble controlling your bowels?",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Any medical problems like diabetes? Tablets, blood thinners, allergies? Anything in the family? Who's at home?",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop there and summarise."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Mr Haslam, 68, acute urinary retention after 18 months of worsening voiding symptoms, likely benign prostatic obstruction, triggered by a decongestant and constipation. No red flags.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Examination and plan?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Abdomen, DRE for size, nodules and tone, perianal sensation and leg neurology; urine dip and renal function. Keep the catheter, start alfuzosin, trial without catheter in about 3 days, stop the decongestant and treat the constipation.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          },
+          {
+            "row": "G8",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "candidate",
+        "text": "Hello, I'm Dr Patel. You mentioned your dad. Are you worried this is cancer? That's understandable. The most likely cause is a benign enlarged prostate, but I'll examine you and we'll check properly.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "So the stream's been getting weaker for 18 months, you're up three times a night, and it's been worse this last month. How much is that affecting you?",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "The cold remedy you bought is a decongestant, which can tip an enlarged prostate into retention. I'd stop it, and we'll sort the constipation too.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'm asking about numbness around the back passage because a trapped nerve in the spine can stop the bladder emptying, sometimes without pain.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Given your dad's history, we can talk about a PSA blood test and what it can and can't tell us before deciding.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop there and summarise."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Mr Haslam, 68: acute painful retention, 850 ml drained, on 18 months of voiding symptoms suggesting benign prostatic obstruction; triggers are a chemist decongestant and constipation; no red flags. A larger residual, raised creatinine or neurological signs would change this.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Suppose 1,400 ml had drained."
+      },
+      {
+        "speaker": "candidate",
+        "text": "That's over a litre, so chronic retention: creatinine, an ultrasound of the kidneys, and the catheter stays under urology.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "And his trial without catheter?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Older age and a drained volume of a litre or more predict failure, so I'd counsel him. If it fails or recurs, he goes to urology for assessment rather than repeated trials.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G4",
+      "move": "Not asking about saddle numbness, leg weakness or bowel control.",
+      "consequence": "Cauda equina syndrome presenting as retention is missed."
+    },
+    {
+      "row": "G3",
+      "move": "Not asking about over-the-counter medicines, alcohol or constipation.",
+      "consequence": "The trigger continues and the trial without catheter fails."
+    },
+    {
+      "row": "G8",
+      "move": "Removing the catheter the same day without an alpha-blocker.",
+      "consequence": "Retention is more likely to recur, with a second painful catheterisation."
+    },
+    {
+      "row": "G1",
+      "move": "Ignoring his worry about cancer.",
+      "consequence": "He leaves frightened, and trust in the plan falls."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You forgot to ask about medicines",
+      "line": "Before I summarise, have you taken anything new, including cold remedies from the chemist?"
+    },
+    {
+      "when": "You forgot the neurological questions",
+      "line": "One more important question: any numbness around your back passage, leg weakness, or change in bowel control?"
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Catheterise acute retention immediately; offer an alpha-blocker before catheter removal.",
+      "source": "CG97"
+    },
+    {
+      "fact": "Residual over 1 litre or a palpable bladder suggests chronic retention: creatinine and upper tract imaging.",
+      "source": "CG97"
+    },
+    {
+      "fact": "Alfuzosin for 3 days improved successful trial without catheter (62% vs 48%); age 65 or over and 1,000 ml or more drained predicted failure.",
+      "source": "ALFAUR"
+    },
+    {
+      "fact": "Triggers include sympathomimetic decongestants, anticholinergics, opioids, alcohol, constipation, infection and anaesthesia.",
+      "source": "BL"
+    },
+    {
+      "fact": "Monitor urine output after draining a large chronic residual: post-obstructive diuresis can follow.",
+      "source": "BL"
+    }
+  ],
+  "recall": {
+    "think": "Cauda equina syndrome; chronic retention with kidney damage.",
+    "say": "\"Acute retention on benign prostatic obstruction, with a reversible trigger.\"",
+    "do": [
+      "Voiding history, triggers, red flags",
+      "DRE, perianal sensation, renal function",
+      "Alfuzosin, then trial without catheter"
+    ],
+    "numbers": [
+      {
+        "value": "Over 1 litre",
+        "meaning": "residual suggests chronic retention",
+        "source": "CG97"
+      },
+      {
+        "value": "3 days",
+        "meaning": "alfuzosin before trial without catheter",
+        "source": "ALFAUR"
+      }
+    ],
+    "trap": "Missing the chemist decongestant.",
+    "finish": "Trial without catheter; urology if it fails."
+  },
+  "sources": [
+    {
+      "id": "CG97",
+      "name": "NICE CG97: Lower urinary tract symptoms in men: management",
+      "version": "Published May 2010; last updated June 2015",
+      "url": "https://www.nice.org.uk/guidance/cg97",
+      "supports": "Immediately catheterise men with acute retention; offer an alpha blocker before catheter removal in acute urinary retention; chronic retention (residual volume greater than 1 litre or a palpable or percussable bladder): serum creatinine and upper urinary tract imaging; catheterise men with renal impairment or hydronephrosis from chronic retention"
+    },
+    {
+      "id": "ALFAUR",
+      "name": "McNeill SA, Hargreave TB; Members of the Alfaur Study Group. Alfuzosin once daily facilitates return to voiding in patients in acute urinary retention. J Urol 2004;171:2316-20",
+      "version": "2004",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/15126812/",
+      "supports": "Alfuzosin 10 mg once daily for 3 days before trial without catheter: successful voiding 61.9% vs 47.9% with placebo; age 65 or over and a drained volume of 1,000 ml or more predicted failure"
+    },
+    {
+      "id": "BL",
+      "name": "Bailey & Love's Short Practice of Surgery (O'Connell, McCaskie, Sayers, eds)",
+      "version": "28th edition, 2023",
+      "url": "https://www.routledge.com/Bailey--Loves-Short-Practice-of-Surgery---28th-Edition/OConnell-McCaskie-Sayers/p/book/9780367548117",
+      "supports": "Acute and chronic urinary retention: precipitants, examination and post-obstructive diuresis"
+    },
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format: 9-minute stations with 1 minute's reading; introduce yourself and confirm identity"
+    }
+  ],
+  "partner": {
+    "opening": "Please take a focused history from Mr Haslam. I'll stop you at 6 minutes to summarise.",
+    "actorBrief": "You are Trevor Haslam, 68, a retired bus driver who lives with his wife. You are relieved now the catheter is in. Opening line: \"I couldn't go at all last night. It was agony. That tube's been a blessing.\" Volunteer only the night's events. Release other facts only when asked (see reveals). Hidden worry: your father had prostate cancer in his eighties; say \"Is it cancer, doctor?\" only if asked what worries you, or if the candidate mentions the prostate. You want to know how long the catheter will stay, because your wife's 70th birthday trip is in two weeks.",
+    "reveals": [
+      {
+        "trigger": "Asks about the stream and emptying",
+        "finding": "\"For about 18 months it's been slow to start and weak, and I dribble after. I never feel quite empty.\"",
+        "row": "G2"
+      },
+      {
+        "trigger": "Asks about frequency or nights",
+        "finding": "Up three times a night, going every hour or two in the day; worse this last month.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Asks about new medicines, including over-the-counter",
+        "finding": "\"I had a stinking cold, so I bought a decongestant from the chemist four days ago.\"",
+        "row": "G3"
+      },
+      {
+        "trigger": "Asks about alcohol or bowels",
+        "finding": "Three pints at a party last night. Not opened bowels for four days; normal control.",
+        "row": "G3"
+      },
+      {
+        "trigger": "Asks about red flags",
+        "finding": "No blood in the urine, no weight loss, no bone or back pain, no leg weakness, no numbness around the back passage, no fever or burning.",
+        "row": "G4"
+      },
+      {
+        "trigger": "Asks about past history, drugs, family",
+        "finding": "High blood pressure on amlodipine. No blood thinners, no allergies. Father had prostate cancer in his eighties.",
+        "row": "G5"
+      },
+      {
+        "trigger": "After the summary, asks for examination findings",
+        "finding": "Abdomen soft, bladder not palpable. DRE: smooth, symmetrically enlarged prostate, no nodules, normal anal tone. Perianal sensation and leg neurology normal. Urine dip clear. Creatinine 92.",
+        "row": "G7"
+      }
+    ],
+    "push": [
+      {
+        "question": "Please stop there and summarise.",
+        "row": "G6",
+        "expect": "Acute retention, background voiding LUTS, likely BPO, triggered by decongestant and constipation; no red flags."
+      },
+      {
+        "question": "How would you examine him and what tests?",
+        "row": "G7",
+        "expect": "Abdomen, DRE, perianal sensation, leg neurology; urine dip, renal function; record drained volume."
+      },
+      {
+        "question": "What is your plan?",
+        "row": "G8",
+        "expect": "Keep catheter, alfuzosin, trial without catheter in about 3 days, stop trigger, treat constipation; urology if it fails."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "\"Can't you just take the tube out now? I'm fine.\"",
+        "safeAnswer": "Explain that a trial after a few days of alfuzosin is more likely to work, and what happens if it fails.",
+        "row": "G8"
+      },
+      {
+        "prompt": "\"Is it cancer, doctor?\"",
+        "safeAnswer": "Acknowledge the worry; the likely cause is benign enlargement; explain the examination and offer a PSA discussion.",
+        "row": "G1"
+      },
+      {
+        "prompt": "Suppose 1,400 ml had drained and his creatinine was 190.",
+        "safeAnswer": "Chronic retention with renal impairment: catheter stays, renal ultrasound, monitor for diuresis, urology; no early trial.",
+        "row": "G7"
+      }
+    ]
+  }
+}

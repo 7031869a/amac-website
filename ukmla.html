@@ -2,222 +2,529 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>UKMLA Preparation — AMaC</title>
-<meta name="description" content="UKMLA performance training from AMaC. Mastery-based CPSA stations, real-time clinical tools, and examiner-led thinking for UK medical graduates.">
+<title>UKMLA Preparation: AKT Paper &amp; CPSA Stations | AMaC</title>
+<!-- ══════════════════════════════════════════════════════════════
+     AMaC — SHARED HEAD BLOCK
+     Paste this inside <head> on EVERY page, just after <title>.
+     Change ONLY the 4 marked lines per page.
+     ══════════════════════════════════════════════════════════════ -->
+
+<!-- ── Favicon & icons ────────────────────────────────────────── -->
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#0C1526">
+
+<!-- ── Canonical (CHANGE per page) ────────────────────────────── -->
+<link rel="canonical" href="https://amac-medical.com/ukmla.html">
+
+<!-- ── Open Graph: how the link looks in WhatsApp / Facebook ──── -->
+<!--    (CHANGE og:title, og:description, og:url per page)         -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AMaC">
+<meta property="og:locale" content="en_GB">
+<meta property="og:title" content="UKMLA Preparation — AMaC">
+<meta data-count-content="cpsaStations:CPSA stations;aktQuestions:AKT questions" property="og:description" content="UKMLA preparation from AMaC — the AKT written paper and the CPSA station assessment, prepared together. 293 CPSA stations, 10,252 AKT questions, examiner-led clinical thinking.">
+<meta property="og:url" content="https://amac-medical.com/ukmla.html">
+<meta property="og:image" content="https://amac-medical.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="AMaC — Think like an examiner. Pass with confidence.">
+
+<!-- ── Twitter/X card ─────────────────────────────────────────── -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="UKMLA Preparation — AMaC">
+<meta data-count-content="cpsaStations:CPSA stations;aktQuestions:AKT questions" name="twitter:description" content="UKMLA preparation from AMaC — the AKT written paper and the CPSA station assessment, prepared together. 293 CPSA stations, 10,252 AKT questions, examiner-led clinical thinking.">
+<meta name="twitter:image" content="https://amac-medical.com/og-image.png">
+
+<!-- ── Structured data: helps Google understand the site ──────── -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  "name": "AMaC",
+  "alternateName": "A. Mansour & Colleagues",
+  "url": "https://amac-medical.com/",
+  "logo": "https://amac-medical.com/apple-touch-icon.png",
+  "description": "Preparation for the UK medical and surgical examinations: UKMLA, PLAB 1, PLAB 2 and FRCS Part 2.",
+  "slogan": "Think like an examiner. Pass with confidence."
+}
+</script>
+
+<!-- Analytics: Cloudflare Web Analytics (privacy-friendly; no cookie banner needed). -->
+<!-- Cloudflare Web Analytics -->
+<script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "f077e68b0cf042c1b887d06c6b866acd"}'></script>
+<!-- End Cloudflare Web Analytics -->
+
+<meta data-count-content="cpsaStations:CPSA stations;aktQuestions:AKT questions" name="description" content="UKMLA preparation from AMaC — the AKT written paper and the CPSA station assessment, prepared together. 293 CPSA stations, 10,252 AKT questions, examiner-led clinical thinking.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--navy:#0d2247;--navy-deep:#091629;--gold:#c9a227;--gold-soft:#e0c45a;--cream:#f7f4ec;--paper:#fffdf8;--ink:#1a1d24;--muted:#5d6470;--line:#e4ddcd;}
+:root{
+  --navy:#0d2247;--navy-deep:#091629;--gold:#c9a227;--gold-soft:#e0c45a;
+  --cream:#f7f4ec;--paper:#fffdf8;--ink:#1a1d24;--muted:#5d6470;--line:#e4ddcd;
+  /* dark-premium house tokens */
+  --bg:#0C1526;--panel:#0F1A2E;--card:#16233F;--card-deep:#111E33;
+  --edge:#1E2C46;--edge-soft:#28385A;--edge-line:#243149;
+  --txt:#F6F4EE;--txt-soft:#AEB9D0;--txt-mute:#8593AE;--txt-faint:#6B7794;
+  /* UKMLA door accent (green/teal) */
+  --door:#2FB48C;--door-deep:#1D9E75;--door-text:#5DCAA5;
+  --neutral:#888780;
+}
 *{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
-body{font-family:'Outfit',sans-serif;background:var(--paper);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;}
+body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--txt);line-height:1.6;-webkit-font-smoothing:antialiased;}
 h1,h2,h3,.serif{font-family:'Fraunces',serif;}
+a{text-decoration:none;color:inherit;}
 
-/* ── NAV ── */
-nav{position:sticky;top:0;z-index:100;background:rgba(13,34,71,0.97);backdrop-filter:blur(8px);border-bottom:1px solid rgba(201,162,39,0.25);}
-.nav-inner{max-width:1200px;margin:0 auto;padding:0 32px;height:72px;display:flex;align-items:center;justify-content:space-between;}
-.brand{font-family:'Fraunces',serif;font-size:26px;font-weight:700;color:var(--gold-soft);letter-spacing:3px;text-decoration:none;}
-.brand span{color:var(--gold-soft);}
-.nav-links{display:flex;gap:30px;list-style:none;align-items:center;}
-.nav-links a{color:#e8e3d6;text-decoration:none;font-size:14px;letter-spacing:.5px;transition:color .25s;position:relative;}
-.nav-links a::after{content:'';position:absolute;left:0;bottom:-6px;width:0;height:2px;background:var(--gold);transition:width .3s;}
-.nav-links a:hover{color:#fff;}.nav-links a:hover::after{width:100%;}
-.nav-cta{background:var(--gold);color:var(--navy-deep)!important;padding:10px 20px;border-radius:2px;font-weight:600;font-size:13px;}
-.nav-cta::after{display:none!important;}.nav-cta:hover{background:var(--gold-soft);}
+/* ── NAV (pure-separation; static fallback — nav.js arrives in Layer 3) ── */
+nav{position:sticky;top:0;z-index:100;background:var(--panel);border-bottom:1px solid var(--edge);backdrop-filter:blur(8px);}
+.nav-inner{max-width:1180px;margin:0 auto;padding:13px 26px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;}
+.nav-l{display:flex;align-items:center;gap:13px;}
+.brand{font-weight:600;letter-spacing:.1em;color:var(--gold);font-size:16px;}
+.door-tag{font-size:11px;color:var(--door-text);border-left:1px solid var(--edge-soft);padding-left:13px;letter-spacing:.1em;}
+.nav-links{display:flex;align-items:center;gap:16px;list-style:none;font-size:12.5px;color:#C7D0E2;flex-wrap:wrap;}
+.nav-links a{transition:color .2s;}
+.nav-links a:hover{color:#fff;}
+.nav-links a.here{color:var(--door-text);}
+.nav-exit{color:var(--txt-mute);font-size:11.5px;border-left:1px solid var(--edge-soft);padding-left:13px;}
+.nav-exit:hover{color:var(--door-text);}
 
 /* ── HERO ── */
-.hero{background:radial-gradient(circle at 75% -10%,rgba(201,162,39,0.12),transparent 50%),linear-gradient(160deg,var(--navy),var(--navy-deep));color:#fff;padding:0 0 0;position:relative;overflow:hidden;min-height:100vh;display:flex;align-items:center;}
-.hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.03) 1px,transparent 1px);background-size:28px 28px;pointer-events:none;}
-.hero-inner{max-width:1200px;margin:0 auto;padding:96px 32px 88px;width:100%;display:grid;grid-template-columns:1fr;gap:64px;align-items:center;position:relative;z-index:1;}
-.hero-kick{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--gold-soft);border:1px solid rgba(201,162,39,0.3);padding:6px 16px;border-radius:2px;display:inline-block;margin-bottom:24px;background:rgba(201,162,39,0.06);}
-.hero-platform-line{font-size:clamp(18px,2.8vw,32px);font-weight:700;color:#ffffff;letter-spacing:3px;text-transform:uppercase;margin-bottom:24px;}
-.hero h1{font-family:'Fraunces',serif;font-size:clamp(38px,5.5vw,66px);font-weight:400;line-height:1.0;letter-spacing:-1.5px;margin-bottom:26px;}
-.hero h1 span{display:block;}
-.hero h1 em{font-style:italic;color:var(--gold-soft);font-weight:400;}
-.hero-sub{font-size:clamp(15px,1.8vw,18px);color:rgba(200,212,228,0.8);font-weight:300;line-height:1.7;max-width:48ch;margin-bottom:36px;}
-.hero-sub strong{color:rgba(224,196,90,0.9);font-weight:500;}
-.hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:44px;}
-.btn-gold{background:var(--gold);color:var(--navy-deep);padding:14px 30px;border-radius:2px;font-weight:700;font-size:14px;text-decoration:none;letter-spacing:.4px;transition:all .2s;box-shadow:0 4px 20px rgba(201,162,39,0.3);}
-.btn-gold:hover{background:var(--gold-soft);transform:translateY(-2px);box-shadow:0 8px 30px rgba(201,162,39,0.4);}
-.btn-ghost{background:rgba(255,255,255,0.06);color:#fff;padding:14px 30px;border-radius:2px;font-weight:500;font-size:14px;text-decoration:none;border:1px solid rgba(255,255,255,0.18);transition:all .2s;}
-.btn-ghost:hover{background:rgba(255,255,255,0.12);border-color:rgba(255,255,255,0.35);}
+.hero{position:relative;padding:62px 26px 44px;text-align:center;border-bottom:1px solid #1A2740;overflow:hidden;}
+.hero-glow{position:absolute;top:46px;left:50%;transform:translateX(-50%);width:520px;max-width:90%;height:200px;background:radial-gradient(ellipse,rgba(47,180,140,0.14),transparent 70%);pointer-events:none;}
+.hero-inner{position:relative;max-width:760px;margin:0 auto;}
+.hero-kick{font-size:11px;letter-spacing:.2em;color:var(--door-text);font-weight:600;}
+.hero h1{font-size:clamp(30px,5vw,46px);color:var(--txt);font-weight:600;margin:16px 0 12px;line-height:1.1;}
+.hero-sub{font-size:clamp(14px,1.7vw,16px);color:var(--txt-soft);margin:0 auto 26px;max-width:46ch;line-height:1.6;}
+.hero-stats{display:inline-flex;gap:30px;flex-wrap:wrap;justify-content:center;}
+.hero-lede{font-size:clamp(14px,1.7vw,16px);color:var(--txt);margin:0 auto 10px;max-width:52ch;line-height:1.6;font-weight:500;}
+.img-note{max-width:760px;margin:22px auto 0;padding:12px 20px;background:var(--card-deep);border:1px solid rgba(93,202,165,.28);border-left:3px solid var(--door);border-radius:8px;color:var(--txt-soft);font-size:14px;text-align:center;}
+.img-note a{color:var(--door-text);border-bottom:1px solid rgba(93,202,165,.45);}
+.hs-num{font-family:'Fraunces',serif;font-size:26px;color:var(--txt);font-weight:600;}
+.hs-lbl{font-size:12.5px;color:var(--txt-mute);margin-left:7px;}
 
-/* ── CONTENT SECTION ── */
-.content-section{background:#fff;padding:80px 32px;}
-.cs-inner{max-width:1120px;margin:0 auto;}
-.section-label{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);text-align:center;margin-bottom:10px;}
-.section-title{font-family:'Fraunces',serif;font-size:clamp(24px,4vw,36px);color:var(--navy);text-align:center;margin-bottom:8px;font-weight:400;}
-.section-sub{font-size:15px;color:var(--muted);text-align:center;max-width:52ch;margin:0 auto 52px;line-height:1.6;}
-.feature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:28px;margin-top:44px;}
-.feature-card{background:var(--cream);border:1px solid var(--line);border-radius:8px;padding:28px 24px;text-align:center;}
-.feature-card h3{font-size:18px;color:var(--navy);margin-bottom:12px;font-weight:500;}
-.feature-card p{font-size:14px;color:var(--muted);line-height:1.6;}
-.feature-icon{font-size:32px;margin-bottom:16px;color:var(--gold);}
+/* ── TOOLKIT ── */
+.wrap{max-width:1180px;margin:0 auto;padding:34px 26px 14px;}
+.sec-label{font-size:11px;letter-spacing:.14em;color:var(--txt-mute);margin-bottom:16px;}
+.tool-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;}
+.tool-card{
+  background:var(--card);
+  border-top:3px solid var(--door);border-left:3px solid var(--door);
+  border-right:1px solid var(--edge-soft);border-bottom:1px solid var(--edge-soft);
+  border-radius:9px;padding:20px 19px;display:block;transition:transform .15s;
+}
+.tool-card:hover{transform:translateY(-3px);}
+.tc-name{font-family:'Fraunces',serif;font-size:19px;color:var(--txt);margin-bottom:6px;}
+.tc-badge{font-size:12.5px;color:var(--door-text);margin-bottom:9px;}
+.tc-desc{font-size:13px;color:var(--txt-soft);line-height:1.55;}
 
-/* ── PHILOSOPHY STRIP ── */
-.phi-strip{background:var(--navy);padding:56px 32px;}
-.phi-inner{max-width:1000px;margin:0 auto;text-align:center;}
-.phi-eyebrow{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:14px;}
-.phi-title{font-family:'Fraunces',serif;font-size:clamp(22px,3.5vw,34px);color:#fff;font-weight:400;margin-bottom:24px;line-height:1.25;}
-.phi-title em{font-style:italic;color:var(--gold-soft);}
+/* shared shelf — neutral two-border */
+.shelf{
+  margin-top:16px;background:var(--card-deep);
+  border-top:2px solid var(--neutral);border-left:2px solid var(--neutral);
+  border-right:1px solid var(--edge-line);border-bottom:1px solid var(--edge-line);
+  border-radius:9px;padding:18px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;transition:transform .15s;
+}
+.shelf:hover{transform:translateY(-2px);}
+.shelf-name{font-family:'Fraunces',serif;font-size:16px;color:var(--txt);}
+.shelf-list{font-size:12.5px;color:var(--txt-mute);margin-top:4px;}
+.shelf-go{font-size:12.5px;color:#B4B2A9;white-space:nowrap;}
 
-/* ── CTA SECTION ── */
-.cta-section{background:linear-gradient(135deg,var(--gold),#b8901a);padding:72px 32px;text-align:center;}
-.cta-inner{max-width:600px;margin:0 auto;}
-.cta-title{font-family:'Fraunces',serif;font-size:clamp(24px,4vw,38px);color:var(--navy-deep);font-weight:500;margin-bottom:12px;line-height:1.15;}
-.cta-sub{font-size:15px;color:rgba(9,22,41,0.6);margin-bottom:30px;line-height:1.65;}
-.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
-.cta-btn-primary{background:var(--navy);color:#fff;padding:14px 30px;border-radius:2px;font-weight:700;font-size:13px;text-decoration:none;transition:background .2s;}
-.cta-btn-primary:hover{background:#112a55;}
-.cta-btn-secondary{background:transparent;color:var(--navy-deep);padding:14px 30px;border-radius:2px;font-weight:600;font-size:13px;text-decoration:none;border:2px solid rgba(9,22,41,0.3);transition:all .2s;}
-.cta-btn-secondary:hover{background:rgba(9,22,41,0.08);}
+/* ── PHILOSOPHY ── */
+.phi{max-width:780px;margin:34px auto 8px;padding:0 26px;text-align:center;}
+.phi-eyebrow{font-size:11px;letter-spacing:.16em;color:var(--door-text);margin-bottom:12px;}
+.phi-title{font-family:'Fraunces',serif;font-size:clamp(21px,3.2vw,30px);color:var(--txt);font-weight:600;line-height:1.25;margin-bottom:16px;}
+.phi-body{font-size:14.5px;color:var(--txt-soft);line-height:1.7;max-width:60ch;margin:0 auto;}
+.phi-body strong{color:var(--door-text);font-weight:500;}
 
 /* ── FOOTER ── */
-footer{background:var(--navy-deep);color:#c4ccd8;padding:54px 32px 28px;}
-.foot-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:30px;border-bottom:1px solid rgba(255,255,255,0.08);padding-bottom:30px;}
-.foot-brand{font-family:'Fraunces',serif;font-size:24px;color:var(--gold-soft);letter-spacing:2px;}
-.foot-brand span{color:var(--gold-soft);}
-.foot-brand p{font-size:13px;color:#aeb6c6;margin-top:10px;max-width:38ch;font-weight:300;}
-.foot-col h4{color:#fff;font-size:13px;letter-spacing:1px;text-transform:uppercase;margin-bottom:14px;}
-.foot-col a{display:block;color:#c4ccd8;text-decoration:none;font-size:14px;margin-bottom:9px;font-weight:300;transition:.2s;}
-.foot-col a:hover{color:var(--gold-soft);}
-.foot-bottom{max-width:1200px;margin:24px auto 0;font-size:12.5px;color:#9aa3b2;text-align:center;}
+footer{margin-top:40px;border-top:1px solid #1A2740;padding:34px 26px 26px;}
+.foot-inner{max-width:1180px;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:28px;border-bottom:1px solid var(--edge);padding-bottom:26px;}
+.foot-brand{font-weight:600;letter-spacing:.1em;color:var(--gold);font-size:18px;}
+.foot-brand p{font-size:13px;color:var(--txt-mute);margin-top:9px;max-width:36ch;font-weight:300;line-height:1.6;}
+.foot-col h4{color:#fff;font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px;}
+.foot-col a{display:block;color:#C7D0E2;font-size:13.5px;margin-bottom:8px;font-weight:300;transition:.2s;}
+.foot-col a:hover{color:var(--door-text);}
+.foot-bottom{max-width:1180px;margin:20px auto 0;font-size:12px;color:var(--txt-faint);text-align:center;}
+.foot-tag{text-align:center;font-size:11.5px;color:var(--txt-faint);letter-spacing:.03em;margin-top:6px;}
 
-/* ── RESPONSIVE ── */
-@media(max-width:960px){
-  .hero-inner{grid-template-columns:1fr;}
-  .feature-grid{grid-template-columns:1fr 1fr;}
-  .foot-inner{flex-wrap:wrap;gap:24px;}
-}
 @media(max-width:640px){
-  nav .nav-links{display:none;}
-  .hero-btns,.cta-btns{flex-direction:column;align-items:flex-start;}
-  .feature-grid{grid-template-columns:1fr;}
+  .nav-links{gap:13px;font-size:12px;}
+  .hero-stats{gap:22px;}
+}
+
+/* ── sticky-nav anchor offset ──
+   nav.js's .amac-nav measures 56.75px here and is position:sticky above 760px
+   (below that nav.js switches it to position:relative). 72px = measured
+   height + a 15px gap. */
+#shelf,#toolkit-extended{scroll-margin-top:72px;}
+</style>
+<style>
+.amac-capture{
+  max-width:780px;margin:60px auto;padding:34px 32px;
+  background:linear-gradient(180deg,#111E36,var(--panel,#0F1A2E));
+  border:1px solid rgba(201,162,39,.28);
+  border-top:3px solid var(--gold,#c9a227);
+  border-radius:16px;box-shadow:0 18px 46px rgba(0,0,0,.34);
+}
+.amac-capture .eyebrow{
+  font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--gold,#c9a227);font-weight:600;margin-bottom:10px;
+}
+.amac-capture h3{
+  font-family:'Fraunces',serif;font-size:26px;line-height:1.25;
+  color:var(--txt,#F6F4EE);margin:0 0 10px;font-weight:600;
+}
+.amac-capture p.sub{
+  color:var(--txt-soft,#AEB9D0);font-size:15px;margin:0 0 20px;max-width:62ch;
+}
+.amac-capture ul.bullets{
+  margin:0 0 22px;padding:0;list-style:none;display:flex;gap:22px;flex-wrap:wrap;
+}
+.amac-capture ul.bullets li{
+  font-size:13.5px;color:var(--txt-soft,#AEB9D0);
+  display:flex;align-items:center;gap:7px;
+}
+.amac-capture ul.bullets li::before{content:"\2713";color:var(--gold,#c9a227);font-weight:700;}
+.amac-capture form{display:flex;gap:10px;flex-wrap:wrap;}
+.amac-capture input[type=email]{
+  flex:1 1 260px;min-width:0;background:#0B1524;
+  border:1px solid rgba(174,185,208,.25);border-radius:10px;
+  padding:14px 16px;color:var(--txt,#F6F4EE);
+  font-family:'Outfit',sans-serif;font-size:15px;
+  transition:border-color .2s,box-shadow .2s;
+}
+.amac-capture input[type=email]::placeholder{color:var(--txt-faint,#6B7794);}
+.amac-capture input[type=email]:focus{
+  outline:none;border-color:var(--gold,#c9a227);
+  box-shadow:0 0 0 3px rgba(201,162,39,.16);
+}
+.amac-capture button{
+  background:var(--gold,#c9a227);color:#0B1220;border:none;border-radius:10px;
+  padding:14px 26px;font-family:'Outfit',sans-serif;font-weight:600;font-size:15px;
+  cursor:pointer;transition:transform .08s,background .2s;flex:0 0 auto;
+}
+.amac-capture button:hover{background:var(--gold-soft,#e0c45a);}
+.amac-capture button:active{transform:translateY(1px);}
+.amac-capture .promise{margin-top:14px;font-size:12.5px;color:var(--txt-faint,#6B7794);}
+.amac-capture .thanks{display:none;color:var(--txt,#F6F4EE);font-size:16px;line-height:1.6;}
+.amac-capture.done form,.amac-capture.done ul.bullets,.amac-capture.done p.sub{display:none;}
+.amac-capture.done .thanks{display:block;}
+@media(max-width:560px){
+  .amac-capture{padding:26px 20px;margin:44px 16px;}
+  .amac-capture h3{font-size:21px;}
+  .amac-capture button{width:100%;}
 }
 </style>
+
 </head>
 <body>
 
-<!-- NAV -->
-<nav><div class="nav-inner">
-  <a href="index.html" class="brand">A<span>MaC</span></a>
+<!-- NAV (pure-separation, static fallback; Layer 3 replaces with shared nav.js) -->
+<nav data-door="ukmla"><div class="nav-inner">
+  <div class="nav-l">
+    <a href="index.html" class="brand">AMaC</a>
+    <span class="door-tag">UKMLA</span>
+  </div>
   <ul class="nav-links">
-    <li><a href="index.html">PLAB 1 & 2</a></li>
-    <li><a href="ukmla.html">UKMLA</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="contact.html" class="nav-cta">Get Started</a></li>
+    <li><a href="cpsa-stations.html" class="here">CPSA stations</a></li>
+    <li><a href="questions.html">AKT bank</a></li>
+    <li><a href="say-never-say.html">Say / Never</a></li>
+    <li><a href="#toolkit-extended">Study Tools</a></li>
+    <li><a href="tools.html#clinical-reference">Clinical reference</a></li>
+    <li><a href="index.html" class="nav-exit">← all exams</a></li>
   </ul>
 </div></nav>
 
 <!-- HERO -->
 <section class="hero">
+  <div class="hero-glow"></div>
   <div class="hero-inner">
-    <div class="hero-left">
-      <div class="hero-platform-line">UKMLA Preparation</div>
-      <h1>
-        <span>Master clinical thinking.</span>
-        <span><em>Ace the assessment.</em></span>
-      </h1>
-      <p class="hero-sub">Complete UKMLA performance training — <strong>real CPSA station banks, clinical tools, and examiner intelligence</strong> built for doctors who want to pass decisively.</p>
-      <div class="hero-btns">
-        <a href="cpsa-stations.html" class="btn-gold">Explore CPSA Stations</a>
-        <a href="questions.html" class="btn-gold">AKT Question Bank</a>
-        <a href="index.html" class="btn-ghost">Back to PLAB</a>
-      </div>
+    <div class="hero-kick">CLINICAL &amp; WRITTEN · THE UK LICENSING STANDARD</div>
+    <h1>UKMLA-aligned preparation</h1>
+    <p class="hero-lede">For UK medical students and graduates preparing for the AKT and CPSA components of the MLA.</p>
+    <div class="hero-stats">
+      <div><span class="hs-num"><span data-count="cpsaStations">293</span></span><span class="hs-lbl">CPSA stations</span></div>
+      <div><span class="hs-num"><span data-count="aktQuestions">10,252</span></span><span class="hs-lbl">AKT questions</span></div>
     </div>
   </div>
 </section>
 
-<!-- FEATURES -->
-<section class="content-section">
-  <div class="cs-inner">
-    <div class="section-label">What's Included</div>
-    <h2 class="section-title">UKMLA Mastery Platform</h2>
-    <p class="section-sub">Everything you need for both halves of the UK Medical Licensing Assessment — the AKT written paper and the CPSA clinical stations — aligned to real exam standards and examiner expectations.</p>
-    
-    <div class="feature-grid">
-      <a href="questions.html" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;">
-      <div class="feature-card">
-        <div class="feature-icon">📝</div>
-        <h3>AKT Question Bank</h3>
-        <p>1,369 single-best-answer questions for the Applied Knowledge Test — the written half of UKMLA. Full explanations, exam traps, and high-yield pearls.</p>
-      </div>
-      </a>
-      <a href="cpsa-stations.html" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;">
-      <div class="feature-card">
-        <div class="feature-icon">🎬</div>
-        <h3>CPSA Stations</h3>
-        <p>Real-world station scenarios built to CPSA specifications. Communication, clinical reasoning, and safety under pressure.</p>
-      </div>
-      </a>
-      <a href="examiner-brain.html" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;">
-      <div class="feature-card">
-        <div class="feature-icon">🧠</div>
-        <h3>Examiner Brain</h3>
-        <p>Understand what examiners are marking. Real station transcripts, marking rubrics, and performance psychology.</p>
-      </div>
-      </a>
-      <a href="tools.html" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;">
-      <div class="feature-card">
-        <div class="feature-icon">⚡</div>
-        <h3>Clinical Tools</h3>
-        <p>Quick-access frameworks, decision trees, and reference guides for station rehearsal and clinical thinking.</p>
-      </div>
-      </a>
-      <a href="performance-bands.html" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;">
-      <div class="feature-card">
-        <div class="feature-icon">🎯</div>
-        <h3>Performance Coaching</h3>
-        <p>Station rehearsal guidance, voice & tone coaching, and psychological preparation for assessment day.</p>
-      </div>
-      </a>
-    </div>
+<div class="img-note">International medical graduates: see <a href="plab1-hub.html">PLAB 1</a> and <a href="plab2.html">PLAB 2</a>.</div>
+
+<!-- TOOLKIT -->
+<div class="wrap">
+  <div class="sec-label">YOUR UKMLA TOOLKIT</div>
+  <div class="tool-grid">
+
+    <a class="tool-card" href="cpsa-stations.html">
+      <div class="tc-name">CPSA Stations</div>
+      <div class="tc-badge"><span data-count="cpsaStations">293</span> CPSA stations</div>
+      <div class="tc-desc">Examiner marking grids and full Fail / Pass / Distinction transcripts across every station category.</div>
+    </a>
+
+    <a class="tool-card" href="questions.html">
+      <div class="tc-name">AKT Question Bank</div>
+      <div class="tc-badge"><span data-count="aktQuestions">10,252</span> questions</div>
+      <div class="tc-desc">Single-best-answer across <span data-count="aktDomains">27</span> clinical domains, with full explanations and exam-style challenge.</div>
+    </a>
+
+    <a class="tool-card" href="say-never-say.html">
+      <div class="tc-name">Say This. Avoid This.</div>
+      <div class="tc-badge">CPSA edition · <span data-count="sayThisCpsa">177</span> cards</div>
+      <div class="tc-desc">Examples of wording that makes safe clinical reasoning clear — and common phrasing that can create avoidable problems.</div>
+    </a>
+    <a class="tool-card" href="do-never-do.html">
+      <div class="tc-name">Do This, Never Do That</div>
+      <div class="tc-badge">CPSA edition · <span data-count="doNeverDo">93</span> cards</div>
+      <div class="tc-desc">How to carry yourself in the station — the conduct that scores, and the conduct that quietly fails.</div>
+    </a>
+    <a class="tool-card" href="mastercards-ukmla.html">
+      <div class="tc-name">Master Cards</div>
+      <div class="tc-badge">CPSA edition · <span data-count="masterCardsUkmla">105</span> station types</div>
+      <div class="tc-desc">105 Master Cards organised by CPSA station type and clinical skill. Each card carries only the sections that station actually has, so the number of sections varies from card to card.</div>
+    </a>
+    <a class="tool-card" href="cpsa-flashcards.html">
+      <div class="tc-name">Flashcard System</div>
+      <div class="tc-badge">CPSA edition · <span data-count="cpsaFlashcards">1,302</span> cards</div>
+      <div class="tc-desc">Clinical decision cards, curveballs, safety checks and critical misses — flip, filter by domain, or run the whole deck in study mode.</div>
+    </a>
+    <a class="tool-card" href="instant-fail-atlas.html">
+      <div class="tc-name">Instant Fail Atlas</div>
+      <div class="tc-badge"><span data-count="atlasCards">222</span> case-based cards</div>
+      <div class="tc-desc">A museum of the moments good candidates fail — the cognitive trap, the instant-fail moves behind it, and the one rule that saves each station.</div>
+    </a>
+
   </div>
-</section>
+
+  <a class="shelf" id="shelf" href="tools.html">
+    <div>
+      <div class="shelf-name">Shared clinical reference</div>
+      <div class="shelf-list">Prescribing · DVLA · antibiotics · normal values · ECG/ABG · frameworks · NHS language · documentation · SBAR</div>
+    </div>
+    <span class="shelf-go">Open shelf →</span>
+  </a>
+
+  <a class="shelf" href="plab1.html">
+    <div>
+      <div class="shelf-name">Also relevant: the PLAB 1 question bank</div>
+      <div class="shelf-list"><span data-count="plab1Questions">2,294</span> single-best-answer questions across <span data-count="plab1Domains">22</span> clinical domains — a different exam, but the same written clinical reasoning the AKT tests.</div>
+    </div>
+    <span class="shelf-go">Open PLAB 1 bank →</span>
+  </a>
+
+  <a class="shelf" href="foundation.html">
+    <div>
+      <div class="shelf-name">Next step: Foundation F1 &amp; F2</div>
+      <div class="shelf-list">On-call shift and prescribing simulators for the first two years as a doctor — coming soon.</div>
+    </div>
+    <span class="shelf-go">See what's planned →</span>
+  </a>
+</div>
+
+<!-- TOOLKIT — EXTENDED -->
+<div class="wrap" id="toolkit-extended">
+  <div class="sec-label">UKMLA TOOLKIT — EXTENDED · CLINICAL REFERENCE</div>
+  <div class="tool-grid">
+
+    <a class="tool-card" href="examcoach.html">
+      <div class="tc-name">Examination Coach</div>
+      <div class="tc-badge">6 examinations</div>
+      <div class="tc-desc">Full verbalisation scripts for CVS, respiratory, abdominal, neurological, GALS and mental state.</div>
+    </a>
+    <a class="tool-card" href="ecg-abg.html">
+      <div class="tc-name">ECG &amp; ABG Interpretation</div>
+      <div class="tc-badge">8 ECG + 6 ABG patterns</div>
+      <div class="tc-desc">KILL first scan, RRAIS systematic, BAD scan, 5-step ABG, ROME rule.</div>
+    </a>
+    <a class="tool-card" href="dvla.html">
+      <div class="tc-name">DVLA Fitness to Drive</div>
+      <div class="tc-badge">24 conditions</div>
+      <div class="tc-desc">Stop durations, notify requirements and the OSCE gold script.</div>
+    </a>
+    <a class="tool-card" href="antibiotics.html">
+      <div class="tc-name">Antibiotic Guide</div>
+      <div class="tc-badge">16 infections</div>
+      <div class="tc-desc">First-line antibiotics, penicillin allergy alternatives, STEWARD mnemonic.</div>
+    </a>
+    <a class="tool-card" href="ethics-law.html">
+      <div class="tc-name">Ethics &amp; Law Quick Reference</div>
+      <div class="tc-badge">8 frameworks</div>
+      <div class="tc-desc">Consent, capacity, confidentiality, safeguarding, and the Mental Health Act — stated precisely, with the traps candidates fall into.</div>
+    </a>
+    <a class="tool-card" href="normal-values.html">
+      <div class="tc-name">Normal Values &amp; Critical Labs</div>
+      <div class="tc-badge">6 categories</div>
+      <div class="tc-desc">Complete UK NHS ranges — critical values, haematology, biochemistry, ABG &amp; ECG, paediatric and pregnancy.</div>
+    </a>
+    <a class="tool-card" href="prescribing.html">
+      <div class="tc-name">Prescribing Safety</div>
+      <div class="tc-badge">10 high-risk drugs</div>
+      <div class="tc-desc">SAFE PRESCRIBE, ORIP, IOAPM, SADMAN, ACID-ID, VRIII protocol.</div>
+    </a>
+
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="sec-label">UKMLA TOOLKIT — EXTENDED · COMMUNICATION &amp; LANGUAGE</div>
+  <div class="tool-grid">
+
+    <a class="tool-card" href="nhs-language.html">
+      <div class="tc-name">NHS Language Coach</div>
+      <div class="tc-badge">25 phrases</div>
+      <div class="tc-desc">Common communication patterns that can sound unfamiliar in UK clinical practice — with natural alternatives and why they matter.</div>
+    </a>
+    <a class="tool-card" href="documentation.html">
+      <div class="tc-name">Documentation Coach</div>
+      <div class="tc-badge">12 scripts</div>
+      <div class="tc-desc">Verbalisation scripts for documentation — free marks on every station. Takes 8 seconds. Never skip.</div>
+    </a>
+    <a class="tool-card" href="sbar-generator.html">
+      <div class="tc-name">SBAR Generator</div>
+      <div class="tc-badge">Interactive</div>
+      <div class="tc-desc">Fill in 4 fields and get an AMaC-language escalation script ready to say aloud.</div>
+    </a>
+    <a class="tool-card" href="frameworks.html">
+      <div class="tc-name">Consultation Frameworks</div>
+      <div class="tc-badge">14 frameworks</div>
+      <div class="tc-desc">ICE, SPIKES, NURSE, SBAR, SOCRATES, ASEPTIC, HEADSS, CAGE, ABCDE and more. With scripts.</div>
+    </a>
+    <a class="tool-card" href="recovery-scripts.html">
+      <div class="tc-name">Recovery Scripts<span style="background:rgba(47,180,140,0.15);border:1px solid rgba(47,180,140,0.3);color:var(--door-text);font-family:'Outfit',sans-serif;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;padding:2px 7px;border-radius:10px;margin-left:6px;vertical-align:middle;">NEW</span></div>
+      <div class="tc-badge">15 scenarios</div>
+      <div class="tc-desc">Exact words for every mid-station crisis — forgot ICE, patient angry, went blank, ran out of time.</div>
+    </a>
+
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="sec-label">UKMLA TOOLKIT — EXTENDED · PERFORMANCE PRACTICE</div>
+  <div class="tool-grid">
+
+    <a class="tool-card" href="spoken-osce.html">
+      <div class="tc-name">Spoken OSCE Trainer</div>
+      <div class="tc-badge">12 stations</div>
+      <div class="tc-desc">Speak the consultation out loud — a reactive patient answers back, with a delivery coach and the AMaC say/never lines.</div>
+    </a>
+    <a class="tool-card" href="actor-trap-simulator.html">
+      <div class="tc-name">Actor-Trap Simulator</div>
+      <div class="tc-badge"><span data-count="actorTrapSimStations">5</span> stations</div>
+      <div class="tc-desc">The OSCE actor works from a hidden brief — red flags dropped casually, fears withheld, baits to see if you cave.</div>
+    </a>
+    <a class="tool-card" href="actor-traps.html">
+      <div class="tc-name">Actor Traps Library<span style="background:rgba(47,180,140,0.15);border:1px solid rgba(47,180,140,0.3);color:var(--door-text);font-family:'Outfit',sans-serif;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;padding:2px 7px;border-radius:10px;margin-left:6px;vertical-align:middle;">NEW</span></div>
+      <div class="tc-badge"><span data-count="actorTraps">75</span> traps</div>
+      <div class="tc-desc">What the actor does, why it's scripted, wrong response, right response, exact words, recovery, examiner thought.</div>
+    </a>
+
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="sec-label">UKMLA TOOLKIT — EXTENDED · STRATEGY &amp; PLANNING</div>
+  <div class="tool-grid">
+
+    <a class="tool-card" href="study-planner.html">
+      <div class="tc-name">Study Planner</div>
+      <div class="tc-badge">3 plans</div>
+      <div class="tc-desc">Day-by-day plans — 7-day crash course, 14-day focused plan, fail recovery pathway.</div>
+    </a>
+    <a class="tool-card" href="route-finder.html">
+      <div class="tc-name">Route Finder</div>
+      <div class="tc-badge">9 questions</div>
+      <div class="tc-desc">Nine questions about how you perform under pressure → a profile across six areas → the tools to start with.</div>
+    </a>
+    <a class="tool-card" href="fail-recovery.html">
+      <div class="tc-name">Fail Recovery Diagnostic</div>
+      <div class="tc-badge">9 domains</div>
+      <div class="tc-desc">15 behavioural questions → 9-domain failure profile → targeted 5-day repair plan.</div>
+    </a>
+    <a class="tool-card" href="exam-morning.html">
+      <div class="tc-name">Exam Morning Card</div>
+      <div class="tc-badge">Exam day</div>
+      <div class="tc-desc">Phone-optimised dark card for exam day only. 10 anchors, 5 scripts, critical values.</div>
+    </a>
+
+  </div>
+</div>
 
 <!-- PHILOSOPHY -->
-<section class="phi-strip">
-  <div class="phi-inner">
-    <div class="phi-eyebrow">AMaC Philosophy</div>
-    <h2 class="phi-title">Train like you'll perform. <em>Perform like you've trained.</em></h2>
-    <p style="font-size:15px;color:rgba(221,226,236,0.8);line-height:1.7;margin:0 auto;max-width:64ch;">UKMLA isn't about knowing more medicine. It's about <strong>thinking and communicating like a UK-trained doctor under pressure</strong>. AMaC teaches examiner-led thinking, safety-first decision-making, and the voice of confidence that passes stations.</p>
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="cta-section">
-  <div class="cta-inner">
-    <h2 class="cta-title">Ready to Master UKMLA?</h2>
-    <p class="cta-sub">Start with real CPSA stations, learn from examiner feedback, and build the confidence that passes.</p>
-    <div class="cta-btns">
-      <a href="contact.html" class="cta-btn-primary">Get Started</a>
-      <a href="index.html" class="cta-btn-secondary">See PLAB Platform</a>
-    </div>
-  </div>
+<section class="phi">
+  <div class="phi-eyebrow">THE AMaC APPROACH</div>
+  <h2 class="phi-title">Train like you'll perform.<br>Perform like you've trained.</h2>
+  <p class="phi-body">UKMLA isn't about knowing more medicine. It's about <strong>thinking and communicating like a UK-trained doctor under pressure</strong> — examiner-led reasoning, safety-first decisions, and the voice of confidence that passes stations.</p>
 </section>
 
 <!-- FOOTER -->
+<section class="amac-capture">
+  <div class="eyebrow">Free chapter &middot; no spam &middot; unsubscribe anytime</div>
+  <h3>Get a free chapter of our UKMLA material</h3>
+  <p class="sub">
+    Written for the AKT paper and the CPSA stations &mdash; the standard, and how it
+    is actually assessed. Tell us where to send it and we will email you a chapter,
+    free.
+  </p>
+  <ul class="bullets">
+    <li>A real chapter, not a sample page</li>
+    <li>New CPSA stations first</li>
+    <li>Early access to our books</li>
+  </ul>
+  <form class="amac-form" action="https://formsubmit.co/info@amac-medical.com" method="POST">
+    <input type="email" name="email" required placeholder="your@email.com" aria-label="Email address">
+    <input type="hidden" name="book" value="UKMLA">
+    <input type="hidden" name="_subject" value="AMaC free chapter request — UKMLA">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_template" value="table">
+    <input type="text" name="_honey" style="display:none">
+    <button type="submit">Send me the chapter &rarr;</button>
+  </form>
+  <div class="thanks">
+    <strong>Thank you &mdash; it is on its way.</strong><br>
+    We will email your chapter shortly. Welcome to AMaC.
+  </div>
+  <p class="promise">We never sell your address, and we email rarely &mdash; only when there is something genuinely worth your time.</p>
+</section>
+
 <footer>
   <div class="foot-inner">
     <div class="foot-brand">
-      A<span>MaC</span>
-      <p>UKMLA performance training. Making the difficult, easy.</p>
+      AMaC
+      <p>Preparation for the UKMLA — the AKT written paper and the CPSA station assessment. Making the difficult, easy.</p>
     </div>
     <div class="foot-col">
-      <h4>Platform</h4>
-      <a href="index.html">PLAB 1 & 2</a>
-      <a href="ukmla.html">UKMLA</a>
-      <a href="tools.html">Tools</a>
+      <h4>UKMLA</h4>
+      <a href="cpsa-stations.html">CPSA stations</a>
+      <a href="questions.html">AKT question bank</a>
+      <a href="say-never-say.html">Say / Never (CPSA)</a>
+      <a href="mastercards-ukmla.html">Master Cards (CPSA)</a>
     </div>
     <div class="foot-col">
-      <h4>Company</h4>
-      <a href="about.html">About AMaC</a>
+      <h4>AMaC</h4>
+      <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
+      <a href="index.html">← All exams</a>
     </div>
   </div>
-  <div class="foot-bottom">
-    © 2026 A. Mansour & Colleagues. All rights reserved. | <a href="index.html" style="color:inherit;text-decoration:none;">Back to PLAB</a>
-  </div>
+  <div class="foot-bottom">© 2026 A. Mansour &amp; Colleagues (AMaC). All rights reserved.</div>
+  <div class="foot-tag">Written by doctors, for doctors who want to excel · free while we grow</div>
 </footer>
 
+<script src="nav.js" defer></script>
+<script>
+document.addEventListener('submit', function(e){
+  var f = e.target;
+  if(!f.classList || !f.classList.contains('amac-form')) return;
+  e.preventDefault();
+  var box = f.closest('.amac-capture');
+  fetch(f.action, {method:'POST', body:new FormData(f), headers:{'Accept':'application/json'}})
+    .then(function(){ box.classList.add('done'); })
+    .catch(function(){ box.classList.add('done'); });
+});
+</script>
+
+<script src="footer.js" defer></script>
+<script src="counts.js" defer></script>
 </body>
 </html>

@@ -1,0 +1,556 @@
+{
+  "id": "MB-224",
+  "exam": "MRCS-B",
+  "title": "Rigid sigmoidoscopy and proctoscopy",
+  "type": "procedural",
+  "header": {
+    "domain": "Applied Skills",
+    "contentArea": "Clinical and procedural skills",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "GMC Intimate examinations and chaperones (updated December 2024)",
+      "Bailey & Love's Short Practice of Surgery, 28th edition (2023)",
+      "Robinson et al, UK survey of sigmoidoscopy complications (1996)",
+      "Attenberger et al, rectal cancer height by rigid rectoscopy (2020)"
+    ],
+    "related": [
+      {
+        "id": "MB-174 History: change in bowel habit and rectal bleeding",
+        "why": "The history that leads to this examination"
+      },
+      {
+        "id": "MB-176 Breaking bad news: colorectal cancer",
+        "why": "What follows a suspicious finding"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Colorectal outpatient clinic, on a rectal examination manikin",
+    "role": "Core surgical trainee",
+    "scenario": "Mr Leonard Pryce, 55, has had 2 months of fresh blood mixed with his stool and a feeling of incomplete emptying. Your consultant has asked you to perform a rigid sigmoidoscopy and proctoscopy in clinic. A rigid sigmoidoscope, proctoscope, light source, insufflation bulb, lubricant, gloves and biopsy forceps are provided.",
+    "task": "Perform the examination on the manikin, talking the examiner through each step, and answer questions."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Consent and chaperone, position, inspect and DRE, proctoscope, sigmoidoscope under vision, findings, aftercare.",
+    "trap": "Passing an instrument before a rectal examination, or advancing the scope blind.",
+    "firstMove": "\"I'll explain the test, ask for his consent and offer a chaperone.\""
+  },
+  "flow": [
+    "Consent",
+    "Chaperone and dignity",
+    "Equipment and position",
+    "Inspection and DRE",
+    "Proctoscopy",
+    "Rigid sigmoidoscopy",
+    "Findings and biopsy",
+    "Aftercare and record"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "professionalism",
+      "label": "Consent",
+      "fail": "Starts without explaining the test or asking permission.",
+      "pass": "Explains the test and gains consent: some discomfort and wind, a possible painless biopsy, and a little bleeding afterwards.",
+      "high": "Adds the rare serious risks: heavier bleeding, and perforation (5 in 328,815 rigid sigmoidoscopies in a UK survey); invites questions.",
+      "source": "ROBIN"
+    },
+    {
+      "id": "G2",
+      "domain": "professionalism",
+      "label": "Chaperone and dignity",
+      "fail": "Doesn't offer a chaperone, or leaves him exposed.",
+      "pass": "Offers a chaperone before starting; privacy to undress and keeps him covered.",
+      "high": "Tells him he can ask to stop at any time; records consent, the chaperone discussion and who was present.",
+      "source": "GMC"
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-skill",
+      "label": "Equipment and position",
+      "fail": "Can't assemble the scope, or examines him lying on his back.",
+      "pass": "Checks the light, obturator, eyepiece and bellows; left lateral, hips and knees flexed.",
+      "high": "Tests the light and insufflation before starting; has biopsy forceps and specimen pots ready.",
+      "source": "BL"
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-skill",
+      "label": "Inspection and DRE first (safety-critical)",
+      "fail": "Passes an instrument without inspecting the anus or doing a rectal examination.",
+      "pass": "Parts the buttocks and inspects; then a digital rectal examination with a lubricated finger before any instrument.",
+      "high": "Doesn't instrument if the DRE suggests anal stenosis, an abscess or perforation; stops and seeks senior advice instead.",
+      "source": "BL"
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-skill",
+      "label": "Proctoscopy",
+      "fail": "Inserts without the obturator, or looks only on the way in.",
+      "pass": "Lubricated proctoscope inserted fully with the obturator held in; removes the obturator; inspects the canal while withdrawing slowly.",
+      "high": "Rotates or reinserts to see the whole circumference; biopsies only above the dentate line.",
+      "source": "BL"
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-skill",
+      "label": "Rigid sigmoidoscopy under vision (safety-critical)",
+      "fail": "Pushes the scope blindly or against resistance.",
+      "borderline": "Advances under vision but doesn't insufflate, so keeps pushing into the rectal wall.",
+      "pass": "Inserts with the obturator towards the umbilicus, removes it, insufflates gently and advances only under direct vision.",
+      "high": "Angles posteriorly as the rectum follows the sacrum; never forces past the rectosigmoid; notes how far the scope reached.",
+      "source": "BL"
+    },
+    {
+      "id": "G7",
+      "domain": "clinical-knowledge",
+      "label": "Findings and biopsy",
+      "fail": "Doesn't inspect on withdrawal, or can't say where the lesion is.",
+      "pass": "Inspects the mucosa while withdrawing under vision; records each lesion's distance from the anal verge and wall position; biopsies it.",
+      "high": "Explains that the height from the anal verge (low, mid or high rectum) guides rectal cancer treatment planning.",
+      "source": "ATTEN"
+    },
+    {
+      "id": "G8",
+      "domain": "professionalism",
+      "label": "Aftercare and record",
+      "fail": "Leaves without explaining the findings or recording the examination.",
+      "pass": "Explains what was seen; warns of a little bleeding after a biopsy; says how he will get the results.",
+      "high": "Tells him honestly the lesion needs urgent tests and the colorectal team; documents findings, distances, biopsies and the chaperone."
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "candidate",
+        "text": "[Asks him to lie on his back and starts opening the scope without explaining.]",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          },
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Doesn't mention a chaperone; leaves him uncovered.]",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Inserts the proctoscope straight away without a rectal examination.]",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Pushes the proctoscope in without the obturator and looks only on the way in.]",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Pushes the sigmoidoscope in against resistance without looking.]",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Where was the lesion?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Somewhere in the rectum, I think.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Removes the scope and leaves without explaining or writing anything.]",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "candidate",
+        "text": "Mr Pryce, I'd like to look inside your back passage with a short tube. It may feel uncomfortable and windy; I may take a painless sample, and you may bleed a little afterwards. Are you happy to go ahead?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Would you like a chaperone? [Gives privacy to undress and covers him.]",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Checks the light, obturator, eyepiece and bellows.] Please lie on your left side with your hips and knees bent.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Parts the buttocks and inspects, then a lubricated digital rectal examination.]",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Inserts the lubricated proctoscope fully with the obturator held in, removes it, and inspects the canal while withdrawing slowly.]",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Inserts the sigmoidoscope towards the umbilicus, removes the obturator, attaches the eyepiece, insufflates gently and advances only when the lumen is seen.]",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Inspects while withdrawing.] Ulcerated lesion on the posterior wall, lower edge 7 cm from the anal verge. I'll biopsy it.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I've seen an area that needs testing and have taken samples. You may bleed a little, and I'll make sure you get the results.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "candidate",
+        "text": "I'd like to look inside your back passage with a short tube. It may feel windy, and any sample is painless. You may bleed a little afterwards. Very rarely there is heavier bleeding or a tear in the bowel wall. Any questions?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Would you like a chaperone? You can ask me to stop at any time. [Covers him; records his consent and that the clinic nurse is chaperoning.]",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Tests the light and insufflation first; biopsy forceps and pots ready.] Left side, knees bent, please.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Inspects, then DRE.] If this were very painful, stenosed or felt like an abscess, I'd stop and get senior advice rather than pass a scope.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Proctoscope in with the obturator held, obturator out, withdraws slowly and rotates to see the whole circumference.] I'd only biopsy above the dentate line.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Towards the umbilicus, obturator out, eyepiece on, gentle air, then angles back as the rectum follows the sacrum, advancing only under vision.] I won't force past the rectosigmoid, and I'll note how far I reached.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Inspects on withdrawal.] Ulcerated, friable lesion on the posterior wall, lower edge 7 cm from the anal verge, so mid rectum. That height guides treatment planning. I'll biopsy it.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Mr Pryce, I've found an area that looks abnormal and taken samples. It needs urgent further tests, and you'll see the colorectal team quickly. [Documents findings, distance, biopsies and chaperone.]",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G4",
+      "move": "Passing the proctoscope or sigmoidoscope without inspecting the anus and doing a rectal examination.",
+      "consequence": "Safety-critical: a stenosis, abscess or tumour is met blind, causing pain or injury."
+    },
+    {
+      "row": "G6",
+      "move": "Advancing the rigid sigmoidoscope without seeing the lumen.",
+      "consequence": "Safety-critical: risks perforating the rectum or rectosigmoid."
+    },
+    {
+      "row": "G2",
+      "move": "Not offering a chaperone, or not recording the discussion.",
+      "consequence": "Breaches GMC guidance for an intimate examination."
+    },
+    {
+      "row": "G7",
+      "move": "Not recording the lesion's distance from the anal verge and its position.",
+      "consequence": "The height that guides rectal cancer surgery is lost."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You can't see the lumen",
+      "line": "I'll withdraw a little, add some air and re-angle before going any further."
+    },
+    {
+      "when": "You forgot the rectal examination",
+      "line": "Before any instrument, I'll inspect and do a rectal examination."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Inspect and do a rectal examination before any instrument. Insert towards the umbilicus, then angle back; insufflate and advance only under vision; inspect on withdrawal.",
+      "source": "BL"
+    },
+    {
+      "fact": "Don't pass an instrument if the examination suggests a stenosis, an abscess or a perforation; stop and get senior advice.",
+      "source": "BL"
+    },
+    {
+      "fact": "UK survey: perforation in 5 of 328,815 rigid sigmoidoscopies; significant bleeding in 35.",
+      "source": "ROBIN"
+    },
+    {
+      "fact": "Tumour height is measured from the anal verge by rigid rectoscopy: UICC low up to 6 cm, mid 6–12 cm, high 12–16 cm.",
+      "source": "ATTEN"
+    },
+    {
+      "fact": "Explain, allow questions, say he can ask to stop; record consent; offer a chaperone and record the discussion.",
+      "source": "GMC"
+    }
+  ],
+  "recall": {
+    "think": "Perforation, a missed rectal cancer, an examination without consent.",
+    "say": "\"Rectal examination first; I only advance what I can see.\"",
+    "do": [
+      "Consent, chaperone, left lateral",
+      "Inspect, DRE, proctoscope",
+      "Scope under vision; inspect on withdrawal; biopsy"
+    ],
+    "numbers": [
+      {
+        "value": "5 in 328,815",
+        "meaning": "perforations after rigid sigmoidoscopy (UK survey)",
+        "source": "ROBIN"
+      },
+      {
+        "value": "6 / 12 / 16 cm",
+        "meaning": "upper limits of low, mid and high rectum from the anal verge (UICC)",
+        "source": "ATTEN"
+      }
+    ],
+    "trap": "Blood on the glove isn't proof of haemorrhoids: look higher.",
+    "finish": "Findings with distance recorded, biopsies sent, urgent colorectal follow-up."
+  },
+  "sources": [
+    {
+      "id": "GMC",
+      "name": "GMC: Intimate examinations and chaperones",
+      "version": "In effect from 30 January 2024; updated 13 December 2024",
+      "url": "https://www.gmc-uk.org/professional-standards/the-professional-standards/intimate-examinations-and-chaperones/intimate-examinations-and-chaperones",
+      "supports": "Explain why the examination is needed and what it involves, give a chance to ask questions, and explain the patient can ask at any time for it to stop (para 8); obtain consent and record it (para 9); privacy to undress and keep covered (para 12); offer a chaperone wherever possible (para 16); record the chaperone discussion and its outcome (para 23)"
+    },
+    {
+      "id": "BL",
+      "name": "Bailey & Love's Short Practice of Surgery (O'Connell, McCaskie, Sayers, eds)",
+      "version": "28th edition, 2023",
+      "url": "https://www.routledge.com/Bailey--Loves-Short-Practice-of-Surgery---28th-Edition/OConnell-McCaskie-Sayers/p/book/9780367548117",
+      "supports": "Proctoscopy and rigid sigmoidoscopy technique: left lateral position; inspection and digital rectal examination before any instrument; obturator in on insertion, removed for viewing; insufflation and advancing only under vision; inspection on withdrawal; biopsy above the dentate line, where the mucosa is insensitive; stop if the examination suggests stenosis, abscess or perforation"
+    },
+    {
+      "id": "ROBIN",
+      "name": "Robinson RJ, Stone M, Mayberry JF. Sigmoidoscopy and rectal biopsy: a survey of current UK practice. Eur J Gastroenterol Hepatol 1996;8(2):149-51",
+      "version": "February 1996",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/8723420/",
+      "supports": "Postal survey of 277 UK consultant gastroenterologists: 71% of sigmoidoscopies were rigid; perforation in 5 of 328,815 rigid sigmoidoscopies (8 of 134,482 flexible); significant bleeding in 35 of 328,815 rigid; overall complication rate after sigmoidoscopy and rectal biopsy 0.01%"
+    },
+    {
+      "id": "ATTEN",
+      "name": "Attenberger UI, Winter J, Harder FN, et al. Height of rectal cancer: a comparison between rectoscopic and different MRI measurements. Gastroenterol Res Pract 2020;2020:2130705",
+      "version": "Published online 28 January 2020",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/32411193/",
+      "supports": "Rigid rectoscopy measured from the anal verge is the reference standard and most common method for rectal cancer height; UICC by rigid endoscopy: low up to 6 cm, mid 6-12 cm, high 12-16 cm; tumour height and relation to the peritoneal reflection matter for treatment; rigid rectoscopy has a low complication rate but is uncomfortable"
+    },
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format: 9 minutes with 1 minute's reading"
+    }
+  ],
+  "media": [
+    {
+      "id": "sigmoidoscope-proctoscope",
+      "task": "Name the instruments and their parts before starting",
+      "description": "Photograph of a disposable rigid sigmoidoscope (with obturator, eyepiece and insufflation bulb) beside a proctoscope with its obturator, on a plain background",
+      "required": false,
+      "status": "needed"
+    }
+  ],
+  "partner": {
+    "opening": "Please perform a rigid sigmoidoscopy and proctoscopy for Mr Pryce on this manikin, talking me through what you're doing.",
+    "reveals": [
+      {
+        "trigger": "Asks for consent and offers a chaperone",
+        "finding": "He agrees and would like a chaperone; a nurse is present.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Inspects the anus",
+        "finding": "No external haemorrhoids, fissure or skin tags.",
+        "row": "G4"
+      },
+      {
+        "trigger": "Performs the rectal examination",
+        "finding": "Say: \"You feel a hard, irregular edge at your fingertip on the posterior wall. There is blood on the glove.\"",
+        "row": "G4"
+      },
+      {
+        "trigger": "Performs the proctoscopy",
+        "finding": "Say: \"Small internal haemorrhoids, not bleeding. The anal canal is otherwise normal.\"",
+        "row": "G5"
+      },
+      {
+        "trigger": "Advances the sigmoidoscope under vision",
+        "finding": "Say: \"An ulcerated, friable lesion on the posterior wall; its lower edge is 7 cm from the anal verge. The scope reaches 16 cm.\"",
+        "row": "G7"
+      }
+    ],
+    "push": [
+      {
+        "question": "Why examine with your finger first?",
+        "row": "G4",
+        "expect": "It must always come before rigid sigmoidoscopy: it finds a mass, stenosis, abscess or pain that changes the plan."
+      },
+      {
+        "question": "How far will you advance the sigmoidoscope?",
+        "row": "G6",
+        "expect": "Only as far as the lumen can be seen without force; never force past the rectosigmoid; record the depth reached."
+      },
+      {
+        "question": "Why record the distance from the anal verge?",
+        "row": "G7",
+        "expect": "It places a rectal cancer as low, mid or high rectum for treatment planning; record the wall position too."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "He is in severe pain on the rectal examination and you feel a tender, fluctuant swelling.",
+        "safeAnswer": "Stop: possible perirectal abscess. No instrumentation; senior review.",
+        "row": "G4"
+      },
+      {
+        "prompt": "You can't see the lumen at 12 cm.",
+        "safeAnswer": "Withdraw slightly, insufflate and re-angle; never push blind; stop if it still can't be seen.",
+        "row": "G6"
+      },
+      {
+        "prompt": "He asks you to stop halfway.",
+        "safeAnswer": "Stop at once, withdraw under vision and talk to him.",
+        "row": "G2"
+      }
+    ]
+  }
+}

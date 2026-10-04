@@ -1,0 +1,485 @@
+{
+  "id": "MB-138",
+  "exam": "MRCS-B",
+  "title": "Breast examination",
+  "type": "examination",
+  "header": {
+    "domain": "Applied Skills",
+    "contentArea": "Physical examination (breast)",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "signalMinutes": 6,
+    "guidelineVersions": [
+      "GMC intimate examinations and chaperones",
+      "NICE NG12 (updated Apr 2026)"
+    ],
+    "related": [
+      {
+        "id": "MB-124 Breast carcinoma",
+        "why": "The pathology behind the lump"
+      },
+      {
+        "id": "Breaking bad news station",
+        "why": "Explaining the result"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Breast clinic",
+    "role": "Core surgical trainee",
+    "scenario": "Ms Clarke, 42, found a lump in her left breast two weeks ago. A chaperone is available. The breast is represented by a simulator.",
+    "task": "Examine her breasts. You will be stopped at 6 minutes to present your findings and answer questions."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Chaperone and consent first, normal side first, then the axilla.",
+    "trap": "Going straight to the lump and forgetting the axilla and supraclavicular nodes.",
+    "firstMove": "\"Before we start, I'd like to offer you a chaperone.\""
+  },
+  "flow": [
+    "Consent and chaperone",
+    "Inspect in three positions",
+    "Palpate, normal side first",
+    "Axillary and supraclavicular nodes",
+    "At 6 minutes: present"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "professionalism",
+      "label": "Consent and chaperone",
+      "fail": "Examines without offering a chaperone or explaining the examination.",
+      "pass": "Explains the examination, gains consent, offers a chaperone, and records the discussion.",
+      "high": "Checks her preferences (e.g. a female chaperone) and keeps her covered except for the area being examined.",
+      "source": "GMC"
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-skill",
+      "label": "Inspection",
+      "fail": "Inspects with arms by the sides only.",
+      "pass": "Sitting: arms by sides, hands pressed on hips, arms above head.",
+      "high": "Adds leaning forward, and looks for skin tethering, peau d'orange, nipple inversion and asymmetry."
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-skill",
+      "label": "Palpation",
+      "fail": "Palpates only the lump, or starts with the symptomatic side.",
+      "pass": "Normal side first, patient semi-reclined with arm behind head; flat hand, all quadrants, axillary tail, nipple.",
+      "high": "Uses a systematic pattern and tests the lump for fixation to skin and chest wall (pectoralis tensed)."
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-skill",
+      "label": "Lymph nodes",
+      "fail": "Omits the axilla.",
+      "pass": "Examines the axilla with the arm supported, and the supraclavicular fossae.",
+      "high": "Examines each axillary group: apical, central, anterior, posterior, lateral."
+    },
+    {
+      "id": "G5",
+      "domain": "communication",
+      "label": "Presentation at the signal",
+      "fail": "Lists actions rather than findings, or runs past the signal.",
+      "borderline": "Describes the lump but not whether it is fixed.",
+      "pass": "Describes the lump (site, size, shape, consistency, mobility) and nodes, then gives a most likely diagnosis.",
+      "high": "Leads with the key finding, states the important negatives, and names the concern directly."
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-knowledge",
+      "label": "Next steps",
+      "fail": "Offers reassurance without investigation.",
+      "pass": "Triple assessment: clinical examination, imaging and core biopsy.",
+      "high": "States suspected cancer pathway referral for an unexplained lump at 30 or over, or nipple changes in one nipple at 50 or over.",
+      "source": "NG12"
+    },
+    {
+      "id": "G7",
+      "domain": "professionalism",
+      "label": "Closing",
+      "fail": "Leaves her exposed or doesn't explain what happens next.",
+      "pass": "Thanks her, lets her dress in privacy, explains next steps, and records the chaperone's name.",
+      "high": "Checks her understanding and concerns before leaving.",
+      "source": "GMC"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "candidate",
+        "text": "[Starts examining the left breast without mentioning a chaperone.]",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          },
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Inspects with her arms by her sides, then palpates the lump only.]",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop. Your findings?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "There's a lump. I felt it and it's probably a cyst.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "And the axilla?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I didn't examine it.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What next?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "It's probably nothing; she can come back if it grows.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "candidate",
+        "text": "Hello, I'm Dr Patel. Can I confirm your name and date of birth? I'd like to examine both breasts and the glands in your armpits and neck. I'd like to offer you a chaperone; would you like one? [Chaperone present; cleans hands.]",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Could you sit with your arms by your sides… now press your hands on your hips… now raise your arms above your head.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Could you lie back with your right arm behind your head? I'll start with the right side. [Flat hand, all quadrants, axillary tail, nipple; then the left.]",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Supports her arm and examines the axilla; then the supraclavicular fossae.]",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Thank you. Please take your time to get dressed. I'll explain what happens next. [Records chaperone's name.]",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop. Your findings?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Ms Clarke has a 2 cm hard, irregular lump in the upper outer quadrant of the left breast, not fixed to skin or chest wall, with a palpable mobile left axillary node. This is concerning for breast carcinoma.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What next?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Triple assessment: clinical examination, imaging and a core biopsy.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "candidate",
+        "text": "Hello, I'm Dr Patel. Can I confirm your name and date of birth? I'd like to look at and feel both breasts, and the glands in your armpits and above the collarbones. I'd like to offer a chaperone; would you prefer a female colleague? You'll stay covered except for the part I'm examining. [Cleans hands.]",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Arms by your sides… hands pressing on your hips… arms above your head… and could you lean forward for me? [Looks for tethering, peau d'orange, nipple inversion, asymmetry.]",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Normal side first, systematically, then the left.] Could you press your hand into your hip while I feel the lump? [Tests fixation to pectoralis and skin.]",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Each axillary group: apical, central, anterior, posterior, lateral; then supraclavicular.]",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Thank you. Take your time to dress, and then we'll talk about what happens next. Is there anything worrying you? [Records chaperone's name.]",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop. Your findings?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "The key finding is a 2 cm hard, irregular lump in the left upper outer quadrant, not fixed to skin or pectoralis, with a mobile left axillary node. There's no skin change or nipple change, and no supraclavicular nodes. I'm concerned this is breast carcinoma.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What next?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Triple assessment with imaging and core biopsy, through a suspected cancer pathway, which applies to anyone 30 or over with an unexplained breast lump.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G7",
+      "move": "Leaving her exposed while presenting.",
+      "consequence": "Undoes the dignity the chaperone and consent were meant to protect."
+    },
+    {
+      "row": "G5",
+      "move": "Not saying whether the lump is fixed.",
+      "consequence": "Fixation to skin or chest wall changes staging and surgery."
+    },
+    {
+      "row": "G4",
+      "move": "Skipping the axilla and supraclavicular fossae.",
+      "consequence": "Misses nodal disease that changes staging and the operation."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You started without offering a chaperone",
+      "line": "I'm sorry, before I go on I should have offered you a chaperone. Would you like one?"
+    },
+    {
+      "when": "You forgot the axilla",
+      "line": "Before I finish, I'd like to examine the glands in your armpits and above your collarbones."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Offer a chaperone, explain the examination, gain consent, and record the discussion and the chaperone's identity.",
+      "source": "GMC"
+    },
+    {
+      "fact": "Suspected cancer pathway: aged 30 or over with an unexplained breast lump; aged 50 or over with discharge, retraction or other concerning change in one nipple.",
+      "source": "NG12"
+    },
+    {
+      "fact": "Triple assessment: clinical examination, imaging, and core biopsy."
+    }
+  ],
+  "recall": {
+    "think": "Dignity first; is the lump fixed; where are the nodes?",
+    "say": "\"I'd like to offer you a chaperone.\"",
+    "do": [
+      "Inspect in three positions, then leaning forward",
+      "Palpate normal side first",
+      "Axilla and supraclavicular fossae"
+    ],
+    "numbers": [
+      {
+        "value": "30+",
+        "meaning": "unexplained lump: suspected cancer pathway",
+        "source": "NG12"
+      },
+      {
+        "value": "6 min",
+        "meaning": "signal to stop and present",
+        "source": "ICBSE"
+      }
+    ],
+    "trap": "Lump only, no axilla.",
+    "finish": "Triple assessment via a suspected cancer pathway."
+  },
+  "sources": [
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "At every station: introduce yourself, explain the task, confirm identity, obtain consent, clean hands before and after patient contact; 6-minute signal in examination stations"
+    },
+    {
+      "id": "GMC",
+      "name": "GMC: Intimate examinations and chaperones",
+      "version": "In effect from 30 January 2024; updated 13 December 2024",
+      "url": "https://www.gmc-uk.org/professional-standards/the-professional-standards/intimate-examinations-and-chaperones/intimate-examinations-and-chaperones",
+      "supports": "Explain the examination (para 8); consent and record it (para 9); offer a chaperone (para 16); record the chaperone discussion and identity (para 23)"
+    },
+    {
+      "id": "NG12",
+      "name": "NICE NG12: Suspected cancer: recognition and referral",
+      "version": "Published June 2015; last updated 15 April 2026",
+      "url": "https://www.nice.org.uk/guidance/ng12",
+      "supports": "Suspected cancer pathway referral for breast cancer (1.4.1)"
+    },
+    {
+      "id": "BL",
+      "name": "Bailey & Love's Short Practice of Surgery (O'Connell, McCaskie, Sayers, eds)",
+      "version": "28th edition, 2023",
+      "url": "https://www.routledge.com/Bailey--Loves-Short-Practice-of-Surgery---28th-Edition/OConnell-McCaskie-Sayers/p/book/9780367548117",
+      "supports": "Examination technique and clinical signs"
+    }
+  ],
+  "partner": {
+    "opening": "Please examine this patient's breasts. A chaperone is available. I'll stop you at 6 minutes.",
+    "actorBrief": "You are Ms Clarke, 42. You found the lump in the shower two weeks ago. You're anxious and would prefer a female chaperone if asked. No nipple discharge, no pain. If asked: your aunt had breast cancer at 60.",
+    "reveals": [
+      {
+        "trigger": "Inspects in each position",
+        "finding": "No asymmetry, skin changes or nipple inversion.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Palpates the left breast",
+        "finding": "2 cm hard, irregular lump, upper outer quadrant; not fixed to skin or pectoralis.",
+        "row": "G3"
+      },
+      {
+        "trigger": "Examines the left axilla",
+        "finding": "One firm, mobile node in the central group.",
+        "row": "G4"
+      },
+      {
+        "trigger": "Examines the supraclavicular fossae",
+        "finding": "No nodes.",
+        "row": "G4"
+      },
+      {
+        "trigger": "At 6 minutes",
+        "finding": "Say: \"Please stop there and present your findings.\"",
+        "row": "G5"
+      }
+    ],
+    "push": [
+      {
+        "question": "What is your most likely diagnosis?",
+        "row": "G5",
+        "expect": "Breast carcinoma until proven otherwise."
+      },
+      {
+        "question": "What happens next?",
+        "row": "G6",
+        "expect": "Triple assessment via a suspected cancer pathway."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "She declines a chaperone.",
+        "safeAnswer": "Respect her choice, explain, and record the discussion; if uncomfortable proceeding, offer to rearrange.",
+        "row": "G1"
+      },
+      {
+        "prompt": "She's 25 with a smooth, mobile lump.",
+        "safeAnswer": "Under 30: non-urgent referral is the NICE default, but still assess fully.",
+        "row": "G6"
+      }
+    ]
+  }
+}

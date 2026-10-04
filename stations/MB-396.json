@@ -1,0 +1,469 @@
+{
+  "id": "MB-396",
+  "exam": "MRCS-B",
+  "title": "Patient who may lack capacity and has no one to consent for them",
+  "type": "applied-knowledge",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "Adult safeguarding: capacity, best interests and IMCA",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "Mental Capacity Act 2005, sections 1-4 and section 37",
+      "GMC Decision making and consent (in effect 9 November 2020; updated 3 August 2026)"
+    ],
+    "related": [
+      {
+        "id": "MB-162",
+        "why": "Same best-interests framework, seen from the relative's side of the conversation"
+      },
+      {
+        "id": "MB-219",
+        "why": "Same functional capacity test, applied to a patient who has capacity but makes an unwise decision"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Surgical ward",
+    "role": "Core surgical trainee",
+    "scenario": "Leonard Vickers, 74, has a serious surgical condition requiring an operation. He has delirium and appears unable to understand or retain the information needed to make the decision. No relative or friend is available.",
+    "task": "Explain how you would approach his capacity, a best-interests decision, and the possible role of an independent mental capacity advocate (IMCA)."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Presumption of capacity, then the specific test, then best interests, then who (if anyone) must be involved.",
+    "trap": "Treating the diagnosis of delirium, or the absence of family, as the end of the analysis rather than the start of it.",
+    "firstMove": "\"I'd start from the presumption that he has capacity, and assess it for this specific decision.\""
+  },
+  "flow": [
+    "Presumption of capacity",
+    "Assess capacity for this decision; treat reversible causes",
+    "If incapacity: make a best-interests decision",
+    "Establish who is available to consult; IMCA if required",
+    "Urgent treatment provision",
+    "Respond to push questions"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-knowledge",
+      "label": "Presumption of capacity",
+      "fail": "States delirium automatically means he lacks capacity.",
+      "pass": "Starts from the presumption that he has capacity, and assesses capacity for this specific decision at this specific time.",
+      "high": "Explains capacity is decision-specific and time-specific, and would reassess if his condition changes."
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-skill",
+      "label": "Supporting decision-making and reversible causes",
+      "fail": "Moves straight to a best-interests decision without first trying to support him or treat reversible causes.",
+      "pass": "Supports him to decide as far as possible, for example by addressing pain, hypoxia, infection, communication problems or delirium where reversible.",
+      "high": "Describes the functional test (understand, retain, use or weigh, communicate) and would reassess after treating reversible causes."
+    },
+    {
+      "id": "G3",
+      "domain": "professionalism",
+      "label": "Best-interests decision-making",
+      "fail": "States the next of kin gives consent for him, or that the surgeon can do whatever they think is best.",
+      "pass": "States that if he lacks capacity, the decision must be made in his best interests, considering his past and present wishes, feelings, beliefs and values, and consulting anyone appropriate.",
+      "high": "Emphasises his own wishes remain important despite lacking capacity, and that a family member's existence does not automatically confer authority to consent."
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-knowledge",
+      "label": "When an IMCA is required",
+      "fail": "States an IMCA is required for every patient who lacks capacity.",
+      "pass": "States that for this serious medical treatment, since no appropriate person is available to consult who is not simply a paid carer, an NHS body must instruct an IMCA.",
+      "high": "Clarifies an IMCA is not a substitute decision-maker but represents and supports the person, while the clinician remains responsible for the best-interests decision.",
+      "source": "MCA37"
+    },
+    {
+      "id": "G5",
+      "domain": "professionalism",
+      "label": "Urgent treatment",
+      "fail": "Says treatment must wait for an IMCA even if the patient is deteriorating from a surgical emergency.",
+      "pass": "States that if treatment is urgently required, the Act allows it to proceed even though the IMCA has not yet been instructed.",
+      "high": "Explains the urgency provision balances the safeguard against clinical need, and an IMCA can still be instructed once the emergency has passed.",
+      "source": "MCA37"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "Does having delirium mean he automatically lacks capacity?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Yes, he has delirium, so he lacks capacity.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Would you do anything before deciding he lacks capacity?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "No — if he has delirium, that's enough to move straight to a best-interests decision.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Who makes the decision?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "The next of kin gives consent for him.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "When is an IMCA required?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "An IMCA is required for every patient who lacks capacity.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What if the operation is urgent?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "We'd wait for an IMCA even if he's deteriorating from a surgical emergency.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "examiner",
+        "text": "Does having delirium mean he automatically lacks capacity?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "No — I'd start from the presumption that he has capacity, and assess capacity for this specific decision at this specific time.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Would you do anything before deciding he lacks capacity?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd try to support him to decide, for example addressing pain, hypoxia, infection or communication problems, since delirium can sometimes be reversible.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Who makes the decision?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "If he lacks capacity, the decision must be made in his best interests — considering his past and present wishes, feelings, beliefs and values, and consulting anyone appropriate.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "When is an IMCA required?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "For this serious medical treatment, since no one appropriate is available to consult who isn't just a paid carer, an NHS body must instruct an independent mental capacity advocate.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What if the operation is urgent?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "If treatment is urgently needed, the Act allows it to proceed even though the IMCA hasn't yet been instructed.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "examiner",
+        "text": "Does having delirium mean he automatically lacks capacity?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "No. Capacity is decision-specific and time-specific — I'd reassess if his condition improves, since the diagnosis alone doesn't determine the outcome.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Would you do anything before deciding he lacks capacity?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd assess whether he can understand, retain, use or weigh the relevant information and communicate a decision, having first treated any reversible contributors to the delirium.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Who makes the decision?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "His own wishes remain important even though he lacks capacity, and no family member automatically has authority to consent for him — the decision is mine to make in his best interests within the legal framework.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "When is an IMCA required?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "The IMCA isn't a substitute decision-maker — they represent and support him within the statutory framework, while I remain responsible for the actual best-interests decision.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What if the operation is urgent?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "The urgency provision lets treatment proceed without delay for the safeguard, and an IMCA can still be instructed once the immediate emergency has passed if appropriate.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G1",
+      "move": "Concluding delirium automatically means he lacks capacity.",
+      "consequence": "Capacity is never actually assessed for the decision in question."
+    },
+    {
+      "row": "G2",
+      "move": "Moving straight to a best-interests decision without treating reversible causes or trying to support him.",
+      "consequence": "A patient who could have regained capacity with treatment is wrongly assumed to lack it."
+    },
+    {
+      "row": "G3",
+      "move": "Treating next of kin as able to consent on his behalf.",
+      "consequence": "A decision is made by someone with no legal authority to make it."
+    },
+    {
+      "row": "G4",
+      "move": "Assuming an IMCA is needed for every patient who lacks capacity.",
+      "consequence": "Overstates the duty and can delay care that doesn't require one."
+    },
+    {
+      "row": "G5",
+      "move": "Delaying urgent surgical treatment to wait for an IMCA.",
+      "consequence": "A deteriorating surgical emergency is left untreated for a safeguard the Act itself allows to follow later."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "Asked whether every incapacitated patient needs an IMCA",
+      "line": "No — only in the specified serious-medical-treatment circumstances where there's no appropriate person to consult."
+    },
+    {
+      "when": "Asked what if he improves later",
+      "line": "I'd reassess capacity, since it's decision-specific and time-specific, not a fixed label."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Start from a presumption of capacity; assess capacity for the specific decision and time, using the functional test (understand, retain, use or weigh, communicate).",
+      "source": "MCA-S1-3"
+    },
+    {
+      "fact": "Support the person to decide first, including treating reversible causes such as pain, hypoxia, infection or delirium where possible.",
+      "source": "GMC-DMC"
+    },
+    {
+      "fact": "Best-interests decisions consider the patient's past and present wishes, feelings, beliefs and values, and consult anyone appropriate; a relative doesn't automatically gain authority to consent.",
+      "source": "MCA-S4"
+    },
+    {
+      "fact": "An NHS body must instruct an IMCA for specified serious medical treatment when there is no appropriate person to consult other than a paid carer; urgent treatment can proceed first if necessary.",
+      "source": "MCA37"
+    }
+  ],
+  "recall": {
+    "think": "Whether this is really incapacity, or something reversible.",
+    "say": "\"I'd assess capacity for this decision, not assume it from the diagnosis.\"",
+    "do": [
+      "Assess capacity, treating reversible causes first",
+      "If incapacity: best-interests decision, consulting anyone appropriate",
+      "Instruct an IMCA if required, unless urgent"
+    ],
+    "numbers": [
+      {
+        "value": "MCA 2005 s37",
+        "meaning": "Duty to instruct an IMCA for serious medical treatment with no appropriate person to consult",
+        "source": "MCA37"
+      }
+    ],
+    "trap": "Assuming delirium is itself proof of incapacity.",
+    "finish": "Clinician makes the best-interests decision, informed by an IMCA where required; urgent treatment is never delayed for one."
+  },
+  "sources": [
+    {
+      "id": "MCA-S1-3",
+      "name": "Mental Capacity Act 2005, sections 1-3 (principles and the functional test of capacity)",
+      "version": "As enacted; in force from 1 October 2007",
+      "url": "https://www.legislation.gov.uk/ukpga/2005/9/section/1",
+      "supports": "Presumption of capacity and the functional test: understand, retain, use or weigh, and communicate"
+    },
+    {
+      "id": "MCA-S4",
+      "name": "Mental Capacity Act 2005, section 4 (best interests)",
+      "version": "As enacted; in force from 1 October 2007",
+      "url": "https://www.legislation.gov.uk/ukpga/2005/9/section/4",
+      "supports": "The best-interests checklist, including the person's past and present wishes and consulting anyone appropriate"
+    },
+    {
+      "id": "MCA37",
+      "name": "Mental Capacity Act 2005, section 37 (Provision of serious medical treatment by NHS body)",
+      "version": "As enacted; in force from 1 October 2007",
+      "url": "https://www.legislation.gov.uk/ukpga/2005/9/section/37",
+      "supports": "Duty to instruct an IMCA where there is no appropriate person to consult, with urgent treatment permitted to proceed first"
+    },
+    {
+      "id": "GMC-DMC",
+      "name": "GMC: Decision making and consent",
+      "version": "In effect from 9 November 2020; updated 3 August 2026",
+      "url": "https://www.gmc-uk.org/professional-standards/the-professional-standards/decision-making-and-consent",
+      "supports": "Supporting a patient to make their own decision, including treating reversible factors affecting capacity"
+    }
+  ],
+  "partner": {
+    "opening": "This 74-year-old man, Leonard Vickers, has delirium and needs an operation. No relative or friend is available. Walk me through your approach to capacity, best interests and the possible role of an IMCA.",
+    "reveals": [
+      {
+        "trigger": "Candidate asks about reversible causes",
+        "finding": "The delirium appears related to an untreated urinary tract infection; treating this may partially improve his lucidity.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Candidate asks if anyone is available to consult",
+        "finding": "No family, friend or other person is available or willing to be consulted; only paid carers are currently involved.",
+        "row": "G4"
+      }
+    ],
+    "push": [
+      {
+        "question": "Is he capable of understanding the risks of the operation right now?",
+        "row": "G2",
+        "expect": "Would formally assess understanding, retention, use/weighing and communication after addressing reversible factors."
+      },
+      {
+        "question": "If he can't decide, who decides?",
+        "row": "G3",
+        "expect": "The clinician decides in his best interests, considering his wishes and consulting anyone appropriate."
+      },
+      {
+        "question": "Does the family's absence change anything?",
+        "row": "G4",
+        "expect": "Triggers the requirement to instruct an IMCA for serious medical treatment, since no appropriate person is available."
+      },
+      {
+        "question": "What if he deteriorates overnight and needs emergency surgery before an IMCA can attend?",
+        "row": "G5",
+        "expect": "Urgent treatment can proceed under the Act without waiting for the IMCA."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "A distant cousin phones the ward and says she wants to be involved in decisions.",
+        "safeAnswer": "She doesn't automatically have authority to consent, but I'd consider consulting her as someone who may help establish his wishes and values, if available in time.",
+        "row": "G3"
+      },
+      {
+        "prompt": "The nursing staff say he seemed to understand and agree to the operation this morning.",
+        "safeAnswer": "I'd still formally reassess capacity for this specific decision now, since one expression of agreement doesn't establish that capacity was present.",
+        "row": "G1"
+      },
+      {
+        "prompt": "Delirium fully resolves after treating the UTI.",
+        "safeAnswer": "Reassess capacity; if he now has capacity, he makes the decision himself.",
+        "row": "G2"
+      },
+      {
+        "prompt": "You're asked whether the IMCA can overrule your best-interests decision.",
+        "safeAnswer": "No — the IMCA represents and supports him and their input must be taken into account, but the clinician remains responsible for the best-interests decision.",
+        "row": "G4"
+      }
+    ]
+  }
+}

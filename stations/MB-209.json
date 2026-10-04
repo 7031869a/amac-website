@@ -1,0 +1,524 @@
+{
+  "id": "MB-209",
+  "exam": "MRCS-B",
+  "title": "Consent: elective laparoscopic cholecystectomy",
+  "type": "communication",
+  "header": {
+    "domain": "Applied Skills",
+    "contentArea": "Communication skills in giving and receiving information and history taking",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "GMC Decision making and consent (Nov 2020; updated Dec 2024 and Aug 2026)",
+      "Montgomery [2015] UKSC 11",
+      "NICE CG188 Gallstone disease (Oct 2014)",
+      "Sutcliffe et al., HPB (2016)",
+      "Brunt et al., Ann Surg (2020)"
+    ],
+    "related": [
+      {
+        "id": "MB-160",
+        "why": "The same consent framework under emergency time pressure"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Surgical outpatient clinic",
+    "role": "Core surgical trainee",
+    "scenario": "Mrs Janet Ferreira, 48, has had four episodes of biliary colic in six months. Ultrasound shows gallstones with a normal common bile duct and normal liver tests. Your consultant has recommended an elective laparoscopic cholecystectomy and asked you to discuss it with her and seek her consent. You have been trained to consent for this operation.",
+    "task": "Discuss the operation with Mrs Ferreira, including the risks, benefits and alternatives, and seek her consent. A consent form is available."
+  },
+  "beforeYouWalkIn": {
+    "frame": "A shared decision: what matters to her, options including no operation, material risks with numbers.",
+    "trap": "Reciting a list of complications without finding out what she is worried about, or treating the signature as the consent.",
+    "firstMove": "Ask what she understands and what matters most to her about this decision."
+  },
+  "flow": [
+    "Introduce; what she knows",
+    "Operation and benefits",
+    "Options, including none",
+    "Material risks",
+    "Her concerns",
+    "Check understanding",
+    "Form and record"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "communication",
+      "label": "Opening and agenda",
+      "fail": "Starts reading the consent form without introduction or finding out what she knows.",
+      "pass": "Introduces self and role, confirms identity, asks what she understands and whether she wants anyone with her.",
+      "high": "Asks what matters most to her (work, caring, recovery) before explaining, and uses it later to tailor the risks.",
+      "source": "GMCDMC"
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-knowledge",
+      "label": "Explaining the operation and benefits",
+      "fail": "Uses jargon (\"lap chole\", \"ports\", \"pneumoperitoneum\") without explanation.",
+      "pass": "Keyhole operation under general anaesthetic, small cuts, gas inflates the abdomen, gallbladder removed; usually home the same day. Stops attacks and prevents complications.",
+      "high": "Explains the complications prevented (inflammation, jaundice, pancreatitis) and that most people eat normally without a gallbladder.",
+      "source": "BL"
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "Options, including no operation",
+      "fail": "Presents the operation as the only option.",
+      "pass": "Covers not operating: watchful waiting with dietary advice and pain relief, with the risk of further attacks and complications; she may decline.",
+      "high": "Gives the team's recommendation and reasons without pressure, and explains that deciding not to operate can be revisited.",
+      "source": "CG188"
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-knowledge",
+      "label": "Material risks",
+      "fail": "Omits bile duct injury, or says the operation is \"very safe\".",
+      "borderline": "Lists risks but gives no sense of how likely or how serious they are.",
+      "pass": "Bleeding, infection, bile leak about 1 in 100, bile duct injury about 3 in 1,000, conversion to open about 3 in 100, bowel injury, clots.",
+      "high": "Explains a duct injury may need major reconstruction; conversion is a safety step when anatomy is unclear, not a failure.",
+      "source": "SUTC"
+    },
+    {
+      "id": "G5",
+      "domain": "communication",
+      "label": "Responding to her concerns",
+      "fail": "Ignores the cue about her friend, or dismisses it.",
+      "pass": "Picks up the cue, asks what happened, acknowledges her worry.",
+      "high": "Relates the friend's story to her own risk, and explains early warning symptoms after discharge and who to contact."
+    },
+    {
+      "id": "G6",
+      "domain": "professionalism",
+      "label": "Checking understanding and decision",
+      "fail": "Does not check understanding, or pressures her to sign today.",
+      "pass": "Teach-back; invites questions; offers a leaflet and time to decide; tells her she can change her mind.",
+      "high": "Asks what she is weighing up; explains the decision will be checked with her again on the day of surgery.",
+      "source": "GMCDMC"
+    },
+    {
+      "id": "G7",
+      "domain": "professionalism",
+      "label": "Consent form and record",
+      "fail": "Asks her to sign before the discussion, or makes no record.",
+      "pass": "Form names the operation, possible conversion and material risks; copy offered; discussion recorded in the notes.",
+      "high": "Records the figures given and what matters to her, so the operating surgeon can confirm consent on the day.",
+      "source": "GMCDMC"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "candidate",
+        "text": "Hi, I just need to go through the consent form for your lap chole. Sign here once we've done the risks.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          },
+          {
+            "row": "G2",
+            "band": "fail"
+          },
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Mrs Ferreira: \"Do I have to have it?\""
+      },
+      {
+        "speaker": "candidate",
+        "text": "Yes, it's the only treatment for gallstones.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Mrs Ferreira: \"Is it dangerous?\""
+      },
+      {
+        "speaker": "candidate",
+        "text": "No, it's very safe. Bleeding and infection mainly.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Mrs Ferreira: \"My friend was back in hospital for weeks after hers.\""
+      },
+      {
+        "speaker": "candidate",
+        "text": "That's quite rare. Everyone's different.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "So if you could sign here, we'll get you a date.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "candidate",
+        "text": "Hello, I'm Dr Patel, a surgical trainee. Can I check your name and date of birth? What have you been told so far? Would you like anyone with you?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "It's keyhole surgery under general anaesthetic: a few small cuts, gas to inflate your tummy, and the gallbladder is removed. Most people go home the same day. It should stop the attacks and prevent complications.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "You don't have to have it. You could wait and see, with diet changes and painkillers, but the attacks may come back and complications can happen. It's your choice.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Risks include bleeding, infection and clots. About 1 in 100 get a bile leak. About 3 in 1,000 have an injury to the main bile duct, needing more surgery. About 3 in 100 need a bigger cut. Rarely, the bowel is injured.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Mrs Ferreira: \"My friend was back in hospital for weeks after hers.\""
+      },
+      {
+        "speaker": "candidate",
+        "text": "That must have been worrying. What happened?",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Can you tell me in your own words what the operation involves and the main risks? Here's a leaflet. Take time if you need; you can change your mind.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "The form lists the operation, the possible bigger cut and the risks we've discussed. You'll get a copy, and I'll record our discussion in your notes.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "candidate",
+        "text": "Hello, I'm Dr Patel, a surgical trainee. Can I check your name and date of birth? What do you know so far? Before I explain, what matters most to you about this?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Mrs Ferreira: \"I look after my mum, so I can't be laid up for long.\""
+      },
+      {
+        "speaker": "candidate",
+        "text": "That helps. Taking the gallbladder out should stop the pain and prevent inflammation, jaundice and pancreatitis. Your body manages without it; most people eat normally.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "We recommend the operation because your attacks are frequent. You could wait, but they would likely continue. If you decide to wait, we can revisit it later.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "About 3 in 1,000 people have an injury to the main bile duct. That can need a major operation to repair it, and a long recovery. If we can't see the anatomy clearly, we switch to a bigger cut to keep you safe; that's not a failure, but recovery takes weeks, which matters for your mum.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Mrs Ferreira: \"My friend was back in hospital for weeks after hers.\""
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'm sorry. Do you know what happened? Problems like that are uncommon, and they're found sooner if you tell us early. If you get worsening pain, fever or yellow skin after going home, ring the ward.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "What are you weighing up? Whatever you decide today, we'll go over it again with you on the day of surgery.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'll write down the figures we discussed and that recovery time matters to you, so the surgeon operating can confirm this with you on the day.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G4",
+      "move": "Leaving out bile duct injury because it is rare.",
+      "consequence": "It is a serious harm a reasonable person would want to know about: a material risk (Montgomery; GMC para 23)."
+    },
+    {
+      "row": "G3",
+      "move": "Telling her surgery is the only option.",
+      "consequence": "The option of taking no action, with its risks, is part of valid consent (GMC para 10)."
+    },
+    {
+      "row": "G7",
+      "move": "Treating the signature as the consent.",
+      "consequence": "A form is not a substitute for dialogue (GMC para 55); without a record there is no evidence of what she was told."
+    },
+    {
+      "row": "G5",
+      "move": "Brushing off her friend's experience.",
+      "consequence": "Misses the concern driving her hesitation, and the chance to teach warning symptoms."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You forgot the option of no operation",
+      "line": "I should also say: you could choose not to have the operation. Let me explain what that would mean."
+    },
+    {
+      "when": "She asks you to decide for her",
+      "line": "I can tell you what we'd recommend and why, but the decision is yours. What would help you decide?"
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Share options including taking no action, with benefits and risks of each; include any risk of serious harm, however unlikely (paras 10, 21, 23).",
+      "source": "GMCDMC"
+    },
+    {
+      "fact": "A risk is material if a reasonable person in the patient's position would attach significance to it, or the doctor should know this patient would.",
+      "source": "MONT"
+    },
+    {
+      "fact": "A doctor asked to seek consent for a colleague must have the knowledge and skills to do so (para 47).",
+      "source": "GMCDMC"
+    },
+    {
+      "fact": "Major bile duct injury: about 0.15–0.36% of laparoscopic cholecystectomies.",
+      "source": "BRUNT"
+    }
+  ],
+  "recall": {
+    "think": "A bile duct injury is rare but life-changing: she must hear about it.",
+    "say": "\"You don't have to have the operation. Let me explain both options.\"",
+    "do": [
+      "Ask what matters to her",
+      "Options including none; risks with numbers",
+      "Teach-back, form and record"
+    ],
+    "numbers": [
+      {
+        "value": "about 3 in 1,000",
+        "meaning": "bile duct injury",
+        "source": "SUTC"
+      },
+      {
+        "value": "about 3 in 100",
+        "meaning": "conversion to open",
+        "source": "SUTC"
+      },
+      {
+        "value": "about 1 in 100",
+        "meaning": "bile leak",
+        "source": "SUTC"
+      }
+    ],
+    "trap": "A signature is not consent.",
+    "finish": "Record the discussion; consent confirmed again on the day of surgery."
+  },
+  "sources": [
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format; communication stations with a role player"
+    },
+    {
+      "id": "BL",
+      "name": "Bailey & Love's Short Practice of Surgery (O'Connell, McCaskie, Sayers, eds)",
+      "version": "28th edition, 2023",
+      "url": "https://www.routledge.com/Bailey--Loves-Short-Practice-of-Surgery---28th-Edition/OConnell-McCaskie-Sayers/p/book/9780367548117",
+      "supports": "Laparoscopic cholecystectomy: technique, benefits and complications"
+    },
+    {
+      "id": "GMCDMC",
+      "name": "GMC: Decision making and consent",
+      "version": "In effect 9 November 2020; updated 13 December 2024 and 3 August 2026",
+      "url": "https://www.gmc-uk.org/professional-standards/the-professional-standards/decision-making-and-consent",
+      "supports": "Information to share including the option of no action (para 10); find out what matters to the patient (paras 16–20); benefits and risks of each option (para 21); risks to include, including any risk of serious harm however unlikely (para 23); check understanding (para 30); consenting on a colleague's behalf (para 47); record decisions (para 51); a form is not a substitute for dialogue (paras 54–55); review the decision before treatment (para 57); patient can change their mind (para 59); patient who wants the doctor to decide (para 65)"
+    },
+    {
+      "id": "MONT",
+      "name": "Montgomery v Lanarkshire Health Board [2015] UKSC 11",
+      "version": "Judgment 11 March 2015",
+      "url": "https://supremecourt.uk/uploads/uksc_2013_0136_judgment_fd5635b4cd.pdf",
+      "supports": "Para 87: duty to take reasonable care that the patient is aware of material risks and reasonable alternatives; test of materiality"
+    },
+    {
+      "id": "CG188",
+      "name": "NICE CG188: Gallstone disease: diagnosis and management",
+      "version": "Published 29 October 2014",
+      "url": "https://www.nice.org.uk/guidance/cg188",
+      "supports": "Offer laparoscopic cholecystectomy to people with symptomatic gallbladder stones"
+    },
+    {
+      "id": "SUTC",
+      "name": "Sutcliffe RP, Hollyman M, Hodson J, et al. (CholeS study group, West Midlands Research Collaborative). Preoperative risk factors for conversion from laparoscopic to open cholecystectomy: a validated risk score derived from a prospective U.K. database of 8820 patients. HPB (Oxford) 2016;18(11):922–8",
+      "version": "2016",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/27591176/",
+      "supports": "UK cohort of 8,820 laparoscopic cholecystectomies: conversion 3.4%; bile leak 1% and bile duct injury 0.3% in operations completed laparoscopically"
+    },
+    {
+      "id": "BRUNT",
+      "name": "Brunt LM, Deziel DJ, Telem DA, et al. Safe cholecystectomy multi-society practice guideline and state of the art consensus conference on prevention of bile duct injury during cholecystectomy. Ann Surg 2020;272(1):3–23",
+      "version": "2020",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/32404658/",
+      "supports": "Major bile duct injury rates of 0.15–0.36% in large series"
+    }
+  ],
+  "partner": {
+    "opening": "Mrs Ferreira is in the clinic room. Please begin when you're ready.",
+    "actorBrief": "You are Janet Ferreira, 48, a school administrator. You care for your mother, who has dementia and lives with you; your brother helps at weekends. You have had four bad attacks of upper abdominal pain, one needing a night in hospital. Opening line: \"The consultant said I should have my gallbladder out. What does that actually involve?\" Emotional state: practical but anxious. Hidden concern: your friend had the same operation last year and was back in hospital for weeks with a bile leak; you are frightened of being unable to care for your mum. Give the cue \"My friend was back in hospital for weeks after hers\" once; say more only if asked. If asked what matters most, say you cannot be laid up for long because of your mother. If the candidate lists risks without numbers, ask \"But how likely is that?\" If they explain well, you are inclined to go ahead but would like a leaflet. If asked to explain back, give a fair summary.",
+    "reveals": [
+      {
+        "trigger": "Asks what matters most to her",
+        "finding": "\"I look after my mum. I can't be laid up for long.\"",
+        "row": "G1"
+      },
+      {
+        "trigger": "Explores the cue about her friend",
+        "finding": "\"She had a leak of bile and needed a drain and another procedure. She was off work for two months.\"",
+        "row": "G5"
+      },
+      {
+        "trigger": "Explains the option of no operation",
+        "finding": "\"I don't want more attacks like the last one.\"",
+        "row": "G3"
+      },
+      {
+        "trigger": "Asks her to explain back",
+        "finding": "\"Keyhole, take the gallbladder out, home the same day usually. Small risk of damaging the main bile tube, and they might need a bigger cut.\"",
+        "row": "G6"
+      }
+    ],
+    "push": [
+      {
+        "question": "What would you tell her about bile duct injury?",
+        "row": "G4",
+        "expect": "About 3 in 1,000; may need major reconstruction; long recovery."
+      },
+      {
+        "question": "What if she asks about conversion to open surgery?",
+        "row": "G4",
+        "expect": "About 3 in 100; a safety step when anatomy is unclear; longer recovery."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "\"I don't want to hear about the risks. Just do it.\"",
+        "safeAnswer": "Explore why; explain she needs basic information, including any risk of serious harm, before consent is valid (GMC paras 66–68); record what was shared.",
+        "row": "G6"
+      },
+      {
+        "prompt": "\"You decide for me, doctor.\"",
+        "safeAnswer": "No one else can decide for an adult with capacity (GMC para 65); give the recommendation with reasons and support her to decide.",
+        "row": "G3"
+      },
+      {
+        "prompt": "\"Will you be doing the operation?\"",
+        "safeAnswer": "Answer honestly that it may be another member of the consultant's team; the operating surgeon will see her before surgery.",
+        "row": "G7"
+      }
+    ]
+  }
+}

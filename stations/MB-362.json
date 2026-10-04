@@ -1,0 +1,433 @@
+{
+  "id": "MB-362",
+  "exam": "MRCS-B",
+  "title": "New lump in follow-up: suspected recurrence",
+  "type": "history",
+  "header": {
+    "domain": "Applied Skills",
+    "contentArea": "History taking for suspected local recurrence",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "signalMinutes": 6,
+    "guidelineVersions": [
+      "NICE NG12: Suspected cancer: recognition and referral (published June 2015; last updated May 2025)",
+      "NICE NG101: Early and locally advanced breast cancer (published 18 July 2018; last updated 14 April 2025)"
+    ],
+    "related": [
+      {
+        "id": "MB-359",
+        "why": "The original surgery and adjuvant treatment this new finding follows"
+      },
+      {
+        "id": "MB-138",
+        "why": "The examination technique now applied to this new finding"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Breast follow-up clinic, eighteen months after initial treatment",
+    "role": "Core surgical trainee",
+    "scenario": "Ms Rachel Linford, 43, completed surgery, radiotherapy and is on ongoing endocrine therapy. She has noticed a new lump near her previous scar.",
+    "task": "Take a focused history to assess this new finding. You will be stopped at 6 minutes to present and discuss next steps."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Take the new lump seriously without alarming her; a focused history plus a calm, clear plan for urgent further assessment.",
+    "trap": "Reassuring her prematurely that it's \"probably scar tissue\" before taking a proper history or arranging assessment.",
+    "firstMove": "\"Can you tell me about the lump you've noticed - when did you first feel it?\""
+  },
+  "flow": [
+    "Onset, site and change over time of the lump",
+    "Associated symptoms (skin change, nipple change, pain)",
+    "Systemic symptoms (weight loss, bone pain, breathlessness)",
+    "Treatment and adherence history",
+    "At 6 minutes: present and discuss next steps"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-skill",
+      "label": "Characterising the lump",
+      "fail": "Does not establish when the lump was noticed or whether it has changed.",
+      "pass": "Establishes onset, exact site relative to the scar, and whether it has grown.",
+      "high": "Also asks how it was found (self-examination vs incidental) and whether she has noticed anything similar before."
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-skill",
+      "label": "Associated local symptoms",
+      "fail": "Does not ask about skin or nipple change.",
+      "pass": "Asks about skin changes, nipple change or discharge, and pain at the site.",
+      "high": "Asks specifically about symptoms that would suggest local invasion (skin tethering, ulceration) versus a simpler cause (fat necrosis, cyst)."
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-skill",
+      "label": "Systemic red flags",
+      "fail": "Does not screen for symptoms of metastatic disease.",
+      "pass": "Asks about unexplained weight loss, bone pain, breathlessness or persistent cough.",
+      "high": "Directly links these questions to why they matter (screening for possible spread) in a way that doesn't frighten the patient unnecessarily."
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-knowledge",
+      "label": "Treatment history",
+      "fail": "Does not check adherence to or details of her ongoing endocrine therapy.",
+      "pass": "Checks she has continued her endocrine therapy as prescribed and asks about any missed doses or side effects prompting her to stop.",
+      "high": "Considers whether poor adherence, rather than treatment failure, could be a contributing factor, without being accusatory."
+    },
+    {
+      "id": "G5",
+      "domain": "communication",
+      "label": "Presentation of findings",
+      "fail": "Gives a diagnosis rather than a differential, or minimises the finding.",
+      "pass": "Summarises the history and states that recurrence must be excluded, alongside benign explanations such as fat necrosis or a cyst.",
+      "high": "Presents this clearly without alarming language, while being honest that recurrence is a genuine possibility that needs prompt assessment."
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-knowledge",
+      "label": "Next steps",
+      "fail": "Offers reassurance with no plan for further assessment.",
+      "pass": "Arranges urgent triple assessment (examination, imaging, biopsy) via the appropriate rapid pathway.",
+      "high": "Explains this will be expedited given her history, and that it will be discussed at the breast MDT once results are available.",
+      "source": "NG12"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "candidate",
+        "text": "It's probably just scar tissue from your surgery, nothing to worry about.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          },
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop. What's your assessment and plan?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd just review her again in a few months to see if it's changed.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "candidate",
+        "text": "Can you tell me about the lump - when did you first notice it, and has it changed since?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "About three weeks ago, near my scar, and it feels a bit firmer now."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Any changes in the skin over it, or your nipple, or any pain?",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "No skin or nipple changes, no pain."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Have you noticed any unexplained weight loss, bone pain, or breathlessness?",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "No, none of that."
+      },
+      {
+        "speaker": "candidate",
+        "text": "And have you been able to keep taking your hormone therapy as prescribed?",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "Yes, every day."
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop. What's your assessment and plan?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "A new, growing lump near the previous surgical site in someone with a breast cancer history needs recurrence excluded, alongside benign causes like fat necrosis. I'd arrange urgent triple assessment.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          },
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "candidate",
+        "text": "Can you tell me about the lump - when did you notice it, has it changed, and how did you come across it?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "I felt it myself about three weeks ago, and it seems slightly bigger now."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Any skin tethering, ulceration, nipple changes or pain over it?",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "No, the skin looks normal and there's no pain."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd also like to check for anything that might suggest it's spread elsewhere - any unexplained weight loss, bone pain, or breathlessness?",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "No, I feel well otherwise."
+      },
+      {
+        "speaker": "candidate",
+        "text": "And have you managed to keep taking your hormone tablets regularly, or have there been any gaps?",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "I've taken them every day without missing any."
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop. What's your assessment and plan?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "A new, growing lump near her scar, with no skin, nipple or systemic symptoms, and good treatment adherence, still needs recurrence actively excluded alongside benign causes like fat necrosis or a cyst - I wouldn't want to reassure her without assessment. I'll arrange urgent triple assessment and make sure this is expedited given her history, then discuss the results at the breast MDT.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          },
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G5",
+      "move": "Reassuring the patient it's \"probably scar tissue\" before any assessment.",
+      "consequence": "Delays diagnosis if this is a recurrence, and undermines trust if it later turns out not to be benign."
+    },
+    {
+      "row": "G3",
+      "move": "Omitting a systemic symptom screen.",
+      "consequence": "Misses a clue to possible metastatic disease that would change the urgency and scope of investigation."
+    },
+    {
+      "row": "G6",
+      "move": "Deferring assessment to a routine future review.",
+      "consequence": "A new lump in someone with a breast cancer history needs urgent, not routine, assessment."
+    },
+    {
+      "row": "G2",
+      "move": "Not asking about skin or nipple change over the lump.",
+      "consequence": "Misses a sign that could suggest local invasion, changing the urgency of assessment."
+    },
+    {
+      "row": "G4",
+      "move": "Not checking adherence to her ongoing endocrine therapy.",
+      "consequence": "Misses a modifiable contributing factor and a chance to address it sensitively."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You reassured her prematurely",
+      "line": "I shouldn't have said that before we've had a proper look - let's make sure we assess this properly first."
+    },
+    {
+      "when": "You forgot to screen for systemic symptoms",
+      "line": "I'd also like to check whether you've noticed anything else, like weight loss or bone pain."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "A new or growing lump near a previous surgical site in a patient with a breast cancer history warrants urgent triple assessment to exclude local recurrence.",
+      "source": "NG12"
+    },
+    {
+      "fact": "Fat necrosis can present as a new firm lump near a previous surgical or radiotherapy site and can mimic recurrence clinically, which is why assessment rather than reassurance alone is needed."
+    },
+    {
+      "fact": "Systemic symptoms such as unexplained weight loss, bone pain or breathlessness in someone with a breast cancer history should prompt consideration of possible metastatic disease.",
+      "source": "NG101"
+    }
+  ],
+  "recall": {
+    "think": "Don't reassure before assessing; screen for red flags; check adherence.",
+    "say": "\"This needs proper assessment, not assumed scar tissue.\"",
+    "do": [
+      "Establish onset and change in the lump",
+      "Screen local and systemic red flags (skin/nipple, weight loss, bone pain, breathlessness); check adherence",
+      "Arrange urgent triple assessment rather than routine review"
+    ],
+    "numbers": [
+      {
+        "value": "2 weeks",
+        "meaning": "maximum wait for a suspected cancer pathway referral for a new lump with a cancer history",
+        "source": "NG12"
+      }
+    ],
+    "trap": "Reassuring her it's \"probably scar tissue\" before assessment.",
+    "finish": "Urgent triple assessment arranged; recurrence neither assumed nor dismissed."
+  },
+  "sources": [
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format and timing"
+    },
+    {
+      "id": "NG12",
+      "name": "NICE NG12: Suspected cancer: recognition and referral",
+      "version": "Published June 2015; last updated May 2025",
+      "url": "https://www.nice.org.uk/guidance/ng12",
+      "supports": "Suspected cancer pathway referral (for an appointment within 2 weeks) for a new or changing lump in a patient with a cancer history"
+    },
+    {
+      "id": "NG101",
+      "name": "NICE NG101: Early and locally advanced breast cancer: diagnosis and management",
+      "version": "Published 18 July 2018; last updated 14 April 2025",
+      "url": "https://www.nice.org.uk/guidance/ng101",
+      "supports": "Whole-breast radiotherapy 26 Gy in 5 fractions over 1 week after breast-conserving surgery (1.13.13)"
+    },
+    {
+      "id": "BLS28",
+      "name": "Bailey & Love's Short Practice of Surgery, 28th edition",
+      "version": "28th edition, 2023",
+      "url": "https://www.routledge.com/Bailey--Loves-Short-Practice-of-Surgery-28th-Edition/Williams-OConnell-McCaskie/p/book/9781032068666",
+      "supports": "Standard oncological practice that repeat radiotherapy to a previously irradiated breast is not usually given, making mastectomy the option for local control of local recurrence after breast-conserving therapy"
+    }
+  ],
+  "partner": {
+    "opening": "Please take a history from this patient about a new lump she's noticed. I'll stop you at 6 minutes.",
+    "actorBrief": "You are Rachel Linford, 43, eighteen months after treatment, on ongoing endocrine therapy which you take reliably. You noticed a new, slightly enlarging lump near your scar three weeks ago. No skin, nipple or systemic symptoms. You are anxious this might be a recurrence.",
+    "reveals": [
+      {
+        "trigger": "Asks about onset and change",
+        "finding": "Lump noticed three weeks ago, near the scar, seems slightly bigger.",
+        "row": "G1"
+      },
+      {
+        "trigger": "Asks about skin/nipple change or pain",
+        "finding": "No skin or nipple change, no pain.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Asks about systemic symptoms",
+        "finding": "No weight loss, bone pain or breathlessness.",
+        "row": "G3"
+      },
+      {
+        "trigger": "Asks about treatment adherence",
+        "finding": "Taking endocrine therapy daily without missed doses.",
+        "row": "G4"
+      },
+      {
+        "trigger": "At 6 minutes",
+        "finding": "Say: \"Please stop there and tell me your assessment and plan.\"",
+        "row": "G5"
+      }
+    ],
+    "push": [
+      {
+        "question": "Do you think it's come back?",
+        "row": "G5",
+        "expect": "Be honest that recurrence needs to be excluded without asserting it is or isn't recurrence before assessment."
+      },
+      {
+        "question": "How quickly can I be seen?",
+        "row": "G6",
+        "expect": "State this will be arranged urgently given her history, not deferred to routine follow-up."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "I've also had a persistent cough for two weeks.",
+        "safeAnswer": "Take this seriously as a possible systemic red flag, ask further questions, and ensure it's flagged as part of the urgent assessment rather than treated as unrelated.",
+        "row": "G3"
+      },
+      {
+        "prompt": "I stopped the hormone tablets a few months ago because of side effects, but didn't mention it before.",
+        "safeAnswer": "Acknowledge this without judgement, note it as relevant history, and ensure it's communicated as part of the assessment rather than omitted.",
+        "row": "G4"
+      }
+    ]
+  }
+}

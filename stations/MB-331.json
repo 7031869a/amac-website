@@ -1,0 +1,543 @@
+{
+  "id": "MB-331",
+  "exam": "MRCS-B",
+  "title": "Digital rectal examination on a manikin",
+  "type": "procedural",
+  "header": {
+    "domain": "Applied Skills",
+    "contentArea": "Practical procedures: digital rectal examination",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "GMC, Decision making and consent (in effect 9 November 2020; updated 3 August 2026)",
+      "GMC, Good medical practice (effective 30 January 2024)",
+      "NICE NG12, Suspected cancer: recognition and referral (last updated 15 April 2026)",
+      "Bailey & Love's Short Practice of Surgery, 28th ed. (2023)"
+    ],
+    "related": [
+      {
+        "id": "MB-235",
+        "why": "Prostate cancer: PSA, Gleason/Grade Group and staging, the pathway a DRE finding feeds into"
+      },
+      {
+        "id": "MB-181",
+        "why": "Male urethral catheterisation: another intimate male genitourinary procedural station"
+      },
+      {
+        "id": "MB-174",
+        "why": "History of change in bowel habit and rectal bleeding, which this examination often follows"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Clinical skills suite",
+    "role": "Surgical trainee",
+    "scenario": "You are asked to perform and describe a digital rectal examination on a male manikin.",
+    "task": "Perform the examination systematically on the manikin, explaining each step and finding to the examiner as you go."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Consent and dignity first, then a systematic look-glove-feel sequence, finishing with clear documentation.",
+    "trap": "Going straight for the prostate and skipping the perianal inspection and rectal wall.",
+    "firstMove": "\"I'll explain the examination, arrange a chaperone and gain consent before starting.\""
+  },
+  "flow": [
+    "Consent, chaperone and privacy",
+    "Perianal inspection",
+    "Digital examination technique",
+    "Systematic assessment",
+    "Aftercare and documentation"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "professionalism",
+      "label": "Consent, chaperone and dignity (safety-critical)",
+      "fail": "Performs the examination without explaining it, or does not offer privacy or a chaperone.",
+      "pass": "Confirms the indication, explains the examination, gains consent, offers or arranges a chaperone per local policy, and provides privacy and appropriate positioning.",
+      "high": "Checks the patient's understanding and comfort with the examination before proceeding, and explicitly documents that consent was gained.",
+      "source": "GMC"
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-skill",
+      "label": "Perianal inspection before digital examination",
+      "fail": "Fails to inspect the perianal area, or examines only the prostate.",
+      "pass": "Inspects the perianal area first for fissure, haemorrhoids, fistula openings, skin lesions, bleeding or prolapse before inserting a finger.",
+      "high": "Explains why inspection comes first: visible pathology (such as a fissure) changes whether or how the digital examination should proceed."
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-skill",
+      "label": "Digital examination technique",
+      "fail": "Forces the finger through severe pain, or omits gloves/lubricant.",
+      "pass": "Wears gloves, uses appropriate lubricant, asks the patient to relax, and gently introduces the finger, assessing anal tone.",
+      "high": "Recognises severe pain or resistance as a reason to stop and reassess rather than push through it."
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-knowledge",
+      "label": "Systematic rectal and prostate assessment",
+      "fail": "Examines only the prostate and ignores the rectal wall, or vice versa.",
+      "pass": "Palpates the rectal wall systematically for masses, tenderness and irregularity, and in a male patient assesses the prostate for size, symmetry, surface, consistency and tenderness.",
+      "high": "Assesses stool or blood on the glove where relevant, and integrates rectal wall and prostate findings into one coherent systematic description rather than reporting them separately.",
+      "source": "BL"
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-knowledge",
+      "label": "Interpret findings appropriately",
+      "fail": "States a normal examination excludes rectal or prostate pathology.",
+      "pass": "States that a normal digital rectal examination does not exclude rectal pathology, since a lesion may be beyond the reach of the examining finger.",
+      "high": "Combines DRE with the appropriate diagnostic pathway rather than using it as a stand-alone rule-out test; a hard irregular prostate raises suspicion but is interpreted alongside PSA.",
+      "source": "NG12"
+    },
+    {
+      "id": "G6",
+      "domain": "professionalism",
+      "label": "Aftercare and documentation",
+      "fail": "Does not document findings, or leaves the patient without explanation or privacy to dress.",
+      "pass": "Withdraws gently, inspects the glove, disposes of equipment safely, allows the patient to dress, explains the findings, and documents consent, findings and any limitations.",
+      "high": "Explicitly documents any limitation of the examination (such as an anxious patient limiting assessment) rather than reporting an incomplete examination as fully normal."
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "Perform a digital rectal examination."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'll just get on with it — he already knows what's happening.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What do you do first?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'll go straight in with a gloved finger.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "He says it's very painful."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'll push through gently, it usually settles.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What are you assessing?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Just the prostate — size and whether it feels hard.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The examination is normal. What does that tell you?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "That rectal cancer is excluded.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What do you do afterwards?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Move on to the next task without writing anything down.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "examiner",
+        "text": "Perform a digital rectal examination."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'll confirm the indication, explain the examination, gain consent, and offer a chaperone per local policy, with privacy and appropriate positioning.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What do you do first?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'll inspect the perianal area first, for fissure, haemorrhoids, fistula openings, skin lesions, bleeding or prolapse.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Go on."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Gloves and lubricant, ask him to relax, and gently introduce my finger, assessing anal tone as I go.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What are you assessing?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'll palpate the rectal wall systematically for masses, tenderness and irregularity, then assess the prostate for size, symmetry, surface, consistency and tenderness.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The examination is normal. What does that tell you?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "A normal DRE doesn't exclude rectal pathology — a lesion could be beyond the reach of my finger.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What do you do afterwards?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Withdraw gently, inspect the glove, dispose of equipment safely, let him dress, explain the findings, and document consent, findings and any limitations.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "examiner",
+        "text": "Perform a digital rectal examination."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'll explain what I'm about to do, check he's comfortable proceeding, gain consent and offer a chaperone, then document that consent was given.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Why inspect first?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Visible pathology, like a fissure, would change how — or whether — I proceed with the digital part.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "He winces sharply as you start."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd stop and reassess rather than push through significant pain or resistance.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Describe your findings."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'll give the rectal wall and prostate findings together as one systematic description, and note any stool or blood on the glove where relevant.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The prostate feels hard and irregular."
+      },
+      {
+        "speaker": "candidate",
+        "text": "That raises suspicion of malignancy, but DRE isn't diagnostic — I'd interpret it alongside PSA and refer through the appropriate suspected-cancer pathway rather than treat DRE as a rule-out test.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "He was very anxious throughout."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd document that his anxiety limited full assessment, rather than recording it as a straightforwardly normal examination.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G1",
+      "move": "Performing the examination without explaining it or offering a chaperone.",
+      "consequence": "Breaches consent and dignity for an intimate examination."
+    },
+    {
+      "row": "G3",
+      "move": "Forcing the finger through significant pain.",
+      "consequence": "Causes unnecessary distress and injury, and risks missing a cause for the pain such as an anal fissure."
+    },
+    {
+      "row": "G4",
+      "move": "Examining only the prostate and ignoring the rectal wall.",
+      "consequence": "Misses rectal masses, tenderness or irregularity unrelated to the prostate."
+    },
+    {
+      "row": "G2",
+      "move": "Skipping perianal inspection.",
+      "consequence": "Misses visible pathology such as fissure, fistula or prolapse before proceeding digitally."
+    },
+    {
+      "row": "G5",
+      "move": "Stating a normal examination excludes rectal pathology.",
+      "consequence": "Gives false reassurance when a lesion may be beyond the reach of the examining finger."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "Asked \"can you rule out cancer now?\"",
+      "line": "That wouldn't exclude the diagnosis, because a lesion may be beyond the reach of the examination."
+    },
+    {
+      "when": "Asked \"anything else?\" after describing findings",
+      "line": "Yes — I'd also consider documentation, safety-netting, and who else needs to know the result."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Consent is required before examination, with relevant information and time to decide.",
+      "source": "GMC"
+    },
+    {
+      "fact": "Patients should be treated with dignity, kindness and respect throughout an intimate examination.",
+      "source": "GMC2024"
+    },
+    {
+      "fact": "A normal DRE does not exclude rectal pathology; findings are interpreted alongside the appropriate suspected-cancer pathway, not used as a rule-out test.",
+      "source": "NG12"
+    },
+    {
+      "fact": "Systematic DRE assesses the anal canal, rectal wall and, in men, the prostate.",
+      "source": "BL"
+    }
+  ],
+  "recall": {
+    "think": "A missed rectal or prostate malignancy, or an examination performed without proper consent.",
+    "say": "\"I'll explain the examination, offer a chaperone and gain consent before I start.\"",
+    "do": [
+      "Inspect perianal area before inserting a finger",
+      "Assess rectal wall systematically",
+      "Assess prostate: size, symmetry, surface, consistency, tenderness"
+    ],
+    "numbers": [
+      {
+        "value": "9 November 2020 (updated 3 August 2026)",
+        "meaning": "Current GMC consent guidance in effect",
+        "source": "GMC"
+      },
+      {
+        "value": "15 April 2026",
+        "meaning": "Most recent update to NICE NG12 suspected-cancer referral criteria",
+        "source": "NG12"
+      }
+    ],
+    "trap": "Treating a normal DRE as excluding rectal or prostate cancer.",
+    "finish": "Document findings and limitations; refer through the suspected-cancer pathway if indicated."
+  },
+  "sources": [
+    {
+      "id": "GMC",
+      "name": "General Medical Council. Decision making and consent",
+      "version": "In effect 9 November 2020; updated 3 August 2026",
+      "url": "https://www.gmc-uk.org/professional-standards/the-professional-standards/decision-making-and-consent",
+      "supports": "Consent required before examination or treatment; patients given relevant information and time to decide"
+    },
+    {
+      "id": "GMC2024",
+      "name": "General Medical Council. Good medical practice",
+      "version": "Effective 30 January 2024",
+      "url": "https://www.gmc-uk.org/professional-standards/the-professional-standards/good-medical-practice",
+      "supports": "Patients treated with dignity, kindness and respect"
+    },
+    {
+      "id": "NG12",
+      "name": "NICE NG12: Suspected cancer: recognition and referral",
+      "version": "Last updated 15 April 2026",
+      "url": "https://www.nice.org.uk/guidance/ng12",
+      "supports": "Rectal/anal symptoms assessed through the relevant suspected-cancer pathway; DRE findings interpreted alongside the pathway, not as a stand-alone rule-out test"
+    },
+    {
+      "id": "BL",
+      "name": "Bailey & Love's Short Practice of Surgery (O'Connell, McCaskie, Sayers, eds)",
+      "version": "28th edition, 2023",
+      "url": "https://www.routledge.com/Bailey--Loves-Short-Practice-of-Surgery---28th-Edition/OConnell-McCaskie-Sayers/p/book/9780367548117",
+      "supports": "Systematic digital rectal examination technique: anal canal, rectal wall and prostate assessment in men"
+    },
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format: 9 minutes with 1 minute's reading; practical/technical skills stations"
+    }
+  ],
+  "partner": {
+    "opening": "\"Perform a digital rectal examination on this manikin, and talk me through the examination and what you're assessing.\"",
+    "actorBrief": "You are the examiner. Prompt for a chaperone/consent if the candidate skips it. Give findings only as the candidate reaches each step; do not volunteer the prostate finding before they ask to assess it.",
+    "reveals": [
+      {
+        "trigger": "Candidate inspects the perianal area",
+        "finding": "No fissure, fistula, external haemorrhoids, skin lesion or prolapse visible.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Candidate performs the digital examination and assesses the rectal wall",
+        "finding": "Normal anal tone; rectal wall smooth throughout, no mass, tenderness or irregularity.",
+        "row": "G4"
+      },
+      {
+        "trigger": "Candidate specifically assesses the prostate",
+        "finding": "Prostate is smoothly enlarged, symmetrical, non-tender; no discrete nodule.",
+        "row": "G4"
+      }
+    ],
+    "push": [
+      {
+        "question": "Why inspect before you examine digitally?",
+        "row": "G2",
+        "expect": "Visible pathology such as a fissure may change whether or how the digital examination proceeds."
+      },
+      {
+        "question": "What if he has severe pain as you start?",
+        "row": "G3",
+        "expect": "Stop and reassess rather than force the examination through significant pain."
+      },
+      {
+        "question": "Does a normal examination rule out cancer?",
+        "row": "G5",
+        "expect": "No — a lesion may be beyond the reach of the examining finger; interpret alongside the suspected-cancer pathway."
+      },
+      {
+        "question": "What do you document afterwards?",
+        "row": "G6",
+        "expect": "Consent, findings, and any limitation of the examination."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "There is a small amount of fresh blood on the glove.",
+        "safeAnswer": "Note it, examine further for a cause such as haemorrhoids or fissure, and ensure it is documented and factored into any referral decision.",
+        "row": "G4"
+      },
+      {
+        "prompt": "The patient declines a chaperone.",
+        "safeAnswer": "Respect the decision, document that it was offered and declined, and proceed with consent.",
+        "row": "G1"
+      },
+      {
+        "prompt": "The prostate feels hard and irregular.",
+        "safeAnswer": "Raises suspicion of malignancy but is not diagnostic; interpret alongside PSA and refer through the appropriate pathway.",
+        "row": "G5"
+      },
+      {
+        "prompt": "He becomes distressed partway through.",
+        "safeAnswer": "Stop, reassess, and offer to continue only if he wishes, documenting the limitation this places on the examination.",
+        "row": "G3"
+      }
+    ]
+  }
+}

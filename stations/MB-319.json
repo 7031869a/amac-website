@@ -1,0 +1,512 @@
+{
+  "id": "MB-319",
+  "exam": "MRCS-B",
+  "title": "Postoperative urinary retention",
+  "type": "applied-knowledge",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "Postoperative care: urinary retention",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "NICE CG97 (2010; 2019 surveillance review, no update)",
+      "NICE CG139 (published March 2012; 2017 surveillance review, no update)",
+      "NICE NG148 (published 18 December 2019; last updated 2024)"
+    ],
+    "related": [
+      {
+        "id": "MB-181",
+        "why": "Technique for the catheterisation this station's management leads to"
+      },
+      {
+        "id": "MB-277",
+        "why": "The history route into the same presentation in an older man"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Surgical ward",
+    "role": "Surgical trainee called to see the patient",
+    "scenario": "Mr Peter Wainwright, 70, is 8 hours after surgery with suprapubic discomfort and has not passed urine.",
+    "task": "Assess and manage suspected postoperative urinary retention."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Assess before you catheterise; treat what's reversible; decompress safely if retention is confirmed.",
+    "trap": "Catheterising on the story alone, or quoting a bladder-volume number as if one universal threshold exists.",
+    "firstMove": "\"I'd start with ABCDE if he's unwell, then examine his abdomen and bladder-scan him before deciding anything.\""
+  },
+  "flow": [
+    "Assess (ABCDE if unwell, history, examination)",
+    "Confirm with bladder scan",
+    "Review reversible contributors",
+    "Decompress if retention confirmed",
+    "Plan and document"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-knowledge",
+      "label": "Distinguishing retention from other causes of low output",
+      "fail": "Assumes not passing urine means retention without assessing the bladder.",
+      "pass": "Confirms with abdominal examination and bladder scan before treating as retention; considers reduced urine production as an alternative.",
+      "high": "Explicitly separates a full, painful bladder from oliguria of renal origin, and reviews fluid balance and renal function to tell them apart."
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-knowledge",
+      "label": "Reviewing reversible contributors",
+      "fail": "Does not review anaesthetic, opioids, anticholinergics or fluids.",
+      "pass": "Reviews the operation, anaesthetic, fluid balance, opioids and anticholinergic drugs as contributors.",
+      "high": "Also asks about prior retention, BPH and neurological disease, and links the specific drug or factor to a plan for reducing it."
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-skill",
+      "label": "Bladder assessment",
+      "fail": "Skips examination and scanning and goes straight to catheterisation.",
+      "pass": "Examines for suprapubic distension and tenderness, then bladder-scans before deciding on decompression.",
+      "high": "Interprets the scan volume alongside symptoms and clinical context rather than against a single fixed number."
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-skill",
+      "label": "Decompression technique and safety",
+      "fail": "Makes repeated forceful catheterisation attempts, or ignores possible urethral injury or obstruction.",
+      "pass": "Decompresses with appropriate catheterisation once retention is confirmed, and stops repeated traumatic attempts.",
+      "high": "Recognises when to stop and get senior or urology help early, particularly if urethral injury or obstruction is suspected."
+    },
+    {
+      "id": "G5",
+      "domain": "professionalism",
+      "label": "Catheter stewardship",
+      "fail": "Leaves the catheter in place with no plan or review.",
+      "pass": "Documents the volume drained, the intervention and a plan for reassessment or trial without catheter.",
+      "high": "Ties the plan explicitly to minimising catheter duration and the infection risk of unnecessary indwelling use.",
+      "source": "CG139"
+    },
+    {
+      "id": "G6",
+      "domain": "professionalism",
+      "label": "Red flag recognition",
+      "fail": "Does not ask about neurological symptoms when relevant.",
+      "pass": "Asks about cauda equina symptoms (saddle numbness, bilateral leg symptoms, bowel disturbance) when clinically relevant.",
+      "high": "Explains that new neurological retention changes the whole management pathway and would prompt urgent escalation."
+    },
+    {
+      "id": "G7",
+      "domain": "communication",
+      "label": "Explaining the plan to the patient",
+      "fail": "Proceeds to catheterise without explaining what is happening or why.",
+      "pass": "Explains the likely cause, what a catheter involves and the plan for review, in plain language.",
+      "high": "Checks understanding, addresses the patient's discomfort and safety-nets what to report if things change."
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "What would you do?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "He's just had surgery, so I'd wait — it's probably normal.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Anything you'd check about his medicines or the operation?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Not really, I'd just go and catheterise him.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "He's now very uncomfortable. What now?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'll pass a catheter.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "It won't pass easily."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'll keep trying with more force until it goes in.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "It's in now. What next?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Leave it in, nothing else to do.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Would you tell him anything?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "No need, he can see the bag.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "examiner",
+        "text": "What would you do?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd assess ABCDE if he's unwell, ask when he last passed urine, and review his operation, anaesthetic, fluids, opioids and any anticholinergics.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you confirm retention?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Examine his abdomen for suprapubic distension and tenderness, then bladder-scan him rather than assume from the story alone.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          },
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The scan confirms a large volume."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd decompress with an appropriate catheter. If it's difficult, I won't force repeated attempts — I'd get senior or urology help given the risk of urethral injury.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "It's catheterised. What's the plan?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd document the volume drained, treat any reversible contributors, and plan for reassessment or a trial without catheter rather than leaving it indefinitely.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Anything else you'd check?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd ask about any neurological symptoms suggesting cauda equina, and I'd explain to him what's happening and what the catheter and plan involve.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          },
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "examiner",
+        "text": "What would you do?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "First I'd make sure he's not unwell — ABCDE — then take a focused history: when he last passed urine, baseline urinary symptoms, and review the operation, anaesthetic, fluids, opioids and anticholinergics that could be contributing.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you confirm it's retention rather than something else?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd examine for suprapubic distension and bladder-scan him. I wouldn't rely on one fixed volume number to define retention — I'd interpret the scan alongside his symptoms, and separately check his renal function and fluid balance in case this is reduced production rather than retention.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          },
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "He needs a catheter but it's not passing easily."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd stop repeated traumatic attempts early and get senior or urology input, especially with possible urethral injury or obstruction — that's not a station to push through alone.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "It's in. What's your plan?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Document the volume and the plan, treat reversible contributors, and aim to remove the catheter as soon as appropriate rather than leaving it in by default, given the infection risk of unnecessary indwelling catheters.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Anything you'd specifically ask him?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Any saddle numbness, bilateral leg symptoms or bowel disturbance — new neurological retention changes the whole pathway and needs urgent escalation. And I'd explain everything to him clearly and check he's understood.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          },
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G1",
+      "move": "Treating 'no urine passed since surgery' as automatically meaning retention.",
+      "consequence": "A different cause of low output, such as reduced renal production, is missed."
+    },
+    {
+      "row": "G3",
+      "move": "Catheterising without examining or scanning first.",
+      "consequence": "An unnecessary or poorly timed catheter is placed without confirming the diagnosis."
+    },
+    {
+      "row": "G4",
+      "move": "Repeated forceful catheter attempts.",
+      "consequence": "Urethral trauma or false passage, especially if there is an unrecognised obstruction."
+    },
+    {
+      "row": "G5",
+      "move": "Leaving the catheter in with no plan for review or removal.",
+      "consequence": "Unnecessary prolonged catheterisation and its infection risk."
+    },
+    {
+      "row": "G6",
+      "move": "Not asking about neurological symptoms when relevant.",
+      "consequence": "A cauda equina cause of retention is missed and escalation is delayed."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You've said 'wait and see' and the examiner pushes back",
+      "line": "I'd still want to examine and bladder-scan him now rather than wait, because he's symptomatic."
+    },
+    {
+      "when": "Asked why you won't force the catheter",
+      "line": "Because repeated forceful attempts risk urethral injury — I'd get senior or urology help instead."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Assess before treating: history, examination and bladder scan, not the story alone."
+    },
+    {
+      "fact": "Review and treat reversible contributors: pain, constipation, immobility, opioids and anticholinergics."
+    },
+    {
+      "fact": "No single bladder-volume threshold defines retention across all pathways — interpret the scan alongside symptoms and clinical context."
+    },
+    {
+      "fact": "Minimise catheter duration once placed; document a plan for removal or reassessment.",
+      "source": "CG139"
+    },
+    {
+      "fact": "Ask about cauda equina symptoms when clinically relevant; this changes the pathway."
+    }
+  ],
+  "recall": {
+    "think": "Urethral injury from forced catheterisation, and missed cauda equina.",
+    "say": "\"I'd confirm with examination and a bladder scan before deciding on catheterisation.\"",
+    "do": [
+      "Examine and bladder-scan",
+      "Review reversible contributors (opioids, anticholinergics, pain, constipation)",
+      "Decompress safely; stop and escalate if difficult"
+    ],
+    "numbers": [
+      {
+        "value": "<0.5 mL/kg/hour for >6 hours",
+        "meaning": "NICE AKI criterion for reduced urine output — useful for separating retention from reduced production",
+        "source": "NG148"
+      }
+    ],
+    "trap": "Assuming 'hasn't passed urine' always means retention, or quoting a fixed bladder-volume cut-off.",
+    "finish": "Confirmed retention decompressed safely, contributors addressed, and a plan for catheter review documented."
+  },
+  "sources": [
+    {
+      "id": "CG97",
+      "name": "NICE CG97: Lower urinary tract symptoms in men: management",
+      "version": "Published 2010; 2019 surveillance review (no update needed)",
+      "url": "https://www.nice.org.uk/guidance/cg97",
+      "supports": "Assessment of urinary symptoms should include relevant history and examination"
+    },
+    {
+      "id": "CG139",
+      "name": "NICE CG139: Healthcare-associated infections: prevention and control in primary and community care",
+      "version": "Published March 2012; 2017 surveillance review (no update needed)",
+      "url": "https://www.nice.org.uk/guidance/cg139",
+      "supports": "Urinary catheter use should be appropriate, reassessed regularly and minimised because of infection risk"
+    },
+    {
+      "id": "NG148",
+      "name": "NICE NG148: Acute kidney injury: prevention, detection and management",
+      "version": "Published 18 December 2019; last updated 2024",
+      "url": "https://www.nice.org.uk/guidance/ng148/chapter/Recommendations",
+      "supports": "Recommendation 1.3.1: urine output <0.5 mL/kg/hour for more than 6 hours as a detection criterion for AKI in adults"
+    }
+  ],
+  "partner": {
+    "opening": "\"He's 8 hours after surgery, hasn't passed urine and has suprapubic discomfort. What would you do?\"",
+    "reveals": [
+      {
+        "trigger": "Candidate asks to examine the abdomen",
+        "finding": "Suprapubic fullness and tenderness.",
+        "row": "G3"
+      },
+      {
+        "trigger": "Candidate asks for a bladder scan",
+        "finding": "Bladder scan shows a significant volume consistent with retention.",
+        "row": "G3"
+      },
+      {
+        "trigger": "Candidate asks about medications",
+        "finding": "He received morphine postoperatively and is on an anticholinergic for another condition.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Candidate attempts catheterisation",
+        "finding": "The catheter does not pass easily on the first attempt.",
+        "row": "G4"
+      }
+    ],
+    "push": [
+      {
+        "question": "What would make you think this isn't simple postoperative retention?",
+        "row": "G1",
+        "expect": "Reduced urine production, e.g. from AKI or hypovolaemia, rather than an emptying problem."
+      },
+      {
+        "question": "What would you review before deciding to catheterise?",
+        "row": "G2",
+        "expect": "Operation, anaesthetic, fluids, opioids, anticholinergics, prior urinary symptoms."
+      },
+      {
+        "question": "The catheter isn't passing. What now?",
+        "row": "G4",
+        "expect": "Stop repeated forceful attempts; get senior/urology help; consider urethral injury or obstruction."
+      },
+      {
+        "question": "It's in and draining well. What's your plan?",
+        "row": "G5",
+        "expect": "Document volume, treat contributors, plan for review or trial without catheter — not indefinite catheterisation."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "\"He hasn't passed urine, so it must be retention, right?\"",
+        "safeAnswer": "Not necessarily — confirm with examination and bladder scan; low output can have other causes.",
+        "row": "G1"
+      },
+      {
+        "prompt": "\"Just give a number for when a bladder scan means retention.\"",
+        "safeAnswer": "There's no single universal threshold; interpret the volume with the symptoms and clinical context.",
+        "row": "G3"
+      },
+      {
+        "prompt": "He mentions new numbness between his legs.",
+        "safeAnswer": "Ask further about saddle anaesthesia, bilateral leg symptoms and bowel disturbance, and escalate urgently if cauda equina is possible.",
+        "row": "G6"
+      }
+    ]
+  }
+}

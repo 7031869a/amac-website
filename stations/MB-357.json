@@ -1,0 +1,531 @@
+{
+  "id": "MB-357",
+  "exam": "MRCS-B",
+  "title": "Breaking bad news: breast cancer on core biopsy",
+  "type": "communication",
+  "header": {
+    "domain": "Applied Skills",
+    "contentArea": "Communication: breaking bad news in the breast clinic",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "SPIKES protocol (Baile et al., Oncologist, 2000)",
+      "NICE NG101 (published 18 July 2018; last updated 14 April 2025)",
+      "GMC Good medical practice (in effect 30 January 2024)"
+    ],
+    "related": [
+      {
+        "id": "MB-356",
+        "why": "Reading the core biopsy report behind this conversation"
+      },
+      {
+        "id": "MB-358",
+        "why": "Ms Linford's consent for wide local excision and sentinel node biopsy"
+      },
+      {
+        "id": "MB-359",
+        "why": "Ms Linford's results after surgery and her adjuvant plan"
+      },
+      {
+        "id": "MB-138",
+        "why": "The breast examination that finds the lump"
+      },
+      {
+        "id": "MB-286",
+        "why": "Blood-stained nipple discharge: another route into the breast clinic"
+      },
+      {
+        "id": "MB-264",
+        "why": "Breast and axillary anatomy behind the operation she will be offered"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Breast clinic, results appointment",
+    "role": "Core surgical trainee",
+    "scenario": "Ms Rachel Linford, 42, had triple assessment for a lump in her left breast last week. The core biopsy shows invasive breast cancer (no special type, grade 2), oestrogen receptor positive and HER2 negative. Imaging shows an 18 mm tumour; axillary ultrasound is normal. The MDT recommends surgery first. Sarah, the breast care nurse, is with you.",
+    "task": "Give Ms Linford her result and discuss the next steps."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Find out what she knows, warn, say \"cancer\", stop. Then the plan, in her order.",
+    "trap": "Filling the silence after the word \"cancer\" with treatment details she cannot take in.",
+    "firstMove": "\"What's been going through your mind since the biopsy last week?\""
+  },
+  "flow": [
+    "Set up and find out what she knows",
+    "Warning shot, then the diagnosis",
+    "Silence and her reaction",
+    "What it means",
+    "Next steps",
+    "Support, check understanding, close"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "communication",
+      "label": "Setting and her perception",
+      "fail": "Starts with the result without checking who she wants present or what she expects.",
+      "pass": "Introduces self and nurse, confirms identity, checks whether she wants anyone with her, asks what she knows.",
+      "high": "Asks how much detail she would like today before giving the result.",
+      "source": "SPIKES"
+    },
+    {
+      "id": "G2",
+      "domain": "communication",
+      "label": "Warning shot and diagnosis",
+      "fail": "Uses euphemism (\"abnormal cells\", \"a growth\") or jargon, and never says \"cancer\".",
+      "pass": "Gives a warning shot, then says plainly that the biopsy shows breast cancer.",
+      "high": "Stops after the word \"cancer\" and waits for her to speak first.",
+      "source": "SPIKES"
+    },
+    {
+      "id": "G3",
+      "domain": "communication",
+      "label": "Responding to emotion",
+      "fail": "Carries on with the plan while she is crying, or offers false reassurance.",
+      "pass": "Acknowledges her distress, allows silence, offers time and a tissue.",
+      "high": "Names the emotion and asks what is worrying her most before giving more information.",
+      "source": "SPIKES"
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-knowledge",
+      "label": "What the result means",
+      "fail": "Cannot explain the result, or guesses at prognosis or cure.",
+      "pass": "Explains in plain words: found early, small, no sign of spread to the armpit on scan, treatable with the aim of cure.",
+      "high": "Explains hormone-sensitive: tablets that block oestrogen will be part of treatment; honest that the operation gives final staging.",
+      "source": "NG101"
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-knowledge",
+      "label": "Next steps",
+      "fail": "Gives no plan, or promises a specific operation or outcome.",
+      "pass": "Surgery first: removing the lump with a lymph node check under the arm, or removing the breast; the surgeon will discuss both.",
+      "high": "Explains similar survival for either operation, so the choice can be hers, and further treatment depends on the final results.",
+      "source": "FISHER"
+    },
+    {
+      "id": "G6",
+      "domain": "professionalism",
+      "label": "Support",
+      "fail": "Ends without a named contact or support.",
+      "pass": "Introduces the breast care nurse as her named contact, with a phone number and written information.",
+      "high": "Asks who is at home, and offers help with telling her children.",
+      "source": "NG101"
+    },
+    {
+      "id": "G7",
+      "domain": "communication",
+      "label": "Checking understanding and closing",
+      "fail": "Closes without checking what she has understood.",
+      "pass": "Asks her to say what she is taking away; invites questions; confirms the next appointment.",
+      "high": "Offers to repeat everything with her partner present, and checks she is safe to get home.",
+      "source": "SPIKES"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "candidate",
+        "text": "Hi. So your biopsy came back and there are some abnormal cells, a growth really.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          },
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Ms Linford: “A growth? Is it cancer?”"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Well, technically it's an invasive carcinoma, grade 2, ER positive. We'll probably do a wide local excision and sentinel node.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Ms Linford: “[Starts to cry.]”"
+      },
+      {
+        "speaker": "candidate",
+        "text": "It's fine, you'll be cured. So the operation will be in a few weeks.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          },
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Ms Linford: “I've got two children.”"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Right. The nurse will book you in. Any questions? No? Great.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          },
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "candidate",
+        "text": "Hello, I'm Dr Patel, one of the surgical doctors, and this is Sarah, a breast care nurse. Can I check your name and date of birth? Would you like anyone with you? What do you understand about the tests?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Ms Linford: “I know they took a biopsy. I've been worried.”"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'm afraid the results aren't what we'd hoped. The biopsy shows breast cancer.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Ms Linford: “[Cries.]”"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'm so sorry. [Pause.] Take your time.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Ms Linford: “Am I going to die?”"
+      },
+      {
+        "speaker": "candidate",
+        "text": "It's been found early. It's small, the scan of your armpit looked normal, and we treat it with the aim of cure.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "The first step is an operation: either removing the lump with a check of the lymph nodes under the arm, or removing the breast. The surgeon will go through both.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Sarah will be your main contact. Here's her number and some written information.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Can you tell me what you're taking away today? Any questions? Your next appointment is with the consultant next week.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "candidate",
+        "text": "Hello, I'm Dr Patel, one of the surgical doctors, and this is Sarah, a breast care nurse. Can I check your name and date of birth? Would you like anyone with you? What's been going through your mind since last week? And how much detail would you like today?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Ms Linford: “I've been terrified. Just tell me straight.”"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'm afraid it's not good news. The biopsy shows breast cancer. [Silence; waits for her.]",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Ms Linford: “[Cries.] My kids are eight and eleven.”"
+      },
+      {
+        "speaker": "candidate",
+        "text": "This is a huge shock, and your children are the first thing on your mind. What's worrying you most?",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Ms Linford: “Am I going to die?”"
+      },
+      {
+        "speaker": "candidate",
+        "text": "It's been found early: it's small and the armpit scan looked normal. We treat this with the aim of cure. It's hormone-sensitive, so tablets that block oestrogen will be part of treatment. The operation will tell us the full picture.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "The first step is surgery: removing the lump, with radiotherapy afterwards, or removing the breast, with a check of the lymph nodes under the arm either way. Survival is the same with either, so there's real choice.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Sarah is your named contact; here's her number. Who's at home tonight? Sarah can help with how to tell the children.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "What will you tell your partner about today? We can go over it again with him next week. Are you alright to get home?",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G2",
+      "move": "Euphemism: \"abnormal cells\" or \"a growth\".",
+      "consequence": "She leaves unsure whether she has cancer, and must ask someone else."
+    },
+    {
+      "row": "G3",
+      "move": "Talking through her tears about operations.",
+      "consequence": "Nothing said while she is distressed is retained, and she feels unheard."
+    },
+    {
+      "row": "G4",
+      "move": "\"You'll be cured.\"",
+      "consequence": "False reassurance. Staging is not complete, and trust suffers if the final histology is worse."
+    },
+    {
+      "row": "G5",
+      "move": "Naming one operation as decided.",
+      "consequence": "Pre-empts her choice between conservation and mastectomy, which have similar survival."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You used a euphemism",
+      "line": "Let me be clearer: this is breast cancer."
+    },
+    {
+      "when": "You kept talking through her distress",
+      "line": "I'm sorry, I've been talking a lot. Let's stop for a moment."
+    },
+    {
+      "when": "She asks \"Will I be cured?\"",
+      "line": "We treat this with the aim of cure. The operation will tell us more."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "SPIKES: Setting, Perception, Invitation, Knowledge (warning shot, plain words), Emotions, Strategy and summary.",
+      "source": "SPIKES"
+    },
+    {
+      "fact": "Everyone with breast cancer should have a named clinical nurse specialist or key worker.",
+      "source": "NG101"
+    },
+    {
+      "fact": "Normal axillary ultrasound: sentinel lymph node biopsy at operation.",
+      "source": "NG101"
+    },
+    {
+      "fact": "Breast conservation with radiotherapy and mastectomy give similar survival.",
+      "source": "FISHER"
+    },
+    {
+      "fact": "ER-positive disease: adjuvant endocrine therapy. Premenopausal women choose, with the oncologist, between tamoxifen alone and ovarian suppression combinations.",
+      "source": "NG101"
+    }
+  ],
+  "recall": {
+    "think": "She will remember little after the word \"cancer\".",
+    "say": "\"I'm afraid it's not good news. The biopsy shows breast cancer.\"",
+    "do": [
+      "Ask what she knows",
+      "Warn, say \"cancer\", then stop",
+      "Name the nurse as her contact"
+    ],
+    "numbers": [
+      {
+        "value": "6 steps",
+        "meaning": "SPIKES",
+        "source": "SPIKES"
+      },
+      {
+        "value": "2 operations",
+        "meaning": "conservation or mastectomy: similar survival",
+        "source": "FISHER"
+      }
+    ],
+    "trap": "Filling the silence with a treatment plan.",
+    "finish": "Named nurse, next appointment, understanding checked."
+  },
+  "sources": [
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Communication station format: 9 minutes with 1 minute's reading; introduce yourself and confirm identity"
+    },
+    {
+      "id": "SPIKES",
+      "name": "Baile WF, et al. SPIKES: a six-step protocol for delivering bad news: application to the patient with cancer. Oncologist 2000;5(4):302-311",
+      "version": "2000",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/10964998/",
+      "supports": "Six steps: Setting, Perception, Invitation, Knowledge (warning shot, plain language, no jargon), Emotions (empathic response), Strategy and summary"
+    },
+    {
+      "id": "NG101",
+      "name": "NICE NG101: Early and locally advanced breast cancer: diagnosis and management",
+      "version": "Published 18 July 2018; last updated 14 April 2025 (links updated July 2026)",
+      "url": "https://www.nice.org.uk/guidance/ng101",
+      "supports": "Named clinical nurse specialist or key worker for everyone with breast cancer (1.1.1); sentinel lymph node biopsy for an ultrasound-negative axilla (1.4.9); systemic therapy decisions made by the MDT with the person (1.6.2); adjuvant endocrine therapy for ER-positive disease (1.11.5)"
+    },
+    {
+      "id": "FISHER",
+      "name": "Fisher B, et al. Twenty-year follow-up of a randomized trial comparing total mastectomy, lumpectomy, and lumpectomy plus irradiation for the treatment of invasive breast cancer. N Engl J Med 2002;347:1233-1241",
+      "version": "2002",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/12393820/",
+      "supports": "Equivalent survival for breast-conserving surgery and mastectomy at 20 years"
+    },
+    {
+      "id": "GMP",
+      "name": "GMC: Good medical practice",
+      "version": "In effect 30 January 2024",
+      "url": "https://www.gmc-uk.org/professional-standards/the-professional-standards/good-medical-practice",
+      "supports": "Give patients the information they want or need in a way they can understand; be honest; support patients to make decisions"
+    }
+  ],
+  "partner": {
+    "opening": "Ms Linford is waiting with the breast care nurse. Please begin when you're ready.",
+    "actorBrief": "You are Rachel Linford, 42, a primary school teacher, married with two children aged 8 and 11. You found the lump in your left breast yourself. You suspect cancer but hope to be told it is a cyst. Opening: \"Is it good news?\" If the diagnosis is given with a warning shot and time, cry, then engage. If it is delivered abruptly or with jargon, go quiet and answer in single words. Hidden concern: your children, and how to tell them; raise it once (\"My kids are eight and eleven\") and say more only if asked. Ask \"Am I going to die?\" once you have heard the word cancer. If asked to summarise, say: \"It's cancer, but early, and I'll need an operation.\" Your husband could not come today.",
+    "reveals": [
+      {
+        "trigger": "Candidate asks what you understand",
+        "finding": "\"They said the biopsy would tell us. I've been dreading it.\"",
+        "row": "G1"
+      },
+      {
+        "trigger": "Candidate asks what worries you most",
+        "finding": "\"The kids. How do I tell them?\"",
+        "row": "G3"
+      },
+      {
+        "trigger": "Candidate asks who is at home",
+        "finding": "\"My husband. He's at work; he couldn't get away.\"",
+        "row": "G6"
+      }
+    ],
+    "push": [
+      {
+        "question": "Am I going to die?",
+        "row": "G4",
+        "expect": "Honest and hopeful: early, small, node-negative on ultrasound, treated with the aim of cure; the operation gives final staging."
+      },
+      {
+        "question": "Will I lose my breast?",
+        "row": "G5",
+        "expect": "Not necessarily: removing the lump with radiotherapy, or the breast, give similar survival; she will discuss the choice with the surgeon."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "\"Just take the whole breast off, both of them. I want it gone.\"",
+        "safeAnswer": "Acknowledge the fear; explain it is a decision for when she has had time and full information from the surgeon; the options will be discussed.",
+        "row": "G5"
+      },
+      {
+        "prompt": "\"Will I need chemotherapy? Will I lose my hair?\"",
+        "safeAnswer": "Not known yet: it depends on the results after surgery, and the oncologist will discuss it; avoid guessing.",
+        "row": "G4"
+      },
+      {
+        "prompt": "\"Why did the GP say it was probably nothing?\"",
+        "safeAnswer": "Acknowledge the frustration without criticising colleagues; refocus on what happens now.",
+        "row": "G3"
+      }
+    ]
+  }
+}

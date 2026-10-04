@@ -1,0 +1,431 @@
+{
+  "id": "MB-142",
+  "exam": "MRCS-B",
+  "title": "Sterile technique: scrub, gown and glove",
+  "type": "procedural",
+  "header": {
+    "domain": "Applied Skills",
+    "contentArea": "Procedural skills (generic)",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "NICE NG125 (updated Aug 2020)"
+    ],
+    "related": [
+      {
+        "id": "MB-141 Instruments",
+        "why": "Working at the sterile field"
+      },
+      {
+        "id": "MB-143 Excision of a skin lesion",
+        "why": "Sterile technique in a procedure"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Theatre scrub room",
+    "role": "Core surgical trainee",
+    "scenario": "You are the first case on the morning list. Scrub solution, brushes, a sterile gown pack and gloves are provided.",
+    "task": "Scrub, gown and glove for the operation, explaining what you are doing. The examiner will ask questions."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Jewellery off, first scrub of the list with a brush or pick, hands above elbows, sterile from chest to waist.",
+    "trap": "Touching the outside of the gown or gloves with bare hands.",
+    "firstMove": "\"I've removed my watch and rings, and my hat and mask are on.\""
+  },
+  "flow": [
+    "Prepare",
+    "Scrub",
+    "Dry",
+    "Gown",
+    "Glove (closed technique)",
+    "Maintain sterility",
+    "Remove gown and gloves"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "professionalism",
+      "label": "Preparation",
+      "fail": "Keeps a watch or rings on.",
+      "pass": "Removes hand jewellery, nail polish and artificial nails; theatre wear, hat and mask on before scrubbing.",
+      "high": "Checks the gown and glove packs are intact and in date before starting.",
+      "source": "NG125"
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-skill",
+      "label": "Scrub",
+      "fail": "Scrubs without a brush or pick on the first case.",
+      "pass": "First scrub of the list: aqueous antiseptic surgical solution with a single-use brush or pick for the nails.",
+      "high": "Knows later scrubs can use alcohol rub or antiseptic solution, but soiled hands need re-washing with antiseptic solution.",
+      "source": "NG125"
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-skill",
+      "label": "Technique and drying",
+      "fail": "Lets water run from elbows back to hands.",
+      "borderline": "Covers every area but in no consistent order.",
+      "pass": "Keeps hands above elbows so water runs from fingertips to elbows; covers all surfaces systematically.",
+      "high": "Dries from fingertips to elbow, using a separate part of the towel for each arm, never returning to a dried area."
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-skill",
+      "label": "Gowning",
+      "fail": "Touches the outside of the gown.",
+      "pass": "Lifts the gown by the inside, lets it unfold away from the body, and puts arms in without touching the outside.",
+      "high": "Knows the sterile area is the front from chest to waist and the sleeves; the back is not sterile."
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-skill",
+      "label": "Gloving",
+      "fail": "Bare skin touches the outside of a glove.",
+      "pass": "Closed-glove technique, with hands kept inside the cuffs.",
+      "high": "Knows to consider 2 pairs of gloves when perforation risk is high and contamination would be serious.",
+      "source": "NG125"
+    },
+    {
+      "id": "G6",
+      "domain": "professionalism",
+      "label": "Maintaining sterility (safety-critical)",
+      "fail": "Drops hands below the waist or touches a non-sterile surface and carries on.",
+      "pass": "Keeps hands in front, above the waist; recognises contamination and re-gowns or re-gloves.",
+      "high": "Announces a contamination openly, and turns the gown tie with a sterile assistant or the card."
+    },
+    {
+      "id": "G7",
+      "domain": "clinical-skill",
+      "label": "Removing gown and gloves",
+      "fail": "Pulls gloves off by the cuffs with bare fingers.",
+      "pass": "Removes gown first, then gloves inside out, without bare skin touching the outer surfaces; cleans hands.",
+      "high": "Rolls the gown away from the body so the contaminated front stays inside."
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "candidate",
+        "text": "[Starts scrubbing with a watch on.]",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Scrubs without a brush; hands drop below the elbows.]",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          },
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Grabs the gown by the outside.]",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Touches a trolley, then carries on.]",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "candidate",
+        "text": "I've taken off my watch and ring, and I'm not wearing nail varnish. Hat and mask are on.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "As it's the first case, I'll use antiseptic solution and a single-use brush for my nails. [Scrubs.]",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Hands above elbows throughout; dries each arm from fingertips to elbow.]",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Lifts the gown by the inside, lets it fall open, arms in without touching the outside.]",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Closed-glove technique, hands inside the cuffs.]",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Keeps hands clasped in front above the waist.] I've touched the trolley; I'll change these gloves.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How do you take off your gown and gloves?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Gown first, then gloves inside out without touching the outside with bare skin, then I clean my hands.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "candidate",
+        "text": "Jewellery, nail varnish and artificial nails off; hat and mask on. I've checked the gown and glove packs are intact and in date.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "First case, so antiseptic solution and a single-use nail brush. Between cases I'd use alcohol rub or solution, but if my hands were soiled I'd wash again with the solution.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Hands up throughout; separate part of the towel for each arm, fingertip to elbow, never going back.]",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Gowns by the inside.] Only the front from chest to waist and the sleeves count as sterile; the back doesn't.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Closed gloving.] For a case with a high risk of perforation, I'd consider double gloving.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Hands in front, above the waist.] I've contaminated that glove; I'm saying so and changing it. Could you take the card to turn my tie?",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How do you take them off?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Gown first, rolled away from me so the front stays inside, then gloves inside out, then clean my hands.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G5",
+      "move": "Gloving with bare fingers outside the cuffs.",
+      "consequence": "The outside of the glove is no longer sterile."
+    },
+    {
+      "row": "G7",
+      "move": "Removing gloves before the gown.",
+      "consequence": "Bare hands then touch the contaminated gown."
+    },
+    {
+      "row": "G6",
+      "move": "Hands dropping below the waist or touching the mask.",
+      "consequence": "Safety-critical: contamination not declared carries infection into the field."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You touch something non-sterile",
+      "line": "I've contaminated my glove. I'll say so and change it."
+    },
+    {
+      "when": "You forget the order",
+      "line": "Scrub, dry, gown, then closed gloves."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Remove hand jewellery, artificial nails and nail polish before operations.",
+      "source": "NG125"
+    },
+    {
+      "fact": "First scrub of the list: aqueous antiseptic surgical solution with a single-use brush or pick for the nails.",
+      "source": "NG125"
+    },
+    {
+      "fact": "Consider 2 pairs of sterile gloves when perforation risk is high and contamination would be serious.",
+      "source": "NG125"
+    }
+  ],
+  "recall": {
+    "think": "What is sterile, and have I touched anything that isn't?",
+    "say": "\"I've contaminated my glove; I'll change it.\"",
+    "do": [
+      "Jewellery off; brush for the first scrub",
+      "Hands above elbows; dry without going back",
+      "Gown by the inside; closed gloves"
+    ],
+    "numbers": [
+      {
+        "value": "2 pairs",
+        "meaning": "of gloves if perforation risk is high",
+        "source": "NG125"
+      }
+    ],
+    "trap": "Hiding a contamination.",
+    "finish": "Gown off first, then gloves inside out, then clean hands."
+  },
+  "sources": [
+    {
+      "id": "NG125",
+      "name": "NICE NG125: Surgical site infections: prevention and treatment",
+      "version": "Published April 2019; last updated August 2020",
+      "url": "https://www.nice.org.uk/guidance/ng125",
+      "supports": "Theatre wear (1.2.7); remove hand jewellery (1.2.10), artificial nails and polish (1.2.11); first scrub with antiseptic solution and single-use brush or pick (1.3.1); subsequent scrubs (1.3.2); sterile gowns (1.3.5); consider 2 pairs of gloves (1.3.6)"
+    },
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "At every station: introduce yourself, explain the task, confirm identity, obtain consent, clean hands before and after patient contact; 6-minute signal in examination stations"
+    }
+  ],
+  "partner": {
+    "opening": "You're scrubbing for the first case on the list. Talk me through it as you go.",
+    "reveals": [
+      {
+        "trigger": "At the start",
+        "finding": "Notice whether a watch or ring is still on.",
+        "row": "G1"
+      },
+      {
+        "trigger": "During the scrub",
+        "finding": "Watch whether the hands stay above the elbows.",
+        "row": "G3"
+      },
+      {
+        "trigger": "After gloving",
+        "finding": "Ask them to wait with their hands, and watch where the hands go.",
+        "row": "G6"
+      }
+    ],
+    "push": [
+      {
+        "question": "What would you do differently for the second case?",
+        "row": "G2",
+        "expect": "Alcohol rub or antiseptic solution; re-wash if soiled."
+      },
+      {
+        "question": "Which parts of the gown are sterile?",
+        "row": "G4",
+        "expect": "Front from chest to waist, and the sleeves."
+      },
+      {
+        "question": "When would you double glove?",
+        "row": "G5",
+        "expect": "High risk of perforation where contamination would be serious."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "You've just brushed your mask with your glove.",
+        "safeAnswer": "Say so and change the glove.",
+        "row": "G6"
+      },
+      {
+        "prompt": "How do you take everything off?",
+        "safeAnswer": "Gown first, rolled away; gloves inside out; clean hands.",
+        "row": "G7"
+      }
+    ]
+  }
+}

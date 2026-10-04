@@ -1,0 +1,547 @@
+{
+  "id": "MB-281",
+  "exam": "MRCS-B",
+  "title": "Consent through a professional interpreter: laparoscopic cholecystectomy",
+  "type": "communication",
+  "header": {
+    "domain": "Applied Skills",
+    "contentArea": "Consent; communication across a language barrier",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "GMC Decision making and consent (in effect 9 November 2020; updated 13 December 2024 and 3 August 2026)",
+      "NHS England Guidance for commissioners: interpreting and translation services in primary care (September 2018)",
+      "Mental Capacity Act 2005, section 1",
+      "Montgomery v Lanarkshire Health Board [2015] UKSC 11"
+    ],
+    "related": [
+      {
+        "id": "MB-209",
+        "why": "The content of consent for laparoscopic cholecystectomy"
+      },
+      {
+        "id": "MB-160",
+        "why": "Consent for emergency surgery"
+      },
+      {
+        "id": "MB-162",
+        "why": "When the patient lacks capacity"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Surgical outpatient clinic",
+    "role": "Core surgical trainee",
+    "scenario": "Mr Andrei Popescu, 45, a warehouse supervisor, has had three episodes of biliary colic. Ultrasound shows gallstones with a normal bile duct. He has been listed for elective laparoscopic cholecystectomy. He speaks Romanian and very little English. His daughter, 19, has come with him.",
+    "task": "Discuss with the examiner how you would take consent from Mr Popescu."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Consent is only valid if he understands. A professional interpreter is how you make sure he does.",
+    "trap": "Accepting his daughter as interpreter because she is there and it's quicker.",
+    "firstMove": "\"I'd arrange a professional Romanian interpreter before starting the consent discussion.\""
+  },
+  "flow": [
+    "Arrange the interpreter",
+    "Run the consultation",
+    "Content of consent",
+    "Check understanding",
+    "Family member offer",
+    "Record"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "professionalism",
+      "label": "Arranging a professional interpreter",
+      "fail": "Proceeds in English, or uses the daughter by default.",
+      "pass": "Books a professional Romanian interpreter (face to face, video or telephone) for the consent discussion.",
+      "high": "Prefers face to face or video for consent; checks dialect and interpreter gender preference; briefs the interpreter first.",
+      "source": "GMCDMC"
+    },
+    {
+      "id": "G2",
+      "domain": "communication",
+      "label": "Conducting the interpreted consultation",
+      "fail": "Talks to the interpreter in the third person ('tell him...') in long, technical sentences.",
+      "pass": "Faces and speaks to the patient, short chunks, plain words, pauses for interpretation, allows extra time.",
+      "high": "Asks the interpreter to interpret everything said, including side comments, and not to add advice; watches his non-verbal cues."
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "Content of consent",
+      "fail": "Mentions only 'bleeding and infection', or omits alternatives.",
+      "pass": "Procedure, benefits, material risks (bile leak, bile duct injury, bleeding, infection, conversion to open), and alternatives including no operation.",
+      "high": "Asks what matters to him (his job, time off, lifting) and tailors risks to it; offers written information in Romanian.",
+      "source": "MONT"
+    },
+    {
+      "id": "G4",
+      "domain": "communication",
+      "label": "Checking understanding",
+      "fail": "Asks only 'Do you understand?'",
+      "pass": "Asks him to explain back, in his own words, what the operation is and its main risks.",
+      "high": "Recognises a language barrier is not lack of capacity: all practicable steps, including an interpreter, must be taken first.",
+      "source": "MCA"
+    },
+    {
+      "id": "G5",
+      "domain": "professionalism",
+      "label": "Daughter offers to interpret",
+      "fail": "Accepts her because it's convenient.",
+      "pass": "Explains the risks: inaccurate or edited interpretation, confidentiality, pressure on him, burden on her; still offers a professional.",
+      "high": "If he insists, confirms his informed choice through the professional interpreter, away from her, and records it.",
+      "source": "NHSE"
+    },
+    {
+      "id": "G6",
+      "domain": "professionalism",
+      "label": "Documentation",
+      "fail": "Records nothing about the interpreter.",
+      "pass": "Records the interpreter's name or ID, language, mode, and that understanding was checked.",
+      "high": "Records his preferences and reasons; plans the same interpreter to confirm consent on the day of surgery.",
+      "source": "GMCDMC"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "How would you take consent?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "His daughter speaks good English, so I'd ask her to translate. It's quicker than booking someone.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          },
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you talk to him?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd tell her: 'Tell your dad it's a laparoscopic cholecystectomy under general anaesthetic.'",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Which risks?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Bleeding and infection, mainly.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How do you know he understands?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd ask if he understands, and if he nods, he signs.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What do you write in the notes?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Consented, risks explained.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "examiner",
+        "text": "How would you take consent?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd book a professional Romanian interpreter, face to face, video or telephone.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you run the consultation?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd face Mr Popescu and speak to him, not the interpreter, in short, plain sentences, pausing for interpretation, and allow extra time.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What would you cover?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "What the operation involves and why; the risks, including bile leak, bile duct injury, bleeding, infection and conversion to an open operation; and alternatives, including not operating.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How do you check he understands?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd ask him to tell me, in his own words, what the operation is and the main risks.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "His daughter offers to interpret. Fine?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd thank her but explain the risks: things can be missed or softened, he may not want to share everything with her, and it's a burden on her. I'd still use the professional interpreter.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What do you record?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "The interpreter's name or ID, the language, how they joined, and that understanding was checked.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "examiner",
+        "text": "How would you take consent?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "A professional Romanian interpreter, ideally face to face or video for consent. I'd check his dialect and whether he'd prefer a male or female interpreter, and brief the interpreter first.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you run it?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd speak directly to him, in short chunks, and ask the interpreter to interpret everything, including anything said between them, without adding advice. I'd watch his face as well as listen.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What would you cover?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "The standard risks, but first I'd ask what matters to him. As a warehouse supervisor, lifting and time off work matter, so I'd tailor what I say to that. I'd give him written information in Romanian if we have it.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "He nods at everything. Does he have capacity?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Nodding isn't understanding. I'd use teach-back. A language barrier doesn't mean he lacks capacity: I must take all practicable steps to help him decide, and the interpreter is one of them.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "He insists on his daughter."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd ask him through the professional interpreter, without her there, whether that's truly his choice. If it is, I'd respect it and record it.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Anything else?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd record his preferences and book the same interpreter to confirm consent on the day of surgery.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G5",
+      "move": "Using the daughter because she is there.",
+      "consequence": "Risks are softened or missed, he may withhold information in front of her, and consent may not be valid."
+    },
+    {
+      "row": "G4",
+      "move": "Taking a nod as understanding.",
+      "consequence": "He signs without understanding the risk of bile duct injury; consent is not informed."
+    },
+    {
+      "row": "G2",
+      "move": "Speaking to the interpreter about him in the third person.",
+      "consequence": "He is excluded from his own consultation and trust is lost."
+    },
+    {
+      "row": "G3",
+      "move": "Listing only bleeding and infection.",
+      "consequence": "Material risks such as bile duct injury and conversion are not disclosed."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You've accepted the daughter",
+      "line": "On reflection, for consent I'd use a professional interpreter and ask him privately what he prefers."
+    },
+    {
+      "when": "Asked if he lacks capacity",
+      "line": "Not understanding English isn't a lack of capacity; I need to help him understand first."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Use an interpreter or translation service if a patient has difficulty understanding spoken English; check they have understood.",
+      "source": "GMCDMC"
+    },
+    {
+      "fact": "Always offer a registered interpreter; relying on family or friends is strongly discouraged. If the patient wants a relative, get his informed consent in his own language, independently of them, and record it.",
+      "source": "NHSE"
+    },
+    {
+      "fact": "Nobody under 16 should interpret, except when immediate and necessary treatment is needed.",
+      "source": "NHSE"
+    },
+    {
+      "fact": "A person is not unable to decide unless all practicable steps to help them have failed.",
+      "source": "MCA"
+    },
+    {
+      "fact": "Disclose material risks: those a reasonable person in his position would consider significant, or that he would.",
+      "source": "MONT"
+    }
+  ],
+  "recall": {
+    "think": "Invalid consent: he signs without understanding the risks.",
+    "say": "\"I'd book a professional Romanian interpreter for the consent discussion.\"",
+    "do": [
+      "Professional interpreter; speak to him directly",
+      "Risks, benefits, alternatives; teach-back",
+      "Record interpreter details and his preferences"
+    ],
+    "numbers": [
+      {
+        "value": "Under 16",
+        "meaning": "never interpreters, except immediate necessary treatment",
+        "source": "NHSE"
+      },
+      {
+        "value": "MCA s1(3)",
+        "meaning": "all practicable steps before judging capacity",
+        "source": "MCA"
+      }
+    ],
+    "trap": "A relative who speaks good English.",
+    "finish": "Informed consent through a professional interpreter, confirmed again on the day."
+  },
+  "sources": [
+    {
+      "id": "GMCDMC",
+      "name": "GMC: Decision making and consent",
+      "version": "In effect 9 November 2020; updated 13 December 2024 and 3 August 2026",
+      "url": "https://www.gmc-uk.org/professional-standards/the-professional-standards/decision-making-and-consent",
+      "supports": "Use an interpreter or translation service; share information in a format the patient prefers (para 27); check understanding (para 30); record decisions and who made them (para 51); a consent form is no substitute for dialogue (para 55)"
+    },
+    {
+      "id": "NHSE",
+      "name": "NHS England: Guidance for commissioners: interpreting and translation services in primary care",
+      "version": "Version 1, September 2018",
+      "url": "https://www.england.nhs.uk/publication/guidance-for-commissioners-interpreting-and-translation-services-in-primary-care/",
+      "supports": "Always offer a registered interpreter; reliance on family or friends strongly discouraged (principle 6); if a patient wants a relative, informed consent sought independently in their own language and recorded (principle 7); under 16s not to interpret except immediate and necessary treatment (principle 8). Written for primary care; the principles are widely applied"
+    },
+    {
+      "id": "MCA",
+      "name": "Mental Capacity Act 2005, section 1: The principles",
+      "version": "In force 1 October 2007; revised text on legislation.gov.uk (September 2026)",
+      "url": "https://www.legislation.gov.uk/ukpga/2005/9/section/1",
+      "supports": "Presumption of capacity (s1(2)); not to be treated as unable to decide unless all practicable steps to help have failed (s1(3))"
+    },
+    {
+      "id": "MONT",
+      "name": "Montgomery v Lanarkshire Health Board [2015] UKSC 11",
+      "version": "Judgment 11 March 2015",
+      "url": "https://www.supremecourt.uk/cases/uksc-2013-0136",
+      "supports": "Duty to take reasonable care that the patient is aware of material risks and reasonable alternatives; test of materiality"
+    },
+    {
+      "id": "BL",
+      "name": "Bailey & Love's Short Practice of Surgery (O'Connell, McCaskie, Sayers, eds)",
+      "version": "28th edition, 2023",
+      "url": "https://www.routledge.com/Bailey--Loves-Short-Practice-of-Surgery---28th-Edition/OConnell-McCaskie-Sayers/p/book/9780367548117",
+      "supports": "Complications of laparoscopic cholecystectomy: bile leak, bile duct injury, bleeding, infection, conversion to open"
+    },
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format: 9 minutes with 1 minute's reading; examiner-led questioning in applied knowledge stations"
+    }
+  ],
+  "partner": {
+    "opening": "Mr Popescu is in clinic with his daughter. Tell me how you would take consent for his operation.",
+    "actorBrief": "You are the examiner and lead a structured discussion. Ask the push questions in order. After the candidate describes the consultation, say: \"His daughter says her English is good and offers to interpret.\" If the candidate accepts, move on without comment. Use the curveballs if time allows.",
+    "reveals": [
+      {
+        "trigger": "Asks about language or dialect",
+        "finding": "Romanian; he reads Romanian well.",
+        "row": "G1"
+      },
+      {
+        "trigger": "Asks what matters to him",
+        "finding": "He supervises a warehouse and worries about time off and lifting.",
+        "row": "G3"
+      },
+      {
+        "trigger": "Uses teach-back",
+        "finding": "He explains the operation but says the risks are 'only pain'.",
+        "row": "G4"
+      }
+    ],
+    "push": [
+      {
+        "question": "How would you arrange the consultation?",
+        "row": "G1",
+        "expect": "Professional Romanian interpreter, face to face or video preferred for consent."
+      },
+      {
+        "question": "How would you speak to him?",
+        "row": "G2",
+        "expect": "Directly, short chunks, plain words, pauses, extra time."
+      },
+      {
+        "question": "What would you tell him?",
+        "row": "G3",
+        "expect": "Procedure, benefits, material risks including bile duct injury and conversion, alternatives."
+      },
+      {
+        "question": "His daughter offers to interpret. What do you do?",
+        "row": "G5",
+        "expect": "Explains risks; still uses the professional interpreter; if he insists, confirms his choice privately and records it."
+      },
+      {
+        "question": "What do you document?",
+        "row": "G6",
+        "expect": "Interpreter's name or ID, language, mode, understanding checked, his preferences."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "Only his 15-year-old son is with him today.",
+        "safeAnswer": "Not acceptable for consent: under 16s interpret only when immediate treatment is needed. Use a professional interpreter.",
+        "row": "G5"
+      },
+      {
+        "prompt": "No face-to-face interpreter is free today.",
+        "safeAnswer": "Use a telephone or video interpreter; the operation is elective, so if that fails, rebook rather than proceed.",
+        "row": "G1"
+      },
+      {
+        "prompt": "The interpreter knows his family.",
+        "safeAnswer": "Ask him privately if he is comfortable; offer a different interpreter for confidentiality.",
+        "row": "G2"
+      },
+      {
+        "prompt": "He nods throughout. Does he lack capacity?",
+        "safeAnswer": "No: a language barrier isn't incapacity. Teach-back through the interpreter first.",
+        "row": "G4"
+      }
+    ]
+  }
+}

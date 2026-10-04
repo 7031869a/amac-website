@@ -1,0 +1,563 @@
+{
+  "id": "MB-134",
+  "exam": "MRCS-B",
+  "title": "Postoperative breathlessness (PE vs atelectasis vs pneumonia)",
+  "type": "applied-knowledge",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "Applied surgical science and critical care",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "NICE NG158 (updated Aug 2023)",
+      "NICE NG139 (Sep 2019)",
+      "BTS oxygen guideline (2017)"
+    ],
+    "related": [
+      {
+        "id": "MB-133 Perforated viscus",
+        "why": "Sepsis recognition and escalation"
+      },
+      {
+        "id": "VTE prophylaxis",
+        "why": "Why she had a PE"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Surgical ward, evening",
+    "role": "Core surgical trainee on call",
+    "scenario": "Mrs Grant, 72, is on day 4 after an open right hemicolectomy. The nurse calls: she is short of breath. RR 26, SpO2 90% on air, pulse 112, BP 128/76, temperature 37.9°C.",
+    "task": "The examiner will ask how you would assess and manage her, giving you results as you ask."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Atelectasis, pneumonia or PE: timing, signs and tests separate them. Treat the hypoxia first.",
+    "trap": "Calling it a chest infection because of the fever, without weighing PE.",
+    "firstMove": "Oxygen, then ABCDE."
+  },
+  "flow": [
+    "Oxygen and ABCDE",
+    "Chart: VTE prophylaxis, fluids",
+    "Examine",
+    "ABG, CXR, ECG, bloods",
+    "Wells score",
+    "Treat the cause",
+    "Escalate"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-skill",
+      "label": "Immediate assessment",
+      "fail": "Takes a history before giving oxygen.",
+      "pass": "ABCDE; sits her up; oxygen to SpO2 94–98% (88–92% if at risk of hypercapnia).",
+      "high": "Asks about COPD before choosing the target, and reassesses after starting oxygen.",
+      "source": "BTS"
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-skill",
+      "label": "Chart and history",
+      "fail": "Doesn't check the drug chart or fluid balance.",
+      "pass": "Checks VTE prophylaxis, fluid balance, analgesia and mobility; asks about chest pain, cough and sputum.",
+      "high": "Spots missed doses of prophylactic heparin, and whether pain is stopping her from coughing."
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "Investigations",
+      "fail": "Orders nothing specific, or only a D-dimer.",
+      "pass": "ABG, chest X-ray, ECG, FBC, CRP, U&E, clotting; blood and sputum cultures if febrile.",
+      "high": "Notes that D-dimer is usually raised after surgery, so it helps little here; checks renal function before contrast.",
+      "source": "BL"
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-knowledge",
+      "label": "Two-level Wells score",
+      "fail": "Doesn't estimate the probability of PE.",
+      "borderline": "Knows she needs a CTPA but can't give the threshold or the interim anticoagulation rule.",
+      "pass": "More than 4: PE likely, CTPA immediately. 4 or less: D-dimer within 4 hours.",
+      "high": "Scores her aloud (surgery 1.5, pulse 1.5, PE most likely 3: total 6) and anticoagulates if CTPA is delayed.",
+      "source": "NG158"
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-knowledge",
+      "label": "Telling the causes apart",
+      "fail": "Labels it a chest infection without considering alternatives.",
+      "pass": "Atelectasis: early, basal dullness, low-grade fever. Pneumonia: productive cough, consolidation. PE: tachycardia, hypoxia, often a clear chest.",
+      "high": "Uses timing and findings together, and says the causes can coexist.",
+      "source": "BL"
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-knowledge",
+      "label": "Treatment",
+      "fail": "Gives furosemide or antibiotics without a diagnosis.",
+      "pass": "Atelectasis: physiotherapy, analgesia, mobilise. Pneumonia: antibiotics within 4 hours (1 hour if high-risk sepsis). PE: anticoagulation.",
+      "high": "Discusses anticoagulation with the operating surgeon because of bleeding risk; knows the plan for an unstable PE.",
+      "source": "NG139"
+    },
+    {
+      "id": "G7",
+      "domain": "communication",
+      "label": "Escalation",
+      "fail": "Doesn't tell a senior.",
+      "pass": "SBAR to the registrar; outreach or critical care if SpO2 can't be maintained.",
+      "high": "Sets a time to reassess and documents the Wells score and plan.",
+      "source": "BTS"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "The nurse calls about Mrs Grant. What do you do?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd go and take a history, then decide about oxygen once I have a gas.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Her temperature's up, so it's a chest infection.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          },
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Investigations?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "A D-dimer.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Could this be a PE?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd wait for the D-dimer.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Treatment?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Antibiotics and some furosemide.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Would you tell anyone?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd see how she is in the morning.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "examiner",
+        "text": "The nurse calls about Mrs Grant. What do you do?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd sit her up and give oxygen aiming for 94 to 98%, then ABCDE.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd check her VTE prophylaxis, fluid balance and analgesia, and ask about chest pain, cough and sputum.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Investigations?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "ABG, chest X-ray, ECG, FBC, CRP, U&E and clotting, with blood cultures as she's febrile.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Could this be a PE?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Yes. I'd use the two-level Wells score. More than 4 is PE likely, so CTPA immediately; 4 or less, a D-dimer within 4 hours.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How do you tell the causes apart?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Atelectasis is early, with basal dullness and a low-grade fever. Pneumonia gives a productive cough and consolidation. PE gives tachycardia and hypoxia, often with a clear chest.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Treatment?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Physio and analgesia for atelectasis, antibiotics within 4 hours for pneumonia, and anticoagulation for a PE.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd call my registrar with an SBAR, and outreach if her sats can't be maintained.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "examiner",
+        "text": "The nurse calls about Mrs Grant. What do you do?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Sit her up and start oxygen. Does she have COPD? If not, I'd aim for 94 to 98%. Then ABCDE, and I'd recheck her sats once the oxygen is on.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "On the chart I'd look for missed heparin doses, her fluid balance and whether pain is stopping her coughing.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Investigations?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "ABG, chest X-ray, ECG, bloods and cultures. A D-dimer is usually raised after surgery, so it won't help much, and I'd check her renal function before contrast.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Could this be a PE?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Wells: surgery in the last 4 weeks 1.5, pulse over 100 1.5, and PE is the most likely diagnosis, 3. That's 6, so PE likely: CTPA now, and interim therapeutic anticoagulation if it's delayed.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How do you tell the causes apart?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Day 4, sudden onset, tachycardia, hypoxia and a clear chest point to PE. But atelectasis and pneumonia can coexist, so I'd still look at the film.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Treatment?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "If it's a PE, I'd discuss anticoagulation with the operating surgeon because of the anastomosis. If she became unstable: unfractionated heparin and consider thrombolysis, with seniors involved.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd call my registrar now, reassess her in 30 minutes, and document the Wells score and plan.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G1",
+      "move": "Withholding oxygen until the gas is back.",
+      "consequence": "Leaves her hypoxic while you wait for a number."
+    },
+    {
+      "row": "G4",
+      "move": "Waiting for a delayed CTPA without interim anticoagulation.",
+      "consequence": "Leaves a likely PE untreated for hours."
+    },
+    {
+      "row": "G5",
+      "move": "Anchoring on pneumonia because of the fever.",
+      "consequence": "A low-grade fever also occurs with PE and atelectasis."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You forgot oxygen",
+      "line": "First, I'd sit her up and give oxygen to a target of 94 to 98%."
+    },
+    {
+      "when": "You can't recall the Wells items",
+      "line": "I'd score her using the two-level Wells score; if PE is likely, CTPA now and interim anticoagulation if it's delayed."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Two-level Wells: DVT signs 3; PE most likely 3; pulse over 100 1.5; immobilised 3+ days or surgery within 4 weeks 1.5; previous VTE 1.5; haemoptysis 1; malignancy 1. More than 4 = PE likely.",
+      "source": "NG158"
+    },
+    {
+      "fact": "PE likely: CTPA immediately; interim therapeutic anticoagulation if it can't be done straight away.",
+      "source": "NG158"
+    },
+    {
+      "fact": "Hospital-acquired pneumonia starts 48 hours or more after admission; antibiotics within 4 hours.",
+      "source": "NG139"
+    },
+    {
+      "fact": "Oxygen target 94–98%, or 88–92% if at risk of hypercapnic respiratory failure.",
+      "source": "BTS"
+    }
+  ],
+  "recall": {
+    "think": "Collapse, consolidation or clot?",
+    "say": "\"Wells is 6: PE likely, CTPA now.\"",
+    "do": [
+      "Oxygen to target, ABCDE",
+      "ABG, CXR, ECG, bloods",
+      "Wells score, then CTPA or D-dimer"
+    ],
+    "numbers": [
+      {
+        "value": "> 4",
+        "meaning": "Wells: PE likely",
+        "source": "NG158"
+      },
+      {
+        "value": "94–98%",
+        "meaning": "SpO2 target (88–92% if hypercapnic risk)",
+        "source": "BTS"
+      },
+      {
+        "value": "4 h",
+        "meaning": "antibiotics for hospital-acquired pneumonia",
+        "source": "NG139"
+      }
+    ],
+    "trap": "Fever means infection.",
+    "finish": "Anticoagulate with the surgeon's agreement."
+  },
+  "sources": [
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format: 9 minutes with 1 minute's reading; examiner-led questioning in applied knowledge stations"
+    },
+    {
+      "id": "BL",
+      "name": "Bailey & Love's Short Practice of Surgery (O'Connell, McCaskie, Sayers, eds)",
+      "version": "28th edition, 2023",
+      "url": "https://www.routledge.com/Bailey--Loves-Short-Practice-of-Surgery---28th-Edition/OConnell-McCaskie-Sayers/p/book/9780367548117",
+      "supports": "Postoperative respiratory complications: atelectasis, pneumonia and PE; D-dimer after surgery"
+    },
+    {
+      "id": "NG158",
+      "name": "NICE NG158: Venous thromboembolic diseases: diagnosis, management and thrombophilia testing",
+      "version": "Published March 2020; last updated 2 August 2023",
+      "url": "https://www.nice.org.uk/guidance/ng158",
+      "supports": "Two-level PE Wells score (1.1.17, table 2); more than 4: CTPA immediately, interim therapeutic anticoagulation if delayed (1.1.18–1.1.19); 4 or less: D-dimer within 4 hours (1.1.21); apixaban or rivaroxaban (1.3.8); haemodynamic instability: UFH infusion and consider thrombolysis (1.3.12)"
+    },
+    {
+      "id": "NG139",
+      "name": "NICE NG139: Pneumonia (hospital-acquired): antimicrobial prescribing",
+      "version": "Published 16 September 2019",
+      "url": "https://www.nice.org.uk/guidance/ng139",
+      "supports": "HAP = 48 hours or more after admission; antibiotics as soon as possible and within 4 hours (1 hour if suspected sepsis with high-risk criteria)"
+    },
+    {
+      "id": "BTS",
+      "name": "BTS guideline for oxygen use in adults in healthcare and emergency settings",
+      "version": "May 2017 (2019 statement: no interim update needed)",
+      "url": "https://www.brit-thoracic.org.uk/clinical-resources/guidelines/emergency-oxygen/",
+      "supports": "Target SpO2 94–98%, or 88–92% if at risk of hypercapnic respiratory failure"
+    }
+  ],
+  "partner": {
+    "opening": "You're called to see Mrs Grant, day 4 after a right hemicolectomy. What would you do?",
+    "reveals": [
+      {
+        "trigger": "Asks about history",
+        "finding": "Sudden breathlessness an hour ago with right-sided pleuritic chest pain. No cough or sputum.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Checks the drug chart",
+        "finding": "Two doses of prophylactic enoxaparin were held yesterday for epidural removal.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Examines",
+        "finding": "Chest clear, calves soft and not swollen, abdomen soft, wound clean.",
+        "row": "G5"
+      },
+      {
+        "trigger": "Asks for an ABG (on air)",
+        "finding": "pH 7.48, PaO2 7.8 kPa, PaCO2 3.9 kPa, lactate 1.4.",
+        "row": "G3"
+      },
+      {
+        "trigger": "Asks for a chest X-ray and ECG",
+        "finding": "Minor left basal atelectasis only. ECG: sinus tachycardia 112.",
+        "row": "G3"
+      },
+      {
+        "trigger": "Asks for a CTPA",
+        "finding": "Filling defects in the right lower lobe pulmonary arteries.",
+        "row": "G4"
+      }
+    ],
+    "push": [
+      {
+        "question": "What is her Wells score?",
+        "row": "G4",
+        "expect": "6: surgery 1.5, pulse 1.5, PE most likely 3. PE likely."
+      },
+      {
+        "question": "Would a D-dimer help?",
+        "row": "G3",
+        "expect": "Little: usually raised after surgery; with Wells over 4 she needs a CTPA."
+      },
+      {
+        "question": "What anticoagulant would you choose?",
+        "row": "G6",
+        "expect": "Per NICE, apixaban or rivaroxaban; here agreed with the surgeon given bleeding risk."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "Radiology can't do the CTPA until tomorrow morning.",
+        "safeAnswer": "Interim therapeutic anticoagulation now, after discussing bleeding risk with the operating surgeon.",
+        "row": "G4"
+      },
+      {
+        "prompt": "Her BP falls to 80/50.",
+        "safeAnswer": "Possible massive PE: unfractionated heparin, consider thrombolysis, senior and critical care now.",
+        "row": "G6"
+      },
+      {
+        "prompt": "The film shows right lower lobe consolidation and she's coughing green sputum.",
+        "safeAnswer": "Hospital-acquired pneumonia: antibiotics within 4 hours per local guidance, physiotherapy.",
+        "row": "G6"
+      }
+    ]
+  }
+}

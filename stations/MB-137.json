@@ -1,0 +1,520 @@
+{
+  "id": "MB-137",
+  "exam": "MRCS-B",
+  "title": "Thyroid examination",
+  "type": "examination",
+  "header": {
+    "domain": "Applied Skills",
+    "contentArea": "Physical examination (neck)",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "signalMinutes": 6,
+    "guidelineVersions": [
+      "NICE NG145 (updated Oct 2023)",
+      "NICE NG12 (updated Apr 2026)"
+    ],
+    "related": [
+      {
+        "id": "MB-139 Examination of a lump",
+        "why": "The same lump description, applied to the neck"
+      },
+      {
+        "id": "Thyroidectomy consent",
+        "why": "Recurrent laryngeal nerve and hypocalcaemia"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Surgical outpatient clinic",
+    "role": "Core surgical trainee",
+    "scenario": "Mrs Hughes, 45, noticed a swelling in the front of her neck three months ago. She has been referred by her GP.",
+    "task": "Examine her neck. You will be stopped at 6 minutes to present your findings and answer questions."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Does it move on swallowing, what are her nodes doing, and is she euthyroid?",
+    "trap": "Palpating only from the front and forgetting the swallow during palpation.",
+    "firstMove": "Put a glass of water within reach before you start."
+  },
+  "flow": [
+    "Introduce, consent, clean hands",
+    "Inspect from front and side",
+    "Swallow and tongue tests",
+    "Palpate from behind, then nodes",
+    "Retrosternal and thyroid status",
+    "At 6 minutes: present"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "professionalism",
+      "label": "Preparation",
+      "fail": "Starts palpating without introduction, consent or hand hygiene.",
+      "pass": "Introduces, confirms identity, explains, gains consent, cleans hands; exposes the neck to the clavicles with the patient seated.",
+      "high": "Asks about pain before touching, and has water ready for the swallow test.",
+      "source": "ICBSE"
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-skill",
+      "label": "Inspection",
+      "fail": "Inspects without the swallow or tongue test.",
+      "pass": "Inspects from the front; swallow test (thyroid moves up) and tongue protrusion (thyroglossal cyst moves up).",
+      "high": "Adds inspection from the side, and looks for scars and dilated neck veins."
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-skill",
+      "label": "Palpation",
+      "fail": "Palpates from the front only, or misses the lymph nodes.",
+      "borderline": "Palpates from behind but doesn't ask her to swallow while palpating.",
+      "pass": "From behind: each lobe and the isthmus, with a swallow; then the cervical lymph nodes.",
+      "high": "Describes the lump fully (site, size, surface, consistency, mobility) and checks tracheal position."
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-skill",
+      "label": "Retrosternal extension",
+      "fail": "Omits any assessment for retrosternal extension.",
+      "pass": "Percusses over the manubrium and listens for a bruit.",
+      "high": "Performs Pemberton's test: facial plethora when both arms are raised suggests retrosternal extension."
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-skill",
+      "label": "Thyroid status",
+      "fail": "Doesn't assess thyroid status.",
+      "pass": "Pulse, hands (tremor, sweating), eyes (lid lag, exophthalmos) and reflexes.",
+      "high": "Adds eye movements for ophthalmoplegia, and proximal myopathy by standing from a chair with arms crossed."
+    },
+    {
+      "id": "G6",
+      "domain": "communication",
+      "label": "Presentation at the signal",
+      "fail": "Lists actions rather than findings, or runs past the signal.",
+      "pass": "Summarises the findings concisely and gives a most likely diagnosis with a differential.",
+      "high": "Leads with the key finding, states the important negatives (nodes, retrosternal extension, thyroid signs), then commits."
+    },
+    {
+      "id": "G7",
+      "domain": "clinical-knowledge",
+      "label": "Investigation and referral",
+      "fail": "Suggests surgery before any investigation.",
+      "pass": "TSH, ultrasound, and ultrasound-guided fine-needle aspiration if ultrasound features warrant it.",
+      "high": "Names red flags (stridor, voice change, rapid growth, cervical nodes) and a suspected cancer pathway referral for an unexplained thyroid lump.",
+      "source": "NG145"
+    },
+    {
+      "id": "G8",
+      "domain": "professionalism",
+      "label": "Closing",
+      "fail": "Leaves without thanking her or cleaning hands.",
+      "pass": "Thanks her, checks she is comfortable, cleans hands.",
+      "high": "Says what else they would examine, e.g. a full cardiovascular examination if the pulse is irregular.",
+      "source": "ICBSE"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "candidate",
+        "text": "[Starts palpating the neck from the front straight away.]",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          },
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "There's a lump on the right. It's probably a goitre.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop there. What are your findings?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I felt her neck and looked at it, and I'd like to feel it more.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you manage her?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Refer for a thyroidectomy.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "candidate",
+        "text": "Hello, I'm Dr Patel, one of the surgical trainees. Can I check your name and date of birth? I'd like to examine your neck; is that all right? Any pain? [Cleans hands.]",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Inspects from the front.] Could you take a sip of water and hold it… now swallow. And stick your tongue out for me.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[From behind.] I'm going to feel your neck now. Another sip and swallow, please. [Then the cervical nodes.]",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Percusses the manubrium; auscultates both lobes.]",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Pulse; hands; eyes for lid lag and exophthalmos; reflexes.]",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Thank you, that's all. [Cleans hands.]",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop. What are your findings?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Mrs Hughes has a 2 cm swelling in the right lobe that moves on swallowing but not with tongue protrusion. It's smooth and firm. No lymph nodes, no retrosternal extension, and she's clinically euthyroid. This is most likely a solitary thyroid nodule; the differential is a colloid nodule, adenoma, cyst or carcinoma.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you investigate?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "TSH, then ultrasound, with ultrasound-guided fine-needle aspiration if the ultrasound features warrant it.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "candidate",
+        "text": "Hello, I'm Dr Patel, one of the surgical trainees. Can I check your name and date of birth? I'd like to look at and feel your neck, and check a few things like your pulse and eyes; is that all right? Is your neck sore anywhere? [Cleans hands; water within reach.]",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Inspects from the front and side: no scars or dilated veins.] A sip of water, hold it… swallow. Now stick your tongue out.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[From behind, each lobe and the isthmus, with a swallow.] [Cervical nodes.] [Checks the trachea is central.]",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Percusses the manubrium; auscultates.] Could you raise both arms above your head and hold them there? [Watches the face.]",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Pulse, hands, lid lag, exophthalmos, eye movements.] Could you stand up from the chair with your arms crossed? [Reflexes.]",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Thank you. I'd also like to complete a full cardiovascular examination if her pulse were irregular. [Cleans hands.]",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop. What are your findings?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "A solitary nodule in the right lobe: about 2 cm, smooth, firm, moving on swallowing but not with tongue protrusion. The trachea is central. Importantly, there are no palpable nodes, no signs of retrosternal extension and no signs of thyroid dysfunction. My working diagnosis is a solitary thyroid nodule, and I need to exclude carcinoma.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you investigate, and what would worry you?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "TSH, ultrasound, and ultrasound-guided FNA if the features warrant it. Stridor, a change in voice, rapid growth or cervical nodes would worry me. An unexplained thyroid lump should be considered for a suspected cancer pathway referral.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G4",
+      "move": "Forgetting retrosternal extension.",
+      "consequence": "Misses a goitre that can compress the trachea or great veins."
+    },
+    {
+      "row": "G5",
+      "move": "Examining the lump but not thyroid status.",
+      "consequence": "A toxic nodule changes both the investigation and the management."
+    },
+    {
+      "row": "G8",
+      "move": "Ending abruptly at the signal.",
+      "consequence": "Loses the closing courtesy and the chance to say what else you'd examine."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You forgot the swallow during palpation",
+      "line": "Could I ask you to swallow once more while I feel from behind?"
+    },
+    {
+      "when": "You're asked something you can't answer",
+      "line": "I'm not certain. I'd start with TSH and an ultrasound, and discuss the result with my senior."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Moves on swallowing: thyroid. Moves with tongue protrusion: thyroglossal cyst.",
+      "source": "BL"
+    },
+    {
+      "fact": "Pemberton's sign: facial plethora on raising both arms suggests retrosternal extension.",
+      "source": "BL"
+    },
+    {
+      "fact": "Offer ultrasound for palpable thyroid enlargement when malignancy is suspected; use ultrasound guidance for FNA.",
+      "source": "NG145"
+    },
+    {
+      "fact": "Consider a suspected cancer pathway referral for an unexplained thyroid lump.",
+      "source": "NG12"
+    }
+  ],
+  "recall": {
+    "think": "Is it thyroid, is it one nodule, and is anything pressing or spreading?",
+    "say": "\"A sip of water, hold it… now swallow.\"",
+    "do": [
+      "Inspect, swallow, tongue out",
+      "Palpate from behind, then nodes",
+      "Retrosternal, then thyroid status"
+    ],
+    "numbers": [
+      {
+        "value": "6 min",
+        "meaning": "signal to stop and present",
+        "source": "ICBSE"
+      }
+    ],
+    "trap": "Front-only palpation, no swallow.",
+    "finish": "TSH, ultrasound ± guided FNA; suspected cancer pathway if unexplained."
+  },
+  "sources": [
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "At every station: introduce yourself, explain the task, confirm identity, obtain consent, clean hands before and after patient contact; 6-minute signal in examination stations"
+    },
+    {
+      "id": "BL",
+      "name": "Bailey & Love's Short Practice of Surgery (O'Connell, McCaskie, Sayers, eds)",
+      "version": "28th edition, 2023",
+      "url": "https://www.routledge.com/Bailey--Loves-Short-Practice-of-Surgery---28th-Edition/OConnell-McCaskie-Sayers/p/book/9780367548117",
+      "supports": "Examination technique and clinical signs"
+    },
+    {
+      "id": "NG145",
+      "name": "NICE NG145: Thyroid disease: assessment and management",
+      "version": "Published November 2019; last updated October 2023",
+      "url": "https://www.nice.org.uk/guidance/ng145",
+      "supports": "Ultrasound for palpable thyroid enlargement when malignancy is suspected (1.9.1); ultrasound-guided FNA (1.9.5)"
+    },
+    {
+      "id": "NG12",
+      "name": "NICE NG12: Suspected cancer: recognition and referral",
+      "version": "Published June 2015; last updated 15 April 2026",
+      "url": "https://www.nice.org.uk/guidance/ng12",
+      "supports": "Consider suspected cancer pathway referral for an unexplained thyroid lump (1.8.5)"
+    }
+  ],
+  "partner": {
+    "opening": "Please examine this patient's neck. I'll stop you at 6 minutes to present.",
+    "actorBrief": "You are Mrs Hughes, 45. You noticed the lump three months ago; it isn't painful. Swallow when asked. If asked about symptoms: no voice change, no difficulty breathing, no weight loss or palpitations.",
+    "reveals": [
+      {
+        "trigger": "Inspects and asks her to swallow",
+        "finding": "A swelling in the right side of the neck rises on swallowing.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Asks her to protrude her tongue",
+        "finding": "The swelling does not move.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Palpates from behind",
+        "finding": "Right lobe: a 2 cm smooth, firm nodule. No other nodules. Trachea central.",
+        "row": "G3"
+      },
+      {
+        "trigger": "Examines the nodes",
+        "finding": "No cervical lymphadenopathy.",
+        "row": "G3"
+      },
+      {
+        "trigger": "Percusses, auscultates or does Pemberton's",
+        "finding": "Resonant manubrium, no bruit, Pemberton's negative.",
+        "row": "G4"
+      },
+      {
+        "trigger": "Checks thyroid status",
+        "finding": "Pulse 72 regular; no tremor, lid lag or exophthalmos; normal reflexes.",
+        "row": "G5"
+      },
+      {
+        "trigger": "At 6 minutes",
+        "finding": "Say: \"Please stop there and present your findings.\"",
+        "row": "G6"
+      }
+    ],
+    "push": [
+      {
+        "question": "What's your differential?",
+        "row": "G6",
+        "expect": "Colloid nodule, adenoma, cyst, carcinoma."
+      },
+      {
+        "question": "How would you investigate?",
+        "row": "G7",
+        "expect": "TSH, ultrasound, ultrasound-guided FNA if indicated."
+      },
+      {
+        "question": "What would make this urgent?",
+        "row": "G7",
+        "expect": "Stridor, voice change, rapid growth, nodes; suspected cancer pathway."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "She now tells you her voice has become hoarse.",
+        "safeAnswer": "That's a red flag for recurrent laryngeal nerve involvement: suspected cancer pathway referral.",
+        "row": "G7"
+      },
+      {
+        "prompt": "Her pulse is irregularly irregular.",
+        "safeAnswer": "Possible AF from thyrotoxicosis: check TSH and complete a cardiovascular examination.",
+        "row": "G5"
+      },
+      {
+        "prompt": "The swelling moves up when she sticks out her tongue.",
+        "safeAnswer": "That suggests a thyroglossal cyst rather than a thyroid nodule.",
+        "row": "G2"
+      }
+    ]
+  }
+}

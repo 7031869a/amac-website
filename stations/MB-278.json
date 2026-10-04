@@ -1,0 +1,565 @@
+{
+  "id": "MB-278",
+  "exam": "MRCS-B",
+  "title": "Transient ischaemic attack: immediate management and the carotid pathway",
+  "type": "applied-knowledge",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "Vascular surgery: carotid disease and TIA (examiner viva with a duplex report)",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "NICE NG128 Stroke and TIA in over 16s (May 2019, updated April 2022)",
+      "DVLA Assessing fitness to drive: neurological disorders (updated November 2025)"
+    ],
+    "related": [
+      {
+        "id": "MB-260",
+        "why": "Carotid sheath and cranial nerve anatomy for carotid endarterectomy"
+      },
+      {
+        "id": "MB-129",
+        "why": "Intermittent claudication: the same atherosclerotic risk factors"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Emergency department",
+    "role": "Core surgical trainee on call for vascular surgery",
+    "scenario": "Mr Ryan Colquhoun, 72, had 20 minutes of weakness of his right arm and slurred speech at 08:00 today. It has fully resolved and examination now is normal. He has hypertension and smokes 20 cigarettes a day.",
+    "task": "Discuss his diagnosis and management with the examiner, who will give you further results."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Resolved focal deficit: suspected TIA. Aspirin now, specialist within 24 hours, image the carotid, fix the risk factors.",
+    "trap": "Calculating ABCD2 to decide urgency, or a CT head for everyone.",
+    "firstMove": "\"Suspected left carotid territory TIA. I'd check his glucose and give aspirin 300 mg now.\""
+  },
+  "flow": [
+    "Diagnosis and territory",
+    "Aspirin",
+    "Referral within 24 hours",
+    "Brain and carotid imaging",
+    "Interpret the duplex",
+    "Best medical treatment",
+    "Driving and safety-netting"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-knowledge",
+      "label": "Diagnosis and territory",
+      "fail": "Calls it a stroke, or reassures because symptoms have gone.",
+      "pass": "Suspected TIA in the left carotid territory: right arm weakness with speech disturbance, fully resolved.",
+      "high": "Excludes mimics: glucose, seizure, migraine aura; knows MRI can still show infarction after full recovery."
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-knowledge",
+      "label": "Immediate antiplatelet",
+      "fail": "Leaves antiplatelet treatment for the clinic.",
+      "pass": "Aspirin 300 mg daily, started immediately, unless contraindicated.",
+      "high": "Asks about anticoagulants, bleeding and aspirin allergy before giving it, and gives it in the department.",
+      "source": "NG128"
+    },
+    {
+      "id": "G3",
+      "domain": "professionalism",
+      "label": "Referral urgency",
+      "fail": "Uses the ABCD2 score to decide how soon he is seen.",
+      "pass": "Refers immediately to be seen by a stroke specialist within 24 hours of symptom onset.",
+      "high": "States NICE advises against scores such as ABCD2 because they do not reliably separate low from high risk.",
+      "source": "NG128"
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-knowledge",
+      "label": "Brain and carotid imaging",
+      "fail": "Requests a CT head for every suspected TIA.",
+      "pass": "No CT unless an alternative diagnosis CT could detect is suspected; MRI with diffusion-weighted imaging considered on the day of specialist assessment.",
+      "high": "Prioritises urgent carotid imaging for any candidate for surgery, plus ECG for atrial fibrillation.",
+      "source": "NG128"
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-knowledge",
+      "label": "Interpret the duplex and decide on surgery",
+      "fail": "Ignores which side is symptomatic, or operates on any stenosis.",
+      "pass": "Left ICA stenosis 50 to 99% (NASCET) on the symptomatic side: urgent referral for carotid endarterectomy plus best medical treatment.",
+      "high": "Checks the report states NASCET or ECST; below 50% NASCET, best medical treatment only; the asymptomatic right side is not the target.",
+      "source": "NG128"
+    },
+    {
+      "id": "G6",
+      "domain": "professionalism",
+      "label": "Best medical treatment",
+      "fail": "Mentions surgery only.",
+      "pass": "Antiplatelet therapy, high-intensity statin, blood pressure control, smoking cessation, and checks for diabetes and atrial fibrillation.",
+      "high": "Offers smoking cessation support today and explains that surgery adds to, not replaces, medical treatment."
+    },
+    {
+      "id": "G7",
+      "domain": "communication",
+      "label": "Driving and safety-netting",
+      "fail": "Gives no advice on driving or recurrence.",
+      "pass": "No driving for 1 month as a car driver; call 999 immediately if symptoms return.",
+      "high": "A single TIA does not need DVLA notification for a car licence; bus or lorry licences have stricter rules.",
+      "source": "DVLA"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "What is the diagnosis?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "It's resolved, so it was probably nothing serious.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How urgently should he be seen?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd work out his ABCD2 score. If it's low, clinic next week.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What imaging?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "A CT head now, like every TIA.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The duplex shows 80% stenosis of the right ICA and 40% on the left."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Then he needs a right carotid endarterectomy.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Can he drive home?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Yes, he's back to normal.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "examiner",
+        "text": "What is the diagnosis?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Suspected TIA in the left carotid territory: right arm weakness and speech disturbance that fully resolved.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What do you do now?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Aspirin 300 mg now, unless contraindicated.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How urgently should he be seen?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Refer immediately to be seen by a stroke specialist within 24 hours of symptom onset.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Imaging?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "No CT unless I suspect an alternative diagnosis it could show. The stroke team may do MRI with diffusion-weighted imaging on the day, and he needs carotid imaging.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Duplex: 75% stenosis of the left ICA by NASCET criteria; 30% on the right."
+      },
+      {
+        "speaker": "candidate",
+        "text": "That's a symptomatic 50 to 99% stenosis, so urgent referral for carotid endarterectomy, with best medical treatment.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What is best medical treatment?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Antiplatelet, a high-intensity statin, blood pressure control, stopping smoking, and checking for diabetes and atrial fibrillation.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Anything else?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "No driving for a month, and call 999 if symptoms come back.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "examiner",
+        "text": "What is the diagnosis?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "A suspected left hemisphere TIA. I'd check his glucose and ask about headache or seizure to exclude a mimic. Even with full recovery, MRI can show a small infarct.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Aspirin?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Yes, 300 mg here in the department, once I've checked he isn't on an anticoagulant and has no bleeding or aspirin allergy.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Wouldn't his ABCD2 score help?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "NICE advises against using it: scores don't reliably separate low from high risk, so everyone is seen within 24 hours.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Which imaging matters most for you?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Urgent carotid duplex, because it decides whether he needs surgery. An ECG too, as atrial fibrillation would change treatment to anticoagulation.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Duplex: 75% stenosis of the left ICA; 30% on the right."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd check the report states NASCET. The left is the symptomatic side and meets the threshold; the right doesn't. Below 50% NASCET he'd have medical treatment only.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "He asks if the operation fixes everything."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Surgery adds to tablets, it doesn't replace them. Stopping smoking is the biggest thing he can do, and I'd refer him for support today.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "He drives a bus part-time."
+      },
+      {
+        "speaker": "candidate",
+        "text": "For his car licence, no driving for a month and no need to tell the DVLA. Bus licences have stricter rules, so he must not drive the bus and must check them.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G2",
+      "move": "Waiting for clinic before starting aspirin.",
+      "consequence": "Stroke risk is highest in the first days, when aspirin gives most benefit."
+    },
+    {
+      "row": "G3",
+      "move": "Using a low ABCD2 score to delay assessment.",
+      "consequence": "A high-risk patient waits and may have a disabling stroke."
+    },
+    {
+      "row": "G5",
+      "move": "Offering surgery on the asymptomatic side.",
+      "consequence": "Exposes him to operative risk without treating the source of his TIA."
+    },
+    {
+      "row": "G6",
+      "move": "Discussing surgery without statin, blood pressure and smoking treatment.",
+      "consequence": "Recurrent vascular events are more likely."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You mentioned ABCD2",
+      "line": "Actually NICE advises against using ABCD2 for urgency; he should be seen within 24 hours regardless."
+    },
+    {
+      "when": "You asked for a CT head",
+      "line": "A CT only helps if I suspect an alternative diagnosis; carotid imaging is what changes his management."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Suspected TIA: aspirin 300 mg immediately unless contraindicated; specialist within 24 hours.",
+      "source": "NG128"
+    },
+    {
+      "fact": "Do not use ABCD2 or other scores to decide urgency.",
+      "source": "NG128"
+    },
+    {
+      "fact": "No CT unless an alternative diagnosis CT could detect is suspected; consider same-day MRI after specialist assessment.",
+      "source": "NG128"
+    },
+    {
+      "fact": "Symptomatic 50 to 99% NASCET: urgent referral for endarterectomy plus best medical treatment; below 50%: no surgery. Reports must state NASCET or ECST.",
+      "source": "NG128"
+    },
+    {
+      "fact": "Car drivers must not drive for 1 month after a single TIA; DVLA need not be told.",
+      "source": "DVLA"
+    }
+  ],
+  "recall": {
+    "think": "Early stroke from a symptomatic carotid stenosis.",
+    "say": "\"Suspected left carotid territory TIA: aspirin now, specialist within 24 hours.\"",
+    "do": [
+      "Glucose; aspirin 300 mg",
+      "Refer: seen within 24 hours",
+      "Urgent carotid duplex"
+    ],
+    "numbers": [
+      {
+        "value": "300 mg",
+        "meaning": "aspirin immediately",
+        "source": "NG128"
+      },
+      {
+        "value": "24 hours",
+        "meaning": "to specialist assessment",
+        "source": "NG128"
+      },
+      {
+        "value": "50–99% NASCET",
+        "meaning": "symptomatic: refer for endarterectomy",
+        "source": "NG128"
+      }
+    ],
+    "trap": "Using ABCD2 to decide urgency.",
+    "finish": "Urgent endarterectomy plus best medical treatment."
+  },
+  "sources": [
+    {
+      "id": "NG128",
+      "name": "NICE NG128: Stroke and transient ischaemic attack in over 16s: diagnosis and initial management",
+      "version": "Published 1 May 2019; last updated 13 April 2022",
+      "url": "https://www.nice.org.uk/guidance/ng128",
+      "supports": "Aspirin 300 mg started immediately for suspected TIA unless contraindicated (1.1.4); refer immediately to be seen within 24 hours of symptom onset (1.1.5); do not use scoring systems such as ABCD2 to assess risk or urgency (1.1.6); no CT brain unless an alternative diagnosis CT could detect is suspected (1.1.8); consider same-day MRI with diffusion-weighted and blood-sensitive sequences after specialist assessment (1.1.9); urgent carotid imaging for candidates for endarterectomy; symptomatic stenosis 50-99% NASCET: assess and refer urgently for carotid endarterectomy plus best medical treatment (1.2.4); under 50% NASCET: no surgery, best medical treatment (1.2.5); reports must state NASCET or ECST criteria"
+    },
+    {
+      "id": "DVLA",
+      "name": "DVLA. Assessing fitness to drive: a guide for medical professionals. Neurological disorders",
+      "version": "Last updated 7 November 2025",
+      "url": "https://www.gov.uk/guidance/neurological-disorders-assessing-fitness-to-drive",
+      "supports": "Single TIA, Group 1 (car and motorcycle): must not drive for 1 month; need not notify DVLA"
+    },
+    {
+      "id": "BL",
+      "name": "Bailey & Love's Short Practice of Surgery (O'Connell, McCaskie, Sayers, eds)",
+      "version": "28th edition, 2023",
+      "url": "https://www.routledge.com/Bailey--Loves-Short-Practice-of-Surgery---28th-Edition/OConnell-McCaskie-Sayers/p/book/9780367548117",
+      "supports": "Carotid artery disease: TIA presentation, duplex assessment and best medical treatment"
+    },
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format: 9 minutes with 1 minute's reading; examiner-led questioning in applied knowledge stations"
+    }
+  ],
+  "partner": {
+    "opening": "Mr Colquhoun had 20 minutes of right arm weakness and slurred speech this morning. He is now back to normal. What is the diagnosis, and what would you do?",
+    "actorBrief": "You are the examiner. Give results only when asked. If the candidate mentions ABCD2 or a CT head, ask why.",
+    "reveals": [
+      {
+        "trigger": "Asks for glucose, ECG or observations",
+        "finding": "Capillary glucose 6.1 mmol/L. ECG sinus rhythm 78. BP 164/92. Neurological examination normal.",
+        "row": "G1"
+      },
+      {
+        "trigger": "Asks about drugs and bleeding",
+        "finding": "Ramipril only. No anticoagulant, no bleeding history, no allergies.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Asks for carotid imaging",
+        "finding": "Carotid duplex: left ICA stenosis 75% (NASCET criteria), heterogeneous plaque; right ICA 30%.",
+        "row": "G5"
+      }
+    ],
+    "push": [
+      {
+        "question": "What is the diagnosis?",
+        "row": "G1",
+        "expect": "Suspected TIA, left carotid territory; exclude mimics such as hypoglycaemia."
+      },
+      {
+        "question": "What treatment now?",
+        "row": "G2",
+        "expect": "Aspirin 300 mg immediately unless contraindicated."
+      },
+      {
+        "question": "How urgently must he be seen, and would ABCD2 help?",
+        "row": "G3",
+        "expect": "Within 24 hours; do not use ABCD2 to decide."
+      },
+      {
+        "question": "Does he need a CT head?",
+        "row": "G4",
+        "expect": "Not unless an alternative diagnosis is suspected; MRI after specialist assessment; urgent carotid imaging."
+      },
+      {
+        "question": "Interpret the duplex. What next?",
+        "row": "G5",
+        "expect": "Symptomatic 50-99% NASCET: urgent endarterectomy referral plus best medical treatment."
+      },
+      {
+        "question": "What advice before he goes?",
+        "row": "G7",
+        "expect": "No driving for 1 month; 999 if symptoms recur."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "His ECG shows atrial fibrillation.",
+        "safeAnswer": "A cardioembolic source is possible: discuss anticoagulation with the stroke team; carotid imaging is still needed.",
+        "row": "G4"
+      },
+      {
+        "prompt": "The duplex shows the left ICA is occluded.",
+        "safeAnswer": "An occluded artery is not treated by endarterectomy: best medical treatment and stroke team follow-up.",
+        "row": "G5"
+      },
+      {
+        "prompt": "He has another episode of arm weakness while waiting.",
+        "safeAnswer": "Treat as a possible acute stroke: call the stroke team immediately for urgent brain imaging and thrombolysis assessment.",
+        "row": "G3"
+      }
+    ]
+  }
+}

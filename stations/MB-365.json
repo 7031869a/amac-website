@@ -1,0 +1,418 @@
+{
+  "id": "MB-365",
+  "exam": "MRCS-B",
+  "title": "Genetic risk assessment: referral for BRCA testing",
+  "type": "communication",
+  "header": {
+    "domain": "Applied Skills",
+    "contentArea": "Genetic risk assessment and referral in breast cancer",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "NICE CG164: Familial breast cancer (published June 2013; last updated November 2023)",
+      "GMC: Good Medical Practice (in effect 30 January 2024)"
+    ],
+    "related": [
+      {
+        "id": "MB-364",
+        "why": "The upcoming surgery that a genetic result could influence"
+      },
+      {
+        "id": "MB-357",
+        "why": "The original diagnosis this risk assessment builds on"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Breast clinic, before her mastectomy",
+    "role": "Core surgical trainee",
+    "scenario": "Ms Rachel Linford, 43, was diagnosed with breast cancer at 42 and has now had a local recurrence. Her aunt had breast cancer at 60. She asks whether her cancer could be genetic.",
+    "task": "Discuss whether genetic testing may be relevant and what a referral would involve. You have 7 minutes."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Take a brief, focused family history, explain what genetic testing could mean for her and her family, and refer to clinical genetics rather than predicting a result.",
+    "trap": "Either dismissing her question because her family history seems mild, or overstating that she \"probably has the gene\" without assessment.",
+    "firstMove": "\"That's a reasonable question - can I get more detail about your family history first?\""
+  },
+  "flow": [
+    "Explore her question and what prompted it",
+    "Focused family history",
+    "Explain what genetic testing could show and why it might be considered",
+    "Explain the referral process",
+    "Address concerns and next steps"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "communication",
+      "label": "Exploring the question",
+      "fail": "Dismisses the question without exploring why she is asking.",
+      "pass": "Asks what has prompted her question and takes it seriously.",
+      "high": "Explores any specific worry underneath the question, such as risk to a daughter or sibling."
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-skill",
+      "label": "Family history",
+      "fail": "Does not ask about family history at all, or asks about only one relative.",
+      "pass": "Takes a focused history covering close relatives, ages at diagnosis, and type of cancer (breast, ovarian, and relevant others).",
+      "high": "Also asks about paternal-side family history and any relatives who have already had genetic testing."
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "Explaining relevance for testing",
+      "fail": "States definitively that she does or does not have a genetic cause without proper assessment.",
+      "pass": "Explains that features such as young age at diagnosis and the pattern of family history can raise the likelihood of an inherited cause, warranting formal risk assessment.",
+      "high": "Explains this without alarming her, framing it as one possible explanation among several rather than a likely certainty.",
+      "source": "CG164"
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-knowledge",
+      "label": "Explaining the referral and testing process",
+      "fail": "Cannot explain what a genetics referral or test would involve.",
+      "pass": "Explains referral to clinical genetics for formal risk assessment, which may lead to a blood test looking for specific gene changes (e.g. BRCA1/BRCA2).",
+      "high": "Mentions that a positive result could also have implications for relatives, and that this is something the genetics team will discuss with her directly.",
+      "source": "CG164"
+    },
+    {
+      "id": "G5",
+      "domain": "communication",
+      "label": "Addressing concerns",
+      "fail": "Dismisses a specific worry (e.g. about her daughter) without addressing it.",
+      "pass": "Responds to a specific concern she raises, such as implications for family members, honestly and sensitively.",
+      "high": "Checks how she is feeling about the possibility of a genetic result before moving on, rather than only providing facts."
+    },
+    {
+      "id": "G6",
+      "domain": "professionalism",
+      "label": "Next steps and closing",
+      "fail": "Ends without a clear next step or timeframe.",
+      "pass": "Confirms she will be referred to clinical genetics and explains roughly what to expect next.",
+      "high": "Clarifies that this referral does not need to delay her planned surgery, addressing an unspoken worry about timing."
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "patient",
+        "text": "Could this be genetic? My aunt had breast cancer too."
+      },
+      {
+        "speaker": "candidate",
+        "text": "One aunt isn't really significant, I wouldn't worry about it.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          },
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "Are you sure? I was quite young when I was diagnosed."
+      },
+      {
+        "speaker": "candidate",
+        "text": "It's probably just bad luck.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "candidate",
+        "text": "That's a reasonable thing to ask - what's made you think about it?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "My aunt had breast cancer at 60, and I was only 42."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Can I ask a bit more - any other relatives with breast, ovarian or related cancers, and at what ages?",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "Just my aunt, as far as I know."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Being diagnosed at a younger age, along with a family history like this, can sometimes point towards an inherited cause, so it's worth having this properly assessed.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "What would that involve?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd refer you to the clinical genetics team, who assess your risk in detail and may offer a blood test looking for specific gene changes, like BRCA1 or BRCA2.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "Would this affect my daughter?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "If a gene change were found, it could be relevant for close relatives too, and the genetics team would talk that through with you directly.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'll put the referral in now - it won't delay your planned surgery.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "candidate",
+        "text": "That's a really reasonable question - what's made you think about it?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "My aunt had it too, and I keep thinking about my daughter."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Can I ask more - which side of the family, any other relatives with breast, ovarian, or related cancers, and at what ages, and has anyone already had genetic testing?",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "My mother's sister, at 60. No one else that I know of, and no one's been tested."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Being diagnosed at 42, together with that family history, is a pattern that's worth having formally assessed - it doesn't mean there is definitely an inherited cause, but it's one possibility among others worth checking.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "What would testing actually involve?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd refer you to clinical genetics, who'll assess your risk properly and may offer a blood test for specific gene changes like BRCA1 or BRCA2. If a change is found, it can have implications for your daughter and other close relatives too, which the genetics team would go through with you.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          },
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "Will this delay my surgery?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "No, I'll put the referral in now, and it can run alongside your surgical planning rather than delaying it.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G2",
+      "move": "Dismissing family history based on a single relative without exploring further detail.",
+      "consequence": "Risks under-recognising a genuine inherited risk pattern that a fuller history would have revealed."
+    },
+    {
+      "row": "G3",
+      "move": "Attributing the cancer to \"bad luck\" without proper risk assessment.",
+      "consequence": "Denies her access to a referral that could be clinically and personally significant, both for her and her relatives."
+    },
+    {
+      "row": "G6",
+      "move": "Leaving her unsure whether this will delay planned surgery.",
+      "consequence": "An unaddressed timing worry can cause unnecessary anxiety or reluctance around the referral."
+    },
+    {
+      "row": "G4",
+      "move": "Cannot explain what a genetics referral or the possible testing would involve.",
+      "consequence": "Leaves her unable to decide whether to accept the referral or know what to expect."
+    },
+    {
+      "row": "G5",
+      "move": "Dismissing her worry about her daughter without addressing it.",
+      "consequence": "Leaves a specific, understandable fear unanswered, undermining trust in the referral."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You dismissed her family history too quickly",
+      "line": "Let me actually take a proper history here rather than assuming it isn't significant."
+    },
+    {
+      "when": "You didn't mention the referral wouldn't delay surgery",
+      "line": "I should say - this referral won't hold up your planned operation."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Young age at diagnosis combined with a family history of breast or ovarian cancer are factors used to assess likelihood of an inherited breast cancer predisposition.",
+      "source": "CG164"
+    },
+    {
+      "fact": "Clinical genetics referral involves formal risk assessment, and may lead to testing for gene changes such as BRCA1 or BRCA2.",
+      "source": "CG164"
+    },
+    {
+      "fact": "A positive genetic test result can have implications for blood relatives, which is discussed as part of genetic counselling."
+    }
+  ],
+  "recall": {
+    "think": "Take the question seriously; get family history first; refer, don't diagnose.",
+    "say": "\"That's a reasonable question to ask.\"",
+    "do": [
+      "Explore what prompted the question; take a focused family history",
+      "Explain referral allows proper risk assessment, without predicting the result",
+      "Confirm the referral won't delay surgery"
+    ],
+    "numbers": [
+      {
+        "value": "50%",
+        "meaning": "chance a first-degree relative carries the same inherited gene change, if one is found",
+        "source": "CG164"
+      }
+    ],
+    "trap": "Dismissing family history as insignificant, or predicting a result, without assessment.",
+    "finish": "Genetics referral made; won't delay her surgery."
+  },
+  "sources": [
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format and timing"
+    },
+    {
+      "id": "CG164",
+      "name": "NICE CG164: Familial breast cancer: classification, care and managing breast cancer and related risks in people with a family history of breast cancer",
+      "version": "Published June 2013; last updated November 2023",
+      "url": "https://www.nice.org.uk/guidance/cg164",
+      "supports": "Assessing likelihood of an inherited breast cancer predisposition, referral for genetic testing, implications of a pathogenic variant for the patient and relatives, and that first-degree relatives of a carrier have up to a 50% chance of carrying the same variant"
+    },
+    {
+      "id": "GMC",
+      "name": "GMC: Good Medical Practice",
+      "version": "In effect 30 January 2024",
+      "url": "https://www.gmc-uk.org/professional-standards/the-professional-standards/good-medical-practice",
+      "supports": "Honest, sensitive communication of serious news and giving patients the information they need in a way they can understand"
+    }
+  ],
+  "partner": {
+    "opening": "This patient has asked whether her cancer could be genetic. Please discuss this with her. You have 7 minutes.",
+    "actorBrief": "You are Rachel Linford, 43, diagnosed at 42 with a subsequent recurrence. Your maternal aunt had breast cancer at 60. You are worried about what this might mean for your children, and separately worried a referral might delay your planned surgery.",
+    "reveals": [
+      {
+        "trigger": "Candidate explores what prompted your question",
+        "finding": "You reveal you're mainly worried about your daughter's risk.",
+        "row": "G1"
+      },
+      {
+        "trigger": "Candidate takes a fuller family history",
+        "finding": "Only one affected relative (maternal aunt, age 60), no one else affected, no one previously tested.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Candidate explains the referral clearly",
+        "finding": "You ask directly whether this will delay your surgery.",
+        "row": "G6"
+      }
+    ],
+    "push": [
+      {
+        "question": "Would this affect my daughter?",
+        "row": "G5",
+        "expect": "Explain that a positive result could have implications for close relatives, without overstating certainty, and that genetics would discuss this directly."
+      },
+      {
+        "question": "Will this delay my surgery?",
+        "row": "G6",
+        "expect": "Confirm the referral can proceed alongside surgical planning without delaying the operation."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "What if I don't want to know the result?",
+        "safeAnswer": "Acknowledge that whether to proceed with testing, and how much information to receive, is her choice, which the genetics team will discuss with her directly.",
+        "row": "G5"
+      },
+      {
+        "prompt": "My sister doesn't want to know if I test positive - is that allowed?",
+        "safeAnswer": "Acknowledge this is a valid concern, note that genetic counselling addresses how and whether information is shared with relatives, and avoid giving a definitive answer beyond your competence.",
+        "row": "G5"
+      }
+    ]
+  }
+}

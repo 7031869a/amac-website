@@ -1,0 +1,572 @@
+{
+  "id": "MB-157",
+  "exam": "MRCS-B",
+  "title": "Knee examination",
+  "type": "examination",
+  "header": {
+    "domain": "Applied Skills",
+    "contentArea": "Clinical and procedural skills",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "signalMinutes": 6,
+    "guidelineVersions": [
+      "NICE NG226 (Oct 2022)",
+      "Ottawa knee rule (Stiell 1995; 1996)"
+    ],
+    "related": [
+      {
+        "id": "MB-140 Hip examination",
+        "why": "The joint above, and a source of referred knee pain"
+      },
+      {
+        "id": "Knee replacement consent",
+        "why": "Infection, VTE and persistent pain"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Orthopaedic clinic",
+    "role": "Core surgical trainee",
+    "scenario": "Mrs Sandra Lewis, 58, has had pain on the inner side of her right knee for 18 months. It is worse on walking and stairs.",
+    "task": "Examine her right knee. You will be stopped at 6 minutes to present your findings and answer questions."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Gait and look standing, then feel, move, stability, and the hip above.",
+    "trap": "Doing the anterior drawer before looking for a posterior sag.",
+    "firstMove": "\"Could I watch you walk to the end of the room and back?\""
+  },
+  "flow": [
+    "Introduce, consent, clean hands",
+    "Gait and look standing",
+    "Feel and effusion tests",
+    "Move",
+    "Ligaments and menisci",
+    "Hip and neurovascular",
+    "At 6 minutes: present"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "professionalism",
+      "label": "Preparation",
+      "fail": "Starts moving the knee without asking about pain.",
+      "pass": "Introduces, confirms identity, gains consent, asks about pain, cleans hands, exposes both legs above the knee.",
+      "high": "Watches her face throughout and compares with the left knee at each step.",
+      "source": "ICBSE"
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-skill",
+      "label": "Gait and look",
+      "fail": "Examines only on the couch.",
+      "pass": "Watches gait; inspects standing for varus or valgus, swelling, scars, quadriceps wasting, and the popliteal fossa.",
+      "high": "Links findings: varus with medial pain suggests medial compartment osteoarthritis; looks for a popliteal (Baker's) cyst."
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-skill",
+      "label": "Feel and effusion",
+      "fail": "Omits effusion tests.",
+      "pass": "Temperature; joint-line tenderness with the knee flexed; sweep test, then patellar tap.",
+      "high": "Explains that the sweep test detects a small effusion the patellar tap can miss, and that a hot joint changes the diagnosis."
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-skill",
+      "label": "Movement",
+      "fail": "Moves the knee passively only.",
+      "pass": "Active then passive flexion and extension, feeling for crepitus; straight-leg raise for the extensor mechanism.",
+      "high": "Checks for a fixed flexion deformity by lifting the heel, and states the range of movement."
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-skill",
+      "label": "Ligament tests",
+      "fail": "Performs the anterior drawer without checking for a posterior sag.",
+      "pass": "Collateral ligaments in slight flexion and full extension; Lachman; posterior sag; then anterior and posterior drawer.",
+      "high": "Explains that a posterior sag can make the anterior drawer look falsely positive."
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-skill",
+      "label": "Meniscal test and completion",
+      "fail": "Diagnoses or excludes a tear on McMurray's alone.",
+      "pass": "Performs McMurray's gently; examines the hip and distal neurovascular status.",
+      "high": "States McMurray's has pooled sensitivity and specificity of about 70%, so a negative test doesn't exclude a tear.",
+      "source": "MEN"
+    },
+    {
+      "id": "G7",
+      "domain": "communication",
+      "label": "Presentation at the signal",
+      "fail": "Lists actions rather than findings.",
+      "pass": "Summarises the positive findings and gives a most likely diagnosis.",
+      "high": "Leads with the key findings, states the important negatives (stable ligaments, normal hip), and commits."
+    },
+    {
+      "id": "G8",
+      "domain": "clinical-knowledge",
+      "label": "Diagnosis and management",
+      "fail": "Asks for an MRI or arthroscopy to diagnose osteoarthritis.",
+      "borderline": "Makes the diagnosis clinically but still asks for an MRI 'to be sure'.",
+      "pass": "Diagnoses osteoarthritis clinically: 45 or over, activity-related pain, and no morning stiffness or 30 minutes or less.",
+      "high": "Offers therapeutic exercise first, not arthroscopic washout, and refers for replacement on quality of life, not scores.",
+      "source": "NG226"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "candidate",
+        "text": "[Asks her to lie down and starts bending the knee without asking about pain.]",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          },
+          {
+            "row": "G2",
+            "band": "fail"
+          },
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Skips the effusion tests.] It's not swollen.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Pulls the tibia forward straight away.] The drawer's positive, so the ACL has gone.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[McMurray's.] No click, so no meniscal tear.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop. Your findings?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I examined the knee and the ligaments.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you confirm the diagnosis?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "An MRI, and probably an arthroscopy.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "candidate",
+        "text": "Hello, I'm Dr Patel. Can I confirm your name and date of birth? I'd like to examine your right knee. Is it painful now? [Consent; cleans hands; exposes both legs.]",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Could you walk to the end of the room and back? [Inspects standing from front, side and behind.]",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Back of the hand for temperature; joint lines with the knee bent; sweep test; patellar tap.]",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Bend and straighten your knee for me… now let me move it. [Feels for crepitus.] Could you lift your leg straight off the bed?",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Collaterals; Lachman; looks for posterior sag; anterior and posterior drawer.]",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[McMurray's, gently.] I'd also examine the hip and check the pulses and sensation. Thank you. [Cleans hands.]",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop. Your findings?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Mrs Lewis has an antalgic gait, a mild varus deformity of the right knee, a small effusion on the sweep test, medial joint-line tenderness and crepitus, with flexion to 110 degrees. The ligaments are stable. This is most likely medial compartment osteoarthritis.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you confirm it?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "It can be diagnosed clinically: she's over 45 with activity-related pain and short morning stiffness.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "candidate",
+        "text": "Hello, I'm Dr Patel. Can I confirm your name and date of birth? I'd like to watch you walk and then examine both knees, starting with the good one. Tell me if anything hurts. [Cleans hands; watches her face throughout.]",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Gait; standing: mild varus, quadriceps wasting.] Varus with medial pain points to the medial compartment. [Checks the popliteal fossa for a Baker's cyst.]",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Temperature, joint lines, sweep test.] The sweep test picks up a small effusion that a patellar tap can miss. The knee isn't hot, which is reassuring.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Active and passive movement; crepitus; straight-leg raise; lifts the heel to check for fixed flexion.] Flexion is to about 110 degrees and she lacks 5 degrees of extension.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Collaterals.] Before the drawer I'll look for a posterior sag, because that can make the anterior drawer look falsely positive. [Lachman; drawers.]",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[McMurray's, gently.] A negative McMurray's doesn't exclude a tear; its sensitivity is only about 70%. [Hip; pulses and sensation.] Thank you. [Cleans hands.]",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop. Your findings?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Right knee: mild varus, a small effusion, medial joint-line tenderness, crepitus and a 5 degree fixed flexion deformity. Importantly, the ligaments are stable and the hip is normal. This is medial compartment osteoarthritis.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you manage her?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "It's a clinical diagnosis, so no MRI. I'd start with therapeutic exercise and, if relevant, weight loss. Arthroscopic washout isn't offered. If her symptoms substantially affect her quality of life despite that, I'd refer for knee replacement on clinical assessment, not scores.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G2",
+      "move": "Examining only on the couch.",
+      "consequence": "Misses the varus deformity and antalgic gait that point to medial compartment disease."
+    },
+    {
+      "row": "G5",
+      "move": "Calling a positive anterior drawer an ACL tear without checking for a posterior sag.",
+      "consequence": "Mistakes a posterior cruciate injury for an anterior one."
+    },
+    {
+      "row": "G6",
+      "move": "Not examining the hip.",
+      "consequence": "Hip disease often presents as knee pain and is missed."
+    },
+    {
+      "row": "G8",
+      "move": "Requesting an MRI or arthroscopy to diagnose osteoarthritis.",
+      "consequence": "Delays treatment and goes against NICE, which advises clinical diagnosis without routine imaging."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You did the drawer before checking for a sag",
+      "line": "Let me look for a posterior sag first, because that changes how I read the drawer test."
+    },
+    {
+      "when": "You forgot the hip",
+      "line": "Before I finish, I'd like to examine the hip, because hip pain can be felt in the knee."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Diagnose osteoarthritis clinically without imaging at 45 or over with activity-related pain and no morning stiffness or stiffness of 30 minutes or less.",
+      "source": "NG226"
+    },
+    {
+      "fact": "Offer tailored therapeutic exercise; do not offer arthroscopic lavage or debridement.",
+      "source": "NG226"
+    },
+    {
+      "fact": "Ottawa knee rule after injury: X-ray if 55 or over, isolated patellar tenderness, fibular head tenderness, can't flex to 90 degrees, or can't bear weight for four steps both immediately and in the ED.",
+      "source": "OKR"
+    },
+    {
+      "fact": "McMurray's: pooled sensitivity 70%, specificity 71%.",
+      "source": "MEN"
+    }
+  ],
+  "recall": {
+    "think": "Is this osteoarthritis, or is something unstable, hot or referred from the hip?",
+    "say": "\"Could I watch you walk?\"",
+    "do": [
+      "Look standing: varus, valgus, popliteal fossa",
+      "Sweep test, then patellar tap",
+      "Posterior sag before the drawer; then the hip"
+    ],
+    "numbers": [
+      {
+        "value": "45+ and ≤ 30 min",
+        "meaning": "clinical OA: age and morning stiffness",
+        "source": "NG226"
+      },
+      {
+        "value": "55+",
+        "meaning": "Ottawa knee rule: X-ray after injury",
+        "source": "OKR"
+      },
+      {
+        "value": "6 min",
+        "meaning": "signal to stop and present",
+        "source": "ICBSE"
+      }
+    ],
+    "trap": "A negative McMurray's doesn't exclude a tear.",
+    "finish": "Clinical diagnosis; exercise first; refer on symptoms, not scores."
+  },
+  "sources": [
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "At every station: introduce yourself, explain the task, confirm identity, obtain consent, clean hands before and after patient contact; 6-minute signal in examination stations"
+    },
+    {
+      "id": "BL",
+      "name": "Bailey & Love's Short Practice of Surgery (O'Connell, McCaskie, Sayers, eds)",
+      "version": "28th edition, 2023",
+      "url": "https://www.routledge.com/Bailey--Loves-Short-Practice-of-Surgery---28th-Edition/OConnell-McCaskie-Sayers/p/book/9780367548117",
+      "supports": "Examination technique and clinical signs"
+    },
+    {
+      "id": "NG226",
+      "name": "NICE NG226: Osteoarthritis in over 16s: diagnosis and management",
+      "version": "Published October 2022",
+      "url": "https://www.nice.org.uk/guidance/ng226",
+      "supports": "Clinical diagnosis without imaging (1.1.1–1.1.2); therapeutic exercise (1.3.1); referral for joint replacement (1.6.1–1.6.3); no arthroscopic lavage or debridement (1.7.1)"
+    },
+    {
+      "id": "OKR",
+      "name": "Ottawa knee rule. Stiell IG et al. Derivation: Ann Emerg Med 1995;26(4):405–13. Prospective validation: JAMA 1996;275(8):611–5",
+      "version": "1995 (derivation); 1996 (validation)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/8594242/",
+      "supports": "Knee radiograph after acute injury if any of: age 55 or older; tenderness at the head of the fibula; isolated tenderness of the patella; inability to flex to 90 degrees; inability to bear weight both immediately and in the emergency department (four steps). Validation sensitivity 1.0 for 63 clinically important fractures"
+    },
+    {
+      "id": "MEN",
+      "name": "Hegedus EJ et al. Physical examination tests for assessing a torn meniscus in the knee: a systematic review with meta-analysis. J Orthop Sports Phys Ther 2007;37(9):541–50",
+      "version": "September 2007",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/17939613/",
+      "supports": "McMurray's test pooled sensitivity 70% and specificity 71%; no single test accurately diagnoses a torn meniscus"
+    }
+  ],
+  "partner": {
+    "opening": "Please examine this patient's right knee. I'll stop you at 6 minutes.",
+    "actorBrief": "You are Mrs Sandra Lewis, 58, a school cook. Pain on the inner side of the right knee for 18 months, worse on stairs and at the end of the day. Morning stiffness about 15 minutes. No injury, no locking or giving way. Flinch a little when the inner joint line is pressed.",
+    "reveals": [
+      {
+        "trigger": "Watches the gait",
+        "finding": "Mildly antalgic gait on the right.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Inspects standing",
+        "finding": "Mild varus of the right knee, mild quadriceps wasting, no scars. Popliteal fossa normal.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Feels and tests for effusion",
+        "finding": "Not warm. Medial joint-line tenderness. Sweep test positive; patellar tap negative.",
+        "row": "G3"
+      },
+      {
+        "trigger": "Tests movement",
+        "finding": "Flexion to 110 degrees; lacks 5 degrees of full extension; crepitus. Straight-leg raise intact.",
+        "row": "G4"
+      },
+      {
+        "trigger": "Tests ligaments",
+        "finding": "No posterior sag. Lachman and drawers have firm end points. Collaterals stable.",
+        "row": "G5"
+      },
+      {
+        "trigger": "McMurray's, hip, neurovascular",
+        "finding": "Medial discomfort, no click. Hip: full, painless range. Pulses and sensation normal.",
+        "row": "G6"
+      },
+      {
+        "trigger": "At 6 minutes",
+        "finding": "Say: \"Please stop there and present your findings.\"",
+        "row": "G7"
+      }
+    ],
+    "push": [
+      {
+        "question": "Does she need imaging to diagnose osteoarthritis?",
+        "row": "G8",
+        "expect": "No: clinical diagnosis at 45 or over with activity-related pain and short or no morning stiffness."
+      },
+      {
+        "question": "Why check for a posterior sag first?",
+        "row": "G5",
+        "expect": "A sag can make the anterior drawer look falsely positive."
+      },
+      {
+        "question": "Why examine the hip?",
+        "row": "G6",
+        "expect": "Hip pain can be felt in the knee."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "A 30-year-old twisted his knee playing football. When does he need an X-ray?",
+        "safeAnswer": "Ottawa knee rule: any of age 55 or over, tenderness of the fibular head, isolated patellar tenderness, can't flex to 90 degrees, or can't take four steps both immediately and in the ED.",
+        "row": "G8"
+      },
+      {
+        "prompt": "The knee is hot and swollen and she has a fever.",
+        "safeAnswer": "Not osteoarthritis until septic arthritis is excluded: urgent aspiration and senior review.",
+        "row": "G3"
+      },
+      {
+        "prompt": "She asks for a keyhole washout.",
+        "safeAnswer": "NICE advises against arthroscopic lavage or debridement for osteoarthritis.",
+        "row": "G8"
+      },
+      {
+        "prompt": "The anterior drawer is positive, and the tibia sags backwards at rest.",
+        "safeAnswer": "That suggests a posterior cruciate injury; the drawer is falsely positive.",
+        "row": "G5"
+      }
+    ]
+  }
+}

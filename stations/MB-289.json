@@ -1,0 +1,593 @@
+{
+  "id": "MB-289",
+  "exam": "MRCS-B",
+  "title": "Lumbar spine examination: neurogenic claudication",
+  "type": "examination",
+  "header": {
+    "domain": "Applied Skills",
+    "contentArea": "Clinical and procedural skills",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "signalMinutes": 6,
+    "guidelineVersions": [
+      "NICE NG59 (last updated July 2026)",
+      "GIRFT national suspected cauda equina pathway (updated March 2026)",
+      "NICE CG147 (last updated December 2020)"
+    ],
+    "related": [
+      {
+        "id": "MB-213 Lower limb neurological examination",
+        "why": "The full root-by-root neurological examination; here it is a screen"
+      },
+      {
+        "id": "MB-155 Back pain red flags history",
+        "why": "Cauda equina and other red flags in detail"
+      },
+      {
+        "id": "MB-168 Peripheral arterial examination",
+        "why": "Vascular claudication, the main alternative"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Spinal surgery outpatient clinic",
+    "role": "Core surgical trainee",
+    "scenario": "Mr Cornelius Ashcombe, 69, a retired postman, has had low back pain for a year. For eight months both legs have ached and felt heavy when he walks a few hundred metres. His GP has referred him.",
+    "task": "Examine his lumbar spine. You will be stopped at 6 minutes to present your findings and answer questions."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Look, feel, move, then nerve tension and a neuro screen; then hips, pulses and the cauda equina questions.",
+    "trap": "A normal straight leg raise does not make this 'not the spine': it is often negative in stenosis.",
+    "firstMove": "\"Could you walk to the door and back for me?\""
+  },
+  "flow": [
+    "Consent, exposure",
+    "Gait; look from behind and the side",
+    "Feel; move",
+    "Nerve tension; neuro screen",
+    "Hips, pulses, cauda equina",
+    "At 6 minutes: present"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "professionalism",
+      "label": "Preparation and exposure",
+      "fail": "Examines the back through clothing, or without asking about pain.",
+      "pass": "Introduces, confirms identity, gains consent, asks about pain, offers a chaperone, and exposes back and legs to underwear.",
+      "high": "Watches how he rises from the chair and undresses, and explains each step before doing it.",
+      "source": "ICBSE"
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-skill",
+      "label": "Gait and inspection",
+      "fail": "Starts palpating without watching him walk or stand.",
+      "pass": "Watches his gait; inspects from behind and the side for posture, scoliosis, lordosis, scars, wasting and skin changes.",
+      "high": "Adds heel and toe walking as a quick motor screen, and notes his stooped, flexed posture.",
+      "source": "BL"
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-skill",
+      "label": "Feel and move",
+      "fail": "Omits spinal movements, or tests them without noting what reproduces symptoms.",
+      "pass": "Palpates spinous processes and paraspinal muscles; tests flexion, extension and lateral flexion; notes which movement reproduces the leg ache.",
+      "high": "Measures lumbar flexion with Schober's test, and says extension reproducing leg symptoms fits stenosis.",
+      "source": "BL"
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-skill",
+      "label": "Nerve tension and neurological screen",
+      "fail": "Omits the straight leg raise and any neurological testing.",
+      "pass": "Straight leg raise on both sides, femoral stretch test prone, then screens power, reflexes and sensation in both legs.",
+      "high": "Says the straight leg raise is often negative in stenosis and is read with the history, not by a single angle.",
+      "source": "BL"
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-skill",
+      "label": "Other causes of leg pain",
+      "fail": "Doesn't examine the hips or feel the foot pulses.",
+      "pass": "Screens hip rotation and palpates foot pulses to exclude hip arthritis and vascular claudication.",
+      "high": "Contrasts them: vascular pain eases on standing still; neurogenic needs sitting or bending forward, as on a shopping trolley.",
+      "source": "BL"
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-knowledge",
+      "label": "Cauda equina screen (safety-critical)",
+      "fail": "Doesn't ask about saddle sensation, bladder, bowel or sexual function.",
+      "pass": "Asks about saddle numbness, bladder, bowel and sexual function, and offers to record perianal sensation.",
+      "high": "States new symptoms need emergency MRI within 4 hours of request, and a bladder scan alone doesn't exclude it.",
+      "source": "GIRFTCES"
+    },
+    {
+      "id": "G7",
+      "domain": "communication",
+      "label": "Presentation at the signal",
+      "fail": "Lists the tests without a diagnosis.",
+      "pass": "Presents key positives and negatives and a working diagnosis: neurogenic claudication from lumbar spinal stenosis.",
+      "high": "Leads with the diagnosis, then the negatives that make vascular, hip and cauda equina causes unlikely."
+    },
+    {
+      "id": "G8",
+      "domain": "clinical-knowledge",
+      "label": "Plan",
+      "fail": "Offers an epidural steroid injection for neurogenic claudication.",
+      "pass": "Exercise and self-management; MRI because it will change management; surgical opinion on decompression if symptoms persist.",
+      "high": "States NICE advises against epidural injections for neurogenic claudication from central canal stenosis; ABPI if pulses are weak.",
+      "source": "NG59"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "candidate",
+        "text": "Could you pop on the couch and lift your shirt? [Doesn't watch him walk.]",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          },
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Presses along the spine.] No tenderness. [No movements tested.]",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'll skip the leg tests as he has back pain.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Thank you, that's all. [No hips, pulses or cauda equina questions.]",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          },
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop. Your findings?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I looked, felt the back and it wasn't tender.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What would you offer him?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "An epidural steroid injection to settle it.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "candidate",
+        "text": "Hello, I'm Dr Patel, one of the surgical trainees. Can I check your name and date of birth? I'd like to examine your back and legs. Any pain now? Would you like a chaperone? [Consent; cleans hands; exposes to underwear.]",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Could you walk to the door and back? [Watches gait.] [Inspects from behind and the side.]",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Palpates spine and paraspinals.] Bend forward, back, and to each side. Does anything bring on the leg ache? [Extension does.]",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Straight leg raise both sides; femoral stretch prone; power, reflexes and sensation both legs.]",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Rotates both hips; feels foot pulses.]",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Any numbness around your bottom, or change in your bladder, bowels or sexual function? I'd also record perianal sensation.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop. Your findings?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Mr Ashcombe has neurogenic claudication, probably from lumbar spinal stenosis. Extension reproduces his leg ache, straight leg raise is negative, the neurological screen is normal apart from reduced ankle jerks, his hips are normal and his foot pulses are present.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What next?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Exercise and advice; an MRI, because he may want surgery; and a surgical opinion on decompression if he doesn't improve.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "candidate",
+        "text": "Hello, I'm Dr Patel, one of the surgical trainees. Can I check your name and date of birth? Any pain now? [Watches him rise from the chair.] I'll explain each step as I go.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Gait.] Could you walk on your heels, then your toes? [Both normal.] He stands slightly stooped forward.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Schober's test: limited flexion.] Leaning back brings on the leg ache, which fits stenosis.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Straight leg raise and femoral stretch.] Both negative, which is common in stenosis; I'd read it with his history, not by a single angle.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Does the ache ease if you stand still, or do you need to sit or lean forward? [\"I lean on the trolley.\"] That's neurogenic rather than vascular. [Hips and pulses normal.]",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Any saddle numbness or change in bladder, bowels or sex? [No.] New symptoms would mean emergency MRI within 4 hours of the request; a bladder scan alone doesn't exclude it.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop. Your findings?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Neurogenic claudication from lumbar spinal stenosis. Normal pulses make vascular claudication unlikely, his hips are normal, and there are no cauda equina features.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "His friend had an injection. Should he?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "NICE advises against epidural injections for neurogenic claudication from central canal stenosis. I'd offer exercise, MRI to plan, and a decompression discussion if he doesn't improve. If his pulses were weak I'd measure the ABPI.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G6",
+      "move": "Not asking about saddle, bladder, bowel or sexual symptoms.",
+      "consequence": "Safety-critical: a cauda equina syndrome is missed and the chance to prevent permanent loss is lost."
+    },
+    {
+      "row": "G5",
+      "move": "Not feeling the foot pulses or examining the hips.",
+      "consequence": "Vascular claudication or hip arthritis is misattributed to the spine."
+    },
+    {
+      "row": "G4",
+      "move": "Taking a negative straight leg raise as excluding spinal pathology.",
+      "consequence": "Stenosis is missed, because root tension is often normal."
+    },
+    {
+      "row": "G8",
+      "move": "Offering an epidural steroid injection.",
+      "consequence": "A treatment NICE advises against for neurogenic claudication from central stenosis."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You forgot the pulses",
+      "line": "Before I finish, I'd like to feel his foot pulses, because vascular claudication can look like this."
+    },
+    {
+      "when": "Asked why the straight leg raise is negative",
+      "line": "Stenosis often gives normal root tension signs; the history of symptoms eased by sitting matters more."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Neurogenic claudication: leg ache or heaviness on walking or standing, eased by sitting or bending forward. Vascular claudication eases on standing still.",
+      "source": "BL"
+    },
+    {
+      "fact": "Image in specialist settings only if the result is likely to change management.",
+      "source": "NG59"
+    },
+    {
+      "fact": "Do not use epidural injections for neurogenic claudication with central spinal canal stenosis.",
+      "source": "NG59"
+    },
+    {
+      "fact": "Suspected cauda equina: emergency MRI as soon as possible and within 4 hours of request; record perianal sensation; rectal examination not necessary.",
+      "source": "GIRFTCES"
+    },
+    {
+      "fact": "Suspected peripheral arterial disease: measure the ABPI.",
+      "source": "CG147"
+    },
+    {
+      "fact": "Past cancer with new night pain in the back: suspect spinal metastases.",
+      "source": "NG234"
+    }
+  ],
+  "recall": {
+    "think": "Is this cauda equina, or not the spine at all (vascular, hip)?",
+    "say": "\"Neurogenic claudication from lumbar spinal stenosis.\"",
+    "do": [
+      "Gait, look, feel, move",
+      "Straight leg raise, femoral stretch, neuro screen",
+      "Hips, pulses, cauda equina questions"
+    ],
+    "numbers": [
+      {
+        "value": "4 hours",
+        "meaning": "suspected cauda equina: MRI within 4 hours of request",
+        "source": "GIRFTCES"
+      },
+      {
+        "value": "6 min",
+        "meaning": "signal to stop and present",
+        "source": "ICBSE"
+      }
+    ],
+    "trap": "A negative straight leg raise doesn't exclude spinal stenosis.",
+    "finish": "Exercise, MRI if it will change management, decompression if non-surgical care fails; no epidural for stenosis."
+  },
+  "sources": [
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Introduce yourself, confirm identity, obtain consent and clean hands at every station; 6-minute signal in examination stations"
+    },
+    {
+      "id": "BL",
+      "name": "Bailey & Love's Short Practice of Surgery (O'Connell, McCaskie, Sayers, eds)",
+      "version": "28th edition, 2023",
+      "url": "https://www.routledge.com/Bailey--Loves-Short-Practice-of-Surgery---28th-Edition/OConnell-McCaskie-Sayers/p/book/9780367548117",
+      "supports": "Lumbar spine examination (inspection, palpation, movements, Schober's test, straight leg raise, femoral stretch test); lumbar spinal stenosis and neurogenic claudication versus vascular claudication; decompression"
+    },
+    {
+      "id": "NG59",
+      "name": "NICE NG59: Low back pain and sciatica in over 16s: assessment and management",
+      "version": "Published 30 November 2016; last updated 29 July 2026",
+      "url": "https://www.nice.org.uk/guidance/ng59",
+      "supports": "Think about alternative diagnoses (1.1.1); consider imaging in specialist settings only if the result is likely to change management (1.1.6); exercise and self-management (1.2.1–1.2.2); do not use epidural injections for neurogenic claudication in people who have central spinal canal stenosis (1.3.6)"
+    },
+    {
+      "id": "GIRFTCES",
+      "name": "GIRFT (NHS England): Spinal surgery: National suspected cauda equina syndrome (CES) pathway",
+      "version": "February 2023; last updated March 2026",
+      "url": "https://gettingitrightfirsttime.co.uk/wp-content/uploads/2026/04/National-Suspected-Cauda-Equina-Pathway-March-2026.pdf",
+      "supports": "Urinary difficulty, altered perianal, perineal or genital sensation, loss of rectal fullness or sexual dysfunction with back or leg pain warrant emergency referral; emergency MRI as soon as possible and within four hours of request; rectal examination not necessary but perianal sensation recorded; bladder scan not used in isolation to decide on MRI"
+    },
+    {
+      "id": "CG147",
+      "name": "NICE CG147: Peripheral arterial disease: diagnosis and management",
+      "version": "Published 8 August 2012; last updated 11 December 2020",
+      "url": "https://www.nice.org.uk/guidance/cg147",
+      "supports": "Assess people with suspected peripheral arterial disease, including measuring the ankle brachial pressure index"
+    },
+    {
+      "id": "NG234",
+      "name": "NICE NG234: Spinal metastases and metastatic spinal cord compression",
+      "version": "Published 6 September 2023",
+      "url": "https://www.nice.org.uk/guidance/ng234",
+      "supports": "Past or current cancer with pain suggesting spinal metastases: seek advice through the MSCC coordinator within 24 hours; with symptoms or signs of cord compression, contact immediately (1.3.2-1.3.3); MRI whole spine"
+    }
+  ],
+  "media": [
+    {
+      "id": "IMG-289-1",
+      "task": "Optional: revise straight leg raise and femoral stretch technique",
+      "description": "Own photographs of the straight leg raise (supine) and femoral stretch test (prone)",
+      "required": false,
+      "status": "needed"
+    }
+  ],
+  "partner": {
+    "opening": "Please examine this gentleman's lumbar spine. I'll stop you at 6 minutes.",
+    "actorBrief": "You are Mr Cornelius Ashcombe, 69, a retired postman. Back ache for a year; for eight months both legs ache and feel heavy after a few hundred metres. You have to sit down or lean forward to ease it; at the supermarket you lean on the trolley. Standing still doesn't help. No numbness in your bottom, no bladder, bowel or sexual problems. No cancer history, no weight loss. Stand slightly stooped. Say leaning back brings on the leg ache.",
+    "reveals": [
+      {
+        "trigger": "Watches him walk and inspects",
+        "finding": "Normal gait; heel and toe walking normal. Slightly stooped posture, reduced lumbar lordosis. No scars, no scoliosis, no wasting.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Palpates and tests movements",
+        "finding": "No tenderness. Flexion mildly limited (Schober's reduced). Extension reproduces aching in both thighs and calves. Lateral flexion normal.",
+        "row": "G3"
+      },
+      {
+        "trigger": "Straight leg raise, femoral stretch and neurological screen",
+        "finding": "Straight leg raise and femoral stretch negative both sides. Power and sensation normal. Knee jerks normal; ankle jerks reduced both sides. Plantars flexor.",
+        "row": "G4"
+      },
+      {
+        "trigger": "Examines hips and feels foot pulses",
+        "finding": "Full, painless hip rotation both sides. Dorsalis pedis and posterior tibial pulses palpable both sides.",
+        "row": "G5"
+      },
+      {
+        "trigger": "Asks about cauda equina symptoms or offers perianal sensation",
+        "finding": "No saddle numbness; bladder, bowel and sexual function normal. Perianal sensation normal.",
+        "row": "G6"
+      },
+      {
+        "trigger": "At 6 minutes",
+        "finding": "Say: \"Please stop there and present your findings.\"",
+        "row": "G7"
+      }
+    ],
+    "push": [
+      {
+        "question": "How do you tell neurogenic from vascular claudication?",
+        "row": "G5",
+        "expect": "Neurogenic eases with sitting or bending forward; vascular eases on standing still; check pulses and the ABPI."
+      },
+      {
+        "question": "What does a negative straight leg raise tell you here?",
+        "row": "G4",
+        "expect": "Little: it is often negative in stenosis."
+      },
+      {
+        "question": "Would you image him?",
+        "row": "G8",
+        "expect": "MRI, because the result will guide surgical decisions."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "He mentions that for two days his bottom has felt numb and he's struggling to pass urine.",
+        "safeAnswer": "Suspected cauda equina syndrome: emergency MRI within 4 hours of request, nil by mouth, senior discussion.",
+        "row": "G6"
+      },
+      {
+        "prompt": "His foot pulses are absent on the right.",
+        "safeAnswer": "Consider vascular claudication: measure the ABPI and assess for peripheral arterial disease.",
+        "row": "G5"
+      },
+      {
+        "prompt": "He had prostate cancer treated five years ago and his back pain now wakes him at night.",
+        "safeAnswer": "Suspect spinal metastases: contact the MSCC coordinator within 24 hours (immediately if neurological signs); MRI whole spine.",
+        "row": "G8"
+      },
+      {
+        "prompt": "He asks for a steroid injection like his friend had.",
+        "safeAnswer": "NICE advises against epidural injections for neurogenic claudication from central stenosis.",
+        "row": "G8"
+      }
+    ]
+  }
+}

@@ -1,0 +1,584 @@
+{
+  "id": "MB-173",
+  "exam": "MRCS-B",
+  "title": "Upper limb neurological examination: C6 radiculopathy or carpal tunnel?",
+  "type": "examination",
+  "header": {
+    "domain": "Applied Skills",
+    "contentArea": "Clinical and procedural skills",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "signalMinutes": 6,
+    "guidelineVersions": [
+      "MRC Memorandum No. 45 (1976)",
+      "Degenerative cervical myelopathy, BMJ (Feb 2018)",
+      "AoMRC EBI carpal tunnel release (Sep 2024)",
+      "NICE NG127 (updated Oct 2023)"
+    ],
+    "related": [
+      {
+        "id": "MB-158 Shoulder examination",
+        "why": "Neck pain that mimics shoulder pain"
+      },
+      {
+        "id": "MB-120 Applied anatomy: the hand",
+        "why": "Median nerve anatomy in the carpal tunnel"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Orthopaedic outpatient clinic",
+    "role": "Core surgical trainee",
+    "scenario": "Mr Graham Pollard, 52, an electrician, has had two months of neck pain and numbness of his right thumb and index finger. His GP asks whether this is carpal tunnel syndrome.",
+    "task": "Examine the neurology of his upper limbs. You will be stopped at 6 minutes to present your findings and answer questions."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Root or nerve? Map power, reflexes and sensation to C6 or the median nerve, then screen for myelopathy.",
+    "trap": "Calling thumb numbness carpal tunnel without checking the forearm, the reflexes and the neck.",
+    "firstMove": "\"Could you take your top off so I can compare both arms?\""
+  },
+  "flow": [
+    "Introduce, consent, expose both arms",
+    "Inspect, tone",
+    "Power by root",
+    "Reflexes",
+    "Sensation: dermatome or nerve",
+    "Neck and myelopathy screen",
+    "At 6 minutes: present"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "professionalism",
+      "label": "Preparation",
+      "fail": "Starts testing power without explaining or asking about pain.",
+      "pass": "Introduces, confirms identity, gains consent, asks about neck pain, cleans hands, exposes both arms.",
+      "high": "Explains each step before doing it and compares right with left throughout.",
+      "source": "ICBSE"
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-skill",
+      "label": "Inspection and tone",
+      "fail": "Skips inspection and tone.",
+      "pass": "Looks for wasting and fasciculation, especially the thenar eminence and first dorsal interosseous; pronator drift; tone at wrist and elbow.",
+      "high": "States that thenar wasting points to the median nerve at the wrist, and that increased tone suggests a cord lesion."
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-skill",
+      "label": "Power",
+      "fail": "Tests grip only, or doesn't grade.",
+      "borderline": "Tests each movement but doesn't grade it or compare sides.",
+      "pass": "Tests each root's movements and grades each on the MRC 0–5 scale, comparing sides.",
+      "high": "Names root and nerve: biceps (C5–6, musculocutaneous), wrist extensors (radial), abductor pollicis brevis (C8–T1, median).",
+      "source": "MRC"
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-skill",
+      "label": "Reflexes",
+      "fail": "Omits reflexes.",
+      "pass": "Biceps (C5–6), brachioradialis (C5–6) and triceps (C7), with reinforcement if absent.",
+      "high": "Explains that a reduced biceps and brachioradialis reflex points to the C6 root; carpal tunnel doesn't change reflexes.",
+      "source": "BL"
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-skill",
+      "label": "Sensation",
+      "fail": "Tests only the numb fingers.",
+      "pass": "Light touch and pinprick by dermatome (C5–T1), then the median nerve territory, comparing sides.",
+      "high": "Checks the lateral forearm and thenar eminence: C6 loss reaches the forearm; carpal tunnel spares the thenar skin.",
+      "source": "BL"
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-skill",
+      "label": "Neck and myelopathy screen (safety-critical)",
+      "fail": "Doesn't look for upper motor neurone signs.",
+      "pass": "Spurling's test; Tinel's and Phalen's; Hoffmann's sign; asks about hand clumsiness, gait and bladder.",
+      "high": "Says Spurling's is specific but not sensitive, and that hyperreflexia, Hoffmann's or an unsteady gait means myelopathy until proven otherwise.",
+      "source": "DCM"
+    },
+    {
+      "id": "G7",
+      "domain": "communication",
+      "label": "Presentation at the signal",
+      "fail": "Lists tests rather than findings.",
+      "pass": "Summarises power, reflexes and sensation by side, and gives a likely level.",
+      "high": "Leads with 'a right C6 radiculopathy', gives the findings against carpal tunnel and the absent myelopathic signs, and commits.",
+      "source": "BL"
+    },
+    {
+      "id": "G8",
+      "domain": "clinical-knowledge",
+      "label": "Next steps",
+      "fail": "Lists him for carpal tunnel release on thumb numbness alone.",
+      "pass": "Treats as C6 radiculopathy: analgesia and physiotherapy; MRI and spinal referral if pain is uncontrolled, symptoms are disabling or weakness progresses; urgent if myelopathic signs appear.",
+      "high": "Safety-nets for NICE's red flags: gait disturbance, clumsy or weak hands, brisk reflexes, new bladder or bowel change; carpal tunnel release isn't indicated without median signs.",
+      "source": "NG127"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "candidate",
+        "text": "[Asks him to squeeze two fingers; doesn't expose or inspect.] Grip's fine.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          },
+          {
+            "row": "G2",
+            "band": "fail"
+          },
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Skips reflexes.] Where's the numbness? [Touches the thumb and index finger only.]",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          },
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop. Your findings?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I tested his power and sensation. The thumb and finger are numb.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          },
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What would you do?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "It's carpal tunnel. I'd list him for a release.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "candidate",
+        "text": "Hello, I'm Dr Patel, one of the surgical trainees. Can I check your name and date of birth? I'd like to examine the nerves in your arms. Is your neck sore now? Could you take your top off? [Consent; cleans hands.]",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Inspects hands and arms for wasting and fasciculation.] Hold your arms out, palms up, eyes closed. [Tone at the wrist and elbow.]",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Push out… pull me in… push me away… cock your wrist back… thumb up to the ceiling. [Grades each 0 to 5, comparing sides.]",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Biceps, brachioradialis and triceps reflexes, both sides.]",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Light touch and pinprick from C5 to T1, then the median nerve territory.]",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Spurling's; Tinel's and Phalen's; Hoffmann's.] Any clumsiness with buttons, problems walking or with your bladder? Thank you. [Cleans hands.]",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop. Your findings?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Mr Pollard has grade 4 weakness of right elbow flexion and wrist extension, reduced right biceps and brachioradialis reflexes, and reduced sensation over the lateral forearm, thumb and index finger. Spurling's reproduces his arm pain. Tinel's and Phalen's are negative, and there are no myelopathic signs. This is most likely a right C6 radiculopathy.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What would you do?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Treat it as a C6 radiculopathy: analgesia and physiotherapy, with MRI and spinal referral if the pain isn't controlled, the symptoms are disabling or the weakness progresses, and urgently if he develops myelopathic signs. Carpal tunnel release isn't indicated.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "candidate",
+        "text": "Hello, I'm Dr Patel. Can I check your name and date of birth? I'll examine both arms, comparing sides, and tell you what I'm doing as I go. Is your neck painful now? [Consent; cleans hands.]",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Inspects.] No thenar wasting, which I'd expect with a long-standing median nerve lesion. [No drift; tone normal: no sign of a cord lesion.]",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Each root by movement.] Right elbow flexion and wrist extension are 4 out of 5: biceps is C5–6, musculocutaneous; the wrist extensors are radial. Abductor pollicis brevis, median, C8–T1, is 5: that argues against carpal tunnel.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Reflexes.] Right biceps and brachioradialis are reduced; triceps is normal. That fits C6. Carpal tunnel wouldn't change the reflexes.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Dermatomes, then median territory.] The loss runs up the lateral forearm, and the thenar eminence is affected. Carpal tunnel would spare both.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Spurling's positive; Tinel's and Phalen's negative; Hoffmann's negative.] Spurling's is specific rather than sensitive. Any clumsiness, falls or bladder problems? No: so no evidence of myelopathy. Thank you. [Cleans hands.]",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop. Your findings?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "This is a right C6 radiculopathy. He has grade 4 weakness of elbow flexion and wrist extension, reduced biceps and brachioradialis reflexes, and sensory loss from the lateral forearm to the thumb and index finger. Against carpal tunnel: normal thumb abduction, the forearm and thenar skin are involved, and Tinel's and Phalen's are negative. There are no upper motor neurone signs.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What would you do?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Analgesia and physiotherapy first. MRI and a spinal referral if the pain isn't controlled, the symptoms become disabling or the weakness progresses; urgently if he develops clumsy hands, unsteadiness, brisk reflexes or bladder change. Carpal tunnel release would need constant median numbness, thenar weakness, or symptoms despite injection or splints for 8 weeks.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G5",
+      "move": "Testing sensation only in the numb fingers.",
+      "consequence": "Can't tell a C6 dermatome from the median nerve territory."
+    },
+    {
+      "row": "G4",
+      "move": "Omitting the reflexes.",
+      "consequence": "Loses the sign that best separates a root lesion from carpal tunnel, and misses hyperreflexia."
+    },
+    {
+      "row": "G6",
+      "move": "Not looking for Hoffmann's sign or asking about gait and dexterity.",
+      "consequence": "Safety-critical: myelopathy is missed, and cord damage from delayed decompression is often permanent."
+    },
+    {
+      "row": "G8",
+      "move": "Listing him for carpal tunnel release on thumb numbness.",
+      "consequence": "An unnecessary operation, and the neck problem continues."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You forgot the reflexes",
+      "line": "Before I finish, I'd like to check the biceps, brachioradialis and triceps reflexes on both sides."
+    },
+    {
+      "when": "You forgot the myelopathy screen",
+      "line": "I'd also like to look for Hoffmann's sign and ask about his walking and hand clumsiness."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "MRC grades: 0 none; 1 flicker; 2 movement with gravity eliminated; 3 against gravity; 4 against resistance; 5 normal.",
+      "source": "MRC"
+    },
+    {
+      "fact": "Muscle root values: biceps and brachioradialis C5–6; triceps C6–8; abductor pollicis brevis C8–T1 (median).",
+      "source": "MRC"
+    },
+    {
+      "fact": "Hyperreflexia, Hoffmann's, spasticity, clumsy hands or unsteady gait suggest myelopathy: MRI of the cervical spine and specialist spinal assessment.",
+      "source": "DCM"
+    },
+    {
+      "fact": "In one surgical series, 43% of patients with myelopathy were first diagnosed with carpal tunnel syndrome.",
+      "source": "DCM"
+    },
+    {
+      "fact": "Spurling's: specific, not sensitive; use it with the history and other findings.",
+      "source": "SPUR"
+    }
+  ],
+  "recall": {
+    "think": "Root, nerve or cord? Don't miss myelopathy.",
+    "say": "\"This fits a right C6 radiculopathy, not carpal tunnel.\"",
+    "do": [
+      "Power by root, graded 0–5",
+      "Reflexes: biceps, brachioradialis, triceps",
+      "Forearm and thenar sensation; Hoffmann's"
+    ],
+    "numbers": [
+      {
+        "value": "0–5",
+        "meaning": "MRC power scale",
+        "source": "MRC"
+      },
+      {
+        "value": "8 weeks",
+        "meaning": "injection or splints before carpal tunnel release (unless constant numbness or weakness)",
+        "source": "EBI"
+      },
+      {
+        "value": "6 min",
+        "meaning": "signal to stop and present",
+        "source": "ICBSE"
+      }
+    ],
+    "trap": "Thumb numbness isn't always carpal tunnel.",
+    "finish": "Analgesia and physio; MRI and spinal referral if pain uncontrolled, disabling or weakness progresses; urgent if myelopathic."
+  },
+  "sources": [
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "At every station: introduce yourself, explain the task, confirm identity, obtain consent, clean hands before and after patient contact; 6-minute signal in examination stations"
+    },
+    {
+      "id": "MRC",
+      "name": "Medical Research Council. Aids to the examination of the peripheral nervous system (Memorandum No. 45)",
+      "version": "1976 edition (HMSO); reissued by UKRI under the Open Government Licence",
+      "url": "https://www.ukri.org/councils/mrc/facilities-and-resources/find-an-mrc-facility-or-resource/mrc-muscle-scale/",
+      "supports": "Muscle power graded 0–5 (0 no contraction; 1 flicker; 2 movement with gravity eliminated; 3 against gravity; 4 against gravity and resistance; 5 normal), with 4-, 4 and 4+ optional; root values: biceps C5, C6 (musculocutaneous); brachioradialis C5, C6 and triceps C6, C7, C8 (radial); extensor carpi radialis longus C5, C6; abductor pollicis brevis C8, T1 (median)"
+    },
+    {
+      "id": "BL",
+      "name": "Bailey & Love's Short Practice of Surgery (O'Connell, McCaskie, Sayers, eds)",
+      "version": "28th edition, 2023",
+      "url": "https://www.routledge.com/Bailey--Loves-Short-Practice-of-Surgery---28th-Edition/OConnell-McCaskie-Sayers/p/book/9780367548117",
+      "supports": "Upper limb neurological examination; reflex root values (biceps and brachioradialis C5–6, triceps C7); dermatomes; median nerve sensory territory and sparing of the thenar skin in carpal tunnel syndrome"
+    },
+    {
+      "id": "DCM",
+      "name": "Davies BM, Mowforth OD, Smith EK, Kotter MR. Degenerative cervical myelopathy. BMJ 2018;360:k186",
+      "version": "Published 22 February 2018",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/29472200/",
+      "supports": "Signs of myelopathy: hyperreflexia, Hoffmann's sign, spasticity, clonus, Babinski's sign, gait disturbance; loss of dexterity; symptoms can be unilateral; in one series of 42 surgical patients, 43% had hand numbness and pain and were initially diagnosed, and sometimes treated, for carpal tunnel syndrome; MRI of the cervical spine for suspected myelopathy, urgent if progressive; all patients with myelopathy assessed by a specialist spinal surgeon"
+    },
+    {
+      "id": "SPUR",
+      "name": "Rubinstein SM et al. A systematic review of the diagnostic accuracy of provocative tests of the neck for diagnosing cervical radiculopathy. Eur Spine J 2007;16(3):307–19",
+      "version": "March 2007",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/17013656/",
+      "supports": "Spurling's test: low to moderate sensitivity and high specificity; a positive test, consistent with the history and other findings, may indicate cervical radiculopathy"
+    },
+    {
+      "id": "EBI",
+      "name": "Academy of Medical Royal Colleges: Evidence-Based Interventions. Carpal tunnel syndrome release",
+      "version": "Published January 2019; revised September 2024",
+      "url": "https://ebi.aomrc.org.uk/interventions/carpal-tunnel-syndrome-release/",
+      "supports": "Surgery considered if symptoms significantly interfere with activities and sleep and have not settled with one steroid injection and/or night splints over at least 8 weeks, or if there is permanent reduced sensation in the median nerve distribution, or wasting or weakness of thenar abduction; nerve conduction studies before surgery or if the diagnosis is uncertain"
+    },
+    {
+      "id": "NG127",
+      "name": "NICE NG127: Suspected neurological conditions: recognition and referral",
+      "version": "Published 1 May 2019; last updated 2 October 2023",
+      "url": "https://www.nice.org.uk/guidance/ng127",
+      "supports": "Cervical radiculopathy stable for 6 weeks or more: don't routinely refer unless pain uncontrolled, symptoms disabling, age under 20, gait disturbance, clumsy or weak hands or legs, brisk reflexes, extensor plantars or new bladder or bowel disturbance (1.10.11)"
+    }
+  ],
+  "partner": {
+    "opening": "Please examine the neurology of this patient's upper limbs. I'll stop you at 6 minutes.",
+    "actorBrief": "You are Mr Graham Pollard, 52, a right-handed electrician. Two months of right-sided neck pain spreading down the outside of your arm to the thumb and index finger, which feel numb. Tilting your head back and to the right makes the arm pain worse. No clumsiness, no problems walking, no bladder problems. No night-time tingling in the hand. When your neck is pressed down with your head turned right, say the pain shoots down your arm.",
+    "reveals": [
+      {
+        "trigger": "Inspects the arms and hands",
+        "finding": "No wasting, no fasciculation. No pronator drift.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Tests tone",
+        "finding": "Normal tone in both arms.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Tests power",
+        "finding": "Right elbow flexion 4/5, right wrist extension 4/5. Shoulder abduction, elbow extension, finger flexion, finger abduction and thumb abduction 5/5. Left arm 5/5 throughout.",
+        "row": "G3"
+      },
+      {
+        "trigger": "Tests reflexes",
+        "finding": "Right biceps and brachioradialis reduced. Triceps normal. Left normal. No Hoffmann's sign.",
+        "row": "G4"
+      },
+      {
+        "trigger": "Tests sensation",
+        "finding": "Reduced light touch and pinprick over the right lateral forearm, thenar eminence, thumb and index finger. Rest normal.",
+        "row": "G5"
+      },
+      {
+        "trigger": "Performs Spurling's, Tinel's and Phalen's",
+        "finding": "Spurling's reproduces right arm pain. Tinel's and Phalen's negative. Coordination and gait normal.",
+        "row": "G6"
+      },
+      {
+        "trigger": "At 6 minutes",
+        "finding": "Say: \"Please stop there and present your findings.\"",
+        "row": "G7"
+      }
+    ],
+    "push": [
+      {
+        "question": "How do you tell C6 radiculopathy from carpal tunnel syndrome?",
+        "row": "G5",
+        "expect": "Forearm sensory loss, weak elbow flexion and wrist extension, and reduced biceps and brachioradialis reflexes point to C6; carpal tunnel spares the thenar skin and reflexes and weakens thumb abduction."
+      },
+      {
+        "question": "Which signs would worry you?",
+        "row": "G6",
+        "expect": "Hoffmann's, hyperreflexia, spasticity, clumsy hands, unsteady gait, bladder symptoms: myelopathy."
+      },
+      {
+        "question": "When is carpal tunnel release indicated?",
+        "row": "G8",
+        "expect": "Constant median numbness, thenar weakness or wasting, or symptoms despite injection or splints for 8 weeks."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "His Hoffmann's sign is positive and he says he's dropping his keys.",
+        "safeAnswer": "Possible cervical myelopathy: MRI of the cervical spine and referral to a spinal surgeon; urgent if progressing.",
+        "row": "G6"
+      },
+      {
+        "prompt": "The thenar eminence is wasted, sensation is lost in the thumb, index and middle fingers only, and Phalen's is positive.",
+        "safeAnswer": "Median nerve compression at the wrist; thenar weakness meets the criteria for carpal tunnel release, with nerve conduction studies if unsure.",
+        "row": "G8"
+      },
+      {
+        "prompt": "The triceps reflex is absent and the middle finger is numb.",
+        "safeAnswer": "Suggests a C7 root lesion.",
+        "row": "G4"
+      },
+      {
+        "prompt": "How do you grade a muscle that moves against gravity but not resistance?",
+        "safeAnswer": "MRC grade 3.",
+        "row": "G3"
+      }
+    ]
+  }
+}
