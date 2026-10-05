@@ -10,14 +10,14 @@ window.SO_MODULES = [
   {n:6, name:'Safety Habits'},
   {n:7, name:'When Things Go Wrong'},
   {n:8, name:'Looking After Yourself'},
-  {n:9, name:'Navigation'}
+  {n:9, name:'Start here'}
 ];
 
 window.SO_CHECKLIST = {
   phases: ['Before you start','Day 0 / induction','First week','Practical life'],
   items: [
     [1,0,'My start date and expected workplace are confirmed.','P',0],
-    [2,0,'My GMC registration and licence to practise are right for my Foundation post (F1 normally needs provisional registration; F2 normally needs full registration).','P',0],
+    [2,0,'My GMC registration and licence to practise are in place for this post: provisional registration with a licence to practise for FY1, or full registration with a licence to practise for FY2. I will not start clinical work until the correct registration is granted.','P',0],
     [3,0,'My required pre-employment checks are complete.','P',0],
     [4,0,'My required identity and document checks are complete.','P',0],
     [5,0,'My required occupational-health clearance is complete.','P',0],
@@ -35,7 +35,7 @@ window.SO_CHECKLIST = {
     [17,1,'I can access patient results.','P',0],
     [18,1,'I can access imaging.','P',0],
     [19,1,'I can access the prescribing system used in my workplace (electronic or paper).','P',0],
-    [20,1,'I have a bleep or equivalent way of being contacted.','P','na'],
+    [20,1,'I know the communication method (bleep or equivalent) I am expected to carry or monitor, and what to do if it fails.','P','na'],
     [21,1,'I know who to contact if essential clinical-system access fails.','A',0],
     [22,1,'I know the local route for summoning emergency clinical help.','A','crit'],
     [23,1,'I know how to contact the appropriate senior clinician for an urgent clinical concern.','A','crit'],
@@ -61,7 +61,7 @@ window.SO_CHECKLIST = {
 
 window.SO_CARDS = [
 {id:'SO-01-01', mod:1, title:'Day-0 Checklist', type:'Tool Card', jur:'Check your nation and employer', fpcP:'FPC7', fpcS:'FPC5', tool:true,
- what:'<p>Find out what is ready, what is missing and who can answer the question — before your first clinical shift and during your first week.</p><p class="so-strong">Completing this checklist does not mean you are ready to work. It means you know your gaps.</p>',
+ what:'<p>Find out what is ready, what is missing and who can answer the question — before your first clinical shift and during your first week.</p><p class="so-strong">Completing this checklist does not mean you are ready to work. It means you know your gaps.</p><p>You do not need every local question answered before you begin. You do need the safety-critical routes — items 22, 23 and 25: how to get emergency help, how to reach an appropriate senior urgently, and what to do if you cannot reach them.</p>',
  safety:'If something is unclear and could affect patient safety: Stop → Clarify → Seek appropriate help → Proceed safely.',
  next:{to:'SO-01-02'}},
 
@@ -71,7 +71,7 @@ window.SO_CARDS = [
  todo:['Some onboarding tasks are finished before you start; others are completed in your first days on your employer\'s timetable. You do not need everything done on Day 1, but you do need the things your duties depend on.',
        'If you are unsure whether you are cleared, supervised or adequately supported for a duty, clarify this before you do it.',
        'Use the Day-0 Checklist to track what is ready and what is missing.',
-       'F1 normally requires provisional registration with a licence to practise, and F2 normally requires full registration. If your route into Foundation is different, check the GMC requirements that apply to you.'],
+       'FY1 requires provisional registration with a licence to practise; FY2 requires full registration with a licence to practise. If your training route or registration status is unusual, confirm the requirements with the GMC and your Foundation school before starting clinical work.'],
  local:['Who in medical staffing or the Foundation team answers onboarding questions?','Which mandatory training must be finished before your first clinical shift, and which can follow?'],
  safety:'Do not take on clinical duties you are not registered, appointed, supervised or fit to do.',
  next:{to:'SO-01-03'}},
@@ -121,19 +121,19 @@ window.SO_CARDS = [
  next:{to:'SO-02-03'}},
 
 {id:'SO-02-03', mod:2, title:'Your Clinical Supervisor', type:'Information Card', jur:'UK-wide', fpcP:'FPC12', fpcS:'FPC7',
- what:'<p>Your named clinical supervisor is a senior doctor responsible for supervising your clinical work and development during a placement. You will have one for each placement.</p><p class="so-strong">Your clinical supervisor is not necessarily the person to contact for immediate clinical help, especially out of hours. Know your urgent-help route separately (see SO-04-03).</p>',
+ what:'<p>Your named clinical supervisor is a senior doctor responsible for supervising your clinical work and development during a placement. Your Foundation programme should identify one for each placement.</p><p class="so-strong">Your clinical supervisor is not necessarily the person to contact for immediate clinical help, especially out of hours. Know your urgent-help route separately (see SO-04-03).</p>',
  why:'<p>Your clinical supervisor sets expectations for the placement, gives you feedback and contributes to the assessment of your progress.</p>',
  todo:['The UK Foundation Programme requires an <b>induction meeting</b> with your clinical supervisor at the start of each placement and an <b>end-of-placement review</b>. A mid-placement meeting is not compulsory but strongly advised.',
        'Their end-of-placement assessment draws on feedback from the wider team who work with you.',
        'Your clinical supervisor may also be your educational supervisor, or they may be different people.',
-       'Arrange your induction meeting early. Don\'t wait to be contacted.'],
+       'Arrange your induction meeting early. If you don\'t know who your clinical supervisor is, ask the Foundation programme team — don\'t wait for an assessment deadline.'],
  local:['Who is your clinical supervisor for this placement?','How do they prefer to be contacted?','When will your induction meeting happen?'],
  safety:'For urgent clinical help, use the local urgent-help route — don\'t wait for your supervisor.',
  next:{to:'SO-02-04'}},
 
 {id:'SO-02-04', mod:2, title:'Your Educational Supervisor', type:'Information Card', jur:'UK-wide', fpcP:'FPC12', fpcS:'',
  what:'<p>Your educational supervisor oversees your progress across the whole Foundation year, not just one placement. The exact appointment and arrangements are set by your Foundation school and employer.</p>',
- why:'<p>Your educational supervisor brings together evidence from all your placements and gives an overall view of your progress. Their end-of-year report informs the Annual Review of Competence Progression (ARCP) panel\'s decision on whether you have satisfactorily completed F1 or F2.</p>',
+ why:'<p>Your educational supervisor brings together evidence from all your placements and gives an overall view of your progress. Their end-of-year report contributes to the evidence the Annual Review of Competence Progression (ARCP) panel uses to decide whether you have satisfactorily completed F1 or F2.</p>',
  todo:['The UK Foundation Programme requires an <b>initial meeting</b> with your educational supervisor, an <b>end-of-placement review</b> and an <b>end-of-year review</b>.',
        'Your educational supervisor may also be your clinical supervisor in one placement.',
        'Most of this work is recorded in your Foundation e-portfolio.'],
@@ -146,7 +146,7 @@ window.SO_CARDS = [
  why:'<p>Knowing the rhythm of the day helps you see where you fit, when decisions are made and when information changes hands.</p>',
  todoHtml:'<p>Many ward days follow a pattern like this:</p><ol class="so-ol"><li><b>Start of the day</b> — you receive handover about patients and anything outstanding from overnight.</li><li><b>Review of patients</b> — often a ward round or board round, where the team reviews patients and makes plans.</li><li><b>Jobs</b> — the tasks that come out of those plans, shared across the team.</li><li><b>Through the day</b> — results come back, patients change, new patients arrive, others prepare to go home. Multidisciplinary meetings may happen.</li><li><b>End of the day</b> — outstanding work and concerns are handed over to the doctors who follow you.</li></ol><p>Two things run through the whole day: information keeps changing, and responsibility passes between people. Your job is to keep track of both and ask when you are unsure.</p>',
  local:['When and where do ward rounds and board rounds happen on your ward?','Who leads them?','When is the end-of-day handover?'],
- safety:'Nothing should be left unfinished without someone knowing it is unfinished.',
+ safety:'If work remains unfinished, make sure the team knows its status and follow the local handover process.',
  next:{to:'SO-03-02'}},
 
 {id:'SO-03-02', mod:3, title:'Your Week and Your Rota', type:'Information Card', jur:'Check your nation and employer', fpcP:'FPC6', fpcS:'FPC7',
@@ -193,7 +193,7 @@ window.SO_CARDS = [
 
 {id:'SO-05-01', mod:5, title:'Your First Bleep', type:'Information Card', jur:'Check your nation and employer', fpcP:'FPC5', fpcS:'FPC6',
  what:'<p>A bleep is the way colleagues reach you during clinical work. It may be a pager, a hospital phone or an app — your workplace decides which.</p>',
- why:'<p>When you carry a bleep, you are the contact for certain patients or wards. If you can\'t be reached, care for those patients can stall.</p>',
+ why:'<p>When you are assigned a bleep or equivalent, colleagues rely on it as one route to reach the covering doctor. If you can\'t be reached, care can be delayed.</p>',
  todo:['<b>Who bleeps you.</b> Often nurses, but also pharmacists, other doctors, switchboard, and departments such as the lab or radiology.',
        '<b>Carrying a bleep means being reachable.</b> Keep it on you, switched on and charged. Don\'t leave it in a coat or on a desk.',
        '<b>Emergency calls work differently.</b> Calls to a cardiac arrest or other emergency team usually come through a separate team bleep or alert system. Find out how this works where you are.',
@@ -207,12 +207,12 @@ window.SO_CARDS = [
  what:'<p>The message that comes with a bleep is the caller\'s summary. It is often made in a hurry, with the information they had at that moment.</p>',
  why:'<p>A short message can be accurate, incomplete, or describe one part of a bigger picture. If you fix on the first description, you may miss what is really happening.</p>',
  todo:['<b>Keep an open mind.</b> Treat the first message as a starting point, not a conclusion.',
-       '<b>Take concern seriously.</b> If the person calling is worried about a patient, that worry is important clinical information, even if they can\'t yet say exactly why.',
+       '<b>Take concern seriously.</b> If anyone contacting you — a nurse, therapist, patient, carer or colleague — is worried about a patient, that worry is important clinical information, even if it is briefly put or they can\'t yet say exactly why.',
        '<b>The picture can change.</b> A request that sounds routine can turn out to be urgent, and the reverse.',
        '<b>You don\'t have to work it out alone.</b> If you are unsure what a call means for the patient, seek help.'],
  todoAfter:'<p>How to respond to a bleep, what to ask and how to decide what comes first are covered in Bleep Cards.</p>',
  local:['Is there a local guide or structure your hospital uses for calls between nurses and doctors?'],
- safety:'Do not assume the first message is complete, and never dismiss a colleague\'s concern about a patient.',
+ safety:'Do not assume the first message is complete, and never dismiss a concern about a patient because of who raised it or how briefly it was put.',
  next:{ext:'Bleep Cards — handling one bleep at a time', href:'bleep-cards.html'}},
 
 {id:'SO-06-01', mod:6, title:'Right Patient, Right Task', type:'Information Card', jur:'UK-wide', fpcP:'FPC5', fpcS:'FPC7',
@@ -227,7 +227,7 @@ window.SO_CARDS = [
  next:{to:'SO-06-02'}},
 
 {id:'SO-06-02', mod:6, title:'Close the Loop', type:'Information Card', jur:'UK-wide', fpcP:'FPC5', fpcS:'FPC6',
- what:'<p>Closing the loop means making sure something you started has actually finished: the request was received, the result was seen, the message got through.</p>',
+ what:'<p>Closing the loop means making sure a request, result or message has reached the person responsible for the next step, and that anything unresolved is visible to the team.</p>',
  why:'<p>In a busy hospital, many errors are not wrong decisions but things that quietly didn\'t happen. Everyone assumed someone else had done it.</p>',
  todo:['<b>A request isn\'t finished when you send it.</b> It\'s finished when the right person has it and acts on it.',
        '<b>A test isn\'t finished when it is requested.</b> It\'s finished when someone has seen the result and decided what it means.',
@@ -240,7 +240,7 @@ window.SO_CARDS = [
 
 {id:'SO-06-03', mod:6, title:'Document What Matters', type:'Information Card', jur:'UK-wide', fpcP:'FPC5', fpcS:'FPC11',
  what:'<p>GMC guidance states that you must make sure formal records of your work, including patients\' records, are <q>clear, accurate, contemporaneous and legible</q>. Contemporaneous means written at the time, or as soon as possible afterwards.</p>',
- why:'<p>The record is how the next person knows what happened, what was decided and what still needs doing. If it isn\'t recorded, the next clinician can\'t rely on it.</p>',
+ why:'<p>The record is how the next person understands what was assessed, decided and communicated, and what remains outstanding. Gaps in the record leave them guessing.</p>',
  todo:['<b>Be proportionate.</b> Not every conversation needs a long note. Record clinically significant findings, decisions, discussions, actions and anything outstanding, including decisions to take no action.',
        '<b>Make it clear who and when.</b> Your entry should show who wrote it and when.',
        '<b>Write it in the right place,</b> using your workplace\'s record system.',
@@ -261,11 +261,12 @@ window.SO_CARDS = [
 {id:'SO-07-02', mod:7, title:'Be Open and Honest', type:'Information Card', jur:'UK-wide', fpcP:'FPC8', fpcS:'FPC11',
  what:'<p>Every doctor has a professional duty of candour: to be open and honest with patients when something goes wrong with their care.</p>',
  why:'<p>Patients have a right to know what has happened to them. Honesty after an error protects trust — between you and your patient, and in the profession.</p>',
- todoIntro:'<p>GMC guidance says that when something goes wrong, the patient must be told as soon as possible. They should be told what happened and why, receive an apology, and hear what can be done about any harm and what will be done to stop it happening again.</p>',
+ todoIntro:'<p>GMC guidance says that when something goes wrong and a patient has suffered, or could suffer, harm or distress, they must be told and receive an apology. The conversation covers what is known, what is not yet known, what is being done about any effects, and what happens next.</p>',
  todo:['<b>Who speaks to the patient.</b> The guidance says the most appropriate team member will usually be the lead or accountable clinician. As a Foundation doctor, this will usually be your senior — but you may be involved.',
        '<b>Your part.</b> Tell your senior promptly. Agree who will speak to the patient. Check that it has happened — don\'t assume someone else has done it.',
        '<b>Apologising is not admitting legal liability.</b> The GMC is explicit about this.',
        '<b>Stick to the facts.</b> Share what you know. Don\'t guess, speculate or blame others.',
+       '<b>Near misses.</b> There is no automatic rule. Your senior will help decide whether the patient should be told.',
        '<b>Your organisation may also have a legal duty of candour.</b> The rules differ between the UK nations, and the organisation runs that process.'],
  local:['Who leads conversations with patients after an incident where you work?','What is your organisation\'s candour policy?'],
  safety:'Never conceal, minimise or alter information about what happened.',
@@ -273,7 +274,7 @@ window.SO_CARDS = [
 
 {id:'SO-07-03', mod:7, title:'Report It Locally', type:'Information Card', jur:'Check your nation and employer', fpcP:'FPC8', fpcS:'FPC9',
  what:'<p>Your employer will have a system for recording patient-safety incidents and near misses. As a doctor, you can and should use it.</p>',
- why:'<p>Reports are how organisations spot patterns and stop the same thing happening to the next patient. Reporting is about learning, not blame.</p>',
+ why:'<p>Reports let your organisation respond, support those affected and learn, so the same thing is less likely to happen to the next patient. If you are unsure what to report or how, ask.</p>',
  todo:['<b>Use your employer\'s reporting system.</b> Find out what it is during induction.',
        '<b>Report near misses too.</b> Something that nearly caused harm is also valuable for learning.',
        '<b>Report what you saw, not who to blame.</b> Keep it factual.',
@@ -285,7 +286,7 @@ window.SO_CARDS = [
  next:{ext:'Develop — how organisations learn from incidents'}},
 
 {id:'SO-08-01', mod:8, title:'Fatigue, Rest and Getting Home Safely', type:'Information Card', jur:'Check your nation and employer', fpcP:'FPC7', fpcS:'',
- what:'<p>Tiredness is part of clinical work, especially on long days and nights. Managing it is part of working safely, not a personal weakness.</p>',
+ what:'<p>Fatigue can build up in clinical work, especially around long days and nights. Recognising and managing it is part of working safely, and unsafe fatigue should not be treated as normal.</p>',
  why:'<p>Fatigue affects attention, judgement and reaction time — at work and on the way home. It can affect your patients\' safety and your own.</p>',
  todo:['<b>Take your breaks.</b> They are part of safe working, not a luxury. If breaks are regularly impossible, raise it (see SO-08-03).',
        '<b>Know your warning signs:</b> re-reading the same thing, losing track of tasks, irritability, or struggling to stay awake.',
@@ -302,16 +303,17 @@ window.SO_CARDS = [
  todo:['<b>Register with a GP</b> where you live, so you have your own doctor if you need one. Out of hours, use your local out-of-hours GP service or urgent care line.',
        '<b>People at work:</b> your clinical and educational supervisors, the Foundation programme team, and colleagues you trust.',
        '<b>Occupational health</b> can advise if your health affects your work, or your work affects your health.',
-       '<b>Confidential support outside work:</b> the BMA\'s 24/7 counselling line is free and confidential for all UK doctors and medical students, whether or not they are members. Confidential health services for doctors also exist in parts of the UK — ask your Foundation programme team what is available to you.',
+       '<b>Confidential support outside work:</b> the BMA\'s 24/7 counselling line is free and confidential for all UK doctors and medical students, whether or not they are members. Check what each service offers and any limits to confidentiality. Confidential health services for doctors also exist in parts of the UK — ask your Foundation programme team what is available to you.',
        '<b>If you feel unsafe or in crisis,</b> get urgent help now: call 999 in an emergency, use your local urgent mental-health route, or contact Samaritans, who are available day and night.'],
  local:['What wellbeing support does your employer and Foundation school offer?','How do you contact occupational health?'],
  safety:'If you are struggling, tell someone today — you don\'t need to wait until it affects your work.',
  next:{to:'SO-08-03'}},
 
 {id:'SO-08-03', mod:8, title:'When Work Is Becoming Unsafe', type:'Information Card', jur:'Check your nation and employer', fpcP:'FPC8', fpcS:'FPC7',
- what:'<p>Sometimes the problem isn\'t you; it\'s the way work is organised. This card is about recognising working patterns that are becoming unsafe and raising them.</p>',
+ what:'<p>Sometimes the problem isn\'t you; it\'s the way work is organised. This card is about recognising working patterns that are, or may become, unsafe and raising them.</p>',
  why:'<p>Unsafe working patterns affect patients and staff alike. They are not "just how it is", and raising them is part of your professional role.</p>',
  todo:['<b>Patterns to notice:</b> regularly missing breaks, routinely staying late, rota gaps that leave too few doctors, being left without adequate supervision, or too much work to see patients safely.',
+       '<b>You don\'t need to prove harm first.</b> Use the local route when your actual work, rest, education or staffing differs from what was agreed.',
        '<b>Raise it early</b> with your clinical or educational supervisor, the rota coordinator or the Foundation programme team. Your employer will also have a local route for raising concerns — find out what it is.',
        '<b>Exception reporting.</b> In England, doctors in training employed on the 2016 terms and conditions use exception reporting to record when their work differs from their work schedule — for example hours, rest breaks or educational opportunities. The process was reformed in February 2026. Your employer\'s Guardian of Safe Working Hours oversees these arrangements in England.',
        '<b>Outside England, or on a different contract,</b> different arrangements apply. Don\'t assume eligibility from your job title — check with medical staffing.',
@@ -332,6 +334,17 @@ window.SO_CARDS = [
  next:{to:'SO-01-01'}}
 ];
 
+window.SO_URLS = {
+  gmc_gmp:'https://www.gmc-uk.org/professional-standards/the-professional-standards/good-medical-practice',
+  gmc_candour:'https://www.gmc-uk.org/professional-standards/the-professional-standards/candour---openness-and-honesty-when-things-go-wrong/being-open-and-honest-with-patients-in-your-care-and-those-close-to-them-when-things-go-wrong',
+  gmc_prov:'https://www.gmc-uk.org/registration-and-licensing/join-our-registers/provisional-registration',
+  ukfpo_syl:'https://foundationprogramme.nhs.uk/curriculum/uk-fp-curriculum/ukfp-syllabus/',
+  ukfpo_sup:'https://foundationprogramme.nhs.uk/curriculum/supervisor-meetings/',
+  lfpse:'https://www.england.nhs.uk/patient-safety/patient-safety-insight/learning-from-patient-safety-events/learn-from-patient-safety-events-service/',
+  er:'https://www.nhsemployers.org/articles/exception-reporting-reform-faqs',
+  bma:'https://www.bma.org.uk/advice-and-support/your-wellbeing/wellbeing-support-services/counselling-and-peer-support-services'
+};
+window.SO_SOURCE_LINKS = {'SO-01-01':['gmc_prov','ukfpo_syl'],'SO-01-02':['gmc_prov'],'SO-02-03':['ukfpo_sup'],'SO-02-04':['ukfpo_sup'],'SO-04-01':['gmc_gmp'],'SO-04-02':['gmc_gmp'],'SO-06-03':['gmc_gmp'],'SO-07-01':['gmc_candour'],'SO-07-02':['gmc_candour'],'SO-07-03':['lfpse'],'SO-08-02':['bma'],'SO-08-03':['er']};
 window.SO_SOURCES = {
   'SO-01-01':'GMC — Provisional registration (item 2). UKFPO Curriculum 2021, 2026 Revision (FPC tags).',
   'SO-01-02':'GMC — Provisional registration.',
@@ -341,7 +354,7 @@ window.SO_SOURCES = {
   'SO-04-02':'GMC — Good medical practice (in effect 30 January 2024), para 2.',
   'SO-06-03':'GMC — Good medical practice (in effect 30 January 2024), paras 69–70.',
   'SO-07-01':'GMC — Candour: openness and honesty when things go wrong.',
-  'SO-07-02':'GMC — Candour: openness and honesty when things go wrong.',
+  'SO-07-02':'GMC — Candour: openness and honesty when things go wrong (including professional judgement on near misses).',
   'SO-07-03':'NHS England — Learn from Patient Safety Events (LFPSE) service (England only).',
   'SO-08-02':'BMA — Counselling and peer support for doctors and medical students.',
   'SO-08-03':'NHS Employers — Exception reporting reform FAQs (England; 2016 TCS; reforms effective 4 February 2026).'
