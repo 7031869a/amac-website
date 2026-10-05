@@ -1,5 +1,5 @@
-/* AMaC Foundation — Starting Out cards v1.0 (DRAFT — awaiting senior review)
-   Source of truth: "AMaC Foundation — Starting Out Cards v1.0" review doc, 5 Oct 2026.
+/* AMaC Foundation — Starting Out cards v1.0 (released 5 Oct 2026 after senior review)
+   Source of truth: "AMaC Foundation — Starting Out Cards v1.0" review doc.
    Edit wording here only after senior review; keep IDs stable. */
 window.SO_MODULES = [
   {n:1, name:'Before Day One'},
