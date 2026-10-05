@@ -344,20 +344,28 @@ const state = {
   openCard: null,
 };
 
+// PLAB 1 progress has its own key; the AKT bank (questions.html) uses 'amac_q_state'.
+const PKEY = 'amac_plab1_q_state';
 function save() {
-  try { localStorage.setItem('amac_q_state', JSON.stringify(state.answered)); } catch(e) {}
+  try { localStorage.setItem(PKEY, JSON.stringify(state.answered)); } catch(e) {}
 }
 const STATE_VERSION = 'v2';
+// IDs shared with the AKT bank whose question or options differ: never carry these over.
+const NO_MIGRATE = new Set(["236", "237", "238", "240", "243", "247", "249", "250", "253", "255", "256", "258", "263", "265", "CARD001", "CARD002", "CARD005", "CARD006", "CARD009", "CARD012", "CARD013", "CARD014", "CARD015", "CARD016", "CARD017", "CARD018", "CARD019", "CARD021", "CARD023", "CARD026", "CARD027", "CARD028", "CARD029", "CARD031", "CARD032", "CARD033", "CARD034", "CARD038", "CARD039", "CP005", "CP006", "CP008", "CP009", "CP011", "CP012", "CP014", "CP016", "CP017", "CP018", "CP019", "CP020", "CP022", "CP028", "CP029", "CP030", "CR004", "CR006", "CR008", "CR009", "CR010", "CR014", "CR016", "CR017", "CR020", "CR022", "CR024", "CR028", "CR029", "CR030", "CR031", "CR032", "CR033", "CR038", "CR039", "ETH001", "ETH004", "ETH005", "ETH009", "ETH010", "ETH011", "ETH012", "ETH016", "ETH017", "ETH019", "GER002", "GER005", "HAE001", "HAE002", "HAE006", "HAE008", "HAE009", "HAE012", "HAE016", "HAE017", "HAE018", "HAE020", "HAE022", "HAE024", "HAE025", "HAE026", "HAE028", "HAE030", "HAE031", "HAE032", "HAE033", "HAE034", "HAE035", "HAE038", "HAE040", "OG001", "OG002", "OG003", "OG004", "OG005", "OG006", "OG007", "OG008", "OG009", "OG010", "OG011", "OG012", "OG013", "OG014", "OG015", "OG016", "OG017", "OG018", "OG019", "OG020", "OG021", "OG022", "OG023", "OG024", "OG025", "OG026", "OG027", "OG028", "OG029", "OG031", "OG032", "OG033", "OG034", "OG035", "OG036", "OG037", "OG038", "OG039", "OG040", "OG041", "OG042", "OG043", "OG044", "OG045", "OG046", "OG047", "OG048", "OG049", "OG050", "OG051", "OG052", "OG053", "OG054", "OG055", "OG056", "OG057", "OG058", "OG059", "OG060", "P034", "P037", "P038", "P040", "PED001", "PED002", "PED004", "PED005", "PED008", "PED010", "PED011", "PED012", "PED013", "PED015", "PED017", "PED018", "PED019", "PED020", "PED021", "PED023", "PED024", "PED026", "PED028", "PED029", "PED031", "PED033", "PED035", "PED036", "PED038", "Q357", "S003", "S006", "S007", "S008", "S009", "S010", "S011", "S015", "S016", "S018", "S019", "S020", "S021", "S025", "S026", "S027", "S031", "S032", "S033", "S036", "S039", "S040", "STA001", "STA004", "STA005", "STA008", "STA009", "STA010", "STA013", "STA015", "STA016", "STA019"]);
 function load() {
   try {
-    const v = localStorage.getItem('amac_q_version');
-    if (v !== STATE_VERSION) {
-      localStorage.removeItem('amac_q_state');
-      localStorage.setItem('amac_q_version', STATE_VERSION);
-      return;
+    const d = localStorage.getItem(PKEY);
+    if (d !== null) { state.answered = JSON.parse(d) || {}; return; }
+    // One-off migration from the old shared key (only if it was written under the current version).
+    const old = localStorage.getItem('amac_q_state');
+    if (old && localStorage.getItem('amac_q_version') === STATE_VERSION) {
+      const o = JSON.parse(old) || {};
+      const ids = new Set(QUESTIONS.map(q => q.id));
+      const m = {};
+      for (const k in o) if (ids.has(k) && !NO_MIGRATE.has(k)) m[k] = o[k];
+      state.answered = m;
     }
-    const d = localStorage.getItem('amac_q_state');
-    if (d) state.answered = JSON.parse(d);
+    localStorage.setItem(PKEY, JSON.stringify(state.answered));
   } catch(e) {}
 }
 load();
