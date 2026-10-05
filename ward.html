@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Ward | AMaC Foundation</title>
+<link rel="canonical" href="https://amac-medical.com/ward.html">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#0C1526">
+<meta name="description" content="Ward: task cards for the planned work of a Foundation doctor — ward rounds, jobs lists, results, handover, discharge, difficult conversations, consent and capacity, and care at the end of life.">
+<!--WD:HEAD-END-->
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* Layout: AMaC Master Cards — cream page, white card, navy-gradient header, pastel icon-chip sections (copied from bleep-cards.html; Foundation door orange). */
+:root{
+  color-scheme:light;
+  --navy:#0d2247;--navy-deep:#091629;--gold:#c9a227;--gold-soft:#e0c45a;
+  --panel:#0F1A2E;--edge:#1E2C46;--edge-soft:#28385A;
+  --txt:#F6F4EE;--txt-soft:#AEB9D0;--txt-mute:#8593AE;--txt-faint:#6B7794;
+  --door:#E5793B;--door-text:#F0A46E;
+  --cream:#f7f4ec;--paper:#fffdf8;--tint:#f5f2ea;--ink:#1a1d24;--ink-soft:#4a5064;--ink-mute:#5d6470;--line:#e4ddcd;--rule:#f0ece0;
+  --ok:#0b7b5e;--ok-bg:#e8f7f2;--warn:#9a5510;--warn-bg:#fff3e0;--ask:#1b3a6b;--ask-bg:#edf2fc;--crit:#a02020;--crit-bg:#fdecea;
+  --serif:'Fraunces',Georgia,'Times New Roman',serif;--sans:'Outfit',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{font-family:var(--sans);background:var(--cream);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;}
+h1,h2,h3{font-family:var(--serif);text-wrap:balance;}
+a{color:inherit;}
+button,input{font-family:var(--sans);}
+:focus-visible{outline:2px solid var(--door);outline-offset:2px;}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important;}}
+
+nav.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:100;background:var(--panel);border-bottom:1px solid var(--edge);}
+.nav-inner{max-width:1180px;margin:0 auto;padding:13px 26px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;}
+.nav-l{display:flex;align-items:center;gap:13px;}
+.brand{font-weight:600;letter-spacing:.1em;color:var(--gold);font-size:16px;text-decoration:none;}
+.door-tag{font-size:11px;color:var(--door-text);border-left:1px solid var(--edge-soft);padding-left:13px;letter-spacing:.1em;}
+.nav-links{display:flex;align-items:center;gap:16px;list-style:none;font-size:12.5px;color:#C7D0E2;flex-wrap:wrap;}
+.nav-links a{text-decoration:none;}.nav-links a:hover{color:#fff;}
+.nav-exit{color:var(--txt-mute);font-size:11.5px;border-left:1px solid var(--edge-soft);padding-left:13px;}
+
+.hero{background:linear-gradient(155deg,#0d2247 0%,#091629 100%);padding:40px 16px 30px;text-align:center;border-bottom:1px solid #1A2740;}
+.hero-inner{max-width:760px;margin:0 auto;}
+.hero-kick{font-size:11px;letter-spacing:.2em;color:var(--door-text);font-weight:600;}
+.hero h1{font-size:clamp(26px,4.5vw,40px);color:var(--txt);font-weight:600;margin:14px 0 10px;line-height:1.15;}
+.hero-lede{font-size:clamp(13.5px,1.6vw,15.5px);color:var(--txt-soft);margin:0 auto;max-width:62ch;line-height:1.65;}
+
+.wrap{max-width:760px;margin:0 auto;padding:22px 16px 60px;}
+.draft{margin-bottom:12px;padding:10px 16px;background:var(--crit-bg);border:1px solid rgba(192,57,43,.25);border-left:3px solid #c0392b;border-radius:8px;color:#7a2020;font-size:13px;line-height:1.5;}
+.draft b{letter-spacing:.06em;}
+.page-note{margin-bottom:18px;padding:11px 16px;background:#fdf3ea;border:1px solid #f1d2b8;border-left:3px solid var(--door);border-radius:8px;color:var(--ink-soft);font-size:13.5px;line-height:1.55;}
+.page-note b{color:var(--ink);}
+
+.so-toolbar{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:10px;}
+.so-toolbar .lbl{font-size:12px;color:var(--ink-mute);}
+.so-mode{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--paper);}
+.so-mode button{border:0;background:transparent;padding:8px 14px;font-size:12.5px;font-weight:500;color:var(--ink-mute);cursor:pointer;}
+.so-mode button[aria-pressed="true"]{background:var(--navy);color:#fff;}
+
+.so-pick-wrap{margin-bottom:18px;}
+.so-pick-wrap>summary{cursor:pointer;font-size:13px;font-weight:600;color:var(--navy);padding:8px 12px;background:var(--paper);border:1px solid var(--line);border-radius:8px;list-style-position:inside;}
+.so-pick-wrap[open]>summary{margin-bottom:10px;}
+.sum-cur{font-weight:400;color:var(--ink-mute);margin-left:6px;}
+.so-picker{display:grid;gap:8px;}
+.so-prow{display:grid;grid-template-columns:150px 1fr;gap:8px;align-items:start;}
+.so-pmod{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-mute);font-weight:600;padding-top:6px;}
+.so-pchips{display:flex;gap:6px;flex-wrap:wrap;min-width:0;}
+.so-chip{font-size:12px;padding:5px 10px;border-radius:999px;border:1px solid var(--line);background:var(--paper);color:var(--ink-soft);cursor:pointer;line-height:1.3;text-align:left;}
+.so-chip:hover{border-color:var(--navy);color:var(--navy);}
+.so-chip[aria-current="true"]{background:var(--navy);border-color:var(--navy);color:#fff;}
+.so-chip .n{font-weight:600;margin-right:4px;opacity:.7;font-variant-numeric:tabular-nums;}
+.so-chip .done{color:var(--ok);margin-left:4px;font-weight:700;}
+.so-chip[aria-current="true"] .done{color:#9fe0c8;}
+@media(max-width:560px){.so-prow{grid-template-columns:1fr;gap:4px;}.so-pmod{padding-top:0;}}
+
+.card{scroll-margin-top:90px;background:var(--paper);border:1px solid var(--line);border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(13,34,71,0.08),0 1px 4px rgba(13,34,71,0.06);}
+.card-hdr{background:linear-gradient(135deg,#0f2850 0%,#0d2247 100%);padding:18px 20px 16px;position:relative;}
+.card-hdr::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.03) 1px,transparent 1px);background-size:16px 16px;pointer-events:none;}
+.card-num{position:relative;font-size:10.5px;color:rgba(240,164,110,.95);letter-spacing:.1em;font-weight:600;text-transform:uppercase;}
+.card-title{position:relative;font-size:22px;font-weight:500;color:#fff;margin:7px 0 4px;line-height:1.25;}
+.card-meta{position:relative;display:flex;gap:6px;flex-wrap:wrap;margin-top:10px;align-items:center;}
+.tag{font-size:10.5px;color:#C8D8F0;background:rgba(255,255,255,.12);border-radius:4px;padding:3px 9px;font-weight:500;}
+.tag.draft-tag{color:#ffd0c4;background:rgba(192,57,43,.28);}
+
+.sbtn-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(104px,1fr));gap:6px;padding:12px 14px;background:var(--tint);border-bottom:1px solid var(--line);}
+.sbtn{position:relative;font-size:11px;font-weight:500;padding:8px 4px;border-radius:8px;border:1px solid;cursor:pointer;text-align:center;transition:transform .15s,box-shadow .15s;line-height:1.25;display:flex;flex-direction:column;align-items:center;gap:4px;}
+.sbtn .ic{font-size:15px;line-height:1;}
+.sbtn:hover{transform:translateY(-1px);box-shadow:0 2px 6px rgba(13,34,71,0.12);}
+.sbtn.active{box-shadow:0 0 0 2px var(--navy),0 3px 10px rgba(13,34,71,.2);font-weight:600;}
+.sbtn .tick{position:absolute;top:3px;right:5px;font-size:10px;color:#1b6b3a;font-weight:700;}
+
+.content{padding:18px 20px;min-height:140px;}
+.sec{margin-bottom:22px;}.sec:last-child{margin-bottom:0;}
+.sec-label{font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;margin-bottom:10px;display:flex;align-items:center;gap:7px;}
+.prose{font-size:14.5px;line-height:1.62;max-width:65ch;}
+.prose p+p,.prose p+ol,.prose p+ul,.prose ol+p,.prose ul+p,.prose .so-table-wrap+ul,.prose ul+.so-table-wrap{margin-top:10px;}
+.prose b{color:var(--navy);font-weight:600;}
+.prose q{quotes:"“" "”";font-style:italic;}
+.so-strong{background:var(--ask-bg);border-left:3px solid #4a6fa5;padding:9px 12px;border-radius:6px;color:var(--ask);font-weight:500;}
+.so-ol,.so-ul{padding-left:20px;display:grid;gap:6px;}
+.bul{list-style:none;padding:0;}
+.bul li{font-size:14.5px;padding:8px;line-height:1.55;border-bottom:1px solid var(--rule);}
+.bul li:last-child{border-bottom:none;}
+.bul li b{color:var(--navy);font-weight:600;}
+.local{list-style:none;padding:0;display:grid;gap:6px;}
+.local li{background:var(--warn-bg);border-radius:8px;padding:9px 12px 9px 34px;position:relative;font-size:14.5px;line-height:1.5;}
+.local li::before{content:'?';position:absolute;left:11px;top:9px;width:16px;height:16px;border-radius:50%;background:#e07b1a;color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.safety{background:#fdf8e6;border:1px solid rgba(201,162,39,.35);border-radius:8px;padding:12px 16px;font-size:14.5px;color:#7a5c00;font-weight:500;line-height:1.55;}
+.next{display:flex;align-items:center;justify-content:space-between;gap:10px;background:var(--ok-bg);border:1px solid #b9e2d3;border-radius:8px;padding:12px 16px;flex-wrap:wrap;}
+.next .t{font-size:14.5px;color:var(--ok);font-weight:500;min-width:0;}
+.next .go{border:1px solid var(--ok);background:#fff;color:var(--ok);font-size:13px;font-weight:600;padding:7px 12px;border-radius:6px;cursor:pointer;text-decoration:none;}
+.next .go:hover{background:var(--ok);color:#fff;}
+.next .later{font-size:12px;color:var(--ink-mute);}
+.so-table-wrap{overflow-x:auto;}
+.so-table{width:100%;border-collapse:collapse;font-size:14px;}
+.so-table th{text-align:left;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-mute);font-weight:600;padding:8px;border-bottom:1px solid var(--line);}
+.so-table td{padding:8px;border-bottom:1px solid var(--rule);vertical-align:top;line-height:1.5;}
+.so-table td:first-child{width:52%;}
+.route{display:grid;gap:14px;}
+.route h3{font-family:var(--sans);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-mute);margin-bottom:6px;}
+.route ol{list-style:none;display:grid;gap:4px;counter-reset:r var(--start);}
+.route li{counter-increment:r;}
+.route button{width:100%;display:flex;gap:10px;align-items:baseline;text-align:left;background:var(--tint);border:1px solid transparent;border-radius:6px;padding:7px 10px;font-size:14px;color:var(--ink);cursor:pointer;}
+.route button::before{content:counter(r);font-variant-numeric:tabular-nums;font-weight:600;color:var(--ink-mute);min-width:1.6em;}
+.route button:hover{border-color:var(--navy);}
+.route .rid{font-size:11.5px;color:var(--ink-mute);margin-left:auto;white-space:nowrap;}
+
+.src a{color:var(--navy);text-decoration:underline;}
+.src{font-size:12.5px;color:var(--ink-mute);line-height:1.6;border-top:1px solid var(--line);padding:14px 20px;}
+.navrow{display:flex;justify-content:space-between;align-items:center;padding:14px 20px;border-top:1px solid var(--line);background:var(--tint);flex-wrap:wrap;gap:10px;}
+.nbtn{display:inline-flex;align-items:center;gap:6px;background:#fff;border:1px solid var(--line);color:var(--ink);padding:8px 14px;border-radius:6px;font-size:13px;font-weight:600;cursor:pointer;box-shadow:0 1px 4px rgba(13,34,71,0.07);}
+.nbtn:hover:not(:disabled){background:var(--navy);color:#fff;border-color:var(--navy);}
+.nbtn:disabled{opacity:.35;cursor:not-allowed;}
+.nbtn.rev{background:linear-gradient(135deg,#37c99a,#2FB48C);color:#07210f;border-color:transparent;}
+.pos{font-size:12.5px;color:var(--ink-mute);font-variant-numeric:tabular-nums;}
+.mid{display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:center;}
+@media(max-width:640px){.navrow{display:grid;grid-template-columns:1fr 1fr;}.navrow [data-act=next]{justify-self:end;}.mid{grid-column:1/-1;order:3;}.content{padding:16px 14px;}}
+
+footer{background:var(--navy-deep);margin-top:40px;border-top:1px solid #1A2740;padding:30px 16px 24px;}
+.foot-bottom{max-width:1180px;margin:0 auto;font-size:12px;color:var(--txt-faint);text-align:center;}
+.foot-disc{max-width:760px;margin:10px auto 0;font-size:11.5px;color:var(--txt-faint);text-align:center;line-height:1.55;}
+
+@media print{
+  body{background:#fff;}
+  nav.top,.hero,footer,.page-note,.draft,.so-toolbar,.so-picker,.sbtn-grid,.navrow,.ck-states,.ck-actions,.ck-store{display:none!important;}
+  .wrap{padding:0;max-width:none;}
+  .card{box-shadow:none;border:0;}
+  .card-hdr,.safety,.local li,.gap,.next{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .sec{break-inside:avoid-page;}
+}
+/* ---------- Ward task cards ---------- */
+.wd-steps{padding-left:22px;display:grid;gap:8px;font-size:14.5px;line-height:1.55;}
+.wd-pit{margin-top:12px;background:var(--tint);border-left:3px solid #9aa3b2;border-radius:6px;padding:9px 12px;font-size:14px;color:var(--ink-soft);}
+.wd-pit b{color:var(--ink);}
+.wd-words{list-style:none;display:grid;gap:6px;}
+.wd-words li{background:var(--ask-bg);border-radius:8px;padding:9px 12px;font-size:14.5px;color:var(--ask);font-style:italic;}
+.wd-stop{list-style:none;display:grid;gap:6px;}
+.wd-stop li{background:var(--crit-bg);border-radius:8px;padding:9px 12px 9px 34px;position:relative;font-size:14.5px;line-height:1.5;color:#5e1a1a;}
+.wd-stop li::before{content:'!';position:absolute;left:11px;top:9px;width:16px;height:16px;border-radius:50%;background:#c0392b;color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.wd-seq{margin-top:10px;font-size:13.5px;color:var(--ink-soft);}
+.wd-seq b{color:var(--navy);}
+.so-chip.soon{opacity:.55;cursor:default;border-style:dashed;}
+</style>
+</head>
+<body>
+
+<nav class="top" data-door="foundation"><div class="nav-inner">
+  <div class="nav-l">
+    <a href="index.html" class="brand">AMaC</a>
+    <span class="door-tag">FOUNDATION</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="foundation.html">Foundation home</a></li>
+    <li><a href="starting-out.html">Starting Out</a></li>
+    <li><a href="bleep-cards.html">Bleep Cards</a></li>
+    <li><a href="index.html" class="nav-exit">← all exams</a></li>
+  </ul>
+</div></nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-kick">THE FOUNDATION DOCTOR · WARD</div>
+    <h1>Do the day’s work well.</h1>
+    <p class="hero-lede">Task cards for the planned work of the ward: rounds, jobs, results, handover, discharge, difficult conversations, consent and capacity, and care at the end of life.</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="draft"><b>DRAFT</b> · Pilot cards, not yet signed off by a senior reviewer.</div>
+  <div class="page-note"><b>Read this first.</b> Ward cards describe how to do common tasks well. They do not replace your employer’s policies, local templates or senior supervision. Where the law differs between UK nations, each card says so.</div>
+
+  <div class="so-toolbar">
+    <span class="lbl" id="wdCount"></span>
+    <div class="so-mode" role="group" aria-label="View">
+      <button type="button" id="modeStudy" data-mode="study" aria-pressed="true">One section</button>
+      <button type="button" id="modeAll" data-mode="all" aria-pressed="false">Whole card</button>
+    </div>
+  </div>
+  <details class="so-pick-wrap" id="wdPickWrap" open><summary>All modules <span class="sum-cur" id="wdCur"></span></summary><div class="so-picker" id="wdPicker" role="navigation" aria-label="Choose a card"></div></details>
+
+  <div id="wdCard" aria-live="polite"></div>
+</main>
+
+<footer>
+  <div class="foot-bottom">© 2026 A. Mansour &amp; Colleagues (AMaC). All rights reserved.</div>
+  <p class="foot-disc">AMaC Ward cards are independent educational material written against current UK guidance. They are not endorsed by the UKFPO, GMC or NHS, do not replace your employer's policies, and do not replace senior clinical supervision.</p>
+</footer>
+
+<!--WD:DATA-->
+<script src="ward-data.js"></script>
+<!--WD:DATA-END-->
+<script>
+(function(){
+  var cards = window.WD_CARDS || [], MODS = window.WD_MODULES || [];
+  var byId = {}; cards.forEach(function(c, i){ c._i = i; byId[c.id] = c; });
+  function load(k, fb){ try { var v = localStorage.getItem(k); return v ? JSON.parse(v) : fb; } catch(e){ return fb; } }
+  function save(k, v){ try { localStorage.setItem(k, JSON.stringify(v)); } catch(e){} }
+  function esc(s){ return String(s).replace(/[&<>"]/g, function(ch){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[ch]; }); }
+  var reviewed = load('amac_wd_v1_reviewed', {}), seen = load('amac_wd_v1_seen', {});
+  var mode = load('amac_wd_v1_mode', 'study'); if(mode !== 'all') mode = 'study';
+  var cidx = 0, active = null;
+
+  var SECS = {
+    good:   {l:'What good looks like', i:'🎯', bg:'#edf2fc', bd:'#4a6fa5', tx:'#1b3a6b'},
+    before: {l:'Before you start',     i:'🧾', bg:'#eeeffe', bd:'#5c6bc0', tx:'#3a4a9a'},
+    steps:  {l:'Doing it',             i:'✅', bg:'#e8f7f2', bd:'#0b7b5e', tx:'#0b5e47'},
+    words:  {l:'Words that work',      i:'💬', bg:'#edf2fc', bd:'#4a6fa5', tx:'#1b3a6b'},
+    stop:   {l:'Stop and get help if', i:'⛔', bg:'#fdecea', bd:'#c0392b', tx:'#a02020'},
+    record: {l:'Record it',            i:'📝', bg:'#fdf8e6', bd:'#c9a227', tx:'#7a5c00'},
+    local:  {l:'Check locally',        i:'📍', bg:'#fff3e0', bd:'#e07b1a', tx:'#9a5510'},
+    next:   {l:'Where next',           i:'➡️', bg:'#e8f7f2', bd:'#2FB48C', tx:'#0b5e47'}
+  };
+  var KEYS = ['good','before','steps','words','stop','record','local','next'];
+
+  function ul(arr, cls){ return '<ul class="'+cls+'">'+arr.map(function(x){ return '<li>'+esc(x)+'</li>'; }).join('')+'</ul>'; }
+  function body(c, k){
+    switch(k){
+      case 'good': return '<div class="prose"><p>'+esc(c.good)+'</p></div>';
+      case 'before': return ul(c.before, 'bul');
+      case 'steps': return '<ol class="wd-steps">'+c.steps.map(function(s){ return '<li>'+esc(s)+'</li>'; }).join('')+'</ol>' +
+        (c.pitfall ? '<div class="wd-pit"><b>Common pitfall:</b> '+esc(c.pitfall)+'</div>' : '');
+      case 'words': return ul(c.words, 'wd-words');
+      case 'stop': return ul(c.stop, 'wd-stop') + '<p class="wd-seq">If any of these apply: <b>Stop → Clarify → Seek appropriate help → Proceed safely.</b></p>';
+      case 'record': return '<div class="prose"><p>'+esc(c.record)+'</p></div>';
+      case 'local': return ul(c.local, 'local');
+      case 'next':
+        var n = c.next;
+        if(n.to && byId[n.to]) return '<div class="next"><span class="t">'+n.to+' — '+esc(byId[n.to].title)+'</span><button type="button" class="go" data-goto="'+n.to+'">Go to card →</button></div>';
+        if(n.href) return '<div class="next"><span class="t">'+esc(n.ext)+'</span><a class="go" href="'+esc(n.href)+'">Open →</a></div>';
+        return '<div class="next"><span class="t">'+esc(n.ext)+'</span></div>';
+    }
+    return '';
+  }
+  function section(c, k){ var s = SECS[k]; return '<div class="sec" id="sec-'+k+'"><div class="sec-label" style="color:'+s.tx+'"><span aria-hidden="true">'+s.i+'</span> '+s.l+'</div>'+body(c,k)+'</div>'; }
+
+  function renderPicker(){
+    var cur = cards[cidx];
+    document.getElementById('wdPicker').innerHTML = MODS.map(function(m){
+      var cs = cards.filter(function(c){ return c.mod === m.n; }), left = Math.max(0, m.planned - cs.length);
+      return '<div class="so-prow"><div class="so-pmod">'+m.n+' · '+esc(m.name)+'</div><div class="so-pchips">'+cs.map(function(c){
+        return '<button type="button" class="so-chip" data-i="'+c._i+'" aria-current="'+(c===cur)+'"><span class="n">'+c.id.replace('WD-','')+'</span>'+esc(c.title)+(reviewed[c.id]?'<span class="done" aria-label="reviewed">✓</span>':'')+'</button>';
+      }).join('') + (left ? '<span class="so-chip soon" aria-label="'+left+' cards coming">'+left+(cs.length ? ' more' : '')+' coming</span>' : '') + '</div></div>';
+    }).join('');
+    var planned = MODS.reduce(function(a, m){ return a + m.planned; }, 0);
+    document.getElementById('wdCount').textContent = cards.length+' of '+planned+' cards ready (pilots)';
+    document.getElementById('wdCur').textContent = '· showing '+cur.id;
+  }
+  function render(){
+    var c = cards[cidx];
+    if(!active || KEYS.indexOf(active) === -1) active = KEYS[0];
+    if(mode === 'study'){ seen[c.id+'-'+active] = true; save('amac_wd_v1_seen', seen); }
+    renderPicker();
+    var modName = (MODS.filter(function(m){ return m.n === c.mod; })[0] || {}).name;
+    var tags = '<span class="tag">Task card</span><span class="tag">'+esc(c.jur)+'</span><span class="tag">FPC primary: '+esc(c.fpcP)+'</span>' +
+      (c.fpcS ? '<span class="tag">FPC secondary: '+esc(c.fpcS)+'</span>' : '') + '<span class="tag">Appointed FY1/FY2 doctors</span>' +
+      (c.status === 'DRAFT' ? '<span class="tag draft-tag">DRAFT</span>' : '');
+    var inner;
+    if(mode === 'all'){ inner = '<div class="content">'+KEYS.map(function(k){ return section(c,k); }).join('')+'</div>'; }
+    else {
+      inner = '<div class="sbtn-grid" role="toolbar" aria-label="Card sections">'+KEYS.map(function(k, n){
+        var s = SECS[k];
+        return '<button type="button" class="sbtn'+(k===active?' active':'')+'" data-sec="'+k+'" aria-pressed="'+(k===active)+'" title="'+s.l+' ('+(n+1)+')" style="background:'+s.bg+';border-color:'+s.bd+';color:'+s.tx+'">'+(seen[c.id+'-'+k]?'<span class="tick" aria-label="seen">✓</span>':'')+'<span class="ic" aria-hidden="true">'+s.i+'</span>'+s.l+'</button>';
+      }).join('')+'</div><div class="content">'+section(c, active)+'</div>';
+    }
+    document.getElementById('wdCard').innerHTML =
+      '<article class="card" id="'+c.id+'"><div class="card-hdr"><div class="card-num">'+c.id+' · Module '+c.mod+' · '+esc(modName)+'</div>' +
+      '<h2 class="card-title">'+esc(c.title)+'</h2><div class="card-meta">'+tags+'</div></div>' + inner +
+      '<div class="src">Sources: '+esc(c.sources)+'</div>' +
+      '<div class="navrow"><button type="button" class="nbtn" data-act="prev" '+(cidx===0?'disabled':'')+'>← Prev</button>' +
+      '<div class="mid"><span class="pos">'+(cidx+1)+' / '+cards.length+'</span><button type="button" class="nbtn rev" data-act="rev">'+(reviewed[c.id]?'✓ Reviewed':'☆ Mark reviewed')+'</button></div>' +
+      '<button type="button" class="nbtn" data-act="next" '+(cidx===cards.length-1?'disabled':'')+'>Next →</button></div></article>';
+    try { history.replaceState(null, '', '#'+c.id); } catch(e){}
+  }
+  function go(i){ if(i < 0 || i >= cards.length) return; cidx = i; active = null; render(); var el = document.getElementById('wdCard'); if(el && el.getBoundingClientRect().top < 0) el.scrollIntoView({block:'start'}); }
+  function setMode(m){ mode = m; save('amac_wd_v1_mode', m); document.getElementById('modeStudy').setAttribute('aria-pressed', String(m==='study')); document.getElementById('modeAll').setAttribute('aria-pressed', String(m==='all')); render(); }
+
+  document.addEventListener('click', function(e){
+    var t = e.target.closest && e.target.closest('button'); if(!t) return;
+    if(t.dataset.i){ go(+t.dataset.i); try { if(window.matchMedia('(max-width:640px)').matches) document.getElementById('wdPickWrap').open = false; } catch(err){} return; }
+    if(t.dataset.goto){ var c = byId[t.dataset.goto]; if(c) go(c._i); return; }
+    if(t.dataset.sec){ active = t.dataset.sec; render(); return; }
+    if(t.dataset.mode){ setMode(t.dataset.mode); return; }
+    var a = t.dataset.act;
+    if(a === 'prev') go(cidx-1);
+    else if(a === 'next') go(cidx+1);
+    else if(a === 'rev'){ var id = cards[cidx].id; if(reviewed[id]) delete reviewed[id]; else reviewed[id] = true; save('amac_wd_v1_reviewed', reviewed); render(); }
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.target.matches && e.target.matches('input,textarea')) return;
+    if(e.key === 'ArrowRight') go(cidx+1); else if(e.key === 'ArrowLeft') go(cidx-1);
+  });
+  try { if(window.matchMedia('(max-width:640px)').matches) document.getElementById('wdPickWrap').open = false; } catch(e){}
+  window.addEventListener('hashchange', function(){ var h = (location.hash || '').slice(1); if(byId[h] && byId[h]._i !== cidx) go(byId[h]._i); });
+  var h = (location.hash || '').slice(1);
+  if(byId[h]) cidx = byId[h]._i;
+  setMode(mode);
+})();
+</script>
+</body>
+</html>
