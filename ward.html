@@ -189,7 +189,7 @@ footer{background:var(--navy-deep);margin-top:40px;border-top:1px solid #1A2740;
 </header>
 
 <main class="wrap">
-  <div class="draft"><b>DRAFT</b> · Pilot cards, not yet signed off by a senior reviewer.</div>
+  <div class="draft"><b>DRAFT</b> · All 24 cards drafted, not yet signed off by a senior reviewer.</div>
   <div class="page-note"><b>Read this first.</b> Ward cards describe how to do common tasks well. They do not replace your employer’s policies, local templates or senior supervision. Where the law differs between UK nations, each card says so.</div>
 
   <div class="so-toolbar">
@@ -265,7 +265,7 @@ footer{background:var(--navy-deep);margin-top:40px;border-top:1px solid #1A2740;
       }).join('') + (left ? '<span class="so-chip soon" aria-label="'+left+' cards coming">'+left+(cs.length ? ' more' : '')+' coming</span>' : '') + '</div></div>';
     }).join('');
     var planned = MODS.reduce(function(a, m){ return a + m.planned; }, 0);
-    document.getElementById('wdCount').textContent = cards.length+' of '+planned+' cards ready (pilots)';
+    document.getElementById('wdCount').textContent = cards.length+' of '+planned+' cards drafted';
     document.getElementById('wdCur').textContent = '· showing '+cur.id;
   }
   function render(){

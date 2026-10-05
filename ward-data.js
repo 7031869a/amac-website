@@ -532,6 +532,79 @@ window.WD_CARDS = [
     sources: 'GMC and NMC, Openness and honesty when things go wrong: the professional duty of candour (2015, updated 2022); GMC, Good medical practice (2024).'
   },
   {
+    id: 'WD-05-01', mod: 5, title: 'Valid consent for treatment',
+    jur: 'UK-wide', fpcP: 'FPC11 Ethics and law', fpcS: 'FPC4 Communication and care', status: 'DRAFT',
+    good: 'Consent is valid when a person with capacity, given the information they need, makes a voluntary decision. Good consent is a shared conversation: you find out what matters to the person, discuss the reasonable options including doing nothing, and explain the risks they would consider significant.',
+    before: [
+      'Check that you, or whoever seeks consent, knows the treatment well enough to explain it and answer questions.',
+      'If capacity is in doubt, assess it first (WD-05-03).',
+      'Arrange privacy, time and, if needed, a professional interpreter.'
+    ],
+    steps: [
+      'Find out what the person already knows and what matters to them.',
+      'Explain the options, including no treatment, with their likely benefits, risks and outcomes, focusing on the risks this person would consider significant.',
+      'Check understanding, invite questions, and give time to decide where possible.',
+      'Make sure the decision is voluntary, without pressure from staff or family.',
+      'Record consent in the way your employer requires; many procedures need written consent.',
+      'Remember consent is ongoing: the person can change their mind, and you should recheck it if things change.'
+    ],
+    pitfall: 'Treating a signed form as the consent. The consent is the conversation; the form records it.',
+    words: [
+      '“What matters most to you in making this decision?”',
+      '“There are a few options, including not having treatment.”',
+      '“Is there anything that worries you about this?”'
+    ],
+    stop: [
+      'You do not know the treatment well enough to answer the person’s questions.',
+      'You doubt their capacity for this decision.',
+      'The person seems pressured, or refuses and you are unsure what to do next: a refusal by an adult with capacity must be respected (for under-18s see WD-05-05), so tell your senior.'
+    ],
+    record: 'The options discussed, the risks explained, questions asked, the decision, who was present, and any written information given.',
+    local: [
+      'Your employer’s consent forms and which procedures need written consent.',
+      'Who may seek consent for which procedures.'
+    ],
+    next: { to: 'WD-05-02' },
+    sources: 'GMC, Decision making and consent (2020); Montgomery v Lanarkshire Health Board [2015] UKSC 11.'
+  },
+  {
+    id: 'WD-05-02', mod: 5, title: 'Consent and safety for ward procedures',
+    jur: 'UK-wide', fpcP: 'FPC11 Ethics and law', fpcS: 'FPC9 Quality improvement', status: 'DRAFT',
+    good: 'Before any ward procedure, such as a cannula, blood culture, catheter or NG tube, you have valid consent, the right patient and procedure, the competence or supervision you need, and a safe set-up. Afterwards you check the patient and record what you did.',
+    before: [
+      'Only do procedures you are trained for, or do them under direct supervision.',
+      'Check identity, allergies (for example to skin preparations or latex), anticoagulants and any results that matter for this procedure.',
+      'Gather the equipment and a sharps bin, and offer a chaperone where appropriate.'
+    ],
+    steps: [
+      'Explain what you will do, why, what it will feel like, the risks and the alternatives, and get consent. Verbal consent is usual for minor ward procedures; follow local policy on written consent.',
+      'Pause before you start: right patient, right procedure and site, consent, equipment. Use your employer’s safety checklist for invasive procedures.',
+      'Use aseptic technique and dispose of sharps at the point of use.',
+      'Stop if the patient withdraws consent, or if you have reached the number of attempts your local policy allows.',
+      'Afterwards, check the patient, label samples at the bedside, and complete any required checks, such as confirming NG tube position before use.'
+    ],
+    pitfall: 'Labelling samples away from the bedside.',
+    words: [
+      '“I’d like to put a small tube in your vein. It will feel like a sharp scratch. Is that all right?”',
+      '“Can you tell me your full name and date of birth?”',
+      '“Tell me if you want me to stop at any point.”'
+    ],
+    stop: [
+      'You are not trained for the procedure, or you are not succeeding.',
+      'The patient withdraws consent.',
+      'There is a complication, or the patient becomes unwell.',
+      'You cannot confirm the patient’s identity.'
+    ],
+    record: 'The procedure and why; consent; technique; the number of attempts; any complications; required checks; your name and role.',
+    local: [
+      'Which procedures Foundation doctors may do, and how you are signed off.',
+      'Your employer’s procedural safety checklists.',
+      'The local policy for confirming NG tube position.'
+    ],
+    next: { to: 'WD-05-03' },
+    sources: 'GMC, Decision making and consent (2020); Centre for Perioperative Care, National Safety Standards for Invasive Procedures 2 (2023); Welsh Health Circular WHC/2023/30.'
+  },
+  {
     id: 'WD-05-03', mod: 5, title: 'Assessing capacity',
     jur: 'Check your nation and employer', fpcP: 'FPC11 Ethics and law', fpcS: 'FPC4 Communication and care', status: 'DRAFT',
     good: 'Assess capacity for one decision at one time. Presume capacity, help the person decide, and record your reasoning. An unwise choice is not, by itself, a lack of capacity.',
@@ -561,12 +634,259 @@ window.WD_CARDS = [
     record: 'The decision; information and support given; findings for each ability, in their own words; conclusion and reasons; who was involved; date, time and plan to reassess.',
     local: [
       'Which law and code apply, and your employer’s capacity form.',
-      'Northern Ireland: the 2016 Act is only partly in force, so check the current position.',
+      'Northern Ireland: only Phase 1 of the 2016 Act is in force; treatment decisions are still largely governed by common law.',
       'Crown Dependencies have their own law, for example Jersey’s Capacity and Self-Determination (Jersey) Law 2016.',
       'Liaison psychiatry contact.',
       'Patients under 16 or 18: a different framework applies; see WD-05-05 or ask a senior.'
     ],
-    next: { ext: 'WD-05-04 Best interests (coming in this module). For a refusal on call, see Bleep Card BLEEP-50.', href: 'bleep-cards.html#BLEEP-50' },
+    next: { to: 'WD-05-04' },
     sources: 'Mental Capacity Act 2005 and Code of Practice (2007); A Local Authority v JB [2021] UKSC 52; Adults with Incapacity (Scotland) Act 2000 and Part 5 Code of Practice; Mental Capacity Act (Northern Ireland) 2016; Capacity and Self-Determination (Jersey) Law 2016; GMC, Decision making and consent (2020).'
+  },
+  {
+    id: 'WD-05-04', mod: 5, title: 'Best interests',
+    jur: 'Check your nation and employer', fpcP: 'FPC11 Ethics and law', fpcS: 'FPC3 Holistic planning', status: 'DRAFT',
+    good: 'When an adult lacks capacity for a decision, it is made in the way your nation’s law requires, with the person’s own wishes, feelings, values and beliefs at the centre. Relatives are consulted; they decide only if they hold legal authority.',
+    before: [
+      'Confirm a capacity assessment for this decision is recorded (WD-05-03).',
+      'Check for an advance decision to refuse treatment, and for a legal proxy with authority over this decision, such as a health and welfare attorney, deputy, welfare attorney or guardian. The terms differ by nation.',
+      'Identify who to consult, and whether an independent advocate is needed under your nation’s law.'
+    ],
+    steps: [
+      'Ask whether the decision can wait until the person regains capacity.',
+      'Involve the person as fully as possible.',
+      'Find out their past and present wishes, feelings, beliefs and values.',
+      'Consult those close to them and any proxy.',
+      'England, Wales, Jersey and Northern Ireland (common law until its Act is fully in force): choose what is in the person’s best interests, using the least restrictive option that achieves the purpose.',
+      'Scotland: any intervention must benefit the person, be the least restrictive option, take account of their wishes and the views of relevant others, and encourage them to use their skills. Non-urgent treatment needs a section 47 certificate.',
+      'In an emergency, give the treatment needed to save life or prevent serious harm.'
+    ],
+    pitfall: 'Asking relatives to make the decision when they have no legal authority to do so.',
+    words: [
+      '“We’re not asking you to decide, but to help us understand what she would want.”',
+      '“What was important to him before he became unwell?”'
+    ],
+    stop: [
+      'The decision is serious, such as withdrawing major treatment, or there is disagreement: involve your senior, who may seek legal advice.',
+      'Restraint or a deprivation of liberty may be needed: each nation has its own legal process.',
+      'A proxy’s decision seems contrary to the person’s interests.'
+    ],
+    record: 'The capacity assessment, who you consulted, the person’s known wishes, the options considered, the decision and the reasons.',
+    local: [
+      'Your employer’s best-interests and deprivation-of-liberty forms and process.',
+      'How to refer to independent advocacy.',
+      'How to reach your legal services team.'
+    ],
+    next: { to: 'WD-05-05' },
+    sources: 'Mental Capacity Act 2005, section 4, and Code of Practice (2007); Adults with Incapacity (Scotland) Act 2000, section 1; BMA, Mental capacity in Northern Ireland toolkit (updated March 2025); Capacity and Self-Determination (Jersey) Law 2016; GMC, Decision making and consent (2020).'
+  },
+  {
+    id: 'WD-05-05', mod: 5, title: 'Children and young people: consent and Gillick',
+    jur: 'Check your nation and employer', fpcP: 'FPC11 Ethics and law', fpcS: 'FPC4 Communication and care', status: 'DRAFT',
+    good: 'You talk to the young person directly, judge whether they can consent to this decision, respect their confidentiality where appropriate, and involve those with parental responsibility when the young person cannot consent or when safety requires it.',
+    before: [
+      'Know who has parental responsibility.',
+      'Know the law where you work. England, Wales and Northern Ireland: young people of 16 and 17 are presumed able to consent to treatment, and under-16s can consent if they are Gillick competent. Scotland: people of 16 and over have full legal capacity, and under-16s can consent if, in the opinion of the attending doctor, they understand the nature and possible consequences of the treatment.'
+    ],
+    steps: [
+      'Speak to the young person directly, in language that suits them.',
+      'Assess whether they understand this decision: what is proposed, the options, and the likely consequences.',
+      'Encourage them to involve their parents, but respect the confidentiality of a competent young person unless there is a risk of serious harm.',
+      'If they cannot consent, obtain consent from someone with parental responsibility.',
+      'In an emergency, give the treatment needed to prevent serious harm.'
+    ],
+    pitfall: 'Talking only to the parents when the young person can take part in the decision.',
+    words: [
+      '“I’d like to hear what you think about this.”',
+      '“Can you tell me what you understand about the treatment?”',
+      '“Is it all right if we include your mum in this conversation?”'
+    ],
+    stop: [
+      'A young person refuses treatment, or parents refuse treatment the child needs: seek senior and legal advice.',
+      'You have a safeguarding concern (WD-05-06).',
+      'Those with parental responsibility disagree.'
+    ],
+    record: 'Who was present, your assessment of the young person’s understanding, their views, who consented, and any confidentiality decisions.',
+    local: [
+      'Your employer’s policy for treating young people on adult and children’s wards.',
+      'How to reach the paediatric team and the safeguarding team.'
+    ],
+    next: { to: 'WD-05-06' },
+    sources: 'Gillick v West Norfolk and Wisbech Area Health Authority [1986] AC 112; Family Law Reform Act 1969, section 8 (England and Wales); Age of Legal Capacity (Scotland) Act 1991, sections 1 and 2(4); Age of Majority Act (Northern Ireland) 1969, section 4; GMC, 0–18 years: guidance for all doctors.'
+  },
+  {
+    id: 'WD-05-06', mod: 5, title: 'Recognising a safeguarding concern',
+    jur: 'Check your nation and employer', fpcP: 'FPC11 Ethics and law', fpcS: 'FPC1 Clinical assessment', status: 'DRAFT',
+    good: 'You notice when a child or an adult at risk may be experiencing abuse or neglect, act to keep them safe, share information appropriately, and refer through your local route. You do not investigate it yourself.',
+    before: [
+      'Know your employer’s safeguarding route and team, including out of hours.',
+      'Remember the many forms abuse can take, including physical, sexual, emotional and financial abuse, neglect and self-neglect, domestic abuse and modern slavery.'
+    ],
+    steps: [
+      'Notice warning signs: injuries that do not fit the explanation, delay in seeking help, disclosures, worrying behaviour, signs of neglect.',
+      'If someone discloses abuse, listen, do not promise secrecy, avoid leading questions, and note their own words.',
+      'Consider immediate safety: is this person, or anyone else such as children at home, at risk now?',
+      'Discuss it with your senior or the safeguarding lead the same day.',
+      'Refer through your local process. GMC guidance supports sharing information to protect a child, or an adult who lacks capacity, from serious harm. If an adult with capacity refuses, usually respect this unless others, such as children, are at risk; discuss it with your senior or safeguarding lead.',
+      'If anyone is in immediate danger, contact the police.'
+    ],
+    pitfall: 'Waiting until you are certain. Raise the concern; others will assess it.',
+    words: [
+      '“Thank you for telling me. I can’t keep this a secret, but I will only share it with people who need to know to help keep you safe.”',
+      '“Can you tell me what happened?”'
+    ],
+    stop: [
+      'Someone is in immediate danger.',
+      'A child discloses abuse.',
+      'You are unsure whether something is a safeguarding concern: ask.'
+    ],
+    record: 'The facts, the person’s own words, what you observed (using a body map if your employer uses one), and who you informed and when.',
+    local: [
+      'Safeguarding team contacts and the out-of-hours route.',
+      'Referral forms, and the law and guidance that apply in your nation.',
+      'How to check whether there are children in the household.'
+    ],
+    next: { ext: 'Starting Out: finding your local safeguarding route', href: 'starting-out.html' },
+    sources: 'Care Act 2014 (England); Social Services and Well-being (Wales) Act 2014; Adult Support and Protection (Scotland) Act 2007; Adult Safeguarding: Prevention and Protection in Partnership (Northern Ireland, 2015); Children Acts 1989 and 2004 (England and Wales); Children (Scotland) Act 1995; Children (Northern Ireland) Order 1995; National Guidance for Child Protection in Scotland (2021, updated 2023); GMC, Protecting children and young people (2012); GMC, Confidentiality (2017).'
+  },
+  {
+    id: 'WD-06-01', mod: 6, title: 'Treatment escalation plans and DNACPR conversations',
+    jur: 'Check your nation and employer', fpcP: 'FPC11 Ethics and law', fpcS: 'FPC4 Communication and care', status: 'DRAFT',
+    good: 'Patients at risk of deteriorating have a clear plan, made with them, about which treatments would and would not be right for them, including CPR. The decision belongs to the senior responsible clinician; you help prepare, take part, and record it.',
+    before: [
+      'Know who will make the decision, and agree with them who leads the conversation.',
+      'Read the notes and check for existing plans or forms, such as ReSPECT, a treatment escalation plan, or your nation’s DNACPR form.',
+      'Find a private space and enough time; offer an interpreter if needed.'
+    ],
+    steps: [
+      'Explore what the person understands about their illness and what matters to them.',
+      'Explain the current situation and the likely course honestly.',
+      'Discuss which treatments may help and which may not, including CPR and its likely outcome for them.',
+      'A person with capacity can refuse CPR. Clinicians need not offer CPR that will not work, but should discuss the decision with the patient unless that would cause them physical or psychological harm.',
+      'If the person lacks capacity, consult those close to them, who inform the decision but do not make it unless they have legal authority.',
+      'Record the decision, share it with the team, and plan when it will be reviewed.'
+    ],
+    pitfall: 'Treating a DNACPR decision as “not for treatment”. It is only about CPR; all other treatment continues.',
+    words: [
+      '“What do you understand about how unwell you are?”',
+      '“If your heart stopped, CPR would be very unlikely to work and could cause harm.”',
+      '“This decision is only about CPR. All your other treatment continues.”'
+    ],
+    stop: [
+      'You are asked to make the decision yourself.',
+      'The patient or family disagree with the decision: involve your senior and offer a second opinion.',
+      'You are unsure whether a decision is valid or still applies.'
+    ],
+    record: 'The decision and reasons, who was involved, what was discussed, the form completed under your nation’s policy, and the review plan.',
+    local: [
+      'Which form you use: ReSPECT, a local treatment escalation plan, the All Wales DNACPR form, or the NHSScotland DNACPR form.',
+      'Who may sign it, and how it travels with the patient on discharge.'
+    ],
+    next: { to: 'WD-06-02' },
+    sources: 'BMA, Resuscitation Council UK and RCN, Decisions relating to cardiopulmonary resuscitation (3rd edition, 1st revision, 2016); GMC, Treatment and care towards the end of life (2010, updated 2022); R (Tracey) v Cambridge University Hospitals [2014] EWCA Civ 822 (England and Wales); Winspear v City Hospitals Sunderland [2015] EWHC 3250 (QB); Sharing and Involving: All Wales DNACPR policy (revised 2024); Scottish Government, CPR decisions: integrated adult policy (2016).'
+  },
+  {
+    id: 'WD-06-02', mod: 6, title: 'Recognising dying and planning care',
+    jur: 'UK-wide', fpcP: 'FPC3 Holistic planning', fpcS: 'FPC4 Communication and care', status: 'DRAFT',
+    good: 'When someone may be in the last days of life, the team recognises it, discusses it with them and those important to them, plans care around comfort and their wishes, and reviews the plan daily.',
+    before: [
+      'Recognising dying is a senior and team decision: raise your concern rather than decide alone.',
+      'Check that reversible causes have been considered.',
+      'Check existing plans and the person’s known wishes.'
+    ],
+    steps: [
+      'Raise the possibility on the round when a patient is deteriorating despite treatment.',
+      'Make sure a senior-led conversation happens with the patient, if possible, and those close to them.',
+      'Agree an individual care plan: symptom control, food and fluids as the person wishes and as appropriate, and stopping tests and treatments that no longer help.',
+      'Make sure anticipatory medicines are prescribed (see the Prescribe section) and specialist palliative care is involved if needs are complex.',
+      'Review daily: some people improve.',
+      'Support the family: what to expect, visiting, and who to contact.'
+    ],
+    pitfall: 'Continuing routine observations and blood tests that no longer help the patient.',
+    words: [
+      '“I’m worried that he may be dying.”',
+      '“We’ll focus on keeping her comfortable.”',
+      '“What would be most important to him now?”'
+    ],
+    stop: [
+      'There is uncertainty about whether the person is dying.',
+      'Symptoms are not controlled: see Bleep Card BLEEP-58 and contact palliative care.',
+      'There is disagreement about the plan.'
+    ],
+    record: 'The recognition of dying and who agreed it, conversations held, the care plan, and the review plan.',
+    local: [
+      'Your specialist palliative care team, in and out of hours.',
+      'Your employer’s last-days-of-life care plan.',
+      'Your anticipatory prescribing guidance.'
+    ],
+    next: { to: 'WD-06-03' },
+    sources: 'NICE NG31, Care of dying adults in the last days of life (2015); Leadership Alliance for the Care of Dying People, One chance to get it right (2014); Scottish Palliative Care Guidelines.'
+  },
+  {
+    id: 'WD-06-03', mod: 6, title: 'Death certification and medical examiner review',
+    jur: 'Check your nation and employer', fpcP: 'FPC11 Ethics and law', fpcS: 'FPC5 Continuity of care', status: 'DRAFT',
+    good: 'After a death, the certificate of cause of death is completed accurately and promptly by an eligible doctor, deaths that must be reported are reported, and the family understand what happens next.',
+    before: [
+      'Know your nation’s process. England and Wales: since 9 September 2024, any doctor who attended the person in life and can establish the cause of death may complete the certificate, and a medical examiner reviews every death not reported to the coroner. Scotland: certificates may be selected for review by the Death Certification Review Service, and some deaths must be reported to the procurator fiscal. Northern Ireland: the arrangements were updated by a Chief Medical Officer letter in 2026; follow it and your employer’s process.',
+      'Read the notes and agree the cause of death with your consultant.'
+    ],
+    steps: [
+      'Decide whether the death must be reported to the coroner or procurator fiscal under your nation’s criteria. If unsure, ask.',
+      'Discuss the cause with your consultant and, in England and Wales, with the medical examiner.',
+      'Complete the certificate: the disease or condition that led to death, in sequence, not the mode of dying; no abbreviations.',
+      'Make sure the family are told the cause of death and what happens next, by you, the medical examiner’s office or the bereavement team.',
+      'Complete any other forms your nation and employer require.'
+    ],
+    pitfall: 'Writing a mode of dying, such as “cardiac arrest”, as the cause of death.',
+    words: [
+      '“The certificate will say she died of pneumonia, which was caused by her stroke.”',
+      '“I looked after Mr Y during his admission, and I believe the cause of death was …”'
+    ],
+    stop: [
+      'You are unsure of the cause of death.',
+      'The death may need reporting, or the family raise concerns about care.',
+      'You did not attend the person in life: ask a doctor who did. If none is available within a reasonable time, the death is referred to the coroner (England and Wales); ask your senior.'
+    ],
+    record: 'In the notes: discussions with the consultant, medical examiner, coroner or procurator fiscal, and the cause of death certified.',
+    local: [
+      'Your bereavement office and, in England and Wales, the medical examiner office.',
+      'How certificates are issued in your system.',
+      'Your nation’s reporting criteria and current guidance.'
+    ],
+    next: { ext: 'Verifying a death on call: Bleep Card BLEEP-56', href: 'bleep-cards.html#BLEEP-56' },
+    sources: 'DHSC, An overview of the death certification reforms; DHSC, Guidance for medical practitioners completing MCCDs in England and Wales (2024, updated April 2025); DHSC, Notification of Deaths Regulations guidance (2024); Healthcare Improvement Scotland, Death Certification Review Service; Scottish Government, CMO letter SGHD/CMO(2025)2; Department of Health Northern Ireland, Guidelines for death certification: issuing MCCD using NIECR (2019, updated 2022); CMO letter HSS(MD)15/2026.'
+  },
+  {
+    id: 'WD-07-01', mod: 7, title: 'Infection prevention at the bedside',
+    jur: 'UK-wide', fpcP: 'FPC9 Quality improvement', fpcS: 'FPC8 Upholding values', status: 'DRAFT',
+    good: 'Every patient contact follows standard infection control precautions, you know when extra precautions are needed, and you challenge lapses politely, including your own.',
+    before: [
+      'Follow your employer’s dress code for clinical areas.',
+      'Check isolation signs and the precautions needed before you enter.'
+    ],
+    steps: [
+      'Clean your hands at the right moments: before touching a patient, before a clean or aseptic procedure, after possible contact with body fluids, after touching a patient, and after touching their surroundings.',
+      'Use soap and water when hands are visibly dirty or when the patient has diarrhoea or suspected C. difficile; alcohol gel does not kill spores.',
+      'Wear personal protective equipment that fits the task and the patient’s isolation category.',
+      'Use aseptic technique for procedures and dispose of sharps at the point of use.',
+      'Clean shared equipment between patients.',
+      'Review lines and catheters every day, and remove them when they are no longer needed.'
+    ],
+    pitfall: 'Using alcohol gel instead of soap and water with suspected C. difficile.',
+    words: [
+      '“Would you mind cleaning your hands before you examine her?”',
+      '“This patient is isolated for diarrhoea, so please use an apron and gloves.”'
+    ],
+    stop: [
+      'You have a needlestick or splash injury: see Bleep Card BLEEP-43.',
+      'A patient needs isolation and none is available: contact the infection prevention team.',
+      'You suspect an outbreak on the ward.'
+    ],
+    record: 'Device insertion and daily review, isolation decisions, and any infection prevention advice given.',
+    local: [
+      'Your infection prevention team and isolation policy.',
+      'The national infection prevention and control manual that applies where you work.'
+    ],
+    next: { ext: 'Needlestick or splash injury: Bleep Card BLEEP-43', href: 'bleep-cards.html#BLEEP-43' },
+    sources: 'WHO, Guidelines on hand hygiene in health care (2009); NHS England, National infection prevention and control manual for England; ARHAI Scotland, National Infection Prevention and Control Manual; Public Health Agency Northern Ireland, Regional Infection Prevention and Control Manual.'
   }
 ];
