@@ -66,7 +66,7 @@ window.SO_CARDS = [
  next:{to:'SO-01-02'}},
 
 {id:'SO-01-02', mod:1, title:'Before You Start', type:'Information Card', jur:'Check your nation and employer', fpcP:'FPC7', fpcS:'',
- what:'<p>Being ready to start clinical work is more than turning up on Day 1. Before you take on clinical duties, five things need to be in place:</p><ol class="so-ol"><li><b>Registration</b> — your GMC registration and licence to practise are right for your post.</li><li><b>Appointment</b> — your employment and pre-employment checks are complete.</li><li><b>Supervision</b> — you know who supervises you and how to reach help.</li><li><b>Local governance</b> — you have had the induction, access and policy information you need for the duties you will do.</li><li><b>Your own fitness</b> — you are well enough, rested enough and prepared enough to work safely.</li></ol>',
+ what:'<p>Being ready to start clinical work is more than turning up on Day 1. Before you take on clinical duties, five things need to be in place:</p><ol class="so-ol"><li><b>Registration</b> — your GMC registration and licence to practise are right for your post.</li><li><b>Appointment</b> — your employment and pre-employment checks are complete.</li><li><b>Supervision</b> — you know who supervises you and how to reach help.</li><li><b>Local governance</b> — you have had the induction, access and policy information you need for the duties you will do.</li><li><b>Your own fitness</b> — you are well enough, rested enough and informed enough to work safely.</li></ol>',
  why:'<p>Gaps in these areas are rarely dramatic, but they can stop you working safely: a missing login, an unclear escalation route, an unfinished check. Finding them before your first shift is far easier than discovering them during it.</p>',
  todo:['Some onboarding tasks are finished before you start; others are completed in your first days on your employer\'s timetable. You do not need everything done on Day 1, but you do need the things your duties depend on.',
        'If you are unsure whether you are cleared, supervised or adequately supported for a duty, clarify this before you do it.',
@@ -91,8 +91,9 @@ window.SO_CARDS = [
  what:'<p>A map of the people you will work with. Titles and structures vary between employers and specialties, so treat this as a guide to roles, not a fixed hierarchy.</p>',
  why:'<p>Patient care is a team effort. Knowing who does what helps you get the right help quickly, and helps you understand what others expect from you.</p>',
  todo:['<b>Medical team.</b> A consultant leads the team and holds overall responsibility for the patients. Registrars (specialty trainees) are senior doctors who often lead day-to-day decisions. Between you and the registrar there may be core trainees, clinical fellows or other doctors. Your fellow Foundation doctors are a support too.',
+       '<b>SAS doctors.</b> Specialty doctors, specialists and associate specialists (together called SAS doctors) are experienced doctors who are not in a training programme and work permanently in a specialty. Some work at a senior level. Find out who they are on your ward and what decisions they make.',
        '<b>Other clinicians.</b> Many teams include advanced clinical practitioners and other clinical roles. Find out what each person\'s role covers on your ward.',
-       '<b>Nursing team.</b> The nurse in charge coordinates the ward for the shift. Staff nurses care for groups of patients; healthcare assistants support them. Specialist nurses and the deteriorating-patient or outreach team (names vary) support particular patients.',
+       '<b>Nursing team.</b> The nurse in charge coordinates the ward for the shift. Staff nurses care for groups of patients; healthcare assistants support them. Specialist nurses support particular patient groups, such as diabetes, stoma or wound care. The deteriorating-patient or outreach team (names vary) supports patients who are becoming acutely unwell on the ward.',
        '<b>Pharmacy.</b> Pharmacists and pharmacy technicians support safe medicines use on the ward.',
        '<b>Allied health professionals.</b> Physiotherapists, occupational therapists, speech and language therapists, dietitians and radiographers, among others.',
        '<b>Coordination and administration.</b> Ward clerks, discharge coordinators, bed or site managers, rota coordinators and the Foundation programme team keep the system running.'],
@@ -112,6 +113,7 @@ window.SO_CARDS = [
    '<tr><td>Rota, swaps or leave</td><td>The rota coordinator or medical staffing</td></tr>'+
    '<tr><td>A login or system problem</td><td>The IT service desk</td></tr>'+
    '<tr><td>Your training or portfolio</td><td>Your educational supervisor or the Foundation programme team</td></tr>'+
+   '<tr><td>A safeguarding concern about an adult or a child</td><td>Your senior clinician or the local safeguarding team — do not wait</td></tr>'+
    '<tr><td>Your own health or wellbeing</td><td>See SO-08-02</td></tr>'+
    '<tr><td>Something that has gone wrong</td><td>See SO-07-01</td></tr>'+
    '</tbody></table></div>',
@@ -134,7 +136,7 @@ window.SO_CARDS = [
 {id:'SO-02-04', mod:2, title:'Your Educational Supervisor', type:'Information Card', jur:'UK-wide', fpcP:'FPC12', fpcS:'',
  what:'<p>Your educational supervisor oversees your progress across the whole Foundation year, not just one placement. The exact appointment and arrangements are set by your Foundation school and employer.</p>',
  why:'<p>Your educational supervisor brings together evidence from all your placements and gives an overall view of your progress. Their end-of-year report contributes to the evidence the Annual Review of Competence Progression (ARCP) panel uses to decide whether you have satisfactorily completed F1 or F2.</p>',
- todo:['The UK Foundation Programme requires an <b>initial meeting</b> with your educational supervisor, an <b>end-of-placement review</b> and an <b>end-of-year review</b>.',
+ todo:['The UK Foundation Programme requires an <b>initial meeting</b> with your educational supervisor, an <b>end-of-placement review</b> for each placement, and an <b>end-of-year review</b>.',
        'Your educational supervisor may also be your clinical supervisor in one placement.',
        'Most of this work is recorded in your Foundation e-portfolio.'],
  local:['Who is your educational supervisor?','When is your initial meeting?','Who in the Foundation programme team can help if you haven\'t been allocated one?'],
@@ -268,7 +270,7 @@ window.SO_CARDS = [
        '<b>Apologising is not admitting legal liability.</b> The GMC is explicit about this.',
        '<b>Stick to the facts.</b> Share what you know. Don\'t guess, speculate or blame others.',
        '<b>Near misses.</b> There is no automatic rule. Your senior will help decide whether the patient should be told.',
-       '<b>Your organisation may also have a legal duty of candour.</b> The rules differ between the UK nations, and the organisation runs that process.'],
+       '<b>Your organisation may also have a legal duty of candour.</b> The rules differ between the UK nations, and the organisation runs that process. England, Scotland and Wales have a statutory organisational duty; Northern Ireland does not currently have one, although legislation has been proposed.'],
  local:['Who leads conversations with patients after an incident where you work?','What is your organisation\'s candour policy?'],
  safety:'Never conceal, minimise or alter information about what happened.',
  next:{to:'SO-07-03'}},
@@ -279,7 +281,7 @@ window.SO_CARDS = [
  todo:['<b>Use your employer\'s reporting system.</b> Find out what it is during induction.',
        '<b>Report near misses too.</b> Something that nearly caused harm is also valuable for learning.',
        '<b>Report what you saw, not who to blame.</b> Keep it factual.',
-       '<b>In England,</b> NHS organisations record patient-safety events in NHS England\'s Learn from Patient Safety Events (LFPSE) service, usually through their own local reporting system. Scotland, Wales, Northern Ireland and the Crown Dependencies have their own arrangements.',
+       '<b>In England,</b> NHS organisations record patient-safety events in NHS England\'s Learn from Patient Safety Events (LFPSE) service, usually through their own local reporting system. Organisations in England respond to incidents under the Patient Safety Incident Response Framework (PSIRF). Scotland, Wales, Northern Ireland and the Crown Dependencies have their own arrangements.',
        '<b>Reporting doesn\'t replace action.</b> Make the patient safe and tell your senior first (SO-07-01). Then report.',
        '<b>If you\'re unsure whether to report,</b> ask your senior — and if in doubt, report.'],
  local:['What is the reporting system called, and how do you access it?','Who can help you write your first report?'],
@@ -304,8 +306,8 @@ window.SO_CARDS = [
  todo:['<b>Register with a GP</b> where you live, so you have your own doctor if you need one. Out of hours, use your local out-of-hours GP service or urgent care line.',
        '<b>People at work:</b> your clinical and educational supervisors, the Foundation programme team, and colleagues you trust.',
        '<b>Occupational health</b> can advise if your health affects your work, or your work affects your health.',
-       '<b>Confidential support outside work:</b> the BMA\'s 24/7 counselling line is free and confidential for all UK doctors and medical students, whether or not they are members. Check what each service offers and any limits to confidentiality. Confidential health services for doctors also exist in parts of the UK — ask your Foundation programme team what is available to you.',
-       '<b>If you feel unsafe or in crisis,</b> get urgent help now: call 999 in an emergency, use your local urgent mental-health route, or contact Samaritans, who are available day and night.'],
+       '<b>Confidential support outside work:</b> the BMA\'s 24/7 counselling line (0330 123 1245) is free and confidential for all UK doctors and medical students, whether or not they are members. Check what each service offers and any limits to confidentiality. Confidential health services for doctors also exist in parts of the UK — ask your Foundation programme team what is available to you.',
+       '<b>If you feel unsafe or in crisis,</b> get urgent help now: call 999 in an emergency, use your local urgent mental-health route, or contact Samaritans on 116 123, available day and night.'],
  local:['What wellbeing support does your employer and Foundation school offer?','How do you contact occupational health?'],
  safety:'If you are struggling, tell someone today — you don\'t need to wait until it affects your work.',
  next:{to:'SO-08-03'}},
@@ -335,6 +337,8 @@ window.SO_CARDS = [
  next:{to:'SO-01-01'}}
 ];
 
+window.SO_CHECKED = '5 October 2026';
+
 window.SO_URLS = {
   gmc_gmp:'https://www.gmc-uk.org/professional-standards/the-professional-standards/good-medical-practice',
   gmc_candour:'https://www.gmc-uk.org/professional-standards/the-professional-standards/candour---openness-and-honesty-when-things-go-wrong/being-open-and-honest-with-patients-in-your-care-and-those-close-to-them-when-things-go-wrong',
@@ -343,12 +347,14 @@ window.SO_URLS = {
   ukfpo_sup:'https://foundationprogramme.nhs.uk/curriculum/supervisor-meetings/',
   lfpse:'https://www.england.nhs.uk/patient-safety/patient-safety-insight/learning-from-patient-safety-events/learn-from-patient-safety-events-service/',
   er:'https://www.nhsemployers.org/articles/exception-reporting-reform-faqs',
+  sas:'https://www.nhsemployers.org/sas',
   bma:'https://www.bma.org.uk/advice-and-support/your-wellbeing/wellbeing-support-services/counselling-and-peer-support-services'
 };
-window.SO_SOURCE_LINKS = {'SO-01-01':['gmc_prov','ukfpo_syl'],'SO-01-02':['gmc_prov'],'SO-02-03':['ukfpo_sup'],'SO-02-04':['ukfpo_sup'],'SO-04-01':['gmc_gmp'],'SO-04-02':['gmc_gmp'],'SO-06-03':['gmc_gmp'],'SO-07-01':['gmc_candour'],'SO-07-02':['gmc_candour'],'SO-07-03':['lfpse'],'SO-08-02':['bma'],'SO-08-03':['er']};
+window.SO_SOURCE_LINKS = {'SO-01-01':['gmc_prov','ukfpo_syl'],'SO-01-02':['gmc_prov'],'SO-02-01':['sas'],'SO-02-03':['ukfpo_sup'],'SO-02-04':['ukfpo_sup'],'SO-04-01':['gmc_gmp'],'SO-04-02':['gmc_gmp'],'SO-06-03':['gmc_gmp'],'SO-07-01':['gmc_candour'],'SO-07-02':['gmc_candour'],'SO-07-03':['lfpse'],'SO-08-02':['bma'],'SO-08-03':['er']};
 window.SO_SOURCES = {
   'SO-01-01':'GMC — Provisional registration (item 2). UKFPO Curriculum 2021, 2026 Revision (FPC tags).',
   'SO-01-02':'GMC — Provisional registration.',
+  'SO-02-01':'NHS Employers — Specialty and specialist (SAS) doctors.',
   'SO-02-03':'UKFPO — Supervisor meetings.',
   'SO-02-04':'UKFPO — Supervisor meetings (mandatory meetings; end-of-year report informs ARCP).',
   'SO-04-01':'GMC — Good medical practice (in effect 30 January 2024), para 7(g).',
@@ -357,6 +363,6 @@ window.SO_SOURCES = {
   'SO-07-01':'GMC — Candour: openness and honesty when things go wrong.',
   'SO-07-02':'GMC — Candour: openness and honesty when things go wrong (including professional judgement on near misses).',
   'SO-07-03':'NHS England — Learn from Patient Safety Events (LFPSE) service (England only).',
-  'SO-08-02':'BMA — Counselling and peer support for doctors and medical students.',
+  'SO-08-02':'BMA — Counselling and peer support for doctors and medical students (24/7 line 0330 123 1245). Samaritans 116 123.',
   'SO-08-03':'NHS Employers — Exception reporting reform FAQs (England; 2016 TCS; reforms effective 4 February 2026).'
 };
