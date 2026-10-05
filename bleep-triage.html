@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Bleep Triage | AMaC Foundation</title>
+<link rel="canonical" href="https://amac-medical.com/bleep-triage.html">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#0C1526">
+<meta name="description" content="Bleep Triage: several bleeps at once. Decide who to see first, what to ask the nurse to do, and when to call a senior, then compare your order with a model answer.">
+<!--BT:HEAD-END-->
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* Layout: AMaC Master Cards — cream page, white card, navy-gradient header, pastel icon-chip sections (copied from bleep-cards.html; Foundation door orange). */
+:root{
+  color-scheme:light;
+  --navy:#0d2247;--navy-deep:#091629;--gold:#c9a227;--gold-soft:#e0c45a;
+  --panel:#0F1A2E;--edge:#1E2C46;--edge-soft:#28385A;
+  --txt:#F6F4EE;--txt-soft:#AEB9D0;--txt-mute:#8593AE;--txt-faint:#6B7794;
+  --door:#E5793B;--door-text:#F0A46E;
+  --cream:#f7f4ec;--paper:#fffdf8;--tint:#f5f2ea;--ink:#1a1d24;--ink-soft:#4a5064;--ink-mute:#5d6470;--line:#e4ddcd;--rule:#f0ece0;
+  --ok:#0b7b5e;--ok-bg:#e8f7f2;--warn:#9a5510;--warn-bg:#fff3e0;--ask:#1b3a6b;--ask-bg:#edf2fc;--crit:#a02020;--crit-bg:#fdecea;
+  --serif:'Fraunces',Georgia,'Times New Roman',serif;--sans:'Outfit',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{font-family:var(--sans);background:var(--cream);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;}
+h1,h2,h3{font-family:var(--serif);text-wrap:balance;}
+a{color:inherit;}
+button,input{font-family:var(--sans);}
+:focus-visible{outline:2px solid var(--door);outline-offset:2px;}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important;}}
+
+nav.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:100;background:var(--panel);border-bottom:1px solid var(--edge);}
+.nav-inner{max-width:1180px;margin:0 auto;padding:13px 26px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;}
+.nav-l{display:flex;align-items:center;gap:13px;}
+.brand{font-weight:600;letter-spacing:.1em;color:var(--gold);font-size:16px;text-decoration:none;}
+.door-tag{font-size:11px;color:var(--door-text);border-left:1px solid var(--edge-soft);padding-left:13px;letter-spacing:.1em;}
+.nav-links{display:flex;align-items:center;gap:16px;list-style:none;font-size:12.5px;color:#C7D0E2;flex-wrap:wrap;}
+.nav-links a{text-decoration:none;}.nav-links a:hover{color:#fff;}
+.nav-exit{color:var(--txt-mute);font-size:11.5px;border-left:1px solid var(--edge-soft);padding-left:13px;}
+
+.hero{background:linear-gradient(155deg,#0d2247 0%,#091629 100%);padding:40px 16px 30px;text-align:center;border-bottom:1px solid #1A2740;}
+.hero-inner{max-width:760px;margin:0 auto;}
+.hero-kick{font-size:11px;letter-spacing:.2em;color:var(--door-text);font-weight:600;}
+.hero h1{font-size:clamp(26px,4.5vw,40px);color:var(--txt);font-weight:600;margin:14px 0 10px;line-height:1.15;}
+.hero-lede{font-size:clamp(13.5px,1.6vw,15.5px);color:var(--txt-soft);margin:0 auto;max-width:62ch;line-height:1.65;}
+
+.wrap{max-width:760px;margin:0 auto;padding:22px 16px 60px;}
+.draft{margin-bottom:12px;padding:10px 16px;background:var(--crit-bg);border:1px solid rgba(192,57,43,.25);border-left:3px solid #c0392b;border-radius:8px;color:#7a2020;font-size:13px;line-height:1.5;}
+.draft b{letter-spacing:.06em;}
+.page-note{margin-bottom:18px;padding:11px 16px;background:#fdf3ea;border:1px solid #f1d2b8;border-left:3px solid var(--door);border-radius:8px;color:var(--ink-soft);font-size:13.5px;line-height:1.55;}
+.page-note b{color:var(--ink);}
+
+.so-toolbar{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:10px;}
+.so-toolbar .lbl{font-size:12px;color:var(--ink-mute);}
+.so-mode{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--paper);}
+.so-mode button{border:0;background:transparent;padding:8px 14px;font-size:12.5px;font-weight:500;color:var(--ink-mute);cursor:pointer;}
+.so-mode button[aria-pressed="true"]{background:var(--navy);color:#fff;}
+
+.so-pick-wrap{margin-bottom:18px;}
+.so-pick-wrap>summary{cursor:pointer;font-size:13px;font-weight:600;color:var(--navy);padding:8px 12px;background:var(--paper);border:1px solid var(--line);border-radius:8px;list-style-position:inside;}
+.so-pick-wrap[open]>summary{margin-bottom:10px;}
+.sum-cur{font-weight:400;color:var(--ink-mute);margin-left:6px;}
+.so-picker{display:grid;gap:8px;}
+.so-prow{display:grid;grid-template-columns:150px 1fr;gap:8px;align-items:start;}
+.so-pmod{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-mute);font-weight:600;padding-top:6px;}
+.so-pchips{display:flex;gap:6px;flex-wrap:wrap;min-width:0;}
+.so-chip{font-size:12px;padding:5px 10px;border-radius:999px;border:1px solid var(--line);background:var(--paper);color:var(--ink-soft);cursor:pointer;line-height:1.3;text-align:left;}
+.so-chip:hover{border-color:var(--navy);color:var(--navy);}
+.so-chip[aria-current="true"]{background:var(--navy);border-color:var(--navy);color:#fff;}
+.so-chip .n{font-weight:600;margin-right:4px;opacity:.7;font-variant-numeric:tabular-nums;}
+.so-chip .done{color:var(--ok);margin-left:4px;font-weight:700;}
+.so-chip[aria-current="true"] .done{color:#9fe0c8;}
+@media(max-width:560px){.so-prow{grid-template-columns:1fr;gap:4px;}.so-pmod{padding-top:0;}}
+
+.card{scroll-margin-top:90px;background:var(--paper);border:1px solid var(--line);border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(13,34,71,0.08),0 1px 4px rgba(13,34,71,0.06);}
+.card-hdr{background:linear-gradient(135deg,#0f2850 0%,#0d2247 100%);padding:18px 20px 16px;position:relative;}
+.card-hdr::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.03) 1px,transparent 1px);background-size:16px 16px;pointer-events:none;}
+.card-num{position:relative;font-size:10.5px;color:rgba(240,164,110,.95);letter-spacing:.1em;font-weight:600;text-transform:uppercase;}
+.card-title{position:relative;font-size:22px;font-weight:500;color:#fff;margin:7px 0 4px;line-height:1.25;}
+.card-meta{position:relative;display:flex;gap:6px;flex-wrap:wrap;margin-top:10px;align-items:center;}
+.tag{font-size:10.5px;color:#C8D8F0;background:rgba(255,255,255,.12);border-radius:4px;padding:3px 9px;font-weight:500;}
+.tag.draft-tag{color:#ffd0c4;background:rgba(192,57,43,.28);}
+
+.sbtn-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(104px,1fr));gap:6px;padding:12px 14px;background:var(--tint);border-bottom:1px solid var(--line);}
+.sbtn{position:relative;font-size:11px;font-weight:500;padding:8px 4px;border-radius:8px;border:1px solid;cursor:pointer;text-align:center;transition:transform .15s,box-shadow .15s;line-height:1.25;display:flex;flex-direction:column;align-items:center;gap:4px;}
+.sbtn .ic{font-size:15px;line-height:1;}
+.sbtn:hover{transform:translateY(-1px);box-shadow:0 2px 6px rgba(13,34,71,0.12);}
+.sbtn.active{box-shadow:0 0 0 2px var(--navy),0 3px 10px rgba(13,34,71,.2);font-weight:600;}
+.sbtn .tick{position:absolute;top:3px;right:5px;font-size:10px;color:#1b6b3a;font-weight:700;}
+
+.content{padding:18px 20px;min-height:140px;}
+.sec{margin-bottom:22px;}.sec:last-child{margin-bottom:0;}
+.sec-label{font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;margin-bottom:10px;display:flex;align-items:center;gap:7px;}
+.prose{font-size:14.5px;line-height:1.62;max-width:65ch;}
+.prose p+p,.prose p+ol,.prose p+ul,.prose ol+p,.prose ul+p,.prose .so-table-wrap+ul,.prose ul+.so-table-wrap{margin-top:10px;}
+.prose b{color:var(--navy);font-weight:600;}
+.prose q{quotes:"“" "”";font-style:italic;}
+.so-strong{background:var(--ask-bg);border-left:3px solid #4a6fa5;padding:9px 12px;border-radius:6px;color:var(--ask);font-weight:500;}
+.so-ol,.so-ul{padding-left:20px;display:grid;gap:6px;}
+.bul{list-style:none;padding:0;}
+.bul li{font-size:14.5px;padding:8px;line-height:1.55;border-bottom:1px solid var(--rule);}
+.bul li:last-child{border-bottom:none;}
+.bul li b{color:var(--navy);font-weight:600;}
+.local{list-style:none;padding:0;display:grid;gap:6px;}
+.local li{background:var(--warn-bg);border-radius:8px;padding:9px 12px 9px 34px;position:relative;font-size:14.5px;line-height:1.5;}
+.local li::before{content:'?';position:absolute;left:11px;top:9px;width:16px;height:16px;border-radius:50%;background:#e07b1a;color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.safety{background:#fdf8e6;border:1px solid rgba(201,162,39,.35);border-radius:8px;padding:12px 16px;font-size:14.5px;color:#7a5c00;font-weight:500;line-height:1.55;}
+.next{display:flex;align-items:center;justify-content:space-between;gap:10px;background:var(--ok-bg);border:1px solid #b9e2d3;border-radius:8px;padding:12px 16px;flex-wrap:wrap;}
+.next .t{font-size:14.5px;color:var(--ok);font-weight:500;min-width:0;}
+.next .go{border:1px solid var(--ok);background:#fff;color:var(--ok);font-size:13px;font-weight:600;padding:7px 12px;border-radius:6px;cursor:pointer;text-decoration:none;}
+.next .go:hover{background:var(--ok);color:#fff;}
+.next .later{font-size:12px;color:var(--ink-mute);}
+.so-table-wrap{overflow-x:auto;}
+.so-table{width:100%;border-collapse:collapse;font-size:14px;}
+.so-table th{text-align:left;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-mute);font-weight:600;padding:8px;border-bottom:1px solid var(--line);}
+.so-table td{padding:8px;border-bottom:1px solid var(--rule);vertical-align:top;line-height:1.5;}
+.so-table td:first-child{width:52%;}
+.route{display:grid;gap:14px;}
+.route h3{font-family:var(--sans);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-mute);margin-bottom:6px;}
+.route ol{list-style:none;display:grid;gap:4px;counter-reset:r var(--start);}
+.route li{counter-increment:r;}
+.route button{width:100%;display:flex;gap:10px;align-items:baseline;text-align:left;background:var(--tint);border:1px solid transparent;border-radius:6px;padding:7px 10px;font-size:14px;color:var(--ink);cursor:pointer;}
+.route button::before{content:counter(r);font-variant-numeric:tabular-nums;font-weight:600;color:var(--ink-mute);min-width:1.6em;}
+.route button:hover{border-color:var(--navy);}
+.route .rid{font-size:11.5px;color:var(--ink-mute);margin-left:auto;white-space:nowrap;}
+
+.src a{color:var(--navy);text-decoration:underline;}
+.src{font-size:12.5px;color:var(--ink-mute);line-height:1.6;border-top:1px solid var(--line);padding:14px 20px;}
+.navrow{display:flex;justify-content:space-between;align-items:center;padding:14px 20px;border-top:1px solid var(--line);background:var(--tint);flex-wrap:wrap;gap:10px;}
+.nbtn{display:inline-flex;align-items:center;gap:6px;background:#fff;border:1px solid var(--line);color:var(--ink);padding:8px 14px;border-radius:6px;font-size:13px;font-weight:600;cursor:pointer;box-shadow:0 1px 4px rgba(13,34,71,0.07);}
+.nbtn:hover:not(:disabled){background:var(--navy);color:#fff;border-color:var(--navy);}
+.nbtn:disabled{opacity:.35;cursor:not-allowed;}
+.nbtn.rev{background:linear-gradient(135deg,#37c99a,#2FB48C);color:#07210f;border-color:transparent;}
+.pos{font-size:12.5px;color:var(--ink-mute);font-variant-numeric:tabular-nums;}
+.mid{display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:center;}
+@media(max-width:640px){.navrow{display:grid;grid-template-columns:1fr 1fr;}.navrow [data-act=next]{justify-self:end;}.mid{grid-column:1/-1;order:3;}.content{padding:16px 14px;}}
+
+footer{background:var(--navy-deep);margin-top:40px;border-top:1px solid #1A2740;padding:30px 16px 24px;}
+.foot-bottom{max-width:1180px;margin:0 auto;font-size:12px;color:var(--txt-faint);text-align:center;}
+.foot-disc{max-width:760px;margin:10px auto 0;font-size:11.5px;color:var(--txt-faint);text-align:center;line-height:1.55;}
+
+@media print{
+  body{background:#fff;}
+  nav.top,.hero,footer,.page-note,.draft,.so-toolbar,.so-picker,.sbtn-grid,.navrow,.ck-states,.ck-actions,.ck-store{display:none!important;}
+  .wrap{padding:0;max-width:none;}
+  .card{box-shadow:none;border:0;}
+  .card-hdr,.safety,.local li,.gap,.next{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .sec{break-inside:avoid-page;}
+}
+/* ---------- Bleep Triage ---------- */
+.bt-ctx{background:var(--ask-bg);border-left:3px solid #4a6fa5;padding:10px 14px;border-radius:6px;color:var(--ask);font-size:14.5px;line-height:1.55;}
+.bt-step{font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:var(--ink-mute);margin:20px 0 8px;}
+.bt-hint{font-size:13px;color:var(--ink-mute);margin:-4px 0 10px;}
+.bt-list{display:grid;gap:8px;}
+.bt-bleep{border:1px solid var(--line);border-radius:10px;background:#fff;overflow:hidden;}
+.bt-bleep[data-ranked]{border-color:var(--navy);box-shadow:0 0 0 1px var(--navy);}
+.bt-tap{all:unset;box-sizing:border-box;display:grid;grid-template-columns:40px 1fr;gap:10px;width:100%;padding:12px 14px;cursor:pointer;}
+.bt-tap:focus-visible{outline:2px solid var(--door);outline-offset:-2px;}
+.bt-rank{width:32px;height:32px;border-radius:50%;border:2px dashed #c9c2b0;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:15px;color:var(--ink-mute);font-variant-numeric:tabular-nums;}
+.bt-bleep[data-ranked] .bt-rank{border:0;background:var(--navy);color:#fff;}
+.bt-who{font-size:11.5px;letter-spacing:.04em;color:var(--ink-mute);font-weight:600;text-transform:uppercase;}
+.bt-who .k{color:var(--door);margin-right:6px;}
+.bt-pager{font-size:14.5px;line-height:1.5;margin-top:2px;}
+.bt-ask{border-top:1px dashed var(--line);padding:8px 14px 10px 64px;font-size:13px;}
+.bt-ask button{border:0;background:none;color:var(--ask);font-weight:600;font-size:13px;cursor:pointer;padding:0;text-decoration:underline;}
+.bt-ask button:disabled{color:#a0a7b4;cursor:not-allowed;text-decoration:none;}
+.bt-ask .ans{background:var(--warn-bg);border-radius:6px;padding:7px 10px;color:#6b3d08;}
+@media(max-width:480px){.bt-ask{padding-left:14px;}}
+.bt-acts{display:grid;gap:10px;}
+.bt-act{border:1px solid var(--line);border-radius:8px;padding:10px 12px;background:#fff;}
+.bt-act .h{font-size:13.5px;font-weight:600;color:var(--navy);margin-bottom:6px;}
+.bt-act .h span{display:inline-block;min-width:22px;height:22px;line-height:22px;text-align:center;border-radius:50%;background:var(--navy);color:#fff;font-size:12px;margin-right:6px;}
+.bt-opts{display:flex;gap:6px;flex-wrap:wrap;}
+.bt-opt{font-size:12.5px;border:1px solid var(--line);background:#fff;color:var(--ink-soft);border-radius:999px;padding:6px 11px;cursor:pointer;text-align:left;line-height:1.3;}
+.bt-opt:hover{border-color:var(--navy);}
+.bt-opt[aria-pressed="true"]{background:var(--navy);border-color:var(--navy);color:#fff;}
+.bt-wait{font-size:13.5px;color:var(--ink-mute);background:var(--tint);border-radius:8px;padding:10px 12px;}
+.bt-go{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:16px;}
+.bt-check{border:0;background:var(--door);color:#fff;font-weight:600;font-size:14px;padding:10px 18px;border-radius:8px;cursor:pointer;}
+.bt-check:disabled{background:#d9cfc0;color:#7d7566;cursor:not-allowed;}
+.abtn{border:1px solid var(--line);background:#fff;color:var(--ink);font-size:13px;font-weight:600;padding:9px 14px;border-radius:8px;cursor:pointer;}
+.abtn:hover{border-color:var(--navy);}
+.bt-band{border-radius:10px;padding:14px 16px;margin-top:6px;}
+.bt-band h3{font-size:20px;font-weight:500;margin-bottom:4px;}
+.bt-band p{font-size:14px;line-height:1.55;}
+.bt-band.unsafe{background:var(--crit-bg);border:1px solid rgba(192,57,43,.3);border-left:4px solid #c0392b;color:#7a2020;}
+.bt-band.safe{background:var(--warn-bg);border:1px solid #f1d2b8;border-left:4px solid #e07b1a;color:#6b3d08;}
+.bt-band.excellent{background:var(--ok-bg);border:1px solid #b9e2d3;border-left:4px solid var(--ok);color:var(--ok);}
+.bt-why-unsafe{margin-top:8px;padding-left:18px;display:grid;gap:4px;font-size:14px;}
+.bt-cmp{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:14px;}
+.bt-cmp th{text-align:left;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-mute);font-weight:600;padding:6px;border-bottom:1px solid var(--line);}
+.bt-cmp td{padding:7px 6px;border-bottom:1px solid var(--rule);vertical-align:top;}
+.bp{font-size:10.5px;font-weight:600;border-radius:4px;padding:2px 7px;white-space:nowrap;}
+.bp.unsafe{background:var(--crit-bg);color:var(--crit);}.bp.safe{background:var(--warn-bg);color:var(--warn);}.bp.excellent{background:var(--ok-bg);color:var(--ok);}
+.bt-fb{display:grid;gap:10px;margin-top:14px;}
+.bt-fbi{border:1px solid var(--line);border-radius:10px;padding:12px 14px;background:#fff;display:grid;gap:7px;}
+.bt-fbi .t{display:flex;justify-content:space-between;gap:8px;align-items:baseline;flex-wrap:wrap;}
+.bt-fbi .t b{font-family:var(--serif);font-weight:500;font-size:16px;color:var(--navy);}
+.bt-fbi p{font-size:14px;line-height:1.55;}
+.bt-fbi .lbl{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-mute);font-weight:600;margin-right:4px;}
+.bt-fbi .say{background:var(--ok-bg);border-radius:6px;padding:8px 10px;color:#0b5a45;font-size:14px;}
+.bt-fbi a.card-link{font-size:13px;color:var(--ok);font-weight:600;}
+.bt-one{background:#fdf8e6;border:1px solid rgba(201,162,39,.35);border-radius:8px;padding:12px 16px;font-size:14.5px;color:#7a5c00;font-weight:500;line-height:1.55;margin-top:14px;}
+.bt-final{font-size:13px;color:var(--ink-mute);margin-top:12px;}
+.bt-store{font-size:12.5px;color:var(--ink-mute);background:var(--tint);border-radius:6px;padding:8px 12px;margin-top:14px;}
+</style>
+</head>
+<body>
+
+<nav class="top" data-door="foundation"><div class="nav-inner">
+  <div class="nav-l">
+    <a href="index.html" class="brand">AMaC</a>
+    <span class="door-tag">FOUNDATION</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="foundation.html">Foundation home</a></li>
+    <li><a href="bleep-cards.html">Bleep Cards</a></li>
+    <li><a href="index.html" class="nav-exit">← all exams</a></li>
+  </ul>
+</div></nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-kick">THE FOUNDATION DOCTOR · BLEEP TRIAGE</div>
+    <h1>Several bleeps. One of you. Who first?</h1>
+    <p class="hero-lede">Rank the bleeps in the order you would deal with them, choose what to do for each, then compare your plan with a model answer and the reasons behind it.</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="draft"><b>DRAFT</b> · Not yet signed off by a senior reviewer.</div>
+  <div class="page-note"><b>Read this first.</b> Bleep Triage practises choosing between bleeps. It does not teach how to manage each one: that is on the linked Bleep Card. Your trust's escalation policy and the senior on duty always take priority over this exercise.</div>
+
+  <div class="so-toolbar"><span class="lbl" id="btCount"></span></div>
+  <div class="so-pchips" id="btPicker" role="navigation" aria-label="Choose a set" style="margin-bottom:14px"></div>
+
+  <div id="btSet" aria-live="polite"></div>
+</main>
+
+<footer>
+  <div class="foot-bottom">© 2026 A. Mansour &amp; Colleagues (AMaC). All rights reserved.</div>
+  <p class="foot-disc">AMaC Bleep Triage is independent educational material written against current UK guidance. It is not endorsed by the UKFPO, GMC or NHS, does not replace your employer's policies, and does not replace senior clinical supervision.</p>
+</footer>
+
+<!--BT:DATA-->
+<script src="bleep-triage-data.js"></script>
+<!--BT:DATA-END-->
+<script>
+(function(){
+  var SETS = window.BT_SETS || [], ACT = window.BT_ACTIONS, ACT_ORDER = window.BT_ACTION_ORDER;
+  var KEY_DONE = 'amac_bt_v1_done', KEY_LAST = 'amac_bt_v1_last';
+  function load(k, fb){ try { var v = localStorage.getItem(k); return v ? JSON.parse(v) : fb; } catch(e){ return fb; } }
+  function save(k, v){ try { localStorage.setItem(k, JSON.stringify(v)); } catch(e){} }
+  function esc(s){ return String(s).replace(/[&<>"']/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
+  var BAND = { unsafe:'Unsafe', safe:'Safe', excellent:'Excellent' };
+
+  var idx = 0, st;
+  function fresh(){ st = { rank: [], asked: null, act: {}, result: null }; }
+  fresh();
+  var set = function(){ return SETS[idx]; };
+  function bleep(k){ return set().bleeps.filter(function(b){ return b.key === k; })[0]; }
+  function isTie(a, b){ return (set().ties || []).some(function(p){ return (p[0]===a && p[1]===b) || (p[0]===b && p[1]===a); }); }
+
+  /* ---------- scoring (spec: Unsafe → Safe → Excellent, checked in that order) ---------- */
+  function evaluate(){
+    var s = set(), pos = {};
+    st.rank.forEach(function(k, i){ pos[k] = i; });
+    var broken = s.must_before.filter(function(p){ return pos[p[0]] > pos[p[1]]; });
+    var unsafeActs = s.bleeps.filter(function(b){ return b.unsafe.indexOf(st.act[b.key]) > -1; });
+    var m = s.model_order, inversions = [];
+    for(var i = 0; i < m.length; i++) for(var j = i + 1; j < m.length; j++)
+      if(pos[m[i]] > pos[m[j]] && !isTie(m[i], m[j])) inversions.push([m[i], m[j]]);
+    var allBest = s.bleeps.every(function(b){ return b.best.indexOf(st.act[b.key]) > -1; });
+    var band = (broken.length || unsafeActs.length) ? 'unsafe' : (!inversions.length && allBest ? 'excellent' : 'safe');
+    var per = {};
+    s.bleeps.forEach(function(b){
+      var k = b.key;
+      if(b.unsafe.indexOf(st.act[k]) > -1 || broken.some(function(p){ return p[0] === k; })) per[k] = 'unsafe';
+      else if(b.best.indexOf(st.act[k]) > -1 && !inversions.some(function(p){ return p[0] === k || p[1] === k; })) per[k] = 'excellent';
+      else per[k] = 'safe';
+    });
+    return { band: band, broken: broken, unsafeActs: unsafeActs, per: per };
+  }
+
+  /* ---------- render ---------- */
+  function renderPicker(){
+    var done = load(KEY_DONE, {});
+    document.getElementById('btCount').textContent = SETS.length + (SETS.length === 1 ? ' set' : ' sets') + ' · tap a bleep to rank it';
+    document.getElementById('btPicker').innerHTML = SETS.map(function(s, i){
+      var d = done[s.id] ? ' <span class="done" title="Last result: ' + esc(BAND[done[s.id]]) + '">✓</span>' : '';
+      return '<button type="button" class="so-chip" data-set="' + i + '" aria-current="' + (i === idx) + '"><span class="n">' + esc(s.id.replace('TRIAGE-','')) + '</span>' + esc(s.title) + d + '</button>';
+    }).join('');
+  }
+
+  function render(){
+    var s = set(), n = s.bleeps.length, allRanked = st.rank.length === n;
+    var tags = '<span class="tag">' + esc(s.jur) + '</span><span class="tag">' + esc(s.fpcP) + '</span>' +
+      (s.fpcS || []).map(function(f){ return '<span class="tag">' + esc(f) + '</span>'; }).join('') +
+      (s.status === 'DRAFT' ? '<span class="tag draft-tag">DRAFT</span>' : '');
+    var h = '<article class="card" id="' + esc(s.id) + '"><div class="card-hdr"><div class="card-num">' + esc(s.id) + ' · Set ' + (idx + 1) + ' of ' + SETS.length + '</div>' +
+      '<h2 class="card-title">' + esc(s.title) + '</h2><div class="card-meta">' + tags + '</div></div><div class="content">';
+    h += '<div class="bt-ctx">' + esc(s.context) + '</div>';
+
+    h += '<div class="bt-step">1 · Who first?</div><p class="bt-hint">Tap the bleeps in the order you will deal with them. Tap a ranked bleep again to take it back. You may ask the nurse one question, on one bleep only.</p><div class="bt-list">';
+    s.bleeps.forEach(function(b){
+      var r = st.rank.indexOf(b.key);
+      h += '<div class="bt-bleep"' + (r > -1 ? ' data-ranked' : '') + '>' +
+        '<button type="button" class="bt-tap" data-rank="' + b.key + '" ' + (st.result ? 'disabled ' : '') + 'aria-label="Bleep ' + b.key + ', ' + esc(b.who) + (r > -1 ? ', ranked ' + (r + 1) : ', not ranked') + '">' +
+        '<span class="bt-rank">' + (r > -1 ? (r + 1) : '') + '</span><span><span class="bt-who"><span class="k">' + b.key + '</span>' + esc(b.who) + '</span><span class="bt-pager" style="display:block">“' + esc(b.pager) + '”</span></span></button>' +
+        '<div class="bt-ask">' + (st.asked === b.key ? '<div class="ans"><b>Nurse:</b> “' + esc(b.ask) + '”</div>' :
+          '<button type="button" data-ask="' + b.key + '"' + (st.asked || st.result ? ' disabled' : '') + '>Ask the nurse one question</button>') + '</div></div>';
+    });
+    h += '</div>';
+
+    h += '<div class="bt-step">2 · What will you do for each?</div>';
+    if(!allRanked){ h += '<div class="bt-wait">Rank all ' + n + ' bleeps first.</div>'; }
+    else {
+      h += '<div class="bt-acts">';
+      st.rank.forEach(function(k, i){
+        var b = bleep(k);
+        h += '<div class="bt-act" role="group" aria-label="Action for bleep ' + k + '"><div class="h"><span>' + (i + 1) + '</span>' + k + ' · ' + esc(b.who) + '</div><div class="bt-opts">' +
+          ACT_ORDER.map(function(a){ return '<button type="button" class="bt-opt" data-act="' + k + '" data-v="' + a + '" aria-pressed="' + (st.act[k] === a) + '"' + (st.result ? ' disabled' : '') + '>' + esc(ACT[a]) + '</button>'; }).join('') +
+          '</div></div>';
+      });
+      h += '</div>';
+    }
+    var ready = allRanked && s.bleeps.every(function(b){ return st.act[b.key]; });
+    h += '<div class="bt-go">' + (st.result ? '<button type="button" class="abtn" data-do="retry">Try again</button>' :
+      '<button type="button" class="bt-check" data-do="check"' + (ready ? '' : ' disabled') + '>Check my plan</button>' +
+      (st.rank.length ? '<button type="button" class="abtn" data-do="clear">Start again</button>' : '')) + '</div>';
+
+    if(st.result) h += feedback(st.result);
+    h += '</div>';
+    h += '<div class="src"><b>Sources:</b> ' + s.sources.map(function(x){ return x.u ? '<a href="' + esc(x.u) + '" target="_blank" rel="noopener">' + esc(x.t) + '</a>' : esc(x.t); }).join(' · ') + '</div></article>';
+    document.getElementById('btSet').innerHTML = h;
+  }
+
+  function feedback(r){
+    var s = set(), pos = {};
+    st.rank.forEach(function(k, i){ pos[k] = i + 1; });
+    var head = { unsafe: 'Unsafe', safe: 'Safe', excellent: 'Excellent' }[r.band];
+    var msg = { unsafe: 'At least one patient would have waited too long or been managed by phone when they needed a doctor. The reasons come first below.',
+                safe: 'No patient was put at risk, but your order or actions differ from the model. Compare the reasons below.',
+                excellent: 'Your order and actions match the model answer.' }[r.band];
+    var h = '<div class="bt-step">3 · Feedback</div><div class="bt-band ' + r.band + '" id="btResult" tabindex="-1"><h3>' + head + '</h3><p>' + msg + '</p>';
+    if(r.band === 'unsafe'){
+      h += '<ul class="bt-why-unsafe">' +
+        r.broken.map(function(p){ return '<li><b>' + p[0] + ' must come before ' + p[1] + ':</b> ' + esc(p[2]) + '</li>'; }).join('') +
+        r.unsafeActs.map(function(b){ return '<li><b>' + b.key + ': “' + esc(ACT[st.act[b.key]]) + '” is unsafe here.</b> ' + esc(b.why) + '</li>'; }).join('') + '</ul>';
+    }
+    h += '</div>';
+    h += '<div class="so-table-wrap"><table class="bt-cmp"><thead><tr><th>Model</th><th>Bleep</th><th>You</th><th>Your action</th><th>Result</th></tr></thead><tbody>';
+    s.model_order.forEach(function(k, i){
+      var tie = s.model_order.filter(function(o){ return o !== k && isTie(o, k); });
+      var mr = i + 1; if(tie.length){ mr = Math.min(i, s.model_order.indexOf(tie[0])) + 1; }
+      h += '<tr><td>' + mr + (tie.length ? ' (equal)' : '') + '</td><td><b>' + k + '</b> ' + esc(bleep(k).who) + '</td><td>' + pos[k] + '</td><td>' + esc(ACT[st.act[k]]) + '</td><td><span class="bp ' + r.per[k] + '">' + BAND[r.per[k]] + '</span></td></tr>';
+    });
+    h += '</tbody></table></div><div class="bt-fb">';
+    s.model_order.forEach(function(k){
+      var b = bleep(k);
+      h += '<div class="bt-fbi"><div class="t"><b>' + k + ' · ' + esc(b.who) + '</b><span class="bp ' + r.per[k] + '">' + BAND[r.per[k]] + '</span></div>' +
+        '<p><span class="lbl">Best action</span>' + b.best.map(function(a){ return esc(ACT[a]); }).join(' <i>or</i> ') + '</p>' +
+        '<p>' + esc(b.why) + '</p>' +
+        '<div class="say"><span class="lbl" style="color:#0b5a45">Say back</span>“' + esc(b.say_back) + '”</div>' +
+        '<a class="card-link" href="bleep-cards.html#' + esc(b.card) + '">Handling this bleep: ' + esc(b.card) + ' ' + esc(b.card_title) + ' →</a></div>';
+    });
+    h += '</div><div class="bt-one"><b>One thing:</b> ' + esc(s.one_thing) + '</div>' +
+      '<p class="bt-final">Your trust’s escalation policy and the senior on duty take priority over this exercise.</p>' +
+      '<div class="bt-store">Your last result is saved on this device only. It is not sent anywhere and will not appear on another device.</div>';
+    return h;
+  }
+
+  /* ---------- events ---------- */
+  document.getElementById('btSet').addEventListener('click', function(e){
+    var t = e.target.closest('button'); if(!t || t.disabled) return;
+    if(t.dataset.rank){
+      var k = t.dataset.rank, i = st.rank.indexOf(k);
+      if(i > -1){ st.rank.splice(i, 1); } else { st.rank.push(k); }
+      render(); var again = document.querySelector('[data-rank="' + k + '"]'); if(again) again.focus();
+    } else if(t.dataset.ask){
+      st.asked = t.dataset.ask; render();
+    } else if(t.dataset.act){
+      st.act[t.dataset.act] = t.dataset.v; render();
+      var b2 = document.querySelector('[data-act="' + t.dataset.act + '"][data-v="' + t.dataset.v + '"]'); if(b2) b2.focus();
+    } else if(t.dataset.do === 'check'){
+      st.result = evaluate();
+      var done = load(KEY_DONE, {}); done[set().id] = st.result.band; save(KEY_DONE, done);
+      save(KEY_LAST, { id: set().id, rank: st.rank, act: st.act, asked: st.asked, band: st.result.band });
+      render(); renderPicker();
+      var r = document.getElementById('btResult'); if(r){ r.focus(); r.scrollIntoView({ block: 'start' }); }
+    } else if(t.dataset.do === 'retry' || t.dataset.do === 'clear'){
+      fresh(); render(); document.getElementById('btSet').scrollIntoView({ block: 'start' });
+    }
+  });
+  document.getElementById('btPicker').addEventListener('click', function(e){
+    var t = e.target.closest('[data-set]'); if(!t) return;
+    idx = +t.dataset.set; fresh(); renderPicker(); render(); history.replaceState(null, '', '#' + set().id);
+  });
+  var h = decodeURIComponent((location.hash || '').slice(1)).toUpperCase();
+  SETS.forEach(function(s, i){ if(s.id === h) idx = i; });
+  renderPicker(); render();
+})();
+</script>
+</body>
+</html>
