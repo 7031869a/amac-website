@@ -263,6 +263,9 @@ footer{background:var(--navy-deep);margin-top:40px;border-top:1px solid #1A2740;
   fresh();
   var set = function(){ return SETS[idx]; };
   function bleep(k){ return set().bleeps.filter(function(b){ return b.key === k; })[0]; }
+  function caller(){ return set().caller || 'nurse'; }
+  function actLabel(a){ return ACT[a].replace('nurse', caller()); }
+  function cap(s){ return s.charAt(0).toUpperCase() + s.slice(1); }
   function isTie(a, b){ return (set().ties || []).some(function(p){ return (p[0]===a && p[1]===b) || (p[0]===b && p[1]===a); }); }
 
   /* ---------- scoring (spec: Unsafe → Safe → Excellent, checked in that order) ---------- */
@@ -305,14 +308,14 @@ footer{background:var(--navy-deep);margin-top:40px;border-top:1px solid #1A2740;
       '<h2 class="card-title">' + esc(s.title) + '</h2><div class="card-meta">' + tags + '</div></div><div class="content">';
     h += '<div class="bt-ctx">' + esc(s.context) + '</div>';
 
-    h += '<div class="bt-step">1 · Who first?</div><p class="bt-hint">Tap the bleeps in the order you will deal with them. Tap a ranked bleep again to take it back. You may ask the nurse one question, on one bleep only.</p><div class="bt-list">';
+    h += '<div class="bt-step">1 · Who first?</div><p class="bt-hint">Tap the bleeps in the order you will deal with them. Tap a ranked bleep again to take it back. You may ask the ' + caller() + ' one question, on one bleep only.</p><div class="bt-list">';
     s.bleeps.forEach(function(b){
       var r = st.rank.indexOf(b.key);
       h += '<div class="bt-bleep"' + (r > -1 ? ' data-ranked' : '') + '>' +
         '<button type="button" class="bt-tap" data-rank="' + b.key + '" ' + (st.result ? 'disabled ' : '') + 'aria-label="Bleep ' + b.key + ', ' + esc(b.who) + (r > -1 ? ', ranked ' + (r + 1) : ', not ranked') + '">' +
         '<span class="bt-rank">' + (r > -1 ? (r + 1) : '') + '</span><span><span class="bt-who"><span class="k">' + b.key + '</span>' + esc(b.who) + '</span><span class="bt-pager" style="display:block">“' + esc(b.pager) + '”</span></span></button>' +
-        '<div class="bt-ask">' + (st.asked === b.key ? '<div class="ans"><b>Nurse:</b> “' + esc(b.ask) + '”</div>' :
-          '<button type="button" data-ask="' + b.key + '"' + (st.asked || st.result ? ' disabled' : '') + '>Ask the nurse one question</button>') + '</div></div>';
+        '<div class="bt-ask">' + (st.asked === b.key ? '<div class="ans"><b>' + cap(caller()) + ':</b> “' + esc(b.ask) + '”</div>' :
+          '<button type="button" data-ask="' + b.key + '"' + (st.asked || st.result ? ' disabled' : '') + '>Ask the ' + caller() + ' one question</button>') + '</div></div>';
     });
     h += '</div>';
 
@@ -323,7 +326,7 @@ footer{background:var(--navy-deep);margin-top:40px;border-top:1px solid #1A2740;
       st.rank.forEach(function(k, i){
         var b = bleep(k);
         h += '<div class="bt-act" role="group" aria-label="Action for bleep ' + k + '"><div class="h"><span>' + (i + 1) + '</span>' + k + ' · ' + esc(b.who) + '</div><div class="bt-opts">' +
-          ACT_ORDER.map(function(a){ return '<button type="button" class="bt-opt" data-act="' + k + '" data-v="' + a + '" aria-pressed="' + (st.act[k] === a) + '"' + (st.result ? ' disabled' : '') + '>' + esc(ACT[a]) + '</button>'; }).join('') +
+          ACT_ORDER.map(function(a){ return '<button type="button" class="bt-opt" data-act="' + k + '" data-v="' + a + '" aria-pressed="' + (st.act[k] === a) + '"' + (st.result ? ' disabled' : '') + '>' + esc(actLabel(a)) + '</button>'; }).join('') +
           '</div></div>';
       });
       h += '</div>';
@@ -350,20 +353,20 @@ footer{background:var(--navy-deep);margin-top:40px;border-top:1px solid #1A2740;
     if(r.band === 'unsafe'){
       h += '<ul class="bt-why-unsafe">' +
         r.broken.map(function(p){ return '<li><b>' + p[0] + ' must come before ' + p[1] + ':</b> ' + esc(p[2]) + '</li>'; }).join('') +
-        r.unsafeActs.map(function(b){ return '<li><b>' + b.key + ': “' + esc(ACT[st.act[b.key]]) + '” is unsafe here.</b> ' + esc(b.why) + '</li>'; }).join('') + '</ul>';
+        r.unsafeActs.map(function(b){ return '<li><b>' + b.key + ': “' + esc(actLabel(st.act[b.key])) + '” is unsafe here.</b> ' + esc(b.why) + '</li>'; }).join('') + '</ul>';
     }
     h += '</div>';
     h += '<div class="so-table-wrap"><table class="bt-cmp"><thead><tr><th>Model</th><th>Bleep</th><th>You</th><th>Your action</th><th>Result</th></tr></thead><tbody>';
     s.model_order.forEach(function(k, i){
       var tie = s.model_order.filter(function(o){ return o !== k && isTie(o, k); });
       var mr = i + 1; if(tie.length){ mr = Math.min(i, s.model_order.indexOf(tie[0])) + 1; }
-      h += '<tr><td>' + mr + (tie.length ? ' (equal)' : '') + '</td><td><b>' + k + '</b> ' + esc(bleep(k).who) + '</td><td>' + pos[k] + '</td><td>' + esc(ACT[st.act[k]]) + '</td><td><span class="bp ' + r.per[k] + '">' + BAND[r.per[k]] + '</span></td></tr>';
+      h += '<tr><td>' + mr + (tie.length ? ' (equal)' : '') + '</td><td><b>' + k + '</b> ' + esc(bleep(k).who) + '</td><td>' + pos[k] + '</td><td>' + esc(actLabel(st.act[k])) + '</td><td><span class="bp ' + r.per[k] + '">' + BAND[r.per[k]] + '</span></td></tr>';
     });
     h += '</tbody></table></div><div class="bt-fb">';
     s.model_order.forEach(function(k){
       var b = bleep(k);
       h += '<div class="bt-fbi"><div class="t"><b>' + k + ' · ' + esc(b.who) + '</b><span class="bp ' + r.per[k] + '">' + BAND[r.per[k]] + '</span></div>' +
-        '<p><span class="lbl">Best action</span>' + b.best.map(function(a){ return esc(ACT[a]); }).join(' <i>or</i> ') + '</p>' +
+        '<p><span class="lbl">Best action</span>' + b.best.map(function(a){ return esc(actLabel(a)); }).join(' <i>or</i> ') + '</p>' +
         '<p>' + esc(b.why) + '</p>' +
         '<div class="say"><span class="lbl" style="color:#0b5a45">Say back</span>“' + esc(b.say_back) + '”</div>' +
         '<a class="card-link" href="bleep-cards.html#' + esc(b.card) + '">Handling this bleep: ' + esc(b.card) + ' ' + esc(b.card_title) + ' →</a></div>';
@@ -400,9 +403,12 @@ footer{background:var(--navy-deep);margin-top:40px;border-top:1px solid #1A2740;
     var t = e.target.closest('[data-set]'); if(!t) return;
     idx = +t.dataset.set; fresh(); renderPicker(); render(); history.replaceState(null, '', '#' + set().id);
   });
-  var h = decodeURIComponent((location.hash || '').slice(1)).toUpperCase();
-  SETS.forEach(function(s, i){ if(s.id === h) idx = i; });
-  renderPicker(); render();
+  function fromHash(){
+    var h = decodeURIComponent((location.hash || '').slice(1)).toUpperCase();
+    SETS.forEach(function(s, i){ if(s.id === h && i !== idx){ idx = i; fresh(); } });
+  }
+  window.addEventListener('hashchange', function(){ fromHash(); renderPicker(); render(); });
+  fromHash(); renderPicker(); render();
 })();
 </script>
 </body>
