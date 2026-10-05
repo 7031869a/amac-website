@@ -145,7 +145,7 @@ window.SO_CARDS = [
  what:'<p>A broad picture of a typical day on a ward. Every specialty and ward runs differently; this is a map, not a timetable.</p>',
  why:'<p>Knowing the rhythm of the day helps you see where you fit, when decisions are made and when information changes hands.</p>',
  todoHtml:'<p>Many ward days follow a pattern like this:</p><ol class="so-ol"><li><b>Start of the day</b> — you receive handover about patients and anything outstanding from overnight.</li><li><b>Review of patients</b> — often a ward round or board round, where the team reviews patients and makes plans.</li><li><b>Jobs</b> — the tasks that come out of those plans, shared across the team.</li><li><b>Through the day</b> — results come back, patients change, new patients arrive, others prepare to go home. Multidisciplinary meetings may happen.</li><li><b>End of the day</b> — outstanding work and concerns are handed over to the doctors who follow you.</li></ol><p>Two things run through the whole day: information keeps changing, and responsibility passes between people. Your job is to keep track of both and ask when you are unsure.</p>',
- local:['When and where do ward rounds and board rounds happen on your ward?','Who leads them?','When is the end-of-day handover?'],
+ local:['When and where do ward rounds and board rounds happen on your ward?','Who leads them?','When is the end-of-day handover?','Where are resuscitation-status and treatment-escalation decisions (for example DNACPR or ReSPECT forms) recorded, and who can make them?'],
  safety:'If work remains unfinished, make sure the team knows its status and follow the local handover process.',
  next:{to:'SO-03-02'}},
 
@@ -187,7 +187,7 @@ window.SO_CARDS = [
        '<b>Routes can fail.</b> The senior may be busy, the bleep may not be answered, the system may be down.',
        '<b>If the first route doesn\'t work, keep going:</b> try again, try the next person in the local chain, involve the nurse in charge, and use the emergency route if the patient\'s condition requires it.',
        '<b>Don\'t fill the gap by going beyond your competence.</b> If help isn\'t available yet, keep the patient as safe as you can within what you are able to do, and keep escalating.'],
- local:['Who is the next person to call if your senior doesn\'t respond, in hours and out of hours?','Who is the consultant on call?'],
+ local:['Who is the next person to call if your senior doesn\'t respond, in hours and out of hours?','Who is the consultant on call?','Which early warning score and deteriorating-patient escalation process does your hospital use?'],
  safety:'If the first route fails, keep escalating until someone responds.',
  next:{to:'SO-05-01'}},
 
@@ -223,7 +223,7 @@ window.SO_CARDS = [
        '<b>Right task.</b> Make sure you understand what you are being asked to do and why. If an instruction is unclear or doesn\'t seem to fit the patient, clarify it before acting.',
        '<b>Pause when it matters.</b> Interruptions and busy moments are when mix-ups happen. If you have been interrupted, re-check before you carry on.'],
  todoAfter:'<p>This card sets out the principle only. The specific checks for medicines, procedures and other tasks are taught in the Prescribe, Ward and On Call sections.</p>',
- local:['What does your local patient identification policy require?','What should you do if a patient has no wristband or the details don\'t match?'],
+ local:['What does your local patient identification policy require?','What should you do if a patient has no wristband or the details don\'t match?','What is the local chaperone policy for intimate examinations?'],
  safety:'If the identity doesn\'t match, stop until it does.',
  next:{to:'SO-06-02'}},
 
