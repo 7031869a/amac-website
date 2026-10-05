@@ -222,6 +222,7 @@ window.SO_CARDS = [
        '<b>Right record.</b> Check you have the right patient\'s record open before you read, request or write anything.',
        '<b>Right task.</b> Make sure you understand what you are being asked to do and why. If an instruction is unclear or doesn\'t seem to fit the patient, clarify it before acting.',
        '<b>Pause when it matters.</b> Interruptions and busy moments are when mix-ups happen. If you have been interrupted, re-check before you carry on.'],
+ todoAfter:'<p>This card sets out the principle only. The specific checks for medicines, procedures and other tasks are taught in the Prescribe, Ward and On Call sections.</p>',
  local:['What does your local patient identification policy require?','What should you do if a patient has no wristband or the details don\'t match?'],
  safety:'If the identity doesn\'t match, stop until it does.',
  next:{to:'SO-06-02'}},
