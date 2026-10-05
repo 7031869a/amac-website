@@ -371,7 +371,7 @@ footer{background:var(--navy-deep);margin-top:40px;border-top:1px solid #1A2740;
     var s = sh();
     if(st.regUsed) return '<div class="ns-reg used">Registrar: already taking a patient for you tonight.</div>';
     if(regFree()) return '<div class="ns-reg free">Registrar: free now, can take one patient.</div>';
-    return '<div class="ns-reg busy">Registrar: busy in ED until ' + esc(T(s.registrar_from)) + '. You can still phone them for advice or escalation.</div>';
+    return '<div class="ns-reg busy">Registrar: busy ' + esc(s.registrar_where || 'in ED') + ' until ' + esc(T(s.registrar_from)) + '. You can still phone them for advice or escalation.</div>';
   }
   function render(){
     var s = sh();
