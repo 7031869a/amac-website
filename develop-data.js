@@ -1,6 +1,6 @@
 /* AMaC Foundation — Develop door data. DRAFT until senior sign-off.
    Spec: "Develop Door — Spec v0.1" (Docs). Same Task Card template as Ward and Prescribe.
-   Four-nation facts checked 5 October 2026; every framework names its nation. */
+   Four-nation facts checked 5–6 October 2026; every framework names its nation. */
 window.DV_MODULES = [
   { n: 1, name: 'Safety and learning', planned: 3 },
   { n: 2, name: 'Professional standards', planned: 4 },
@@ -233,7 +233,7 @@ window.DV_CARDS = [
     ],
     stop: [
       'Someone is at immediate risk: act and contact the police if needed.',
-      'You are unsure which legal duty applies.',
+      'You are unsure which legal duty applies: ask your safeguarding team.',
       'You disagree with a decision about a referral: escalate to the safeguarding lead.'
     ],
     record: 'Concerns, advice received, referrals made, and who you informed.',
@@ -403,7 +403,145 @@ window.DV_CARDS = [
       'Your foundation school’s guidance on reflection.',
       'Wellbeing and support services for doctors.'
     ],
-    next: { ext: 'Develop module 4: teaching, audit and careers (coming next)' },
+    next: { to: 'DV-04-01' },
     sources: 'Academy of Medical Royal Colleges, COPMeD, GMC and Medical Schools Council, The reflective practitioner: guidance for doctors and medical students (2018).'
+  },
+  {
+    id: 'DV-04-01', mod: 4, title: 'Teaching',
+    jur: 'UK-wide', fpcP: 'FPC10 Teaching the teacher', fpcS: 'FPC12 Continuing professional development', status: 'DRAFT',
+    good: 'You teach students and colleagues regularly, plan short sessions around clear learning outcomes, ask for feedback, and record it as evidence of your development as a teacher.',
+    before: [
+      'Look for opportunities: medical students on placement, new colleagues, nurses and allied health professionals, and departmental teaching.',
+      'Know the developing-the-clinical-teacher supervised learning event, which records your teaching for your portfolio.'
+    ],
+    steps: [
+      'Offer to teach, at the bedside or in short sessions.',
+      'Plan one or two learning outcomes that suit your learners’ level.',
+      'Make it active: questions, cases, demonstration and practice.',
+      'Check what they have learned before you finish.',
+      'Ask for feedback. For a formal session or presentation, ask a senior to observe and complete a developing-the-clinical-teacher assessment.',
+      'Reflect on the feedback and record it in your ePortfolio.'
+    ],
+    pitfall: 'A long slide presentation with no clear learning outcome.',
+    words: [
+      '“What would be most useful for you to learn today?”',
+      '“Could you watch me teach and complete a developing-the-clinical-teacher assessment?”'
+    ],
+    stop: [
+      'Students would examine or practise on a patient: make sure the patient has agreed.',
+      'You are asked to teach a procedure or topic you are not confident in: say so, and suggest someone who is.'
+    ],
+    record: 'Feedback, the developing-the-clinical-teacher assessment, and your reflection, in your ePortfolio.',
+    local: [
+      'The medical school’s undergraduate team at your hospital.',
+      'Your department’s teaching programme and how to contribute.'
+    ],
+    next: { to: 'DV-04-02' },
+    sources: 'UK Foundation Programme Curriculum 2021 (2026 revision), FPC10; UK Foundation Programme, Supervised learning events; GMC, Good medical practice (2024).'
+  },
+  {
+    id: 'DV-04-02', mod: 4, title: 'Audit and quality improvement',
+    jur: 'UK-wide', fpcP: 'FPC9 Quality improvement', fpcS: 'FPC12 Continuing professional development', status: 'DRAFT',
+    good: 'You help improve care by choosing a real problem, measuring it, testing changes and sharing what you found, and you know how audit, quality improvement and research differ.',
+    before: [
+      'Know the difference. Audit compares current practice with a standard. Quality improvement tests changes with repeated measurement, for example in plan–do–study–act cycles. Research creates new knowledge and needs research approvals.',
+      'Find a supervisor, and check whether a similar project already exists.'
+    ],
+    steps: [
+      'Choose a problem that matters to patients or staff where you work, and consider its environmental impact.',
+      'Register the project with your organisation’s audit or quality improvement team.',
+      'Set a standard or aim, and decide how you will measure it.',
+      'Collect data using approved systems, following information governance rules.',
+      'Make a change and measure again, so the loop is closed.',
+      'Present the results locally, and share the learning.',
+      'Record the project and your reflection in your ePortfolio.'
+    ],
+    pitfall: 'A single round of data collection that is never repeated after a change.',
+    words: [
+      '“Is there a problem on this ward you would like improved that I could work on?”',
+      '“Can we register this with the audit team before we start?”'
+    ],
+    stop: [
+      'The project may be research: check with your research and development office, using the Health Research Authority’s decision tool.',
+      'You would need patient-identifiable data outside approved systems: stop, and ask your information governance team or Caldicott Guardian.',
+      'The project overlaps with existing work: join it rather than duplicate it.'
+    ],
+    record: 'Registration, data collection, results, presentations and your reflection.',
+    local: [
+      'Your clinical audit and quality improvement team.',
+      'Your research and development office.',
+      'Local meetings where you can present your work.'
+    ],
+    next: { to: 'DV-04-03' },
+    sources: 'Healthcare Quality Improvement Partnership, Best practice in clinical audit (2020); Institute for Healthcare Improvement, Model for Improvement; Health Research Authority and Medical Research Council, Is my study research? decision tool; UK Foundation Programme Curriculum 2021 (2026 revision), FPC9.'
+  },
+  {
+    id: 'DV-04-03', mod: 4, title: 'Planning your career',
+    jur: 'UK-wide', fpcP: 'FPC13 Understanding medicine', fpcS: 'FPC12 Continuing professional development', status: 'DRAFT',
+    good: 'You explore specialties early, get experience and advice, understand how recruitment works, and build evidence that fits the path you choose.',
+    before: [
+      'Know your sources of support: your educational supervisor, your foundation school’s careers lead, and the national recruitment information for specialty training.',
+      'Know that specialty applications open early in F2, so planning starts in F1.'
+    ],
+    steps: [
+      'Explore through placements, taster experiences and conversations with trainees and consultants.',
+      'Read the person specifications for the specialties you are considering.',
+      'Plan portfolio evidence that matches them, such as audit or QI, teaching and presentations.',
+      'Note application windows, any limit on how many applications you can make, and any assessments the specialty uses.',
+      'Consider all your options after F2, including specialty training, a year out, research or other paths.',
+      'Know that the Medical Training (Prioritisation) Act 2026 applies to UK specialty recruitment from 2027, and that completing the UK Foundation Programme is one route into the priority group for CT1 and ST1 posts. Check the current recruitment guidance for how it applies to you.'
+    ],
+    pitfall: 'Leaving career decisions until applications open.',
+    words: [
+      '“Could I arrange a taster in your specialty?”',
+      '“What made the strongest applications stand out?”'
+    ],
+    stop: [
+      'You are unsure whether you are eligible for a post or how prioritisation affects you: ask your foundation school or the recruitment office.',
+      'You are thinking about leaving training or taking time out: talk to your educational supervisor first.'
+    ],
+    record: 'Career conversations and goals in your ePortfolio and PDP.',
+    local: [
+      'Your foundation school’s careers support and taster arrangements.',
+      'Study leave rules for tasters and interviews.'
+    ],
+    next: { to: 'DV-05-01' },
+    sources: 'NHS England Medical Hub, specialty recruitment; UK Foundation Programme, Specialty tasters for foundation doctors; Medical Training (Prioritisation) Act 2026 (Royal Assent 5 March 2026); NHS England Medical Hub, Prioritisation for specialty recruitment (reviewed 16 September 2026); BMA, Applying for a specialty training post.'
+  },
+  {
+    id: 'DV-05-01', mod: 5, title: 'Exception reporting: the detail',
+    jur: 'Check your nation and employer', fpcP: 'FPC7 Fitness for practise', fpcS: 'FPC11 Ethics and law', status: 'DRAFT',
+    good: 'In England and Wales, you exception report whenever your work differs from your work schedule or job plan, promptly and accurately, because it protects patients, pay and training. In Scotland and Northern Ireland, you take part fully and honestly in rota monitoring.',
+    before: [
+      'England: a reformed exception reporting system went live on 4 February 2026.',
+      'Wales: a new resident doctor contract is being phased in from August 2026, starting with foundation doctors. It has exception reporting, a separate overtime system that replaces rota monitoring, and a Guardian of Safe and Flexible Working in every health board and trust.',
+      'Scotland and Northern Ireland: there is no exception reporting. Hours are checked through rota monitoring exercises under the 2002 terms and conditions.'
+    ],
+    steps: [
+      'England: report extra hours worked, missed breaks and missed education.',
+      'England: submit each report within 28 days of the day it happened, as the 2026 reforms require.',
+      'England: reports of extra hours go to your employer’s workforce team and educational reports to the director of medical education. Your supervisor is involved only if you ask.',
+      'England: check the outcome. For extra hours you choose payment or time off in lieu, unless time off is required for safety reasons, such as a breach of rest rules.',
+      'Wales: use your employer’s exception reporting and overtime systems, and ask medical staffing how to submit.',
+      'Scotland and Northern Ireland: record your actual hours accurately during monitoring, and ask for a monitoring exercise if your rota does not match the hours you work.',
+      'Everywhere: raise any immediate safety concern straight away, separately from any report.'
+    ],
+    pitfall: 'Not reporting because “everyone stays late”. Unreported hours make unsafe rotas look safe.',
+    words: [
+      '“I stayed late to finish handover safely, so I’m submitting an exception report.”',
+      '“My rota doesn’t match the hours I work. Could we arrange a monitoring exercise?”'
+    ],
+    stop: [
+      'You are pressured not to report, or to change monitoring records: seek support from your guardian of safe working hours (England) or Guardian of Safe and Flexible Working (Wales), medical staffing, or the BMA.',
+      'Staffing is unsafe now: escalate it (DV-01-03).',
+      'You are too tired to work safely: tell your senior.'
+    ],
+    record: 'Your exception reports or monitoring records, kept in your employer’s system.',
+    local: [
+      'The system your employer uses for exception reporting or rota monitoring.',
+      'Your guardian of safe working hours (England), Guardian of Safe and Flexible Working (Wales), or medical staffing contact.'
+    ],
+    next: { ext: 'Starting Out: exception-reporting awareness and your local route', href: 'starting-out.html' },
+    sources: 'BMA, Exception reporting reforms in England: summary and FAQs (4 February 2026); NHS Employers, Exception reporting reform resources; BMA, Contract reform for resident doctors in Wales (updated 31 July 2026); BMA, Rota monitoring for resident doctors in Northern Ireland, Scotland and Wales (September 2025).'
   }
 ];
