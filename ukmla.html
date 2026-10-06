@@ -252,6 +252,65 @@ footer{margin-top:40px;border-top:1px solid #1A2740;padding:34px 26px 26px;}
 
 <div class="img-note">International medical graduates: see <a href="plab1-hub.html">PLAB 1</a> and <a href="plab2.html">PLAB 2</a>.</div>
 
+<!-- GMC CONTENT MAP COVERAGE STRIP (data: data/akt-mla-map.json, page: mla-coverage.html) -->
+<div class="wrap mla-wrap">
+  <a class="mla-strip" href="mla-coverage.html">
+    <div class="mla-main">
+      <div class="mla-eyebrow">GMC CONTENT MAP</div>
+      <div class="mla-title">See the whole syllabus, and where you stand</div>
+      <div class="mla-text" id="mla-text">The GMC lists 429 conditions and 220 presentations. Every AKT question is linked to them, so you can track which ones you have practised as you go.</div>
+      <div class="mla-bar" id="mla-bar" hidden><span class="mla-sec" id="mla-sec"></span><span class="mla-pra" id="mla-pra"></span></div>
+    </div>
+    <span class="mla-go">Open the map →</span>
+  </a>
+</div>
+<style>
+.mla-wrap{padding-bottom:0;}
+.mla-strip{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  background:var(--card);border-top:3px solid var(--door);border-left:3px solid var(--door);
+  border-right:1px solid var(--edge-soft);border-bottom:1px solid var(--edge-soft);
+  border-radius:9px;padding:18px 20px;transition:transform .15s;}
+.mla-strip:hover{transform:translateY(-3px);}
+.mla-main{flex:1 1 320px;min-width:0;}
+.mla-eyebrow{font-size:11px;letter-spacing:.14em;color:var(--door-text);margin-bottom:4px;}
+.mla-title{font-family:'Fraunces',serif;font-size:19px;color:var(--txt);margin-bottom:4px;}
+.mla-text{font-size:13px;color:var(--txt-soft);line-height:1.55;}
+.mla-bar{display:flex;height:8px;border-radius:4px;overflow:hidden;background:#3A4A6A;margin-top:10px;max-width:420px;}
+.mla-bar[hidden]{display:none;}
+.mla-sec{background:var(--door);}
+.mla-pra{background:var(--gold);}
+.mla-go{font-size:12.5px;color:var(--door-text);white-space:nowrap;}
+</style>
+<script>
+(function () {
+  var ans;
+  try { ans = JSON.parse(localStorage.getItem('amac_q_state') || '{}') || {}; } catch (e) { return; }
+  if (!Object.keys(ans).length || typeof fetch !== 'function') return;
+  fetch('data/akt-mla-map.json').then(function (r) { return r.ok ? r.json() : null; }).then(function (map) {
+    if (!map) return;
+    var t = {}, a = {}, c = {};
+    Object.keys(map.q).forEach(function (id) {
+      var k = map.q[id][0]; if (!k) return;
+      t[k] = (t[k] || 0) + 1;
+      if (ans[id]) { a[k] = (a[k] || 0) + 1; if (ans[id].correct) c[k] = (c[k] || 0) + 1; }
+    });
+    var sec = 0, pra = 0;
+    Object.keys(a).forEach(function (k) {
+      if (a[k] >= Math.min(t[k], Math.max(3, Math.ceil(t[k] * 0.2))) && (c[k] || 0) / a[k] >= 0.8) sec++; else pra++;
+    });
+    var total = 429;
+    document.getElementById('mla-text').textContent =
+      'You have practised ' + (sec + pra) + ' of the GMC’s ' + total + ' conditions, and ' + sec + (sec === 1 ? ' is' : ' are') + ' secure. See what you haven’t touched yet.';
+    document.getElementById('mla-sec').style.width = (100 * sec / total) + '%';
+    document.getElementById('mla-pra').style.width = (100 * pra / total) + '%';
+    var bar = document.getElementById('mla-bar');
+    bar.setAttribute('role', 'img');
+    bar.setAttribute('aria-label', sec + ' secure and ' + pra + ' practised of ' + total + ' conditions');
+    bar.hidden = false;
+  }).catch(function () {});
+})();
+</script>
+
 <!-- TOOLKIT -->
 <div class="wrap">
   <div class="sec-label">YOUR UKMLA TOOLKIT</div>

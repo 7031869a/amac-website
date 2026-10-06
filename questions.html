@@ -695,6 +695,7 @@ function filter() {
   const diff = document.getElementById('diff-filter').value;
   const status = document.getElementById('status-filter').value;
   const filtered = QUESTIONS.filter(q => {
+    if (gmcFilter && !gmcFilter.ids.has(q.id)) return false;
     if (domain && q.domain !== domain) return false;
     if (diff && !(q.difficulty||'').toLowerCase().includes(diff.toLowerCase())) return false;
     if (status) {
@@ -717,6 +718,37 @@ function filter() {
 });
 
 renderBank(QUESTIONS);
+
+/* GMC content-map deep link: questions.html?gmc=C123 (condition) or ?gmc=P045 (presentation).
+   Mapping lives in data/akt-mla-map.json; linked from mla-coverage.html. */
+var gmcFilter = null;
+(function () {
+  var code = new URLSearchParams(location.search).get('gmc');
+  if (!code || !/^[CP]\d{3}$/.test(code) || typeof fetch !== 'function') return;
+  var slot = code[0] === 'C' ? 0 : 1;
+  Promise.all([
+    fetch('data/akt-mla-map.json').then(function (r) { if (!r.ok) throw 0; return r.json(); }),
+    fetch('data/gmc-mla-map.json').then(function (r) { if (!r.ok) throw 0; return r.json(); })
+  ]).then(function (res) {
+    var ids = new Set(Object.keys(res[0].q).filter(function (id) { return res[0].q[id][slot] === code; }));
+    var list = slot === 0 ? res[1].conditions : res[1].presentations;
+    var item = list.find(function (x) { return x.id === code; });
+    if (!item || !ids.size) return;
+    gmcFilter = { ids: ids };
+    var bar = document.createElement('div');
+    bar.setAttribute('role', 'status');
+    bar.style.cssText = 'max-width:1100px;margin:14px auto 0;padding:10px 16px;background:#fffdf8;border:1px solid #e4ddcd;border-left:3px solid #2FB48C;border-radius:6px;font-size:13.5px;display:flex;gap:12px;justify-content:space-between;flex-wrap:wrap;align-items:center;';
+    var txt = document.createElement('span');
+    txt.textContent = 'GMC content map · ' + (slot === 0 ? 'Condition' : 'Presentation') + ': ' + item.name + ' · ' + ids.size + ' question' + (ids.size === 1 ? '' : 's');
+    var links = document.createElement('span');
+    links.innerHTML = '<a href="mla-coverage.html" style="color:#1D9E75;margin-right:14px;">← Back to the map</a><a href="questions.html" style="color:#5d6470;">Show all questions</a>';
+    bar.appendChild(txt); bar.appendChild(links);
+    var anchor = document.getElementById('search').closest('.search-wrap').parentElement;
+    anchor.parentElement.insertBefore(bar, anchor);
+    filter();
+    bar.scrollIntoView({ block: 'start' });
+  }).catch(function () {});
+})();
 
 function printAllQuestions() {
   // Expand every visible question card
