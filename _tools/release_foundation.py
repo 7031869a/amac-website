@@ -20,7 +20,7 @@ TODAY = datetime.date.today().isoformat()
 PRODUCTS = {
     'bleep-triage': dict(grid='oncall', name='On Call: Bleep Triage', badge='12 practice sets',
         desc='Several bleeps at once. Decide who to see first, what to ask the nurse to do and when to call a senior, then compare your order with a model answer.',
-        practise='several bleeps at once: who first'),
+        practise='several bleeps at once, who to see first'),
     'night-shift': dict(grid='oncall', name='On Call: Night Shift', badge='3 practice nights',
         desc='Practise a whole night on call in six decisions. Bleeps keep arriving, waiting patients change, and the registrar can take only one. See what happened to every patient.',
         practise='a whole night on call in six decisions', replaces='On-Call Shift Simulator'),
@@ -94,7 +94,7 @@ def copy_and_strip(repo, slug, source, changed):
             s = s.replace("status: 'DRAFT'", "status: 'REVIEWED'")
             if "'DRAFT'" in s:
                 die(f + ' still contains a DRAFT status')
-        if re.search(r'not yet signed off|>DRAFT<', s, re.I) and f.endswith('.html'):
+        if re.search(r'not yet signed off|cards drafted', s, re.I) and f.endswith('.html'):
             die(f + ' still contains draft wording')
         wr(repo, f, s, changed)
 
@@ -129,12 +129,44 @@ def update_foundation(repo, changed):
     page = sub1(r'<span class="hs-num">\d+</span><span class="hs-lbl">simulators? in build</span>',
                 '<span class="hs-num">%d</span><span class="hs-lbl">simulator%s in build</span>' % (n, '' if n == 1 else 's'),
                 page, 'foundation.html hero stat')
+    page = update_foundation_text(page, repo)
     wr(repo, 'foundation.html', page, changed)
+
+
+def and_join(xs):
+    return xs[0] if len(xs) == 1 else ', '.join(xs[:-1]) + ' and ' + xs[-1]
+
+
+def update_foundation_text(page, repo):
+    """Rewrite the hero line and meta descriptions to match what is live."""
+    doors = [PRODUCTS[s]['name'] for s in ('ward', 'prescribe', 'develop') if released(repo, s)]
+    practice = [PRODUCTS[s]['name'].replace('On Call: ', '') for s in ('bleep-triage', 'night-shift') if released(repo, s)]
+    soon = ([] if released(repo, 'night-shift') else ['an on-call shift simulator']) + \
+           ['a prescribing simulator with Prescribing Safety Assessment (PSA)-style tasks', 'a question bank']
+    soon_short = ([] if released(repo, 'night-shift') else ['an on-call shift simulator']) + ['a prescribing simulator', 'a question bank']
+    avail = ['Starting Out']
+    if doors:
+        avail.append(and_join(doors) + ' task cards')
+    avail.append('On Call: Bleep Cards, 65 of the calls an F1 actually gets')
+    if practice:
+        avail.append(and_join(practice) + ' for on-call practice')
+    lede = ('For UK foundation doctors and final-year students. Available now: %s; and %s. '
+            'Coming soon: %s, written against the UK Foundation Programme curriculum.') % (
+            '; '.join(avail[:-1]), avail[-1], and_join(soon))
+    page = sub1(r'(<p class="hero-lede">)For UK foundation doctors[^<]*(</p>)',
+                lambda m: m.group(1) + lede + m.group(2), page, 'foundation.html hero line')
+    short = and_join(['Starting Out'] + doors + ['65 On Call Bleep Cards'] + practice)
+    desc = ('Foundation training from AMaC for F1 and F2 doctors, now open: %s available now, with %s coming soon '
+            '— built around safe decisions on the ward.') % (short, and_join(soon_short))
+    page, n = re.subn(r'Foundation training from AMaC for F1 and F2 doctors, now open: [^"]*', desc, page)
+    if n != 3:
+        die('foundation.html: expected 3 meta descriptions, found %d' % n)
+    return page
 
 
 def update_bleep_cards(repo, changed):
     page = rd(repo, 'bleep-cards.html')
-    items = ['<a href="%s.html">%s</a>: %s' % (s, PRODUCTS[s]['name'].replace('On Call: ', ''), PRODUCTS[s]['practise'])
+    items = ['<a href="%s.html">%s</a> (%s)' % (s, PRODUCTS[s]['name'].replace('On Call: ', ''), PRODUCTS[s]['practise'])
              for s in ('bleep-triage', 'night-shift') if released(repo, s)]
     page = re.sub(r'\n  <!--FD:PRACTISE-->.*?<!--/FD:PRACTISE-->', '', page, flags=re.S)
     if items:
@@ -159,7 +191,7 @@ def update_sitemap(repo, changed):
 
 
 def ids_in(repo, datafile):
-    return set(re.findall(r"id: *'([A-Z]+-[0-9-]+)'", rd(repo, datafile)))
+    return set(re.findall(r"""["']?id["']?: *["']([A-Z]+-[0-9-]+)["']""", rd(repo, datafile)))
 
 
 def check_links(repo, source):
