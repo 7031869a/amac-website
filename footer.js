@@ -157,7 +157,7 @@
   el.innerHTML = ''
     + '<div class="amacf-in">' + cols + cap + "</div>"
     + '<div class="amacf-legal">'
-    + "<span>&copy; " + year + " A. Mansour &amp; Colleagues (AMaC). "
+    + "<span>&copy; " + year + " Ahmed Mansour &amp; Colleagues (AMaC). "
     + "Educational material only \u2014 not clinical advice.</span>"
     + '<span><a href="mailto:' + CONFIG.email + '">' + CONFIG.email + "</a></span>"
     + "</div>";
