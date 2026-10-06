@@ -619,7 +619,7 @@ window.WD_CARDS = [
       'With open questions, explore whether they can understand, retain, and use or weigh the information, and communicate a choice (England, Wales, Northern Ireland, Jersey). Scotland’s Act asks whether they can act, make, communicate, understand or remember the decision.',
       'If they cannot, ask why: an impairment or disturbance of the mind or brain (England and Wales; similar in Northern Ireland and Jersey), or mental disorder or physical inability to communicate (Scotland).',
       'If unsure, reassess later and seek senior or specialist advice.',
-      'If they lack capacity for this decision: England, Wales, Jersey and Northern Ireland use best interests (Northern Ireland under the parts in force or common law). In Scotland, act only to benefit them, least restrictively, taking account of their wishes; non-urgent treatment needs a section 47 certificate from the practitioner primarily responsible, not usually the FY1.'
+      'If they lack capacity for this decision: England, Wales, Jersey and Northern Ireland use best interests (Northern Ireland under the parts in force or common law). In Scotland, act only to benefit them, least restrictively, taking account of their wishes; non-urgent treatment needs a section 47 certificate from the medical practitioner primarily responsible; check your health board’s policy on who signs.'
     ],
     pitfall: 'Deciding someone lacks capacity because they disagree with medical advice.',
     words: [
@@ -640,7 +640,7 @@ window.WD_CARDS = [
       'Patients under 16 or 18: a different framework applies; see WD-05-05 or ask a senior.'
     ],
     next: { to: 'WD-05-04' },
-    sources: 'Mental Capacity Act 2005 and Code of Practice (2007); A Local Authority v JB [2021] UKSC 52; Adults with Incapacity (Scotland) Act 2000 and Part 5 Code of Practice; Mental Capacity Act (Northern Ireland) 2016; Capacity and Self-Determination (Jersey) Law 2016; GMC, Decision making and consent (2020).'
+    sources: 'Mental Capacity Act 2005 and Code of Practice (2007); A Local Authority v JB [2021] UKSC 52; Adults with Incapacity (Scotland) Act 2000 and Part 5 Code of Practice; Mental Welfare Commission for Scotland, Treatment under section 47; Mental Capacity Act (Northern Ireland) 2016; Capacity and Self-Determination (Jersey) Law 2016; GMC, Decision making and consent (2020).'
   },
   {
     id: 'WD-05-04', mod: 5, title: 'Best interests',
@@ -778,11 +778,11 @@ window.WD_CARDS = [
     ],
     record: 'The decision and reasons, who was involved, what was discussed, the form completed under your nation’s policy, and the review plan.',
     local: [
-      'Which form you use: ReSPECT, a local treatment escalation plan, the All Wales DNACPR form, or the NHSScotland DNACPR form.',
+      'Which form you use: ReSPECT, a local treatment escalation plan, the All Wales DNACPR form, or the NHSScotland DNACPR form. Northern Ireland is working towards adopting ReSPECT nationally in 2026, so check your trust’s current form.',
       'Who may sign it, and how it travels with the patient on discharge.'
     ],
     next: { to: 'WD-06-02' },
-    sources: 'BMA, Resuscitation Council UK and RCN, Decisions relating to cardiopulmonary resuscitation (3rd edition, 1st revision, 2016); GMC, Treatment and care towards the end of life (2010, updated 2022); R (Tracey) v Cambridge University Hospitals [2014] EWCA Civ 822 (England and Wales); Winspear v City Hospitals Sunderland [2015] EWHC 3250 (QB); Sharing and Involving: All Wales DNACPR policy (revised 2024); Scottish Government, CPR decisions: integrated adult policy (2016).'
+    sources: 'BMA, Resuscitation Council UK and RCN, Decisions relating to cardiopulmonary resuscitation (3rd edition, 1st revision, 2016); GMC, Treatment and care towards the end of life (2010, updated 2022); R (Tracey) v Cambridge University Hospitals [2014] EWCA Civ 822 (England and Wales); Winspear v City Hospitals Sunderland [2015] EWHC 3250 (QB); Sharing and Involving: All Wales DNACPR policy (revised 2024); Scottish Government, CPR decisions: integrated adult policy (2016); Resuscitation Council UK, Where in the UK has adopted the ReSPECT process?'
   },
   {
     id: 'WD-06-02', mod: 6, title: 'Recognising dying and planning care',

@@ -83,7 +83,7 @@ window.DV_CARDS = [
     good: 'When you believe patient safety, care or dignity is at risk, from systems, resources or a colleague’s conduct, you raise it promptly through the right route, and you know you are supported in doing so.',
     before: [
       'Know your duty: Good medical practice requires you to act when patient safety is at risk.',
-      'Know the routes where you work. England: your line manager or supervisor, or at any stage your organisation’s Freedom to Speak Up arrangements. Scotland: the National Whistleblowing Standards, with the Independent National Whistleblowing Officer as the final, independent stage. Wales: your organisation’s procedure under the NHS Wales Speaking Up Safely framework. Northern Ireland: your HSC organisation’s whistleblowing policy.'
+      'Know the routes where you work. England: your line manager or supervisor, or at any stage your organisation’s Freedom to Speak Up arrangements. Scotland: the National Whistleblowing Standards, with the Independent National Whistleblowing Officer as the final, independent stage. Wales: your organisation’s procedure under the NHS Wales Speaking Up Safely framework. Northern Ireland: your HSC organisation’s policy under the Raising a Concern in the Public Interest (Whistleblowing) framework (March 2024).'
     ],
     steps: [
       'If patients are at immediate risk, act to protect them first.',
@@ -108,7 +108,7 @@ window.DV_CARDS = [
       'The system regulator in your nation: CQC (England), Healthcare Inspectorate Wales, Healthcare Improvement Scotland, or RQIA (Northern Ireland).'
     ],
     next: { to: 'DV-02-01' },
-    sources: 'GMC, Good medical practice (2024); GMC, Raising and acting on concerns about patient safety (2012, updated December 2024); SPSO, Independent National Whistleblowing Officer and National Whistleblowing Standards (from April 2021; Scotland); NHS England, The future of Freedom to Speak Up (April 2026; England); Welsh Government and NHS Wales, Speaking Up Safely (2023); Public Interest Disclosure Act 1998 and Public Interest Disclosure (Northern Ireland) Order 1998.'
+    sources: 'GMC, Good medical practice (2024); GMC, Raising and acting on concerns about patient safety (2012, updated December 2024); SPSO, Independent National Whistleblowing Officer and National Whistleblowing Standards (from April 2021; Scotland); NHS England, The future of Freedom to Speak Up (April 2026; England); Welsh Government and NHS Wales, Speaking Up Safely (2023); Department of Health Northern Ireland, Raising a Concern in the Public Interest (Whistleblowing) HSC Framework and Model Policy (March 2024); Public Interest Disclosure Act 1998 and Public Interest Disclosure (Northern Ireland) Order 1998.'
   },
   {
     id: 'DV-02-01', mod: 2, title: 'Good medical practice day to day',
