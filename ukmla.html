@@ -252,6 +252,185 @@ footer{margin-top:40px;border-top:1px solid #1A2740;padding:34px 26px 26px;}
 
 <div class="img-note">International medical graduates: see <a href="plab1-hub.html">PLAB 1</a> and <a href="plab2.html">PLAB 2</a>.</div>
 
+<!-- START HERE — intent-first panel (routes only to pages already linked from this page; AKT advice uses data/akt-mla-map.json via mla-coverage.js) -->
+<div class="wrap sh-wrap">
+  <section class="sh" aria-labelledby="sh-title">
+    <div class="sh-eyebrow">START HERE</div>
+    <h2 class="sh-title" id="sh-title">Where are you right now?</h2>
+    <p class="sh-sub">Pick the one that fits best. You'll get one clear next step, and the reason for it.</p>
+    <div class="sh-chips" role="group" aria-label="Where are you right now?">
+      <button type="button" class="sh-chip" data-intent="early" aria-pressed="false">Starting early<span>months to go</span></button>
+      <button type="button" class="sh-chip" data-intent="weeks" aria-pressed="false">Exam in 2–8 weeks<span>time to close gaps</span></button>
+      <button type="button" class="sh-chip" data-intent="final" aria-pressed="false">Exam within 2 weeks<span>final stretch</span></button>
+      <button type="button" class="sh-chip" data-intent="akt" aria-pressed="false">Struggling with the AKT<span>written paper</span></button>
+      <button type="button" class="sh-chip" data-intent="cpsa" aria-pressed="false">Struggling with the CPSA<span>stations</span></button>
+      <button type="button" class="sh-chip" data-intent="resit" aria-pressed="false">Resitting<span>after a fail</span></button>
+    </div>
+    <div class="sh-result" id="sh-result" aria-live="polite" hidden></div>
+  </section>
+</div>
+<style>
+.sh-wrap{padding-bottom:0;}
+.sh{background:var(--card);border-top:3px solid var(--door);border-left:3px solid var(--door);
+  border-right:1px solid var(--edge-soft);border-bottom:1px solid var(--edge-soft);border-radius:9px;padding:22px 22px 20px;}
+.sh-eyebrow{font-size:11px;letter-spacing:.14em;color:var(--door-text);margin-bottom:6px;}
+.sh-title{font-family:'Fraunces',serif;font-size:clamp(20px,2.6vw,25px);color:var(--txt);font-weight:600;line-height:1.2;}
+.sh-sub{font-size:13.5px;color:var(--txt-soft);margin:6px 0 16px;}
+.sh-chips{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;}
+.sh-chip{background:var(--card-deep);border:1px solid var(--edge-soft);border-radius:8px;color:var(--txt);
+  font:inherit;font-size:14px;font-weight:500;text-align:left;padding:11px 13px;cursor:pointer;transition:border-color .15s,background .15s;}
+.sh-chip span{display:block;font-size:12px;font-weight:400;color:var(--txt-mute);margin-top:2px;}
+.sh-chip:hover{border-color:var(--door);}
+.sh-chip[aria-pressed="true"]{background:rgba(47,180,140,.14);border-color:var(--door);}
+.sh-chip:focus-visible,.sh-go:focus-visible,.sh-alt a:focus-visible,.sh-sub2 button:focus-visible,.sh-reset:focus-visible{outline:2px solid var(--door-text);outline-offset:2px;}
+.sh-result{margin-top:18px;border-top:1px solid var(--edge);padding-top:16px;}
+.sh-result[hidden]{display:none;}
+.sh-step{font-size:11px;letter-spacing:.14em;color:var(--door-text);margin-bottom:6px;}
+.sh-go{display:inline-flex;align-items:center;gap:8px;background:var(--door-deep);color:#fff;font-weight:500;font-size:15px;
+  padding:11px 18px;border-radius:8px;transition:background .15s;}
+.sh-go:hover{background:var(--door);}
+.sh-why{font-size:13.5px;color:var(--txt-soft);line-height:1.6;margin:12px 0 0;max-width:68ch;}
+.sh-why strong{color:var(--txt);font-weight:500;}
+.sh-then{font-size:13px;color:var(--txt-mute);margin-top:10px;max-width:68ch;}
+.sh-alt{display:flex;gap:8px 18px;flex-wrap:wrap;margin-top:12px;font-size:13px;}
+.sh-alt a{color:var(--door-text);border-bottom:1px solid rgba(93,202,165,.4);}
+.sh-alt a:hover{color:#fff;}
+.sh-sub2{display:flex;gap:10px;flex-wrap:wrap;margin-top:4px;}
+.sh-sub2 button{background:var(--card-deep);border:1px solid var(--edge-soft);border-radius:8px;color:var(--txt);font:inherit;font-size:14px;padding:9px 14px;cursor:pointer;}
+.sh-sub2 button:hover{border-color:var(--door);}
+@media(max-width:560px){.sh{padding:18px 16px;}.sh-chips{grid-template-columns:1fr 1fr;gap:8px;}.sh-chip{font-size:13.5px;padding:10px 11px;}}
+.sh-reset{background:none;border:0;color:var(--txt-mute);font:inherit;font-size:12px;cursor:pointer;padding:0;margin-top:14px;text-decoration:underline;}
+</style>
+<script>
+(function () {
+  'use strict';
+  var KEY = 'amac_ukmla_intent';
+  var box = document.getElementById('sh-result');
+  if (!box) return;
+
+  function store(v) { try { if (v) localStorage.setItem(KEY, v); else localStorage.removeItem(KEY); } catch (e) {} }
+  function recall() { try { return localStorage.getItem(KEY); } catch (e) { return null; } }
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+
+  // Personal AKT signal from the candidate's own answers (this browser only).
+  function aktSignal(cb) {
+    var A = window.AMaCMLA;
+    if (!A || !Object.keys(A.answered()).length) return cb(null);
+    A.load().then(function (d) {
+      var r = A.compute(d.gmc, d.map);
+      var weak = r.conditions.filter(function (it) { return it.ans >= 3 && it.cor / it.ans < 0.8; })
+        .sort(function (a, b) { return (a.cor / a.ans) - (b.cor / b.ans) || b.ans - a.ans; })[0];
+      if (weak) return cb({ kind: 'weak', it: weak });
+      var fresh = r.conditions.filter(function (it) { return it.st === 'untouched'; })
+        .sort(function (a, b) { return b.total - a.total; })[0];
+      cb(fresh ? { kind: 'fresh', it: fresh } : null);
+    }).catch(function () { cb(null); });
+  }
+  function link(it) { return 'questions.html?gmc=' + it.codes.join(',') + (it.via ? '&via=' + it.id : ''); }
+
+  var ROUTES = {
+    early: {
+      go: ['mla-coverage.html', 'Open the GMC content map'],
+      why: '<strong>Why this:</strong> with months to go, breadth matters more than depth. The GMC map shows all 429 conditions, so you can work steadily across the whole syllabus instead of re-drilling what you already know.',
+      then: 'Then: learn how each CPSA station type is structured early, so stations feel familiar long before the exam.',
+      alt: [['mastercards-ukmla.html', 'Master Cards (station types)'], ['questions.html', 'AKT question bank']]
+    },
+    weeks: {
+      go: ['mla-coverage.html?st=untouched', 'See what you haven’t touched yet'],
+      why: '<strong>Why this:</strong> two to eight weeks is enough to close gaps, but not to cover everything again. Working on areas you have never practised gives you more than repeating ones you are already secure in.',
+      then: 'Then: for stations, compare the Fail, Pass and High-performance transcripts. The difference between them is where the marks are.',
+      alt: [['cpsa-stations.html', 'CPSA stations'], ['instant-fail-atlas.html', 'Instant Fail Atlas']]
+    },
+    final: {
+      go: ['instant-fail-atlas.html', 'Go to the Instant Fail Atlas'],
+      why: '<strong>Why this:</strong> in the final fortnight, don’t try to do everything. Avoiding the few errors that fail a station outright is worth more than new content now.',
+      then: 'Then: learn the recovery lines for when a station goes wrong, and keep the Exam Morning Card for the day itself.',
+      alt: [['recovery-scripts.html', 'Recovery Scripts'], ['exam-morning.html', 'Exam Morning Card']]
+    },
+    cpsa: {
+      go: ['mastercards-ukmla.html', 'Start with the Master Cards'],
+      why: '<strong>Why this:</strong> most station marks are lost on structure and wording rather than knowledge. Learn the shape of each station type first, then hear the difference between a failing and a passing consultation.',
+      then: 'Then: practise out loud. Saying the words under time pressure is a different skill from knowing them.',
+      alt: [['cpsa-stations.html', 'CPSA stations (Fail / Pass / High)'], ['spoken-osce.html', 'Spoken OSCE Trainer'], ['say-never-say.html', 'Say This. Avoid This.']]
+    },
+    resitCpsa: {
+      go: ['fail-recovery.html', 'Work out what failed you'],
+      why: '<strong>Why this:</strong> before revising more of everything, find out which domain actually cost you the stations. The diagnostic asks how you performed, not what you know.',
+      then: 'Then: rehearse the moments that went wrong, using the recovery lines and the instant-fail traps.',
+      alt: [['recovery-scripts.html', 'Recovery Scripts'], ['instant-fail-atlas.html', 'Instant Fail Atlas']]
+    }
+  };
+
+  function render(intent) {
+    var html = '';
+    if (intent === 'resit') {
+      html = '<div class="sh-step">WHICH PART ARE YOU RESITTING?</div><div class="sh-sub2">' +
+        '<button type="button" data-sub="resitAkt">The AKT</button><button type="button" data-sub="resitCpsa">The CPSA</button></div>';
+      return show(html);
+    }
+    if (intent === 'akt' || intent === 'resitAkt') {
+      show('<div class="sh-step">YOUR NEXT STEP</div><p class="sh-why">Checking your answers so far…</p>');
+      return aktSignal(function (sig) {
+        var go, why, then = 'Then: open the GMC content map and check which conditions you haven’t touched yet.';
+        if (sig && sig.kind === 'weak') {
+          go = [link(sig.it), 'Practise ' + sig.it.name];
+          why = '<strong>Why this:</strong> of the conditions you have answered at least three questions on, this is your weakest: ' +
+            sig.it.cor + ' right out of ' + sig.it.ans + '. Fixing a known weak area is the quickest gain.';
+        } else if (sig && sig.kind === 'fresh') {
+          go = [link(sig.it), 'Practise ' + sig.it.name];
+          why = '<strong>Why this:</strong> you are doing well in the areas you have practised. ' + esc(sig.it.name) +
+            ' is the largest area you haven’t touched yet (' + sig.it.total + ' questions).';
+        } else {
+          go = ['questions.html', 'Open the AKT question bank'];
+          why = '<strong>Why this:</strong> answer a mixed set of questions first. Once you have answered a few, this panel can point you at your weakest area, using your own results.';
+          then = 'Then: come back here after 30 or so questions for a recommendation based on your answers.';
+        }
+        show(block(go, why, then, [['mla-coverage.html', 'GMC content map'], ['ethics-law.html', 'Ethics & Law reference'], ['normal-values.html', 'Normal values']]));
+      });
+    }
+    var r = ROUTES[intent];
+    if (r) show(block(r.go, r.why, r.then, r.alt));
+  }
+
+  function block(go, why, then, alt) {
+    return '<div class="sh-step">YOUR NEXT STEP</div>' +
+      '<a class="sh-go" href="' + esc(go[0]) + '">' + esc(go[1]) + ' →</a>' +
+      '<p class="sh-why">' + why + '</p>' +
+      (then ? '<p class="sh-then">' + esc(then) + '</p>' : '') +
+      '<div class="sh-alt">' + alt.map(function (a) { return '<a href="' + esc(a[0]) + '">' + esc(a[1]) + '</a>'; }).join('') + '</div>' +
+      '<button type="button" class="sh-reset">Change my answer</button>';
+  }
+
+  function show(html) { box.innerHTML = html; box.hidden = false; }
+
+  function choose(intent, remember) {
+    document.querySelectorAll('.sh-chip').forEach(function (b) {
+      var top = intent.indexOf('resit') === 0 ? 'resit' : intent;
+      b.setAttribute('aria-pressed', String(b.getAttribute('data-intent') === top));
+    });
+    if (remember) store(intent);
+    render(intent);
+  }
+
+  document.querySelector('.sh-chips').addEventListener('click', function (e) {
+    var b = e.target.closest('.sh-chip'); if (b) choose(b.getAttribute('data-intent'), true);
+  });
+  box.addEventListener('click', function (e) {
+    var s = e.target.closest('[data-sub]'); if (s) return choose(s.getAttribute('data-sub'), true);
+    if (e.target.closest('.sh-reset')) {
+      store(null); box.hidden = true; box.innerHTML = '';
+      document.querySelectorAll('.sh-chip').forEach(function (b) { b.setAttribute('aria-pressed', 'false'); });
+    }
+  });
+
+  var saved = recall();
+  if (saved && (ROUTES[saved] || saved === 'akt' || saved === 'resitAkt' || saved === 'resit')) {
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', function () { choose(saved, false); });
+    else choose(saved, false);
+  }
+})();
+</script>
+
 <!-- GMC CONTENT MAP COVERAGE STRIP (data: data/akt-mla-map.json, page: mla-coverage.html) -->
 <div class="wrap mla-wrap">
   <a class="mla-strip" href="mla-coverage.html">
