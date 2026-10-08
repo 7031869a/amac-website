@@ -1,7 +1,7 @@
 # AMaC UKMLA — Paid-Platform Roadmap (parked until monetisation)
 
 **Status:** PARKED. Do not build any of this until Ahmed decides to move the site to paid access.
-**Saved:** 8 Oct 2026
+**Saved:** 8 Oct 2026 · **Read with:** `ADDENDUM.md` (second full pass, more NOW items and live-site problems)
 **Sources:** `source/UKMLA_IMPROVEMENT_PROJECT.docx` (an exported AI chat, about 333,000 words), plus Claude's review of it against the live site.
 **Not served on the website:** folders starting with `_` are not published by GitHub Pages. The repository itself is **public**, so anyone browsing it on GitHub can read this file.
 
@@ -118,7 +118,7 @@ The document's own top priorities, in order:
 - **"What would an F1 do?"**
 - **Managing-uncertainty mode** and **"I don't know" training**: when to safety-net, escalate or seek senior help.
 - **Guideline-conflict** and **"Guideline changed"** alerts on questions affected by NICE/BNF/DVLA updates.
-- **Prediction traps**: common distractor patterns.
+- **Prediction traps / answer-change tracking**: record first vs final answer ("you change correct answers 27% of the time"). See ADDENDUM §D.
 - **"One-minute medicine"** micro-revision and **"Explain it like I'm about to sit the exam"** summaries.
 - **"I keep getting this wrong"**: triggers a repair mini-lesson.
 - **"Teach me from my mistakes"**: a lesson built from the candidate's own wrong answers.
@@ -278,7 +278,9 @@ Also possible now:
 - Reorganise `ukmla.html` around the method, with numbers demoted.
 - Use the reasoning formats in section 5 when writing new question and station batches.
 
-**[Claude] Count check:** the live page says 10,953 AKT / 293 CPSA; earlier records said 10,252 / 238. Verify with `_tools/build-counts.py` before any marketing uses them.
+**[Claude] Count check:** as of 8 Oct 2026 (later the same day) the live site shows 10,959 AKT / 403 CPSA. `_tools/build-counts.py` is the source of truth.
+
+**More items found in a second full pass, including 15 verified problems on the live site: see `ADDENDUM.md`.**
 
 ---
 
