@@ -15,7 +15,7 @@
 
   var APP = 'AMaC progress';
   var VERSION = 1;
-  var QUESTION_MAPS = ['amac_q_state', 'amac_plab1_q_state'];
+  var QUESTION_MAPS = ['amac_q_state', 'amac_plab1_q_state', 'amac_q_first'];
 
   function keys() {
     var out = [];
@@ -72,7 +72,7 @@
         var a, b;
         try { a = JSON.parse(current || '{}'); b = JSON.parse(incoming); } catch (e) { return; }
         if (!isPlainObject(a) || !isPlainObject(b)) return;
-        Object.keys(b).forEach(function (q) { if (!(q in a)) { a[q] = b[q]; report.merged++; } });
+        Object.keys(b).forEach(function (q) { if (!(q in a)) { a[q] = b[q]; if (k !== 'amac_q_first') report.merged++; } });
         try { localStorage.setItem(k, JSON.stringify(a)); } catch (e) { throw new Error('Your browser would not let AMaC save the progress.'); }
       } else if (current === null) {
         try { localStorage.setItem(k, incoming); report.added++; } catch (e) {}
