@@ -267,6 +267,12 @@ footer{margin-top:40px;border-top:1px solid #1A2740;padding:34px 26px 26px;}
       <button type="button" class="sh-chip" data-intent="resit" aria-pressed="false">Resitting<span>after a fail</span></button>
     </div>
     <div class="sh-result" id="sh-result" aria-live="polite" hidden></div>
+    <div class="sh-quick">
+      <div><strong>Short on time?</strong> A 20-minute set of AKT questions, chosen from your own results.</div>
+      <button type="button" class="sh-20" id="sh-20">Give me 20 minutes</button>
+    </div>
+    <div class="sh-quick-out" id="sh-20-out" aria-live="polite" hidden></div>
+    <p class="sh-foot">Your progress is saved in this browser only. <a href="mla-coverage.html#backup">Back up or move it to another device</a>.</p>
   </section>
 </div>
 <style>
@@ -299,6 +305,16 @@ footer{margin-top:40px;border-top:1px solid #1A2740;padding:34px 26px 26px;}
 .sh-sub2 button{background:var(--card-deep);border:1px solid var(--edge-soft);border-radius:8px;color:var(--txt);font:inherit;font-size:14px;padding:9px 14px;cursor:pointer;}
 .sh-sub2 button:hover{border-color:var(--door);}
 @media(max-width:560px){.sh{padding:18px 16px;}.sh-chips{grid-template-columns:1fr 1fr;gap:8px;}.sh-chip{font-size:13.5px;padding:10px 11px;}}
+.sh-quick{display:flex;gap:12px 16px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-top:18px;padding:13px 15px;
+  background:var(--card-deep);border:1px solid var(--edge-soft);border-radius:8px;font-size:13.5px;color:var(--txt-soft);}
+.sh-quick strong{color:var(--txt);font-weight:500;}
+.sh-20{background:transparent;border:1px solid var(--door);color:var(--door-text);font:inherit;font-size:14px;font-weight:500;padding:9px 16px;border-radius:8px;cursor:pointer;white-space:nowrap;}
+.sh-20:hover{background:rgba(47,180,140,.14);color:#fff;}
+.sh-20:focus-visible,.sh-foot a:focus-visible{outline:2px solid var(--door-text);outline-offset:2px;}
+.sh-quick-out{margin-top:12px;}
+.sh-quick-out[hidden]{display:none;}
+.sh-foot{font-size:12px;color:var(--txt-mute);margin-top:14px;}
+.sh-foot a{color:var(--door-text);border-bottom:1px solid rgba(93,202,165,.4);}
 .sh-reset{background:none;border:0;color:var(--txt-mute);font:inherit;font-size:12px;cursor:pointer;padding:0;margin-top:14px;text-decoration:underline;}
 </style>
 <script>
@@ -421,6 +437,30 @@ footer{margin-top:40px;border-top:1px solid #1A2740;padding:34px 26px 26px;}
       store(null); box.hidden = true; box.innerHTML = '';
       document.querySelectorAll('.sh-chip').forEach(function (b) { b.setAttribute('aria-pressed', 'false'); });
     }
+  });
+
+  // "Give me 20 minutes": a short session built from the candidate's own answers.
+  var out20 = document.getElementById('sh-20-out');
+  document.getElementById('sh-20').addEventListener('click', function () {
+    var A = window.AMaCMLA;
+    if (!A) return;
+    out20.hidden = false; out20.innerHTML = '<p class="sh-why">Building your set\u2026</p>';
+    A.load().then(function (d) {
+      var s = A.session(d.gmc, d.map);
+      if (!s.ids.length) { out20.innerHTML = '<p class="sh-why">You have answered every question we could pick. Open the AKT bank for a full mock.</p>'; return; }
+      var why;
+      if (!s.anyAnswered) {
+        why = s.ids.length + ' questions, each from a different GMC condition: a quick check across the syllabus. Once you have answered some, this button aims at your weak areas.';
+      } else {
+        var parts = [];
+        if (s.weakCount) parts.push(s.weakCount + ' from your weakest areas (' + s.weak.map(esc).join(', ') + ')' + (s.retest ? ', including ' + s.retest + ' you got wrong before' : ''));
+        if (s.fresh) parts.push(s.fresh + ' from areas you haven\u2019t touched yet');
+        if (s.other) parts.push(s.other + ' more you haven\u2019t answered');
+        why = parts.join(', and ') + '.';
+      }
+      out20.innerHTML = '<a class="sh-go" href="questions.html?session=1&ids=' + encodeURIComponent(s.ids.join(',')).replace(/%2C/g, ',') + '">Start ' + s.ids.length + ' questions \u2192</a>' +
+        '<p class="sh-why"><strong>Why these:</strong> ' + why + '</p>';
+    }).catch(function () { out20.innerHTML = '<p class="sh-why">Something went wrong. Please refresh and try again.</p>'; });
   });
 
   var saved = recall();
