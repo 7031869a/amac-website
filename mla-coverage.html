@@ -185,6 +185,11 @@ footer{margin-top:40px;border-top:1px solid #1A2740;padding:28px 16px 24px;text-
 (function () {
   'use strict';
   var state = { kind: 'conditions', st: 'all', q: '' };
+  (function () {
+    var qs = new URLSearchParams(location.search);
+    if (['all', 'untouched', 'practised', 'secure'].indexOf(qs.get('st')) !== -1) state.st = qs.get('st');
+    if (['conditions', 'presentations'].indexOf(qs.get('kind')) !== -1) state.kind = qs.get('kind');
+  })();
   var data = null;
 
   var LABEL = { secure: 'Secure', practised: 'Practised', untouched: 'Not touched', none: 'No questions yet' };
@@ -241,6 +246,7 @@ footer{margin-top:40px;border-top:1px solid #1A2740;padding:28px 16px 24px;text-
   document.querySelectorAll('[data-st]').forEach(function (b) {
     b.addEventListener('click', function () { state.st = b.getAttribute('data-st'); press(null, 'st', state.st); if (data) renderList(); });
   });
+  press(null, 'kind', state.kind); press(null, 'st', state.st);
   document.getElementById('q').addEventListener('input', function (e) { state.q = e.target.value; if (data) renderList(); });
 
   AMaCMLA.load().then(function (d) {
