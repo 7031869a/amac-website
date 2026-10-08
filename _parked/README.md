@@ -10,3 +10,6 @@ in reviewed batches.
 clinically reviewed PLAB 1 adaptations live (PMG001–PMG102 for MG001–MG102; batch 1 "PAN…" Acute & Emergency set), or were
 retired on reviewer agreement (MG029, MG058, MG085, MG089, MG091 and 11 batch-1 copies: N1274, N1324, N1399, N1402, N1412,
 N1547, N1933, N207, N211, N2165, N2314). Do not re-adapt these sources.
+
+**8 Oct 2026 (late):** 1,386 further entries removed because their `source_akt_id` already has a live PLAB 1 question
+(the Adaptation III waves, PRs #58 and #59). Parked list: 5,862 → 4,476 entries still to adapt.
