@@ -4,6 +4,6 @@ This folder holds planning material for future work. Folders starting with `_` a
 
 | Folder | What | Status |
 |---|---|---|
-| `ukmla-monetisation/` | Everything to build when the site moves to paid access: features, pricing, governance, UX and an engineering-spec index. Start with `ROADMAP.md`. | Parked until Ahmed decides to monetise |
+| `ukmla-monetisation/` | Everything to build when the site moves to paid access: features, pricing, governance, UX and an engineering-spec index. Start with `ROADMAP.md`, then `ADDENDUM.md` (second pass: live-site problems + items doable now on the free site). | Parked until Ahmed decides to monetise |
 
 Nothing in here is an instruction to change the live site. Every item needs an explicit order first.
