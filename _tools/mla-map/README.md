@@ -28,7 +28,7 @@ Not published (Jekyll skips `_tools/`).
   entry genuinely represents what is tested, record `X`; never force a neighbour. All 920 questions in
   conditions/presentations with ≤9 questions were re-checked under the rule; the 128 proposed changes
   were independently verified (121 accepted, 2 reverted, 5 amended); the reviewer's corrections were
-  applied. 129 labels changed.
+  applied. 129 labels changed; 5 more at sign-off (134 total, all in v2-change-log.json).
 
 ## Coverage (v2)
 - Conditions: 1 gap, 75 thin (1–4), 353 covered. Presentations: 1 gap, 22 thin, 197 covered.
@@ -37,8 +37,12 @@ Not published (Jekyll skips `_tools/`).
 - Intrauterine death was a bank gap (no question in a full-bank stem search); closed 8 Oct 2026 by six
   clinically reviewed questions: IUD01–IUD06 in the AKT bank, adapted as PIUD01–PIUD06 in PLAB 1
   (new vignettes, reordered options, same teaching; source_akt_id links them).
-- THE THIN LIST IS PROVISIONAL until the 100-item mapping audit is complete (65 items outstanding).
-  Do not commission questions from it before then.
+- Mapping audit COMPLETE and signed off (8 Oct 2026). Fixed 100-question sample (50 from thin
+  conditions, 50 random). Round 1 (32 items, v1 labels) found forced-neighbour errors -> strict rule,
+  v2 re-check. Round 2 (remaining 68 items, v2 labels): condition disagreement 2/68 (2.9%),
+  presentation 1/68 (1.5%), against thresholds of 10% / 20%. Reviewer verdict: acceptable with
+  corrections. All corrections applied, plus the same patterns elsewhere in the bank (5 labels).
+- The thin list (75 conditions, 22 presentations) is FINAL and can be used for commissioning.
 
 ## Limits
 - One condition and one presentation per question; secondary features are not counted.
