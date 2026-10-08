@@ -471,6 +471,198 @@ footer{margin-top:40px;border-top:1px solid #1A2740;padding:34px 26px 26px;}
 })();
 </script>
 
+<!-- 60-SECOND DEMO — one AKT question → examiner view → repair → retry, then one CPSA "spot the pass".
+     Content is copied verbatim from live, reviewed items: AKT Q538 and AKT069 (questions.html) and the
+     "warning shot" entry of say-never-say.html. If any of those is edited, update the copy here too.
+     Nothing here writes to the candidate's saved progress. -->
+<div class="wrap dm-wrap">
+  <section class="dm" id="demo" aria-labelledby="dm-title">
+    <div class="dm-head">
+      <div>
+        <div class="sh-eyebrow">NEW HERE? SEE HOW IT WORKS</div>
+        <h2 class="sh-title" id="dm-title">One question, the way an examiner sees it</h2>
+        <p class="sh-sub">About 60 seconds: answer, see why the mark is won or lost, fix the reasoning, then prove it on a fresh question.</p>
+      </div>
+      <button type="button" class="dm-start" id="dm-start" aria-expanded="false" aria-controls="dm-body">Try it</button>
+    </div>
+    <div id="dm-body" hidden>
+      <ol class="dm-steps" aria-label="Steps">
+        <li data-s="1">Attempt</li><li data-s="2">Examiner view</li><li data-s="3">Repair</li><li data-s="4">Retry</li><li data-s="5">CPSA</li>
+      </ol>
+      <div class="dm-stage" id="dm-stage" aria-live="polite"></div>
+    </div>
+  </section>
+</div>
+<style>
+.dm-wrap{padding-bottom:0;}
+.dm{background:var(--card);border:1px solid var(--edge-soft);border-left:3px solid var(--gold);border-radius:9px;padding:22px 22px 20px;}
+.dm .sh-eyebrow{color:var(--gold-soft);}
+.dm-head{display:flex;gap:14px 20px;align-items:center;justify-content:space-between;flex-wrap:wrap;}
+.dm-head .sh-sub{margin-bottom:0;}
+.dm-start{background:var(--gold);color:#0B1220;border:0;border-radius:8px;font:inherit;font-weight:600;font-size:15px;padding:11px 22px;cursor:pointer;white-space:nowrap;}
+.dm-start:hover{background:var(--gold-soft);}
+.dm-start[aria-expanded="true"]{background:transparent;color:var(--txt-mute);border:1px solid var(--edge-soft);font-weight:500;font-size:13.5px;padding:8px 14px;}
+.dm-steps{list-style:none;display:flex;gap:6px;flex-wrap:wrap;margin:18px 0 14px;padding:0;counter-reset:dm;}
+.dm-steps li{counter-increment:dm;font-size:12px;color:var(--txt-faint);border:1px solid var(--edge);border-radius:999px;padding:3px 10px;}
+.dm-steps li::before{content:counter(dm) ". ";}
+.dm-steps li.on{color:#0B1220;background:var(--gold-soft);border-color:var(--gold-soft);font-weight:600;}
+.dm-steps li.done{color:var(--txt-soft);border-color:var(--edge-soft);}
+.dm-stage{border-top:1px solid var(--edge);padding-top:16px;}
+.dm-kick{font-size:11px;letter-spacing:.14em;color:var(--gold-soft);margin-bottom:8px;}
+.dm-stem{font-size:15px;color:var(--txt);line-height:1.6;max-width:72ch;}
+.dm-opts{display:grid;gap:8px;margin:14px 0 4px;max-width:640px;}
+.dm-opt{display:flex;gap:10px;align-items:flex-start;text-align:left;background:var(--card-deep);border:1px solid var(--edge-soft);border-radius:8px;
+  color:var(--txt);font:inherit;font-size:14.5px;padding:10px 13px;cursor:pointer;transition:border-color .15s;}
+.dm-opt b{color:var(--txt-mute);font-weight:600;min-width:1.2em;}
+.dm-opt:hover:not([disabled]){border-color:var(--gold);}
+.dm-opt[disabled]{cursor:default;}
+.dm-opt.ok{border-color:var(--door);background:rgba(47,180,140,.14);}
+.dm-opt.no{border-color:#C0574B;background:rgba(192,87,75,.14);}
+.dm-opt.dim{opacity:.55;}
+.dm-verdict{font-family:'Fraunces',serif;font-size:19px;color:var(--txt);margin:2px 0 8px;}
+.dm-p{font-size:14px;color:var(--txt-soft);line-height:1.65;max-width:72ch;margin:0 0 10px;}
+.dm-p strong{color:var(--txt);font-weight:500;}
+.dm-trap{border-left:3px solid #C0574B;background:rgba(192,87,75,.08);padding:10px 13px;border-radius:0 8px 8px 0;margin:10px 0;max-width:72ch;font-size:14px;color:var(--txt-soft);}
+.dm-trap strong{color:#E7A196;font-weight:600;}
+.dm-chain{list-style:none;margin:6px 0 12px;padding:0;max-width:640px;}
+.dm-chain li{position:relative;font-size:14px;color:var(--txt);background:var(--card-deep);border:1px solid var(--edge-soft);border-radius:8px;padding:8px 12px;margin-bottom:20px;}
+.dm-chain li:not(:last-child)::after{content:"\2193";position:absolute;left:50%;bottom:-19px;transform:translateX(-50%);color:var(--gold-soft);font-size:14px;}
+.dm-chain li:last-child{border-color:var(--door);color:var(--door-text);font-weight:500;}
+.dm-pearl{font-family:'Fraunces',serif;font-style:italic;font-size:16px;color:var(--gold-soft);max-width:66ch;margin:4px 0 12px;}
+.dm-next{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:#0B1220;border:0;border-radius:8px;font:inherit;font-weight:600;font-size:14.5px;padding:10px 18px;cursor:pointer;margin-top:6px;}
+.dm-next:hover{background:var(--gold-soft);}
+.dm-lines{display:grid;gap:10px;margin:12px 0 4px;max-width:640px;}
+.dm-line{text-align:left;background:var(--card-deep);border:1px solid var(--edge-soft);border-radius:8px;color:var(--txt);font:inherit;font-size:15px;font-style:italic;padding:12px 14px;cursor:pointer;}
+.dm-line:hover:not([disabled]){border-color:var(--gold);}
+.dm-line[disabled]{cursor:default;}
+.dm-line.ok{border-color:var(--door);background:rgba(47,180,140,.14);}
+.dm-line.no{border-color:#C0574B;background:rgba(192,87,75,.14);}
+.dm-line small{display:block;font-style:normal;font-size:12px;font-weight:600;letter-spacing:.06em;margin-top:6px;}
+.dm-line.ok small{color:var(--door-text);}.dm-line.no small{color:#E7A196;}
+.dm-end{display:flex;gap:10px 14px;flex-wrap:wrap;align-items:center;margin-top:12px;}
+.dm-again{background:none;border:0;color:var(--txt-mute);font:inherit;font-size:13px;text-decoration:underline;cursor:pointer;padding:0;}
+.dm-start:focus-visible,.dm-opt:focus-visible,.dm-next:focus-visible,.dm-line:focus-visible,.dm-again:focus-visible{outline:2px solid var(--gold-soft);outline-offset:2px;}
+@media(max-width:560px){.dm{padding:18px 16px;}.dm-start{width:100%;}.dm-stem{font-size:14.5px;}}
+</style>
+<script>
+(function () {
+  'use strict';
+  var D = {"q1": {"id": "Q538", "stem": "A 70-year-old man with chronic kidney disease is lethargic. His ECG shows tented T waves and a broadened QRS. Venous potassium is 7.2 mmol/L. What is the most appropriate immediate step?", "options": {"A": "Oral calcium resonium", "B": "IV insulin with dextrose", "C": "Nebulised salbutamol", "D": "IV calcium gluconate", "E": "IV furosemide"}, "correct_letter": "D", "why_correct": "Calcium gluconate raises the myocardial threshold potential within minutes, stabilising the membrane against arrhythmia — it buys time for the potassium-lowering treatments and does not itself lower the potassium.", "why_wrong": "A. Calcium resonium removes potassium through the gut over hours to days, does nothing to protect a heart already showing QRS broadening, and is no longer routinely recommended for acute hyperkalaemia. B. Insulin with dextrose is needed to shift potassium into cells, but it starts to act after about 15 minutes, peaks at 30 to 60 minutes and does not stabilise the myocardium, so calcium must come first. C. Nebulised salbutamol shifts potassium into cells but is recommended only as an adjunct to insulin–dextrose, never alone; it is slower than calcium, gives no membrane protection and can provoke tachycardia. E. Furosemide relies on renal potassium excretion, which is unreliable in chronic kidney disease, and has no immediate effect on the ECG changes.", "pearl": "When hyperkalaemia is on the ECG, protect the myocardium before you lower the number — calcium first, always.", "thinking": "CKD patient with potassium 7.2 mmol/L ↓ ECG shows tented T waves and a broadened QRS, so the myocardium is at imminent risk of arrhythmia ↓ First priority is membrane stabilisation, which does not lower potassium but works within minutes ↓ Insulin–dextrose and other potassium-lowering steps follow ↓ IV calcium gluconate first", "exam_trap": "B, insulin–dextrose — it is the option that lowers the potassium, so it feels definitive. But it does nothing in the sixty seconds that matter to a myocardium already showing a broad QRS."}, "q2": {"id": "AKT069", "stem": "A 65-year-old man with CKD has weakness. ECG shows absent P waves, wide bizarre QRS complexes, and a sinusoidal pattern. Potassium is 7.8 mmol/L. What is the most appropriate immediate treatment?", "options": {"A": "Oral potassium binder (e.g. sodium zirconium cyclosilicate) now", "B": "IV sodium bicarbonate 8.4% 50 mL over 5 minutes", "C": "Nebulised salbutamol 10–20 mg via an oxygen-driven nebuliser", "D": "10% calcium gluconate 30 mL IV over 10 minutes", "E": "10 units soluble insulin in 25 g glucose IV over 15 min"}, "correct_letter": "D", "why_correct": "Sinusoidal ECG with K+ 7.8 = severe life-threatening hyperkalaemia with cardiac toxicity. IV calcium gluconate (30 mL of 10% over 10 minutes, or 10 mL of 10% calcium chloride — UK Kidney Association 2023) is cardioprotective — it stabilises the myocardial membrane within 1-3 minutes. It does not lower potassium but prevents arrhythmia while definitive treatment follows.", "why_wrong": "A. Potassium binders lower potassium over hours and do not protect the myocardium. B. Bicarbonate is not first-line and does not protect the myocardium. C. Salbutamol shifts K+ into cells but does not stabilise the myocardium. E. Insulin-glucose shifts K+ into cells and comes after calcium.", "pearl": "ECG progression in hyperkalaemia: peaked T waves → PR prolongation → P wave loss → wide QRS → sine wave → VF.", "thinking": "Cardiac toxicity from hyperkalaemia: membrane stabilise first, then shift K+ intracellularly, then remove K+.", "exam_trap": "Starting insulin-dextrose without first giving calcium gluconate in a patient with ECG changes."}, "cpsa": {"s": "Delivering a serious diagnosis — the warning shot", "say": "I'm afraid the scan shows something more serious than we'd hoped.", "never": "It's probably nothing to worry about, but the scan showed a shadow.", "why": "A warning shot prepares the patient to receive bad news. False reassurance means they stop listening and trust is lost."}};
+  var stage = document.getElementById('dm-stage'), body = document.getElementById('dm-body'), btn = document.getElementById('dm-start');
+  if (!stage) return;
+  var steps = body.querySelectorAll('.dm-steps li');
+  var first = null; // letter chosen on question 1
+
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  function mark(n) { [].forEach.call(steps, function (li) { var s = +li.getAttribute('data-s'); li.className = s === n ? 'on' : (s < n ? 'done' : ''); }); }
+  function whyWrong(q, L) {
+    var m = q.why_wrong.split(/(?:^|\s)(?=[A-E]\. )/), out = {};
+    m.forEach(function (p) { p = p.trim(); if (/^[A-E]\. /.test(p)) out[p[0]] = p.slice(3); });
+    return out[L] || '';
+  }
+  function splitStem(s) { var i = s.lastIndexOf('. '); return i > 0 && /\?$/.test(s) ? [s.slice(0, i + 1), s.slice(i + 2)] : [s, '']; }
+  function question(q, kick, onPick) {
+    var st = splitStem(q.stem);
+    stage.innerHTML = '<div class="dm-kick">' + kick + '</div><p class="dm-stem">' + esc(st[0]) + (st[1] ? '</p><p class="dm-stem" style="margin-top:8px"><strong>' + esc(st[1]) + '</strong>' : '') + '</p>' +
+      '<div class="dm-opts">' + 'ABCDE'.split('').map(function (L) {
+        return '<button type="button" class="dm-opt" data-l="' + L + '"><b>' + L + '</b><span>' + esc(q.options[L]) + '</span></button>';
+      }).join('') + '</div><div id="dm-fb"></div>';
+    [].forEach.call(stage.querySelectorAll('.dm-opt'), function (b) {
+      b.addEventListener('click', function () {
+        var L = b.getAttribute('data-l');
+        [].forEach.call(stage.querySelectorAll('.dm-opt'), function (x) {
+          var l = x.getAttribute('data-l'); x.disabled = true;
+          x.classList.add(l === q.correct_letter ? 'ok' : (l === L ? 'no' : 'dim'));
+        });
+        onPick(L, document.getElementById('dm-fb'));
+      });
+    });
+    var f = stage.querySelector('.dm-opt'); if (f) f.focus({ preventScroll: true });
+  }
+  function next(label, fn) {
+    var b = document.createElement('button'); b.type = 'button'; b.className = 'dm-next'; b.textContent = label + ' →';
+    b.addEventListener('click', fn); return b;
+  }
+
+  function s1() {
+    mark(1); first = null;
+    question(D.q1, 'STEP 1 · ATTEMPT · AKT QUESTION', function (L, fb) {
+      first = L;
+      fb.appendChild(next('See the examiner’s view', s2));
+      fb.lastChild.focus({ preventScroll: true });
+    });
+  }
+  function s2() {
+    mark(2); var q = D.q1, ok = first === q.correct_letter;
+    stage.innerHTML = '<div class="dm-kick">STEP 2 · EXAMINER VIEW</div>' +
+      '<div class="dm-verdict">' + (ok ? 'Mark won. Here is what was really being tested.' : 'Mark lost on ' + first + '. Here is why.') + '</div>' +
+      (ok ? '' : '<p class="dm-p"><strong>' + first + '. ' + esc(q.options[first]) + ':</strong> ' + esc(whyWrong(q, first)) + '</p>') +
+      '<p class="dm-p"><strong>' + q.correct_letter + '. ' + esc(q.options[q.correct_letter]) + ':</strong> ' + esc(q.why_correct) + '</p>' +
+      '<div class="dm-trap"><strong>The trap' + (ok ? ' most candidates fall into' : '') + ':</strong> ' + esc(q.exam_trap) + '</div>';
+    stage.appendChild(next('Repair the reasoning', s3));
+    stage.lastChild.focus({ preventScroll: true });
+  }
+  function s3() {
+    mark(3); var q = D.q1;
+    var chain = q.thinking.split(/\s*↓\s*/).filter(Boolean);
+    stage.innerHTML = '<div class="dm-kick">STEP 3 · REPAIR · THE REASONING CHAIN</div>' +
+      '<p class="dm-p">Not a fact to memorise: a route you can walk again under pressure.</p>' +
+      '<ol class="dm-chain">' + chain.map(function (c) { return '<li>' + esc(c) + '</li>'; }).join('') + '</ol>' +
+      '<p class="dm-pearl">“' + esc(q.pearl) + '”</p>';
+    stage.appendChild(next('Prove it on a new question', s4));
+    stage.lastChild.focus({ preventScroll: true });
+  }
+  function s4() {
+    mark(4); var q = D.q2;
+    question(q, 'STEP 4 · RETRY · SAME RULE, NEW DISGUISE', function (L, fb) {
+      var ok = L === q.correct_letter;
+      fb.innerHTML = '<div class="dm-verdict" style="margin-top:14px">' + (ok ? 'That’s the transfer.' : 'Not yet — and that is useful to know.') + '</div>' +
+        '<p class="dm-p">' + (ok
+          ? 'Different ECG, options dressed up with doses, same rule: protect the heart first. ' + esc(q.why_correct)
+          : '<strong>' + L + '. ' + esc(q.options[L]) + ':</strong> ' + esc(whyWrong(q, L)) + ' The rule from step 3 still applies: ECG changes mean calcium first. In the bank, your answers are tracked, and \u201cGive me 20 minutes\u201d goes back to your weakest areas.') + '</p>';
+      fb.appendChild(next('One more: the CPSA', s5));
+      fb.lastChild.focus({ preventScroll: true });
+    });
+  }
+  function s5() {
+    mark(5); var c = D.cpsa;
+    var order = Math.random() < 0.5 ? ['say', 'never'] : ['never', 'say'];
+    stage.innerHTML = '<div class="dm-kick">STEP 5 · CPSA · SPOT THE PASS</div>' +
+      '<p class="dm-stem"><strong>Breaking bad news.</strong> You are about to tell a patient their scan shows a serious diagnosis. Which opening line earns the mark?</p>' +
+      '<div class="dm-lines">' + order.map(function (k) { return '<button type="button" class="dm-line" data-k="' + k + '">“' + esc(c[k]) + '”</button>'; }).join('') + '</div><div id="dm-fb"></div>';
+    [].forEach.call(stage.querySelectorAll('.dm-line'), function (b) {
+      b.addEventListener('click', function () {
+        var right = b.getAttribute('data-k') === 'say';
+        [].forEach.call(stage.querySelectorAll('.dm-line'), function (x) {
+          x.disabled = true; var k = x.getAttribute('data-k');
+          x.classList.add(k === 'say' ? 'ok' : 'no');
+          x.insertAdjacentHTML('beforeend', '<small>' + (k === 'say' ? 'SAY' : 'NEVER SAY') + '</small>');
+        });
+        var fb = document.getElementById('dm-fb');
+        fb.innerHTML = '<div class="dm-verdict" style="margin-top:14px">' + (right ? 'That’s the pass.' : 'That one loses the patient.') + '</div>' +
+          '<p class="dm-p">' + esc(c.why) + '</p>' +
+          '<p class="dm-p"><strong>That was the method.</strong> Every AKT question explains why the right answer wins and why each wrong one loses; over 4,000 also carry the trap and a reasoning chain. The CPSA stations and Say / Never lines train what examiners listen for.</p>' +
+          '<div class="dm-end"><a class="sh-go" href="#sh-title">Find my starting point →</a>' +
+          '<a class="sh-alt" style="margin:0" href="questions.html"><span style="color:var(--door-text);border-bottom:1px solid rgba(93,202,165,.4)">Open the AKT bank</span></a>' +
+          '<a class="sh-alt" style="margin:0" href="say-never-say.html"><span style="color:var(--door-text);border-bottom:1px solid rgba(93,202,165,.4)">More Say / Never lines</span></a>' +
+          '<button type="button" class="dm-again">Start the demo again</button></div>';
+        fb.querySelector('.dm-again').addEventListener('click', s1);
+        fb.querySelector('.sh-go').focus({ preventScroll: true });
+      });
+    });
+  }
+
+  btn.addEventListener('click', function () {
+    var open = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', open ? 'false' : 'true');
+    btn.textContent = open ? 'Try it' : 'Close';
+    body.hidden = open;
+    if (!open) s1();
+  });
+  if (location.hash === '#demo') btn.click();
+})();
+</script>
+
 <!-- GMC CONTENT MAP COVERAGE STRIP (data: data/akt-mla-map.json, page: mla-coverage.html) -->
 <div class="wrap mla-wrap">
   <a class="mla-strip" href="mla-coverage.html">
