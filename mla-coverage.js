@@ -75,5 +75,49 @@
     ]).then(function (res) { return { gmc: res[0], map: res[1] }; });
   }
 
-  global.AMaCMLA = { compute: compute, load: load, answered: answered };
+  function shuffle(a) {
+    for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)), t = a[i]; a[i] = a[j]; a[j] = t; }
+    return a;
+  }
+
+  /* A ~20-minute session (default 15 questions), built from the candidate's own answers:
+     up to 6 from their weakest conditions (>=3 answered, under 80% right) — one previously
+     wrong question to retest plus one new — then one new question from each of several
+     different untouched conditions. With no answers yet: one question from each of 15
+     different conditions, as a breadth check. */
+  function session(gmc, map, ans, size) {
+    ans = ans || answered(); size = size || 15;
+    var byCond = {};
+    Object.keys(map.q).forEach(function (q) {
+      var c = map.q[q][0];
+      if (c && c !== 'X') (byCond[c] = byCond[c] || []).push(q);
+    });
+    var r = compute(gmc, map, ans), picked = [], seen = {}, weakNames = [], retest = 0;
+    function take(q) { if (q && !seen[q] && picked.length < size) { seen[q] = 1; picked.push(q); return true; } return false; }
+    function unanswered(c) { return shuffle((byCond[c] || []).filter(function (q) { return !ans[q] && !seen[q]; })); }
+    function wrong(c) { return shuffle((byCond[c] || []).filter(function (q) { return ans[q] && !ans[q].correct && !seen[q]; })); }
+
+    var weak = r.conditions.filter(function (it) { return byCond[it.id] && it.ans >= 3 && it.cor / it.ans < 0.8; })
+      .sort(function (a, b) { return (a.cor / a.ans) - (b.cor / b.ans) || b.ans - a.ans; }).slice(0, 3);
+    weak.forEach(function (it) {
+      var got = false;
+      if (take(wrong(it.id)[0])) { retest++; got = true; }
+      if (take(unanswered(it.id)[0])) got = true;
+      if (got) weakNames.push(it.name);
+    });
+    var weakCount = picked.length;
+
+    var fresh = shuffle(r.conditions.filter(function (it) { return byCond[it.id] && it.st === 'untouched'; }));
+    fresh.sort(function (a, b) { return (b.total >= 5) - (a.total >= 5); });
+    for (var i = 0; i < fresh.length && picked.length < size; i++) take(unanswered(fresh[i].id)[0]);
+    var freshCount = picked.length - weakCount;
+
+    if (picked.length < size) {
+      shuffle(Object.keys(byCond)).forEach(function (c) { if (picked.length < size) take(unanswered(c)[0]); });
+    }
+    return { ids: shuffle(picked), weak: weakNames, weakCount: weakCount, retest: retest, fresh: freshCount,
+             other: picked.length - weakCount - freshCount, anyAnswered: Object.keys(ans).length > 0 };
+  }
+
+  global.AMaCMLA = { compute: compute, load: load, answered: answered, session: session };
 })(window);

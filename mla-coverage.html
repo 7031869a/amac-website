@@ -105,6 +105,20 @@ nav{position:sticky;top:0;z-index:100;background:var(--panel);border-bottom:1px 
 .how h2{font-size:16px;color:var(--txt);margin-bottom:8px;font-weight:500;}
 .how p{margin-bottom:8px;max-width:72ch;}
 
+.bk{margin-top:26px;background:var(--card-deep);border:1px solid var(--edge-line);border-radius:9px;padding:18px 18px 16px;}
+.bk h2{font-size:17px;color:var(--txt);font-weight:500;margin-bottom:6px;}
+.bk p{font-size:13.5px;color:var(--txt-soft);max-width:72ch;}
+.bk-now{margin-top:8px;color:var(--txt) !important;}
+.bk-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px;}
+.bk-btn{display:inline-block;background:var(--door-deep);color:#fff;border:0;font:inherit;font-size:14px;font-weight:500;padding:10px 16px;border-radius:8px;cursor:pointer;}
+.bk-btn:hover{background:var(--door);}
+.bk-up{background:transparent;border:1px solid var(--door);color:var(--door-text);}
+.bk-up:hover{background:rgba(47,180,140,.14);color:#fff;}
+.bk-up input{position:absolute;width:1px;height:1px;opacity:0;overflow:hidden;}
+.bk-up:focus-within,.bk-btn:focus-visible{outline:2px solid var(--door-text);outline-offset:2px;}
+.bk-msg{margin-top:10px;min-height:1em;color:var(--door-text) !important;}
+.bk-msg.err{color:#F09595 !important;}
+.bk-note{font-size:12.5px !important;color:var(--txt-mute) !important;margin-top:6px;}
 footer{margin-top:40px;border-top:1px solid #1A2740;padding:28px 16px 24px;text-align:center;}
 .foot-bottom{font-size:12px;color:var(--txt-faint);}
 
@@ -167,6 +181,18 @@ footer{margin-top:40px;border-top:1px solid #1A2740;padding:28px 16px 24px;text-
   <div class="count-line" id="count-line"></div>
   <div class="list" id="list"></div>
 
+  <section class="bk" id="backup" aria-labelledby="bk-title">
+    <h2 id="bk-title">Back up or move your progress</h2>
+    <p>AMaC has no accounts, so your answers are saved in this browser on this device only. Download a backup file to keep them safe, or to carry them to another phone or laptop and restore them there.</p>
+    <p class="bk-now" id="bk-now"></p>
+    <div class="bk-actions">
+      <button type="button" class="bk-btn" id="bk-dl">Download my progress</button>
+      <label class="bk-btn bk-up">Restore from a file<input type="file" id="bk-file" accept=".json,application/json"></label>
+    </div>
+    <p class="bk-msg" id="bk-msg" role="status" aria-live="polite"></p>
+    <p class="bk-note">Restoring adds answers from the file to this device; nothing already saved here is overwritten. The file stays on your device. Nothing is uploaded.</p>
+  </section>
+
   <section class="how">
     <h2>How this works</h2>
     <p><strong>Practised</strong> means you have answered at least one question on it. <strong>Secure</strong> means you have answered at least a fifth of its questions (never fewer than three, or all of them if there are fewer) and got 80% or more right.</p>
@@ -181,6 +207,7 @@ footer{margin-top:40px;border-top:1px solid #1A2740;padding:28px 16px 24px;text-
 </footer>
 
 <script src="mla-coverage.js"></script>
+<script src="amac-progress.js"></script>
 <script>
 (function () {
   'use strict';
@@ -248,6 +275,36 @@ footer{margin-top:40px;border-top:1px solid #1A2740;padding:28px 16px 24px;text-
   });
   press(null, 'kind', state.kind); press(null, 'st', state.st);
   document.getElementById('q').addEventListener('input', function (e) { state.q = e.target.value; if (data) renderList(); });
+
+  // Backup / restore
+  function bkNow() {
+    var x = AMaCProgress.summary();
+    var parts = [];
+    if (x.akt) parts.push(x.akt.toLocaleString('en-GB') + ' AKT answer' + (x.akt === 1 ? '' : 's'));
+    if (x.plab1) parts.push(x.plab1.toLocaleString('en-GB') + ' PLAB 1 answer' + (x.plab1 === 1 ? '' : 's'));
+    if (x.other) parts.push('saved progress from ' + (x.other === 1 ? 'another AMaC tool' : 'other AMaC tools'));
+    document.getElementById('bk-now').textContent = parts.length
+      ? 'This browser holds ' + parts.join(', ').replace(/, ([^,]*)$/, ' and $1') + '.'
+      : 'Nothing is saved in this browser yet.';
+  }
+  bkNow();
+  var bkMsg = document.getElementById('bk-msg');
+  document.getElementById('bk-dl').addEventListener('click', function () {
+    var n = AMaCProgress.download();
+    bkMsg.className = 'bk-msg'; bkMsg.textContent = n ? 'Backup downloaded. Keep the file somewhere safe.' : 'There is nothing to back up yet.';
+  });
+  document.getElementById('bk-file').addEventListener('change', function (e) {
+    var f = e.target.files && e.target.files[0]; if (!f) return;
+    AMaCProgress.readFile(f).then(function (r) {
+      bkMsg.className = 'bk-msg';
+      bkMsg.textContent = (r.merged || r.added)
+        ? 'Restored: ' + r.merged + ' answer' + (r.merged === 1 ? '' : 's') + ' added' + (r.added ? ', plus ' + r.added + ' other saved item' + (r.added === 1 ? '' : 's') : '') + '.'
+        : 'Nothing new to restore: this device already has everything in the file.';
+      bkNow();
+      if (data) AMaCMLA.load().then(function (d) { data = AMaCMLA.compute(d.gmc, d.map); render(); });
+    }).catch(function (err) { bkMsg.className = 'bk-msg err'; bkMsg.textContent = err.message; })
+      .then(function () { e.target.value = ''; });
+  });
 
   AMaCMLA.load().then(function (d) {
     document.getElementById('h-c').textContent = d.gmc.conditions.length;

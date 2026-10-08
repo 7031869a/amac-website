@@ -755,6 +755,29 @@ var gmcFilter = null;
   }).catch(function () {});
 })();
 
+/* Short session deep link: questions.html?session=1&ids=ID1,ID2,...  (built on ukmla.html by mla-coverage.js) */
+(function () {
+  var qs = new URLSearchParams(location.search);
+  if (!qs.get('ids') || qs.get('gmc')) return;
+  var want = qs.get('ids').split(',').filter(function (x) { return /^[A-Za-z0-9_-]{1,20}$/.test(x); }).slice(0, 40);
+  var have = new Set(QUESTIONS.map(function (q) { return q.id; }));
+  var ids = new Set(want.filter(function (x) { return have.has(x); }));
+  if (!ids.size) return;
+  gmcFilter = { ids: ids };
+  var bar = document.createElement('div');
+  bar.setAttribute('role', 'status');
+  bar.style.cssText = 'max-width:1100px;margin:14px auto 0;padding:10px 16px;background:#fffdf8;border:1px solid #e4ddcd;border-left:3px solid #2FB48C;border-radius:6px;font-size:13.5px;display:flex;gap:12px;justify-content:space-between;flex-wrap:wrap;align-items:center;';
+  var txt = document.createElement('span');
+  txt.textContent = 'Your 20-minute session \u00b7 ' + ids.size + ' question' + (ids.size === 1 ? '' : 's') + ' \u00b7 aim for about 80 seconds each';
+  var links = document.createElement('span');
+  links.innerHTML = '<a href="ukmla.html#sh-title" style="color:#1D9E75;margin-right:14px;">\u2190 Back to UKMLA</a><a href="questions.html" style="color:#5d6470;">Show all questions</a>';
+  bar.appendChild(txt); bar.appendChild(links);
+  var anchor = document.getElementById('search').closest('.search-wrap').parentElement;
+  anchor.parentElement.insertBefore(bar, anchor);
+  filter();
+  bar.scrollIntoView({ block: 'start' });
+})();
+
 function printAllQuestions() {
   // Expand every visible question card
   document.querySelectorAll('.q-card').forEach(card => card.classList.add('open'));
