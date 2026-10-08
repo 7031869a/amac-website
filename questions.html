@@ -723,17 +723,22 @@ renderBank(QUESTIONS);
    Mapping lives in data/akt-mla-map.json; linked from mla-coverage.html. */
 var gmcFilter = null;
 (function () {
-  var code = new URLSearchParams(location.search).get('gmc');
-  if (!code || !/^[CP]\d{3}$/.test(code) || typeof fetch !== 'function') return;
-  var slot = code[0] === 'C' ? 0 : 1;
+  var qs = new URLSearchParams(location.search);
+  var codes = (qs.get('gmc') || '').split(',').filter(function (c) { return /^[CP]\d{3}$/.test(c); });
+  if (!codes.length || typeof fetch !== 'function') return;
+  var slot = codes[0][0] === 'C' ? 0 : 1;
+  codes = codes.filter(function (c) { return (c[0] === 'C' ? 0 : 1) === slot; });
+  var via = qs.get('via');
   Promise.all([
     fetch('data/akt-mla-map.json').then(function (r) { if (!r.ok) throw 0; return r.json(); }),
     fetch('data/gmc-mla-map.json').then(function (r) { if (!r.ok) throw 0; return r.json(); })
   ]).then(function (res) {
-    var ids = new Set(Object.keys(res[0].q).filter(function (id) { return res[0].q[id][slot] === code; }));
+    var ids = new Set(Object.keys(res[0].q).filter(function (id) { return codes.indexOf(res[0].q[id][slot]) !== -1; }));
     var list = slot === 0 ? res[1].conditions : res[1].presentations;
-    var item = list.find(function (x) { return x.id === code; });
-    if (!item || !ids.size) return;
+    var named = list.filter(function (x) { return codes.indexOf(x.id) !== -1; });
+    var head = via && list.find(function (x) { return x.id === via; });
+    if (!named.length || !ids.size) return;
+    var item = { name: head ? head.name + ' (through ' + named.map(function (x) { return x.name; }).join(', ') + ')' : named.map(function (x) { return x.name; }).join(', ') };
     gmcFilter = { ids: ids };
     var bar = document.createElement('div');
     bar.setAttribute('role', 'status');

@@ -281,26 +281,16 @@ footer{margin-top:40px;border-top:1px solid #1A2740;padding:34px 26px 26px;}
 .mla-pra{background:var(--gold);}
 .mla-go{font-size:12.5px;color:var(--door-text);white-space:nowrap;}
 </style>
+<script src="mla-coverage.js"></script>
 <script>
 (function () {
-  var ans;
-  try { ans = JSON.parse(localStorage.getItem('amac_q_state') || '{}') || {}; } catch (e) { return; }
-  if (!Object.keys(ans).length || typeof fetch !== 'function') return;
-  fetch('data/akt-mla-map.json').then(function (r) { return r.ok ? r.json() : null; }).then(function (map) {
-    if (!map) return;
-    var t = {}, a = {}, c = {};
-    Object.keys(map.q).forEach(function (id) {
-      var k = map.q[id][0]; if (!k) return;
-      t[k] = (t[k] || 0) + 1;
-      if (ans[id]) { a[k] = (a[k] || 0) + 1; if (ans[id].correct) c[k] = (c[k] || 0) + 1; }
-    });
-    var sec = 0, pra = 0;
-    Object.keys(a).forEach(function (k) {
-      if (a[k] >= Math.min(t[k], Math.max(3, Math.ceil(t[k] * 0.2))) && (c[k] || 0) / a[k] >= 0.8) sec++; else pra++;
-    });
-    var total = 429;
+  if (typeof fetch !== 'function' || !window.AMaCMLA) return;
+  if (!Object.keys(AMaCMLA.answered()).length) return;
+  AMaCMLA.load().then(function (d) {
+    var r = AMaCMLA.compute(d.gmc, d.map), total = r.conditions.length, sec = 0, pra = 0;
+    r.conditions.forEach(function (it) { if (it.st === 'secure') sec++; else if (it.st === 'practised') pra++; });
     document.getElementById('mla-text').textContent =
-      'You have practised ' + (sec + pra) + ' of the GMC’s ' + total + ' conditions, and ' + sec + (sec === 1 ? ' is' : ' are') + ' secure. See what you haven’t touched yet.';
+      'You have practised ' + (sec + pra) + ' of the GMC\u2019s ' + total + ' conditions, and ' + sec + (sec === 1 ? ' is' : ' are') + ' secure. See what you haven\u2019t touched yet.';
     document.getElementById('mla-sec').style.width = (100 * sec / total) + '%';
     document.getElementById('mla-pra').style.width = (100 * pra / total) + '%';
     var bar = document.getElementById('mla-bar');
