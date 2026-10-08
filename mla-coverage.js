@@ -14,14 +14,22 @@
                             GMC id | "X" (tests something with no exact GMC entry)
                             | null (nothing to map). Only GMC ids are counted.
 
-   Answers come from the AKT bank's localStorage key 'amac_q_state'.
+   Answers come from the AKT bank's localStorage keys: 'amac_q_first' (first attempt,
+   used where present) and 'amac_q_state' (current answer).
    ========================================================= */
 (function (global) {
   'use strict';
 
+  // Coverage is judged on FIRST attempts ('amac_q_first', written by questions.html),
+  // so retrying a question until it is right cannot turn a topic "secure".
+  // Falls back to the current answer for any question without a first-attempt record.
   function answered() {
-    try { return JSON.parse(localStorage.getItem('amac_q_state') || '{}') || {}; }
-    catch (e) { return {}; }
+    var cur = {}, first = {}, out = {};
+    try { cur = JSON.parse(localStorage.getItem('amac_q_state') || '{}') || {}; } catch (e) {}
+    try { first = JSON.parse(localStorage.getItem('amac_q_first') || '{}') || {}; } catch (e) {}
+    Object.keys(cur).forEach(function (id) { out[id] = cur[id]; });
+    Object.keys(first).forEach(function (id) { out[id] = first[id]; });
+    return out;
   }
 
   function status(it) {

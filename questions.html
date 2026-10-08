@@ -29,7 +29,7 @@
 <meta property="og:image" content="https://amac-medical.com/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="AMaC — Think like an examiner. Pass with confidence.">
+<meta property="og:image:alt" content="AMaC — Think like an examiner. Perform with confidence.">
 
 <!-- ── Twitter/X card ─────────────────────────────────────────── -->
 <meta name="twitter:card" content="summary_large_image">
@@ -47,7 +47,7 @@
   "url": "https://amac-medical.com/",
   "logo": "https://amac-medical.com/apple-touch-icon.png",
   "description": "Preparation for the UK medical and surgical examinations: UKMLA, PLAB 1, PLAB 2 and FRCS Part 2.",
-  "slogan": "Think like an examiner. Pass with confidence."
+  "slogan": "Think like an examiner. Perform with confidence."
 }
 </script>
 
@@ -284,7 +284,7 @@ footer p{font-size:12px;font-weight:300;}
 
 <header class="hero">
   <div class="hero-inner">
-    <span class="hero-kick">SBA Question Bank · UKMLA Standard · AMaC Format</span>
+    <span class="hero-kick">SBA Question Bank · UKMLA-aligned · AMaC Format</span>
     <span class="plab-line">UKMLA <span>AKT</span></span>
     <span class="plab-sub">Question Bank</span>
     <p><span id="hdr-count" data-count="aktQuestions" data-count-plain>10959</span> questions built to full AMaC standard — Why It Is Correct, Why The Others Are Wrong, NICE Pearl, Examiner Thinking chain, Exam Trap, and Key Takeaway.</p>
@@ -293,6 +293,7 @@ footer p{font-size:12px;font-weight:300;}
       <div class="stat"><div class="stat-num" id="domain-count" data-count="aktDomains">27</div><div class="stat-label">Domains</div></div>
       <div class="stat"><div class="stat-num" id="answered-count">0</div><div class="stat-label">Answered</div></div>
       <div class="stat"><div class="stat-num" id="correct-count">0</div><div class="stat-label">Correct</div></div>
+      <div class="stat" title="Accuracy on your first attempt at each question. Retries do not change it."><div class="stat-num" id="first-pct">–</div><div class="stat-label">First-try %</div></div>
     </div>
   </div>
 </header>
@@ -355,18 +356,32 @@ const QUESTIONS = [{"id":"S001","domain":"Surgery","presentation":"Acute appendi
 
 const state = {
   answered: {},
+  first: {},          // first attempt per question — never overwritten by "Try again"
   examMode: false,
   openCard: null,
+  exam: null,         // current exam-mode session: { start, ids: [] }
 };
 
 function save() {
   try { localStorage.setItem('amac_q_state', JSON.stringify(state.answered)); } catch(e) {}
+  try { localStorage.setItem('amac_q_first', JSON.stringify(state.first)); } catch(e) {}
 }
 function load() {
   try {
     const d = localStorage.getItem('amac_q_state');
-    if (d) state.answered = JSON.parse(d);
+    if (d) state.answered = JSON.parse(d) || {};
   } catch(e) {}
+  try {
+    const f = localStorage.getItem('amac_q_first');
+    if (f) state.first = JSON.parse(f) || {};
+  } catch(e) {}
+  // Answers saved before first attempts were tracked: treat the stored answer as the
+  // first attempt, marked est:1 because it may already have been a retry.
+  let added = false;
+  Object.keys(state.answered).forEach(id => {
+    if (!state.first[id]) { const a = state.answered[id]; state.first[id] = { chosen: a.chosen, correct: !!a.correct, est: 1 }; added = true; }
+  });
+  if (added) { try { localStorage.setItem('amac_q_first', JSON.stringify(state.first)); } catch(e) {} }
 }
 load();
 
@@ -417,7 +432,8 @@ function renderBank(qs) {
   const correctCount = Object.values(state.answered).filter(a => a.correct).length;
 
   document.getElementById('answered-count').textContent = answeredCount;
-  document.getElementById('correct-count').textContent = correctCount;
+  document.getElementById('correct-count').textContent = state.examMode ? '–' : correctCount;
+  updateFirstPct();
   document.getElementById('q-count').textContent = `${qs.length} question${qs.length!==1?'s':''}`;
 
   const pct = Math.round(answeredCount / total * 100);
@@ -454,7 +470,10 @@ function renderBank(qs) {
 }
 
 function buildCard(q) {
-  const ans = state.answered[q.id];
+  const recorded = state.answered[q.id];
+  // In exam mode an answer is recorded but nothing is revealed until exam mode is switched off.
+  if (recorded && state.examMode) return buildRecordedCard(q, recorded);
+  const ans = recorded;
   const status = ans ? (ans.correct ? 'correct-ans' : 'wrong-ans') : '';
   const statusIcon = ans ? (ans.correct ? '✓' : '✗') : '';
   const preview = (q.stem||'').slice(0, 110) + ((q.stem||'').length > 110 ? '…' : '');
@@ -522,6 +541,51 @@ function buildCard(q) {
   </div>`;
 }
 
+function buildRecordedCard(q, rec) {
+  const preview = (q.stem||'').slice(0, 110) + ((q.stem||'').length > 110 ? '…' : '');
+  const optionsHtml = Object.entries(q.options||{}).map(([letter, text]) =>
+    `<div class="opt locked${letter === rec.chosen ? ' selected' : ''}" data-letter="${letter}" data-qid="${q.id}">
+      <span class="opt-letter">${letter}</span>
+      <span class="opt-text">${esc(text)}</span>
+    </div>`).join('');
+  return `<div class="q-card" id="qc-${q.id}">
+    <div class="q-header" data-qid="${q.id}">
+      <div class="q-answered-badge" title="Answer recorded">●</div>
+      <span class="q-num">${esc(q.id)}</span>
+      <span class="q-stem-preview">${esc(preview)}</span>
+      <span class="q-diff ${diffClass(q.difficulty)}">${esc(q.difficulty)}</span>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="q-body">
+      <div class="q-stem-full">${esc(q.stem)}</div>
+      <div class="options" id="opts-${q.id}">${optionsHtml}</div>
+      <div class="result-row show" style="background:#f3f1ec;color:#4a4f58;">Answer recorded (${esc(rec.chosen)}). Results and explanations are hidden in exam mode. Switch back to learning mode to review.</div>
+    </div>
+  </div>`;
+}
+
+function refreshCard(qid) {
+  const q = QUESTIONS.find(q => q.id === qid);
+  const card = document.getElementById('qc-' + qid);
+  if (!q || !card) return;
+  const wasOpen = card.classList.contains('open');
+  card.outerHTML = buildCard(q);
+  const newCard = document.getElementById('qc-' + qid);
+  if (!newCard) return;
+  if (wasOpen) newCard.classList.add('open');
+  newCard.querySelector('.q-header').addEventListener('click', () => toggleCard(qid));
+  newCard.querySelectorAll('.opt:not(.locked)').forEach(o => {
+    o.addEventListener('click', () => selectOpt(o.dataset.qid, o.dataset.letter));
+  });
+  newCard.querySelectorAll('.btn-submit').forEach(b => {
+    b.addEventListener('click', () => submitAnswer(b.dataset.qid));
+  });
+  newCard.querySelectorAll('.btn-reset').forEach(b => {
+    b.addEventListener('click', () => resetAnswer(b.dataset.qid));
+  });
+  applyExamModeCard(newCard);
+}
+
 function attachHandlers() {
   document.querySelectorAll('.q-header').forEach(h => {
     h.addEventListener('click', () => toggleCard(h.dataset.qid));
@@ -569,8 +633,17 @@ function submitAnswer(qid) {
 
   const correct = chosen === q.correct_letter;
   state.answered[qid] = { chosen, correct };
+  if (!state.first[qid]) state.first[qid] = { chosen, correct, t: Date.now() };
   save();
   updateStats();
+
+  if (state.examMode) {
+    if (state.exam && state.exam.ids.indexOf(qid) === -1) state.exam.ids.push(qid);
+    refreshCard(qid);
+    updateDomainProgress(q.domain);
+    updateExamPill();
+    return;
+  }
 
   const opts = document.querySelectorAll(`#opts-${qid} .opt`);
   opts.forEach(o => {
@@ -622,29 +695,12 @@ function submitAnswer(qid) {
 function resetAnswer(qid) {
   const q = QUESTIONS.find(q => q.id === qid);
   if (!q) return;
+  // The current answer is cleared so the question can be retried;
+  // the first attempt (state.first) is deliberately kept.
   delete state.answered[qid];
   save();
   updateStats();
-  const card = document.getElementById('qc-' + qid);
-  if (card) {
-    const wasOpen = card.classList.contains('open');
-    card.outerHTML = buildCard(q);
-    const newCard = document.getElementById('qc-' + qid);
-    if (newCard) {
-      if (wasOpen) newCard.classList.add('open');
-      newCard.querySelector('.q-header').addEventListener('click', () => toggleCard(qid));
-      newCard.querySelectorAll('.opt:not(.locked)').forEach(o => {
-        o.addEventListener('click', () => selectOpt(o.dataset.qid, o.dataset.letter));
-      });
-      newCard.querySelectorAll('.btn-submit').forEach(b => {
-        b.addEventListener('click', () => submitAnswer(b.dataset.qid));
-      });
-      newCard.querySelectorAll('.btn-reset').forEach(b => {
-        b.addEventListener('click', () => resetAnswer(b.dataset.qid));
-      });
-      applyExamModeCard(newCard);
-    }
-  }
+  refreshCard(qid);
   updateDomainProgress(q.domain);
 }
 
@@ -652,7 +708,8 @@ function updateStats() {
   const answeredCount = Object.keys(state.answered).length;
   const correctCount = Object.values(state.answered).filter(a => a.correct).length;
   document.getElementById('answered-count').textContent = answeredCount;
-  document.getElementById('correct-count').textContent = correctCount;
+  document.getElementById('correct-count').textContent = state.examMode ? '–' : correctCount;
+  updateFirstPct();
   const total = QUESTIONS.length;
   const pct = Math.round(answeredCount / total * 100);
   document.getElementById('progress-fill').style.width = pct + '%';
@@ -679,12 +736,74 @@ function applyExamModeCard(card) {
   if (loBlock) loBlock.style.display = state.examMode ? 'none' : 'block';
 }
 
+function updateFirstPct() {
+  const el = document.getElementById('first-pct');
+  if (!el) return;
+  const f = Object.values(state.first);
+  if (state.examMode || !f.length) { el.textContent = '–'; return; }
+  el.textContent = Math.round(f.filter(a => a.correct).length / f.length * 100) + '%';
+}
+
+let examTick = null;
+function fmtTime(ms) {
+  const s = Math.floor(ms / 1000), m = Math.floor(s / 60), h = Math.floor(m / 60);
+  const mm = String(m % 60).padStart(2, '0'), ss = String(s % 60).padStart(2, '0');
+  return h ? h + ':' + mm + ':' + ss : m + ':' + ss;
+}
+function updateExamPill() {
+  const pill = document.getElementById('exam-pill');
+  if (!pill || !state.exam) return;
+  const n = state.exam.ids.length;
+  pill.textContent = 'Exam mode · ' + fmtTime(Date.now() - state.exam.start) + ' · ' + n + ' answered';
+}
+function showExamSummary(sess) {
+  const old = document.getElementById('exam-summary');
+  if (old) old.remove();
+  if (!sess || !sess.ids.length) return;
+  const n = sess.ids.length;
+  const right = sess.ids.filter(id => state.answered[id] && state.answered[id].correct).length;
+  const mins = Math.max(1, Math.round((Date.now() - sess.start) / 60000));
+  const box = document.createElement('div');
+  box.id = 'exam-summary';
+  box.setAttribute('role', 'status');
+  box.style.cssText = 'max-width:1100px;margin:14px auto 0;padding:12px 16px;background:#fffdf8;border:1px solid #e4ddcd;border-left:3px solid #2FB48C;border-radius:6px;font-size:14px;display:flex;gap:12px;justify-content:space-between;flex-wrap:wrap;align-items:center;';
+  box.innerHTML = '<span><strong>Exam session finished.</strong> ' + n + ' question' + (n === 1 ? '' : 's') + ' in about ' + mins + ' min · ' + right + ' correct (' + Math.round(right / n * 100) + '%). Explanations are now visible below.</span>'
+    + '<span><a href="#" id="exam-review" style="color:#1D9E75;margin-right:14px;">Review this session only</a><a href="#" id="exam-dismiss" style="color:#5d6470;">Dismiss</a></span>';
+  const anchor = document.getElementById('bank');
+  anchor.parentElement.insertBefore(box, anchor);
+  document.getElementById('exam-dismiss').addEventListener('click', e => { e.preventDefault(); box.remove(); });
+  document.getElementById('exam-review').addEventListener('click', e => {
+    e.preventDefault();
+    const ids = new Set(sess.ids);
+    renderBank(QUESTIONS.filter(q => ids.has(q.id)));
+    box.scrollIntoView({ block: 'start' });
+  });
+}
+
 document.getElementById('mode-toggle').addEventListener('change', function() {
   state.examMode = this.checked;
   document.getElementById('mode-label-text').textContent = state.examMode ? 'Exam mode' : 'Learning mode';
-  document.getElementById('exam-pill').classList.toggle('show', state.examMode);
+  const pill = document.getElementById('exam-pill');
+  pill.classList.toggle('show', state.examMode);
   document.getElementById('progress-wrap').classList.toggle('show', true);
-  applyExamMode();
+  // Filtering by correct / wrong would reveal results, so it is unavailable in exam mode.
+  const sf = document.getElementById('status-filter');
+  ['correct', 'wrong'].forEach(v => { const o = sf.querySelector('option[value="' + v + '"]'); if (o) o.disabled = state.examMode; });
+  if (state.examMode && (sf.value === 'correct' || sf.value === 'wrong')) sf.value = '';
+  let finished = null;
+  if (state.examMode) {
+    state.exam = { start: Date.now(), ids: [] };
+    updateExamPill();
+    examTick = setInterval(updateExamPill, 1000);
+    showExamSummary(null);
+  } else {
+    clearInterval(examTick); examTick = null;
+    finished = state.exam; state.exam = null;
+    pill.textContent = 'Exam mode';
+  }
+  filter();          // re-render: hides or reveals results on every card
+  updateStats();
+  if (finished) showExamSummary(finished);
 });
 
 document.getElementById('progress-wrap').classList.add('show');

@@ -158,7 +158,9 @@
     + '<div class="amacf-in">' + cols + cap + "</div>"
     + '<div class="amacf-legal">'
     + "<span>&copy; " + year + " Ahmed Mansour &amp; Colleagues (AMaC). "
-    + "Educational material only \u2014 not clinical advice.</span>"
+    + "Educational material only \u2014 not clinical advice. "
+    + "AMaC is independent: not affiliated with, endorsed or approved by the GMC. "
+    + '<a href="standards.html">Our standards</a></span>'
     + '<span><a href="mailto:' + CONFIG.email + '">' + CONFIG.email + "</a></span>"
     + "</div>";
 
