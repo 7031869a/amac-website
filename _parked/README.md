@@ -16,3 +16,7 @@ N1547, N1933, N207, N211, N2165, N2314). Do not re-adapt these sources.
 
 **8 Oct 2026 (after #62):** 474 more entries removed because Adaptation III wave 3 (PR #62) made their sources live (Acute & Emergency 176,
 Cardiovascular 165, Care of the Elderly 133). Parked list: 4,476 → 4,002 entries still to adapt.
+
+`plab1-adapted-awaiting-review.json` — 2,431 PLAB 1 adaptations ("2026 UKMLA Adaptation III — adapted (Oct 2026)": waves 1–4,
+PRs #58, #59, #62 and #64) taken off the live bank on Ahmed's instruction because they were reviewed by AI only, never by a
+human clinician. Content is unchanged. They can return to the live bank once clinically reviewed.
