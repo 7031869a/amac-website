@@ -48,7 +48,7 @@
   "alternateName": ["Ahmed Mansour & Colleagues", "A. Mansour & Colleagues"],
   "url": "https://amac-medical.com/",
   "logo": "https://amac-medical.com/apple-touch-icon.png",
-  "description": "Preparation for the UK medical and surgical examinations: UKMLA, PLAB 1, PLAB 2 and FRCS Part 2.",
+  "description": "Preparation for the UK medical and surgical examinations and Foundation training: UKMLA, Foundation F1 and F2, PLAB 1, PLAB 2, MRCP Part 1, MRCS and FRCS (General Surgery) Section 2 academic paper critique.",
   "slogan": "Think like an examiner. Pass with confidence."
 }
 </script>
@@ -337,7 +337,7 @@ const STATIONS = {
   tagline:"Hidden red flags & safety",
   meta:"Mr Brennan, 48",
   speaker:"Patient",
-  brief:{rows:[["Setting","GP surgery \u00b7 10-minute appointment"],["Your role","FY2 in general practice"],["Patient","Mr Daniel Brennan, 48, lorry driver"],["Booked reason","Sick note for back pain"]]},
+  brief:{rows:[["Setting","GP surgery \u00b7 8-minute station"],["Your role","FY2 in general practice"],["Patient","Mr Daniel Brennan, 48, lorry driver"],["Booked reason","Sick note for back pain"]]},
   traps:[
     {
       name:"The buried red flag",
@@ -1028,12 +1028,12 @@ const STATIONS = {
 
 /* shared verdict copy, used by every station */
 const VERDICTS={
-  fail:{tag:"Unsafe",cls:"v-fail",head:"The actor got past your safety.",
-    body:"An instant-fail behaviour was triggered \u2014 in the OSCE, one of these ends the station regardless of everything else you did well. The dossier below shows exactly where."},
-  distinction:{tag:"Distinction",cls:"v-dist",head:"You read the room.",
+  fail:{tag:"Unsatisfactory \u00b7 unsafe",cls:"v-fail",head:"The actor got past your safety.",
+    body:"An INSTANT FAIL behaviour (AMaC\u2019s label for a lapse serious enough to fail a station) was triggered. The GMC has no automatic-fail rule, but unsafe actions cost marks across the domains and can be recorded as a cause for concern. The dossier below shows exactly where."},
+  distinction:{tag:"Good",cls:"v-dist",head:"You read the room.",
     body:"You caught what the actor was briefed to bury and stayed safe under pressure. This is the difference between knowing medicine and performing it in front of a watching examiner."},
-  pass:{tag:"Pass",cls:"v-pass",head:"Solid \u2014 but a couple slipped through.",
-    body:"You were safe and caught most of the briefed traps. Read the misses below: in a real circuit, those are the marks between a pass and a clear pass."},
+  pass:{tag:"Satisfactory",cls:"v-pass",head:"Solid \u2014 but a couple slipped through.",
+    body:"You were safe and caught most of the briefed traps. Read the misses below: in a real circuit, those are what separate a satisfactory station from a good one."},
   borderline:{tag:"Borderline",cls:"v-mid",head:"More got past you than you'd want.",
     body:"No single fatal error, but the actor planted several traps you walked by. The dossier shows what each one was scoring \u2014 work the misses."}
 };
@@ -1143,7 +1143,7 @@ function renderDebrief(){
     else v=VERDICTS.borderline;
   }
   $("#verdict").className="verdict "+v.cls;
-  $("#verdict").innerHTML=`<div class="v-tag">${v.tag}</div><h2>${v.head}</h2><p>${v.body}</p>`;
+  $("#verdict").innerHTML=`<div class="v-tag">${v.tag}</div><h2>${v.head}</h2><p>${v.body}</p><p style="font-size:.8em;opacity:.75;font-style:italic">AMaC practice scale (Unsatisfactory / Borderline / Satisfactory / Good) — the GMC does not publish its mark sheet.</p>`;
 
   const wrap=$("#dossier");wrap.innerHTML="";
   state.results.forEach((r,i)=>{

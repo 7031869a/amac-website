@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Which PLAB 2 Stations Come Up Most Often | AMaC</title>
-<meta name="description" content="Which PLAB 2 stations actually come up &mdash; station frequency by theme, so your revision time follows the exam and not your comfort zone.">
+<title>PLAB 2 Revision Priorities | AMaC</title>
+<meta name="description" content="PLAB 2 revision priorities by station type &mdash; an AMaC priority estimate from candidate recall (unverified), so your revision time goes where it matters most.">
 <!-- ══════════════════════════════════════════════════════════════
      AMaC — SHARED HEAD BLOCK
      Paste this inside <head> on EVERY page, just after <title>.
@@ -24,8 +24,8 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="AMaC">
 <meta property="og:locale" content="en_GB">
-<meta property="og:title" content="Station Frequency — AMaC PLAB 2">
-<meta property="og:description" content="Where to focus first. Every station type ranked by circuit frequency — filter by how many days you have to prepare and see exactly where to invest your…">
+<meta property="og:title" content="PLAB 2 Revision Priorities — AMaC">
+<meta property="og:description" content="Where to focus first. Every station type given an AMaC priority estimate (candidate recall, unverified) — filter by how many days you have to prepare.">
 <meta property="og:url" content="https://amac-medical.com/station-planner.html">
 <meta property="og:image" content="https://amac-medical.com/og-image.png">
 <meta property="og:image:width" content="1200">
@@ -34,8 +34,8 @@
 
 <!-- ── Twitter/X card ─────────────────────────────────────────── -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Station Frequency — AMaC PLAB 2">
-<meta name="twitter:description" content="Where to focus first. Every station type ranked by circuit frequency — filter by how many days you have to prepare and see exactly where to invest your…">
+<meta name="twitter:title" content="PLAB 2 Revision Priorities — AMaC">
+<meta name="twitter:description" content="Where to focus first. Every station type given an AMaC priority estimate (candidate recall, unverified) — filter by how many days you have to prepare.">
 <meta name="twitter:image" content="https://amac-medical.com/og-image.png">
 
 <!-- ── Structured data: helps Google understand the site ──────── -->
@@ -47,7 +47,7 @@
   "alternateName": ["Ahmed Mansour & Colleagues", "A. Mansour & Colleagues"],
   "url": "https://amac-medical.com/",
   "logo": "https://amac-medical.com/apple-touch-icon.png",
-  "description": "Preparation for the UK medical and surgical examinations: UKMLA, PLAB 1, PLAB 2 and FRCS Part 2.",
+  "description": "Preparation for the UK medical and surgical examinations and Foundation training: UKMLA, Foundation F1 and F2, PLAB 1, PLAB 2, MRCP Part 1, MRCS and FRCS (General Surgery) Section 2 academic paper critique.",
   "slogan": "Think like an examiner. Pass with confidence."
 }
 </script>
@@ -140,16 +140,16 @@ footer{background:var(--navy-deep);color:#c4ccd8;padding:36px 28px 20px;}
   <ul class="nav-links"><li><a href="books.html">The Master Series</a></li><li><a href="tools.html">Study Tools</a></li><li><a href="contact.html" class="nav-cta">Get Started</a></li></ul>
 </div></nav>
 <header class="hero"><div class="ph">
-  <span class="kick">App 1E · Circuit Data 2022–2025</span>
-  <h1>Station <em>Frequency</em> Analyser</h1>
-  <p>Where to focus first. Every station type ranked by circuit frequency — filter by how many days you have to prepare and see exactly where to invest your time.</p>
+  <span class="kick">AMaC priority estimate · candidate recall, unverified</span>
+  <h1>PLAB 2 Revision <em>Priorities</em></h1>
+  <p>Where to focus first. Every station type has an AMaC priority estimate (candidate recall, unverified) — High, Medium or Standard. The GMC does not publish how often station types appear; it bases the exam on the MLA content map. Filter by how many days you have to prepare.</p>
 </div></header>
 <div class="time-strip"><div class="time-inner">
   <span class="time-lbl">I have:</span>
   <button class="time-btn active" onclick="setTime('all',this)">All stations</button>
-  <button class="time-btn" onclick="setTime(7,this)">7 days — Tier 1 only</button>
-  <button class="time-btn" onclick="setTime(14,this)">14 days — Tier 1 + 2</button>
-  <button class="time-btn" onclick="setTime(28,this)">4 weeks — All tiers</button>
+  <button class="time-btn" onclick="setTime(7,this)">7 days — High priority</button>
+  <button class="time-btn" onclick="setTime(14,this)">14 days — High + Medium</button>
+  <button class="time-btn" onclick="setTime(28,this)">4 weeks — All priorities</button>
 </div></div>
 <div class="filter-bar"><div class="fi">
   <span class="filter-lbl">Domain:</span>
@@ -165,14 +165,14 @@ footer{background:var(--navy-deep);color:#c4ccd8;padding:36px 28px 20px;}
   <div class="priority-box">
     <div class="pb-title">Time-Based Strategy</div>
     <div class="pb-grid">
-      <div class="pb-item"><div class="pb-time">7 days</div><div class="pb-desc">Master Tier 1 only — covers 70–90% of circuits</div></div>
-      <div class="pb-item"><div class="pb-time">14 days</div><div class="pb-desc">Tier 1 + 2 — prepared for 90%+ of stations</div></div>
-      <div class="pb-item"><div class="pb-time">4 weeks</div><div class="pb-desc">All tiers + mock circuits — ready for every station</div></div>
+      <div class="pb-item"><div class="pb-time">7 days</div><div class="pb-desc">Master High-priority stations first</div></div>
+      <div class="pb-item"><div class="pb-time">14 days</div><div class="pb-desc">High + Medium priority</div></div>
+      <div class="pb-item"><div class="pb-time">4 weeks</div><div class="pb-desc">All priorities + mock circuits</div></div>
     </div>
   </div>
   <div id="stationList"></div>
 </div>
-<div class="trustband"><p class="slogan">Think Like an Examiner · Speak Like a Doctor · Perform With Confidence</p><p>Circuit frequency data from Appendix 1E of the AMaC Master Series, based on PLAB 2/UKMLA recall data 2022–2025.</p></div>
+<div class="trustband"><p class="slogan">Think Like an Examiner · Speak Like a Doctor · Perform With Confidence</p><p>AMaC priority estimate (candidate recall, unverified), from Appendix 1E of the AMaC Master Series. Not GMC data: the GMC publishes no station weightings.</p></div>
 <footer><div class="foot-inner">
   <div><div class="foot-brand">AMaC</div><p class="foot-p">Ahmed Mansour &amp; Colleagues.</p></div>
   <div class="foot-col"><h4>Study Tools</h4><a href="exam-morning.html">Exam Morning Card</a><a href="study-planner.html">Study Planner</a><a href="fail-recovery.html">Fail Recovery</a></div>
@@ -190,7 +190,9 @@ function render(){
     return tierOk&&domOk;
   });
   const tiers=[1,2,3];
-  const tierLabels={1:'⛔ Tier 1 — High Priority (appears in 70–90% of circuits)',2:'⚠ Tier 2 — Medium Priority (appears in 55–65% of circuits)',3:'📋 Tier 3 — Complete Preparation (appears in 40–50% of circuits)'};
+  const tierLabels={1:'⛔ High priority — AMaC priority estimate (candidate recall, unverified)',2:'⚠ Medium priority — AMaC priority estimate (candidate recall, unverified)',3:'📋 Standard priority — complete preparation'};
+  const tierWord={1:'High',2:'Medium',3:'Standard'};
+  const tierWidth={1:100,2:66,3:33};
   const tierBadge={1:'t1-badge',2:'t2-badge',3:'t3-badge'};
   const tierRow={1:'t1-row',2:'t2-row',3:'t3-row'};
   const tierNum={1:'t1-num',2:'t2-num',3:'t3-num'};
@@ -200,10 +202,10 @@ function render(){
     const items=list.filter(s=>s.tier===tier);
     if(!items.length) return;
     html+=`<div class="tier-section">
-      <div class="tier-hdr"><span class="tier-badge ${tierBadge[tier]}">${['','Tier 1','Tier 2','Tier 3'][tier]}</span><span class="tier-desc">${tierLabels[tier]}</span></div>
+      <div class="tier-hdr"><span class="tier-badge ${tierBadge[tier]}">${tierWord[tier]}</span><span class="tier-desc">${tierLabels[tier]}</span></div>
       ${items.map(s=>`<div class="station-row ${tierRow[tier]}">
-        <div class="sr-freq"><div class="freq-num ${tierNum[tier]}">${s.freq}</div><div class="freq-lbl">%</div></div>
-        <div class="sr-bar-wrap"><div class="sr-bar ${tierBar[tier]}" style="width:${s.freq}%"></div></div>
+        <div class="sr-freq"><div class="freq-num ${tierNum[tier]}" style="font-size:13px">${tierWord[tier]}</div><div class="freq-lbl">priority</div></div>
+        <div class="sr-bar-wrap"><div class="sr-bar ${tierBar[tier]}" style="width:${tierWidth[tier]}%"></div></div>
         <div class="sr-content">
           <div class="sr-station">${s.station}</div>
           <div class="sr-meta"><span class="sr-domain">${s.domain}</span><span class="sr-vol">${s.vol}</span><span class="sr-ch">${s.chapters}</span></div>

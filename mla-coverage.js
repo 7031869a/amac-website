@@ -80,13 +80,13 @@
     return a;
   }
 
-  /* A ~20-minute session (default 15 questions), built from the candidate's own answers:
+  /* A ~20-minute session (default 17 questions, the AKT pace of 72 seconds each), built from the candidate's own answers:
      up to 6 from their weakest conditions (>=3 answered, under 80% right) — one previously
      wrong question to retest plus one new — then one new question from each of several
-     different untouched conditions. With no answers yet: one question from each of 15
+     different untouched conditions. With no answers yet: one question from each of 17
      different conditions, as a breadth check. */
   function session(gmc, map, ans, size) {
-    ans = ans || answered(); size = size || 15;
+    ans = ans || answered(); size = size || 17;
     var byCond = {};
     Object.keys(map.q).forEach(function (q) {
       var c = map.q[q][0];

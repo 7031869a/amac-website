@@ -48,7 +48,7 @@
   "alternateName": ["Ahmed Mansour & Colleagues", "A. Mansour & Colleagues"],
   "url": "https://amac-medical.com/",
   "logo": "https://amac-medical.com/apple-touch-icon.png",
-  "description": "Preparation for the UK medical and surgical examinations: UKMLA, PLAB 1, PLAB 2 and FRCS Part 2.",
+  "description": "Preparation for the UK medical and surgical examinations and Foundation training: UKMLA, Foundation F1 and F2, PLAB 1, PLAB 2, MRCP Part 1, MRCS and FRCS (General Surgery) Section 2 academic paper critique.",
   "slogan": "Think like an examiner. Pass with confidence."
 }
 </script>
@@ -108,7 +108,10 @@ h1,h2,h3{font-family:'Fraunces',Georgia,serif;color:var(--navy);}
 .opts label.opt-wrong{border-color:var(--bad);background:#fbeceb;}
 .opts label.opt-neutral-locked{opacity:.55;}
 .opt-letter{font-weight:700;color:var(--navy);min-width:18px;}
-.stem{font-size:17px;margin:14px 0 18px;font-weight:500;line-height:1.65;}
+.stem{font-size:17px;margin:14px 0 18px;font-weight:500;line-height:1.65;white-space:pre-line;}
+.q-figure{margin:0 0 18px;}
+.q-figure img{display:block;max-width:100%;height:auto;border:1px solid var(--line);border-radius:9px;background:#fff;}
+.q-figure figcaption{font-size:13px;color:var(--muted);margin-top:6px;}
 .qmeta{display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--muted);margin-bottom:6px;}
 .qmeta .dom{background:#eef1f7;color:var(--navy);padding:3px 10px;border-radius:20px;font-weight:600;}
 .qmeta .diff{padding:3px 10px;border-radius:20px;font-weight:600;background:#f0ece0;color:var(--amber);}
@@ -244,6 +247,14 @@ function go(d){
   render();
 }
 
+function escAttr(s){ return String(s || '').replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+// optional image item: q.image = {src, alt, caption}
+function figureHtml(q){
+  if (!q.image || !q.image.src) return '';
+  return '<figure class="q-figure"><img src="' + escAttr(q.image.src) + '" alt="' + escAttr(q.image.alt) + '" loading="lazy">'
+    + (q.image.caption ? '<figcaption>' + escAttr(q.image.caption) + '</figcaption>' : '') + '</figure>';
+}
+
 function render(){
   const total = QUESTIONS.length;
 
@@ -335,6 +346,7 @@ function render(){
     + (q.difficulty ? '<span class="diff">' + q.difficulty + '</span>' : '')
     + '<span class="dim">' + q.id + '</span></div>'
     + '<div class="stem">' + q.stem + '</div>'
+    + figureHtml(q)
     + '<div class="opts">' + opts + '</div>'
     + actionBtn
     + explHtml;

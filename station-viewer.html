@@ -220,9 +220,19 @@ details p{margin-top:6px;color:var(--muted)}
   function rowById(id){return S.grid.find(r=>r.id===id)}
   function srcName(id){const s=S.sources.find(x=>x.id===id);return s?s.id:""}
 
-  function header(){
+  const TYPE_LABEL={"examination":"Physical examination","history":"History taking","communication":"Communication","procedural":"Procedural skill","applied-knowledge":"Applied knowledge","data-interpretation":"Data interpretation"};
+  // While the candidate attempts the station (Solo step 1, Partner), show only what is posted outside
+  // the door: the station number and type. The title and content area often name the answer.
+  function header(hidden){
     const h=S.header;
-    $("#head").innerHTML=`
+    $("#head").innerHTML=hidden?`
+      <span class="eyebrow">${esc(S.exam==="MRCS-B"?"MRCS Part B":S.exam)} · ${esc(h.domain||"")}</span>
+      <h1>Station ${esc(S.id)}</h1>
+      <div class="meta">
+        <span class="chip">Station type: <b>${esc(TYPE_LABEL[S.type]||S.type)}</b></span>
+        <span class="chip"><b>${h.minutes} min</b> + ${h.readingMinutes} min reading</span>
+        <span class="chip">Title hidden until you finish</span>
+      </div>`:`
       <span class="eyebrow">${esc(S.exam==="MRCS-B"?"MRCS Part B":S.exam)} · ${esc(h.domain||"")}</span>
       <h1>${esc(S.id)} · ${esc(S.title)}</h1>
       <div class="meta">
@@ -230,12 +240,12 @@ details p{margin-top:6px;color:var(--muted)}
         <span class="chip"><b>${h.minutes} min</b> + ${h.readingMinutes} min reading</span>
         ${h.guidelineVersions.map(g=>`<span class="chip">${esc(g)}</span>`).join("")}
       </div>`;
-    document.title=`${S.id} ${S.title}`;
+    document.title=hidden?`Station ${S.id}`:`${S.id} ${S.title}`;
   }
 
   function briefHTML(){
     const b=S.brief;
-    return `<div class="panel brief"><dl>
+    return `<div class="panel brief">${b.date?`<p style="margin-bottom:10px"><b><u>Today's date: ${esc(b.date)}</u></b></p>`:""}<dl>
       <dt>Setting</dt><dd>${esc(b.setting)}</dd>
       <dt>Your role</dt><dd>${esc(b.role)}</dd>
       <dt>Scenario</dt><dd>${esc(b.scenario)}</dd>
@@ -264,11 +274,31 @@ details p{margin-top:6px;color:var(--muted)}
       </div>`;}).join("")}</div>`;
   }
 
+  // AMaC practice estimate of the station mark: Fail 0, Borderline 1, Pass 2, High-performance 3 per row,
+  // scaled so the whole grid is worth 20, with a subtotal for each ICBSE domain from the rows' domain tags.
+  const BAND_POINTS={fail:0,borderline:1,pass:2,high:3};
+  function markOf(scoreObj){
+    const per=20/S.grid.length, dom={};
+    let total=0;
+    S.grid.forEach(r=>{
+      const d=dom[r.domain]||(dom[r.domain]={got:0,max:0});
+      d.max+=per;
+      if(scoreObj[r.id]){const v=BAND_POINTS[scoreObj[r.id]]/3*per;d.got+=v;total+=v;}
+    });
+    return {total,dom};
+  }
+  const r1=x=>(Math.round(x*10)/10).toFixed(1).replace(/\.0$/,"");
   function tallyHTML(scoreObj){
     const n=b=>Object.values(scoreObj).filter(v=>v===b).length;
     const done=Object.keys(scoreObj).length;
+    const m=markOf(scoreObj);
+    const section=S.header.domain==="Applied Knowledge"?"Knowledge section (8 stations, 160 marks)":"Skills section (9 stations, 180 marks)";
     return `<div class="tally"><span class="muted">${done} of ${S.grid.length} rows scored</span>
-      ${BANDS.map(b=>`<span class="pill ${b}">${BAND_LABEL[b]} ${n(b)}</span>`).join("")}</div>`;
+      ${BANDS.map(b=>`<span class="pill ${b}">${BAND_LABEL[b]} ${n(b)}</span>`).join("")}</div>
+      <div class="overall"><span class="eyebrow">Station mark (AMaC practice estimate, not the ICBSE mark sheet)</span>
+        <div><span class="clock" style="font-size:1.8rem">${r1(m.total)}</span> <span class="muted">/ 20</span></div>
+        <div class="meta">${Object.entries(m.dom).map(([d,v])=>`<span class="chip">${esc(DOMAIN_LABEL[d]||d)}: <b>${r1(v.got)}</b> / ${r1(v.max)}</span>`).join("")}</div>
+        <span class="muted" style="font-size:.84rem">Rows score Fail 0, Borderline 1, Pass 2, High-performance 3, scaled to 20. This station counts towards the ${section}, which is passed separately from the other section. The overall rating below is a separate judgement, as in the exam.</span></div>`;
   }
 
   function bindGrid(scoreObj,rerender){
@@ -354,8 +384,9 @@ details p{margin-top:6px;color:var(--muted)}
     return `<div class="timer" id="${id}"><span class="clock" id="${id}-clock">1:00</span>
       <span class="phase" id="${id}-phase">Reading time</span>
       <button class="btn primary" id="${id}-go">Start</button><button class="btn" id="${id}-reset">Reset</button>
-      ${S.header.signalMinutes?`<span class="sigmark">Signal at ${S.header.signalMinutes} minutes: stop and present your findings.</span>`:""}</div>`;
+      ${S.header.signalMinutes?`<span class="sigmark">${isTask()?`Task: ${S.header.signalMinutes} min · Examiner questions: ${S.header.minutes-S.header.signalMinutes} min. The examiners stop you at ${S.header.signalMinutes} minutes.`:`Signal at ${S.header.signalMinutes} minutes: stop and present your findings.`}</span>`:""}</div>`;
   }
+  function isTask(){return S.type==="procedural";}
   function bindTimer(id,onEnd){
     const total=[S.header.readingMinutes*60,S.header.minutes*60];
     let phase=0,left=total[0],running=false;
@@ -363,7 +394,7 @@ details p{margin-top:6px;color:var(--muted)}
     const sig=S.header.signalMinutes?S.header.signalMinutes*60:null; let signalled=false;
     // Short tone; allowed because the timer is started by a tap.
     const beep=()=>{try{const C=window.AudioContext||window.webkitAudioContext;const c=new C();const o=c.createOscillator();const g=c.createGain();o.frequency.value=880;g.gain.value=0.15;o.connect(g);g.connect(c.destination);o.start();o.stop(c.currentTime+0.6);}catch(e){} try{navigator.vibrate&&navigator.vibrate(300);}catch(e){}};
-    const paint=()=>{$(`#${id}-clock`).textContent=fmt(left);const afterSig=phase===1&&sig&&(total[1]-left)>=sig;$(`#${id}`).classList.toggle("signal",!!afterSig);$(`#${id}-phase`).textContent=phase===0?"Reading time":phase===1?(afterSig?"Signal: present your findings":"In the station"):"Time";$(`#${id}-go`).textContent=running?"Pause":(phase===2?"Done":"Start");$(`#${id}-go`).disabled=phase===2;};
+    const paint=()=>{$(`#${id}-clock`).textContent=fmt(left);const afterSig=phase===1&&sig&&(total[1]-left)>=sig;$(`#${id}`).classList.toggle("signal",!!afterSig);$(`#${id}-phase`).textContent=phase===0?"Reading time":phase===1?(afterSig?(isTask()?"Signal: examiner questions":"Signal: present your findings"):(isTask()&&sig?"Task":"In the station")):"Time";$(`#${id}-go`).textContent=running?"Pause":(phase===2?"Done":"Start");$(`#${id}-go`).disabled=phase===2;};
     const tick=()=>{left--;if(phase===1&&sig&&!signalled&&(total[1]-left)>=sig){signalled=true;beep();}if(left<=0){if(phase===0){phase=1;left=total[1];}else{phase=2;left=0;stop();onEnd&&onEnd();}}paint();};
     const stop=()=>{clearInterval(timer);timer=null;running=false;};
     $(`#${id}-go`).addEventListener("click",()=>{if(running){stop();}else{running=true;timer=setInterval(tick,1000);}paint();});
@@ -373,6 +404,7 @@ details p{margin-top:6px;color:var(--muted)}
   }
 
   function renderPartner(){
+    header(true);
     const p=S.partner;
     $("#view").innerHTML=`
       <p class="note">One of you is the candidate, one the examiner. Give the candidate the brief, then run the script. Reveal findings only when the candidate asks for them or performs the step.</p>
@@ -395,6 +427,7 @@ details p{margin-top:6px;color:var(--muted)}
   function renderSolo(){
     const labels=["Attempt","Self-score","Compare"];
     const stepsHTML=`<ol class="steps">${labels.map((l,i)=>`<li class="${i===solo.step?"on":i<solo.step?"ok":""}">${i+1}. ${l}</li>`).join("")}</ol>`;
+    header(solo.step===0);
     if(solo.step===0){
       $("#view").innerHTML=`${stepsHTML}
         <p class="note">Read the brief during reading time, then answer out loud as if the examiner were in front of you. When you would ask for a finding or perform a step, open it below.</p>
@@ -417,6 +450,7 @@ details p{margin-top:6px;color:var(--muted)}
     }else{
       const gaps=S.grid.filter(r=>soloScore[r.id]!=="high");
       $("#view").innerHTML=`${stepsHTML}
+        <p class="note">Station: <strong>${esc(S.id)} · ${esc(S.title)}</strong></p>
         <div class="tally"><span class="muted">Your overall rating:</span> <span class="pill ${soloOverall.v}">${BAND_LABEL[soloOverall.v]}</span></div>
         ${tallyHTML(soloScore)}
         <section><h2>Where to gain marks</h2>${gaps.length?`<ul class="plain gap-list">${gaps.map(r=>`<li class="panel"><span><span class="pill ${soloScore[r.id]}">${BAND_LABEL[soloScore[r.id]]}</span> <strong>${r.id} ${esc(r.label)}</strong></span><span class="muted">High-performance: ${esc(r.high)}</span></li>`).join("")}</ul>`:`<p>You scored every row at high-performance.</p>`}</section>
@@ -432,6 +466,7 @@ details p{margin-top:6px;color:var(--muted)}
   function setMode(m){
     if(timer){clearInterval(timer);timer=null;}
     mode=m;
+    if(m==="learn"||m==="revise")header(false);
     document.querySelectorAll(".mode").forEach(b=>b.setAttribute("aria-selected",b.dataset.mode===m));
     ({learn:renderLearn,partner:renderPartner,solo:renderSolo,revise:renderRevise})[m]();
     try{history.replaceState(null,"","#"+m);}catch(e){}

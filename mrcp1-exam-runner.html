@@ -169,9 +169,10 @@ nav{position:sticky;top:0;z-index:100;background:var(--panel);border-bottom:1px 
     sessionTitle = PAPERS[paperId].title || paperId;
     sessionQs = (PAPERS[paperId].ids || []).map(function(id){ return BYID[id]; })
                   .filter(function(q){ return !!q; });
-    // Timed only once the published specification supplies a duration. Until
-    // mrcp1-papers.js carries one, a paper runs untimed rather than inventing a clock.
-    isTimed = false;
+    // Timed from the published specification: HOURS_PER_PAPER (3 h) per
+    // QUESTIONS_PER_PAPER (100) questions, so a full paper runs at 180:00.
+    // A shorter fixed paper gets the same time per question, pro rata.
+    isTimed = !!(SPEC.HOURS_PER_PAPER && SPEC.QUESTIONS_PER_PAPER);
   } else if (mode === 'practice' && n > 0){
     sessionTitle = 'Random practice';
     var pool = QUESTIONS.slice();
@@ -210,6 +211,20 @@ nav{position:sticky;top:0;z-index:100;background:var(--panel);border-bottom:1px 
   document.getElementById('sessionMeta').textContent =
     sessionQs.length + ' question' + (sessionQs.length === 1 ? '' : 's');
   document.getElementById('timer').textContent = isTimed ? '' : 'Untimed';
+  var timeLeft = 0, timerId = null;
+  if (isTimed){
+    timeLeft = Math.round(SPEC.HOURS_PER_PAPER * 3600 * sessionQs.length / SPEC.QUESTIONS_PER_PAPER);
+    var tEl = document.getElementById('timer');
+    tEl.classList.remove('untimed');
+    var paint = function(){
+      tEl.textContent = Math.floor(timeLeft / 60) + ':' + String(timeLeft % 60).padStart(2, '0');
+    };
+    paint();
+    timerId = setInterval(function(){
+      timeLeft--; paint();
+      if (timeLeft <= 0){ clearInterval(timerId); if (!finished) window.__submit(); }
+    }, 1000);
+  }
 
   var TOTAL = sessionQs.length;
   var cur = 0;
@@ -272,8 +287,11 @@ nav{position:sticky;top:0;z-index:100;background:var(--panel);border-bottom:1px 
 
     main.innerHTML =
       '<div class="card">' +
-        '<div class="qmeta"><span class="sub">' + esc(q.subdomain) + '</span>' +
-        '<span class="qid">' + esc(q.id) + ' · ' + (cur + 1) + '/' + TOTAL + '</span></div>' +
+        // A timed paper shows no topic label or item ID until it is submitted (the real paper gives neither).
+        ((isTimed && !finished)
+          ? '<div class="qmeta"><span class="sub"></span><span class="qid">' + (cur + 1) + '/' + TOTAL + '</span></div>'
+          : '<div class="qmeta"><span class="sub">' + esc(q.subdomain) + '</span>' +
+            '<span class="qid">' + esc(q.id) + ' · ' + (cur + 1) + '/' + TOTAL + '</span></div>') +
         '<div class="stem">' + esc(q.stem) + '</div>' +
         '<div class="opts">' + opts + '</div>' + rationale +
         '<div class="nav-row">' +
@@ -292,6 +310,7 @@ nav{position:sticky;top:0;z-index:100;background:var(--panel);border-bottom:1px 
 
   function submit(){
     finished = true;
+    if (timerId) clearInterval(timerId);
     var correct = 0, bySub = {};
     sessionQs.forEach(function(q, i){
       var ok = answers[i] === q.correct_letter;

@@ -1,5 +1,7 @@
 #!/usr/bin/env node
-// AMaC station validator v1.2 — enforces station-template-spec.md §10, four-band model.
+// AMaC station validator v1.3 — enforces station-template-spec.md §10, four-band model.
+// v1.3: 6-minute signal checks extended to procedural stations; brief.date checks; --pages runs the
+// framing check (no instant fail / kill zone / hurdle) over the MRCS pages (mrcs*.html).
 // Bands per grid row: fail, pass, high required; borderline optional (only where it teaches something specific).
 // Usage: node validate-station.js stations/MB-120.json [more.json ...]
 // Exit code 1 if any station has errors. Warnings do not fail.
@@ -23,7 +25,22 @@ const REQUIRED = ['id', 'exam', 'title', 'type', 'header', 'brief', 'beforeYouWa
 const MEDIA_STATUS = ['needed', 'own', 'licensed'];
 const COMPONENTS = ['Applied Knowledge', 'Applied Skills'];
 // Framing the exam does not use: an error, not a warning, on candidate-facing text.
-const FRAMING = /\b(instant fail|kill zone|hurdle|the bounded answer|instrument limit)\b/i;
+const FRAMING = /\b(instant fail|kill zone|hurdles?|the bounded answer|instrument limit)\b/i;
+const DATE_RE = /^[0-9]{1,2} (January|February|March|April|May|June|July|August|September|October|November|December) [0-9]{4}$/;
+
+// The same framing check over the MRCS pages' visible text (styles, scripts and tags stripped).
+function validatePage(file) {
+  const errors = [];
+  const html = fs.readFileSync(file, 'utf8');
+  const text = html.replace(/<style[\s\S]*?<\/style>/gi, ' ').replace(/<script[\s\S]*?<\/script>/gi, ' ')
+    .replace(/<!--[\s\S]*?-->/g, ' ').replace(/<[^>]+>/g, ' ');
+  const attrs = [...html.matchAll(/\b(?:content|title|alt|aria-label)="([^"]*)"/gi)].map(m => m[1]).join(' ');
+  // Owner rule for MRCS pages: no instant fail, kill zone or hurdle ("Safety-critical" instead).
+  // ("The Bounded Answer" is an AMaC chapter title on the pages, so only the station check bans it.)
+  const re = /\b(instant fail|kill zone|hurdles?)\b/gi;
+  for (const m of `${text} ${attrs}`.matchAll(re)) errors.push(`Framing the exam does not use: "${m[0]}"`);
+  return { errors, warnings: [] };
+}
 
 const words = s => (s || '').trim().split(/\s+/).filter(Boolean).length;
 const blank = s => !s || !String(s).trim() || /^[-—–\s]+$/.test(String(s));
@@ -43,6 +60,10 @@ function validate(file) {
   for (const b of REQUIRED_BANDS) if (!st.performances[b]) errors.push(`Missing ${b} model performance`);
   if (errors.length) return { errors, warnings };
   if (['examination','history'].includes(st.type) && st.header && st.header.signalMinutes !== 6) warnings.push(`Examination and history stations have a signal at 6 minutes (RCPSG candidate guidance): set header.signalMinutes to 6`);
+  if (st.type === 'procedural' && st.header && st.header.signalMinutes !== 6) warnings.push(`Procedural (task and questions) stations split 6 minutes task / 3 minutes examiner questions (ICBSE exam day guidance): set header.signalMinutes to 6`);
+  if (['examination','history','procedural'].includes(st.type) && st.brief && !/\b(6|six)[- ]minutes?\b/i.test(`${st.brief.scenario || ''} ${st.brief.task || ''}`)) warnings.push(`Brief does not state the 6-minute stop ("You will be stopped at 6 minutes…" / "You have up to 6 minutes to complete the task…")`);
+  if (st.brief && st.brief.date !== undefined && !DATE_RE.test(st.brief.date)) errors.push(`brief.date "${st.brief.date}" must look like "14 March 2026"`);
+  if (st.type === 'communication' && st.brief && st.brief.date === undefined) warnings.push(`Communication stations show an assumed date treated as today (ICBSE exam day guidance): add brief.date`);
   if (!COMPONENTS.includes((st.header || {}).domain)) errors.push(`header.domain must be exactly one of: ${COMPONENTS.join(', ')} (put the content area, e.g. 'Surgical anatomy', in header.contentArea)`);
 
   const rows = new Map(st.grid.map(r => [r.id, r]));
@@ -147,14 +168,19 @@ function validate(file) {
   return { errors, warnings };
 }
 
-module.exports = { validate };
+module.exports = { validate, validatePage };
 
 if (require.main === module) {
-  const files = process.argv.slice(2);
-  if (!files.length) { console.log('Usage: node validate-station.js <station.json> [...]'); process.exit(2); }
+  let files = process.argv.slice(2);
+  const pages = files[0] === '--pages';
+  if (pages) {
+    files = files.slice(1);
+    if (!files.length) files = fs.readdirSync(__dirname).filter(f => /^mrcs.*\.html$/.test(f)).sort().map(f => require('path').join(__dirname, f));
+  }
+  if (!files.length) { console.log('Usage: node validate-station.js <station.json> [...]\n       node validate-station.js --pages [mrcs-page.html ...]   (defaults to every mrcs*.html)'); process.exit(2); }
   let failed = false;
   for (const f of files) {
-    const { errors, warnings } = validate(f);
+    const { errors, warnings } = pages ? validatePage(f) : validate(f);
     console.log(`\n${f}: ${errors.length ? 'FAIL' : 'PASS'} (${errors.length} errors, ${warnings.length} warnings)`);
     errors.forEach(e => console.log(`  ✗ ${e}`));
     warnings.forEach(w => console.log(`  ! ${w}`));

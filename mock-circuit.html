@@ -25,7 +25,7 @@
 <meta property="og:site_name" content="AMaC">
 <meta property="og:locale" content="en_GB">
 <meta property="og:title" content="Mock OSCE Circuit — AMaC PLAB 2">
-<meta property="og:description" content="A full timed PLAB 2 circuit — 18 stations, 8 minutes each, with 2-minute reading time between stations. Track your performance across the whole circuit.">
+<meta property="og:description" content="A full timed PLAB 2 circuit — 16 scored stations and 2 rest stations, 8 minutes each, with 90 seconds to move and read. Mark yourself afterwards on three domains.">
 <meta property="og:url" content="https://amac-medical.com/mock-circuit.html">
 <meta property="og:image" content="https://amac-medical.com/og-image.png">
 <meta property="og:image:width" content="1200">
@@ -35,7 +35,7 @@
 <!-- ── Twitter/X card ─────────────────────────────────────────── -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Mock OSCE Circuit — AMaC PLAB 2">
-<meta name="twitter:description" content="A full timed PLAB 2 circuit — 18 stations, 8 minutes each, with 2-minute reading time between stations. Track your performance across the whole circuit.">
+<meta name="twitter:description" content="A full timed PLAB 2 circuit — 16 scored stations and 2 rest stations, 8 minutes each, with 90 seconds to move and read. Mark yourself afterwards on three domains.">
 <meta name="twitter:image" content="https://amac-medical.com/og-image.png">
 
 <!-- ── Structured data: helps Google understand the site ──────── -->
@@ -47,7 +47,7 @@
   "alternateName": ["Ahmed Mansour & Colleagues", "A. Mansour & Colleagues"],
   "url": "https://amac-medical.com/",
   "logo": "https://amac-medical.com/apple-touch-icon.png",
-  "description": "Preparation for the UK medical and surgical examinations: UKMLA, PLAB 1, PLAB 2 and FRCS Part 2.",
+  "description": "Preparation for the UK medical and surgical examinations and Foundation training: UKMLA, Foundation F1 and F2, PLAB 1, PLAB 2, MRCP Part 1, MRCS and FRCS (General Surgery) Section 2 academic paper critique.",
   "slogan": "Think like an examiner. Pass with confidence."
 }
 </script>
@@ -82,7 +82,7 @@ nav{position:sticky;top:0;z-index:100;background:linear-gradient(180deg,#0f2850,
 /* SETUP */
 .setup-card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:24px;margin-bottom:16px;box-shadow:0 2px 8px rgba(13,34,71,0.07);}
 .setup-title{font-family:'Fraunces',serif;font-size:20px;color:var(--navy);margin-bottom:12px;}
-.info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:20px;}
+.info-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:20px;}
 .info-item{background:var(--cream);border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center;}
 .ii-num{font-family:'Fraunces',serif;font-size:26px;color:var(--navy);font-weight:500;}
 .ii-label{font-size:12px;color:var(--muted);margin-top:2px;}
@@ -186,6 +186,32 @@ footer{background:var(--navy-deep);color:#c4ccd8;padding:36px 28px 20px;}
 .foot-col a{display:block;color:#8a96b0;text-decoration:none;font-size:12px;margin-bottom:6px;}
 .foot-col a:hover{color:var(--gold-soft);}
 .foot-btm{max-width:1200px;margin:14px auto 0;font-size:11px;color:#4a5568;text-align:center;}
+/* Circuit realism additions */
+.scenario-box .sb-label{color:var(--navy);font-size:13px;margin-top:0;}
+.opt-row{display:flex;align-items:center;gap:8px;font-size:13.5px;color:var(--ink);padding:6px 0;border-bottom:1px solid var(--line);cursor:pointer;}
+.opt-row:last-child{border-bottom:none;}
+.slp-hint{font-size:12.5px;color:var(--muted);margin:-4px 0 10px;}
+.pick-count{font-weight:400;color:var(--muted);text-transform:none;letter-spacing:0;}
+.pick-row{cursor:pointer;}
+.pick-row.off{opacity:.5;}
+.start-btn:disabled{opacity:.5;cursor:not-allowed;transform:none;}
+.mc-alert{display:none;background:var(--fail);color:#fff;font-weight:700;padding:12px 16px;border-radius:8px;margin-bottom:14px;font-size:15px;}
+.mc-alert.show{display:block;}
+.mc-alert.end{background:var(--navy);color:var(--gold-soft);}
+.rest-card{display:none;background:#fff;border:1px solid var(--line);border-radius:12px;padding:24px;margin-bottom:14px;text-align:center;}
+.rest-card p{font-size:14px;color:var(--muted);margin-top:4px;}
+.dtag{display:inline-block;font-size:9.5px;font-weight:700;letter-spacing:.5px;padding:1px 6px;border-radius:8px;color:#fff;margin-right:4px;vertical-align:1px;text-decoration:none;}
+.dtag-DG{background:#1b3a6b;}.dtag-CM{background:#0b5345;}.dtag-IP{background:#8a5a00;}
+.dom-row{display:flex;align-items:center;gap:8px;padding:6px 0;border-bottom:1px solid var(--line);font-size:13.5px;}
+.dom-name{flex:1;}
+.dom-val{font-family:'Fraunces',serif;font-size:17px;color:var(--navy);}
+.grade-row{display:flex;gap:6px;flex-wrap:wrap;}
+.grade-btn{padding:7px 14px;border:1px solid var(--line);background:#fff;border-radius:20px;font-size:12.5px;font-weight:600;cursor:pointer;font-family:'Outfit',sans-serif;color:var(--navy);}
+.grade-btn.active{background:var(--navy);color:#fff;border-color:var(--navy);}
+.scale-note{font-size:11.5px;color:var(--muted);font-style:italic;margin-top:10px;}
+.mark-nav{display:flex;gap:10px;}
+.mark-nav>*{flex:1;}
+.cs-scale{font-size:11.5px;color:rgba(255,255,255,0.6);font-style:italic;margin-top:12px;}
 @media(max-width:700px){.nav-links{display:none;}.wrap{padding:16px 14px 48px;}.info-grid{grid-template-columns:1fr 1fr;}.score-row{gap:10px;}}
 </style>
 </head>
@@ -194,9 +220,9 @@ footer{background:var(--navy-deep);color:#c4ccd8;padding:36px 28px 20px;}
   <ul class="nav-links"><li><a href="books.html">The Master Series</a></li><li><a href="tools.html">Study Tools</a></li><li><a href="contact.html" class="nav-cta">Get Started</a></li></ul>
 </div></nav>
 <header class="hero"><div class="ph">
-  <span class="kick">18 Stations · 8 Minutes Each · Full Circuit</span>
+  <span class="kick">16 Stations + 2 Rest · 8 Minutes · 90 Seconds to Read</span>
   <h1>Mock OSCE <em>Circuit</em></h1>
-  <p>A full timed PLAB 2 circuit — 18 stations, 8 minutes each, with 2-minute reading time between stations. Track your performance across the whole circuit.</p>
+  <p>A full timed PLAB 2 circuit — 16 scored stations and 2 rest stations, 8 minutes each, with 90 seconds to move and read. You see only the instruction sheet; you mark yourself afterwards.</p>
 </div></header>
 
 <!-- SETUP -->
@@ -205,20 +231,31 @@ footer{background:var(--navy-deep);color:#c4ccd8;padding:36px 28px 20px;}
     <div class="setup-card">
       <div class="setup-title">Circuit Overview</div>
       <div class="info-grid">
-        <div class="info-item"><div class="ii-num">18</div><div class="ii-label">Stations</div></div>
+        <div class="info-item"><div class="ii-num">16</div><div class="ii-label">Scored stations</div></div>
+        <div class="info-item"><div class="ii-num">+2</div><div class="ii-label">Rest stations</div></div>
         <div class="info-item"><div class="ii-num">8 min</div><div class="ii-label">Per station</div></div>
-        <div class="info-item"><div class="ii-num">2 min</div><div class="ii-label">Reading time</div></div>
+        <div class="info-item"><div class="ii-num">90 s</div><div class="ii-label">To move and read</div></div>
+      </div>
+      <div class="scenario-box">
+        <div class="sb-label">How this circuit runs</div>
+        <div class="sb-text" style="font-size:14px">Before each station you have 90 seconds to move to the room and read the instruction sheet. Each station lasts 8 minutes. You will get a two-minute warning, and the station ends when time is up. As in the exam, there is no countdown on screen and you see only the instruction sheet. Start each station by confirming your name and GMC number. You mark yourself after the whole circuit, not during it.</div>
+      </div>
+      <div class="checklist">
+        <div class="cl-title">Practice options</div>
+        <label class="opt-row"><input type="checkbox" id="optShowTimer"> Show the countdown timer during stations</label>
+        <label class="opt-row"><input type="checkbox" id="optEarly"> Allow me to end a station or reading time early</label>
       </div>
       <div class="station-list-preview">
-        <div class="slp-title">Station list</div>
+        <div class="slp-title">Choose 16 of AMaC's 18 circuit stations <span id="pickCount" class="pick-count"></span></div>
+        <div class="slp-hint">The circuit rotates which two stations sit out each time. Tick or untick to choose your own 16.</div>
         <div id="stationListPreview"></div>
       </div>
-      <button class="start-btn" onclick="startCircuit()">Start Circuit →</button>
+      <button class="start-btn" id="startBtn" onclick="startCircuit()">Start Circuit →</button>
     </div>
   </div>
 </div>
 
-<!-- BRIEF -->
+<!-- CHANGEOVER: 90 seconds to move and read the next instruction sheet -->
 <div class="stage" id="stage-brief">
   <div class="wrap">
     <div class="brief-header">
@@ -227,27 +264,20 @@ footer{background:var(--navy-deep);color:#c4ccd8;padding:36px 28px 20px;}
         <div class="bh-progress" id="briefProgress"></div>
       </div>
       <div class="bh-title" id="briefTitle"></div>
-      <div class="bh-domain" id="briefDomain"></div>
     </div>
     <div class="brief-timer">
-      <div><div class="bt-label">Reading Time</div><div class="bt-desc">Read brief. Prepare your opening.</div></div>
-      <div class="bt-countdown" id="briefCountdown">2:00</div>
+      <div><div class="bt-label">Move and read</div><div class="bt-desc">Read the instruction sheet. Confirm your name and GMC number when you enter.</div></div>
+      <div class="bt-countdown" id="briefCountdown">1:30</div>
     </div>
-    <div class="scenario-box">
-      <div class="sb-label">Station Scenario</div>
+    <div class="scenario-box" id="briefSheet">
+      <div class="sb-label">Candidate instructions</div>
       <div class="sb-text" id="briefScenario"></div>
     </div>
-    <div class="checklist">
-      <div class="cl-title">Before you enter</div>
-      <div class="cl-item"><span class="cl-dot"></span>Prepare your opening sentence</div>
-      <div class="cl-item"><span class="cl-dot"></span>Note the patient's name and concern</div>
-      <div class="cl-item"><span class="cl-dot"></span>ICE — Empathy — Safety-net — Document</div>
-    </div>
-    <button class="brief-start-btn" id="briefStartBtn" onclick="startStation()">Enter Station →</button>
+    <button class="brief-start-btn" id="briefStartBtn" onclick="enterNow()">Enter now (practice) →</button>
   </div>
 </div>
 
-<!-- STATION ACTIVE -->
+<!-- STATION ACTIVE: instruction sheet only -->
 <div class="stage" id="stage-station">
   <div class="wrap">
     <div class="station-header">
@@ -255,33 +285,59 @@ footer{background:var(--navy-deep);color:#c4ccd8;padding:36px 28px 20px;}
         <div class="sh-station" id="stationLabel"></div>
         <div class="sh-title" id="stationTitle"></div>
       </div>
-      <div class="sh-timer-wrap">
+      <div class="sh-timer-wrap" id="stationTimerWrap">
         <div class="sh-timer" id="stationTimer">8:00</div>
         <div class="sh-timer-label">remaining</div>
       </div>
     </div>
-    <div class="task-panel">
-      <div class="tp-title">Examiner Checklist — tick as you complete</div>
-      <div id="taskList"></div>
+    <div class="mc-alert" id="stationAlert" role="status" aria-live="assertive"></div>
+    <div class="scenario-box" id="stationSheetBox">
+      <div class="sb-label">Candidate instructions</div>
+      <div class="sb-text" id="stationSheet"></div>
     </div>
-    <div class="must-say" id="mustSayPanel"></div>
-    <button class="end-station-btn" onclick="endStation()">End Station</button>
+    <div class="rest-card" id="restCard">
+      <div class="break-title">Rest station</div>
+      <p>Sit quietly. Do not review the last station. The circuit moves on when the time is up.</p>
+      <div class="break-scripts">
+        <div class="bs-title">Reset protocol</div>
+        <div class="bs-item">"That station is done. I cannot change it."</div>
+        <div class="bs-item">"This next station is a clean start."</div>
+      </div>
+    </div>
+    <button class="end-station-btn" id="endStationBtn" onclick="endStation()">End station early (practice)</button>
   </div>
 </div>
 
-<!-- BREAK -->
-<div class="stage" id="stage-break">
+<!-- MARK YOURSELF (after the circuit) -->
+<div class="stage" id="stage-mark">
   <div class="wrap">
-    <div class="break-card">
-      <div class="break-title">Between Stations</div>
-      <div id="breakSubtitle" style="font-size:13px;color:var(--muted);margin-bottom:4px;"></div>
-      <div class="break-timer" id="breakTimer">2:00</div>
-      <div class="break-scripts">
-        <div class="bs-title">Reset Protocol</div>
-        <div class="bs-item">"That station is done. I cannot change it."</div>
-        <div class="bs-item">"This next station is a clean start."</div>
-        <div class="bs-item">"Introduce. ICE. Empathy. Safety-net. Document."</div>
+    <div class="brief-header">
+      <div class="bh-top">
+        <div class="bh-station" id="markLabel"></div>
+        <div class="bh-progress" id="markProgress"></div>
       </div>
+      <div class="bh-title" id="markTitle"></div>
+      <div class="bh-domain" id="markDomain"></div>
+    </div>
+    <div class="scenario-box">
+      <div class="sb-label">Instruction sheet</div>
+      <div class="sb-text" id="markSheet" style="font-size:14px"></div>
+    </div>
+    <div class="task-panel">
+      <div class="tp-title">Mark yourself — tick what you actually did</div>
+      <div id="taskList"></div>
+    </div>
+    <div class="task-panel">
+      <div class="tp-title">Your domain scores</div>
+      <div id="markDomains"></div>
+      <div class="tp-title" style="margin-top:14px">Your overall grade for this station</div>
+      <div class="grade-row" id="markGrade"></div>
+      <div class="scale-note">AMaC practice scale — the GMC does not publish its mark sheet. Each domain is scored 0–4 from the share of its items you ticked.</div>
+    </div>
+    <div class="must-say" id="mustSayPanel"></div>
+    <div class="mark-nav">
+      <button class="restart-btn" id="markBack" onclick="markGo(-1)">← Previous station</button>
+      <button class="brief-start-btn" id="markNext" onclick="markGo(1)">Next station →</button>
     </div>
   </div>
 </div>
@@ -293,10 +349,17 @@ footer{background:var(--navy-deep);color:#c4ccd8;padding:36px 28px 20px;}
       <div class="cs-title">Circuit Complete</div>
       <div class="cs-sub" id="circuitTime"></div>
       <div class="score-row">
-        <div class="score-bubble"><div class="sb-num" id="scoreTotal">—</div><div class="sb-label">Total Score</div></div>
-        <div class="score-bubble"><div class="sb-num" id="scorePassed">—</div><div class="sb-label">Stations Passed</div></div>
-        <div class="score-bubble"><div class="sb-num" id="scoreAvg">—</div><div class="sb-label">Avg % Tasks</div></div>
+        <div class="score-bubble"><div class="sb-num" id="scoreDG">—</div><div class="sb-label">Data gathering</div></div>
+        <div class="score-bubble"><div class="sb-num" id="scoreCM">—</div><div class="sb-label">Clinical management</div></div>
+        <div class="score-bubble"><div class="sb-num" id="scoreIP">—</div><div class="sb-label">Interpersonal</div></div>
+        <div class="score-bubble"><div class="sb-num" id="scoreTotal">—</div><div class="sb-label">Total</div></div>
+        <div class="score-bubble"><div class="sb-num" id="scoreSat">—</div><div class="sb-label">Satisfactory or better</div></div>
       </div>
+      <div class="cs-scale">AMaC practice scale — the GMC does not publish its mark sheet.</div>
+    </div>
+    <div class="scenario-box">
+      <div class="sb-label">How the real PLAB 2 pass works</div>
+      <div class="sb-text" style="font-size:14px">The examiner marks each station in three domains (data gathering, technical and assessment skills; clinical management; interpersonal skills) and also gives a grade: unsatisfactory, borderline, satisfactory or good. The grades are used after the exam to set each station's pass mark. To pass, you need <strong>both</strong>: a total at or above the overall pass mark (the sum of the station pass scores plus one standard error of measurement), <strong>and</strong> a minimum number of stations passed. That minimum is calculated for each exam; in 2024–25 it was 9 or 10 of 16. AMaC cannot reproduce the real station pass marks, so use the domain totals and the number of stations you graded satisfactory or better as a guide only.</div>
     </div>
     <div style="font-size:14px;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px;">Station Breakdown</div>
     <div class="station-results" id="stationResults"></div>
@@ -304,7 +367,7 @@ footer{background:var(--navy-deep);color:#c4ccd8;padding:36px 28px 20px;}
   </div>
 </div>
 
-<div class="trustband"><p class="slogan">Think Like an Examiner · Speak Like a Doctor · Perform With Confidence</p><p>18 stations from the AMaC PLAB 2 Master Series. Simulate full exam conditions.</p></div>
+<div class="trustband"><p class="slogan">Think Like an Examiner · Speak Like a Doctor · Perform With Confidence</p><p>16 scored stations and 2 rest stations from the AMaC PLAB 2 Master Series, run to exam timing.</p></div>
 <footer><div class="foot-inner">
   <div><div class="foot-brand">AMaC</div><p class="foot-p">Ahmed Mansour &amp; Colleagues.</p></div>
   <div class="foot-col"><h4>Practice</h4><a href="osce.html">OSCE Stations</a><a href="simulator.html">AI Simulator</a><a href="recovery-scripts.html">Recovery Scripts</a></div>
@@ -314,184 +377,231 @@ footer{background:var(--navy-deep);color:#c4ccd8;padding:36px 28px 20px;}
 
 <script>
 const STATIONS=[
-  {n:1,title:"Acute Chest Pain — Possible ACS",domain:"Emergency",scenario:"You are the FY2 on call. Mr James, 58, presents with central crushing chest pain radiating to his left arm for 40 minutes. He is sweating. HR 98, BP 144/88, SpO₂ 97%.",tasks:["Assessed ABCDE within first 60 seconds","Requested ECG urgently","Checked allergy before aspirin","Gave aspirin 300mg or stated dose","Asked about sildenafil / GTN contraindication","Escalated to senior / cardiology","ICE explored — patient fear acknowledged","Safety-netted clearly","Documented plan"],must_say:["I need to do a quick ABCDE assessment first.","I would like an ECG done immediately please.","Before I prescribe — do you have any allergies?","I am concerned this may be a heart attack — I need to escalate to my senior now."]},
-  {n:2,title:"Febrile Child — Traffic Light Assessment",domain:"Paediatrics",scenario:"Mrs Okafor brings her 18-month-old son Elijah. Temperature 39.2°C for 12 hours. HR 148, RR 32, CRT 2 seconds. Alert and responsive. You are the paediatric FY2.",tasks:["Applied traffic light system (green/amber/red)","Checked for non-blanching rash explicitly","Asked about neck stiffness and fontanelle","ICE — explored meningitis fear","Clear safety-net: 999 for non-blanching rash","Communicated in plain language to parent","Appropriate management for amber category","Offered follow-up timeframe"],must_say:["I am going to use our assessment system to check how serious this is.","I need to specifically check for a non-blanching rash.","If you notice any rash that doesn't fade when you press a glass to it — call 999 immediately.","I can hear you're worried about meningitis — let me explain what I've found."]},
-  {n:3,title:"Breaking Bad News — Colorectal Cancer",domain:"Communication",scenario:"Mrs Patel, 52, has come to discuss results. She had a colonoscopy last week. Histology: adenocarcinoma of the colon. She was told only to 'come in to discuss results.'",tasks:["Checked what patient already knows (SPIKES — P)","Used warning shot before diagnosis","Delivered diagnosis in plain language — not 'malignancy'","Paused at least 5 seconds after bad news","Responded to emotion with NURSE","ICE explored after the news","Explained next steps clearly","Offered written information and support","Safety-netted with specific follow-up"],must_say:["Before I share the results — can you tell me what you've been told so far?","I'm afraid the news isn't what we were hoping for. [Pause.]","I want to make sure I explain this clearly — the biopsy showed a cancer of the bowel.","Take your time. There's no rush. [Hold the silence.]","I can hear how frightening this is. What worries you most right now?"]},
-  {n:4,title:"Capacity Assessment — Refusing Insulin",domain:"Ethics",scenario:"Mr Davis, 67, is an inpatient who has refused insulin for newly diagnosed type 1 diabetes. He understands he may die without it but says it is his choice. The nurse asks you to assess capacity.",tasks:["Applied 4-part capacity test explicitly","Explored the reason for refusal before concluding","Did not coerce or override","Correctly concluded patient has capacity","Acknowledged patient autonomy","Offered alternatives or compromise","Safety-netted — kept door open","Documented decision"],must_say:["I need to check four things — can you understand, remember, weigh up, and tell me your decision?","Can you tell me in your own words what might happen if you don't take insulin?","I respect that this is your decision — can I ask what's making you feel this way?","I want to be clear — I respect your right to refuse, even if I'm worried about you."]},
-  {n:5,title:"Drug Chart — CAP with Penicillin Allergy",domain:"Prescribing",scenario:"Mr Begum, 68, is admitted with community-acquired pneumonia. He is allergic to penicillin (rash). You need to prescribe appropriate antibiotics on the drug chart.",tasks:["Asked about allergy — confirmed type of reaction","Chose correct alternative (doxycycline or clarithromycin)","Did NOT prescribe amoxicillin or co-amoxiclav","Documented indication for antibiotic","Prescribed correctly (dose, route, frequency, duration)","Checked renal function before prescribing","Stated review date at 48 hours"],must_say:["Before I prescribe — you mentioned a penicillin allergy. Can I ask what reaction you had?","Because you have a penicillin allergy, I will use a different antibiotic.","I am prescribing doxycycline for your pneumonia — the indication is CAP.","I will review this antibiotic in 48 to 72 hours and narrow it based on cultures."]},
-  {n:6,title:"Suicide Risk Assessment",domain:"Psychiatry",scenario:"Tom, 28, took 20 paracetamol tablets 3 hours ago after a relationship breakdown. He is medically stable in A&E. You are asked to assess psychiatric risk.",tasks:["Asked about suicidal intent directly — no minimising language","Assessed plan, intent and means","Assessed protective factors","Explored precipitating event empathically","Did not discharge without senior review","Offered safety plan","Crisis resources discussed","Documented risk assessment"],must_say:["I need to ask you directly — did you want to die?","Can you tell me — was there a plan, and did you intend to end your life?","Who or what makes life feel worth living — even a little?","I can't let you go home today without a senior review — that's about keeping you safe, not about judgement."]},
-  {n:7,title:"Sepsis — Post-Op Deterioration",domain:"Emergency",scenario:"Mrs Chen, 72, post-op day 2 after bowel surgery. Temperature 38.9°C, HR 118, BP 94/60, RR 24, SpO₂ 94%, confused. NEWS2 score 9. Ward nurse has called you.",tasks:["Said the word 'sepsis'","Performed ABCDE","Initiated Sepsis Six within the hour","Blood cultures before antibiotics stated","Checked antibiotic allergy","IV fluids initiated","Lactate and urine output mentioned","Escalated to senior or outreach urgently","Reassessed after initial management"],must_say:["I am concerned this patient has sepsis.","I need to start ABCDE immediately.","I will send blood cultures, start IV antibiotics, give fluids, measure lactate and monitor urine output — Sepsis Six.","I need to escalate this to my senior and the outreach team now."]},
-  {n:8,title:"Anaphylaxis — Post Antibiotic",domain:"Emergency",scenario:"Mr Foster, 34, was given IV amoxicillin 5 minutes ago on the ward. He now has urticaria, lip swelling, stridor and BP 80/50. You are called urgently.",tasks:["Recognised anaphylaxis explicitly","Called for help immediately","Gave IM adrenaline 0.5mg (1:1000) into outer thigh","Positioned supine with legs raised","High-flow oxygen","IV access and fluids","Chlorphenamine and hydrocortisone after adrenaline","Monitoring — BP, HR, SpO₂","Documented time of reaction and treatment"],must_say:["This is anaphylaxis — I need help now.","I am giving adrenaline 0.5mg intramuscularly into the outer thigh immediately.","I need high-flow oxygen, IV access and 500mL fluid bolus.","I will stay with this patient and reassess every 5 minutes."]},
-  {n:9,title:"Safeguarding — Child Bruising",domain:"Safeguarding",scenario:"You are a GP. A mother brings in her 3-year-old son Aiden for a routine check. You notice a bruise on his lower back in a non-mobile area. The mother says he 'fell off a chair.'",tasks:["Documented bruise location and appearance accurately","Did not promise confidentiality","Sensitively explored the history without accusation","Applied TEN-4 criteria (non-accidental injury concern)","Did not confront the parent aggressively","Escalated to named safeguarding lead","Stated referral to Children's Services","Safety-planned for Aiden"],must_say:["I want to make sure I'm giving Aiden the very best care — can I ask how this bruise happened?","I'm going to have to share this with our safeguarding team — I want to be open with you about that.","I cannot promise confidentiality when I'm worried about a child's safety.","I will be making a referral to Children's Services today — this isn't about blame, it's about making sure Aiden is safe."]},
-  {n:10,title:"DVLA — New Seizure",domain:"Ethics",scenario:"Mr Singh, 42, had his first unprovoked tonic-clonic seizure last week. He drives for work. He has come for review. Neurology has confirmed first unprovoked seizure.",tasks:["Gave correct DVLA advice — 6 months no driving","Explained legal responsibility to notify DVLA","Used gold script — clear, non-judgemental","Explored impact on patient's work empathically","Documented discussion in notes","Safety-netted: what to do if seizure recurs","Did not tell patient it is their doctor's job to notify DVLA (it is the patient's)"],must_say:["For safety reasons you should not drive for 6 months from the date of your seizure.","It is your legal responsibility to inform the DVLA — I will document that we discussed this today.","I understand this has a big impact on your work — can we talk about what support is available?","If you have any further seizures, the 6-month period restarts from that date."]},
-  {n:11,title:"Angry Relative — Ward Complaint",domain:"Communication",scenario:"Mr Morrison, 60, is demanding to speak to a doctor. His mother, 84, fell getting to the toilet because the call bell was out of reach. He is visibly angry and wants answers.",tasks:["Did not become defensive","Acknowledged emotion explicitly and early","Apologised for the experience without admitting liability","Listened without interrupting","Explored what happened factually","Explained PALS complaints process","Offered escalation to senior if needed","Maintained professional boundaries","Clear follow-up offered"],must_say:["I can hear how upset and frustrated you are — I completely understand why.","I am sorry that your mother had this experience. That should not have happened.","I am not going to be defensive about this — I want to understand exactly what happened.","I will make sure this is escalated appropriately and that you hear back from us."]},
-  {n:12,title:"Mental State Examination — Depression",domain:"Psychiatry",scenario:"Sarah, 34, is referred by her GP with low mood for 6 weeks. She has stopped going to work. She is tearful when she arrives. You are asked to assess her mental state.",tasks:["Opened with safety question about self-harm","Completed ASEPTIC systematically","Assessed mood subjectively and objectively","Asked about command hallucinations specifically","Assessed insight","Completed risk assessment (intent, plan, means, protective factors)","ICE explored sensitively","Management plan discussed"],must_say:["Before we start — have you had any thoughts of harming yourself or ending your life?","How would you describe your mood in one word?","Have you heard voices when no one was around — and if so, what do they say?","Do you think something is wrong, and do you feel you need help?"]},
-  {n:13,title:"Explanation — New Type 2 Diabetes Diagnosis",domain:"Communication",scenario:"Mr Hassan, 52, has just been told by his GP that he has type 2 diabetes. He has come to the clinic to understand what this means. He looks anxious.",tasks:["Checked understanding before explaining (BREAKDOWN — A)","Used plain language — no jargon","Chunked information and checked understanding","ICE — explored concerns about injections, diet, work","Addressed insulin misconception (T2DM ≠ always insulin initially)","Lifestyle advice given","Next steps and follow-up clear","Safety-net — symptoms of hypo/hyper"],must_say:["Before I explain — what do you already understand about diabetes?","In simple terms, diabetes means your body is not controlling sugar levels as well as it should.","Does that make sense so far? What questions do you have?","Type 2 diabetes is very manageable — the most important things are diet, exercise and monitoring."]},
-  {n:14,title:"ECG Interpretation — STEMI",domain:"Emergency",scenario:"You are the FY1 in A&E. Mr Bello, 65, has had central chest pain for 1 hour. You are handed his ECG. There is ST elevation in leads II, III and aVF with reciprocal changes.",tasks:["Identified STEMI pattern correctly","Named territory (inferior STEMI)","Said aspirin before thrombolysis/PCI decision","Escalated immediately — cardiology and senior","Did not wait for troponin before escalating","Oxygen only if SpO₂ <94%","SBAR used for escalation","Safety-netted patient"],must_say:["This ECG shows ST elevation in the inferior leads — this is an inferior STEMI.","I need to activate the primary PCI pathway now.","I am giving aspirin 300mg now — has anyone confirmed there is no allergy?","I am calling the cardiology registrar immediately using SBAR."]},
-  {n:15,title:"Prescribing — VRIII for NBM Diabetic",domain:"Prescribing",scenario:"Mrs Obi, 58, has type 2 diabetes on insulin. She is nil by mouth for an elective procedure tomorrow morning. You need to initiate VRIII on the drug chart.",tasks:["Confirmed indication — NBM diabetic patient","Did NOT stop long-acting insulin","Started 10% glucose infusion alongside insulin","Used correct VRIII protocol","Monitored blood glucose 1-hourly stated","Aimed glucose 6–10 mmol/L","Stated when to stop VRIII (eating and drinking resumed)","Allergy check performed"],must_say:["For a nil-by-mouth diabetic patient I need to start a variable rate insulin infusion.","I will not stop her long-acting insulin — that must continue.","I will run 10% glucose alongside the insulin infusion.","I will monitor blood glucose hourly and target 6 to 10 mmol/L."]},
-  {n:16,title:"Respiratory Examination",domain:"Examination",scenario:"Mr Owusu, 62, has presented with progressive breathlessness. You are asked to perform a respiratory examination and present your findings.",tasks:["Obtained consent explicitly","Inspected hands, face and neck first","Counted respiratory rate before touching patient","Assessed tracheal position","Expansion — both sides compared","Percussion — systematic comparison both sides","Auscultation — compared sides, vocal resonance done","Presented positive and negative findings","Offered differential and next investigations"],must_say:["The respiratory rate is [X] breaths per minute — normal is 12 to 20.","The trachea is central / deviated to [side].","Expansion is equal / reduced on the [side].","I can hear [vesicular / bronchial / reduced] breath sounds at [zone]."]},
-  {n:17,title:"Telephone Consultation — Chest Pain Triage",domain:"Communication",scenario:"You receive a call from Mrs Green, 67, who has had central chest pain for 20 minutes. She is at home alone. She sounds short of breath. You are the on-call FY1.",tasks:["Did NOT give reassurance over the phone","Called 999 or arranged ambulance immediately","Kept patient on the line","Gave clear instructions while waiting","Documented consultation and escalation","Safety-netted: unlock front door, sit down","Did not advise her to drive herself"],must_say:["Mrs Green, I am very concerned about your symptoms — I am going to call 999 for you right now.","Please stay on the line with me — do not hang up.","Can you unlock your front door and sit down — the ambulance is coming to you.","Do not drive yourself — please wait for the ambulance."]},
-  {n:18,title:"Duty of Candour — Drug Error",domain:"Communication",scenario:"You are the FY1. You prescribed 10× the correct dose of methotrexate last week. The pharmacist caught it before administration. The patient, Mrs Khalid, 58, needs to be told.",tasks:["Opened with clear acknowledgement of the error","Apologised sincerely — not a conditional apology","Explained what happened in plain language","Did not minimise or deflect blame","Explained that harm was prevented","Explained what would change to prevent recurrence","Offered written record of the meeting","Documented the conversation and duty of candour obligation"],must_say:["I need to tell you about something that happened — I made an error in your prescription.","I am truly sorry this happened. You deserved better care than this.","Fortunately the pharmacist identified it before you received the medication — you were not harmed.","We take this very seriously, and I want to explain what we are doing to make sure this cannot happen again."]}
+  {n:1,title:"Acute Chest Pain — Possible ACS",domain:"Emergency",scenario:"You are the FY2 on call. Mr James, 58, presents with central crushing chest pain radiating to his left arm for 40 minutes. He is sweating. HR 98, BP 144/88, SpO₂ 97%. You have 8 minutes.",tasks:["Assessed ABCDE within first 60 seconds","Requested ECG urgently","Checked allergy before aspirin","Gave aspirin 300mg or stated dose","Asked about sildenafil / GTN contraindication","Escalated to senior / cardiology","ICE explored — patient fear acknowledged","Safety-netted clearly","Documented plan"],doms:["DG","DG","DG","CM","DG","CM","IP","CM","CM"],must_say:["I need to do a quick ABCDE assessment first.","I would like an ECG done immediately please.","Before I prescribe — do you have any allergies?","I am concerned this may be a heart attack — I need to escalate to my senior now."]},
+  {n:2,title:"Febrile Child — Traffic Light Assessment",domain:"Paediatrics",scenario:"Mrs Okafor brings her 18-month-old son Elijah. Temperature 39.2°C for 12 hours. HR 148, RR 32, CRT 2 seconds. Alert and responsive. You are the paediatric FY2. You have 8 minutes.",tasks:["Applied traffic light system (green/amber/red)","Checked for non-blanching rash explicitly","Asked about neck stiffness and fontanelle","ICE — explored meningitis fear","Clear safety-net: 999 for non-blanching rash","Communicated in plain language to parent","Appropriate management for amber category","Offered follow-up timeframe"],doms:["DG","DG","DG","IP","CM","IP","CM","CM"],must_say:["I am going to use our assessment system to check how serious this is.","I need to specifically check for a non-blanching rash.","If you notice any rash that doesn't fade when you press a glass to it — call 999 immediately.","I can hear you're worried about meningitis — let me explain what I've found."]},
+  {n:3,title:"Breaking Bad News — Colorectal Cancer",domain:"Communication",scenario:"You are a Foundation Year 2 doctor in the colorectal clinic. Mrs Patel, 52, has come to discuss results. She had a colonoscopy last week. Histology: adenocarcinoma of the colon. She was told only to 'come in to discuss results.' You have 8 minutes.",tasks:["Checked what patient already knows (SPIKES — P)","Used warning shot before diagnosis","Delivered diagnosis in plain language — not 'malignancy'","Paused at least 5 seconds after bad news","Responded to emotion with NURSE","ICE explored after the news","Explained next steps clearly","Offered written information and support","Safety-netted with specific follow-up"],doms:["DG","IP","IP","IP","IP","IP","CM","CM","CM"],must_say:["Before I share the results — can you tell me what you've been told so far?","I'm afraid the news isn't what we were hoping for. [Pause.]","I want to make sure I explain this clearly — the biopsy showed a cancer of the bowel.","Take your time. There's no rush. [Hold the silence.]","I can hear how frightening this is. What worries you most right now?"]},
+  {n:4,title:"Capacity Assessment — Refusing Insulin",domain:"Ethics",scenario:"You are a Foundation Year 2 doctor on the medical ward. Mr Davis, 67, is an inpatient who has refused insulin for newly diagnosed type 1 diabetes. He understands he may die without it but says it is his choice. The nurse asks you to assess capacity. You have 8 minutes.",tasks:["Applied 4-part capacity test explicitly","Explored the reason for refusal before concluding","Did not coerce or override","Correctly concluded patient has capacity","Acknowledged patient autonomy","Offered alternatives or compromise","Safety-netted — kept door open","Documented decision"],doms:["DG","DG","IP","CM","IP","CM","CM","CM"],must_say:["I need to check four things — can you understand, remember, weigh up, and tell me your decision?","Can you tell me in your own words what might happen if you don't take insulin?","I respect that this is your decision — can I ask what's making you feel this way?","I want to be clear — I respect your right to refuse, even if I'm worried about you."]},
+  {n:5,title:"Drug Chart — CAP with Penicillin Allergy",domain:"Prescribing",scenario:"You are a Foundation Year 2 doctor on the medical ward. Mr Begum, 68, is admitted with community-acquired pneumonia. He is allergic to penicillin (rash). You need to prescribe appropriate antibiotics on the drug chart. You have 8 minutes.",tasks:["Asked about allergy — confirmed type of reaction","Chose correct alternative (doxycycline or clarithromycin)","Did NOT prescribe amoxicillin or co-amoxiclav","Documented indication for antibiotic","Prescribed correctly (dose, route, frequency, duration)","Checked renal function before prescribing","Stated review date at 48 hours","Checked the patient's understanding and agreed the plan"],doms:["DG","CM","CM","CM","CM","DG","CM","IP"],must_say:["Before I prescribe — you mentioned a penicillin allergy. Can I ask what reaction you had?","Because you have a penicillin allergy, I will use a different antibiotic.","I am prescribing doxycycline for your pneumonia — the indication is CAP.","I will review this antibiotic in 48 to 72 hours and narrow it based on cultures."]},
+  {n:6,title:"Suicide Risk Assessment",domain:"Psychiatry",scenario:"You are a Foundation Year 2 doctor in the emergency department. Tom, 28, took 20 paracetamol tablets 3 hours ago after a relationship breakdown. He is medically stable in A&E. You are asked to assess psychiatric risk. You have 8 minutes.",tasks:["Asked about suicidal intent directly — no minimising language","Assessed plan, intent and means","Assessed protective factors","Explored precipitating event empathically","Did not discharge without senior review","Offered safety plan","Crisis resources discussed","Documented risk assessment"],doms:["DG","DG","DG","IP","CM","CM","CM","CM"],must_say:["I need to ask you directly — did you want to die?","Can you tell me — was there a plan, and did you intend to end your life?","Who or what makes life feel worth living — even a little?","I can't let you go home today without a senior review — that's about keeping you safe, not about judgement."]},
+  {n:7,title:"Sepsis — Post-Op Deterioration",domain:"Emergency",scenario:"You are a Foundation Year 2 doctor on the surgical ward. Mrs Chen, 72, post-op day 2 after bowel surgery. Temperature 38.9°C, HR 118, BP 94/60, RR 24, SpO₂ 94%, confused. NEWS2 score 9. Ward nurse has called you. You have 8 minutes.",tasks:["Said the word 'sepsis'","Performed ABCDE","Initiated Sepsis Six within the hour","Blood cultures before antibiotics stated","Checked antibiotic allergy","IV fluids initiated","Lactate and urine output mentioned","Escalated to senior or outreach urgently","Reassessed after initial management","Explained the plan clearly to the patient and the nurse"],doms:["DG","DG","CM","CM","DG","CM","CM","CM","DG","IP"],must_say:["I am concerned this patient has sepsis.","I need to start ABCDE immediately.","I will send blood cultures, start IV antibiotics, give fluids, measure lactate and monitor urine output — Sepsis Six.","I need to escalate this to my senior and the outreach team now."]},
+  {n:8,title:"Anaphylaxis — Post Antibiotic",domain:"Emergency",scenario:"You are a Foundation Year 2 doctor on the ward. Mr Foster, 34, was given IV amoxicillin 5 minutes ago on the ward. He now has urticaria, lip swelling, stridor and BP 80/50. You are called urgently. You have 8 minutes.",tasks:["Recognised anaphylaxis explicitly","Called for help immediately","Gave IM adrenaline 0.5mg (1:1000) into outer thigh","Positioned supine with legs raised","High-flow oxygen","IV access and fluids","Chlorphenamine and hydrocortisone after adrenaline","Monitoring — BP, HR, SpO₂","Documented time of reaction and treatment","Explained to the patient calmly what was happening"],doms:["DG","CM","CM","CM","CM","CM","CM","CM","CM","IP"],must_say:["This is anaphylaxis — I need help now.","I am giving adrenaline 0.5mg intramuscularly into the outer thigh immediately.","I need high-flow oxygen, IV access and 500mL fluid bolus.","I will stay with this patient and reassess every 5 minutes."]},
+  {n:9,title:"Safeguarding — Child Bruising",domain:"Safeguarding",scenario:"You are a Foundation Year 2 doctor in general practice. A mother brings in her 3-year-old son Aiden for a routine check. You notice a bruise on his lower back in a non-mobile area. The mother says he 'fell off a chair.' You have 8 minutes.",tasks:["Documented bruise location and appearance accurately","Did not promise confidentiality","Sensitively explored the history without accusation","Applied TEN-4 criteria (non-accidental injury concern)","Did not confront the parent aggressively","Escalated to named safeguarding lead","Stated referral to Children's Services","Safety-planned for Aiden"],doms:["DG","IP","IP","DG","IP","CM","CM","CM"],must_say:["I want to make sure I'm giving Aiden the very best care — can I ask how this bruise happened?","I'm going to have to share this with our safeguarding team — I want to be open with you about that.","I cannot promise confidentiality when I'm worried about a child's safety.","I will be making a referral to Children's Services today — this isn't about blame, it's about making sure Aiden is safe."]},
+  {n:10,title:"DVLA — New Seizure",domain:"Ethics",scenario:"You are a Foundation Year 2 doctor in general practice. Mr Singh, 42, had his first unprovoked tonic-clonic seizure last week. He drives for work. He has come for review. Neurology has confirmed first unprovoked seizure. You have 8 minutes.",tasks:["Gave correct DVLA advice — 6 months no driving","Explained legal responsibility to notify DVLA","Used gold script — clear, non-judgemental","Explored impact on patient's work empathically","Documented discussion in notes","Safety-netted: what to do if seizure recurs","Did not tell patient it is their doctor's job to notify DVLA (it is the patient's)","Clarified the relevant history before giving advice"],doms:["CM","CM","IP","IP","CM","CM","CM","DG"],must_say:["For safety reasons you should not drive for 6 months from the date of your seizure.","It is your legal responsibility to inform the DVLA — I will document that we discussed this today.","I understand this has a big impact on your work — can we talk about what support is available?","If you have any further seizures, the 6-month period restarts from that date."]},
+  {n:11,title:"Angry Relative — Ward Complaint",domain:"Communication",scenario:"You are a Foundation Year 2 doctor on the ward. Mr Morrison, 60, is demanding to speak to a doctor. His mother, 84, fell getting to the toilet because the call bell was out of reach. He is visibly angry and wants answers. You have 8 minutes.",tasks:["Did not become defensive","Acknowledged emotion explicitly and early","Apologised for the experience without admitting liability","Listened without interrupting","Explored what happened factually","Explained PALS complaints process","Offered escalation to senior if needed","Maintained professional boundaries","Clear follow-up offered"],doms:["IP","IP","IP","IP","DG","CM","CM","CM","CM"],must_say:["I can hear how upset and frustrated you are — I completely understand why.","I am sorry that your mother had this experience. That should not have happened.","I am not going to be defensive about this — I want to understand exactly what happened.","I will make sure this is escalated appropriately and that you hear back from us."]},
+  {n:12,title:"Mental State Examination — Depression",domain:"Psychiatry",scenario:"You are a Foundation Year 2 doctor in psychiatry. Sarah, 34, is referred by her GP with low mood for 6 weeks. She has stopped going to work. She is tearful when she arrives. You are asked to assess her mental state. You have 8 minutes.",tasks:["Opened with safety question about self-harm","Completed ASEPTIC systematically","Assessed mood subjectively and objectively","Asked about command hallucinations specifically","Assessed insight","Completed risk assessment (intent, plan, means, protective factors)","ICE explored sensitively","Management plan discussed"],doms:["DG","DG","DG","DG","DG","DG","IP","CM"],must_say:["Before we start — have you had any thoughts of harming yourself or ending your life?","How would you describe your mood in one word?","Have you heard voices when no one was around — and if so, what do they say?","Do you think something is wrong, and do you feel you need help?"]},
+  {n:13,title:"Explanation — New Type 2 Diabetes Diagnosis",domain:"Communication",scenario:"You are a Foundation Year 2 doctor in the diabetes clinic. Mr Hassan, 52, has just been told by his GP that he has type 2 diabetes. He has come to the clinic to understand what this means. He looks anxious. You have 8 minutes.",tasks:["Checked understanding before explaining (BREAKDOWN — A)","Used plain language — no jargon","Chunked information and checked understanding","ICE — explored concerns about injections, diet, work","Addressed insulin misconception (T2DM ≠ always insulin initially)","Lifestyle advice given","Next steps and follow-up clear","Safety-net — symptoms of hypo/hyper"],doms:["DG","IP","IP","IP","CM","CM","CM","CM"],must_say:["Before I explain — what do you already understand about diabetes?","In simple terms, diabetes means your body is not controlling sugar levels as well as it should.","Does that make sense so far? What questions do you have?","Type 2 diabetes is very manageable — the most important things are diet, exercise and monitoring."]},
+  {n:14,title:"ECG Interpretation — STEMI",domain:"Emergency",scenario:"You are the FY2 in A&E. Mr Bello, 65, has had central chest pain for 1 hour. You are handed his ECG. There is ST elevation in leads II, III and aVF with reciprocal changes. You have 8 minutes.",tasks:["Identified STEMI pattern correctly","Named territory (inferior STEMI)","Said aspirin before thrombolysis/PCI decision","Escalated immediately — cardiology and senior","Did not wait for troponin before escalating","Oxygen only if SpO₂ <94%","SBAR used for escalation","Safety-netted patient","Explained the findings and next steps to the patient in plain language"],doms:["DG","DG","CM","CM","CM","CM","CM","CM","IP"],must_say:["This ECG shows ST elevation in the inferior leads — this is an inferior STEMI.","I need to activate the primary PCI pathway now.","I am giving aspirin 300mg now — has anyone confirmed there is no allergy?","I am calling the cardiology registrar immediately using SBAR."]},
+  {n:15,title:"Prescribing — VRIII for NBM Diabetic",domain:"Prescribing",scenario:"You are a Foundation Year 2 doctor on the surgical ward. Mrs Obi, 58, has type 2 diabetes on insulin. She is nil by mouth for an elective procedure tomorrow morning. You need to initiate VRIII on the drug chart. You have 8 minutes.",tasks:["Confirmed indication — NBM diabetic patient","Did NOT stop long-acting insulin","Started 10% glucose infusion alongside insulin","Used correct VRIII protocol","Monitored blood glucose 1-hourly stated","Aimed glucose 6–10 mmol/L","Stated when to stop VRIII (eating and drinking resumed)","Allergy check performed","Checked the patient's understanding and agreed the plan"],doms:["DG","CM","CM","CM","CM","CM","CM","DG","IP"],must_say:["For a nil-by-mouth diabetic patient I need to start a variable rate insulin infusion.","I will not stop her long-acting insulin — that must continue.","I will run 10% glucose alongside the insulin infusion.","I will monitor blood glucose hourly and target 6 to 10 mmol/L."]},
+  {n:16,title:"Respiratory Examination",domain:"Examination",scenario:"You are a Foundation Year 2 doctor on the respiratory ward. Mr Owusu, 62, has presented with progressive breathlessness. You are asked to perform a respiratory examination and present your findings. You have 8 minutes.",tasks:["Obtained consent explicitly","Inspected hands, face and neck first","Counted respiratory rate before touching patient","Assessed tracheal position","Expansion — both sides compared","Percussion — systematic comparison both sides","Auscultation — compared sides, vocal resonance done","Presented positive and negative findings","Offered differential and next investigations"],doms:["IP","DG","DG","DG","DG","DG","DG","DG","CM"],must_say:["The respiratory rate is [X] breaths per minute — normal is 12 to 20.","The trachea is central / deviated to [side].","Expansion is equal / reduced on the [side].","I can hear [vesicular / bronchial / reduced] breath sounds at [zone]."]},
+  {n:17,title:"Telephone Consultation — Chest Pain Triage",domain:"Communication",scenario:"You receive a call from Mrs Green, 67, who has had central chest pain for 20 minutes. She is at home alone. She sounds short of breath. You are the on-call FY2. You have 8 minutes.",tasks:["Did NOT give reassurance over the phone","Called 999 or arranged ambulance immediately","Kept patient on the line","Gave clear instructions while waiting","Documented consultation and escalation","Safety-netted: unlock front door, sit down","Did not advise her to drive herself","Gathered the key information quickly before acting"],doms:["CM","CM","CM","IP","CM","CM","CM","DG"],must_say:["Mrs Green, I am very concerned about your symptoms — I am going to call 999 for you right now.","Please stay on the line with me — do not hang up.","Can you unlock your front door and sit down — the ambulance is coming to you.","Do not drive yourself — please wait for the ambulance."]},
+  {n:18,title:"Duty of Candour — Drug Error",domain:"Communication",scenario:"You are the FY2. You prescribed 10× the correct dose of methotrexate last week. The pharmacist caught it before administration. The patient, Mrs Khalid, 58, needs to be told. You have 8 minutes.",tasks:["Opened with clear acknowledgement of the error","Apologised sincerely — not a conditional apology","Explained what happened in plain language","Did not minimise or deflect blame","Explained that harm was prevented","Explained what would change to prevent recurrence","Offered written record of the meeting","Documented the conversation and duty of candour obligation","Checked what the patient already knows before explaining"],doms:["IP","IP","IP","IP","CM","CM","CM","CM","DG"],must_say:["I need to tell you about something that happened — I made an error in your prescription.","I am truly sorry this happened. You deserved better care than this.","Fortunately the pharmacist identified it before you received the medication — you were not harmed.","We take this very seriously, and I want to explain what we are doing to make sure this cannot happen again."]}
 ];
 
-let currentStation=0, timerInterval=null, briefInterval=null, breakInterval=null;
-let taskChecks={}, circuitStartTime=null, stationResults=[];
-const STATION_SECS=480, BRIEF_SECS=120, BREAK_SECS=120;
-let secsLeft=STATION_SECS, briefSecsLeft=BRIEF_SECS, breakSecsLeft=BREAK_SECS;
+const SCORED=16, REST_AFTER=[5,11]; // rest stations follow the 5th and 11th scored station (18 positions)
+const STATION_SECS=480, WARN_SECS=360, READ_SECS=90, REST_SECS=480;
+let circuit=[], pos=0, phase='', phaseT0=0, warned=false, tick=null;
+let taskChecks={}, grades={}, circuitStartTime=null, markIdx=0;
 
-// Build preview
 const domainClass={
   'Emergency':'dom-emergency','Communication':'dom-communication','Ethics':'dom-ethics',
   'Prescribing':'dom-prescribing','Psychiatry':'dom-psychiatry','Paediatrics':'dom-paediatrics',
   'Examination':'dom-examination','Safeguarding':'dom-safeguarding','Interpretation':'dom-interpretation'
 };
-document.getElementById('stationListPreview').innerHTML=STATIONS.map(s=>`
-  <div class="st-row">
-    <span class="st-num">${s.n}</span>
-    <span class="st-title">${s.title}</span>
-    <span class="st-domain ${domainClass[s.domain]||''}">${s.domain}</span>
-  </div>`).join('');
+function shortTitle(t){const k=t.indexOf(' — ');return k>0?t.slice(0,k):t;}
+function fmt(sec){sec=Math.max(0,Math.ceil(sec));return Math.floor(sec/60)+':'+String(sec%60).padStart(2,'0');}
+function beep(n){try{const C=window.AudioContext||window.webkitAudioContext;if(!C)return;const ctx=new C();for(let k=0;k<(n||1);k++){const o=ctx.createOscillator(),g=ctx.createGain();o.frequency.value=880;o.connect(g);g.connect(ctx.destination);const t0=ctx.currentTime+k*0.35;g.gain.setValueAtTime(0.0001,t0);g.gain.exponentialRampToValueAtTime(0.25,t0+0.02);g.gain.exponentialRampToValueAtTime(0.0001,t0+0.28);o.start(t0);o.stop(t0+0.3);}}catch(e){}}
+
+/* GMC domain for each checklist item: tagged in STATIONS[].doms (AMaC tagging; the GMC does not publish item-level marks). Keyword classifier is a fallback only. */
+const DOM_NAMES={DG:'Data gathering, technical and assessment skills',CM:'Clinical management',IP:'Interpersonal skills'};
+const DOM_IP=/(introduc|consent|chaperone|empath|rapport|\bICE\b|concern|\bideas?\b|expectation|worr|feeling|listen|jargon|plain (words|language|english)|understanding|teach-?back|confidential|apolog|sorry|dignity|respect|privacy|interpreter|warning shot|silence|\bpause|reassur|engag|blame|judg(e)?mental|open question|signpost|acknowledg|sensitiv|agenda|shared decision|wishes|preference|\bcalm|de-?escalat|cultur|\btone of|distress|anger|angry|emotion|name and role|check(ed|s)? (the patient's )?understanding|identity|honest|candou?r|accus|\bpressur|coerc|threat|challeng|supportive|non-?confront|at their pace|seen alone|\bprivate\b|not rushed|time given|permission|defensive|NURSE|autonomy|minimis)/i;
+const DOM_DG=/(\bask(s|ed)?\b|histor(y|ies)|elicit|explor|screen|examin|inspect|palpat|auscultat|percuss|observation|\bobs\b|ABCDE|\bA[–-]E\b|NEWS|assess|onset|SOCRATES|risk factor|allerg|establish|identif|recogni[sz]|calculat|interpret|\bECG\b|measur|features|excluded|ruled? out|considered|differential|reflex|\bpower\b|sensation|pulses?\b|gait|visual|cranial|\bCN\b|\btest(s|ed|ing)?\b|\bsigns?\b|findings|clarif|severity|systems? review|collateral|mental state|\bMSE\b|protective factors|insight|gestation|enquir|inquir|\bdetermin|confirm(ed)? (the )?(diagnosis|gestation|history|timing|dose)|read(s)? the|noted|spotted|quantif|timeline|pattern|squeeze|drift|flexion|extension|rotation|abduct|adduct|movements?\b|range of|\bcheck(ed|s)?\b|recheck|tender|effusion|crepit|look, feel|look\b|feel\b|\bmove\b|special tests?|characteri[sz]|criteria covered|questions\b|counted|expansion|trache|ASEPTIC|traffic light|territory|STEMI pattern)/i;
+function classifyTask(t){t=String(t||'');if(DOM_IP.test(t))return 'IP';if(DOM_DG.test(t))return 'DG';return 'CM';}
+function taskDom(st,i){return (st.doms&&st.doms[i])||classifyTask(st.tasks[i]);}
+const GRADES=['Unsatisfactory','Borderline','Satisfactory','Good'];
+
+/* ── Setup: pick 16 of 18 (rotating default) ── */
+let picked=new Set();
+function defaultPick(){
+  let rot=0;try{rot=parseInt(localStorage.getItem('amacCircuitRot')||'0',10)||0;}catch(e){}
+  const out=[(rot*2)%STATIONS.length,(rot*2+1)%STATIONS.length];
+  picked=new Set(STATIONS.map((_,i)=>i).filter(i=>!out.includes(i)));
+}
+function renderPicker(){
+  document.getElementById('stationListPreview').innerHTML=STATIONS.map((s,i)=>`
+    <label class="st-row pick-row${picked.has(i)?'':' off'}">
+      <input type="checkbox" ${picked.has(i)?'checked':''} onchange="togglePick(${i},this.checked)">
+      <span class="st-num">${s.n}</span>
+      <span class="st-title">${shortTitle(s.title)}</span>
+      <span class="st-domain ${domainClass[s.domain]||''}">${s.domain}</span>
+    </label>`).join('');
+  const c=picked.size;
+  document.getElementById('pickCount').textContent=`(${c} selected)`;
+  const b=document.getElementById('startBtn');b.disabled=c!==SCORED;b.textContent=c===SCORED?'Start Circuit →':`Select exactly ${SCORED} stations (${c} selected)`;
+}
+function togglePick(i,on){if(on)picked.add(i);else picked.delete(i);renderPicker();}
+defaultPick();renderPicker();
 
 function showStage(id){
   document.querySelectorAll('.stage').forEach(s=>s.classList.remove('active'));
   document.getElementById(id).classList.add('active');
   window.scrollTo({top:0,behavior:'smooth'});
 }
+function opt(id){const e=document.getElementById(id);return !!(e&&e.checked);}
 
 function startCircuit(){
-  currentStation=0; taskChecks={}; stationResults=[];
+  if(picked.size!==SCORED)return;
+  try{const r=parseInt(localStorage.getItem('amacCircuitRot')||'0',10)||0;localStorage.setItem('amacCircuitRot',String(r+1));}catch(e){}
+  const chosen=[...picked].sort((a,b)=>a-b);
+  circuit=[];let k=0;
+  chosen.forEach((idx,j)=>{circuit.push({type:'station',idx,scoredNo:j+1});if(REST_AFTER.includes(j+1))circuit.push({type:'rest'});});
+  pos=0;taskChecks={};grades={};
   circuitStartTime=Date.now();
-  showBrief();
+  startPhase('read');
 }
 
-function showBrief(){
-  clearAllTimers();
-  const st=STATIONS[currentStation];
-  document.getElementById('briefStationLabel').textContent=`Station ${st.n} of ${STATIONS.length}`;
-  document.getElementById('briefProgress').textContent=`${currentStation} completed`;
-  document.getElementById('briefTitle').textContent=st.title;
-  document.getElementById('briefDomain').textContent=st.domain;
-  document.getElementById('briefScenario').textContent=st.scenario;
-  briefSecsLeft=BRIEF_SECS;
-  updateBriefTimer();
-  showStage('stage-brief');
-  briefInterval=setInterval(()=>{
-    briefSecsLeft--;
-    updateBriefTimer();
-    if(briefSecsLeft<=0){clearInterval(briefInterval);startStation();}
-  },1000);
+function stopTick(){if(tick)clearInterval(tick);tick=null;}
+function startPhase(p){
+  stopTick();phase=p;phaseT0=Date.now();warned=false;
+  const item=circuit[pos];
+  const label=`Station ${pos+1} of ${circuit.length}`;
+  if(p==='read'){
+    document.getElementById('briefStationLabel').textContent=label;
+    document.getElementById('briefProgress').textContent=`${pos} completed`;
+    if(item.type==='rest'){
+      document.getElementById('briefTitle').textContent='Next: Rest station';
+      document.getElementById('briefSheet').style.display='none';
+    }else{
+      document.getElementById('briefTitle').textContent=label;
+      document.getElementById('briefSheet').style.display='';
+      document.getElementById('briefScenario').textContent=STATIONS[item.idx].scenario;
+    }
+    document.getElementById('briefStartBtn').style.display=opt('optEarly')?'':'none';
+    document.getElementById('briefCountdown').textContent=fmt(READ_SECS);
+    showStage('stage-brief');
+  }else{
+    const rest=item.type==='rest';
+    document.getElementById('stationLabel').textContent=rest?label+' — rest':label;
+    document.getElementById('stationTitle').textContent=rest?'Rest station':'Station in progress';
+    document.getElementById('stationSheetBox').style.display=rest?'none':'';
+    document.getElementById('restCard').style.display=rest?'block':'none';
+    if(!rest)document.getElementById('stationSheet').textContent=STATIONS[item.idx].scenario;
+    const a=document.getElementById('stationAlert');a.className='mc-alert';a.textContent='';
+    document.getElementById('stationTimerWrap').style.visibility=opt('optShowTimer')?'visible':'hidden';
+    document.getElementById('stationTimer').textContent=fmt(STATION_SECS);
+    document.getElementById('endStationBtn').style.display=opt('optEarly')?'':'none';
+    showStage('stage-station');
+    if(!rest)beep(1);
+  }
+  tick=setInterval(onTick,250);
+}
+function onTick(){
+  const el=(Date.now()-phaseT0)/1000;
+  if(phase==='read'){
+    document.getElementById('briefCountdown').textContent=fmt(READ_SECS-el);
+    if(el>=READ_SECS)startPhase('station');
+    return;
+  }
+  const rest=circuit[pos].type==='rest';
+  const total=rest?REST_SECS:STATION_SECS;
+  document.getElementById('stationTimer').textContent=fmt(total-el);
+  if(!rest&&el>=WARN_SECS&&!warned){warned=true;const a=document.getElementById('stationAlert');a.textContent='Two minutes remaining.';a.className='mc-alert show';beep(2);}
+  if(el>=total){endStation(true);}
+}
+function enterNow(){if(phase==='read')startPhase('station');}
+
+function endStation(timeUp){
+  stopTick();
+  if(timeUp&&circuit[pos].type!=='rest'){
+    const a=document.getElementById('stationAlert');a.textContent='Time is up. Stop and move to the next station.';a.className='mc-alert show end';beep(3);
+    setTimeout(advance,1500);
+  }else advance();
+}
+function advance(){
+  pos++;
+  if(pos>=circuit.length){startMarking();return;}
+  startPhase('read');
 }
 
-function updateBriefTimer(){
-  const m=Math.floor(briefSecsLeft/60), s=briefSecsLeft%60;
-  const el=document.getElementById('briefCountdown');
-  el.textContent=`${m}:${s.toString().padStart(2,'0')}`;
-  el.classList.toggle('urgent',briefSecsLeft<=30);
+/* ── Post-circuit self-marking ── */
+function scoredList(){return circuit.filter(c=>c.type==='station');}
+function startMarking(){stopTick();markIdx=0;renderMark();showStage('stage-mark');}
+function domainScores(idx){
+  const st=STATIONS[idx];const ch=taskChecks[idx]||{};const out={};
+  ['DG','CM','IP'].forEach(d=>{
+    const items=st.tasks.map((t,i)=>i).filter(i=>taskDom(st,i)===d);
+    const done=items.filter(i=>ch[i]).length;
+    out[d]=items.length?Math.round(4*done/items.length):null;
+  });
+  return out;
 }
-
-function startStation(){
-  clearAllTimers();
-  const st=STATIONS[currentStation];
-  taskChecks[currentStation]={};
-  document.getElementById('stationLabel').textContent=`Station ${st.n} of ${STATIONS.length} — ${st.domain}`;
-  document.getElementById('stationTitle').textContent=st.title;
-
-  // Build task list
-  document.getElementById('taskList').innerHTML=st.tasks.map((t,i)=>`
-    <div class="task-row" onclick="toggleTask(${i})">
-      <div class="task-check" id="tc-${i}"></div>
-      <span class="task-label" id="tl-${i}">${t}</span>
-    </div>`).join('');
-
-  // Must say
-  document.getElementById('mustSayPanel').innerHTML=`
-    <div class="ms-title">💬 Must Say</div>
-    ${st.must_say.map(m=>`<div class="ms-item">${m}</div>`).join('')}`;
-
-  secsLeft=STATION_SECS;
-  updateStationTimer();
-  showStage('stage-station');
-  timerInterval=setInterval(()=>{
-    secsLeft--;
-    updateStationTimer();
-    if(secsLeft<=0){clearInterval(timerInterval);endStation();}
-  },1000);
+function renderMark(){
+  const list=scoredList();const c=list[markIdx];const st=STATIONS[c.idx];
+  if(!taskChecks[c.idx])taskChecks[c.idx]={};
+  document.getElementById('markLabel').textContent=`Mark yourself — station ${markIdx+1} of ${list.length}`;
+  document.getElementById('markProgress').textContent='';
+  document.getElementById('markTitle').textContent=st.title;
+  document.getElementById('markDomain').textContent=st.domain;
+  document.getElementById('markSheet').textContent=st.scenario;
+  document.getElementById('taskList').innerHTML=st.tasks.map((t,i)=>{
+    const d=taskDom(st,i);const on=taskChecks[c.idx][i];
+    return `<div class="task-row" onclick="toggleTask(${i})">
+      <div class="task-check${on?' done':''}" id="tc-${i}">${on?'✓':''}</div>
+      <span class="task-label" id="tl-${i}"><span class="dtag dtag-${d}" title="${DOM_NAMES[d]}">${d}</span> ${t}</span>
+    </div>`;}).join('');
+  document.getElementById('mustSayPanel').innerHTML=`<div class="ms-title">💬 What a strong answer said</div>${st.must_say.map(m=>`<div class="ms-item">${m}</div>`).join('')}`;
+  renderMarkScores();
+  document.getElementById('markBack').style.visibility=markIdx>0?'visible':'hidden';
+  document.getElementById('markNext').textContent=markIdx<list.length-1?'Next station →':'See circuit result →';
 }
-
-function updateStationTimer(){
-  const m=Math.floor(secsLeft/60), s=secsLeft%60;
-  const el=document.getElementById('stationTimer');
-  el.textContent=`${m}:${s.toString().padStart(2,'0')}`;
-  el.classList.toggle('urgent',secsLeft<=60);
+function renderMarkScores(){
+  const c=scoredList()[markIdx];const ds=domainScores(c.idx);
+  document.getElementById('markDomains').innerHTML=['DG','CM','IP'].map(d=>`<div class="dom-row"><span class="dtag dtag-${d}">${d}</span><span class="dom-name">${DOM_NAMES[d]}</span><span class="dom-val">${ds[d]===null?'—':ds[d]+' / 4'}</span></div>`).join('');
+  const g=grades[c.idx]||'';
+  document.getElementById('markGrade').innerHTML=GRADES.map(x=>`<button class="grade-btn${g===x?' active':''}" onclick="setGrade('${x}')">${x}</button>`).join('');
 }
-
 function toggleTask(i){
-  taskChecks[currentStation][i]=!taskChecks[currentStation][i];
-  const box=document.getElementById('tc-'+i);
-  const lbl=document.getElementById('tl-'+i);
-  box.className='task-check'+(taskChecks[currentStation][i]?' done':'');
-  box.textContent=taskChecks[currentStation][i]?'✓':'';
-  lbl.className='task-label'+(taskChecks[currentStation][i]?' done':'');
+  const c=scoredList()[markIdx];const ch=taskChecks[c.idx];ch[i]=!ch[i];
+  const box=document.getElementById('tc-'+i);box.className='task-check'+(ch[i]?' done':'');box.textContent=ch[i]?'✓':'';
+  renderMarkScores();
 }
-
-function endStation(){
-  clearAllTimers();
-  const st=STATIONS[currentStation];
-  const checks=taskChecks[currentStation]||{};
-  const done=Object.values(checks).filter(Boolean).length;
-  const pct=Math.round((done/st.tasks.length)*100);
-  stationResults.push({n:st.n,title:st.title,done,total:st.tasks.length,pct});
-  currentStation++;
-  if(currentStation>=STATIONS.length){showResults();}
-  else{showBreak();}
-}
-
-function showBreak(){
-  clearAllTimers();
-  const next=STATIONS[currentStation];
-  document.getElementById('breakSubtitle').textContent=`Next: Station ${next.n} — ${next.title}`;
-  breakSecsLeft=BREAK_SECS;
-  updateBreakTimer();
-  showStage('stage-break');
-  breakInterval=setInterval(()=>{
-    breakSecsLeft--;
-    updateBreakTimer();
-    if(breakSecsLeft<=0){clearInterval(breakInterval);showBrief();}
-  },1000);
-}
-
-function updateBreakTimer(){
-  const m=Math.floor(breakSecsLeft/60), s=breakSecsLeft%60;
-  document.getElementById('breakTimer').textContent=`${m}:${s.toString().padStart(2,'0')}`;
+function setGrade(g){const c=scoredList()[markIdx];grades[c.idx]=grades[c.idx]===g?'':g;renderMarkScores();}
+function markGo(d){
+  const n=scoredList().length;
+  markIdx+=d;
+  if(markIdx>=n){showResults();return;}
+  if(markIdx<0)markIdx=0;
+  renderMark();window.scrollTo({top:0,behavior:'smooth'});
 }
 
 function showResults(){
   const elapsed=Math.round((Date.now()-circuitStartTime)/1000/60);
-  const totalTasks=stationResults.reduce((a,r)=>a+r.total,0);
-  const doneTasks=stationResults.reduce((a,r)=>a+r.done,0);
-  const avgPct=Math.round((doneTasks/totalTasks)*100);
-  const passed=stationResults.filter(r=>r.pct>=70).length;
-
-  document.getElementById('circuitTime').textContent=`Completed in approximately ${elapsed} minutes`;
-  document.getElementById('scoreTotal').textContent=avgPct+'%';
-  document.getElementById('scorePassed').textContent=`${passed}/${STATIONS.length}`;
-  document.getElementById('scoreAvg').textContent=avgPct+'%';
-
-  document.getElementById('stationResults').innerHTML=stationResults.map(r=>{
-    const cls=r.pct>=90?'pct-pass':r.pct>=70?'pct-merit':'pct-fail';
+  const list=scoredList();
+  const tot={DG:0,CM:0,IP:0},mx={DG:0,CM:0,IP:0};let sat=0;
+  const rows=list.map((c,j)=>{
+    const st=STATIONS[c.idx];const ds=domainScores(c.idx);const g=grades[c.idx]||'';
+    ['DG','CM','IP'].forEach(d=>{if(ds[d]!==null){tot[d]+=ds[d];mx[d]+=4;}}); // a domain with no checklist items on a station is not counted against you
+    if(g==='Satisfactory'||g==='Good')sat++;
+    const cls=g==='Good'||g==='Satisfactory'?'pct-pass':g==='Borderline'?'pct-merit':'pct-fail';
     return`<div class="sr-row">
-      <span class="sr-num">${r.n}</span>
-      <div style="flex:1"><div class="sr-title">${r.title}</div><div class="sr-tasks">${r.done}/${r.total} tasks ticked</div></div>
-      <span class="sr-pct ${cls}">${r.pct}%</span>
+      <span class="sr-num">${j+1}</span>
+      <div style="flex:1"><div class="sr-title">${st.title}</div><div class="sr-tasks">DG ${ds.DG===null?'—':ds.DG} · CM ${ds.CM===null?'—':ds.CM} · IP ${ds.IP===null?'—':ds.IP} (each out of 4)</div></div>
+      <span class="sr-pct ${cls}">${g||'Not graded'}</span>
     </div>`;
-  }).join('');
-
+  });
+  const n=list.length;
+  document.getElementById('circuitTime').textContent=`Completed in approximately ${elapsed} minutes`;
+  document.getElementById('scoreDG').textContent=`${tot.DG}/${mx.DG}`;
+  document.getElementById('scoreCM').textContent=`${tot.CM}/${mx.CM}`;
+  document.getElementById('scoreIP').textContent=`${tot.IP}/${mx.IP}`;
+  document.getElementById('scoreTotal').textContent=`${tot.DG+tot.CM+tot.IP}/${mx.DG+mx.CM+mx.IP}`;
+  document.getElementById('scoreSat').textContent=`${sat}/${n}`;
+  document.getElementById('stationResults').innerHTML=rows.join('');
   showStage('stage-results');
 }
 
-function clearAllTimers(){clearInterval(timerInterval);clearInterval(briefInterval);clearInterval(breakInterval);}
-function restart(){clearAllTimers();currentStation=0;taskChecks={};stationResults=[];showStage('stage-setup');}
+function restart(){stopTick();circuit=[];pos=0;taskChecks={};grades={};defaultPick();renderPicker();showStage('stage-setup');}
 </script>
+
 <script src="nav.js" defer></script>
 <script src="footer.js" defer></script>
 </body>

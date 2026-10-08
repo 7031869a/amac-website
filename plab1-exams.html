@@ -48,7 +48,7 @@
   "alternateName": ["Ahmed Mansour & Colleagues", "A. Mansour & Colleagues"],
   "url": "https://amac-medical.com/",
   "logo": "https://amac-medical.com/apple-touch-icon.png",
-  "description": "Preparation for the UK medical and surgical examinations: UKMLA, PLAB 1, PLAB 2 and FRCS Part 2.",
+  "description": "Preparation for the UK medical and surgical examinations and Foundation training: UKMLA, Foundation F1 and F2, PLAB 1, PLAB 2, MRCP Part 1, MRCS and FRCS (General Surgery) Section 2 academic paper critique.",
   "slogan": "Think like an examiner. Pass with confidence."
 }
 </script>
@@ -105,7 +105,13 @@ nav{position:sticky;top:0;z-index:200;background:rgba(13,34,71,0.97);backdrop-fi
 .main{max-width:1100px;margin:0 auto;padding:56px 32px 80px;}
 .section-eyebrow{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:10px;}
 .section-title{font-family:'Fraunces',serif;font-size:34px;font-weight:500;color:var(--navy);letter-spacing:-.5px;margin-bottom:8px;}
-.section-intro{color:var(--muted);font-size:15px;line-height:1.7;max-width:62ch;margin-bottom:34px;}
+.section-intro{color:var(--muted);font-size:15px;line-height:1.7;max-width:62ch;margin-bottom:22px;}
+.cond-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:30px;}
+.cond-label{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);font-weight:600;margin-right:4px;}
+.cond-btn{background:#fff;border:1.5px solid var(--line);color:var(--navy);font-family:'Outfit',sans-serif;font-size:13px;font-weight:600;padding:9px 15px;border-radius:3px;cursor:pointer;transition:all .2s;}
+.cond-btn:hover{border-color:var(--navy);}
+.cond-btn.active{background:var(--navy);border-color:var(--navy);color:#fff;}
+.cond-help{font-size:13px;color:var(--muted);flex-basis:100%;}
 
 /* MOCK CARDS */
 .mocks-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-bottom:60px;}
@@ -195,15 +201,21 @@ footer a{color:var(--gold-soft);text-decoration:none;}
       <div><div class="stat-num">6</div><div class="stat-label">Full Mocks</div></div>
       <div><div class="stat-num">180</div><div class="stat-label">Questions Each</div></div>
       <div><div class="stat-num"><span data-count="plab1Questions" data-count-plain>3171</span></div><div class="stat-label">Bank Total</div></div>
-      <div><div class="stat-num">20</div><div class="stat-label">Domains</div></div>
+      <div><div class="stat-num"><span data-count="plab1Domains">24</span></div><div class="stat-label">Topic areas</div></div>
     </div>
   </div>
 </header>
 
 <main class="main">
-  <div class="section-eyebrow">Blueprint-Weighted Papers</div>
+  <div class="section-eyebrow">Full-Length Papers</div>
   <h2 class="section-title">The Six Mocks</h2>
-  <p class="section-intro">The first four papers each sample the twenty domains in the same proportions as the real exam — the clinical workhorses weighted heavily, the cross-cutting subjects lighter. The fifth is a high-yield paper built from the remaining questions, so it leans towards the most heavily tested domains — Neurology, Gastroenterology, and Endocrinology. No question repeats across any of the five papers. Your progress on each is saved automatically on this device.</p>
+  <p class="section-intro">Each paper is 180 questions in 3 hours. Papers 1–4 and 6 sample the bank&rsquo;s 24 topic areas so that all 10 GMC feedback areas are covered. The GMC does not publish weightings. Paper 5 is a high-yield paper built from the remaining questions; it leans towards Neurology, Gastroenterology and Endocrinology and has no child health questions. Your results are shown by the 10 GMC feedback areas. Progress on each paper is saved on this device.</p>
+  <div class="cond-row" id="condRow">
+    <span class="cond-label">Exam conditions</span>
+    <button type="button" class="cond-btn active" data-cond="strict">Strict exam conditions</button>
+    <button type="button" class="cond-btn" data-cond="relaxed">Relaxed (not exam conditions)</button>
+    <span class="cond-help" id="condHelp">One sitting. No pause, and the clock keeps running if you close the tab.</span>
+  </div>
 
   <div class="mocks-grid" id="mocksGrid"><!-- cards injected by JS --></div>
 
@@ -299,7 +311,7 @@ footer a{color:var(--gold-soft);text-decoration:none;}
 
     html += '<div class="mock-meta">';
     html += '<span class="mock-meta-item"><b>'+total+'</b> questions</span>';
-    html += '<span class="mock-meta-item">'+(paperId==="mock-5"?"High-yield mix":"Blueprint-weighted")+'</span>';
+    html += '<span class="mock-meta-item">'+(paperId==="mock-5"?"High-yield mix":"All 10 GMC areas")+'</span>';
     html += '</div>';
 
     html += '<div class="mock-domains">Heaviest domains: <b>'+topDomains+'</b></div>';
@@ -323,8 +335,30 @@ footer a{color:var(--gold-soft);text-decoration:none;}
 
   // The runner is the existing mock engine page. We pass the paper id so it loads
   // the fixed list from PLAB1_PAPERS. Mode hints (resume/review/restart) are read there.
+  // Strict exam conditions are the default (P1-10); relaxed mode is labelled as not exam conditions.
+  var cond = "strict";
+  try{ if(localStorage.getItem("plab1-exam-cond") === "relaxed"){ cond = "relaxed"; } }catch(e){}
   function runnerUrl(paperId, mode){
-    return "plab1-exam-runner.html?paper="+encodeURIComponent(paperId)+"&mode="+encodeURIComponent(mode||"start");
+    return "plab1-exam-runner.html?paper="+encodeURIComponent(paperId)+"&mode="+encodeURIComponent(mode||"start")+
+      (cond === "relaxed" ? "&cond=relaxed" : "");
+  }
+  function wireCond(){
+    var btns = document.querySelectorAll("#condRow .cond-btn");
+    var help = document.getElementById("condHelp");
+    function paint(){
+      btns.forEach(function(b){ b.classList.toggle("active", b.getAttribute("data-cond") === cond); });
+      if(help){ help.textContent = cond === "strict"
+        ? "One sitting. No pause, and the clock keeps running if you close the tab."
+        : "Not exam conditions: you can pause, and the clock stops while the tab is closed."; }
+    }
+    btns.forEach(function(b){
+      b.addEventListener("click", function(){
+        cond = b.getAttribute("data-cond");
+        try{ localStorage.setItem("plab1-exam-cond", cond); }catch(e){}
+        paint(); renderMocks();
+      });
+    });
+    paint();
   }
 
   function renderMocks(){
@@ -388,6 +422,7 @@ footer a{color:var(--gold-soft);text-decoration:none;}
 
   // init
   document.addEventListener("DOMContentLoaded", function(){
+    wireCond();
     renderMocks();
     populateDomains();
     wireCountChips();

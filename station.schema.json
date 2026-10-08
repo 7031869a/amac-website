@@ -74,7 +74,7 @@
         },
         "signalMinutes": {
           "type": "number",
-          "description": "Physical examination and history stations: 6. The candidate hears a signal at 6 minutes and presents findings (RCPSG MRCS Part B candidate guidance). Leave out for other station types."
+          "description": "6 for physical examination and history stations (signal at 6 minutes: stop and present findings, then examiner questions) and for procedural task-and-questions stations (6 minutes for the task, then 3 minutes of examiner questions). Source: ICBSE MRCS Part B OSCE exam day guidance notes (Aug 2021). Leave out for other station types."
         },
         "guidelineVersions": {
           "type": "array",
@@ -111,6 +111,11 @@
         "task"
       ],
       "properties": {
+        "date": {
+          "type": "string",
+          "pattern": "^[0-9]{1,2} (January|February|March|April|May|June|July|August|September|October|November|December) [0-9]{4}$",
+          "description": "Assumed date, treated as today. Communication stations show it in bold and underlined at the top of the instructions (ICBSE MRCS Part B OSCE exam day guidance notes, Aug 2021). Must agree with any timeline in the scenario. Example: 14 March 2026."
+        },
         "setting": {
           "type": "string"
         },

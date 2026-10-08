@@ -47,7 +47,7 @@
   "alternateName": ["Ahmed Mansour & Colleagues", "A. Mansour & Colleagues"],
   "url": "https://amac-medical.com/",
   "logo": "https://amac-medical.com/apple-touch-icon.png",
-  "description": "Preparation for the UK medical and surgical examinations: UKMLA, PLAB 1, PLAB 2 and FRCS Part 2.",
+  "description": "Preparation for the UK medical and surgical examinations and Foundation training: UKMLA, Foundation F1 and F2, PLAB 1, PLAB 2, MRCP Part 1, MRCS and FRCS (General Surgery) Section 2 academic paper critique.",
   "slogan": "Think like an examiner. Pass with confidence."
 }
 </script>
@@ -155,6 +155,16 @@ footer{background:var(--navy-deep);color:#c4ccd8;padding:36px 28px 20px;}
 .foot-col a{display:block;color:#8a96b0;text-decoration:none;font-size:12px;margin-bottom:6px;}
 .foot-col a:hover{color:var(--gold-soft);}
 .foot-btm{max-width:1200px;margin:14px auto 0;font-size:11px;color:#4a5568;text-align:center;}
+/* Realism additions */
+.live-notice{max-width:860px;margin:18px auto 0;padding:0 28px;}
+.live-notice div{background:#fdf8e6;border:1px solid rgba(201,162,39,0.4);border-left:4px solid var(--gold);border-radius:0 8px 8px 0;padding:12px 16px;font-size:13.5px;line-height:1.55;color:var(--ink);}
+.dom-row{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--line);font-size:13.5px;}
+.dom-name{flex:1;color:var(--ink);}
+.dom-bar{width:120px;height:8px;background:#e0e5ef;border-radius:4px;overflow:hidden;}
+.dom-bar span{display:block;height:100%;background:var(--navy);}
+.dom-val{font-family:'Fraunces',serif;font-size:17px;color:var(--navy);min-width:44px;text-align:right;}
+.grade-chip{display:inline-block;background:linear-gradient(135deg,#0f2850,#0d2247);color:var(--gold-soft);font-family:'Fraunces',serif;font-size:20px;padding:10px 22px;border-radius:8px;}
+.scale-note{font-size:11.5px;color:var(--muted);font-style:italic;margin-top:8px;line-height:1.5;}
 @media(max-width:700px){.nav-links{display:none;}.station-select,.sim-wrap{padding:0 14px 40px;}.brief-rules{grid-template-columns:1fr 1fr;}.msg{max-width:92%;}}
 </style>
 </head>
@@ -163,10 +173,11 @@ footer{background:var(--navy-deep);color:#c4ccd8;padding:36px 28px 20px;}
   <ul class="nav-links"><li><a href="books.html">The Master Series</a></li><li><a href="tools.html">Study Tools</a></li><li><a href="contact.html" class="nav-cta">Get Started</a></li></ul>
 </div></nav>
 <header class="hero"><div class="ph">
-  <span class="kick">AI-Powered · AMaC Standard Marking</span>
+  <span class="kick">AI Preview · AMaC Practice Scale</span>
   <h1>Consultation <em>Simulator</em></h1>
-  <p>Practice live PLAB 2 consultations with an AI patient. Get AMaC-standard feedback on ICE, safety-netting, escalation, scripts and instant-fail risks.</p>
+  <p>Practice live PLAB 2 consultations with an AI patient. Get feedback on ICE, safety-netting, escalation, scripts and INSTANT FAIL risks (AMaC's label for lapses serious enough to fail a station), scored on the AMaC practice scale.</p>
 </div></header>
+<div class="live-notice"><div><strong>Preview: the live AI patient needs a server connection.</strong> This page calls the AI service directly from your browser, so the patient and the feedback may not respond. If that happens you will see an error message, not a score. Practise the same stations with a partner in the <a href="osce.html">OSCE Station Library</a>.</div></div>
 <div class="station-select">
   <div class="ss-label">Choose a station to simulate:</div>
   <div class="station-grid" id="stationGrid"></div>
@@ -175,16 +186,16 @@ footer{background:var(--navy-deep);color:#c4ccd8;padding:36px 28px 20px;}
   <!-- Briefing stage -->
   <div class="sim-stage" id="stageBrief">
     <div class="brief-hdr">
-      <div><div class="brief-station" id="briefTitle"></div><div class="brief-meta">8 minutes · AMaC standard marking</div></div>
+      <div><div class="brief-station" id="briefTitle"></div><div class="brief-meta">8 minutes · AMaC practice scale</div></div>
       <div class="timer-display"><div class="timer-num">8:00</div><div class="timer-lbl">Available</div></div>
     </div>
     <div class="brief-body">
-      <div class="brief-label">Station Scenario</div>
+      <div class="brief-label">Candidate instructions</div>
       <div class="scenario-text" id="briefScenario"></div>
       <div class="brief-rules">
         <div class="rule-item"><div class="rule-icon">💬</div><div class="rule-text">Type what you would say to the patient</div></div>
         <div class="rule-item"><div class="rule-icon">⏱</div><div class="rule-text">8-minute timer starts when you begin</div></div>
-        <div class="rule-item"><div class="rule-icon">📊</div><div class="rule-text">AMaC-standard feedback at the end</div></div>
+        <div class="rule-item"><div class="rule-icon">📊</div><div class="rule-text">Start by confirming your name and GMC number</div></div>
       </div>
       <button class="start-btn" onclick="startConsultation()">Begin Consultation →</button>
     </div>
@@ -233,7 +244,7 @@ Respond with 1-3 sentences maximum per response. Be realistic — express pain, 
   },
   {
     id:'bbns', emoji:'🗣️', name:'Breaking Bad News', domain:'Communication',
-    scenario:'You are the SHO. Mrs Patel, 52, has come to discuss results of her recent investigations. She has been told to come in to "discuss some results." The histology shows adenocarcinoma of the colon.',
+    scenario:'You are the FY2. Mrs Patel, 52, has come to discuss results of her recent investigations. She has been told to come in to "discuss some results." The histology shows adenocarcinoma of the colon.',
     patientName:'Mrs Patel',
     systemPrompt:`You are Mrs Patel, 52, attending to discuss results. You are anxious — you have been worrying since the call.
 Respond naturally. Give 1-3 sentences per response.
@@ -245,7 +256,7 @@ React emotionally to bad news — shock, tears, questions. Do not make it easy. 
   },
   {
     id:'capacity', emoji:'⚖️', name:'Capacity Assessment', domain:'Ethics',
-    scenario:'Mr Davis, 67, is an inpatient who has refused insulin for his newly diagnosed type 1 diabetes. He understands he may die without it but says "it is my choice." The nurse has asked you to assess his capacity.',
+    scenario:'You are the FY2 on the medical ward. Mr Davis, 67, is an inpatient who has refused insulin for his newly diagnosed type 1 diabetes. He understands he may die without it but says "it is my choice." The nurse has asked you to assess his capacity.',
     patientName:'Mr Davis',
     systemPrompt:`You are Mr Davis, 67. You have been told you have type 1 diabetes and need insulin injections daily. You are refusing insulin.
 Your reason (only reveal if sensitively asked): Your wife died from complications of insulin-treated diabetes — hypoglycaemic brain damage. You watched her suffer. You would rather die than go through that. This is your informed, considered choice.
@@ -257,7 +268,7 @@ Respond with 2-3 sentences per response.`,
   },
   {
     id:'sepsis', emoji:'🦠', name:'Sepsis Management', domain:'Emergency',
-    scenario:'You are the FY1. Mrs Chen, 72, is a ward patient post-op day 2 after bowel surgery. The nurse has called you — Mrs Chen has a temperature of 38.9°C, HR 118, BP 94/60, RR 24, SpO₂ 94% on air. She is confused.',
+    scenario:'You are the FY2. Mrs Chen, 72, is a ward patient post-op day 2 after bowel surgery. The nurse has called you — Mrs Chen has a temperature of 38.9°C, HR 118, BP 94/60, RR 24, SpO₂ 94% on air. She is confused.',
     patientName:'Mrs Chen',
     systemPrompt:`You are Mrs Chen, 72, post-operative day 2. You are confused and feel very unwell. You are not able to give detailed history — mostly short responses showing you are unwell.
 If asked about pain: Tummy hurts a lot. More than before.
@@ -269,7 +280,7 @@ Respond briefly — 1-2 sentences. Show you are unwell.`,
   },
   {
     id:'suicide', emoji:'🧠', name:'Suicide Risk Assessment', domain:'Psychiatry',
-    scenario:'You are the SHO in A&E. Tom, 28, was brought in after taking 20 paracetamol tablets 3 hours ago. He is medically stable. You have been asked to complete a psychiatric assessment.',
+    scenario:'You are the FY2 in A&E. Tom, 28, was brought in after taking 20 paracetamol tablets 3 hours ago. He is medically stable. You have been asked to complete a psychiatric assessment.',
     patientName:'Tom',
     systemPrompt:`You are Tom, 28. You took 20 paracetamol tablets 3 hours ago after a relationship breakdown. You told a friend who called an ambulance.
 Your emotional state: You feel ashamed you were found out. You are not sure if you really wanted to die — part of you is relieved you are here.
@@ -296,7 +307,7 @@ Respond as a worried parent — 2-3 sentences.`,
   },
   {
     id:'anger', emoji:'😡', name:'Angry Relative', domain:'Communication',
-    scenario:'Mr Morrison, 60, is demanding to speak with a doctor. His mother, Mrs Morrison, 84, was admitted yesterday with a fall. He says staff "let her fall again" and he wants to make a formal complaint. You are the ward doctor.',
+    scenario:'Mr Morrison, 60, is demanding to speak with a doctor. His mother, Mrs Morrison, 84, was admitted yesterday with a fall. He says staff "let her fall again" and he wants to make a formal complaint. You are the FY2 on the ward.',
     patientName:'Mr Morrison',
     systemPrompt:`You are Mr Morrison, 60. Your mother is in hospital and you believe staff have been negligent. You are angry and distressed.
 Your actual concern: Your mother fell getting to the toilet because the call bell was out of reach. You feel guilty you were not there. You want accountability.
@@ -308,27 +319,22 @@ Respond in 2-3 sentences. Start frustrated and only soften if the doctor is genu
   },
 ];
 
-const MARKING_SYSTEM = `You are an AMaC PLAB 2 examiner providing structured feedback on a consultation.
+const MARKING_SYSTEM = `You are giving structured practice feedback on a PLAB 2-style consultation, using the AMaC practice scale.
 
-Assess the candidate's performance against AMaC marking criteria.
+Score the three GMC domains, each from 0 to 4 (whole numbers): dg = data gathering, technical and assessment skills; cm = clinical management; ip = interpersonal skills. Then give one overall grade: Unsatisfactory, Borderline, Satisfactory or Good.
+Unsafe actions or INSTANT FAIL behaviours (AMaC's label for lapses serious enough to fail a station) should lower the relevant domain scores and usually the grade. Do not invent pass marks, percentages, Merit or Distinction.
 
-Provide your response as valid JSON with this exact structure:
+Reply with valid JSON only, in exactly this structure:
 {
-  "score": <number 0-100>,
-  "verdict": "<Pass|Merit|Distinction|Fail>",
-  "passed": [<list of criteria met - max 5 strings>],
-  "failed": [<list of criteria missed or done poorly - max 5 strings>],
-  "improve": [<list of 2-3 specific improvement suggestions with exact scripts>],
+  "domains": {"dg": <0-4>, "cm": <0-4>, "ip": <0-4>},
+  "grade": "<Unsatisfactory|Borderline|Satisfactory|Good>",
+  "passed": [<criteria met - max 5 strings>],
+  "failed": [<criteria missed or done poorly - max 5 strings>],
+  "improve": [<2-3 specific improvement suggestions with exact scripts>],
   "highlight": "<single most important learning point from this consultation>"
 }
 
-Scoring guide:
-- 70+ = Pass
-- 80+ = Merit  
-- 90+ = Distinction
-- <70 = Fail
-
-Be honest and specific. Use real PLAB 2 examiner language.`;
+Be honest and specific. Use plain language.`;
 
 let currentStation = null;
 let chatHistory = [];
@@ -363,6 +369,9 @@ function startConsultation() {
   if (!currentStation) return;
   chatHistory = [];
   secondsLeft = 480;
+  document.getElementById('sendBtn').disabled = false;
+  document.getElementById('chatTimer').textContent = '8:00';
+  document.getElementById('chatTimer').classList.remove('urgent');
   
   document.getElementById('chatTitle').textContent = `${currentStation.emoji} ${currentStation.name}`;
   document.getElementById('stageBrief').classList.remove('active');
@@ -404,7 +413,8 @@ function startTimer() {
     const s = secondsLeft % 60;
     const display = `${m}:${s.toString().padStart(2,'0')}`;
     document.getElementById('chatTimer').textContent = display;
-    if (secondsLeft <= 60) document.getElementById('chatTimer').classList.add('urgent');
+    if (secondsLeft === 120) { const w = document.getElementById('chatWindow'); w.innerHTML += `<div class="msg msg-system">Two minutes remaining.</div>`; w.scrollTop = w.scrollHeight; }
+    if (secondsLeft <= 120) document.getElementById('chatTimer').classList.add('urgent');
     if (secondsLeft <= 0) { clearInterval(timerInterval); endConsultation(); }
   }, 1000);
 }
@@ -440,8 +450,10 @@ async function sendMessage() {
       })
     });
     
+    if (!response.ok) throw new Error('HTTP ' + response.status);
     const data = await response.json();
-    const patientReply = data.content?.[0]?.text || 'I\'m not sure what to say...';
+    const patientReply = data.content?.[0]?.text;
+    if (!patientReply) throw new Error('No reply');
     
     chatHistory.push({role:'assistant', content: patientReply});
     
@@ -451,7 +463,9 @@ async function sendMessage() {
     
   } catch(e) {
     document.getElementById('loadingMsg')?.remove();
-    win.innerHTML += `<div class="msg msg-system">Connection error — please try again</div>`;
+    chatHistory.pop();
+    win.innerHTML += `<div class="msg msg-system">The AI patient did not respond. The live patient needs a server connection, which this preview may not have. Your last message was not sent.</div>`;
+    win.scrollTop = win.scrollHeight;
   }
   
   isLoading = false;
@@ -483,7 +497,7 @@ Time used: ${minsUsed}m ${secsUsed}s of 8:00
 Marking criteria for this station:
 ${currentStation.markingCriteria.map((c,i) => `${i+1}. ${c}`).join('\n')}
 
-Instant fail risks to check:
+AMaC INSTANT FAIL risks to check (AMaC label; the GMC has no automatic-fail rule):
 ${currentStation.instantFails.join('\n')}
 
 CONSULTATION TRANSCRIPT:
@@ -503,32 +517,56 @@ Assess this candidate's performance and provide structured feedback.`;
       })
     });
     
+    if (!response.ok) throw new Error('HTTP ' + response.status);
     const data = await response.json();
-    let rawText = data.content?.[0]?.text || '{}';
-    rawText = rawText.replace(/```json|```/g, '').trim();
-    
-    let feedback;
-    try { feedback = JSON.parse(rawText); }
-    catch(e) { feedback = {score:65, verdict:'Unable to parse', passed:['Consultation completed'], failed:['Feedback generation error'], improve:['Please try again'], highlight:'Check your internet connection and retry.'}; }
-    
+    let rawText = (data.content?.[0]?.text || '').replace(/```json|```/g, '').trim();
+    const feedback = JSON.parse(rawText);
+    const d = feedback && feedback.domains;
+    const ok = v => Number.isInteger(v) && v >= 0 && v <= 4;
+    if (!d || !ok(d.dg) || !ok(d.cm) || !ok(d.ip) || !GRADES.includes(feedback.grade)) throw new Error('Bad feedback format');
     showFeedback(feedback, minsUsed, secsUsed);
     
   } catch(e) {
-    showFeedback({score:0, verdict:'Error', passed:[], failed:['Could not connect to marking system'], improve:['Check your internet connection and try again'], highlight:'Feedback unavailable — please retry.'}, minsUsed, secsUsed);
+    showFeedbackError(minsUsed, secsUsed);
   }
 }
 
+const GRADES = ['Unsatisfactory','Borderline','Satisfactory','Good'];
+const DOM_LABELS = {dg:'Data gathering, technical and assessment skills', cm:'Clinical management', ip:'Interpersonal skills'};
+function showStage(id) {
+  ['stageBrief','stageChat','stageFeedback'].forEach(s => document.getElementById(s).classList.toggle('active', s === id));
+  document.getElementById(id).scrollIntoView({behavior:'smooth', block:'start'});
+}
+function showFeedbackError(minsUsed, secsUsed) {
+  document.getElementById('fbSub').textContent = `${currentStation.name} · ${minsUsed}m ${secsUsed}s used · Feedback unavailable`;
+  document.getElementById('feedbackBody').innerHTML = `
+    <div class="fb-section">
+      <div class="fb-sec-title">Feedback unavailable</div>
+      <div class="fb-item fb-fail">The marking service did not return usable feedback. The live AI features need a server connection, which this preview may not have. No score has been given.</div>
+      <div class="fb-item fb-improve">Mark yourself instead: use the self-check list for a similar station in the <a href="osce.html">OSCE Station Library</a>.</div>
+    </div>
+    <button class="again-btn" onclick="selectStation('${currentStation.id}')">Try this station again →</button>`;
+  showStage('stageFeedback');
+}
 function showFeedback(fb, minsUsed, secsUsed) {
-  document.getElementById('fbSub').textContent = `${currentStation.name} · ${minsUsed}m ${secsUsed}s used · ${fb.verdict || 'Assessed'}`;
-  
-  const scoreColour = fb.score >= 90 ? '#15803d' : fb.score >= 80 ? '#1d4ed8' : fb.score >= 70 ? '#92400e' : '#991b1b';
-  
+  document.getElementById('fbSub').textContent = `${currentStation.name} · ${minsUsed}m ${secsUsed}s used · ${fb.grade}`;
+  const d = fb.domains;
+  const total = d.dg + d.cm + d.ip;
   document.getElementById('feedbackBody').innerHTML = `
     <div class="score-display">
-      <div class="score-circle" style="border: 3px solid ${scoreColour}40">
-        <div class="score-num" style="color:${scoreColour}">${fb.score || '--'}</div>
-        <div class="score-label">${fb.verdict || 'Score'}</div>
+      <div class="score-circle">
+        <div class="score-num" style="font-size:28px">${total}/12</div>
+        <div class="score-label">3 domains</div>
       </div>
+    </div>
+    <div class="fb-section">
+      <div class="fb-sec-title">Domain scores</div>
+      ${['dg','cm','ip'].map(k=>`<div class="dom-row"><span class="dom-name">${DOM_LABELS[k]}</span><span class="dom-bar"><span style="width:${d[k]*25}%"></span></span><span class="dom-val">${d[k]} / 4</span></div>`).join('')}
+    </div>
+    <div class="fb-section">
+      <div class="fb-sec-title">Overall grade</div>
+      <div class="grade-chip">${fb.grade}</div>
+      <div class="scale-note">AMaC practice scale — the GMC does not publish its mark sheet. In the real exam the examiner marks the three domains and gives a separate grade; station pass marks are set after the exam.</div>
     </div>
     <div class="fb-section">
       <div class="fb-sec-title">✓ What you did well</div>
@@ -544,10 +582,7 @@ function showFeedback(fb, minsUsed, secsUsed) {
     </div>
     ${fb.highlight ? `<div class="fb-section"><div class="fb-sec-title">⭐ Key learning point</div><div class="fb-item" style="background:#fdf8e6;border-left:4px solid var(--gold);color:var(--ink)">${fb.highlight}</div></div>` : ''}
     <button class="again-btn" onclick="selectStation('${currentStation.id}')">Try this station again →</button>`;
-  
-  document.getElementById('stageChat').classList.remove('active');
-  document.getElementById('stageFeedback').classList.add('active');
-  document.getElementById('stageFeedback').scrollIntoView({behavior:'smooth', block:'start'});
+  showStage('stageFeedback');
 }
 
 function handleKey(e) {

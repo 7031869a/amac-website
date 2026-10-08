@@ -8,10 +8,11 @@
    the index shows an explicit "no papers defined yet" state rather
    than an empty grid, and the runner refuses to start a paper session.
 
-   TODO: papers cannot be assembled until (a) MRCP1_SUBDOMAINS is
-   populated from the Federation's published Part 1 blueprint and
-   (b) there are enough reviewed questions to fill a paper without
-   reusing items. Do not invent paper sizes, timings or a pass mark —
-   take them from the published specification.
+   MRCP1_SUBDOMAINS (mrcp1-spec.js) now carries the Federation's published
+   approximate 200-question blueprint. TODO: papers still cannot be
+   assembled until there are enough reviewed questions across the
+   specialties to fill a 100-question paper to that blueprint without
+   reusing items. A paper of 100 questions runs timed at 3 hours
+   (HOURS_PER_PAPER) in mrcp1-exam-runner.html.
    ============================================================ */
 window.MRCP1_PAPERS = {};

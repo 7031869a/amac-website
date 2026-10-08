@@ -47,7 +47,7 @@
   "alternateName": ["Ahmed Mansour & Colleagues", "A. Mansour & Colleagues"],
   "url": "https://amac-medical.com/",
   "logo": "https://amac-medical.com/apple-touch-icon.png",
-  "description": "Preparation for the UK medical and surgical examinations: UKMLA, PLAB 1, PLAB 2 and FRCS Part 2.",
+  "description": "Preparation for the UK medical and surgical examinations and Foundation training: UKMLA, Foundation F1 and F2, PLAB 1, PLAB 2, MRCP Part 1, MRCS and FRCS (General Surgery) Section 2 academic paper critique.",
   "slogan": "Think like an examiner. Pass with confidence."
 }
 </script>
@@ -102,7 +102,12 @@ h1,h2,h3{font-family:'Fraunces',Georgia,serif;color:var(--navy);}
 .opt-letter{font-weight:700;color:var(--navy);margin-right:2px;}
 .qmeta{display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--muted);margin-bottom:6px;}
 .qmeta .dom{background:#eef1f7;color:var(--navy);padding:3px 10px;border-radius:20px;font-weight:600;}
-.stem{font-size:17px;margin:14px 0 18px;font-weight:500;line-height:1.65;}
+.stem{font-size:17px;margin:14px 0 18px;font-weight:500;line-height:1.65;white-space:pre-line;}
+.q-figure{margin:0 0 18px;}
+.q-figure img{display:block;max-width:100%;height:auto;border:1px solid var(--line);border-radius:9px;background:#fff;}
+.q-figure figcaption{font-size:13px;color:var(--muted);margin-top:6px;}
+.cond-opt{display:flex;gap:10px;align-items:flex-start;font-size:14px;margin:0 0 18px;cursor:pointer;}
+.cond-opt input{margin-top:3px;accent-color:var(--navy);width:16px;height:16px;flex-shrink:0;}
 
 .nav{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:22px;}
 .flag{cursor:pointer;color:var(--muted);font-size:14px;display:flex;align-items:center;gap:6px;user-select:none;}
@@ -183,15 +188,16 @@ h1,h2,h3{font-family:'Fraunces',Georgia,serif;color:var(--navy);}
     <div class="card">
       <h1 style="font-size:30px;margin-bottom:6px;">Mock Exam Mode</h1>
       <p class="dim" style="margin-bottom:18px;">Exam conditions. No feedback until you finish.</p>
-      <p style="margin-bottom:14px;">The real PLAB 1 is <strong>180 single-best-answer questions in 3 hours</strong> &mdash; 60 seconds per question, no negative marking. This mock draws <strong>180 questions from the live <span data-count="plab1Questions">3,171</span>-question bank</strong>, weighted proportionally across all <span data-count="plab1Domains">24</span> domains.</p>
+      <p style="margin-bottom:14px;">The real PLAB 1 is <strong>180 single-best-answer questions in 3 hours</strong> &mdash; 60 seconds per question, no negative marking. This mock draws <strong>180 questions from the live <span data-count="plab1Questions">3,171</span>-question bank</strong>, in proportion to the size of each of the bank&rsquo;s <span data-count="plab1Domains">24</span> topic areas. The GMC does not publish topic weightings.</p>
       <ul style="margin:0 0 20px 20px;font-size:15px;line-height:1.9;">
         <li>3-hour countdown &mdash; auto-submits at zero</li>
         <li>Flag questions to revisit</li>
         <li>Jump anywhere with the question grid</li>
-        <li>Full per-domain breakdown and answer review at the end</li>
-        <li>Progress saved automatically &mdash; resume if you close the tab</li>
+        <li>Results by the 10 GMC feedback areas, plus an AMaC topic breakdown and full answer review at the end</li>
+        <li>Progress saved automatically &mdash; in strict mode the clock keeps running if you close the tab</li>
       </ul>
-      <div class="note">Indicative pass line: 115/180 (64%). The real GMC pass mark is set by the Angoff method and varies between 110&ndash;118 each sitting.</div>
+      <label class="cond-opt"><input type="checkbox" id="relaxed"> <span><strong>Relaxed mode &mdash; not exam conditions.</strong> The clock stops while the tab is closed. Leave this unticked for strict exam conditions (one sitting, the clock runs on real time).</span></label>
+      <div class="note">AMaC indicative pass score: 115/180. This is AMaC&rsquo;s estimate, not a GMC figure. The GMC sets the pass mark for each paper using the Angoff method plus one standard error of measurement, and tells you it with your result.</div>
       <button type="button" class="btn" onclick="startExam(false)">Start mock exam</button>
     </div>
 
@@ -233,7 +239,10 @@ h1,h2,h3{font-family:'Fraunces',Georgia,serif;color:var(--navy);}
 const TARGET       = 180;
 const FULL_SECONDS = TARGET * 60;
 const PASS_MARK    = 115;
-const LS_KEY       = 'amac_plab1_mock_v1';
+const LS_KEY       = 'amac_plab1_mock_v2'; // v2: answer letters of papers 1-5 items were rebalanced (Oct 2026)
+const GMC_AREAS    = ['Reproductive health','Renal and urology','Neurosciences and senses','Musculoskeletal','Mental health','Gastrointestinal','Endocrine, metabolic and clinical haematology','Child and adolescent health','Cardiorespiratory','Ethics and other'];
+let strict    = true;   // strict exam conditions: wall-clock timer
+let endsAt    = null;
 
 let EXAM_QS   = [];
 let answers   = [];
@@ -273,9 +282,10 @@ function buildExam() {
 
 // ---- LOCAL STORAGE ----
 function saveState() {
+  if (submitted) return; // a submitted exam must not be re-saved (beforeunload would resurrect it as 'in progress')
   try {
     localStorage.setItem(LS_KEY, JSON.stringify({
-      ids: EXAM_QS.map(q => q.id), answers, flags, cur, timeLeft
+      ids: EXAM_QS.map(q => q.id), answers, flags, cur, timeLeft, strict, endsAt
     }));
   } catch(e) {}
 }
@@ -297,7 +307,8 @@ function tick() {
   const warn = timeLeft <= Math.round(FULL_SECONDS * 0.15);
   t.className = 'timer' + (crit ? ' crit' : warn ? ' warn' : '');
   if (timeLeft <= 0) { clearInterval(timerId); submitExam(true); return; }
-  timeLeft--;
+  if (strict && endsAt) timeLeft = Math.max(0, Math.round((endsAt - Date.now()) / 1000));
+  else timeLeft--;
   if (timeLeft % 30 === 0) saveState();
 }
 
@@ -337,10 +348,10 @@ function render() {
           + '<span><span class="opt-letter">' + k + '.</span> ' + v + '</span>'
           + '</label>';
   });
+  // topic label and item ID are hidden while the timed mock runs (shown in the review)
   document.getElementById('qcard').innerHTML =
-    '<div class="qmeta"><span class="dom">' + q.domain + '</span>'
-    + '<span class="dim">' + q.id + '</span></div>'
-    + '<div class="stem">' + q.stem + '</div>'
+    '<div class="stem">' + q.stem + '</div>'
+    + figureHtml(q)
     + '<div class="opts">' + opts + '</div>';
   document.getElementById('prev').disabled = (cur === 0);
   document.getElementById('next').disabled = (cur === TARGET - 1);
@@ -348,6 +359,13 @@ function render() {
   f.className = 'flag' + (flags[cur] ? ' on' : '');
   f.innerHTML = flags[cur] ? '&#9873; Flagged' : '&#9873; Flag for review';
   refreshPalette();
+}
+
+function escAttr(s) { return String(s || '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+function figureHtml(q) {
+  if (!q.image || !q.image.src) return '';
+  return '<figure class="q-figure"><img src="' + escAttr(q.image.src) + '" alt="' + escAttr(q.image.alt) + '" loading="lazy">'
+    + (q.image.caption ? '<figcaption>' + escAttr(q.image.caption) + '</figcaption>' : '') + '</figure>';
 }
 
 // ---- ACTIONS ----
@@ -400,9 +418,14 @@ function submitExam(auto) {
 
   let correct = 0;
   const domStats = {};
+  const areaStats = {};
   EXAM_QS.forEach((q, i) => {
     const ok = answers[i] === q.correct_letter;
     if (ok) correct++;
+    const ga = q.gmc_area || 'Ethics and other';
+    if (!areaStats[ga]) areaStats[ga] = { c: 0, t: 0 };
+    areaStats[ga].t++;
+    if (ok) areaStats[ga].c++;
     if (!domStats[q.domain]) domStats[q.domain] = { c: 0, t: 0 };
     domStats[q.domain].t++;
     if (ok) domStats[q.domain].c++;
@@ -417,6 +440,15 @@ function submitExam(auto) {
     domHtml += '<div class="dom-row"><div class="name">' + d + '</div>'
              + '<div class="track"><div class="fill" style="width:' + dp + '%;background:' + col + '"></div></div>'
              + '<div class="pct">' + s.c + '/' + s.t + '</div></div>';
+  });
+
+  let areaHtml = '';
+  GMC_AREAS.filter(a => areaStats[a]).forEach(a => {
+    const s = areaStats[a], ap = Math.round(s.c / s.t * 100);
+    const col = ap >= 70 ? '#1E8449' : ap >= 50 ? '#B7950B' : '#922B21';
+    areaHtml += '<div class="dom-row"><div class="name">' + a + '</div>'
+             + '<div class="track"><div class="fill" style="width:' + ap + '%;background:' + col + '"></div></div>'
+             + '<div class="pct">' + ap + '%</div></div>';
   });
 
   let revHtml = '';
@@ -442,8 +474,8 @@ function submitExam(auto) {
     if (q.pearl)       explHtml += '<div class="expl expl-pearl"><div class="expl-label">NICE Pearl</div>'               + q.pearl       + '</div>';
     if (q.exam_trap)   explHtml += '<div class="expl expl-trap"><div class="expl-label">Exam trap</div>'                 + q.exam_trap   + '</div>';
     if (q.takeaway)    explHtml += '<div class="expl expl-takeaway"><div class="expl-label">Key takeaway</div>'          + q.takeaway    + '</div>';
-    revHtml += '<div class="rev-q"><div class="qmeta"><span class="dom">' + q.domain + '</span>' + statusHtml + '</div>'
-             + '<div class="stem">' + (i + 1) + '. ' + q.stem + '</div>' + optHtml + explHtml + '</div>';
+    revHtml += '<div class="rev-q"><div class="qmeta"><span class="dom">' + q.domain + ' · ' + q.id + '</span>' + statusHtml + '</div>'
+             + '<div class="stem">' + (i + 1) + '. ' + q.stem + '</div>' + figureHtml(q) + optHtml + explHtml + '</div>';
   });
 
   document.getElementById('s-results').innerHTML =
@@ -452,12 +484,14 @@ function submitExam(auto) {
     + '<h1 style="font-size:26px;margin-bottom:4px">Your Result</h1>'
     + '<div class="score-big" style="color:' + (passed ? '#1E8449' : '#922B21') + '">'
     + correct + '<span style="font-size:26px;color:#6a7a92">/' + TARGET + '</span></div>'
-    + '<div class="verdict ' + (passed ? 'pass' : 'fail') + '">' + (passed ? 'PASS' : 'BELOW PASS LINE') + ' · ' + pct + '%</div>'
-    + '<p class="dim" style="max-width:520px;margin:8px auto 0">Indicative pass line: ' + PASS_MARK + '/' + TARGET
-    + ' (' + Math.round(PASS_MARK / TARGET * 100) + '%). The real GMC pass mark is set by the Angoff method and varies between 110–118 each sitting.</p>'
+    + '<div class="verdict ' + (passed ? 'pass' : 'fail') + '">' + (passed ? 'At or above the AMaC indicative pass score' : 'Below the AMaC indicative pass score') + ' · ' + pct + '%</div>'
+    + '<p class="dim" style="max-width:520px;margin:8px auto 0">AMaC indicative pass score: ' + PASS_MARK + '/' + TARGET
+    + '. This is AMaC’s estimate, not a GMC figure. The GMC sets the pass mark for each paper using the Angoff method plus one standard error of measurement, and tells you it with your result.</p>'
     + '</div>'
-    + '<div class="card"><h2 style="font-size:20px;margin-bottom:14px">Performance by domain</h2>'
-    + '<p class="dim" style="margin-bottom:14px">Weakest first — focus your revision here.</p>' + domHtml + '</div>'
+    + '<div class="card"><h2 style="font-size:20px;margin-bottom:14px">Results by GMC area</h2>'
+    + '<p class="dim" style="margin-bottom:14px">Your % correct by GMC area (the GMC also shows the cohort average; AMaC cannot).</p>' + areaHtml + '</div>'
+    + '<div class="card"><h2 style="font-size:20px;margin-bottom:14px">AMaC revision breakdown</h2>'
+    + '<p class="dim" style="margin-bottom:14px">By AMaC bank topic, weakest first — focus your revision here.</p>' + domHtml + '</div>'
     + '<div class="card"><h2 style="font-size:20px;margin-bottom:6px">Review all questions</h2>'
     + '<p class="dim" style="margin-bottom:8px">Full explanations for every question.</p>' + revHtml + '</div>'
     + '<div style="text-align:center;margin-top:8px;margin-bottom:24px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap">'
@@ -476,7 +510,7 @@ function startExam(resume) {
 
   const saved = resume ? loadSaved() : null;
   if (resume && saved && Array.isArray(saved.ids) && saved.ids.length === TARGET
-      && typeof saved.timeLeft === 'number' && saved.timeLeft > 60) {
+      && typeof saved.timeLeft === 'number' && (saved.timeLeft > 60 || (saved.strict !== false && typeof saved.endsAt === 'number'))) {
     const idMap = {};
     window.PLAB1_QUESTIONS.forEach(q => { idMap[q.id] = q; });
     EXAM_QS  = saved.ids.map(id => idMap[id]).filter(Boolean);
@@ -484,6 +518,9 @@ function startExam(resume) {
     flags    = saved.flags;
     cur      = typeof saved.cur === 'number' ? saved.cur : 0;
     timeLeft = saved.timeLeft;
+    strict   = saved.strict !== false;
+    endsAt   = strict ? (typeof saved.endsAt === 'number' ? saved.endsAt : Date.now() + timeLeft * 1000) : null;
+    if (strict) timeLeft = Math.max(0, Math.round((endsAt - Date.now()) / 1000));
   } else {
     clearSaved();
     EXAM_QS  = buildExam();
@@ -491,6 +528,9 @@ function startExam(resume) {
     flags    = new Array(TARGET).fill(false);
     cur      = 0;
     timeLeft = FULL_SECONDS;
+    const rx = document.getElementById('relaxed');
+    strict   = !(rx && rx.checked);
+    endsAt   = strict ? Date.now() + FULL_SECONDS * 1000 : null;
   }
 
   document.getElementById('s-start').classList.remove('active');
@@ -498,6 +538,7 @@ function startExam(resume) {
   document.getElementById('timer').style.display = 'block';
   buildPalette();
   render();
+  saveState();
   tick();
   timerId = setInterval(tick, 1000);
   window.addEventListener('beforeunload', saveState);
@@ -507,10 +548,13 @@ function startExam(resume) {
 window.addEventListener('DOMContentLoaded', function() {
   const saved = loadSaved();
   if (saved && Array.isArray(saved.ids) && saved.ids.length === TARGET
-      && typeof saved.timeLeft === 'number' && saved.timeLeft > 60) {
+      && typeof saved.timeLeft === 'number' && (saved.timeLeft > 60 || (saved.strict !== false && typeof saved.endsAt === 'number'))) {
     const answered = Array.isArray(saved.answers) ? saved.answers.filter(a => a !== null).length : 0;
+    const left = (saved.strict !== false && typeof saved.endsAt === 'number')
+      ? Math.max(0, Math.round((saved.endsAt - Date.now()) / 1000)) : saved.timeLeft;
     document.getElementById('resume-info').innerHTML =
-      answered + ' of ' + TARGET + ' answered · ' + fmt(saved.timeLeft) + ' remaining';
+      answered + ' of ' + TARGET + ' answered · ' + fmt(left) + ' remaining'
+      + (saved.strict !== false ? ' (strict: the clock kept running)' : ' (relaxed mode)');
     document.getElementById('resume-banner').style.display = 'flex';
   }
 });

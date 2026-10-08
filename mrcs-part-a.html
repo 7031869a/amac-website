@@ -207,7 +207,8 @@ button:disabled{opacity:.4;cursor:default;filter:none;}
 .quiz-progress div{height:100%;background:var(--mrcs);width:0%;transition:width .25s;}
 .quiz-meta{display:flex;justify-content:space-between;font-size:13px;color:var(--muted);margin-bottom:12px;}
 .topic-tag{display:inline-block;font-size:12px;font-weight:600;color:var(--mrcs);background:var(--mrcs-bg);padding:3px 10px;border-radius:20px;margin-bottom:12px;}
-.question-text{font-size:16px;line-height:1.65;margin-bottom:16px;}
+.question-text{font-size:16px;line-height:1.65;margin-bottom:16px;white-space:pre-line;}
+.q-stem-full,.review-item .q{white-space:pre-line;}
 .quiz-controls{display:flex;justify-content:flex-end;gap:10px;margin-top:18px;}
 
 .mock-layout{display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap;}
@@ -233,6 +234,16 @@ button:disabled{opacity:.4;cursor:default;filter:none;}
 .score-display{font-family:'Fraunces',serif;font-size:46px;font-weight:500;margin:8px 0;}
 .score-display.pass{color:var(--green);}
 .score-display.fail{color:var(--red);}
+/* Part A results by paper and syllabus area (neutral; no invented pass mark) */
+.area-table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:8px;font-size:14px;margin:14px 0 6px;}
+.area-table th,.area-table td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--line);}
+.area-table th{font-size:11px;letter-spacing:.6px;text-transform:uppercase;color:var(--muted);font-weight:700;}
+.area-table td.num,.area-table th.num{text-align:right;font-variant-numeric:tabular-nums;}
+.area-table tr.paper-row td{background:var(--cream);font-weight:700;color:var(--navy);}
+.paper-scores{display:flex;gap:28px;flex-wrap:wrap;margin:6px 0 4px;}
+.paper-scores div{font-size:14px;color:var(--muted);}
+.paper-scores b{display:block;font-family:'Fraunces',serif;font-weight:500;font-size:28px;color:var(--navy);}
+.mock-paper-label{font-weight:700;color:var(--mrcs);}
 .results-actions{display:flex;gap:10px;margin-top:22px;flex-wrap:wrap;}
 .results-meta{color:var(--muted);font-size:14px;margin:4px 0;}
 .review-filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px;}
@@ -311,18 +322,18 @@ button:disabled{opacity:.4;cursor:default;filter:none;}
 <div id="bank-view">
   <header class="hero">
     <div class="hero-inner">
-      <span class="hero-kick">SBA Question Bank · Applied Basic Science · AMaC Format</span>
+      <span class="hero-kick">SBA Question Bank · Papers 1 &amp; 2 · AMaC Format</span>
       <span class="big-line">MRCS <span>A</span></span>
       <span class="big-sub">Question Bank</span>
-      <p><span id="hero-count">5,156</span> single-best-answer questions for Paper 1, each with why the answer is right, why every other option is wrong, the exam trap and the key takeaway.</p>
+      <p><span id="hero-count">4,642</span> single-best-answer questions for Paper 1 (Applied Basic Science) and Paper 2 (Principles of Surgery-in-General), each with why the answer is right, why every other option is wrong, the exam trap and the key takeaway.</p>
       <p class="credit">Reviewed by the AMaC team, September 2026.</p>
       <div class="hero-actions">
-        <button class="hero-btn primary" id="hero-mock-btn">Mock exam — 180 questions, 3 hours</button>
+        <button class="hero-btn primary" id="hero-mock-btn">Full Part A mock — Paper 1 and Paper 2</button>
         <button class="hero-btn ghost" id="hero-practice-btn">Timed practice by subject</button>
       </div>
       <div class="stats-row">
-        <div class="stat"><div class="stat-num" id="total-count">5,156</div><div class="stat-label">Questions</div></div>
-        <div class="stat"><div class="stat-num" id="subject-count">32</div><div class="stat-label">Subjects</div></div>
+        <div class="stat"><div class="stat-num" id="total-count">4,642</div><div class="stat-label">Questions</div></div>
+        <div class="stat"><div class="stat-num" id="subject-count">37</div><div class="stat-label">Subjects</div></div>
         <div class="stat"><div class="stat-num" id="answered-count">0</div><div class="stat-label">Answered</div></div>
         <div class="stat"><div class="stat-num" id="correct-count">0</div><div class="stat-label">Correct</div></div>
       </div>
@@ -371,17 +382,22 @@ button:disabled{opacity:.4;cursor:default;filter:none;}
     </div>
   </div>
 
+  <div class="main" id="mock-resume" style="display:none"><div class="card">
+    <h3 style="font-family:'Fraunces',serif;font-weight:500;font-size:20px;color:var(--navy);margin-bottom:6px;">You have a saved Part A mock in progress</h3>
+    <p class="note" id="mock-resume-info"></p>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;"><button id="mock-resume-btn" class="btn-danger">Resume mock</button><button id="mock-discard-btn" class="btn-secondary">Discard it</button></div>
+  </div></div>
   <div class="main" id="bank"><div class="empty"><p>Loading questions…</p></div></div>
 </div>
 
-<!-- ═══════════════ TIMED SESSIONS (practice + 180-question mock) ═══════════════ -->
+<!-- ═══════════════ TIMED SESSIONS (practice + Part A mocks) ═══════════════ -->
 <div id="session-view">
 <main class="session-main" id="main-el">
   <button class="back-link" id="back-to-bank">← Back to the question bank</button>
 
   <section id="setup-screen" class="screen active">
     <h1>Practise for Part A</h1>
-    <p class="lede">Applied Basic Science — pick a mode and go.</p>
+    <p class="lede">Paper 1 (Applied Basic Science) and Paper 2 (Principles of Surgery-in-General) — pick a mode and go.</p>
 
     <div class="mode-switch">
       <button id="mode-practice-btn" class="mode-btn active">Timed practice</button>
@@ -409,14 +425,26 @@ button:disabled{opacity:.4;cursor:default;filter:none;}
 
     <div id="mock-options" style="display:none;">
       <div class="card">
+        <h3 style="font-family:'Fraunces',serif;font-weight:500;font-size:20px;color:var(--navy);margin-bottom:10px;">Full Part A mock (Paper 1 + Paper 2)</h3>
         <ul class="info-list">
-          <li><b>180 questions</b>, drawn at random from the question bank<span id="mock-subject-coverage"></span></li>
-          <li><b>180 minutes</b>, one continuous sitting — this mirrors Paper 1 (Applied Basic Science) as it is actually sat, not a split into two half-length papers</li>
-          <li>No feedback until you finish, same as the real exam</li>
+          <li><b>Paper 1 — Applied Basic Science:</b> 180 questions in <b>3 hours</b></li>
+          <li><b>Break:</b> 60 minutes, as scheduled on the real exam day. You can skip it.</li>
+          <li><b>Paper 2 — Principles of Surgery-in-General:</b> 120 questions in <b>2 hours</b></li>
+          <li>Questions are drawn to the official approximate split for each paper<span id="mock-subject-coverage"></span></li>
+          <li>Questions appear in random order with no topic labels, and there is no feedback until you finish</li>
+          <li>Results show your raw score for each paper and for each syllabus area. AMaC does not predict a pass.</li>
+        </ul>
+        <button id="start-full-mock-btn" class="btn-danger">Start full Part A mock</button>
+      </div>
+      <div class="card">
+        <h3 style="font-family:'Fraunces',serif;font-weight:500;font-size:20px;color:var(--navy);margin-bottom:10px;">Paper 1 mock (180 SBA, 3 h)</h3>
+        <ul class="info-list">
+          <li><b>180 questions</b> in <b>180 minutes</b>, drawn to the Paper 1 split: anatomy 75, physiology 45, pathology 37, pharmacology 8, microbiology 7, imaging 5, data interpretation and audit 3</li>
+          <li>Paper 1 only. Paper 2 is not included in this option.</li>
           <li>Flag questions and jump between them freely using the palette</li>
           <li>Auto-submits if time runs out; you can submit early at any point</li>
         </ul>
-        <button id="start-mock-btn" class="btn-danger">Start mock exam</button>
+        <button id="start-mock-btn" class="btn-danger">Start Paper 1 mock</button>
       </div>
       <p class="note" id="mock-availability-note"></p>
     </div>
@@ -443,14 +471,14 @@ button:disabled{opacity:.4;cursor:default;filter:none;}
 
   <section id="mock-screen" class="screen">
     <div class="mock-header">
-      <span id="mock-counter">Question 1 of 180</span>
+      <span><span class="mock-paper-label" id="mock-paper-label">Paper 1</span> · <span id="mock-counter">Question 1 of 180</span></span>
       <span>Time remaining: <span class="mock-timer" id="mock-timer">180:00</span></span>
       <span id="mock-answered-count">Answered: 0 / 180</span>
     </div>
     <div class="mock-layout">
       <div class="mock-main">
         <div class="card">
-          <span class="topic-tag" id="mock-topic"></span>
+          <span class="topic-tag" id="mock-topic" style="display:none;"></span>
           <p class="question-text" id="mock-text"></p>
           <div class="options" id="mock-options-list"></div>
         </div>
@@ -477,11 +505,25 @@ button:disabled{opacity:.4;cursor:default;filter:none;}
     </div>
   </section>
 
+  <section id="break-screen" class="screen">
+    <h2>Break before Paper 2</h2>
+    <p class="lede" id="break-summary">Paper 1 is submitted. On the real exam day there is a scheduled 1-hour break between the papers.</p>
+    <div class="card">
+      <p style="font-size:14px;color:var(--muted);margin-bottom:6px;">Break time remaining</p>
+      <div class="score-display"><span class="mock-timer" id="break-timer">60:00</span></div>
+      <p class="note">Paper 2 (Principles of Surgery-in-General) has 120 questions in 2 hours. It starts automatically when the break ends.</p>
+      <div class="results-actions">
+        <button id="skip-break-btn" class="btn-danger">Skip the break and start Paper 2</button>
+      </div>
+    </div>
+  </section>
+
   <section id="results-screen" class="screen">
     <h2>Session complete</h2>
     <p class="lede" id="results-summary"></p>
     <div class="score-display" id="score-display"></div>
     <p class="results-meta" id="results-meta"></p>
+    <div id="results-breakdown"></div>
     <div class="results-actions">
       <button id="review-btn" class="btn-secondary">Review answers</button>
       <button id="restart-btn" class="btn-primary">New session</button>
@@ -536,9 +578,13 @@ button:disabled{opacity:.4;cursor:default;filter:none;}
        plab1.html / questions.html). Progress is kept in this
        browser (localStorage).
      - Timed practice: a subject-filtered run with instant feedback.
-     - Mock exam: one continuous 180-question/180-minute sitting
-       representing Paper 1 as it is actually sat — deliberately
-       NOT split into two fake half-length papers.
+     - Mock exams: (a) Full Part A = Paper 1 (180 SBA, 3 h), an
+       optional 60-minute break, then Paper 2 (120 SBA, 2 h);
+       (b) Paper 1 only (180 SBA, 3 h). Each paper is drawn by
+       quota to the official approximate split (ICBSE candidate
+       guide), using each item's paper / syllabus_area fields.
+       Results are raw scores per paper and per syllabus area; the
+       real pass mark is standard-set per sitting, so none is shown.
    Each question carries a letter-keyed options object,
    correct_letter, why_correct, why_others_wrong per wrong letter,
    and optional exam_trap / takeaway / source. Optional thinking
@@ -553,6 +599,14 @@ button:disabled{opacity:.4;cursor:default;filter:none;}
 const DATA_FILE = 'data/mrcs-part-a-combined.json';
 const MOCK_QUESTION_COUNT = 180;
 const MOCK_SECONDS = 180 * 60;
+const BREAK_SECONDS = 60 * 60;
+// Official approximate split per paper (ICBSE Guide to the intercollegiate MRCS, Aug 2021).
+const PAPERS = {
+  1: { name: 'Paper 1', title: 'Applied Basic Science', count: 180, seconds: 180 * 60,
+       quota: { 'Anatomy': 75, 'Physiology': 45, 'Pathology': 37, 'Pharmacology': 8, 'Microbiology': 7, 'Imaging': 5, 'Data interpretation & audit': 3 } },
+  2: { name: 'Paper 2', title: 'Principles of Surgery-in-General', count: 120, seconds: 120 * 60,
+       quota: { 'Common congenital & acquired conditions': 45, 'Perioperative management': 35, 'Trauma': 30, 'Surgical care of children': 7, 'Medico-legal': 3 } },
+};
 const SHOW_STEP = 25;          // cards shown per subject before "Show more"
 const STORE_KEY = 'amac_mrcs_a_state_v1';
 const LETTERS = ['A', 'B', 'C', 'D', 'E', 'F'];
@@ -596,9 +650,19 @@ function makeLayout(order) {
   order.forEach((stored, i) => { disp[stored] = LETTERS[i]; });
   return { order, disp };
 }
+// When every option is a number (doses, volumes, percentages), keep them in
+// ascending order instead of shuffling, as printed SBA papers do.
+const NUM_RE = /^\s*[<>≤≥~]?\s*[-−]?\d/;
+function numericOrder(q) {
+  const keys = Object.keys(q.options);
+  if (!keys.every(k => NUM_RE.test(q.options[k]))) return null;
+  const val = k => parseFloat(String(q.options[k]).replace(/[^0-9.\-−]+/, '').replace('−', '-').match(/-?\d+(\.\d+)?/)[0]);
+  return [...keys].sort((a, b) => val(a) - val(b));
+}
+function randomLayout(q) { return makeLayout(numericOrder(q) || shuffle(Object.keys(q.options))); }
 const bankLayouts = {};
 function bankLayout(q) {
-  if (!bankLayouts[q.id]) bankLayouts[q.id] = makeLayout(seededOrder(q.id, Object.keys(q.options)));
+  if (!bankLayouts[q.id]) bankLayouts[q.id] = makeLayout(numericOrder(q) || seededOrder(q.id, Object.keys(q.options)));
   return bankLayouts[q.id];
 }
 
@@ -863,6 +927,7 @@ const screens = {
   setup: document.getElementById('setup-screen'),
   quiz: document.getElementById('quiz-screen'),
   mock: document.getElementById('mock-screen'),
+  break: document.getElementById('break-screen'),
   results: document.getElementById('results-screen'),
   review: document.getElementById('review-screen'),
 };
@@ -894,9 +959,14 @@ document.getElementById('mode-mock-btn').addEventListener('click', () => setSetu
 document.getElementById('hero-practice-btn').addEventListener('click', () => { setSetupMode('practice'); showScreen('setup'); });
 document.getElementById('hero-mock-btn').addEventListener('click', () => { setSetupMode('mock'); showScreen('setup'); });
 document.getElementById('back-to-bank').addEventListener('click', () => {
-  if (screens.mock.classList.contains('active') && document.body.classList.contains('in-session')) {
-    if (!confirm('Leave the mock exam? Your answers in this sitting will be lost.')) return;
+  if ((screens.mock.classList.contains('active') || screens.break.classList.contains('active')) && document.body.classList.contains('in-session')) {
+    if (!confirm('Leave the mock exam? It is saved and the clock keeps running. You can resume it from the question bank page.')) return;
+    mockSaveState();
     clearInterval(mockTimer);
+    clearInterval(breakTimer);
+    showScreen('bank');
+    showMockResumeCard();
+    return;
   }
   showScreen('bank');
 });
@@ -909,9 +979,9 @@ function populateSubjects() {
   document.getElementById('subject-filter').innerHTML = '<option value="">All subjects</option>' +
     subjects.map(s => `<option value="${esc(s)}">${esc(s)} (${count(s)})</option>`).join('');
   updateBankNote();
-  const mockSubjects = subjects;
+  const quotaText = n => Object.entries(PAPERS[n].quota).map(([a, k]) => `${a.toLowerCase()} ${k}`).join(', ');
   document.getElementById('mock-subject-coverage').textContent =
-    ` — currently covering ${mockSubjects.length} subjects: ${mockSubjects.join(', ')}`;
+    ` (Paper 1: ${quotaText(1)}. Paper 2: ${quotaText(2)}). Where the bank has too few questions in an area, the gap is filled from the largest areas of the same paper.`;
 }
 
 // Live count for the current practice selection.
@@ -938,7 +1008,7 @@ document.getElementById('start-btn').addEventListener('click', () => {
   let filtered = subject === 'all' ? bankData : bankData.filter(d => d.subject === subject);
   filtered = shuffle(filtered);
   quizPool = (countSel === 'all' ? filtered : filtered.slice(0, parseInt(countSel, 10)))
-    .map(q => ({ q, layout: makeLayout(shuffle(Object.keys(q.options))) }));
+    .map(q => ({ q, layout: randomLayout(q) }));
   if (!quizPool.length) { alert('No questions available for that combination. Try a different subject.'); return; }
   currentIndex = 0;
   score = 0;
@@ -1000,47 +1070,174 @@ function showPracticeResults() {
   document.getElementById('results-summary').textContent = `You answered ${total} question${total === 1 ? '' : 's'}.`;
   document.getElementById('results-meta').textContent = '';
   const scoreEl = document.getElementById('score-display');
-  scoreEl.textContent = `${score} / ${total} (${pct}%)`;
-  scoreEl.className = 'score-display ' + (pct >= 70 ? 'pass' : 'fail');
+  scoreEl.textContent = `Raw score ${score} / ${total} (${pct}%)`;
+  scoreEl.className = 'score-display';
+  document.getElementById('results-breakdown').innerHTML = total ? areaTable(sessionLog, false) +
+    '<p class="note">Practice scores are for your own tracking. AMaC does not set or predict a pass mark.</p>' : '';
 }
 
-document.getElementById('start-mock-btn').addEventListener('click', () => {
-  if (bankData.length < MOCK_QUESTION_COUNT) return;
-  mockPool = shuffle(bankData).slice(0, MOCK_QUESTION_COUNT)
-    .map(q => ({ q, layout: makeLayout(shuffle(Object.keys(q.options))) }));
-  mockIndex = 0;
-  mockAnswers = {};
-  mockFlags = {};
-  mockTimeLeft = MOCK_SECONDS;
+/* ---------- Part A mocks: quota draw, two papers, break ---------- */
+let mockType = 'p1';          // 'p1' = Paper 1 only, 'full' = Paper 1 + break + Paper 2
+let mockPaper = 1;            // paper currently being sat
+let mockSeconds = MOCK_SECONDS;
+let paperLogs = {};           // { 1: {log, timeUsed, autoSubmitted, unanswered, flaggedCount}, 2: {...} }
+let usedStems = new Set();    // identical-stem items never appear twice in one sitting
+let breakTimer = null;
+let breakLeft = BREAK_SECONDS;
+
+function stemKey(q) { return String(q.stem || '').toLowerCase().replace(/\W+/g, ' ').trim(); }
+
+// Draw one paper to its official split. Areas with too few items are filled
+// from the largest remaining areas of the same paper.
+function drawPaper(n) {
+  const cfg = PAPERS[n];
+  const pools = {};
+  Object.keys(cfg.quota).forEach(a => { pools[a] = shuffle(bankData.filter(q => q.paper === n && q.syllabus_area === a)); });
+  const picked = [];
+  const take = (area, k) => {
+    let got = 0;
+    while (got < k && pools[area].length) {
+      const q = pools[area].shift();
+      const key = stemKey(q);
+      if (usedStems.has(key)) continue;
+      usedStems.add(key); picked.push(q); got++;
+    }
+    return got;
+  };
+  let short = 0;
+  Object.entries(cfg.quota).forEach(([area, k]) => { short += k - take(area, k); });
+  while (short > 0) {
+    const area = Object.keys(pools).sort((x, y) => pools[y].length - pools[x].length)[0];
+    if (!area || !pools[area].length) break;
+    short -= take(area, 1);
+  }
+  return shuffle(picked).map(q => ({ q, layout: randomLayout(q) }));
+}
+
+/* Saved sitting: the mock survives a reload, and the clock keeps running (wall-clock end time) */
+const MOCK_KEY = 'amac_mrcs_a_mock_v1';
+let mockEndsAt = null, breakEndsAt = null;
+function mockSaveState() {
+  try {
+    const phase = screens.break.classList.contains('active') ? 'break' : 'paper';
+    const pl = {};
+    Object.keys(paperLogs).forEach(k => { const L = paperLogs[k]; pl[k] = Object.assign({}, L, { log: L.log.map(a => ({ id: a.q.id, layout: a.layout, selected: a.selected, isCorrect: a.isCorrect, flagged: a.flagged, paper: a.paper })) }); });
+    localStorage.setItem(MOCK_KEY, JSON.stringify({ v: 1, phase, mockType, mockPaper, mockSeconds, endsAt: mockEndsAt, breakEndsAt,
+      pool: mockPool.map(x => ({ id: x.q.id, layout: x.layout })), index: mockIndex, answers: mockAnswers, flags: mockFlags,
+      paperLogs: pl, usedStems: [...usedStems] }));
+  } catch (e) {}
+}
+function mockClearState() { try { localStorage.removeItem(MOCK_KEY); } catch (e) {} }
+function mockLoadState() { try { const d = JSON.parse(localStorage.getItem(MOCK_KEY) || 'null'); return d && d.v === 1 && Array.isArray(d.pool) ? d : null; } catch (e) { return null; } }
+function showMockResumeCard() {
+  const d = mockLoadState(), box = document.getElementById('mock-resume');
+  if (!d) { box.style.display = 'none'; return; }
+  const left = d.phase === 'break' ? null : Math.max(0, Math.round((d.endsAt - Date.now()) / 1000));
+  const p = PAPERS[d.mockPaper];
+  document.getElementById('mock-resume-info').textContent = (d.mockType === 'full' ? 'Full Part A mock' : 'Paper 1 mock') + ' · ' +
+    (d.phase === 'break' ? 'on the break between papers' : `${p.name}, ${Object.keys(d.answers || {}).length} of ${d.pool.length} answered, ` +
+    (left > 0 ? `${mmss(left)} remaining (the clock kept running)` : 'time has run out; it will be submitted when you resume'));
+  box.style.display = '';
+}
+function mockResume() {
+  const d = mockLoadState(); if (!d) return;
+  const pool = d.pool.map(x => ({ q: byId[x.id], layout: x.layout }));
+  if (pool.some(x => !x.q)) { mockClearState(); showMockResumeCard(); return; }
+  mockType = d.mockType; mockPaper = d.mockPaper; mockSeconds = d.mockSeconds;
+  usedStems = new Set(d.usedStems || []);
+  paperLogs = {};
+  Object.keys(d.paperLogs || {}).forEach(k => { const L = d.paperLogs[k]; paperLogs[k] = Object.assign({}, L, { log: L.log.map(a => Object.assign({}, a, { q: byId[a.id] })) }); });
   mockSubmitted = null;
+  document.getElementById('mock-resume').style.display = 'none';
+  if (d.phase === 'break') { breakEndsAt = d.breakEndsAt; startBreak(true); return; }
+  mockPool = pool; mockIndex = d.index || 0; mockAnswers = d.answers || {}; mockFlags = d.flags || {};
+  mockEndsAt = d.endsAt;
+  document.getElementById('mock-paper-label').textContent = `${PAPERS[mockPaper].name} — ${PAPERS[mockPaper].title}`;
   buildPalette();
   showScreen('mock');
   renderMockQuestion();
   startMockTimer();
+}
+document.getElementById('mock-resume-btn').addEventListener('click', mockResume);
+document.getElementById('mock-discard-btn').addEventListener('click', () => {
+  if (!confirm('Discard the saved mock? Your answers in that sitting will be lost.')) return;
+  mockClearState(); showMockResumeCard();
 });
+
+function startPaper(n) {
+  mockPaper = n;
+  mockSeconds = PAPERS[n].seconds;
+  mockPool = drawPaper(n);
+  mockIndex = 0;
+  mockAnswers = {};
+  mockFlags = {};
+  mockTimeLeft = mockSeconds;
+  mockEndsAt = Date.now() + mockSeconds * 1000;
+  document.getElementById('mock-paper-label').textContent = `${PAPERS[n].name} — ${PAPERS[n].title}`;
+  buildPalette();
+  showScreen('mock');
+  renderMockQuestion();
+  startMockTimer();
+}
+
+function startMock(type) {
+  if (bankData.length < MOCK_QUESTION_COUNT) return;
+  mockType = type;
+  paperLogs = {};
+  usedStems = new Set();
+  mockSubmitted = null;
+  startPaper(1);
+}
+document.getElementById('start-mock-btn').addEventListener('click', () => startMock('p1'));
+document.getElementById('start-full-mock-btn').addEventListener('click', () => startMock('full'));
 
 function startMockTimer() {
   clearInterval(mockTimer);
-  updateTimerDisplay();
-  mockTimer = setInterval(() => {
-    mockTimeLeft--;
+  let n = 0;
+  const tick = () => {
+    mockTimeLeft = Math.max(0, Math.round((mockEndsAt - Date.now()) / 1000));
     updateTimerDisplay();
-    if (mockTimeLeft <= 0) { clearInterval(mockTimer); submitMockExam(true); }
-  }, 1000);
+    if (mockTimeLeft <= 0) { clearInterval(mockTimer); submitMockExam(true); return true; }
+    if (++n % 15 === 0) mockSaveState();
+    return false;
+  };
+  if (tick()) return;
+  mockTimer = setInterval(tick, 1000);
 }
 
+function mmss(t) { return `${String(Math.floor(t / 60)).padStart(2, '0')}:${String(t % 60).padStart(2, '0')}`; }
 function updateTimerDisplay() {
-  const m = Math.floor(mockTimeLeft / 60), s = mockTimeLeft % 60;
   const el = document.getElementById('mock-timer');
-  el.textContent = `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+  el.textContent = mmss(mockTimeLeft);
   el.className = 'mock-timer' + (mockTimeLeft <= 600 ? ' danger' : mockTimeLeft <= 1800 ? ' warning' : '');
 }
+
+function startBreak(resume) {
+  if (!resume) breakEndsAt = Math.min(Date.now(), mockEndsAt || Date.now()) + BREAK_SECONDS * 1000;
+  breakLeft = Math.max(0, Math.round((breakEndsAt - Date.now()) / 1000));
+  if (breakLeft <= 0) { startPaper(2); return; }
+  const p1 = paperLogs[1];
+  document.getElementById('break-summary').textContent =
+    `Paper 1 is submitted (${p1.log.length - p1.unanswered} of ${p1.log.length} answered). On the real exam day there is a scheduled 1-hour break between the papers. Your Paper 1 score is shown at the end, with Paper 2.`;
+  const el = document.getElementById('break-timer');
+  el.textContent = mmss(breakLeft);
+  showScreen('break');
+  clearInterval(breakTimer);
+  mockSaveState();
+  breakTimer = setInterval(() => {
+    breakLeft = Math.max(0, Math.round((breakEndsAt - Date.now()) / 1000));
+    el.textContent = mmss(Math.max(breakLeft, 0));
+    if (breakLeft <= 0) { clearInterval(breakTimer); startPaper(2); }
+  }, 1000);
+}
+document.getElementById('skip-break-btn').addEventListener('click', () => { clearInterval(breakTimer); startPaper(2); });
 
 function renderMockQuestion() {
   const { q, layout } = mockPool[mockIndex];
   document.getElementById('mock-counter').textContent = `Question ${mockIndex + 1} of ${mockPool.length}`;
   document.getElementById('mock-answered-count').textContent = `Answered: ${Object.keys(mockAnswers).length} / ${mockPool.length}`;
-  document.getElementById('mock-topic').textContent = q.subject;
+  // Real papers show no topic label, so the subject stays hidden during the mock (shown in review).
+  document.getElementById('mock-topic').textContent = '';
   document.getElementById('mock-text').textContent = q.stem;
   renderOptionList(document.getElementById('mock-options-list'), q, layout, letter => {
     mockAnswers[mockIndex] = letter;
@@ -1053,6 +1250,7 @@ function renderMockQuestion() {
   document.getElementById('mock-next-btn').disabled = mockIndex === mockPool.length - 1;
   document.getElementById('mock-next-btn').textContent = mockIndex === mockPool.length - 1 ? 'Last question' : 'Next';
   updatePalette();
+  mockSaveState();
 }
 
 function buildPalette() {
@@ -1089,36 +1287,76 @@ document.getElementById('mock-submit-btn').addEventListener('click', () => {
 
 function submitMockExam(autoSubmitted) {
   clearInterval(mockTimer);
-  let correct = 0;
-  sessionLog = mockPool.map(({ q, layout }, i) => {
+  const log = mockPool.map(({ q, layout }, i) => {
     const selected = mockAnswers[i] || null;
     const isCorrect = !!selected && selected === q.correct_letter;
-    if (isCorrect) correct++;
-    return { q, layout, selected, isCorrect, flagged: !!mockFlags[i] };
+    return { q, layout, selected, isCorrect, flagged: !!mockFlags[i], paper: mockPaper };
   });
-  score = correct;
-  mockSubmitted = {
-    total: mockPool.length, timeUsed: MOCK_SECONDS - mockTimeLeft, autoSubmitted,
+  paperLogs[mockPaper] = {
+    log, timeUsed: mockSeconds - mockTimeLeft, autoSubmitted,
     unanswered: mockPool.length - Object.keys(mockAnswers).length,
     flaggedCount: Object.keys(mockFlags).filter(k => mockFlags[k]).length,
   };
+  if (mockType === 'full' && mockPaper === 1) { startBreak(); return; }
+  sessionLog = [].concat(...Object.keys(paperLogs).sort().map(k => paperLogs[k].log));
+  score = sessionLog.filter(a => a.isCorrect).length;
+  mockSubmitted = { total: sessionLog.length };
+  mockClearState();
   showMockResults();
+}
+
+// Raw score by syllabus area, grouped by paper. No pass/fail colouring.
+function areaTable(log, byPaperHeader) {
+  const rows = {};
+  log.forEach(a => {
+    const p = a.q.paper, area = a.q.syllabus_area || a.q.subject;
+    const k = p + '|' + area;
+    rows[k] = rows[k] || { p, area, n: 0, c: 0 };
+    rows[k].n++; if (a.isCorrect) rows[k].c++;
+  });
+  const order = p => Object.keys(PAPERS[p] ? PAPERS[p].quota : {});
+  const papers = [...new Set(Object.values(rows).map(r => r.p))].sort();
+  const pc = (c, n) => n ? Math.round(c / n * 100) + '%' : '—';
+  let html = '<table class="area-table"><thead><tr><th>Syllabus area</th><th class="num">Correct</th><th class="num">Questions</th><th class="num">%</th></tr></thead><tbody>';
+  papers.forEach(p => {
+    const rs = Object.values(rows).filter(r => r.p === p)
+      .sort((x, y) => order(p).indexOf(x.area) - order(p).indexOf(y.area));
+    const c = rs.reduce((t, r) => t + r.c, 0), n = rs.reduce((t, r) => t + r.n, 0);
+    const label = PAPERS[p] ? `${PAPERS[p].name} — ${PAPERS[p].title}` : 'Other';
+    html += `<tr class="paper-row"><td>${esc(label)}</td><td class="num">${c}</td><td class="num">${n}</td><td class="num">${pc(c, n)}</td></tr>`;
+    html += rs.map(r => `<tr><td>${esc(r.area)}</td><td class="num">${r.c}</td><td class="num">${r.n}</td><td class="num">${pc(r.c, r.n)}</td></tr>`).join('');
+  });
+  return html + '</tbody></table>';
 }
 
 function showMockResults() {
   showScreen('results');
   lastReviewMode = 'mock';
-  const { total, timeUsed, autoSubmitted, unanswered, flaggedCount } = mockSubmitted;
+  const total = mockSubmitted.total;
   const pct = Math.round((score / total) * 100);
-  const mins = Math.floor(timeUsed / 60), secs = timeUsed % 60;
-  document.getElementById('results-summary').textContent = autoSubmitted
-    ? 'Time ran out — your exam was submitted automatically.'
-    : 'Mock exam submitted.';
-  document.getElementById('results-meta').textContent =
-    `Time used: ${mins}m ${secs}s · Unanswered: ${unanswered} · Flagged: ${flaggedCount}`;
+  const papers = Object.keys(paperLogs).sort();
+  const anyAuto = papers.some(p => paperLogs[p].autoSubmitted);
+  document.getElementById('results-summary').textContent = (mockType === 'full'
+    ? 'Full Part A mock submitted (Paper 1 and Paper 2).'
+    : 'Paper 1 mock submitted.') + (anyAuto ? ' Time ran out on at least one paper, so it was submitted automatically.' : '');
+  document.getElementById('results-meta').textContent = papers.map(p => {
+    const L = paperLogs[p], m = Math.floor(L.timeUsed / 60), sec = L.timeUsed % 60;
+    return `${PAPERS[p].name}: time used ${m}m ${sec}s · unanswered ${L.unanswered} · flagged ${L.flaggedCount}`;
+  }).join('  |  ');
   const scoreEl = document.getElementById('score-display');
-  scoreEl.textContent = `${score} / ${total} (${pct}%)`;
-  scoreEl.className = 'score-display ' + (pct >= 70 ? 'pass' : 'fail');
+  scoreEl.textContent = `Raw score ${score} / ${total} (${pct}%)`;
+  scoreEl.className = 'score-display';
+  let html = '';
+  if (papers.length > 1) {
+    html += '<div class="paper-scores">' + papers.map(p => {
+      const L = paperLogs[p].log, c = L.filter(a => a.isCorrect).length;
+      return `<div><b>${c} / ${L.length}</b>${PAPERS[p].name} raw score (${Math.round(c / L.length * 100)}%)</div>`;
+    }).join('') + `<div><b>${score} / ${total}</b>Combined raw score</div></div>`;
+  }
+  html += areaTable(sessionLog, true);
+  html += '<p class="note">How Part A is actually passed: you must reach the minimum standard in <b>each</b> paper <b>and</b> a combined total at or above the pass mark. Both are standard-set for each sitting and are not published in advance, so AMaC shows raw scores only and does not predict a pass or fail.' +
+    (mockType === 'p1' ? ' This was a Paper 1 mock only; the real exam also includes Paper 2.' : '') + '</p>';
+  document.getElementById('results-breakdown').innerHTML = html;
 }
 
 document.getElementById('review-btn').addEventListener('click', () => { showScreen('review'); renderReview('all'); });
@@ -1159,6 +1397,7 @@ function renderReview(filterName) {
       : '<p class="a wrong">Not answered</p>';
     return `<div class="review-item ${a.isCorrect ? 'correct' : 'incorrect'}">
       <p class="q"><b>Q${idx}.</b> ${esc(q.stem)}</p>
+      ${q.paper ? `<p class="a">${esc(PAPERS[q.paper] ? PAPERS[q.paper].name : '')} · ${esc(q.syllabus_area || '')} · ${esc(q.subject)}</p>` : ''}
       ${answeredText}
       ${!a.isCorrect ? `<p class="a right">Correct answer: ${opt(q.correct_letter)}</p>` : ''}
       ${a.flagged ? '<p class="flag-note">Flagged during exam</p>' : ''}
@@ -1170,11 +1409,8 @@ function renderReview(filterName) {
 document.getElementById('restart-btn').addEventListener('click', () => showScreen('setup'));
 document.getElementById('back-to-setup-btn').addEventListener('click', () => showScreen('setup'));
 
-window.addEventListener('beforeunload', e => {
-  if (document.body.classList.contains('in-session') && screens.mock.classList.contains('active')) {
-    e.preventDefault();
-    e.returnValue = '';
-  }
+window.addEventListener('beforeunload', () => {
+  if (document.body.classList.contains('in-session') && (screens.mock.classList.contains('active') || screens.break.classList.contains('active'))) mockSaveState();
 });
 
 /* =========================================================
@@ -1207,6 +1443,7 @@ async function loadData() {
     mockNote.textContent = `Drawing from ${n} questions.`;
   }
   filter();
+  showMockResumeCard();
 }
 
 loadData();

@@ -47,7 +47,7 @@
 window.MRCP1_SPEC = {
 
   /* ---- version of this transcription ---- */
-  SPEC_VERSION: 3,
+  SPEC_VERSION: 4,
   SPEC_SOURCE:  "Federation of the Royal Colleges of Physicians of the UK — published MRCP(UK) Part 1 specification",
 
   /* ---- paper structure ---- */
@@ -65,6 +65,44 @@ window.MRCP1_SPEC = {
   OPTIONS_PER_QUESTION: 5,
   // Published marking scheme: there is no negative marking in Part 1.
   NEGATIVE_MARKING: false,
+  // Published format: Part 1 questions carry no images. The Federation's Part 1
+  // page states "no images" (thefederation.uk/examinations/part-1, read 8 Oct 2026).
+  IMAGES_PERMITTED: false,
+  IMAGES_SOURCE: "https://www.thefederation.uk/examinations/part-1",
+
+  /* ---- blueprint (approximate questions per 200, from the 2020/1 diet) ----
+     Source: thefederation.uk/examinations/part-1/format, read 8 Oct 2026.
+     The Federation describes these counts as approximate. Clinical sciences
+     (25) is broken down in CLINICAL_SCIENCES below. Totals 200. */
+  BLUEPRINT_SOURCE: "https://www.thefederation.uk/examinations/part-1/format",
+  BLUEPRINT: [
+    ["Clinical sciences", 25],
+    ["Clinical pharmacology and therapeutics", 15],
+    ["Cardiology", 14],
+    ["Endocrinology, diabetes and metabolic medicine", 14],
+    ["Gastroenterology and hepatology", 14],
+    ["Infectious diseases", 14],
+    ["Neurology", 14],
+    ["Renal medicine", 14],
+    ["Respiratory medicine", 14],
+    ["Rheumatology", 14],
+    ["Haematology", 10],
+    ["Psychiatry", 9],
+    ["Dermatology", 8],
+    ["Geriatric medicine", 8],
+    ["Oncology", 5],
+    ["Medical ophthalmology", 4],
+    ["Palliative medicine and end of life care", 4]
+  ],
+  CLINICAL_SCIENCES: [
+    ["Cell, molecular and membrane biology", 2],
+    ["Clinical anatomy", 3],
+    ["Clinical biochemistry and metabolism", 4],
+    ["Clinical physiology", 4],
+    ["Genetics", 3],
+    ["Immunology", 4],
+    ["Statistics, epidemiology and evidence-based medicine", 5]
+  ],
 
   /* ---- standard setting and scoring ---- */
   // Published standard: the pass mark is a SCALED score of 450.
@@ -126,5 +164,19 @@ window.MRCP1_SPEC = {
           TYPICAL span, not bounds -- the page allows scores below 200 and
           above 800. mrcp1-mock.html now renders "typically 200-800" instead
           of "200-800 scaled" so the table does not read as a limit.
+     v4 — 8 Oct 2026. IMAGES_PERMITTED restored as false. The v2 withdrawal was
+          itself the error: the Federation's Part 1 page
+          (thefederation.uk/examinations/part-1) states "no images". The
+          'Images' row is back in mrcp1-mock.html and mrcp1-exams.html.
+          BLUEPRINT and CLINICAL_SCIENCES added from the format page (the
+          approximate 200-question split), exposed as window.MRCP1_SUBDOMAINS
+          so papers can be assembled to it (see mrcp1-papers.js).
   */
 };
+
+// The blueprint as { name: approximate questions per 200 } for paper assembly.
+window.MRCP1_SUBDOMAINS = (function(){
+  var o = {};
+  window.MRCP1_SPEC.BLUEPRINT.forEach(function(r){ o[r[0]] = r[1]; });
+  return o;
+})();

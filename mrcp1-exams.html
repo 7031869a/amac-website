@@ -57,6 +57,10 @@ nav{position:sticky;top:0;z-index:100;background:var(--panel);border-bottom:1px 
   padding:16px 19px;font-size:13px;color:var(--txt-soft);line-height:1.65;margin-bottom:28px;}
 .scaffold-note b{color:var(--txt);font-weight:600;}
 
+.spec{display:grid;grid-template-columns:auto 1fr;gap:9px 20px;margin:12px 0 0;font-size:13.5px;}
+.spec dt{color:var(--txt-mute);}
+.spec dd{color:var(--txt);margin:0;}
+@media(max-width:560px){.spec{grid-template-columns:1fr;gap:2px 0;}.spec dd{margin-bottom:10px;}}
 .mocks-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:15px;margin-bottom:38px;}
 .mock-card{
   background:var(--card);
@@ -101,6 +105,7 @@ footer{margin-top:40px;border-top:1px solid #1A2740;padding:30px 26px 26px;}
 .foot-bottom{max-width:1180px;margin:0 auto;font-size:12px;color:var(--txt-faint);text-align:center;}
 .amac-legal-note{max-width:74ch;margin:16px auto 0;font-size:11.5px;line-height:1.65;color:var(--txt-faint);text-align:center;}
 @media(max-width:640px){.nav-links{gap:13px;font-size:12px;}}
+.filters>div{min-width:0;max-width:100%;}.filter-select{max-width:100%;} /* RF: 390px overflow */
 </style>
 </head>
 <body>
@@ -131,9 +136,10 @@ footer{margin-top:40px;border-top:1px solid #1A2740;padding:30px 26px 26px;}
 
 <div class="wrap">
   <div class="scaffold-note">
-    <b>Mock papers are coming soon.</b> Paper length, timing and the pass mark are set by the
-    Federation, and we do not state them here until we can cite them. Nothing on this page
-    invents a paper size or a pass threshold.
+    <b>Mock papers are coming soon.</b> When they arrive they will follow the Federation's
+    published Part 1 format below, which is taken from the Federation's own pages
+    (thefederation.uk/examinations/part-1) and shown on every page from one source file.
+    <dl class="spec" id="specList"></dl>
   </div>
 
   <h2 class="section-title">Fixed papers</h2>
@@ -168,6 +174,25 @@ footer{margin-top:40px;border-top:1px solid #1A2740;padding:30px 26px 26px;}
 
 <script src="mrcp1-questions.js"></script>
 <script src="mrcp1-papers.js"></script>
+<script src="mrcp1-spec.js"></script>
+<script>
+// The published format, rendered from mrcp1-spec.js (same rows as mrcp1-mock.html).
+(function renderSpec(){
+  var SPEC = window.MRCP1_SPEC || {};
+  var el = document.getElementById('specList');
+  if (!el || !SPEC.QUESTIONS_PER_PAPER) return;
+  var rows = [
+    ['Papers per diet',   SPEC.PAPERS_PER_DIET + ', sat on the same day'],
+    ['Questions a paper', SPEC.QUESTIONS_PER_PAPER],
+    ['Time a paper',      SPEC.HOURS_PER_PAPER + ' hours'],
+    ['Question format',   'Best of ' + SPEC.OPTIONS_PER_QUESTION],
+    ['Negative marking',  SPEC.NEGATIVE_MARKING ? 'Yes' : 'No'],
+    ['Images',            SPEC.IMAGES_PERMITTED === false ? 'None (the Federation states “no images”)' : 'Not stated'],
+    ['Pass mark',         SPEC.PASS_MARK_SCALED + ' scaled, from the ' + SPEC.PASS_MARK_APPLIES_FROM + ' diet (equated each diet; a practice percentage does not convert to it)']
+  ];
+  el.innerHTML = rows.map(function(r){ return '<dt>' + r[0] + '</dt><dd>' + r[1] + '</dd>'; }).join('');
+})();
+</script>
 <script>
 var QUESTIONS = Array.isArray(window.MRCP1_QUESTIONS) ? window.MRCP1_QUESTIONS : [];
 var PAPERS    = window.MRCP1_PAPERS || {};

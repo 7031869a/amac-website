@@ -46,7 +46,7 @@
   "alternateName": ["Ahmed Mansour & Colleagues", "A. Mansour & Colleagues"],
   "url": "https://amac-medical.com/",
   "logo": "https://amac-medical.com/apple-touch-icon.png",
-  "description": "Preparation for the UK medical and surgical examinations: UKMLA, PLAB 1, PLAB 2 and FRCS Part 2.",
+  "description": "Preparation for the UK medical and surgical examinations and Foundation training: UKMLA, Foundation F1 and F2, PLAB 1, PLAB 2, MRCP Part 1, MRCS and FRCS (General Surgery) Section 2 academic paper critique.",
   "slogan": "Think like an examiner. Pass with confidence."
 }
 </script>
@@ -174,7 +174,10 @@ select:focus{border-color:var(--gold);}
 .learn-obj-text{font-size:13px;color:var(--muted);line-height:1.5;}
 
 /* STEM */
-.q-stem-full{font-size:15px;color:var(--ink);line-height:1.65;margin-bottom:6px;padding:14px;background:var(--cream);border-radius:4px;border-left:3px solid var(--gold);}
+.q-stem-full{font-size:15px;color:var(--ink);line-height:1.65;margin-bottom:6px;padding:14px;background:var(--cream);border-radius:4px;border-left:3px solid var(--gold);white-space:pre-line;}
+.q-figure{margin:10px 0 14px;}
+.q-figure img{display:block;max-width:100%;height:auto;border:1px solid var(--line);border-radius:4px;background:#fff;}
+.q-figure figcaption{font-size:13px;color:var(--muted);margin-top:6px;line-height:1.5;}
 .q-stem-q{font-size:15px;font-weight:600;color:var(--navy);margin:8px 0 14px;}
 
 /* OPTIONS */
@@ -265,13 +268,13 @@ footer p{font-size:12px;font-weight:300;}
 
 <header class="hero">
   <div class="hero-inner">
-    <span class="hero-kick">SBA Question Bank · UKMLA Standard · AMaC Format</span>
+    <span class="hero-kick">SBA Question Bank · PLAB 1 format (180 SBA, 5 options)</span>
     <span class="plab-line">PLAB <span>1</span></span>
     <span class="plab-sub">Question Bank</span>
     <p><span id="hero-count" data-count="plab1Questions" data-count-plain>3171</span> questions built to full AMaC standard — Why It Is Correct, Why The Others Are Wrong, NICE Pearl, Examiner Thinking chain, Exam Trap, and Key Takeaway.</p>
     <div style="margin-top:22px;display:flex;gap:12px;flex-wrap:wrap;">
       <a href="plab1-exams.html" style="display:inline-block;background:var(--gold);color:var(--navy-deep);padding:13px 30px;border-radius:4px;font-weight:700;font-size:15px;text-decoration:none;letter-spacing:.5px;font-family:'Outfit',sans-serif;transition:.2s;">&#9201; Mock Exam &mdash; 180 questions, 3 hours</a>
-      <a href="plab1-study.html" style="display:inline-block;background:transparent;border:2px solid rgba(255,255,255,.55);color:#fff;padding:13px 28px;border-radius:4px;font-weight:600;font-size:15px;text-decoration:none;letter-spacing:.5px;font-family:'Outfit',sans-serif;transition:.2s;">&#128218; Study Mode &mdash; all <span id="study-count">1334</span>, with explanations</a>
+      <a href="plab1-study.html" style="display:inline-block;background:transparent;border:2px solid rgba(255,255,255,.55);color:#fff;padding:13px 28px;border-radius:4px;font-weight:600;font-size:15px;text-decoration:none;letter-spacing:.5px;font-family:'Outfit',sans-serif;transition:.2s;">&#128218; Study Mode &mdash; all <span id="study-count" data-count="plab1Questions" data-count-plain>3171</span>, with explanations</a>
     </div>
     <div class="stats-row">
       <div class="stat"><div class="stat-num" id="total-count" data-count="plab1Questions" data-count-plain>3171</div><div class="stat-label">Questions</div></div>
@@ -467,7 +470,7 @@ function buildCard(q) {
       <div class="learn-obj-text">Understand and apply the correct management of: ${esc(q.presentation)}.</div>
     </div>` : '';
 
-  const optionsHtml = Object.entries(q.options||{}).map(([letter, text]) => {
+  const optionsHtml = Object.entries(q.options||{}).sort(([a],[b]) => a.localeCompare(b)).map(([letter, text]) => {
     let cls = '';
     if (ans) {
       if (letter === q.correct_letter) cls = ' correct locked';
@@ -516,6 +519,7 @@ function buildCard(q) {
     <div class="q-body">
       ${learnObjHtml}
       <div class="q-stem-full">${esc(q.stem)}</div>
+      ${(q.image && q.image.src) ? `<figure class="q-figure"><img src="${esc(q.image.src).replace(/"/g,'&quot;')}" alt="${esc(q.image.alt||'').replace(/"/g,'&quot;')}" loading="lazy">${q.image.caption ? `<figcaption>${esc(q.image.caption)}</figcaption>` : ''}</figure>` : ''}
       <div class="options" id="opts-${q.id}">${optionsHtml}</div>
       ${resultHtml}
       ${submitBtn}

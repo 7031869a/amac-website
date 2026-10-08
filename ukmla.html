@@ -46,7 +46,7 @@
   "alternateName": ["Ahmed Mansour & Colleagues", "A. Mansour & Colleagues"],
   "url": "https://amac-medical.com/",
   "logo": "https://amac-medical.com/apple-touch-icon.png",
-  "description": "Preparation for the UK medical and surgical examinations: UKMLA, PLAB 1, PLAB 2 and FRCS Part 2.",
+  "description": "Preparation for the UK medical and surgical examinations and Foundation training: UKMLA, Foundation F1 and F2, PLAB 1, PLAB 2, MRCP Part 1, MRCS and FRCS (General Surgery) Section 2 academic paper critique.",
   "slogan": "Think like an examiner. Pass with confidence."
 }
 </script>
@@ -268,7 +268,7 @@ footer{margin-top:40px;border-top:1px solid #1A2740;padding:34px 26px 26px;}
     </div>
     <div class="sh-result" id="sh-result" aria-live="polite" hidden></div>
     <div class="sh-quick">
-      <div><strong>Short on time?</strong> A 20-minute set of AKT questions, chosen from your own results.</div>
+      <div><strong>Short on time?</strong> A 20-minute set of 17 AKT questions, chosen from your own results, at the AKT pace of 72 seconds a question.</div>
       <button type="button" class="sh-20" id="sh-20">Give me 20 minutes</button>
     </div>
     <div class="sh-quick-out" id="sh-20-out" aria-live="polite" hidden></div>
@@ -359,7 +359,7 @@ footer{margin-top:40px;border-top:1px solid #1A2740;padding:34px 26px 26px;}
     },
     final: {
       go: ['instant-fail-atlas.html', 'Go to the Instant Fail Atlas'],
-      why: '<strong>Why this:</strong> in the final fortnight, don’t try to do everything. Avoiding the few errors that fail a station outright is worth more than new content now.',
+      why: '<strong>Why this:</strong> in the final fortnight, don’t try to do everything. Avoiding the few errors serious enough to fail a station on their own is worth more than new content now. (“Instant fail” is AMaC’s label for these; there is no national CPSA instant-fail rule, and your school’s marking decides.)',
       then: 'Then: learn the recovery lines for when a station goes wrong, and keep the Exam Morning Card for the day itself.',
       alt: [['recovery-scripts.html', 'Recovery Scripts'], ['exam-morning.html', 'Exam Morning Card']]
     },
@@ -372,7 +372,7 @@ footer{margin-top:40px;border-top:1px solid #1A2740;padding:34px 26px 26px;}
     resitCpsa: {
       go: ['fail-recovery.html', 'Work out what failed you'],
       why: '<strong>Why this:</strong> before revising more of everything, find out which domain actually cost you the stations. The diagnostic asks how you performed, not what you know.',
-      then: 'Then: rehearse the moments that went wrong, using the recovery lines and the instant-fail traps.',
+      then: 'Then: rehearse the moments that went wrong, using the recovery lines and the instant-fail traps (AMaC’s label for lapses serious enough to fail a station; there is no national CPSA instant-fail rule).',
       alt: [['recovery-scripts.html', 'Recovery Scripts'], ['instant-fail-atlas.html', 'Instant Fail Atlas']]
     }
   };
@@ -447,7 +447,7 @@ footer{margin-top:40px;border-top:1px solid #1A2740;padding:34px 26px 26px;}
     out20.hidden = false; out20.innerHTML = '<p class="sh-why">Building your set\u2026</p>';
     A.load().then(function (d) {
       var s = A.session(d.gmc, d.map);
-      if (!s.ids.length) { out20.innerHTML = '<p class="sh-why">You have answered every question we could pick. Open the AKT bank for a full mock.</p>'; return; }
+      if (!s.ids.length) { out20.innerHTML = '<p class="sh-why">You have answered every question we could pick. <a href="questions.html?mock=1">Open the AKT mock: two 100-question papers, 2 hours each.</a></p>'; return; }
       var why;
       if (!s.anyAnswered) {
         why = s.ids.length + ' questions, each from a different GMC condition: a quick check across the syllabus. Once you have answered some, this button aims at your weak areas.';
@@ -528,13 +528,13 @@ footer{margin-top:40px;border-top:1px solid #1A2740;padding:34px 26px 26px;}
     <a class="tool-card" href="cpsa-stations.html">
       <div class="tc-name">CPSA Stations</div>
       <div class="tc-badge"><span data-count="cpsaStations">360</span> CPSA stations</div>
-      <div class="tc-desc">Examiner marking grids and full Fail / Pass / High-performance transcripts across every station category.</div>
+      <div class="tc-desc">AMaC marking checklists and full Fail / Pass / High-performance transcripts across every station category.</div>
     </a>
 
     <a class="tool-card" href="questions.html">
       <div class="tc-name">AKT Question Bank</div>
       <div class="tc-badge"><span data-count="aktQuestions">10,999</span> questions</div>
-      <div class="tc-desc">Single-best-answer across <span data-count="aktDomains">27</span> clinical domains, with full explanations and exam-style challenge.</div>
+      <div class="tc-desc">Single-best-answer questions mapped to the GMC’s 24 areas of clinical practice, with full explanations, plus a timed two-paper AKT mock.</div>
     </a>
 
     <a class="tool-card" href="say-never-say.html">
@@ -560,7 +560,7 @@ footer{margin-top:40px;border-top:1px solid #1A2740;padding:34px 26px 26px;}
     <a class="tool-card" href="instant-fail-atlas.html">
       <div class="tc-name">Instant Fail Atlas</div>
       <div class="tc-badge"><span data-count="atlasCards">222</span> case-based cards</div>
-      <div class="tc-desc">A museum of the moments good candidates fail — the cognitive trap, the instant-fail moves behind it, and the one rule that saves each station.</div>
+      <div class="tc-desc">A museum of the moments good candidates fail — the cognitive trap, the instant-fail moves behind it, and the one rule that saves each station. “Instant fail” is AMaC’s label for a lapse serious enough to fail a station on its own; there is no national CPSA instant-fail rule.</div>
     </a>
 
   </div>

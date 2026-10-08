@@ -46,7 +46,7 @@
   "alternateName": ["Ahmed Mansour & Colleagues", "A. Mansour & Colleagues"],
   "url": "https://amac-medical.com/",
   "logo": "https://amac-medical.com/apple-touch-icon.png",
-  "description": "Preparation for the UK medical and surgical examinations: UKMLA, PLAB 1, PLAB 2 and FRCS Part 2.",
+  "description": "Preparation for the UK medical and surgical examinations and Foundation training: UKMLA, Foundation F1 and F2, PLAB 1, PLAB 2, MRCP Part 1, MRCS and FRCS (General Surgery) Section 2 academic paper critique.",
   "slogan": "Think like an examiner. Pass with confidence."
 }
 </script>
@@ -157,6 +157,7 @@ footer{border-top:1px solid #1A2740;padding:28px 26px;text-align:center;}
     <div class="hero-kick">PERFORMANCE INTELLIGENCE &middot; PLAB 2 &amp; CPSA</div>
     <h1>The Instant Fail Atlas</h1>
     <p class="hero-sub">Not a list of mistakes. A museum of the moments good candidates fail &mdash; the cognitive trap, the instant-fail moves behind it, and the one rule that saves the station.</p>
+    <p class="hero-sub" style="margin-top:14px;font-size:13.5px;">&ldquo;Instant fail&rdquo; is AMaC&rsquo;s label for a lapse serious enough to fail a station on its own. In PLAB 2 the GMC has no automatic-fail rule: unsafe or unprofessional actions lose marks in the three domains, and serious concerns are recorded separately. In the UKMLA CPSA there is no national instant-fail rule: your medical school&rsquo;s marking decides.</p>
   </div>
 </section>
 
@@ -214,6 +215,11 @@ footer{border-top:1px solid #1A2740;padding:28px 26px;text-align:center;}
     var examOk = state.exam==='all' || card.exam==='both' || card.exam===state.exam;
     return catOk && examOk;
   }
+  // Kicker suffix follows the exam filter: the card data carries '· CPSA' for every card (exam:'both').
+  function kickerFor(c){
+    var suffix = state.exam==='plab2' ? '\u00b7 PLAB 2' : state.exam==='cpsa' ? '\u00b7 UKMLA CPSA' : '\u00b7 PLAB 2 & CPSA';
+    return (c.kicker||'').replace(/\u00b7 CPSA$/, suffix);
+  }
   function cardHTML(c){
     var moves = (c.fails||[]).map(function(f){
       return '<div class="move"><div class="x">&#10005;</div><div class="mt"><b>'+esc(f.lead)+'</b> '+esc(f.body)+'</div></div>';
@@ -223,7 +229,7 @@ footer{border-top:1px solid #1A2740;padding:28px 26px;text-align:center;}
       '<div class="flip-in">'+
         '<div class="face front">'+
           '<div class="front-body">'+
-            '<div class="front-kick">'+esc(c.kicker)+'</div>'+
+            '<div class="front-kick">'+esc(kickerFor(c))+'</div>'+
             '<div class="front-title">'+esc(c.title)+'</div>'+
             '<div class="front-rule"></div>'+
             '<div class="trap-label">The Cognitive Trap</div>'+

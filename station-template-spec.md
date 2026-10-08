@@ -105,7 +105,8 @@ Each exam defines its domains and band labels once; stations reference them.
 **MRCS Part B (confirm wording against current Intercollegiate candidate guidance before locking):**
 
 - Domains: `clinical-knowledge`, `clinical-skill` (clinical and technical skill), `communication`, `professionalism` (includes decision-making, situational awareness and judgement, organisation, planning, patient safety).
-- Each station is marked out of 20 against a structured mark sheet, plus a global rating of **pass / borderline / fail**.
+- Each station is marked out of 20 against a structured mark sheet, plus a global rating of **pass / borderline / fail**. Knowledge (8 stations, 160 marks) and Skills (9 stations, 180 marks) are passed separately.
+- **Viewer self-score (AMaC practice estimate, not the ICBSE mark sheet):** each grid row is scored Fail 0, Borderline 1, Pass 2, High-performance 3; the rows are scaled to a station mark out of 20, with a subtotal for each of the four domains from the rows' domain tags. The global rating is chosen separately and is never derived from the mark.
 - Stations are 9 minutes with a reading minute outside the door.
 - **Band note:** the real overall rating is pass / borderline / fail. AMaC's Fail, Borderline and Pass bands mirror it. **High-performance** is AMaC's teaching label for what lifts a pass towards full marks; it is not an official grade, and the Learn view says so once.
 
@@ -131,7 +132,9 @@ Anatomy, pathology and wound stations need images. Each station lists them under
 
 The viewer does not show images yet. Anatomy and pathology stations stay unpublished until it does and their required images are sourced.
 
-`header.signalMinutes`: set to 6 for physical examination and history stations. The candidate guidance states a signal is given at 6 minutes, when the candidate presents findings. The viewer's timer shows it and sounds a short tone. Leave it out for other station types.
+`header.signalMinutes`: set to 6 for physical examination and history stations, and for procedural (task and questions) stations. The candidate guidance gives a signal at 6 minutes: in examination and history stations the candidate stops and presents findings; in task stations the 9 minutes split into 6 minutes for the task and 3 minutes of examiner questions. The brief should say so in the official form ("You will be stopped at 6 minutes…" or "You have up to 6 minutes to complete the task, at which stage the examiners will stop you…"). The viewer's timer shows it ("Task: 6 min · Examiner questions: 3 min" for task stations) and sounds a short tone. Leave it out for other station types.
+
+`brief.date`: communication stations carry an assumed date (for example `14 March 2026`), treated as today. The real instructions show it in bold and underlined; the viewer shows it first as **Today's date**. It must agree with every timeline in the scenario (days since surgery, "this week", weekday clinics and lists). The validator warns when a communication station has no date.
 
 ## 10. Validator checks
 
@@ -143,12 +146,13 @@ The viewer does not show images yet. Anatomy and pathology stations stay unpubli
 4. Any grid row's Fail descriptor has no tagged Fail-model line or failure entry.
 5. Any reveal, push question, curveball, failure or knowledge item references a non-existent row or source.
 6. A grid row with a number in it has no source reference.
-7. Candidate-facing text contains review-process terms (reviewed, reviewer, unreviewed, pending/under/awaiting review, review status, sign-off, editorial note). Clinical uses such as "review the patient" are allowed. Also fails on "instant fail", "kill zone" or "hurdle".
+7. Candidate-facing text contains review-process terms (reviewed, reviewer, unreviewed, pending/under/awaiting review, review status, sign-off, editorial note). Clinical uses such as "review the patient" are allowed. Also fails on "instant fail", "kill zone" or "hurdle". The same framing check also runs over the MRCS pages (`mrcs*.html`) with `node validate-station.js --pages`.
 8. A word budget is exceeded by more than 20% (warning, not failure).
 9. Curveballs exceed 4, or the recall card is missing a field.
 10. A source has no version or date.
 11. An image is marked own or licensed without a source and licence (error), or a required image is still needed (warning).
 12. Warnings for unsupported claims about exam marking ("examiners expect", "loses … marks", "caps the station", "commonest"). Station text shouldn't claim to know how marks are awarded.
+13. Warnings when an examination, history or procedural station has no `header.signalMinutes` of 6, when such a brief does not state the 6-minute stop, or when a communication station has no `brief.date` (an error if `brief.date` is present but not in the form `14 March 2026`).
 
 ## 11. Pilot
 

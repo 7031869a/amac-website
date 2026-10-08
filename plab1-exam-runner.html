@@ -47,7 +47,7 @@
   "alternateName": ["Ahmed Mansour & Colleagues", "A. Mansour & Colleagues"],
   "url": "https://amac-medical.com/",
   "logo": "https://amac-medical.com/apple-touch-icon.png",
-  "description": "Preparation for the UK medical and surgical examinations: UKMLA, PLAB 1, PLAB 2 and FRCS Part 2.",
+  "description": "Preparation for the UK medical and surgical examinations and Foundation training: UKMLA, Foundation F1 and F2, PLAB 1, PLAB 2, MRCP Part 1, MRCS and FRCS (General Surgery) Section 2 academic paper critique.",
   "slogan": "Think like an examiner. Pass with confidence."
 }
 </script>
@@ -108,7 +108,13 @@ body{font-family:'Outfit',sans-serif;background:var(--paper);color:var(--ink);-w
 .flag-btn:hover{border-color:var(--amber);color:var(--amber);}
 .flag-btn.flagged{background:var(--amber-bg);border-color:var(--amber);color:var(--amber);font-weight:600;}
 
-.q-stem{font-size:17px;line-height:1.65;color:var(--ink);margin-bottom:26px;}
+.q-stem{font-size:17px;line-height:1.65;color:var(--ink);margin-bottom:26px;white-space:pre-line;}
+.q-figure{margin:-8px 0 26px;}
+.q-figure img{display:block;max-width:100%;height:auto;border:1px solid var(--line);border-radius:6px;background:#fff;}
+.q-figure figcaption{font-size:13px;color:var(--muted);margin-top:8px;line-height:1.5;}
+.cond-tag{font-size:11px;letter-spacing:.5px;color:rgba(232,227,214,0.7);white-space:nowrap;}
+.area-note{font-size:13px;color:var(--muted);margin:-18px 0 22px;line-height:1.6;}
+.breakdown-title.secondary{margin-top:44px;font-size:21px;}
 
 .opt-list{display:flex;flex-direction:column;gap:11px;margin-bottom:28px;}
 .opt{display:flex;gap:14px;align-items:flex-start;background:#fff;border:1.5px solid var(--line);border-radius:6px;padding:15px 17px;cursor:pointer;transition:all .15s;text-align:left;font-family:'Outfit',sans-serif;font-size:15px;line-height:1.5;color:var(--ink);}
@@ -217,6 +223,7 @@ body{font-family:'Outfit',sans-serif;background:var(--paper);color:var(--ink);-w
       <a href="plab1-exams.html" class="exam-brand">AMaC</a>
       <div class="exam-title-mid" id="examTitleMid"></div>
       <div class="timer-box">
+        <span class="cond-tag" id="condTag"></span>
         <span class="timer" id="timer">3:00:00</span>
         <button class="timer-btn" id="pauseBtn">Pause</button>
       </div>
@@ -278,11 +285,14 @@ body{font-family:'Outfit',sans-serif;background:var(--paper);color:var(--ink);-w
     <div class="results-score"><span id="scoreNum">0</span> / <span id="scoreTotal">180</span></div>
     <div class="results-pct" id="scorePct">0%</div>
     <div id="bandWrap"></div>
-    <div class="results-note">The PLAB 1 pass mark is set by the GMC for each sitting and varies. This band is a study guide based on a typical threshold, not a prediction of your result.</div>
+    <div class="results-note" id="passNote">AMaC indicative pass score: 115/180. This is AMaC's estimate, not a GMC figure. The GMC sets the pass mark for each paper using the Angoff method plus one standard error of measurement, and tells you it with your result.</div>
   </div>
   <div class="results-body">
-    <div class="breakdown-title">Performance by domain</div>
-    <div class="breakdown-sub">Where you're strong, and where to focus revision next.</div>
+    <div class="breakdown-title">Results by GMC area</div>
+    <div class="breakdown-sub">Your % correct by GMC area (the GMC also shows the cohort average; AMaC cannot).</div>
+    <div id="areaBreakdown"></div>
+    <div class="breakdown-title secondary">AMaC revision breakdown</div>
+    <div class="breakdown-sub">By AMaC bank topic, weakest first. Use this to plan revision.</div>
     <div id="domBreakdown"></div>
     <div class="results-cta">
       <button class="r-btn primary" id="reviewBtn">Review all answers →</button>
@@ -342,6 +352,15 @@ body{font-family:'Outfit',sans-serif;background:var(--paper);color:var(--ink);-w
 
   var TOTAL = sessionQs.length;
 
+  // ---- exam conditions (P1-10): fixed papers default to strict (no pause, wall-clock timer) ----
+  // Relaxed mode (?cond=relaxed) keeps Pause and stores the remaining time; it is not exam conditions.
+  var strictMode = isTimed && !!paperId && param("cond") !== "relaxed";
+  var GMC_AREAS = ["Reproductive health","Renal and urology","Neurosciences and senses","Musculoskeletal","Mental health","Gastrointestinal","Endocrine, metabolic and clinical haematology","Child and adolescent health","Cardiorespiratory","Ethics and other"];
+  var PASS_SCORE = 115; // AMaC estimate for a 180-question paper, not a GMC figure
+  // Papers 1-5 had their answer letters rebalanced (Oct 2026). Saved letters from before that no longer match.
+  var DATA_VER = 2;
+  var RELETTERED = {"mock-1":1,"mock-2":1,"mock-3":1,"mock-4":1,"mock-5":1};
+
   // ---- per-paper storage key (fixed mocks save progress; practice doesn't) ----
   var STORE_KEY = paperId ? ("plab1-exam-" + paperId) : null;
 
@@ -351,6 +370,7 @@ body{font-family:'Outfit',sans-serif;background:var(--paper);color:var(--ink);-w
     answers: {},     // index -> chosen letter
     flags: {},       // index -> true
     secondsLeft: isTimed ? 3*60*60 : 0,
+    endsAt: null,      // strict mode: wall-clock end time (ms)
     paused: false,
     submitted: false
   };
@@ -359,7 +379,10 @@ body{font-family:'Outfit',sans-serif;background:var(--paper);color:var(--ink);-w
   if(STORE_KEY){
     try{
       var saved = JSON.parse(localStorage.getItem(STORE_KEY) || "null");
+      if(saved && RELETTERED[paperId] && saved.v !== DATA_VER){ saved = null; }
       if(saved && !saved.completed && mode !== "restart"){
+        if(typeof saved.strict === "boolean"){ strictMode = saved.strict; }
+        if(strictMode && typeof saved.endsAt === "number"){ state.endsAt = saved.endsAt; }
         state.answers = saved.answers || {};
         state.flags = saved.flags || {};
         if(typeof saved.secondsLeft === "number"){ state.secondsLeft = saved.secondsLeft; }
@@ -377,6 +400,7 @@ body{font-family:'Outfit',sans-serif;background:var(--paper);color:var(--ink);-w
   function persist(extra){
     if(!STORE_KEY) return;
     var payload = {
+      v: DATA_VER, strict: strictMode, endsAt: state.endsAt,
       answers: state.answers, flags: state.flags,
       secondsLeft: state.secondsLeft, current: state.current,
       completed: !!(extra && extra.completed),
@@ -401,6 +425,13 @@ body{font-family:'Outfit',sans-serif;background:var(--paper);color:var(--ink);-w
   if(!isTimed){
     document.querySelector(".timer-box").style.display = "none";
   }
+  if(isTimed && paperId){
+    document.getElementById("condTag").textContent = strictMode ? "Strict exam conditions" : "Relaxed · not exam conditions";
+  }
+  if(strictMode){
+    pauseBtn.style.display = "none";
+    if(!state.endsAt && !state.submitted){ state.endsAt = Date.now() + state.secondsLeft*1000; persist(); }
+  }
 
   // ---- timer ----
   var timerInterval = null;
@@ -411,7 +442,8 @@ body{font-family:'Outfit',sans-serif;background:var(--paper);color:var(--ink);-w
   }
   function tick(){
     if(state.paused || state.submitted) return;
-    state.secondsLeft--;
+    if(strictMode){ state.secondsLeft = Math.round((state.endsAt - Date.now())/1000); }
+    else { state.secondsLeft--; }
     renderTimer();
     if(state.secondsLeft % 15 === 0) persist();
     if(state.secondsLeft <= 0){
@@ -424,10 +456,11 @@ body{font-family:'Outfit',sans-serif;background:var(--paper);color:var(--ink);-w
     timerEl.classList.toggle("warn", state.secondsLeft <= 15*60 && state.secondsLeft > 5*60);
     timerEl.classList.toggle("danger", state.secondsLeft <= 5*60);
   }
-  if(isTimed){
+  if(isTimed && !state.submitted){
+    if(strictMode){ state.secondsLeft = Math.round((state.endsAt - Date.now())/1000); }
     renderTimer();
     timerInterval = setInterval(tick, 1000);
-    pauseBtn.addEventListener("click", function(){
+    if(!strictMode) pauseBtn.addEventListener("click", function(){
       state.paused = !state.paused;
       pauseBtn.textContent = state.paused ? "Resume" : "Pause";
       examMain.style.opacity = state.paused ? "0.25" : "1";
@@ -470,13 +503,21 @@ body{font-family:'Outfit',sans-serif;background:var(--paper);color:var(--ink);-w
         '</div>';
     }
 
+    // topic label is a cue the real paper does not give: hidden while a timed mock is running (P1-09)
+    var showTopic = reviewing || !isTimed;
+    var figHtml = "";
+    if(q.image && q.image.src){
+      figHtml = '<figure class="q-figure"><img src="'+esc(q.image.src)+'" alt="'+esc(q.image.alt||"")+'" loading="lazy">'+
+        (q.image.caption ? '<figcaption>'+esc(q.image.caption)+'</figcaption>' : '')+'</figure>';
+    }
     examMain.innerHTML =
       '<div class="q-meta">'+
         '<span class="q-index">Question '+(idx+1)+' of '+TOTAL+'</span>'+
-        '<span class="q-domain">'+esc(q.domain)+'</span>'+
+        (showTopic ? '<span class="q-domain">'+esc(q.domain)+'</span>' : '')+
         (reviewing ? '' : '<button class="flag-btn '+(flagged?'flagged':'')+'" id="flagBtn">'+(flagged?'★ Flagged':'☆ Flag')+'</button>')+
       '</div>'+
       '<div class="q-stem">'+esc(q.stem)+'</div>'+
+      figHtml+
       '<div class="opt-list" id="optList">'+optsHtml+'</div>'+
       rationaleHtml;
 
@@ -571,24 +612,31 @@ body{font-family:'Outfit',sans-serif;background:var(--paper);color:var(--ink);-w
   document.getElementById("cancelSubmit").addEventListener("click", function(){ confirmOverlay.classList.remove("show"); });
   document.getElementById("confirmSubmit").addEventListener("click", function(){ confirmOverlay.classList.remove("show"); doSubmit(false); });
 
-  function doSubmit(auto){
-    state.submitted = true;
-    if(timerInterval) clearInterval(timerInterval);
-    // score
-    var score = 0;
-    var domStats = {};
+  function computeStats(){
+    var score = 0, domStats = {}, areaStats = {};
     sessionQs.forEach(function(q,i){
       var correct = state.answers[i] === q.correct_letter;
       if(correct) score++;
       if(!domStats[q.domain]) domStats[q.domain] = {c:0,t:0};
       domStats[q.domain].t++;
       if(correct) domStats[q.domain].c++;
+      var a = q.gmc_area || "Ethics and other";
+      if(!areaStats[a]) areaStats[a] = {c:0,t:0};
+      areaStats[a].t++;
+      if(correct) areaStats[a].c++;
     });
-    persist({completed:true, score:score});
-    showResults(score, domStats, auto);
+    return {score:score, domStats:domStats, areaStats:areaStats};
   }
 
-  function showResults(score, domStats, auto){
+  function doSubmit(auto){
+    state.submitted = true;
+    if(timerInterval) clearInterval(timerInterval);
+    var st = computeStats();
+    persist({completed:true, score:st.score});
+    showResults(st.score, st.domStats, auto, st.areaStats);
+  }
+
+  function showResults(score, domStats, auto, areaStats){
     document.getElementById("examView").classList.add("hidden");
     document.querySelector(".nav-row").classList.add("hidden");
     document.getElementById("resultsView").classList.remove("hidden");
@@ -599,11 +647,28 @@ body{font-family:'Outfit',sans-serif;background:var(--paper);color:var(--ink);-w
     document.getElementById("scorePct").textContent = pct+"%";
     if(auto){ document.getElementById("resultsTitle").textContent = "Time's Up — Mock Complete"; }
 
-    // pass band (study guidance only — typical PLAB 1 threshold ~ low-to-mid 60s%)
+    // AMaC indicative pass score (an estimate, not a GMC figure) — only meaningful for a full 180-question paper
     var band = document.getElementById("bandWrap");
-    if(pct >= 67){ band.innerHTML = '<div class="results-band band-pass">Comfortably above a typical pass mark</div>'; }
-    else if(pct >= 60){ band.innerHTML = '<div class="results-band band-borderline">Around a typical pass mark — borderline</div>'; }
-    else { band.innerHTML = '<div class="results-band band-below">Below a typical pass mark — keep revising</div>'; }
+    if(TOTAL === 180){
+      band.innerHTML = score >= PASS_SCORE
+        ? '<div class="results-band band-pass">At or above the AMaC indicative pass score (estimate)</div>'
+        : '<div class="results-band band-below">Below the AMaC indicative pass score (estimate)</div>';
+    } else {
+      band.innerHTML = "";
+      document.getElementById("passNote").textContent = "Practice set: no pass score applies. On the real paper the GMC sets the pass mark for each paper using the Angoff method plus one standard error of measurement.";
+    }
+
+    // % correct by the 10 GMC feedback areas (P1-04), in the GMC's order
+    areaStats = areaStats || {};
+    document.getElementById("areaBreakdown").innerHTML = GMC_AREAS.filter(function(a){ return areaStats[a]; }).map(function(a){
+      var s = areaStats[a], p = Math.round(s.c/s.t*100);
+      var col = p>=67?"var(--green)":(p>=50?"var(--amber)":"var(--red)");
+      return '<div class="dom-row">'+
+        '<span class="dom-name">'+esc(a)+'</span>'+
+        '<div class="dom-bar"><div class="dom-bar-fill" style="width:'+p+'%;background:'+col+';"></div></div>'+
+        '<span class="dom-score" style="color:'+col+';">'+p+'%</span>'+
+      '</div>';
+    }).join("");
 
     // domain breakdown, weakest first
     var rows = Object.keys(domStats).map(function(d){
@@ -642,14 +707,11 @@ body{font-family:'Outfit',sans-serif;background:var(--paper);color:var(--ink);-w
 
   // ---- if opened directly in review mode (completed paper) ----
   if(state.submitted && mode === "review"){
-    var score=0, domStats={};
-    sessionQs.forEach(function(q,i){
-      var correct = state.answers[i]===q.correct_letter;
-      if(correct) score++;
-      if(!domStats[q.domain]) domStats[q.domain]={c:0,t:0};
-      domStats[q.domain].t++; if(correct) domStats[q.domain].c++;
-    });
-    showResults(score, domStats, false);
+    var st0 = computeStats();
+    showResults(st0.score, st0.domStats, false, st0.areaStats);
+  } else if(strictMode && !state.submitted && state.secondsLeft <= 0){
+    // strict mode: the clock kept running while the tab was closed
+    doSubmit(true);
   } else {
     renderQuestion();
     updateProgress();

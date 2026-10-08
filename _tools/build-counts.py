@@ -146,7 +146,6 @@ def measure():
     safe('sayThisPlab2', lambda: count('say-never-say-plab2.html', 'CARDS'))
     safe('doNeverDo', lambda: count('do-never-do.html', 'CARDS'))
     safe('performanceBands', lambda: count('performance-bands.html', 'BANDS'))
-    safe('mockCircuitStations', lambda: count('mock-circuit.html', 'STATIONS'))
     safe('simulatorStations', lambda: count('simulator.html', 'STATIONS'))
     safe('actorTrapSimStations', lambda: count('actor-trap-simulator.html', 'ORDER'))
     safe('stationPlannerStations', lambda: count('station-planner.html', 'FREQ'))
