@@ -1,11 +1,12 @@
 import json,re,sys
+sys.stdout.reconfigure(encoding='utf-8')
 import os; B=os.environ.get('BATCH_DIR','_tools/plab-adaptation/work/b01')+'/'
-plan={p['id']:p for p in json.load(open(B+'ctx/plan.json'))}
-src={x['live_plab_copy']['source_akt_id']:x['live_plab_copy'] for x in json.load(open(B+'ctx/source.json'))}
+plan={p['id']:p for p in json.load(open(B+'ctx/plan.json',encoding='utf-8'))}
+src={x['live_plab_copy']['source_akt_id']:x['live_plab_copy'] for x in json.load(open(B+'ctx/source.json',encoding='utf-8'))}
 K=['id','source_akt_id','presentation','difficulty','stem','options','correct_letter','correct_answer','why_correct','why_wrong','pearl','thinking','exam_trap','takeaway','skip','notes','sources']
 tok=lambda t:set(re.findall(r'[a-z]{4,}',t.lower()))
 errs=[]
-for q in json.load(open(sys.argv[1])):
+for q in json.load(open(sys.argv[1],encoding='utf-8')):
   i=q.get('id'); e=lambda m:errs.append(f'{i}: {m}')
   if list(q)!=K: e(f'keys/order must be {K}')
   if i not in plan: e('id not in plan'); continue
