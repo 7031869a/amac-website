@@ -96,6 +96,7 @@ nav{position:sticky;top:0;z-index:100;background:var(--panel);border-bottom:1px 
 .chip.practised{background:rgba(201,162,39,.16);color:#E0C45A;}
 .chip.untouched{background:rgba(133,147,174,.14);color:var(--txt-mute);}
 .chip.none{background:transparent;color:var(--txt-faint);border:1px dashed var(--edge-soft);}
+.row .via{display:block;font-size:12px;color:var(--txt-mute);margin-top:2px;}
 .row a.go{font-size:12.5px;color:var(--door-text);white-space:nowrap;}
 .row a.go:hover{color:#fff;}
 .empty{padding:20px;color:var(--txt-mute);font-size:14px;text-align:center;}
@@ -169,7 +170,7 @@ footer{margin-top:40px;border-top:1px solid #1A2740;padding:28px 16px 24px;text-
   <section class="how">
     <h2>How this works</h2>
     <p><strong>Practised</strong> means you have answered at least one question on it. <strong>Secure</strong> means you have answered at least a fifth of its questions (never fewer than three, or all of them if there are fewer) and got 80% or more right.</p>
-    <p>Each AKT question is linked to the one condition and one presentation it mainly tests, so a symptom that only appears in passing is not counted. Coverage shows how widely you have practised, not whether you are ready for the exam.</p>
+    <p>Each AKT question is linked to the one condition and one presentation it mainly tests, so a symptom that only appears in passing is not counted. Where a GMC entry is a broad heading (such as antepartum haemorrhage), it is covered through the more specific entries listed under it. Questions that test something the GMC list does not name are not counted towards any entry. Coverage shows how widely you have practised, not whether you are ready for the exam.</p>
     <p>Your progress comes from the AKT bank in this browser on this device. Nothing is sent anywhere, and clearing your browser data resets it.</p>
     <p>Source: GMC MLA content map (published October 2025, applies from September 2026), including the GMC's September 2026 change from PCOS to Polyendocrine Metabolic Ovarian Syndrome (PMOS).</p>
   </section>
@@ -179,46 +180,12 @@ footer{margin-top:40px;border-top:1px solid #1A2740;padding:28px 16px 24px;text-
   <div class="foot-bottom">© 2026 Ahmed Mansour &amp; Colleagues (AMaC). All rights reserved.</div>
 </footer>
 
+<script src="mla-coverage.js"></script>
 <script>
 (function () {
   'use strict';
   var state = { kind: 'conditions', st: 'all', q: '' };
   var data = null;
-
-  function answered() {
-    try { return JSON.parse(localStorage.getItem('amac_q_state') || '{}') || {}; }
-    catch (e) { return {}; }
-  }
-
-  function build(gmc, map) {
-    var ans = answered();
-    var idx = { conditions: {}, presentations: {} };
-    gmc.conditions.forEach(function (x) { idx.conditions[x.id] = { id: x.id, name: x.name, total: 0, ans: 0, cor: 0 }; });
-    gmc.presentations.forEach(function (x) { idx.presentations[x.id] = { id: x.id, name: x.name, total: 0, ans: 0, cor: 0 }; });
-    Object.keys(map.q).forEach(function (qid) {
-      var cp = map.q[qid], a = ans[qid];
-      [['conditions', cp[0]], ['presentations', cp[1]]].forEach(function (pair) {
-        var it = pair[1] && idx[pair[0]][pair[1]];
-        if (!it) return;
-        it.total++;
-        if (a) { it.ans++; if (a.correct) it.cor++; }
-      });
-    });
-    ['conditions', 'presentations'].forEach(function (k) {
-      Object.keys(idx[k]).forEach(function (id) {
-        var it = idx[k][id];
-        if (it.total === 0) it.st = 'none';
-        else if (it.ans === 0) it.st = 'untouched';
-        else if (it.ans >= Math.min(it.total, Math.max(3, Math.ceil(it.total * 0.2))) && it.cor / it.ans >= 0.8) it.st = 'secure';
-        else it.st = 'practised';
-      });
-    });
-    return {
-      conditions: gmc.conditions.map(function (x) { return idx.conditions[x.id]; }),
-      presentations: gmc.presentations.map(function (x) { return idx.presentations[x.id]; }),
-      anyAnswered: Object.keys(ans).length > 0
-    };
-  }
 
   var LABEL = { secure: 'Secure', practised: 'Practised', untouched: 'Not touched', none: 'No questions yet' };
 
@@ -252,8 +219,9 @@ footer{margin-top:40px;border-top:1px solid #1A2740;padding:28px 16px 24px;text-
     document.getElementById('count-line').textContent = 'Showing ' + rows.length + ' of ' + data[state.kind].length;
     var html = rows.map(function (it) {
       var meta = it.total ? (it.ans + ' of ' + it.total + ' answered' + (it.ans ? ' · ' + it.cor + ' right' : '')) : '';
-      var go = it.total ? '<a class="go" href="questions.html?gmc=' + it.id + '">Practise →</a>' : '';
-      return '<div class="row st-' + it.st + '"><span class="nm">' + esc(it.name) + '</span>' +
+      var go = it.total ? '<a class="go" href="questions.html?gmc=' + it.codes.join(',') + (it.via ? '&via=' + it.id : '') + '">Practise →</a>' : '';
+      var via = it.via ? '<span class="via">Covered through: ' + esc(it.via.join(', ')) + '</span>' : '';
+      return '<div class="row st-' + it.st + '"><span class="nm">' + esc(it.name) + via + '</span>' +
         '<span class="chip ' + it.st + '">' + LABEL[it.st] + '</span>' +
         (meta ? '<span class="meta">' + meta + '</span>' : '') + go + '</div>';
     }).join('');
@@ -275,13 +243,10 @@ footer{margin-top:40px;border-top:1px solid #1A2740;padding:28px 16px 24px;text-
   });
   document.getElementById('q').addEventListener('input', function (e) { state.q = e.target.value; if (data) renderList(); });
 
-  Promise.all([
-    fetch('data/gmc-mla-map.json').then(function (r) { if (!r.ok) throw 0; return r.json(); }),
-    fetch('data/akt-mla-map.json').then(function (r) { if (!r.ok) throw 0; return r.json(); })
-  ]).then(function (res) {
-    document.getElementById('h-c').textContent = res[0].conditions.length;
-    document.getElementById('h-p').textContent = res[0].presentations.length;
-    data = build(res[0], res[1]);
+  AMaCMLA.load().then(function (d) {
+    document.getElementById('h-c').textContent = d.gmc.conditions.length;
+    document.getElementById('h-p').textContent = d.gmc.presentations.length;
+    data = AMaCMLA.compute(d.gmc, d.map);
     render();
   }).catch(function () {
     document.getElementById('s-note').textContent = 'The content map could not be loaded. Please refresh the page.';
