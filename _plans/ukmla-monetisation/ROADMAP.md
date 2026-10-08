@@ -38,6 +38,8 @@ GitHub Pages cannot restrict content to paying users. A paid version needs:
 
 **Migration point [Claude]:** progress currently lives in browser localStorage (`amac_q_state`, `amac_plab1_q_state`, handled by `amac-progress.js`). The existing backup-file format should be importable into a new account so current free users don't lose their history.
 
+**Paid on/off switch (added 8 Oct 2026):** `amac-config.js` is loaded on every page. Build paid features in place marked `data-paid-only` (or a whole page with `<html data-paid-only>`); they stay hidden until `paid: false` is changed to `paid: true` in that file. Preview them in your own browser with `?amac-preview=paid` (turn off with `?amac-preview=off`). It hides content but doesn't protect it; real access control still needs the login and server items above.
+
 **Decide early [Claude]:** what stays free forever, so the switch doesn't feel like a bait-and-switch to the audience built during the free phase. One option is "everything free today stays free; new intelligence features are paid".
 
 ---
