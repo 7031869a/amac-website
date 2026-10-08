@@ -17,8 +17,9 @@ Not published (Jekyll skips `_tools/`).
 - `MAPPING_RULES.md` — the strict labelling rule (v2). Use it for every future mapping.
 - `v2-change-log.json` — every label changed in v2, with its source.
 - `AKT_GMC_Coverage_Review.xlsx` — coverage review workbook (v2).
-- `drafts/iud-questions-draft.json` — six intrauterine-death questions, clinically reviewed and
-  edited (8 Oct 2026). Not yet in the live bank.
+- `drafts/iud-questions-draft.json` — the six intrauterine-death questions as reviewed (8 Oct 2026);
+  now live in both banks. Post-review edits: IUD06/PIUD06 option A reworded to "Cabergoline orally to
+  suppress lactation" (1 mg single dose is the prevention regimen, not suppression); PIUD05 tense.
 
 ## Method
 - v1 (6 Oct 2026): label matching, then stem classification in batches; blind second pass on
@@ -30,10 +31,12 @@ Not published (Jekyll skips `_tools/`).
   applied. 129 labels changed.
 
 ## Coverage (v2)
-- Conditions: 1 gap, 75 thin (1–4), 353 covered. Presentations: 2 gaps, 22 thin, 196 covered.
-- Bank coverage gaps (full-bank stem search, not the sample): Skin manifestations of systemic disease
-  (condition); Intrauterine death (presentation; six questions drafted). Tinnitus appears in 19 questions
-  but never as the lead problem.
+- Conditions: 1 gap, 75 thin (1–4), 353 covered. Presentations: 1 gap, 22 thin, 197 covered.
+- Bank coverage gap (full-bank stem search, not the sample): Skin manifestations of systemic disease
+  (condition). Tinnitus (presentation) appears in 19 questions but never as the lead problem.
+- Intrauterine death was a bank gap (no question in a full-bank stem search); closed 8 Oct 2026 by six
+  clinically reviewed questions: IUD01–IUD06 in the AKT bank, adapted as PIUD01–PIUD06 in PLAB 1
+  (new vignettes, reordered options, same teaching; source_akt_id links them).
 - THE THIN LIST IS PROVISIONAL until the 100-item mapping audit is complete (65 items outstanding).
   Do not commission questions from it before then.
 
