@@ -29,3 +29,14 @@ human clinician. Content is unchanged. They can return to the live bank once cli
   adaptations, 399 retired as repeats (Adapted packs section 3; ids in the sign-off JSON). Do not re-adapt these sources.
 - `plab1-next-review-pack.json` (new): PAQ11939, a u74 draft the reviewer kept out of the retirements. It has not been reviewed as a question and
   must not go live until it has; it goes in the next review pack. Its parked source UQ11939 stays in the parked list.
+
+**9 Oct 2026 (later) — the 9 Oct verdict entry above is WITHDRAWN.** The verdict letter it relied on is not confirmed as a personal
+clinician verdict, so everything PR #66 changed is back to its pre-#66 state (c75ebe7):
+- The 46 H01 questions #66 put live are back in `plab1-adapted-awaiting-review.json` with their original text (without the PAQ932/PAQ14765
+  edits), marked `review_status: "awaiting genuine clinician review"`. The 43 H01 retirements are undone, and PAN15778 is no longer marked rejected.
+  Held list: 2,431 again.
+- The 237 Adapted 01–03 questions are off the live bank. Their 636 sources (237 + 399 "retired") are back in
+  `plab1-adaptation-ii-unadapted.json` (3,443 again). The checked drafts remain on branch `plab1-u74-review-packs`.
+- `plab1-next-review-pack.json` (PAQ11939) is kept. PR #67 (Paediatrics packs) was closed unmerged.
+- No retirement from the 9 Oct packs stands. They all need a confirmed clinician verdict.
+
