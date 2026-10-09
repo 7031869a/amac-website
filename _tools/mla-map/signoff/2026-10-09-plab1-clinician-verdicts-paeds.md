@@ -16,7 +16,7 @@
   - PAAKT183: option E (key) → "Intravenous ceftriaxone plus amoxicillin now, with lumbar puncture once safe". why_correct, pearl and takeaway now give ceftriaxone first
     (cefotaxime only if contraindicated) plus amoxicillin for Listeria under 3 months. Source: NICE NG240 (2024) 1.6.5–1.6.6 and NG143 1.5.7. why_wrong B no longer says
     cefotaxime is preferred, and the last step of the reasoning line names ceftriaxone. Option B "Intravenous ceftriaxone alone" stays wrong (no Listeria cover).
-  - PAQ977: Source line → NICE CG84 1.3.3.2 (IV route) and APLS, Advanced Life Support Group (intraosseous route). Key unchanged.
+  - PAQ977: Source line → NICE CG84 (2009, updated October 2022 when the shock bolus changed to 10 ml/kg) 1.3.3.2 (IV route) and APLS, Advanced Life Support Group (intraosseous route). Key unchanged.
 - Section 3: 79 retired from the held file (69 repeat a live question, 9 are the weaker of a held twin, 1 repeats a held question in another domain:
   PAQ16534 → PAQ16393, still held under Infectious Diseases. If PAQ16393 is ever retired, PAQ16534 should be restored from git history).
 - Label moves (the items stay held for their own domains): PAQ15847 → Neurology, PAQ15061 → Infectious Diseases & Emergencies.
