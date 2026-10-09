@@ -1,6 +1,9 @@
 # PLAB 1 clinician verdicts — non-Paediatrics (9 Oct 2026) — sign-off record (internal; never shown on the website)
 
-- Reviewer: Dr De A Darling. Verdicts dated 9 Oct 2026, relayed by Ahmed. Applied 9 Oct 2026 (branch plab1-clinician-verdicts-nonpaeds).
+> **WITHDRAWN (9 Oct 2026, later).** The verdict letter this record relies on is not confirmed as a personal clinician verdict. Everything
+> PR #66 changed was restored to its pre-#66 state (see `_parked/README.md`). Nothing in this record counts as a clinician sign-off.
+
+- Reviewer: the AMaC clinical reviewer (unconfirmed). Verdicts dated 9 Oct 2026, relayed by Ahmed. Applied 9 Oct 2026 (branch plab1-clinician-verdicts-nonpaeds).
 - Packs: AMaC_PLAB1_Clinician_Review_2026-10-09 (files 1a/1b, 3a/3b, 5a–7b). The Paediatrics packs (2, 4) and the Paediatrics items
   in pack 3 are applied by the Paediatrics session, not here.
 
