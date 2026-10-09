@@ -29,3 +29,14 @@ human clinician. Content is unchanged. They can return to the live bank once cli
   adaptations, 399 retired as repeats (Adapted packs section 3; ids in the sign-off JSON). Do not re-adapt these sources.
 - `plab1-next-review-pack.json` (new): PAQ11939, a u74 draft the reviewer kept out of the retirements. It has not been reviewed as a question and
   must not go live until it has; it goes in the next review pack. Its parked source UQ11939 stays in the parked list.
+
+**9 Oct 2026 — clinician verdicts, Paediatrics packs (Paediatrics Held 01 and Paediatrics Batch 2).** Record:
+`_tools/mla-map/signoff/2026-10-09-plab1-clinician-verdicts-paeds.md`.
+- `plab1-adapted-awaiting-review.json`: 2,342 → 2,204. 59 repaired Paediatrics held questions went live (2 edited by the reviewer); 79 Paediatrics
+  held repeats retired. The 10 Paediatrics items of held pack H01 are covered here (4 live, 6 retired). PAQ15847 and PAQ15061 (relabelled out of
+  Paediatrics) stay held.
+- `plab1-adaptation-ii-unadapted.json`: 2,807 → 2,707. 100 Paediatrics sources resolved by batch b02: 64 now live as clinically reviewed
+  adaptations, 36 retired as repeats. Do not re-adapt these sources.
+- `plab1-retired.json` (new): every held question and parked source retired as a repeat on the 9 Oct 2026 review (Paediatrics Held 01 79,
+  Held H01 43, Paediatrics Batch 2 36, Adapted 01–03 169 + 189 + 41), each with the matching ids and the reason. PAQ11939 is not retired
+  (see `plab1-next-review-pack.json`). Add future retirements here.
