@@ -40,3 +40,6 @@ clinician verdict, so everything PR #66 changed is back to its pre-#66 state (c7
 - `plab1-next-review-pack.json` (PAQ11939) is kept. PR #67 (Paediatrics packs) was closed unmerged.
 - No retirement from the 9 Oct packs stands. They all need a confirmed clinician verdict.
 
+**9 Oct 2026 (afternoon) — #66 reinstated.** PR #68 had taken #66's changes back off the live bank because the 9 Oct verdict letter was not confirmed as a
+clinician verdict. Ahmed has since confirmed that the letter counts as clinician sign-off, so this change restores #66 exactly (same content as main at d4db2e9):
+PLAB 1 bank 3,314 → 3,597; held 2,431 → 2,342; parked 3,443 → 2,807. Record: `_tools/mla-map/signoff/2026-10-09-plab1-clinician-verdicts-non-paeds.md`.
