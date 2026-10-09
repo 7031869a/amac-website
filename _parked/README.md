@@ -43,3 +43,10 @@ clinician verdict, so everything PR #66 changed is back to its pre-#66 state (c7
 **9 Oct 2026 (afternoon) — #66 reinstated.** PR #68 had taken #66's changes back off the live bank because the 9 Oct verdict letter was not confirmed as a
 clinician verdict. Ahmed has since confirmed that the letter counts as clinician sign-off, so this change restores #66 exactly (same content as main at d4db2e9):
 PLAB 1 bank 3,314 → 3,597; held 2,431 → 2,342; parked 3,443 → 2,807. Record: `_tools/mla-map/signoff/2026-10-09-plab1-clinician-verdicts-non-paeds.md`.
+
+**9 Oct 2026 — clinician verdicts, Paediatrics (Held 01, Batch 2, and the Paediatrics items of H01).** Record: `_tools/mla-map/signoff/2026-10-09-plab1-clinician-verdicts-paeds.md`.
+- `plab1-adapted-awaiting-review.json`: 2,342 → 2,204. 59 Paediatrics Held 01 questions went live (55 approved, 4 edited: PAQ15063, PAQ995, PAAKT183, PAQ977); 79 section-3
+  repeats retired (ids in the sign-off JSON). PAQ15847 relabelled Neurology and PAQ15061 Infectious Diseases & Emergencies; both stay here for their domains' review.
+- `plab1-adaptation-ii-unadapted.json`: 2,807 → 2,707. All 100 Paediatrics batch-2 sources resolved: 61 live, 3 held back (below), 36 retired. Do not re-adapt these sources.
+- `plab1-next-review-pack.json`: +3 approved batch-2 questions held back because each repeats a Held 01 question that went live (PAN2526/PAQ300, PAN1799/PAQ15511,
+  PAN1974/PAQ15553). Ahmed or the reviewer to choose which of each pair stays live.
