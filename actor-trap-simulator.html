@@ -74,7 +74,7 @@
     --line-strong:rgba(247,244,236,.22);
     --caught:#5bbf8a;        /* trap caught */
     --missed:#d9694f;        /* trap missed */
-    --fail:#e04f4f;          /* instant fail */
+    --fail:#e04f4f;          /* critical fail */
     --seal:#8a6d1f;
     --serif:'Fraunces',Georgia,serif;
     --sans:'Outfit',system-ui,sans-serif;
@@ -299,7 +299,7 @@
     <div class="tally">
       <div><div class="num" id="caughtNum" style="color:var(--caught)">0</div><div class="lbl">Traps caught</div></div>
       <div><div class="num" id="missedNum" style="color:var(--missed)">0</div><div class="lbl">Traps missed</div></div>
-      <div><div class="num" id="failNum" style="color:var(--fail)">0</div><div class="lbl">Instant fails</div></div>
+      <div><div class="num" id="failNum" style="color:var(--fail)">0</div><div class="lbl">Critical fails</div></div>
     </div>
     <div class="dossier-title">
       <span class="wax" aria-hidden="true"></span>
@@ -1030,7 +1030,7 @@ const STATIONS = {
 /* shared verdict copy, used by every station */
 const VERDICTS={
   fail:{tag:"Unsafe",cls:"v-fail",head:"The actor got past your safety.",
-    body:"An instant-fail behaviour was triggered \u2014 in the OSCE, one of these ends the station regardless of everything else you did well. The dossier below shows exactly where."},
+    body:"A critical-fail behaviour was triggered \u2014 in the OSCE, one of these ends the station regardless of everything else you did well. The dossier below shows exactly where."},
   distinction:{tag:"Distinction",cls:"v-dist",head:"You read the room.",
     body:"You caught what the actor was briefed to bury and stayed safe under pressure. This is the difference between knowing medicine and performing it in front of a watching examiner."},
   pass:{tag:"Pass",cls:"v-pass",head:"Solid \u2014 but a couple slipped through.",
@@ -1148,7 +1148,7 @@ function renderDebrief(){
 
   const wrap=$("#dossier");wrap.innerHTML="";
   state.results.forEach((r,i)=>{
-    const status=r.picked.catches?["st-caught","Caught"]:r.picked.fail?["st-fail","Instant fail"]:["st-missed","Missed"];
+    const status=r.picked.catches?["st-caught","Caught"]:r.picked.fail?["st-fail","Critical fail"]:["st-missed","Missed"];
     const el=document.createElement("div");
     el.className="trap";el.style.animationDelay=(i*0.09)+"s";
     el.innerHTML=`
@@ -1186,7 +1186,7 @@ function renderWeakness(){
     h={cls:"v-mid",tag:"Keep going",head:`${done} station done — the map sharpens fast.`,body:"A weakness map gets meaningful once you've run a few different stations. Each new register makes the pattern below more honest."};
   } else if(weakest){
     const a=agg[weakest];
-    h={cls:"v-fail",tag:"Your blind spot",head:ARCHETYPES[weakest],body:`Across ${done} stations you've handled ${a.caught} of ${a.total} of these${a.fails?` and triggered ${a.fails} instant fail${a.fails>1?"s":""}`:""}. This is the pattern to drill — it's costing you across scenarios, not just one.`};
+    h={cls:"v-fail",tag:"Your blind spot",head:ARCHETYPES[weakest],body:`Across ${done} stations you've handled ${a.caught} of ${a.total} of these${a.fails?` and triggered ${a.fails} critical fail${a.fails>1?"s":""}`:""}. This is the pattern to drill — it's costing you across scenarios, not just one.`};
   } else if(tested.length && tested.every(k=>agg[k].caught/agg[k].total>=0.85)){
     h={cls:"v-dist",tag:"Consistently strong",head:"You're catching traps across every register.",body:"No blind spot is showing across the stations you've done. Keep widening the spread to keep the picture honest."};
   } else {

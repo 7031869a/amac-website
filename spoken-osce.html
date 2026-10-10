@@ -371,7 +371,7 @@ const STATIONS=[
   sayNever:[
     {s:"Naming it", say:"The tests point to epilepsy \u2014 a tendency to have seizures from bursts of abnormal electrical activity in the brain.", never:"You have idiopathic generalised epilepsy with epileptiform discharges.", why:"Plain language lands; jargon leaves the patient lost and frightened."},
     {s:"Eliciting concerns first", say:"Before I go on \u2014 what's worrying you most about this?", never:"(launches into management without asking)", why:"ICE first. Her biggest fears \u2014 driving, work \u2014 should shape what you say."},
-    {s:"Driving", say:"You must stop driving now and tell the DVLA \u2014 it's usually until you've been seizure-free for a set time.", never:"You'll be fine to drive once you're on the tablets.", why:"Driving advice is a legal and safety must; getting it wrong is dangerous and an instant fail."},
+    {s:"Driving", say:"You must stop driving now and tell the DVLA \u2014 it's usually until you've been seizure-free for a set time.", never:"You'll be fine to drive once you're on the tablets.", why:"Driving advice is a legal and safety must; getting it wrong is dangerous and a critical fail."},
     {s:"Hope", say:"For most people epilepsy is well controlled with medication, and many become seizure-free.", never:"It's a serious lifelong condition, I'm afraid.", why:"Honest hope is warranted; doom is neither accurate nor kind."},
     {s:"Checking understanding", say:"Just so I know I've explained it well \u2014 could you tell me back what you'll do about driving?", never:"Does that all make sense? (and moves on)", why:"Teach-back confirms understanding; a rhetorical \u2018make sense?\u2019 confirms nothing."}
   ],
@@ -385,7 +385,7 @@ const STATIONS=[
       {when:c=>c.has("teachback"), q:"You checked with teach-back", why:"You confirmed she understood, rather than assuming."}
     ],
     never:[
-      {when:/fine to drive|keep driving|carry on driving|ok to drive|still drive to work/, q:"wrong driving advice", problem:"Telling her she can keep driving is unsafe and an instant fail.", say:"You must stop driving now and tell the DVLA."},
+      {when:/fine to drive|keep driving|carry on driving|ok to drive|still drive to work/, q:"wrong driving advice", problem:"Telling her she can keep driving is unsafe and a critical fail.", say:"You must stop driving now and tell the DVLA."},
       {when:/idiopathic|epileptiform|generalised tonic|postictal/, q:"unexplained jargon", problem:"Medical terms she can't follow leave her lost.", say:"A tendency to have seizures from abnormal electrical activity in the brain."},
       {when:/serious lifelong|never drive again|you'?ll always|no cure/, q:"removing all hope", problem:"Overstating the gloom is inaccurate and unkind.", say:"For most people it's well controlled, and many become seizure-free."}
     ],
@@ -496,7 +496,7 @@ const STATIONS=[
       {when:/you can'?t (leave|go)|i won'?t let|not allowed|have to stay|won'?t (let you|discharge)|against your will/, q:"trying to detain him", problem:"You can't hold a capacitous adult \u2014 and it makes him dig in.", say:"This is your choice and I can't keep you here \u2014 but I'd strongly advise staying."}
     ],
     ifail:[
-      {when:c=>/you can'?t (leave|go)|i won'?t let|not allowed|have to stay|won'?t discharge/.test(c.full), b:"Tried to detain a capacitous patient", e:"Telling him he can't leave is unlawful and an instant fail."},
+      {when:c=>/you can'?t (leave|go)|i won'?t let|not allowed|have to stay|won'?t discharge/.test(c.full), b:"Tried to detain a capacitous patient", e:"Telling him he can't leave is unlawful and a critical fail."},
       {when:c=>!c.has("risk"), b:"Didn't explain the risk", e:"He left without understanding the danger."},
       {when:c=>!c.has("safetynet"), b:"No safety-net", e:"No return advice for a man leaving with possible cardiac pain."},
       {when:c=>!c.has("explore"), b:"Never explored his reason", e:"Argued with him instead of understanding him."}
@@ -692,7 +692,7 @@ const STATIONS=[
   sayNever:[
     {s:"Holding the line, warmly", say:"I can see how worried you are, and I wish I could help \u2014 but I can't share your dad's details without his permission.", never:"I'm not allowed to tell you anything, those are the rules.", why:"Hold confidentiality with empathy; a cold rule-quote feels like a slap to a frightened relative."},
     {s:"Offering a route through", say:"What I can do is ask your dad whether he'd be happy for me to update you, or for you to sit in with us.", never:"(just refuses and ends it)", why:"Confidentiality isn't a dead end \u2014 the patient can consent, and you can make that easy."},
-    {s:"When pushed", say:"I understand it feels wrong to be kept out \u2014 it's there to protect every patient, including him.", never:"Alright, between us \u2014 it's not good news.", why:"Even a sympathetic breach is still a breach, and an instant fail."},
+    {s:"When pushed", say:"I understand it feels wrong to be kept out \u2014 it's there to protect every patient, including him.", never:"Alright, between us \u2014 it's not good news.", why:"Even a sympathetic breach is still a breach, and a critical fail."},
     {s:"Staying human within the limits", say:"I can talk in general terms about how we approach things, just not his specific results without consent.", never:"I can't even confirm he's a patient here.", why:"Be helpful within the rules, not robotically obstructive."}
   ],
   instantFails:["Disclosed his information without consent","Quoted rules coldly, with no empathy","Refused as a dead end with no route via the patient","Confirmed details he hadn't agreed to share"],
@@ -703,7 +703,7 @@ const STATIONS=[
       {when:c=>c.has("offerRoute"), q:"You offered a way through", why:"Asking him to consent or to have her sit in \u2014 the right facilitation."}
     ],
     never:[
-      {when:/it'?s (cancer|a heart attack|pneumonia)|the diagnosis is|his results show|between us|off the record|tell you, but/, q:"a breach of confidentiality", problem:"Even a kind disclosure without consent is an instant fail.", say:"I can't share his details without his permission \u2014 but I can ask him."},
+      {when:/it'?s (cancer|a heart attack|pneumonia)|the diagnosis is|his results show|between us|off the record|tell you, but/, q:"a breach of confidentiality", problem:"Even a kind disclosure without consent is a critical fail.", say:"I can't share his details without his permission \u2014 but I can ask him."},
       {when:/those are the rules|not allowed to tell you anything|rules are rules|that'?s (just )?the (law|rules)|nothing i can do/, q:"a cold rule-quote", problem:"To a frightened relative this lands as a slap.", say:"I can see how worried you are, and I wish I could help."}
     ],
     ifail:[
@@ -755,7 +755,7 @@ const STATIONS=[
       {when:/nothing (i|we) can do|nothing more (i|we) can do|won'?t have blood.{0,12}nothing/, q:"withdrawing care", problem:"Refusing one treatment isn't refusing all care.", say:"There are still things we can do \u2014 let me plan around your wishes."}
     ],
     ifail:[
-      {when:c=>/you have to have|you must have|i can'?t let you|you'?ll die if you don'?t/.test(c.full), b:"Tried to override the refusal", e:"Coerced a capacitous patient \u2014 an instant fail."},
+      {when:c=>/you have to have|you must have|i can'?t let you|you'?ll die if you don'?t/.test(c.full), b:"Tried to override the refusal", e:"Coerced a capacitous patient \u2014 a critical fail."},
       {when:c=>!c.has("inform"), b:"Didn't ensure the refusal was informed", e:"Accepted it without confirming he understood the risk."},
       {when:c=>!c.has("respect"), b:"Didn't respect his autonomy", e:"No clear acknowledgement of his right to refuse."}
     ],
@@ -792,7 +792,7 @@ const STATIONS=[
     {s:"Naming it", say:"I'm sorry to tell you the test came back positive for HIV.", never:"Your HIV test was reactive, indicating seropositivity.", why:"Say it plainly and gently; jargon leaves him unsure how serious it is."},
     {s:"Honest hope", say:"This is very different from years ago \u2014 with treatment, people with HIV live a full, normal lifespan; and once the virus is undetectable on treatment, it can't be passed on — undetectable equals untransmittable.", never:"(leaves him believing it's a death sentence)", why:"Accurate hope is essential and true; silence here is cruel."},
     {s:"Confidentiality and partners", say:"This stays confidential \u2014 and we'll talk, with support, about telling partners so they can be tested and protected.", never:"We'll have to inform everyone you've slept with.", why:"Partner notification is supported and sensitive, not a threat you announce."},
-    {s:"No judgement", say:"None of this is about blame \u2014 my job is to help you from here.", never:"How do you think you caught it?", why:"A judgemental question at this moment is an instant fail."}
+    {s:"No judgement", say:"None of this is about blame \u2014 my job is to help you from here.", never:"How do you think you caught it?", why:"A judgemental question at this moment is a critical fail."}
   ],
   instantFails:["Was judgemental about how he acquired it","Left him believing it's a death sentence","Threatened mandatory partner disclosure","Used jargon (\u2018reactive / seropositive\u2019) instead of saying it plainly"],
   marking:{
@@ -803,7 +803,7 @@ const STATIONS=[
       {when:c=>c.has("support"), q:"You pointed to support", why:"Specialist clinic and a team \u2014 he isn't alone."}
     ],
     never:[
-      {when:/how did you (get|catch)|who gave it|sleeping around|your lifestyle|should have used/, q:"a judgemental question", problem:"Blame at this moment is an instant fail.", say:"None of this is about blame \u2014 my job is to help you from here."},
+      {when:/how did you (get|catch)|who gave it|sleeping around|your lifestyle|should have used/, q:"a judgemental question", problem:"Blame at this moment is a critical fail.", say:"None of this is about blame \u2014 my job is to help you from here."},
       {when:/have to (tell|inform).{0,14}(slept|partner|everyone)|we'?ll inform everyone|must disclose to/, q:"threatening disclosure", problem:"Partner notification is supported and consensual, not announced as a threat.", say:"We'll talk, with support, about telling partners so they can be tested."},
       {when:/reactive|seropositiv|seroconvers/, q:"jargon", problem:"He can't tell how serious \u2018reactive\u2019 is.", say:"The test came back positive for HIV."}
     ],
@@ -854,10 +854,10 @@ const STATIONS=[
       {when:c=>c.has("safetynet")||c.has("plan"), q:"You gave a plan and safety-net", why:"Reassurance with follow-up, not a brush-off."}
     ],
     never:[
-      {when:/all in your (head|mind)|nothing wrong with you|stop worrying|you'?re (just )?imagining|just anxiety,? (so )?don'?t/, q:"dismissing her", problem:"This makes her feel disbelieved \u2014 an instant fail.", say:"I don't doubt the headaches are real \u2014 let's take them seriously."}
+      {when:/all in your (head|mind)|nothing wrong with you|stop worrying|you'?re (just )?imagining|just anxiety,? (so )?don'?t/, q:"dismissing her", problem:"This makes her feel disbelieved \u2014 a critical fail.", say:"I don't doubt the headaches are real \u2014 let's take them seriously."}
     ],
     ifail:[
-      {when:c=>/all in your (head|mind)|nothing wrong with you|you'?re imagining it|stop worrying/.test(c.full), b:"Dismissed her symptoms", e:"\u2018In your head\u2019 / \u2018nothing wrong\u2019 \u2014 dismissive and an instant fail."},
+      {when:c=>/all in your (head|mind)|nothing wrong with you|you'?re imagining it|stop worrying/.test(c.full), b:"Dismissed her symptoms", e:"\u2018In your head\u2019 / \u2018nothing wrong\u2019 \u2014 dismissive and a critical fail."},
       {when:c=>c.has("explain")&&!c.has("validate"), b:"Reassured without validating", e:"Jumped to \u2018it's normal\u2019 without acknowledging her distress."},
       {when:c=>!c.has("explore"), b:"Never explored her fear", e:"Reassured blind, without finding what's driving it."}
     ],
@@ -1003,7 +1003,7 @@ $('#markBtn').onclick=()=>{ stopClock(); stopRec();
 
   did.forEach(x=>h+='<div class="item good">\u2713 <span class="q">'+esc(x.q)+'</span><div class="sub">'+esc(x.why)+'</div></div>');
   never.forEach(x=>h+='<div class="item never">\u2715 You used <span class="q">'+esc(x.q)+'</span><div class="sub">'+esc(x.problem)+'</div><div class="sayit">Say instead:</div> \u201c'+esc(x.say)+'\u201d</div>');
-  ifail.forEach(x=>h+='<div class="item if">\u2691 <strong>Instant-fail risk:</strong> '+esc(x.b)+'<div class="sub">'+esc(x.e)+'</div></div>');
+  ifail.forEach(x=>h+='<div class="item if">\u2691 <strong>Critical-fail risk:</strong> '+esc(x.b)+'<div class="sub">'+esc(x.e)+'</div></div>');
   if(!did.length&&!never.length&&!ifail.length) h+='<p class="small">Nothing matched the patterns either way — usually a short run. Use the model lines below to mark yourself properly.</p>';
 
   h+='<div class="disclaim"><strong>Mark yourself honestly.</strong> This spots obvious phrases — it can\u2019t judge a paraphrase or your tone. Read the model lines below against what you actually said; that\u2019s where the real learning is. (The AI version, when it lands, judges meaning, not keywords.)</div>';
@@ -1013,7 +1013,7 @@ $('#markBtn').onclick=()=>{ stopClock(); stopRec();
     '<div class="say"><b>Say:</b> \u201c'+esc(r.say)+'\u201d</div>'+
     '<div class="nev"><b>Never:</b> \u201c'+esc(r.never)+'\u201d</div>'+
     '<div class="sub">'+esc(r.why)+'</div></div>'; });
-  h+='<div class="modelrow"><div class="s">Instant fails</div><div class="sub">'+cur.instantFails.map(esc).join(' \u00b7 ')+'</div></div>';
+  h+='<div class="modelrow"><div class="s">Critical fails</div><div class="sub">'+cur.instantFails.map(esc).join(' \u00b7 ')+'</div></div>';
   h+='</details>';
 
   h+='<p class="small" style="margin-top:14px">Before you run it again — what one thing would you change?</p>';

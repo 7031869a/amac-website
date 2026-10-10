@@ -26,7 +26,7 @@ A station is used four ways. The current bank mixes them into one long page. Thi
 6. **Knowledge removal test:** if removing a fact would not change performance in this station, it doesn't belong.
 7. **Every clinical claim that carries a number or a specific action cites a named source with a version date.**
 8. **Candidate-facing text contains no internal review language** (reviewed, sign-off, pending, reviewer names, editorial notes).
-9. **No framing the exam doesn't use:** no "instant fail", "kill zone" or "hurdle". Unsafe moves are called **Safety-critical**. The card header shows **Domain** (Applied Knowledge / Applied Skills) and **Station type**.
+9. **No framing the exam doesn't use:** no "instant fail", "Safety-critical", "kill zone" or "hurdle". Unsafe moves are called **Critical fail** (label "Critical fail:", heading "Critical fails", in a sentence "is a critical fail"). The product name "Instant Fail Atlas" is the only exception. The card header shows **Domain** (Applied Knowledge / Applied Skills) and **Station type**.
 
 The validator (`validate-station.js`) enforces rules 3, 4 and the structural parts of 2, 7 and 8.
 
