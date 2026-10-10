@@ -25,7 +25,7 @@
 <meta property="og:site_name" content="AMaC">
 <meta property="og:locale" content="en_GB">
 <meta property="og:title" content="Prescribing Safety — AMaC PLAB 2">
-<meta property="og:description" content="SAFE PRESCRIBE · ORIP · IOAPM · SADMAN · ACID-ID · VRIII · High-risk drugs · Instant fails. Everything from the AMaC prescribing chapters in one…">
+<meta property="og:description" content="SAFE PRESCRIBE · ORIP · IOAPM · SADMAN · ACID-ID · VRIII · High-risk drugs · Critical fails. Everything from the AMaC prescribing chapters in one…">
 <meta property="og:url" content="https://amac-medical.com/prescribing.html">
 <meta property="og:image" content="https://amac-medical.com/og-image.png">
 <meta property="og:image:width" content="1200">
@@ -35,7 +35,7 @@
 <!-- ── Twitter/X card ─────────────────────────────────────────── -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Prescribing Safety — AMaC PLAB 2">
-<meta name="twitter:description" content="SAFE PRESCRIBE · ORIP · IOAPM · SADMAN · ACID-ID · VRIII · High-risk drugs · Instant fails. Everything from the AMaC prescribing chapters in one…">
+<meta name="twitter:description" content="SAFE PRESCRIBE · ORIP · IOAPM · SADMAN · ACID-ID · VRIII · High-risk drugs · Critical fails. Everything from the AMaC prescribing chapters in one…">
 <meta name="twitter:image" content="https://amac-medical.com/og-image.png">
 
 <!-- ── Structured data: helps Google understand the site ──────── -->
@@ -89,7 +89,7 @@ nav{position:sticky;top:0;z-index:100;background:linear-gradient(180deg,#0f2850,
 .mnem-body{padding:14px 16px;}
 .mnem-text{font-size:13px;color:var(--ink);line-height:1.7;}
 .mnem-letter{font-weight:700;color:var(--navy);}
-/* Instant fails */
+/* Critical fails */
 .fail-grid{display:flex;flex-direction:column;gap:8px;}
 .fail-item{display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#fff;border:1px solid var(--line);border-radius:8px;border-left:4px solid var(--fail);transition:all .15s;}
 .fail-item:hover{background:rgba(192,57,43,0.04);transform:translateX(3px);}
@@ -141,11 +141,11 @@ footer{background:var(--navy-deep);color:#c4ccd8;padding:36px 28px 20px;}
 <header class="hero"><div class="ph">
   <span class="kick">Chapters 67–68 · Volume 3</span>
   <h1>Prescribing <em>Safety</em></h1>
-  <p>SAFE PRESCRIBE · ORIP · IOAPM · SADMAN · ACID-ID · VRIII · High-risk drugs · Instant fails. Everything from the AMaC prescribing chapters in one interactive reference.</p>
+  <p>SAFE PRESCRIBE · ORIP · IOAPM · SADMAN · ACID-ID · VRIII · High-risk drugs · Critical fails. Everything from the AMaC prescribing chapters in one interactive reference.</p>
 </div></header>
 <div class="tabs"><div class="tabs-inner">
   <button class="tab active" onclick="showTab('mnemonics',this)">📋 Mnemonics</button>
-  <button class="tab" onclick="showTab('instant-fails',this)">⚠ Instant Fails</button>
+  <button class="tab" onclick="showTab('instant-fails',this)">⚠ Critical Fails</button>
   <button class="tab" onclick="showTab('high-risk',this)">💊 High-Risk Drugs</button>
   <button class="tab" onclick="showTab('vriii',this)">💉 VRIII Protocol</button>
 </div></div>
@@ -172,7 +172,7 @@ footer{background:var(--navy-deep);color:#c4ccd8;padding:36px 28px 20px;}
 <div class="trustband"><p class="slogan">Think Like an Examiner · Speak Like a Doctor · Perform With Confidence</p><p>All prescribing content sourced from Chapters 67–68 of the AMaC Master Series Volume 3.</p></div>
 <footer><div class="foot-inner">
   <div><div class="foot-brand">AMaC</div><p class="foot-p">Ahmed Mansour &amp; Colleagues — preparation for the PLAB 2 OSCE, built on examiner thinking.</p></div>
-  <div class="foot-col"><h4>Tools</h4><a href="mastercards.html">Master Cards</a><a href="osce.html">OSCE Stations</a><a href="dvla.html">DVLA Reference</a><a href="instant-fails.html">Instant Fails</a></div>
+  <div class="foot-col"><h4>Tools</h4><a href="mastercards.html">Master Cards</a><a href="osce.html">OSCE Stations</a><a href="dvla.html">DVLA Reference</a><a href="instant-fails.html">Critical Fails</a></div>
   <div class="foot-col"><h4>New Tools</h4><a href="ecg-abg.html">ECG &amp; ABG</a><a href="examcoach.html">Examination Coach</a></div>
   <div class="foot-col"><h4>Contact</h4><a href="mailto:info@amac-medical.com">info@amac-medical.com</a></div>
 </div><div class="foot-btm">&copy; 2026 Ahmed Mansour &amp; Colleagues (AMaC). All rights reserved.</div></footer>
@@ -201,7 +201,7 @@ document.getElementById('mnemGrid').innerHTML=Object.entries(RX.mnemonics).map((
     }).join('<br>')}</div></div>
   </div>`).join('');
 
-// Instant fails
+// Critical fails
 document.getElementById('failGrid').innerHTML=RX.instant_fails.map(f=>`
   <div class="fail-item"><span class="fail-icon">⚠</span><span class="fail-text">${f}</span></div>`).join('');
 
@@ -225,7 +225,7 @@ document.getElementById('vriiiBody').innerHTML=`
   <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:10px">Protocol Steps</div>
   <div class="vriii-steps">${v.steps.map((s,i)=>`<div class="vriii-step"><div class="vs-num">${i+1}</div><div class="vs-text">${s}</div></div>`).join('')}</div>
   <div class="vriii-errors">
-    <div class="ve-title">⚠ Common Errors — Instant Fail Risk</div>
+    <div class="ve-title">⚠ Common Errors — Critical Fail Risk</div>
     ${v.common_errors.map(e=>`<div class="ve-item">✗ ${e}</div>`).join('')}
   </div>`;
 </script>

@@ -98,7 +98,7 @@ BANNED = ["Kill Zone", "Automatic Fail", "Auto Fail", "Auto-Fail"]
 for n, h in pages.items():
     for b in BANNED:
         if re.search(re.escape(b), h, re.I):
-            errors.append(f"[term]      {n}.html contains banned term '{b}' (use INSTANT FAIL)")
+            errors.append(f"[term]      {n}.html contains banned term '{b}' (use Critical fail)")
 
 # ---------------------------------------------------------------- 3. prototype contamination
 # These strings exist ONLY in the old scrapped prototype, never in the real site.
