@@ -13,6 +13,10 @@
       the explicit ALLOW list below, so a new occurrence still fails.
   (c) Internal links. Every local href/src in a page must point at a file that
       exists in the repo.
+  WARNINGS (listed, never fail the build): wording that can imply an instant or
+      automatic fail ("on the spot", "automatic fail", "ends the station",
+      "instantly fail", "immediate fail", "fails immediately"). Many hits are
+      ordinary clinical English ("prescribing on the spot"); each needs a human read.
 
   Exit 0 = clean, 1 = at least one failure. Structural only: clinical accuracy
   always needs a clinician.
@@ -25,6 +29,7 @@ const read = rel => fs.readFileSync(path.join(ROOT, rel), 'utf8');
 const lineOf = (text, i) => text.slice(0, i).split('\n').length;
 const failures = [];
 const fail = (kind, msg) => failures.push(`[${kind}] ${msg}`);
+const warnings = [];
 const pages = htmlPages();
 
 // ---------------------------------------------------------------- (a) counts
@@ -62,6 +67,14 @@ const BANNED = [
   { name: 'AI-checked', re: /\bAI[- ]checked\b/gi },
   { name: 'instant fail', re: /instant[- ]fail/gi },
 ];
+// Wording that can imply an instant/automatic fail: a warning, not a failure.
+const WARN = [
+  { name: 'on the spot', re: /\bon the spot\b/gi },
+  { name: 'automatic fail', re: /\bautomatic(?:ally)?[- ]fail/gi },
+  { name: 'ends the station', re: /\bends? (?:the|a|your) station\b/gi },
+  { name: 'instantly fail', re: /\binstantly fail/gi },
+  { name: 'immediate fail', re: /\bimmediate(?:ly)? fail|\bfails? immediately\b/gi },
+];
 // What "instant fail" may legitimately be part of. Replaced with spaces of the
 // same length so line numbers and offsets stay true.
 const NOT_A_LABEL = [
@@ -90,6 +103,12 @@ for (const file of pages) {
     for (const m of text.matchAll(b.re)) {
       const ctx = raw.slice(Math.max(0, m.index - 40), m.index + 50).replace(/\s+/g, ' ');
       fail('term', `${file}:${lineOf(raw, m.index)} contains "${b.name}": …${ctx}…`);
+    }
+  }
+  for (const w of WARN) {
+    for (const m of text.matchAll(w.re)) {
+      const ctx = raw.slice(Math.max(0, m.index - 50), m.index + 50).replace(/\s+/g, ' ');
+      warnings.push(`[wording] ${file}:${lineOf(raw, m.index)} "${w.name}": …${ctx}…`);
     }
   }
 }
@@ -125,6 +144,10 @@ console.log('='.repeat(64));
 console.log(`AMaC SITE AUDIT (node)  --  ${pages.length} pages`);
 console.log(`  ${Object.keys(fresh).length} count keys, ${spotTotal} count spots, ${linkTotal} internal links checked`);
 console.log('='.repeat(64));
+if (warnings.length) {
+  console.log(`\nWARNINGS (${warnings.length}) -- non-blocking, read each one:`);
+  for (const w of warnings) console.log('  ! ' + w);
+}
 if (failures.length) {
   console.log(`\nFAILURES (${failures.length}):`);
   for (const f of failures) console.log('  x ' + f);
