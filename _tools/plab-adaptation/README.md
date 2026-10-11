@@ -22,7 +22,7 @@ Per batch (work folder `_tools/plab-adaptation/work/<batch>/`, not served):
 3. Independent checkers (3) follow CHECK_BRIEF.md → `rev/C*.json` (pass / fix / drop); apply fixes; re-validate.
 4. Clinician review pack (.docx) + feedback form (.xlsx); apply verdicts.
 5. Go live: append approved items to plab1-questions.js (section "2026 UKMLA adaptation — clinically reviewed (Oct 2026)"),
-   remove resolved sources from `_parked`, `python3 _tools/build-counts.py`, then `--check`, test pages, PR.
+   remove resolved sources from `_parked`, `node scripts/sync-counts.mjs`, then `--check`, test pages, PR.
 
 Locked rules: adapt not copy (stem Jaccard vs copy < 0.40); no unnecessary figures; key never hinges on a movable
 threshold; check before creating (no repeat of a live PLAB 1 scenario + learning point); correct option never the longest.
