@@ -124,8 +124,7 @@ const distinct = (arr, field) => new Set(arr.map(x => x[field])).size;
 
 // ---------------------------------------------------------------- what is counted
 // Every public count has one key. `src` is the file the page loads; `how` is the
-// rule. Keys with `manual` are not countable from data: they are kept here by
-// hand and the note says why.
+// rule. Every value is measured; none is typed in by hand.
 
 const KEYS = {
   // ---- question banks
@@ -273,11 +272,18 @@ const KEYS = {
   speakMoments: { label: 'Speak Like a Doctor moments', src: ['speak-m*.html'], how: 'number of speak-m<N>-*.html pages',
     fn: () => fs.readdirSync(ROOT).filter(f => /^speak-m\d+-.*\.html$/.test(f)).length },
 
-  // ---- not countable from data
-  performanceTools: { label: 'Performance tools (the "N Tools" headline)', src: [], manual: 30,
-    how: 'HAND-MAINTAINED. Not a tile count: tools.html has more tiles than this (39 .tc-name on 2026-10-11, incl. book volumes). '
-       + 'Bumped by one per tool launch; 30 = tools.html as of ef4220e (2026-09-21). Owner to decide the definition.',
-    fn: () => KEYS.performanceTools.manual },
+  // ---- the "N Tools" headline
+  performanceTools: { label: 'Tools (the "N Tools" headline)', src: ['tools.html'],
+    how: 'tiles on tools.html: <a class="tool-card"> links, counting each target page once and '
+       + 'leaving out the book-volume tiles that link to books.html',
+    fn: () => {
+      const hrefs = [...read('tools.html').matchAll(/<a\b[^>]*>/g)]
+        .map(m => m[0])
+        .filter(a => /\bclass="tool-card\b/.test(a))
+        .map(a => (a.match(/\bhref="([^"#?]+)/) || [])[1])
+        .filter(h => h && h !== 'books.html');
+      return new Set(hrefs).size;
+    } },
 };
 
 export function measure() {
@@ -295,7 +301,7 @@ export function measure() {
 }
 
 export const meta = () => Object.fromEntries(Object.entries(KEYS).map(([key, k]) => [key,
-  { label: k.label, source: k.src, method: k.how, ...(k.manual !== undefined ? { manual: true } : {}) }]));
+  { label: k.label, source: k.src, method: k.how }]));
 
 // ---------------------------------------------------------------- the markup
 
