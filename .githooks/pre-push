@@ -1,5 +1,7 @@
 #!/bin/sh
-# pre-push: refuse to push a commit whose headline counts are stale.
+# pre-push: refuse to push a commit whose headline counts are stale, or whose
+# content has a structural error (scripts/content-integrity.mjs: duplicate ID,
+# answer key missing from the options, empty answer; its warnings never block).
 #
 # Install once per clone:   git config core.hooksPath .githooks
 #
@@ -30,7 +32,7 @@ while read -r local_ref local_sha remote_ref remote_sha; do
       exit 1
     fi
     run="node"; script=scripts/sync-counts.mjs; fix="node scripts/sync-counts.mjs"
-    paths="scripts data stations/index.json *.html *.js"
+    paths="scripts data stations *.html *.js"
   else
     script=
     for s in _tools/build-counts.py build-counts.py; do
@@ -59,6 +61,14 @@ while read -r local_ref local_sha remote_ref remote_sha; do
     echo "$out" | grep -E 'stale:|MARKUP PROBLEMS|COULD NOT COUNT|^  - ' >&2
     echo "Run  $fix , commit, and push again." >&2
     status=1
+  fi
+  if [ -f "$tmp/scripts/content-integrity.mjs" ]; then
+    if ! out=$(node "$tmp/scripts/content-integrity.mjs" 2>&1); then
+      echo "pre-push: structural content errors in $local_ref ($local_sha):" >&2
+      echo "$out" | awk '/^x /{p=1; print; next} /^(! |$)/{p=0} p' | head -40 >&2
+      echo "Run  node scripts/content-integrity.mjs , fix the FAIL items, commit, and push again." >&2
+      status=1
+    fi
   fi
   rm -rf "$tmp"
 done
