@@ -47,7 +47,7 @@ const read = rel => fs.readFileSync(path.join(ROOT, rel), 'utf8');
 
 // Index just past `NAME =` (window.NAME / const NAME / var / let) where an
 // array or object literal starts.
-function literalStart(text, name) {
+export function literalStart(text, name) {
   const re = new RegExp('(?:window\\.|\\b(?:const|var|let)\\s+)' + name + '\\s*=\\s*(?=[\\[{])');
   const m = re.exec(text);
   if (!m) throw new Error(`${name} not found`);
@@ -56,7 +56,7 @@ function literalStart(text, name) {
 
 // Index of the bracket closing the literal that opens at text[start].
 // Skips strings, template strings and comments.
-function literalEnd(text, start) {
+export function literalEnd(text, start) {
   let depth = 0;
   for (let i = start; i < text.length; i++) {
     const c = text[i];

@@ -35,3 +35,9 @@ jobs:
       - name: Run AMaC count, wording and link audit
         if: success() || failure()
         run: node scripts/audit-site.mjs
+
+      # Data files: duplicate IDs, answer keys, empty answers fail the build;
+      # option counts, near-duplicates, station sections and wording are warnings.
+      - name: Run AMaC content integrity checks
+        if: success() || failure()
+        run: node scripts/content-integrity.mjs

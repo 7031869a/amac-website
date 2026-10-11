@@ -24,6 +24,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { ROOT, measure, spots, htmlPages } from './sync-counts.mjs';
+import { BANNED, WARN, NOT_A_LABEL, blank } from './phrases.mjs';
 
 const read = rel => fs.readFileSync(path.join(ROOT, rel), 'utf8');
 const lineOf = (text, i) => text.slice(0, i).split('\n').length;
@@ -61,28 +62,8 @@ for (const file of pages) {
 }
 
 // ---------------------------------------------------------------- (b) banned phrases
-const BANNED = [
-  { name: 'examiner-led', re: /examiner[- ]led/gi },
-  { name: 'No competitor', re: /no competitor/gi },
-  { name: 'AI-checked', re: /\bAI[- ]checked\b/gi },
-  { name: 'instant fail', re: /instant[- ]fail/gi },
-];
-// Wording that can imply an instant/automatic fail: a warning, not a failure.
-const WARN = [
-  { name: 'on the spot', re: /\bon the spot\b/gi },
-  { name: 'automatic fail', re: /\bautomatic(?:ally)?[- ]fail/gi },
-  { name: 'ends the station', re: /\bends? (?:the|a|your) station\b/gi },
-  { name: 'instantly fail', re: /\binstantly fail/gi },
-  { name: 'immediate fail', re: /\bimmediate(?:ly)? fail|\bfails? immediately\b/gi },
-];
-// What "instant fail" may legitimately be part of. Replaced with spaces of the
-// same length so line numbers and offsets stay true.
-const NOT_A_LABEL = [
-  /Instant[- ]Fail Atlas/gi,                                   // product name
-  /instant-fail[\w-]*\.html/gi,                                // URLs / filenames
-  /\b(?:id|class|for|href|src|onclick|data-[\w-]+)="[^"]*"/g,  // identifiers in markup
-  /(['"])(?:panel-)?instant-fails?\1/g,                        // identifiers in scripts
-];
+// BANNED, WARN, NOT_A_LABEL and blank() live in phrases.mjs (shared with
+// content-integrity.mjs).
 // Exact exemptions: book listings (feature lists of published books) keep the
 // book's own wording. Each entry must still exist, or the audit says so.
 const ALLOW = [
@@ -90,7 +71,6 @@ const ALLOW = [
   { file: 'books.html', text: 'Instant-Fail risk maps', why: 'Volume II contents list (book listing)' },
   { file: 'books.html', text: 'instant-fail alerts', why: 'The Final Fortnight contents list (book listing)' },
 ];
-const blank = s => s.replace(/[^\n]/g, ' ');
 for (const file of pages) {
   const raw = read(file);
   let text = raw;
