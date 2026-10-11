@@ -4,19 +4,34 @@
 
       node .claude/skills/amac-audit/audit-tool.mjs status
       node .claude/skills/amac-audit/audit-tool.mjs sample [--stage N] [--date YYYY-MM-DD]
+      node .claude/skills/amac-audit/audit-tool.mjs changed [--since SHA] [--date YYYY-MM-DD]
       node .claude/skills/amac-audit/audit-tool.mjs record --sample FILE --report FILE
             [--findings N --major N --acute N] [--sweep "Domain A|Domain B" --why "text"]
+      node .claude/skills/amac-audit/audit-tool.mjs coverage --commit SHA [--from SHA]   (used by .githooks/pre-push)
 
   Reads the live data files in this repo; reads and writes ONLY under
   AUDIT_DIR (default C:\Users\user\Documents\AMaC-audits). Never writes inside
   the repo, so no audit output can reach the public site.
 
-  sample  picks the stage (next_stage in rotation.json unless --stage), draws
-          the sample and writes AUDIT_DIR/work/<date>-stage<N>-<gate>-sample.json
-          with every sampled item's full content. It does NOT update the ledger.
-  record  after the report is written: adds the sampled IDs to the stage's
-          ledger, sets last_audit / last_commit, records full-sweep domains and
-          advances next_stage. Run it once per finished audit.
+  sample   rotation mode: picks the stage (next_stage in rotation.json unless
+           --stage), draws the sample and writes
+           AUDIT_DIR/work/<date>-stage<N>-<gate>-sample.json with every sampled
+           item's full content. It does NOT update the ledger.
+  changed  every item added or changed, per gate, since that gate's last audited
+           commit (changed_commit; else the gate's last rotation commit; else
+           --since; else the gate has no baseline yet and starts at HEAD).
+           No sampling. Writes AUDIT_DIR/work/<date>-changed-sample.json.
+  record   after the report is written. Rotation: adds the sampled IDs to the
+           stage's ledger, sets last_audit / last_commit, records full-sweep
+           domains, advances next_stage. Changed: sets every gate's
+           changed_commit to the audited HEAD. Both set last_run and next_due.
+  coverage prints a warning (exit 0) when a gate's data files differ between its
+           changed_commit and SHA, i.e. no "changed" audit covers SHA. With
+           --from, only gates whose data files changed in FROM..SHA are checked.
+
+  Cadence: rotation.json "cadence" = { label, weekdays } (default twice weekly,
+  Mon + Thu). next_due = the first listed weekday after the last run.
+  Models: Agent 1 (screen) sonnet, Agent 2 (independent re-check) opus (MODELS).
 
   Sampling (seeded by date + stage, so a re-run on the same day gives the same sample):
     bank     40 items stratified across domains (every domain once, as far as 40
@@ -116,17 +131,37 @@ const STAGES = {
 const SIZE = { bank: { total: 40, changed: 20, extra: true }, station: { total: 8, changed: 2 }, card: { total: 25, changed: 6 } };
 
 // ---------------------------------------------------------------- rotation.json
+const MODELS = { agent1: 'sonnet', agent2: 'opus' };
+const DEFAULT_CADENCE = { label: 'twice weekly', weekdays: ['Mon', 'Thu'] };
+const WEEKDAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+
 function freshRotation() {
   return {
     _about: 'AMaC content-audit rotation for /amac-audit. Written by .claude/skills/amac-audit/audit-tool.mjs. Never commit this file.',
     owner_first_name: '',   // used in the report heading "5 items for <name> to verify personally"; kept out of the repo
-    cycle_weeks: 8,
+    cadence: DEFAULT_CADENCE,
+    last_run: null,
+    next_due: null,
     next_stage: 1,
     stages: Object.fromEntries(Object.entries(STAGES).map(([n, s]) => [n, {
       title: s.title, gate: s.gate, last_audit: null, last_commit: null, pool_cycle: 1,
-      sampled_ids: [], full_sweep: [], reports: [],
+      sampled_ids: [], full_sweep: [], reports: [], changed_commit: null,
     }])),
+    changed_audits: [],
   };
+}
+// Older rotation.json files gain the newer fields without losing anything.
+function upgrade(rot) {
+  const fresh = freshRotation();
+  for (const k of ['cadence', 'last_run', 'next_due', 'changed_audits']) if (!(k in rot)) rot[k] = fresh[k];
+  delete rot.cycle_weeks;
+  for (const [n, s] of Object.entries(fresh.stages)) rot.stages[n] = { ...s, ...(rot.stages[n] || {}) };
+  if (!rot.last_run) {
+    const dates = Object.values(rot.stages).map(s => s.last_audit).filter(Boolean).sort();
+    if (dates.length) rot.last_run = dates[dates.length - 1];
+  }
+  if (!rot.next_due && rot.last_run) rot.next_due = nextDue(rot.last_run, rot.cadence);
+  return rot;
 }
 function loadRotation() {
   if (!fs.existsSync(ROTATION)) {
@@ -134,7 +169,23 @@ function loadRotation() {
     fs.writeFileSync(ROTATION, JSON.stringify(freshRotation(), null, 2));
     console.log(`Created ${ROTATION}`);
   }
-  return JSON.parse(fs.readFileSync(ROTATION, 'utf8'));
+  const raw = fs.readFileSync(ROTATION, 'utf8');
+  const rot = upgrade(JSON.parse(raw));
+  const upgraded = JSON.stringify(rot, null, 2);
+  if (upgraded !== JSON.stringify(JSON.parse(raw), null, 2)) fs.writeFileSync(ROTATION, upgraded);   // newer fields added
+  return rot;
+}
+const saveRotation = rot => fs.writeFileSync(ROTATION, JSON.stringify(rot, null, 2));
+
+// First cadence weekday strictly after `date` (YYYY-MM-DD).
+function nextDue(date, cadence = DEFAULT_CADENCE) {
+  const days = (cadence.weekdays || DEFAULT_CADENCE.weekdays).map(d => WEEKDAYS.indexOf(String(d).slice(0, 3)));
+  if (!days.length || days.some(d => d < 0)) throw new Error(`rotation.json cadence.weekdays must be names like ${WEEKDAYS.join(', ')}`);
+  const d = new Date(date + 'T12:00:00Z');
+  for (let i = 1; i <= 7; i++) {
+    const x = new Date(d.getTime() + i * 864e5);
+    if (days.includes(x.getUTCDay())) return x.toISOString().slice(0, 10);
+  }
 }
 
 // ---------------------------------------------------------------- sampling helpers
@@ -169,14 +220,31 @@ function changedSince(part, sha) {
   return part.load(readHead).filter(it => old.get(it.id) !== JSON.stringify(it.content)).map(it => it.id);
 }
 
+// Every data file a gate reads, for the coverage check.
+const gateFiles = n => STAGES[n].parts.flatMap(p => p.files);
+
 // ---------------------------------------------------------------- commands
 function status() {
   const rot = loadRotation();
+  const today = new Date().toISOString().slice(0, 10);
+  console.log(`cadence: ${rot.cadence.label} (${rot.cadence.weekdays.join(', ')})  last run: ${rot.last_run || 'never'}  next due: ${rot.next_due || 'now'}` +
+    (rot.next_due && rot.next_due < today ? '  OVERDUE' : ''));
   console.log(`next_stage: ${rot.next_stage}`);
   for (const [n, s] of Object.entries(rot.stages)) {
     console.log(`  ${n} ${s.title.padEnd(44)} last ${s.last_audit || 'never'}  ledger ${s.sampled_ids.length} (cycle ${s.pool_cycle})` +
+      `  changed-audited to ${s.changed_commit ? s.changed_commit.slice(0, 7) : '-'}` +
       (s.full_sweep.filter(x => !x.done).length ? `  FULL SWEEP PENDING: ${s.full_sweep.filter(x => !x.done).map(x => x.domain).join(', ')}` : ''));
   }
+}
+
+function writeSample(name, body) {
+  const out = path.join(AUDIT_DIR, 'work', `${name}-sample.json`);
+  fs.mkdirSync(path.dirname(out), { recursive: true });
+  fs.writeFileSync(out, JSON.stringify(body, null, 1));
+  console.log(`Sample: ${out}`);
+  console.log(`Report: ${body.report}`);
+  console.log(`Models: Agent 1 ${MODELS.agent1}, Agent 2 ${MODELS.agent2}. Next due after this run: ${body.next_due}`);
+  return out;
 }
 
 function sample() {
@@ -199,44 +267,92 @@ function sample() {
     const pool = part.load(readHead);
     if (part.kind === 'full') { pool.forEach(it => items.push({ ...it, source: part.source, reason: 'full review' })); continue; }
     const size = SIZE[part.kind];
-    let eligible = pool.filter(it => !ledger.has(it.id));
+    const eligible = pool.filter(it => !ledger.has(it.id));
     const changedIds = new Set(changedSince(part, baseline));
-    const changed = shuffle(eligible.filter(it => changedIds.has(it.id)), r).slice(0, size.changed);
-    const strat = size.extra ? size.total : size.total - changed.length;
-    const taken = new Set(changed.map(it => it.id));
+    const changedItems = shuffle(eligible.filter(it => changedIds.has(it.id)), r).slice(0, size.changed);
+    const strat = size.extra ? size.total : size.total - changedItems.length;
+    const taken = new Set(changedItems.map(it => it.id));
     let rest = stratified(eligible.filter(it => !taken.has(it.id)), strat, r);
     if (rest.length < strat) {                     // pool exhausted: restart the ledger
       poolReset = true;
       rest.forEach(it => taken.add(it.id));
       rest = rest.concat(stratified(pool.filter(it => !taken.has(it.id)), strat - rest.length, r));
     }
-    changed.forEach(it => items.push({ ...it, source: part.source, reason: 'added/changed since last audit' }));
+    changedItems.forEach(it => items.push({ ...it, source: part.source, reason: 'added/changed since last audit' }));
     rest.forEach(it => items.push({ ...it, source: part.source, reason: 'stratified' }));
     console.log(`${part.source}: pool ${pool.length}, not yet sampled ${eligible.length}, changed since baseline ${changedIds.size}` +
-      ` -> ${changed.length} changed + ${rest.length} stratified`);
+      ` -> ${changedItems.length} changed + ${rest.length} stratified`);
   }
-
-  if (n === '2') {                                  // which mock papers use each PLAB 1 item
-    const papers = literalFrom(readHead('plab1-papers.js'), 'PLAB1_PAPERS');
-    for (const it of items) it.mock_papers = Object.entries(papers).filter(([, p]) => p.ids.map(String).includes(it.id)).map(([k]) => k);
-  }
+  if (n === '2') addMockPapers(items);
 
   const name = `${date}-stage${n}-${stage.gate}`;
-  const out = path.join(AUDIT_DIR, 'work', `${name}-sample.json`);
-  fs.mkdirSync(path.dirname(out), { recursive: true });
   const domains = {};
   items.forEach(it => { domains[it.domain] = (domains[it.domain] || 0) + 1; });
-  fs.writeFileSync(out, JSON.stringify({
-    stage: Number(n), gate: stage.gate, title: stage.title, note: stage.note || null, date, seed: `${date}|stage${n}`,
+  writeSample(name, {
+    mode: 'rotation', stage: Number(n), gate: stage.gate, title: stage.title, note: stage.note || null, date, seed: `${date}|stage${n}`,
     head, baseline, pool_reset: poolReset, report: path.join(AUDIT_DIR, `${name}.md`),
+    models: MODELS, cadence: rot.cadence, next_due: nextDue(date, rot.cadence),
     pending_full_sweeps: st.full_sweep.filter(x => !x.done), domains,
     items,
-  }, null, 1));
+  });
   console.log(`Stage ${n} (${stage.title}): ${items.length} items, ${Object.keys(domains).length} domains${poolReset ? ', ledger restarts (pool exhausted)' : ''}`);
-  console.log(`Sample: ${out}`);
-  console.log(`Report: ${path.join(AUDIT_DIR, name + '.md')}`);
   const pend = st.full_sweep.filter(x => !x.done);
   if (pend.length) console.log(`FULL SWEEP PENDING for stage ${n}: ${pend.map(x => x.domain).join(', ')}`);
+}
+
+// Which PLAB 1 mock papers use each PLAB 1 item.
+function addMockPapers(items) {
+  const papers = literalFrom(readHead('plab1-papers.js'), 'PLAB1_PAPERS');
+  for (const it of items) {
+    if (it.source === 'PLAB 1') it.mock_papers = Object.entries(papers).filter(([, p]) => p.ids.map(String).includes(it.id)).map(([k]) => k);
+  }
+}
+
+// "/amac-audit changed": every added or changed item of every gate, no sampling.
+function changed() {
+  const rot = loadRotation();
+  const date = opt('date', new Date().toISOString().slice(0, 10));
+  const head = git('rev-parse', 'HEAD').trim();
+  const since = opt('since');
+  const items = [], gates = {};
+  for (const [n, stage] of Object.entries(STAGES)) {
+    const st = rot.stages[n];
+    const base = st.changed_commit || st.last_commit || since;
+    if (!base) {
+      gates[n] = { gate: stage.gate, title: stage.title, baseline: head, items: 0, removed: 0,
+        note: 'no audited commit yet: baseline set to HEAD, nothing to audit' };
+      console.log(`Stage ${n} ${stage.title}: no audited commit yet, baseline set to ${head.slice(0, 7)}`);
+      continue;
+    }
+    let count = 0, removed = 0;
+    for (const part of stage.parts) {
+      if (part.kind === 'full') {
+        const diff = git('diff', '--name-only', base, head, '--', ...part.files).split('\n').filter(Boolean);
+        for (const it of part.load(readHead).filter(x => diff.includes(x.id))) {
+          items.push({ ...it, stage: Number(n), gate: stage.gate, source: part.source, reason: 'page changed' }); count++;
+        }
+        continue;
+      }
+      const ids = new Set(changedSince(part, base));
+      const now = part.load(readHead);
+      for (const it of now.filter(x => ids.has(x.id))) {
+        items.push({ ...it, stage: Number(n), gate: stage.gate, source: part.source, reason: 'added/changed' }); count++;
+      }
+      const nowIds = new Set(now.map(x => x.id));
+      removed += part.load(rel => readAt(base, rel), base).filter(x => !nowIds.has(x.id)).length;
+    }
+    gates[n] = { gate: stage.gate, title: stage.title, baseline: base, items: count, removed };
+    console.log(`Stage ${n} ${stage.title}: ${count} added/changed since ${base.slice(0, 7)}${removed ? `, ${removed} removed (listed only)` : ''}`);
+  }
+  addMockPapers(items);
+  const name = `${date}-changed`;
+  const domains = {};
+  items.forEach(it => { domains[it.domain] = (domains[it.domain] || 0) + 1; });
+  writeSample(name, {
+    mode: 'changed', date, head, gates, report: path.join(AUDIT_DIR, `${name}.md`),
+    models: MODELS, cadence: rot.cadence, next_due: nextDue(date, rot.cadence), domains, items,
+  });
+  console.log(`Changed audit: ${items.length} items across ${Object.values(gates).filter(g => g.items).length} gates`);
 }
 
 function record() {
@@ -244,23 +360,80 @@ function record() {
   const s = JSON.parse(fs.readFileSync(opt('sample'), 'utf8'));
   const report = opt('report');
   if (!report || !fs.existsSync(report)) throw new Error('--report must name the written report');
-  const st = rot.stages[String(s.stage)];
-  const ids = s.items.map(it => it.id);
-  st.sampled_ids = s.pool_reset ? ids : [...new Set([...st.sampled_ids, ...ids])];
-  if (s.pool_reset) st.pool_cycle += 1;
-  st.last_audit = s.date;
-  st.last_commit = s.head;
+  const tally = { findings: Number(opt('findings', 0)), major: Number(opt('major', 0)), acute: Number(opt('acute', 0)) };
   const sweep = (opt('sweep') || '').split('|').map(x => x.trim()).filter(Boolean);
-  for (const d of sweep) st.full_sweep.push({ domain: d, marked: s.date, why: opt('why', ''), report, done: false });
-  st.reports.push({ date: s.date, report, sampled: ids.length, findings: Number(opt('findings', 0)),
-    major: Number(opt('major', 0)), acute: Number(opt('acute', 0)), full_sweep: sweep });
-  rot.next_stage = (s.stage % 8) + 1;
-  fs.writeFileSync(ROTATION, JSON.stringify(rot, null, 2));
-  console.log(`Recorded stage ${s.stage}: ${ids.length} IDs in the ledger, next_stage ${rot.next_stage}` +
-    (sweep.length ? `, full sweep marked: ${sweep.join(', ')}` : ''));
+  if (s.mode === 'changed') {
+    // --sweep entries are "<stage>:<domain>" in changed mode.
+    for (const n of Object.keys(s.gates)) {
+      const st = rot.stages[n];
+      st.changed_commit = s.head;
+      const ids = s.items.filter(it => String(it.stage) === n).map(it => it.id);
+      if (ids.length) st.sampled_ids = [...new Set([...st.sampled_ids, ...ids])];
+    }
+    for (const d of sweep) {
+      const [n, domain] = d.split(':');
+      if (!rot.stages[n] || !domain) throw new Error(`--sweep in changed mode needs "<stage>:<domain>", got "${d}"`);
+      rot.stages[n].full_sweep.push({ domain, marked: s.date, why: opt('why', ''), report, done: false });
+    }
+    rot.changed_audits.push({ date: s.date, commit: s.head, report, items: s.items.length, ...tally, full_sweep: sweep });
+    console.log(`Recorded changed audit: ${s.items.length} items, every gate audited to ${s.head.slice(0, 7)}`);
+  } else {
+    const st = rot.stages[String(s.stage)];
+    const ids = s.items.map(it => it.id);
+    st.sampled_ids = s.pool_reset ? ids : [...new Set([...st.sampled_ids, ...ids])];
+    if (s.pool_reset) st.pool_cycle += 1;
+    st.last_audit = s.date;
+    st.last_commit = s.head;
+    for (const d of sweep) st.full_sweep.push({ domain: d, marked: s.date, why: opt('why', ''), report, done: false });
+    st.reports.push({ date: s.date, report, sampled: ids.length, ...tally, full_sweep: sweep });
+    rot.next_stage = (s.stage % 8) + 1;
+    console.log(`Recorded stage ${s.stage}: ${ids.length} IDs in the ledger, next_stage ${rot.next_stage}` +
+      (sweep.length ? `, full sweep marked: ${sweep.join(', ')}` : ''));
+  }
+  rot.last_run = s.date;
+  rot.next_due = nextDue(s.date, rot.cadence);
+  saveRotation(rot);
+  console.log(`Next due: ${rot.next_due} (${rot.cadence.label})`);
+}
+
+// Pre-push: warn (never block) when content changed after the last "changed" audit.
+function coverage() {
+  const sha = opt('commit') || 'HEAD';
+  if (!fs.existsSync(ROTATION)) {
+    console.log('amac-audit: WARNING (not blocking): no rotation.json, so no "changed" audit covers this push. Run /amac-audit changed.');
+    return;
+  }
+  const rot = upgrade(JSON.parse(fs.readFileSync(ROTATION, 'utf8')));
+  // --from: the push range starts here; a push that changes no content data file is silent.
+  const from = opt('from');
+  const touched = n => {
+    if (!from) return true;
+    try { return git('diff', '--name-only', from, sha, '--', ...gateFiles(n)).trim() !== ''; } catch { return true; }
+  };
+  const gaps = [];
+  for (const n of Object.keys(STAGES)) {
+    if (!touched(n)) continue;
+    const base = rot.stages[n].changed_commit;
+    let diff;
+    if (!base) diff = ['no "changed" audit yet'];
+    else {
+      try { diff = git('diff', '--name-only', base, sha, '--', ...gateFiles(n)).split('\n').filter(Boolean); }
+      catch { diff = [`audited commit ${base.slice(0, 7)} not found locally`]; }
+    }
+    if (diff.length) gaps.push(`${STAGES[n].title}: ${diff.slice(0, 3).join(', ')}${diff.length > 3 ? ' …' : ''}`);
+  }
+  if (!gaps.length) return;
+  console.log(`amac-audit: WARNING (not blocking): no "/amac-audit changed" covers ${String(sha).slice(0, 7)} for:`);
+  for (const g of gaps) console.log('  - ' + g);
+  console.log('Run /amac-audit changed to audit every added or changed item.');
 }
 
 if (cmd === 'status') status();
 else if (cmd === 'sample') sample();
+else if (cmd === 'changed') changed();
 else if (cmd === 'record') record();
-else { console.log('usage: audit-tool.mjs status | sample [--stage N] [--date D] | record --sample FILE --report FILE [...]'); process.exit(2); }
+else if (cmd === 'coverage') coverage();
+else {
+  console.log('usage: audit-tool.mjs status | sample [--stage N] | changed [--since SHA] | record --sample FILE --report FILE [...] | coverage --commit SHA');
+  process.exit(2);
+}

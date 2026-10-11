@@ -2,6 +2,8 @@
 # pre-push: refuse to push a commit whose headline counts are stale, or whose
 # content has a structural error (scripts/content-integrity.mjs: duplicate ID,
 # answer key missing from the options, empty answer; its warnings never block).
+# It also WARNS (never blocks) when the push changes content data files that no
+# "/amac-audit changed" run covers (.claude/skills/amac-audit/audit-tool.mjs coverage).
 #
 # Install once per clone:   git config core.hooksPath .githooks
 #
@@ -71,5 +73,17 @@ while read -r local_ref local_sha remote_ref remote_sha; do
     fi
   fi
   rm -rf "$tmp"
+
+  # Content audit coverage: a WARNING only, never blocks. If this push changes
+  # content data files that no "/amac-audit changed" run has covered, say so.
+  tool="$(git rev-parse --show-toplevel)/.claude/skills/amac-audit/audit-tool.mjs"
+  if [ -f "$tool" ] && command -v node >/dev/null 2>&1; then
+    if [ "$remote_sha" = "$zero" ]; then
+      from=$(git merge-base origin/main "$local_sha" 2>/dev/null)
+    else
+      from=$remote_sha
+    fi
+    node "$tool" coverage --commit "$local_sha" ${from:+--from "$from"} >&2 || true
+  fi
 done
 exit $status
