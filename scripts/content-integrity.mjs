@@ -194,7 +194,12 @@ const LIBRARIES = [
   { source: 'PLAB 2 OSCE stations', file: 'osce.html', name: 'STATIONS', id: s => s.num,
     required: ['title'], grid: s => s.marks || s.self_audit, critical: s => s.critical_fails || s.instant_fails },
   { source: 'MRCS Part B stations', dir: 'stations', id: s => s.id,
-    required: ['title'], grid: s => s.grid, critical: s => s.failures },
+    required: ['title'], grid: s => s.grid, critical: s => s.failures,
+    // The ICBSE source citation ("Station format: ... examiner-led questioning
+    // ...") quotes the exam's own description of the format, so it is not
+    // checked for phrases.
+    phraseText: s => ({ ...s, sources: (s.sources || []).map(x =>
+      x && /^Station format:/.test(x.supports || '') ? { ...x, supports: '' } : x) }) },
 ];
 for (const L of LIBRARIES) {
   let items;
@@ -212,7 +217,7 @@ for (const L of LIBRARIES) {
     for (const f of L.required) if (isEmpty(s[f])) hit('empty-field', L.source, id, `${f} is empty`);
     if (isEmpty(L.grid(s))) hit('marking-grid', L.source, id, 'no marking grid');
     if (L.critical && isEmpty(L.critical(s))) hit('critical-fail', L.source, id, 'no critical-fail section');
-    phraseChecks(L.source, id, s);
+    phraseChecks(L.source, id, L.phraseText ? L.phraseText(s) : s);
   }
   if (!L.critical) hit('critical-fail', L.source, null, `the station schema has no critical-fail field: all ${items.length} stations lack the section`);
 }

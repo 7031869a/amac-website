@@ -237,7 +237,11 @@ function status() {
   }
 }
 
-function writeSample(name, body) {
+function writeSample(base, body) {
+  // A second run on the same day gets -2, -3 … so no earlier sample or report is overwritten.
+  let name = base;
+  for (let k = 2; fs.existsSync(path.join(AUDIT_DIR, 'work', `${name}-sample.json`)) || fs.existsSync(path.join(AUDIT_DIR, `${name}.md`)); k++) name = `${base}-${k}`;
+  body.report = path.join(AUDIT_DIR, `${name}.md`);
   const out = path.join(AUDIT_DIR, 'work', `${name}-sample.json`);
   fs.mkdirSync(path.dirname(out), { recursive: true });
   fs.writeFileSync(out, JSON.stringify(body, null, 1));
