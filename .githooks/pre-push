@@ -3,40 +3,61 @@
 #
 # Install once per clone:   git config core.hooksPath .githooks
 #
-# For every commit being pushed, runs that commit's own _tools/build-counts.py --check
-# against that commit's files (not the working tree, so uncommitted edits
-# cannot hide or cause a failure). If anything is stale, the push is blocked:
-# run  python _tools/build-counts.py , commit the result, and push again.
+# For every commit being pushed, runs that commit's own count check against
+# that commit's files (not the working tree, so uncommitted edits cannot hide
+# or cause a failure). If anything is stale, the push is blocked: run the
+# count script named in the message, commit the result, and push again.
+#
+# Since Oct 2026 the check is scripts/sync-counts.mjs (Node). Older commits
+# still carry _tools/build-counts.py (or build-counts.py at the root before
+# 24 Sep 2026) and are checked with Python as before.
 
 zero=0000000000000000000000000000000000000000
-py=
-for c in python python3 py; do
-  if "$c" -c 'import sys' >/dev/null 2>&1; then py=$c; break; fi
-done
-if [ -z "$py" ]; then
-  echo "pre-push: no Python found, cannot check counts. Push blocked." >&2
-  exit 1
-fi
+
+find_python() {
+  for c in python python3 py; do
+    if "$c" -c 'import sys' >/dev/null 2>&1; then echo "$c"; return; fi
+  done
+}
 
 status=0
 while read -r local_ref local_sha remote_ref remote_sha; do
   [ "$local_sha" = "$zero" ] && continue          # branch deletion
-  # the script moved to _tools/ on 24 Sep 2026; older commits have it at the root
-  script=
-  for s in _tools/build-counts.py build-counts.py; do
-    if git cat-file -e "$local_sha:$s" 2>/dev/null; then script=$s; break; fi
-  done
-  if [ -z "$script" ]; then
-    echo "pre-push: WARNING - no build-counts.py found in $local_ref ($local_sha); counts NOT checked." >&2
-    continue
+
+  if git cat-file -e "$local_sha:scripts/sync-counts.mjs" 2>/dev/null; then
+    if ! command -v node >/dev/null 2>&1; then
+      echo "pre-push: no Node found, cannot check counts. Push blocked." >&2
+      exit 1
+    fi
+    run="node"; script=scripts/sync-counts.mjs; fix="node scripts/sync-counts.mjs"
+    paths="scripts data stations/index.json *.html *.js"
+  else
+    script=
+    for s in _tools/build-counts.py build-counts.py; do
+      if git cat-file -e "$local_sha:$s" 2>/dev/null; then script=$s; break; fi
+    done
+    if [ -z "$script" ]; then
+      echo "pre-push: WARNING - no count script found in $local_ref ($local_sha); counts NOT checked." >&2
+      continue
+    fi
+    run=$(find_python)
+    if [ -z "$run" ]; then
+      echo "pre-push: no Python found, cannot check counts. Push blocked." >&2
+      exit 1
+    fi
+    fix="python $script"
+    paths="$script data stations/index.json *.html *.js"
   fi
 
   tmp=$(mktemp -d) || exit 1
-  git archive "$local_sha" -- "$script" data stations/index.json '*.html' '*.js' | tar -x -C "$tmp"
-  if ! out=$("$py" "$tmp/$script" --check 2>&1); then
+  # shellcheck disable=SC2086  # $paths is a list of pathspecs
+  set -f                                         # pass the globs to git, not the shell
+  git archive "$local_sha" -- $paths | tar -x -C "$tmp"
+  set +f
+  if ! out=$("$run" "$tmp/$script" --check 2>&1); then
     echo "pre-push: counts are stale in $local_ref ($local_sha):" >&2
     echo "$out" | grep -E 'stale:|MARKUP PROBLEMS|COULD NOT COUNT|^  - ' >&2
-    echo "Run  python $script , commit, and push again." >&2
+    echo "Run  $fix , commit, and push again." >&2
     status=1
   fi
   rm -rf "$tmp"
