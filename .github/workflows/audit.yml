@@ -24,3 +24,14 @@ jobs:
 
       - name: Run AMaC structural audit
         run: python3 .github/audit_site.py
+
+      - name: Set up Node
+        if: success() || failure()   # run even when the step above fails
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      # Counts vs data/counts.json vs the data files, banned phrases, internal links.
+      - name: Run AMaC count, wording and link audit
+        if: success() || failure()
+        run: node scripts/audit-site.mjs
