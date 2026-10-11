@@ -234,12 +234,12 @@ footer{background:var(--navy-deep);color:#c4ccd8;padding:36px 28px 20px;}
     <h1>PLAB 2 <em>Flashcards</em></h1>
     <p>A PLAB 2 Performance Card System — not a flashcard deck. Each card is labelled by learning type so you always know: am I learning a <strong style="color:var(--gold-soft)">decision</strong>, a <strong style="color:#a0c0ff">script</strong>, a <strong style="color:#ffa090">critical fail</strong> or a <strong style="color:#80e0a0">curveball</strong>?</p>
     <div class="hero-chips">
-      <span class="chip active-chip">🟣 25 Curveballs</span>
-      <span class="chip active-chip">🔴 38 Examiner Traps</span>
-      <span class="chip active-chip">🔴 37 Critical Misses</span>
-      <span class="chip active-chip">🛡 20 Safety Checks</span>
-      <span class="chip">🟢 93 Say This Scripts</span>
-      <span class="chip">🔵 390 Decision Cards</span>
+      <span class="chip active-chip">🟣 <span data-count="flashcardsCurveball">189</span> Curveballs</span>
+      <span class="chip active-chip">🔴 <span data-count="flashcardsExaminerTrap">184</span> Examiner Traps</span>
+      <span class="chip active-chip">🔴 <span data-count="flashcardsCriticalMiss">126</span> Critical Misses</span>
+      <span class="chip active-chip">🛡 <span data-count="flashcardsSafetyCheck">143</span> Safety Checks</span>
+      <span class="chip">🟢 <span data-count="flashcardsSayThis">181</span> Say This Scripts</span>
+      <span class="chip">🔵 <span data-count="flashcardsDecision">666</span> Decision Cards</span>
     </div>
   </div>
 </header>
@@ -265,7 +265,7 @@ footer{background:var(--navy-deep);color:#c4ccd8;padding:36px 28px 20px;}
       <option value="Foundation">Foundation</option>
       <option value="Safety">Safety</option>
     </select>
-    <button class="fbtn active" id="allTypeBtn" onclick="filterType('all',this)">All (1,654)</button>
+    <button class="fbtn active" id="allTypeBtn" onclick="filterType('all',this)">All (<span data-count="flashcards">1,654</span>)</button>
     <button class="fbtn t-curve" onclick="filterType('curveball',this)">🟣 Curveball</button>
     <button class="fbtn t-trap" onclick="filterType('examiner_trap',this)">🔴 Examiner Trap</button>
     <button class="fbtn t-miss" onclick="filterType('critical_miss',this)">🔴 Critical Miss</button>

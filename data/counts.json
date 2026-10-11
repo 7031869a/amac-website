@@ -4,25 +4,475 @@
   "plab1Questions": 3717,
   "plab1Domains": 24,
   "plab1Papers": 6,
+  "plab1PaperDomains": 20,
+  "mrcsPartATotal": 4642,
+  "mrcsPartASubjects": 37,
+  "mrcp1Questions": 20,
   "cpsaStations": 431,
   "osceStations": 442,
-  "flashcards": 1654,
-  "cpsaFlashcards": 1302,
-  "atlasCards": 222,
-  "masterCards": 67,
-  "masterCardsUkmla": 105,
-  "actorTraps": 75,
-  "examinerBrain": 85,
-  "sayThisCpsa": 177,
-  "sayThisPlab2": 177,
-  "doNeverDo": 93,
-  "performanceBands": 106,
+  "mrcsPartBStations": 219,
   "mockCircuitStations": 18,
   "simulatorStations": 7,
   "actorTrapSimStations": 5,
+  "spokenOsceStations": 12,
   "stationPlannerStations": 22,
-  "mrcp1Questions": 20,
-  "mrcsPartBStations": 219,
-  "mrcsPartATotal": 4642,
-  "generated": "2026-10-10"
+  "performanceBands": 106,
+  "flashcards": 1654,
+  "flashcardsDecision": 666,
+  "flashcardsCurveball": 189,
+  "flashcardsExaminerTrap": 184,
+  "flashcardsCriticalMiss": 126,
+  "flashcardsSafetyCheck": 143,
+  "flashcardsSayThis": 181,
+  "cpsaFlashcards": 1302,
+  "cpsaFlashcardsDecision": 632,
+  "cpsaFlashcardsCurveball": 175,
+  "cpsaFlashcardsSafetyCheck": 280,
+  "cpsaFlashcardsCriticalMiss": 215,
+  "frcsFlashcards": 100,
+  "bleepCards": 65,
+  "startingOutCards": 24,
+  "atlasCards": 222,
+  "masterCards": 67,
+  "masterCardsUkmla": 105,
+  "sayThisCpsa": 177,
+  "sayThisPlab2": 177,
+  "doNeverDo": 93,
+  "doNeverDoPlab2": 93,
+  "actorTraps": 75,
+  "examinerBrain": 85,
+  "criticalFailsTier1": 59,
+  "criticalFailsTier2": 64,
+  "criticalFailsTotal": 123,
+  "nhsPhrases": 25,
+  "documentationScripts": 12,
+  "recoveryScripts": 15,
+  "failRecoveryQuestions": 15,
+  "failRecoveryDomains": 9,
+  "routeFinderQuestions": 9,
+  "dvlaConditions": 24,
+  "ethicsFrameworks": 8,
+  "antibioticInfections": 16,
+  "examCoachExams": 6,
+  "consultationFrameworks": 14,
+  "studyPlans": 3,
+  "speakMoments": 8,
+  "performanceTools": 36,
+  "generated": "2026-10-11",
+  "_meta": {
+    "aktQuestions": {
+      "label": "UKMLA AKT questions",
+      "source": [
+        "questions.html"
+      ],
+      "method": "length of QUESTIONS"
+    },
+    "aktDomains": {
+      "label": "UKMLA AKT clinical domains",
+      "source": [
+        "questions.html"
+      ],
+      "method": "distinct QUESTIONS[].domain"
+    },
+    "plab1Questions": {
+      "label": "PLAB 1 SBA questions",
+      "source": [
+        "plab1-questions.js"
+      ],
+      "method": "length of PLAB1_QUESTIONS"
+    },
+    "plab1Domains": {
+      "label": "PLAB 1 bank clinical domains",
+      "source": [
+        "plab1-questions.js"
+      ],
+      "method": "distinct PLAB1_QUESTIONS[].domain"
+    },
+    "plab1Papers": {
+      "label": "PLAB 1 full timed mock papers",
+      "source": [
+        "plab1-papers.js"
+      ],
+      "method": "keys of PLAB1_PAPERS"
+    },
+    "plab1PaperDomains": {
+      "label": "Clinical domains covered by the PLAB 1 mock papers (not the whole bank)",
+      "source": [
+        "plab1-papers.js",
+        "plab1-questions.js"
+      ],
+      "method": "distinct domain of every question id listed in PLAB1_PAPERS"
+    },
+    "mrcsPartATotal": {
+      "label": "MRCS Part A questions (one combined bank)",
+      "source": [
+        "data/mrcs-part-a-combined.json"
+      ],
+      "method": "length of the JSON array mrcs-part-a.html loads"
+    },
+    "mrcsPartASubjects": {
+      "label": "MRCS Part A subjects",
+      "source": [
+        "data/mrcs-part-a-combined.json"
+      ],
+      "method": "distinct subject"
+    },
+    "mrcp1Questions": {
+      "label": "MRCP Part 1 questions (scaffold bank)",
+      "source": [
+        "mrcp1-questions.js"
+      ],
+      "method": "length of MRCP1_QUESTIONS"
+    },
+    "cpsaStations": {
+      "label": "UKMLA CPSA stations",
+      "source": [
+        "cpsa-stations.html"
+      ],
+      "method": "length of STATIONS"
+    },
+    "osceStations": {
+      "label": "PLAB 2 OSCE stations",
+      "source": [
+        "osce.html"
+      ],
+      "method": "length of STATIONS"
+    },
+    "mrcsPartBStations": {
+      "label": "MRCS Part B practice stations",
+      "source": [
+        "stations/index.json"
+      ],
+      "method": "length of the index mrcs-part-b.html lists (built by build-station-index.js)"
+    },
+    "mockCircuitStations": {
+      "label": "PLAB 2 mock circuit stations",
+      "source": [
+        "mock-circuit.html"
+      ],
+      "method": "length of STATIONS"
+    },
+    "simulatorStations": {
+      "label": "Consultation simulator stations",
+      "source": [
+        "simulator.html"
+      ],
+      "method": "length of STATIONS"
+    },
+    "actorTrapSimStations": {
+      "label": "Actor trap simulator stations",
+      "source": [
+        "actor-trap-simulator.html"
+      ],
+      "method": "length of ORDER"
+    },
+    "spokenOsceStations": {
+      "label": "Spoken OSCE trainer stations",
+      "source": [
+        "spoken-osce.html"
+      ],
+      "method": "entries indented `  id:\"` between `const STATIONS=[` and the next top-level declaration (the literal holds regexes with quotes in them, so it cannot be bracket-matched)"
+    },
+    "stationPlannerStations": {
+      "label": "Station types in the Station Frequency Analyser",
+      "source": [
+        "station-planner.html"
+      ],
+      "method": "length of FREQ"
+    },
+    "performanceBands": {
+      "label": "Fail/Pass/Distinction stations",
+      "source": [
+        "performance-bands.html"
+      ],
+      "method": "length of BANDS"
+    },
+    "flashcards": {
+      "label": "PLAB 2 flashcards (all types)",
+      "source": [
+        "flashcards.html"
+      ],
+      "method": "length of CARDS"
+    },
+    "flashcardsDecision": {
+      "label": "PLAB 2 flashcards: Decision (type qa)",
+      "source": [
+        "flashcards.html"
+      ],
+      "method": "CARDS where type = qa"
+    },
+    "flashcardsCurveball": {
+      "label": "PLAB 2 flashcards: Curveball",
+      "source": [
+        "flashcards.html"
+      ],
+      "method": "CARDS where type = curveball"
+    },
+    "flashcardsExaminerTrap": {
+      "label": "PLAB 2 flashcards: Examiner Trap",
+      "source": [
+        "flashcards.html"
+      ],
+      "method": "CARDS where type = examiner_trap"
+    },
+    "flashcardsCriticalMiss": {
+      "label": "PLAB 2 flashcards: Critical Miss",
+      "source": [
+        "flashcards.html"
+      ],
+      "method": "CARDS where type = critical_miss"
+    },
+    "flashcardsSafetyCheck": {
+      "label": "PLAB 2 flashcards: Safety Check",
+      "source": [
+        "flashcards.html"
+      ],
+      "method": "CARDS where type = safety_check"
+    },
+    "flashcardsSayThis": {
+      "label": "PLAB 2 flashcards: Say This",
+      "source": [
+        "flashcards.html"
+      ],
+      "method": "CARDS where type = say_this"
+    },
+    "cpsaFlashcards": {
+      "label": "CPSA flashcards (all types)",
+      "source": [
+        "cpsa-flashcards.html"
+      ],
+      "method": "length of CARDS"
+    },
+    "cpsaFlashcardsDecision": {
+      "label": "CPSA flashcards: Decision (type qa)",
+      "source": [
+        "cpsa-flashcards.html"
+      ],
+      "method": "CARDS where type = qa"
+    },
+    "cpsaFlashcardsCurveball": {
+      "label": "CPSA flashcards: Curveball",
+      "source": [
+        "cpsa-flashcards.html"
+      ],
+      "method": "CARDS where type = curveball"
+    },
+    "cpsaFlashcardsSafetyCheck": {
+      "label": "CPSA flashcards: Safety Check",
+      "source": [
+        "cpsa-flashcards.html"
+      ],
+      "method": "CARDS where type = safety_check"
+    },
+    "cpsaFlashcardsCriticalMiss": {
+      "label": "CPSA flashcards: Critical Miss",
+      "source": [
+        "cpsa-flashcards.html"
+      ],
+      "method": "CARDS where type = critical_miss"
+    },
+    "frcsFlashcards": {
+      "label": "FRCS paper-critique flashcards",
+      "source": [
+        "frcs-flashcards.html"
+      ],
+      "method": "count of <div class=\"flashcard\"> (static HTML deck)"
+    },
+    "bleepCards": {
+      "label": "Foundation On Call Bleep Cards",
+      "source": [
+        "bleep-cards-data.js"
+      ],
+      "method": "length of BLEEP_CARDS"
+    },
+    "startingOutCards": {
+      "label": "Foundation Starting Out cards",
+      "source": [
+        "starting-out-data.js"
+      ],
+      "method": "length of SO_CARDS"
+    },
+    "atlasCards": {
+      "label": "Instant Fail Atlas cards",
+      "source": [
+        "atlas-cards.js"
+      ],
+      "method": "length of ATLAS_CARDS"
+    },
+    "masterCards": {
+      "label": "PLAB 2 Master Cards",
+      "source": [
+        "mastercards.html"
+      ],
+      "method": "length of CARDS"
+    },
+    "masterCardsUkmla": {
+      "label": "UKMLA (CPSA) Master Cards",
+      "source": [
+        "mastercards-ukmla.html"
+      ],
+      "method": "length of CARDS"
+    },
+    "sayThisCpsa": {
+      "label": "Say This. Avoid This. (CPSA) cards",
+      "source": [
+        "say-never-say.html"
+      ],
+      "method": "length of CARDS"
+    },
+    "sayThisPlab2": {
+      "label": "Say This. Avoid This. (PLAB 2) cards",
+      "source": [
+        "say-never-say-plab2.html"
+      ],
+      "method": "length of CARDS"
+    },
+    "doNeverDo": {
+      "label": "Do / Never Do (CPSA) cards",
+      "source": [
+        "do-never-do.html"
+      ],
+      "method": "length of CARDS"
+    },
+    "doNeverDoPlab2": {
+      "label": "Do / Never Do (PLAB 2) cards",
+      "source": [
+        "do-never-do-plab2.html"
+      ],
+      "method": "length of CARDS"
+    },
+    "actorTraps": {
+      "label": "Actor Traps Library traps",
+      "source": [
+        "actor-traps.html"
+      ],
+      "method": "length of TRAPS"
+    },
+    "examinerBrain": {
+      "label": "Examiner Brain stations",
+      "source": [
+        "examiner-brain.html"
+      ],
+      "method": "length of BRAIN"
+    },
+    "criticalFailsTier1": {
+      "label": "Critical-fail behaviours: Tier 1",
+      "source": [
+        "instant-fails.html"
+      ],
+      "method": "length of T1"
+    },
+    "criticalFailsTier2": {
+      "label": "Critical-fail behaviours: Tier 2",
+      "source": [
+        "instant-fails.html"
+      ],
+      "method": "length of T2"
+    },
+    "criticalFailsTotal": {
+      "label": "Critical-fail behaviours: total",
+      "source": [
+        "instant-fails.html"
+      ],
+      "method": "length of T1 + T2"
+    },
+    "nhsPhrases": {
+      "label": "NHS Language Coach phrases",
+      "source": [
+        "nhs-language.html"
+      ],
+      "method": "length of PHRASES"
+    },
+    "documentationScripts": {
+      "label": "Documentation Coach scripts",
+      "source": [
+        "documentation.html"
+      ],
+      "method": "length of DOCS"
+    },
+    "recoveryScripts": {
+      "label": "Recovery Scripts scenarios",
+      "source": [
+        "recovery-scripts.html"
+      ],
+      "method": "length of SCRIPTS"
+    },
+    "failRecoveryQuestions": {
+      "label": "Fail Recovery Diagnostic questions",
+      "source": [
+        "fail-recovery.html"
+      ],
+      "method": "length of QUESTIONS"
+    },
+    "failRecoveryDomains": {
+      "label": "Fail Recovery Diagnostic domains",
+      "source": [
+        "fail-recovery.html"
+      ],
+      "method": "keys of DOMAINS"
+    },
+    "routeFinderQuestions": {
+      "label": "Route Finder questions",
+      "source": [
+        "route-finder.html"
+      ],
+      "method": "length of QUESTIONS"
+    },
+    "dvlaConditions": {
+      "label": "DVLA Fitness to Drive conditions",
+      "source": [
+        "dvla.html"
+      ],
+      "method": "length of CONDITIONS.conditions"
+    },
+    "ethicsFrameworks": {
+      "label": "Ethics & Law Quick Reference frameworks",
+      "source": [
+        "ethics-law.html"
+      ],
+      "method": "length of ETHICS.sections"
+    },
+    "antibioticInfections": {
+      "label": "Antibiotic Guide infections",
+      "source": [
+        "antibiotics.html"
+      ],
+      "method": "length of ABX"
+    },
+    "examCoachExams": {
+      "label": "Examination Coach examinations",
+      "source": [
+        "examcoach.html"
+      ],
+      "method": "length of EXAMS.examinations"
+    },
+    "consultationFrameworks": {
+      "label": "Consultation Frameworks",
+      "source": [
+        "frameworks.html"
+      ],
+      "method": "length of FW"
+    },
+    "studyPlans": {
+      "label": "Study Planner plans",
+      "source": [
+        "study-planner.html"
+      ],
+      "method": "keys of PLANS"
+    },
+    "speakMoments": {
+      "label": "Speak Like a Doctor moments",
+      "source": [
+        "speak-m*.html"
+      ],
+      "method": "number of speak-m<N>-*.html pages"
+    },
+    "performanceTools": {
+      "label": "Tools (the \"N Tools\" headline)",
+      "source": [
+        "tools.html"
+      ],
+      "method": "tiles on tools.html: <a class=\"tool-card\"> links, counting each target page once and leaving out the book-volume tiles that link to books.html"
+    }
+  }
 }
