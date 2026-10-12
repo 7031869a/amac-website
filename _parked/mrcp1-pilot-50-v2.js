@@ -158,7 +158,7 @@ window.MRCP1_PILOT_V2_QUESTIONS = [
   "subdomain": "Endocrinology and diabetes",
   "topic": "Endocrinology and diabetes: diagnosis",
   "difficulty": "Moderate",
-  "stem": "A 79-year-old woman with primary hypothyroidism has not collected her prescriptions for 3 months. She is admitted in winter with confusion and drowsiness (GCS 11). Temperature is 33.1 °C, heart rate 42 beats/min and blood pressure 92/58 mmHg. Sodium is 124 mmol/L (135–145), glucose 3.1 mmol/L (4.0–7.0), TSH 68 mU/L (0.3–4.2) and free T4 below 3 pmol/L (12–22). Random cortisol is 540 nmol/L (adrenal insufficiency unlikely above 450). White cell count is 6.8 × 10^9/L (4.0–11.0) and CRP 6 mg/L (0–5). What is the most likely diagnosis?",
+  "stem": "A 79-year-old woman with primary hypothyroidism has not collected her prescriptions for 3 months. She is admitted in winter with confusion and drowsiness (GCS 11). Temperature is 33.1 °C, heart rate 42 beats/min and blood pressure 92/58 mmHg. Sodium is 124 mmol/L (135–145), glucose 3.1 mmol/L (4.0–7.0), TSH 68 mU/L (0.3–4.2) and free T4 below 3 pmol/L (12–22). Serum cortisol at 09:00 on the morning of admission is 520 nmol/L (133–537). White cell count is 6.8 × 10^9/L (4.0–11.0) and CRP 6 mg/L (0–5). What is the most likely diagnosis?",
   "options": {
    "A": "Myxoedema coma",
    "B": "Septic shock",
@@ -170,7 +170,7 @@ window.MRCP1_PILOT_V2_QUESTIONS = [
   "why_correct": "Myxoedema coma is decompensated hypothyroidism with reduced consciousness, hypothermia, bradycardia, hypotension, hyponatraemia and hypoglycaemia, often after stopping levothyroxine or with cold exposure. TSH 68 mU/L with undetectable free T4 confirms primary hypothyroidism. Treat with IV hydrocortisone before or with thyroid hormone replacement, plus supportive care.",
   "distractor_analysis": {
    "B": "Sepsis may precipitate the illness, but the normal white cell count and CRP make septic shock unlikely as the main explanation.",
-   "C": "Adrenal crisis also causes hypotension, hyponatraemia and hypoglycaemia, but a random cortisol of 540 nmol/L in an acutely unwell patient makes it unlikely, and it does not explain the thyroid results.",
+   "C": "Adrenal crisis also causes hypotension, hyponatraemia and hypoglycaemia, but a 09:00 cortisol of 520 nmol/L during acute illness makes it unlikely, and it does not explain the thyroid results.",
    "D": "Environmental hypothermia can cause bradycardia and confusion, but it does not explain a TSH of 68 mU/L with undetectable free T4.",
    "E": "Hypopituitary coma causes secondary hypothyroidism with a low or inappropriately normal TSH, not a TSH of 68 mU/L."
   },
@@ -610,19 +610,19 @@ window.MRCP1_PILOT_V2_QUESTIONS = [
   "difficulty": "Moderate",
   "stem": "A 21-year-old man has tendon xanthomas over his Achilles tendons and the extensor tendons of his hands, first noticed at the age of 14. Fasting lipids: total cholesterol 7.4 mmol/L (below 5.0), LDL cholesterol 5.2 mmol/L (below 3.0), HDL cholesterol 1.3 mmol/L (above 1.0), triglycerides 1.0 mmol/L (below 1.7). LDL cholesterol fell by 8% on atorvastatin 80 mg daily but by 45% when ezetimibe was started. Haemoglobin is 118 g/L (130–180), reticulocytes 190 × 10^9/L (20–100) and platelets 92 × 10^9/L (150–400); the blood film shows stomatocytes and large platelets. Both parents have normal cholesterol. He has no diarrhoea, cataracts or neurological symptoms. What is the most likely diagnosis?",
   "options": {
-   "A": "Tangier disease (ABCA1)",
-   "B": "Familial hypercholesterolaemia (LDLR)",
-   "C": "Abetalipoproteinaemia (MTTP)",
-   "D": "Cerebrotendinous xanthomatosis (CYP27A1)",
-   "E": "Sitosterolaemia (ABCG5/ABCG8)"
+   "A": "Familial defective apolipoprotein B-100",
+   "B": "Familial hypercholesterolaemia (heterozygous)",
+   "C": "Autosomal recessive hypercholesterolaemia",
+   "D": "Cerebrotendinous xanthomatosis",
+   "E": "Sitosterolaemia (phytosterolaemia)"
   },
   "correct_letter": "E",
-  "why_correct": "Sitosterolaemia is an autosomal recessive defect of the ABCG5/ABCG8 sterol transporter, so plant sterols are absorbed and not excreted into bile. It causes tendon xanthomas out of proportion to the LDL cholesterol, a poor response to statins, a marked response to ezetimibe (which blocks sterol absorption) and haemolysis with stomatocytes and large platelets (macrothrombocytopenia). Recessive inheritance fits parents with normal cholesterol.",
+  "why_correct": "Sitosterolaemia (also called phytosterolaemia) is an autosomal recessive defect of the ABCG5/ABCG8 sterol transporter, so plant sterols are absorbed and not excreted into bile. It causes tendon xanthomas out of proportion to the LDL cholesterol, a poor response to statins, a marked response to ezetimibe (which blocks sterol absorption) and haemolysis with stomatocytes and large platelets (macrothrombocytopenia). Recessive inheritance fits parents with normal cholesterol.",
   "distractor_analysis": {
-   "A": "Tangier disease causes very low HDL cholesterol and apoA-I, orange tonsils and neuropathy. Here HDL is normal.",
+   "A": "Familial defective apolipoprotein B-100 is autosomal dominant, so a parent would usually have high cholesterol. LDL cholesterol responds to statins, and it does not cause haemolysis or large platelets.",
    "B": "Heterozygous familial hypercholesterolaemia is autosomal dominant, so a parent would usually have high cholesterol, and LDL cholesterol falls well on a high-intensity statin. It does not cause haemolysis or large platelets.",
-   "C": "Abetalipoproteinaemia causes very low LDL cholesterol and triglyceride, acanthocytes, fat malabsorption and vitamin E deficiency neuropathy, not xanthomas.",
-   "D": "Cerebrotendinous xanthomatosis causes tendon xanthomas with chronic diarrhoea, juvenile cataracts and progressive neurological disease, none of which he has, and normal cholesterol."
+   "C": "Autosomal recessive hypercholesterolaemia fits unaffected parents and tendon xanthomas, but LDL cholesterol is usually much higher (often above 8 mmol/L), it responds to statins, and it does not cause stomatocytic haemolysis or large platelets.",
+   "D": "Cerebrotendinous xanthomatosis causes tendon xanthomas with chronic diarrhoea, juvenile cataracts and progressive neurological disease, none of which he has, and cholesterol is usually normal."
   },
   "generalisation": "Suspect sitosterolaemia when xanthomas are out of proportion to LDL cholesterol, statins work poorly, ezetimibe works well and there is stomatocytic haemolysis with macrothrombocytopenia. Confirm with plasma plant-sterol levels.",
   "review_status": "pilot v2 - not clinically reviewed"
@@ -833,23 +833,23 @@ window.MRCP1_PILOT_V2_QUESTIONS = [
   "subdomain": "Respiratory medicine",
   "topic": "Respiratory medicine: diagnosis",
   "difficulty": "Moderate",
-  "stem": "A 34-year-old woman with asthma since childhood has had a year of worsening control requiring three courses of prednisolone. She coughs up brown mucus plugs. She has no rash, numbness or sinus symptoms. Eosinophils are 1.4 × 10^9/L (0.0–0.4), total IgE 2,850 kU/L (0–81), Aspergillus fumigatus-specific IgE 18.2 kUA/L (below 0.35) and Aspergillus IgG 64 mgA/L (below 40). ANCA is negative and urinalysis is normal. High-resolution CT shows central bronchiectasis in both upper lobes with mucus plugging and no cavities. What is the most likely diagnosis?",
+  "stem": "A 34-year-old woman with asthma since childhood has had a year of worsening control requiring three courses of prednisolone. She coughs up brown mucus plugs. Eosinophils are 1.4 × 10^9/L (0.0–0.4), total IgE 2,850 kU/L (0–81), Aspergillus fumigatus-specific IgE 18.2 kUA/L (below 0.35) and Aspergillus IgG 64 mgA/L (below 40). Neutrophils are 5.6 × 10^9/L (2.0–7.5). High-resolution CT shows central bronchiectasis in both upper lobes with mucus plugging, and no cavities, nodules or fungal balls. What is the most likely diagnosis?",
   "options": {
    "A": "Allergic bronchopulmonary aspergillosis",
-   "B": "Chronic eosinophilic pneumonia",
-   "C": "Chronic pulmonary aspergillosis",
-   "D": "Eosinophilic granulomatosis with polyangiitis",
-   "E": "Idiopathic hypereosinophilic syndrome"
+   "B": "Severe asthma with fungal sensitisation",
+   "C": "Chronic cavitary pulmonary aspergillosis",
+   "D": "Subacute invasive pulmonary aspergillosis",
+   "E": "Simple pulmonary aspergilloma"
   },
   "correct_letter": "A",
-  "why_correct": "Allergic bronchopulmonary aspergillosis is a hypersensitivity reaction to Aspergillus fumigatus colonising the airways in asthma or cystic fibrosis. Poorly controlled asthma, brown mucus plugs, total IgE above 1,000, positive Aspergillus-specific IgE and IgG, eosinophilia and central bronchiectasis meet the diagnostic criteria. Treatment is oral prednisolone or itraconazole, with monitoring of total IgE.",
+  "why_correct": "Allergic bronchopulmonary aspergillosis is a hypersensitivity reaction to Aspergillus fumigatus colonising the airways in asthma or cystic fibrosis. Poorly controlled asthma, brown mucus plugs, a total IgE in the thousands, positive Aspergillus-specific IgE and IgG, eosinophilia and central bronchiectasis meet the diagnostic criteria. Treatment is oral prednisolone or itraconazole, with monitoring of total IgE.",
   "distractor_analysis": {
-   "B": "Chronic eosinophilic pneumonia causes peripheral consolidation with eosinophilia, not central bronchiectasis with mucus plugs and a total IgE in the thousands.",
-   "C": "Chronic pulmonary aspergillosis causes cavities or aspergillomas in damaged lungs with very high Aspergillus IgG, usually in non-atopic patients; there are no cavities here.",
-   "D": "Eosinophilic granulomatosis with polyangiitis causes asthma and eosinophilia, but with vasculitic features such as neuropathy, rash, sinus disease or nephritis; it does not cause central bronchiectasis with fungal sensitisation.",
-   "E": "Idiopathic hypereosinophilic syndrome needs eosinophils of at least 1.5 × 10^9/L with organ damage and no other cause; Aspergillus sensitisation with central bronchiectasis explains this picture."
+   "B": "Severe asthma with fungal sensitisation is severe asthma with sensitisation to a fungus that does not meet the criteria for allergic bronchopulmonary aspergillosis: total IgE is usually below 1,000 kU/L and there is no central bronchiectasis or mucus plugging.",
+   "C": "Chronic cavitary pulmonary aspergillosis causes one or more expanding cavities, often with fungal balls, in previously damaged lungs, with positive Aspergillus IgG. CT shows no cavities here.",
+   "D": "Subacute invasive pulmonary aspergillosis occurs in moderately immunocompromised patients and shows nodules or cavities progressing over 1 to 3 months; it does not cause central bronchiectasis with a total IgE in the thousands.",
+   "E": "A simple aspergilloma is a fungal ball in a pre-existing cavity, often after tuberculosis; CT shows no cavity or fungal ball."
   },
-  "generalisation": "In asthma that is getting harder to control, check eosinophils, total IgE and Aspergillus-specific IgE. Total IgE above 1,000 with Aspergillus sensitisation and central bronchiectasis indicates allergic bronchopulmonary aspergillosis.",
+  "generalisation": "In asthma that is getting harder to control, check eosinophils, total IgE and Aspergillus-specific IgE. A total IgE in the thousands with Aspergillus sensitisation, mucus plugging and central bronchiectasis indicates allergic bronchopulmonary aspergillosis rather than fungal sensitisation alone.",
   "review_status": "pilot v2 - not clinically reviewed"
  },
  {
@@ -883,7 +883,7 @@ window.MRCP1_PILOT_V2_QUESTIONS = [
   "subdomain": "Nephrology",
   "topic": "Nephrology: diagnosis",
   "difficulty": "Moderate",
-  "stem": "A 28-year-old woman has 4 days of malaise and reduced urine output after an upper respiratory tract infection. She has had no diarrhoea. Blood pressure is 148/92 mmHg and fundoscopy is normal. Haemoglobin is 72 g/L (115–165), platelets 38 × 10^9/L (150–400), creatinine 412 micromol/L (45–90), LDH 1,840 U/L (135–214) and haptoglobin below 0.1 g/L (0.3–2.0). The blood film shows red-cell fragments and the direct antiglobulin test is negative. Prothrombin time is 12 seconds (10–13) and fibrinogen 3.4 g/L (1.5–4.0). ADAMTS13 activity is 62% (50–150), stool PCR for Shiga toxin genes is negative, a pregnancy test is negative, and C3 is 0.52 g/L (0.75–1.65). What is the most likely diagnosis?",
+  "stem": "A 28-year-old woman has 4 days of malaise and reduced urine output after an upper respiratory tract infection. She has had no diarrhoea. Blood pressure is 148/92 mmHg and fundoscopy is normal. Haemoglobin is 72 g/L (115–165), platelets 38 × 10^9/L (150–400), creatinine 412 micromol/L (45–90), LDH 1,840 U/L (135–214) and haptoglobin below 0.1 g/L (0.3–2.0). The blood film shows red-cell fragments and the direct antiglobulin test is negative. Prothrombin time is 12 seconds (10–13) and fibrinogen 3.4 g/L (1.5–4.0). ADAMTS13 activity is 62% (50–150), stool PCR for Shiga toxin genes is negative, and a pregnancy test is negative. What is the most likely diagnosis?",
   "options": {
    "A": "TMA due to malignant hypertension",
    "B": "Complement-mediated atypical HUS",
@@ -892,7 +892,7 @@ window.MRCP1_PILOT_V2_QUESTIONS = [
    "E": "Shiga toxin-producing E. coli HUS"
   },
   "correct_letter": "B",
-  "why_correct": "Microangiopathic haemolysis, thrombocytopenia and acute kidney injury define a thrombotic microangiopathy. ADAMTS13 activity of 62% makes TTP very unlikely, there is no diarrhoea and Shiga toxin PCR is negative, clotting is normal and blood pressure is only mildly high with normal fundi. With an infective trigger and low C3, complement-mediated atypical HUS is most likely; treatment is a complement C5 inhibitor (eculizumab or ravulizumab) with meningococcal vaccination and antibiotic prophylaxis.",
+  "why_correct": "Microangiopathic haemolysis, thrombocytopenia and acute kidney injury define a thrombotic microangiopathy. ADAMTS13 activity of 62% makes TTP very unlikely, there is no diarrhoea and Shiga toxin PCR is negative, clotting is normal and blood pressure is only mildly high with normal fundi. With an infective trigger and these alternatives excluded, complement-mediated atypical HUS is most likely (C3 is often normal, so a normal C3 does not exclude it); treatment is a complement C5 inhibitor (eculizumab or ravulizumab) with meningococcal vaccination and antibiotic prophylaxis.",
   "distractor_analysis": {
    "A": "Malignant hypertension can cause a thrombotic microangiopathy, but it needs very high blood pressure with retinopathy; 148/92 mmHg with normal fundi does not fit.",
    "C": "Disseminated intravascular coagulation consumes clotting factors, prolonging the prothrombin time and lowering fibrinogen; both are normal here.",
