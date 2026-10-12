@@ -22,7 +22,7 @@
     near-duplicate    same keyed answer and stems that overlap heavily (same bank)
     mock-ref          a PLAB 1 / MRCP 1 mock paper lists an ID the bank does not have, or lists one twice
     marking-grid      a station with no marking grid
-    critical-fail     a station with no critical-fail section
+    critical-fail     a station with no critical-fail section (CPSA: criticalFails, being backfilled in batches)
     banned-phrase     a phrase from phrases.mjs BANNED inside item text
     wording           a phrase from phrases.mjs WARN inside item text
 
@@ -190,7 +190,7 @@ for (const [source, file, name, bankName] of [
 // null = the schema has no such section (reported once per library, not per station).
 const LIBRARIES = [
   { source: 'CPSA stations', file: 'cpsa-stations.html', name: 'STATIONS', id: s => s.num,
-    required: ['title', 'scenario'], grid: s => s.markingGrid, critical: null },
+    required: ['title', 'scenario'], grid: s => s.markingGrid, critical: s => s.criticalFails },
   { source: 'PLAB 2 OSCE stations', file: 'osce.html', name: 'STATIONS', id: s => s.num,
     required: ['title'], grid: s => s.marks || s.self_audit, critical: s => s.critical_fails || s.instant_fails },
   { source: 'MRCS Part B stations', dir: 'stations', id: s => s.id,
@@ -217,6 +217,14 @@ for (const L of LIBRARIES) {
     for (const f of L.required) if (isEmpty(s[f])) hit('empty-field', L.source, id, `${f} is empty`);
     if (isEmpty(L.grid(s))) hit('marking-grid', L.source, id, 'no marking grid');
     if (L.critical && isEmpty(L.critical(s))) hit('critical-fail', L.source, id, 'no critical-fail section');
+    if (Array.isArray(s.criticalFails) && s.criticalFails.length) {   // CPSA {move, consequence, gridRow}
+      const rows = new Set((s.markingGrid || []).map(g => g.domain));
+      if (s.criticalFails.length < 2 || s.criticalFails.length > 5) hit('critical-fail', L.source, id, `${s.criticalFails.length} critical fails (expected 2-5)`);
+      s.criticalFails.forEach((c, i) => {
+        for (const f of ['move', 'consequence', 'gridRow']) if (isEmpty(c && c[f])) hit('critical-fail', L.source, id, `criticalFails[${i}].${f} is empty`);
+        if (c && c.gridRow && !rows.has(c.gridRow)) hit('critical-fail', L.source, id, `criticalFails[${i}].gridRow "${c.gridRow}" is not a markingGrid domain`);
+      });
+    }
     phraseChecks(L.source, id, L.phraseText ? L.phraseText(s) : s);
   }
   if (!L.critical) hit('critical-fail', L.source, null, `the station schema has no critical-fail field: all ${items.length} stations lack the section`);
