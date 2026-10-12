@@ -71,6 +71,19 @@ section{display:grid;gap:10px}
 .flow li{background:var(--surface-2);border-radius:6px;padding:4px 10px;font-size:.88rem}
 .flow li+li::before{content:"→";margin-right:8px;color:var(--muted)}
 .note{font-size:.84rem;color:var(--muted);border-left:2px solid var(--line);padding-left:10px}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* brief images: lazy-loaded, tap to enlarge */
+.figs{display:grid;gap:14px;margin-top:14px}
+.fig{margin:0;display:grid;gap:6px}
+.fig .zoom{display:block;width:100%;padding:0;border:1px solid var(--line);border-radius:8px;background:var(--surface-2);overflow:hidden;cursor:zoom-in}
+.fig img{display:block;width:100%;height:auto;max-height:70vh;object-fit:contain}
+.fig figcaption{font-size:.8rem;color:var(--muted)}
+.fig figcaption a{color:inherit}
+dialog.imgbox{padding:0;border:0;background:rgba(5,10,20,.96);width:100vw;height:100vh;max-width:100vw;max-height:100vh}
+dialog.imgbox::backdrop{background:rgba(5,10,20,.9)}
+dialog.imgbox img{display:block;width:100%;height:100%;object-fit:contain}
+dialog.imgbox .btn{position:fixed;top:calc(env(safe-area-inset-top,0px) + 10px);right:12px;min-height:44px;min-width:64px}
 
 /* grid */
 .tbl{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
@@ -205,6 +218,7 @@ details p{margin-top:6px;color:var(--muted)}
   </nav>
   <main id="view" aria-live="polite"></main>
 </div>
+<dialog class="imgbox" id="imgbox" aria-label="Enlarged image"><button type="button" class="btn" id="imgbox-close">Close</button><img id="imgbox-img" alt=""></dialog>
 
 <script type="application/json" id="station-data">__STATION_JSON__</script>
 <script>
@@ -240,7 +254,33 @@ details p{margin-top:6px;color:var(--muted)}
       <dt>Setting</dt><dd>${esc(b.setting)}</dd>
       <dt>Your role</dt><dd>${esc(b.role)}</dd>
       <dt>Scenario</dt><dd>${esc(b.scenario)}</dd>
-      <dt>Task</dt><dd><strong>${esc(b.task)}</strong></dd></dl></div>`;
+      <dt>Task</dt><dd><strong>${esc(b.task)}</strong></dd></dl>${mediaHTML()}</div>`;
+  }
+
+  // Sourced images only (validate-station.js guarantees file, credit and licence for these).
+  // Alt text is the task, never the description: the description says what the image shows.
+  const MEDIA_FILE=/^media\/mrcs\/[A-Za-z0-9._\/-]+$/;
+  function mediaHTML(){
+    const items=(S.media||[]).filter(m=>(m.status==="own"||m.status==="licensed")&&MEDIA_FILE.test(m.file||"")&&!m.file.split("/").includes(".."));
+    if(!items.length)return "";
+    return `<div class="figs">${items.map(m=>{
+      const alt=`Image for the task: ${m.task}`;
+      const cap=`Image: ${esc(m.credit)}, ${esc(m.licence)}`;
+      const url=/^https?:\/\//.test(m.sourceUrl||"")?m.sourceUrl:"";
+      const mod=String(m.changes??"").trim()?" (modified)":"";
+      return `<figure class="fig"><button type="button" class="zoom" data-zoom="${esc(m.file)}" data-alt="${esc(alt)}"><img src="${esc(m.file)}" alt="${esc(alt)}" loading="lazy" decoding="async"><span class="vh"> (tap to enlarge)</span></button>
+        <figcaption>${url?`<a href="${esc(url)}" target="_blank" rel="noopener">${cap}</a>`:cap}${mod}</figcaption></figure>`;
+    }).join("")}</div>`;
+  }
+  function bindZoom(){
+    const box=$("#imgbox"), img=$("#imgbox-img");
+    document.addEventListener("click",e=>{
+      const z=e.target.closest("[data-zoom]"); if(!z)return;
+      if(typeof box.showModal!=="function"){window.open(z.dataset.zoom,"_blank","noopener");return;}
+      img.src=z.dataset.zoom; img.alt=z.dataset.alt; box.showModal();
+    });
+    // Tap the backdrop or Close to shut; tapping the image itself leaves room to pinch-zoom.
+    box.addEventListener("click",e=>{if(e.target===box||e.target.id==="imgbox-close")box.close();});
   }
 
   function rowHead(r){
@@ -454,7 +494,7 @@ details p{margin-top:6px;color:var(--muted)}
       document.querySelector(".modes").hidden=true;
       return;
     }
-    S=data; header();
+    S=data; header(); bindZoom();
     document.querySelectorAll(".mode").forEach(b=>b.addEventListener("click",()=>setMode(b.dataset.mode)));
     let start=(location.hash||"").slice(1);
     if(!["learn","partner","solo","revise"].includes(start)){try{start=localStorage.getItem("amac-station-mode")||"learn";}catch(e){start="learn";}}

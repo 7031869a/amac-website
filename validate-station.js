@@ -1,10 +1,11 @@
 #!/usr/bin/env node
-// AMaC station validator v1.2 — enforces station-template-spec.md §10, four-band model.
+// AMaC station validator v1.3 — enforces station-template-spec.md §10, four-band model; image licences (v1.3).
 // Bands per grid row: fail, pass, high required; borderline optional (only where it teaches something specific).
 // Usage: node validate-station.js stations/MB-120.json [more.json ...]
 // Exit code 1 if any station has errors. Warnings do not fail.
 
 const fs = require('fs');
+const path = require('path');
 
 const TYPES = ['examination', 'applied-knowledge', 'communication', 'history', 'procedural', 'data-interpretation'];
 const DOMAINS = {
@@ -21,6 +22,9 @@ const CLAIMS = /\b(examiners? (expect|reward|look for|want)|caps? the station|lo
 const BUDGET = { brief: 120, before: 60, flow: 40, cell: 25, fail: 150, borderline: 200, pass: 200, high: 300, failure: 40, knowledge: 150, recall: 80 };
 const REQUIRED = ['id', 'exam', 'title', 'type', 'header', 'brief', 'beforeYouWalkIn', 'flow', 'grid', 'performances', 'failures', 'knowledge', 'recall', 'sources', 'partner'];
 const MEDIA_STATUS = ['needed', 'own', 'licensed'];
+// Images we may publish: no NonCommercial (NC) or NoDerivatives (ND) licences.
+const LICENCES = ['Public domain', 'CC0', 'CC BY', 'CC BY-SA', 'Own'];
+const MEDIA_DIR = 'media/mrcs/';
 const COMPONENTS = ['Applied Knowledge', 'Applied Skills'];
 // Framing the exam does not use: an error, not a warning, on candidate-facing text.
 const FRAMING = /\b(instant fail|kill zone|hurdle|the bounded answer|instrument limit)\b/i;
@@ -28,7 +32,9 @@ const FRAMING = /\b(instant fail|kill zone|hurdle|the bounded answer|instrument 
 const words = s => (s || '').trim().split(/\s+/).filter(Boolean).length;
 const blank = s => !s || !String(s).trim() || /^[-—–\s]+$/.test(String(s));
 
-function validate(file) {
+// opts.root: site root that media file paths resolve against (default: this folder).
+function validate(file, opts = {}) {
+  const root = opts.root || __dirname;
   const errors = [], warnings = [];
   let st;
   try { st = JSON.parse(fs.readFileSync(file, 'utf8')); }
@@ -104,7 +110,19 @@ function validate(file) {
   (st.media || []).forEach((m, i) => {
     if (blank(m.task) || blank(m.description)) errors.push(`media[${i}] needs a task and a description`);
     if (!MEDIA_STATUS.includes(m.status)) errors.push(`media[${i}] status must be one of ${MEDIA_STATUS.join(', ')}`);
-    if ((m.status === 'own' || m.status === 'licensed') && (blank(m.source) || blank(m.licence))) errors.push(`media[${i}] is ${m.status} but has no source or licence recorded`);
+    if (m.status === 'own' || m.status === 'licensed') {
+      for (const k of ['file', 'credit', 'licence']) if (blank(m[k])) errors.push(`media[${i}] is ${m.status} but has no ${k}`);
+      if (m.licence !== 'Own' && blank(m.sourceUrl)) errors.push(`media[${i}] is ${m.status} but has no sourceUrl (only an Own licence may leave it out)`);
+    }
+    if (!blank(m.licence)) {
+      if (/\bN[CD]\b/i.test(m.licence)) errors.push(`media[${i}] licence "${m.licence}" is NonCommercial or NoDerivatives — not allowed`);
+      else if (!LICENCES.includes(m.licence)) errors.push(`media[${i}] licence "${m.licence}" must be one of: ${LICENCES.join(', ')}`);
+    }
+    if (!blank(m.sourceUrl) && !/^https?:\/\//.test(m.sourceUrl)) errors.push(`media[${i}] sourceUrl must start with http:// or https://`);
+    if (!blank(m.file)) {
+      if (!m.file.startsWith(MEDIA_DIR) || !/^[A-Za-z0-9._/-]+$/.test(m.file) || m.file.split('/').includes('..')) errors.push(`media[${i}] file "${m.file}" must be a plain path under ${MEDIA_DIR}`);
+      else if (!fs.existsSync(path.join(root, m.file))) errors.push(`media[${i}] file "${m.file}" does not exist`);
+    }
     if (m.status === 'needed' && m.required) warnings.push(`media[${i}] (${m.id}) is required but not yet sourced — station cannot be published without it`);
   });
 
@@ -116,7 +134,7 @@ function validate(file) {
       if (CLAIMS.test(v)) warnings.push(`Marking claim or retired term at ${path}: "${v.match(CLAIMS)[0]}"`);
     }
     else if (Array.isArray(v)) v.forEach((x, i) => walk(x, `${path}[${i}]`));
-    else if (v && typeof v === 'object') for (const [k, x] of Object.entries(v)) if (k !== 'url') walk(x, `${path}.${k}`);
+    else if (v && typeof v === 'object') for (const [k, x] of Object.entries(v)) if (!['url', 'sourceUrl', 'file'].includes(k)) walk(x, `${path}.${k}`);
   };
   walk(st, 'station');
 
