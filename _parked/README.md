@@ -50,3 +50,5 @@ PLAB 1 bank 3,314 → 3,597; held 2,431 → 2,342; parked 3,443 → 2,807. Recor
 - `plab1-adaptation-ii-unadapted.json`: 2,807 → 2,707. All 100 Paediatrics batch-2 sources resolved: 61 live, 3 held back (below), 36 retired. Do not re-adapt these sources.
 - `plab1-next-review-pack.json`: +3 approved batch-2 questions held back because each repeats a Held 01 question that went live (PAN2526/PAQ300, PAN1799/PAQ15511,
   PAN1974/PAQ15553). Ahmed or the reviewer to choose which of each pair stays live.
+
+`mrcp1-pilot-50.js` (12 Oct 2026) — MRCP Part 1 pilot: 50 clinical vignettes picked from the archive extraction pool (MRCP1-007..2583, not live), spread across 14 specialties, options reshuffled so keys run 10 each A–E. Not loaded by any page and not counted on the site. Audit sign-off list: 2026-10-12-mrcp1-pilot50.md in the owner's AMaC-audits folder (outside the repo). Nothing here may go live without clinician sign-off.
