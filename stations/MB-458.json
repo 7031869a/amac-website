@@ -1,0 +1,686 @@
+{
+  "id": "MB-458",
+  "exam": "MRCS-B",
+  "title": "Sepsis in the surgical patient",
+  "type": "applied-knowledge",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "high-risk postoperative intra-abdominal sepsis, resuscitation and source control",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "NICE NG253 “Suspected sepsis in people aged 16 or over” (published 19 November 2025; updated 23 September 2026)"
+    ],
+    "related": [
+      {
+        "id": "MB-457",
+        "why": "burn resuscitation"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Surgical ward",
+    "role": "Core surgical trainee",
+    "scenario": "You are the core surgical trainee called to a surgical ward. A 66-year-old patient is day five after sigmoid resection with primary anastomosis and has new abdominal pain, rigors and confusion. The nurse asks for urgent review.",
+    "task": "Conduct an assessment and describe your immediate management, escalation and source-control plan. The examiner will provide requested results."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Identify a high-risk septic surgical patient, begin concurrent resuscitation and antibiotics and identify source control.",
+    "trap": "Treating sepsis as antibiotics alone while missing possible anastomotic leak requiring urgent senior intervention.",
+    "firstMove": "I am worried about sepsis with organ dysfunction; I need senior surgical and critical-care review now while I assess ABCDE."
+  },
+  "flow": [
+    "ABCDE, full observations, NEWS2 and immediate escalation.",
+    "Suspect abdominal source; inspect wound/drains and elicit new pain/rigors.",
+    "Take cultures and lactate, start timely IV antibiotics and carefully reassessed boluses.",
+    "Discuss urgent CT if stable, and surgical/radiological source control without avoidable delay.",
+    "Reassess perfusion/NEWS2, explain urgency and hand over clearly."
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-skill",
+      "label": "Recognition and escalation",
+      "fail": "Attributes confusion and hypotension to pain without urgent review.",
+      "borderline": "Mentions infection but waits for laboratory confirmation before escalating.",
+      "pass": "Recognises high-risk sepsis and calls registrar/critical care promptly.",
+      "high": "Allocates roles, sets reassessment schedule and senior escalation while treating."
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-skill",
+      "label": "ABCDE / NEWS2",
+      "fail": "Fails to obtain respiratory rate or blood pressure.",
+      "borderline": "Performs partial ABCDE but omits NEWS2 or repeat observations.",
+      "pass": "Uses ABCDE, requests complete observations and calculates NEWS2.",
+      "high": "Interprets deterioration alongside NEWS2 and communicates concern explicitly.",
+      "source": "NG253"
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "Abdominal source",
+      "fail": "Does not consider anastomotic leak after resection.",
+      "borderline": "Lists leak but does not examine or seek evidence of peritonism.",
+      "pass": "Examines abdomen, wound, drains and asks about symptoms; suspects intra-abdominal source.",
+      "high": "Distinguishes alternative sources without delaying urgent surgical assessment."
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-skill",
+      "label": "Cultures and lactate",
+      "fail": "Starts no blood tests or cultures in an unstable patient.",
+      "borderline": "Takes routine FBC but forgets blood cultures or lactate.",
+      "pass": "Requests blood cultures, blood gas/lactate, FBC, U&Es, CRP and coagulation screen.",
+      "high": "Obtains cultures before antibiotics only if this does not delay treatment and uses trends."
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-knowledge",
+      "label": "Time-critical antibiotics",
+      "fail": "Offers oral antibiotics at end of shift.",
+      "borderline": "Says IV antibiotics but gives no urgency or antimicrobial strategy.",
+      "pass": "Prescribes local-guideline broad-spectrum IV antibiotics within 1 hour of identifying high risk.",
+      "high": "Checks allergy, renal function, source and prior therapy; plans microbiology review/de-escalation.",
+      "source": "NG253"
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-skill",
+      "label": "IV fluids",
+      "fail": "Gives unmonitored large bolus with no reassessment.",
+      "borderline": "Mentions fluid but not volume or repeat examination.",
+      "pass": "Gives isotonic crystalloid 250 mL bolus over 10–15 min, reassesses after each bolus and escalates promptly if not improving.",
+      "high": "Escalates a deteriorating patient at once; documents each response; treats 1,000 mL without response as the latest point for senior advice.",
+      "source": "NG253"
+    },
+    {
+      "id": "G7",
+      "domain": "clinical-knowledge",
+      "label": "Source control",
+      "fail": "Plans antibiotics and routine CT tomorrow despite suspected leak.",
+      "borderline": "Requests CT without an early surgical source-control conversation.",
+      "pass": "Calls senior surgeon early; arranges urgent imaging if stable and intervention planning.",
+      "high": "Explains not to delay intervention for imaging if unstable and source control is clinically urgent."
+    },
+    {
+      "id": "G8",
+      "domain": "professionalism",
+      "label": "Communication",
+      "fail": "Leaves patient confused and family uninformed.",
+      "borderline": "Gives vague reassurance without urgency or explaining intervention.",
+      "pass": "Explains suspected infection, urgent treatment and need for further assessment.",
+      "high": "Communicates uncertainty and potential reoperation sensitively without overpromising."
+    },
+    {
+      "id": "G9",
+      "domain": "clinical-skill",
+      "label": "Reassessment / handover",
+      "fail": "Walks away after prescribing antibiotics.",
+      "borderline": "Checks again only if nurse calls.",
+      "pass": "Repeats observations, urine output, lactate as indicated and structured senior handover.",
+      "high": "Anticipates critical-care support, ongoing perfusion assessment and immediate deterioration triggers."
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "candidate",
+        "text": "It is probably normal postoperative pain. I can review after the ward round.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Nurse: He is newly confused and shivering. His blood pressure is 88/52."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Give him paracetamol and recheck his temperature later.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What do you want to ask about?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Whether he is eating and when he can go home.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Nurse: He has increasing abdominal pain and less urine."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I will send a routine full blood count.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Would you measure lactate or obtain cultures?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Not unless the temperature stays up overnight.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Give your treatment plan."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Oral antibiotics tomorrow may help.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Perhaps a litre of fluid without checking again.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Could this be an anastomotic leak?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I would book a routine CT next week if symptoms persist.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Nurse: His wife is on the phone asking what is happening."
+      },
+      {
+        "speaker": "candidate",
+        "text": "He is too confused to understand, and I do not need to update his wife now.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I will leave the nurse to monitor him.",
+        "tags": [
+          {
+            "row": "G9",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "candidate",
+        "text": "I am the core surgical trainee. I am worried about sepsis in a postoperative patient; please call the surgical registrar and critical-care outreach while I perform ABCDE.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Nurse: He became confused during the past hour and has rigors."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Please give complete observations including respiratory rate, oxygen saturation, blood pressure and consciousness, so I can calculate NEWS2.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "RR 28, SpO2 93% on air, pulse 126, BP 88/52, temperature 38.7°C, new confusion."
+      },
+      {
+        "speaker": "candidate",
+        "text": "That gives a NEWS2 of 14 (respiratory rate 3, SpO₂ 2, pulse 2, systolic BP 3, temperature 1, new confusion 3). I will give oxygen appropriate to the target saturation and assess breathing and perfusion. I am treating this as high-risk sepsis.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Is the abdominal pain new? Any vomiting, changed stoma or drain output? I will examine the abdomen, wound and drains.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Nurse: Pain has increased over eight hours. There is guarding and cloudy fluid in the pelvic drain."
+      },
+      {
+        "speaker": "candidate",
+        "text": "That raises serious concern about anastomotic leak or intra-abdominal collection.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I need IV access, blood culture, blood gas with lactate, FBC, U&Es, CRP and clotting; cultures should not delay antibiotics.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Lactate is 4.1 mmol/L. What next?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Check allergy and local antibiotic protocol, then give broad-spectrum IV antibiotics within 1 hour of identifying high risk.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Give a 250 mL bolus of balanced isotonic crystalloid over about 10–15 minutes unless contraindicated, then reassess BP, breathing and perfusion after each bolus before giving another. If he is not responding, I escalate at that point; I would not give 1,000 mL before involving seniors in a deteriorating patient, because 1,000 mL without response is the latest point for senior advice.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Nurse: His BP remains 86/50 after the first bolus."
+      },
+      {
+        "speaker": "candidate",
+        "text": "This requires immediate senior and critical-care involvement. I will reassess and continue monitored resuscitation rather than give fluids blindly.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "The registrar and consultant surgeon need to consider urgent CT if stable and timely drainage or return to theatre; intervention must not be delayed if the patient is unstable.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "Am I going back to theatre?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "There may be a complication causing a serious infection. We are treating you now and the senior surgeon will explain the safest investigation and treatment, including whether another operation is needed.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I will arrange regular NEWS2 reassessment, urine measurement and a structured handover of observations, lactate, antibiotics, fluids and suspected source.",
+        "tags": [
+          {
+            "row": "G9",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "candidate",
+        "text": "This is a time-critical deterioration on day five after colonic anastomosis. I am initiating ABCDE now; please summon the registrar, consultant team and critical-care outreach, and document the time of high-risk assessment.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Nurse: He has been more muddled for an hour."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Please tell me airway patency, RR, oxygenation, pulse, blood pressure, temperature and neurological status. I will calculate NEWS2 and repeat it during resuscitation.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "RR 28, SpO2 93% air, pulse 126, BP 88/52, temperature 38.7°C, newly confused."
+      },
+      {
+        "speaker": "candidate",
+        "text": "He is haemodynamically unstable. I will use supplemental oxygen according to the indicated target, assess capillary refill and peripheral perfusion and prepare for critical-care transfer if he does not respond.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I want to know the operation, intra-operative findings, any previous leak concerns, drain output, urine output and new pain. I am assessing for peritonism, wound infection and other sources without anchoring prematurely.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Nurse: There is guarding; the pelvic drain has become cloudy and urine output is low."
+      },
+      {
+        "speaker": "candidate",
+        "text": "The likely source is intra-abdominal, potentially anastomotic leak, until urgently assessed.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I will send blood cultures now, venous or arterial gas with lactate, FBC, U&Es, CRP and clotting. Culture collection must not postpone first-dose antibiotics.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Lactate is 4.1 mmol/L."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I will check documented allergies, renal status and the hospital intra-abdominal sepsis antimicrobial guideline, and give appropriate broad-spectrum IV antibiotics within 1 hour of identifying high risk; narrow therapy when microbiology and source are clarified.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "With his hypotension, I will start balanced crystalloid 250 mL over 10–15 minutes, then reassess lung findings, BP, peripheral perfusion and conscious level after each bolus before repeating. If he is not improving, I escalate then rather than working towards a volume; 1,000 mL without adequate response is where NG253 requires senior advice, not a dose to complete first. I will involve critical care early.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Nurse: BP remains 86/50 after the first 250 mL."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I am documenting non-response and prompting the senior team to consider advanced haemodynamic support while I continue bedside reassessment.",
+        "tags": [
+          {
+            "row": "G9",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Please notify the operating consultant now. Source control is a parallel priority: urgent CT abdomen/pelvis if stable enough; image-guided drainage or operation as directed by the senior surgeon. Unstable peritonitis cannot wait for a routine scan slot.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "Am I in danger? Will I need surgery again?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "This is a serious change and we are acting urgently. We suspect an infection that may need a procedure; I cannot yet say which, but I will keep you informed and ensure the surgeon discusses the choices with you.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I will provide SBAR: postoperative day five, new confusion/guarding/cloudy drain, high NEWS2 and lactate 4.1, antibiotics given/time, each fluid bolus and response, urgent source-control question and next review time.",
+        "tags": [
+          {
+            "row": "G9",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G1",
+      "move": "Fails to respond to profound hypotension and confusion",
+      "consequence": "shock progresses."
+    },
+    {
+      "row": "G5",
+      "move": "Delays indicated IV antibiotics in high-risk suspected sepsis without justification.",
+      "consequence": "This is a critical fail."
+    },
+    {
+      "row": "G6",
+      "move": "Gives large unmonitored crystalloid volumes to an unstable patient",
+      "consequence": "risks harmful fluid overload."
+    },
+    {
+      "row": "G7",
+      "move": "Omits senior surgical source-control decision despite suspected anastomotic leak.",
+      "consequence": "This is a critical fail."
+    },
+    {
+      "row": "G9",
+      "move": "Fails to reassess after interventions or relay ongoing shock to critical care.",
+      "consequence": "This is a critical fail."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "If you missed the new confusion and shock",
+      "line": "I focused on postoperative pain and missed the new confusion and shock. I am recalculating NEWS2 and calling the registrar and critical-care team immediately."
+    },
+    {
+      "when": "If you asked for CT before arranging treatment",
+      "line": "I asked for CT before arranging treatment. I will start indicated antibiotics and monitored resuscitation now, and discuss urgent source control with the consultant in parallel."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Postoperative surgery within six weeks increases sepsis risk.",
+      "source": "NG253"
+    },
+    {
+      "fact": "NEWS2 ≥7 with suspected infection is high risk; clinical concern can override a lower score.",
+      "source": "NG253"
+    },
+    {
+      "fact": "High-risk adult suspected sepsis: broad-spectrum IV antibiotics within 1 hour of identifying high risk (NEWS2 calculated on ward deterioration).",
+      "source": "NG253"
+    },
+    {
+      "fact": "Initial isotonic crystalloid bolus is 250 mL over about 10–15 minutes; reassess after each bolus and escalate a deteriorating patient at once. If not improved enough after 1,000 mL in total, get senior advice.",
+      "source": "NG253"
+    },
+    {
+      "fact": "Choice of antibiotics should follow local guidance for a known infection source and be reassessed when results arrive.",
+      "source": "NG253"
+    },
+    {
+      "fact": "Seek early relevant surgical or radiological review for source control and intervene promptly on senior advice.",
+      "source": "NG253"
+    }
+  ],
+  "recall": {
+    "think": "Post-op deterioration plus new confusion and hypotension may signal an anastomotic leak.",
+    "say": "“This is high-risk suspected sepsis. I am escalating now.”",
+    "do": [
+      "ABCDE, NEWS2, blood culture and lactate, immediate indicated IV antibiotic, carefully reassessed crystalloid."
+    ],
+    "numbers": [
+      {
+        "value": "NEWS2 ≥7",
+        "meaning": "high risk",
+        "source": "NG253"
+      },
+      {
+        "value": "1 hour",
+        "meaning": "IV antibiotics within, from identifying high risk",
+        "source": "NG253"
+      },
+      {
+        "value": "250 mL",
+        "meaning": "crystalloid bolus over 10–15 min, reassess after each; senior advice if no adequate response by 1 L total, sooner if deteriorating.",
+        "source": "NG253"
+      }
+    ],
+    "trap": "Do not treat with antibiotics alone or postpone sepsis care until CT.",
+    "finish": "Early surgical source-control decision, repeated physiology and documented SBAR handover."
+  },
+  "sources": [
+    {
+      "id": "NG253",
+      "name": "National Institute for Health and Care Excellence. Suspected sepsis in people aged 16 or over: recognition, assessment and early management, NG253",
+      "version": "published 19 November 2025; updated 23 September 2026",
+      "url": "https://www.nice.org.uk/guidance/ng253",
+      "supports": "Used §§1.2, 1.6, 1.8, 1.9 and 1.11, and the NG253 algorithm “Managing risk of severe illness or death in acute hospital settings with NEWS2” (NEWS2 thresholds, 1-hour antibiotics, 250 mL boluses up to 1,000 mL)."
+    }
+  ],
+  "partner": {
+    "opening": "Conduct an assessment and describe your immediate management, escalation and source-control plan.",
+    "actorBrief": "Opening nurse: “He is shaking, seems confused and his BP is 88/52.”",
+    "reveals": [
+      {
+        "trigger": "Only if asked about symptoms",
+        "finding": "nurse says abdominal pain increasing eight hours, new cloudy pelvic-drain output, reduced urine.",
+        "row": "G3"
+      },
+      {
+        "trigger": "Examiner gives (observations)",
+        "finding": "RR 28, SpO2 93% air, pulse 126, BP 88/52, temp 38.7°C and new confusion (NEWS2 14, Scale 1, on air).",
+        "row": "G2"
+      },
+      {
+        "trigger": "On request for blood gas",
+        "finding": "lactate 4.1 mmol/L.",
+        "row": "G4"
+      },
+      {
+        "trigger": "On request for abdominal examination",
+        "finding": "guarding.",
+        "row": "G3"
+      },
+      {
+        "trigger": "If candidate explains suspected leak",
+        "finding": "patient asks: “Am I going back to theatre?” No definitive operative answer is available at this point.",
+        "row": "G8"
+      }
+    ],
+    "push": [],
+    "curveballs": [
+      {
+        "prompt": "After initial 250 mL: BP remains 86/50.",
+        "safeAnswer": "Candidate must reassess, escalate, and avoid a reflex unmonitored fluid load.",
+        "row": "G6"
+      }
+    ]
+  }
+}

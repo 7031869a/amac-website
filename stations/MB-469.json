@@ -1,0 +1,725 @@
+{
+  "id": "MB-469",
+  "exam": "MRCS-B",
+  "title": "Jaundice: interpretation of liver blood tests",
+  "type": "data-interpretation",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "surgical pathology and data interpretation",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "BSG 2018 (accessed 12 October 2026)",
+      "NICE NG12 (accessed 12 October 2026)",
+      "NICE NG85 (accessed 12 October 2026)"
+    ],
+    "related": [
+      {
+        "id": "MB-467",
+        "why": "thyroid nodule"
+      },
+      {
+        "id": "MB-468",
+        "why": "melanoma"
+      },
+      {
+        "id": "MB-471",
+        "why": "Barrett’s oesophagus"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Surgical assessment unit",
+    "role": "Core surgical trainee",
+    "scenario": "You are the core surgical trainee in the surgical assessment unit. A 67-year-old patient has yellow eyes and dark urine for 10 days, pale stools, generalised itch and 4 kg unintentional weight loss. Observations: 36.8°C, HR 84, BP 132/76 mmHg. They are alert, without abdominal tenderness. Provided data: Bilirubin 116 µmol/L (3–20); ALP 612 U/L (30–130); GGT 480 U/L (10–60); ALT 92 U/L (0–45); AST 74 U/L (0–40); albumin 38 g/L (35–50); INR 1.0 (0.9–1.2); haemoglobin 129 g/L; WCC 7.6 × 10⁹/L. Local laboratory ranges are shown. Ultrasound is not yet performed.",
+    "task": "Interpret the provided liver blood results; explain your differential, immediate investigations and safe referral pathway. Respond to additional results supplied by the examiner."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Cholestatic jaundice with red flags for malignant obstruction; distinguish pattern, synthetic function, urgency and next investigation.",
+    "trap": "Equating ALP with cancer, or ordering ERCP before establishing the cause in a well patient with suspicious obstruction.",
+    "firstMove": "“This is a predominantly cholestatic pattern: bilirubin, ALP and GGT are raised out of proportion to aminotransferases. I would first assess for cholangitis or liver failure.”"
+  },
+  "flow": [
+    "Identify cholestatic pattern and synthetic function",
+    "Assess danger signs and relevant history",
+    "List obstructive and intrahepatic differentials",
+    "Request ultrasound and appropriate further imaging/referral",
+    "Respond to deterioration and close with a clear handover"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-knowledge",
+      "label": "Pattern",
+      "fail": "Mislabels as hepatitic despite marked ALP/GGT",
+      "borderline": "Calls jaundice but gives no pattern",
+      "pass": "Identifies predominantly cholestatic profile and uses the printed ranges",
+      "high": "States mixed elevation possible and distinguishes pattern from diagnosis"
+    },
+    {
+      "id": "G2",
+      "domain": "professionalism",
+      "label": "Severity",
+      "fail": "Ignores haemodynamic or mental-state red flags",
+      "borderline": "Mentions fever but omits hypotension/confusion",
+      "pass": "Checks for fever, pain, confusion, shock and bleeding",
+      "high": "Articulates cholangitis/sepsis and synthetic-failure escalation triggers"
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "Function",
+      "fail": "Calls normal INR/albumin proof of a healthy liver",
+      "borderline": "Notes INR only",
+      "pass": "Distinguishes synthetic function (INR/albumin) from injury/cholestasis tests",
+      "high": "Notes albumin changes slowly and normal results do not exclude serious disease"
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-knowledge",
+      "label": "Differential",
+      "fail": "Claims gallstone without alternative",
+      "borderline": "Names stones and cancer only",
+      "pass": "Considers choledocholithiasis, biliary stricture, pancreatic/biliary malignancy and intrahepatic cholestasis",
+      "high": "Connects painless weight loss/pruritus to malignancy without prematurely diagnosing it"
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-skill",
+      "label": "History",
+      "fail": "Does not request clinical context",
+      "borderline": "Asks pain alone",
+      "pass": "Asks fever, pain, stool/urine colour, weight change, drug history and prior biliary disease",
+      "high": "Adds autoimmune risk, alcohol, surgery, hepatitis history and trend of prior tests"
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-knowledge",
+      "label": "Imaging",
+      "fail": "Orders ERCP as universal first test",
+      "borderline": "Suggests an ultrasound without explaining next step",
+      "pass": "Requests urgent ultrasound; then targeted cross-sectional imaging according to findings",
+      "high": "Explains why suspicious pancreatic obstruction needs pancreas-protocol CT before biliary drainage when stable"
+    },
+    {
+      "id": "G7",
+      "domain": "professionalism",
+      "label": "Referral",
+      "fail": "Reassures despite jaundice and weight loss",
+      "borderline": "Mentions outpatient follow-up without urgency",
+      "pass": "Identifies suspected-cancer pathway for patient aged ≥40 with jaundice, and communicates to senior team",
+      "high": "Coordinates hepatobiliary/upper GI MDT and investigations without causing avoidable delays",
+      "source": "S2"
+    },
+    {
+      "id": "G8",
+      "domain": "professionalism",
+      "label": "Deterioration",
+      "fail": "Defers care when sepsis cue develops",
+      "borderline": "Mentions antibiotics but omits resuscitation",
+      "pass": "Recognises new fever, rigors and hypotension as possible cholangitis; activates sepsis assessment and urgent biliary discussion",
+      "high": "Orders cultures before antibiotics if no treatment delay, IV treatment per local policy and urgent source control with senior support"
+    },
+    {
+      "id": "G9",
+      "domain": "communication",
+      "label": "Closure",
+      "fail": "No handover or plan",
+      "borderline": "Vague “will investigate”",
+      "pass": "Summarises pattern, investigation, escalation and safety-netting",
+      "high": "Provides structured referral including observations, results and change in condition"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "What pattern do you see?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "ALT is elevated so it must be hepatitis. I would repeat the panel next month.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The bilirubin and ALP are markedly high; does that alter your view?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Not really. The ALT is the main issue.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The INR and albumin are normal. What does that tell you?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "That proves the liver is healthy, so this cannot be serious.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Would you like to know anything else about how the patient is?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "No, the blood results are all I need; I will not check for fever, confusion or bleeding.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What history is important?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Has the patient had alcohol?",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "No significant alcohol intake. What will you do next?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I would book an ERCP as the first test; there is no need for an ultrasound.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Ultrasound shows dilated ducts and an indistinct pancreatic head."
+      },
+      {
+        "speaker": "candidate",
+        "text": "That is probably gallstones. We can wait until an ERCP appointment becomes available.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "They develop rigors, temperature 38.7°C, HR 116 and BP 88/54. What now?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "The bloods are already abnormal, so I would monitor and wait for a scan tomorrow.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Do you wish to escalate?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Not yet, I do not think it is urgent.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please summarise and hand over."
+      },
+      {
+        "speaker": "candidate",
+        "text": "There is nothing to hand over; the day team can sort it out tomorrow.",
+        "tags": [
+          {
+            "row": "G9",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "examiner",
+        "text": "Interpret these liver blood tests."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Bilirubin 116, ALP 612 and GGT 480 with a smaller ALT rise to 92 indicate predominantly cholestatic jaundice, not an isolated hepatocellular pattern.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What about albumin 38 and INR 1.0?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "These do not show impaired synthesis at present, but they do not exclude serious obstruction or cancer.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What would you ask?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I would ask about pain, fever and rigors; dark urine, pale stools, itch, weight loss, appetite, drugs, alcohol, previous gallstones and biliary procedures.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "No pain or fever so far; there is weight loss, pale stools and itch."
+      },
+      {
+        "speaker": "candidate",
+        "text": "They are stable at present. I would document observations and check for new fever, hypotension, confusion or abdominal pain, which would require urgent escalation.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Give your differential."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Extrahepatic obstruction from stones, benign stricture or pancreatic/biliary malignancy is important. Intrahepatic drug-related or autoimmune cholestasis is possible.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What imaging would you request?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Urgent abdominal ultrasound for duct dilatation and biliary pathology, alongside senior discussion and review of prior tests and medicines.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Ultrasound shows dilated ducts, CBD 13 mm and indistinct pancreatic head."
+      },
+      {
+        "speaker": "candidate",
+        "text": "This is suspicious for distal biliary obstruction. If pancreatic cancer is suspected, I would arrange pancreatic-protocol CT before biliary drainage while the patient is stable, with hepatobiliary input.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What referral?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "They are 67 with jaundice, so meet the NICE NG12 suspected pancreatic cancer referral criterion. I would inform my registrar and coordinate the urgent pathway.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Now the nurse reports fever 38.7°C, HR 116 and BP 88/54 with rigors."
+      },
+      {
+        "speaker": "candidate",
+        "text": "This is a new emergency: possible ascending cholangitis and sepsis. I would call for urgent senior help, begin ABCDE, IV access, bloods including lactate and cultures if timely, IV antibiotics per local guideline and monitored resuscitation, and urgently discuss biliary drainage.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please finish."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I will hand over the obstructive jaundice, ultrasound findings, suspected cause and new shock physiology, requesting immediate review and source-control planning.",
+        "tags": [
+          {
+            "row": "G9",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "examiner",
+        "text": "You are given this report. Where do you start?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "First I check whether the patient is unwell now: vitals, fever or rigors, RUQ pain, mental state, haemodynamic instability and evidence of bleeding or encephalopathy.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "They are afebrile, haemodynamically stable and alert."
+      },
+      {
+        "speaker": "candidate",
+        "text": "The dominant abnormality is cholestasis: ALP 612 and GGT 480, bilirubin 116, with less prominent ALT 92 and AST 74. I would not label the cause from enzyme magnitude alone.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Are their liver functions preserved?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Albumin 38 and INR 1.0 are currently reassuring regarding synthetic function, although albumin is slow-changing and neither normal result rules out malignancy or obstruction.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What targeted history matters?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I would establish onset and progression, biliary pain, fever, dark urine, pale stools, pruritus, weight loss, appetite, previous stones or ERCP, operations, drug/supplement exposure and earlier LFTs.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "They confirm ten days of jaundice, pale stools and 4 kg weight loss, without pain."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Painless cholestatic jaundice with weight loss raises distal malignant obstruction, including pancreatic head cancer, but I would retain common bile duct stone, cholangiocarcinoma, benign stricture and intrahepatic cholestasis.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Which investigation first?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Urgent ultrasound to establish whether ducts are dilated; I would also review prior LFTs, FBC, renal function and the clinical aetiology screen where appropriate rather than reflexively repeating an isolated panel.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Ultrasound: CBD 13 mm, intra- and extrahepatic dilatation, indistinct pancreatic head."
+      },
+      {
+        "speaker": "candidate",
+        "text": "That supports extrahepatic obstruction. I would promptly discuss a pancreatic-protocol CT before drainage in the stable patient, with specialist MDT input; ERCP is not a diagnostic reflex before CT.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How urgent is referral?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "NICE NG12 recommends the suspected-cancer pathway for a person aged 40 or over with jaundice. I would contact the senior surgical/hepatobiliary team today, ensure the pathway is activated, and avoid telling the patient this proves cancer.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The nurse now reports 38.7°C, rigors, HR 116 and BP 88/54."
+      },
+      {
+        "speaker": "candidate",
+        "text": "The priority changes immediately. I would initiate ABCDE and a sepsis response, seek consultant/critical-care support, obtain blood cultures if this does not delay antimicrobials, give IV antibiotics and carefully titrated fluids with reassessment, and arrange urgent biliary decompression with the responsible team.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What would you tell the next clinician?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "“A 67-year-old with obstructive cholestatic jaundice, duct dilatation and possible pancreatic head lesion has now developed probable cholangitis with shock. Please review immediately for resuscitation and urgent biliary source control; we have started the sepsis bundle and are monitoring response.”",
+        "tags": [
+          {
+            "row": "G9",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G8",
+      "move": "Failing to recognise the late shock/rigors cue and delaying urgent escalation.",
+      "consequence": "Potential delay of treatment for biliary sepsis and source control."
+    },
+    {
+      "row": "G6",
+      "move": "Ordering immediate invasive drainage without appropriate prior imaging in a stable suspected pancreatic malignancy.",
+      "consequence": "May compromise staging or create avoidable procedure risk."
+    },
+    {
+      "row": "G7",
+      "move": "Reassuring the jaundiced, weight-losing patient without timely senior/specialist referral.",
+      "consequence": "Delayed evaluation of possible malignancy."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "If you concentrated on ALT",
+      "line": "I concentrated on ALT and missed that ALP, GGT and bilirubin dominate. This is cholestatic; I will reassess obstruction and urgency."
+    },
+    {
+      "when": "The new fever and hypotension",
+      "line": "The new fever and hypotension change the station: I am stopping the elective plan and initiating urgent sepsis care and biliary escalation."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Bilirubin, ALP, GGT and ALT are interpreted together; clinical history and trends matter.",
+      "source": "S1"
+    },
+    {
+      "fact": "ALP with raised GGT supports a hepatobiliary source rather than isolated bone ALP.",
+      "source": "S1"
+    },
+    {
+      "fact": "Abnormal tests can be significant even if the magnitude is modest; synthetic markers are a separate question.",
+      "source": "S1"
+    },
+    {
+      "fact": "Abdominal ultrasound forms part of the standard adult abnormal-liver-test aetiology assessment.",
+      "source": "S1"
+    },
+    {
+      "fact": "At age 40 or above with jaundice, use a suspected-cancer referral pathway for pancreatic cancer.",
+      "source": "S2"
+    },
+    {
+      "fact": "In suspected pancreatic cancer with obstructive jaundice, obtain pancreas-protocol CT before biliary drainage when clinically appropriate.",
+      "source": "S3"
+    }
+  ],
+  "recall": {
+    "think": "Is this obstructive cholestasis, and is the patient septic now?",
+    "say": "“The pattern is cholestatic; the cause remains to be established.”",
+    "do": [
+      "Check stability, obtain ultrasound, coordinate appropriate cross-sectional imaging and referral."
+    ],
+    "numbers": [
+      {
+        "value": "≥40",
+        "meaning": "Age with jaundice: NG12 suspected-cancer referral",
+        "source": "S2"
+      },
+      {
+        "value": "13 mm",
+        "meaning": "case CBD is dilated, interpreted clinically",
+        "source": "S1"
+      }
+    ],
+    "trap": "Painless jaundice is not harmless; ERCP is not the default first diagnostic test.",
+    "finish": "Handover the changed physiology and explicit source-control plan."
+  },
+  "sources": [
+    {
+      "id": "S1",
+      "name": "British Society of Gastroenterology. Guidelines on the management of abnormal liver blood tests.",
+      "version": "2018 (accessed 12 October 2026)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5754852/",
+      "supports": "Used for the cited key-knowledge lines only."
+    },
+    {
+      "id": "S2",
+      "name": "NICE NG12. Suspected cancer: recognition and referral, 1.2.4.",
+      "version": "2015; current web recommendations accessed 12 October 2026",
+      "url": "https://www.nice.org.uk/guidance/ng12/chapter/Recommendations-organised-by-site-of-cancer",
+      "supports": "Used for the cited key-knowledge lines only."
+    },
+    {
+      "id": "S3",
+      "name": "NICE NG85. Pancreatic cancer in adults, Recommendations 1.1.1–1.1.3.",
+      "version": "2018; current web recommendations accessed 12 October 2026",
+      "url": "https://www.nice.org.uk/guidance/ng85/chapter/Recommendations",
+      "supports": "Used for the cited key-knowledge lines only."
+    }
+  ],
+  "partner": {
+    "opening": "Please interpret the liver blood tests and state what they mean clinically.",
+    "reveals": [
+      {
+        "trigger": "Give printed data at the start",
+        "finding": "Bilirubin 116 µmol/L (3–20); ALP 612 U/L (30–130); GGT 480 U/L (10–60); ALT 92 U/L (0–45); AST 74 U/L (0–40); albumin 38 g/L (35–50); INR 1.0 (0.9–1.2); haemoglobin 129 g/L; WCC 7.6 × 10⁹/L. Local laboratory ranges are shown. Ultrasound is not yet performed.",
+        "row": "G1"
+      },
+      {
+        "trigger": "After the history question",
+        "finding": "No pain or fever so far; there is weight loss, pale stools and itch.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Throughout",
+        "finding": "This is an examiner-question station: no actor or patient should volunteer unsolicited history. Give printed data at the start; ask follow-ups sequentially as reflected in the transcript.",
+        "row": "G5"
+      },
+      {
+        "trigger": "Before curveball two",
+        "finding": "Do not release curveball two before clinical assessment and pathway discussion. Do not expect a finding unless it has been supplied in candidate brief or examiner question.",
+        "row": "G8"
+      }
+    ],
+    "push": [
+      {
+        "question": "Interpret these liver blood tests.",
+        "row": "G1"
+      },
+      {
+        "question": "What about albumin 38 and INR 1.0?",
+        "row": "G3"
+      },
+      {
+        "question": "What would you ask?",
+        "row": "G5"
+      },
+      {
+        "question": "Give your differential.",
+        "row": "G4"
+      },
+      {
+        "question": "What imaging would you request?",
+        "row": "G6"
+      },
+      {
+        "question": "What referral?",
+        "row": "G7"
+      },
+      {
+        "question": "Please finish.",
+        "row": "G9"
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "After the initial interpretation examiner asks: “Ultrasound shows intrahepatic and extrahepatic duct dilatation, CBD 13 mm, and an indistinct pancreatic head.”",
+        "safeAnswer": "Explains why suspicious pancreatic obstruction needs pancreas-protocol CT before biliary drainage when stable",
+        "row": "G6"
+      },
+      {
+        "prompt": "Only when prompted at the later stage: “The nurse calls: temperature now 38.7°C, HR 116, BP 88/54 and new rigors.”",
+        "safeAnswer": "Recognises new fever, rigors and hypotension as possible cholangitis; activates sepsis assessment and urgent biliary discussion",
+        "row": "G8"
+      }
+    ]
+  }
+}

@@ -1,0 +1,845 @@
+{
+  "id": "MB-474",
+  "exam": "MRCS-B",
+  "title": "Tumour markers — uses and misuses",
+  "type": "data-interpretation",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "Cancer investigations and surveillance",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "NICE NG151 Colorectal cancer (2020, current online guidance)",
+      "NICE NG85 Pancreatic cancer in adults (2018)",
+      "NICE CSG2 Improving Outcomes in Urological Cancers (accessed 12 October 2026)",
+      "NICE NG12 Suspected cancer: recognition and referral (updated 15 April 2026)",
+      "NICE CG122 Ovarian cancer: recognition and initial management (2011, updated 2026)"
+    ]
+  },
+  "brief": {
+    "setting": "Oncology MDT teaching room",
+    "role": "Core surgical trainee",
+    "scenario": "You are the core surgical trainee. Card A: 62-year-old post-curative colorectal resection, CEA 2.1 then 4.6 then 8.7 µg/L at successive visits. Card B: obstructive jaundice, CA19-9 480 U/mL, pancreas imaging pending. Card C: 27-year-old with solid testicular lesion on ultrasound; AFP 160 kIU/L and β-hCG raised. Card D: 65-year-old with 2 months of early satiety, bloating and pelvic discomfort, CA125 28 IU/mL. Card E: asymptomatic adult requests a “full cancer blood-marker screen”.",
+    "task": "Interpret a sequence of five short tumour-marker results, describe which markers support surveillance or diagnosis, and identify tests that cannot establish malignancy on their own. Explain a new symptom-driven request to the examiner."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Oncology MDT teaching room; serial report cards",
+    "trap": "Treating any tumour marker as a definitive cancer test and using the old universal CA125 35 IU/mL threshold despite NICE 2026 changes.",
+    "firstMove": "These tests have different roles. I will not infer malignancy from a single marker result; I will interpret each in the clinical and imaging pathway."
+  },
+  "flow": [
+    "State clinical frame and identify the report’s key abnormality.",
+    "Interrogate the missing context and interpret evidence.",
+    "Explain differential and limitations, without overdiagnosis.",
+    "State safe pathway, investigations and specialist escalation.",
+    "Handle the new cue and close with explicit next steps."
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-knowledge",
+      "label": "Opening and interpretive rule",
+      "fail": "Equates elevated marker with proven malignancy.",
+      "borderline": "Recognises markers may be non-specific but does not use a case-based plan.",
+      "pass": "States markers supplement history, imaging and histology, not stand-alone diagnoses.",
+      "high": "Contrasts screening, triage, prognostic use and surveillance with examples."
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-knowledge",
+      "label": "CEA in colorectal follow-up",
+      "fail": "Uses CEA alone to diagnose recurrence.",
+      "borderline": "Notices rise but plans only repeat CEA indefinitely.",
+      "pass": "Identifies rising postoperative CEA as reason to review trend and complete surveillance assessment with CT per NG151.",
+      "high": "Notes a normal CEA does not exclude recurrence and confirms 3-year surveillance context.",
+      "source": "T1"
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "CA19-9 limitations",
+      "fail": "Calls CA19-9 definitive pancreatic cancer evidence.",
+      "borderline": "Names pancreatic association but no limitations.",
+      "pass": "Says CA19-9 cannot replace pancreatic-protocol CT and specialist assessment.",
+      "high": "Explains elevation also occurs with benign biliary obstruction, and interpretation depends on jaundice and imaging.",
+      "source": "T2"
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-knowledge",
+      "label": "AFP and β-hCG use",
+      "fail": "Labels any raised AFP as hepatocellular carcinoma.",
+      "borderline": "Mentions testicular germ cell tumours without marker or imaging context.",
+      "pass": "States AFP and β-hCG help classify germ-cell tumours alongside examination and ultrasound.",
+      "high": "Separates AFP/β-hCG patterns and recognises markers should be obtained before treatment when germ-cell cancer is suspected."
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-knowledge",
+      "label": "CA125 primary-care pathway",
+      "fail": "Uses CA125 35 for every age including a 65-year-old.",
+      "borderline": "Knows ovarian symptoms and CA125 but cannot state updated age threshold.",
+      "pass": "For a 65-year-old with persistent symptoms, identifies the NG12 age 60–69 threshold (CA125 24 IU/mL or greater) for urgent, direct access abdominal and pelvic ultrasound.",
+      "high": "States age-specific 2026 thresholds and cautions against falsely reassuring symptomatic patients below thresholds.",
+      "source": "T4"
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-knowledge",
+      "label": "Secondary care ovarian assessment",
+      "fail": "Treats CA125 28 as conclusive ovarian cancer.",
+      "borderline": "Requests pelvic imaging but has no differential.",
+      "pass": "Requests pelvic ultrasound and gynaecology assessment with clinical context; no diagnosis from CA125 alone.",
+      "high": "Recognises secondary-care CA125 and risk stratification differ from a screening test.",
+      "source": "T5"
+    },
+    {
+      "id": "G7",
+      "domain": "clinical-knowledge",
+      "label": "False positives and negatives",
+      "fail": "Says normal marker excludes cancer.",
+      "borderline": "Gives one false positive cause only.",
+      "pass": "Describes inflammatory, hepatobiliary and benign causes of elevations and false-negative results.",
+      "high": "Explains why marker trends can mislead without consistent testing and radiological correlation."
+    },
+    {
+      "id": "G8",
+      "domain": "clinical-knowledge",
+      "label": "Communication and MDT",
+      "fail": "Informs patient they have cancer based on blood test.",
+      "borderline": "Says marker is abnormal without discussing next investigation.",
+      "pass": "Communicates uncertainty, imaging and MDT need; avoids premature diagnosis.",
+      "high": "Provides proportionate risk discussion and specific follow-up, documentation and safety net."
+    },
+    {
+      "id": "G9",
+      "domain": "clinical-knowledge",
+      "label": "Curveball and synthesis",
+      "fail": "On patient request for a whole-body marker screen, orders a panel.",
+      "borderline": "Discourages screening but gives no alternative.",
+      "pass": "Declines indiscriminate marker screening, offers symptom-directed evaluation instead.",
+      "high": "Returns to symptoms and appropriate age-specific or organ-specific pathways, explaining harms of false positives."
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "First principle: how will you interpret these tests?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "A high tumour marker proves cancer.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Card A: CEA 2.1, 4.6 then 8.7 after colorectal surgery.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "CEA above normal means recurrent cancer; no scan needed.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Card B: CA19-9 480 in a jaundiced patient.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "That result confirms pancreatic carcinoma.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Card C: testicular mass; AFP and β-hCG elevated.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "AFP elevation proves hepatocellular cancer.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Card D: a symptomatic 65-year-old has CA125 28. Is this below the threshold?",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "The threshold is always 35, so I would discharge her.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What should secondary care do if ovarian cancer is suspected?",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "CA125 alone gives the diagnosis.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Could apparently normal or high markers mislead?",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Normal results exclude cancer.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How do you explain these results to a patient?",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I would tell them the blood test proves a cancer diagnosis.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "An asymptomatic adult requests a full tumour-marker panel for reassurance.",
+        "tags": [
+          {
+            "row": "G9",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I would order every marker to be safe.",
+        "tags": [
+          {
+            "row": "G9",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "examiner",
+        "text": "First principle: how will you interpret these tests?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "They support a clinical decision but do not prove or rule out cancer on their own.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Card A: CEA 2.1, 4.6 then 8.7 after colorectal surgery.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "The rise warrants surveillance review including imaging and MDT discussion, not a diagnosis from CEA alone.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Card B: CA19-9 480 in a jaundiced patient.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "This alone cannot diagnose pancreatic cancer. I would prioritise pancreatic and biliary imaging.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Card C: testicular mass; AFP and β-hCG elevated.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "These support a germ-cell tumour work-up with testicular ultrasound, staging and specialist referral.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Card D: a symptomatic 65-year-old has CA125 28. Is this below the threshold?",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "No. The updated NG12 threshold for age 60–69 is 24 or above, so she needs an urgent, direct access ultrasound of the abdomen and pelvis.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What should secondary care do if ovarian cancer is suspected?",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Assess clinically, review pelvic ultrasound and marker context, and involve the appropriate gynaecology pathway.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Could apparently normal or high markers mislead?",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Yes. Both false positives and false negatives occur, so results need clinical context.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How do you explain these results to a patient?",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I would explain that the markers are clues and describe the next investigation without declaring cancer.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "An asymptomatic adult requests a full tumour-marker panel for reassurance.",
+        "tags": [
+          {
+            "row": "G9",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I would not order an indiscriminate panel. I would assess their concerns and offer appropriate, evidence-based screening or symptom assessment.",
+        "tags": [
+          {
+            "row": "G9",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "examiner",
+        "text": "First principle: how will you interpret these tests?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I distinguish triage from monitoring and staging: test meaning depends on disease, symptoms, assay and imaging.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Card A: CEA 2.1, 4.6 then 8.7 after colorectal surgery.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "This trend is concerning but non-specific. NG151 uses CEA with CT in the first three years; I would review timing, serial trends and chest–abdomen–pelvis imaging.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Card B: CA19-9 480 in a jaundiced patient.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "CA19-9 is unreliable as a solitary diagnostic marker, particularly with biliary obstruction; clinical assessment and pancreatic-protocol imaging lead the pathway.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Card C: testicular mass; AFP and β-hCG elevated.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "AFP, β-hCG and LDH can inform suspected testicular malignancy, but correlation with ultrasound and histology is crucial; avoid unplanned trans-scrotal biopsy.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Card D: a symptomatic 65-year-old has CA125 28. Is this below the threshold?",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "NICE April 2026 thresholds are age-specific. At 65, 28 exceeds the 24 IU/mL primary-care investigation threshold. With persistent symptoms, she needs an urgent, direct access abdominal and pelvic ultrasound, not reassurance.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What should secondary care do if ovarian cancer is suspected?",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "CG122 distinguishes secondary-care evaluation from population screening; pelvic imaging and clinical assessment determine escalation and tissue/pathology planning.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Could apparently normal or high markers mislead?",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Yes. Inflammation, hepatobiliary disease and benign conditions can elevate markers; a normal result does not end investigation of concerning symptoms.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How do you explain these results to a patient?",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I would discuss uncertainty honestly, specify the planned investigation and expected communication of results, and address the patient’s understanding and anxiety.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "An asymptomatic adult requests a full tumour-marker panel for reassurance.",
+        "tags": [
+          {
+            "row": "G9",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "A broad marker panel risks misleading false positives and false reassurance. I would take a risk-focused history, discuss established screening and avoid indiscriminate testing.",
+        "tags": [
+          {
+            "row": "G9",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please summarise your next action in one sentence."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I will use symptom-directed assessment and validated screening, not a blanket marker panel."
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G2",
+      "move": "Calls rising CEA definitive recurrence and withholds imaging.",
+      "consequence": "May misdirect treatment and delay confirmation."
+    },
+    {
+      "row": "G5",
+      "move": "Uses universal 35 IU/mL to dismiss a symptomatic 65-year-old with CA125 28.",
+      "consequence": "Misses NG12 2026 age-specific ovarian pathway."
+    },
+    {
+      "row": "G9",
+      "move": "Orders indiscriminate marker screening and falsely reassures from normal values.",
+      "consequence": "False positives, unnecessary testing and missed clinical assessment."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "If you treated the CA19-9 result as a diagnosis",
+      "line": "I was treating the CA19-9 result as a diagnosis; with jaundice I must interpret it alongside pancreatic-protocol imaging, not in isolation."
+    },
+    {
+      "when": "If you used an obsolete CA125 threshold",
+      "line": "I used an obsolete CA125 threshold. NG12 now has an age-60–69 threshold of 24 IU/mL, so this patient with persistent symptoms needs an urgent abdominal and pelvic ultrasound."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "After potentially curative non-metastatic colorectal surgery, CEA and CT are components of surveillance for the first three years.",
+      "source": "T1"
+    },
+    {
+      "fact": "A rising CEA is not a standalone diagnosis of recurrent colorectal cancer.",
+      "source": "T1"
+    },
+    {
+      "fact": "Pancreatic cancer investigation and staging rely on imaging and multidisciplinary assessment; CA19-9 is not a substitute.",
+      "source": "T2"
+    },
+    {
+      "fact": "AFP, β-hCG and LDH are markers included in evaluation of suspected testicular germ-cell malignancy.",
+      "source": "T3"
+    },
+    {
+      "fact": "NG12 (April 2026) uses age-specific CA125 thresholds for people aged 40 or over with persistent symptoms: at 60–69, CA125 24 IU/mL or greater means an urgent, direct access ultrasound of the abdomen and pelvis.",
+      "source": "T4"
+    },
+    {
+      "fact": "Secondary-care suspected ovarian cancer assessment includes CA125 and pelvic ultrasound, with AFP and β-hCG added in people under 40 where appropriate.",
+      "source": "T5"
+    }
+  ],
+  "recall": {
+    "think": "A marker is a clinical clue, not a histological diagnosis.",
+    "say": "“I will interpret the trend alongside symptoms, imaging and the cancer pathway.”",
+    "do": [
+      "Use CEA for colorectal follow-up; assess jaundice with imaging; use AFP/β-hCG with testicular ultrasound; investigate ovarian symptoms appropriately."
+    ],
+    "numbers": [
+      {
+        "value": "40–49 ≥35; 50–59 ≥31; 60–69 ≥24; 70–79 ≥25; 80+ ≥31 IU/mL",
+        "meaning": "CA125 thresholds (age 40+, persistent symptoms) for urgent, direct access abdominal and pelvic ultrasound (NG12 table 1, April 2026)",
+        "source": "T4"
+      },
+      {
+        "value": "first 3 years",
+        "meaning": "CEA surveillance after colorectal surgery",
+        "source": "T1"
+      }
+    ],
+    "trap": "Never order a blanket marker screen or apply 35 IU/mL to every age in 2026.",
+    "finish": "Identify next investigations and communicate uncertainty without falsely diagnosing cancer."
+  },
+  "sources": [
+    {
+      "id": "T1",
+      "name": "NICE NG151, Colorectal cancer",
+      "version": "2020, current online guidance",
+      "url": "https://www.nice.org.uk/guidance/ng151/chapter/Recommendations",
+      "supports": "Follow-up for detection of recurrence, recommendation 1.6.1"
+    },
+    {
+      "id": "T2",
+      "name": "NICE NG85, Pancreatic cancer in adults",
+      "version": "2018",
+      "url": "https://www.nice.org.uk/guidance/ng85/chapter/Recommendations",
+      "supports": "Diagnosing pancreatic cancer and staging, recommendations 1.1 and 1.3"
+    },
+    {
+      "id": "T3",
+      "name": "NICE cancer service guidance CSG2, Improving Outcomes in Urological Cancers",
+      "version": "Accessed 12 October 2026",
+      "url": "https://www.nice.org.uk/guidance/csg2/evidence/full-guideline-pdf-2185190749",
+      "supports": "Testicular cancer, tumour markers section"
+    },
+    {
+      "id": "T4",
+      "name": "NICE NG12, Suspected cancer: recognition and referral",
+      "version": "Updated 15 April 2026",
+      "url": "https://www.nice.org.uk/guidance/ng12/chapter/Recommendations-organised-by-site-of-cancer",
+      "supports": "Ovarian cancer 1.5.8–1.5.11"
+    },
+    {
+      "id": "T5",
+      "name": "NICE CG122, Ovarian cancer: recognition and initial management",
+      "version": "2011, updated 2026",
+      "url": "https://www.nice.org.uk/guidance/CG122/chapter/recommendations",
+      "supports": "1.2.1 tumour markers in secondary care"
+    }
+  ],
+  "partner": {
+    "opening": "You are the core surgical trainee. Please interpret the case cards and explain your reasoning and safe next actions.",
+    "reveals": [],
+    "push": [
+      {
+        "question": "First principle: how will you interpret these tests?",
+        "row": "G1"
+      },
+      {
+        "question": "Card A: CEA 2.1, 4.6 then 8.7 after colorectal surgery.",
+        "row": "G2"
+      },
+      {
+        "question": "Card B: CA19-9 480 in a jaundiced patient.",
+        "row": "G3"
+      },
+      {
+        "question": "Card C: testicular mass; AFP and β-hCG elevated.",
+        "row": "G4"
+      },
+      {
+        "question": "Card D: a symptomatic 65-year-old has CA125 28. Is this below the threshold?",
+        "row": "G5"
+      },
+      {
+        "question": "What should secondary care do if ovarian cancer is suspected?",
+        "row": "G6"
+      },
+      {
+        "question": "Could apparently normal or high markers mislead?",
+        "row": "G7"
+      },
+      {
+        "question": "How do you explain these results to a patient?",
+        "row": "G8"
+      },
+      {
+        "question": "An asymptomatic adult requests a full tumour-marker panel for reassurance.",
+        "row": "G9"
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "At minute 7: the examiner says, “An asymptomatic patient asks for every tumour marker as a reassurance blood test.”",
+        "safeAnswer": "Declines indiscriminate marker screening, offers symptom-directed evaluation instead.",
+        "row": "G9"
+      },
+      {
+        "prompt": "But a normal marker would reassure the patient, would it not?",
+        "safeAnswer": "no; clinical concern overrides marker reassurance.",
+        "row": "G7"
+      }
+    ]
+  }
+}

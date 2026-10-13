@@ -1,0 +1,781 @@
+{
+  "id": "MB-471",
+  "exam": "MRCS-B",
+  "title": "Barrett’s oesophagus and oesophageal adenocarcinoma",
+  "type": "applied-knowledge",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "Upper gastrointestinal pathology",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "NICE NG231 (February 2023)",
+      "NICE NG83 (January 2018)"
+    ],
+    "related": [
+      {
+        "id": "MB-469",
+        "why": "jaundice"
+      },
+      {
+        "id": "MB-470",
+        "why": "pancreatic cancer"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Oesophago-gastric MDT teaching assessment",
+    "role": "Core surgical trainee",
+    "scenario": "You are a core surgical trainee at the oesophago-gastric MDT teaching assessment. The examiner will hand you a written endoscopy and histology report. Report A: 61-year-old with Barrett’s segment C2M4 and a 12-mm visible distal-oesophageal nodule. Targeted biopsies: high-grade dysplasia (HGD), confirmed by two gastrointestinal pathologists. CT has not yet been performed.",
+    "task": "Interpret it, outline management and respond to new information. No photograph is required."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Differentiate dysplasia from intramucosal and invasive adenocarcinoma; choose the treatment according to confirmed histology, not appearance alone.",
+    "trap": "Confusing high-grade dysplasia with invasive stage, or treating visible lesions with ablation before histological resection.",
+    "firstMove": "Check the visible lesion and confirmed pathology."
+  },
+  "flow": [
+    "Confirm histological diagnosis, lesion visibility and whether pathology review is complete.",
+    "Separate flat dysplasia from visible lesions: resect the visible lesion first.",
+    "Interpret resection histology and propose treatment for favourable T1a cancer.",
+    "Discuss staging when disease is beyond early T1a, with specialist MDT.",
+    "Explain surveillance, pathology uncertainty and safety-netting without overpromising."
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-knowledge",
+      "label": "Report interpretation",
+      "fail": "Calls HGD a benign finding.",
+      "borderline": "Recognises dysplasia but cannot distinguish nodule from flat mucosa.",
+      "pass": "Identifies visible lesion and pathologist-confirmed HGD.",
+      "high": "Explains why endoscopic resection gives histological staging as well as treatment."
+    },
+    {
+      "id": "G2",
+      "domain": "communication",
+      "label": "Risk communication",
+      "fail": "Guarantees cancer or cure.",
+      "borderline": "States cancer risk vaguely without explaining uncertainty.",
+      "pass": "Explains HGD is serious and needs specialist treatment.",
+      "high": "Separates premalignant dysplasia from subsequent confirmed invasive cancer."
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "Visible lesion management",
+      "fail": "Proposes ablation alone of an unresected nodule.",
+      "borderline": "Suggests ablation before clarifying visible lesion histology.",
+      "pass": "Recommends endoscopic resection first for visible HGD lesion.",
+      "high": "Plans MDT/pathology review of depth and margins before further treatment."
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-knowledge",
+      "label": "Residual Barrett’s",
+      "fail": "Omits further treatment after resection.",
+      "borderline": "Mentions follow-up but not residual segment treatment.",
+      "pass": "Recommends ablation of residual Barrett’s after resecting HGD.",
+      "high": "Coordinates specialist ablation and surveillance with the patient’s fitness/preferences."
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-knowledge",
+      "label": "T1a pathology",
+      "fail": "Treats T1a as automatically requiring oesophagectomy.",
+      "borderline": "Identifies early cancer but cannot interpret favourable features.",
+      "pass": "Offers endoscopic resection first line for T1a cancer.",
+      "high": "Explains how histology and patient context drive further MDT discussion.",
+      "source": "NG231"
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-knowledge",
+      "label": "Stage escalation",
+      "fail": "Uses PET-CT routinely for the initial T1a lesion.",
+      "borderline": "Requests every staging test indiscriminately.",
+      "pass": "For radical-treatment non-T1a disease, recommends whole-body CT followed by PET-CT.",
+      "high": "Uses EUS selectively only when it changes management; explains exceptions.",
+      "source": "NG83"
+    },
+    {
+      "id": "G7",
+      "domain": "professionalism",
+      "label": "MDT decisions",
+      "fail": "Makes unilateral surgery recommendation.",
+      "borderline": "Mentions MDT only after proposing definitive treatment.",
+      "pass": "Refers confirmed cancer and uncertain margins to specialist OG MDT.",
+      "high": "Asks for expert pathology, endoscopy and surgical assessment together."
+    },
+    {
+      "id": "G8",
+      "domain": "communication",
+      "label": "Consent and expectations",
+      "fail": "Guarantees no recurrence after ablation.",
+      "borderline": "Gives risks without planned follow-up.",
+      "pass": "Discusses ongoing endoscopic surveillance and possibility of further treatment.",
+      "high": "Explains residual/metachronous risk and shared decision-making clearly."
+    },
+    {
+      "id": "G9",
+      "domain": "professionalism",
+      "label": "Curveball response",
+      "fail": "Continues T1a pathway after the new T2 report.",
+      "borderline": "Notices T2 but forgets PET-CT/MDT implications.",
+      "pass": "Switches to radical-treatment staging and specialist MDT for T2 disease.",
+      "high": "Recognises PET-CT after CT and only uses EUS if it changes treatment.",
+      "source": "NG83"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "What do you make of the 12-mm nodule and HGD?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "High-grade dysplasia means the patient definitely has deep invasive cancer. I would arrange an operation immediately.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Are you certain of invasion from the biopsy?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Yes, I think HGD always means invasive cancer.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Would you consider endoscopic resection?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "No, I would simply ablate the visible lump and avoid taking more tissue.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Suppose the nodule is resected and shows HGD only. What about the rest of the C2M4 segment?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Nothing more is needed once the nodule is out; the rest of the Barrett’s can be left alone.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Resection elsewhere instead shows favourable T1a disease."
+      },
+      {
+        "speaker": "candidate",
+        "text": "T1a still mandates oesophagectomy in everybody, regardless of fitness or pathology.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you stage this T1a lesion?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I would request PET-CT, as I would for every oesophageal cancer.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Who decides on treatment?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I would decide myself and list the patient for oesophagectomy; the MDT does not need to see it.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What follow-up should occur?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "None once the lump is treated.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Now the lesion is T2 and suitable for radical therapy."
+      },
+      {
+        "speaker": "candidate",
+        "text": "It is basically identical to T1a, so I would not stage it further or discuss it with the MDT.",
+        "tags": [
+          {
+            "row": "G9",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "examiner",
+        "text": "Read Report A. What is most important?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "There is confirmed high-grade dysplasia in Barrett’s oesophagus, and importantly a visible 12-mm nodule. I would verify the endoscopy description and expert histology review.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Is this already invasive cancer?",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Not on these biopsies. HGD is a high-risk premalignant finding; sampling cannot fully characterise the visible lesion, so we must not equate the biopsy result with the final stage.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What would you do first?",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I would arrange specialist endoscopic resection of the visible lesion as first-line treatment and to establish accurate histological stage, rather than simply ablating the nodule.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What about the remaining Barrett’s?",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "After resection, I would offer endoscopic ablation of residual Barrett’s and organise endoscopic follow-up through a specialist service.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The resection shows a well differentiated T1a adenocarcinoma, clear deep margin and no lymphovascular invasion.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "That is intramucosal early cancer with favourable reported features. Endoscopic resection is first-line for T1a oesophageal adenocarcinoma, with ablation of residual Barrett’s and specialist follow-up.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Would you send the patient straight for oesophagectomy?",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "No. I would discuss suitability of endoscopic treatment and oesophagectomy with the patient in the specialist OG team, taking final pathology and individual factors into account.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Can you promise that treatment ends all future risk?",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "No. Treatment is effective but does not remove the need for follow-up. I would explain that further endoscopy or therapy may be needed.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "New case: histology now says T2 cancer and radical treatment appears possible. What changes?",
+        "tags": [
+          {
+            "row": "G9",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "This is not an uncomplicated T1a endoscopic case. After diagnostic endoscopy and whole-body CT, the person suitable for radical therapy should have FDG PET-CT; EUS only if it would guide management. The specialist MDT decides treatment.",
+        "tags": [
+          {
+            "row": "G9",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Would you insist on EUS merely to differentiate T2 from T3?",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "No. NICE advises against EUS solely for that distinction. I would explain why the test is needed if ordering it.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "examiner",
+        "text": "Interpret this Barrett’s surveillance report.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "The two separate questions are whether the visible lesion contains invasive carcinoma and how much abnormal Barrett’s mucosa remains. Biopsy-confirmed HGD alone does not provide full invasion depth. I would check the Prague length and lesion description, and confirm expert GI pathology review.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Your first management recommendation?",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Specialist endoscopic resection of the 12-mm visible nodule; I would not ablate it in situ because histology from resection is essential for staging and margin assessment.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you phrase this to the patient?",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I would explain that the biopsies show a serious change that can precede cancer, and that removal of the visible area both treats it and tells us more precisely whether cancer is present. I would avoid promising the biopsy has excluded invasion.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The final specimen is T1a, well differentiated, no lymphovascular invasion and clear deep margin.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "That confirms intramucosal adenocarcinoma. In a suitable patient, NICE recommends endoscopic resection first line for T1a disease. I would review complete histology and risk features with the specialist MDT before confirming next steps.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What do you do with C2M4 remaining Barrett’s mucosa?",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Offer endoscopic ablation after lesion resection, then a planned endoscopic follow-up programme. I would clarify the endoscopist’s eradication plan and document what has actually been treated.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The patient says, “So this is cured and I never need another scope?”",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I would say the early cancer is often treatable endoscopically, but future Barrett’s-related change remains possible. Follow-up is a central part of care, and we should discuss its burden and benefits.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Is oesophagectomy always unnecessary?",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "No. Treatment options and patient fitness must be evaluated in a specialist OG meeting, particularly if adverse histological factors, incomplete resection, or more advanced disease emerge.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Now I replace the case with a confirmed T2 oesophageal cancer suitable for radical treatment.",
+        "tags": [
+          {
+            "row": "G9",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I would stop using the T1a-only pathway. After diagnostic endoscopy and whole-body CT, PET-CT should be offered for radical-treatment candidates other than T1a. An EUS has value only if it changes management, not simply to label T2 versus T3.",
+        "tags": [
+          {
+            "row": "G9",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What needs to happen before the treatment plan is final?",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Specialist OG MDT discussion with staging, nutritional and fitness assessment, and a patient-centred discussion of curative options. I would not choose a single operation based on this snippet.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G3",
+      "move": "Ablating a visible HGD lesion without first obtaining the indicated resection histology",
+      "consequence": "risks understaging invasive malignancy."
+    },
+    {
+      "row": "G5",
+      "move": "Insisting on oesophagectomy for every favourable T1a lesion without consideration of endoscopic resection",
+      "consequence": "exposes patients to potentially unnecessary major surgery."
+    },
+    {
+      "row": "G9",
+      "move": "Treating T2 oesophageal cancer as T1a and bypassing appropriate staging",
+      "consequence": "risks inappropriate therapy."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "If you have treated the biopsy as the final stage",
+      "line": "I have treated the biopsy as the final stage. Let me correct that: this visible lesion needs resection histology before deciding the pathway."
+    },
+    {
+      "when": "The new report changes the stage to T2",
+      "line": "The new report changes the stage to T2; I will leave the early-endoscopic pathway and arrange full staging through the specialist MDT."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "A visible lesion with HGD should undergo endoscopic resection first.",
+      "source": "NG231"
+    },
+    {
+      "fact": "Residual Barrett’s after HGD resection should be ablated.",
+      "source": "NG231"
+    },
+    {
+      "fact": "T1a adenocarcinoma should have endoscopic resection first line.",
+      "source": "NG231"
+    },
+    {
+      "fact": "Residual Barrett’s after T1a resection should receive ablation.",
+      "source": "NG231"
+    },
+    {
+      "fact": "PET-CT for radical candidates except T1a; EUS only if management is changed.",
+      "source": "NG83"
+    },
+    {
+      "fact": "Confirmed cancer management is assessed by a specialist OG MDT.",
+      "source": "NG83"
+    }
+  ],
+  "recall": {
+    "think": "Identify the visible lesion and confirm histology, not just the word “Barrett’s”.",
+    "say": "“We need tissue from the nodule before we can define its depth.”",
+    "do": [
+      "Resect visible HGD/T1a lesion; plan residual Barrett’s ablation where indicated."
+    ],
+    "numbers": [
+      {
+        "value": "T1a",
+        "meaning": "mucosal",
+        "source": "NG231"
+      },
+      {
+        "value": "T2",
+        "meaning": "muscularis propria",
+        "source": "NG83"
+      },
+      {
+        "value": "None",
+        "meaning": "no stand-alone numeric threshold for PET-CT beyond the stage exception.",
+        "source": "NG83"
+      }
+    ],
+    "trap": "Do not ablate a visible nodule without resection/staging.",
+    "finish": "Agree MDT management and endoscopic follow-up."
+  },
+  "sources": [
+    {
+      "id": "NG231",
+      "name": "NICE. Barrett’s oesophagus and stage 1 oesophageal adenocarcinoma: monitoring and management. NG231",
+      "version": "February 2023 (accessed 12 October 2026)",
+      "url": "https://www.nice.org.uk/guidance/ng231/chapter/recommendations",
+      "supports": "recommendations §§1.5–1.6"
+    },
+    {
+      "id": "NG83",
+      "name": "NICE. Oesophago-gastric cancer: assessment and management in adults. NG83",
+      "version": "January 2018 (accessed 12 October 2026)",
+      "url": "https://www.nice.org.uk/guidance/ng83/chapter/Recommendations",
+      "supports": "§§1.2–1.3"
+    }
+  ],
+  "partner": {
+    "opening": "Please review Report A and tell me the diagnosis and next step.",
+    "reveals": [
+      {
+        "trigger": "Provide resection result only when asked about subsequent histology or after initial management",
+        "finding": "endoscopic resection histology reveals well differentiated intramucosal T1a adenocarcinoma, clear deep margin, no lymphovascular invasion.",
+        "row": "G5"
+      },
+      {
+        "trigger": "Later curveball",
+        "finding": "a different patient has biopsy-proven T2 oesophageal adenocarcinoma suitable for radical therapy.",
+        "row": "G9"
+      },
+      {
+        "trigger": "Throughout",
+        "finding": "Do not disclose adverse histology absent from the supplied written reports.",
+        "row": "G5"
+      }
+    ],
+    "push": [
+      {
+        "question": "Read Report A. What is most important?",
+        "row": "G1"
+      },
+      {
+        "question": "Is this already invasive cancer?",
+        "row": "G2"
+      },
+      {
+        "question": "What would you do first?",
+        "row": "G3"
+      },
+      {
+        "question": "What about the remaining Barrett’s?",
+        "row": "G4"
+      },
+      {
+        "question": "Would you send the patient straight for oesophagectomy?",
+        "row": "G7"
+      },
+      {
+        "question": "Can you promise that treatment ends all future risk?",
+        "row": "G8"
+      },
+      {
+        "question": "Would you insist on EUS merely to differentiate T2 from T3?",
+        "row": "G6"
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "The resection shows T1a with favourable features.",
+        "safeAnswer": "Offers endoscopic resection first line for T1a cancer.",
+        "row": "G5"
+      },
+      {
+        "prompt": "This is now a different, confirmed T2 cancer considered suitable for radical treatment.",
+        "safeAnswer": "Switches to radical-treatment staging and specialist MDT for T2 disease.",
+        "row": "G9"
+      }
+    ]
+  }
+}

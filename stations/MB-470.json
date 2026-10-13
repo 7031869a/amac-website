@@ -1,0 +1,687 @@
+{
+  "id": "MB-470",
+  "exam": "MRCS-B",
+  "title": "Pancreatic head cancer: staging and management",
+  "type": "applied-knowledge",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "surgical pathology and data interpretation",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "NICE NG85 (accessed 12 October 2026)",
+      "NICE NG12 (accessed 12 October 2026)",
+      "NCI PDQ (supporting marker limitation; accessed 12 October 2026)"
+    ],
+    "related": [
+      {
+        "id": "MB-467",
+        "why": "thyroid nodule"
+      },
+      {
+        "id": "MB-468",
+        "why": "melanoma"
+      },
+      {
+        "id": "MB-471",
+        "why": "Barrett’s oesophagus"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Upper GI surgical meeting",
+    "role": "Core surgical trainee",
+    "scenario": "You are the core surgical trainee discussing a case at the upper GI surgical meeting. A 71-year-old patient has three weeks of painless jaundice, pale stools, itch and 6 kg weight loss; clinically stable. Pancreatic-protocol CT report is provided. Provided data: Pancreatic-protocol CT: 28-mm hypoenhancing pancreatic head mass; dilation of common bile duct and pancreatic duct; no definite liver or lung metastases on reported images; no arterial encasement; tumour contacts the SMV along approximately 120° with no occlusion or contour irregularity. Report explicitly states that final vascular staging requires specialist HPB radiology review. Bilirubin 172 µmol/L, ALP 640 U/L, ALT 108 U/L, INR 1.1; CA19-9 460 kU/L (reference <37).",
+    "task": "Interpret the report, discuss staging and resectability, identify appropriate investigations and outline the management pathway, including when biliary drainage is indicated."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Distinguish anatomical staging and potential operability from tumour-marker overinterpretation, and decide when to drain bile versus plan surgery.",
+    "trap": "Calling CA19-9 diagnostic, or offering stenting routinely before potentially curative surgery without specialist discussion.",
+    "firstMove": "“This is obstructive jaundice with a pancreatic head mass; I would assess metastatic spread and mesenteric-vessel relationships, then refer to the specialist pancreatic MDT.”"
+  },
+  "flow": [
+    "Describe mass, duct signs and metastasis status",
+    "Interpret venous/arterial relationships and limits",
+    "Explain CA19-9 and tissue diagnosis",
+    "Discuss MDT and staging investigations",
+    "Distinguish upfront surgery, selected drainage and palliation"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-knowledge",
+      "label": "CT diagnosis",
+      "fail": "Calls lesion a cyst or says scan is normal",
+      "borderline": "Identifies mass but not obstruction",
+      "pass": "Explains pancreatic head mass plus double-duct dilatation",
+      "high": "Connects findings to obstructive jaundice without claiming pathological confirmation"
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-knowledge",
+      "label": "Metastases",
+      "fail": "Calls resectable despite not checking spread",
+      "borderline": "Notes liver only",
+      "pass": "Checks liver, peritoneal and distant metastatic assessment",
+      "high": "Identifies need for full staging review and uncertainty of negative single-phase reports"
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "Vessels",
+      "fail": "Asserts 120° SMV contact is automatically unresectable",
+      "borderline": "Notices SMV contact but guesses stage",
+      "pass": "Describes SMV contact and lack of arterial encasement; defers formal resectability to HPB MDT",
+      "high": "Differentiates venous reconstruction feasibility from arterial encasement and acknowledges scan limitations"
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-knowledge",
+      "label": "Marker",
+      "fail": "Calls CA19-9 460 proof of cancer",
+      "borderline": "Says elevated, no caveat",
+      "pass": "Explains CA19-9 is supportive/monitoring marker, confounded by jaundice",
+      "high": "Plans baseline and possible re-evaluation after relief of obstruction without treating marker as staging",
+      "source": "S2"
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-knowledge",
+      "label": "Diagnosis",
+      "fail": "Insists all patients need pre-op biopsy",
+      "borderline": "Mentions EUS but not purpose",
+      "pass": "Uses EUS-guided sampling when histology needed, especially if non-operative/neoadjuvant pathway",
+      "high": "Distinguishes likely resectable operative planning from diagnostic uncertainty or systemic therapy needs"
+    },
+    {
+      "id": "G6",
+      "domain": "professionalism",
+      "label": "Drainage",
+      "fail": "Performs ERCP automatically in all jaundiced patients",
+      "borderline": "Recognises stent option without selection",
+      "pass": "Avoids routine preoperative drainage if suitable for prompt resection; discusses selected indications with MDT",
+      "high": "Recognises cholangitis as immediate drainage priority and drainage needs if surgery delayed / treatment pathway requires it"
+    },
+    {
+      "id": "G7",
+      "domain": "clinical-knowledge",
+      "label": "Management",
+      "fail": "Promises Whipple as certain cure",
+      "borderline": "Says surgery without workup",
+      "pass": "Discusses pancreaticoduodenectomy only after staging/fitness and MDT; alternative systemic/palliative options",
+      "high": "Offers a balanced, patient-centred explanation of operative risk and multidisciplinary support"
+    },
+    {
+      "id": "G8",
+      "domain": "professionalism",
+      "label": "Acute deterioration",
+      "fail": "Leaves febrile hypotensive patient for clinic",
+      "borderline": "Mentions antibiotics but not urgent review",
+      "pass": "Recognises acute cholangitis/sepsis and initiates resuscitation, antimicrobials and urgent biliary team call",
+      "high": "Explicitly prioritises source control and physiological support over elective workup"
+    },
+    {
+      "id": "G9",
+      "domain": "communication",
+      "label": "Communication",
+      "fail": "Gives definitive cancer diagnosis from CT alone",
+      "borderline": "Uses vague reassurance",
+      "pass": "Explains suspicion, uncertainty, planned MDT workup and support",
+      "high": "Handles questions about prognosis with honesty, avoids deterministic statements and provides safety-netting"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "Interpret the CT report."
+      },
+      {
+        "speaker": "candidate",
+        "text": "There is pancreatic cancer. The CA19-9 proves it.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          },
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What about the double-duct sign?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "It does not change anything.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What is the vascular relationship?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Any SMV contact means it cannot be operated on.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Are there metastases?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I do not need to check, because the tumour marker is high.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What would you do next?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Arrange ERCP and stent immediately for everyone; no need for an HPB discussion.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Does this patient need a biopsy before surgery?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Yes, every patient must have a biopsy before any operation, even if the scan is typical and they are fit for prompt resection.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The patient asks whether a Whipple procedure will cure them."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Yes, surgery is a guaranteed cure once the jaundice is drained.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The patient now develops rigors, temperature 39°C and BP 86/50."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I would keep the planned outpatient appointment and review the bloods next week.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "examiner",
+        "text": "What does the CT show?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "A 28-mm pancreatic head mass with pancreatic-duct and bile-duct dilatation causing an obstructive jaundice pattern.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What would you assess for staging?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Distant spread, particularly liver and peritoneal disease, and the arterial and venous relationships on expert pancreatic-protocol review.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "There is around 120° SMV contact without occlusion; no arterial encasement. Is it unresectable?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Not automatically. Formal resectability depends on detailed vascular review and whether safe venous reconstruction could be required; HPB MDT must decide.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "CA19-9 is 460. What does that mean?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "It is elevated and increases concern but is not diagnostic. Obstructive jaundice can also raise it, so it should not be used alone to decide resectability.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Do you require a biopsy now?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "The MDT determines whether tissue is needed. EUS-guided sampling is appropriate if diagnosis is uncertain or systemic/neoadjuvant treatment is planned; it need not delay a clearly indicated resection pathway.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What about the jaundice?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "CT has appropriately preceded drainage. I would not arrange routine preoperative biliary stenting in every stable potentially resectable case; I would discuss its need if surgery is delayed or there is cholangitis.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What management options?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Following MDT staging and fitness assessment, pancreaticoduodenectomy may be considered if resectable; selected patients may need systemic treatment, or palliative treatment if unresectable.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The patient asks, “Is it definitely cancer, and will I survive?”"
+      },
+      {
+        "speaker": "candidate",
+        "text": "The scan is suspicious, but final diagnosis and options require the specialist review. I would explain the next tests and offer pancreatic specialist nurse support, without making promises.",
+        "tags": [
+          {
+            "row": "G9",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Now they develop 39°C fever, HR 125 and BP 86/50 with rigors."
+      },
+      {
+        "speaker": "candidate",
+        "text": "This changes priorities: suspected cholangitis with sepsis. I would initiate ABCDE, urgent senior and critical-care review, cultures if no delay, prompt IV antibiotics and resuscitation, and urgent specialist discussion for biliary drainage/source control.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "examiner",
+        "text": "Present this case in an MDT-style summary."
+      },
+      {
+        "speaker": "candidate",
+        "text": "A stable 71-year-old with progressive painless obstructive jaundice and weight loss has a 28-mm pancreatic head mass causing double-duct dilatation; this is highly suspicious for pancreatic malignancy, pending the specialist pathway.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What about stage?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I would confirm full staging includes relevant chest and abdominal imaging and expert evaluation for liver, peritoneal or other metastases, rather than assuming none because this excerpt is negative.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The report describes 120° SMV contact. Does that settle operability?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "No. There is no arterial encasement and no venous occlusion or contour distortion here, but tumour–vein contact demands pancreatic MDT assessment of the interface, reconstructability and overall risk. I would not assign a definitive resectability label from this single number.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What does CA19-9 of 460 contribute?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "A baseline measure that may assist later monitoring, not a diagnostic or staging test on its own. Bilirubin 172 can confound CA19-9; an elevated result does not substitute for imaging or tissue where indicated.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Would you obtain tissue?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "If there is diagnostic uncertainty or a neoadjuvant/palliative systemic pathway, I would discuss EUS-guided biopsy, which can sample while avoiding routine preoperative procedures. The MDT should not let an unnecessary biopsy postpone suitable curative surgery.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Would you stent the duct today?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Not reflexively. NICE NG85 places pancreatic-protocol CT before biliary drainage. For a stable patient potentially proceeding promptly to surgery, routine drainage is not automatically beneficial; I would weigh delay, symptoms, planned chemotherapy and infection with the HPB team.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What treatment do you discuss?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "After full staging and physiological assessment, the MDT may advise pancreaticoduodenectomy, potentially within a multimodal pathway; if disease is non-resectable, systemic treatment and symptom-directed palliation should be explained compassionately.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "They ask whether the scan confirms cancer and whether surgery guarantees survival."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I would say the imaging is concerning but avoid claiming certainty or cure. I would set out the immediate MDT review, possible biopsy where appropriate, pancreatic specialist nurse contact and an opportunity for questions.",
+        "tags": [
+          {
+            "row": "G9",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Now the nurse calls: 39°C, HR 125, BP 86/50 and rigors."
+      },
+      {
+        "speaker": "candidate",
+        "text": "We must suspend the elective discussion: likely ascending cholangitis with shock. Activate emergency assessment and sepsis care, obtain early blood cultures without delaying antimicrobials, administer guideline-based IV antibiotics with careful fluids and reassessment, and seek urgent biliary decompression and critical-care input.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Your one-line handover?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "“Suspected pancreatic head malignancy with obstructive jaundice, now haemodynamically unstable with probable cholangitis; immediate resuscitation and time-critical biliary source control required.”",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G8",
+      "move": "Treating new febrile hypotension as routine outpatient jaundice.",
+      "consequence": "Delayed sepsis resuscitation and biliary source control."
+    },
+    {
+      "row": "G6",
+      "move": "Automatically performing ERCP or stenting without MDT selection in a stable potentially resectable patient.",
+      "consequence": "Potential avoidable procedural harm/delay."
+    },
+    {
+      "row": "G9",
+      "move": "Promising cancer certainty or cure from CT and CA19-9 alone.",
+      "consequence": "Unsafe misinformation and deficient informed decision-making."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "If you were using CA19-9 as proof of malignancy",
+      "line": "I was using CA19-9 as proof of malignancy; it is not specific during jaundice. I will return to CT staging and MDT assessment."
+    },
+    {
+      "when": "If you said the 120-degree vein contact was unresectable",
+      "line": "I said the 120-degree vein contact was unresectable. That is not sufficient; I need HPB review of vascular anatomy and reconstructability."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "For suspected pancreatic cancer with obstructive jaundice, offer pancreatic-protocol CT before drainage.",
+      "source": "S1"
+    },
+    {
+      "fact": "If diagnosis remains unclear, PET/CT and/or EUS with tissue sampling may be offered.",
+      "source": "S1"
+    },
+    {
+      "fact": "CT-based staging and specialist multidisciplinary review inform further treatment and surgical decisions.",
+      "source": "S1"
+    },
+    {
+      "fact": "Biliary stenting should not be the unexamined default prior to potentially curative surgery.",
+      "source": "S1"
+    },
+    {
+      "fact": "CA19-9 has low specificity and must not be treated as histological proof of pancreatic cancer.",
+      "source": "S2"
+    },
+    {
+      "fact": "Age ≥40 with jaundice meets NG12 suspected-cancer referral criterion.",
+      "source": "S3"
+    }
+  ],
+  "recall": {
+    "think": "Is this malignant obstruction, and does staging permit an operative pathway?",
+    "say": "“The CT is suspicious; resectability is an HPB MDT decision.”",
+    "do": [
+      "Review metastases, vessels, fitness, tissue needs and drainage indication."
+    ],
+    "numbers": [
+      {
+        "value": "28-mm",
+        "meaning": "mass",
+        "source": "S1"
+      },
+      {
+        "value": "~120°",
+        "meaning": "SMV contact",
+        "source": "S1"
+      },
+      {
+        "value": "≥40",
+        "meaning": "age plus jaundice triggers NG12 referral",
+        "source": "S3"
+      }
+    ],
+    "trap": "Neither CA19-9 nor 120° venous contact determines cancer certainty or inoperability alone.",
+    "finish": "Give the patient a clear MDT plan and an emergency return/escalation instruction."
+  },
+  "sources": [
+    {
+      "id": "S1",
+      "name": "NICE NG85. Pancreatic cancer in adults: diagnosis and management, Sections 1.1, 1.3 and 1.7.",
+      "version": "2018; current web recommendations accessed 12 October 2026",
+      "url": "https://www.nice.org.uk/guidance/ng85/chapter/Recommendations",
+      "supports": "Used for the cited key-knowledge lines only."
+    },
+    {
+      "id": "S2",
+      "name": "National Cancer Institute PDQ. Pancreatic Cancer Treatment (Health Professional Version), tumour markers.",
+      "version": "Accessed 12 October 2026",
+      "url": "https://www.cancer.gov/types/pancreatic/hp/pancreatic-treatment-pdq",
+      "supports": "Used for the cited key-knowledge lines only."
+    },
+    {
+      "id": "S3",
+      "name": "NICE NG12. Suspected cancer: recognition and referral, Recommendation 1.2.4.",
+      "version": "2015; current web recommendations accessed 12 October 2026",
+      "url": "https://www.nice.org.uk/guidance/ng12/chapter/Recommendations-organised-by-site-of-cancer",
+      "supports": "Used for the cited key-knowledge lines only."
+    }
+  ],
+  "partner": {
+    "opening": "Please interpret this pancreatic protocol CT report and give a management plan.",
+    "reveals": [
+      {
+        "trigger": "Give printed data at the start",
+        "finding": "Pancreatic-protocol CT: 28-mm hypoenhancing pancreatic head mass; dilation of common bile duct and pancreatic duct; no definite liver or lung metastases on reported images; no arterial encasement; tumour contacts the SMV along approximately 120° with no occlusion or contour irregularity. Report explicitly states that final vascular staging requires specialist HPB radiology review. Bilirubin 172 µmol/L, ALP 640 U/L, ALT 108 U/L, INR 1.1; CA19-9 460 kU/L (reference <37).",
+        "row": "G1"
+      },
+      {
+        "trigger": "Throughout",
+        "finding": "This is an examiner-question station: no actor or patient should volunteer unsolicited history. Give printed data at the start; ask follow-ups sequentially as reflected in the transcript.",
+        "row": "G1"
+      },
+      {
+        "trigger": "Before curveball two",
+        "finding": "Do not release curveball two before clinical assessment and pathway discussion. Do not expect a finding unless it has been supplied in candidate brief or examiner question.",
+        "row": "G8"
+      }
+    ],
+    "push": [
+      {
+        "question": "What does the CT show?",
+        "row": "G1"
+      },
+      {
+        "question": "What would you assess for staging?",
+        "row": "G2"
+      },
+      {
+        "question": "CA19-9 is 460. What does that mean?",
+        "row": "G4"
+      },
+      {
+        "question": "Do you require a biopsy now?",
+        "row": "G5"
+      },
+      {
+        "question": "What about the jaundice?",
+        "row": "G6"
+      },
+      {
+        "question": "What management options?",
+        "row": "G7"
+      },
+      {
+        "question": "The patient asks, “Is it definitely cancer, and will I survive?”",
+        "row": "G9"
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "At the staging question, examiner asks: “Does an SMV contact of about 120 degrees by itself establish unresectability?”",
+        "safeAnswer": "Describes SMV contact and lack of arterial encasement; defers formal resectability to HPB MDT",
+        "row": "G3"
+      },
+      {
+        "prompt": "At the late emergency question, examiner reveals new 39°C fever, rigors, HR 125 and BP 86/50.",
+        "safeAnswer": "Recognises acute cholangitis/sepsis and initiates resuscitation, antimicrobials and urgent biliary team call",
+        "row": "G8"
+      }
+    ]
+  }
+}

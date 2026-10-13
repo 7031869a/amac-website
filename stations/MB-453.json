@@ -1,0 +1,692 @@
+{
+  "id": "MB-453",
+  "exam": "MRCS-B",
+  "title": "Removing a chest drain",
+  "type": "procedural",
+  "header": {
+    "domain": "Applied Skills",
+    "contentArea": "Procedural skills — pleural drain removal",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "BTS Clinical Statement on Pleural Procedures (July 2023)"
+    ]
+  },
+  "brief": {
+    "setting": "Clinical skills station",
+    "role": "Core surgical trainee",
+    "scenario": "A 54-year-old man had a right intercostal drain inserted for a spontaneous pneumothorax three days ago. He is comfortable, breathing room air, and the team is considering drain removal. A functioning water-seal system is available for demonstration.",
+    "task": "You are the core surgical trainee. Assess whether the drain may safely be removed, explain your plan to the patient, then demonstrate removal on the task trainer. Explain aftercare and when you would request imaging."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Removal is a decision about lung expansion and ongoing air leak, not merely pulling out a tube.",
+    "trap": "Removing a drain despite ongoing bubbling or without checking the current clinical/imaging context.",
+    "firstMove": "I will check the patient, the drain record and evidence of lung re-expansion before touching the drain."
+  },
+  "flow": [
+    "Review reason for drain, progress, observations, imaging and relevant medical record.",
+    "Check drain function, swinging/bubbling or recorded digital air leak, and clinical stability.",
+    "Explain and obtain consent; prepare analgesia, PPE, equipment, positioning and trained assistance.",
+    "Use instructed respiratory manoeuvre, remove steadily, immediately seal wound and secure dressing.",
+    "Reassess respiratory status, document and consider post-removal chest radiograph and safety net."
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "communication",
+      "label": "Identify/consent",
+      "fail": "Moves to pull without identity/consent",
+      "borderline": "Checks identity but explains the reason or consent incompletely",
+      "pass": "Checks identity, reason and consent",
+      "high": "Explains risks, alternatives and expected sensations"
+    },
+    {
+      "id": "G2",
+      "domain": "professionalism",
+      "label": "Removal decision",
+      "fail": "Removes with unassessed bubbling",
+      "borderline": "Checks imaging or air leak, but not both",
+      "pass": "Checks stability, recent imaging and air leak",
+      "high": "Integrates trend, indication and senior/local protocol"
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-skill",
+      "label": "Patient preparation",
+      "fail": "Omits analgesia and positioning",
+      "borderline": "Offers analgesia or positioning, not both; instructions unclear",
+      "pass": "Offers analgesia, positions and explains cooperation",
+      "high": "Anticipates discomfort and verifies patient can follow instruction"
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-skill",
+      "label": "Equipment/asepsis",
+      "fail": "No gloves or occlusive dressing ready",
+      "borderline": "Wears PPE but the occlusive dressing is not ready before removal",
+      "pass": "Uses PPE, aseptic handling and ready dressing",
+      "high": "Uses assistant/suture plan appropriate to drain type"
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-skill",
+      "label": "Respiratory coordination",
+      "fail": "Pulls during uncontrolled inhalation",
+      "borderline": "Asks for a breath-hold without a clear Valsalva instruction",
+      "pass": "Uses Valsalva or locally accepted coordinated manoeuvre",
+      "high": "Explains that phase of respiration is less important than successful Valsalva"
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-skill",
+      "label": "Drain removal",
+      "fail": "Jerks, cuts wrong suture or leaves wound open",
+      "borderline": "Steady withdrawal but a delay before occluding the wound",
+      "pass": "Releases securing suture safely; continuous steady withdrawal; immediate occlusion",
+      "high": "Coordinates assistant and suture closure smoothly"
+    },
+    {
+      "id": "G7",
+      "domain": "clinical-skill",
+      "label": "Immediate reassessment",
+      "fail": "Leaves without observations",
+      "borderline": "Asks how the patient feels but omits saturation and respiratory rate",
+      "pass": "Checks breathing, saturation, pain and wound",
+      "high": "Recognises new breathlessness or reduced saturations as urgent"
+    },
+    {
+      "id": "G8",
+      "domain": "clinical-knowledge",
+      "label": "Imaging/monitoring",
+      "fail": "Assumes CXR never needed",
+      "borderline": "Mentions a chest X-ray without indication or monitoring plan",
+      "pass": "Considers post-removal CXR and monitors as clinically appropriate",
+      "high": "Balances indication, symptoms and local pathway"
+    },
+    {
+      "id": "G9",
+      "domain": "professionalism",
+      "label": "Handover/documentation",
+      "fail": "No record or advice",
+      "borderline": "Documents the procedure but omits red-flag advice",
+      "pass": "Documents time, condition, dressing, observations and red flags",
+      "high": "Communicates plan to ward staff and patient"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "candidate",
+        "text": "I am the core surgical trainee. The drain has been in for three days, so it can come out.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "Will my lung collapse again?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "It probably will not. This is very quick.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "He does not need pain relief or repositioning; I will do it with him lying as he is.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I take out the drain without checking the X-ray or whether it has been bubbling.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "There is no prepared occlusive dressing."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I will put a dressing on once the tube is out.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          },
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "Should I hold my breath?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "No need, just breathe normally.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I pull out the tube and turn away to dispose of it before sealing the wound.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The patient says he is newly breathless."
+      },
+      {
+        "speaker": "candidate",
+        "text": "That is probably anxiety. We can review later.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          },
+          {
+            "row": "G8",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What will you document and tell him?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Nothing needs writing down, and he does not need any advice before I go.",
+        "tags": [
+          {
+            "row": "G9",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "candidate",
+        "text": "I am the core surgical trainee. Can I check your name and confirm I can explain the drain removal?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "Yes. Will my lung collapse again?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "There is a small risk of air returning. First I need to be sure the lung has re-expanded and there is no continuing air leak.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          },
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "How will you know?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I will review the recent chest X-ray, your observations, the drain chart and whether there has been bubbling or an air leak.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The lung is expanded and there has been no bubbling for 24 hours, as recorded by the pleural team."
+      },
+      {
+        "speaker": "candidate",
+        "text": "You appear clinically stable. I would follow the supervising team’s drain-removal plan. Is it all right to proceed?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          },
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "Yes, but will it hurt?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "There may be brief pulling discomfort; I will ensure appropriate analgesia first, position you comfortably and explain when to hold your breath and strain gently.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          },
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I wash my hands, use appropriate protective equipment, prepare the sterile supplies, scissors and occlusive dressing, and have assistance available.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I identify the securing suture, ensuring I am not cutting a closure suture that should remain. I ask you to perform the agreed Valsalva manoeuvre.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          },
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "I can do that."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I withdraw the drain in one steady movement and immediately cover the opening with an occlusive dressing; the closure suture is secured if present.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "How is your breathing now? I check oxygen saturation, respiratory rate, pain and the wound.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "It feels all right."
+      },
+      {
+        "speaker": "candidate",
+        "text": "We will observe you and consider a follow-up chest X-ray according to the indication, symptoms and local pleural pathway. Tell us immediately about breathlessness, chest pain or a loose dressing.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "pass"
+          },
+          {
+            "row": "G9",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The patient now says, “I suddenly cannot catch my breath.”"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I stop; assess airway, breathing and circulation, check observations, call for urgent senior help and arrange immediate investigation and treatment for possible recurrent pneumothorax.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          },
+          {
+            "row": "G8",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I document the indication, procedure, observations, dressing, complication assessment and handover.",
+        "tags": [
+          {
+            "row": "G9",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "candidate",
+        "text": "Hello, I am the core surgical trainee. Before we plan removal, can I confirm your identity and explain why the drain was needed?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "It was for a collapsed lung. I am worried it could happen again."
+      },
+      {
+        "speaker": "candidate",
+        "text": "That is a sensible concern. We minimise the risk by checking the lung is expanded, the air leak has stopped, and your breathing is stable; removal is not based on elapsed days alone.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          },
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "Do I need another scan?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I review the latest radiograph and the pleural team’s decision now, and decide on any further imaging after removal based on the clinical situation.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          },
+          {
+            "row": "G8",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Current imaging demonstrates re-expansion; the drain has not bubbled for 24 hours. Respiratory observations are normal."
+      },
+      {
+        "speaker": "candidate",
+        "text": "There is no identified ongoing leak. I also inspect the drain and insertion site, verify there is no new subcutaneous emphysema and ensure the agreed plan matches the drain type.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          },
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "How exactly will you do it?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "After pain relief, I will loosen the retaining stitch, ask you to perform a gentle Valsalva manoeuvre, remove the tube steadily and immediately seal the site. I will explain each step before I do it.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          },
+          {
+            "row": "G5",
+            "band": "high"
+          },
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I assemble protective and sterile items, occlusive dressing, scissors, appropriate closure arrangements and a colleague if assistance with the suture or dressing is helpful.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "Do I breathe in or out?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "We will practise a brief strain against a closed glottis. The BTS statement notes that inspiration versus expiration is less important if a proper Valsalva is performed; we will use our local protocol.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I confirm consent again, remove only the securing suture, coordinate the manoeuvre, withdraw without interruption and promptly apply the occlusive seal.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          },
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I check breathing and pulse oximetry immediately, examine the site and ensure you are comfortable.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "That was better than I expected."
+      },
+      {
+        "speaker": "candidate",
+        "text": "We will observe you and consider a post-removal chest radiograph, especially if symptoms arise or pneumothorax reaccumulation is a concern.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The patient suddenly says he is short of breath."
+      },
+      {
+        "speaker": "candidate",
+        "text": "This is a new post-procedural deterioration. I call for urgent help, start ABCDE assessment, oxygen if needed and observations, and organise urgent evaluation for recurrent pneumothorax. If unstable, I escalate for immediate emergency management rather than wait for routine imaging.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          },
+          {
+            "row": "G8",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I communicate clearly with the pleural team and record removal, patient response and the new escalation plan.",
+        "tags": [
+          {
+            "row": "G9",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G2",
+      "move": "Removing a drain with an unassessed ongoing air leak.",
+      "consequence": "Risk of recurrent or worsening pneumothorax."
+    },
+    {
+      "row": "G6",
+      "move": "Leaving the drain opening unsealed.",
+      "consequence": "Risk of air entering pleural space."
+    },
+    {
+      "row": "G7",
+      "move": "Ignoring acute breathlessness after removal.",
+      "consequence": "Misses potentially serious recurrent pneumothorax."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "If there is still bubbling",
+      "line": "There is still bubbling, so I will not remove the drain; I will check the imaging and discuss with the pleural team."
+    },
+    {
+      "when": "If the site is open",
+      "line": "The site is open; I will seal it now with the occlusive dressing and reassess his breathing."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Drain removal requires patient stability and assessment of lung expansion/air leak.",
+      "source": "S1"
+    },
+    {
+      "fact": "Valsalva matters more than choosing inspiration versus expiration.",
+      "source": "S1"
+    },
+    {
+      "fact": "Remove with steady continuous pull and promptly occlude the wound.",
+      "source": "S1"
+    },
+    {
+      "fact": "Consider post-removal chest radiography, especially to detect pneumothorax.",
+      "source": "S1"
+    },
+    {
+      "fact": "Procedure should be undertaken by appropriately trained staff.",
+      "source": "S1"
+    },
+    {
+      "fact": "Acute post-removal breathlessness needs urgent clinical reassessment.",
+      "source": "S1"
+    }
+  ],
+  "recall": {
+    "think": "Confirm the reason for the drain and that air leak has ended.",
+    "say": "Explain the brief discomfort and small risk of recurrent pneumothorax.",
+    "do": [
+      "Coordinate Valsalva, steady withdrawal and immediate occlusion."
+    ],
+    "numbers": [
+      {
+        "value": "None",
+        "meaning": "No fixed day count or universal radiograph interval dictates removal.",
+        "source": "S1"
+      }
+    ],
+    "trap": "Pulling the drain because three days have passed, without checking bubbling.",
+    "finish": "Reassess, consider imaging, document and hand over."
+  },
+  "sources": [
+    {
+      "id": "S1",
+      "name": "British Thoracic Society Clinical Statement on Pleural Procedures",
+      "version": "July 2023; accessed 12 October 2026",
+      "url": "https://thorax.bmj.com/content/78/Suppl_3/s43",
+      "supports": "Chest drain removal; Operator training and competence; follow-up and complications"
+    }
+  ],
+  "partner": {
+    "opening": "Assess whether the drain may safely be removed, explain your plan to the patient, then demonstrate removal on the task trainer. Explain aftercare and when you would request imaging.",
+    "actorBrief": "Patient begins: “Will taking it out make my lung collapse again?” The patient is not breathless and reports no new symptoms unless asked.",
+    "reveals": [
+      {
+        "trigger": "Examiner states when asked",
+        "finding": "current radiograph shows re-expansion; no bubbling observed over the preceding 24 hours, confirmed by the pleural team.",
+        "row": "G2"
+      },
+      {
+        "trigger": "On the removal model",
+        "finding": "The removal model has one skin securing suture.",
+        "row": "G6"
+      }
+    ],
+    "push": [],
+    "curveballs": [
+      {
+        "prompt": "Curveball at end: patient reports sudden shortness of breath after removal",
+        "safeAnswer": "the candidate must stop, assess ABCDE, call for help and organise urgent assessment/imaging.",
+        "row": "G7"
+      }
+    ]
+  }
+}

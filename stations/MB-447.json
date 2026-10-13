@@ -1,0 +1,684 @@
+{
+  "id": "MB-447",
+  "exam": "MRCS-B",
+  "title": "Measuring the ankle–brachial pressure index",
+  "type": "procedural",
+  "header": {
+    "domain": "Applied Skills",
+    "contentArea": "Vascular assessment",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "NICE CG147 (2012; amended 2018)",
+      "HTG677 (2023)"
+    ]
+  },
+  "brief": {
+    "setting": "Vascular assessment clinic",
+    "role": "Core surgical trainee",
+    "scenario": "You are a core surgical trainee in a vascular assessment clinic. A 68-year-old with exertional left calf discomfort is attending for a resting Doppler ABPI. A training manikin and Doppler equipment are available. The patient also has type 2 diabetes.",
+    "task": "Explain, demonstrate the measurement sequence, calculate both indices from the supplied readings, interpret results and advise next steps. You have 9 minutes."
+  },
+  "beforeYouWalkIn": {
+    "frame": "an ABPI is a measured ratio interpreted alongside symptoms and Doppler signals—not a magic number.",
+    "trap": "relying on an automated high index to rule out PAD in diabetes.",
+    "firstMove": "identify, consent, rest supine and check that the clinical examination is safe."
+  },
+  "flow": [
+    "Introduce, consent, symptom/safety check.",
+    "Examine legs and position supine.",
+    "Demonstrate manual Doppler pressures in both arms and both ankles.",
+    "Calculate and interpret supplied readings.",
+    "Communicate limitations, document, and plan."
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "communication",
+      "label": "Introduction, identity and consent",
+      "fail": "Begins cuff inflation without explanation.",
+      "borderline": "Introduces but omits consent or discomfort warning.",
+      "pass": "Checks identity, explains cuffs/Doppler and obtains consent.",
+      "high": "Adds accessibility, pain and stop-signal agreement."
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-skill",
+      "label": "Red flags and limb review",
+      "fail": "Ignores rest pain or tissue loss.",
+      "borderline": "Asks only about claudication.",
+      "pass": "Asks about rest pain, wounds, sudden changes and checks feet.",
+      "high": "Distinguishes limb threat from routine claudication and prioritises urgent review."
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-skill",
+      "label": "Position and equipment",
+      "fail": "Measures seated without considering position.",
+      "borderline": "Positions supine but omits cuff-size check.",
+      "pass": "Resting supine where feasible; selects suitable cuff and manual Doppler.",
+      "high": "Explains positioning limitation and documents exceptions."
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-skill",
+      "label": "Brachial pressures",
+      "fail": "Measures only one arm.",
+      "borderline": "Attempts both but records just one.",
+      "pass": "Obtains systolic readings from both brachial arteries.",
+      "high": "States highest brachial pressure becomes common denominator."
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-skill",
+      "label": "Ankle pressures and signals",
+      "fail": "Uses palpation alone.",
+      "borderline": "Samples only one ankle artery.",
+      "pass": "Measures dorsalis pedis and posterior tibial pressures in each leg and records waveform nature.",
+      "high": "Mentions peroneal artery where feasible and repeats uncertain signals."
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-knowledge",
+      "label": "Calculation",
+      "fail": "Divides ankle by its own lower arm result incorrectly.",
+      "borderline": "Gets one leg correct.",
+      "pass": "Uses highest ankle pressure per leg divided by highest arm pressure.",
+      "high": "Shows units cancel and checks plausibility of both results."
+    },
+    {
+      "id": "G7",
+      "domain": "clinical-knowledge",
+      "label": "Interpretation",
+      "fail": "Says normal/high ABPI excludes PAD in diabetes.",
+      "borderline": "Calls a low result abnormal without context.",
+      "pass": "Recognises low left index and potential falsely high right with diabetes.",
+      "high": "Correlates waveform, symptoms and need for further vascular testing."
+    },
+    {
+      "id": "G8",
+      "domain": "professionalism",
+      "label": "Management and compression safety",
+      "fail": "Recommends compression from single potentially unreliable value.",
+      "borderline": "Offers vascular review but no safety explanation.",
+      "pass": "Requests appropriate clinical/vascular assessment and avoids unsupervised compression decisions.",
+      "high": "Differentiates symptomatic PAD and suspected limb-threat escalation."
+    },
+    {
+      "id": "G9",
+      "domain": "communication",
+      "label": "Closure and documentation",
+      "fail": "Leaves without results or plan.",
+      "borderline": "Explains results without recording method.",
+      "pass": "Documents pressures, ratios, Doppler signals and plan; checks understanding.",
+      "high": "Makes a succinct bilateral report with limitations and safety-netting."
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "candidate",
+        "text": "I need the machine now. Put your foot up.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "What are you doing?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Checking blood pressure in your leg.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "It hurts when I walk; should I be worried?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "We can discuss that later.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The patient has diabetes. How will you position them?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Sitting is fine; I can start on one arm.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "You have readings from both arms: right 140, left 150 mmHg. Which do you use?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I will just use 140 because it is nearer.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What ankle arteries will you measure?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Only the easy pulse I can feel.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Left ankle: posterior tibial 90, dorsalis pedis 96; right ankle: posterior tibial 200, dorsalis pedis 192."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I will use 96 over the 140 I chose: about 0.69, so only mildly reduced.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What does the right ankle measurement mean?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "The right ratio is high, so diabetes cannot affect the artery and the right leg is definitely fine.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "Can I have compression socks?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Yes, there is no need for further assessment.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please conclude."
+      },
+      {
+        "speaker": "candidate",
+        "text": "ABPI done. No need to write the Doppler signals.",
+        "tags": [
+          {
+            "row": "G9",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "candidate",
+        "text": "Hello, I am the core surgical trainee. I will check blood pressures at both arms and ankles with a cuff and handheld Doppler. The cuffs squeeze briefly. Is that all right?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "Yes."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Before starting: do you have pain at rest, a wound that will not heal, or any sudden worsening?",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "No wounds or sudden change. My left calf aches after about 200 metres and settles with rest."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Thank you. I will inspect both feet and check pulses as well; please tell me if a cuff hurts.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "There is no ulceration. How do you position the patient?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "After allowing rest I position them supine if possible and select correctly sized cuffs and a manual Doppler.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Which pressures do you take?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Systolic pressures from both brachial arteries. I use the higher brachial pressure as the denominator for both legs.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Right arm 140; left arm 150 mmHg."
+      },
+      {
+        "speaker": "candidate",
+        "text": "So the denominator is 150 mmHg.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "At each ankle I use the Doppler over both dorsalis pedis and posterior tibial arteries, recording the pressure when flow returns on cuff deflation and noting signal quality.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Left posterior tibial 90, dorsalis pedis 96; right posterior tibial 200, dorsalis pedis 192 mmHg. Left signal monophasic and right signal poorly compressible."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Left ABPI is 96 over 150: 0.64. Right ABPI is 200 over 150: 1.33.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "Does that mean my right leg is healthy?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Not necessarily. Diabetes can cause stiff vessels and spuriously high or normal ABPI readings, so I do not exclude disease on the right from this value alone.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "What happens next?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "The symptoms and low left ABPI warrant vascular assessment and risk-factor management. I would review Doppler waveforms and arrange further tests if needed. Compression decisions need the full assessment, not this ratio alone.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I will document both arm pressures, each ankle reading, waveforms, the calculated ratios and the plan. Do you have questions?",
+        "tags": [
+          {
+            "row": "G9",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "No, thank you."
+      }
+    ],
+    "high": [
+      {
+        "speaker": "candidate",
+        "text": "Hello. I am a core surgical trainee. I want to assess blood flow to your legs using a Doppler and inflatable cuffs. It can feel tight for a few seconds; if it becomes painful, please tell me and we will stop. May I proceed?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "Of course."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I understand your calf hurts on walking. Exactly how far, and does rest relieve it? Any pain while lying in bed, ulcers, black toes or sudden worsening?",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "Around 200 metres, better after a short rest; none of the others."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I will examine skin, temperature, wounds and pulses first. If any limb-threatening features emerge, that changes the urgency.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "No tissue loss. Describe the set-up."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Resting and supine where possible, legs supported at heart level, appropriately sized cuffs, Doppler gel and probe; I will note any inability to lie flat as a limitation.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Both brachial systolics first, not one chosen arm; I use the higher of the two for both indices.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "They are 140 right and 150 left mmHg."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I select 150 mmHg.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "For each limb I locate dorsalis pedis and posterior tibial signals, inflate until absent and slowly deflate to identify systolic return, recording the waveform as well as pressure. Peroneal artery assessment can help where possible.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The four ankle values are left 90 and 96; right 200 and 192 mmHg. Left signal is monophasic; right arteries are difficult to compress."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Highest left 96 divided by 150 equals 0.64, suggesting peripheral arterial disease. Highest right 200 divided by 150 equals 1.33, but I would treat it cautiously.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "Why cautiously when the number is higher?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "With diabetes, arterial calcification can make ankle arteries poorly compressible and inflate the result. The waveform and the clinical picture matter; a high number is not proof of normal circulation.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I would organise specialist vascular review, optimise cardiovascular risk factors with the treating team, and consider toe pressures or other vascular assessment if ankle measurements are unreliable. I would not use ABPI alone to authorise compression.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "What symptoms should worry me?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "New severe pain, a cold pale foot, rapidly changing symptoms, or tissue loss warrant urgent assessment. I will give you a written plan and record all six pressure values and the waveforms.",
+        "tags": [
+          {
+            "row": "G9",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please summarise."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Left ABPI 0.64 with monophasic signal fits symptomatic PAD; right 1.33 may be falsely elevated with diabetes. Further clinical assessment is needed before treatment decisions.",
+        "tags": [
+          {
+            "row": "G9",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G2",
+      "move": "Dismissing newly reported rest pain/tissue loss",
+      "consequence": "can delay limb-saving vascular assessment."
+    },
+    {
+      "row": "G7",
+      "move": "Declaring a high index definitively normal in diabetes",
+      "consequence": "can miss arterial disease."
+    },
+    {
+      "row": "G8",
+      "move": "Ordering high compression solely from an unreliable ABPI",
+      "consequence": "can worsen tissue ischaemia."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "If you gave a number too much certainty",
+      "line": "I have given that number too much certainty; I need to interpret it with the Doppler signal and diabetes history."
+    },
+    {
+      "when": "If you concluded this is routine claudication",
+      "line": "I should check for tissue loss and rest pain before concluding this is routine claudication."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Supine rest, both brachial pressures, both DP/PT pressures and waveform description are recommended by NICE CG147 (section 1.2, diagnosis).",
+      "source": "S1"
+    },
+    {
+      "fact": "Use the highest ankle pressure in each leg divided by the highest brachial pressure.",
+      "source": "S1"
+    },
+    {
+      "fact": "In diabetes a normal or raised ABPI does not exclude PAD.",
+      "source": "S1"
+    },
+    {
+      "fact": "Arterial calcification in diabetes or advanced renal disease can make ABPI misleadingly normal; correlate with Doppler waveforms and clinical signs (background from NICE HTG677, which assesses devices in people with leg ulcers; this patient has none).",
+      "source": "S2"
+    },
+    {
+      "fact": "In a person with suspected PAD ask about symptoms and assess feet and peripheral pulses.",
+      "source": "S1"
+    }
+  ],
+  "recall": {
+    "think": "Is the limb threatened, and can these ankle arteries be compressed reliably?",
+    "say": "“I will measure both arms and both ankle arteries, then interpret the Doppler signal.”",
+    "do": [
+      "Supine • cuff and Doppler • bilateral brachial, DP and PT • calculate and document."
+    ],
+    "numbers": [
+      {
+        "value": "Left 96/150 = 0.64",
+        "meaning": "These examples are case values, not universal treatment cut-offs.",
+        "source": "S1"
+      },
+      {
+        "value": "right 200/150 = 1.33",
+        "meaning": "These examples are case values, not universal treatment cut-offs.",
+        "source": "S1"
+      }
+    ],
+    "trap": "High ABPI in diabetes is not a rule-out test.",
+    "finish": "Explain limitations, vascular review and urgent symptom safety-net."
+  },
+  "sources": [
+    {
+      "id": "S1",
+      "name": "NICE CG147 Peripheral arterial disease: diagnosis and management",
+      "version": "published 2012, recommendations amended 2018",
+      "url": "https://www.nice.org.uk/guidance/cg147/chapter/recommendations",
+      "supports": "section 1.2 (diagnosis)"
+    },
+    {
+      "id": "S2",
+      "name": "NICE HTG677 Automated ankle brachial pressure index measurement devices to detect peripheral arterial disease in people with leg ulcers",
+      "version": "2023; accessed 12 October 2026",
+      "url": "https://www.nice.org.uk/guidance/htg677/chapter/2-The-diagnostic-tests",
+      "supports": "The diagnostic tests §2.6 (background on arterial calcification; the guidance itself covers people with leg ulcers)"
+    }
+  ],
+  "partner": {
+    "opening": "Explain, demonstrate the measurement sequence, calculate both indices from the supplied readings, interpret results and advise next steps.",
+    "actorBrief": "Opening patient line: “My left calf aches after walking; why do I need cuffs on both legs?” No extra finding is volunteered unprompted.",
+    "reveals": [
+      {
+        "trigger": "Only on asking about rest pain/wounds",
+        "finding": "“No wounds, no pain in bed and no sudden change.”",
+        "row": "G2"
+      },
+      {
+        "trigger": "After candidate requests brachial measurements",
+        "finding": "Right arm 140; left arm 150 mmHg.",
+        "row": "G4"
+      },
+      {
+        "trigger": "After candidate requests ankle measurements",
+        "finding": "Left posterior tibial 90, dorsalis pedis 96; right posterior tibial 200, dorsalis pedis 192 mmHg. Left signal monophasic and right signal poorly compressible.",
+        "row": "G5"
+      },
+      {
+        "trigger": "General rule",
+        "finding": "Pressure values are supplied by examiner only after candidate requests measurements; waveform quality is disclosed when requested or as part of result panel. Examiner uses the given values consistently.",
+        "row": "G5"
+      }
+    ],
+    "push": [],
+    "curveballs": [
+      {
+        "prompt": "Cue 1 after calculation: “Does the high right number mean that leg is fine?”",
+        "safeAnswer": "Not necessarily. Diabetes can cause stiff vessels and spuriously high or normal ABPI readings, so I do not exclude disease on the right from this value alone.",
+        "row": "G7"
+      },
+      {
+        "prompt": "Cue 2 after management plan: “Can I start compression socks?”",
+        "safeAnswer": "Compression decisions need the full assessment, not this ratio alone.",
+        "row": "G8"
+      }
+    ]
+  }
+}

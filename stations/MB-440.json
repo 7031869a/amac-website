@@ -1,0 +1,754 @@
+{
+  "id": "MB-440",
+  "exam": "MRCS-B",
+  "title": "Leg ulcer examination",
+  "type": "examination",
+  "header": {
+    "domain": "Applied Skills",
+    "contentArea": "Clinical examination / vascular and wound assessment",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "signalMinutes": 6,
+    "guidelineVersions": [
+      "NWCSP Lower Limb Recommendations for Clinical Care (2023)",
+      "NICE CG168 (2013)",
+      "NICE QS67 (2014)"
+    ]
+  },
+  "brief": {
+    "setting": "Vascular assessment clinic",
+    "role": "Core surgical trainee",
+    "scenario": "You are the core surgical trainee in a vascular assessment clinic.",
+    "task": "Examine the lower legs of a 69-year-old patient with a right lower-leg ulcer. Explain your findings to the examiner, distinguish likely venous from arterial or neuropathic causes, and outline safe initial investigation and management. Use the examination model/patient and request any unavailable findings from the examiner. Do not remove dressings without permission."
+  },
+  "beforeYouWalkIn": {
+    "frame": "This is a vascular examination with an ulcer, not merely a wound description. Establish arterial safety before recommending therapeutic compression.",
+    "trap": "Attributing every gaiter ulcer to venous disease without testing arterial perfusion.",
+    "firstMove": "“I’ll inspect both legs, examine arterial pulses and sensation, and assess the ulcer before deciding on compression.”"
+  },
+  "flow": [
+    "0–1 min: introduce, consent, pain control, exposure and position",
+    "1–3 min: compare skin, oedema, venous changes, ulcer dimensions and bed",
+    "3–5 min: examine both limbs for temperature, capillary refill, pulses and neuropathy",
+    "5–7 min: synthesise likely venous ulcer plus possible mixed arterial disease; request ABPI/Doppler if needed",
+    "7–9 min: recommend dressing, measured vascular assessment, compression only when safe, red-flag escalation and referral"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "professionalism",
+      "label": "Introduction and comfort",
+      "fail": "No consent, unexpected painful handling",
+      "borderline": "Consent given but poor positioning or pain assessment",
+      "pass": "Introduces self, gains consent, asks pain and adjusts exposure",
+      "high": "Explains each manoeuvre and avoids wound trauma"
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-skill",
+      "label": "Bilateral inspection",
+      "fail": "Looks at ulcer alone, ignores other leg",
+      "borderline": "Notes ulcer but omits venous skin changes",
+      "pass": "Compares both legs for oedema, varicosities, pigmentation, eczema and scars",
+      "high": "Connects distribution of oedema and gaiter skin changes to venous hypertension"
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-skill",
+      "label": "Ulcer characterisation",
+      "fail": "No site or wound-bed assessment",
+      "borderline": "Describes site only",
+      "pass": "States site, dimensions, edge, bed, exudate, periwound skin and infection signs",
+      "high": "Distinguishes clinically infected tissue from colonisation and documents monitoring baseline"
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-skill",
+      "label": "Arterial supply",
+      "fail": "Recommends strong compression without any arterial assessment",
+      "borderline": "Feels only one pulse without interpreting significance",
+      "pass": "Checks temperature, refill, dorsalis pedis/posterior tibial pulses bilaterally; requests Doppler/ABPI",
+      "high": "Recognises palpable pulses do not exclude peripheral arterial disease; considers toe pressures when ABPI is unreliable"
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-skill",
+      "label": "Neuropathy and other causes",
+      "fail": "Ignores diabetes, pressure and neuropathy",
+      "borderline": "Mentions diabetes without sensory check",
+      "pass": "Assesses protective sensation and pressure/trauma patterns",
+      "high": "Considers vasculitis, malignancy and atypical ulcer red flags if presentation does not fit"
+    },
+    {
+      "id": "G6",
+      "domain": "professionalism",
+      "label": "Clinical interpretation",
+      "fail": "Calls it definitely venous and safe for compression",
+      "borderline": "Suggests venous cause but misses possible mixed disease",
+      "pass": "States probable venous ulcer, arterial status not yet established",
+      "high": "Explains mixed aetiology risk and diagnostic limits of bedside examination"
+    },
+    {
+      "id": "G7",
+      "domain": "clinical-skill",
+      "label": "Compression safety",
+      "fail": "Starts strong compression without establishing arterial adequacy",
+      "borderline": "Defers decision but offers no plan",
+      "pass": "Requests reliable arterial assessment before full compression; no strong compression if significant ischaemia suspected",
+      "high": "Uses specialist pathway for mixed disease and cautions about falsely high ABPI in calcified vessels"
+    },
+    {
+      "id": "G8",
+      "domain": "clinical-skill",
+      "label": "Referral and monitoring",
+      "fail": "No follow-up or referral",
+      "borderline": "Dressing only",
+      "pass": "Documents ulcer, arranges wound review and vascular referral for venous ulcer",
+      "high": "Recommends duplex to define reflux and supports multidisciplinary care"
+    },
+    {
+      "id": "G9",
+      "domain": "professionalism",
+      "label": "Safety and escalation",
+      "fail": "Misses cold painful foot and sepsis",
+      "borderline": "Recognises red flag but delays response",
+      "pass": "Urgently escalates acute limb ischaemia, spreading infection or systemic illness",
+      "high": "States immediate priorities and tells patient when urgent return is needed"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "candidate",
+        "text": "I need to look at your ulcer. Let me lift the dressing now.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "That pulls on the sore skin."
+      },
+      {
+        "speaker": "candidate",
+        "text": "It is on the ankle and looks superficial. I think it is venous.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Would you examine the rest of the leg?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "The swollen ankle is enough to know. I do not need the other leg.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What about the arterial circulation?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "One pulse is probably there, so arterial disease is excluded.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The posterior tibial pulse is faint; there is no ABPI available."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I would apply full-strength compression immediately anyway.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Summarise your interpretation so far."
+      },
+      {
+        "speaker": "candidate",
+        "text": "This is definitely a venous ulcer, so compression is safe.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Could anything else be contributing to this ulcer?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "No. I would not check sensation or ask about diabetes or pressure; leg ulcers are either venous or arterial.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you monitor it?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "A dressing each week is adequate. No specialist referral is needed.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The patient asks what to do if the foot becomes cold and suddenly very painful."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Leave it until next week; cold feet happen.",
+        "tags": [
+          {
+            "row": "G9",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "That worries me because it could get worse."
+      },
+      {
+        "speaker": "candidate",
+        "text": "There is nothing urgent to check.",
+        "tags": [
+          {
+            "row": "G9",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "candidate",
+        "text": "Hello, I’m the core surgical trainee. I’d like to examine your legs and the ulcer. Is that all right? Is it sore if I touch near it?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "That’s fine. The skin is tender close to the dressing, not terribly painful."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I will keep the wound protected and uncover only what is necessary. Please tell me if I hurt you.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "With both legs exposed appropriately, I can see swelling around the ankles and brown skin staining, with visible superficial veins. I will compare the opposite limb.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The pigmentation is bilateral; oedema is worse on the right."
+      },
+      {
+        "speaker": "candidate",
+        "text": "May I inspect the ulcer and surrounding skin without scraping its bed?",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "It is 3 by 2 centimetres at the right medial gaiter region, shallow with granulation, an irregular sloping edge and moderate serous exudate."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I would record its site, size, bed, edge, discharge and surrounding skin. Is there spreading erythema, pus, malodour or fever?",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "None. The patient is systemically well."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I am assessing the arterial supply before planning compression. I will check foot warmth, capillary refill and both pedal pulses on each side.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Both feet are warm. Right posterior tibial pulse is faint; dorsalis pedis is palpable. Capillary refill is approximately two seconds."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Palpable pulses do not reliably exclude arterial disease. I would arrange Doppler ABPI and assess whether toe pressures are required if ABPI seems unreliable.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Do you have diabetes or loss of sensation in your feet? I will check protective sensation with a suitable monofilament and look for pressure points.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "I do not have diabetes and have not noticed numbness."
+      },
+      {
+        "speaker": "examiner",
+        "text": "Protective sensation is preserved and there are no obvious pressure lesions."
+      },
+      {
+        "speaker": "candidate",
+        "text": "The location, oedema, skin staining and varicosities suggest a venous ulcer. But I cannot confirm adequate arterial perfusion from inspection and pulses alone.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What would you do next?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I would arrange formal arterial assessment before prescribing full therapeutic compression. If there is clinically important arterial disease, compression needs specialist assessment rather than routine application.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I would document a wound baseline, use an appropriate non-adherent dressing and arrange trained wound-care review, venous duplex and vascular referral.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Suppose the patient says their foot suddenly becomes cold and severely painful tonight."
+      },
+      {
+        "speaker": "candidate",
+        "text": "That is an emergency suggesting acute limb ischaemia. They need immediate emergency assessment, not routine clinic follow-up. I would arrange urgent vascular escalation.",
+        "tags": [
+          {
+            "row": "G9",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Please seek urgent help also for fever, rapidly spreading redness or feeling acutely unwell. Do you have any questions?",
+        "tags": [
+          {
+            "row": "G9",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "No, I understand why you need the circulation test first."
+      }
+    ],
+    "high": [
+      {
+        "speaker": "candidate",
+        "text": "Good morning. I’m one of the core surgical trainees. I understand you have a leg wound that is slow to heal. Before I inspect it, is it painful today, and would you prefer a short pause if it becomes uncomfortable?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "It is more itchy than painful."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Thank you. I’ll examine both legs, because the comparison helps identify the underlying circulation problem. May I proceed?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "Yes."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I’m comparing both limbs from the knees to the toes: asymmetry, swelling, varicose veins, scars, pigment change, eczema and skin thickening. The medial ankle location with pigmentation and oedema suggests long-standing venous pressure.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The right ankle is more oedematous; there is bilateral haemosiderin staining."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I would gently expose the ulcer, measure it and record its depth, margins, granulation, exudate and periwound changes. Are there signs of local infection or a necrotic base?",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "It measures 3 × 2 cm, is superficial and granulating, with moderate serous exudate. There is no spreading erythema or necrosis."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I would not equate a colonised wound with clinical infection. I would photograph it only with appropriate consent and documentation to compare healing.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Now arterial assessment: temperature and colour of both feet, refill, femoral and distal pulses as appropriate, particularly dorsalis pedis and posterior tibial. I will not infer arterial sufficiency just from one palpable pulse.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The feet are warm, the right posterior tibial pulse is faint and the dorsalis pedis is present."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I will also test protective sensation and look for deformity or pressure injury. Can you tell me about diabetes, smoking, calf pain on walking or pain at night relieved by hanging the foot down?",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "No diabetes and no night pain. My ankle swells by evening."
+      },
+      {
+        "speaker": "examiner",
+        "text": "Protective sensation is normal."
+      },
+      {
+        "speaker": "candidate",
+        "text": "This is most consistent with a venous gaiter ulcer, possibly mixed with arterial disease. The right posterior tibial finding is a reason to document formal vascular testing rather than declare compression safe.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Can we apply a high-strength compression bandage today?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Not before arterial adequacy is established through validated testing. I would obtain a Doppler ABPI, consider toe pressure if vessels are non-compressible, and follow the local specialist pathway. Reduced compression may be considered by an experienced service in selected mixed disease; that is not a blanket instruction. If there are no red flags, mild graduated compression of 20 mmHg or less at the ankle can be started while we wait; strong compression should be considered only once the ABPI is above 0.8.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What will you arrange for the vein problem?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I would refer the active venous ulcer to the vascular service and seek duplex assessment for treatable superficial reflux. Meanwhile I would coordinate wound measurement, suitable simple dressing, ankle mobility and follow-up.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "At the end, the patient asks: “What if the whole foot turns icy cold and hurts suddenly?”"
+      },
+      {
+        "speaker": "candidate",
+        "text": "That changes the urgency completely. Sudden severe pain and a cold foot require emergency vascular assessment the same day, immediately if acute limb ischaemia is suspected; I would not ask them to wait for ABPI at clinic.",
+        "tags": [
+          {
+            "row": "G9",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I would also give clear infection precautions and check the patient can contact the service. Could you tell me what would make you seek urgent help?",
+        "tags": [
+          {
+            "row": "G9",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "A suddenly cold, painful foot, fever, or fast-spreading redness."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Exactly. The key is to treat the cause of the ulcer while ensuring the circulation is safe for treatment."
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G4",
+      "move": "Applies strong compression without assessing arterial sufficiency.",
+      "consequence": "May worsen critical limb ischaemia in mixed arterial disease."
+    },
+    {
+      "row": "G9",
+      "move": "Tells the patient to delay assessment of a sudden cold painful foot.",
+      "consequence": "Could miss acute limb ischaemia and limb loss."
+    },
+    {
+      "row": "G3",
+      "move": "Ignores spreading infection or systemic illness.",
+      "consequence": "May delay treatment of severe soft-tissue infection or sepsis."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "If you implied a palpable pulse makes full compression safe",
+      "line": "I need to correct that: a palpable pulse does not establish that full compression is safe. I will request formal arterial assessment."
+    },
+    {
+      "when": "If a newly cold and painful foot is described",
+      "line": "A newly cold and painful foot would change this to an emergency; I would arrange immediate vascular assessment."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Medial gaiter ulcers with oedema and haemosiderin often suggest venous disease; morphology alone is not proof.",
+      "source": "NWCSP"
+    },
+    {
+      "fact": "Wound size and wound-bed status form the baseline for judging healing; wound imaging is standard practice, and ankle circumference should be measured at every visit.",
+      "source": "NWCSP"
+    },
+    {
+      "fact": "Palpation of peripheral pulses is an unreliable form of arterial assessment; pair it with handheld Doppler ABPI, and consider toe pressures where ABPI is unreliable (for example medial arterial calcification in diabetes or kidney disease).",
+      "source": "NWCSP"
+    },
+    {
+      "fact": "Without red flags, mild graduated compression (20 mmHg or less at the ankle) can be offered at first presentation, with full assessment within 14 days. Consider strong compression only if ABPI is above 0.8; ABPI below 0.5 indicates chronic limb-threatening ischaemia and needs urgent vascular referral.",
+      "source": "NWCSP"
+    },
+    {
+      "fact": "An active or healed venous leg ulcer is an indication for vascular service referral.",
+      "source": "CG168"
+    },
+    {
+      "fact": "Acute or suspected chronic limb-threatening ischaemia, acute infection and symptoms of sepsis are red flags requiring immediate escalation to the relevant specialist.",
+      "source": "NWCSP"
+    }
+  ],
+  "recall": {
+    "think": "venous-pattern ulcer, but exclude significant arterial disease.",
+    "say": "“The ulcer looks venous, but I must establish perfusion before full compression.”",
+    "do": [
+      "compare both limbs",
+      "size/edge/bed",
+      "pulses, Doppler ABPI ± toe pressures; sensation."
+    ],
+    "numbers": [
+      {
+        "value": "≤20 mmHg",
+        "meaning": "mild compression ≤20 mmHg at the ankle",
+        "source": "NWCSP"
+      },
+      {
+        "value": "ABPI >0.8",
+        "meaning": "strong compression only if ABPI >0.8",
+        "source": "NWCSP"
+      },
+      {
+        "value": "ABPI <0.5; 14 days",
+        "meaning": "ABPI <0.5 urgent vascular referral; full assessment within 14 days.",
+        "source": "NWCSP"
+      }
+    ],
+    "trap": "strong compression without arterial assessment.",
+    "finish": "document, refer for venous duplex/vascular service, give ischaemia/infection precautions."
+  },
+  "sources": [
+    {
+      "id": "NWCSP",
+      "name": "National Wound Care Strategy Programme. Lower Limb Recommendations for Clinical Care",
+      "version": "2023",
+      "url": "https://nhsforthvalley.com/wp-content/uploads/2024/12/National-Wound-Care-Strategy-Lower-limb-recommendation-to-clinical-care.pdf",
+      "supports": "red flags, unreliability of pulse palpation, Doppler ABPI and toe pressures, ABPI thresholds, mild compression, 14-day assessment, wound baseline. Summary at https://www.rcn.org.uk/-/media/Royal-College-Of-Nursing/Documents/Clinical-Topics/Lower-Limb/NWCSP-Leg-Ulcer-Recommendations-Summary.pdf"
+    },
+    {
+      "id": "CG168",
+      "name": "NICE CG168, Varicose veins: diagnosis and management",
+      "version": "published 24 July 2013",
+      "url": "https://www.nice.org.uk/guidance/cg168/chapter/Recommendations",
+      "supports": "vascular referral for active/healed venous ulcer; duplex assessment."
+    },
+    {
+      "id": "QS67",
+      "name": "NICE QS67, Varicose veins in the legs",
+      "version": "published 14 August 2014",
+      "url": "https://www.nice.org.uk/guidance/qs67/chapter/quality-statement-1-referral-to-a-vascular-service",
+      "supports": "vascular referral for venous ulcers."
+    }
+  ],
+  "partner": {
+    "opening": "Examine the lower legs of a 69-year-old patient with a right lower-leg ulcer.",
+    "actorBrief": "“This ulcer by my ankle has not healed.” Do not volunteer an ABPI result; one has not been done.",
+    "reveals": [
+      {
+        "trigger": "On inspection of both legs",
+        "finding": "Brown haemosiderin pigmentation, ankle oedema and varicosities bilaterally.",
+        "row": "G2"
+      },
+      {
+        "trigger": "On ulcer examination (only provide the 3 × 2 cm size when examined or explicitly requested)",
+        "finding": "Model shows shallow 3 × 2 cm right medial gaiter ulcer, irregular sloping edge, granulation and moderate serous exudate.",
+        "row": "G3"
+      },
+      {
+        "trigger": "If asked about infection or systemic illness",
+        "finding": "No fever, erythema spreading beyond the wound or purulent discharge.",
+        "row": "G3"
+      },
+      {
+        "trigger": "On arterial examination (only provide the faint right posterior tibial pulse when examined or explicitly requested)",
+        "finding": "Right foot warm, posterior tibial pulse faint, dorsalis pedis palpable; no rest pain.",
+        "row": "G4"
+      },
+      {
+        "trigger": "If ABPI is requested (do not volunteer an ABPI result; one has not been done)",
+        "finding": "ABPI not available during encounter.",
+        "row": "G4"
+      },
+      {
+        "trigger": "On sensory examination",
+        "finding": "Protective sensation intact.",
+        "row": "G5"
+      }
+    ],
+    "push": [],
+    "curveballs": [
+      {
+        "prompt": "After candidate’s compression plan: “Can you put the tight bandage on today?”",
+        "safeAnswer": "I would arrange formal arterial assessment before prescribing full therapeutic compression. If there is clinically important arterial disease, compression needs specialist assessment rather than routine application.",
+        "row": "G7"
+      },
+      {
+        "prompt": "Near the end: “What if my foot goes suddenly cold and very painful?”",
+        "safeAnswer": "That is an emergency suggesting acute limb ischaemia. They need immediate emergency assessment, not routine clinic follow-up. I would arrange urgent vascular escalation.",
+        "row": "G9"
+      }
+    ]
+  }
+}

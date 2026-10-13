@@ -1,0 +1,628 @@
+{
+  "id": "MB-464",
+  "exam": "MRCS-B",
+  "title": "New atrial fibrillation after surgery",
+  "type": "applied-knowledge",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "MRCS Part B • emergency surgical decision-making",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "NICE NG196 (2021)",
+      "NICE CG50 (2007 recommendations)"
+    ],
+    "related": [
+      {
+        "id": "MB-459",
+        "why": "postoperative fluids; both assess reversible postoperative physiology"
+      },
+      {
+        "id": "MB-460",
+        "why": "hyperkalaemia; both assess reversible postoperative physiology"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "General surgical ward",
+    "role": "Core surgical trainee",
+    "scenario": "You are the core surgical trainee on a general surgical ward. A 71-year-old patient on postoperative day 2 after right hemicolectomy has palpitations.",
+    "task": "Review the ECG, identify risk, and tell the examiner how you would assess and manage the patient."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Treat postoperative AF as a clinical syndrome: assess stability first, ECG-confirm, find reversible triggers, then choose appropriate rate/rhythm strategy and individualise anticoagulation.",
+    "trap": "Automatically giving an AV-nodal blocker without recognising new hypotension, or automatically anticoagulating immediately after bowel surgery.",
+    "firstMove": "I will check haemodynamic stability first, obtain a 12-lead ECG and call the medical/anaesthetic team for help if unstable."
+  },
+  "flow": [
+    "Assess stability: ABCDE, BP, mentation, chest pain, heart failure and shock.",
+    "Confirm irregular narrow-complex AF on ECG and assess triggers: infection, hypoxia, pain, anaemia, fluid status, K/Mg.",
+    "In stable AF, discuss rate control, medication contraindications and monitoring with senior/medical team.",
+    "Assess stroke risk and bleeding risk, including recent surgery and possible haemostasis concerns, before an individualised anticoagulation decision.",
+    "If new haemodynamic instability, urgent senior response and synchronised electrical cardioversion as appropriate; document and arrange monitoring/follow-up."
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-skill",
+      "label": "Immediate stability",
+      "fail": "Starts rate-control drug without checking BP or perfusion.",
+      "borderline": "Checks pulse only and calls patient stable.",
+      "pass": "ABCDE, checks BP, consciousness, chest pain, breathlessness and shock.",
+      "high": "Repeatedly prioritises stability and plans response to any change."
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-knowledge",
+      "label": "ECG diagnosis",
+      "fail": "Mislabels regular SVT as AF.",
+      "borderline": "Says AF without describing rhythm.",
+      "pass": "Identifies irregular narrow-complex rhythm with absent consistent P waves.",
+      "high": "Checks for ischaemic changes, rate, and alternative causes."
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "Clinical triggers",
+      "fail": "No review of postoperative causes.",
+      "borderline": "Checks only pain or infection.",
+      "pass": "Evaluates volume, hypoxia, sepsis, bleeding, drugs, electrolytes.",
+      "high": "Links low K/Mg to arrhythmia and requests timely correction."
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-knowledge",
+      "label": "Initial investigations",
+      "fail": "No bloods or monitoring.",
+      "borderline": "Bloods only with no ECG plan.",
+      "pass": "Full observations, ECG, blood count, U&Es/Mg, infection tests as indicated.",
+      "high": "Targets tests to bleeding, cardiac injury or infection if signs suggest them."
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-knowledge",
+      "label": "Stable management",
+      "fail": "Gives a poorly chosen agent despite contraindication.",
+      "borderline": "Says “rate control” but no monitoring or senior plan.",
+      "pass": "Discusses appropriate rate control with contraindication/EF assessment and review.",
+      "high": "Clearly separates rate/rhythm choices based on onset, symptoms and physiology."
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-knowledge",
+      "label": "Anticoagulation decision",
+      "fail": "Starts full-dose anticoagulation (e.g. a DOAC) automatically after surgery without bleeding-risk assessment or surgical input.",
+      "borderline": "Mentions CHA₂DS₂-VASc only.",
+      "pass": "Assesses stroke and bleeding risk, recent haemostasis and senior decision on anticoagulation.",
+      "high": "Explains ongoing reassessment and shared specialist-surgical planning."
+    },
+    {
+      "id": "G7",
+      "domain": "professionalism",
+      "label": "Deterioration",
+      "fail": "Gives more oral beta-blocker at BP 76/44.",
+      "borderline": "Recognises low BP without urgent response.",
+      "pass": "Recognises unstable AF and calls emergency expert help for synchronised cardioversion.",
+      "high": "Plans immediate resuscitation, monitoring and cardioversion without delay for anticoagulation."
+    },
+    {
+      "id": "G8",
+      "domain": "communication",
+      "label": "Communication and role",
+      "fail": "Uses unsupported definitive prescribing.",
+      "borderline": "Tells nurse “doctor will review” without plan.",
+      "pass": "Escalates to surgical registrar and medical/anaesthetic support, documents actions.",
+      "high": "Uses concise SBAR and delegates monitoring, medicines and rapid review."
+    },
+    {
+      "id": "G9",
+      "domain": "professionalism",
+      "label": "Aftercare",
+      "fail": "No monitoring or follow-up plan.",
+      "borderline": "Suggests repeat pulse later.",
+      "pass": "Plans repeat ECG, K/Mg and clinical review, discharge follow-up and risk reassessment.",
+      "high": "Coordinates longer-term AF assessment, stroke prevention and recurrence counselling."
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "candidate",
+        "text": "Hello, I am the core surgical trainee. The pulse is fast—perhaps I should give a beta-blocker.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Nurse: Her pulse is irregular at 142; BP is 118/72."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I do not think we need a 12-lead ECG yet. The rate alone is enough.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "She has just undergone major bowel surgery. What might be contributing?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "It is probably anxiety; no blood tests are necessary.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What investigations and monitoring do you want?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "None; no bloods or cardiac monitoring are needed.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Her potassium is 3.2 and magnesium is low."
+      },
+      {
+        "speaker": "candidate",
+        "text": "That can wait. I will prescribe a rate-control tablet without reviewing contraindications.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          },
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Nurse: She now reports chest pain, looks clammy and BP is 76/44."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Give another tablet and recheck after an hour.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Who will you involve?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "No one; I will prescribe amiodarone and digoxin myself, and that settles it.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What about anticoagulation?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Every postoperative AF patient needs a DOAC immediately, regardless of the operation.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What happens after this episode?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Nothing further; no repeat ECG or follow-up is needed.",
+        "tags": [
+          {
+            "row": "G9",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "candidate",
+        "text": "I am the core surgical trainee. I will check the patient first: is there chest pain, breathlessness, confusion, hypotension or evidence of heart failure?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Nurse: She has palpitations but is alert, BP 118/72, saturation 96%, no chest pain now."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Please obtain a 12-lead ECG, attach cardiac monitoring and repeat full observations. The ECG shows an irregular narrow-complex tachycardia, no consistent P waves, rate 142: this is atrial fibrillation with rapid ventricular response.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          },
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What may have triggered this after a colectomy?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Pain, infection, fluid shifts, hypoxia, blood loss, potassium or magnesium deficits and medication effects. I would examine, review fluid balance, and check FBC, U&Es, magnesium and other tests guided by findings.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Potassium is 3.2 and magnesium 0.61. What next?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Correct electrolytes in a monitored setting, look for bleeding or infection, and discuss rate control with the surgical registrar and medical team, taking account of BP, ventricular function and drug contraindications.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          },
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Would you prescribe anticoagulation now?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Not automatically. I would assess CHA₂DS₂-VASc stroke risk, ORBIT or bleeding risk, the fresh anastomosis and surgical haemostasis, then make an individualised senior plan. VTE prophylaxis is a separate decision.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Nurse: She now has chest pain, looks clammy, and BP is 76/44."
+      },
+      {
+        "speaker": "candidate",
+        "text": "She is now haemodynamically unstable. Call the emergency medical/anaesthetic and senior surgical teams, ABCDE, oxygen if needed, IV access and monitoring; prepare urgent synchronised electrical cardioversion. Do not delay life-saving cardioversion to achieve anticoagulation.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          },
+          {
+            "row": "G7",
+            "band": "pass"
+          },
+          {
+            "row": "G8",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What do you document afterwards?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "ECG changes, haemodynamics, treatments and response; repeat ECG, electrolytes, recurrence monitoring, stroke/bleeding review and appropriate follow-up.",
+        "tags": [
+          {
+            "row": "G9",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "candidate",
+        "text": "I will assess this postoperative tachyarrhythmia at the bedside before choosing medication. Nurse, please continue cardiac monitoring and give me repeat BP, mentation, perfusion, oxygenation and any chest discomfort.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          },
+          {
+            "row": "G8",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Nurse: She is alert and frightened. BP 118/72, pulse 142 irregular, SpO₂ 96% and no chest pain."
+      },
+      {
+        "speaker": "candidate",
+        "text": "This ECG is irregularly irregular with no discrete consistent P waves and narrow QRS complexes: new AF with rapid ventricular response. I would scrutinise ST segments and verify there is no pre-excitation or alternative arrhythmia.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Where does your diagnostic work begin?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "On the ward and the operation chart: check bleeding, sepsis, pain, urine output, input/output, hypoxia, anaemia, medication, haemoglobin, K and Mg. Order ECG, FBC, U&Es, magnesium and clinically indicated infection or ischaemia tests.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          },
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "K is 3.2 and Mg 0.61. How would you manage stable AF?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Correct both deficits appropriately while monitoring ECG and renal function. Discuss rate control with the medical/anaesthetic team, screening for low BP, heart failure, bronchospasm or structural disease before selecting a drug; revisit rhythm control if symptoms persist or the situation changes.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          },
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Could you start a DOAC simply because she is 71?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Age contributes to risk, but it does not settle the decision. I will assess formal stroke risk and bleeding risk, determine AF duration, examine whether the anastomosis is haemostatically secure, and agree timing and drug choice with the operating consultant and relevant specialist. We must document reassessment.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Nurse: She has suddenly developed central chest pressure and is sweaty. BP 76/44."
+      },
+      {
+        "speaker": "candidate",
+        "text": "We have crossed into instability. Activate emergency response now, call senior surgery and anaesthesia, prepare monitored resuscitation and urgent synchronised electrical cardioversion. An unstable patient must not wait for anticoagulation or an oral rate-control tablet.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          },
+          {
+            "row": "G7",
+            "band": "high"
+          },
+          {
+            "row": "G8",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How will you hand over?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "“Postoperative day two after right hemicolectomy, new ECG-confirmed AF at 142 initially stable, K 3.2/Mg 0.61, now chest pain and BP 76/44; emergency team and cardioversion preparations underway.”",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What are the follow-up risks?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Continue rhythm and haemodynamic monitoring, review cause, repeat electrolytes and ECG, assess cardiac function as indicated, and ensure a documented anticoagulation review and follow-up plan even if sinus rhythm returns.",
+        "tags": [
+          {
+            "row": "G9",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G1",
+      "move": "Treats BP 76/44 with further oral rate-control medication instead of emergency response.",
+      "consequence": "Risks collapse and delay to cardioversion."
+    },
+    {
+      "row": "G6",
+      "move": "Automatically starts full-dose anticoagulation after major bowel surgery without a bleeding-risk assessment and surgical input (recent surgery affects timing; it does not permanently rule anticoagulation out).",
+      "consequence": "Risks serious postoperative haemorrhage."
+    },
+    {
+      "row": "G2",
+      "move": "Treats without ECG rhythm confirmation.",
+      "consequence": "May mismanage another tachyarrhythmia."
+    },
+    {
+      "row": "G3",
+      "move": "Ignores marked postoperative electrolyte deficits.",
+      "consequence": "May perpetuate arrhythmia and instability."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "If you focused too early on rate control",
+      "line": "I have focused too early on rate control. Let me first repeat the blood pressure and determine whether this is unstable AF before choosing treatment."
+    },
+    {
+      "when": "When the blood pressure falls to 76/44 with chest pain",
+      "line": "The blood pressure has now fallen to 76/44 with chest pain. I must abandon the stable pathway and request immediate cardioversion support."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Postoperative AF after non-cardiothoracic surgery is managed as other newly presenting AF.",
+      "source": "NICE-NG196"
+    },
+    {
+      "fact": "Correct reversible causes including hypoxia and electrolyte imbalance.",
+      "source": "NICE-NG196"
+    },
+    {
+      "fact": "ECG confirmation and initial assessment precede selection of treatment.",
+      "source": "NICE-NG196"
+    },
+    {
+      "fact": "Life-threatening instability requires emergency electrical cardioversion without delaying for anticoagulation.",
+      "source": "NICE-NG196"
+    },
+    {
+      "fact": "Anticoagulation requires stroke-risk and bleeding-risk assessment, particularly after recent surgery.",
+      "source": "NICE-NG196"
+    },
+    {
+      "fact": "Clinical concern and hypotension trigger urgent escalation and increased observation.",
+      "source": "NICE-CG50"
+    }
+  ],
+  "recall": {
+    "think": "Stable or unstable AF comes before choosing rate control.",
+    "say": "“Confirm ECG, correct triggers, reassess perfusion.”",
+    "do": [
+      "Monitor, investigate K/Mg/bleeding/sepsis, involve senior team."
+    ],
+    "numbers": [
+      {
+        "value": "142",
+        "meaning": "Case HR",
+        "source": "NICE-NG196"
+      },
+      {
+        "value": "3.2 mmol/L; 0.61 mmol/L",
+        "meaning": "K; Mg",
+        "source": "NICE-NG196"
+      },
+      {
+        "value": "76/44",
+        "meaning": "later BP",
+        "source": "NICE-CG50"
+      }
+    ],
+    "trap": "Never medicate through shock or automatically anticoagulate a fresh anastomosis.",
+    "finish": "Risk-balanced anticoagulation review and follow-up after acute treatment."
+  },
+  "sources": [
+    {
+      "id": "NICE-NG196",
+      "name": "NICE NG196, Atrial fibrillation: diagnosis and management",
+      "version": "April 2021; online recommendations accessed 12 October 2026",
+      "url": "https://www.nice.org.uk/guidance/NG196/chapter/recommendations",
+      "supports": "Sections: diagnosis; acute presentation; stroke/bleeding assessment; 1.10.7–1.10.8 postoperative AF."
+    },
+    {
+      "id": "NICE-CG50",
+      "name": "NICE CG50, Acutely ill adults in hospital",
+      "version": "25 July 2007; online recommendations accessed 12 October 2026",
+      "url": "https://www.nice.org.uk/guidance/cg50/chapter/recommendations",
+      "supports": "Sections 1.2–1.9: recognition, escalation and monitoring."
+    }
+  ],
+  "partner": {
+    "opening": "Review the ECG, identify risk, and tell the examiner how you would assess and manage the patient.",
+    "actorBrief": "Simulated patient/nurse or examiner cues: reveal only at the specified time; maintain exactly the same results in all performances. Opening nurse: “The patient feels a racing heartbeat.” Once cue given, do not describe the patient as still stable.",
+    "reveals": [
+      {
+        "trigger": "Only if asked",
+        "finding": "currently no chest pain, syncope or breathlessness; alert, BP 118/72.",
+        "row": "G1"
+      },
+      {
+        "trigger": "Only on blood-results request",
+        "finding": "K 3.2 mmol/L, magnesium 0.61 mmol/L.",
+        "row": "G3"
+      },
+      {
+        "trigger": "Later cue, AFTER stable treatment discussion",
+        "finding": "“She has just developed chest pain and is clammy; BP now 76/44.”",
+        "row": "G7"
+      }
+    ],
+    "push": [],
+    "curveballs": [
+      {
+        "prompt": "Would you anticoagulate her now?",
+        "safeAnswer": "Not automatically. I would assess CHA₂DS₂-VASc stroke risk, ORBIT or bleeding risk, the fresh anastomosis and surgical haemostasis, then make an individualised senior plan. VTE prophylaxis is a separate decision.",
+        "row": "G6"
+      }
+    ]
+  }
+}

@@ -1,0 +1,761 @@
+{
+  "id": "MB-443",
+  "exam": "MRCS-B",
+  "title": "Respiratory examination after lung resection",
+  "type": "examination",
+  "header": {
+    "domain": "Applied Skills",
+    "contentArea": "Clinical examination / thoracic surgery",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "signalMinutes": 6,
+    "guidelineVersions": [
+      "University Hospitals Plymouth NHS Trust, Thoracic Surgery Post-operative (v2, issued April 2025)",
+      "NICE NG122, Lung cancer: diagnosis and management (Accessed 12 October 2026)",
+      "NHS 111 Wales, Cancer of the lung (Accessed 12 October 2026)"
+    ],
+    "related": [
+      {
+        "id": "MB-442",
+        "why": "share examination safety skills but assess different systems"
+      },
+      {
+        "id": "MB-445",
+        "why": "share examination safety skills but assess different systems"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Thoracic follow-up clinic",
+    "role": "Core surgical trainee",
+    "scenario": "You are a core surgical trainee in the thoracic follow-up clinic. A 66-year-old patient had a right upper lobectomy eight months ago for lung cancer. They report mild stable breathlessness since surgery.",
+    "task": "Perform a focused respiratory examination, summarise the findings, and outline further assessment if the breathlessness worsens. An examiner will provide examination findings when you request them."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Recognise a previous thoracotomy and modified breath sounds without assuming that one lobe removed means a silent entire hemithorax.",
+    "trap": "Interpreting post-lobectomy changes as a pneumonectomy, or dismissing a new respiratory problem as expected postoperative breathlessness.",
+    "firstMove": "I will confirm the operation and baseline symptoms, check comfort and oxygenation, and compare both sides before interpreting the signs."
+  },
+  "flow": [
+    "Introduce, consent, check current breathlessness and vital signs.",
+    "Inspect chest wall, symmetry, scars, breathing pattern and tracheal position.",
+    "Palpate expansion, percuss and auscultate both sides systematically.",
+    "Summarise provided findings and distinguish lobectomy from pneumonectomy.",
+    "Discuss warning signs, investigations, appropriate senior review and safety-netting."
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "communication",
+      "label": "Introduction and consent",
+      "fail": "No role/consent; proceeds abruptly",
+      "borderline": "Partial introduction or consent",
+      "pass": "Names core surgical trainee, confirms patient and obtains consent",
+      "high": "Adds comfort, privacy and permission for focused exposure"
+    },
+    {
+      "id": "G2",
+      "domain": "professionalism",
+      "label": "Safety and baseline",
+      "fail": "Ignores distress or observations",
+      "borderline": "Recognises breathlessness but does not check observations",
+      "pass": "Checks rest symptoms, RR and oxygen saturation",
+      "high": "Identifies change from postoperative baseline and any red flags"
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-skill",
+      "label": "Inspection",
+      "fail": "Misses thoracotomy scar",
+      "borderline": "Notices scar only",
+      "pass": "Examines scar, symmetry, work of breathing and trachea",
+      "high": "Identifies likely approach and describes expected surgical context without overinterpretation"
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-skill",
+      "label": "Palpation",
+      "fail": "Omits chest expansion",
+      "borderline": "Performs only one-sided palpation",
+      "pass": "Assesses trachea and bilateral expansion",
+      "high": "Relates right upper asymmetry to prior upper-lobe resection cautiously"
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-skill",
+      "label": "Percussion",
+      "fail": "Percusses one point",
+      "borderline": "Limited comparison",
+      "pass": "Compares corresponding zones bilaterally",
+      "high": "States a change requires correlation rather than inferring absence of whole lung"
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-skill",
+      "label": "Auscultation",
+      "fail": "Only auscultates right upper zone",
+      "borderline": "Incomplete comparison",
+      "pass": "Compares full accessible bilateral zones and identifies reduced right upper sounds",
+      "high": "Separates expected focal reduction from new focal signs"
+    },
+    {
+      "id": "G7",
+      "domain": "clinical-knowledge",
+      "label": "Interpretation",
+      "fail": "Calls this a right pneumonectomy",
+      "borderline": "Describes altered right side but not operation extent",
+      "pass": "States findings consistent with previous right upper lobectomy",
+      "high": "Explains anatomy: lobectomy removes a lobe; pneumonectomy removes whole lung",
+      "source": "S1"
+    },
+    {
+      "id": "G8",
+      "domain": "professionalism",
+      "label": "Assessment and escalation",
+      "fail": "Dismisses worsening breathlessness",
+      "borderline": "Offers review without urgency",
+      "pass": "States CXR, pulse oximetry, and medical/surgical review if deterioration",
+      "high": "Tailors urgency to hypoxia, fever, chest pain or acute deterioration"
+    },
+    {
+      "id": "G9",
+      "domain": "communication",
+      "label": "Communication and finish",
+      "fail": "No summary or safety advice",
+      "borderline": "Vague reassurance",
+      "pass": "Explains findings, follow-up and new symptoms needing prompt assessment",
+      "high": "Uses plain language and checks patient understanding"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "candidate",
+        "text": "I’m here to check your lungs. Take your shirt off.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "All right."
+      },
+      {
+        "speaker": "candidate",
+        "text": "You had lung surgery, so you are supposed to be breathless, aren’t you?",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "I get breathless on hills, yes."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I can see a scar on the right; that means that whole lung was taken out.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The operation note, available if requested, says right upper lobectomy."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I will not check chest expansion; the scar already tells me which side was operated on.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I will just tap once over the right upper chest; there is no need to compare the two sides.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I’ll just listen here near the scar.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "There are slightly reduced breath sounds in that upper zone."
+      },
+      {
+        "speaker": "candidate",
+        "text": "So the right lung is missing. That explains everything; I need not compare with the left.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "What if I became much more breathless tonight?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "That is probably just how it will be after surgery. Mention it at your routine review.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "fail"
+          },
+          {
+            "row": "G9",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please summarise."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Right pneumonectomy with normal postoperative breathlessness; discharge.",
+        "tags": [
+          {
+            "row": "G9",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "candidate",
+        "text": "Hello, I’m the core surgical trainee. Could I confirm your name? I’d like to examine your breathing and chest; is that all right?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "Yes, of course."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Are you struggling to breathe at the moment, or has your breathlessness changed recently?",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "No trouble sitting here. I get puffed on hills, but it hasn’t changed."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Any chest pain, fever, cough with sputum or blood?",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "No to all of those."
+      },
+      {
+        "speaker": "candidate",
+        "text": "What operation did you have, and when?",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "They removed the top lobe of my right lung eight months ago."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I would check respiratory rate, oxygen saturation, pulse, temperature and whether this is the postoperative baseline.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "RR 17, oxygen saturation 96% on air, pulse 78, afebrile."
+      },
+      {
+        "speaker": "candidate",
+        "text": "With permission I expose the chest appropriately. I inspect from the end and each side for distress, symmetry and scars. I note a healed right posterolateral thoracotomy scar. I check the trachea.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The trachea is central; there is no increased work of breathing."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I assess bilateral chest expansion, comparing upper and lower regions.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Mildly reduced expansion over the right upper chest."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I percuss corresponding zones across both lungs.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "No striking new area of stony dullness or hyperresonance."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I auscultate symmetrically front and back and listen for added sounds.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Slightly reduced breath sounds in the right upper zone; no crackles or wheeze."
+      },
+      {
+        "speaker": "candidate",
+        "text": "These findings fit previous right upper lobectomy; the whole right lung was not removed. I would compare with prior imaging and documented postoperative findings.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you assess a patient whose breathlessness became worse?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I would repeat observations and focused examination, obtain a chest X-ray and involve the surgical or respiratory team, urgently if the patient were hypoxic or acutely unwell.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "What if I suddenly got much more breathless tonight?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "That is not something to assume is normal after surgery. If severe or sudden, seek emergency assessment immediately; I would be concerned about causes such as pneumothorax, infection or pulmonary embolism depending on the symptoms. Do you understand what to watch for?",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "pass"
+          },
+          {
+            "row": "G9",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "Yes. I would get help rather than wait."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I will document the findings and compare them with your prior post-operative baseline.",
+        "tags": [
+          {
+            "row": "G9",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "candidate",
+        "text": "Hello, I’m the core surgical trainee. I’m going to assess how both sides of your chest are moving and how air enters the lungs. May I check your identity and gain consent? I can stop at any point.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "That is fine."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Before examining, are you breathless at rest today? Has your usual exercise tolerance changed since the operation?",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "No; I only get short of breath on hills and it is about the same."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Any sudden chest pain, wheeze, fever, blood in the sputum, new cough or swollen painful leg?",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "No, none of those."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Which operation was performed, and how long ago?",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "The upper lobe on the right was removed eight months ago."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I will confirm the operation from the record, compare observations with baseline and look for any immediate respiratory compromise.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "RR 17, SpO₂ 96% room air, pulse 78, normal temperature."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I expose appropriately and inspect posture, speaking comfort, respiratory effort, chest symmetry and scars from the front and back. If there is no thoracotomy scar, I would look for small VATS port scars under the arm or below the shoulder blade.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Healed right posterolateral thoracotomy scar; no distress."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I check tracheal position and then compare upper and lower chest expansion rather than treating the operated side as entirely absent.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          },
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Central trachea, modest right upper-zone reduction of movement."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Percussing matching zones on each side, I am checking for unexpected asymmetry that might need imaging.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "No new markedly abnormal percussion note."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I listen over matched anterior, lateral and posterior fields, including the bases, and check for focal crackles or wheeze.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Slight reduction in breath sounds at right upper zone only; no added sounds."
+      },
+      {
+        "speaker": "candidate",
+        "text": "My summary is a stable patient with examination features compatible with prior right upper lobectomy. The scar indicates access and the reduced local movement is plausible after resection. A pneumonectomy would mean removal of the entire right lung; I would not infer that from this scar.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The patient asks whether these signs mean lung cancer has returned."
+      },
+      {
+        "speaker": "candidate",
+        "text": "These examination findings alone cannot establish recurrence; I would review the planned oncological follow-up and imaging. I would be careful not to offer false reassurance or imply a diagnosis.",
+        "tags": [
+          {
+            "row": "G9",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "What if I suddenly got much more breathless tonight?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "A sudden change warrants emergency assessment, especially if there is chest pain, hypoxia or collapse. We would reassess observations and investigate, including chest radiography, with urgent senior review. That is different from your stable, longstanding hill-related symptoms.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "high"
+          },
+          {
+            "row": "G9",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "I understand the difference."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I would document exactly what I found, check old operative notes and images, and communicate any new concern clearly to the thoracic team.",
+        "tags": [
+          {
+            "row": "G9",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G7",
+      "move": "Incorrectly asserts the entire lung was removed, despite a recorded upper lobectomy",
+      "consequence": "risks erroneous interpretation and investigation."
+    },
+    {
+      "row": "G8",
+      "move": "Dismisses sudden severe breathlessness as routine recovery",
+      "consequence": "risks delayed recognition of a new emergency."
+    },
+    {
+      "row": "G2",
+      "move": "Starts examining without asking about breathlessness at rest or checking oxygen saturation",
+      "consequence": "would miss hypoxia if present."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "If you summarised it as a pneumonectomy",
+      "line": "I need to correct my summary: the operation was an upper lobectomy, not a pneumonectomy; I will verify the operation record."
+    },
+    {
+      "when": "If you treated a new change in breathing as stable postoperative limitation",
+      "line": "A new change in breathing is different from stable postoperative limitation. I would reassess observations and escalate now."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "A lobectomy removes one lobe; a pneumonectomy removes an entire lung.",
+      "source": "S1"
+    },
+    {
+      "fact": "A thoracotomy commonly involves an incision along the side of the chest below the shoulder blade.",
+      "source": "S1"
+    },
+    {
+      "fact": "Breathlessness can persist after lung cancer surgery, especially with pre-existing respiratory limitation.",
+      "source": "S3"
+    },
+    {
+      "fact": "Many lung resections are done by VATS (video-assisted thoracoscopic surgery) or RATS (robot-assisted) through small 1–5 cm cuts under the arm and/or below the shoulder blade, so a large thoracotomy scar is not always present.",
+      "source": "S1"
+    },
+    {
+      "fact": "After lung cancer treatment, offer an initial specialist follow-up appointment within 6 weeks and regular appointments afterwards; tell people how to contact their clinical nurse specialist between visits.",
+      "source": "S2"
+    }
+  ],
+  "recall": {
+    "think": "Scar plus focal right upper-zone signs means lobectomy, not pneumonectomy. Stable baseline or new change?",
+    "say": "“These findings fit a previous right upper lobectomy; I would compare them with the operation note and prior imaging.”",
+    "do": [
+      "Observations → inspect (thoracotomy or VATS scars, symmetry, trachea) → expansion → percussion → auscultation, always comparing both sides."
+    ],
+    "numbers": [
+      {
+        "value": "RR 17/min",
+        "meaning": "No fixed diagnostic threshold. Scenario observations: interpret with baseline.",
+        "source": "S1"
+      },
+      {
+        "value": "SpO₂ 96% on room air",
+        "meaning": "Scenario observations: interpret with baseline.",
+        "source": "S1"
+      }
+    ],
+    "trap": "Interpreting post-lobectomy changes as a pneumonectomy, or dismissing a new respiratory problem as expected postoperative breathlessness.",
+    "finish": "Sudden or severe change means urgent assessment (observations, chest X-ray, senior review); questions about recurrence go to the planned oncology follow-up."
+  },
+  "sources": [
+    {
+      "id": "S1",
+      "name": "University Hospitals Plymouth NHS Trust, Thoracic Surgery Post-operative",
+      "version": "v2, issued April 2025",
+      "url": "https://www.plymouthhospitals.nhs.uk/display-pil/pil-thoracic-surgery-postoperative-6304",
+      "supports": "section “Types of Lung Surgery” and “Accessing the lung for surgery”"
+    },
+    {
+      "id": "S2",
+      "name": "NICE NG122, Lung cancer: diagnosis and management",
+      "version": "Accessed 12 October 2026",
+      "url": "https://www.nice.org.uk/guidance/ng122/chapter/Follow-up-and-patient-perspectives",
+      "supports": "recommendations 1.19.1–1.19.3 (follow-up)"
+    },
+    {
+      "id": "S3",
+      "name": "NHS 111 Wales, Cancer of the lung",
+      "version": "Accessed 12 October 2026",
+      "url": "https://111.wales.nhs.uk/cancerofthelung/",
+      "supports": "section “Surgery”"
+    }
+  ],
+  "partner": {
+    "opening": "Perform a focused respiratory examination, summarise the findings, and outline further assessment if the breathlessness worsens.",
+    "actorBrief": "Opening: “I get a bit short of breath walking up hills, but it has been much the same since my operation.” Only answer when asked: operation right upper lobectomy eight months ago; breathing at rest comfortable; no fever, productive cough, haemoptysis or pleuritic chest pain; walking distance stable. Do not volunteer surgical type before asked.",
+    "reveals": [
+      {
+        "trigger": "When observations are requested",
+        "finding": "Patient is comfortable at rest, RR 17/min, SpO₂ 96% on room air, pulse 78/min, afebrile.",
+        "row": "G2"
+      },
+      {
+        "trigger": "If candidate asks about oxygen",
+        "finding": "examiner supplies SpO₂ 96% at rest",
+        "row": "G2"
+      },
+      {
+        "trigger": "On inspection",
+        "finding": "Healed right posterolateral thoracotomy scar.",
+        "row": "G3"
+      },
+      {
+        "trigger": "On palpation and auscultation",
+        "finding": "Mild reduction of right upper chest expansion and breath sounds in the right upper zone; no new focal crackles, wheeze or stridor; trachea central.",
+        "row": "G6"
+      },
+      {
+        "trigger": "If the operation is asked about",
+        "finding": "Prior operation is RIGHT UPPER LOBECTOMY, not pneumonectomy.",
+        "row": "G7"
+      },
+      {
+        "trigger": "General rule",
+        "finding": "Examiner gives the case examination observations only when each examination step is requested.",
+        "row": "G3"
+      }
+    ],
+    "push": [],
+    "curveballs": [
+      {
+        "prompt": "Curveball at ~minute 6, after candidate interpretation: “What if I became much more breathless tonight?”",
+        "safeAnswer": "if acute hypothetical, no fresh values are supplied and candidate must call for urgent assessment.",
+        "row": "G8"
+      }
+    ]
+  }
+}

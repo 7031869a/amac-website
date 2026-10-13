@@ -1,0 +1,655 @@
+{
+  "id": "MB-463",
+  "exam": "MRCS-B",
+  "title": "Perforated peptic ulcer",
+  "type": "applied-knowledge",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "MRCS Part B • emergency surgical decision-making",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "WSES (2020)",
+      "NICE CG50 (2007 recommendations)"
+    ],
+    "related": [
+      {
+        "id": "MB-458",
+        "why": "surgical sepsis; both test timely source control"
+      },
+      {
+        "id": "MB-462",
+        "why": "sigmoid volvulus; both test timely source control"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Emergency surgical assessment unit",
+    "role": "Core surgical trainee",
+    "scenario": "You are the core surgical trainee in the emergency surgical assessment unit. A 54-year-old patient has sudden severe epigastric pain and now looks acutely unwell.",
+    "task": "Review the observations and imaging request and explain immediate management to the examiner. A simulated nurse answers operational questions."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Suspect hollow-viscus perforation and septic/hypovolaemic shock; stabilise in parallel with urgent surgical source control.",
+    "trap": "Treating the CT or an erect film as a prerequisite to urgently resuscitating and involving the consultant.",
+    "firstMove": "I am worried about perforation with shock. Please call the consultant surgeon and anaesthetist while I start ABCDE."
+  },
+  "flow": [
+    "Recognise peritonitis and physiological shock immediately.",
+    "ABCDE, monitoring, oxygen if indicated, two IV lines, bloods/cultures as appropriate, blood gas/lactate, crossmatch, fluids guided by response and urinary catheter.",
+    "Keep nil by mouth; IV analgesia, IV broad-spectrum antibiotics according to local intra-abdominal sepsis policy, IV PPI as clinically appropriate, NG decompression according to senior assessment.",
+    "Urgent consultant and anaesthetic review; CT with IV contrast if stable enough, without delaying life-saving intervention.",
+    "Arrange urgent operative source control; anticipate deterioration, ICU, and subsequent H. pylori/NSAID risk review."
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-knowledge",
+      "label": "Recognise emergency",
+      "fail": "Calls it indigestion and misses shock.",
+      "borderline": "Identifies abdominal emergency but no explicit shock assessment.",
+      "pass": "Identifies likely perforation, peritonitis and shock.",
+      "high": "Explains life-threatening sepsis/contamination and immediate parallel actions."
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-skill",
+      "label": "ABCDE and escalation",
+      "fail": "Continues routine history despite BP 88/54.",
+      "borderline": "Requests help late without named teams.",
+      "pass": "Uses ABCDE and urgently calls consultant and anaesthesia.",
+      "high": "Delegates actions with explicit re-evaluation and critical care planning."
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-skill",
+      "label": "Access and monitoring",
+      "fail": "No IV access or continuous observations.",
+      "borderline": "One cannula and occasional BP.",
+      "pass": "Two IV cannulas; ECG/SpO₂/BP monitoring; repeat physiology.",
+      "high": "Plans invasive monitoring if indicated with anaesthesia/critical care."
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-knowledge",
+      "label": "Investigations",
+      "fail": "Requests only an abdominal radiograph.",
+      "borderline": "Bloods but no lactate or crossmatch.",
+      "pass": "FBC, U&Es, CRP, clotting, blood gas/lactate, group/crossmatch.",
+      "high": "Explains serial lactate and tests do not delay treatment."
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-knowledge",
+      "label": "Resuscitation",
+      "fail": "Withholds resuscitation while waiting for CT.",
+      "borderline": "Gives fluid with no reassessment.",
+      "pass": "Gives appropriate IV resuscitation and reassesses perfusion/urine output.",
+      "high": "Anticipates repeated assessment, overload risk, blood products or pressors with senior team."
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-knowledge",
+      "label": "Contamination management",
+      "fail": "No antibiotics, allows food.",
+      "borderline": "Nil by mouth but delayed antimicrobials.",
+      "pass": "Nil by mouth, timely IV antibiotics, analgesia; consider NG/PPI under team plan.",
+      "high": "Explains local antibiotic choice, allergy check and source-control priority."
+    },
+    {
+      "id": "G7",
+      "domain": "professionalism",
+      "label": "Imaging decision",
+      "fail": "Insists CT despite deterioration.",
+      "borderline": "Requests CT without considering stability.",
+      "pass": "CT if safe; unstable patient requires immediate senior decision on surgery.",
+      "high": "Uses imaging to plan treatment but never substitutes it for source control."
+    },
+    {
+      "id": "G8",
+      "domain": "clinical-knowledge",
+      "label": "Surgery/source control",
+      "fail": "Suggests observation alone.",
+      "borderline": "Mentions surgery without urgency.",
+      "pass": "Urgent operative source control; discusses repair/lavage options with consultant.",
+      "high": "Anticipates laparoscopic/open approach based on physiology and perforation characteristics."
+    },
+    {
+      "id": "G9",
+      "domain": "professionalism",
+      "label": "Reassessment and communication",
+      "fail": "Ignores later BP 78/46 cue.",
+      "borderline": "Notes falling BP but no response plan.",
+      "pass": "Escalates new shock, repeat ABCDE and reassess fluid/organ support.",
+      "high": "Provides concise SBAR and explains severity and aftercare to patient/family."
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "candidate",
+        "text": "Hello, I am the core surgical trainee. Where exactly is the pain?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "All over now; it started very suddenly high in my abdomen."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Perhaps it is gastritis. Are you taking painkillers?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "Ibuprofen most days. I feel faint."
+      },
+      {
+        "speaker": "examiner",
+        "text": "Nurse: His BP is 88/54 and his pulse is 124."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Let us wait for the CT result before starting fluids or calling the consultant.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          },
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The abdomen is rigid. Does that change your plan?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I will arrange an abdominal film first. Antibiotics can wait until we confirm the diagnosis.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What access, monitoring and tests do you want?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "He does not need a cannula or monitoring yet; an abdominal radiograph is the only test I need.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          },
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Nurse: He is getting more drowsy and BP is now 78/46."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Perhaps he is anxious. We can repeat observations in an hour.",
+        "tags": [
+          {
+            "row": "G9",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Would you still send him for CT now?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Yes, CT must come first, whatever his blood pressure does.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "candidate",
+        "text": "This is a surgical emergency. A rigid abdomen, tachycardia and BP 88/54 suggest perforation with shock. Please contact the on-call consultant surgeon and anaesthetist now.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          },
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Nurse: They are being paged. What would you like first?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I will assess airway and breathing, repeat full observations, attach ECG, pulse oximetry and frequent BP, and obtain two wide-bore cannulas.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          },
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Nurse: The patient is alert but distressed. Oxygen saturation remains 95% on air."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Please take FBC, U&Es, CRP, liver tests, clotting, venous blood gas and lactate, and group and crossmatch. Record a fluid balance chart.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          },
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Lactate is 4.1 mmol/L. What do you do before imaging?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Begin careful IV crystalloid resuscitation with repeated BP and perfusion checks, give IV analgesia, keep nil by mouth, and administer IV broad-spectrum antibiotics under the local intra-abdominal sepsis policy after an allergy check. I will consider NG decompression with the senior team.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          },
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Would you request a CT?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Yes, CT abdomen/pelvis with IV contrast if stable enough, but I will not delay consultant review or surgery in an unstable patient.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "CT now shows free gas and fluid near the duodenal bulb. Interpret this."
+      },
+      {
+        "speaker": "candidate",
+        "text": "This supports perforated peptic ulcer with peritonitis. They need urgent operative source control, with laparoscopy or laparotomy and repair as appropriate to physiology and operative findings.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          },
+          {
+            "row": "G8",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Nurse: His blood pressure has fallen to 78/46."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Please activate emergency senior and anaesthetic support at the bedside. Repeat ABCDE and lactate, reassess fluid response, catheterise for urine-output monitoring and prepare for theatre and higher-level care.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          },
+          {
+            "row": "G5",
+            "band": "pass"
+          },
+          {
+            "row": "G9",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What should happen after the operation?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Monitor for sepsis, leak and organ dysfunction; review ulcer risk, avoid NSAIDs when possible, and test/treat H. pylori according to the definitive diagnosis and senior plan.",
+        "tags": [
+          {
+            "row": "G9",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "candidate",
+        "text": "Before any further history, this is presumed upper gastrointestinal perforation with peritonitis and shock: BP 88/54, pulse 124 and a rigid abdomen. Nurse, please summon consultant surgery and anaesthesia immediately; I will lead ABCDE until they arrive.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          },
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Nurse: I have sent both calls."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Is the airway patent, what is the work of breathing, and is there ongoing vomiting? Apply continuous pulse oximetry and ECG, cycle BP frequently, and establish two large-bore peripheral IV lines.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          },
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Nurse: He is talking, breathing quickly and retching, with saturation 95%."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Oxygen only if clinically needed; suction available. Please send FBC, U&Es, liver tests, clotting, inflammatory markers, gas including lactate, and group and crossmatch; confirm drug allergies, anticoagulants and antibiotic timing.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          },
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The lactate is 4.1. What is your immediate therapeutic plan?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Keep nil by mouth, give titrated IV analgesia and prompt broad-spectrum IV antimicrobials covering intra-abdominal contamination according to local guidance, and resuscitate with crystalloid in reassessed increments. We need repeated mental state, pulse pressure, capillary refill, lactate and urine output—not fluid on autopilot.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          },
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The radiology team can obtain CT, but there is a short delay."
+      },
+      {
+        "speaker": "candidate",
+        "text": "If he responds and transfer is safe, contrast CT defines the perforation. With continuing shock, imaging must not become a barrier to timely surgery. I would brief the consultant and anaesthetic team now to coordinate source control.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          },
+          {
+            "row": "G8",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "CT shows free gas around the duodenal bulb and intraperitoneal fluid."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I would present this as a likely perforated duodenal ulcer. Management is urgent operative repair with lavage, selecting laparoscopic versus open surgery based on physiology and surgical judgement; discuss gastric biopsy or alternative repair if operative findings demand it.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Nurse: His BP has dropped to 78/46. He is now more drowsy."
+      },
+      {
+        "speaker": "candidate",
+        "text": "That is evolving refractory shock. Activate immediate bedside consultant/anaesthetic response, repeat ABCDE, reassess volume status and perfusion, obtain repeat gas, and prepare for vasopressor support, organ support and urgent theatre with the critical-care team.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          },
+          {
+            "row": "G5",
+            "band": "high"
+          },
+          {
+            "row": "G9",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What would you tell the family?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I would explain plainly that there may be a hole in the stomach or duodenum causing infection and dangerously low blood pressure, that urgent treatment and an operation are likely, and that the team will update them as decisions are made.",
+        "tags": [
+          {
+            "row": "G9",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Any measures after recovery?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Document perforation cause and treatment; arrange H. pylori assessment and eradication when indicated, NSAID review and follow-up, with operative and microbiology findings guiding duration of therapy.",
+        "tags": [
+          {
+            "row": "G9",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G2",
+      "move": "Waits for CT while patient is in shock.",
+      "consequence": "Uncorrected shock and delayed resuscitation."
+    },
+    {
+      "row": "G6",
+      "move": "Omits antibiotics in established perforation/peritonitis.",
+      "consequence": "Avoidable progression of infection."
+    },
+    {
+      "row": "G8",
+      "move": "Attempts prolonged non-operative observation despite diffuse peritonitis.",
+      "consequence": "Delays definitive source control."
+    },
+    {
+      "row": "G9",
+      "move": "Ignores falling BP and consciousness.",
+      "consequence": "May miss impending cardiovascular collapse."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "If you have been focusing on imaging",
+      "line": "I have been focusing on imaging; I need to correct course—this patient is shocked. I am calling the consultant and anaesthetist while I start resuscitation."
+    },
+    {
+      "when": "If there is no CT report yet",
+      "line": "Even without a CT report, a rigid abdomen and worsening physiology make source control urgent; I will escalate immediately."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Rigid peritonitis with shock requires urgent resuscitation and surgical review.",
+      "source": "WSES"
+    },
+    {
+      "fact": "Contrast CT is recommended for diagnostic definition, provided instability does not delay emergency treatment.",
+      "source": "WSES"
+    },
+    {
+      "fact": "Early broad-spectrum IV antibiotics cover perforation-related intra-abdominal infection.",
+      "source": "WSES"
+    },
+    {
+      "fact": "Emergency surgery is recommended in peritonitis or clinically significant pneumoperitoneum.",
+      "source": "WSES"
+    },
+    {
+      "fact": "Laparoscopic versus open repair depends on physiologic stability and ulcer characteristics.",
+      "source": "WSES"
+    },
+    {
+      "fact": "Escalation and observation frequency respond to physiology and clinical concern.",
+      "source": "NICE-CG50"
+    }
+  ],
+  "recall": {
+    "think": "Treat as perforation with peritonitis and shock from the outset.",
+    "say": "“This needs senior surgical and anaesthetic action now.”",
+    "do": [
+      "ABCDE, two IV lines, cultures/lactate/crossmatch, resuscitate and give IV antibiotics."
+    ],
+    "numbers": [
+      {
+        "value": "88/54 → 78/46",
+        "meaning": "Case BP",
+        "source": "NICE-CG50"
+      },
+      {
+        "value": "4.1 mmol/L",
+        "meaning": "lactate",
+        "source": "WSES"
+      },
+      {
+        "value": "None",
+        "meaning": "No fixed fluid volume replaces reassessment.",
+        "source": "WSES"
+      }
+    ],
+    "trap": "Do not postpone resuscitation or surgery just to obtain another image.",
+    "finish": "Theatre source control, organ support and ulcer-risk follow-up."
+  },
+  "sources": [
+    {
+      "id": "WSES",
+      "name": "Tarasconi et al. Perforated and bleeding peptic ulcer: WSES guidelines. World Journal of Emergency Surgery 15:3",
+      "version": "7 January 2020",
+      "url": "https://link.springer.com/article/10.1186/s13017-019-0283-9",
+      "supports": "Sections: Diagnosis; Resuscitation; Surgical treatment; Antimicrobial therapy."
+    },
+    {
+      "id": "NICE-CG50",
+      "name": "NICE CG50, Acutely ill adults in hospital",
+      "version": "25 July 2007; online recommendations accessed 12 October 2026",
+      "url": "https://www.nice.org.uk/guidance/cg50/chapter/recommendations",
+      "supports": "Sections 1.2–1.9: observation, deterioration and escalation."
+    }
+  ],
+  "partner": {
+    "opening": "Review the observations and imaging request and explain immediate management to the examiner.",
+    "actorBrief": "Simulated patient/nurse or examiner cues: reveal only at the specified time; maintain exactly the same results in all performances. Opening: “My stomach suddenly hurt terribly and now it hurts everywhere.” Never volunteer a medication history unless asked.",
+    "reveals": [
+      {
+        "trigger": "Only if asked about medication",
+        "finding": "regular ibuprofen.",
+        "row": "G1"
+      },
+      {
+        "trigger": "Only if asked about timing",
+        "finding": "began suddenly three hours ago.",
+        "row": "G1"
+      },
+      {
+        "trigger": "Cue 1, after candidate management plan",
+        "finding": "CT free gas and fluid near duodenal bulb.",
+        "row": "G8"
+      },
+      {
+        "trigger": "Cue 2, after source control discussion",
+        "finding": "BP 78/46 and new drowsiness.",
+        "row": "G9"
+      }
+    ],
+    "push": [],
+    "curveballs": []
+  }
+}

@@ -1,0 +1,827 @@
+{
+  "id": "MB-473",
+  "exam": "MRCS-B",
+  "title": "Soft tissue lump — when to suspect sarcoma",
+  "type": "data-interpretation",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "Surgical oncology and referral safety",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "NICE NG12 Suspected cancer: recognition and referral (last updated 15 April 2026)",
+      "British Sarcoma Group UK guidelines for the management of soft tissue sarcomas (2024)"
+    ]
+  },
+  "brief": {
+    "setting": "Surgical assessment clinic",
+    "role": "Core surgical trainee",
+    "scenario": "You are the core surgical trainee. 48-year-old; left upper thigh lump noticed 5 months ago, now 7 cm, deep to fascia, firm and relatively fixed; mild intermittent ache, normal distal pulses and power. Ultrasound: 7.1 × 5.4 × 4.8 cm deep heterogeneous vascular solid mass, indeterminate/suspicious for soft tissue neoplasm.",
+    "task": "Interpret the supplied clinical and ultrasound information about an enlarging left thigh lump. Explain the differential, safe investigation, referral pathway and immediate next steps to the examiner."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Surgical assessment clinic; a 48-year-old with a left thigh mass",
+    "trap": "Treating a painless lump, or an uncertain ultrasound, as permission for an unplanned excision.",
+    "firstMove": "This is an enlarging deep 7-cm soft tissue mass with concerning ultrasound findings. I would refer through the sarcoma pathway, not excise it locally."
+  },
+  "flow": [
+    "State clinical frame and identify the report’s key abnormality.",
+    "Interrogate the missing context and interpret evidence.",
+    "Explain differential and limitations, without overdiagnosis.",
+    "State safe pathway, investigations and specialist escalation.",
+    "Handle the new cue and close with explicit next steps."
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-knowledge",
+      "label": "Opening and clinical frame",
+      "fail": "Starts brusquely, calls the lesion a lipoma without seeing data.",
+      "borderline": "Introduces role but does not establish whether mass is enlarging.",
+      "pass": "Uses the growth, depth and size details to raise concern for sarcoma.",
+      "high": "Frames an enlarging deep mass as potential sarcoma, explicitly avoiding an unplanned excision."
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-knowledge",
+      "label": "Risk features",
+      "fail": "Says absence of pain excludes cancer.",
+      "borderline": "Mentions growth but misses depth and size.",
+      "pass": "Identifies 7-cm deep, enlarging thigh lump as concerning.",
+      "high": "Explains that size >5 cm and deep location increase concern, while growth alone drives NG12 urgent ultrasound.",
+      "source": "S2"
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "Ultrasound reading",
+      "fail": "Declares indeterminate scan benign.",
+      "borderline": "Notes heterogeneous finding but no next step.",
+      "pass": "Recognises deep heterogeneous vascular solid lesion as suspicious and requests sarcoma-team review.",
+      "high": "Separates ultrasound triage from definitive tissue diagnosis and requests specialist planned imaging."
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-knowledge",
+      "label": "Referral pathway",
+      "fail": "Recommends routine follow-up in 6 months.",
+      "borderline": "Requests ultrasound again without addressing concerning first scan.",
+      "pass": "Uses suspected-cancer pathway to specialist sarcoma service because scan is suggestive.",
+      "high": "Explicitly references urgent ultrasound within 2 weeks for enlarging unexplained lump and specialist referral for suspicious/uncertain scans with persisting concern.",
+      "source": "S1"
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-knowledge",
+      "label": "Biopsy planning",
+      "fail": "Offers office excision to establish diagnosis.",
+      "borderline": "Mentions biopsy without specifying specialist planning.",
+      "pass": "States that MRI and core biopsy planning belong in specialist sarcoma pathway; no unplanned excision.",
+      "high": "Explains imaging before planned image-guided core biopsy and positioning of biopsy tract with surgical team."
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-knowledge",
+      "label": "Differential and scope",
+      "fail": "Gives lipoma as certain diagnosis.",
+      "borderline": "Names benign and malignant causes but does not interpret case pattern.",
+      "pass": "Considers lipoma, haematoma and sarcoma, treating case as malignant until evaluated.",
+      "high": "Acknowledges not all >5-cm masses are sarcoma, but clinical context precludes reassurance.",
+      "source": "S2"
+    },
+    {
+      "id": "G7",
+      "domain": "clinical-knowledge",
+      "label": "Neurological and vascular function",
+      "fail": "Ignores distal symptoms.",
+      "borderline": "Asks only whether lump hurts.",
+      "pass": "Assesses pain, numbness, weakness and distal vascular symptoms, prompting examination.",
+      "high": "Integrates preserved pulses with no assurance about pathology, and checks evolving neurovascular compromise."
+    },
+    {
+      "id": "G8",
+      "domain": "clinical-knowledge",
+      "label": "Safety and patient information",
+      "fail": "Tells patient lump is harmless.",
+      "borderline": "Says cancer is possible without pathway or timeline.",
+      "pass": "Explains urgent referral without announcing a diagnosis; records and communicates plan.",
+      "high": "Handles anxiety, explains why biopsy should be specialised, ensures follow-up and safety net."
+    },
+    {
+      "id": "G9",
+      "domain": "clinical-knowledge",
+      "label": "Curveball and finish",
+      "fail": "On growth in two weeks, still books elective removal.",
+      "borderline": "Acknowledges rapid change but leaves routine appointment.",
+      "pass": "On report mass has doubled over 2 weeks, promptly contacts sarcoma team and escalates urgency.",
+      "high": "Communicates rapidly progressive symptoms to specialist same day and ensures prompt evaluation for compression or bleeding.",
+      "source": "S2"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "What concerns you most about this lump?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "It sounds like a lipoma; the lack of pain is reassuring.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Which features are significant?",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "It does not hurt; I would ignore its depth.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Interpret this ultrasound report.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "It does not say “cancer”, so the scan is normal.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What pathway do you use?",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "A routine appointment in six months is acceptable.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Would you biopsy or excise it today?",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I can excise it under local anaesthetic for diagnosis.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What are your alternatives?",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "A lipoma is the only likely diagnosis.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What symptoms would you ask about next?",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Only pain.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What would you tell this patient?",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I would say “it is definitely benign” to avoid worrying them.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "New information: it has doubled in size over two weeks and feels tight. What now?",
+        "tags": [
+          {
+            "row": "G9",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I would retain the elective plan.",
+        "tags": [
+          {
+            "row": "G9",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "examiner",
+        "text": "What concerns you most about this lump?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "It has enlarged over five months, is deep and measures seven centimetres. I would consider sarcoma and avoid removing it without specialist assessment.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Which features are significant?",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Growth, depth, size and fixation are relevant. I would assess neurological or vascular symptoms as well.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Interpret this ultrasound report.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "A heterogeneous vascular deep solid mass is suspicious; ultrasound cannot establish subtype.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What pathway do you use?",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "NG12 says to consider urgent ultrasound for a growing unexplained mass, and a suspected-cancer referral when findings are suspicious or uncertain with concern.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Would you biopsy or excise it today?",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "No local excision. Specialist imaging and planned core biopsy are needed.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What are your alternatives?",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Lipoma, haematoma and malignant soft tissue tumour, but the findings require sarcoma exclusion.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What symptoms would you ask about next?",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Pain, numbness, weakness, skin change and vascular symptoms.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What would you tell this patient?",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "The ultrasound is concerning and needs an urgent specialist opinion; it does not prove cancer.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "New information: it has doubled in size over two weeks and feels tight. What now?",
+        "tags": [
+          {
+            "row": "G9",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I would contact the specialist service promptly today, update the referral and assess new neurovascular symptoms.",
+        "tags": [
+          {
+            "row": "G9",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "examiner",
+        "text": "What concerns you most about this lump?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "An enlarging, 7-cm, deep solid thigh mass requires prompt sarcoma assessment; pain is neither necessary nor sufficient for malignancy.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Which features are significant?",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Its deep location, relatively fixed nature and growth are concerning. I would document distal power, sensation and perfusion and not confuse intact pulses with benignity.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Interpret this ultrasound report.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "The report says indeterminate or suspicious for soft tissue neoplasm. That requires referral; imaging triages but does not give definitive histology.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What pathway do you use?",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "This has already met the ultrasound criterion and the report remains suspicious: I would arrange the sarcoma suspected-cancer pathway and make sure the result is acknowledged.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Would you biopsy or excise it today?",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I would not biopsy or excise it outside the specialist plan. The sarcoma MDT coordinates further imaging and biopsy tract planning to preserve definitive treatment options.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What are your alternatives?",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Benign mimics exist, but the accelerating growth and deep solid vascular appearance make unplanned reassurances inappropriate.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What symptoms would you ask about next?",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I would ask about progressive neurological symptoms, tightness, swelling, skin involvement and function. Compression warrants prompt examination.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What would you tell this patient?",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I would explain the uncertainty, the reason for an urgent referral and the importance of not having a casual “lump removal”; I would document who owns follow-up.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "New information: it has doubled in size over two weeks and feels tight. What now?",
+        "tags": [
+          {
+            "row": "G9",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "That is an important change: I would assess for acute compression or bleeding, contact the sarcoma team the same day and ensure the urgency and safety-net advice reach the patient.",
+        "tags": [
+          {
+            "row": "G9",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please summarise your next action in one sentence."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I will contact the sarcoma team today and document who follows up."
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G4",
+      "move": "Delays specialist referral for a suspicious deep growing solid mass.",
+      "consequence": "Potential delay in sarcoma diagnosis."
+    },
+    {
+      "row": "G5",
+      "move": "Performs unplanned local excision or biopsy without specialist planning.",
+      "consequence": "May compromise definitive management."
+    },
+    {
+      "row": "G9",
+      "move": "Ignores rapid enlargement with possible compression.",
+      "consequence": "May miss acute nerve or vascular compromise."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "If you called it a lipoma too soon",
+      "line": "I called it a lipoma too soon. Growth, depth and this ultrasound make sarcoma possible; I will stop any local excision plan and refer to the sarcoma service."
+    },
+    {
+      "when": "If the new rapid growth is reported",
+      "line": "The new rapid growth changes my urgency. I will examine distal neurological and vascular function and contact the specialist pathway today."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "For an adult with an unexplained lump that is increasing in size, NG12 says consider an urgent direct-access ultrasound, performed within two weeks.",
+      "source": "S1"
+    },
+    {
+      "fact": "Ultrasound suspicious for sarcoma or uncertain with continued clinical concern means considering a suspected cancer pathway referral.",
+      "source": "S1"
+    },
+    {
+      "fact": "Large (>5 cm), deep or growing masses increase concern but no single feature makes a histological diagnosis.",
+      "source": "S2"
+    },
+    {
+      "fact": "Suspected sarcoma is evaluated in a specialist pathway with imaging and planned tissue sampling.",
+      "source": "S2"
+    },
+    {
+      "fact": "Core biopsy and biopsy-tract planning are usually specialist-directed, avoiding an unplanned excision.",
+      "source": "S2"
+    },
+    {
+      "fact": "Rapid enlargement warrants prompt re-discussion with the specialist team and assessment for compression or bleeding.",
+      "source": "S2"
+    }
+  ],
+  "recall": {
+    "think": "An enlarging deep solid mass is potentially sarcoma until specialist investigation.",
+    "say": "“I will refer this suspicious 7-cm thigh mass through the sarcoma pathway.”",
+    "do": [
+      "Check size, depth, growth, ultrasound, neurovascular findings and specialist referral."
+    ],
+    "numbers": [
+      {
+        "value": "2 weeks",
+        "meaning": "NG12 ultrasound within 2 weeks",
+        "source": "S1"
+      },
+      {
+        "value": ">5 cm",
+        "meaning": ">5 cm is a concern flag, not a diagnostic cut-off",
+        "source": "S2"
+      }
+    ],
+    "trap": "Do not perform an unplanned local excision or rely on absence of pain.",
+    "finish": "Document the plan, urgency and person responsible for contacting the patient."
+  },
+  "sources": [
+    {
+      "id": "S1",
+      "name": "NICE NG12, Suspected cancer: recognition and referral",
+      "version": "Last updated 15 April 2026",
+      "url": "https://www.nice.org.uk/guidance/ng12/chapter/Recommendations-organised-by-site-of-cancer",
+      "supports": "Sarcomas, recommendation 1.11.4–1.11.5"
+    },
+    {
+      "id": "S2",
+      "name": "British Sarcoma Group, UK guidelines for the management of soft tissue sarcomas",
+      "version": "2024",
+      "url": "https://www.nature.com/articles/s41416-024-02674-y",
+      "supports": "Diagnosis and biopsy"
+    }
+  ],
+  "partner": {
+    "opening": "You are the core surgical trainee. Please interpret the case cards and explain your reasoning and safe next actions.",
+    "reveals": [
+      {
+        "trigger": "Later examiner cue",
+        "finding": "The patient telephones and says it has doubled in size over two weeks and feels tight.",
+        "row": "G9"
+      }
+    ],
+    "push": [
+      {
+        "question": "What concerns you most about this lump?",
+        "row": "G1"
+      },
+      {
+        "question": "Which features are significant?",
+        "row": "G2"
+      },
+      {
+        "question": "Interpret this ultrasound report.",
+        "row": "G3"
+      },
+      {
+        "question": "What pathway do you use?",
+        "row": "G4"
+      },
+      {
+        "question": "Would you biopsy or excise it today?",
+        "row": "G5"
+      },
+      {
+        "question": "What are your alternatives?",
+        "row": "G6"
+      },
+      {
+        "question": "What symptoms would you ask about next?",
+        "row": "G7"
+      },
+      {
+        "question": "What would you tell this patient?",
+        "row": "G8"
+      },
+      {
+        "question": "New information: it has doubled in size over two weeks and feels tight. What now?",
+        "row": "G9"
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "At minute 7: the examiner reads, “The patient reports the mass has doubled in size over two weeks and the thigh now feels tight.”",
+        "safeAnswer": "On report mass has doubled over 2 weeks, promptly contacts sarcoma team and escalates urgency.",
+        "row": "G9"
+      },
+      {
+        "prompt": "Would you remove it in the minor-operations clinic to save time?",
+        "safeAnswer": "no, specialist imaging and biopsy planning.",
+        "row": "G5"
+      }
+    ]
+  }
+}
