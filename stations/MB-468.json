@@ -1,0 +1,644 @@
+{
+  "id": "MB-468",
+  "exam": "MRCS-B",
+  "title": "Melanoma: histology report",
+  "type": "applied-knowledge",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "Surgical pathology / melanoma histology",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "NICE NG14, updated July 2022",
+      "AJCC 8 staging terminology where applicable"
+    ],
+    "related": [
+      {
+        "id": "MB-444",
+        "why": "non-pigmented skin lesion examination"
+      },
+      {
+        "id": "MB-473",
+        "why": "soft-tissue mass referral"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Skin cancer MDT teaching encounter",
+    "role": "Core surgical trainee",
+    "scenario": "You are the core surgical trainee at a skin cancer MDT teaching encounter.",
+    "task": "Interpret a written report on a left calf melanoma excision biopsy. The examiner will ask for stage-relevant findings, treatment and nodal evaluation. No images are used."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Differentiate pathology of the primary tumour from overall clinical stage.",
+    "trap": "Equating diagnostic clear margins with completed treatment or ulceration with proven metastatic disease.",
+    "firstMove": "Read Breslow thickness, ulceration and biopsy margin status verbatim."
+  },
+  "flow": [
+    "Read the pathology report exactly and extract stage-relevant variables.",
+    "Explain Breslow thickness, ulceration, and what full stage cannot yet be concluded.",
+    "Discuss further local excision and sentinel-node staging via skin MDT.",
+    "Respond to a newly revealed palpable node without using routine SLNB as a shortcut.",
+    "Deliver an accurate, calm summary and follow-up plan."
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-knowledge",
+      "label": "Extracts histology facts",
+      "fail": "Overlooks depth and ulceration.",
+      "borderline": "Reads thickness but misses ulceration.",
+      "pass": "Identifies 1.2 mm Breslow thickness, ulceration present, complete biopsy.",
+      "high": "Integrates pathology findings without making unsupported stage claims from missing data.",
+      "source": "S1"
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-knowledge",
+      "label": "Explains prognostic relevance",
+      "fail": "Calls Breslow a lesion diameter.",
+      "borderline": "Understands thickness but not ulceration.",
+      "pass": "Explains Breslow depth and ulceration contribute to melanoma risk and staging.",
+      "high": "Distinguishes pathological tumour features from nodal/metastatic status."
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "Explains initial staging",
+      "fail": "Declares final stage IV on biopsy alone.",
+      "borderline": "Mentions AJCC but claims exact overall stage without node status.",
+      "pass": "Explains pT-related assessment and need for clinical node review; avoids definitive overall stage.",
+      "high": "Clarifies distinction between primary pathological T category and full clinical stage, with specialist MDT input."
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-knowledge",
+      "label": "Wide local excision decision",
+      "fail": "Recommends no further surgery after diagnostic biopsy.",
+      "borderline": "Requests re-excision without margin rationale.",
+      "pass": "Plans MDT-directed wide local excision, taking stage and anatomical site into account.",
+      "high": "Explains NICE stage I versus II margin guidance and why stage assessment matters."
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-knowledge",
+      "label": "SLNB decision",
+      "fail": "Says SLNB is therapeutic lymphadenectomy mandatory for everyone.",
+      "borderline": "Mentions SLNB but not individualised discussion.",
+      "pass": "Discusses SLNB consideration for lesion >1 mm through skin MDT; explains it is staging.",
+      "high": "Balances prognostic information, discussion of benefits/harms and patient values.",
+      "source": "S1"
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-skill",
+      "label": "Assesses nodes and symptoms",
+      "fail": "Ignores regional nodes.",
+      "borderline": "Asks only about new moles.",
+      "pass": "Requests regional lymph node examination and symptom review.",
+      "high": "Distinguishes palpable-node workup from routine SLNB; selects imaging only when indicated."
+    },
+    {
+      "id": "G7",
+      "domain": "professionalism",
+      "label": "Communicates pathology",
+      "fail": "Promises cure or widespread disease.",
+      "borderline": "Uses jargon without meaning.",
+      "pass": "Explains confirmed melanoma and what biopsy does and does not show.",
+      "high": "Names uncertainties and expected specialist next steps in accessible language."
+    },
+    {
+      "id": "G8",
+      "domain": "clinical-knowledge",
+      "label": "Responds to palpable node cue",
+      "fail": "Proceeds directly to routine SLNB without assessing node.",
+      "borderline": "Records the new lump but takes no action.",
+      "pass": "Requests urgent skin-cancer MDT assessment and diagnostic evaluation of palpable node.",
+      "high": "Explains why clinically suspicious nodes change the pathway and need targeted investigation."
+    },
+    {
+      "id": "G9",
+      "domain": "professionalism",
+      "label": "Completes safe plan",
+      "fail": "Discharges without follow-up.",
+      "borderline": "Refers vaguely and omits communication.",
+      "pass": "Documents pathology, MDT referral, treatment/staging plan and safety-netting.",
+      "high": "Ensures explicit review ownership and tailored counselling without unverified prognosis figures."
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "What is important in the report?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "It is only a small skin cancer and the margins are clear, so nothing much matters.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What is Breslow thickness?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "The width of the skin lesion. Ulceration is just a scratch, so I would ignore it.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Can you stage it?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Yes, definitely stage IV melanoma just because the lesion was ulcerated.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Does the patient require any further local treatment?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "No. A clear diagnostic biopsy means the whole treatment course is finished.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Would sentinel-node assessment be relevant?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "No; it is never relevant when the skin margins are clear.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What examination would you do?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Only inspect the scar. The groin nodes cannot be involved if the biopsy margins were clear.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The patient asks if there is spread."
+      },
+      {
+        "speaker": "candidate",
+        "text": "“It has definitely spread through your body; the ulceration proves that.”",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "A firm new lump appears in the ipsilateral groin."
+      },
+      {
+        "speaker": "candidate",
+        "text": "That is probably unrelated. I would not ask the MDT about it.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "State the management plan."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Discharge. No further surgery or node investigation, and no follow-up is necessary.",
+        "tags": [
+          {
+            "row": "G9",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "examiner",
+        "text": "Here is a histology report after removal of a changing left calf lesion. Read the important findings."
+      },
+      {
+        "speaker": "candidate",
+        "text": "It confirms invasive melanoma. The Breslow thickness is 1.2 mm, there is ulceration, and the biopsy margins are clear. The mitotic rate is also reported at three per square millimetre.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Why do depth and ulceration matter?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Breslow is vertical tumour thickness, not surface size. Thickness and ulceration influence risk and pathological T classification, so neither should be omitted from handover.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Can you assign the complete stage now?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I can discuss the primary tumour characteristics, but I cannot responsibly assign the overall stage from this histology alone without clinical nodal assessment and any indicated staging.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The margins are clear. Is treatment complete?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Not necessarily. A clear diagnostic biopsy is different from the therapeutic wide local excision. The specialist skin MDT should plan the definitive excision according to stage, location and NICE NG14 margin guidance.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Is sentinel lymph node biopsy relevant?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Yes, it should be discussed for this thickness through the MDT. SLNB is a staging procedure, not itself treatment of known nodal disease. I would explain potential value and harms before any decision.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What would you examine and ask now?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I would examine regional groin nodes, the excision site and remaining skin, and ask about new lumps or systemic symptoms. I would not order routine imaging just because the patient has melanoma without applying staging criteria.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The patient asks “Does this mean it has spread?”"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I would explain that melanoma is confirmed in the skin specimen, but this report alone does not tell us whether it has spread. We need to assess the lymph nodes and discuss further excision and staging tests.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "A week later the patient notices a new firm left groin lump. What do you do?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I would arrange urgent clinical assessment and targeted evaluation of this palpable regional node through the skin-cancer MDT. I would not assume the patient simply proceeds to routine sentinel-node staging.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Summarise your plan."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Confirmed invasive 1.2 mm ulcerated melanoma of the left calf after diagnostic excision. Refer to skin MDT for definitive local excision, nodal assessment and SLNB discussion, with the new palpable groin node investigated urgently. I would document the findings and explain who will contact the patient next.",
+        "tags": [
+          {
+            "row": "G9",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "examiner",
+        "text": "Interpret the histology of this excised left calf lesion: invasive melanoma, Breslow 1.2 mm, ulcerated, mitoses 3/mm², diagnostic margins clear."
+      },
+      {
+        "speaker": "candidate",
+        "text": "The decisive findings are invasive cutaneous melanoma, 1.2 mm vertical Breslow thickness and microscopic ulceration; I would retain the mitotic rate and margin status in the report rather than conflate them with definitive treatment status.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What is the prognostic significance?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Depth and ulceration underpin pathological tumour risk classification. Clear margins on the diagnostic sample are welcome but do not answer whether recommended therapeutic margins have been achieved.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What can you say about AJCC staging?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I can describe the primary tumour risk features, but a full stage requires the nodal and metastatic picture. I would not tell the patient “stage III” or “stage IV” without evidence; staging is reconciled through the specialist MDT.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What should follow the excision biopsy?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I would refer promptly to the specialist skin MDT for planned therapeutic wide local excision. NICE NG14 section 1.5 differentiates margins by stage—typically 1 cm for stage I and 2 cm for stage II, with MDT consideration of anatomy and morbidity. I would not mechanically choose from Breslow alone without staging discussion.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Do you offer sentinel lymph node biopsy?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I would discuss it with the MDT and patient because this lesion exceeds 1 mm. I would explain that SLNB provides prognostic staging information in clinically node-negative disease; it is not a guarantee of cure and does not replace assessment of a suspicious palpable node.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Describe your initial clinical assessment."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I would inspect the scar and whole skin, palpate the ipsilateral inguinal nodes and review symptoms and relevant history. I would separate clinically suspicious nodes, which need diagnostic workup, from clinically negative nodes where SLNB might be discussed.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The patient worries about a death from melanoma in the family."
+      },
+      {
+        "speaker": "candidate",
+        "text": "“This report confirms melanoma, but it does not by itself establish spread. The next steps are to ensure the site is definitively treated and assess regional nodes appropriately.” I would acknowledge the family experience, offer written information and invite questions.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Curveball: a firm new 1.5 cm left groin node is palpable at review."
+      },
+      {
+        "speaker": "candidate",
+        "text": "That changes the sequence. I would expedite specialist assessment and targeted ultrasound with needle sampling as directed by the MDT rather than treating a clinically suspicious node as a routine sentinel-node procedure. I would discuss any further staging only after establishing the nature of the node.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Close with your handover and documentation."
+      },
+      {
+        "speaker": "candidate",
+        "text": "“Ulcerated 1.2 mm invasive melanoma, diagnostic margins clear, regional nodal status unresolved and now a new palpable ipsilateral groin node.” I would ensure named MDT ownership, a documented investigation and definitive local-treatment plan, and balanced counselling without invented survival percentages.",
+        "tags": [
+          {
+            "row": "G9",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G3",
+      "move": "Assigning disseminated disease from ulceration alone",
+      "consequence": "risks major misinformation and harmful management decisions."
+    },
+    {
+      "row": "G4",
+      "move": "Omitting specialist assessment for wide local excision",
+      "consequence": "risks inadequate local treatment."
+    },
+    {
+      "row": "G8",
+      "move": "Ignoring a palpable regional node",
+      "consequence": "risks delayed diagnosis of nodal metastatic disease."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "Correcting the implication of a clear diagnostic margin",
+      "line": "I should correct the implication of a clear diagnostic margin: the skin MDT must still decide the therapeutic excision margin and stage-specific plan."
+    },
+    {
+      "when": "A newly palpable regional node",
+      "line": "A newly palpable regional node needs a diagnostic assessment now; it should not simply be routed into routine sentinel-node discussion."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Breslow thickness is measured tumour depth; ulceration is a separate staging feature.",
+      "source": "S1"
+    },
+    {
+      "fact": "NG14 advises against imaging or SLNB in stage IA melanoma.",
+      "source": "S1"
+    },
+    {
+      "fact": "NG14 1.4.3 considers SLNB at 0.8–1.0 mm only with specified additional risk factors; higher-risk melanomas should be discussed through specialist staging pathways.",
+      "source": "S1"
+    },
+    {
+      "fact": "NICE NG14 clinical excision margins are stage dependent: 1 cm for stage I (or where a 2 cm margin causes unacceptable morbidity), 2 cm for stage II.",
+      "source": "S1"
+    },
+    {
+      "fact": "The presence of a palpable suspicious node changes assessment: routine SLNB is not a substitute for diagnostic evaluation of clinically suspicious lymphadenopathy.",
+      "source": "S1"
+    },
+    {
+      "fact": "Normal diagnostic biopsy margins do not by themselves remove the need for discussion of wide local excision and MDT management.",
+      "source": "S1"
+    }
+  ],
+  "recall": {
+    "think": "Thickness and ulceration describe primary tumour risk, not proven spread.",
+    "say": "“The melanoma diagnosis is confirmed; the stage is not yet fully established.”",
+    "do": [
+      "Skin MDT, therapeutic excision plan, regional-node assessment and SLNB discussion."
+    ],
+    "numbers": [
+      {
+        "value": "1.2 mm",
+        "meaning": "Breslow here",
+        "source": "S1"
+      },
+      {
+        "value": "1 cm",
+        "meaning": "NICE NG14 excision clinical margins: stage I",
+        "source": "S1"
+      },
+      {
+        "value": "2 cm",
+        "meaning": "NICE NG14 excision clinical margins: stage II (context matters)",
+        "source": "S1"
+      }
+    ],
+    "trap": "A clear biopsy margin is not the same as completion of definitive care.",
+    "finish": "Document the new-node investigation and patient contact arrangements."
+  },
+  "sources": [
+    {
+      "id": "S1",
+      "name": "NICE. Melanoma: assessment and management (NG14).",
+      "version": "Published July 2015, updated 27 July 2022 (accessed 12 October 2026)",
+      "url": "https://www.nice.org.uk/guidance/ng14/chapter/recommendations",
+      "supports": "Recommendations 1.4 and 1.5."
+    }
+  ],
+  "partner": {
+    "opening": "Interpret a written report on a left calf melanoma excision biopsy.",
+    "reveals": [
+      {
+        "trigger": "Provide the histology in writing",
+        "finding": "1.2 mm ulcerated invasive melanoma of left calf, mitoses 3/mm², diagnostic margins clear. No diagnostic image.",
+        "row": "G1"
+      },
+      {
+        "trigger": "At the beginning",
+        "finding": "regional nodes are not yet assessed; do not disclose any palpable node until G8.",
+        "row": "G6"
+      },
+      {
+        "trigger": "If asked about distant symptoms before the curveball",
+        "finding": "say none is reported; do not volunteer the new groin node.",
+        "row": "G6"
+      }
+    ],
+    "push": [
+      {
+        "question": "Ask the candidate what Breslow thickness and ulceration mean and whether full AJCC stage can be assigned.",
+        "row": "G2"
+      },
+      {
+        "question": "Ask about definitive local excision, sentinel-node discussion and relevant clinical assessment.",
+        "row": "G4"
+      },
+      {
+        "question": "At G7, use a patient worry about spread or family melanoma history; candidate responds as they would to the patient.",
+        "row": "G7"
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "At G8 reveal a new firm 1.5 cm left groin node, prompting a change from clinically node-negative staging discussion to targeted workup.",
+        "safeAnswer": "Requests urgent skin-cancer MDT assessment and diagnostic evaluation of palpable node.",
+        "row": "G8"
+      }
+    ]
+  }
+}

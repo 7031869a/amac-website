@@ -1,0 +1,717 @@
+{
+  "id": "MB-459",
+  "exam": "MRCS-B",
+  "title": "IV fluid prescribing after surgery",
+  "type": "applied-knowledge",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "Applied surgical science / fluid balance",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "NICE CG174, Intravenous fluid therapy in adults in hospital (published 2013; updated 5 May 2017)"
+    ],
+    "related": [
+      {
+        "id": "MB-457",
+        "why": "Burns assessment (resuscitation reasoning)"
+      },
+      {
+        "id": "MB-458",
+        "why": "Surgical sepsis (acute physiology)"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Colorectal ward",
+    "role": "Core surgical trainee",
+    "scenario": "You are the core surgical trainee on the colorectal ward. A 70-kg adult is postoperative day 2 after laparotomy and remains nil by mouth with a nasogastric tube. The nurses ask you to review the IV prescription.",
+    "task": "Review the clinical observations, balance and blood results supplied by the examiner; describe your initial 24-hour fluid plan and respond to new symptoms. You are not required to select a proprietary brand of fluid."
+  },
+  "beforeYouWalkIn": {
+    "frame": "This is a fluid-prescribing reasoning station: specify indication, volume, losses and review plan.",
+    "trap": "Confusing maintenance with additional nasogastric replacement and continuing fluids despite new pulmonary symptoms.",
+    "firstMove": "Decide whether IV is still indicated and inspect fluid status before choosing a bag."
+  },
+  "flow": [
+    "Check intake, observations and physical fluid status.",
+    "Distinguish routine maintenance from ongoing NG losses and deficits.",
+    "Calculate a weight-based starting plan, then adjust to electrolytes and comorbidity.",
+    "Complete exact type/volume/rate/review instructions.",
+    "Reassess sudden breathlessness, escalate and hand over."
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-knowledge",
+      "label": "Fluid indication",
+      "fail": "Automatically orders a bag without asking whether IV therapy is needed.",
+      "borderline": "Asks about oral intake but does not decide whether IV therapy is necessary.",
+      "pass": "Checks inability to meet needs orally and states IV fluids should stop once enteral intake is adequate.",
+      "high": "Explains a time-limited prescription and reviews when nausea resolves."
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-skill",
+      "label": "Fluid status",
+      "fail": "Ignores hypotension or pulmonary oedema risk.",
+      "borderline": "Asks for BP but omits urine output and chest signs.",
+      "pass": "Checks observations, perfusion, oedema, chest, urine output and recent weight.",
+      "high": "Integrates trend, kidney function and fluid chart before any rate decision."
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "Interpret losses",
+      "fail": "Calls all drain losses maintenance.",
+      "borderline": "Identifies drain output but fails to quantify volume.",
+      "pass": "Separates routine needs from measured NG loss and previous deficit.",
+      "high": "States losses should be replaced and reassessed against changing NG output."
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-knowledge",
+      "label": "Maintenance calculation",
+      "fail": "Uses 3 litres for every patient without weight.",
+      "borderline": "Calculates volume but not electrolytes or glucose.",
+      "pass": "For 70 kg gives initial ~1750–2100 mL/day plus ~70 mmol/day each Na/K/Cl and 50–100g glucose, adjusted for clinical state.",
+      "high": "Explicitly excludes additional NG losses from maintenance and adjusts potassium to actual renal function/labs.",
+      "source": "CG174"
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-knowledge",
+      "label": "Replacement approach",
+      "fail": "Ignores 800 mL nasogastric aspirate.",
+      "borderline": "Prescribes replacement without checking electrolytes or ongoing measurement.",
+      "pass": "Plans replacement of measured NG loss using electrolyte-appropriate fluid and repeat measurement.",
+      "high": "Avoids a fixed rate as losses change and obtains senior/pharmacy input for composition."
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-skill",
+      "label": "Potassium safety",
+      "fail": "Adds potassium to a bag at bedside despite AKI uncertainty.",
+      "borderline": "Notices potassium but fails to cross-check latest result.",
+      "pass": "Reviews K 3.4 and renal function before any potassium-containing prescription; never adds K to a bag manually.",
+      "high": "Plans frequent checks if ongoing vomiting/NG losses cause evolving depletion.",
+      "source": "CG174"
+    },
+    {
+      "id": "G7",
+      "domain": "professionalism",
+      "label": "Prescription completeness",
+      "fail": "Writes “IV fluids” with no volume/rate.",
+      "borderline": "Names a product but omits 24-hour plan.",
+      "pass": "Specifies fluid type, volume, rate and 24-hour review in a written plan.",
+      "high": "Documents reason for each component including maintenance versus replacement.",
+      "source": "CG174"
+    },
+    {
+      "id": "G8",
+      "domain": "clinical-skill",
+      "label": "Response to cue",
+      "fail": "Gives an unassessed large bolus despite new breathlessness.",
+      "borderline": "Stops fluid but does not examine or escalate.",
+      "pass": "At breathlessness cue, rechecks ABCDE and lungs, pauses/reassesses fluids and seeks senior review.",
+      "high": "Differentiates overload from deterioration, organises appropriate observation and urgent senior assessment."
+    },
+    {
+      "id": "G9",
+      "domain": "professionalism",
+      "label": "Monitoring and handover",
+      "fail": "Does not review U&Es or balance.",
+      "borderline": "Requests bloods without specifying timing or review.",
+      "pass": "Orders daily U&Es and fluid balance, checks output, reviews the plan and hands over.",
+      "high": "Sets clear triggers to reassess earlier if output rises or perfusion worsens."
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "candidate",
+        "text": "Hello, I am the core surgical trainee. I can prescribe a standard drip.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "I have not been able to eat."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Are you unwell at all?",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "Thirsty and a bit sick."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Most people can have three litres a day, so I will order that.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The patient weighs 70 kg. NG loss is 800 mL in 24 hours, potassium 3.4. What about those losses?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "The drip will cover everything; I do not need to measure what comes out.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I will not replace the 800 mL of NG aspirate; it does not need its own prescription.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What about the potassium of 3.4?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I will ask the nurse to add potassium to the bag at the bedside; I do not need to check the renal function first.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The patient now becomes breathless."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I will leave the infusion running and review this during tomorrow’s round.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What will your chart contain?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I will write “IV fluids” and let the nurses choose the rate.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I have no particular blood-test plan.",
+        "tags": [
+          {
+            "row": "G9",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "candidate",
+        "text": "Hello, I am the core surgical trainee. I have been asked to review your IV fluids. Is it alright if I ask some questions and examine you?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "Yes. I feel dry and nauseated."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Have you been able to drink or eat since the operation?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "No, I still feel sick and have a tube draining my stomach."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Are you dizzy on sitting up, unusually breathless, or swollen in your legs?",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "I feel thirsty but not breathless."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I will check your pulse, BP, lungs, mouth, peripheral perfusion and oedema and review the fluid balance.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Pulse 94, BP 112/70, saturations 98% air, clear lungs, no oedema. Urine 45 mL/hour. Weight 70 kg."
+      },
+      {
+        "speaker": "candidate",
+        "text": "How much has the nasogastric tube drained, and what has the oral intake been?",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "800 mL gastric aspirate in 24 hours; no oral intake; 400 mL of IV fluid given so far today. Recent sodium 138, potassium 3.4, creatinine 76 micromol/L."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I will distinguish routine maintenance from replacement of the 800 mL measured gastric loss rather than bundle them together.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "For a 70-kg adult who is not frail, maintenance is 25–30 mL/kg/day, so I will plan 2,000 mL for this 24-hour period with about 70 mmol each of sodium, potassium and chloride and 50–100 g glucose. The patient has already had 400 mL today, so the remaining maintenance is 1,600 mL, not a fresh 2 litres on top.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "The 800 mL measured NG loss is replaced separately, volume for volume, with 0.9% sodium chloride containing 20 mmol/L potassium chloride, because gastric fluid is chloride-rich and contains potassium. At yesterday’s rate that is about 35 mL/hour (roughly 600 mL over the remaining 18 hours), adjusted 6-hourly to the measured aspirate.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Potassium is 3.4 with normal creatinine (76) and urine output of 45 mL/hour, so potassium-containing fluid is appropriate. I will use pre-mixed potassium bags only; I would never put loose potassium into an IV bag.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Prescription for the remaining 18 hours: line 1, maintenance, 1,600 mL 0.18% sodium chloride/4% glucose with 40 mmol/L potassium chloride at 90 mL/hour (about 64 mmol potassium, 48 mmol sodium, 64 g glucose); line 2, NG replacement, 0.9% sodium chloride with 20 mmol/L potassium chloride matched to measured losses, starting at 35 mL/hour. That is about 76 mmol potassium in total, appropriate with K 3.4 and ongoing losses. I will document each line’s purpose and review time, and ask the senior surgeon or pharmacist if a specialist formulation is needed.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "At minute seven the patient says: “I have just started feeling short of breath.”"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I will stop and reassess: ABCDE, saturations, BP, lungs, fluid balance and urine output, pause further non-urgent fluids while reviewing, and escalate urgently if there is respiratory compromise.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I will monitor observations, strict input and output including each new NG aspirate volume, daily weight where useful, and at least daily U&Es, sooner if losses or physiology change.",
+        "tags": [
+          {
+            "row": "G9",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "Will I need the drip forever?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "No. We will switch back to drinking when it is safe and you can meet your needs.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please summarise your prescription safety-net."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Maintenance, measured replacement, fluid status and electrolytes are four separate checks; review after the next blood results and sooner for breathlessness, oliguria or increased drain output.",
+        "tags": [
+          {
+            "row": "G9",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "candidate",
+        "text": "Hello, I am the core surgical trainee. I want to prescribe only the fluids you need, and reassess daily. May I check a few things?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "Yes. I am thirsty and the NG tube keeps collecting fluid."
+      },
+      {
+        "speaker": "candidate",
+        "text": "What have you managed orally since yesterday?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "Nothing."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Any dizziness, worsening abdominal pain, swollen ankles or breathing problems?",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "Just thirst and nausea; I can breathe fine."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I will first review the vital-sign trend and examine perfusion, mucosae, lungs and oedema, as fluid charts alone can mislead.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "BP 112/70, pulse 94, clear chest, no oedema; urine 45 mL/hour. Weight 70 kg."
+      },
+      {
+        "speaker": "candidate",
+        "text": "How much measured loss, and what was administered?",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "NG aspirate 800 mL in the last 24 hours, no oral intake, 400 mL IV so far; Na 138, K 3.4, creatinine 76."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I can separate three issues: maintenance while nil by mouth, replacement of continuing gastric losses, and a search for evidence of an existing deficit. I do not have evidence that this stable patient needs an immediate resuscitation bolus.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Initial maintenance: 25–30 mL/kg/day means 1750–2100 mL per day at 70 kg; approximate electrolyte needs are 1 mmol/kg/day for each of sodium, potassium and chloride, plus 50–100 g glucose. These are starting targets, not a one-size-fits-all formula.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "The NG tube is an additional, changing loss. I would measure it each shift, choose fluid/electrolyte replacement in line with results and unit policy, and review it with the senior team instead of using the same bag indefinitely.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "The potassium of 3.4 makes loss replacement important, but I must reassess renal function and potassium before prescribing any potassium-containing fluid. I will never add potassium to a bag at the bedside.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I will write the prescription with bag composition, total volume and rate, plus a 24-hour plan spelling out what is maintenance and what replaces measured losses; I will document the review time.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "Can the drip be stopped when I can drink again?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Yes. IV fluid is temporary; we will reduce and stop it once oral or enteral intake can safely meet your needs.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The patient suddenly says: “I have just become short of breath.”"
+      },
+      {
+        "speaker": "candidate",
+        "text": "That is new. I would pause non-essential infusion, reassess ABCDE, oxygenation, chest signs and input/output, and urgently involve the senior team if respiratory compromise or overload is suspected; I would not assume the original plan is still correct.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I will follow urine output, balance, daily weight if meaningful, repeat sodium, potassium and creatinine at least daily, and earlier for rapidly changing NG losses or new deterioration.",
+        "tags": [
+          {
+            "row": "G9",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Give a final one-line handover."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Stable, nil by mouth, 800 mL NG loss and K 3.4: calculated maintenance plus separately measured replacement, defined monitoring and immediate reassessment if breathless or oliguric.",
+        "tags": [
+          {
+            "row": "G9",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G3",
+      "move": "Treats 800 mL gastric loss as if it did not exist.",
+      "consequence": "Progressive dehydration, electrolyte depletion or inadequate replacement."
+    },
+    {
+      "row": "G8",
+      "move": "Continues an unassessed infusion when the patient newly develops breathlessness.",
+      "consequence": "Possible worsening fluid overload or missed acute deterioration."
+    },
+    {
+      "row": "G7",
+      "move": "Writes no specific rate, volume or review time.",
+      "consequence": "Unsafe or inconsistent fluid administration."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "If you mixed maintenance and replacement",
+      "line": "I have mixed maintenance and replacement; I will stop and prescribe them as separately measurable components."
+    },
+    {
+      "when": "If the patient has become breathless",
+      "line": "The patient has become breathless, so I am reassessing the fluid prescription and respiratory status before continuing."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "IV fluids are indicated only when oral/enteral routes cannot meet needs.",
+      "source": "CG174"
+    },
+    {
+      "fact": "The 5 Rs include resuscitation, routine maintenance, replacement, redistribution and reassessment.",
+      "source": "CG174"
+    },
+    {
+      "fact": "Standard initial maintenance is 25–30 mL/kg/day, approximately 1 mmol/kg/day each Na/K/Cl and 50–100 g/day glucose; consider less (e.g. 20–25 mL/kg/day) if older or frail, or with renal or cardiac impairment.",
+      "source": "CG174"
+    },
+    {
+      "fact": "Ongoing abnormal losses need separate replacement and repeated review.",
+      "source": "CG174"
+    },
+    {
+      "fact": "A fluid prescription needs product, volume and rate plus a 24-hour management and monitoring plan.",
+      "source": "CG174"
+    },
+    {
+      "fact": "Fluid monitoring includes fluid status, fluid balance and laboratory assessment.",
+      "source": "CG174"
+    }
+  ],
+  "recall": {
+    "think": "Why IV today, and what is additional to maintenance?",
+    "say": "“I will separate routine fluid needs from measured losses.”",
+    "do": [
+      "Examine, calculate, prescribe precisely, and reassess after the next results."
+    ],
+    "numbers": [
+      {
+        "value": "70 kg → 1.75–2.1 L/day",
+        "meaning": "initial maintenance",
+        "source": "CG174"
+      },
+      {
+        "value": "about 70 mmol/day",
+        "meaning": "Na/K/Cl each",
+        "source": "CG174"
+      },
+      {
+        "value": "50–100 g/day",
+        "meaning": "glucose, modified by results.",
+        "source": "CG174"
+      }
+    ],
+    "trap": "The same bag cannot cover an unmeasured, changing NG loss indefinitely.",
+    "finish": "Document review triggers and aim to stop IV fluids when oral intake is adequate."
+  },
+  "sources": [
+    {
+      "id": "CG174",
+      "name": "NICE CG174, Intravenous fluid therapy in adults in hospital",
+      "version": "published 2013; updated 5 May 2017",
+      "url": "https://www.nice.org.uk/guidance/cg174/chapter/recommendations",
+      "supports": "Recommendations 1.1.1–1.1.6, 1.2, 1.3, 1.4, 1.5."
+    }
+  ],
+  "partner": {
+    "opening": "Please review this postoperative IV fluid chart.",
+    "actorBrief": "The patient initially reports thirst and nausea, but no breathlessness.",
+    "reveals": [
+      {
+        "trigger": "When asked (do not volunteer numerical losses before candidate requests fluid chart or examiner observations)",
+        "finding": "no oral intake; 800 mL NG output during 24 hours; total IV so far today 400 mL; urine 45 mL/hour; 70 kg; pulse 94, BP 112/70, saturation 98% room air; chest clear; no oedema. Na 138, K 3.4, creatinine 76 micromol/L.",
+        "row": "G3"
+      },
+      {
+        "trigger": "Assumptions for the worked prescription (give if asked)",
+        "finding": "the fluid chart runs 08:00–08:00 and it is now 14:00, so 18 hours remain; the 400 mL already given was Hartmann’s; the patient is not frail and has no cardiac or renal impairment; examination shows no deficit needing correction.",
+        "row": "G7"
+      },
+      {
+        "trigger": "If asked for new observations before response",
+        "finding": "saturations 95% room air and respiratory rate 24; no unprompted diagnosis.",
+        "row": "G8"
+      }
+    ],
+    "push": [
+      {
+        "question": "Please summarise your prescription safety-net.",
+        "row": "G9"
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "At around minute seven ONLY: patient says, “I have just started feeling short of breath.”",
+        "safeAnswer": "At breathlessness cue, rechecks ABCDE and lungs, pauses/reassesses fluids and seeks senior review.",
+        "row": "G8"
+      }
+    ]
+  }
+}

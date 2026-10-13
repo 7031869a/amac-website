@@ -1,0 +1,658 @@
+{
+  "id": "MB-465",
+  "exam": "MRCS-B",
+  "title": "Hip fracture in an older patient",
+  "type": "applied-knowledge",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "Orthopaedic perioperative care",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "CG124 (2023)",
+      "NG89 (2018)"
+    ],
+    "related": [
+      {
+        "id": "MB-438",
+        "why": "abdominal examination (different anatomical task)"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Emergency department",
+    "role": "Core surgical trainee",
+    "scenario": "You are the core surgical trainee in the emergency department. An 83-year-old woman has fallen at home and cannot weight bear because of left hip pain.",
+    "task": "Perform a focused assessment, interpret the radiograph findings when provided, and present your immediate management and operative plan. A simulated patient and examiner are present."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Time-critical, compassionate hip-fracture assessment and coordination.",
+    "trap": "Treating analgesia and optimisable illness as excuses to postpone the hip-fracture pathway.",
+    "firstMove": "Offer immediate analgesia, check stability and avoid painful manipulation."
+  },
+  "flow": [
+    "Stabilise and treat pain.",
+    "Obtain fall history, baseline function and focused neurovascular findings.",
+    "Review pelvic/hip imaging and consider occult fracture.",
+    "Plan timely surgery and optimisations with orthogeriatrics.",
+    "Explain, document, rehabilitate and hand over."
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-skill",
+      "label": "Initial safety and pain",
+      "fail": "Ignores pain or attempts forceful hip movement.",
+      "borderline": "Recognises hip pain but delays assessment and analgesia.",
+      "pass": "Checks observations, pain and offers immediate analgesia without unnecessary limb movement.",
+      "high": "Prioritises analgesia while checking instability and cognitive impairment, then reassesses pain promptly."
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-knowledge",
+      "label": "Mechanism and clinical features",
+      "fail": "Assumes no fracture because fall was low energy.",
+      "borderline": "Identifies fall but omits preceding syncope or baseline mobility.",
+      "pass": "Asks about mechanism, head injury, preceding illness, baseline walking and examines limb gently.",
+      "high": "Separates mechanical fall from possible precipitating illness and anticipates perioperative risks."
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-skill",
+      "label": "Neurovascular and skin assessment",
+      "fail": "Does not check distal circulation or pressure areas.",
+      "borderline": "Checks foot warmth but not sensation or movement.",
+      "pass": "Checks distal pulses, capillary refill, movement and sensation, skin/pressure risk.",
+      "high": "Explicitly documents comparison and repeats checks if pain or findings change."
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-knowledge",
+      "label": "Imaging and diagnosis",
+      "fail": "Dismisses inability to bear weight with negative plain X-ray.",
+      "borderline": "Requests radiographs but has no occult-fracture plan.",
+      "pass": "Requests AP pelvis and lateral hip radiographs; persistent suspicion with negative X-ray prompts MRI or CT if MRI unavailable within 24h.",
+      "high": "States suspected fracture type, escalates occult fracture pathway and prevents unsafe mobilisation.",
+      "source": "CG124"
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-skill",
+      "label": "Analgesic plan",
+      "fail": "Provides no immediate analgesia and leaves patient distressed.",
+      "borderline": "Gives one analgesic without review or block consideration.",
+      "pass": "Uses paracetamol, additional opioids when needed and considers nerve block by trained personnel.",
+      "high": "Avoids NSAIDs, reassesses pain after treatment and addresses delirium risk."
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-knowledge",
+      "label": "Operative timing",
+      "fail": "States routine delay for several days is acceptable.",
+      "borderline": "Says soon without naming the standard or optimisable issues.",
+      "pass": "Plans surgery on day of or day after admission; treats reversible problems promptly.",
+      "high": "Coordinates anaesthetic/senior review without using optimisation as an unnecessary delay."
+    },
+    {
+      "id": "G7",
+      "domain": "clinical-knowledge",
+      "label": "Multidisciplinary care",
+      "fail": "Excludes orthogeriatrics and rehabilitation planning.",
+      "borderline": "Mentions physiotherapy alone.",
+      "pass": "Requests orthogeriatric/hip-fracture pathway, frailty and delirium assessment, early rehabilitation.",
+      "high": "Links premorbid function, cognition, nutrition and discharge requirements to recovery."
+    },
+    {
+      "id": "G8",
+      "domain": "professionalism",
+      "label": "Shared decision and explanation",
+      "fail": "Promises full recovery or ignores questions.",
+      "borderline": "Explains surgery vaguely and leaves patient unclear.",
+      "pass": "Explains likely fracture, imaging, pain control and surgical plan with uncertainty acknowledged.",
+      "high": "Checks understanding, involves chosen supporter and explains risks without overwhelming the patient."
+    },
+    {
+      "id": "G9",
+      "domain": "clinical-knowledge",
+      "label": "Prevention and safe handover",
+      "fail": "No VTE assessment or documentation.",
+      "borderline": "Handover lacks analgesia reassessment or fall risks.",
+      "pass": "Documents neurovascular findings, analgesia, imaging, VTE risk and senior handover.",
+      "high": "Communicates clear time-bound surgery plan, VTE decision, safeguarding and secondary prevention needs."
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "candidate",
+        "text": "Hello, I am the core surgical trainee. Can you stand so I can see whether your hip really hurts?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "No, I fell getting out of bed and cannot put weight on my left leg."
+      },
+      {
+        "speaker": "candidate",
+        "text": "It was only a fall from standing, so it may be bruising. Were you dizzy beforehand?",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "I felt a little light-headed; I have not walked since."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I will pull your leg straight to examine it.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "Please stop. That is extremely painful."
+      },
+      {
+        "speaker": "examiner",
+        "text": "Her left leg is shortened and externally rotated. She can move her toes; feet feel warm."
+      },
+      {
+        "speaker": "candidate",
+        "text": "We can get an X-ray later; there is no urgent reason to investigate.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "What about the pain?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I do not want to mask anything before the surgeon sees you.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Radiograph shows a displaced intracapsular neck-of-femur fracture."
+      },
+      {
+        "speaker": "candidate",
+        "text": "We might arrange an operation later in the week once everything is sorted.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "Will I be able to walk again?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Yes, definitely. There is nothing to worry about.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What about frailty, delirium and prevention of complications?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "We can decide about those after surgery.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I will leave the ward to arrange a bed without a clear handover.",
+        "tags": [
+          {
+            "row": "G9",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "candidate",
+        "text": "Hello, I am the core surgical trainee. I understand you fell. I will assess you gently and get your pain treated now. Are you comfortable enough to answer some questions?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "My left hip hurts badly and I cannot stand."
+      },
+      {
+        "speaker": "candidate",
+        "text": "How did you fall? Did you black out, have chest pain or feel dizzy? Did you hit your head? How far could you walk before this?",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "I stood up quickly, felt light-headed and fell. No chest pain, blackout or head strike. I usually use a stick outdoors."
+      },
+      {
+        "speaker": "candidate",
+        "text": "What are your pain score and observations?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Pain 8/10, BP 136/78, pulse 88, saturations 97% on air; she is alert."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I will inspect without moving the hip forcefully and check both feet for pulses, sensation, movement and capillary refill.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Left leg shortened and externally rotated. Foot pulses, sensation and ankle/toe movement are intact."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Please arrange an AP pelvis and lateral view of the left hip. I suspect a proximal femoral fracture. If radiographs were negative despite persistent concern, I would pursue the occult-fracture imaging pathway.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "X-ray shows a displaced intracapsular fracture."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I will start paracetamol unless contraindicated, add an opioid if needed and ask a trained colleague about a fascia iliaca block. I will review pain after treatment and avoid NSAIDs.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "Does the injection mean I will not need surgery?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "No. It is to control pain while the team plans the safest definitive treatment.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I will inform the orthopaedic registrar and anaesthetic team. NICE recommends surgery on the day of or day after admission; we should identify and promptly address reversible problems rather than postpone unnecessarily.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "She takes apixaban for AF. Does that automatically mean a long delay?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "No automatic delay, and no automatic immediate surgery either. With seniors and anaesthetics I would individualise the timing using the time of the last dose, renal function, bleeding risk, the anaesthetic plan and the urgency, still aiming for surgery on the day of or day after admission.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I will refer her to the hip-fracture/orthogeriatric pathway, screen for delirium and frailty, and plan mobilisation and rehabilitation.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I will document observations, distal neurovascular status, analgesia response, imaging, medication review, VTE risk assessment and an explicit handover.",
+        "tags": [
+          {
+            "row": "G9",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "candidate",
+        "text": "Hello, I am the core surgical trainee. I am going to protect your painful leg, assess your general health and organise treatment. May I ask what happened while we arrange analgesia?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "I got out of bed, felt faint and fell. Now the hip is very painful."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Thank you. Did you lose consciousness or hit your head? Any palpitations, breathlessness, chest pain, fever or new medicines? Before the fall, could you shop, climb stairs and manage at home?",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "No head injury or blackout. I use a stick for the shops and live with my daughter. I started a water tablet recently."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I will ask nursing colleagues for observations, a pain score and immediate simple analgesia, and assess hydration and potential causes of dizziness in parallel.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Stable observations; pain 8/10; no focal neurological deficit."
+      },
+      {
+        "speaker": "candidate",
+        "text": "With consent, I will look for shortening or rotation, inspect pressure areas, avoid forceful hip movement, and compare foot pulses, capillary refill, sensation and ankle/toe motor function.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Left leg shortened and externally rotated; neurovascular examination normal."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I suspect an intracapsular fracture. Please arrange AP pelvis and lateral hip radiographs and baseline preoperative investigations. Persistent suspicion after normal radiographs needs advanced imaging, ideally MRI.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The radiograph confirms a displaced intracapsular fracture."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I will titrate analgesia, consider a trained-performer fascia iliaca block if appropriate, recheck pain within 30 minutes after initial treatment, and avoid NSAIDs.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "My neighbour had hip surgery and never walked again. Will that happen to me?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Recovery varies with health and mobility beforehand. We will aim for effective pain relief, timely surgery and early rehabilitation. I cannot promise a particular outcome, but we will include you and your daughter in decisions if you wish.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I will call the orthopaedic registrar now and coordinate anaesthetic and orthogeriatric assessment. The target is surgery today or tomorrow. We should correct important dehydration or medical problems quickly without a needless wait.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "She took apixaban this morning. Her daughter asks whether the surgery must be cancelled for several days."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I would explain that apixaban changes the perioperative plan but does not automatically mean several days’ delay, nor surgery regardless. Senior anaesthetic and surgical teams will weigh when the last dose was taken, kidney function, bleeding risk, the anaesthetic plan and how urgent the operation is, and we still aim to operate today or tomorrow.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I would assess delirium and falls risk, nutrition, osteoporosis, functional baseline and realistic discharge support, and involve the rehabilitation team from admission.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "My handover will state diagnosis, neurovascular status, pain and reassessment time, medications and anticoagulant timing, investigations, named senior review and the proposed operation window.",
+        "tags": [
+          {
+            "row": "G9",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G1",
+      "move": "Denying analgesia because fracture has not yet been imaged",
+      "consequence": "causes unnecessary severe suffering."
+    },
+    {
+      "row": "G3",
+      "move": "Forcefully manipulating a suspected fracture",
+      "consequence": "causes avoidable pain and possible injury."
+    },
+    {
+      "row": "G4",
+      "move": "Discharging a non-weight-bearing patient after negative X-rays without considering occult fracture",
+      "consequence": "risks a missed injury."
+    },
+    {
+      "row": "G6",
+      "move": "Unnecessary prolonged delay in operative planning",
+      "consequence": "exposes the patient to complications."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "If you concentrated on the X-ray",
+      "line": "I have concentrated on the X-ray; before moving on I need to assess pain, observations and the distal neurovascular state."
+    },
+    {
+      "when": "If you spoke of delaying surgery too casually",
+      "line": "I spoke of delaying surgery too casually; I will escalate today, optimise reversible problems promptly and agree a named operation plan."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Immediate analgesia and pain reassessment are recommended, including nerve block by trained staff if needed.",
+      "source": "CG124"
+    },
+    {
+      "fact": "Offer surgery on the day of or day after admission and promptly treat correctable conditions.",
+      "source": "CG124"
+    },
+    {
+      "fact": "Surgery should aim to allow immediate unrestricted weight bearing when feasible.",
+      "source": "CG124"
+    },
+    {
+      "fact": "Coordinated multidisciplinary and orthogeriatric care improves the overall pathway.",
+      "source": "CG124"
+    },
+    {
+      "fact": "Hip fracture management includes early mobilisation and postoperative physiotherapy.",
+      "source": "CG124"
+    },
+    {
+      "fact": "Assess VTE risk and prophylaxis in the context of fragility hip fracture and bleeding risk.",
+      "source": "NG89"
+    }
+  ],
+  "recall": {
+    "think": "Painful immobile older patient: fracture plus cause of fall and frailty.",
+    "say": "“I will control your pain and arrange urgent orthopaedic assessment.”",
+    "do": [
+      "Gentle neurovascular exam, films, analgesia, senior/orthogeriatric referral."
+    ],
+    "numbers": [
+      {
+        "value": "Day of or day after admission",
+        "meaning": "Surgery",
+        "source": "CG124"
+      },
+      {
+        "value": "30 minutes",
+        "meaning": "reassess pain within 30 minutes of initial analgesia",
+        "source": "CG124"
+      }
+    ],
+    "trap": "Do not delay surgery simply because a comorbidity needs prompt assessment.",
+    "finish": "Handover operative timing, anticoagulants, analgesia review, VTE and rehab."
+  },
+  "sources": [
+    {
+      "id": "CG124",
+      "name": "NICE. Hip fracture: management (CG124)",
+      "version": "Published 2011; last updated 6 January 2023 (accessed 12 October 2026)",
+      "url": "https://www.nice.org.uk/guidance/cg124/chapter/recommendations",
+      "supports": "Relevant sections: 1.2 Timing of surgery; 1.3 Analgesia; 1.7 Mobilisation; 1.8 Multidisciplinary management."
+    },
+    {
+      "id": "NG89",
+      "name": "NICE. Venous thromboembolism in over 16s: reducing the risk of hospital-acquired DVT or PE (NG89)",
+      "version": "Published March 2018, subsequent updates (accessed 12 October 2026)",
+      "url": "https://www.nice.org.uk/guidance/ng89/chapter/recommendations",
+      "supports": "Relevant section: fragility fractures of pelvis, hip and proximal femur."
+    }
+  ],
+  "partner": {
+    "opening": "Perform a focused assessment, interpret the radiograph findings when provided, and present your immediate management and operative plan.",
+    "actorBrief": "Opening line: “It hurts terribly when I move; I cannot stand.” Only when asked: Started a diuretic; usual mobility is a stick outdoors; no head strike; takes apixaban for AF. Consistency: No altered vital signs. Do not volunteer medication before asked.",
+    "reveals": [
+      {
+        "trigger": "Examiner imaging",
+        "finding": "AP pelvis and lateral hip radiographs show displaced left intracapsular neck-of-femur fracture.",
+        "row": "G4"
+      }
+    ],
+    "push": [
+      {
+        "question": "Will I ever walk again?",
+        "row": "G8"
+      },
+      {
+        "question": "Does my blood thinner mean a long delay?",
+        "row": "G6"
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "Anticoagulant history revealed only after candidate asks about medication, or examiner asks about perioperative planning.",
+        "safeAnswer": "No automatic delay, and no automatic immediate surgery either. With seniors and anaesthetics I would individualise the timing using the time of the last dose, renal function, bleeding risk, the anaesthetic plan and the urgency, still aiming for surgery on the day of or day after admission.",
+        "row": "G6"
+      },
+      {
+        "prompt": "Patient fears loss of independence; ask candidate to give a realistic explanation.",
+        "safeAnswer": "Recovery varies with health and mobility beforehand. We will aim for effective pain relief, timely surgery and early rehabilitation. I cannot promise a particular outcome, but we will include you and your daughter in decisions if you wish.",
+        "row": "G8"
+      }
+    ]
+  }
+}

@@ -1,0 +1,702 @@
+{
+  "id": "MB-441",
+  "exam": "MRCS-B",
+  "title": "Cervical spine examination",
+  "type": "examination",
+  "header": {
+    "domain": "Applied Skills",
+    "contentArea": "Clinical examination / spine and neurology",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "signalMinutes": 6,
+    "guidelineVersions": [
+      "BJGP 2018 review of cervical radiculopathy and myelopathy",
+      "NICE NG41 (2016)"
+    ]
+  },
+  "brief": {
+    "setting": "Clinical skills station",
+    "role": "Core surgical trainee",
+    "scenario": "You are the core surgical trainee assessing a 58-year-old patient with six months of neck stiffness and intermittent tingling in the right hand. There has been no recent trauma.",
+    "task": "Conduct a focused cervical spine and neurological examination and report whether the findings suggest radiculopathy or cervical myelopathy. Request findings from the examiner for steps that cannot be simulated."
+  },
+  "beforeYouWalkIn": {
+    "frame": "This patient has a possible spinal cord problem hidden beneath ordinary neck discomfort. Look for gait and upper motor-neurone signs as well as radicular findings.",
+    "trap": "Stopping after neck range of movement and a sensory check, missing hand clumsiness and lower limb signs.",
+    "firstMove": "“Before testing movement, I want to ask about hand dexterity, walking and bladder symptoms; then examine safely.”"
+  },
+  "flow": [
+    "0–1 min: consent, pain, trauma/instability screen and red flags",
+    "1–3 min: inspect head posture, upper limbs, scars and cautious active neck movements",
+    "3–5 min: upper limb power, sensation, reflexes and hand dexterity",
+    "5–7 min: gait, lower limb tone/reflexes and plantar responses; interpret Hoffmann sign cautiously",
+    "7–9 min: summarise possible myelopathy, urgent specialist review/imaging and safety advice"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "professionalism",
+      "label": "Safe introduction and red flags",
+      "fail": "Forcefully moves painful neck without checking safety",
+      "borderline": "Consent but no trauma or cord history",
+      "pass": "Consent, pain assessment, screens recent trauma, weakness, gait or bladder disturbance",
+      "high": "Prioritises cord-warning symptoms before provocative manoeuvres"
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-skill",
+      "label": "Inspection and range of movement",
+      "fail": "Forces maximal extension despite symptoms",
+      "borderline": "Brief neck movement only",
+      "pass": "Inspects posture/scars and assesses comfortable active range only",
+      "high": "Stops provocative movement if it causes neurological worsening"
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-skill",
+      "label": "Upper limb motor examination",
+      "fail": "Does not compare power",
+      "borderline": "Tests grip alone",
+      "pass": "Tests representative C5–T1 myotomes and compares sides",
+      "high": "Also examines fine finger movement and functional hand dexterity",
+      "source": "BJGP"
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-skill",
+      "label": "Upper limb sensation",
+      "fail": "Asks vaguely about tingling only",
+      "borderline": "Checks fingertips inconsistently",
+      "pass": "Assesses light touch in C5–T1 pattern bilaterally and distinguishes dermatomal from patchy loss",
+      "high": "Correlates sensory pattern with motor and reflex changes rather than naming a root prematurely",
+      "source": "BJGP"
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-skill",
+      "label": "Deep tendon reflexes",
+      "fail": "Does not elicit reflexes",
+      "borderline": "Elicits one arm reflex only",
+      "pass": "Checks biceps, brachioradialis and triceps reflexes bilaterally",
+      "high": "Recognises brisk reflexes may imply cord involvement, while depressed root reflexes may indicate radiculopathy"
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-skill",
+      "label": "Myelopathy screening",
+      "fail": "Misses gait and lower limbs",
+      "borderline": "Asks about falls but does not examine gait",
+      "pass": "Assesses gait, lower limb reflexes and plantar responses as indicated; interprets upper motor-neurone features",
+      "high": "Uses Hoffmann sign as a supporting, not definitive, sign and integrates hand dexterity and gait"
+    },
+    {
+      "id": "G7",
+      "domain": "professionalism",
+      "label": "Synthesis",
+      "fail": "Calls this simple strain despite objective neurological deficits",
+      "borderline": "Mentions nerve irritation only",
+      "pass": "Recognises possible degenerative cervical myelopathy with radicular symptoms",
+      "high": "Separates clinical suspicion from confirmation and identifies urgent imaging/specialist pathway"
+    },
+    {
+      "id": "G8",
+      "domain": "professionalism",
+      "label": "Escalation and management",
+      "fail": "Offers routine physiotherapy only and defers referral",
+      "borderline": "Mentions imaging without urgency",
+      "pass": "Arranges urgent senior/spinal assessment and MRI decision through local pathway",
+      "high": "Avoids cervical manipulation and communicates concern without declaring a confirmed diagnosis"
+    },
+    {
+      "id": "G9",
+      "domain": "communication",
+      "label": "Communication and safety",
+      "fail": "Reassures despite progressive gait or bladder symptoms",
+      "borderline": "General return advice",
+      "pass": "Explains hand/gait deterioration and bladder/bowel warning symptoms and urgent help",
+      "high": "Checks patient understanding, documents objective findings and safe follow-up"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "candidate",
+        "text": "You have neck stiffness. I’ll bend your head backwards to see how far it goes.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "That causes tingling in my hand."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Try harder; I need the full movement.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The patient looks uncomfortable."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Squeeze my fingers. Good, your strength is fine.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Would you test anything else?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "The tingling is probably a pinched nerve. I do not need to compare sensation across the arms.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What about reflexes and gait?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Reflexes are not important in a stiff neck, and gait is unrelated.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          },
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Would you ask about hand function or walking?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "No. Stiffness and tingling at this age are just wear and tear. I will give you a physiotherapy leaflet.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The patient says they had a new bladder symptom yesterday."
+      },
+      {
+        "speaker": "candidate",
+        "text": "That can wait until the next visit.",
+        "tags": [
+          {
+            "row": "G9",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "Should I see a specialist?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "There is no reason to involve one.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "candidate",
+        "text": "Hello, I’m the core surgical trainee. I would like to assess your neck, arms and walking to find out whether the nerves or spinal cord might be involved. Is that okay?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "Yes. My neck is stiff, and my right hand tingles."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Before I move the neck, have you had a fall or injury? Any difficulty with buttons, dropping objects, balance or new bladder trouble?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "No injury, and nothing I’ve noticed with my bladder, but I have dropped my keys and buttons are awkward. I am less steady on stairs."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I’ll look at head posture, muscles and scars, and ask you to turn your head only as far as comfortable. Tell me if you get pain or worsening tingling.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "There is reduced active rotation, especially rightward, without pain shooting down the arm during the movement."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I will compare shoulder abduction, elbow flexion and extension, wrist movements, finger extension and finger abduction, then ask you to open and close the hands rapidly.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Most power is 5 out of 5; right finger abduction is 4-plus out of 5, and rapid hand opening is slightly slow."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I’ll compare light touch across both arms and hands, including representative C5 to T1 areas. Is the sensation the same on each side?",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "There is intermittent altered light touch in the right index and middle fingers; the rest is preserved."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I will check biceps, brachioradialis and triceps reflexes bilaterally.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Biceps and brachioradialis are normal. Triceps reflexes are brisk on both sides."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Because of the hand difficulty, I must also observe gait and check lower limb reflexes and plantar responses.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Gait is broad-based, tandem gait is impaired, knee reflexes are brisk and plantar responses extensor bilaterally. Right Hoffmann is positive."
+      },
+      {
+        "speaker": "candidate",
+        "text": "These findings suggest possible cervical myelopathy, not isolated cervical radiculopathy. The altered finger sensation could reflect a root component, but the gait and brisk lower limb responses raise concern about the cord.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The patient asks: “Could I just have physiotherapy for my stiff neck?”"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I would not recommend cervical manipulation or routine physiotherapy as the only plan while we are concerned about cord compression. I would urgently discuss with the senior/spinal team and arrange appropriate cervical MRI assessment.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "Does that mean permanent damage?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Not necessarily. I cannot confirm the cause without specialist assessment and imaging, but the signs deserve prompt investigation because untreated cord problems may worsen.",
+        "tags": [
+          {
+            "row": "G9",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Late cue: the patient remembers one episode of urinary urgency yesterday, without incontinence."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I would clarify whether there is new retention, incontinence or progressive weakness and escalate the new symptom to the senior team now. Any sudden worsening of walking, weakness or bladder/bowel control needs urgent emergency assessment.",
+        "tags": [
+          {
+            "row": "G9",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "I understand why we need to check this quickly."
+      }
+    ],
+    "high": [
+      {
+        "speaker": "candidate",
+        "text": "I’m one of the core surgical trainees. May I examine your neck, arms and balance? With symptoms like hand clumsiness, I first want to rule out a spinal-cord warning sign before asking you to move your neck.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "That sounds sensible; I keep dropping keys."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Has there been trauma? Any progressive weakness, difficulty walking, changes in handwriting or fastening buttons, or bladder and bowel symptoms?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "No injury. Buttons have become harder during the last six weeks and I am unsteady on stairs; nothing I’ve noticed with my bladder."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I’ll inspect posture, wasting and surgical scars. Please rotate gently within comfort; I will not force extension or use provocative manipulation.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Rotation is limited to the right. No scar or marked muscle wasting."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I’m testing power side to side from shoulder abduction down to intrinsic hand muscles and rapid finger movement, looking not just for an isolated root deficit but loss of fine motor control.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Right finger abduction 4+/5, the rest 5/5, with mildly slow rapid hand opening."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I’ll map sensation in the hands and forearms. Where exactly is the tingling?",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "Mainly the index and middle fingers of my right hand."
+      },
+      {
+        "speaker": "examiner",
+        "text": "The corresponding light-touch change is intermittent. No widespread sensory deficit."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I will compare biceps, brachioradialis and triceps reflexes, then look for upper motor-neurone signs. The pattern of reflexes matters more than any single test.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Triceps brisk bilaterally, with other upper-limb reflexes normal."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Please walk a short distance with support nearby and, if safe, try heel-to-toe walking. I will check knee reflexes and plantar responses.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Broad-based walking, impaired tandem gait, brisk knees and bilateral extensor plantars. Right Hoffmann sign is positive."
+      },
+      {
+        "speaker": "candidate",
+        "text": "The combined hand dexterity change, gait disturbance and long-tract signs strongly suggest cervical cord involvement. Hoffmann alone would not establish myelopathy, but here it reinforces the overall pattern. Coexisting root irritation could explain finger paraesthesia.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The patient asks if they can book a manipulation session later this week."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I would advise against neck manipulation until spinal cord compression is assessed. I will discuss this urgently with the senior clinician/spinal service and request cervical MRI through the agreed pathway. I would record the exact motor, reflex and gait findings for the referral.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "Am I going to lose the use of my hands?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I cannot predict that from this examination. The reason to investigate promptly is to reduce the risk of deterioration and clarify the treatment options, which may or may not involve surgery.",
+        "tags": [
+          {
+            "row": "G9",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Final cue: “I’ve just remembered — I had unusual urinary urgency yesterday, but not incontinence.”"
+      },
+      {
+        "speaker": "candidate",
+        "text": "That is relevant new information. I would ask about retention, loss of urinary control and saddle symptoms, document the chronology, and convey it immediately in my urgent senior referral; I would not leave this as a routine outpatient issue.",
+        "tags": [
+          {
+            "row": "G9",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Until review, seek emergency care for worsening limb weakness, falls, or new bladder or bowel dysfunction. Can you tell me which changes would prompt you to seek help?",
+        "tags": [
+          {
+            "row": "G9",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "A sudden change in walking, weakness, or bladder control."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Exactly. I will explain the plan and arrange the assessment now rather than simply sending you away with exercises."
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G1",
+      "move": "Forces neck motion despite neurological symptoms.",
+      "consequence": "May provoke pain or neurological deterioration in an unstable/cord-compromised patient."
+    },
+    {
+      "row": "G6",
+      "move": "Ignores gait disturbance and upper motor-neurone signs.",
+      "consequence": "Misses possible cervical myelopathy and delays decompression assessment."
+    },
+    {
+      "row": "G8",
+      "move": "Fails to escalate progressive neurological or new bladder symptoms.",
+      "consequence": "May permit worsening neurological deficit."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "If you attributed this to a simple nerve root problem",
+      "line": "I should not attribute this to a simple nerve root problem without examining gait and long-tract signs; I will complete the cord examination now."
+    },
+    {
+      "when": "If the examination suggests possible myelopathy and you need to change your plan",
+      "line": "I need to change my plan: the examination suggests possible myelopathy, so urgent senior and spinal assessment is appropriate."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Radiculopathy without red flags can usually be referred routinely to a spinal clinic, or for MRI if conservative measures fail; myelopathy features change the urgency.",
+      "source": "BJGP"
+    },
+    {
+      "fact": "Myelopathy presents with clumsy hands, reduced manual dexterity and an unsteady gait; neck pain may be absent. Ask about bladder and bowel function.",
+      "source": "BJGP"
+    },
+    {
+      "fact": "Hoffmann’s test has low reported sensitivity, so a negative result does not rule out myelopathy.",
+      "source": "BJGP"
+    },
+    {
+      "fact": "Examine both upper and lower limbs: myelopathy causes upper motor neurone signs, particularly in the legs (brisk reflexes, up-going plantars); clonus of more than 3 beats is highly suggestive.",
+      "source": "BJGP"
+    },
+    {
+      "fact": "Any positive myelopathy symptoms or signs warrant immediate referral, usually by phoning the on-call orthopaedic or spinal registrar.",
+      "source": "BJGP"
+    },
+    {
+      "fact": "In recent trauma, the assessment differs: spinal protection and formal injury risk stratification take priority over routine active movements.",
+      "source": "NG41"
+    }
+  ],
+  "recall": {
+    "think": "root OR cord?",
+    "say": "“Hand clumsiness and gait changes raise concern for myelopathy.”",
+    "do": [
+      "safety screen",
+      "gentle active movements",
+      "upper-limb motor/sensory/reflex testing; gait and long-tract signs."
+    ],
+    "numbers": [
+      {
+        "value": "more than 3 beats",
+        "meaning": "clonus of more than 3 beats is highly suggestive of myelopathy; no other threshold is required.",
+        "source": "BJGP"
+      }
+    ],
+    "trap": "treating cord signs as benign radiculopathy.",
+    "finish": "urgent senior/spinal referral and appropriate MRI pathway; document and safety-net."
+  },
+  "sources": [
+    {
+      "id": "BJGP",
+      "name": "McCartney S, Baskerville R, Blagg S, McCartney D. Cervical radiculopathy and cervical myelopathy: diagnosis and management in primary care.",
+      "version": "Br J Gen Pract 2018;68(666):44–46",
+      "url": "https://bjgp.org/content/68/666/44",
+      "supports": "myelopathy symptoms and signs, Hoffmann sensitivity, clonus, bladder/bowel enquiry, immediate referral for myelopathy, routine pathway for uncomplicated radiculopathy."
+    },
+    {
+      "id": "NG41",
+      "name": "NICE NG41, Spinal injury: assessment and initial management",
+      "version": "published 17 February 2016",
+      "url": "https://www.nice.org.uk/guidance/ng41/chapter/Recommendations",
+      "supports": "separate traumatic/unstable spine protection; not a routine non-trauma range-of-motion guideline."
+    }
+  ],
+  "partner": {
+    "opening": "Conduct a focused cervical spine and neurological examination and report whether the findings suggest radiculopathy or cervical myelopathy.",
+    "actorBrief": "“My neck is stiff and my right hand tingles.” Fictional patient: 58 years old; neck stiffness for six months. Right index and middle finger paraesthesia intermittently; dropping keys for six weeks and difficulty fastening buttons. No trauma, fever or cancer history. Normal current bladder function. Only answer specific questions about dropping keys, buttons and gait when asked. If asked about bladder symptoms before the final cue, answer: “Nothing I’ve noticed.”",
+    "reveals": [
+      {
+        "trigger": "On upper limb motor examination",
+        "finding": "upper limb power largely 5/5 with mild right finger-abduction weakness 4+/5.",
+        "row": "G3"
+      },
+      {
+        "trigger": "On upper limb reflexes",
+        "finding": "Biceps reflexes normal; triceps brisk bilaterally.",
+        "row": "G5"
+      },
+      {
+        "trigger": "On gait examination",
+        "finding": "Gait is wide-based and tandem gait is impaired.",
+        "row": "G6"
+      },
+      {
+        "trigger": "On lower limb reflexes and plantars",
+        "finding": "Knee reflexes brisk, plantar responses extensor bilaterally.",
+        "row": "G6"
+      },
+      {
+        "trigger": "On Hoffmann testing",
+        "finding": "Hoffmann sign present on right (supportive only).",
+        "row": "G6"
+      },
+      {
+        "trigger": "Examiner instruction (all findings)",
+        "finding": "Examiner releases these findings only when requested. Give examination findings when each manoeuvre is performed or asked of the examiner. Candidate must not perform forced manipulation. Do not invent additional neurological findings.",
+        "row": "G2"
+      }
+    ],
+    "push": [],
+    "curveballs": [
+      {
+        "prompt": "After synthesis: “Could I just have manipulation or routine physio?”",
+        "safeAnswer": "I would not recommend cervical manipulation or routine physiotherapy as the only plan while we are concerned about cord compression. I would urgently discuss with the senior/spinal team and arrange appropriate cervical MRI assessment.",
+        "row": "G8"
+      },
+      {
+        "prompt": "In the final minute: “I’ve just remembered — I had some new urinary urgency yesterday.”",
+        "safeAnswer": "I would clarify whether there is new retention, incontinence or progressive weakness and escalate the new symptom to the senior team now. Any sudden worsening of walking, weakness or bladder/bowel control needs urgent emergency assessment.",
+        "row": "G9"
+      }
+    ]
+  }
+}

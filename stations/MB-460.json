@@ -1,0 +1,550 @@
+{
+  "id": "MB-460",
+  "exam": "MRCS-B",
+  "title": "Hyperkalaemia on the surgical ward",
+  "type": "applied-knowledge",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "Surgical ward emergency: metabolic",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "UK Kidney Association (UKKA) Clinical Practice Guideline: Management of Hyperkalaemia in Adults, original July 2020, updated July 2026",
+      "NICE NG148, Acute kidney injury: prevention, detection and management (published 18 December 2019; last updated 16 October 2024)"
+    ],
+    "related": [
+      {
+        "id": "MB-459",
+        "why": "potassium-containing maintenance fluid is part of the cause."
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Surgical ward, 02:00",
+    "role": "Core surgical trainee",
+    "scenario": "You are the core surgical trainee on call. Mr Desmond Ackroyd, 71, is day 2 after Hartmann’s procedure for perforated diverticulitis.",
+    "task": "Review his observations, blood results, ECG report and drug chart; explain your assessment and what you will do now, in order."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Severe ECG-changing hyperkalaemia with AKI: monitor and escalate, stabilise myocardium, shift potassium, stop contributors, and arrange potassium removal and monitoring.",
+    "trap": "Insulin before calcium, insulin without checking glucose, ignoring the potassium-containing fluid and nephrotoxic/RAAS medicines, or treating the number without a definitive removal plan.",
+    "firstMove": "This is severe hyperkalaemia with ECG changes. I need continuous ECG monitoring, IV access and senior help while I start treatment immediately."
+  },
+  "flow": [
+    "Review supplied ECG/results; ABCDE, continuous ECG monitoring, IV access and urgent senior escalation.",
+    "Give IV calcium for ECG toxicity and reassess ECG; persistent toxic changes require urgent senior/expert reassessment and further calcium according to the current guideline/local protocol.",
+    "Give insulin-glucose; starting glucose is 6.2 mmol/L, so add 10% glucose at 50 mL/hour for 5 hours; add nebulised salbutamol as adjunct.",
+    "Stop potassium-containing fluid and review ramipril/ibuprofen; assess volume, urine output, bladder obstruction and other contributors.",
+    "Repeat potassium at 1, 2, 4, 6 and 24 hours; glucose checks at 0, 30, 60, 90, 120, 180, 240, 300 and 360 minutes after the insulin-glucose was given (extended after repeat doses); sodium zirconium cyclosilicate for K⁺ ≥6.5; urgent renal replacement decision if resistant; ALS and IV calcium chloride if hyperkalaemia is suspected in cardiac arrest."
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-skill",
+      "label": "Assessment and escalation",
+      "fail": "Waits until morning or fails to monitor/escalate.",
+      "borderline": "Requests ECG but delays continuous monitoring or senior review.",
+      "pass": "ABCDE, reviews supplied ECG, starts continuous monitoring and IV access, calls senior immediately.",
+      "high": "Gives structured handover with surgery, K⁺ 6.9, ECG changes, AKI and treatment timeline.",
+      "source": "UKKA"
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-knowledge",
+      "label": "Severity and ECG",
+      "fail": "Dismisses K⁺ 6.9 or ignores peaked T waves/wide QRS.",
+      "borderline": "Names high potassium and ECG changes but not the arrhythmia risk.",
+      "pass": "Recognises severe hyperkalaemia at ≥6.5 mmol/L and ECG toxicity with risk of malignant arrhythmia.",
+      "high": "Explains possible bradyarrhythmia, ventricular tachycardia or sine-wave progression.",
+      "source": "UKKA"
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-skill",
+      "label": "Calcium",
+      "fail": "Omits calcium or delays it until after insulin despite ECG changes.",
+      "borderline": "Gives calcium with incorrect formulation/dose or without ECG reassessment.",
+      "pass": "Gives 30 mL of 10% calcium gluconate IV over 10 minutes with monitoring.",
+      "high": "Repeats ECG; if toxic changes persist, urgently seeks senior/expert guidance and considers further calcium according to current protocol; calcium chloride preferred in arrest/peri-arrest.",
+      "source": "UKKA"
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-skill",
+      "label": "Insulin and glucose",
+      "fail": "Gives insulin alone or omits glucose monitoring.",
+      "borderline": "Gives insulin-glucose but misses starting glucose or prolonged monitoring.",
+      "pass": "Gives 10 units soluble insulin in 25 g glucose; because starting glucose is 6.2 (<7.0), adds 10% glucose at 50 mL/h for 5 h; monitors glucose for 6 h after the insulin-glucose was given.",
+      "high": "States checks at 0, 30, 60, 90, 120, 180, 240, 300 and 360 min after the insulin-glucose, extended after repeat doses; repeats insulin-glucose only per UKKA criteria.",
+      "source": "UKKA"
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-knowledge",
+      "label": "Adjuncts",
+      "fail": "Uses salbutamol alone or bicarbonate routinely without indication.",
+      "borderline": "Mentions salbutamol but not dose or limits.",
+      "pass": "Adds nebulised salbutamol 10–20 mg as adjunct, not monotherapy; bicarbonate is not routine; starts sodium zirconium cyclosilicate 10 g three times daily (up to 72 h) for K⁺ ≥6.5.",
+      "high": "Explains that sodium zirconium cyclosilicate removes potassium but does not replace emergency stabilisation/shift therapy; calcium resonium is no longer routine.",
+      "source": "UKKA"
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-knowledge",
+      "label": "Causes and AKI",
+      "fail": "Leaves potassium chloride fluid, ramipril and ibuprofen unchanged.",
+      "borderline": "Stops one contributor but misses others or ignores AKI.",
+      "pass": "Stops potassium-containing fluid and reviews/withholds ramipril and ibuprofen; links oliguria and creatinine rise to AKI.",
+      "high": "Checks volume status, bladder for obstruction, constipation and acidosis; documents cause review.",
+      "source": "UKKA"
+    },
+    {
+      "id": "G7",
+      "domain": "clinical-knowledge",
+      "label": "Repeat testing and definitive treatment",
+      "fail": "No repeat potassium or plan for rebound/resistant disease.",
+      "borderline": "Repeats potassium without schedule or escalation plan.",
+      "pass": "Repeats potassium at 1, 2, 4, 6 and 24 h; urgent renal discussion if not settling.",
+      "high": "Recognises resistant life-threatening hyperkalaemia needs urgent renal replacement decision; if arrest and hyperkalaemia known/suspected, calls arrest team, follows ALS and gives IV calcium chloride.",
+      "source": "UKKA"
+    },
+    {
+      "id": "G8",
+      "domain": "professionalism",
+      "label": "Communication and prescription",
+      "fail": "Tells nobody, leaves no notes or unsafe prescription.",
+      "borderline": "Informs nurse but omits times, doses or handover.",
+      "pass": "Explains to patient, keeps nurse informed, documents doses/times and monitoring plan.",
+      "high": "Writes drug/dose/route/rate and closed-loop task allocation for the night team.",
+      "source": "UKKA"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "The nurse says the potassium is 6.9. What do you do?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I would repeat it in the morning in case it is haemolysed.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          },
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The lab confirms it is not haemolysed; ECG shows peaked T waves and a wide QRS."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I would give insulin on its own; there is no need for glucose.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          },
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How will you lower his potassium and keep it down?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "A salbutamol nebuliser on its own will bring it down. I wouldn’t start a binder; his kidneys will clear it.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The drug chart shows ramipril, ibuprofen and potassium chloride in the fluid."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I would leave them running and not tell anyone until the morning.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          },
+          {
+            "row": "G7",
+            "band": "fail"
+          },
+          {
+            "row": "G8",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "examiner",
+        "text": "Potassium is 6.9 with an abnormal ECG. What do you do?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "This is severe hyperkalaemia with ECG changes. I will start continuous ECG monitoring, assess ABCDE, secure IV access and call my senior now.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Not haemolysed. The ECG shows peaked T waves and a QRS of 132 ms."
+      },
+      {
+        "speaker": "candidate",
+        "text": "K⁺ 6.9 is severe, and peaked T waves with QRS widening mean risk of a dangerous arrhythmia.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "First treatment?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I would give 30 mL of 10% calcium gluconate IV over 10 minutes with ECG monitoring, then reassess the ECG.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Glucose is 6.2. Next?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I would give 10 units soluble insulin in 25 g glucose. As glucose is below 7, I would add 10% glucose at 50 mL/hour for 5 hours and monitor glucose for 6 hours from when the insulin-glucose is given.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I would add nebulised salbutamol 10–20 mg as an adjunct, never alone; bicarbonate is not routine. As K⁺ is above 6.5, I would also start sodium zirconium cyclosilicate 10 g three times daily.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The drug chart shows ramipril, ibuprofen and saline with potassium chloride."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I would stop the potassium-containing fluid and review/withhold ramipril and ibuprofen. The oliguria and creatinine rise suggest AKI; I would assess volume status and exclude obstruction.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I would repeat potassium at 1, 2, 4, 6 and 24 hours, ask renal urgently if it does not settle, and document the doses and monitoring plan.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "Is my heart going to stop?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Your potassium is high enough to upset your heart rhythm, which is serious, and that is why we are treating it now. The treatment works within minutes, you are on a heart monitor and my senior is coming. I’ll keep you and your nurse updated.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "examiner",
+        "text": "Potassium 6.9, not haemolysed, peaked T waves, QRS 132 ms. How will you run this?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I will delegate repeat bloods, medication/fluid stop, glucose monitoring and documentation, but keep responsibility until a clear handover is accepted. My senior gets a structured handover: day 2 after Hartmann’s, K⁺ 6.9, peaked T waves and QRS 132 ms, AKI, and what has been given and when.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What is the risk?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Severe hyperkalaemia with QRS widening can progress to bradyarrhythmia, ventricular tachycardia or a sine-wave pattern.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "After calcium and insulin-glucose, the 60-minute potassium is 6.6 mmol/L and the QRS is still wide."
+      },
+      {
+        "speaker": "candidate",
+        "text": "The toxic changes persist, so I will repeat the ECG and, with my senior, give further IV calcium per the UKKA/local protocol (calcium chloride if peri-arrest), keeping him on continuous cardiac monitoring.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I will not automatically repeat insulin-glucose. UKKA advises considering a further infusion only if potassium is still not controlled (not below 6.0 mmol/L) within 2 hours of the infusion; I would recheck glucose first and decide with my senior, because repeat doses add hypoglycaemia risk. Glucose checks continue at 0, 30, 60, 90, 120, 180, 240, 300 and 360 minutes after the insulin-glucose was given, extended beyond 6 hours if a further dose is given, with 10% glucose if the pre-dose glucose is below 7.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I will continue sodium zirconium cyclosilicate, explaining that it removes potassium but does not replace calcium or insulin-glucose; salbutamol is only an adjunct and bicarbonate is not routine.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I will find and stop the cause: stop the potassium-containing fluid, withhold ramipril and ibuprofen, and assess volume status, bladder retention, constipation and acidosis.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Potassium 6.6 with a wide QRS despite treatment is resistant hyperkalaemia, so I will discuss dialysis with renal and critical care now. If he arrests: arrest team, ALS and IV calcium chloride.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I will prescribe each medicine with dose, route and rate and hand over the timeline and monitoring schedule.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G1",
+      "move": "Delays calcium and senior escalation despite severe hyperkalaemia with ECG toxicity.",
+      "consequence": "Potentially fatal arrhythmia may occur."
+    },
+    {
+      "row": "G4",
+      "move": "Gives insulin without glucose or omits glucose monitoring.",
+      "consequence": "Severe treatment-related hypoglycaemia may go unrecognised."
+    },
+    {
+      "row": "G6",
+      "move": "Leaves potassium chloride fluid and potassium-raising/nephrotoxic medicines unchanged.",
+      "consequence": "Potassium may rise further and AKI worsen."
+    },
+    {
+      "row": "G1",
+      "move": "Fails to alert any senior or emergency team.",
+      "consequence": "Life-threatening deterioration may not be treated in time."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "If you gave calcium and insulin-glucose out of the correct sequence",
+      "line": "Calcium stabilises the myocardium; insulin-glucose shifts potassium. I will give them in the correct sequence and monitor both ECG and glucose."
+    },
+    {
+      "when": "If you have not stopped potassium sources",
+      "line": "I will stop potassium sources, repeat potassium on schedule and obtain urgent renal help if it remains life-threatening."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Severe hyperkalaemia is K⁺ ≥6.5 mmol/L; this case’s 6.9 mmol/L is severe.",
+      "source": "UKKA"
+    },
+    {
+      "fact": "For ECG changes, UKKA July 2026 suggests 30 mL 10% calcium gluconate IV over 10 minutes; calcium stabilises the myocardium but does not lower potassium.",
+      "source": "UKKA"
+    },
+    {
+      "fact": "Give 10 units soluble insulin in 25 g glucose; if pretreatment glucose <7.0 mmol/L, add 10% glucose at 50 mL/h for 5 h.",
+      "source": "UKKA"
+    },
+    {
+      "fact": "Glucose monitoring schedule: 0, 30, 60, 90, 120, 180, 240, 300 and 360 minutes after the insulin-glucose was given; extend monitoring after repeat doses or in other patients at high risk of late hypoglycaemia.",
+      "source": "UKKA"
+    },
+    {
+      "fact": "If toxic ECG changes persist after calcium, give further IV calcium. Further insulin-glucose is considered only if K⁺ is not controlled (below 6.0 mmol/L) within 2 hours of the infusion, with glucose rechecked and senior input; repeat doses increase hypoglycaemia risk.",
+      "source": "UKKA"
+    },
+    {
+      "fact": "Nebulised salbutamol 10–20 mg is an adjunct, not monotherapy; IV bicarbonate is not routine; sodium zirconium cyclosilicate 10 g three times daily (up to 72 h) is recommended for K⁺ ≥6.5 mmol/L.",
+      "source": "UKKA"
+    },
+    {
+      "fact": "Repeat potassium at 1, 2, 4, 6 and 24 h; resistant life-threatening hyperkalaemia needs urgent renal replacement decision; consider hyperkalaemia in cardiac arrest.",
+      "source": "UKKA"
+    }
+  ],
+  "recall": {
+    "think": "Severe K plus ECG changes: monitor, calcium, shift, stop cause, remove potassium.",
+    "say": "“Severe hyperkalaemia with ECG changes; I’m treating now and escalating.”",
+    "do": [
+      "ECG monitor, calcium, insulin-glucose, salbutamol adjunct, stop sources, repeat labs."
+    ],
+    "numbers": [
+      {
+        "value": "K⁺ ≥6.5 mmol/L",
+        "meaning": "Severe hyperkalaemia",
+        "source": "UKKA"
+      },
+      {
+        "value": "30 mL 10% calcium gluconate over 10 min",
+        "meaning": "ECG changes",
+        "source": "UKKA"
+      },
+      {
+        "value": "10 units insulin + 25 g glucose",
+        "meaning": "Shift potassium",
+        "source": "UKKA"
+      }
+    ],
+    "trap": "Insulin without glucose/checks; ignoring potassium sources.",
+    "finish": "Glucose schedule, potassium schedule, senior/renal plan and handover."
+  },
+  "sources": [
+    {
+      "id": "UKKA",
+      "name": "UK Kidney Association, Clinical Practice Guideline: Management of Hyperkalaemia in Adults",
+      "version": "updated July 2026",
+      "url": "https://www.ukkidney.org/sites/default/files/documents/FINAL%20VERSION%20-%20UKKA%20CLINICAL%20PRACTICE%20GUIDELINE%20-%20MANAGEMENT%20OF%20HYPERKALAEMIA%20IN%20ADULTS%20-%20UPDATED%20JULY%202026_0.pdf",
+      "supports": "Severity, ECG toxicity, calcium, insulin-glucose, adjuncts, monitoring, causes and arrest."
+    },
+    {
+      "id": "NG148",
+      "name": "NICE NG148, Acute kidney injury: prevention, detection and management",
+      "version": "published 18 December 2019, last updated 16 October 2024",
+      "url": "https://www.nice.org.uk/guidance/ng148",
+      "supports": "AKI recognition and medication review."
+    }
+  ],
+  "partner": {
+    "opening": "The nurse says his potassium is 6.9 and the ECG is abnormal. He is becoming more bradycardic.",
+    "reveals": [
+      {
+        "trigger": "Reveal only if asked",
+        "finding": "Mr Desmond Ackroyd, 71, 78 kg, day 2 after Hartmann’s procedure for perforated diverticulitis; alert, stoma pink.",
+        "row": "G1"
+      },
+      {
+        "trigger": "Reveal only if asked",
+        "finding": "Observations: pulse 56/min, BP 104/60 mmHg, RR 18/min, SpO₂ 96% on air, temperature 36.8°C. Urine output 150 mL in the last 8 hours.",
+        "row": "G1"
+      },
+      {
+        "trigger": "Reveal only if asked",
+        "finding": "Bloods: K⁺ 6.9 mmol/L (not haemolysed), Na 133 mmol/L, urea 22.4 mmol/L, creatinine 231 µmol/L (baseline 92), bicarbonate 17 mmol/L, capillary glucose 6.2 mmol/L.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Reveal only if asked",
+        "finding": "ECG: sinus bradycardia 56/min, peaked T waves, QRS 132 ms.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Reveal only if asked",
+        "finding": "Drug chart: ramipril restarted day 1, ibuprofen three times daily, maintenance saline with 20 mmol potassium chloride per litre.",
+        "row": "G6"
+      },
+      {
+        "trigger": "Actor/examiner pushback: If candidate delays",
+        "finding": "His heart rate has fallen to 42/min and the QRS remains wide.",
+        "row": "G1"
+      }
+    ],
+    "push": [],
+    "curveballs": [
+      {
+        "prompt": "Repeat potassium at 60 minutes after initial treatment is 6.6 mmol/L and the ECG still shows a wide QRS.",
+        "safeAnswer": "repeat the ECG; give further IV calcium because toxic ECG changes persist; continuous cardiac monitoring; urgent senior, renal and critical care input about dialysis; continue sodium zirconium cyclosilicate and remove the cause. Further insulin-glucose only per UKKA, if potassium is still not controlled (not below 6.0 mmol/L) within 2 hours of the infusion, with glucose rechecked and senior input, noting the extra hypoglycaemia risk of repeat doses.",
+        "row": "G3"
+      },
+      {
+        "prompt": "He arrests and hyperkalaemia is suspected.",
+        "safeAnswer": "call arrest team, follow ALS and give IV calcium chloride per resuscitation guidance.",
+        "row": "G7"
+      }
+    ]
+  }
+}

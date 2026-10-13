@@ -1,0 +1,637 @@
+{
+  "id": "MB-467",
+  "exam": "MRCS-B",
+  "title": "Thyroid nodule: ultrasound and cytology",
+  "type": "applied-knowledge",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "Surgical pathology / thyroid imaging and cytology",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "NICE NG230 (2022)",
+      "UK Head and Neck Cancer Multidisciplinary Guidelines, sixth edition (2024)"
+    ],
+    "related": [
+      {
+        "id": "MB-439",
+        "why": "parotid examination—distinct clinical tasks"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Endocrine surgery assessment",
+    "role": "Core surgical trainee",
+    "scenario": "You are the core surgical trainee in an endocrine surgery assessment. An examiner will show you a written thyroid ultrasound report and FNAC report.",
+    "task": "Interpret them, explain management options and address new clinical information. No patient is present and no image is required."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Interpret morphological risk and indeterminate cytology together.",
+    "trap": "Calling Thy3a confirmed cancer or treating normal TSH as proof of safety.",
+    "firstMove": "State what U4 means and which reported features justify concern."
+  },
+  "flow": [
+    "Inspect the report, identify the suspicious sonographic features and U category.",
+    "Interpret the FNAC precisely rather than inferring malignancy.",
+    "Reconcile imaging and cytology; state next sampling and specialist plan.",
+    "Respond to new red-flag symptoms as new clinical information.",
+    "Summarise uncertainty, counselling and documented follow-up."
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-knowledge",
+      "label": "Reads ultrasound report accurately",
+      "fail": "Calls it benign without reading suspicious features.",
+      "borderline": "Mentions hypoechoic appearance but ignores the irregular border.",
+      "pass": "Recognises U4 suspicion from hypoechogenicity and irregular outline.",
+      "high": "Explains why the feature combination matters and that U grading is not a histological diagnosis.",
+      "source": "S2"
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-knowledge",
+      "label": "Interprets FNAC report",
+      "fail": "Calls Thy3a malignant.",
+      "borderline": "Calls Thy3a indeterminate without meaning.",
+      "pass": "Identifies Thy3a as atypia/neoplasia possible and not proof of cancer.",
+      "high": "Explains that sampling uncertainty and imaging discordance warrant careful next steps.",
+      "source": "S1"
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "Reconciles ultrasound and cytology",
+      "fail": "Discharges because cytology is not Thy5.",
+      "borderline": "Notes uncertainty but offers no next step.",
+      "pass": "Recognises concerning ultrasound plus Thy3a needs further assessment.",
+      "high": "Explicitly identifies imaging–cytology discordance and uses MDT for personalised sequencing.",
+      "source": "S1"
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-skill",
+      "label": "Specifies sampling pathway",
+      "fail": "Orders an unsupported diagnostic blood tumour marker instead of further sampling.",
+      "borderline": "Says repeat biopsy vaguely.",
+      "pass": "Recommends repeat sampling and considers core-needle biopsy in line with NG230 1.2.11.",
+      "high": "Explains why core biopsy or FNAC is selected with radiology and sampling feasibility.",
+      "source": "S1"
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-knowledge",
+      "label": "Assesses thyroid and neck",
+      "fail": "Ignores nodes and voice symptoms.",
+      "borderline": "Only requests TSH.",
+      "pass": "Requests thyroid/cervical node assessment, history and thyroid function as appropriate.",
+      "high": "Adds compressive/voice history and links abnormal cervical nodes to targeted assessment."
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-knowledge",
+      "label": "Explains Thy categories",
+      "fail": "States Thy1=benign and Thy5=indeterminate.",
+      "borderline": "Gets Thy4/5 right but not Thy1 or Thy3f.",
+      "pass": "Correctly distinguishes Thy1, Thy2, Thy3a/3f, Thy4 and Thy5.",
+      "high": "Explains diagnostic uncertainty and why Thy3f is not handled identically to Thy3a.",
+      "source": "S1"
+    },
+    {
+      "id": "G7",
+      "domain": "professionalism",
+      "label": "Counsels uncertainty",
+      "fail": "Tells patient they definitely have cancer.",
+      "borderline": "Avoids diagnosis but does not explain plan.",
+      "pass": "Explains indeterminate cytology honestly, risk and next investigation.",
+      "high": "Uses plain language, checks understanding, avoids false reassurance or alarm."
+    },
+    {
+      "id": "G8",
+      "domain": "clinical-knowledge",
+      "label": "Handles progression cue",
+      "fail": "Treats new hoarseness as irrelevant.",
+      "borderline": "Acknowledges hoarseness but does not expedite assessment.",
+      "pass": "Escalates new hoarseness and concerning node through specialist pathway.",
+      "high": "Coordinates urgent specialist review and targeted assessment, explaining not to await routine repeat testing."
+    },
+    {
+      "id": "G9",
+      "domain": "professionalism",
+      "label": "Summarises and safety nets",
+      "fail": "Discharges without follow-up.",
+      "borderline": "Advises follow-up without ownership.",
+      "pass": "States MDT/review, next test and worsening symptom advice.",
+      "high": "Closes with named responsible service, documented plan and explicit voice/airway escalation advice."
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "A report describes a 2.4 cm irregular hypoechoic thyroid nodule called U4. What does it mean?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "The scan alone is not very important. Most thyroid lumps are harmless.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The ultrasound-guided needle aspirate returns Thy3a. What is Thy3a?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "That means thyroid cancer, so I would book the patient for total thyroidectomy immediately.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The patient asks why the scan and cytology seem different."
+      },
+      {
+        "speaker": "candidate",
+        "text": "The pathology report is final. I do not think we need to discuss the ultrasound again.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What further investigation would you arrange?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "None. I would just get another thyroid function test in six months.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What other examination might be relevant?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I would probably just palpate the lump. Neck nodes are not necessary here.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Is Thy1 benign?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Yes, essentially. It means nothing worrying was found.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The patient asks if cancer is certain."
+      },
+      {
+        "speaker": "candidate",
+        "text": "“Yes, the cytology proves it. You will definitely need your entire thyroid removed.”",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The patient has developed new hoarseness and a firm cervical node. What now?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I would leave it until the routine clinic in a few months because the thyroid blood test is normal.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Give your handover."
+      },
+      {
+        "speaker": "candidate",
+        "text": "U4 means low risk; Thy3a is already cancer; no further sampling or urgent review is required.",
+        "tags": [
+          {
+            "row": "G9",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "examiner",
+        "text": "You are shown a written ultrasound report for a 47-year-old with a 2.4 cm right thyroid nodule: predominantly solid, hypoechoic, irregular margins, no microcalcification described. The reporting radiologist calls it U4. What do you make of it?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "The U4 category is suspicious, because the nodule has a hypoechoic solid appearance and irregular margin. It is not a histological diagnosis, but it merits sampling and specialist correlation.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Thyroid function is normal. Ultrasound-guided aspiration returns “Thy3a: atypia, neoplasia possible.” What does this mean?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "It is indeterminate rather than a definite benign or malignant cytology result. It should not be described to the patient as confirmed thyroid cancer.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The patient asks whether the scan or the needle test is right."
+      },
+      {
+        "speaker": "candidate",
+        "text": "The tests answer different questions. Ultrasound assesses structural risk and FNAC samples cells; an indeterminate sample may not settle the concern raised by a suspicious scan. I would not discharge based on this result.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What is the next investigation?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "NICE NG230 advises repeat sampling for Thy3a. I would discuss a core-needle biopsy, or repeat ultrasound-guided FNAC if core biopsy is not suitable or available, with the thyroid team.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What else would you check before deciding?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Symptoms of dysphagia, voice change or breathing difficulty, previous radiation or family history, examine the thyroid and cervical nodes, and review the full ultrasound including nodal appearances. The TSH is already normal.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Briefly take me through the Thy categories."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Thy1 is inadequate; Thy2 is benign; Thy3a is atypical/indeterminate; Thy3f suggests follicular neoplasm; Thy4 is suspicious; and Thy5 is malignant. The next steps differ.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The patient says, “Does a Thy3a result mean I have cancer?”"
+      },
+      {
+        "speaker": "candidate",
+        "text": "No, it does not confirm cancer. The scan does contain features we should investigate further, so I would explain the plan for another sample and specialist discussion rather than make a promise either way.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "New information: over the past week the patient has developed persistent hoarseness, and a small firm right cervical node is now documented. What changes?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "That adds clinical concern. I would contact the thyroid/head-and-neck specialist service promptly, ensure the node and voice are assessed, and not allow routine repeat sampling to delay urgent review.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Give me your closing handover."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Forty-seven-year-old with suspicious U4 nodule, Thy3a cytology and new hoarseness with a cervical node. Not a confirmed cancer, but needs expedited specialist assessment, targeted neck evaluation, repeat sampling per NG230 and clear documentation. Breathing difficulty or stridor warrants emergency assessment.",
+        "tags": [
+          {
+            "row": "G9",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "examiner",
+        "text": "A 47-year-old has a 2.4 cm solid, hypoechoic, irregular-margin thyroid nodule reported U4. How do you interpret the report?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I would first name the suspicious features rather than rely on the U4 label alone: predominantly solid, hypoechoic, irregular margin. U grading estimates risk, while tissue and the full clinical picture determine the diagnosis.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Ultrasound-guided FNAC is Thy3a. The patient has a normal TSH. Explain your synthesis."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Thy3a is atypia with neoplasia possible, not a definitive malignant aspirate. Normal TSH tells me function is preserved; it does not make the nodule benign.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "The salient issue is discordance: suspicious U4 morphology remains unresolved by an indeterminate cytology sample. I would arrange structured thyroid MDT discussion and avoid a reassuring discharge letter.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What would you request next?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "NICE NG230 section 1.2.11 says offer repeat sampling for Thy3a. Core-needle biopsy is considered, with ultrasound-guided FNAC if core sampling is unavailable or inappropriate. I would ask radiology about access, lesion characteristics and the prior specimen adequacy.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Are there any additional risk features?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I would review voice, swallowing, pressure symptoms, breathing, previous neck irradiation and family history, and examine the thyroid and cervical lymph nodes. I would check that the ultrasound assessed cervical nodes; abnormal nodes should be targeted through the specialist pathway.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "A trainee calls all Thy3 cases “low-grade cancer.” Your response?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I would correct that. Thy3a means atypia/neoplasia possible, whereas Thy3f suggests follicular neoplasm and may lead to consideration of diagnostic hemithyroidectomy. Thy1 is inadequate, Thy2 benign, Thy4 suspicious and Thy5 malignant; none should be casually conflated.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The patient says, “Please tell me if I definitely need surgery.”"
+      },
+      {
+        "speaker": "candidate",
+        "text": "“Not necessarily. This biopsy is not conclusive. Our priority is to clarify the result safely, then discuss options with you. I will explain why another sample may be helpful and where surgery might become an option.” I would check what worries the patient most.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Curveball: the patient now reports progressive hoarseness for a week and a newly palpable firm right cervical node."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I would treat that as a change in risk, not merely wait for a routine repeat appointment. I would expedite head-and-neck/thyroid assessment, including the voice and cervical node, and involve the MDT. If there were stridor or respiratory compromise, this becomes urgent airway care.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Summarise your plan to the receiving team and patient."
+      },
+      {
+        "speaker": "candidate",
+        "text": "“U4, 2.4 cm right thyroid lesion with Thy3a FNAC, normal TSH, now progressive hoarseness and a firm ipsilateral node: no confirmed malignancy, but clinically concerning. Specialist review is expedited; neck and voice assessment and further sampling will be coordinated through the thyroid service.” I would name the responsible team, record communication, and give emergency airway safety-netting.",
+        "tags": [
+          {
+            "row": "G9",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G2",
+      "move": "Telling the patient Thy3a is proven cancer and consenting for definitive surgery without appropriate specialist diagnostic assessment",
+      "consequence": "may cause unnecessary intervention."
+    },
+    {
+      "row": "G8",
+      "move": "Ignoring new progressive hoarseness and a firm cervical node",
+      "consequence": "risks delaying assessment of invasive or metastatic disease."
+    },
+    {
+      "row": "G3",
+      "move": "Discharging a U4/Thy3a discordant lesion without a responsible follow-up pathway",
+      "consequence": "risks missed malignancy."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "If you called Thy3a malignant",
+      "line": "I need to correct my interpretation: Thy3a is indeterminate, not malignant; I would check NICE NG230 Table 1 before advising surgery."
+    },
+    {
+      "when": "When new hoarseness and a node appear",
+      "line": "The new hoarseness and node change urgency: I would bring this to the thyroid/head-and-neck team promptly rather than waiting for routine surveillance."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "U grading relates to thyroid ultrasound morphology; suspicious features include hypoechoic solid architecture and irregular margins.",
+      "source": "S2"
+    },
+    {
+      "fact": "NICE NG230 recommends an established ultrasound grading system and offering FNAC when the grading threshold is met.",
+      "source": "S1"
+    },
+    {
+      "fact": "Thy3a is indeterminate atypia/neoplasia possible, not a cancer diagnosis; the RCPath-modified BTA system is recommended.",
+      "source": "S1"
+    },
+    {
+      "fact": "Thy3a: offer repeat sampling; consider core-needle biopsy or FNAC if CNB unsuitable/unavailable.",
+      "source": "S1"
+    },
+    {
+      "fact": "Thy3f: consider diagnostic hemithyroidectomy; Thy4/Thy5: surgical treatment options through specialist care.",
+      "source": "S1"
+    },
+    {
+      "fact": "Suspicious ultrasound with new hoarseness or nodal findings warrants timely thyroid/head-and-neck specialist assessment, including node and voice review.",
+      "source": "S2"
+    }
+  ],
+  "recall": {
+    "think": "Suspicious U4 morphology plus indeterminate Thy3a is unresolved risk.",
+    "say": "“The biopsy has not confirmed cancer; we need a clear next step.”",
+    "do": [
+      "Arrange specialist review and NG230 repeat sampling; review the neck and voice."
+    ],
+    "numbers": [
+      {
+        "value": "U1–U5",
+        "meaning": "ultrasound categories",
+        "source": "S2"
+      },
+      {
+        "value": "Thy1–Thy5",
+        "meaning": "cytology categories; no fixed cancer probability required.",
+        "source": "S1"
+      }
+    ],
+    "trap": "A normal TSH and a Thy3a sample cannot overrule suspicious anatomy.",
+    "finish": "Name who owns the result and when the next contact occurs."
+  },
+  "sources": [
+    {
+      "id": "S1",
+      "name": "NICE. Thyroid cancer: assessment and management (NG230)",
+      "version": "Published 19 December 2022 (accessed 12 October 2026)",
+      "url": "https://www.nice.org.uk/guidance/ng230/chapter/Recommendations",
+      "supports": "Recommendations 1.2.5–1.2.11, Table 1."
+    },
+    {
+      "id": "S2",
+      "name": "UK National Multidisciplinary Guidelines, Head and Neck Cancer",
+      "version": "6th edition (2024) (accessed 12 October 2026)",
+      "url": "https://discovery.ucl.ac.uk/id/eprint/10193598/1/head-and-neck-cancer-united-kingdom-national-multidisciplinary-guidelines-sixth-edition.pdf",
+      "supports": "Thyroid cancer chapter—ultrasound and thyroid assessment recommendations."
+    }
+  ],
+  "partner": {
+    "opening": "Interpret them, explain management options and address new clinical information.",
+    "reveals": [
+      {
+        "trigger": "At opening disclose",
+        "finding": "47 years old, 2.4 cm, U4 solid hypoechoic irregular-margin nodule; TSH normal; Thy3a FNAC.",
+        "row": "G1"
+      },
+      {
+        "trigger": "Only at G8 reveal",
+        "finding": "newly progressive hoarseness and palpable firm ipsilateral cervical node.",
+        "row": "G8"
+      },
+      {
+        "trigger": "If candidate proactively asks about breathing difficulty",
+        "finding": "say no current stridor or breathlessness; nevertheless insist on the clinical significance of the new red flags.",
+        "row": "G8"
+      }
+    ],
+    "push": [
+      {
+        "question": "After discussion of sampling ask what Thy1/2/3f/4/5 mean.",
+        "row": "G6"
+      },
+      {
+        "question": "At G7 ask what the trainee would tell a worried patient.",
+        "row": "G7"
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "the patient now reports progressive hoarseness for a week and a newly palpable firm right cervical node.",
+        "safeAnswer": "That adds clinical concern. I would contact the thyroid/head-and-neck specialist service promptly, ensure the node and voice are assessed, and not allow routine repeat sampling to delay urgent review.",
+        "row": "G8"
+      }
+    ]
+  }
+}
