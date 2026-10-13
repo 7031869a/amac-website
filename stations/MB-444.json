@@ -1,0 +1,628 @@
+{
+  "id": "MB-444",
+  "exam": "MRCS-B",
+  "title": "Examination of a non-pigmented skin lesion",
+  "type": "examination",
+  "header": {
+    "domain": "Applied Skills",
+    "contentArea": "Clinical examination / skin lesions",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "signalMinutes": 6,
+    "guidelineVersions": [
+      "NICE NG12, Suspected cancer: recognition and referral (15 April 2026)",
+      "NICE QS130, Skin cancer (2016, updated 2024)"
+    ],
+    "related": [
+      {
+        "id": "MB-439",
+        "why": "share regional tumour assessment"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Clinical skills station",
+    "role": "Core surgical trainee",
+    "scenario": "You are a core surgical trainee assessing a 72-year-old patient with a non-pigmented lesion on the left temple.",
+    "task": "Examine the lesion using a structured clinical approach and explain the most important differential diagnoses, referral urgency and further management. No clinical photograph is required; the examiner provides all findings when requested."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Identify a possible cutaneous SCC without assuming every pale lesion is a harmless BCC.",
+    "trap": "Calling any ulcerated pearly lesion “simple BCC” and omitting regional nodes, risk factors and the suspected-cancer pathway when SCC is possible.",
+    "firstMove": "Ask permission to examine and describe site, size, border, surface, ulceration and regional nodes before naming a likely diagnosis."
+  },
+  "flow": [
+    "Introduce, consent, history of evolution and risks.",
+    "Inspect and describe morphology and measure lesion.",
+    "Palpate lesion and examine regional lymph nodes.",
+    "Interpret SCC versus BCC and other alternatives with uncertainty.",
+    "State correct referral pathway and communicate next steps."
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "communication",
+      "label": "Introduction and consent",
+      "fail": "Exposes without explanation",
+      "borderline": "Explains examination only",
+      "pass": "Introduces as core surgical trainee; consent and privacy",
+      "high": "Checks pain and requests permission for nodes"
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-skill",
+      "label": "Change and symptoms",
+      "fail": "Never asks progression",
+      "borderline": "Asks duration only",
+      "pass": "Asks growth, bleeding, pain and ulceration",
+      "high": "Adds nonhealing status and prior skin cancers"
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-skill",
+      "label": "Risk context",
+      "fail": "No risk assessment",
+      "borderline": "Asks sun exposure",
+      "pass": "Asks outdoor exposure and immune status",
+      "high": "Asks prior treatment/skin cancers and history of immunosuppression"
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-skill",
+      "label": "Description and measure",
+      "fail": "Calls it a lump without detail",
+      "borderline": "Gives site and approximate size",
+      "pass": "Describes temple site, 16 mm, border, keratin and ulceration",
+      "high": "Adds induration and distinguishes observed from inferred features",
+      "source": "S1"
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-skill",
+      "label": "Palpation and nodes",
+      "fail": "Does not assess regional nodes",
+      "borderline": "Palpates only lesion",
+      "pass": "Assesses fixation and preauricular/cervical nodes",
+      "high": "Describes node without presuming metastasis"
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-knowledge",
+      "label": "Differential",
+      "fail": "Calls it definitely benign",
+      "borderline": "Lists BCC alone",
+      "pass": "Raises SCC, BCC and keratoacanthoma differential",
+      "high": "Explains fast growth and induration increase concern for invasive SCC"
+    },
+    {
+      "id": "G7",
+      "domain": "clinical-knowledge",
+      "label": "Referral urgency",
+      "fail": "Reassures without referral",
+      "borderline": "Unclear referral timing",
+      "pass": "Uses suspected-cancer pathway for suspected SCC",
+      "high": "Explains BCC ordinarily routine unless location/size makes delay consequential",
+      "source": "S1"
+    },
+    {
+      "id": "G8",
+      "domain": "professionalism",
+      "label": "Safe management",
+      "fail": "Offers to remove immediately in clinic",
+      "borderline": "Suggests biopsy without planning",
+      "pass": "Arranges specialist assessment and tissue diagnosis pathway",
+      "high": "Explains tissue sampling and definitive treatment depend on skin team evaluation"
+    },
+    {
+      "id": "G9",
+      "domain": "communication",
+      "label": "Communication",
+      "fail": "No uncertainty/safety net",
+      "borderline": "Vague reassurance",
+      "pass": "Explains suspicion without declaring cancer; safety net",
+      "high": "Checks understanding and addresses fear without false certainty"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "candidate",
+        "text": "It is probably another harmless skin spot. Let me see.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "All right."
+      },
+      {
+        "speaker": "candidate",
+        "text": "It is pink, so it cannot be anything dangerous.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The lesion is 16 mm, keratotic and ulcerated."
+      },
+      {
+        "speaker": "candidate",
+        "text": "You have had it a while, then?",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "About six weeks."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I do not need to ask about sun exposure or your immune system for a skin spot.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "There is no need to feel the nodes for a skin spot.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "Could you cut it out today? My neighbour thinks it is only a BCC."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Yes, I can arrange routine removal without any urgent assessment. It must be benign because it is not dark.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          },
+          {
+            "row": "G8",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please summarise your assessment."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Benign BCC confirmed by visual inspection; no need to warn about changes.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          },
+          {
+            "row": "G9",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "candidate",
+        "text": "Hello, I’m the core surgical trainee. Is it all right if I look closely at your temple lesion and feel the glands around your face and neck?",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "Yes."
+      },
+      {
+        "speaker": "candidate",
+        "text": "When did it appear, and has it changed in size?",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "About six weeks ago, and it has become bigger."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Does it hurt, bleed or develop a scab?",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "A bit tender. It sometimes bleeds and crusts."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Have you had lots of sun exposure, skin cancer before or medicines that suppress your immune system?",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "I gardened outdoors for years. No previous skin cancer and no such medicines."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I inspect the site, shape, measured diameter, edge, colour and surface, and ask the examiner for findings.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Left temple, 16 mm, non-pigmented, firm raised keratotic edge, shallow central ulcer with crust."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I gently palpate the lesion for tenderness and fixation and examine preauricular and cervical lymph nodes.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Indurated edge; one small mobile preauricular node, no other definite nodes."
+      },
+      {
+        "speaker": "candidate",
+        "text": "SCC is a concern given the enlarging indurated ulcerated lesion. BCC and keratoacanthoma are alternatives; examination alone is not diagnostic.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "Can you just cut it out today? My neighbour said it is only a BCC."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I would not remove it without appropriate planning. Because SCC is possible, I will arrange assessment through the suspected-cancer referral pathway to a skin specialist. The team will determine suitable biopsy or excision and check the node.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          },
+          {
+            "row": "G8",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "Does that mean it is cancer?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "It may be, but we cannot know from looking alone. The urgent referral is to avoid delay in finding out and treating it if necessary.",
+        "tags": [
+          {
+            "row": "G9",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I will document the measurement and morphology, explain the pathway, and ask you to return promptly if it changes rapidly or bleeds persistently.",
+        "tags": [
+          {
+            "row": "G9",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "candidate",
+        "text": "I’m the core surgical trainee. I can see this area may be sore. Could I examine it, then gently check the nearby glands? Please tell me if anything hurts.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "Yes, that’s fine."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Tell me how it first appeared. What is different now compared with six weeks ago?",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "It started as a small spot and has grown quite quickly."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Has it broken down, crusted or bled? Is it painful?",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "It crusts and bleeds from time to time; it is tender."
+      },
+      {
+        "speaker": "candidate",
+        "text": "What sort of sun exposure have you had? Any previous skin cancers, immunosuppressive treatment or transplant?",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "A lot of outdoor gardening. No skin cancer, transplant or those medicines."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I inspect the lesion and surrounding skin in good light, measure its maximum diameter and record its exact site so a referral can be compared with later change.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "It is a 16 mm left temple lesion with a keratotic raised border and central superficial ulceration; no pigment."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I would assess induration, movement relative to deeper tissues and palpate relevant preauricular and cervical nodes with permission.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          },
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The edge is firm and indurated; one small mobile preauricular node; no other definite cervical lymphadenopathy."
+      },
+      {
+        "speaker": "candidate",
+        "text": "My leading concern is cutaneous SCC because the lesion is enlarging, hyperkeratotic and indurated. BCC remains a differential, as does keratoacanthoma, which cannot be safely declared benign from this appearance alone. I cannot infer the nature of the mobile node without further assessment.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "Could you cut it out now? My neighbour says it is just a BCC."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I understand why you want it dealt with quickly. The location and growth pattern mean it is important for the specialist skin cancer service to assess the lesion and node and determine the safest diagnostic and treatment approach. I would send an appropriately detailed suspected-cancer pathway referral because SCC is suspected.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          },
+          {
+            "row": "G8",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "Am I definitely going to have cancer?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "No one can say that from this examination. Referral means the suspicion is strong enough that we should not delay a proper assessment. The aim of the pathway is a timely diagnosis or ruling out, usually within 28 days of referral.",
+        "tags": [
+          {
+            "row": "G9",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I would document the precise findings, explain what happens next, check contact details and provide advice to contact the team if there is further rapid growth, bleeding or new lumps.",
+        "tags": [
+          {
+            "row": "G9",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G7",
+      "move": "Fails to refer a clinically suspicious SCC on a suspected cancer pathway",
+      "consequence": "causing potentially harmful delay."
+    },
+    {
+      "row": "G8",
+      "move": "Commits to unplanned removal without specialist diagnostic/treatment planning for a suspicious lesion.",
+      "consequence": "This is a critical fail."
+    },
+    {
+      "row": "G6",
+      "move": "States non-pigmented morphology excludes malignancy",
+      "consequence": "resulting in false reassurance."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "If you gave earlier reassurance about a non-pigmented lesion",
+      "line": "I should correct my earlier reassurance: a non-pigmented lesion can still be malignant, and I need to assess the concerning features carefully."
+    },
+    {
+      "when": "If you confirmed BCC without appropriate assessment",
+      "line": "I cannot confirm BCC without appropriate assessment. As SCC is a concern, I will organise the suspected-cancer pathway referral."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "NICE NG12 1.7.4: consider suspected cancer pathway referral when a lesion raises suspicion of cutaneous SCC.",
+      "source": "S1"
+    },
+    {
+      "fact": "NICE NG12 1.7.5: consider routine referral for a skin lesion that raises the suspicion of BCC.",
+      "source": "S1"
+    },
+    {
+      "fact": "NICE NG12 1.7.6: consider suspected-cancer pathway for BCC if delay would significantly matter because of site or size.",
+      "source": "S1"
+    },
+    {
+      "fact": "NICE QS130: suspected SCC pathway aims at diagnosis or ruling out within 28 days of referral.",
+      "source": "S2"
+    },
+    {
+      "fact": "If a virtual referral is used, macroscopic and dermatoscopic images should be provided to an agreed standard and format.",
+      "source": "S2"
+    }
+  ],
+  "recall": {
+    "think": "An enlarging, keratotic, indurated, ulcerated lesion on sun-exposed skin is SCC until histology excludes it.",
+    "say": "“SCC is my main concern, but examination alone cannot confirm it.”",
+    "do": [
+      "Ask about change and risk → inspect and measure → palpate edge and fixation → preauricular, parotid and cervical nodes."
+    ],
+    "numbers": [
+      {
+        "value": "16 mm",
+        "meaning": "Lesion in scenario",
+        "source": "S1"
+      },
+      {
+        "value": "28 days",
+        "meaning": "NICE suspected-cancer pathway aims for diagnosis or exclusion within 28 days; this is not a guarantee of a clinic appointment within two weeks.",
+        "source": "S2"
+      }
+    ],
+    "trap": "Calling any ulcerated pearly lesion “simple BCC” and omitting regional nodes, risk factors and the suspected-cancer pathway when SCC is possible.",
+    "finish": "Suspected-cancer pathway referral; no unplanned excision; explain uncertainty and safety-net."
+  },
+  "sources": [
+    {
+      "id": "S1",
+      "name": "NICE NG12, Suspected cancer: recognition and referral",
+      "version": "15 April 2026; accessed 12 October 2026",
+      "url": "https://www.nice.org.uk/guidance/ng12/chapter/Recommendations-organised-by-site-of-cancer",
+      "supports": "recommendations 1.7.4–1.7.6 (skin cancers)"
+    },
+    {
+      "id": "S2",
+      "name": "NICE QS130, Skin cancer",
+      "version": "2016, updated 2024",
+      "url": "https://www.nice.org.uk/guidance/qs130/chapter/Quality-statement-2-Suspected-cancer-pathway-referrals",
+      "supports": "quality statement 2: suspected cancer pathway referrals. 28-day diagnosis or ruling out; images for virtual referral."
+    }
+  ],
+  "partner": {
+    "opening": "Examine the lesion using a structured clinical approach and explain the most important differential diagnoses, referral urgency and further management.",
+    "actorBrief": "Opening: “This sore patch on my temple seems to be getting bigger.” Only if asked: six weeks of growth, intermittent bleeding, some tenderness, no brown/black pigmentation, heavy sun exposure from years of gardening; no history of immune suppression; no personal skin cancer. Patient should not spontaneously tell the candidate about bleeding or outdoor exposure before being asked.",
+    "reveals": [
+      {
+        "trigger": "If asked about change and symptoms",
+        "finding": "grew over six weeks, tender, intermittently bleeds, not pigmented.",
+        "row": "G2"
+      },
+      {
+        "trigger": "If asked about risk factors",
+        "finding": "Patient had substantial outdoor exposure; no known immunosuppression.",
+        "row": "G3"
+      },
+      {
+        "trigger": "only after candidate states appropriate examination (lesion size, edge, ulceration, consistency)",
+        "finding": "Left temple lesion 16 mm diameter, firm hyperkeratotic rim, central superficial ulcer/crust and indurated edge",
+        "row": "G4"
+      },
+      {
+        "trigger": "only after candidate states appropriate examination (node findings)",
+        "finding": "One small mobile ipsilateral preauricular node (not necessarily malignant).",
+        "row": "G5"
+      }
+    ],
+    "push": [],
+    "curveballs": [
+      {
+        "prompt": "Curveball around minute 6: “Can you just cut it out today? My neighbour said it is only a BCC.”",
+        "safeAnswer": "I would not remove it without appropriate planning. Because SCC is possible, I will arrange assessment through the suspected-cancer referral pathway to a skin specialist. The team will determine suitable biopsy or excision and check the node.",
+        "row": "G8"
+      }
+    ]
+  }
+}

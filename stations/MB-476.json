@@ -1,0 +1,649 @@
+{
+  "id": "MB-476",
+  "exam": "MRCS-B",
+  "title": "A liver lesion on a scan",
+  "type": "applied-knowledge",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "HPB surgical diagnostics",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "European Association for the Study of the Liver, Clinical Practice Guidelines on the management of benign liver tumours, Journal of Hepatology 2016;65:386–398",
+      "NICE NG50, Cirrhosis in over 16s, 2016, recommendations 1.2.4–1.2.5"
+    ],
+    "related": [
+      {
+        "id": "MB-470",
+        "why": "pancreatic head cancer"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "HPB MDT-style applied-knowledge station",
+    "role": "Core surgical trainee",
+    "scenario": "You are a core surgical trainee in an HPB MDT-style applied-knowledge station. The examiner provides this written report: “63-year-old, previous colorectal adenocarcinoma treated three years ago; ultrasound shows a 2.8 cm heterogeneous indeterminate right-lobe liver lesion.”",
+    "task": "Explain the differential, further characterisation, safe referral and patient communication."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Interpret the lesion through risk factors and a definitive imaging pathway, not morphology alone.",
+    "trap": "Calling an indeterminate lesion definitely metastatic or ordering immediate biopsy without MDT review.",
+    "firstMove": "Ask for previous cancer, liver disease and scan history."
+  },
+  "flow": [
+    "Interpret ultrasound limitations and differential",
+    "Choose multiphase characterisation",
+    "Avoid premature biopsy and involve HPB MDT",
+    "Explain surveillance versus diagnostic work-up",
+    "Communicate uncertainty and plan"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-knowledge",
+      "label": "Risk context",
+      "fail": "Ignores cancer history and chronic liver disease.",
+      "borderline": "Asks about cancer but not cirrhosis.",
+      "pass": "Identifies colorectal cancer history and compares cirrhosis risk.",
+      "high": "Integrates history and imaging pretest probability."
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-knowledge",
+      "label": "Report interpretation",
+      "fail": "Calls lesion diagnostic on ultrasound alone.",
+      "borderline": "Recognises indeterminate scan without implications.",
+      "pass": "States enhancement and washout require multiphase characterisation.",
+      "high": "Compares metastasis, haemangioma and HCC profiles without overclaiming."
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "Benign haemangioma",
+      "fail": "Believes all liver lesions require biopsy.",
+      "borderline": "Recognises haemangioma but no imaging features.",
+      "pass": "Describes typical peripheral nodular enhancement and delayed centripetal fill-in.",
+      "high": "Explains why the pattern changes management in an otherwise healthy liver."
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-knowledge",
+      "label": "Malignant differential",
+      "fail": "Rules out metastasis in cancer survivor.",
+      "borderline": "Mentions cancer without HCC context.",
+      "pass": "Considers colorectal metastasis and HCC in at-risk liver.",
+      "high": "States imaging appearance and background disease determine next investigation."
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-knowledge",
+      "label": "Appropriate imaging",
+      "fail": "Requests routine plain radiograph.",
+      "borderline": "Requests CT but no protocol.",
+      "pass": "Recommends contrast MRI or liver-protocol multiphase imaging.",
+      "high": "Chooses imaging according to cancer suspicion and previous scans."
+    },
+    {
+      "id": "G6",
+      "domain": "professionalism",
+      "label": "Biopsy safety",
+      "fail": "Orders percutaneous biopsy immediately.",
+      "borderline": "Postpones biopsy without rationale.",
+      "pass": "Avoids unplanned biopsy pending HPB MDT assessment.",
+      "high": "Explains bleeding and seeding/diagnostic planning concerns without absolute contraindication."
+    },
+    {
+      "id": "G7",
+      "domain": "professionalism",
+      "label": "MDT and pathway",
+      "fail": "Discharges without referral.",
+      "borderline": "Suggests follow-up only.",
+      "pass": "Refers suspicious lesion for HPB/liver MDT review.",
+      "high": "Coordinates staging and tissue decisions through appropriate specialist team."
+    },
+    {
+      "id": "G8",
+      "domain": "clinical-knowledge",
+      "label": "HCC surveillance",
+      "fail": "Says every adult needs screening.",
+      "borderline": "Knows cirrhosis matters but not frequency.",
+      "pass": "Mentions six-month ultrasound surveillance in relevant cirrhosis.",
+      "high": "Separates surveillance from investigation of a detected suspicious lesion."
+    },
+    {
+      "id": "G9",
+      "domain": "communication",
+      "label": "Communication",
+      "fail": "Says definite metastasis before confirmation.",
+      "borderline": "Communicates uncertainty without plan.",
+      "pass": "Explains differential, targeted imaging and follow-up.",
+      "high": "Addresses anxiety and provides a specific safety and results plan."
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "What additional history matters?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I would not ask about alcohol, hepatitis or cirrhosis, or about when and how the bowel cancer was treated; the scan answers that.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What do you make of the ultrasound finding?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Any liver lesion after cancer means metastasis.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Are there alternative diagnoses?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "No, so I do not need to think about benign tumours or underlying liver disease.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What is the next investigation?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I will ask for biopsy today without reviewing the old scans.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Would multiphase imaging help?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "It is unnecessary once an ultrasound shows a lesion.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Could this be a haemangioma?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Possibly, but all liver lesions need a biopsy to be sure, so I would biopsy it either way.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What would you tell the patient?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Your cancer has definitely come back. You do not need any specialist review.",
+        "tags": [
+          {
+            "row": "G9",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What if the patient also has cirrhosis?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "It makes no difference to the differential or liver follow-up.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "examiner",
+        "text": "A 63-year-old with previous colorectal cancer has an incidental 2.8-cm liver lesion. What additional history matters?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I would review cancer stage and surveillance scans, previous liver lesions, weight loss and symptoms, and chronic liver disease or viral hepatitis.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Ultrasound calls it heterogeneous, but not diagnostic. Your interpretation?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "It is indeterminate; ultrasound alone cannot establish whether this is benign or malignant in a patient with cancer history.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Name important differentials."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Colorectal liver metastasis, haemangioma and, especially with cirrhosis, hepatocellular carcinoma.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What imaging would you request?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Contrast-enhanced liver MRI or appropriate multiphase liver-protocol imaging, taking account of previous cancer scans.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Describe a typical haemangioma pattern."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Peripheral nodular arterial enhancement with progressive centripetal fill-in on delayed phases.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you decide whether to biopsy?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I would not arrange an unplanned biopsy. Imaging and the HPB MDT should establish whether tissue is needed and the safest route.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What team should be involved?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "HPB and relevant oncology teams, with radiology review and staging if malignancy is suspected.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How is HCC surveillance performed in relevant cirrhosis?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "NICE NG50 recommends six-monthly ultrasound with or without AFP for specified patients with cirrhosis; that does not replace proper work-up of a new lesion.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The patient asks, “Is it definitely cancer?”"
+      },
+      {
+        "speaker": "candidate",
+        "text": "No, not from this report. We need a better-characterising scan and specialist review, and I would explain when and how the result will be communicated.",
+        "tags": [
+          {
+            "row": "G9",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "examiner",
+        "text": "Start with the risk profile rather than the label on the scan."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I would obtain the colorectal primary pathology and stage, treatment and CEA trend, compare past CTs, and ask about hepatitis, cirrhosis, alcohol-related disease and metabolic risk. These factors materially alter the probability of metastasis or HCC.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The ultrasound report says 2.8 cm, heterogeneous, vascular and indeterminate."
+      },
+      {
+        "speaker": "candidate",
+        "text": "That is descriptive, not a diagnosis. A single-phase description does not establish a classic enhancement pattern, so I would not label it metastasis or haemangioma without dedicated imaging.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Which differential possibilities would you prioritise?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Given previous colorectal cancer, metastatic disease is a leading concern; a typical benign haemangioma remains possible. HCC rises in probability with cirrhosis or viral hepatitis.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Explain what would support a haemangioma."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Discontinuous peripheral nodular enhancement followed by progressive inward fill-in on delayed contrast images is characteristic. A confidently typical lesion in a suitable context usually needs no intervention.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What imaging pathway is most useful now?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Review existing cancer staging scans first, then request dedicated contrast-enhanced liver MRI or a multiphase CT protocol as appropriate, with specialist radiology interpretation.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The referring team suggests image-guided biopsy tomorrow."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I would defer an unplanned biopsy until the HPB MDT reviews imaging; many benign lesions are diagnosed non-invasively, and tissue strategy should account for risks and future oncological management.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What next if metastasis remains likely?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "HPB and colorectal oncology MDT discussion, evaluation of extrahepatic disease, liver disease reserve and treatment options. A finding should not be called resectable from a short ultrasound report.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How does HCC surveillance fit into this case?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Six-month ultrasound ± AFP is surveillance for appropriate cirrhotic patients under NICE NG50. Once a lesion is found, it requires diagnostic characterisation, not another six-month surveillance wait.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The patient is frightened this means recurrent cancer."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I would acknowledge the concern, state that it is a possibility rather than a confirmed diagnosis, arrange a definite scan and MDT review, and identify who will relay results and when.",
+        "tags": [
+          {
+            "row": "G9",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G6",
+      "move": "Orders biopsy without imaging or MDT review",
+      "consequence": "risking inappropriate invasive assessment."
+    },
+    {
+      "row": "G7",
+      "move": "Discharges a potentially malignant indeterminate liver lesion with no specialist pathway.",
+      "consequence": "This is a critical fail."
+    },
+    {
+      "row": "G9",
+      "move": "Informs the patient that metastasis is proven by an indeterminate ultrasound",
+      "consequence": "causing avoidable harm through misinformation."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "If you called this metastatic on ultrasound alone",
+      "line": "I should not have called this metastatic on ultrasound alone; I need dedicated contrast imaging and HPB radiology review."
+    },
+    {
+      "when": "Before deciding whether tissue is required",
+      "line": "Let me review the previous cancer stage and old scans before deciding whether tissue is required."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Cancer history and background liver disease inform malignancy probability and imaging choice.",
+      "source": "S1"
+    },
+    {
+      "fact": "Typical haemangioma contrast enhancement is peripheral globular enhancement with progressive centripetal fill-in.",
+      "source": "S1"
+    },
+    {
+      "fact": "Contrast MRI is preferred when a benign lesion is suspected; CT may be preferable when malignancy suspected.",
+      "source": "S1"
+    },
+    {
+      "fact": "When imaging is uncertain, biopsy decisions should be considered by an experienced MDT.",
+      "source": "S1"
+    },
+    {
+      "fact": "In suitable cirrhosis, NICE recommends ultrasound with or without AFP every six months for HCC surveillance.",
+      "source": "S2"
+    },
+    {
+      "fact": "A new indeterminate lesion requires diagnostic investigation rather than routine surveillance alone.",
+      "source": "S1"
+    }
+  ],
+  "recall": {
+    "think": "Characterise the liver risk background and cancer history.",
+    "say": "Explain the lesion is indeterminate rather than confirmed malignant.",
+    "do": [
+      "Review old scans; arrange contrast liver imaging and HPB MDT."
+    ],
+    "numbers": [
+      {
+        "value": "6 months",
+        "meaning": "HCC surveillance interval is 6 months in eligible cirrhosis",
+        "source": "S2"
+      }
+    ],
+    "trap": "Do not biopsy or label metastasis solely from ultrasound.",
+    "finish": "Specify results ownership and follow-up."
+  },
+  "sources": [
+    {
+      "id": "S1",
+      "name": "European Association for the Study of the Liver, Clinical Practice Guidelines on the management of benign liver tumours, Journal of Hepatology",
+      "version": "2016;65:386–398",
+      "url": "https://www.journal-of-hepatology.eu/article/S0168-8278%2816%2930101-5/fulltext",
+      "supports": "Contrast imaging, haemangioma characteristics, avoidance of unplanned biopsy, MDT."
+    },
+    {
+      "id": "S2",
+      "name": "NICE NG50, Cirrhosis in over 16s",
+      "version": "2016, recommendations 1.2.4–1.2.5",
+      "url": "https://www.nice.org.uk/guidance/ng50/chapter/Recommendations",
+      "supports": "Six-monthly HCC surveillance in relevant people with cirrhosis."
+    }
+  ],
+  "partner": {
+    "opening": "Interpret an incidental 2.8-cm indeterminate liver lesion in a colorectal cancer survivor.",
+    "reveals": [
+      {
+        "trigger": "At start",
+        "finding": "Provide ultrasound wording only at start.",
+        "row": "G2"
+      },
+      {
+        "trigger": "If asked",
+        "finding": "Supply past cancer history and absence of known cirrhosis if asked",
+        "row": "G1"
+      },
+      {
+        "trigger": "Later, as an examiner variation",
+        "finding": "later offer possible cirrhosis as an examiner variation.",
+        "row": "G8"
+      }
+    ],
+    "push": [
+      {
+        "question": "A 63-year-old with previous colorectal cancer has an incidental 2.8-cm liver lesion. What additional history matters?",
+        "row": "G1"
+      },
+      {
+        "question": "Ultrasound calls it heterogeneous, but not diagnostic. Your interpretation?",
+        "row": "G2"
+      },
+      {
+        "question": "Name important differentials.",
+        "row": "G4"
+      },
+      {
+        "question": "What imaging would you request?",
+        "row": "G5"
+      },
+      {
+        "question": "Describe a typical haemangioma pattern.",
+        "row": "G3"
+      },
+      {
+        "question": "How would you decide whether to biopsy?",
+        "row": "G6"
+      },
+      {
+        "question": "What team should be involved?",
+        "row": "G7"
+      },
+      {
+        "question": "How is HCC surveillance performed in relevant cirrhosis?",
+        "row": "G8"
+      },
+      {
+        "question": "The patient asks, “Is it definitely cancer?”",
+        "row": "G9"
+      },
+      {
+        "question": "The patient asks whether this proves the cancer has returned.",
+        "row": "G9"
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "The team has booked a biopsy tomorrow. Should they proceed?",
+        "safeAnswer": "Avoids unplanned biopsy pending HPB MDT assessment.",
+        "row": "G6"
+      }
+    ]
+  }
+}

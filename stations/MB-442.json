@@ -1,0 +1,726 @@
+{
+  "id": "MB-442",
+  "exam": "MRCS-B",
+  "title": "Cardiovascular examination after cardiac surgery",
+  "type": "examination",
+  "header": {
+    "domain": "Applied Skills",
+    "contentArea": "Post-cardiac-surgery cardiovascular assessment",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "signalMinutes": 6,
+    "guidelineVersions": [
+      "NICE NG208 (published 17 November 2021; recommendations 1.8 and 1.9)",
+      "British cardiovascular/valve/cardiothoracic societies joint statement (August 2021)"
+    ],
+    "related": [
+      {
+        "id": "MB-443",
+        "why": "thoracic surgical scars; distinct respiratory examination"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Outpatient surgical assessment bay",
+    "role": "Core surgical trainee",
+    "scenario": "You are a core surgical trainee in an outpatient surgical assessment bay. A 64-year-old patient has undergone open heart-valve surgery several years ago and is attending for assessment of exercise intolerance. The patient is stable and can sit or lie comfortably.",
+    "task": "Please perform a focused cardiovascular examination, describe the findings and explain your differential and immediate next steps to the examiner. You have 9 minutes."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Identify the operation using scars and prosthetic sounds, assess haemodynamic status and complications, and interpret anticoagulation safely.",
+    "trap": "Calling the click normal without investigating new breathlessness, or recommending a DOAC for a mechanical valve.",
+    "firstMove": "“I am the core surgical trainee. May I examine your heart? I will explain each step and stop if uncomfortable.”"
+  },
+  "flow": [
+    "0–1 min: introduction, consent, symptoms and immediate distress check.",
+    "1–3 min: hands, pulse, blood pressure (verbalised), face, neck/JVP.",
+    "3–6 min: inspect sternotomy/leg harvest; palpate apex/heaves; auscultate valve areas and carotids appropriately.",
+    "6–7.5 min: examine chest, lungs and peripheral oedema; reposition respectfully.",
+    "7.5–9 min: present findings, explain prosthetic-valve concern, anticoagulant check, investigations and escalation."
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "professionalism",
+      "label": "Introduction / consent",
+      "fail": "No identity, consent or comfort check.",
+      "borderline": "Introduces self but minimal explanation.",
+      "pass": "Core surgical trainee; permission, positioning, chaperone offer where appropriate.",
+      "high": "Sensitive pacing; anticipates discomfort and checks tolerance."
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-skill",
+      "label": "General / hands / pulse",
+      "fail": "Fails to assess perfusion or pulse.",
+      "borderline": "Checks pulse only.",
+      "pass": "Observes distress, hands/perfusion; measures pulse rate and rhythm; asks for BP.",
+      "high": "Connects pulse rhythm to postoperative arrhythmia risk without overdiagnosis."
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-skill",
+      "label": "Face / neck",
+      "fail": "Omits neck/JVP entirely.",
+      "borderline": "Limited face/neck examination.",
+      "pass": "Checks conjunctival pallor, neck/JVP and carotid pulse one side at a time if indicated.",
+      "high": "Explains significance and avoids unsafe simultaneous carotid palpation."
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-skill",
+      "label": "Surgical scars",
+      "fail": "Misses obvious midline sternotomy and leg-harvest scar.",
+      "borderline": "Identifies sternotomy only.",
+      "pass": "Identifies healed median sternotomy and left medial leg harvest scar, without assuming exact surgery.",
+      "high": "Notes scar suggests sternotomy/CABG but prosthesis requires corroboration."
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-skill",
+      "label": "Palpation",
+      "fail": "Skips apex and precordium.",
+      "borderline": "Finds apex but no heave/thrill check.",
+      "pass": "Locates apex; checks for heaves/thrills before auscultation.",
+      "high": "Uses findings to prioritise likely structural dysfunction."
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-skill",
+      "label": "Auscultation",
+      "fail": "Misses audible prosthetic click or fails valve areas.",
+      "borderline": "Incomplete areas or describes click imprecisely.",
+      "pass": "Systematically auscultates four valve areas; reports metallic prosthetic click and systolic murmur as supplied.",
+      "high": "Recognises that a soft ejection systolic flow murmur is common with an aortic prosthesis; listens for a diastolic murmur or muffled click, and bases the need for echo on the new symptoms."
+    },
+    {
+      "id": "G7",
+      "domain": "clinical-skill",
+      "label": "Completion",
+      "fail": "Does not assess failure signs.",
+      "borderline": "Mentions oedema only.",
+      "pass": "Examines lungs and ankles for fluid overload; requests ECG and current observations.",
+      "high": "Explicitly relates breathlessness/oedema to possible valve dysfunction or cardiac failure."
+    },
+    {
+      "id": "G8",
+      "domain": "clinical-knowledge",
+      "label": "Interpretation / escalation",
+      "fail": "Dismisses new exertional dyspnoea.",
+      "borderline": "Vague plan without timeframe.",
+      "pass": "States previous valve surgery, new symptoms/new murmur need timely senior/cardiology review and echocardiography.",
+      "high": "Flags red-flag instability and how urgency would change."
+    },
+    {
+      "id": "G9",
+      "domain": "clinical-knowledge",
+      "label": "Mechanical valve anticoagulation",
+      "fail": "Suggests switching warfarin to a DOAC.",
+      "borderline": "Asks about tablets without identifying contraindication.",
+      "pass": "Checks medication and INR status; mechanical valve needs appropriate VKA/warfarin management, not DOAC substitution.",
+      "high": "Requests valve type, target INR set by valve service and specialist input before changing anticoagulation."
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "candidate",
+        "text": "Hello, I’m one of the doctors. I need to listen to your heart.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "All right."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Are you breathless at the moment?",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "No, only when I walk up the hill near my home."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Let me feel your wrist.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Pulse 88 per minute, regular. BP 132/76 mmHg if requested."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I will skip the face and neck and go straight to the chest.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I can see your chest scar, so you must have had a bypass. Is that right?",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "The valve was replaced and I had a bypass."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I do not need to feel for the apex beat or any thrills; the stethoscope will tell me.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I’ll listen at the front of the chest.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Metallic closing click and an ejection systolic murmur at the upper right sternal edge."
+      },
+      {
+        "speaker": "candidate",
+        "text": "That click means the valve is fine, so I would not investigate it.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Any other examination?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "No, I have finished.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The valve is mechanical. The patient asks whether apixaban could replace warfarin."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Yes, apixaban would be more convenient; I would change it.",
+        "tags": [
+          {
+            "row": "G9",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please summarise."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Normal heart surgery sounds. I would reassure and discharge.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "candidate",
+        "text": "Hello. I am the core surgical trainee. May I examine your heart and circulation? I will check your pulse, chest and legs, and listen with a stethoscope.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "Yes. I get more breathless on hills these days."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Are you short of breath sitting here, having chest pain, or feeling faint?",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "No. It is only on hills. I have not fainted."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I will look for pallor or distress, check your hands, temperature and capillary refill, then assess your pulse rate and rhythm. What are the observations and blood pressure?",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Comfortable at rest; warm hands; pulse 88, regular; BP 132/76; SpO₂ 97% on air."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I will check for conjunctival pallor, inspect the neck veins with the patient at 45 degrees and assess the carotid pulse one side at a time if indicated.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "No pallor; JVP not raised; carotid upstroke is normal."
+      },
+      {
+        "speaker": "candidate",
+        "text": "With your permission I will expose the chest enough to inspect for scars.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "That is fine."
+      },
+      {
+        "speaker": "candidate",
+        "text": "There is a healed median sternotomy scar. I would also inspect the legs for vein-harvest scars.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Healed left medial leg scar, no wound breakdown."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I will locate the apex beat and feel for a parasternal heave or thrills.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Apex in fifth intercostal space near midclavicular line, no heave or palpable thrill."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I will auscultate the aortic, pulmonary, tricuspid and mitral areas, including appropriate radiation.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "A crisp metallic closing click and grade 2/6 ejection systolic murmur at the aortic area, without new clinical instability."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I hear a prosthetic-valve click and a systolic murmur. The click does not exclude valve dysfunction.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I would listen to the lung bases and check sacral or ankle oedema.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Lungs clear and no pitting oedema."
+      },
+      {
+        "speaker": "candidate",
+        "text": "This is a stable person with previous cardiac valve surgery and new exertional dyspnoea. I would request an ECG and echocardiography and discuss with the cardiology or valve team; I would escalate immediately if breathless at rest, hypotensive or syncopal.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The valve is mechanical. The patient asks if apixaban could replace warfarin."
+      },
+      {
+        "speaker": "candidate",
+        "text": "No. A mechanical valve needs appropriate vitamin K antagonist anticoagulation; DOACs such as apixaban are not an appropriate substitute. I will confirm the last INR, adherence and the valve team’s INR target before any changes.",
+        "tags": [
+          {
+            "row": "G9",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "So you are going to check the valve, not just the blood test?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Yes. Both the symptoms and valve function need review, and I will explain the plan and safety advice.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "candidate",
+        "text": "Good morning. I’m the core surgical trainee. I understand you have had heart surgery and now feel more breathless when walking. May I examine your circulation and heart? Please tell me if you need to sit up or stop.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "Of course. I have been worried the operation has worn out."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Before I begin, are you breathless now, have you had chest pressure, blackouts, or a racing heartbeat?",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "No blackouts or chest pain. Hills are simply harder than before."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I will check perfusion, pulse regularity and current observations before interpreting the scar or click.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Warm, well-perfused, pulse 88 and regular, BP 132/76, oxygen saturation 97% air."
+      },
+      {
+        "speaker": "candidate",
+        "text": "There is no conjunctival pallor. With the bed at 45 degrees, I would assess JVP and inspect the neck; I would check carotids individually only if required.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "JVP not elevated, normal carotid upstroke."
+      },
+      {
+        "speaker": "candidate",
+        "text": "May I uncover your upper chest and inspect your legs for surgical scars?",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "Yes, please."
+      },
+      {
+        "speaker": "candidate",
+        "text": "The midline sternotomy indicates a previous open cardiac operation, and the left medial leg scar may be a vein-harvest site. I would confirm exactly which operations from the record, rather than decide from scars alone.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Confirmed: previous mechanical aortic valve replacement and coronary bypass."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I am going to locate the apex, feel the precordium for a heave and thrills, then auscultate across the valve areas.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Apex normally positioned; no heave or thrill."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I hear a distinct metallic prosthetic sound with a quiet systolic ejection murmur in the aortic area. A soft ejection systolic flow murmur is common across an aortic prosthesis; a diastolic murmur or a muffled click would worry me more. I would check radiation and compare with prior documented examinations. I cannot tell from the click alone whether the valve is working normally, and the new breathlessness is what makes echo necessary.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The sound is as described, but prior murmur records are unavailable."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I’ll listen to both lung bases for congestion and assess dependent oedema, to look for the effects of impaired cardiac function.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Lung bases clear; no ankle oedema."
+      },
+      {
+        "speaker": "candidate",
+        "text": "My summary is a haemodynamically stable patient after mechanical AVR and CABG, with a prosthetic click, systolic murmur and new effort intolerance. Differential includes prosthetic valve dysfunction, native cardiac disease, ischaemia, rhythm disturbance and noncardiac causes. I would organise a 12-lead ECG, blood tests including full blood count if relevant, and transthoracic echo, and ask the specialist valve service to assess. I would not reassure solely on a stable pulse or audible click.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "I take warfarin. Could I just use the newer tablets and forget the INR clinic?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I understand why fewer blood tests appeal, but with a mechanical valve the newer direct oral anticoagulants are unsuitable and can increase valve-related clotting risk. I would verify your latest INR, usual prescribed target, missed doses, bleeding or thrombotic symptoms and contact the anticoagulation team rather than change your medication myself.",
+        "tags": [
+          {
+            "row": "G9",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "patient",
+        "text": "What symptoms would mean I should get help urgently?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Sudden breathlessness, chest pain, collapse, a new neurological problem or marked deterioration means urgent emergency assessment. I will arrange the valve review and make sure you know how the results will be followed up.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G8",
+      "move": "Reassures or discharges despite new exertional dyspnoea and murmur without considering echo or specialist assessment",
+      "consequence": "risks missed valve deterioration."
+    },
+    {
+      "row": "G9",
+      "move": "Recommends a DOAC (apixaban/rivaroxaban etc.) instead of warfarin for a mechanical valve",
+      "consequence": "risks prosthetic valve thrombosis."
+    },
+    {
+      "row": "G2",
+      "move": "Ignores new syncope, chest pain or haemodynamic collapse if disclosed",
+      "consequence": "risks delayed emergency care."
+    },
+    {
+      "row": "G6",
+      "move": "States the prosthesis is definitely functioning normally solely because a click is audible",
+      "consequence": "risks missed obstructive or regurgitant dysfunction."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "If you implied an audible prosthetic click rules out dysfunction",
+      "line": "I must correct that: an audible prosthetic click does not rule out dysfunction. The change in symptoms warrants echo and valve-team review."
+    },
+    {
+      "when": "If you suggested a newer anticoagulant",
+      "line": "I need to retract my suggestion of a newer anticoagulant. A mechanical valve should not be switched to a DOAC; I would confirm the anticoagulation plan with the valve service."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Mechanical prosthetic heart valves require vitamin K antagonist (warfarin) anticoagulation; DOACs are contraindicated and not licensed for mechanical valves.",
+      "source": "S1"
+    },
+    {
+      "fact": "LMWH can be used as an alternative to warfarin only in certain clinical settings (for example pregnancy or scheduled surgery) under direct supervision of a responsible physician; it is not a routine permanent substitute.",
+      "source": "S1"
+    },
+    {
+      "fact": "Follow-up after valve intervention is individualised according to prosthesis, symptoms and other clinical factors.",
+      "source": "S2"
+    },
+    {
+      "fact": "Changes in cardiac symptoms after valve intervention require assessment and advice; avoid attributing them to benign postoperative findings alone.",
+      "source": "S2"
+    },
+    {
+      "fact": "Echocardiography is indicated when suspected valve disease is accompanied by breathlessness or other relevant symptoms; apply to this simulated new-murmur scenario with clinical judgement.",
+      "source": "S2"
+    },
+    {
+      "fact": "There is no single generic INR target for all mechanical valves: obtain the specific valve-service plan before advising a patient.",
+      "source": "S1"
+    }
+  ],
+  "recall": {
+    "think": "Previous sternotomy, prosthetic valve and new symptoms — do not assume normal function.",
+    "say": "“I hear a prosthetic click, but the breathlessness needs assessment.”",
+    "do": [
+      "Perfusion/pulse → JVP → scars → apex/thrills → full auscultation → lungs/oedema → ECG/echo/specialist."
+    ],
+    "numbers": [
+      {
+        "value": "None",
+        "meaning": "9 rows × 0–2 = 18 marks; no universal INR target—follow individual valve plan.",
+        "source": "S1"
+      }
+    ],
+    "trap": "Substituting a DOAC for warfarin in mechanical valve disease.",
+    "finish": "Review warfarin and INR; safety-net for collapse, chest pain or acute dyspnoea."
+  },
+  "sources": [
+    {
+      "id": "S1",
+      "name": "British Heart Valve Society, British Cardiovascular Society and Society for Cardiothoracic Surgeons: Dear Colleague letter, with joint statement “Anticoagulation of Patients with Mechanical Heart Valves” (BHVS, SCTS, BSE, PCCS, BCCA, BCS).",
+      "version": "Undated; issued after the NHS England National Patient Safety Alert of 14 July 2021 (file dated August 2021)",
+      "url": "https://britishcardiovascularsociety.org.uk/wp-content/uploads/2024/10/Mechanical-Valves-and-NOACs_Aug-2021_FINAL.pdf",
+      "supports": "DOAC contraindication, conversion to warfarin, supervised LMWH. States no INR target."
+    },
+    {
+      "id": "S2",
+      "name": "NICE NG208. “Heart valve disease presenting in adults: investigation and management”",
+      "version": "published 17 November 2021",
+      "url": "https://www.nice.org.uk/guidance/ng208/chapter/recommendations",
+      "supports": "recommendations 1.1.2 and 1.8.1, and section 1.9 information and advice."
+    }
+  ],
+  "partner": {
+    "opening": "Please perform a focused cardiovascular examination, describe the findings and explain your differential and immediate next steps to the examiner.",
+    "actorBrief": "(ONLY after candidate introduces themself) “I have been getting more breathless when I walk uphill since my heart operation.” Patient stable at rest. Answer yes/no only to the exact relevant questions. Do not volunteer operation type, anticoagulant name, chest pain or collapse history unless asked or examiner cue is reached. If asked about chest pain, blackouts and palpitations: “No chest pain or blackouts, no racing heart.” If asked about surgery: “The valve was replaced and I had a bypass.” Do not volunteer this before asked.",
+    "reveals": [
+      {
+        "trigger": "If examined",
+        "finding": "examiner gives observations and findings in the precise sequence used in the scripts; do not reveal clicks/murmur before auscultation. Fail dialogue may stop early and should not be supplemented with unearned positive findings. All marks are based on observed candidate behaviour.",
+        "row": "G6"
+      }
+    ],
+    "push": [],
+    "curveballs": [
+      {
+        "prompt": "At the management discussion (after candidate gives impression): The valve is mechanical. The patient asks whether apixaban could replace warfarin.",
+        "safeAnswer": "No. A mechanical valve needs appropriate vitamin K antagonist anticoagulation; DOACs such as apixaban are not an appropriate substitute. I will confirm the last INR, adherence and the valve team’s INR target before any changes.",
+        "row": "G9"
+      },
+      {
+        "prompt": "After anticoagulant answer in High-performance only, patient may ask: “What symptoms would mean I should get help urgently?”",
+        "safeAnswer": "Sudden breathlessness, chest pain, collapse, a new neurological problem or marked deterioration means urgent emergency assessment. I will arrange the valve review and make sure you know how the results will be followed up.",
+        "row": "G8"
+      }
+    ]
+  }
+}
