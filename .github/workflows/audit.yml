@@ -41,3 +41,8 @@ jobs:
       - name: Run AMaC content integrity checks
         if: success() || failure()
         run: node scripts/content-integrity.mjs
+
+      # Station index and image-licence rules (node:test).
+      - name: Run station tests
+        if: success() || failure()
+        run: node --test "tests/*.test.js"

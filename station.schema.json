@@ -403,13 +403,36 @@
             ]
           },
           "source": {
-            "type": "string"
-          },
-          "licence": {
-            "type": "string"
+            "type": "string",
+            "description": "Legacy free-text source note. Use credit and sourceUrl for new images."
           },
           "file": {
-            "type": "string"
+            "type": "string",
+            "pattern": "^media/mrcs/[A-Za-z0-9._/-]+$",
+            "description": "Image path under media/mrcs/, relative to the site root. Required when status is own or licensed."
+          },
+          "credit": {
+            "type": "string",
+            "description": "Who made the image, as shown in the caption. Required when status is own or licensed."
+          },
+          "sourceUrl": {
+            "type": "string",
+            "pattern": "^https?://",
+            "description": "Where the image was obtained. Required when status is own or licensed, unless licence is Own."
+          },
+          "licence": {
+            "enum": [
+              "Public domain",
+              "CC0",
+              "CC BY",
+              "CC BY-SA",
+              "Own"
+            ],
+            "description": "No NC or ND licences. Required when status is own or licensed."
+          },
+          "changes": {
+            "type": "string",
+            "description": "What AMaC changed (crop, labels, contrast). If filled, the caption says (modified)."
           }
         }
       }
