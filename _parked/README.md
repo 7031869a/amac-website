@@ -50,3 +50,9 @@ PLAB 1 bank 3,314 → 3,597; held 2,431 → 2,342; parked 3,443 → 2,807. Recor
 - `plab1-adaptation-ii-unadapted.json`: 2,807 → 2,707. All 100 Paediatrics batch-2 sources resolved: 61 live, 3 held back (below), 36 retired. Do not re-adapt these sources.
 - `plab1-next-review-pack.json`: +3 approved batch-2 questions held back because each repeats a Held 01 question that went live (PAN2526/PAQ300, PAN1799/PAQ15511,
   PAN1974/PAQ15553). Ahmed or the reviewer to choose which of each pair stays live.
+
+`mrcp1-pilot-50.js` (12 Oct 2026) — MRCP Part 1 pilot: 50 clinical vignettes picked from the archive extraction pool (MRCP1-007..2583, not live), spread across 14 specialties, options reshuffled so keys run 10 each A–E. Not loaded by any page and not counted on the site. Audit sign-off list: 2026-10-12-mrcp1-pilot50.md in the owner's AMaC-audits folder (outside the repo). Nothing here may go live without clinician sign-off.
+
+`mrcp1-pilot-50-v2.js` (12 Oct 2026) — v2 of the MRCP Part 1 pilot: all 50 items rewritten to the single-best-answer standard (audit-flagged items follow the 12 Oct proposed fixes); M1P033 (paediatric) retired and replaced by M1P051 (adult respiratory). Keys 10 each A–E. Mechanical lint 0 flags (`_tools/mrcp1-lint/`). Not loaded by any page; nothing here may go live without clinician sign-off.
+
+`mrcp1-pool-lint.csv` / `mrcp1-pool-lint-summary.md` (12 Oct 2026) — mechanical lint of the 2,357-item MRCP Part 1 archive pool and of the pilot.
