@@ -368,7 +368,7 @@ details p{margin-top:6px;color:var(--muted)}
         <div class="panel"><span class="eyebrow">First move</span><p>${esc(w.firstMove)}</p></div></div></section>
       <section><h2>Station flow</h2><ol class="flow">${S.flow.map(f=>`<li>${esc(f)}</li>`).join("")}</ol></section>
       <section><h2>Candidate brief</h2>${briefHTML()}</section>
-      <section><h2>Scoring grid</h2>
+      <section><h2>Scoring grid${S.gridLabel?`: ${esc(S.gridLabel)}`:""}</h2>
         <p class="note">In the exam each station is marked out of 20 with an overall rating of pass, borderline or fail. <strong>High-performance</strong> is AMaC's teaching label for what lifts a pass towards full marks. It is not an official grade.</p>
         ${bandTabsHTML()}<div id="gridbody">${gridListHTML()}</div></section>
       <section><h2>Model performances</h2>
@@ -428,7 +428,7 @@ details p{margin-top:6px;color:var(--muted)}
       <section><h2>Findings to reveal</h2><div class="dlg">${p.reveals.map((r,i)=>`<label class="reveal" for="rv${i}"><input type="checkbox" id="rv${i}"><span><span class="trig">When the candidate: ${esc(r.trigger)}</span><br>${esc(r.finding)}</span></label>`).join("")}</div></section>
       <section><h2>Push questions, in order</h2><ol class="push">${p.push.map(q=>`<li><div><strong>${esc(q.question)}</strong>${q.expect?`<div class="exp">Listen for: ${esc(q.expect)}</div>`:""}<div class="tags"><span class="tag">${q.row} ${esc(rowById(q.row)?.label)}</span></div></div></li>`).join("")}</ol></section>
       <section><h2>Curveballs</h2><div>${p.curveballs.map(c=>`<details><summary>${esc(c.prompt)}</summary><p>Safe answer: ${esc(c.safeAnswer)}</p></details>`).join("")}</div></section>
-      <section><h2>Tick-sheet</h2><p class="note">For each row, tap the band that best matches the candidate's performance.</p><div id="ptally">${tallyHTML(partnerScore)}</div><div id="pgrid">${gridHTML(partnerScore)}</div><div id="povr">${overallHTML(partnerOverall)}</div></section>`;
+      <section><h2>Tick-sheet${S.gridLabel?`: ${esc(S.gridLabel)}`:""}</h2><p class="note">For each row, tap the band that best matches the candidate's performance.</p><div id="ptally">${tallyHTML(partnerScore)}</div><div id="pgrid">${gridHTML(partnerScore)}</div><div id="povr">${overallHTML(partnerOverall)}</div></section>`;
     bindTimer("pt");
     document.querySelectorAll(".reveal input").forEach(cb=>cb.addEventListener("change",()=>cb.closest(".reveal").classList.toggle("done",cb.checked)));
     const re=()=>{$("#pgrid").innerHTML=gridHTML(partnerScore);$("#ptally").innerHTML=tallyHTML(partnerScore);$("#povr").innerHTML=overallHTML(partnerOverall);bindGrid(partnerScore,re);bindOverall(partnerOverall,re);};

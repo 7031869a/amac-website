@@ -1,0 +1,421 @@
+{
+  "exam": "MRCS-B",
+  "gridLabel": "AMaC teaching criteria",
+  "id": "MB-513",
+  "title": "Subarachnoid haemorrhage",
+  "type": "applied-knowledge",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "Neurosurgical emergencies: thunderclap headache",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "NICE NG228 (published 23 November 2022, September 2023 amendment)"
+    ],
+    "related": [
+      {
+        "id": "MB-136",
+        "why": "head injury: GCS and when to scan"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Emergency department",
+    "role": "Core surgical trainee",
+    "scenario": "A 47-year-old man, Lorcan Pendry, develops an abrupt severe headache while exercising. He vomits and develops neck stiffness.",
+    "task": "Assess the thunderclap headache, explain the investigation pathway and immediate management after confirmation. You have 9 minutes. The examiner will give results as you ask."
+  },
+  "beforeYouWalkIn": {
+    "frame": "A thunderclap headache is a red flag; timing decides the investigation pathway.",
+    "trap": "Doing a lumbar puncture straight after any negative CT, or discharging after one.",
+    "firstMove": "ABCDE and neurological observations, then establish the exact time of onset."
+  },
+  "flow": [
+    "Recognise the red flag",
+    "Assess and stabilise",
+    "CT and the six-hour rule",
+    "When to consider lumbar puncture",
+    "After confirmation"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-knowledge",
+      "label": "Recognises the red flag",
+      "fail": "Calls it migraine and waits for the headache to settle.",
+      "pass": "Recognises thunderclap headache as a red flag for subarachnoid haemorrhage.",
+      "high": "Asks the exact time of onset and time to peak intensity, and about seizure, focal deficit and consciousness."
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-skill",
+      "label": "Assessment and stabilisation",
+      "fail": "Delays assessment while waiting for imaging.",
+      "pass": "Performs ABCDE and repeated neurological observations, and treats pain.",
+      "high": "Watches for falling consciousness from rebleeding or hydrocephalus and escalates immediately."
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "CT and the six-hour rule",
+      "fail": "Plans a lumbar puncture after every negative CT, or discharges because the CT is normal.",
+      "pass": "Arranges urgent senior review alongside an urgent non-contrast CT head; a negative CT within 6 hours, reported and documented by a radiologist, does not routinely need LP.",
+      "high": "Discusses alternatives with a senior clinical decision-maker; a negative early CT is not an automatic discharge instruction.",
+      "source": "NG228"
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-knowledge",
+      "label": "Lumbar puncture after a later CT",
+      "fail": "Performs LP too early or not at all after a negative late CT.",
+      "pass": "Negative CT more than 6 hours after onset: considers LP, waiting at least 12 hours from onset.",
+      "high": "Specifies spectrophotometric CSF bilirubin/xanthochromia assessment.",
+      "source": "NG228"
+    },
+    {
+      "id": "G5",
+      "domain": "professionalism",
+      "label": "After confirmation",
+      "fail": "Admits under a general team without specialist discussion.",
+      "pass": "Arranges urgent specialist-centre discussion and CT angiography without delay.",
+      "high": "Considers enteral nimodipine under the specialist pathway, and does not delay transfer or treatment.",
+      "source": "NG228"
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-knowledge",
+      "label": "Definitive treatment",
+      "fail": "Cannot say what happens to the aneurysm.",
+      "pass": "Explains definitive aneurysm treatment is a specialist decision.",
+      "high": "Names coiling and clipping as the options discussed by the specialist team.",
+      "source": "NG228"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "What diagnosis concerns you?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "It is probably migraine brought on by exercise. I would wait for the headache to settle.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          },
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What investigation would you request?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "A CT, and then an LP straight away whatever it shows.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          },
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The non-contrast CT report describes acute blood in the basal cisterns and subarachnoid sulci."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I would admit him to the medical ward and see how he does overnight.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What happens to the aneurysm?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "It usually settles on its own.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "examiner",
+        "text": "What diagnosis concerns you?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I am concerned about subarachnoid haemorrhage. A thunderclap headache is a red-flag presentation.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I would perform ABCDE and repeated neurological observations, and treat his pain.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What investigation would you request?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Urgent review by a senior clinical decision-maker, alongside an urgent non-contrast CT head. If CT performed within 6 hours is negative and reported and documented by a radiologist, I would not routinely offer lumbar puncture.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What if the CT is done later?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "If CT is performed more than 6 hours after onset and is negative, lumbar puncture may be considered, at least 12 hours from symptom onset.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The non-contrast CT report describes acute blood in the basal cisterns and subarachnoid sulci."
+      },
+      {
+        "speaker": "candidate",
+        "text": "That confirms subarachnoid haemorrhage. I would arrange urgent specialist-centre discussion and CT angiography without delay.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Definitive treatment of the aneurysm is a specialist decision.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "examiner",
+        "text": "What diagnosis concerns you?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Subarachnoid haemorrhage. I would ask the exact time of onset and how quickly it peaked, and about seizure, focal deficit and consciousness.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Perform ABCDE and repeated neurological observations. A fall in consciousness could mean rebleeding or hydrocephalus, so I would escalate at once.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What investigation would you request?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I would ask for urgent review by a senior clinical decision-maker and request an urgent non-contrast CT head. If it is negative within six hours and reported and documented by a radiologist, I would not routinely do an LP; I would discuss alternatives with a senior clinical decision-maker and seek specialist advice as appropriate. A negative early CT is not an automatic discharge.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What if the CT is done later?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "After a negative CT more than six hours from onset, I would consider LP at least 12 hours from onset, with spectrophotometric CSF bilirubin/xanthochromia assessment.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The non-contrast CT report describes acute blood in the basal cisterns and subarachnoid sulci."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Perform ABCDE and repeated neurological observations; consider enteral nimodipine after confirmed SAH under the specialist pathway. Arrange urgent specialist-centre discussion and CT angiography without delay. Do not delay transfer or treatment while completing the viva.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "The specialist team will decide between coiling and clipping.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G3",
+      "move": "Discharges because an early CT is normal, without senior discussion.",
+      "consequence": "A missed haemorrhage can rebleed. This is a critical fail."
+    },
+    {
+      "row": "G4",
+      "move": "Performs LP before 12 hours from onset.",
+      "consequence": "Xanthochromia may not yet be detectable."
+    },
+    {
+      "row": "G5",
+      "move": "Delays specialist-centre discussion after confirmation.",
+      "consequence": "Delays securing the aneurysm."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Negative non-contrast CT within 6 hours, reported and documented by a radiologist: do not routinely offer LP.",
+      "source": "NG228"
+    },
+    {
+      "fact": "Negative CT more than 6 hours after onset: consider LP at least 12 hours from onset, with spectrophotometry.",
+      "source": "NG228"
+    },
+    {
+      "fact": "Confirmed SAH: urgent discussion with a specialist neurosurgical centre, CT angiography without delay, and enteral nimodipine considered under the specialist pathway.",
+      "source": "NG228"
+    }
+  ],
+  "recall": {
+    "think": "Aneurysmal bleed that can rebleed.",
+    "say": "“Thunderclap headache is a red flag. When did it start?”",
+    "do": [
+      "ABCDE and neurological observations",
+      "Urgent non-contrast CT head",
+      "Confirmed: specialist centre and CT angiography"
+    ],
+    "numbers": [
+      {
+        "value": "6 hours",
+        "meaning": "CT within this time and negative: no routine LP",
+        "source": "NG228"
+      },
+      {
+        "value": "12 hours",
+        "meaning": "minimum from onset before LP",
+        "source": "NG228"
+      }
+    ],
+    "trap": "A normal early CT as a reason to discharge.",
+    "finish": "Specialist-centre care: aneurysm treatment by coiling or clipping."
+  },
+  "sources": [
+    {
+      "id": "NG228",
+      "name": "NICE NG228, Subarachnoid haemorrhage caused by a ruptured aneurysm",
+      "version": "published 23 November 2022, with a September 2023 amendment; recommendations 1.1 (including 1.1.6 senior review) and 1.2",
+      "url": "https://www.nice.org.uk/guidance/ng228",
+      "supports": "CT and lumbar puncture pathway, specialist-centre discussion, CT angiography and nimodipine."
+    }
+  ],
+  "partner": {
+    "opening": "This 47-year-old man developed an abrupt severe headache while exercising, with vomiting and neck stiffness. Assess the thunderclap headache, explain the investigation pathway and immediate management after confirmation.",
+    "reveals": [
+      {
+        "trigger": "Asks about onset",
+        "finding": "Peak intensity within a minute, two hours ago.",
+        "row": "G1"
+      },
+      {
+        "trigger": "Asks for the CT result (later in the station)",
+        "finding": "The non-contrast CT report describes acute blood in the basal cisterns and subarachnoid sulci.",
+        "row": "G5"
+      }
+    ],
+    "push": [
+      {
+        "question": "What investigation would you request?",
+        "row": "G3"
+      },
+      {
+        "question": "What if the CT is normal?",
+        "row": "G3"
+      },
+      {
+        "question": "What if the CT had been done 8 hours after onset?",
+        "row": "G4"
+      },
+      {
+        "question": "What happens after SAH is confirmed?",
+        "row": "G5"
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "Is every thunderclap headache an SAH?",
+        "safeAnswer": "No, but it is a red flag requiring appropriate investigation.",
+        "row": "G1"
+      }
+    ]
+  }
+}
