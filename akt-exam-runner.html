@@ -219,7 +219,7 @@ body{font-family:'Outfit',sans-serif;background:var(--paper);color:var(--ink);-w
       <div class="exam-title-mid" id="examTitleMid"></div>
       <div class="timer-box">
         <span class="timer" id="timer">2:00:00</span>
-        <button class="timer-btn" id="pauseBtn">Pause</button>
+        <button class="timer-btn" id="pauseBtn" title="Practice only: the real AKT cannot be paused">Pause</button>
       </div>
     </div>
   </div>
@@ -609,7 +609,7 @@ body{font-family:'Outfit',sans-serif;background:var(--paper);color:var(--ink);-w
 
     document.getElementById("domBreakdown").innerHTML = rows.map(function(r){
       var p = Math.round(r.pct*100);
-      var col = p>=67?"var(--green)":(p>=50?"var(--amber)":"var(--red)");
+      var col = "var(--navy)";
       return '<div class="dom-row">'+
         '<span class="dom-name">'+esc(r.d)+'</span>'+
         '<div class="dom-bar"><div class="dom-bar-fill" style="width:'+p+'%;background:'+col+';"></div></div>'+
