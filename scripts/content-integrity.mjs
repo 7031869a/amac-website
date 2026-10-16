@@ -201,17 +201,21 @@ const LIBRARIES = [
     // checked for phrases.
     phraseText: s => ({ ...s, sources: (s.sources || []).map(x =>
       x && /^Station format:/.test(x.supports || '') ? { ...x, supports: '' } : x) }) },
+  // PACES marks seven skills per encounter; there is no critical-fail section to check.
+  { source: 'MRCP PACES stations', dir: 'paces-stations', files: /^R5-\d{3}\.json$/, id: s => s.id,
+    required: ['title'], grid: s => (s.sections || []).filter(x => /scoring grid/i.test(x.heading)).flatMap(x => x.blocks),
+    critical: null, noCritical: true },
 ];
 for (const L of LIBRARIES) {
   let items;
   if (L.dir) {
-    const files = fs.readdirSync(path.join(ROOT, L.dir)).filter(f => /^MB-.*\.json$/.test(f)).sort();
+    const files = fs.readdirSync(path.join(ROOT, L.dir)).filter(f => (L.files || /^MB-.*\.json$/).test(f)).sort();
     items = files.map(f => JSON.parse(read(`${L.dir}/${f}`)));
     const index = JSON.parse(read(`${L.dir}/index.json`)).map(e => String(e.id || e));
     const ids = new Set(items.map(s => String(s.id)));
-    for (const id of index) if (!ids.has(id)) hit('empty-field', L.source, id, 'listed in stations/index.json but has no station file');
+    for (const id of index) if (!ids.has(id)) hit('empty-field', L.source, id, `listed in ${L.dir}/index.json but has no station file`);
   } else items = literal(L.file, L.name);
-  checked.push([L.source, L.file || `${L.dir}/MB-*.json`, items.length]);
+  checked.push([L.source, L.file || `${L.dir}/${L.files ? 'R5-*' : 'MB-*'}.json`, items.length]);
   duplicateIds(L.source, items, L.id);
   for (const s of items) {
     const id = L.id(s);
@@ -228,7 +232,7 @@ for (const L of LIBRARIES) {
     }
     phraseChecks(L.source, id, L.phraseText ? L.phraseText(s) : s);
   }
-  if (!L.critical) hit('critical-fail', L.source, null, `the station schema has no critical-fail field: all ${items.length} stations lack the section`);
+  if (!L.critical && !L.noCritical) hit('critical-fail', L.source, null, `the station schema has no critical-fail field: all ${items.length} stations lack the section`);
 }
 
 // ---------------------------------------------------------------- card decks
