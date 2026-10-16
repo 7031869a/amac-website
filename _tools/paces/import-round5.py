@@ -143,6 +143,26 @@ def clean_text(text, log, sid, where):
     return text
 
 
+def strip_repeated_suffix(rows, log, sid, where):
+    """Drop a cut-off ": <fragment>" that the docx appends to every body cell of a column.
+
+    In some Think-Say-Do tables each first-column cell ends with the same truncated
+    station label (": Hypertrophic cardi"). It is removed only when every body row
+    of that column ends with the identical ": <text>", so ordinary colons stay.
+    """
+    if len(rows) < 3:
+        return rows
+    for ci in range(len(rows[0])):
+        body = [r[ci] if ci < len(r) else '' for r in rows[1:]]
+        sufs = [re.search(r': ([^:]+)$', c) for c in body]
+        if all(sufs) and len({m.group(1) for m in sufs}) == 1:
+            frag = sufs[0].group(0)
+            for r in rows[1:]:
+                r[ci] = r[ci][:-len(frag)]
+            log.append(f'{sid} {where}: removed repeated cut-off "{frag}" from column {ci + 1}')
+    return rows
+
+
 def encounter(header):
     m = re.search(r'Station\s+(\d)\s*[:,]?\s*([^·•|]*)', header)
     mins = re.search(r'(\d+)\s*minutes', header)
@@ -182,6 +202,7 @@ def main():
                     b['text'] = clean_header(b['text'], log, sid)
                 elif b['t'] == 'table':
                     b['rows'] = [[clean_text(c, log, sid, x['heading']) for c in r] for r in b['rows']]
+                    b['rows'] = strip_repeated_suffix(b['rows'], log, sid, x['heading'])
                 else:
                     b['text'] = clean_text(b['text'], log, sid, x['heading'])
                 blocks.append(b)
