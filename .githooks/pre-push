@@ -1,7 +1,8 @@
 #!/bin/sh
 # pre-push: refuse to push a commit whose headline counts are stale, or whose
 # content has a structural error (scripts/content-integrity.mjs: duplicate ID,
-# answer key missing from the options, empty answer; its warnings never block).
+# answer key missing from the options, empty answer; its warnings never block),
+# or whose data files do not parse strictly (scripts/strict-data.mjs).
 # It also WARNS (never blocks) when the push changes content data files that no
 # "/amac-audit changed" run covers (.claude/skills/amac-audit/audit-tool.mjs coverage).
 #
@@ -69,6 +70,14 @@ while read -r local_ref local_sha remote_ref remote_sha; do
       echo "pre-push: structural content errors in $local_ref ($local_sha):" >&2
       echo "$out" | awk '/^x /{p=1; print; next} /^(! |$)/{p=0} p' | head -40 >&2
       echo "Run  node scripts/content-integrity.mjs , fix the FAIL items, commit, and push again." >&2
+      status=1
+    fi
+  fi
+  if [ -f "$tmp/scripts/strict-data.mjs" ]; then
+    if ! out=$(node "$tmp/scripts/strict-data.mjs" 2>&1); then
+      echo "pre-push: data files do not parse strictly in $local_ref ($local_sha):" >&2
+      echo "$out" | grep -E '^  \[' | head -40 >&2
+      echo "Run  node scripts/strict-data.mjs , fix each file:line, commit, and push again." >&2
       status=1
     fi
   fi
