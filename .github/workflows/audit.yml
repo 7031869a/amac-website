@@ -42,6 +42,13 @@ jobs:
         if: success() || failure()
         run: node scripts/content-integrity.mjs
 
+      # Strict parse: every .json / .js / inline <script> parses as the browser would
+      # (a stray "]" after a data array fails here, not only on the live page), and
+      # every question has a unique ID, 5 options, a valid key and an explanation.
+      - name: Run AMaC strict data parse
+        if: success() || failure()
+        run: node scripts/strict-data.mjs
+
       # Station index and image-licence rules (node:test).
       - name: Run station tests
         if: success() || failure()
