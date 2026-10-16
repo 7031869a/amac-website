@@ -10,7 +10,8 @@
     "minutes": 9,
     "readingMinutes": 1,
     "guidelineVersions": [
-      "ENT UK handbook (2019)",
+      "Gray's Anatomy, 42nd edition (2020)",
+      "DAS/BAETS/ENT UK haematoma guideline (2022)",
       "NICE HTG164 (26 March 2008)"
     ],
     "related": [
@@ -50,7 +51,7 @@
       "fail": "Reverses the right and left loops or cannot describe the ascent.",
       "pass": "Right loops under the right subclavian artery; left loops under the aortic arch; both ascend in the tracheo-oesophageal groove.",
       "high": "Adds that the left is longer and that a non-recurrent right nerve occurs with an aberrant right subclavian artery.",
-      "source": "ENTUK"
+      "source": "GRAYS"
     },
     {
       "id": "G2",
@@ -59,7 +60,7 @@
       "fail": "Says it supplies “most” intrinsic muscles, or includes cricothyroid.",
       "pass": "All intrinsic laryngeal muscles except cricothyroid, which is supplied by the external branch of the superior laryngeal nerve.",
       "high": "Adds sensory supply to the larynx below the vocal folds.",
-      "source": "ENTUK"
+      "source": "GRAYS"
     },
     {
       "id": "G3",
@@ -68,7 +69,7 @@
       "fail": "States the nerve always lies behind the inferior thyroid artery, or focuses on the inferior pole alone.",
       "pass": "Variable relationship to the inferior thyroid artery; particularly at risk where it enters the larynx near Berry's ligament and the cricothyroid joint.",
       "high": "Identify and preserve it; do not assume one fixed arterial relationship.",
-      "source": "ENTUK"
+      "source": "GRAYS"
     },
     {
       "id": "G4",
@@ -77,16 +78,16 @@
       "fail": "Cannot describe the effect of a unilateral injury.",
       "pass": "Unilateral injury causes vocal-fold dysfunction with a hoarse, weak or breathy voice.",
       "high": "Adds possible aspiration and the need to assess vocal-fold mobility before and after surgery.",
-      "source": "ENTUK"
+      "source": "GRAYS"
     },
     {
       "id": "G5",
-      "domain": "clinical-knowledge",
-      "label": "Bilateral injury and postoperative stridor",
-      "fail": "Treats new stridor after thyroid surgery as anxiety and observes.",
-      "pass": "New postoperative stridor requires immediate airway assessment and urgent anaesthetic/ENT/surgical help.",
-      "high": "Considers a compressive neck haematoma as well as bilateral vocal-fold dysfunction.",
-      "source": "ENTUK"
+      "domain": "clinical-skill",
+      "label": "Postoperative stridor: bedside evacuation (SCOOP)",
+      "fail": "Treats new stridor as anxiety, or waits for theatre or senior help while the airway worsens.",
+      "pass": "Calls for help and gives oxygen, then opens a compressing haematoma at the bedside by SCOOP, without waiting for help to arrive.",
+      "high": "Gives oxygen, sits the patient up, prepares for intubation; distinguishes haematoma from bilateral vocal-fold palsy.",
+      "source": "DAS"
     },
     {
       "id": "G6",
@@ -162,7 +163,7 @@
       },
       {
         "speaker": "candidate",
-        "text": "She is probably anxious. I would reassure her and recheck in an hour.",
+        "text": "She is probably anxious. I would reassure her, and if the neck is swollen I would wait for the registrar to take her to theatre.",
         "tags": [
           {
             "row": "G5",
@@ -244,7 +245,7 @@
       },
       {
         "speaker": "candidate",
-        "text": "New postoperative stridor requires immediate airway assessment and urgent anaesthetic/ENT/surgical help.",
+        "text": "I call for senior surgical and anaesthetic help immediately and give oxygen. If a neck haematoma is compressing the airway, I open the wound at the bedside using SCOOP (Skin exposure, Cut sutures, Open skin, Open muscles, Pack), without waiting for help to arrive.",
         "tags": [
           {
             "row": "G5",
@@ -322,7 +323,7 @@
       },
       {
         "speaker": "candidate",
-        "text": "New postoperative stridor requires immediate airway assessment and urgent anaesthetic/ENT/surgical help; consider a compressive neck haematoma as well as bilateral vocal-fold dysfunction.",
+        "text": "I call for help immediately, including a senior anaesthetist, give high-flow oxygen and sit her up. If a haematoma is compromising the airway, I open the wound at the bedside using SCOOP (Skin exposure, Cut sutures, Open skin, Open muscles, Pack), without waiting for help to arrive, and intubate if the airway does not improve. If the neck is flat, I consider bilateral vocal-fold palsy, which may need reintubation or a tracheostomy.",
         "tags": [
           {
             "row": "G5",
@@ -345,8 +346,8 @@
   "failures": [
     {
       "row": "G5",
-      "move": "Observes new stridor after thyroid surgery.",
-      "consequence": "Airway obstruction from haematoma or bilateral palsy can be fatal. This is a critical fail."
+      "move": "Observes new stridor, or waits for theatre instead of opening a compressing haematoma at the bedside.",
+      "consequence": "Airway obstruction can be fatal. This is a critical fail."
     },
     {
       "row": "G3",
@@ -362,15 +363,15 @@
   "knowledge": [
     {
       "fact": "All intrinsic laryngeal muscles except cricothyroid are supplied by the recurrent laryngeal nerve, which also carries sensation below the vocal folds.",
-      "source": "ENTUK"
+      "source": "GRAYS"
     },
     {
       "fact": "The relationship to the inferior thyroid artery varies; the nerve is particularly at risk near Berry's ligament and the cricothyroid joint.",
-      "source": "ENTUK"
+      "source": "GRAYS"
     },
     {
-      "fact": "New postoperative stridor: immediate airway assessment and urgent help; consider haematoma as well as bilateral vocal-fold dysfunction.",
-      "source": "ENTUK"
+      "fact": "Haematoma compromising the airway after thyroid surgery: call for help and give oxygen head-up, then open the wound at the bedside using SCOOP (Skin exposure, Cut sutures, Open skin, Open muscles, Pack) without waiting; intubate if compromise persists.",
+      "source": "DAS"
     },
     {
       "fact": "Gland relationships, the superior laryngeal nerve and the parathyroids are covered in MB-478."
@@ -382,13 +383,13 @@
     "do": [
       "Describe each side's course",
       "All intrinsic muscles except cricothyroid",
-      "New stridor: airway and urgent help"
+      "New stridor with haematoma: call for help, oxygen, then SCOOP at the bedside"
     ],
     "numbers": [
       {
         "value": "1 exception",
         "meaning": "cricothyroid is supplied by the external branch of the superior laryngeal nerve",
-        "source": "ENTUK"
+        "source": "GRAYS"
       }
     ],
     "trap": "A fixed relationship to the inferior thyroid artery.",
@@ -396,11 +397,18 @@
   },
   "sources": [
     {
-      "id": "ENTUK",
-      "name": "ENT UK, Ear Nose and Throat The Official Handbook for Medical Students and Junior Doctors",
-      "version": "2019, thyroid surgery section",
-      "url": "https://www.entuk.org/_userfiles/pages/files/groups/ear_nose_and_throat_the_offici_sfo_uk_compressed.pdf",
-      "supports": "Recurrent laryngeal nerve anatomy, function and injury."
+      "id": "GRAYS",
+      "name": "Standring S (ed). Gray's Anatomy: The Anatomical Basis of Clinical Practice",
+      "version": "42nd edition, 21 October 2020 (Elsevier)",
+      "url": "https://shop.elsevier.com/books/grays-anatomy/standring/978-0-7020-7705-0",
+      "supports": "Recurrent laryngeal nerve course, function, relations and variants, and the effects of injury."
+    },
+    {
+      "id": "DAS",
+      "name": "Iliff HA, El-Boghdadly K, Ahmad I, et al. Management of haematoma after thyroid surgery: systematic review and multidisciplinary consensus guidelines from the Difficult Airway Society, the British Association of Endocrine and Thyroid Surgeons and the British Association of Otorhinolaryngology, Head and Neck Surgery. Anaesthesia 2022;77(1):82-95",
+      "version": "Published online 21 September 2021; January 2022 issue",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9291554/",
+      "supports": "Order of actions (Fig. 2): oxygen and head-up; with airway compromise, call for help immediately and inform a senior anaesthetist; evacuate the haematoma at the bedside by SCOOP (skin exposure, cut sutures, open skin, open muscles, pack wound); intubate if evacuation fails."
     },
     {
       "id": "HTG164",

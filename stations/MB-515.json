@@ -10,14 +10,13 @@
     "minutes": 9,
     "readingMinutes": 1,
     "guidelineVersions": [
-      "NICE CG99 (26 May 2010, updated 13 July 2017)",
-      "BAPM bilious vomiting framework (2024)"
+      "NICE NG1 (14 January 2015, updated 9 October 2019)"
     ]
   },
   "brief": {
     "setting": "Paediatric emergency department",
     "role": "Core surgical trainee",
-    "scenario": "A 4-week-old infant, Rory Penhallow, born at term, has abdominal distension, poor feeding and delayed passage of meconium: he first passed meconium at 72 hours of age. His parents report vomiting that has become green today.",
+    "scenario": "A 4-week-old infant, Bram Kittow, born at term, has abdominal distension, poor feeding and delayed passage of meconium: he first passed meconium at 72 hours of age. His parents report vomiting that has become green today.",
     "task": "Assess this infant with suspected intestinal obstruction, explain urgent management and how Hirschsprung's disease is confirmed. You have 9 minutes. The examiner will give findings as you ask."
   },
   "beforeYouWalkIn": {
@@ -37,18 +36,17 @@
       "domain": "clinical-knowledge",
       "label": "Recognises red flags",
       "fail": "Treats it as simple constipation and reassures the parents.",
-      "pass": "Recognises delayed meconium (more than 48 hours in a term infant), distension and vomiting as red flags for Hirschsprung's disease.",
-      "high": "States that normal meconium passage would not exclude the disease.",
-      "source": "CG99"
+      "pass": "Recognises delayed passage of meconium, distension and vomiting as red flags for Hirschsprung's disease.",
+      "high": "States that normal meconium passage would not exclude the disease."
     },
     {
       "id": "G2",
       "domain": "clinical-knowledge",
       "label": "Bilious vomiting",
       "fail": "Ignores the green vomiting.",
-      "pass": "Bilious vomiting also requires urgent exclusion of malrotation/volvulus.",
-      "high": "Treats green vomiting as a surgical emergency and arranges assessment without delay.",
-      "source": "BAPM"
+      "pass": "Bilious vomiting needs an urgent (same day) upper GI contrast study to exclude malrotation with volvulus.",
+      "high": "Treats green vomiting as a surgical emergency and explains to the parents why the contrast study is needed.",
+      "source": "NG1"
     },
     {
       "id": "G3",
@@ -56,8 +54,7 @@
       "label": "Urgent management",
       "fail": "Gives repeated laxatives without assessment.",
       "pass": "Arranges immediate paediatric and paediatric-surgical assessment; nil by mouth, IV access, glucose and electrolytes, hydration, resuscitation and gastric decompression.",
-      "high": "Coordinates resuscitation and decompression with the paediatric team in parallel with the surgical referral.",
-      "source": "CG99"
+      "high": "Coordinates resuscitation and decompression with the paediatric team in parallel with the surgical referral."
     },
     {
       "id": "G4",
@@ -71,10 +68,9 @@
       "id": "G5",
       "domain": "clinical-knowledge",
       "label": "Confirming the diagnosis",
-      "fail": "Relies on anorectal manometry or explosive stool after rectal examination.",
+      "fail": "Excludes or confirms the diagnosis without a rectal biopsy, for example on explosive stool after rectal examination.",
       "pass": "Rectal biopsy, usually suction biopsy in an infant, confirms aganglionosis when an adequate specimen is assessed by specialist pathology.",
-      "high": "States that anorectal manometry should not be used to exclude Hirschsprung's disease.",
-      "source": "CG99"
+      "high": "States that an inadequate biopsy is repeated, not taken as reassurance."
     },
     {
       "id": "G6",
@@ -153,7 +149,7 @@
       },
       {
         "speaker": "candidate",
-        "text": "Anorectal manometry: if it is normal, it is not Hirschsprung's.",
+        "text": "The explosive stool after my rectal examination confirms it, so he does not need a biopsy.",
         "tags": [
           {
             "row": "G5",
@@ -169,7 +165,7 @@
       },
       {
         "speaker": "candidate",
-        "text": "I am concerned about Hirschsprung's disease causing distal functional obstruction. Meconium after more than 48 hours in a term baby is a red flag, with distension and vomiting.",
+        "text": "I am concerned about Hirschsprung's disease causing distal functional obstruction. Delayed passage of meconium is a red flag, with distension and vomiting.",
         "tags": [
           {
             "row": "G1",
@@ -183,7 +179,7 @@
       },
       {
         "speaker": "candidate",
-        "text": "Bilious vomiting also requires urgent exclusion of malrotation/volvulus.",
+        "text": "Bilious vomiting needs an urgent (same day) upper GI contrast study to exclude malrotation with volvulus.",
         "tags": [
           {
             "row": "G2",
@@ -265,7 +261,7 @@
       },
       {
         "speaker": "candidate",
-        "text": "Green vomiting is a surgical emergency until assessed: malrotation with volvulus must be excluded urgently.",
+        "text": "Green vomiting is a surgical emergency until assessed. He needs an urgent same-day upper GI contrast study to exclude malrotation with volvulus, and I would explain to his parents why.",
         "tags": [
           {
             "row": "G2",
@@ -307,7 +303,7 @@
       },
       {
         "speaker": "candidate",
-        "text": "Suction rectal biopsy showing aganglionosis. Anorectal manometry should not be used to exclude Hirschsprung's disease.",
+        "text": "Suction rectal biopsy showing aganglionosis. If the sample is inadequate, it is repeated rather than taken as reassurance.",
         "tags": [
           {
             "row": "G5",
@@ -340,22 +336,21 @@
     },
     {
       "row": "G5",
-      "move": "Uses anorectal manometry to exclude Hirschsprung's disease.",
+      "move": "Excludes Hirschsprung's disease without a rectal biopsy.",
       "consequence": "The diagnosis is missed."
     }
   ],
   "knowledge": [
     {
-      "fact": "Meconium passed after more than 48 hours in a term baby is a red flag in a child with constipation.",
-      "source": "CG99"
+      "fact": "Perform an urgent (same day) upper GI contrast study for infants with unexplained bile-stained vomiting, to rule out intestinal obstruction from mid-gut volvulus.",
+      "source": "NG1"
     },
     {
-      "fact": "Do not use anorectal manometry to exclude Hirschsprung's disease.",
-      "source": "CG99"
+      "fact": "Bile-stained (green or yellow-green) vomit may suggest intestinal obstruction: refer to paediatric surgery.",
+      "source": "NG1"
     },
     {
-      "fact": "Bilious vomiting in a newborn or infant needs urgent surgical assessment to exclude malrotation with volvulus.",
-      "source": "BAPM"
+      "fact": "Rectal biopsy confirms Hirschsprung's disease; delayed meconium, distension and vomiting are red flags."
     }
   ],
   "recall": {
@@ -368,9 +363,9 @@
     ],
     "numbers": [
       {
-        "value": "48 hours",
-        "meaning": "meconium later than this in a term baby is a red flag",
-        "source": "CG99"
+        "value": "Same day",
+        "meaning": "urgent upper GI contrast study for an infant with unexplained bile-stained vomiting",
+        "source": "NG1"
       }
     ],
     "trap": "Calling it constipation because constipation is common.",
@@ -378,18 +373,11 @@
   },
   "sources": [
     {
-      "id": "CG99",
-      "name": "NICE CG99, Constipation in children and young people: diagnosis and management",
-      "version": "26 May 2010, updated 13 July 2017; red flags (table 2) and recommendations 1.3.3 and 1.3.6",
-      "url": "https://www.nice.org.uk/guidance/cg99",
-      "supports": "Red flags including delayed meconium, specialist referral and not using anorectal manometry to exclude Hirschsprung's disease."
-    },
-    {
-      "id": "BAPM",
-      "name": "BAPM Management of Bilious Vomiting in the Newborn Period framework",
-      "version": "13 February 2024",
-      "url": "https://www.bapm.org/resources/management-of-bilious-vomiting-in-the-newborn-period",
-      "supports": "Urgent surgical assessment of bilious vomiting to exclude malrotation with volvulus."
+      "id": "NG1",
+      "name": "NICE NG1, Gastro-oesophageal reflux disease in children and young people: diagnosis and management",
+      "version": "published 14 January 2015, last updated 9 October 2019; recommendation 1.1.16 and red-flag table (infants: under 1 year)",
+      "url": "https://www.nice.org.uk/guidance/ng1",
+      "supports": "Urgent (same day) upper GI contrast study for infants with unexplained bile-stained vomiting to rule out mid-gut volvulus; bile-stained vomit as a red flag for intestinal obstruction needing paediatric surgery referral."
     }
   ],
   "partner": {
@@ -432,9 +420,9 @@
         "row": "G4"
       },
       {
-        "prompt": "Is anorectal manometry enough to exclude it?",
-        "safeAnswer": "No: do not use anorectal manometry to exclude Hirschsprung's disease.",
-        "row": "G5"
+        "prompt": "The vomit is green but his abdomen is soft. Can the contrast study wait until next week?",
+        "safeAnswer": "No: unexplained bile-stained vomiting in an infant needs an urgent same-day upper GI contrast study to exclude malrotation with volvulus.",
+        "row": "G2"
       }
     ]
   }
