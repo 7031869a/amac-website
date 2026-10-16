@@ -1,0 +1,441 @@
+{
+  "exam": "MRCS-B",
+  "gridLabel": "AMaC teaching criteria",
+  "id": "MB-515",
+  "title": "Hirschsprung's disease",
+  "type": "applied-knowledge",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "Paediatric surgery: neonatal and infant intestinal obstruction",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "NICE CG99 (26 May 2010, updated 13 July 2017)",
+      "BAPM bilious vomiting framework (2024)"
+    ]
+  },
+  "brief": {
+    "setting": "Paediatric emergency department",
+    "role": "Core surgical trainee",
+    "scenario": "A 4-week-old infant, Rory Penhallow, born at term, has abdominal distension, poor feeding and delayed passage of meconium: he first passed meconium at 72 hours of age. His parents report vomiting that has become green today.",
+    "task": "Assess this infant with suspected intestinal obstruction, explain urgent management and how Hirschsprung's disease is confirmed. You have 9 minutes. The examiner will give findings as you ask."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Distension, vomiting and delayed meconium mean obstruction until assessed by the paediatric surgeons.",
+    "trap": "Treating it as simple constipation with repeated laxatives.",
+    "firstMove": "Call the paediatric and paediatric-surgical teams now; bilious vomiting is an emergency."
+  },
+  "flow": [
+    "Recognise red flags",
+    "Urgent assessment and resuscitation",
+    "Look for enterocolitis",
+    "Confirm the diagnosis"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-knowledge",
+      "label": "Recognises red flags",
+      "fail": "Treats it as simple constipation and reassures the parents.",
+      "pass": "Recognises delayed meconium (more than 48 hours in a term infant), distension and vomiting as red flags for Hirschsprung's disease.",
+      "high": "States that normal meconium passage would not exclude the disease.",
+      "source": "CG99"
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-knowledge",
+      "label": "Bilious vomiting",
+      "fail": "Ignores the green vomiting.",
+      "pass": "Bilious vomiting also requires urgent exclusion of malrotation/volvulus.",
+      "high": "Treats green vomiting as a surgical emergency and arranges assessment without delay.",
+      "source": "BAPM"
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-skill",
+      "label": "Urgent management",
+      "fail": "Gives repeated laxatives without assessment.",
+      "pass": "Arranges immediate paediatric and paediatric-surgical assessment; nil by mouth, IV access, glucose and electrolytes, hydration, resuscitation and gastric decompression.",
+      "high": "Coordinates resuscitation and decompression with the paediatric team in parallel with the surgical referral.",
+      "source": "CG99"
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-knowledge",
+      "label": "Enterocolitis",
+      "fail": "Misses fever, lethargy or diarrhoea as signs of enterocolitis.",
+      "pass": "Recognises fever, lethargy, worsening distension, diarrhoea or shock as possible Hirschsprung-associated enterocolitis needing emergency resuscitation and antimicrobials.",
+      "high": "Knows that decompression and rectal washouts require specialist direction."
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-knowledge",
+      "label": "Confirming the diagnosis",
+      "fail": "Relies on anorectal manometry or explosive stool after rectal examination.",
+      "pass": "Rectal biopsy, usually suction biopsy in an infant, confirms aganglionosis when an adequate specimen is assessed by specialist pathology.",
+      "high": "States that anorectal manometry should not be used to exclude Hirschsprung's disease.",
+      "source": "CG99"
+    },
+    {
+      "id": "G6",
+      "domain": "professionalism",
+      "label": "Avoiding harm and explaining to parents",
+      "fail": "Repeats rectal examinations or sends the family home.",
+      "pass": "Avoids repeated rectal examinations and explains the urgency and next steps to the parents.",
+      "high": "Explains that definitive surgery is specialist and that nutrition and fluid status matter meanwhile."
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "What diagnosis concerns you?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Constipation is common in babies. I would reassure the parents.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The vomit is green."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Babies often posset. I would not worry about the colour.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you manage him?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Lactulose, and I would see him again in a week.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          },
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "He now has a fever and diarrhoea."
+      },
+      {
+        "speaker": "candidate",
+        "text": "That shows the laxative is working.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How is the diagnosis confirmed?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Anorectal manometry: if it is normal, it is not Hirschsprung's.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "examiner",
+        "text": "What diagnosis concerns you?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I am concerned about Hirschsprung's disease causing distal functional obstruction. Meconium after more than 48 hours in a term baby is a red flag, with distension and vomiting.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The vomit is green."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Bilious vomiting also requires urgent exclusion of malrotation/volvulus.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you manage him?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Arrange immediate paediatric and paediatric-surgical assessment for distension with vomiting. If obstruction is suspected, keep nil by mouth, obtain IV access, assess glucose/electrolytes and hydration, resuscitate as needed and arrange gastric decompression with the paediatric team.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "He now has a fever and diarrhoea."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Fever, lethargy, worsening distension, diarrhoea or shock may indicate Hirschsprung-associated enterocolitis: initiate emergency resuscitation and senior-led antimicrobial treatment.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How is the diagnosis confirmed?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Rectal biopsy, usually suction biopsy in an infant, confirms aganglionosis when an adequate specimen is assessed by specialist pathology.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I would not repeat rectal examinations, and I would explain to his parents why he needs urgent assessment.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "examiner",
+        "text": "What diagnosis concerns you?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Hirschsprung's disease is likely, but normal meconium passage would not have excluded it, so I would not be reassured by that alone.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The vomit is green."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Green vomiting is a surgical emergency until assessed: malrotation with volvulus must be excluded urgently.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you manage him?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I would call the paediatric and paediatric-surgical teams now and, with the paediatric team, start resuscitation and gastric decompression while he is kept nil by mouth with IV access and glucose checked.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "He now has a fever and diarrhoea."
+      },
+      {
+        "speaker": "candidate",
+        "text": "This may be enterocolitis: emergency resuscitation and senior-led antimicrobials. Decompression/rectal washouts require specialist direction.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How is the diagnosis confirmed?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Suction rectal biopsy showing aganglionosis. Anorectal manometry should not be used to exclude Hirschsprung's disease.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I would explain to his parents that surgery is specialist and that his nutrition and fluids will be supported meanwhile.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G2",
+      "move": "Ignores bilious vomiting in an infant.",
+      "consequence": "Malrotation with volvulus is missed. This is a critical fail."
+    },
+    {
+      "row": "G3",
+      "move": "Gives repeated laxatives without assessment.",
+      "consequence": "Obstruction progresses."
+    },
+    {
+      "row": "G5",
+      "move": "Uses anorectal manometry to exclude Hirschsprung's disease.",
+      "consequence": "The diagnosis is missed."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Meconium passed after more than 48 hours in a term baby is a red flag in a child with constipation.",
+      "source": "CG99"
+    },
+    {
+      "fact": "Do not use anorectal manometry to exclude Hirschsprung's disease.",
+      "source": "CG99"
+    },
+    {
+      "fact": "Bilious vomiting in a newborn or infant needs urgent surgical assessment to exclude malrotation with volvulus.",
+      "source": "BAPM"
+    }
+  ],
+  "recall": {
+    "think": "Obstruction, volvulus or enterocolitis.",
+    "say": "“Green vomiting and delayed meconium: I need the paediatric surgeons now.”",
+    "do": [
+      "Nil by mouth, IV access, glucose and electrolytes",
+      "Gastric decompression with the paediatric team",
+      "Urgent paediatric-surgical assessment"
+    ],
+    "numbers": [
+      {
+        "value": "48 hours",
+        "meaning": "meconium later than this in a term baby is a red flag",
+        "source": "CG99"
+      }
+    ],
+    "trap": "Calling it constipation because constipation is common.",
+    "finish": "Suction rectal biopsy; specialist surgery."
+  },
+  "sources": [
+    {
+      "id": "CG99",
+      "name": "NICE CG99, Constipation in children and young people: diagnosis and management",
+      "version": "26 May 2010, updated 13 July 2017; red flags (table 2) and recommendations 1.3.3 and 1.3.6",
+      "url": "https://www.nice.org.uk/guidance/cg99",
+      "supports": "Red flags including delayed meconium, specialist referral and not using anorectal manometry to exclude Hirschsprung's disease."
+    },
+    {
+      "id": "BAPM",
+      "name": "BAPM Management of Bilious Vomiting in the Newborn Period framework",
+      "version": "13 February 2024",
+      "url": "https://www.bapm.org/resources/management-of-bilious-vomiting-in-the-newborn-period",
+      "supports": "Urgent surgical assessment of bilious vomiting to exclude malrotation with volvulus."
+    }
+  ],
+  "partner": {
+    "opening": "This 4-week-old infant has abdominal distension, poor feeding, delayed meconium and vomiting. Assess him, explain urgent management and how Hirschsprung's disease is confirmed.",
+    "actorBrief": "If asked, the parents say the vomit has been green since this morning and he has had fewer wet nappies.",
+    "reveals": [
+      {
+        "trigger": "Asks about meconium",
+        "finding": "He first passed meconium at 72 hours of age; he was born at term.",
+        "row": "G1"
+      },
+      {
+        "trigger": "Asks about the vomit",
+        "finding": "It has been green since this morning.",
+        "row": "G2"
+      }
+    ],
+    "push": [
+      {
+        "question": "What diagnosis concerns you?",
+        "row": "G1"
+      },
+      {
+        "question": "What else must you exclude with green vomiting?",
+        "row": "G2"
+      },
+      {
+        "question": "What would you do now?",
+        "row": "G3"
+      },
+      {
+        "question": "How is it confirmed?",
+        "row": "G5"
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "He now has a fever, diarrhoea and is more lethargic.",
+        "safeAnswer": "Possible enterocolitis: emergency resuscitation and senior-led antimicrobials; washouts under specialist direction.",
+        "row": "G4"
+      },
+      {
+        "prompt": "Is anorectal manometry enough to exclude it?",
+        "safeAnswer": "No: do not use anorectal manometry to exclude Hirschsprung's disease.",
+        "row": "G5"
+      }
+    ]
+  }
+}
