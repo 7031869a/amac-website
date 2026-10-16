@@ -10,6 +10,7 @@
     "minutes": 9,
     "readingMinutes": 1,
     "guidelineVersions": [
+      "NICE CG99 (26 May 2010, updated 13 July 2017)",
       "NICE NG1 (14 January 2015, updated 9 October 2019)"
     ]
   },
@@ -36,8 +37,9 @@
       "domain": "clinical-knowledge",
       "label": "Recognises red flags",
       "fail": "Treats it as simple constipation and reassures the parents.",
-      "pass": "Recognises delayed passage of meconium, distension and vomiting as red flags for Hirschsprung's disease.",
-      "high": "States that normal meconium passage would not exclude the disease."
+      "pass": "Recognises failure to pass meconium within 48 hours of birth (term baby), distension and vomiting as red flags for Hirschsprung's disease.",
+      "high": "States that normal meconium passage would not exclude the disease.",
+      "source": "CG99"
     },
     {
       "id": "G2",
@@ -165,7 +167,7 @@
       },
       {
         "speaker": "candidate",
-        "text": "I am concerned about Hirschsprung's disease causing distal functional obstruction. Delayed passage of meconium is a red flag, with distension and vomiting.",
+        "text": "I am concerned about Hirschsprung's disease causing distal functional obstruction. Failure to pass meconium within 48 hours of birth in a term baby is a red flag, with distension and vomiting.",
         "tags": [
           {
             "row": "G1",
@@ -350,7 +352,11 @@
       "source": "NG1"
     },
     {
-      "fact": "Rectal biopsy confirms Hirschsprung's disease; delayed meconium, distension and vomiting are red flags."
+      "fact": "Failure to pass meconium within 48 hours of birth in a term baby is a red flag for Hirschsprung's disease.",
+      "source": "CG99"
+    },
+    {
+      "fact": "Rectal biopsy confirms Hirschsprung's disease."
     }
   ],
   "recall": {
@@ -363,6 +369,11 @@
     ],
     "numbers": [
       {
+        "value": "48 hours",
+        "meaning": "meconium not passed by then in a term baby: red flag for Hirschsprung's disease",
+        "source": "CG99"
+      },
+      {
         "value": "Same day",
         "meaning": "urgent upper GI contrast study for an infant with unexplained bile-stained vomiting",
         "source": "NG1"
@@ -372,6 +383,13 @@
     "finish": "Suction rectal biopsy; specialist surgery."
   },
   "sources": [
+    {
+      "id": "CG99",
+      "name": "NICE CG99, Constipation in children and young people: diagnosis and management",
+      "version": "published 26 May 2010, last updated 13 July 2017; red flags table (table 2)",
+      "url": "https://www.nice.org.uk/guidance/cg99",
+      "supports": "Red flag: failure to pass meconium/delay (more than 48 hours after birth in a term baby)."
+    },
     {
       "id": "NG1",
       "name": "NICE NG1, Gastro-oesophageal reflux disease in children and young people: diagnosis and management",
