@@ -78,6 +78,7 @@
       accent: "#8A6FD1", accentText: "#B79EE8",
       links: [
         { href: "#parts",    label: "The three exams" },
+        { href: "mrcp-paces-stations.html", label: "PACES stations" },
         { href: "#waitlist", label: "Join the waitlist" }
       ]
     },
