@@ -26,6 +26,7 @@
       links: [
         { href: "cpsa-stations.html", label: "CPSA stations" },
         { href: "questions.html",     label: "AKT bank" },
+        { href: "akt-exams.html",     label: "AKT mocks" },
         { href: "say-never-say.html", label: "Say / Never" },
         { href: "tools.html#clinical-reference", label: "Clinical reference" },
         { href: "ukmla.html#toolkit-extended", label: "Study Tools" }
