@@ -6,7 +6,9 @@ Each station is kept as written: its sections in order, each a list of blocks
 (p = paragraph, h3 = sub-heading, li = list item, table = rows of cells). The only
 text removed is editorial workflow notes (Station ID placeholders, draft labels,
 "check live register before publication", "sign-off pending" lines); every
-removal is printed. Stations in HOLD are not written (reasons alongside).
+removal is printed. Stations in HOLD are not published: all of them are listed with
+their reasons in _tools/paces/held-round5.json, and those in HOLD_RECORD also get a
+full record in _tools/paces/held/ with their original Sources text (not served).
 
 Then run: node build-paces-index.js
 """
@@ -30,7 +32,14 @@ HOLD = {
     **{i: 'no sources in the signed docx' for i in (
         'R5-323', 'R5-339', 'R5-345', 'R5-346', 'R5-349', 'R5-350', 'R5-353',
         'R5-354', 'R5-360', 'R5-368', 'R5-370', 'R5-379', 'R5-396')},
+    # Owner, 16 Oct 2026: held until the sign-off is confirmed.
+    **{i: 'source said sign-off pending - awaiting confirmation' for i in (
+        'R5-211', 'R5-212', 'R5-214', 'R5-217', 'R5-218', 'R5-220', 'R5-224',
+        'R5-226', 'R5-227', 'R5-228')},
 }
+# Held stations kept as a full record, with their Sources section exactly as in the docx.
+HOLD_RECORD = {i for i, why in HOLD.items() if why.startswith('source said sign-off pending')}
+HELD_DIR = os.path.join(ROOT, '_tools', 'paces', 'held')
 
 # Header segments that are workflow metadata, not station content.
 DROP_SEGMENT = re.compile(r'^(?:Station ID\b.*|Educational draft dated .*|Working draft .*|Draft dated .*|DRAFT, .*)$')
@@ -148,20 +157,28 @@ def main():
     src = sys.argv[1]
     stations = parse(src)
     os.makedirs(OUT_DIR, exist_ok=True)
-    log, written, held = [], [], []
+    os.makedirs(HELD_DIR, exist_ok=True)
+    log, written, held, held_list = [], [], [], []
     ids = [s['id'] for s in stations]
     assert None not in ids and len(set(ids)) == len(ids), ids
     for s in stations:
         sid = s['id']
-        if sid in HOLD:
+        if sid in HOLD and sid not in HOLD_RECORD:
+            title = next((b['text'] for x in s['sections'] if x['heading'].startswith('1.')
+                          for b in x['blocks'] if b['t'] == 'p'), '')
             held.append(f'{sid}: {HOLD[sid]}')
+            held_list.append({'id': sid, 'title': title.strip(), 'reason': HOLD[sid], 'record': None})
             continue
+        keep_sources = sid in HOLD_RECORD
         sections = []
         for x in s['sections']:
             blocks = []
+            raw = keep_sources and x['heading'].startswith('15')
             for b in x['blocks']:
                 b = dict(b)
-                if x['heading'].startswith('2.') and b['t'] == 'p':
+                if raw:
+                    pass
+                elif x['heading'].startswith('2.') and b['t'] == 'p':
                     b['text'] = clean_header(b['text'], log, sid)
                 elif b['t'] == 'table':
                     b['rows'] = [[clean_text(c, log, sid, x['heading']) for c in r] for r in b['rows']]
@@ -173,10 +190,27 @@ def main():
         header = next(b['text'] for x in sections if x['heading'].startswith('2.') for b in x['blocks'] if b['t'] == 'p')
         st = {'id': sid, 'exam': 'MRCP-PACES', 'round': 5, 'title': title.strip(),
               'encounter': encounter(header), 'sections': sections}
-        with open(os.path.join(OUT_DIR, f'{sid}.json'), 'w', encoding='utf-8', newline='\n') as f:
+        if keep_sources:
+            st = {'held': HOLD[sid], **st}
+            path = os.path.join(HELD_DIR, f'{sid}.json')
+            held.append(f'{sid}: {HOLD[sid]} (record: _tools/paces/held/{sid}.json)')
+            held_list.append({'id': sid, 'title': st['title'], 'reason': HOLD[sid], 'record': f'_tools/paces/held/{sid}.json'})
+        else:
+            path = os.path.join(OUT_DIR, f'{sid}.json')
+            written.append(sid)
+        with open(path, 'w', encoding='utf-8', newline='\n') as f:
             json.dump(st, f, ensure_ascii=False, indent=2)
             f.write('\n')
-        written.append(sid)
+    # A held station must not stay in the published folder from an earlier run.
+    for sid in HOLD:
+        stale = os.path.join(OUT_DIR, f'{sid}.json')
+        if os.path.exists(stale):
+            os.remove(stale)
+            print(f'Removed {sid} from paces-stations/ (now held)')
+    held_list.sort(key=lambda h: h['id'])
+    with open(os.path.join(ROOT, '_tools', 'paces', 'held-round5.json'), 'w', encoding='utf-8', newline='\n') as f:
+        json.dump(held_list, f, ensure_ascii=False, indent=2)
+        f.write('\n')
     print(f'Wrote {len(written)} stations to paces-stations/, held {len(held)}:')
     for h in held:
         print('  - ' + h)
