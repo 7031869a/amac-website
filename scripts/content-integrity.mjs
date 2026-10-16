@@ -167,6 +167,7 @@ for (const b of BANKS) {
 // ---------------------------------------------------------------- mock papers
 for (const [source, file, name, bankName] of [
   ['PLAB 1 mocks', 'plab1-papers.js', 'PLAB1_PAPERS', 'PLAB 1'],
+  ['UKMLA AKT mocks', 'akt-papers.js', 'AKT_PAPERS', 'UKMLA AKT'],
   ['MRCP Part 1 mocks', 'mrcp1-papers.js', 'MRCP1_PAPERS', 'MRCP Part 1'],
 ]) {
   const papers = literal(file, name);

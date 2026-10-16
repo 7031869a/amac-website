@@ -138,6 +138,22 @@ const KEYS = {
     fn: () => distinct(literal('plab1-questions.js', 'PLAB1_QUESTIONS'), 'domain') },
   plab1Papers: { label: 'PLAB 1 full timed mock papers', src: ['plab1-papers.js'], how: 'keys of PLAB1_PAPERS',
     fn: () => count('plab1-papers.js', 'PLAB1_PAPERS') },
+  aktMockPapers: { label: 'UKMLA AKT timed mock papers (2 per mock)', src: ['akt-papers.js', 'akt-mock-questions.js', 'questions.html'],
+    how: 'keys of AKT_PAPERS; every paper id must be in questions.html and its akt-mock-questions.js entry identical to the bank',
+    fn: () => {
+      const bank = Object.fromEntries(literal('questions.html', 'QUESTIONS').map(q => [String(q.id), q]));
+      const ex = Object.fromEntries(literal('akt-mock-questions.js', 'AKT_MOCK_QUESTIONS').map(q => [String(q.id), q]));
+      const papers = literal('akt-papers.js', 'AKT_PAPERS');
+      for (const p of Object.values(papers)) for (const id of p.ids.map(String)) {
+        if (!(id in bank)) throw new Error(`AKT mock id ${id} is not in questions.html`);
+        if (!(id in ex)) throw new Error(`AKT mock id ${id} is missing from akt-mock-questions.js`);
+        for (const [k, v] of Object.entries(ex[id])) if (JSON.stringify(v) !== JSON.stringify(bank[id][k]))
+          throw new Error(`akt-mock-questions.js ${id}.${k} differs from questions.html - regenerate the extract`);
+      }
+      return Object.keys(papers).length;
+    } },
+  aktMocks: { label: 'UKMLA AKT full mocks (each of 2 timed papers)', src: ['akt-papers.js'], how: 'distinct mock number in the keys of AKT_PAPERS',
+    fn: () => new Set(Object.keys(literal('akt-papers.js', 'AKT_PAPERS')).map(k => k.replace(/-paper-\d+$/, ''))).size },
   plab1PaperDomains: { label: 'Clinical domains covered by the PLAB 1 mock papers (not the whole bank)',
     src: ['plab1-papers.js', 'plab1-questions.js'], how: 'distinct domain of every question id listed in PLAB1_PAPERS',
     fn: () => {

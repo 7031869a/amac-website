@@ -52,6 +52,20 @@
     return stemIndex[stem.trim()] || null;
   }
 
+  // AKT exam runner: same approach, over the mock extract of the AKT bank.
+  var aktStemIndex = null;
+  function idFromAktStem(stem) {
+    if (!stem || !window.AKT_MOCK_QUESTIONS) return null;
+    if (!aktStemIndex) {
+      aktStemIndex = {};
+      window.AKT_MOCK_QUESTIONS.forEach(function (q) {
+        var k = String(q.stem || '').trim();
+        if (k && !(k in aktStemIndex)) aktStemIndex[k] = q.id;
+      });
+    }
+    return aktStemIndex[stem.trim()] || null;
+  }
+
   // Question banks shown as expandable cards with id="qc-<id>". The link is added
   // when a card is opened (the AKT bank alone has 11,000+ cards on one page).
   var bankCards = { sel: '.q-card.open[id^="qc-"]', id: function (el) { return el.id.slice(3); },
@@ -78,6 +92,7 @@
       { sel: '#s-exam #qcard', id: function () { return EXAM_QS[cur].id; } },
       { sel: '#s-results .rev-q', id: function (el, i) { return EXAM_QS[i].id; } }
     ],
+    'akt-exam-runner.html': [{ sel: '#examMain', id: function (el) { return idFromAktStem(text(el, '.q-stem')); } }],
     'plab1-exam-runner.html': [{ sel: '#examMain', id: function (el) { return idFromStem(text(el, '.q-stem')); } }],
     'mrcs-part-a.html': [
       bankCards,
