@@ -37,9 +37,12 @@ const fail = (kind, where, msg) => failures.push(`[${kind}] ${where}  ${msg}`);
 let parsed = 0;
 
 function trackedFiles() {
+  // A hook runs with GIT_DIR etc. set to the real repo, which would list ITS files for the
+  // archived copy: drop them so git looks at ROOT itself (and fails there, so we walk).
+  const env = Object.fromEntries(Object.entries(process.env).filter(([k]) => !k.startsWith('GIT_')));
   try {
-    return execFileSync('git', ['ls-files', '-z'], { cwd: ROOT, encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] })
-      .split('\0').filter(Boolean);
+    return execFileSync('git', ['ls-files', '-z'], { cwd: ROOT, env, encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] })
+      .split('\0').filter(f => f && fs.existsSync(path.join(ROOT, f)));
   } catch {
     const out = [];
     const walk = dir => {
