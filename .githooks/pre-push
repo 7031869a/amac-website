@@ -34,7 +34,7 @@ while read -r local_ref local_sha remote_ref remote_sha; do
       exit 1
     fi
     run="node"; script=scripts/sync-counts.mjs; fix="node scripts/sync-counts.mjs"
-    paths="scripts data stations *.html *.js"
+    paths="scripts data stations paces-stations *.html *.js"
   else
     script=
     for s in _tools/build-counts.py build-counts.py; do
