@@ -538,7 +538,7 @@ window.MRCP1_QUESTIONS = [
     "subdomain": "Haematology & oncology",
     "topic": "Reactive thrombocytosis in iron deficiency",
     "difficulty": "Moderate",
-    "stem": "A 67-year-old man presents with fatigue. Blood tests show:, Hb 86 g/L, MCV 72 fL, Ferritin 8 µg/L, Platelets 520 × 10⁹/LHe has no overt bleeding. Which interpretation best explains the platelet count?",
+    "stem": "A 67-year-old man presents with fatigue. Blood tests show: Hb 86 g/L, MCV 72 fL, ferritin 8 µg/L, platelets 520 × 10⁹/L. He has no overt bleeding. Which interpretation best explains the platelet count?",
     "options": {
       "A": "The thrombocytosis is a typical primary feature of iron deficiency",
       "B": "The thrombocytosis is most likely a reactive response associated with iron deficiency",
@@ -728,7 +728,7 @@ window.MRCP1_QUESTIONS = [
       "E": "Advise him to avoid walking outdoors"
     },
     "correct_letter": "B",
-    "why_correct": "Recurrent falls warrant a comprehensive assessment rather than a single intervention\u0001The assessment \u0002 consider gait and balance, muscle strength, medicines, cardiovascular factors, vision, functional ability and environmental hazards. Management should address the factors identified. NICE advises against using falls prediction tools to estimate an individual's future risk.",
+    "why_correct": "Recurrent falls warrant a comprehensive assessment rather than a single intervention. The assessment should consider gait and balance, muscle strength, medicines, cardiovascular factors, vision, functional ability and environmental hazards. Management should address the factors identified. NICE advises against using falls prediction tools to estimate an individual's future risk.",
     "distractor_analysis": {},
     "generalisation": "",
     "review_status": "reviewed"
@@ -747,7 +747,7 @@ window.MRCP1_QUESTIONS = [
       "E": "Chronic hepatitis seropositivity without evidence of active disease"
     },
     "correct_letter": "A",
-    "why_correct": "Constipation can precipitate hepatic encephalopathy\u0001The assessment \u0002 also look for other causes and precipitants, including infection, gastrointestinal bleeding, dehydration and medication-related problems; identifying constipation does not exclude these.",
+    "why_correct": "Constipation can precipitate hepatic encephalopathy. The assessment should also look for other causes and precipitants, including infection, gastrointestinal bleeding, dehydration and medication-related problems; identifying constipation does not exclude these.",
     "distractor_analysis": {},
     "generalisation": "",
     "review_status": "reviewed"
