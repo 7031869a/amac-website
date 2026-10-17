@@ -3854,5 +3854,1157 @@ window.MRCP1_QUESTIONS = [
     },
     "generalisation": "",
     "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q171",
+    "subdomain": "Dermatology",
+    "topic": "Tinea corporis",
+    "difficulty": "Moderate",
+    "stem": "A 33-year-old man develops an enlarging, circular, itchy rash on his forearm. It has a raised, scaly outer edge and relative central clearing. Which diagnosis is most likely?",
+    "options": {
+      "A": "Cellulitis",
+      "B": "Atopic eczema",
+      "C": "Tinea corporis",
+      "D": "Lichen planus",
+      "E": "Plaque psoriasis"
+    },
+    "correct_letter": "C",
+    "why_correct": "Tinea corporis is a dermatophyte infection of the body skin that often produces an annular lesion with an advancing scaly edge and central clearing. If the appearance is atypical or treatment fails, mycological testing can help establish the diagnosis.",
+    "distractor_analysis": {
+      "A": "Cellulitis gives diffuse, warm, tender erythema without a scaly advancing edge or central clearing.",
+      "B": "Atopic eczema is flexural and poorly demarcated, not an expanding ring with central clearing.",
+      "D": "Lichen planus gives purple, flat-topped polygonal papules, often on the wrists, with Wickham striae.",
+      "E": "Psoriasis gives well-demarcated plaques with silvery scale over the whole surface, usually on extensor surfaces."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q172",
+    "subdomain": "Dermatology",
+    "topic": "Stevens–Johnson syndrome",
+    "difficulty": "Moderate",
+    "stem": "A patient develops fever, widespread skin pain, dusky erythematous lesions, blistering and extensive oral and ocular mucosal erosions several days after starting a new medicine. What is the most appropriate immediate response?",
+    "options": {
+      "A": "Arrange routine outpatient dermatology review",
+      "B": "Suspect a severe cutaneous adverse reaction and arrange emergency hospital assessment",
+      "C": "Reassure the patient that the rash is a common, self-limiting drug eruption",
+      "D": "Start topical antifungal treatment and review in one week",
+      "E": "Treat as uncomplicated urticaria with an oral antihistamine"
+    },
+    "correct_letter": "B",
+    "why_correct": "Skin pain, blistering, systemic symptoms and mucosal erosions following a new medicine raise concern for Stevens–Johnson syndrome or toxic epidermal necrolysis. These are medical emergencies requiring immediate hospital assessment, withdrawal of the suspected causative medicine under urgent clinical supervision, and specialist supportive care.",
+    "distractor_analysis": {
+      "A": "Routine outpatient review delays emergency care for a potentially fatal reaction.",
+      "C": "Skin pain, blistering and mucosal erosions are not features of a benign drug eruption.",
+      "D": "Nothing suggests fungal infection, and delay risks progression to toxic epidermal necrolysis.",
+      "E": "Urticaria gives transient wheals without skin pain, blistering or mucosal erosions."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q173",
+    "subdomain": "Pharmacology & prescribing",
+    "topic": "Therapeutic index",
+    "difficulty": "Moderate",
+    "stem": "A patient taking a medicine with a narrow therapeutic index develops toxicity after a modest dose increase. Which property best explains why this medicine requires particular care when its dose is adjusted?",
+    "options": {
+      "A": "Its absorption is always incomplete",
+      "B": "It cannot undergo hepatic metabolism",
+      "C": "Its elimination is independent of renal function",
+      "D": "It has no clinically significant drug interactions",
+      "E": "Its therapeutic and toxic concentrations are relatively close"
+    },
+    "correct_letter": "E",
+    "why_correct": "A narrow therapeutic index means the margin between effective and toxic exposure is small. Dose changes, organ dysfunction and interacting medicines may therefore cause clinically important changes in effect. Drug-level monitoring is useful for selected medicines when interpreted alongside the clinical context.",
+    "distractor_analysis": {
+      "A": "Incomplete absorption affects bioavailability, not the gap between effective and toxic levels.",
+      "B": "Many narrow-index drugs are metabolised by the liver; that is not what defines the risk.",
+      "C": "Elimination of many narrow-index drugs, such as lithium and digoxin, depends heavily on renal function.",
+      "D": "Narrow-index drugs are often prone to important interactions, which adds to the risk."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q174",
+    "subdomain": "Pharmacology & prescribing",
+    "topic": "Methotrexate prescribing safety",
+    "difficulty": "Moderate",
+    "stem": "A patient with rheumatoid arthritis is prescribed methotrexate for the first time. The intended regimen is once weekly, but the patient misunderstands the instructions and takes it every day for five days. What is the most important concern?",
+    "options": {
+      "A": "Isolated reversible postural hypotension",
+      "B": "Reduced anticoagulant effect of all concurrent medicines",
+      "C": "Acute severe hypoglycaemia",
+      "D": "Immediate serotonin syndrome",
+      "E": "Potentially life-threatening methotrexate toxicity"
+    },
+    "correct_letter": "E",
+    "why_correct": "Low-dose methotrexate used for inflammatory disease is generally prescribed weekly, not daily. Accidental daily dosing can cause severe toxicity, including bone-marrow suppression and mucosal injury. Suspected overdose requires urgent specialist assessment and management.",
+    "distractor_analysis": {
+      "A": "Postural hypotension is not a recognised effect of methotrexate overdose.",
+      "B": "Methotrexate does not reduce anticoagulant effect; this is not the concern.",
+      "C": "Methotrexate does not cause acute hypoglycaemia.",
+      "D": "Methotrexate is not serotonergic and does not cause serotonin syndrome."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q175",
+    "subdomain": "Pharmacology & prescribing",
+    "topic": "Aminoglycoside toxicity",
+    "difficulty": "Moderate",
+    "stem": "A hospitalised patient receiving gentamicin develops worsening renal function and new tinnitus. Which adverse-effect profile best explains these findings?",
+    "options": {
+      "A": "Severe hypoglycaemia and lactic acidosis",
+      "B": "Bone-marrow suppression and haemorrhagic cystitis",
+      "C": "Nephrotoxicity and ototoxicity",
+      "D": "Hepatotoxicity and pancreatitis",
+      "E": "Pulmonary fibrosis and retinopathy"
+    },
+    "correct_letter": "C",
+    "why_correct": "Aminoglycosides such as gentamicin can cause renal injury and damage to the auditory or vestibular system. Risk is influenced by exposure, patient factors and concurrent nephrotoxic or ototoxic medicines. Prescribing should follow the applicable monitoring protocol, including renal function and drug concentrations where indicated.",
+    "distractor_analysis": {
+      "A": "Hypoglycaemia and lactic acidosis are not aminoglycoside effects; lactic acidosis is linked with metformin.",
+      "B": "Marrow suppression with haemorrhagic cystitis points to cyclophosphamide.",
+      "D": "Hepatotoxicity and pancreatitis are not typical gentamicin effects.",
+      "E": "Pulmonary fibrosis suggests drugs such as amiodarone, and retinopathy hydroxychloroquine, not gentamicin."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q176",
+    "subdomain": "Pharmacology & prescribing",
+    "topic": "Valproate and reproductive safety",
+    "difficulty": "Moderate",
+    "stem": "A woman of childbearing potential is taking sodium valproate for epilepsy and asks whether she can stop contraception because she is not planning a pregnancy. Which response is most appropriate?",
+    "options": {
+      "A": "The pregnancy-prevention requirements apply only after pregnancy is confirmed",
+      "B": "Valproate carries no important fetal risk when taken for epilepsy",
+      "C": "She should abruptly stop valproate without medical advice",
+      "D": "Contraception is unnecessary if the valproate dose is low",
+      "E": "She needs specialist review and counselling about reproductive risks and the applicable pregnancy-prevention requirements"
+    },
+    "correct_letter": "E",
+    "why_correct": "Valproate is associated with serious fetal risks. UK regulatory requirements include a Pregnancy Prevention Programme for women and girls of childbearing potential, subject to the applicable rules and specialist assessment. Treatment should not be stopped abruptly without clinical advice because uncontrolled seizures can also be dangerous. Current MHRA advice and patient-specific circumstances must guide prescribing.",
+    "distractor_analysis": {
+      "A": "Prevention must be in place before pregnancy, because most fetal harm occurs very early.",
+      "B": "Valproate carries a high risk of congenital malformations and neurodevelopmental disorders.",
+      "C": "Abrupt withdrawal risks uncontrolled seizures; any change needs specialist supervision.",
+      "D": "Fetal risk is dose-related but no dose is safe, so the requirements still apply."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q177",
+    "subdomain": "Emergency & critical care",
+    "topic": "Paracetamol overdose",
+    "difficulty": "Moderate",
+    "stem": "A patient presents after taking a potentially toxic amount of paracetamol. The time of ingestion is uncertain. Which principle should guide the initial approach?",
+    "options": {
+      "A": "Discharge if the patient has no abdominal pain",
+      "B": "A normal initial clinical examination excludes serious toxicity",
+      "C": "Undertake urgent assessment and follow the relevant poisoning pathway, including decisions about acetylcysteine",
+      "D": "Wait for jaundice before investigating",
+      "E": "Give activated charcoal to every patient regardless of presentation time or circumstances"
+    },
+    "correct_letter": "C",
+    "why_correct": "Early paracetamol poisoning may be asymptomatic despite the risk of subsequent liver injury. Management depends on the history, timing, blood results and the applicable toxicology pathway. When timing is uncertain, the standard timed nomogram may not be directly applicable; urgent specialist or poisons-service advice is important.",
+    "distractor_analysis": {
+      "A": "Early paracetamol poisoning is often symptom-free despite serious risk.",
+      "B": "A normal early examination does not exclude later liver injury.",
+      "D": "Waiting for jaundice means treatment comes too late.",
+      "E": "Charcoal helps only within a limited time after ingestion, in selected patients."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q178",
+    "subdomain": "Emergency & critical care",
+    "topic": "Opioid toxicity",
+    "difficulty": "Moderate",
+    "stem": "A patient is found unresponsive with slow, shallow breathing and pinpoint pupils after suspected opioid use. What is the immediate pharmacological priority alongside airway and ventilatory support?",
+    "options": {
+      "A": "Vitamin K",
+      "B": "Atropine",
+      "C": "Protamine",
+      "D": "Flumazenil",
+      "E": "Naloxone"
+    },
+    "correct_letter": "E",
+    "why_correct": "Naloxone is an opioid receptor antagonist that can reverse opioid-induced respiratory depression. Airway support and ventilation remain priorities; naloxone may need repeat administration because its duration of action can be shorter than that of the opioid involved. Monitor for recurrent respiratory depression and acute withdrawal.",
+    "distractor_analysis": {
+      "A": "Vitamin K reverses warfarin, not opioids.",
+      "B": "Atropine treats bradycardia or organophosphate poisoning, not opioid respiratory depression.",
+      "C": "Protamine reverses heparin.",
+      "D": "Flumazenil reverses benzodiazepines, not opioids, and can precipitate seizures."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q179",
+    "subdomain": "Endocrinology & diabetes",
+    "topic": "Long-term glucocorticoids",
+    "difficulty": "Moderate",
+    "stem": "A patient who has taken oral prednisolone for a prolonged period stops it abruptly. Several days later, the patient develops marked weakness, vomiting and hypotension. Which mechanism is most concerning?",
+    "options": {
+      "A": "Acute increase in endogenous cortisol production",
+      "B": "Selective inhibition of aldosterone synthesis with preserved cortisol production as the only possible mechanism",
+      "C": "Acute insulin resistance as the sole explanation",
+      "D": "Suppression of the hypothalamic–pituitary–adrenal axis",
+      "E": "Excess thyroid hormone release"
+    },
+    "correct_letter": "D",
+    "why_correct": "Prolonged systemic glucocorticoid treatment can suppress endogenous cortisol production. Abrupt withdrawal may precipitate adrenal insufficiency, particularly during physiological stress. Suspected adrenal crisis is an emergency and requires prompt treatment; withdrawal plans must be individualised rather than applying one tapering schedule to everyone.",
+    "distractor_analysis": {
+      "A": "Endogenous cortisol is suppressed, not increased, after long-term steroids.",
+      "B": "Aldosterone is largely preserved in secondary adrenal insufficiency; cortisol deficiency is the problem.",
+      "C": "Insulin resistance would not explain vomiting and hypotension.",
+      "E": "Stopping steroids does not cause thyroid hormone release."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q180",
+    "subdomain": "Haematology & oncology",
+    "topic": "Anticoagulation and bleeding",
+    "difficulty": "Moderate",
+    "stem": "A patient taking warfarin presents with major gastrointestinal bleeding and a markedly elevated INR. Which approach best reflects the immediate priority?",
+    "options": {
+      "A": "Treat with oral iron alone",
+      "B": "Delay assessment until a repeat INR is available the following day",
+      "C": "Continue warfarin unchanged until the cause of bleeding is confirmed",
+      "D": "Give an additional warfarin dose to stabilise the INR",
+      "E": "Manage the major bleed urgently and reverse anticoagulation according to the emergency protocol"
+    },
+    "correct_letter": "E",
+    "why_correct": "Major bleeding in a patient taking warfarin requires urgent resuscitation, assessment of the bleeding source and appropriate reversal of anticoagulation. The reversal regimen depends on severity and the clinical setting; management should follow the current local emergency protocol and relevant guidance.",
+    "distractor_analysis": {
+      "A": "Iron does nothing for the acute bleed or the raised INR.",
+      "B": "Delay in major bleeding is dangerous; reversal is needed now.",
+      "C": "Warfarin must be withheld in major bleeding.",
+      "D": "More warfarin would worsen the bleeding."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q181",
+    "subdomain": "Pharmacology & prescribing",
+    "topic": "Anticholinergic adverse effects",
+    "difficulty": "Moderate",
+    "stem": "An older patient develops acute confusion, dry mouth, blurred vision, constipation and urinary retention after several medicines with anticholinergic effects are added to their prescription. Which mechanism best explains this cluster of symptoms?",
+    "options": {
+      "A": "Increased renal excretion of sodium",
+      "B": "Selective dopamine D₂ receptor stimulation",
+      "C": "Muscarinic receptor blockade",
+      "D": "Excessive muscarinic receptor stimulation",
+      "E": "Increased acetylcholine release at all synapses"
+    },
+    "correct_letter": "C",
+    "why_correct": "Anticholinergic medicines block muscarinic acetylcholine receptors and can cause dry mouth, blurred vision, constipation, urinary retention and delirium. Older people may be particularly susceptible. A structured medication review should consider prescribed, over-the-counter and complementary medicines, as well as the potential benefits and harms of changing treatment.",
+    "distractor_analysis": {
+      "A": "Increased sodium excretion would not cause dry mouth, blurred vision or retention.",
+      "B": "D2 stimulation causes nausea or psychosis, not this antimuscarinic picture.",
+      "D": "Muscarinic stimulation causes the opposite: salivation, diarrhoea and frequent urination.",
+      "E": "Excess acetylcholine release would give cholinergic, not anticholinergic, features."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q182",
+    "subdomain": "Geriatrics & palliative care",
+    "topic": "Opioid-induced constipation",
+    "difficulty": "Moderate",
+    "stem": "A 68-year-old patient with advanced cancer starts regular oral morphine for pain. Within several days, they develop hard stools and difficulty opening their bowels. Which approach is most appropriate?",
+    "options": {
+      "A": "Restrict oral fluids regardless of the clinical context",
+      "B": "Assess for complications and institute an appropriate laxative regimen",
+      "C": "Prescribe an anti-diarrhoeal medicine",
+      "D": "Reassure the patient that opioid-related constipation always resolves spontaneously",
+      "E": "Stop all analgesia immediately"
+    },
+    "correct_letter": "B",
+    "why_correct": "Opioids commonly reduce gastrointestinal motility, causing constipation. A laxative is often needed when regular opioids are started. Assess the severity and exclude faecal impaction or bowel obstruction when clinically indicated. The choice of laxative should reflect the patient’s circumstances and local guidance.",
+    "distractor_analysis": {
+      "A": "Restricting fluids makes constipation worse.",
+      "C": "Anti-diarrhoeals such as loperamide, itself an opioid, would make it worse.",
+      "D": "Tolerance to opioid constipation is limited, so it rarely settles untreated.",
+      "E": "Stopping analgesia leaves pain uncontrolled; the side effect should be treated instead."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q183",
+    "subdomain": "Geriatrics & palliative care",
+    "topic": "Delirium in palliative care",
+    "difficulty": "Moderate",
+    "stem": "A patient with advanced cancer becomes acutely confused and agitated over 24 hours. The family believes this is simply part of dying. Which is the best initial approach?",
+    "options": {
+      "A": "Assume the confusion is irreversible because the patient has advanced cancer",
+      "B": "Assess for potentially reversible contributors and relieve distress",
+      "C": "Use physical restraint as the first-line intervention",
+      "D": "Withhold all fluids and medicines without assessment",
+      "E": "Immediately increase opioid treatment regardless of pain"
+    },
+    "correct_letter": "B",
+    "why_correct": "Delirium near the end of life may be associated with infection, medication effects, dehydration, metabolic disturbance, organ failure or the dying process itself. The clinician should consider the patient’s goals of care, investigate proportionately and treat reversible causes where appropriate while managing distress and supporting family members.",
+    "distractor_analysis": {
+      "A": "Delirium in advanced cancer is often partly reversible, for example infection, drugs or hypercalcaemia.",
+      "C": "Restraint is not first line and can worsen agitation.",
+      "D": "Fluids and medicines need assessment and discussion, not blanket withdrawal.",
+      "E": "Opioid toxicity can itself cause delirium; increasing opioids without pain could worsen it."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q184",
+    "subdomain": "Geriatrics & palliative care",
+    "topic": "Advance care planning",
+    "difficulty": "Moderate",
+    "stem": "A patient with advanced illness has decision-making capacity and wishes to discuss what treatments they would or would not want if their condition deteriorates. Which response is most appropriate?",
+    "options": {
+      "A": "Explain that these discussions are permitted only during the final days of life",
+      "B": "Explore the patient’s values, preferences and understanding, and document the discussion appropriately",
+      "C": "Explain that every preference expressed in a discussion is automatically legally binding",
+      "D": "Ask the family to decide without involving the patient",
+      "E": "Avoid the discussion because it may remove hope"
+    },
+    "correct_letter": "B",
+    "why_correct": "Advance care planning can help patients communicate their values and preferences before a crisis. Discussions should be sensitive, individualised and documented. A conversation, an advance statement and a legally valid advance decision to refuse treatment are not interchangeable; their legal status differs. Applicable law must be considered for the relevant UK nation.",
+    "distractor_analysis": {
+      "A": "Advance care planning is best done early, while the patient has capacity.",
+      "C": "Only a valid advance decision to refuse treatment is legally binding; stated preferences are not.",
+      "D": "A patient with capacity makes their own decisions.",
+      "E": "Avoiding the discussion denies the patient a say; it can be done sensitively."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q185",
+    "subdomain": "Geriatrics & palliative care",
+    "topic": "Breakthrough cancer pain",
+    "difficulty": "Moderate",
+    "stem": "A patient with advanced cancer has otherwise well-controlled background pain but experiences brief episodes of severe pain when moving from bed to chair. What is the most appropriate interpretation?",
+    "options": {
+      "A": "The episodes prove that the cancer has progressed",
+      "B": "The background analgesia must always be stopped",
+      "C": "The patient necessarily has opioid addiction",
+      "D": "The patient should be advised to tolerate the pain because it is brief",
+      "E": "The patient may have incident breakthrough pain requiring an individualised pain-management review"
+    },
+    "correct_letter": "E",
+    "why_correct": "Breakthrough pain is a transient exacerbation of pain occurring despite otherwise controlled background pain. Movement-related episodes may represent incident pain. Assessment should consider the trigger, severity, current analgesia, adverse effects and the patient’s preferences before selecting an appropriate strategy.",
+    "distractor_analysis": {
+      "A": "Incident pain can occur without disease progression.",
+      "B": "Background analgesia is working and should continue.",
+      "C": "Needing analgesia for movement-related pain is not addiction.",
+      "D": "Breakthrough pain is treatable and should not be left uncontrolled."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q186",
+    "subdomain": "Haematology & oncology",
+    "topic": "Superior vena cava obstruction",
+    "difficulty": "Moderate",
+    "stem": "A 64-year-old man with a history of smoking develops progressive facial swelling, distended neck veins and breathlessness. The symptoms worsen when he lies flat. Which diagnosis should be considered?",
+    "options": {
+      "A": "Superior vena cava obstruction",
+      "B": "Acute appendicitis",
+      "C": "Isolated peripheral neuropathy",
+      "D": "Nephrolithiasis",
+      "E": "Acute otitis media"
+    },
+    "correct_letter": "A",
+    "why_correct": "Obstruction of the superior vena cava impairs venous drainage from the head, neck and upper limbs, causing facial swelling and distended veins. Intrathoracic malignancy is an important cause. Assess urgency, particularly if there is stridor, significant airway compromise, cerebral symptoms or haemodynamic instability.",
+    "distractor_analysis": {
+      "B": "Appendicitis causes abdominal pain, not facial swelling and distended neck veins.",
+      "C": "Peripheral neuropathy causes limb sensory or motor symptoms, not venous congestion.",
+      "D": "Kidney stones cause loin-to-groin pain.",
+      "E": "Otitis media causes ear pain and does not explain venous obstruction."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q187",
+    "subdomain": "Haematology & oncology",
+    "topic": "Tumour markers and screening",
+    "difficulty": "Moderate",
+    "stem": "A healthy, asymptomatic man asks for a serum tumour-marker panel to screen for all common cancers. Which response is most appropriate?",
+    "options": {
+      "A": "A raised tumour marker always establishes a cancer diagnosis",
+      "B": "No general tumour-marker panel can reliably screen for all common cancers; testing should be guided by the specific clinical context",
+      "C": "Tumour markers are never useful in clinical practice",
+      "D": "Tumour markers replace histological diagnosis in every suspected cancer",
+      "E": "A normal panel reliably excludes all common cancers"
+    },
+    "correct_letter": "B",
+    "why_correct": "Tumour markers vary in sensitivity and specificity. Some are useful in selected diagnostic pathways, monitoring treatment response or detecting recurrence, but they are not a universal cancer-screening solution. A normal result does not exclude malignancy, and an abnormal result does not necessarily prove it.",
+    "distractor_analysis": {
+      "A": "Tumour markers can be raised in benign conditions.",
+      "C": "Some markers are useful in selected settings, such as PSA, CA-125, AFP and hCG.",
+      "D": "Histology remains the standard for diagnosis in most cancers.",
+      "E": "Many cancers do not raise a marker, so a normal panel does not exclude cancer."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q188",
+    "subdomain": "Haematology & oncology",
+    "topic": "Cancer cachexia",
+    "difficulty": "Moderate",
+    "stem": "A patient with advanced pancreatic cancer has progressive weight loss, reduced muscle mass and weakness despite attempts to increase caloric intake. Which statement best describes cancer cachexia?",
+    "options": {
+      "A": "It is a multifactorial syndrome involving altered metabolism and loss of skeletal muscle",
+      "B": "It can always be reversed by increasing calories alone",
+      "C": "It occurs only during the final 24 hours of life",
+      "D": "It is always caused solely by inadequate food intake",
+      "E": "It is synonymous with dehydration"
+    },
+    "correct_letter": "A",
+    "why_correct": "Cancer cachexia involves ongoing loss of skeletal muscle, often with loss of fat, and is associated with metabolic and inflammatory changes. Reduced intake can contribute, but nutritional supplementation alone may not fully reverse the syndrome. Management should be individualised and may include symptom control, nutritional support and functional goals.",
+    "distractor_analysis": {
+      "B": "Cachexia is driven by inflammation and metabolic change; calories alone do not reverse it.",
+      "C": "Cachexia develops over weeks to months, not only at the very end of life.",
+      "D": "Reduced intake contributes but is not the only cause.",
+      "E": "Dehydration is a fluid deficit, not loss of muscle mass."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q189",
+    "subdomain": "Haematology & oncology",
+    "topic": "Chemotherapy extravasation",
+    "difficulty": "Moderate",
+    "stem": "A patient receiving intravenous chemotherapy develops pain, swelling and erythema around the cannula site. Extravasation of the infused drug is suspected. What should be done first?",
+    "options": {
+      "A": "Increase the infusion rate to complete treatment quickly",
+      "B": "Remove the cannula immediately without considering drug-specific instructions",
+      "C": "Apply heat to every suspected extravasation regardless of the drug",
+      "D": "Stop the infusion immediately and follow the drug-specific extravasation protocol",
+      "E": "Flush the line forcefully"
+    },
+    "correct_letter": "D",
+    "why_correct": "Extravasation can cause significant tissue injury, depending on the drug. Stop administration immediately and activate the relevant protocol. The cannula may need to remain in place temporarily to permit aspiration or administration of an antidote, depending on the agent. Subsequent measures, including warm or cold compresses, are drug-specific.",
+    "distractor_analysis": {
+      "A": "A faster infusion increases tissue exposure to the drug.",
+      "B": "The cannula may need to stay in so drug can be aspirated or an antidote given.",
+      "C": "Heat suits some drugs, such as vinca alkaloids, but cold is used for others, such as anthracyclines.",
+      "E": "Flushing pushes more drug into the tissues."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q190",
+    "subdomain": "Haematology & oncology",
+    "topic": "Brain metastases",
+    "difficulty": "Moderate",
+    "stem": "A patient with a known lung malignancy develops a new progressive headache, vomiting and a focal neurological deficit. Which is the most appropriate interpretation?",
+    "options": {
+      "A": "Neurological imaging is unnecessary in a patient with known cancer",
+      "B": "The symptoms establish a diagnosis of migraine without further assessment",
+      "C": "Brain metastases are excluded if the patient has no fever",
+      "D": "Intracranial metastatic disease or another serious intracranial process must be considered urgently",
+      "E": "The symptoms are necessarily due to tension headache"
+    },
+    "correct_letter": "D",
+    "why_correct": "New progressive headache, vomiting and focal neurological signs in a patient with cancer are red flags for intracranial pathology, including metastases and raised intracranial pressure. The patient requires urgent assessment and appropriate neuroimaging; the precise investigation depends on the clinical situation and local pathway.",
+    "distractor_analysis": {
+      "A": "Urgent imaging is needed to look for metastases or raised intracranial pressure.",
+      "B": "New focal signs in someone with cancer cannot be called migraine without investigation.",
+      "C": "Fever is not a feature of brain metastases, so its absence excludes nothing.",
+      "E": "Tension headache does not cause vomiting or focal deficits."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q191",
+    "subdomain": "Haematology & oncology",
+    "topic": "Cancer-associated thrombosis",
+    "difficulty": "Moderate",
+    "stem": "A patient with active malignancy develops unilateral leg swelling and pain. Which statement about venous thromboembolism in cancer is most accurate?",
+    "options": {
+      "A": "Malignancy can increase thrombosis risk, and suspected venous thromboembolism requires an appropriate diagnostic pathway",
+      "B": "Every patient with cancer should receive therapeutic-dose anticoagulation regardless of risk",
+      "C": "Active cancer reduces the risk of venous thrombosis",
+      "D": "A normal D-dimer invariably excludes venous thromboembolism in a patient with cancer",
+      "E": "Leg swelling in cancer should be attributed to lymphoedema without assessment"
+    },
+    "correct_letter": "A",
+    "why_correct": "Cancer and some cancer treatments increase venous thromboembolism risk. New unilateral leg swelling and pain warrant assessment using the applicable diagnostic pathway, with imaging and laboratory testing as appropriate. Anticoagulation decisions depend on whether thrombosis is confirmed or strongly suspected, bleeding risk, contraindications and the clinical context.",
+    "distractor_analysis": {
+      "B": "Anticoagulation depends on individual risk; blanket therapeutic dosing is not used.",
+      "C": "Cancer increases, not reduces, thrombosis risk.",
+      "D": "D-dimer is often raised in cancer, and a normal result still needs clinical judgement.",
+      "E": "Unilateral swelling needs DVT excluded before another cause is assumed."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q192",
+    "subdomain": "Haematology & oncology",
+    "topic": "Pancoast tumour",
+    "difficulty": "Moderate",
+    "stem": "A 61-year-old man with a substantial smoking history develops persistent shoulder pain radiating down the medial aspect of his arm. Examination reveals wasting of the small muscles of the hand and ipsilateral ptosis and miosis. Which diagnosis best explains this presentation?",
+    "options": {
+      "A": "Pulmonary embolism without local tumour involvement",
+      "B": "Isolated cervical radiculopathy affecting the upper cervical roots",
+      "C": "Rotator cuff tendinopathy",
+      "D": "Apical lung tumour involving the lower brachial plexus and sympathetic pathway",
+      "E": "Carpal tunnel syndrome"
+    },
+    "correct_letter": "D",
+    "why_correct": "A Pancoast tumour arises at the lung apex and can invade the lower brachial plexus, producing shoulder pain and lower-arm neurological symptoms. Involvement of the cervical sympathetic pathway can cause Horner syndrome, characterised by ptosis and miosis.",
+    "distractor_analysis": {
+      "A": "Pulmonary embolism does not cause brachial plexus signs or Horner syndrome.",
+      "B": "Upper cervical roots would not cause small hand muscle wasting (C8–T1) or Horner syndrome.",
+      "C": "Rotator cuff disease causes shoulder pain without hand wasting or Horner syndrome.",
+      "E": "Carpal tunnel affects only the thenar muscles, without ptosis or miosis."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q193",
+    "subdomain": "Haematology & oncology",
+    "topic": "Carcinoid syndrome",
+    "difficulty": "Moderate",
+    "stem": "A patient with metastatic neuroendocrine tumour develops episodic flushing, watery diarrhoea and wheezing. Which mediator is most closely associated with these symptoms?",
+    "options": {
+      "A": "Calcitonin",
+      "B": "Erythropoietin",
+      "C": "Serotonin",
+      "D": "Histamine alone",
+      "E": "Insulin"
+    },
+    "correct_letter": "C",
+    "why_correct": "Carcinoid syndrome is associated with secretion of vasoactive substances, including serotonin, by neuroendocrine tumours. It can cause flushing, diarrhoea and bronchospasm. The syndrome is classically associated with metastatic disease, particularly when secreted substances reach the systemic circulation without being inactivated by the liver.",
+    "distractor_analysis": {
+      "A": "Calcitonin is a marker of medullary thyroid cancer, not the cause of carcinoid symptoms.",
+      "B": "Erythropoietin causes polycythaemia, not flushing or diarrhoea.",
+      "D": "Histamine contributes to flushing in some tumours, but serotonin is the key mediator.",
+      "E": "Insulin causes hypoglycaemia, as in insulinoma."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q194",
+    "subdomain": "Haematology & oncology",
+    "topic": "Malignant pericardial effusion",
+    "difficulty": "Moderate",
+    "stem": "A patient with known metastatic cancer develops worsening breathlessness, hypotension, raised jugular venous pressure and muffled heart sounds. Which complication must be urgently excluded?",
+    "options": {
+      "A": "Uncomplicated pleural thickening",
+      "B": "Chronic venous insufficiency",
+      "C": "Isolated mitral stenosis",
+      "D": "Cardiac tamponade",
+      "E": "Stable chronic pericardial calcification"
+    },
+    "correct_letter": "D",
+    "why_correct": "Malignant pericardial effusion can impair cardiac filling and cause tamponade. Hypotension with raised jugular venous pressure in this context is concerning and requires emergency assessment, urgent echocardiography where feasible, and specialist management. In an unstable patient, investigation must not cause unsafe delay in definitive treatment.",
+    "distractor_analysis": {
+      "A": "Pleural thickening does not cause hypotension, raised JVP and muffled heart sounds.",
+      "B": "Venous insufficiency causes leg oedema, not haemodynamic compromise.",
+      "C": "Mitral stenosis does not muffle the heart sounds and is not a malignant complication.",
+      "E": "Pericardial calcification causes slowly developing constriction, not this acute picture."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q195",
+    "subdomain": "Neurology",
+    "topic": "Paraneoplastic Lambert–Eaton syndrome",
+    "difficulty": "Moderate",
+    "stem": "A 67-year-old smoker reports proximal leg weakness that improves briefly after repeated muscle contraction. Examination shows reduced tendon reflexes and autonomic symptoms, including dry mouth. Which underlying malignancy is particularly associated with this syndrome?",
+    "options": {
+      "A": "Small-cell lung carcinoma",
+      "B": "Colorectal adenoma",
+      "C": "Renal angiomyolipoma",
+      "D": "Basal-cell carcinoma",
+      "E": "Papillary thyroid carcinoma"
+    },
+    "correct_letter": "A",
+    "why_correct": "Lambert–Eaton myasthenic syndrome is a presynaptic neuromuscular-junction disorder often associated with antibodies against voltage-gated calcium channels. Proximal weakness, autonomic symptoms and reduced reflexes that may improve after activation are characteristic. Small-cell lung carcinoma is an important association.",
+    "distractor_analysis": {
+      "B": "Colorectal adenoma is not associated with Lambert–Eaton syndrome.",
+      "C": "Angiomyolipoma is linked with tuberous sclerosis, not Lambert–Eaton syndrome.",
+      "D": "Basal cell carcinoma does not cause paraneoplastic syndromes.",
+      "E": "Papillary thyroid cancer is not linked with Lambert–Eaton syndrome."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q196",
+    "subdomain": "Ophthalmology & ENT",
+    "topic": "Anterior uveitis",
+    "difficulty": "Moderate",
+    "stem": "A 32-year-old man develops a painful red eye with photophobia and blurred vision. The pupil is small and irregular, and the redness is most pronounced around the limbus. There is no purulent discharge. Which diagnosis is most likely?",
+    "options": {
+      "A": "Chronic open-angle glaucoma",
+      "B": "Subconjunctival haemorrhage",
+      "C": "Blepharitis",
+      "D": "Acute anterior uveitis",
+      "E": "Uncomplicated allergic conjunctivitis"
+    },
+    "correct_letter": "D",
+    "why_correct": "Anterior uveitis can cause ocular pain, photophobia, blurred vision, ciliary injection and a small or irregular pupil. It requires urgent ophthalmic assessment because delayed treatment can threaten vision. A painful photophobic red eye should not be managed as routine conjunctivitis without appropriate assessment.",
+    "distractor_analysis": {
+      "A": "Chronic open-angle glaucoma is painless and gradual.",
+      "B": "Subconjunctival haemorrhage is painless, with normal vision and pupil.",
+      "C": "Blepharitis affects the lid margins, without photophobia or pupil change.",
+      "E": "Allergic conjunctivitis is itchy and usually bilateral, with normal vision and pupils."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q197",
+    "subdomain": "Ophthalmology & ENT",
+    "topic": "Retinal detachment",
+    "difficulty": "Moderate",
+    "stem": "A 66-year-old man reports sudden onset of flashing lights and new floaters in one eye, followed by a dark curtain spreading across part of his visual field. What is the most appropriate next step?",
+    "options": {
+      "A": "Routine optometry review in six weeks",
+      "B": "Reassurance because floaters are always benign",
+      "C": "Start oral antibiotics and review after completing the course",
+      "D": "Immediate treatment with topical antihistamines",
+      "E": "Urgent same-day ophthalmic assessment for possible retinal detachment"
+    },
+    "correct_letter": "E",
+    "why_correct": "New flashes and floaters followed by a curtain-like visual-field defect are concerning for retinal tear or detachment. Urgent ophthalmic assessment is needed to protect vision. The absence of pain does not make the presentation safe to defer.",
+    "distractor_analysis": {
+      "A": "Detachment needs same-day assessment; waiting six weeks risks permanent sight loss.",
+      "B": "New flashes with a field defect are not benign.",
+      "C": "Antibiotics have no role; this is not an infection.",
+      "D": "Antihistamines treat allergy, not a retinal tear."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q198",
+    "subdomain": "Ophthalmology & ENT",
+    "topic": "Diabetic retinopathy",
+    "difficulty": "Moderate",
+    "stem": "A patient with long-standing diabetes attends retinal screening. Fundoscopy reveals retinal microaneurysms, dot-and-blot haemorrhages and hard exudates. Which underlying process is primarily responsible for these changes?",
+    "options": {
+      "A": "Acute obstruction of the central retinal artery",
+      "B": "Chronic diabetes-related retinal microvascular damage",
+      "C": "Raised intraocular pressure as the sole mechanism",
+      "D": "Autoimmune inflammation of the optic nerve",
+      "E": "Degeneration of the macula caused exclusively by ageing"
+    },
+    "correct_letter": "B",
+    "why_correct": "Diabetic retinopathy results from chronic retinal microvascular injury. Early non-proliferative changes include microaneurysms and retinal haemorrhages; more advanced disease can involve neovascularisation. Macular oedema can impair central vision at different stages of retinopathy.",
+    "distractor_analysis": {
+      "A": "Central retinal artery occlusion causes sudden loss with a pale retina and cherry-red spot.",
+      "C": "Raised intraocular pressure causes disc cupping, not microaneurysms and exudates.",
+      "D": "Optic neuritis affects the optic nerve, not the retinal vessels.",
+      "E": "Macular degeneration causes drusen and macular change, not dot-and-blot haemorrhages across the retina."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q199",
+    "subdomain": "Ophthalmology & ENT",
+    "topic": "Age-related macular degeneration",
+    "difficulty": "Moderate",
+    "stem": "A 79-year-old woman reports progressive difficulty reading and recognising faces. Central vision is distorted, but peripheral vision is relatively preserved. Which anatomical region is primarily responsible for the central visual impairment in age-related macular degeneration?",
+    "options": {
+      "A": "Macula",
+      "B": "Optic chiasm",
+      "C": "Peripheral retina only",
+      "D": "Extraocular muscles",
+      "E": "Ciliary body"
+    },
+    "correct_letter": "A",
+    "why_correct": "The macula is responsible for detailed central vision. Age-related macular degeneration can cause distortion and loss of central visual acuity while peripheral vision is relatively preserved. New distortion or sudden deterioration warrants prompt ophthalmic assessment because some forms are treatable.",
+    "distractor_analysis": {
+      "B": "Chiasmal lesions cause bitemporal hemianopia, not central loss.",
+      "C": "The peripheral retina serves peripheral vision, which is preserved here.",
+      "D": "Extraocular muscles affect eye movement, not acuity.",
+      "E": "The ciliary body controls accommodation and aqueous production."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q200",
+    "subdomain": "Ophthalmology & ENT",
+    "topic": "Cataract referral",
+    "difficulty": "Moderate",
+    "stem": "A 74-year-old woman reports increasing glare when driving at night and difficulty reading despite appropriate spectacles. Examination confirms bilateral cataracts. Her best-corrected visual acuity remains relatively good, but her daily activities are increasingly restricted. Which factor should primarily guide referral for cataract surgery?",
+    "options": {
+      "A": "The effect of the cataracts on vision and quality of life, discussed with the patient",
+      "B": "Whether the cataracts are associated with raised intraocular pressure",
+      "C": "Whether both eyes have the same degree of lens opacity",
+      "D": "Whether the patient has stopped driving completely",
+      "E": "Whether visual acuity has fallen below a fixed threshold"
+    },
+    "correct_letter": "A",
+    "why_correct": "Referral should be based on the impact of cataracts on vision and quality of life, the potential benefits and risks of surgery, and the patient's preferences. NICE specifically advises against restricting access to cataract surgery on visual acuity alone.",
+    "distractor_analysis": {
+      "B": "Raised intraocular pressure is not the criterion for cataract referral.",
+      "C": "Referral does not require both eyes to be equally affected.",
+      "D": "She does not need to stop driving to qualify.",
+      "E": "NICE advises against using a visual acuity threshold alone."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q201",
+    "subdomain": "Psychiatry",
+    "topic": "Post-traumatic stress disorder",
+    "difficulty": "Moderate",
+    "stem": "A 31-year-old man presents four months after a serious road traffic collision. He experiences recurrent distressing memories, avoids travelling by car, feels persistently on edge and has difficulty sleeping. His symptoms significantly impair his work and relationships. Which psychological treatment is recommended for an adult with this presentation?",
+    "options": {
+      "A": "Individual trauma-focused cognitive behavioural therapy",
+      "B": "Cognitive stimulation therapy",
+      "C": "A compulsory period of watchful waiting before treatment can be offered",
+      "D": "Behavioural activation directed solely at depressive symptoms",
+      "E": "Supportive counselling alone, with no structured intervention"
+    },
+    "correct_letter": "A",
+    "why_correct": "NICE recommends individual trauma-focused CBT for adults with PTSD or clinically important PTSD symptoms presenting more than one month after a traumatic event. Treatment should be structured and delivered by appropriately trained practitioners.",
+    "distractor_analysis": {
+      "B": "Cognitive stimulation therapy is for mild to moderate dementia.",
+      "C": "Watchful waiting is not required at four months with significant impairment.",
+      "D": "Behavioural activation targets depression, not PTSD.",
+      "E": "Non-directive counselling alone is not recommended as treatment for PTSD."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q202",
+    "subdomain": "Psychiatry",
+    "topic": "Medically compromised eating disorder",
+    "difficulty": "Moderate",
+    "stem": "A 22-year-old woman presents with rapid weight loss, restrictive eating and recurrent self-induced vomiting. She is bradycardic and has a significant electrolyte disturbance. She says she is willing to attend outpatient appointments but does not want to be admitted. What is the most appropriate next step?",
+    "options": {
+      "A": "Provide acute medical assessment and treatment, including emergency admission if indicated by her physical compromise",
+      "B": "Arrange psychological treatment first and investigate the electrolyte disturbance later",
+      "C": "Delay referral until she acknowledges having an eating disorder",
+      "D": "Arrange routine outpatient psychological treatment without further medical assessment",
+      "E": "Use BMI alone to determine whether treatment is necessary"
+    },
+    "correct_letter": "A",
+    "why_correct": "Significant physical compromise, including severe electrolyte disturbance, can require acute medical care and emergency admission. Assessment must consider physical health and immediate risk; BMI or duration of illness must not be used alone to determine whether treatment is needed.",
+    "distractor_analysis": {
+      "B": "Electrolyte disturbance with bradycardia is immediately dangerous and cannot wait.",
+      "C": "Treatment should not depend on her accepting the diagnosis.",
+      "D": "Outpatient care without medical assessment ignores the physical risk.",
+      "E": "NICE advises against using BMI alone to decide on treatment."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q203",
+    "subdomain": "Geriatrics & palliative care",
+    "topic": "Clinically assisted hydration",
+    "difficulty": "Moderate",
+    "stem": "A patient with advanced cancer is thought to be in the last days of life. They have distressing thirst and possible dehydration-related delirium, but oral hydration is inadequate. There is no clear advance decision refusing clinically assisted hydration. Which approach is most appropriate?",
+    "options": {
+      "A": "Withhold hydration because the patient is dying",
+      "B": "Start clinically assisted hydration automatically and continue regardless of response",
+      "C": "Encourage unrestricted oral fluids even if swallowing is unsafe",
+      "D": "Discuss the potential benefits and harms and consider an individualised therapeutic trial, monitoring for benefit and harm",
+      "E": "Give fluids solely to prolong life, irrespective of the patient's goals"
+    },
+    "correct_letter": "D",
+    "why_correct": "NICE recommends an individualised decision. A therapeutic trial of clinically assisted hydration can be considered when distressing symptoms may be related to dehydration and oral hydration is inadequate. The patient's wishes, swallowing, consciousness and risk of fluid overload matter; treatment should be reviewed and reduced or stopped if harm occurs or benefit is absent.",
+    "distractor_analysis": {
+      "A": "Hydration need not be withheld simply because the patient is dying.",
+      "B": "Assisted hydration should be reviewed and stopped if it causes harm such as fluid overload.",
+      "C": "Unsafe swallowing risks aspiration.",
+      "E": "Decisions should follow the patient's goals and comfort, not prolonging life alone."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q204",
+    "subdomain": "Geriatrics & palliative care",
+    "topic": "Medication review in the last days of life",
+    "difficulty": "Moderate",
+    "stem": "A 79-year-old man with advanced malignancy is recognised as being in the last days of life. He is increasingly unable to swallow tablets. His regular medicines include a statin for long-term cardiovascular prevention and medicines prescribed for symptom relief. What is the most appropriate general approach to his medication regimen?",
+    "options": {
+      "A": "Replace all oral medicines with intravenous equivalents",
+      "B": "Review each medicine with the patient or appropriate decision-makers, stopping medicines that offer no symptomatic benefit or may cause harm, while preserving appropriate symptom relief",
+      "C": "Stop every prescribed medicine immediately, without discussion",
+      "D": "Continue preventive medicines in preference to medicines for comfort",
+      "E": "Continue every medicine unchanged until death"
+    },
+    "correct_letter": "B",
+    "why_correct": "NICE recommends reviewing current medicines when a person may be entering the last days of life and, following appropriate discussion, stopping those that do not provide symptomatic benefit or may cause harm. Decisions should be individualised; this is not a blanket instruction to stop every medicine.",
+    "distractor_analysis": {
+      "A": "Intravenous medicines are not routinely needed; the subcutaneous route is used for symptom control.",
+      "C": "Stopping everything without discussion may remove needed symptom relief.",
+      "D": "Preventive medicines such as statins offer no benefit in the last days of life.",
+      "E": "Continuing everything adds burden without benefit."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q205",
+    "subdomain": "Haematology & oncology",
+    "topic": "Malignancy of unknown primary origin",
+    "difficulty": "Moderate",
+    "stem": "A 68-year-old man has a liver biopsy confirming metastatic adenocarcinoma. Initial history, examination and baseline blood tests have not identified the primary site. There are no specific clinical findings directing investigation towards one organ. Which investigation is included in the initial diagnostic assessment of malignancy of unknown primary origin?",
+    "options": {
+      "A": "Whole-body PET-CT in every patient before any other imaging",
+      "B": "CT of the chest, abdomen and pelvis",
+      "C": "Bone-marrow biopsy in every patient",
+      "D": "Screening colonoscopy in every patient, regardless of symptoms or findings",
+      "E": "Serum tumour-marker panels as the sole method of identifying the primary"
+    },
+    "correct_letter": "B",
+    "why_correct": "NICE guidance on malignancy of unknown primary includes CT of the chest, abdomen and pelvis in the initial diagnostic phase, alongside clinical assessment and other investigations selected according to the presentation. Further testing should be directed by the findings rather than applying every possible investigation to every patient.",
+    "distractor_analysis": {
+      "A": "PET-CT is for selected cases, not first-line imaging in everyone.",
+      "C": "Bone marrow biopsy is not routine without a haematological indication.",
+      "D": "Colonoscopy is guided by symptoms or findings, not done in every patient.",
+      "E": "Tumour markers cannot locate the primary on their own; only selected markers are recommended."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q206",
+    "subdomain": "Cardiology",
+    "topic": "Rehabilitation after myocardial infarction",
+    "difficulty": "Moderate",
+    "stem": "An 82-year-old man is recovering from an uncomplicated myocardial infarction. He is clinically stable, mobilising independently and has no contraindication to an appropriately adapted exercise programme. A team member suggests that cardiac rehabilitation is unnecessary because of his age. What is the most appropriate response?",
+    "options": {
+      "A": "Offer rehabilitation only if his left ventricular ejection fraction is normal",
+      "B": "Prescribe bed rest for several weeks before considering rehabilitation",
+      "C": "Offer cardiac rehabilitation with an exercise component, adapting it to his clinical needs",
+      "D": "Cardiac rehabilitation is indicated only for patients younger than 70 years",
+      "E": "Defer rehabilitation until he develops exercise-related symptoms"
+    },
+    "correct_letter": "C",
+    "why_correct": "NICE recommends offering cardiac rehabilitation after myocardial infarction regardless of age. Stable patients with reduced left ventricular ejection fraction can also be offered the exercise component; the programme should be adapted when necessary for clinical conditions.",
+    "distractor_analysis": {
+      "A": "Reduced ejection fraction does not exclude rehabilitation.",
+      "B": "Prolonged bed rest is harmful and not recommended.",
+      "D": "NICE recommends offering rehabilitation regardless of age.",
+      "E": "Rehabilitation should start soon after the infarct, not wait for symptoms."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q207",
+    "subdomain": "Musculoskeletal & rheumatology",
+    "topic": "Sjögren disease",
+    "difficulty": "Moderate",
+    "stem": "A 53-year-old woman reports persistent gritty eyes, a dry mouth requiring frequent sips of water and increasing dental caries. She also describes intermittent arthralgia. Medication review does not identify a convincing cause of her dryness. Which autoantibody is particularly associated with Sjögren disease?",
+    "options": {
+      "A": "Anti-cyclic citrullinated peptide antibody",
+      "B": "Anti-centromere antibody",
+      "C": "Anti-mitochondrial antibody",
+      "D": "Anti-Ro/SSA antibody",
+      "E": "Anti-glomerular basement membrane antibody"
+    },
+    "correct_letter": "D",
+    "why_correct": "Anti-Ro/SSA is an important autoantibody associated with Sjögren disease. The diagnosis must still be based on the clinical picture and appropriate investigations; an antibody result alone does not establish the diagnosis in every patient.",
+    "distractor_analysis": {
+      "A": "Anti-CCP is specific for rheumatoid arthritis.",
+      "B": "Anti-centromere is linked with limited cutaneous systemic sclerosis.",
+      "C": "Anti-mitochondrial antibody is linked with primary biliary cholangitis.",
+      "E": "Anti-GBM antibody causes anti-GBM (Goodpasture) disease."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q208",
+    "subdomain": "Musculoskeletal & rheumatology",
+    "topic": "Initial fracture-risk assessment",
+    "difficulty": "Moderate",
+    "stem": "A 68-year-old postmenopausal woman has several risk factors for fragility fracture but no previous DXA scan. She has not sustained a fragility fracture, and the clinician wants to estimate her fracture risk before deciding whether bone-density measurement is needed. Which is the recommended initial approach?",
+    "options": {
+      "A": "Measure serum calcium and use it as the sole estimate of fracture risk",
+      "B": "Use BMI alone to determine whether osteoporosis is present",
+      "C": "Reassure her because a previous fragility fracture is required before risk assessment",
+      "D": "Use FRAX or QFracture, within the tool's applicable age range, to estimate absolute fracture risk",
+      "E": "Arrange DXA before undertaking any fracture-risk assessment"
+    },
+    "correct_letter": "D",
+    "why_correct": "NICE recommends using FRAX or QFracture to estimate absolute fracture risk. DXA can then be considered when the estimated risk is around the intervention threshold, with risk recalculated using the bone mineral density result where appropriate. Risk tools have limitations and must be interpreted in clinical context.",
+    "distractor_analysis": {
+      "A": "Serum calcium does not estimate fracture risk.",
+      "B": "BMI is one risk factor, not a diagnostic test for osteoporosis.",
+      "C": "Risk assessment does not require a previous fracture.",
+      "E": "NICE advises calculating risk first, then using DXA when risk is near the threshold."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q209",
+    "subdomain": "Gastroenterology & hepatology",
+    "topic": "Autoimmune hepatitis",
+    "difficulty": "Moderate",
+    "stem": "A 36-year-old woman presents with fatigue, nausea and jaundice. Blood tests show ALT 1,180 IU/L, AST 960 IU/L, bilirubin 105 µmol/L and a prolonged prothrombin time. Viral hepatitis testing is negative. Serum IgG is markedly elevated, and anti-smooth-muscle antibodies are detected. She reports no significant alcohol intake or recent medication changes. Which diagnosis best explains these findings?",
+    "options": {
+      "A": "Hereditary haemochromatosis",
+      "B": "Primary sclerosing cholangitis",
+      "C": "Alcohol-associated hepatitis",
+      "D": "Primary biliary cholangitis",
+      "E": "Autoimmune hepatitis"
+    },
+    "correct_letter": "E",
+    "why_correct": "The combination of a hepatocellular injury pattern, raised IgG, compatible autoantibodies and negative viral testing strongly supports the diagnosis. Diagnosis requires integration of serology, exclusion of competing causes and usually specialist assessment with liver biopsy where appropriate.",
+    "distractor_analysis": {
+      "A": "Haemochromatosis raises ferritin and transferrin saturation, not IgG with smooth-muscle antibodies.",
+      "B": "Primary sclerosing cholangitis gives a cholestatic pattern with a raised ALP.",
+      "C": "Alcohol is excluded by the history, and alcoholic hepatitis rarely gives aminotransferases above 1,000.",
+      "D": "Primary biliary cholangitis is cholestatic, with anti-mitochondrial antibodies and raised IgM."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q210",
+    "subdomain": "Gastroenterology & hepatology",
+    "topic": "Budd–Chiari syndrome",
+    "difficulty": "Moderate",
+    "stem": "A 29-year-old woman presents with progressive abdominal pain, abdominal distension and tender hepatomegaly. She has shifting dullness. Liver tests are abnormal, and abdominal ultrasound shows ascites and an enlarged liver. Doppler imaging demonstrates absent flow in the major hepatic veins. Her full blood count shows a raised haemoglobin concentration and haematocrit. Which diagnosis best explains the presentation?",
+    "options": {
+      "A": "Acute viral hepatitis",
+      "B": "Budd–Chiari syndrome",
+      "C": "Spontaneous bacterial peritonitis",
+      "D": "Portal vein thrombosis",
+      "E": "Hepatic venous congestion from right-sided heart failure"
+    },
+    "correct_letter": "B",
+    "why_correct": "Hepatic venous outflow obstruction causes hepatic congestion, abdominal pain, hepatomegaly and ascites. Thrombophilic conditions and myeloproliferative neoplasms are important potential underlying causes.",
+    "distractor_analysis": {
+      "A": "Viral hepatitis would not cause absent hepatic vein flow.",
+      "C": "Spontaneous bacterial peritonitis is infection of existing ascites, not a cause of venous occlusion.",
+      "D": "Portal vein thrombosis does not occlude the hepatic veins or usually cause tender hepatomegaly.",
+      "E": "Heart failure shows patent, distended hepatic veins and a raised JVP."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q211",
+    "subdomain": "Ophthalmology & ENT",
+    "topic": "Adult acute epiglottitis",
+    "difficulty": "Difficult",
+    "stem": "A 42-year-old man presents with severe sore throat, fever and difficulty swallowing. He is drooling and sitting upright, leaning forwards. His voice is muffled, and he has inspiratory stridor. He appears distressed. What is the most appropriate immediate approach?",
+    "options": {
+      "A": "Examine the oropharynx thoroughly with a tongue depressor",
+      "B": "Arrange routine outpatient throat swabs before treatment",
+      "C": "Arrange urgent senior airway assessment in a controlled setting",
+      "D": "Give oral antibiotics and discharge if he can swallow",
+      "E": "Send him for a routine lateral neck radiograph before seeking specialist help"
+    },
+    "correct_letter": "C",
+    "why_correct": "Call for immediate experienced anaesthetic and ENT support, minimise distress, and manage the airway in an appropriately equipped environment. Antibiotics and other treatment should follow the emergency team’s plan without delaying airway management.",
+    "distractor_analysis": {
+      "A": "Examining the throat can trigger complete airway obstruction.",
+      "B": "Outpatient swabs ignore an airway emergency.",
+      "D": "Discharge risks sudden airway loss.",
+      "E": "Sending him to radiology delays airway care and moves him from a safe area."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q212",
+    "subdomain": "Infectious disease & sexual health",
+    "topic": "Suspected Shiga toxin-producing E. coli infection",
+    "difficulty": "Moderate",
+    "stem": "A 27-year-old man develops severe abdominal cramps and bloody diarrhoea after attending a barbecue. He is haemodynamically stable and has no signs of sepsis. Initial blood tests show a normal platelet count and renal function. A stool sample is sent for microbiological testing, including Shiga toxin-producing Escherichia coli (STEC). Which management principle is most appropriate while STEC is suspected?",
+    "options": {
+      "A": "Give empirical antibiotics to all patients with bloody diarrhoea",
+      "B": "Start loperamide to reduce stool frequency",
+      "C": "Start corticosteroids to reduce intestinal inflammation",
+      "D": "Reassure him that renal monitoring is unnecessary if the initial creatinine is normal",
+      "E": "Provide supportive care and avoid routine antibiotics and antimotility drugs"
+    },
+    "correct_letter": "E",
+    "why_correct": "Assess hydration, provide appropriate fluid replacement, send stool testing and monitor for complications. The need for further treatment depends on clinical severity and microbiological results.",
+    "distractor_analysis": {
+      "A": "Antibiotics may increase the risk of haemolytic uraemic syndrome in STEC infection.",
+      "B": "Antimotility drugs also increase the risk of haemolytic uraemic syndrome.",
+      "C": "Steroids have no role in STEC infection.",
+      "D": "Haemolytic uraemic syndrome can develop days later, so renal function and platelets need monitoring."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q213",
+    "subdomain": "Renal & urology",
+    "topic": "Fanconi syndrome",
+    "difficulty": "Moderate",
+    "stem": "A 51-year-old man reports fatigue, bone pain and proximal muscle weakness. Blood tests show a normal-anion-gap metabolic acidosis, hypophosphataemia and hypokalaemia. Urinalysis shows glucose despite a normal plasma glucose concentration. Further testing demonstrates urinary phosphate and amino acid losses. Which renal abnormality best explains these findings?",
+    "options": {
+      "A": "Isolated failure of glomerular filtration",
+      "B": "Excessive parathyroid hormone secretion as the sole cause",
+      "C": "Generalised dysfunction of the proximal renal tubule",
+      "D": "Isolated failure of distal urinary acidification",
+      "E": "Selective impairment of aldosterone synthesis"
+    },
+    "correct_letter": "C",
+    "why_correct": "Fanconi syndrome causes impaired proximal tubular reabsorption, producing losses of substances such as bicarbonate, phosphate, glucose, urate and amino acids. Phosphate depletion can contribute to bone pain and muscle weakness.",
+    "distractor_analysis": {
+      "A": "Glomerular failure would not cause glycosuria, phosphaturia and aminoaciduria.",
+      "B": "Hyperparathyroidism causes phosphaturia but not glycosuria or aminoaciduria.",
+      "D": "Distal (type 1) RTA does not cause glycosuria or aminoaciduria.",
+      "E": "Reduced aldosterone causes hyperkalaemia (type 4 RTA), not hypokalaemia."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q214",
+    "subdomain": "Haematology & oncology",
+    "topic": "Hyperviscosity syndrome in Waldenström macroglobulinaemia",
+    "difficulty": "Difficult",
+    "stem": "A 71-year-old man with a known IgM-secreting lymphoplasmacytic disorder presents with headache, blurred vision and recurrent epistaxis. Fundoscopy shows markedly dilated, tortuous retinal veins. He is increasingly confused. Which treatment most directly addresses the suspected mechanism of his acute deterioration?",
+    "options": {
+      "A": "Routine outpatient bone marrow biopsy before any treatment",
+      "B": "Oral iron replacement",
+      "C": "Vitamin K administration",
+      "D": "Platelet transfusion as the sole treatment",
+      "E": "Immediate therapeutic plasma exchange"
+    },
+    "correct_letter": "E",
+    "why_correct": "The combination of visual disturbance, neurological symptoms, mucosal bleeding and retinal venous changes in an IgM-secreting disorder strongly suggests symptomatic hyperviscosity. Plasma exchange rapidly reduces circulating paraprotein and viscosity while definitive haematological treatment is arranged.",
+    "distractor_analysis": {
+      "A": "Biopsy can wait; the hyperviscosity is the emergency.",
+      "B": "Iron is irrelevant to hyperviscosity.",
+      "C": "Vitamin K does not correct paraprotein-related bleeding.",
+      "D": "Platelets do not reduce viscosity."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q215",
+    "subdomain": "Endocrinology & diabetes",
+    "topic": "Thyroid eye disease",
+    "difficulty": "Moderate",
+    "stem": "A 44-year-old woman with Graves disease develops gritty eyes, periorbital swelling, proptosis and intermittent diplopia. She smokes. Her thyroid hormone concentrations are now within the reference range on treatment. Which statement is most accurate?",
+    "options": {
+      "A": "All patients with thyroid eye disease require immediate thyroidectomy",
+      "B": "Normal thyroid hormone concentrations exclude thyroid eye disease",
+      "C": "Thyroid eye disease can occur despite biochemical control of thyroid function",
+      "D": "Smoking has no association with the severity of thyroid eye disease",
+      "E": "Proptosis in Graves disease is caused exclusively by excess circulating thyroid hormone"
+    },
+    "correct_letter": "C",
+    "why_correct": "It is an autoimmune orbital disorder associated with Graves disease. Orbital inflammation and tissue remodelling can cause proptosis, discomfort, diplopia and, in severe cases, sight-threatening complications.",
+    "distractor_analysis": {
+      "A": "Thyroidectomy is not the treatment for eye disease.",
+      "B": "Eye disease can occur at any thyroid status.",
+      "D": "Smoking is a strong risk factor for severe eye disease.",
+      "E": "Proptosis comes from autoimmune orbital inflammation, not circulating thyroid hormone."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q216",
+    "subdomain": "Gastroenterology & hepatology",
+    "topic": "Acute liver failure",
+    "difficulty": "Difficult",
+    "stem": "A 24-year-old woman with no known chronic liver disease presents with jaundice and progressive confusion. Blood tests show markedly elevated aminotransferases and a prolonged prothrombin time. Her INR is 3.2. She has no history of cirrhosis. Which feature most strongly establishes that this is acute liver failure rather than isolated acute liver injury?",
+    "options": {
+      "A": "Hepatic encephalopathy with coagulopathy in the appropriate clinical setting",
+      "B": "Right upper-quadrant discomfort",
+      "C": "Markedly elevated aminotransferases",
+      "D": "Jaundice",
+      "E": "Raised serum bilirubin alone"
+    },
+    "correct_letter": "A",
+    "why_correct": "Acute liver failure is characterised by acute hepatic dysfunction with coagulopathy and hepatic encephalopathy in a patient without established pre-existing cirrhosis, subject to the applicable diagnostic definition. This presentation requires urgent specialist management.",
+    "distractor_analysis": {
+      "B": "Right upper quadrant discomfort occurs in many liver conditions.",
+      "C": "High aminotransferases show injury, not failure.",
+      "D": "Jaundice occurs in liver injury without failure.",
+      "E": "Bilirubin alone does not define liver failure."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q217",
+    "subdomain": "Haematology & oncology",
+    "topic": "Acquired methaemoglobinaemia",
+    "difficulty": "Difficult",
+    "stem": "A 38-year-old man develops headache, dizziness and breathlessness after using a topical anaesthetic preparation. His oxygen saturation remains around 85% despite supplemental oxygen. An arterial blood gas shows a relatively preserved arterial oxygen tension, and his blood appears chocolate-brown. Which investigation is most useful to confirm the suspected diagnosis?",
+    "options": {
+      "A": "Arterial blood gas analysis without co-oximetry",
+      "B": "Blood co-oximetry to measure methaemoglobin",
+      "C": "Measurement of carboxyhaemoglobin alone",
+      "D": "Measurement of serum lactate alone",
+      "E": "Repeat pulse oximetry using a different finger"
+    },
+    "correct_letter": "B",
+    "why_correct": "Co-oximetry measures haemoglobin species and can confirm elevated methaemoglobin in the appropriate clinical setting.",
+    "distractor_analysis": {
+      "A": "A standard blood gas calculates saturation from PaO2 and misses methaemoglobin.",
+      "C": "Carboxyhaemoglobin is a different species; measuring it alone misses methaemoglobin.",
+      "D": "Lactate is non-specific.",
+      "E": "Pulse oximetry is unreliable here and tends to read about 85% whatever the finger."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q218",
+    "subdomain": "Haematology & oncology",
+    "topic": "Heparin-induced thrombocytopenia",
+    "difficulty": "Difficult",
+    "stem": "A 67-year-old man is receiving unfractionated heparin after orthopaedic surgery. On the seventh day of treatment, his platelet count has fallen substantially from baseline and he develops a new proximal deep-vein thrombosis. He has no obvious alternative explanation for the thrombocytopenia. Which is the most appropriate immediate management principle if heparin-induced thrombocytopenia (HIT) is strongly suspected?",
+    "options": {
+      "A": "Stop all heparin and arrange an appropriate non-heparin anticoagulant",
+      "B": "Give platelet transfusions routinely and continue heparin",
+      "C": "Start warfarin alone immediately while continuing heparin",
+      "D": "Continue heparin and repeat the platelet count in one week",
+      "E": "Stop anticoagulation completely until the platelet count normalises"
+    },
+    "correct_letter": "A",
+    "why_correct": "The timing, substantial platelet fall and new thrombosis are concerning for HIT. Stop heparin, assess clinical probability using an appropriate tool, arrange laboratory testing and initiate suitable non-heparin anticoagulation when indicated, following current specialist guidance.",
+    "distractor_analysis": {
+      "B": "Platelet transfusion may worsen thrombosis, and heparin must be stopped.",
+      "C": "Warfarin alone early in HIT can cause venous limb gangrene, and heparin must be stopped.",
+      "D": "Continuing heparin risks further thrombosis.",
+      "E": "HIT is prothrombotic, so a non-heparin anticoagulant is needed."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
   }
 ];
