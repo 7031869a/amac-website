@@ -1454,5 +1454,1205 @@ window.MRCP1_QUESTIONS = [
     "distractor_analysis": {},
     "generalisation": "",
     "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q071",
+    "subdomain": "Endocrinology & diabetes",
+    "topic": "Thyrotoxicosis: identifying Graves’ disease",
+    "difficulty": "Moderate",
+    "stem": "A 29-year-old woman has weight loss, tremor, heat intolerance and a diffuse goitre. Her TSH is suppressed, and both free T4 and free T3 are raised. Which investigation is recommended to help confirm Graves’ disease?",
+    "options": {
+      "A": "Thyroid peroxidase antibodies alone",
+      "B": "TSH-receptor antibodies",
+      "C": "Serum thyroglobulin",
+      "D": "Calcitonin",
+      "E": "A serum TSH measurement repeated the following day"
+    },
+    "correct_letter": "B",
+    "why_correct": "NICE recommends measuring TSH-receptor antibodies (TRAbs) in adults with confirmed thyrotoxicosis to help confirm Graves’ disease. If TRAbs are negative, a technetium thyroid scan may be considered. Thyroid ultrasound is not routinely indicated for thyrotoxicosis unless there is a palpable thyroid nodule.",
+    "distractor_analysis": {
+      "A": "TPO antibodies occur in both Graves' and Hashimoto's disease, so they do not confirm Graves'.",
+      "C": "Thyroglobulin is used in thyroid cancer follow-up, not to identify the cause of thyrotoxicosis.",
+      "D": "Calcitonin is a marker for medullary thyroid cancer.",
+      "E": "Thyrotoxicosis is already confirmed; repeating TSH adds nothing about the cause."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q072",
+    "subdomain": "Endocrinology & diabetes",
+    "topic": "Pituitary disease: prolactinoma",
+    "difficulty": "Moderate",
+    "stem": "A 31-year-old woman presents with amenorrhoea and galactorrhoea. Pregnancy testing is negative. Her serum prolactin is substantially elevated on repeat measurement. She takes no medicines known to raise prolactin, and thyroid function and renal function are normal. Which investigation is most appropriate to identify a likely structural cause?",
+    "options": {
+      "A": "MRI of the pituitary",
+      "B": "CT pulmonary angiography",
+      "C": "Adrenal ultrasound",
+      "D": "Thyroid technetium scanning",
+      "E": "A water deprivation test"
+    },
+    "correct_letter": "A",
+    "why_correct": "Persistent, substantial hyperprolactinaemia without an evident physiological, medication-related or systemic cause warrants assessment for a pituitary lesion. MRI is the principal imaging investigation. The prolactin result, symptoms, potential assay interference and possibility of a large lesion with a disproportionately modest prolactin result should be considered together.",
+    "distractor_analysis": {
+      "B": "CT pulmonary angiography looks for pulmonary emboli and has no role here.",
+      "C": "Adrenal imaging does not assess a pituitary cause of hyperprolactinaemia.",
+      "D": "Technetium scanning assesses thyroid uptake, not the pituitary.",
+      "E": "Water deprivation testing investigates diabetes insipidus."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q073",
+    "subdomain": "Endocrinology & diabetes",
+    "topic": "Hypercalcaemia: primary hyperparathyroidism",
+    "difficulty": "Moderate",
+    "stem": "A 61-year-old woman has repeated measurements showing raised adjusted serum calcium. Her parathyroid hormone concentration is also raised, rather than suppressed. Which mechanism best explains this biochemical pattern?",
+    "options": {
+      "A": "PTH secretion is appropriately suppressed by hypercalcaemia",
+      "B": "PTH secretion is inappropriate for the raised serum calcium",
+      "C": "Excess calcitonin is stimulating osteoclast activity",
+      "D": "Reduced PTH secretion is causing renal calcium retention",
+      "E": "Increased insulin secretion is driving calcium release from bone"
+    },
+    "correct_letter": "B",
+    "why_correct": "When serum calcium is elevated, normal parathyroid glands should suppress PTH secretion. A raised or inappropriately normal PTH therefore suggests a PTH-dependent cause of hypercalcaemia, such as primary hyperparathyroidism. This differs from many malignancy-related causes, in which endogenous PTH is usually suppressed.",
+    "distractor_analysis": {
+      "A": "Appropriate suppression would give a low PTH, as in malignancy-related hypercalcaemia.",
+      "C": "Calcitonin inhibits osteoclasts and lowers calcium.",
+      "D": "Reduced PTH would lower calcium, and PTH is raised here.",
+      "E": "Insulin does not release calcium from bone."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q074",
+    "subdomain": "Infectious disease & sexual health",
+    "topic": "Lyme disease: when serology is unnecessary",
+    "difficulty": "Moderate",
+    "stem": "A 35-year-old woman develops an enlarging, non-painful, non-itchy erythematous rash around the site of a tick bite after walking in woodland. The rash has expanded over several days and has partial central clearing. She is otherwise well. What is the most appropriate approach?",
+    "options": {
+      "A": "Exclude Lyme disease unless the initial antibody test is positive",
+      "B": "Diagnose and treat Lyme disease clinically without waiting for serology",
+      "C": "Perform a skin biopsy before making a diagnosis",
+      "D": "Reassure her that central clearing excludes infection",
+      "E": "Wait several weeks before considering treatment"
+    },
+    "correct_letter": "B",
+    "why_correct": "Erythema migrans is characteristic of early Lyme disease. NICE recommends diagnosing and treating Lyme disease without laboratory testing when erythema migrans is present. Other presentations may require serological investigation guided by clinical suspicion.",
+    "distractor_analysis": {
+      "A": "Serology is often negative early in infection, so a negative test does not exclude Lyme disease.",
+      "C": "Biopsy is unnecessary when erythema migrans is typical.",
+      "D": "Central clearing is consistent with erythema migrans, not against it.",
+      "E": "Delay risks disseminated disease; treat at diagnosis."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q075",
+    "subdomain": "Cardiology",
+    "topic": "Infective endocarditis: blood cultures",
+    "difficulty": "Moderate",
+    "stem": "A 58-year-old man has fever, a new cardiac murmur and clinical features raising concern for infective endocarditis. He is haemodynamically stable and has not received antibiotics. What is the most appropriate next step before starting antimicrobial treatment?",
+    "options": {
+      "A": "Take appropriate blood cultures before antibiotics",
+      "B": "Give antibiotics immediately and obtain cultures several days later",
+      "C": "Take a throat swab as the sole microbiological investigation",
+      "D": "Wait for echocardiography before taking any microbiological samples",
+      "E": "Use a single negative blood culture to exclude endocarditis"
+    },
+    "correct_letter": "A",
+    "why_correct": "In a stable patient with suspected infective endocarditis, blood cultures should be obtained before antimicrobial treatment to improve the chance of identifying the causative organism. Treatment must not be inappropriately delayed in an unstable patient; sampling and urgent management should be coordinated according to the clinical situation.",
+    "distractor_analysis": {
+      "B": "Antibiotics before cultures reduce the chance of identifying the organism.",
+      "C": "A throat swab does not identify the bloodstream organism.",
+      "D": "Blood cultures should not wait for echocardiography; both contribute to the diagnosis.",
+      "E": "A single negative culture does not exclude endocarditis."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q076",
+    "subdomain": "Infectious disease & sexual health",
+    "topic": "Pneumocystis pneumonia in HIV",
+    "difficulty": "Moderate",
+    "stem": "A 39-year-old man with previously undiagnosed HIV presents with progressive breathlessness, dry cough and fever. Oxygen saturation is low, and chest imaging shows bilateral diffuse ground-glass changes. Which opportunistic infection should be strongly considered?",
+    "options": {
+      "A": "Pneumocystis jirovecii pneumonia",
+      "B": "Uncomplicated oral candidiasis",
+      "C": "Latent tuberculosis without pulmonary involvement",
+      "D": "Tinea corporis",
+      "E": "Localised herpes simplex infection"
+    },
+    "correct_letter": "A",
+    "why_correct": "Pneumocystis pneumonia is an important cause of subacute respiratory illness and hypoxaemia in people with advanced HIV-related immunosuppression. The clinical and radiological findings raise suspicion but are not specific; respiratory sampling and appropriate microbiological testing help establish the diagnosis. Urgent assessment and treatment should not be delayed when clinical suspicion is high and the patient is significantly unwell.",
+    "distractor_analysis": {
+      "B": "Oral candidiasis does not cause hypoxia or bilateral ground-glass change.",
+      "C": "Latent tuberculosis is asymptomatic by definition.",
+      "D": "Tinea corporis is a superficial skin infection.",
+      "E": "Localised herpes simplex does not cause diffuse pneumonitis."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q077",
+    "subdomain": "Respiratory",
+    "topic": "Severe community-acquired pneumonia: antibiotic timing",
+    "difficulty": "Moderate",
+    "stem": "A 66-year-old man presents to hospital with a clinical diagnosis of community-acquired pneumonia. He is significantly unwell but can swallow and has no immediate indication that intravenous administration is essential. Which statement best reflects current NICE guidance on antibiotic timing and route?",
+    "options": {
+      "A": "Antibiotics should routinely be delayed until sputum culture results are available",
+      "B": "Start antibiotic treatment promptly after diagnosis; oral treatment is preferred if he can take it and severity does not require intravenous therapy",
+      "C": "Intravenous antibiotics are mandatory for every hospitalised patient",
+      "D": "Antibiotics should be withheld until the fever has persisted for 48 hours",
+      "E": "Antibiotic choice should not be reviewed when microbiology results become available"
+    },
+    "correct_letter": "B",
+    "why_correct": "NICE NG250 recommends starting antibiotics as soon as possible after establishing a diagnosis of community-acquired pneumonia, and within four hours of hospital presentation. Oral antibiotics are first-line when the patient can take oral medicines and the illness does not require intravenous treatment. If IV antibiotics are used, review them by 48 hours and consider switching to oral treatment when appropriate.",
+    "distractor_analysis": {
+      "A": "Waiting for culture delays treatment; antibiotics should start promptly after diagnosis.",
+      "C": "Oral treatment is preferred when the patient can take it and severity allows.",
+      "D": "Withholding antibiotics in diagnosed pneumonia is unsafe.",
+      "E": "Antibiotic choice should be reviewed against microbiology results."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q078",
+    "subdomain": "Neurology",
+    "topic": "Parkinson’s disease: initial treatment",
+    "difficulty": "Moderate",
+    "stem": "A 68-year-old man has recently diagnosed Parkinson’s disease. Bradykinesia and rigidity now interfere substantially with dressing, walking and preparing meals. Which medicine should generally be offered to improve his motor symptoms?",
+    "options": {
+      "A": "Levodopa",
+      "B": "Long-term haloperidol",
+      "C": "Phenytoin",
+      "D": "Acetazolamide",
+      "E": "No pharmacological treatment until he develops dementia"
+    },
+    "correct_letter": "A",
+    "why_correct": "NICE recommends offering levodopa to people in the early stages of Parkinson’s disease when motor symptoms affect quality of life. Treatment should be individualised, with discussion of benefits and adverse effects. Dopamine-blocking medicines such as haloperidol can worsen parkinsonism.",
+    "distractor_analysis": {
+      "B": "Haloperidol blocks dopamine and worsens parkinsonism.",
+      "C": "Phenytoin is an antiepileptic with no role in Parkinson's disease.",
+      "D": "Acetazolamide has no role in Parkinson's disease.",
+      "E": "Treatment is indicated now because symptoms impair daily function."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q079",
+    "subdomain": "Neurology",
+    "topic": "Cluster headache: acute treatment",
+    "difficulty": "Moderate",
+    "stem": "A 40-year-old man experiences repeated attacks of excruciating unilateral orbital pain lasting about an hour. During attacks, his eye waters and becomes red, and he feels intensely restless. Which treatment is recommended for an acute cluster headache attack?",
+    "options": {
+      "A": "High-flow oxygen and/or a subcutaneous or nasal triptan, as appropriate",
+      "B": "Oral antibiotics",
+      "C": "Long-term opioid treatment as first-line therapy",
+      "D": "Oral corticosteroids for every attack as the sole acute treatment",
+      "E": "Reassurance without offering acute treatment"
+    },
+    "correct_letter": "A",
+    "why_correct": "NICE recommends offering oxygen and/or a subcutaneous or nasal triptan for acute cluster headache, taking contraindications and the patient’s circumstances into account. Oral analgesics are often too slow for these attacks. Oxygen delivery requires an appropriate high-flow setup and non-rebreather mask.",
+    "distractor_analysis": {
+      "B": "There is no infection; antibiotics have no role.",
+      "C": "Opioids are ineffective for cluster headache and risk dependence.",
+      "D": "Corticosteroids may be used as short-term prevention, not as the sole acute treatment.",
+      "E": "Effective acute treatments exist and should be offered."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q080",
+    "subdomain": "Neurology",
+    "topic": "Myasthenia gravis: pattern recognition",
+    "difficulty": "Moderate",
+    "stem": "A 35-year-old woman reports intermittent double vision and drooping eyelids that worsen towards the end of the day. Symptoms improve after rest. Pupillary responses are normal, and sensation is intact. Which diagnosis best explains this presentation?",
+    "options": {
+      "A": "Myasthenia gravis",
+      "B": "Multiple sclerosis presenting with a fixed sensory level",
+      "C": "Parkinson’s disease",
+      "D": "Peripheral sensory neuropathy",
+      "E": "Motor neurone disease presenting with isolated fluctuating ocular symptoms"
+    },
+    "correct_letter": "A",
+    "why_correct": "Myasthenia gravis causes fluctuating, fatigable weakness due to impaired neuromuscular transmission. Ocular symptoms such as ptosis and diplopia are common presentations. Assessment should consider bulbar and respiratory involvement, which can indicate a medical emergency.",
+    "distractor_analysis": {
+      "B": "A fixed sensory level indicates spinal cord disease; sensation is intact here.",
+      "C": "Parkinson's disease does not cause fatigable ptosis or diplopia.",
+      "D": "Sensory neuropathy does not cause ptosis or diplopia.",
+      "E": "Motor neurone disease spares eye movements and does not fluctuate with fatigue."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q081",
+    "subdomain": "Neurology",
+    "topic": "Guillain–Barré syndrome: immediate concern",
+    "difficulty": "Moderate",
+    "stem": "A 47-year-old man develops progressive symmetrical leg weakness one week after a diarrhoeal illness. Weakness has ascended to the thighs, and tendon reflexes are absent. Which complication requires particular attention during urgent assessment?",
+    "options": {
+      "A": "Respiratory muscle weakness",
+      "B": "Isolated chronic migraine",
+      "C": "Acute angle-closure glaucoma",
+      "D": "Hyperthyroidism as the inevitable cause",
+      "E": "A fixed unilateral sensory deficit as the defining feature"
+    },
+    "correct_letter": "A",
+    "why_correct": "Guillain–Barré syndrome can progress rapidly and cause respiratory failure, bulbar dysfunction and autonomic instability. Urgent hospital assessment includes monitoring respiratory function and swallowing, alongside neurological assessment and investigations. Do not wait for overt respiratory distress before assessing the risk of deterioration.",
+    "distractor_analysis": {
+      "B": "Migraine is not a complication of Guillain-Barré syndrome.",
+      "C": "Angle-closure glaucoma is unrelated to this presentation.",
+      "D": "This is a post-infectious neuropathy; thyroid disease is not the cause.",
+      "E": "Guillain-Barré syndrome is typically symmetrical and areflexic, not a unilateral sensory deficit."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q082",
+    "subdomain": "Neurology",
+    "topic": "Subarachnoid haemorrhage: presentation",
+    "difficulty": "Moderate",
+    "stem": "A 51-year-old woman develops a sudden, severe headache that reaches maximal intensity within seconds. She vomits and has neck stiffness. She has no established history of recurrent similar headaches. What is the most appropriate response?",
+    "options": {
+      "A": "Diagnose migraine and discharge without investigation",
+      "B": "Arrange urgent hospital assessment for suspected subarachnoid haemorrhage",
+      "C": "Start a triptan and arrange routine review in one month",
+      "D": "Reassure her because subarachnoid haemorrhage usually causes a gradual headache",
+      "E": "Arrange outpatient nerve-conduction studies"
+    },
+    "correct_letter": "B",
+    "why_correct": "A sudden severe headache reaching maximum intensity rapidly is a red flag for subarachnoid haemorrhage and other serious causes. Urgent assessment and appropriate neuroimaging are required. The exact investigation pathway depends on timing, imaging findings and specialist assessment.",
+    "distractor_analysis": {
+      "A": "A thunderclap headache with neck stiffness must not be attributed to migraine.",
+      "C": "Triptans delay diagnosis and are inappropriate in suspected haemorrhage.",
+      "D": "Subarachnoid haemorrhage classically causes a sudden, not gradual, headache.",
+      "E": "Nerve-conduction studies have no role in acute headache."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q083",
+    "subdomain": "Neurology",
+    "topic": "Migraine: medication overuse",
+    "difficulty": "Moderate",
+    "stem": "A 37-year-old woman with migraine now has headaches on most days. She takes a triptan on many days each month and has done so for several months. The headache pattern has become more frequent despite treatment. Which issue should be specifically considered?",
+    "options": {
+      "A": "Medication-overuse headache",
+      "B": "A diagnosis of epilepsy based on headache frequency alone",
+      "C": "A requirement for antibiotics",
+      "D": "A diagnosis of Parkinson’s disease",
+      "E": "An indication for routine neuroimaging solely to reassure her, without reassessing the history"
+    },
+    "correct_letter": "A",
+    "why_correct": "Frequent use of acute headache medicines can contribute to medication-overuse headache. Assessment should quantify the frequency of headache and medication use, review the headache diagnosis and discuss an appropriate plan to reduce overuse. New red flags or a substantial change in headache characteristics may warrant further investigation; the frequency alone does not automatically require imaging.",
+    "distractor_analysis": {
+      "B": "Headache frequency does not indicate epilepsy.",
+      "C": "There is no infection; antibiotics have no role.",
+      "D": "There are no parkinsonian features.",
+      "E": "Without red flags, reassessing the history and medication use comes before imaging."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q084",
+    "subdomain": "Neurology",
+    "topic": "Essential tremor versus Parkinson’s disease",
+    "difficulty": "Moderate",
+    "stem": "A 64-year-old man reports a bilateral hand tremor that is most noticeable when holding a cup or writing. Examination shows no bradykinesia or rigidity, and the tremor diminishes when his hands are fully supported at rest. Which diagnosis is most consistent with this pattern?",
+    "options": {
+      "A": "Essential tremor",
+      "B": "Typical Parkinson’s disease",
+      "C": "Guillain–Barré syndrome",
+      "D": "Myasthenia gravis",
+      "E": "Acute subarachnoid haemorrhage"
+    },
+    "correct_letter": "A",
+    "why_correct": "Essential tremor typically occurs during posture or action. Parkinsonian tremor is often most evident at rest and is usually accompanied by bradykinesia, with rigidity also commonly present. Clinical assessment is central; diagnostic uncertainty or atypical features may warrant specialist review.",
+    "distractor_analysis": {
+      "B": "Parkinsonian tremor is typically at rest and accompanied by bradykinesia.",
+      "C": "Guillain-Barré syndrome causes weakness, not tremor.",
+      "D": "Myasthenia gravis causes fatigable weakness, not tremor.",
+      "E": "Subarachnoid haemorrhage presents with acute headache."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q085",
+    "subdomain": "Renal & urology",
+    "topic": "Chronic kidney disease: assessing albuminuria",
+    "difficulty": "Moderate",
+    "stem": "A 63-year-old man with hypertension has an eGFR of 72 mL/min/1.73 m². His urine reagent strip is negative for protein, but there is clinical concern about early chronic kidney disease. Which test is most appropriate for initial assessment of low-level albuminuria?",
+    "options": {
+      "A": "Urine albumin-to-creatinine ratio",
+      "B": "A 24-hour urine collection in every case",
+      "C": "Serum albumin concentration alone",
+      "D": "Repeat urine dipstick alone",
+      "E": "Urine culture"
+    },
+    "correct_letter": "A",
+    "why_correct": "NICE recommends urine ACR rather than routine reagent strips for detecting low levels of albuminuria. If the initial ACR is between 3 and 70 mg/mmol, confirm it using a subsequent early-morning sample; an initial ACR of 70 mg/mmol or more does not require repeat confirmation before action.",
+    "distractor_analysis": {
+      "B": "A 24-hour collection is not needed routinely; ACR is the recommended test.",
+      "C": "Serum albumin does not measure urinary albumin loss.",
+      "D": "Reagent strips are insensitive to low-level albuminuria.",
+      "E": "Urine culture detects infection, not albuminuria."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q086",
+    "subdomain": "Renal & urology",
+    "topic": "IgA nephropathy: synpharyngitic haematuria",
+    "difficulty": "Moderate",
+    "stem": "A 22-year-old man notices dark, cola-coloured urine two days after the start of a sore throat. He had a similar episode a year ago. His blood pressure is 128/78 mmHg. Urinalysis shows blood and a trace of protein, renal function is normal and serum C3 is normal. Which diagnosis is most likely?",
+    "options": {
+      "A": "IgA nephropathy",
+      "B": "Post-streptococcal glomerulonephritis",
+      "C": "Minimal change disease",
+      "D": "Anti-glomerular basement membrane disease",
+      "E": "Renal cell carcinoma"
+    },
+    "correct_letter": "A",
+    "why_correct": "Visible haematuria within one to two days of an upper respiratory infection (synpharyngitic haematuria), recurring with later infections and with normal complement, is typical of IgA nephropathy. Post-streptococcal glomerulonephritis follows the infection by about one to three weeks and usually lowers C3. Blood pressure, proteinuria and renal function should be monitored, with nephrology referral if any are abnormal.",
+    "distractor_analysis": {
+      "B": "Post-streptococcal glomerulonephritis follows infection by one to three weeks and usually lowers C3.",
+      "C": "Minimal change disease causes nephrotic syndrome, not visible haematuria.",
+      "D": "Anti-GBM disease causes rapidly progressive renal failure, often with haemoptysis.",
+      "E": "Renal cell carcinoma is unlikely at 22 and does not cause haematuria recurring with sore throats."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q087",
+    "subdomain": "Renal & urology",
+    "topic": "Nephrotic syndrome: recognising the pattern",
+    "difficulty": "Moderate",
+    "stem": "A 46-year-old woman presents with progressive bilateral leg oedema. Blood tests show marked hypoalbuminaemia, and urine testing demonstrates heavy protein loss. Her renal function is only mildly impaired. Which process best explains the oedema?",
+    "options": {
+      "A": "Reduced plasma oncotic pressure due to urinary albumin loss",
+      "B": "Increased plasma oncotic pressure",
+      "C": "Isolated obstruction of the ureters",
+      "D": "Reduced intestinal glucose absorption",
+      "E": "Excessive urinary loss of red cells without protein loss"
+    },
+    "correct_letter": "A",
+    "why_correct": "Nephrotic syndrome involves substantial proteinuria, often with hypoalbuminaemia and oedema. Reduced plasma oncotic pressure contributes to fluid movement into the interstitial space; renal sodium retention can also contribute. The underlying cause requires further evaluation.",
+    "distractor_analysis": {
+      "B": "Plasma oncotic pressure falls, not rises, in nephrotic syndrome.",
+      "C": "Ureteric obstruction does not cause heavy proteinuria or hypoalbuminaemia.",
+      "D": "Intestinal glucose absorption is unrelated to oedema here.",
+      "E": "Nephrotic syndrome is defined by heavy protein loss."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q088",
+    "subdomain": "Renal & urology",
+    "topic": "Autosomal dominant polycystic kidney disease",
+    "difficulty": "Moderate",
+    "stem": "A 39-year-old man has multiple bilateral renal cysts and a family history of kidney failure affecting his father and paternal aunt. Which extra-renal association is particularly important to recognise in autosomal dominant polycystic kidney disease?",
+    "options": {
+      "A": "Intracranial berry aneurysms",
+      "B": "Pulmonary fibrosis as an inevitable complication",
+      "C": "Congenital absence of the thyroid gland",
+      "D": "Retinal detachment in every affected patient",
+      "E": "Isolated adrenal insufficiency"
+    },
+    "correct_letter": "A",
+    "why_correct": "Autosomal dominant polycystic kidney disease is associated with several extra-renal manifestations, including intracranial aneurysms, liver cysts and cardiac valve abnormalities. Screening for intracranial aneurysms is not automatically indicated for every patient; the decision depends on individual risk factors and specialist guidance.",
+    "distractor_analysis": {
+      "B": "Pulmonary fibrosis is not a recognised association of ADPKD.",
+      "C": "Thyroid agenesis is not associated with ADPKD.",
+      "D": "Retinal detachment is not a feature of ADPKD.",
+      "E": "Adrenal insufficiency is not associated with ADPKD."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q089",
+    "subdomain": "Renal & urology",
+    "topic": "Renal colic: imaging",
+    "difficulty": "Moderate",
+    "stem": "A 42-year-old man presents with sudden severe flank pain radiating towards the groin, with nausea and microscopic haematuria. A ureteric stone is suspected. Which imaging investigation is recommended for an adult with suspected renal colic?",
+    "options": {
+      "A": "Non-contrast CT of the urinary tract",
+      "B": "Contrast-enhanced CT of the abdomen in every case",
+      "C": "Plain abdominal radiography alone",
+      "D": "MRI of the lumbar spine",
+      "E": "No imaging if haematuria is present"
+    },
+    "correct_letter": "A",
+    "why_correct": "NICE recommends low-dose non-contrast CT for adults with suspected renal colic, with imaging urgently arranged within the recommended pathway. Ultrasound is preferred as first-line imaging in pregnancy and children. Imaging choices must account for the clinical situation and radiation exposure.",
+    "distractor_analysis": {
+      "B": "Contrast is not needed to detect stones and may obscure them.",
+      "C": "Plain radiography misses many stones.",
+      "D": "Spinal MRI does not assess the urinary tract.",
+      "E": "Haematuria supports, rather than removes, the need for imaging."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q090",
+    "subdomain": "Renal & urology",
+    "topic": "Distal renal tubular acidosis",
+    "difficulty": "Moderate",
+    "stem": "A 33-year-old woman has recurrent calcium phosphate kidney stones. Blood tests show a normal-anion-gap metabolic acidosis. Despite systemic acidosis, her urine remains inappropriately alkaline. Which disorder best explains these findings?",
+    "options": {
+      "A": "Distal (type 1) renal tubular acidosis",
+      "B": "Type 4 renal tubular acidosis",
+      "C": "Contraction alkalosis due to vomiting",
+      "D": "Respiratory alkalosis",
+      "E": "Uncomplicated chronic respiratory acidosis"
+    },
+    "correct_letter": "A",
+    "why_correct": "Distal RTA involves impaired distal urinary acidification and can cause normal-anion-gap metabolic acidosis, inappropriately high urine pH and calcium phosphate stones. Type 4 RTA is more characteristically associated with hyperkalaemia and impaired aldosterone activity.",
+    "distractor_analysis": {
+      "B": "Type 4 RTA causes hyperkalaemia with acidic urine and is not typically associated with stones.",
+      "C": "Vomiting causes metabolic alkalosis, not acidosis.",
+      "D": "The disturbance is a metabolic acidosis, not a respiratory alkalosis.",
+      "E": "The acidosis is metabolic, with a normal anion gap."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q091",
+    "subdomain": "Renal & urology",
+    "topic": "NSAIDs and acute kidney injury",
+    "difficulty": "Moderate",
+    "stem": "A 77-year-old man with vomiting and poor oral intake continues taking ibuprofen for osteoarthritis. His creatinine rises and urine output falls. Which mechanism best explains how ibuprofen may contribute to his acute kidney injury?",
+    "options": {
+      "A": "Inhibition of renal prostaglandin synthesis, reducing afferent arteriolar vasodilation",
+      "B": "Direct stimulation of glomerular filtration",
+      "C": "Increased aldosterone secretion causing obligatory renal potassium loss",
+      "D": "Selective inhibition of glucose reabsorption in the proximal tubule",
+      "E": "Increased renal blood flow during hypovolaemia"
+    },
+    "correct_letter": "A",
+    "why_correct": "Renal prostaglandins help maintain afferent arteriolar dilation when circulating volume is reduced. NSAIDs inhibit prostaglandin synthesis and can reduce renal perfusion, particularly in people who are dehydrated or otherwise vulnerable to AKI.",
+    "distractor_analysis": {
+      "B": "NSAIDs reduce, not increase, glomerular filtration in vulnerable patients.",
+      "C": "NSAIDs tend to cause hyperkalaemia, not potassium loss.",
+      "D": "Proximal glucose reabsorption inhibition is how SGLT2 inhibitors act.",
+      "E": "Renal blood flow falls during hypovolaemia, especially with NSAIDs."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q092",
+    "subdomain": "Renal & urology",
+    "topic": "Acute hyperkalaemia: ECG changes",
+    "difficulty": "Moderate",
+    "stem": "A 69-year-old man with acute kidney injury has a potassium concentration of 7.1 mmol/L. His ECG shows broad QRS complexes and peaked T waves. Which immediate treatment is required to reduce the risk of a fatal arrhythmia?",
+    "options": {
+      "A": "Intravenous calcium, following the emergency hyperkalaemia protocol",
+      "B": "Oral dietary potassium restriction alone",
+      "C": "A loop diuretic as the sole immediate treatment",
+      "D": "Repeat potassium measurement tomorrow before acting",
+      "E": "Sodium bicarbonate as the sole treatment in every case"
+    },
+    "correct_letter": "A",
+    "why_correct": "Severe hyperkalaemia with ECG changes is a medical emergency. Intravenous calcium stabilises the cardiac membrane but does not itself lower serum potassium; additional treatment is required to shift potassium intracellularly and remove it from the body. Follow the current UK Kidney Association emergency protocol.",
+    "distractor_analysis": {
+      "B": "Dietary restriction acts far too slowly for an emergency.",
+      "C": "A loop diuretic is not the sole immediate treatment and does not protect the heart.",
+      "D": "Delaying treatment with ECG changes risks cardiac arrest.",
+      "E": "Sodium bicarbonate is not routine sole treatment."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q093",
+    "subdomain": "Musculoskeletal & rheumatology",
+    "topic": "Gout: interpreting serum urate during a flare",
+    "difficulty": "Moderate",
+    "stem": "A 57-year-old man presents with sudden severe pain, redness and swelling of the first metatarsophalangeal joint. His serum urate concentration measured during the episode is below 360 micromol/L. Gout remains clinically suspected. What is the most appropriate next step regarding serum urate measurement?",
+    "options": {
+      "A": "Exclude gout because the urate is below 360 micromol/L",
+      "B": "Repeat serum urate at least two weeks after the flare has settled",
+      "C": "Repeat serum urate the following hour",
+      "D": "Diagnose rheumatoid arthritis from the urate result alone",
+      "E": "Start lifelong urate-lowering treatment solely because of this single result"
+    },
+    "correct_letter": "B",
+    "why_correct": "Serum urate may be below the diagnostic threshold during an acute gout flare. NICE recommends repeating the measurement at least two weeks after the flare has settled if gout is strongly suspected despite a level below 360 micromol/L during the episode. If the diagnosis remains uncertain, joint aspiration and synovial-fluid microscopy can help.",
+    "distractor_analysis": {
+      "A": "Urate can fall during a flare, so a level below 360 does not exclude gout.",
+      "C": "Repeating within an hour does not avoid the flare effect.",
+      "D": "Serum urate does not diagnose rheumatoid arthritis.",
+      "E": "Urate-lowering treatment needs a confirmed diagnosis and discussion, not one result."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q094",
+    "subdomain": "Musculoskeletal & rheumatology",
+    "topic": "Systemic lupus erythematosus: suspected renal involvement",
+    "difficulty": "Moderate",
+    "stem": "A 26-year-old woman with systemic lupus erythematosus develops ankle oedema and hypertension. Urinalysis shows blood and protein, and her renal function has deteriorated. Which complication should be urgently considered?",
+    "options": {
+      "A": "Lupus nephritis",
+      "B": "Uncomplicated primary osteoarthritis",
+      "C": "Isolated Raynaud phenomenon",
+      "D": "Fibromyalgia without renal disease",
+      "E": "Acute gout as the explanation for the urinary abnormalities"
+    },
+    "correct_letter": "A",
+    "why_correct": "New proteinuria, haematuria, hypertension and deteriorating renal function in a patient with SLE raise concern for lupus nephritis. Prompt specialist assessment is needed, with quantification of proteinuria, renal investigations and consideration of kidney biopsy according to the clinical picture.",
+    "distractor_analysis": {
+      "B": "Osteoarthritis does not cause nephritic urine or renal decline.",
+      "C": "Raynaud phenomenon does not affect the kidneys.",
+      "D": "Fibromyalgia has no renal involvement.",
+      "E": "Gout does not explain haematuria, proteinuria and hypertension in SLE."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q095",
+    "subdomain": "Musculoskeletal & rheumatology",
+    "topic": "ANCA-associated vasculitis: pulmonary–renal syndrome",
+    "difficulty": "Moderate",
+    "stem": "A 59-year-old man presents with haemoptysis, breathlessness and rapidly worsening renal function. Urine microscopy shows haematuria and red-cell casts. Which disease process should be urgently considered?",
+    "options": {
+      "A": "ANCA-associated small-vessel vasculitis",
+      "B": "Uncomplicated osteoarthritis",
+      "C": "Isolated gout",
+      "D": "Polymyalgia rheumatica without vascular involvement",
+      "E": "Fibromyalgia"
+    },
+    "correct_letter": "A",
+    "why_correct": "The combination of pulmonary haemorrhage and rapidly progressive glomerular injury suggests a pulmonary–renal syndrome. ANCA-associated vasculitis is an important cause, although anti-GBM disease and other conditions must also be considered. Urgent renal, respiratory and specialist assessment is required.",
+    "distractor_analysis": {
+      "B": "Osteoarthritis is not a systemic disease.",
+      "C": "Gout does not cause pulmonary haemorrhage or glomerulonephritis.",
+      "D": "Polymyalgia rheumatica does not cause a pulmonary-renal syndrome.",
+      "E": "Fibromyalgia causes no organ damage."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q096",
+    "subdomain": "Musculoskeletal & rheumatology",
+    "topic": "Axial spondyloarthritis: inflammatory back pain",
+    "difficulty": "Moderate",
+    "stem": "A 28-year-old man has chronic lower-back pain that began before the age of 40. It improves with exercise, does not improve with rest and wakes him during the second half of the night. He also reports alternating buttock pain. Which diagnosis should be considered?",
+    "options": {
+      "A": "Axial spondyloarthritis",
+      "B": "Acute lumbar fracture without trauma",
+      "C": "Isolated knee osteoarthritis",
+      "D": "Myasthenia gravis",
+      "E": "Polymyalgia rheumatica"
+    },
+    "correct_letter": "A",
+    "why_correct": "Onset at a young age, improvement with exercise, lack of improvement with rest and night pain are features suggestive of inflammatory back pain and axial spondyloarthritis. Normal inflammatory markers or negative HLA-B27 testing do not independently exclude the diagnosis. Appropriate clinical assessment and imaging may be needed.",
+    "distractor_analysis": {
+      "B": "There is no trauma and the history is chronic.",
+      "C": "Knee osteoarthritis does not explain inflammatory back pain.",
+      "D": "Myasthenia gravis does not cause back pain.",
+      "E": "Polymyalgia rheumatica affects people over 50 with shoulder and hip girdle pain."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q097",
+    "subdomain": "Musculoskeletal & rheumatology",
+    "topic": "Systemic sclerosis: organ involvement",
+    "difficulty": "Moderate",
+    "stem": "A 48-year-old woman with Raynaud phenomenon develops progressive skin thickening of the fingers, fingertip ulceration and increasing breathlessness on exertion. Which complication should be actively investigated?",
+    "options": {
+      "A": "Interstitial lung disease or pulmonary arterial hypertension",
+      "B": "Isolated acute appendicitis",
+      "C": "Uncomplicated iron deficiency as the sole explanation for all symptoms",
+      "D": "Essential tremor",
+      "E": "Acute bacterial sinusitis as the defining systemic complication"
+    },
+    "correct_letter": "A",
+    "why_correct": "Systemic sclerosis can affect internal organs, including the lungs. New breathlessness warrants assessment for interstitial lung disease and pulmonary arterial hypertension, among other potential causes. Screening and monitoring should follow specialist guidance and the patient’s disease phenotype.",
+    "distractor_analysis": {
+      "B": "Appendicitis is not a complication of systemic sclerosis.",
+      "C": "Iron deficiency does not explain skin thickening or digital ulcers.",
+      "D": "Essential tremor is unrelated.",
+      "E": "Sinusitis is not a recognised systemic complication."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q098",
+    "subdomain": "Musculoskeletal & rheumatology",
+    "topic": "Calcium pyrophosphate deposition disease",
+    "difficulty": "Moderate",
+    "stem": "A 76-year-old woman develops an acutely painful, swollen knee. Radiography shows chondrocalcinosis. Joint aspiration identifies rhomboid crystals with weak positive birefringence. Which diagnosis best explains the findings?",
+    "options": {
+      "A": "Calcium pyrophosphate deposition disease",
+      "B": "Monosodium urate crystal gout",
+      "C": "Rheumatoid arthritis",
+      "D": "Septic arthritis as proven by the crystal shape alone",
+      "E": "Osteoporosis without crystal deposition"
+    },
+    "correct_letter": "A",
+    "why_correct": "Calcium pyrophosphate crystals are typically rhomboid-shaped and weakly positively birefringent. Monosodium urate crystals are needle-shaped and negatively birefringent. Finding crystals does not exclude a concurrent joint infection, so synovial-fluid culture remains important when septic arthritis is suspected.",
+    "distractor_analysis": {
+      "B": "Urate crystals are needle-shaped and negatively birefringent.",
+      "C": "Rheumatoid arthritis is not a crystal arthropathy.",
+      "D": "Crystal shape cannot prove infection; culture is needed.",
+      "E": "Osteoporosis does not cause an acute swollen joint."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q099",
+    "subdomain": "Geriatrics & palliative care",
+    "topic": "Acute confusion in an older adult",
+    "difficulty": "Moderate",
+    "stem": "An 82-year-old woman is admitted with a urinary tract infection. Her daughter reports that, over the past 24 hours, the patient has become unusually inattentive and intermittently disorientated. She was managing independently before this illness. Her attention and alertness fluctuate during the day. What is the most likely diagnosis?",
+    "options": {
+      "A": "Alzheimer’s disease",
+      "B": "Delirium",
+      "C": "Depression",
+      "D": "Vascular dementia",
+      "E": "Mild cognitive impairment"
+    },
+    "correct_letter": "B",
+    "why_correct": "The acute onset, fluctuating course and impaired attention strongly suggest delirium, precipitated here by an acute illness. Dementia usually develops more gradually. Delirium can coexist with dementia, and uncertainty between the diagnoses should prompt management of possible delirium first.",
+    "distractor_analysis": {
+      "A": "Alzheimer's disease develops gradually, not over 24 hours.",
+      "C": "Depression does not cause acute fluctuating inattention.",
+      "D": "Vascular dementia does not develop acutely over 24 hours with fluctuating attention.",
+      "E": "Mild cognitive impairment is gradual and does not fluctuate acutely."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q100",
+    "subdomain": "Geriatrics & palliative care",
+    "topic": "Postural hypotension",
+    "difficulty": "Moderate",
+    "stem": "An 81-year-old man reports light-headedness shortly after standing. His blood pressure is 142/78 mmHg after resting supine and 108/64 mmHg after standing. He takes several antihypertensive medicines and has had two recent falls. What is the most likely explanation for his symptoms?",
+    "options": {
+      "A": "Orthostatic hypotension",
+      "B": "Essential tremor",
+      "C": "Ménière’s disease",
+      "D": "Transient ischaemic attack",
+      "E": "Vestibular neuritis"
+    },
+    "correct_letter": "A",
+    "why_correct": "The substantial fall in blood pressure after standing, associated with postural symptoms, supports orthostatic hypotension. Potential contributors include medication effects, dehydration and autonomic dysfunction. The clinical response should include reviewing the medication list and assessing reversible causes rather than assuming age alone is responsible.",
+    "distractor_analysis": {
+      "B": "Essential tremor does not cause a postural blood pressure fall.",
+      "C": "Ménière's disease causes vertigo, tinnitus and hearing loss.",
+      "D": "A TIA causes focal neurological deficits, not postural symptoms.",
+      "E": "Vestibular neuritis causes continuous vertigo, not postural light-headedness."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q101",
+    "subdomain": "Geriatrics & palliative care",
+    "topic": "Medicines and anticholinergic burden",
+    "difficulty": "Moderate",
+    "stem": "An 84-year-old woman with pre-existing cognitive impairment develops worsening confusion, dry mouth, constipation and difficulty passing urine after a new medicine is added. The medicine has anticholinergic properties. Which mechanism best explains the cluster of symptoms?",
+    "options": {
+      "A": "Excessive central and peripheral muscarinic receptor stimulation",
+      "B": "Blockade of muscarinic acetylcholine receptors",
+      "C": "Inhibition of dopamine breakdown",
+      "D": "Increased renal excretion of sodium",
+      "E": "Selective stimulation of nicotinic receptors"
+    },
+    "correct_letter": "B",
+    "why_correct": "Anticholinergic medicines can impair cognition and cause dry mouth, constipation and urinary retention. Older people, particularly those with cognitive impairment or polypharmacy, may be more susceptible. A medication review should consider the indication, dose, alternatives and cumulative anticholinergic burden.",
+    "distractor_analysis": {
+      "A": "Anticholinergics block, not stimulate, muscarinic receptors.",
+      "C": "Inhibition of dopamine breakdown describes MAO-B or COMT inhibitors.",
+      "D": "Renal sodium excretion does not explain these symptoms.",
+      "E": "Anticholinergic effects come from muscarinic blockade, not nicotinic stimulation."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q102",
+    "subdomain": "Geriatrics & palliative care",
+    "topic": "Dementia assessment",
+    "difficulty": "Moderate",
+    "stem": "A 76-year-old man has had an 18-month history of progressive memory difficulties. His wife reports that he increasingly struggles with finances and familiar household tasks. He is not acutely unwell, and there is no fluctuating disturbance of attention. Which approach is most appropriate when dementia is suspected in primary care?",
+    "options": {
+      "A": "Diagnose Alzheimer’s disease solely from the history",
+      "B": "Exclude dementia if a brief cognitive screening score is normal",
+      "C": "Assess for reversible contributors and obtain a history of cognitive and functional change, including collateral information",
+      "D": "Start an antipsychotic as a diagnostic trial",
+      "E": "Diagnose vascular dementia from age alone"
+    },
+    "correct_letter": "C",
+    "why_correct": "Assessment should establish the pattern and impact of cognitive decline, use information from someone who knows the patient when possible, and consider alternative or contributing causes such as delirium, depression, sensory impairment and medication effects. A normal cognitive score does not by itself exclude dementia. If dementia remains suspected after initial assessment, referral to a specialist diagnostic service is appropriate.",
+    "distractor_analysis": {
+      "A": "Diagnosis needs structured assessment and specialist input, not history alone.",
+      "B": "A normal brief screening score does not exclude dementia.",
+      "D": "Antipsychotics cause harm in dementia and are not diagnostic.",
+      "E": "Age alone does not diagnose vascular dementia."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q103",
+    "subdomain": "Psychiatry",
+    "topic": "Capacity and a specific decision",
+    "difficulty": "Moderate",
+    "stem": "A 79-year-old inpatient with mild dementia refuses a recommended blood test. He can explain that the test involves taking blood but cannot retain the information about why it is needed long enough to weigh the risks and benefits. His ability to make decisions varies with the time of day. Which statement is most accurate?",
+    "options": {
+      "A": "A diagnosis of dementia automatically means he lacks capacity",
+      "B": "Refusal of treatment establishes incapacity",
+      "C": "Capacity must be assessed for the particular decision at the relevant time, after appropriate support is offered",
+      "D": "His family can automatically make the decision for him",
+      "E": "Capacity cannot fluctuate"
+    },
+    "correct_letter": "C",
+    "why_correct": "Capacity is decision-specific and time-specific. A diagnosis of dementia or an apparently unwise decision does not, by itself, establish incapacity. The person should be supported to understand, retain, use or weigh relevant information and communicate a decision. If the person lacks capacity for that decision, the applicable legal framework for decision-making must be followed.",
+    "distractor_analysis": {
+      "A": "A diagnosis of dementia does not by itself mean he lacks capacity.",
+      "B": "Refusing treatment, even unwisely, does not establish incapacity.",
+      "D": "Family cannot decide automatically unless they hold relevant legal authority.",
+      "E": "Capacity can fluctuate and should be assessed at the relevant time."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q104",
+    "subdomain": "Haematology & oncology",
+    "topic": "Malignant spinal cord compression",
+    "difficulty": "Moderate",
+    "stem": "A 68-year-old man with known prostate cancer develops severe progressive back pain, worse at night. He now reports leg weakness and difficulty walking. Examination reveals bilateral lower-limb weakness. What is the most appropriate interpretation?",
+    "options": {
+      "A": "Uncomplicated mechanical back pain",
+      "B": "Peripheral neuropathy caused by diabetes",
+      "C": "Suspected metastatic spinal cord compression",
+      "D": "Osteoarthritis of the lumbar spine",
+      "E": "Chemotherapy-induced nausea"
+    },
+    "correct_letter": "C",
+    "why_correct": "Cancer with progressive back pain and new neurological deficits is a red-flag presentation for metastatic spinal cord compression. This is an oncological emergency requiring immediate escalation for urgent assessment and investigation; routine outpatient review is inappropriate.",
+    "distractor_analysis": {
+      "A": "New neurological deficits rule out uncomplicated mechanical back pain.",
+      "B": "There is no diabetes, and acute bilateral weakness with back pain in cancer suggests cord compression.",
+      "D": "Osteoarthritis does not cause progressive limb weakness.",
+      "E": "Nausea does not explain back pain and weakness."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q105",
+    "subdomain": "Haematology & oncology",
+    "topic": "Neutropenic sepsis",
+    "difficulty": "Moderate",
+    "stem": "A 59-year-old woman receiving chemotherapy presents with fever, rigors and marked lethargy. Her neutrophil count is severely reduced. Her blood pressure is falling, and she appears acutely unwell. What is the most appropriate immediate approach?",
+    "options": {
+      "A": "Wait for blood culture results before starting treatment",
+      "B": "Treat as a medical emergency and initiate the local neutropenic sepsis pathway promptly",
+      "C": "Prescribe oral antibiotics and arrange routine review in 48 hours",
+      "D": "Give an antipyretic and discharge if the fever falls",
+      "E": "Assume the fever is caused by the malignancy and avoid antibiotics"
+    },
+    "correct_letter": "B",
+    "why_correct": "Neutropenic sepsis can deteriorate rapidly and may present with few localising signs. Urgent assessment, cultures and other indicated investigations, and prompt empiric antimicrobial treatment according to the current local protocol are required. Investigations must not cause an unsafe delay in treatment.",
+    "distractor_analysis": {
+      "A": "Treatment must not wait for culture results.",
+      "C": "Oral antibiotics and delayed review are unsafe in a hypotensive patient.",
+      "D": "Treating the fever and discharging misses life-threatening sepsis.",
+      "E": "Assuming a malignant cause and withholding antibiotics is unsafe."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q106",
+    "subdomain": "Haematology & oncology",
+    "topic": "Tumour lysis syndrome",
+    "difficulty": "Moderate",
+    "stem": "A 54-year-old man is admitted with newly diagnosed high-grade lymphoma and a large tumour burden. Shortly after starting chemotherapy, he develops nausea, muscle cramps and reduced urine output. Blood tests show raised potassium, phosphate and urate, with reduced calcium and worsening renal function. Which process best explains these findings?",
+    "options": {
+      "A": "Increased renal calcium excretion as the sole abnormality",
+      "B": "Rapid release of intracellular contents from lysed tumour cells",
+      "C": "Autoimmune destruction of renal tubules",
+      "D": "Reduced breakdown of bilirubin",
+      "E": "Inappropriate secretion of antidiuretic hormone alone"
+    },
+    "correct_letter": "B",
+    "why_correct": "Tumour lysis syndrome results from rapid tumour-cell breakdown, releasing potassium, phosphate and nucleic acids, which are metabolised to uric acid. Hyperphosphataemia can lower serum calcium, while urate and calcium-phosphate deposition and other mechanisms can contribute to acute kidney injury.",
+    "distractor_analysis": {
+      "A": "Calcium is low, and the pattern involves several electrolytes, not calcium excretion alone.",
+      "C": "The picture follows chemotherapy, not autoimmune tubular injury.",
+      "D": "Bilirubin metabolism does not explain these findings.",
+      "E": "SIADH causes hyponatraemia, not this electrolyte pattern."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q107",
+    "subdomain": "Haematology & oncology",
+    "topic": "Paraneoplastic hypercalcaemia",
+    "difficulty": "Moderate",
+    "stem": "A 65-year-old man with a heavy smoking history presents with weight loss, thirst, constipation and confusion. Investigations confirm hypercalcaemia. His parathyroid hormone concentration is suppressed, and imaging identifies a lung mass. Which mechanism is most characteristic of hypercalcaemia associated with squamous cell lung carcinoma?",
+    "options": {
+      "A": "Ectopic production of parathyroid hormone-related peptide",
+      "B": "Increased secretion of calcitonin",
+      "C": "Primary hyperparathyroidism",
+      "D": "Increased renal activation of vitamin D caused by PTH",
+      "E": "Destruction of the thyroid gland"
+    },
+    "correct_letter": "A",
+    "why_correct": "Squamous cell lung carcinoma can cause humoral hypercalcaemia through secretion of parathyroid hormone-related peptide (PTHrP). Suppressed circulating PTH supports a non-parathyroid cause. Malignancy can cause hypercalcaemia through other mechanisms too, including osteolytic bone metastases.",
+    "distractor_analysis": {
+      "B": "Calcitonin lowers, not raises, serum calcium.",
+      "C": "PTH is suppressed, which excludes primary hyperparathyroidism.",
+      "D": "PTH is suppressed, so PTH-driven vitamin D activation is not the mechanism.",
+      "E": "Thyroid destruction does not cause hypercalcaemia."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q108",
+    "subdomain": "Haematology & oncology",
+    "topic": "Cancer-associated thrombosis",
+    "difficulty": "Moderate",
+    "stem": "A 61-year-old woman with newly diagnosed pancreatic adenocarcinoma develops unilateral calf swelling and pain. Compression ultrasonography confirms a proximal deep vein thrombosis. She has no active bleeding. Which statement best explains her increased risk of venous thromboembolism?",
+    "options": {
+      "A": "Most solid tumours cause a generalised deficiency of clotting factors",
+      "B": "Malignancy can activate coagulation through tumour-related and host inflammatory mechanisms",
+      "C": "Cancer reliably increases fibrinolysis enough to prevent thrombosis",
+      "D": "Venous thromboembolism in cancer is usually caused by thrombocytopenia alone",
+      "E": "Pancreatic cancer protects against venous thrombosis unless chemotherapy has begun"
+    },
+    "correct_letter": "B",
+    "why_correct": "Cancer can promote thrombosis through procoagulant activity, inflammatory pathways, platelet activation and other changes in haemostasis. Pancreatic adenocarcinoma is particularly associated with venous thromboembolism. Treatment choices depend on factors such as bleeding risk, renal function, interactions and the patient's overall circumstances.",
+    "distractor_analysis": {
+      "A": "Cancer tends to increase, not deplete, procoagulant factors.",
+      "C": "Cancer does not reliably increase fibrinolysis enough to prevent thrombosis.",
+      "D": "Thrombocytopenia reduces, not causes, thrombosis.",
+      "E": "Pancreatic cancer carries one of the highest thrombosis risks."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q109",
+    "subdomain": "Ophthalmology & ENT",
+    "topic": "Acute angle-closure glaucoma",
+    "difficulty": "Moderate",
+    "stem": "A 72-year-old woman develops sudden severe pain in her right eye, blurred vision, coloured halos around lights, headache and nausea. The right eye is red, and the pupil is mid-dilated and poorly reactive. What is the most likely diagnosis?",
+    "options": {
+      "A": "Acute anterior uveitis",
+      "B": "Central retinal artery occlusion",
+      "C": "Acute angle-closure glaucoma",
+      "D": "Retinal detachment",
+      "E": "Optic neuritis"
+    },
+    "correct_letter": "C",
+    "why_correct": "Sudden painful red eye, reduced vision, halos, nausea and a mid-dilated poorly reactive pupil are characteristic of acute angle-closure glaucoma. It is an ophthalmic emergency requiring immediate specialist assessment and pressure-lowering treatment.",
+    "distractor_analysis": {
+      "A": "Anterior uveitis usually causes a small pupil and photophobia, without halos.",
+      "B": "Central retinal artery occlusion causes painless visual loss.",
+      "D": "Retinal detachment is painless, with flashes, floaters or a curtain.",
+      "E": "Optic neuritis causes pain on eye movement with a white eye."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q110",
+    "subdomain": "Musculoskeletal & rheumatology",
+    "topic": "Giant cell arteritis and visual symptoms",
+    "difficulty": "Moderate",
+    "stem": "A 74-year-old woman presents with a new temporal headache, scalp tenderness and pain in her jaw when chewing. She reports a brief episode of visual loss in one eye earlier that day. Which is the most appropriate immediate approach?",
+    "options": {
+      "A": "Arrange routine optometry review before further action",
+      "B": "Start treatment for suspected giant cell arteritis urgently and arrange immediate specialist assessment",
+      "C": "Wait for temporal artery biopsy results before starting treatment",
+      "D": "Reassure her because transient visual loss is not associated with giant cell arteritis",
+      "E": "Prescribe migraine treatment and review in one month"
+    },
+    "correct_letter": "B",
+    "why_correct": "The combination of new headache, jaw claudication and transient visual loss strongly suggests giant cell arteritis, with a risk of irreversible blindness. Treatment should not be delayed while awaiting confirmatory tests. Visual symptoms make same-day specialist assessment especially urgent.",
+    "distractor_analysis": {
+      "A": "Routine optometry review delays treatment and risks permanent blindness.",
+      "C": "Steroids must not wait for biopsy; biopsy can follow treatment.",
+      "D": "Transient visual loss is a red flag for giant cell arteritis.",
+      "E": "Migraine does not explain jaw claudication or scalp tenderness."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q111",
+    "subdomain": "Psychiatry",
+    "topic": "Major depressive episode",
+    "difficulty": "Moderate",
+    "stem": "A 46-year-old man reports six weeks of persistent low mood, loss of interest, early-morning waking, reduced appetite, poor concentration and feelings of worthlessness. These symptoms have impaired his ability to work. He has no history of mania or hypomania. Which diagnosis best fits this presentation?",
+    "options": {
+      "A": "Generalised anxiety disorder",
+      "B": "Major depressive episode",
+      "C": "Cyclothymia",
+      "D": "Adjustment disorder",
+      "E": "Persistent delusional disorder"
+    },
+    "correct_letter": "B",
+    "why_correct": "Persistent low mood or loss of interest, accompanied by other depressive symptoms and significant functional impairment, supports a depressive episode. The duration, symptom pattern and absence of a history of mania or hypomania make this more likely than the alternatives. Assessment should also include suicide risk, possible bipolar disorder and relevant physical or substance-related causes.",
+    "distractor_analysis": {
+      "A": "Generalised anxiety disorder centres on excessive worry, not pervasive low mood.",
+      "C": "Cyclothymia involves chronic mood fluctuation without full depressive episodes.",
+      "D": "Adjustment disorder needs an identifiable stressor and does not meet full depressive criteria.",
+      "E": "There are no delusions."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q112",
+    "subdomain": "Psychiatry",
+    "topic": "Generalised anxiety disorder",
+    "difficulty": "Moderate",
+    "stem": "A 38-year-old woman describes excessive, difficult-to-control worry about work, finances, family and health. She feels tense, sleeps poorly and struggles to concentrate. The symptoms have persisted for many months and interfere with daily functioning. She does not experience discrete episodes of intense fear. Which diagnosis is most likely?",
+    "options": {
+      "A": "Panic disorder",
+      "B": "Generalised anxiety disorder",
+      "C": "Specific phobia",
+      "D": "Obsessive-compulsive disorder",
+      "E": "Acute stress reaction"
+    },
+    "correct_letter": "B",
+    "why_correct": "Generalised anxiety disorder is characterised by persistent, excessive and difficult-to-control anxiety across multiple areas of life, often accompanied by tension, sleep disturbance and impaired concentration. Panic disorder instead centres on recurrent panic attacks and their consequences.",
+    "distractor_analysis": {
+      "A": "Panic disorder centres on discrete panic attacks, which she does not have.",
+      "C": "Specific phobia is fear of a particular trigger.",
+      "D": "OCD involves obsessions and compulsions.",
+      "E": "An acute stress reaction is brief and follows a specific event."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q113",
+    "subdomain": "Psychiatry",
+    "topic": "Mania",
+    "difficulty": "Moderate",
+    "stem": "A 29-year-old man is brought to hospital after ten days of sleeping very little without feeling tired. He is unusually talkative, has racing thoughts, believes he has exceptional business abilities and has spent most of his savings on an implausible venture. His behaviour has caused major disruption at work. Which diagnosis is most likely?",
+    "options": {
+      "A": "Hypomania",
+      "B": "Mania",
+      "C": "Generalised anxiety disorder",
+      "D": "Attention-deficit hyperactivity disorder",
+      "E": "Dysthymia"
+    },
+    "correct_letter": "B",
+    "why_correct": "A sustained period of elevated or irritable mood, increased energy, reduced need for sleep, pressured speech, grandiosity and markedly impaired functioning supports mania. The severity and substantial disruption distinguish it from hypomania. An assessment should consider substance or medication effects and medical causes where appropriate.",
+    "distractor_analysis": {
+      "A": "Hypomania does not cause marked functional impairment.",
+      "C": "Generalised anxiety disorder does not cause elevated mood or grandiosity.",
+      "D": "ADHD is lifelong, not an episodic change.",
+      "E": "Dysthymia is chronic low mood."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q114",
+    "subdomain": "Psychiatry",
+    "topic": "Obsessive-compulsive disorder",
+    "difficulty": "Moderate",
+    "stem": "A 25-year-old woman repeatedly checks that her front door is locked. She recognises that the checking is excessive but feels intense anxiety if she tries to resist it. The ritual takes more than an hour each day and makes her late for work. Which feature most strongly supports obsessive-compulsive disorder?",
+    "options": {
+      "A": "A fixed false belief that cannot be questioned",
+      "B": "Recurrent intrusive thoughts or urges and repetitive behaviours intended to reduce distress",
+      "C": "Recurrent unexpected episodes of intense fear alone",
+      "D": "Persistent worry across several everyday domains without rituals",
+      "E": "Progressive loss of memory and executive function"
+    },
+    "correct_letter": "B",
+    "why_correct": "OCD involves obsessions, compulsions or both. Compulsions are repetitive behaviours or mental acts performed in response to obsessions or according to rigid rules, often to reduce distress. Insight can vary, and the symptoms cause significant distress or functional impairment.",
+    "distractor_analysis": {
+      "A": "A fixed false belief is a delusion, not an obsession.",
+      "C": "Unexpected episodes of intense fear describe panic disorder.",
+      "D": "Persistent worry without rituals describes generalised anxiety disorder.",
+      "E": "Loss of memory and executive function suggests dementia."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q115",
+    "subdomain": "Psychiatry",
+    "topic": "Schizophrenia: positive symptoms",
+    "difficulty": "Moderate",
+    "stem": "A 23-year-old man has become socially withdrawn and increasingly suspicious over four months. He hears voices discussing him when nobody is present and believes that strangers are transmitting messages specifically for him through the television. His drug screen is negative. Which finding is a positive symptom of schizophrenia?",
+    "options": {
+      "A": "Reduced emotional expression",
+      "B": "Poverty of speech",
+      "C": "Auditory hallucinations",
+      "D": "Social withdrawal",
+      "E": "Reduced motivation"
+    },
+    "correct_letter": "C",
+    "why_correct": "Positive symptoms include hallucinations, delusions and disorganised thought or behaviour. Reduced emotional expression, poverty of speech and reduced motivation are negative symptoms. Social withdrawal can occur in several conditions and is not specific to schizophrenia.",
+    "distractor_analysis": {
+      "A": "Reduced emotional expression is a negative symptom.",
+      "B": "Poverty of speech is a negative symptom.",
+      "D": "Social withdrawal is non-specific and usually grouped with negative symptoms.",
+      "E": "Reduced motivation is a negative symptom."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q116",
+    "subdomain": "Pharmacology & prescribing",
+    "topic": "Lithium toxicity",
+    "difficulty": "Moderate",
+    "stem": "A 67-year-old man with bipolar disorder has been stable on lithium for several years. He develops vomiting and diarrhoea and continues taking his usual medicines despite poor oral intake. He subsequently develops coarse tremor, unsteady gait and confusion. Which is the most appropriate immediate action?",
+    "options": {
+      "A": "Increase the lithium dose because the mood disorder may be relapsing",
+      "B": "Continue lithium and arrange a routine outpatient review",
+      "C": "Withhold lithium and arrange urgent medical assessment for possible toxicity",
+      "D": "Prescribe an additional antipsychotic and discharge him",
+      "E": "Reassure him that these are expected effects of long-term treatment"
+    },
+    "correct_letter": "C",
+    "why_correct": "Gastrointestinal illness and dehydration can increase the risk of lithium toxicity. Coarse tremor, ataxia and confusion are concerning neurological features. Lithium should be withheld and urgent assessment arranged, including lithium concentration, renal function, electrolytes and evaluation of fluid status. Severe toxicity may require specialist management.",
+    "distractor_analysis": {
+      "A": "Increasing the dose would worsen toxicity.",
+      "B": "Continuing lithium with neurological features is unsafe.",
+      "D": "Adding an antipsychotic and discharging misses toxicity.",
+      "E": "Coarse tremor, ataxia and confusion are not expected effects; they suggest toxicity."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q117",
+    "subdomain": "Pharmacology & prescribing",
+    "topic": "Neuroleptic malignant syndrome",
+    "difficulty": "Moderate",
+    "stem": "A 42-year-old man develops fever, severe generalised muscle rigidity, confusion and autonomic instability several days after starting a dopamine-blocking antipsychotic. Blood tests show a markedly elevated creatine kinase concentration. Which diagnosis is most likely?",
+    "options": {
+      "A": "Serotonin syndrome",
+      "B": "Neuroleptic malignant syndrome",
+      "C": "Acute dystonia",
+      "D": "Malignant hyperthermia following anaesthesia",
+      "E": "Alcohol withdrawal without complications"
+    },
+    "correct_letter": "B",
+    "why_correct": "Neuroleptic malignant syndrome is a potentially fatal reaction associated with dopamine antagonism, typically involving hyperthermia, severe rigidity, altered mental state and autonomic instability. Creatine kinase is often markedly elevated due to muscle injury. The causative drug should be stopped and emergency supportive medical care initiated.",
+    "distractor_analysis": {
+      "A": "Serotonin syndrome causes clonus and hyperreflexia with rapid onset, not lead-pipe rigidity.",
+      "C": "Acute dystonia causes muscle spasms without fever or a marked CK rise.",
+      "D": "Malignant hyperthermia follows anaesthetic agents, not antipsychotics.",
+      "E": "There is no alcohol history, and withdrawal does not cause this rigidity."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q118",
+    "subdomain": "Pharmacology & prescribing",
+    "topic": "Serotonin syndrome",
+    "difficulty": "Moderate",
+    "stem": "A 35-year-old woman taking sertraline is prescribed another medicine with serotonergic activity. Within hours, she develops agitation, sweating, diarrhoea, tremor, hyperreflexia and inducible ankle clonus. Which diagnosis best explains the findings?",
+    "options": {
+      "A": "Neuroleptic malignant syndrome",
+      "B": "Serotonin syndrome",
+      "C": "Lithium toxicity",
+      "D": "Anticholinergic toxicity",
+      "E": "Opioid withdrawal"
+    },
+    "correct_letter": "B",
+    "why_correct": "Serotonin syndrome follows excessive serotonergic activity and may develop rapidly after a medicine is started, increased or combined with another serotonergic agent. Clonus and hyperreflexia are particularly useful clues. The suspected causative medicines should be stopped and urgent assessment and supportive treatment provided according to severity.",
+    "distractor_analysis": {
+      "A": "Neuroleptic malignant syndrome follows antipsychotics and causes rigidity, not clonus.",
+      "C": "Lithium toxicity does not follow adding a serotonergic drug to sertraline.",
+      "D": "Anticholinergic toxicity causes dry skin and does not cause clonus.",
+      "E": "Opioid withdrawal does not cause clonus and hyperreflexia."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q119",
+    "subdomain": "Psychiatry",
+    "topic": "Alcohol withdrawal",
+    "difficulty": "Moderate",
+    "stem": "A 51-year-old man with longstanding heavy alcohol consumption is admitted with pneumonia. Approximately 24 hours after his last drink, he develops tremor, sweating, anxiety, nausea and tachycardia. He remains orientated and has no hallucinations. What is the most likely explanation?",
+    "options": {
+      "A": "Alcohol withdrawal",
+      "B": "Wernicke encephalopathy",
+      "C": "Hepatic encephalopathy",
+      "D": "Alcoholic hallucinosis",
+      "E": "Delirium tremens"
+    },
+    "correct_letter": "A",
+    "why_correct": "Tremor, sweating, anxiety, nausea and autonomic activation after reducing or stopping prolonged heavy alcohol consumption are consistent with alcohol withdrawal. Delirium tremens involves a more severe syndrome with delirium and usually marked autonomic disturbance. Withdrawal can progress, so the patient requires appropriate clinical assessment and monitoring.",
+    "distractor_analysis": {
+      "B": "Wernicke encephalopathy causes confusion, ataxia and ophthalmoplegia; he is orientated.",
+      "C": "Hepatic encephalopathy causes confusion and asterixis.",
+      "D": "Alcoholic hallucinosis involves hallucinations, which he does not have.",
+      "E": "Delirium tremens involves delirium, usually 48 to 72 hours after the last drink."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q120",
+    "subdomain": "Renal & urology",
+    "topic": "Nephritic syndrome",
+    "difficulty": "Moderate",
+    "stem": "A 24-year-old man presents with dark urine, facial puffiness and hypertension. Urinalysis shows blood and protein. Microscopy reveals red-cell casts, and blood tests show a reduced serum C3 concentration. He had a sore throat three weeks earlier. Which diagnosis is most likely?",
+    "options": {
+      "A": "Minimal change disease",
+      "B": "Acute post-streptococcal glomerulonephritis",
+      "C": "Diabetic nephropathy",
+      "D": "Acute interstitial nephritis",
+      "E": "Renal artery stenosis"
+    },
+    "correct_letter": "B",
+    "why_correct": "The interval after a preceding throat infection, nephritic features and reduced complement support post-streptococcal glomerulonephritis. Red-cell casts indicate bleeding originating within the kidney, commonly from glomerular inflammation.",
+    "distractor_analysis": {
+      "A": "Minimal change disease causes nephrotic syndrome with normal C3.",
+      "C": "Diabetic nephropathy requires diabetes and develops gradually.",
+      "D": "Acute interstitial nephritis is usually drug-related, with white-cell casts.",
+      "E": "Renal artery stenosis does not cause red-cell casts or a low C3."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
   }
 ];
