@@ -25,7 +25,7 @@ UK drug names and units, and explain UK-system terms briefly where needed (e.g. 
    England) — curl -A "Mozilla/5.0" works for nice.org.uk. Keep or strengthen any safety wording in the source.
 
 ## Format (per question)
-- Single best answer, exactly 5 options A–E, same type and similar length; the correct option must NOT be the longest.
+- Single best answer, exactly 5 options A–E, same type and similar length; the correct option must NOT be the longest, and should not systematically be the shortest either (batch limit: key longest <=25%, key shortest <=25%).
 - Put the correct option at the letter given in ctx/plan.json for that id. Keep the plan's difficulty.
 - Stem: vignette, blank line ("\n\n"), then one question ending in "?". No "NOT/EXCEPT", no all/none of the above.
 - why_correct 2–4 sentences ending "Source: <guideline, body, year>". why_wrong: "A. … B. …" one sentence per wrong option,

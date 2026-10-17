@@ -34,4 +34,10 @@ for q in json.load(open(sys.argv[1],encoding='utf-8')):
   jac=len(tok(st)&tok(s['stem']))/max(1,len(tok(st)|tok(s['stem'])))
   if jac>=0.40: e(f'stem too close to source (Jaccard {jac:.2f})')
   if not isinstance(q['sources'],list) or not q['sources']: e('sources')
+# batch-level key-length rules: the key must not be the longest, or the shortest, option in more than 25% of items
+live=[q for q in json.load(open(sys.argv[1],encoding='utf-8')) if not q.get('skip') and q.get('id') in plan]
+if live:
+  for name,fn in (('longest',max),('shortest',min)):
+    k=sum(len(q['options'][q['correct_letter']])==len(fn(q['options'].values(),key=len)) for q in live)
+    if k/len(live)>0.25: errs.append(f'batch: key is the {name} option in {k}/{len(live)} items ({k/len(live):.0%}); limit is 25%')
 print('OK' if not errs else 'PROBLEMS:\n'+'\n'.join(errs))
