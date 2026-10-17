@@ -1,0 +1,741 @@
+[
+ {
+  "id": "PAN4518",
+  "verdict": "fix",
+  "issues": "Mechanism and key sound (sarcoid 1-alpha-hydroxylase, PTH-independent). exam_trap slip: primary hyperparathyroidism is the commonest cause in the community but malignancy is commoner in hospital inpatients, so 'commonest overall' is overstated. No live duplicate (RES025 sarcoid diagnosis; DR127/DR128 sarcoid management; END022 primary hyperparathyroidism).",
+  "edits": {
+   "exam_trap": "A, a parathyroid adenoma, is a leading cause of hypercalcaemia in general, but the suppressed parathyroid hormone in this stem rules it out."
+  },
+  "near_checked": [
+   {
+    "id": "RES025",
+    "key": "Sarcoidosis (diagnosis from erythema nodosum/hilar nodes)",
+    "same": false
+   },
+   {
+    "id": "END022",
+    "key": "Primary hyperparathyroidism",
+    "same": false
+   },
+   {
+    "id": "DR127",
+    "key": "12-lead ECG (sarcoid cardiac screen)",
+    "same": false
+   }
+  ],
+  "checker": "C1"
+ },
+ {
+  "id": "PAN10450",
+  "verdict": "pass",
+  "issues": "NG158 table 2 (rec 1.1.17) fetched: previous DVT/PE scores; age, oestrogen, saturation are PERC only. Key neither longest nor shortest. No live item tests Wells components.",
+  "near_checked": [
+   {
+    "id": "CR024",
+    "key": "CT pulmonary angiography (next step after Wells)",
+    "same": false
+   },
+   {
+    "id": "BX549",
+    "key": "D-dimer (next step after Wells)",
+    "same": false
+   },
+   {
+    "id": "ACU020",
+    "key": "Calculate Wells then D-dimer or CTPA",
+    "same": false
+   }
+  ],
+  "checker": "C1"
+ },
+ {
+  "id": "PAN3954",
+  "verdict": "drop",
+  "issues": "Duplicates live BX266 (known heart failure, dullness to percussion and reduced breath sounds at both bases -> pleural effusions): same sign pattern and same learning point (dull + reduced breath sounds = effusion); only the aetiology and laterality differ, so this is a diagnosis-only re-skin. Also the D explanation was loose (lobar collapse breath sounds are diminished rather than 'bronchial' when the bronchus is blocked).",
+  "near_checked": [
+   {
+    "id": "BX266",
+    "key": "Pleural effusions",
+    "same": true
+   },
+   {
+    "id": "RES018",
+    "key": "Malignancy or infection (exudative)",
+    "same": false
+   },
+   {
+    "id": "CR009",
+    "key": "Right lower lobe pneumonia",
+    "same": false
+   }
+  ],
+  "checker": "C1"
+ },
+ {
+  "id": "PAN7471",
+  "verdict": "fix",
+  "issues": "NG115 rec 1.1.5 fetched and correct ('Measure post-bronchodilator spirometry to confirm the diagnosis of COPD'). Key E was tied for shortest option (33 chars with A); lengthened. Citation wording 'checked on the fetched page' removed. No live item asks which test confirms COPD.",
+  "edits": {
+   "options": {
+    "E": "Spirometry following a bronchodilator"
+   },
+   "correct_answer": "E. Spirometry following a bronchodilator",
+   "why_correct": "A long smoking history with chronic cough and exertional breathlessness suggests chronic obstructive pulmonary disease. Diagnosis rests on spirometry performed after a bronchodilator showing persistent airflow obstruction (FEV1/FVC ratio below 0.7), alongside the clinical picture. Source: NICE NG115, Chronic obstructive pulmonary disease in over 16s, recommendation 1.1.5."
+  },
+  "near_checked": [
+   {
+    "id": "PAQ15631",
+    "key": "Chronic obstructive pulmonary disease (spirometry given in stem, asks diagnosis)",
+    "same": false
+   },
+   {
+    "id": "CR032",
+    "key": "Obstructive ventilatory defect",
+    "same": false
+   },
+   {
+    "id": "GF048",
+    "key": "Persistent obstruction with marked reversibility",
+    "same": false
+   }
+  ],
+  "checker": "C1"
+ },
+ {
+  "id": "PAN987",
+  "verdict": "pass",
+  "issues": "NG158 rec 1.1.18 fetched: for likely PE offer CTPA, or for contrast allergy, severe renal impairment (CrCl <30) or high radiation risk assess suitability of V/Q SPECT (planar if unavailable). Draft wording matches; threshold kept in words. No live renal-impairment PE imaging item.",
+  "near_checked": [
+   {
+    "id": "OG059",
+    "key": "Chest X-ray then V/Q or CTPA (pregnancy)",
+    "same": false
+   },
+   {
+    "id": "CR024",
+    "key": "CT pulmonary angiography",
+    "same": false
+   },
+   {
+    "id": "PAQ15448",
+    "key": "CT pulmonary angiogram",
+    "same": false
+   }
+  ],
+  "checker": "C1"
+ },
+ {
+  "id": "PAN3974",
+  "verdict": "pass",
+  "issues": "Infarction mechanism for haemoptysis in peripheral PE is standard teaching; NG158 Wells includes haemoptysis (verified). No live item on PE haemoptysis mechanism. Earlier than PAN4499 (terminology), no conflict.",
+  "near_checked": [
+   {
+    "id": "S058",
+    "key": "Pulmonary embolism (post-op diagnosis)",
+    "same": false
+   },
+   {
+    "id": "PAQ15447",
+    "key": "Pulmonary embolism (post knee replacement diagnosis)",
+    "same": false
+   },
+   {
+    "id": "PAQ550",
+    "key": "Interim anticoagulation and CTPA",
+    "same": false
+   }
+  ],
+  "checker": "C1"
+ },
+ {
+  "id": "PAN3957",
+  "verdict": "fix",
+  "issues": "Key E echoed stem wording ('cutting and blasting' vs stem 'sandblasting') and cited HSE pages not fetched. Reworded key; HSE silicosis page (hse.gov.uk/lung-disease/silicosis.htm) fetched: confirms silica from quarrying/sandblasting/rock drilling, and raised TB and lung cancer risk in silicosis. Kept as the earlier-in-order item vs PAN4515.",
+  "edits": {
+   "options": {
+    "E": "Respirable crystalline silica released as rock is fragmented"
+   },
+   "correct_answer": "E. Respirable crystalline silica released as rock is fragmented",
+   "why_correct": "Crystalline silica from cutting, drilling or blasting stone, sand and granite causes silicosis, a pneumoconiosis with small upper-zone nodules and hilar nodes that may show eggshell calcification. Risk rises with cumulative dust exposure, and dust control and masks reduce it. People with silicosis also have an increased risk of tuberculosis and lung cancer. Source: UK Health and Safety Executive, Silicosis (hse.gov.uk/lung-disease/silicosis.htm); standard occupational respiratory teaching."
+  },
+  "near_checked": [
+   {
+    "id": "DT120",
+    "key": "Sputum for AFB (TB in known silicosis)",
+    "same": false
+   },
+   {
+    "id": "PAQ15445",
+    "key": "Asbestos (bilateral irregular pleural calcification)",
+    "same": false
+   },
+   {
+    "id": "RES024",
+    "key": "Malignant mesothelioma",
+    "same": false
+   }
+  ],
+  "checker": "C1"
+ },
+ {
+  "id": "PAN4515",
+  "verdict": "drop",
+  "issues": "Within-batch duplicate: same learning point as PAN3957, which is earlier in draft_all.json (stone-dust worker with upper-zone nodules and hilar nodes -> silicosis); PAN3957 is kept. No live duplicate (DT120 is TB in known silicosis).",
+  "near_checked": [
+   {
+    "id": "DT120",
+    "key": "Sputum for AFB (TB in known silicosis)",
+    "same": false
+   },
+   {
+    "id": "PAQ15445",
+    "key": "Asbestos",
+    "same": false
+   },
+   {
+    "id": "PAAKT026",
+    "key": "Idiopathic pulmonary fibrosis",
+    "same": false
+   }
+  ],
+  "checker": "C1"
+ },
+ {
+  "id": "PAN10448",
+  "verdict": "fix",
+  "issues": "Stem and option B contain a corrupted degree sign (U+FFFD) - replaced. Key text 'over the cut-off' cued the answer - removed. why_correct said only age scores while urea unknown: reworded to 'of the findings given'. NG250 Box 2 fetched: confusion, urea over 7, RR 30+, BP systolic <90 or diastolic 60 or less, age 65+; matches. Not a repeat of Q357/ID019/ID044 (those score or interpret).",
+  "edits": {
+   "stem": "A 69-year-old man has had 3 days of fever, productive cough and right-sided pleuritic chest pain. A chest X-ray confirms right lower lobe consolidation. He is alert and orientated, with a temperature of 38.9°C, pulse 104/min, respiratory rate 22/min, blood pressure 128/76 mmHg and oxygen saturation 93% on air. His C-reactive protein is markedly raised. The admitting doctor calculates his CURB65 score.\n\nWhich of his findings contributes a point to the score?",
+   "options": {
+    "A": "His age of 69 years on presentation",
+    "B": "A temperature of 38.9°C on arrival"
+   },
+   "correct_answer": "A. His age of 69 years on presentation",
+   "why_correct": "CURB65 gives one point each for new confusion, urea above 7 mmol/L, respiratory rate of 30 or more, low blood pressure (systolic under 90 or diastolic 60 or less) and age 65 or over. This man is alert, with a respiratory rate of 22 and normal blood pressure, so of the findings given only his age scores; his urea is not yet known. Fever, tachycardia, pleuritic pain and CRP are not part of the score, so clinical judgement and oxygen saturation must be used alongside it. Source: NICE NG250 Pneumonia: diagnosis and management, 2025 (Box 2, CURB65)."
+  },
+  "near_checked": [
+   {
+    "id": "Q357",
+    "key": "4 (CURB65 calculation with all items given)",
+    "same": false
+   },
+   {
+    "id": "ID019",
+    "key": "High severity - admit",
+    "same": false
+   },
+   {
+    "id": "ID044",
+    "key": "High score - admit",
+    "same": false
+   }
+  ],
+  "checker": "C1"
+ },
+ {
+  "id": "PAN3860",
+  "verdict": "fix",
+  "issues": "Key B was the shortest option (61 chars vs A 63); lengthened. Clinical content correct (CF lung disease = bronchiectasis on HRCT; distractors accurate). No live item asks for the CF CT lung change.",
+  "edits": {
+   "options": {
+    "B": "Dilated, thick-walled airways, typical of established bronchiectasis"
+   },
+   "correct_answer": "B. Dilated, thick-walled airways, typical of established bronchiectasis"
+  },
+  "near_checked": [
+   {
+    "id": "BX268",
+    "key": "Bronchiectasis (non-CF sputum history)",
+    "same": false
+   },
+   {
+    "id": "RES016",
+    "key": "Bronchiectasis (HRCT, non-CF)",
+    "same": false
+   },
+   {
+    "id": "BX911",
+    "key": "Cystic fibrosis (diagnosis)",
+    "same": false
+   }
+  ],
+  "checker": "C1"
+ },
+ {
+  "id": "PAN8887",
+  "verdict": "pass",
+  "issues": "Pathophysiology (chronic inflammation, bronchial hyper-responsiveness, variable reversible narrowing) is sound and consistent with NG245/BTS-NICE-SIGN. Nearest live PAQ225 asks what reversibility on spirometry indicates (interpretation of results); this item asks the underlying mechanism in an atopic child, so not the same question. Key mid-length.",
+  "near_checked": [
+   {
+    "id": "PAQ225",
+    "key": "Variable, reversible airflow obstruction (spirometry interpretation)",
+    "same": false
+   },
+   {
+    "id": "PAQ15313",
+    "key": "Obstruction improving after bronchodilator (test supporting asthma)",
+    "same": false
+   },
+   {
+    "id": "BX261",
+    "key": "Asthma (exercise wheeze diagnosis)",
+    "same": false
+   }
+  ],
+  "checker": "C1"
+ },
+ {
+  "id": "PAN4781",
+  "verdict": "pass",
+  "issues": "Renal compensation mechanism sound; key not longest/shortest; no live item tests the renal mechanism (PAN5774 and PAN3632 test respiratory compensation, CR001 gas interpretation).",
+  "edits": {},
+  "near_checked": [
+   {
+    "id": "CR001",
+    "key": "Acute-on-chronic respiratory acidosis",
+    "same": false
+   },
+   {
+    "id": "PAN5774",
+    "key": "Slower, shallower breathing so CO2 accumulates",
+    "same": false
+   },
+   {
+    "id": "PAN3632",
+    "key": "Lower arterial CO2 as partial compensation",
+    "same": false
+   }
+  ],
+  "checker": "C2"
+ },
+ {
+  "id": "PAN2846",
+  "verdict": "pass",
+  "issues": "Coal workers' pneumoconiosis with upper-zone nodules is correct; distractors accurate. No live coal item; PAN3960 (in batch, later) tests the collective term only.",
+  "edits": {},
+  "near_checked": [
+   {
+    "id": "DT120",
+    "key": "Sputum for AFB (silicosis with TB)",
+    "same": false
+   },
+   {
+    "id": "PAQ15445",
+    "key": "Asbestos",
+    "same": false
+   },
+   {
+    "id": "RES024",
+    "key": "Malignant mesothelioma",
+    "same": false
+   }
+  ],
+  "checker": "C2"
+ },
+ {
+  "id": "PAN4780",
+  "verdict": "drop",
+  "issues": "Within-batch duplicate of PAN10447 (earlier in draft_all): same pursed-lip breathing mechanism, same key (airways held open, less air trapping). Later item dropped per rule. No live duplicate.",
+  "edits": {},
+  "near_checked": [
+   {
+    "id": "RES040",
+    "key": "Type 2 respiratory failure",
+    "same": false
+   },
+   {
+    "id": "BX262",
+    "key": "Inhaler technique and adherence",
+    "same": false
+   }
+  ],
+  "checker": "C2"
+ },
+ {
+  "id": "PAN6261",
+  "verdict": "fix",
+  "issues": "Stem already described the persistent wheeze that is the key, so it restated the answer (cueing); removed that sentence and asked for the examination finding. NG12 1.1.1-1.1.3 cited for the wheeze mechanism was overstated: they cover referral/chest X-ray (1.1.1 referral for CXR findings suggesting lung cancer), not wheeze; re-cited honestly.",
+  "edits": {
+   "stem": "A 68-year-old man who stopped smoking a few years ago has had a persistent cough and weight loss for three months. A chest X-ray shows a mass at the left hilum, and he has been referred on the suspected cancer pathway (an urgent, time-limited route to specialist assessment).\n\nOn examining his chest, which finding is most directly explained by the tumour narrowing the left main bronchus?",
+   "why_correct": "A tumour growing in or pressing on a main bronchus narrows the lumen, so air moving through the narrowed segment makes a localised wheeze that persists and does not clear with coughing or bronchodilators. A fixed, unilateral wheeze in a smoker or ex-smoker should prompt imaging for lung cancer rather than a trial of asthma treatment. Source: standard respiratory teaching on central airway obstruction; NICE NG12 (suspected cancer, 2015, updated) recommendation 1.1.1 supports referral on the suspected cancer pathway when chest X-ray findings suggest lung cancer."
+  },
+  "near_checked": [
+   {
+    "id": "PAQ15440",
+    "key": "Bronchial carcinoma",
+    "same": false
+   },
+   {
+    "id": "PAAKT052",
+    "key": "Apical lung tumour (Pancoast)",
+    "same": false
+   },
+   {
+    "id": "BX460",
+    "key": "Urgent investigation for possible lung cancer",
+    "same": false
+   }
+  ],
+  "checker": "C2"
+ },
+ {
+  "id": "PAN4505",
+  "verdict": "fix",
+  "issues": "Content correct (NHS lists obesity first among linked factors). NICE NG202 recommendations do not state obesity as a risk factor or give weight-loss advice, so that citation was overstated; re-cited to NHS plus standard teaching. Item is weak (distractors are normal findings) but unambiguous; stem BMI echoes key - accepted as an Easy item.",
+  "edits": {
+   "why_correct": "Obesity is the most important modifiable risk factor for obstructive sleep apnoea, because fat deposition around the upper airway and neck narrows the pharynx and makes it collapse during sleep. Weight loss is therefore a core part of management alongside other measures. Source: NHS sleep apnoea information (obesity listed first among linked factors) and standard teaching; NICE NG202 (2021) covers diagnosis and treatment."
+  },
+  "near_checked": [
+   {
+    "id": "RES022",
+    "key": "Sleep study, then CPAP with weight loss",
+    "same": false
+   },
+   {
+    "id": "DS016",
+    "key": "Home respiratory polygraphy",
+    "same": false
+   },
+   {
+    "id": "PAQ15794",
+    "key": "Obstructive sleep apnoea",
+    "same": false
+   }
+  ],
+  "checker": "C2"
+ },
+ {
+  "id": "PAN4512",
+  "verdict": "fix",
+  "issues": "Anatomy correct (left RLN under aortic arch; right loops subclavian). NG12 citation was vague ('recognition and referral'); tied to recommendation 1.1.1 (verified on NICE page) and standard anatomy.",
+  "edits": {
+   "why_correct": "The left recurrent laryngeal nerve branches from the vagus and hooks under the aortic arch, so a left hilar or mediastinal tumour (or involved nodes) can compress or invade it. This causes vocal cord palsy with a weak, hoarse voice, and hoarseness in a smoker is a red flag for lung or laryngeal cancer. A chest X-ray suggesting lung cancer needs referral on the suspected cancer pathway. Source: standard anatomy teaching; NICE NG12 (2015, updated) recommendation 1.1.1 for referral when chest X-ray findings suggest lung cancer."
+  },
+  "near_checked": [
+   {
+    "id": "S059",
+    "key": "Suspected cancer pathway referral (hoarseness, smoker)",
+    "same": false
+   },
+   {
+    "id": "PAQ1069",
+    "key": "Suspected cancer pathway referral",
+    "same": false
+   },
+   {
+    "id": "PAAKT052",
+    "key": "Apical lung tumour (Pancoast)",
+    "same": false
+   }
+  ],
+  "checker": "C2"
+ },
+ {
+  "id": "PAN3958",
+  "verdict": "fix",
+  "issues": "'20 to 40 years' latency is an unnecessary figure and not supported (NHS asbestosis: 20 to 30 years); softened to words. Rest correct.",
+  "edits": {
+   "why_correct": "Prolonged heavy asbestos exposure causes asbestosis, a diffuse interstitial fibrosis worst at the lung bases, with fine basal crackles, clubbing and pleural plaques on imaging. It typically appears many years after the exposure. The fibrosis gives a restrictive pattern with reduced gas transfer. Source: NHS asbestosis information and standard occupational respiratory teaching; the occupational history is the key to diagnosis."
+  },
+  "near_checked": [
+   {
+    "id": "RES014",
+    "key": "Idiopathic pulmonary fibrosis",
+    "same": false
+   },
+   {
+    "id": "PAQ15445",
+    "key": "Asbestos (asymptomatic pleural plaques)",
+    "same": false
+   },
+   {
+    "id": "PAAKT025",
+    "key": "Malignant pleural mesothelioma",
+    "same": false
+   }
+  ],
+  "checker": "C2"
+ },
+ {
+  "id": "PAN1946",
+  "verdict": "fix",
+  "issues": "Learning point sound. BTS 2023 guideline scope does not cover bilateral effusions (checked), so the citation was overstated and '(guideline page not fetched)' should not appear in student text; re-cited as standard teaching in line with BTS pleural guidance. No live equivalent (BX266 is diagnosis only; PAQ14765/PAQ16214 diagnose decompensated HF).",
+  "edits": {
+   "why_correct": "Symmetrical bilateral effusions in a patient with decompensated heart failure and no atypical features are presumed to be transudates. The best approach is to treat the underlying heart failure with diuretics and review the response. Pleural sampling is reserved for effusions that are unilateral or asymmetrical, associated with pleuritic pain or fever, or that fail to resolve with treatment. Source: standard teaching on pleural effusion in heart failure, in line with BTS pleural disease guidance."
+  },
+  "near_checked": [
+   {
+    "id": "BX266",
+    "key": "Pleural effusions (diagnosis in heart failure)",
+    "same": false
+   },
+   {
+    "id": "PAQ14765",
+    "key": "Decompensated heart failure",
+    "same": false
+   },
+   {
+    "id": "PAQ16214",
+    "key": "Fluid retention from decompensated heart failure",
+    "same": false
+   }
+  ],
+  "checker": "C2"
+ },
+ {
+  "id": "PAN4686",
+  "verdict": "fix",
+  "issues": "Technique correct (stand if able, full breath in, tight seal, hard fast blast, best of three). Source line admitted not checking; replaced with an honest standard-teaching label. Key is not longest/shortest (lengths 82/86/83/85/83).",
+  "edits": {
+   "why_correct": "Peak expiratory flow is the fastest flow achieved during a forced expiration that starts from full lung inflation. The patient therefore needs an upright position, a maximal breath in, a tight lip seal and a single short, forceful blast. The manoeuvre is repeated and the highest of three readings is recorded. Source: standard UK respiratory clinical teaching and respiratory service patient guidance on peak flow meters."
+  },
+  "near_checked": [
+   {
+    "id": "CR033",
+    "key": "Significant diurnal variability consistent with asthma",
+    "same": false
+   },
+   {
+    "id": "PAQ225",
+    "key": "Variable, reversible airflow obstruction",
+    "same": false
+   },
+   {
+    "id": "DS132",
+    "key": "Refer to occupational asthma specialist",
+    "same": false
+   }
+  ],
+  "checker": "C2"
+ },
+ {
+  "id": "PAN4499",
+  "verdict": "pass",
+  "issues": "Correct; low-level terminology item but no live duplicate of the term; key neither longest nor shortest.",
+  "edits": {},
+  "near_checked": [
+   {
+    "id": "RES039",
+    "key": "Goodpasture (anti-GBM) disease",
+    "same": false
+   },
+   {
+    "id": "BX460",
+    "key": "Urgent investigation for possible lung cancer",
+    "same": false
+   },
+   {
+    "id": "DS096",
+    "key": "Urgent investigation for haemoptysis",
+    "same": false
+   }
+  ],
+  "checker": "C2"
+ },
+ {
+  "id": "PAN10447",
+  "verdict": "pass",
+  "issues": "Sound. Source honestly labelled as standard teaching; no live pursed-lip item.",
+  "edits": {},
+  "near_checked": [
+   {
+    "id": "BX264",
+    "key": "Pulmonary rehabilitation",
+    "same": false
+   }
+  ],
+  "checker": "C3"
+ },
+ {
+  "id": "PAN3950",
+  "verdict": "pass",
+  "issues": "Sound; key not longest/shortest. No live emphysema-pathology item.",
+  "edits": {},
+  "near_checked": [
+   {
+    "id": "BX133",
+    "key": "Emphysema (diagnosis from CT/AAT)",
+    "same": false
+   },
+   {
+    "id": "RES043",
+    "key": "Alpha-1 antitrypsin deficiency",
+    "same": false
+   }
+  ],
+  "checker": "C3"
+ },
+ {
+  "id": "PAN7070",
+  "verdict": "fix",
+  "issues": "why_correct carried learner-visible 'page not fetched'; BTS 2023 citation tightened (CXR first-line, ultrasound to guide procedures; confirmed via secondary summaries, Thorax 403).",
+  "edits": {
+   "why_correct": "Reduced expansion, a stony-dull percussion note and diminished breath sounds at one base indicate a pleural effusion. A chest X-ray is the first-line, widely available test to confirm fluid; thoracic ultrasound then guides any pleural sampling, and diagnostic pleural aspiration follows if the cause is unclear. Source: BTS Pleural Disease Guideline, Thorax 2023, and standard teaching."
+  },
+  "near_checked": [
+   {
+    "id": "BX266",
+    "key": "Pleural effusions (diagnosis from bilateral basal dullness in HF)",
+    "same": false
+   },
+   {
+    "id": "DR092",
+    "key": "Ultrasound-guided diagnostic pleural aspiration (parapneumonic effusion)",
+    "same": false
+   }
+  ],
+  "checker": "C3"
+ },
+ {
+  "id": "PAN356",
+  "verdict": "fix",
+  "issues": "BTS pleural guideline is not a source for CXR sign interpretation (overstated citation).",
+  "edits": {
+   "why_correct": "Fluid in the pleural space tracks up the lateral chest wall, producing a homogeneous basal opacity with a concave upper border (meniscus) and loss of the costophrenic angle. Heart failure is a common cause of transudative effusions, and a central trachea fits a moderate-sized collection. Source: standard radiology teaching (chest X-ray interpretation)."
+  },
+  "near_checked": [
+   {
+    "id": "BX266",
+    "key": "Pleural effusions (clinical signs)",
+    "same": false
+   },
+   {
+    "id": "PAN355",
+    "key": "Pulmonary oedema (CXR)",
+    "same": false
+   }
+  ],
+  "checker": "C3"
+ },
+ {
+  "id": "PAN1427",
+  "verdict": "drop",
+  "issues": "Same scenario and learning point as live PAN1547 (and PAN1400): low NEWS2 but clinical concern, so reassess urgently and escalate; COPD skin adds nothing keyed (Scale 2 is not tested).",
+  "edits": {},
+  "near_checked": [
+   {
+    "id": "PAN1547",
+    "key": "Reassess him urgently and escalate despite the low score",
+    "same": true
+   },
+   {
+    "id": "PAN1400",
+    "key": "Higher risk than his NEWS2 score alone suggests",
+    "same": true
+   }
+  ],
+  "checker": "C3"
+ },
+ {
+  "id": "PAN2420",
+  "verdict": "fix",
+  "issues": "Citation overstated: BTS 2008 replaced by BTS Clinical Statement on pulmonary sarcoidosis (Thorax 2021;76:4-20); hypercalcaemia mechanism/steroid/avoid vitamin D is standard and consistent with it.",
+  "edits": {
+   "why_correct": "Activated macrophages in sarcoid granulomas express 1-alpha-hydroxylase, which converts 25-hydroxyvitamin D to active 1,25-dihydroxyvitamin D without normal feedback control. This increases gut calcium absorption and bone resorption, raising calcium while PTH is suppressed. Treatment is usually with oral corticosteroids, and vitamin D supplements and a high calcium intake should be avoided. Source: BTS Clinical Statement on pulmonary sarcoidosis, Thorax 2021, and standard teaching."
+  },
+  "near_checked": [
+   {
+    "id": "RES025",
+    "key": "Sarcoidosis (diagnosis of erythema nodosum/hilar nodes)",
+    "same": false
+   },
+   {
+    "id": "DR127",
+    "key": "12-lead ECG (cardiac screen in sarcoid)",
+    "same": false
+   }
+  ],
+  "checker": "C3"
+ },
+ {
+  "id": "PAN3960",
+  "verdict": "fix",
+  "issues": "Pearl claims '-osis' reflects dust-induced fibrosis, which is etymologically wrong; reworded. IIDB source named precisely (prescribed disease D1, which includes coal, silica and asbestos-related pneumoconiosis).",
+  "edits": {
+   "pearl": "Pneumoconiosis is the umbrella term for the chronic lung diseases caused by inhaling mineral dust, and silicosis, asbestosis and coal worker's pneumoconiosis all fall within it.",
+   "why_correct": "Pneumoconiosis is the collective term for lung diseases caused by inhaling mineral dusts such as coal dust, silica and asbestos. Coal worker's pneumoconiosis typically shows small nodular opacities in the upper zones after prolonged underground exposure. Pneumoconiosis is a prescribed disease (D1) under the UK Industrial Injuries Disablement Benefit scheme, so the occupational history can matter for benefits. Source: standard occupational respiratory teaching; UK Industrial Injuries Disablement Benefit scheme, prescribed disease D1."
+  },
+  "near_checked": [
+   {
+    "id": "DT120",
+    "key": "Sputum for AFB (silicosis with TB features)",
+    "same": false
+   },
+   {
+    "id": "PAQ15445",
+    "key": "Asbestos (pleural plaques)",
+    "same": false
+   }
+  ],
+  "checker": "C3"
+ },
+ {
+  "id": "PAN4490",
+  "verdict": "fix",
+  "issues": "Learner-visible 'guideline page not fetched' removed; scenario overlaps BX266 (HF bibasal dullness) but keys differ (effusion vs mechanism), acceptable.",
+  "edits": {
+   "why_correct": "In heart failure the raised venous and pulmonary capillary hydrostatic pressure drives protein-poor fluid across the pleural membranes faster than the lymphatics can clear it. This produces a transudate, typically bilateral and roughly symmetrical. Inflammatory, infective and malignant effusions are usually exudates and tend to be unilateral or asymmetrical. Source: BTS Pleural Disease Guideline, Thorax 2023, and standard teaching."
+  },
+  "near_checked": [
+   {
+    "id": "BX266",
+    "key": "Pleural effusions",
+    "same": false
+   },
+   {
+    "id": "RES018",
+    "key": "Malignancy or infection (exudate by Light's)",
+    "same": false
+   },
+   {
+    "id": "BX791",
+    "key": "Raised venous hydrostatic pressure (ankle oedema)",
+    "same": false
+   }
+  ],
+  "checker": "C3"
+ },
+ {
+  "id": "PAN3955",
+  "verdict": "pass",
+  "issues": "Sound; mechanism of consolidation signs not tested live.",
+  "edits": {},
+  "near_checked": [
+   {
+    "id": "PAQ16095",
+    "key": "Community-acquired pneumonia",
+    "same": false
+   },
+   {
+    "id": "CR009",
+    "key": "Right lower lobe pneumonia (consolidation)",
+    "same": false
+   }
+  ],
+  "checker": "C3"
+ },
+ {
+  "id": "PAN9834",
+  "verdict": "drop",
+  "issues": "Duplicates live BX598 (family history asthma, wheeze, eczema: which predisposition => Atopy) and PAQ16283 (eczema, hay fever, wheeze: predisposition linking => Atopy); also PAQ11788, PAN3735.",
+  "edits": {},
+  "near_checked": [
+   {
+    "id": "BX598",
+    "key": "Atopy",
+    "same": true
+   },
+   {
+    "id": "PAQ16283",
+    "key": "Atopy",
+    "same": true
+   },
+   {
+    "id": "PAQ11788",
+    "key": "Atopy",
+    "same": true
+   }
+  ],
+  "checker": "C3"
+ }
+]

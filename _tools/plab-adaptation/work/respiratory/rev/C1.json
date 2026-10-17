@@ -1,0 +1,276 @@
+[
+ {
+  "id": "PAN4518",
+  "verdict": "fix",
+  "issues": "Mechanism and key sound (sarcoid 1-alpha-hydroxylase, PTH-independent). exam_trap slip: primary hyperparathyroidism is the commonest cause in the community but malignancy is commoner in hospital inpatients, so 'commonest overall' is overstated. No live duplicate (RES025 sarcoid diagnosis; DR127/DR128 sarcoid management; END022 primary hyperparathyroidism).",
+  "edits": {
+   "exam_trap": "A, a parathyroid adenoma, is a leading cause of hypercalcaemia in general, but the suppressed parathyroid hormone in this stem rules it out."
+  },
+  "near_checked": [
+   {
+    "id": "RES025",
+    "key": "Sarcoidosis (diagnosis from erythema nodosum/hilar nodes)",
+    "same": false
+   },
+   {
+    "id": "END022",
+    "key": "Primary hyperparathyroidism",
+    "same": false
+   },
+   {
+    "id": "DR127",
+    "key": "12-lead ECG (sarcoid cardiac screen)",
+    "same": false
+   }
+  ]
+ },
+ {
+  "id": "PAN10450",
+  "verdict": "pass",
+  "issues": "NG158 table 2 (rec 1.1.17) fetched: previous DVT/PE scores; age, oestrogen, saturation are PERC only. Key neither longest nor shortest. No live item tests Wells components.",
+  "near_checked": [
+   {
+    "id": "CR024",
+    "key": "CT pulmonary angiography (next step after Wells)",
+    "same": false
+   },
+   {
+    "id": "BX549",
+    "key": "D-dimer (next step after Wells)",
+    "same": false
+   },
+   {
+    "id": "ACU020",
+    "key": "Calculate Wells then D-dimer or CTPA",
+    "same": false
+   }
+  ]
+ },
+ {
+  "id": "PAN3954",
+  "verdict": "drop",
+  "issues": "Duplicates live BX266 (known heart failure, dullness to percussion and reduced breath sounds at both bases -> pleural effusions): same sign pattern and same learning point (dull + reduced breath sounds = effusion); only the aetiology and laterality differ, so this is a diagnosis-only re-skin. Also the D explanation was loose (lobar collapse breath sounds are diminished rather than 'bronchial' when the bronchus is blocked).",
+  "near_checked": [
+   {
+    "id": "BX266",
+    "key": "Pleural effusions",
+    "same": true
+   },
+   {
+    "id": "RES018",
+    "key": "Malignancy or infection (exudative)",
+    "same": false
+   },
+   {
+    "id": "CR009",
+    "key": "Right lower lobe pneumonia",
+    "same": false
+   }
+  ]
+ },
+ {
+  "id": "PAN7471",
+  "verdict": "fix",
+  "issues": "NG115 rec 1.1.5 fetched and correct ('Measure post-bronchodilator spirometry to confirm the diagnosis of COPD'). Key E was tied for shortest option (33 chars with A); lengthened. Citation wording 'checked on the fetched page' removed. No live item asks which test confirms COPD.",
+  "edits": {
+   "options": {
+    "E": "Spirometry following a bronchodilator"
+   },
+   "correct_answer": "E. Spirometry following a bronchodilator",
+   "why_correct": "A long smoking history with chronic cough and exertional breathlessness suggests chronic obstructive pulmonary disease. Diagnosis rests on spirometry performed after a bronchodilator showing persistent airflow obstruction (FEV1/FVC ratio below 0.7), alongside the clinical picture. Source: NICE NG115, Chronic obstructive pulmonary disease in over 16s, recommendation 1.1.5."
+  },
+  "near_checked": [
+   {
+    "id": "PAQ15631",
+    "key": "Chronic obstructive pulmonary disease (spirometry given in stem, asks diagnosis)",
+    "same": false
+   },
+   {
+    "id": "CR032",
+    "key": "Obstructive ventilatory defect",
+    "same": false
+   },
+   {
+    "id": "GF048",
+    "key": "Persistent obstruction with marked reversibility",
+    "same": false
+   }
+  ]
+ },
+ {
+  "id": "PAN987",
+  "verdict": "pass",
+  "issues": "NG158 rec 1.1.18 fetched: for likely PE offer CTPA, or for contrast allergy, severe renal impairment (CrCl <30) or high radiation risk assess suitability of V/Q SPECT (planar if unavailable). Draft wording matches; threshold kept in words. No live renal-impairment PE imaging item.",
+  "near_checked": [
+   {
+    "id": "OG059",
+    "key": "Chest X-ray then V/Q or CTPA (pregnancy)",
+    "same": false
+   },
+   {
+    "id": "CR024",
+    "key": "CT pulmonary angiography",
+    "same": false
+   },
+   {
+    "id": "PAQ15448",
+    "key": "CT pulmonary angiogram",
+    "same": false
+   }
+  ]
+ },
+ {
+  "id": "PAN3974",
+  "verdict": "pass",
+  "issues": "Infarction mechanism for haemoptysis in peripheral PE is standard teaching; NG158 Wells includes haemoptysis (verified). No live item on PE haemoptysis mechanism. Earlier than PAN4499 (terminology), no conflict.",
+  "near_checked": [
+   {
+    "id": "S058",
+    "key": "Pulmonary embolism (post-op diagnosis)",
+    "same": false
+   },
+   {
+    "id": "PAQ15447",
+    "key": "Pulmonary embolism (post knee replacement diagnosis)",
+    "same": false
+   },
+   {
+    "id": "PAQ550",
+    "key": "Interim anticoagulation and CTPA",
+    "same": false
+   }
+  ]
+ },
+ {
+  "id": "PAN3957",
+  "verdict": "fix",
+  "issues": "Key E echoed stem wording ('cutting and blasting' vs stem 'sandblasting') and cited HSE pages not fetched. Reworded key; HSE silicosis page (hse.gov.uk/lung-disease/silicosis.htm) fetched: confirms silica from quarrying/sandblasting/rock drilling, and raised TB and lung cancer risk in silicosis. Kept as the earlier-in-order item vs PAN4515.",
+  "edits": {
+   "options": {
+    "E": "Respirable crystalline silica released as rock is fragmented"
+   },
+   "correct_answer": "E. Respirable crystalline silica released as rock is fragmented",
+   "why_correct": "Crystalline silica from cutting, drilling or blasting stone, sand and granite causes silicosis, a pneumoconiosis with small upper-zone nodules and hilar nodes that may show eggshell calcification. Risk rises with cumulative dust exposure, and dust control and masks reduce it. People with silicosis also have an increased risk of tuberculosis and lung cancer. Source: UK Health and Safety Executive, Silicosis (hse.gov.uk/lung-disease/silicosis.htm); standard occupational respiratory teaching."
+  },
+  "near_checked": [
+   {
+    "id": "DT120",
+    "key": "Sputum for AFB (TB in known silicosis)",
+    "same": false
+   },
+   {
+    "id": "PAQ15445",
+    "key": "Asbestos (bilateral irregular pleural calcification)",
+    "same": false
+   },
+   {
+    "id": "RES024",
+    "key": "Malignant mesothelioma",
+    "same": false
+   }
+  ]
+ },
+ {
+  "id": "PAN4515",
+  "verdict": "drop",
+  "issues": "Within-batch duplicate: same learning point as PAN3957, which is earlier in draft_all.json (stone-dust worker with upper-zone nodules and hilar nodes -> silicosis); PAN3957 is kept. No live duplicate (DT120 is TB in known silicosis).",
+  "near_checked": [
+   {
+    "id": "DT120",
+    "key": "Sputum for AFB (TB in known silicosis)",
+    "same": false
+   },
+   {
+    "id": "PAQ15445",
+    "key": "Asbestos",
+    "same": false
+   },
+   {
+    "id": "PAAKT026",
+    "key": "Idiopathic pulmonary fibrosis",
+    "same": false
+   }
+  ]
+ },
+ {
+  "id": "PAN10448",
+  "verdict": "fix",
+  "issues": "Stem and option B contain a corrupted degree sign (U+FFFD) - replaced. Key text 'over the cut-off' cued the answer - removed. why_correct said only age scores while urea unknown: reworded to 'of the findings given'. NG250 Box 2 fetched: confusion, urea over 7, RR 30+, BP systolic <90 or diastolic 60 or less, age 65+; matches. Not a repeat of Q357/ID019/ID044 (those score or interpret).",
+  "edits": {
+   "stem": "A 69-year-old man has had 3 days of fever, productive cough and right-sided pleuritic chest pain. A chest X-ray confirms right lower lobe consolidation. He is alert and orientated, with a temperature of 38.9°C, pulse 104/min, respiratory rate 22/min, blood pressure 128/76 mmHg and oxygen saturation 93% on air. His C-reactive protein is markedly raised. The admitting doctor calculates his CURB65 score.\n\nWhich of his findings contributes a point to the score?",
+   "options": {
+    "A": "His age of 69 years on presentation",
+    "B": "A temperature of 38.9°C on arrival"
+   },
+   "correct_answer": "A. His age of 69 years on presentation",
+   "why_correct": "CURB65 gives one point each for new confusion, urea above 7 mmol/L, respiratory rate of 30 or more, low blood pressure (systolic under 90 or diastolic 60 or less) and age 65 or over. This man is alert, with a respiratory rate of 22 and normal blood pressure, so of the findings given only his age scores; his urea is not yet known. Fever, tachycardia, pleuritic pain and CRP are not part of the score, so clinical judgement and oxygen saturation must be used alongside it. Source: NICE NG250 Pneumonia: diagnosis and management, 2025 (Box 2, CURB65)."
+  },
+  "near_checked": [
+   {
+    "id": "Q357",
+    "key": "4 (CURB65 calculation with all items given)",
+    "same": false
+   },
+   {
+    "id": "ID019",
+    "key": "High severity - admit",
+    "same": false
+   },
+   {
+    "id": "ID044",
+    "key": "High score - admit",
+    "same": false
+   }
+  ]
+ },
+ {
+  "id": "PAN3860",
+  "verdict": "fix",
+  "issues": "Key B was the shortest option (61 chars vs A 63); lengthened. Clinical content correct (CF lung disease = bronchiectasis on HRCT; distractors accurate). No live item asks for the CF CT lung change.",
+  "edits": {
+   "options": {
+    "B": "Dilated, thick-walled airways, typical of established bronchiectasis"
+   },
+   "correct_answer": "B. Dilated, thick-walled airways, typical of established bronchiectasis"
+  },
+  "near_checked": [
+   {
+    "id": "BX268",
+    "key": "Bronchiectasis (non-CF sputum history)",
+    "same": false
+   },
+   {
+    "id": "RES016",
+    "key": "Bronchiectasis (HRCT, non-CF)",
+    "same": false
+   },
+   {
+    "id": "BX911",
+    "key": "Cystic fibrosis (diagnosis)",
+    "same": false
+   }
+  ]
+ },
+ {
+  "id": "PAN8887",
+  "verdict": "pass",
+  "issues": "Pathophysiology (chronic inflammation, bronchial hyper-responsiveness, variable reversible narrowing) is sound and consistent with NG245/BTS-NICE-SIGN. Nearest live PAQ225 asks what reversibility on spirometry indicates (interpretation of results); this item asks the underlying mechanism in an atopic child, so not the same question. Key mid-length.",
+  "near_checked": [
+   {
+    "id": "PAQ225",
+    "key": "Variable, reversible airflow obstruction (spirometry interpretation)",
+    "same": false
+   },
+   {
+    "id": "PAQ15313",
+    "key": "Obstruction improving after bronchodilator (test supporting asthma)",
+    "same": false
+   },
+   {
+    "id": "BX261",
+    "key": "Asthma (exercise wheeze diagnosis)",
+    "same": false
+   }
+  ]
+ }
+]
