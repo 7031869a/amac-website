@@ -2765,7 +2765,7 @@ window.MRCP1_QUESTIONS = [
       "E": "A negative tissue transglutaminase antibody test would reliably exclude coeliac disease"
     },
     "correct_letter": "A",
-    "why_correct": "Decisive clue: She has already restricted gluten before diagnostic testing. Reasoning: Coeliac serology is most reliable when the patient is consuming gluten. NICE advises people not to start a gluten-free diet until the diagnosis is confirmed and recommends specialist assessment when someone is already restricting gluten and cannot or will not reintroduce it. HLA-DQ2/DQ8 testing is not an initial diagnostic test in non-specialist settings.",
+    "why_correct": "Decisive clue: She has already restricted gluten before diagnostic testing. Reasoning: Coeliac serology is most reliable when the patient is consuming gluten. NICE advises people not to start a gluten-free diet until the diagnosis is confirmed and recommends specialist assessment when someone is already restricting gluten and cannot or will not reintroduce it. If she can reintroduce gluten, she should eat gluten in more than one meal every day for at least 6 weeks before testing. HLA-DQ2/DQ8 testing is not an initial diagnostic test in non-specialist settings.",
     "distractor_analysis": {
       "B": "Calprotectin is a marker of intestinal inflammation, mainly used for IBD, and does not diagnose coeliac disease.",
       "C": "HLA-DQ2 is common in the general population, so a positive result cannot confirm coeliac disease.",
