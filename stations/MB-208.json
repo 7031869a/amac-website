@@ -1,0 +1,598 @@
+{
+  "id": "MB-208",
+  "exam": "MRCS-B",
+  "title": "Intussusception in an infant",
+  "type": "applied-knowledge",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "Paediatric surgery (clinical scenario with findings)",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "Bailey & Love, 28th ed. (2023)",
+      "Hwang et al., Clin Exp Pediatr (2023)",
+      "Kelley-Quon et al. (APSA), J Pediatr Surg (2021)",
+      "NICE NG29 (Dec 2015; updated Jun 2020)",
+      "Green Book chapter 27b, Rotavirus (Aug 2015)"
+    ],
+    "related": [
+      {
+        "id": "MB-207",
+        "why": "The other infant vomiting station: pyloric stenosis and its fluid management"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Paediatric emergency department",
+    "role": "Core surgical trainee",
+    "scenario": "Isla Brennan, 9 months old, has had episodes of screaming and drawing up her legs every 15 to 20 minutes since this morning. Between episodes she is pale and lethargic. She has vomited twice, and her parents found a small amount of blood in her nappy.",
+    "task": "Answer the examiner's questions on the assessment, investigation and management of this baby. The examiner will read out the imaging findings."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Recognise, resuscitate, ultrasound, air enema if safe, surgery if not.",
+    "trap": "Waiting for redcurrant jelly stool, or sending a lethargic infant for an enema before checking for shock and peritonitis.",
+    "firstMove": "\"Intussusception until proven otherwise. I'd start with an ABCDE assessment.\""
+  },
+  "flow": [
+    "Recognise",
+    "Assess and resuscitate",
+    "Ultrasound",
+    "Enema reduction or surgery",
+    "Cause",
+    "Aftercare and parents"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-knowledge",
+      "label": "Recognition and differential",
+      "fail": "Calls it colic or gastroenteritis and plans discharge.",
+      "pass": "Intussusception first; also gastroenteritis, incarcerated inguinal hernia, malrotation with volvulus. Examines the hernial orifices.",
+      "high": "Notes pallor and lethargy between spasms may be the main sign; redcurrant jelly stool is late, from venous congestion and mucosal ischaemia.",
+      "source": "BL"
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-skill",
+      "label": "Assessment and resuscitation",
+      "fail": "Sends her straight for imaging without assessing perfusion or peritonism.",
+      "pass": "ABCDE; looks for shock and peritonitis; IV access and bloods; 10 mL/kg crystalloid bolus if shocked; NG tube if vomiting; analgesia.",
+      "high": "Reassesses after each bolus; involves the paediatric surgeon and radiologist early; transfers to a paediatric surgical centre if none on site.",
+      "source": "NG29"
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "Diagnosis by ultrasound",
+      "fail": "Requests CT, or uses a normal plain film to exclude it.",
+      "pass": "Ultrasound first: target sign in cross-section, pseudokidney longitudinally; sensitivity about 98%.",
+      "high": "Plain film only for suspected perforation or obstruction; ultrasound also shows free fluid and may show a lead point.",
+      "source": "HWANG"
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-knowledge",
+      "label": "Enema reduction",
+      "fail": "Proceeds to enema in a shocked or peritonitic child.",
+      "pass": "Image-guided air enema if stable. Contraindicated by peritonitis, free air or shock that has not responded to resuscitation. Surgeon aware.",
+      "high": "Air enema succeeds in about 83%, perforation about 0.4%; a delayed repeat attempt can succeed if partially reduced and stable.",
+      "source": "HWANG"
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-knowledge",
+      "label": "Surgery",
+      "fail": "Cannot say when to operate.",
+      "pass": "Operates if enema contraindicated or fails: laparoscopic or open reduction; resection if non-viable, perforated or a lead point is found.",
+      "high": "Open reduction by squeezing the apex back, never pulling; laparoscopy frequently succeeds.",
+      "source": "KQ"
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-knowledge",
+      "label": "Cause and lead points",
+      "fail": "States a pathological lead point is usual at this age.",
+      "pass": "Most infant cases are idiopathic: hypertrophied Peyer's patches, often after a viral illness. A pathological lead point is uncommon in infants.",
+      "high": "Suspects a lead point in older children or with recurrence: Meckel's diverticulum, polyp, duplication cyst, lymphoma, IgA vasculitis.",
+      "source": "HWANG"
+    },
+    {
+      "id": "G7",
+      "domain": "professionalism",
+      "label": "Aftercare and the parents",
+      "fail": "Discharges without explaining recurrence or when to return.",
+      "pass": "Observes after reduction and restarts feeds; warns of recurrence, about 9–15%, and to return if symptoms recur.",
+      "high": "Recurrence is usually treated with another enema; repeated recurrence prompts a search for a lead point.",
+      "source": "HWANG"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "What do you think is going on?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "It sounds like colic or gastroenteritis. I'd give fluids by mouth and review.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "She is pale and floppy. What next?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd get her down for imaging straight away.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Which imaging?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "An abdominal X-ray, and CT if that's normal.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Here are the ultrasound findings. She now has a rigid abdomen."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd ask radiology for an air enema to reduce it.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "And if that fails?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'm not sure. Try the enema again?",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What causes it?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Usually a polyp or a Meckel's acting as a lead point.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "After a successful reduction?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "She can go home.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "examiner",
+        "text": "What is your differential?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Intussusception first. Also gastroenteritis, an incarcerated inguinal hernia, and malrotation with volvulus, so I'd check the hernial orifices.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you assess her?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "ABCDE: heart rate, capillary refill, conscious level, and whether she is peritonitic. IV access and bloods. If shocked, 10 mL/kg crystalloid, NG tube as she's vomiting, and analgesia.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you confirm it?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Ultrasound. A target sign in cross-section and a pseudokidney along its length. It's about 98% sensitive.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Here are the ultrasound findings. She is stable after one bolus."
+      },
+      {
+        "speaker": "candidate",
+        "text": "That's a target sign. I'd ask for an image-guided air enema, provided there's no peritonitis, no free air and no ongoing shock, with the surgical team aware.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The enema fails."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Then she needs surgery, laparoscopic or open reduction, and resection if the bowel isn't viable or there's a lead point.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Why did this happen?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "At her age it's usually idiopathic, from enlarged Peyer's patches after a viral illness. A pathological lead point is uncommon in infants.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What do you tell the parents after reduction?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "We'll observe her and restart feeds. It can come back in about 9 to 15 in 100, so return if the symptoms recur.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "candidate",
+        "text": "This is intussusception until proven otherwise. The lethargy and pallor between spasms matter; I wouldn't wait for redcurrant jelly stool, which is a late sign of mucosal ischaemia.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "After the bolus I'd reassess perfusion. I'd call the paediatric surgeon and radiologist now, and if we don't have paediatric surgery here, arrange transfer.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Would a plain film help?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Only if I suspected perforation or obstruction. Ultrasound can also show free fluid and sometimes a lead point.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What are the results of air enema?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "It reduces about 83%, with perforation in about 0.4%, so the surgeon should be aware. If it partially reduces and she stays stable, a delayed second attempt can work.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you reduce it at open operation?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Squeeze the apex back from distal to proximal, never pull. Laparoscopic reduction is frequently successful too.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "When would you look for a lead point?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "In an older child or with recurrence: Meckel's diverticulum, a polyp, duplication cyst, lymphoma or IgA vasculitis.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "If it recurs, a further enema is usually tried; repeated recurrence makes me look for a lead point.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G4",
+      "move": "Sending a peritonitic or shocked child for an air enema.",
+      "consequence": "Risks perforation and tension pneumoperitoneum in bowel that may already be ischaemic; she needs resuscitation and surgery."
+    },
+    {
+      "row": "G1",
+      "move": "Waiting for redcurrant jelly stool before suspecting intussusception.",
+      "consequence": "It is a late sign of ischaemia; delay increases the chance of resection."
+    },
+    {
+      "row": "G3",
+      "move": "Using a normal plain film to exclude the diagnosis, or requesting CT.",
+      "consequence": "Plain films miss it; CT adds radiation and delay when ultrasound is the test."
+    },
+    {
+      "row": "G2",
+      "move": "Imaging before assessing perfusion.",
+      "consequence": "Shock goes untreated in a child who may be septic from ischaemic bowel."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You blank on management",
+      "line": "Resuscitate, ultrasound, air enema if she's stable and not peritonitic, surgery if not."
+    },
+    {
+      "when": "Asked why she is lethargic",
+      "line": "Lethargy can be the main sign in infants; I'd treat it as intussusception until the ultrasound says otherwise."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Only a minority of children present with the classic triad of colicky pain, vomiting and redcurrant jelly stool.",
+      "source": "HWANG"
+    },
+    {
+      "fact": "Ultrasound is the first test: target or pseudokidney sign.",
+      "source": "HWANG"
+    },
+    {
+      "fact": "Air enema contraindications: peritonitis, pneumoperitoneum, shock.",
+      "source": "HWANG"
+    },
+    {
+      "fact": "Operate if enema is contraindicated or fails; laparoscopic reduction is frequently successful.",
+      "source": "KQ"
+    },
+    {
+      "fact": "Most infant cases are idiopathic; pathological lead points become more frequent with age.",
+      "source": "HWANG"
+    },
+    {
+      "fact": "Rotavirus vaccine: possibly two extra cases per 100,000 first doses, within 7 days; previous intussusception contraindicates it.",
+      "source": "GB27B"
+    }
+  ],
+  "recall": {
+    "think": "Ischaemic, perforated bowel in a shocked infant.",
+    "say": "\"Intussusception until proven otherwise.\"",
+    "do": [
+      "ABCDE and fluid bolus if shocked",
+      "Ultrasound",
+      "Air enema if stable, surgery if not"
+    ],
+    "numbers": [
+      {
+        "value": "10 mL/kg",
+        "meaning": "crystalloid bolus if shocked",
+        "source": "NG29"
+      },
+      {
+        "value": "about 83%",
+        "meaning": "air enema success",
+        "source": "HWANG"
+      },
+      {
+        "value": "about 9–15%",
+        "meaning": "recurrence after reduction",
+        "source": "HWANG"
+      }
+    ],
+    "trap": "No redcurrant jelly stool, or a normal X-ray, does not exclude it.",
+    "finish": "Air enema; laparoscopic or open reduction if it fails or is contraindicated."
+  },
+  "sources": [
+    {
+      "id": "BL",
+      "name": "Bailey & Love's Short Practice of Surgery (O'Connell, McCaskie, Sayers, eds)",
+      "version": "28th edition, 2023",
+      "url": "https://www.routledge.com/Bailey--Loves-Short-Practice-of-Surgery---28th-Edition/OConnell-McCaskie-Sayers/p/book/9780367548117",
+      "supports": "Intussusception in infants: presentation, redcurrant jelly stool as a late sign of venous congestion and ischaemia, differential diagnosis, operative reduction by squeezing the apex and resection of non-viable bowel"
+    },
+    {
+      "id": "HWANG",
+      "name": "Hwang J, Yoon HM, Kim PH, et al. Current diagnosis and image-guided reduction for intussusception in children. Clin Exp Pediatr 2023;66(1):12–21",
+      "version": "2023",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35798026/",
+      "supports": "Classic presentation in about 20%; ultrasound sensitivity 97.9–98.5%; absolute contraindications to enema reduction (pneumoperitoneum, peritonitis, shock); pneumatic reduction success about 83%; perforation about 0.4%; delayed repeat enema; recurrence about 9–15%; most cases idiopathic, pathological lead points about 4% overall and more frequent in older children"
+    },
+    {
+      "id": "KQ",
+      "name": "Kelley-Quon LI, Arthur LG, Williams RF, et al. (APSA Outcomes and Evidence-Based Practice Committee). Management of intussusception in children: a systematic review. J Pediatr Surg 2021;56(3):587–96",
+      "version": "2021",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33158508/",
+      "supports": "Repeat enema attempts acceptable when clinically appropriate; laparoscopic reduction frequently successful as an alternative to open surgery"
+    },
+    {
+      "id": "NG29",
+      "name": "NICE NG29: Intravenous fluid therapy in children and young people in hospital",
+      "version": "Published 9 December 2015; last updated 11 June 2020",
+      "url": "https://www.nice.org.uk/guidance/ng29",
+      "supports": "Fluid resuscitation with glucose-free crystalloid (sodium 131–154 mmol/L), bolus 10 mL/kg over less than 10 minutes (1.3.1)"
+    },
+    {
+      "id": "GB27B",
+      "name": "UKHSA. Immunisation against infectious disease (the Green Book), chapter 27b: Rotavirus",
+      "version": "Version 3, 28 August 2015",
+      "url": "https://www.gov.uk/government/publications/rotavirus-the-green-book-chapter-27b",
+      "supports": "Small risk of intussusception within 7 days of vaccination, possibly two cases per 100,000 first doses; previous intussusception is a contraindication; first dose not after 15 weeks of age"
+    },
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format: 9 minutes with 1 minute's reading; examiner-led questioning in applied knowledge stations"
+    }
+  ],
+  "partner": {
+    "opening": "Isla is 9 months old, with spasms of screaming, vomiting and a little blood in her nappy. What is your differential diagnosis?",
+    "reveals": [
+      {
+        "trigger": "Candidate assesses ABCDE",
+        "finding": "Heart rate 175, capillary refill 4 seconds, pale, lethargic. Abdomen soft with a sausage-shaped mass in the right upper quadrant. Hernial orifices normal.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Candidate gives a fluid bolus and reassesses",
+        "finding": "Heart rate 145, capillary refill 2 seconds, more alert.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Candidate requests ultrasound",
+        "finding": "Read out: a transverse ultrasound of the right upper quadrant shows a round mass about 3 cm across, made of concentric alternating bright and dark rings around a bright centre. There is a small amount of free fluid. No separate mass is seen within the bowel.",
+        "row": "G3"
+      },
+      {
+        "trigger": "Candidate requests an air enema",
+        "finding": "Read out: fluoroscopy during the air enema. Air introduced through a rectal catheter fills the rectum and left colon and outlines a rounded soft-tissue mass projecting into the lumen of the transverse colon. With further insufflation the mass moves back to the caecum, but air does not pass into the small bowel. She remains stable.",
+        "row": "G4"
+      }
+    ],
+    "push": [
+      {
+        "question": "What is your differential?",
+        "row": "G1",
+        "expect": "Intussusception first; gastroenteritis, incarcerated hernia, malrotation with volvulus."
+      },
+      {
+        "question": "How would you confirm it?",
+        "row": "G3",
+        "expect": "Ultrasound: target or pseudokidney sign."
+      },
+      {
+        "question": "When is an enema contraindicated?",
+        "row": "G4",
+        "expect": "Peritonitis, free air, shock not corrected by resuscitation."
+      },
+      {
+        "question": "When would you operate, and how?",
+        "row": "G5",
+        "expect": "Enema contraindicated or failed; laparoscopic or open reduction; resect if non-viable or lead point."
+      },
+      {
+        "question": "Why did she get it?",
+        "row": "G6",
+        "expect": "Usually idiopathic in infants, lymphoid hyperplasia after a viral illness; lead points uncommon."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "Her parents ask whether her vaccines caused this.",
+        "safeAnswer": "Rotavirus vaccine carries a small risk in the 7 days after a dose, mainly the first. Her doses were months ago, so it is very unlikely to be related.",
+        "row": "G7"
+      },
+      {
+        "prompt": "During the enema she becomes distended and her saturations fall.",
+        "safeAnswer": "Suspect perforation with tension pneumoperitoneum: stop, needle decompression, resuscitate, and take her to theatre.",
+        "row": "G4"
+      },
+      {
+        "prompt": "She is 4 years old and this is her third episode.",
+        "safeAnswer": "Look for a pathological lead point such as Meckel's diverticulum, a polyp or lymphoma; surgery is more likely.",
+        "row": "G6"
+      }
+    ]
+  }
+}

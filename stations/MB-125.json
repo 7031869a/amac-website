@@ -1,0 +1,526 @@
+{
+  "id": "MB-125",
+  "exam": "MRCS-B",
+  "title": "Pathology: gallstones and cholecystitis",
+  "type": "applied-knowledge",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "Surgical pathology (specimen, histology and discussion)",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "NICE CG188 (October 2014)",
+      "Tokyo Guidelines 2018"
+    ],
+    "related": [
+      {
+        "id": "Acute abdomen history station",
+        "why": "Biliary pain in the history"
+      },
+      {
+        "id": "Consent for laparoscopic cholecystectomy",
+        "why": "Bile duct injury as a specific risk"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Pathology station",
+    "role": "Core surgical trainee",
+    "scenario": "A cholecystectomy specimen has been sent to the laboratory. The examiner will read out the histology from the gallbladder wall during the station. Written findings: the gallbladder has been opened along its length. The wall is diffusely thickened, firm and grey-white on cut section. The mucosa is flattened, with loss of its normal fine folds. The lumen contains numerous small stones, each a few millimetres across, faceted where they press against one another, and yellow-brown. No stone is impacted in Hartmann's pouch, and no discrete mass is seen in the wall.",
+    "task": "Summarise and interpret the written specimen findings and the histology the examiner reads out, and answer questions on gallstone disease and its complications."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Summarise the wall and the stones, then work outwards: gallbladder, ducts, pancreas, bowel.",
+    "trap": "Relying on Murphy's sign alone to diagnose acute cholecystitis.",
+    "firstMove": "\"This is an opened gallbladder containing multiple stones.\""
+  },
+  "flow": [
+    "Summarise the specimen findings",
+    "Stone types",
+    "Histology",
+    "Complications",
+    "Diagnosis, severity and management"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-skill",
+      "label": "Specimen summary",
+      "fail": "Says \"gallstones\" without summarising the wall or the stones.",
+      "pass": "Opened gallbladder: summarises wall thickness, mucosa, and the stones' number, size, shape and colour.",
+      "high": "Recognises chronic inflammation (thick fibrotic wall) and comments on Hartmann's pouch and any wall mass."
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-knowledge",
+      "label": "Stone types",
+      "fail": "Cannot name a stone type.",
+      "pass": "Cholesterol, pigment (black or brown) and mixed stones.",
+      "high": "Links each to its cause: cholesterol supersaturation; black with haemolysis or cirrhosis; brown with biliary infection."
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "Histology",
+      "fail": "Cannot tell acute from chronic inflammation.",
+      "pass": "Acute: oedema, neutrophils, mucosal ulceration. Chronic: fibrosis, chronic inflammatory cells, Rokitansky–Aschoff sinuses.",
+      "high": "Explains Rokitansky–Aschoff sinuses as mucosa herniating through the muscle wall under raised pressure."
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-knowledge",
+      "label": "Complications",
+      "fail": "Cannot name a complication outside the gallbladder.",
+      "pass": "Empyema, duct stones with cholangitis, gallstone pancreatitis and gallstone ileus.",
+      "high": "Explains Mirizzi syndrome: a Hartmann's pouch stone compressing the common hepatic duct, raising the risk of duct injury at surgery."
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-knowledge",
+      "label": "Diagnosis and severity",
+      "fail": "Relies on Murphy's sign alone.",
+      "pass": "Diagnosis needs local signs, systemic inflammation and imaging findings (Tokyo Guidelines 2018).",
+      "high": "Grades severity: grade III with organ dysfunction; grade II with WCC over 18,000/mm³, a tender RUQ mass, or symptoms over 72 hours.",
+      "source": "TG18"
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-knowledge",
+      "label": "Management",
+      "fail": "Plans delayed cholecystectomy for everyone.",
+      "borderline": "Knows early surgery is preferred but gives no time frame.",
+      "pass": "Ultrasound and LFTs; early laparoscopic cholecystectomy within 1 week of diagnosis.",
+      "high": "Adds MRCP when ultrasound misses duct stones but the duct is dilated or LFTs abnormal, and cholecystostomy for empyema if surgery is contraindicated.",
+      "source": "CG188"
+    },
+    {
+      "id": "G7",
+      "domain": "professionalism",
+      "label": "Safe conclusions",
+      "fail": "Calls it benign from the naked-eye findings alone, without histology.",
+      "pass": "States that histology confirms the diagnosis and excludes an incidental carcinoma.",
+      "high": "Commits to a most likely diagnosis while naming what would change it."
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "Summarise the specimen findings."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Gallstones.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What types of stone are there?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'm not sure there are different types.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you diagnose acute cholecystitis?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "A positive Murphy's sign.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "When would you operate?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd bring everyone back in six weeks.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Is this definitely benign?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Yes, it's just gallstones.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "examiner",
+        "text": "Summarise the specimen findings."
+      },
+      {
+        "speaker": "candidate",
+        "text": "An opened gallbladder with a thickened wall and flattened mucosa, containing many small, faceted, yellow-brown stones.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What types of stone are there?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Cholesterol, pigment, which can be black or brown, and mixed.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "I'll read you the histology from the wall."
+      },
+      {
+        "speaker": "candidate",
+        "text": "There's fibrosis, chronic inflammatory cells and Rokitansky–Aschoff sinuses, so this is chronic cholecystitis. Acute would show oedema, neutrophils and ulceration.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What complications do you know?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Empyema, stones in the bile duct with cholangitis, gallstone pancreatitis and gallstone ileus.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How do you diagnose acute cholecystitis?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Using the Tokyo Guidelines: local signs such as Murphy's sign, systemic inflammation such as fever or a raised CRP, and imaging findings.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you manage it?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Ultrasound and LFTs, then early laparoscopic cholecystectomy within 1 week of diagnosis.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Is this definitely benign?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "It looks like chronic cholecystitis, but histology confirms it and excludes an incidental carcinoma.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "examiner",
+        "text": "Summarise the specimen findings."
+      },
+      {
+        "speaker": "candidate",
+        "text": "An opened gallbladder with a thick, fibrotic wall and flattened mucosa, containing many small, faceted stones. Nothing is impacted in Hartmann's pouch and no wall mass is seen, which I'd always comment on.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Stone types?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Cholesterol stones from supersaturated bile; black pigment stones with haemolysis or cirrhosis; brown pigment stones with biliary infection; and mixed.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Histology?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Chronic cholecystitis: fibrosis, chronic inflammatory cells and Rokitansky–Aschoff sinuses, where mucosa herniates through the muscle layer under raised pressure.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Complications?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Beyond empyema, cholangitis, pancreatitis and gallstone ileus, there's Mirizzi syndrome: a stone in Hartmann's pouch compressing the common hepatic duct, which makes bile duct injury more likely at surgery.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Diagnosis and severity?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Tokyo 2018: local signs, systemic inflammation and imaging. Grade III has organ dysfunction. Grade II has a white count over 18,000, a tender right upper quadrant mass, or symptoms for more than 72 hours.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Management?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Ultrasound and LFTs; MRCP if ultrasound misses duct stones but the duct is dilated or LFTs abnormal. Laparoscopic cholecystectomy within 1 week of diagnosis. For an empyema where surgery is contraindicated, percutaneous cholecystostomy.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Is this definitely benign?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Most likely chronic cholecystitis. A wall mass or dysplasia on histology would change that.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G3",
+      "move": "Not knowing Rokitansky–Aschoff sinuses.",
+      "consequence": "Misses the histological hallmark of chronic cholecystitis."
+    },
+    {
+      "row": "G4",
+      "move": "Stopping at the gallbladder when asked about complications.",
+      "consequence": "Misses cholangitis and pancreatitis, the life-threatening ones."
+    },
+    {
+      "row": "G6",
+      "move": "Offering surgery with no time frame.",
+      "consequence": "Misses the 1-week target for acute cholecystitis."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You blank on complications",
+      "line": "Let me work outwards: gallbladder, then bile ducts, then pancreas, then bowel."
+    },
+    {
+      "when": "You can't grade severity",
+      "line": "I'd grade it using the Tokyo Guidelines: organ dysfunction makes it grade III."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Acute cholecystitis: offer early laparoscopic cholecystectomy within 1 week of diagnosis.",
+      "source": "CG188"
+    },
+    {
+      "fact": "MRCP if ultrasound hasn't shown duct stones but the duct is dilated or LFTs are abnormal.",
+      "source": "CG188"
+    },
+    {
+      "fact": "Tokyo 2018 grade II: WCC over 18,000/mm³, tender RUQ mass, symptoms over 72 hours, or marked local inflammation.",
+      "source": "TG18"
+    },
+    {
+      "fact": "Charcot's triad (fever, jaundice, RUQ pain) suggests cholangitis."
+    },
+    {
+      "fact": "Mirizzi syndrome: a Hartmann's pouch stone compresses the common hepatic duct."
+    }
+  ],
+  "recall": {
+    "think": "Gallbladder, ducts, pancreas, bowel: where has the stone gone?",
+    "say": "\"This is an opened gallbladder containing multiple stones.\"",
+    "do": [
+      "Summarise wall, mucosa and stones",
+      "Grade severity by Tokyo 2018",
+      "Operate within 1 week of diagnosis"
+    ],
+    "numbers": [
+      {
+        "value": "1 week",
+        "meaning": "laparoscopic cholecystectomy for acute cholecystitis",
+        "source": "CG188"
+      },
+      {
+        "value": "72 h",
+        "meaning": "symptom duration pointing to grade II",
+        "source": "TG18"
+      },
+      {
+        "value": "WCC > 18,000/mm³",
+        "meaning": "grade II criterion",
+        "source": "TG18"
+      }
+    ],
+    "trap": "Murphy's sign alone doesn't make the diagnosis.",
+    "finish": "Early laparoscopic cholecystectomy, within 1 week."
+  },
+  "sources": [
+    {
+      "id": "CG188",
+      "name": "NICE CG188: Gallstone disease: diagnosis and management",
+      "version": "Published October 2014",
+      "url": "https://www.nice.org.uk/guidance/cg188/chapter/Recommendations",
+      "supports": "Ultrasound and LFTs; MRCP when ultrasound misses duct stones but the duct is dilated or LFTs abnormal; laparoscopic cholecystectomy within 1 week for acute cholecystitis; percutaneous cholecystostomy for empyema when surgery is contraindicated"
+    },
+    {
+      "id": "TG18",
+      "name": "Tokyo Guidelines 2018: diagnostic criteria and severity grading of acute cholecystitis (Yokoe M et al., J Hepatobiliary Pancreat Sci 2018;25:41–54)",
+      "version": "2018",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/29032636/",
+      "supports": "Diagnostic criteria and grade I–III severity"
+    },
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format: 9-minute stations with 1 minute's reading; marking domains"
+    }
+  ],
+  "partner": {
+    "opening": "You have the written findings for a cholecystectomy specimen. Summarise them for me.",
+    "reveals": [
+      {
+        "trigger": "After the specimen summary",
+        "finding": "Read out: the H&E section shows the gallbladder wall thickened by fibrous tissue, with scattered lymphocytes and plasma cells. Pockets of mucosal epithelium extend deep through the muscle layer into the wall. There are no sheets of neutrophils and no ulceration. Ask what this shows.",
+        "row": "G3"
+      },
+      {
+        "trigger": "When asked about severity",
+        "finding": "Give the clinical picture: 4 days of pain, WCC 19,000/mm³, no organ dysfunction.",
+        "row": "G5"
+      }
+    ],
+    "push": [
+      {
+        "question": "What types of gallstone are there, and why do they form?",
+        "row": "G2",
+        "expect": "Cholesterol, black and brown pigment, mixed; with causes."
+      },
+      {
+        "question": "What complications happen outside the gallbladder?",
+        "row": "G4",
+        "expect": "Cholangitis, pancreatitis, gallstone ileus, Mirizzi."
+      },
+      {
+        "question": "How severe is this, and how would you manage it?",
+        "row": "G6",
+        "expect": "Grade II (WCC > 18,000, over 72 hours); cholecystectomy within 1 week."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "She is too frail for surgery and has an empyema. What now?",
+        "safeAnswer": "Percutaneous cholecystostomy if conservative management fails.",
+        "row": "G6"
+      },
+      {
+        "prompt": "Ultrasound shows a dilated duct but no stones. Next test?",
+        "safeAnswer": "MRCP.",
+        "row": "G6"
+      },
+      {
+        "prompt": "The histology report mentions a focus of dysplasia. Does that change anything?",
+        "safeAnswer": "Yes: it needs discussion at the MDT, because the specimen is no longer simply benign.",
+        "row": "G7"
+      }
+    ]
+  }
+}

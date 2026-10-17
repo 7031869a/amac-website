@@ -1,0 +1,577 @@
+{
+  "id": "MB-135",
+  "exam": "MRCS-B",
+  "title": "Burns: initial assessment and fluids",
+  "type": "applied-knowledge",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "Applied surgical science and critical care",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "ScotSTAR CG032 (Oct 2023)",
+      "BBA first aid (Apr 2018)",
+      "NNBC referral guidance (2012)"
+    ],
+    "related": [
+      {
+        "id": "MB-136 Head injury",
+        "why": "Primary survey in trauma"
+      },
+      {
+        "id": "Fluid balance",
+        "why": "Crystalloids and urine output"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Emergency department resuscitation room",
+    "role": "Core surgical trainee in the trauma team",
+    "scenario": "Mr Hart, 35, 70 kg, was rescued from a house fire 1 hour ago. His nasal hairs are singed and his voice is hoarse. Written findings: burn map. Partial-thickness burn of the whole front of the trunk, from the collarbones to the groins. Partial-thickness burn of the front of the neck. Partial-thickness burn of the front of the whole right arm, from the shoulder to the fingertips, including the palm; the back of the arm and hand is not burnt. Partial-thickness burn of the front of the whole right leg, from the groin to the ankle; the right foot is not burnt. Erythema of the face, with no blistering.",
+    "task": "Estimate his burn area from the written findings and calculate his fluids. The examiner will also ask about your initial assessment. Estimate the burn area using a Lund and Browder chart."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Airway first. Then a calculated fluid plan, timed from the burn, not from arrival.",
+    "trap": "Counting erythema in the burn size, or starting the 8 hours at arrival.",
+    "firstMove": "Say you'd call a senior anaesthetist now for the airway signs."
+  },
+  "flow": [
+    "Airway and inhalation injury",
+    "Stop the burning, cool, keep warm",
+    "Burn size",
+    "Fluid calculation",
+    "Catheter and urine output",
+    "Secondary survey",
+    "Refer"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-skill",
+      "label": "Airway and inhalation injury (safety-critical)",
+      "fail": "Misses the singed nasal hair and hoarse voice, or waits for stridor.",
+      "pass": "Recognises inhalation injury; high-flow oxygen; senior anaesthetist now for early intubation.",
+      "high": "Checks carboxyhaemoglobin on the gas, knows pulse oximetry can mislead, and considers cyanide after an enclosed-space fire.",
+      "source": "CG032"
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-skill",
+      "label": "First aid",
+      "fail": "Applies ice.",
+      "pass": "Removes clothing and jewellery; cool running water for 20 minutes if within 3 hours; cling film in strips.",
+      "high": "Cools the burn but keeps the patient warm; no circumferential cling film.",
+      "source": "BBA"
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "Burn size (TBSA)",
+      "fail": "Includes erythema, or guesses without a method. Uses rule of nines as the final estimate (gives ~32.5%, overestimates this burn).",
+      "borderline": "Uses the rule of nines correctly but adds the facial erythema.",
+      "pass": "Partial and full thickness only. Lund and Browder, front only: trunk 13, neck 1, right arm 4.75, right leg 8.25 = 27%.",
+      "high": "Prefers Lund and Browder, which adjusts for age; knows the face erythema doesn't count.",
+      "source": "CG032"
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-knowledge",
+      "label": "Fluid calculation",
+      "fail": "Can't give a formula, or starts the clock at arrival.",
+      "borderline": "Knows the formula but starts the 8 hours from arrival.",
+      "pass": "Over 15% in adults: 3 ml × kg × %TBSA of Hartmann's over 24 hours; half in the first 8 hours from the burn.",
+      "high": "5,670 ml; about 405 ml/h. Formulas differ: ATLS 10th ed 2 ml, Parkland 4 ml, local network 3 ml; urine output, not the formula, sets the rate.",
+      "source": "CG032"
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-knowledge",
+      "label": "Monitoring",
+      "fail": "No urinary catheter.",
+      "pass": "Urinary catheter; titrate fluid to urine output 0.5–1.0 ml/kg/h.",
+      "high": "Adjusts the rate to the output rather than the formula, and watches for over-resuscitation.",
+      "source": "CG032"
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-skill",
+      "label": "Secondary survey",
+      "fail": "Doesn't check circulation in the burned arm.",
+      "pass": "Secondary survey; checks for circumferential burns affecting limb perfusion or breathing; IV opioid analgesia; tetanus status.",
+      "high": "Knows escharotomy is a burns-centre decision and seeks their advice early."
+    },
+    {
+      "id": "G7",
+      "domain": "professionalism",
+      "label": "Referral",
+      "fail": "Doesn't refer to a burns service.",
+      "pass": "Refers to the regional burns service: inhalation injury and burn size both meet the criteria.",
+      "high": "Sends the fluid chart, burn map and injury time with him, and asks the burns centre about the fluid plan.",
+      "source": "NNBC"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "How would you assess him?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd look at the burns first. His airway seems fine because he's talking.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd put ice packs on the burns.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How big is the burn?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "About 30%, counting his face.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Fluids?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "A litre of saline now and see how he does.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          },
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Anything else?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Dressings and admit him to the surgical ward.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          },
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "examiner",
+        "text": "How would you assess him?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "ABCDE. Singed nasal hair and a hoarse voice mean inhalation injury, so high-flow oxygen and a senior anaesthetist now for early intubation.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Remove clothing and jewellery, cool running water for 20 minutes as he's within 3 hours, and cling film in strips.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How big is the burn?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Only partial and full thickness count. Using Lund and Browder: front of trunk 13, front of neck 1, front of right arm 4.75, front of right leg 8.25: 27%.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Fluids?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "He's over 15%, so 3 ml × 70 × 27 of Hartmann's over 24 hours, half in the first 8 hours from the time of the burn.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "A urinary catheter, titrating to 0.5 to 1 ml/kg/h.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Secondary survey, check the arm for a circumferential burn, IV morphine and tetanus.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "And refer him to the regional burns service.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "examiner",
+        "text": "How would you assess him?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "His airway is the priority. Singed nasal hair and a hoarse voice: inhalation injury. High-flow oxygen, and a senior anaesthetist now, before swelling makes intubation harder. His sats may read normal, so I'd check carboxyhaemoglobin, and consider cyanide as it was an enclosed-space fire.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Stop the burning: clothing and jewellery off, cool running water for 20 minutes, cling film in strips, never around the arm. Cool the burn, but keep him warm.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How big is the burn?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "27% on Lund and Browder: front of trunk 13, front of neck 1, front of the right arm 4.75 and front of the right leg 8.25. The facial erythema doesn't count.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Fluids?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "3 × 70 × 27 is 5,670 ml of Hartmann's in 24 hours. Half, 2,835 ml, by hour 8 from the fire. He's 1 hour in, so about 405 ml an hour for the next 7 hours.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Formulas differ: ATLS 10th edition uses 2 ml, Parkland 4 ml, and our burns network 3 ml. Whichever I start with, the urine output, not the formula, sets the rate.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Catheter, and I'd adjust the rate to his urine output, 0.5 to 1 ml/kg/h.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Secondary survey. If the arm burn is circumferential, I'd watch perfusion and ask the burns centre about escharotomy early.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "He meets referral criteria. I'd send the fluid chart, burn map and injury time with him, and agree the fluid plan with the burns centre.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G1",
+      "move": "Waiting for stridor before calling an anaesthetist.",
+      "consequence": "Safety-critical: airway swelling can make later intubation very difficult."
+    },
+    {
+      "row": "G4",
+      "move": "Starting the 8-hour clock at arrival.",
+      "consequence": "Under-resuscitates him in the first hours."
+    },
+    {
+      "row": "G3",
+      "move": "Counting erythema in the burn size.",
+      "consequence": "Overestimates the burn, so he gets too much fluid."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You started with the burn, not the airway",
+      "line": "Before the burn itself: his airway. Singed nasal hair and hoarseness mean I need a senior anaesthetist now."
+    },
+    {
+      "when": "You're unsure of the formula",
+      "line": "Formulas range from 2 to 4 ml; I'd follow the local burns network's, time it from the burn and titrate to urine output."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Only partial- and full-thickness burns count towards TBSA; use Lund and Browder.",
+      "source": "CG032"
+    },
+    {
+      "fact": "Fluids for burns over 15% (adults) or 10% (children): 3 ml × kg × %TBSA (adults), half in the first 8 hours from the burn; urine output 0.5–1.0 ml/kg/h.",
+      "source": "CG032"
+    },
+    {
+      "fact": "ATLS 10th edition: 2 ml × kg × %TBSA for adults.",
+      "source": "ATLS"
+    },
+    {
+      "fact": "Parkland formula: 4 ml × kg × %TBSA.",
+      "source": "PARK"
+    },
+    {
+      "fact": "Whatever the formula, titrate the rate to urine output.",
+      "source": "RCEM"
+    },
+    {
+      "fact": "Cool running water for 20 minutes, within 3 hours of the burn; no ice.",
+      "source": "BBA"
+    }
+  ],
+  "recall": {
+    "think": "Airway, then area, then fluids from the time of the burn.",
+    "say": "\"Hoarse with singed nasal hair: I need a senior anaesthetist now.\"",
+    "do": [
+      "Anaesthetist, oxygen, carboxyhaemoglobin",
+      "TBSA without erythema",
+      "Fluids from the burn time; catheter"
+    ],
+    "numbers": [
+      {
+        "value": "3 ml × kg × %",
+        "meaning": "24-hour fluid, half in 8 h",
+        "source": "CG032"
+      },
+      {
+        "value": "> 15%",
+        "meaning": "adult fluid threshold (children > 10%)",
+        "source": "CG032"
+      },
+      {
+        "value": "20 min",
+        "meaning": "cool running water, within 3 h",
+        "source": "BBA"
+      }
+    ],
+    "trap": "The clock starts at the fire.",
+    "finish": "Titrate to 0.5–1 ml/kg/h and refer."
+  },
+  "sources": [
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format: 9 minutes with 1 minute's reading; examiner-led questioning in applied knowledge stations"
+    },
+    {
+      "id": "BL",
+      "name": "Bailey & Love's Short Practice of Surgery (O'Connell, McCaskie, Sayers, eds)",
+      "version": "28th edition, 2023",
+      "url": "https://www.routledge.com/Bailey--Loves-Short-Practice-of-Surgery---28th-Edition/OConnell-McCaskie-Sayers/p/book/9780367548117",
+      "supports": "Rule of nines; inhalation injury and early intubation"
+    },
+    {
+      "id": "CG032",
+      "name": "ScotSTAR CG032: Burns (adults and children)",
+      "version": "Version 1, issued 23 October 2023 (review October 2026)",
+      "url": "https://www.snprs.scot.nhs.uk/wp-content/uploads/Burns-CG032.pdf",
+      "supports": "Airway and inhalation injury signs; Lund and Browder, partial and full thickness only; fluids for burns over 15% (adults) and over 10% (children); 3 ml × %TBSA × kg (adults), 2 ml (children) of Hartmann's or Plasma-Lyte; half in the first 8 hours from the burn; urine output 0.5–1.0 ml/kg/h"
+    },
+    {
+      "id": "BBA",
+      "name": "British Burn Association: First aid clinical practice guidelines",
+      "version": "April 2018",
+      "url": "https://www.britishburnassociation.org/wp-content/uploads/2017/06/BBA-First-Aid-Guideline-24.9.18.pdf",
+      "supports": "Cool running water for 20 minutes, within 3 hours; no ice; cling film in strips, not circumferential; cool the burn, warm the patient"
+    },
+    {
+      "id": "RCEM",
+      "name": "RCEMLearning: Major trauma – burns: fluids",
+      "version": "Last modified 13 January 2026",
+      "url": "https://www.rcemlearning.co.uk/modules/major-trauma-burns/lessons/fluids/",
+      "supports": "Formulas range 2–4 ml × kg × %TBSA; thresholds vary between guidelines; titrate to urine output"
+    },
+    {
+      "id": "NNBC",
+      "name": "National Network for Burn Care: National Burn Care Referral Guidance",
+      "version": "Version 1, 2012",
+      "url": "https://www.britishburnassociation.org/wp-content/uploads/2018/02/National-Burn-Care-Referral-Guidance-2012.pdf",
+      "supports": "Referral to specialised burn care: size, depth, site, inhalation injury, mechanism and safeguarding"
+    },
+    {
+      "id": "ATLS",
+      "name": "American College of Surgeons: Advanced Trauma Life Support (ATLS) Student Course Manual",
+      "version": "10th edition, 2018",
+      "url": "https://www.facs.org/quality-programs/trauma/education/advanced-trauma-life-support/",
+      "supports": "Adult thermal burns: 2 ml × kg × %TBSA of crystalloid in the first 24 hours, titrated to urine output"
+    },
+    {
+      "id": "PARK",
+      "name": "Baxter CR, Shires T. Physiological response to crystalloid resuscitation of severe burns. Ann N Y Acad Sci (Parkland formula)",
+      "version": "1968",
+      "url": "https://doi.org/10.1111/j.1749-6632.1968.tb14738.x",
+      "supports": "Parkland formula: 4 ml × kg × %TBSA of Ringer's lactate in the first 24 hours"
+    }
+  ],
+  "partner": {
+    "opening": "Mr Hart has just arrived from a house fire. How would you assess him?",
+    "reveals": [
+      {
+        "trigger": "Asks about the airway",
+        "finding": "Talking, hoarse voice, singed nasal hair, soot in the nostrils, no stridor yet.",
+        "row": "G1"
+      },
+      {
+        "trigger": "Asks for a blood gas",
+        "finding": "Carboxyhaemoglobin 14%, lactate 2.8. SpO2 on the monitor reads 98%.",
+        "row": "G1"
+      },
+      {
+        "trigger": "Asks about other burns",
+        "finding": "Read out: the back of the trunk, the back of the right arm and leg, the left arm, the left leg and both feet are not burnt. The face is red but not blistered.",
+        "row": "G3"
+      },
+      {
+        "trigger": "Asks about the arm",
+        "finding": "Burn is not circumferential; radial pulse present, hand warm.",
+        "row": "G6"
+      },
+      {
+        "trigger": "Asks about urine output after 2 hours",
+        "finding": "25 ml/h and 30 ml/h.",
+        "row": "G5"
+      }
+    ],
+    "push": [
+      {
+        "question": "Calculate his fluids for the first 8 hours.",
+        "row": "G4",
+        "expect": "5,670 ml in 24 h; 2,835 ml by hour 8 from the burn; about 405 ml/h."
+      },
+      {
+        "question": "Why not count the face?",
+        "row": "G3",
+        "expect": "Erythema isn't included in TBSA."
+      },
+      {
+        "question": "What does his urine output tell you?",
+        "row": "G5",
+        "expect": "25–30 ml/h is under 0.5 ml/kg/h for 70 kg: increase the rate and reassess."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "His voice becomes more hoarse and he's drooling.",
+        "safeAnswer": "Airway threat: senior anaesthetist to intubate now, not later.",
+        "row": "G1"
+      },
+      {
+        "prompt": "A 4-year-old has a 12% scald.",
+        "safeAnswer": "Over 10% in a child needs formal fluids and referral to a paediatric burns service.",
+        "row": "G4"
+      },
+      {
+        "prompt": "The arm burn is circumferential and full thickness, and the hand is cold.",
+        "safeAnswer": "Compromised limb: urgent burns-centre advice about escharotomy.",
+        "row": "G6"
+      },
+      {
+        "prompt": "Another hospital uses 4 ml. Which is right?",
+        "safeAnswer": "Formulas range from 2 to 4 ml; follow the local network, time it from the burn and titrate to urine output.",
+        "row": "G4"
+      }
+    ]
+  }
+}

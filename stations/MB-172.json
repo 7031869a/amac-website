@@ -1,0 +1,572 @@
+{
+  "id": "MB-172",
+  "exam": "MRCS-B",
+  "title": "Ulcer examination: venous, arterial or neuropathic",
+  "type": "examination",
+  "header": {
+    "domain": "Applied Skills",
+    "contentArea": "Clinical and procedural skills",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "signalMinutes": 6,
+    "guidelineVersions": [
+      "Wounds UK venous leg ulcer best practice statement (2022)",
+      "NWCSP lower limb recommendations (Oct 2020)",
+      "NICE CG168 (2013)",
+      "NICE NG19 (updated Oct 2019)"
+    ],
+    "related": [
+      {
+        "id": "MB-175 Intermittent claudication",
+        "why": "The arterial history behind an arterial ulcer"
+      },
+      {
+        "id": "MB-169 Varicose veins examination",
+        "why": "The venous disease that causes most leg ulcers"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Vascular outpatient clinic",
+    "role": "Core surgical trainee",
+    "scenario": "Mrs Irene Holloway, 74, has had an ulcer on her right leg for three months. The district nurses would like to start compression bandaging. The examiner will read out what you see and feel, including the appearance of the ulcer, as you examine.",
+    "task": "Examine her legs, including the ulcer; the examiner will read out the findings as you go. You will be stopped at 6 minutes to present your findings and answer questions."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Describe the ulcer, then decide: venous, arterial or neuropathic? Pulses, sensation and ABPI answer it.",
+    "trap": "Agreeing to strong compression because the ulcer looks venous, before an ABPI.",
+    "firstMove": "\"May I look at both of your legs, from the knees down?\""
+  },
+  "flow": [
+    "Introduce, consent, expose both legs",
+    "Describe the ulcer",
+    "Surrounding skin and veins",
+    "Pulses and ABPI",
+    "Sensation",
+    "At 6 minutes: present",
+    "Compression and referral"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "professionalism",
+      "label": "Preparation",
+      "fail": "Removes the dressing without asking about pain.",
+      "pass": "Introduces, confirms identity, gains consent, asks about pain, cleans hands, wears gloves, exposes both legs below the knee.",
+      "high": "Examines the good leg too, and checks the feet, heels and between the toes.",
+      "source": "ICBSE"
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-skill",
+      "label": "Assessing the ulcer",
+      "fail": "Says 'an ulcer on the leg' without assessing or describing it.",
+      "borderline": "Gives the size and base but not the edge or surrounding skin.",
+      "pass": "Assesses and restates site, size, shape, edge, base, depth, discharge and surrounding skin, in order.",
+      "high": "Uses each feature to discriminate: a sloping edge and granulating base in the gaiter area point to a venous cause."
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-skill",
+      "label": "Venous signs",
+      "fail": "Doesn't look at the rest of the leg.",
+      "pass": "Looks for varicose veins, oedema, haemosiderin staining, venous eczema, lipodermatosclerosis and atrophie blanche.",
+      "high": "Links the skin changes to venous hypertension and notes an 'inverted champagne bottle' leg from lipodermatosclerosis.",
+      "source": "WUK"
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-skill",
+      "label": "Arterial assessment",
+      "fail": "Says the foot pulses are impalpable 'because of the swelling' and moves on.",
+      "pass": "Feels femoral, popliteal and foot pulses; capillary refill; asks for a Doppler ABPI in both legs.",
+      "high": "States that pulse palpation can't exclude arterial disease, and that the ABPI uses the highest ankle and highest arm pressures.",
+      "source": "CG147"
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-skill",
+      "label": "Sensation",
+      "fail": "Doesn't test sensation.",
+      "pass": "Tests sensation with a 10 g monofilament on the feet.",
+      "high": "Explains that neuropathy points to a neuropathic ulcer and makes compression riskier, because she may not feel pressure damage.",
+      "source": "NG19"
+    },
+    {
+      "id": "G6",
+      "domain": "communication",
+      "label": "Presentation at the signal",
+      "fail": "Lists actions rather than findings.",
+      "pass": "Describes the ulcer, the leg and the pulses, and gives a likely cause.",
+      "high": "Leads with 'a venous ulcer', gives the features against arterial and neuropathic causes, and says compression depends on the ABPI."
+    },
+    {
+      "id": "G7",
+      "domain": "clinical-knowledge",
+      "label": "Compression and ABPI (safety-critical)",
+      "fail": "Agrees to start strong compression before an ABPI.",
+      "pass": "No strong compression until the ABPI is known; ABPI 0.8–1.3 allows compression of at least 40 mmHg.",
+      "high": "Below 0.5: no compression, urgent vascular referral. 0.5–0.8: mixed disease, specialist advice, under 20 mmHg. Above 1.3: suspect calcification.",
+      "source": "WUK"
+    },
+    {
+      "id": "G8",
+      "domain": "clinical-knowledge",
+      "label": "Referral",
+      "fail": "Leaves her with the district nurses and dressings only.",
+      "pass": "Refers to the vascular service: a venous leg ulcer not healed within 2 weeks; duplex ultrasound for reflux.",
+      "high": "Explains that treating superficial reflux helps healing and recurrence, and that a healed venous ulcer still merits referral.",
+      "source": "NWCSP"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "candidate",
+        "text": "[Starts peeling off the dressing without asking about pain; looks at the right leg only.]",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          },
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "There's an ulcer on her leg. It looks venous.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Tries the foot pulses.] I can't feel them, but that's the swelling.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop. Your findings?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "She has a leg ulcer, probably venous.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The district nurses want to start four-layer bandaging. Do you agree?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Yes, it's venous, so compression can start today and she can carry on with the district nurses.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          },
+          {
+            "row": "G8",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "candidate",
+        "text": "Hello, I'm Dr Patel, one of the surgical trainees. Can I check your name and date of birth? I'd like to look at both legs and the ulcer. Is it painful? I'll be gentle with the dressing. [Consent; cleans hands; gloves; exposes both legs.]",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Examines the ulcer; the examiner reads out the findings.] The ulcer is above the right medial malleolus. It's 4 by 3 centimetres and oval, with a sloping edge and a granulating base with some slough. It's shallow, with a moderate serous discharge, and the skin around it is brown and hard.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Inspects both legs standing and lying: varicose veins, oedema, staining, eczema, lipodermatosclerosis, atrophie blanche.]",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Femoral, popliteal and foot pulses; capillary refill.] I'd like a Doppler ABPI in both legs.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[10 g monofilament on both feet.] Thank you. [Cleans hands.]",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop. Your findings?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Mrs Holloway has a 4 by 3 cm shallow ulcer above the right medial malleolus with a sloping edge and granulating base, with varicose veins, haemosiderin staining and lipodermatosclerosis. Femoral and popliteal pulses are present; the foot pulses are hard to feel. Sensation is normal. This is most likely a venous ulcer.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The district nurses want to start four-layer bandaging. Do you agree?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Not until we know the ABPI. The ABPI is 0.92 on the right. Between 0.8 and 1.3, strong compression of at least 40 mmHg can be used. I'd also refer her to the vascular service for a duplex scan, because the ulcer hasn't healed in more than 2 weeks.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          },
+          {
+            "row": "G8",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "candidate",
+        "text": "Hello, I'm Dr Patel, one of the surgical trainees. Can I check your name and date of birth? I'd like to look at both legs, including your feet. Is the ulcer painful? [Consent; cleans hands; gloves; checks heels and between the toes on both sides.]",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Examines the ulcer; the examiner reads out the findings.] Medial gaiter area, 4 by 3 cm, oval, with a sloping edge and a granulating base with slough. It's shallow with a serous discharge. The sloping edge and the site point to a venous ulcer rather than a punched-out arterial one.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Both legs.] Varicose veins, haemosiderin staining and a narrow, woody lower calf: lipodermatosclerosis, the 'inverted champagne bottle'. These come from venous hypertension.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Femoral and popliteal pulses present; foot pulses not felt.] I can't rely on palpation to exclude arterial disease, so I need a Doppler ABPI, using the highest ankle and highest arm pressure.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Monofilament on both feet: normal.] That makes a neuropathic ulcer unlikely, and she'll feel it if a bandage is too tight. Thank you. [Cleans hands.]",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop. Your findings?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Mrs Holloway has a venous leg ulcer: medial gaiter area, sloping edge, granulating base, with lipodermatosclerosis and varicose veins. It isn't punched out or on a pressure point, and sensation is normal, so arterial and neuropathic causes are less likely. Whether we compress depends on the ABPI.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The district nurses want to start four-layer bandaging. Do you agree?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Only once we have the ABPI. At 0.92 she can have strong compression. Below 0.5 I'd stop and refer urgently; between 0.5 and 0.8 it's mixed disease, with only light compression under specialist advice; above 1.3 I'd suspect calcified vessels. I'd refer her for a venous duplex, because treating the superficial reflux helps healing and prevents recurrence.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          },
+          {
+            "row": "G8",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G7",
+      "move": "Agreeing to strong compression before an ABPI because the ulcer 'looks venous'.",
+      "consequence": "Safety-critical: compression on an ischaemic leg can cause pressure necrosis and limb loss."
+    },
+    {
+      "row": "G4",
+      "move": "Blaming oedema for impalpable foot pulses.",
+      "consequence": "Palpation can't exclude arterial disease; mixed disease is missed unless the ABPI is measured."
+    },
+    {
+      "row": "G2",
+      "move": "Assessing the ulcer without its edge or site.",
+      "consequence": "Loses the two features that best separate venous, arterial and neuropathic ulcers."
+    },
+    {
+      "row": "G5",
+      "move": "Not testing sensation.",
+      "consequence": "Misses neuropathy, which changes the diagnosis and makes compression less safe."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You can't feel the foot pulses",
+      "line": "I can't feel the foot pulses, so I'd like a Doppler ABPI before deciding on compression."
+    },
+    {
+      "when": "You forgot to test sensation",
+      "line": "Before I finish, I'd like to test sensation on both feet with a monofilament."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Venous: gaiter area, granulating base, haemosiderin, lipodermatosclerosis. Arterial: toes, foot or ankle, necrotic or sloughy base, pale skin.",
+      "source": "WUK"
+    },
+    {
+      "fact": "Edge: sloping in venous ulcers, punched out in arterial and neuropathic. Neuropathic: plantar pressure points, callus, insensate foot.",
+      "source": "BL"
+    },
+    {
+      "fact": "ABPI 0.8–1.3: at least 40 mmHg compression. 0.5–0.8: mixed disease, specialist advice, under 20 mmHg. Below 0.5: no compression, urgent vascular referral. Above 1.3: consider calcification.",
+      "source": "WUK"
+    },
+    {
+      "fact": "Red flags (infection, sepsis, limb-threatening ischaemia, DVT, suspected skin cancer): no compression; escalate immediately.",
+      "source": "NWCSP"
+    },
+    {
+      "fact": "Refer to a vascular service a venous leg ulcer not healed within 2 weeks, or healed.",
+      "source": "CG168"
+    },
+    {
+      "fact": "Diabetic foot ulcer with fever, sepsis, ischaemia, deep infection or gangrene: immediate referral to acute services.",
+      "source": "NG19"
+    }
+  ],
+  "recall": {
+    "think": "Is there arterial disease or infection that makes compression dangerous?",
+    "say": "\"No strong compression until we have an ABPI.\"",
+    "do": [
+      "Describe: site, edge, base, surrounding skin",
+      "Pulses, then ask for a Doppler ABPI",
+      "Monofilament sensation"
+    ],
+    "numbers": [
+      {
+        "value": "0.8–1.3",
+        "meaning": "ABPI range for strong compression",
+        "source": "WUK"
+      },
+      {
+        "value": "2 weeks",
+        "meaning": "unhealed venous ulcer: refer to vascular service",
+        "source": "CG168"
+      },
+      {
+        "value": "6 min",
+        "meaning": "signal to stop and present",
+        "source": "ICBSE"
+      }
+    ],
+    "trap": "A venous-looking ulcer can still sit on an ischaemic leg.",
+    "finish": "ABPI-guided compression; vascular referral for duplex and venous intervention."
+  },
+  "sources": [
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "At every station: introduce yourself, explain the task, confirm identity, obtain consent, clean hands before and after patient contact; 6-minute signal in examination stations"
+    },
+    {
+      "id": "BL",
+      "name": "Bailey & Love's Short Practice of Surgery (O'Connell, McCaskie, Sayers, eds)",
+      "version": "28th edition, 2023",
+      "url": "https://www.routledge.com/Bailey--Loves-Short-Practice-of-Surgery---28th-Edition/OConnell-McCaskie-Sayers/p/book/9780367548117",
+      "supports": "Ulcer description (site, size, shape, edge, base, depth, discharge, surrounding skin); sloping edge of venous ulcers; punched-out arterial and neuropathic ulcers; neuropathic ulcers on plantar pressure points with callus"
+    },
+    {
+      "id": "WUK",
+      "name": "Wounds UK. Best Practice Statement: Holistic management of venous leg ulceration (second edition)",
+      "version": "2022 (second edition)",
+      "url": "https://wounds-uk.com/best-practice-statements/holistic-management-venous-leg-ulceration-second-edition/",
+      "supports": "Pathway: full lower limb assessment including ABPI within 14 days; ABPI 0.8–1.3: compression of at least 40 mmHg; ABPI 0.5–0.8: mixed disease, refer to vascular centre or tissue viability and continue with less than 20 mmHg; ABPI below 0.5: urgent vascular referral, stop compression; ABPI above 1.3: consider calcification. Table 3: features of venous (gaiter area, lipodermatosclerosis, haemosiderosis, atrophie blanche) and arterial ulcers (toes, foot, ankle; pale; necrotic tissue); lipodermatosclerosis gives an 'inverted champagne bottle' leg"
+    },
+    {
+      "id": "NWCSP",
+      "name": "National Wound Care Strategy Programme (NHS England): Lower limb recommendations",
+      "version": "October 2020",
+      "url": "https://thehealthinnovationnetwork.co.uk/wp-content/uploads/2020/10/@NWCSP-Lower-Limb-Recommendations-13.10.20.pdf",
+      "supports": "Red flags (acute infection, sepsis, acute or chronic limb-threatening ischaemia, suspected DVT, suspected skin cancer) are not treated with compression and are escalated immediately; pulse palpation is unreliable, so arterial assessment is at minimum a Doppler ABPI; leg wound assessment within 14 days; neuropathic assessment because impaired sensation raises the risk of pressure damage from compression; strong compression is at least 40 mmHg at the ankle; foot ulcers typically on the plantar surface, dorsal interphalangeal joints and toe tips; good evidence that endovenous ablation helps venous leg ulcers heal and prevents recurrence, as NICE CG168 recommends (explanatory notes)"
+    },
+    {
+      "id": "CG147",
+      "name": "NICE CG147: Peripheral arterial disease: diagnosis and management",
+      "version": "Published 8 August 2012; last updated 11 December 2020; minor changes July 2026",
+      "url": "https://www.nice.org.uk/guidance/cg147",
+      "supports": "Assess for PAD in people with non-healing wounds on the legs or feet or who need compression hosiery (1.3.1); examine femoral, popliteal and foot pulses (1.3.2); ABPI: highest ankle pressure divided by highest arm pressure in each leg, using a Doppler probe (1.3.3)"
+    },
+    {
+      "id": "CG168",
+      "name": "NICE CG168: Varicose veins: diagnosis and management",
+      "version": "Published 24 July 2013; links updated March 2025",
+      "url": "https://www.nice.org.uk/guidance/cg168",
+      "supports": "Refer to a vascular service people with a venous leg ulcer (a break in the skin below the knee that has not healed within 2 weeks) or a healed venous leg ulcer (1.2.2); duplex ultrasound for diagnosis and the extent of reflux (1.3.1)"
+    },
+    {
+      "id": "NG19",
+      "name": "NICE NG19: Diabetic foot problems: prevention and management",
+      "version": "Published 26 August 2015; last updated 11 October 2019; minor changes September 2024",
+      "url": "https://www.nice.org.uk/guidance/ng19",
+      "supports": "10 g monofilament as part of foot sensory examination (1.3.4); interpret ABPI carefully in diabetes because calcified arteries may falsely elevate results (1.3.5); immediate referral to acute services for ulceration with fever or sepsis, ulceration with limb ischaemia, deep infection or gangrene (1.4.1); other active problems referred within 1 working day (1.4.2); SINBAD or University of Texas classification, not Wagner (1.5.2–1.5.3)"
+    }
+  ],
+  "partner": {
+    "opening": "Please examine this patient's legs, including the ulcer. I'll read out the findings as you go, and I'll stop you at 6 minutes.",
+    "actorBrief": "You are Mrs Irene Holloway, 74, a retired shop worker. The ulcer on your right leg started after you knocked it three months ago. It aches by the end of the day and feels better with your feet up. No pain in the calves on walking and no pain at night. You are not diabetic. Wince slightly when the dressing comes off.",
+    "reveals": [
+      {
+        "trigger": "Inspects both legs",
+        "finding": "Right leg: varicose veins, pitting ankle oedema, brown staining and hard, narrow skin in the lower third of the calf. White scarred patches near the ulcer. Left leg: mild varicose veins only.",
+        "row": "G3"
+      },
+      {
+        "trigger": "Looks at the ulcer",
+        "finding": "Read out: the ulcer lies just above the right medial malleolus. It is oval, 4 × 3 cm, shallow, with a gently sloping edge. The base is red and granular with some yellow slough, and there is a moderate serous exudate. The skin around it is brown-stained and firm.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Feels the pulses",
+        "finding": "Femoral and popliteal pulses present both sides. Right foot pulses not palpable; left dorsalis pedis palpable. Capillary refill 2 seconds.",
+        "row": "G4"
+      },
+      {
+        "trigger": "Tests sensation",
+        "finding": "Monofilament felt at all sites on both feet.",
+        "row": "G5"
+      },
+      {
+        "trigger": "Asks for an ABPI",
+        "finding": "Right: highest ankle 138 mmHg, highest arm 150 mmHg, ABPI 0.92. Left: ankle 153, ABPI 1.02. Biphasic Doppler signals.",
+        "row": "G4"
+      },
+      {
+        "trigger": "At 6 minutes",
+        "finding": "Say: \"Please stop there and present your findings.\"",
+        "row": "G6"
+      }
+    ],
+    "push": [
+      {
+        "question": "What makes this venous rather than arterial?",
+        "row": "G2",
+        "expect": "Gaiter site, sloping edge, granulating base, venous skin changes; arterial is punched out, distal or on pressure points, pale base, absent pulses."
+      },
+      {
+        "question": "The district nurses want to start four-layer bandaging. Do you agree?",
+        "row": "G7",
+        "expect": "Only after an ABPI; 0.8–1.3 allows strong compression."
+      },
+      {
+        "question": "Where would you refer her?",
+        "row": "G8",
+        "expect": "Vascular service for duplex ultrasound: venous ulcer not healed within 2 weeks."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "The ABPI comes back at 0.45.",
+        "safeAnswer": "Severe arterial disease: no compression and urgent vascular referral.",
+        "row": "G7"
+      },
+      {
+        "prompt": "A man with diabetes has a round, punched-out ulcer under his first metatarsal head, with a thick rim of callus around it, a hot swollen foot and a temperature of 38.4°C.",
+        "safeAnswer": "Infected diabetic foot ulcer: immediate referral to acute services and inform the multidisciplinary foot care service.",
+        "row": "G5"
+      },
+      {
+        "prompt": "In a patient with diabetes the ABPI is 1.6.",
+        "safeAnswer": "Likely calcified, incompressible vessels, so the ABPI is unreliable; ask for Doppler waveforms or toe pressures and a vascular opinion.",
+        "row": "G7"
+      },
+      {
+        "prompt": "Read out: a different patient has a round 1.5 cm ulcer on the dorsum of the foot over the base of the second toe. The edge is sharply punched out, the base is pale with a patch of black tissue and no granulation, and the surrounding skin is shiny, hairless and cool. What type of ulcer is this, and what would you do?",
+        "safeAnswer": "An arterial ulcer: punched out, pale base, on the foot. Needs ABPI and vascular referral; no compression.",
+        "row": "G2"
+      }
+    ]
+  }
+}

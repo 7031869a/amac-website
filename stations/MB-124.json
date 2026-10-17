@@ -1,0 +1,522 @@
+{
+  "id": "MB-124",
+  "exam": "MRCS-B",
+  "title": "Pathology: breast carcinoma (specimen and histology)",
+  "type": "applied-knowledge",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "Surgical pathology (specimen, histology and discussion)",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "RCPath G148 breast cancer dataset, v3 (Nov 2024)"
+    ],
+    "related": [
+      {
+        "id": "Breast lump history station",
+        "why": "Triple assessment before the specimen"
+      },
+      {
+        "id": "Breaking bad news station",
+        "why": "Explaining a cancer diagnosis"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Pathology station",
+    "role": "Core surgical trainee",
+    "scenario": "A 58-year-old woman has had a wide local excision of a breast lesion. The examiner will read out the histology during the station. Written findings: a wide local excision of breast tissue, orientated with marking sutures, has been sliced. One slice shows a firm, grey-white mass about 2 cm across with an irregular, spiculated edge radiating into the surrounding yellow fat, giving a star-shaped outline. The cut surface feels gritty. The mass lies close to one margin. No skin or nipple is included.",
+    "task": "Summarise and interpret the written specimen findings and the histology the examiner reads out, and answer the examiner's questions on grading, receptor status and prognosis."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Summarise the findings before you diagnose, then grade, receptors and prognosis, in that order.",
+    "trap": "Naming the diagnosis from the first line of the findings and skipping the structured summary.",
+    "firstMove": "\"This is a wide local excision specimen, orientated with sutures, sliced to show a mass.\""
+  },
+  "flow": [
+    "Summarise the specimen findings",
+    "Most likely diagnosis and differential",
+    "Histology",
+    "Grade and receptors",
+    "Prognosis"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-skill",
+      "label": "Specimen summary",
+      "fail": "Leads with a diagnosis before summarising the findings.",
+      "pass": "Summarises the specimen and orientation markers, then size, shape, colour, consistency and margins, in order.",
+      "high": "Picks out the nearest margin and the absence of skin and nipple before offering a diagnosis."
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-knowledge",
+      "label": "Macroscopic diagnosis",
+      "fail": "Calls a stellate, gritty mass a fibroadenoma.",
+      "pass": "Stellate, grey-white, gritty mass: most likely invasive carcinoma of no special type.",
+      "high": "Gives a differential (lobular carcinoma, fat necrosis, radial scar) and says histology will decide."
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "Histology",
+      "fail": "Cannot say what makes a carcinoma invasive.",
+      "borderline": "Says it is malignant but cannot say whether it is in situ or invasive.",
+      "pass": "Nests and glands of pleomorphic cells infiltrating desmoplastic stroma: invasive carcinoma of no special type.",
+      "high": "Contrasts lobular carcinoma: single-file, discohesive cells with loss of E-cadherin."
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-knowledge",
+      "label": "Nottingham grade",
+      "fail": "Confuses grade with stage.",
+      "pass": "Tubule formation, nuclear pleomorphism and mitotic count, each scored 1–3.",
+      "high": "Converts totals: 3–5 grade 1, 6–7 grade 2, 8–9 grade 3.",
+      "source": "RCPATH"
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-knowledge",
+      "label": "Receptor status",
+      "fail": "Omits HER2.",
+      "pass": "Reports ER, PR and HER2, and explains they guide endocrine and anti-HER2 treatment.",
+      "high": "HER2 immunohistochemistry: 3+ positive, 2+ equivocal needing in situ hybridisation. ER 1–10% is reported as ER low.",
+      "source": "RCPATH"
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-knowledge",
+      "label": "Prognosis",
+      "fail": "Cannot name a prognostic factor.",
+      "pass": "Nodal status, tumour size and grade, combined in the Nottingham Prognostic Index.",
+      "high": "Gives the formula: 0.2 × size in cm, plus grade, plus nodal score (1 none, 2 one to three nodes, 3 four or more).",
+      "source": "NPI"
+    },
+    {
+      "id": "G7",
+      "domain": "professionalism",
+      "label": "Safe conclusions",
+      "fail": "Gives a definitive diagnosis from the naked-eye specimen alone.",
+      "pass": "States that the final diagnosis rests on histology and receptor testing.",
+      "high": "Commits to a most likely diagnosis while naming what would change it."
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "Summarise the specimen findings for me."
+      },
+      {
+        "speaker": "candidate",
+        "text": "This is breast cancer.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          },
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Could it be benign?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "It could be a fibroadenoma.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What does the histology show?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Cancer cells.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How is it graded?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "By its size and the lymph nodes.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "examiner",
+        "text": "Summarise the specimen findings."
+      },
+      {
+        "speaker": "candidate",
+        "text": "This is a wide local excision, orientated with sutures and sliced. There is a firm, grey-white, stellate mass about 2 cm across, close to one margin.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What is it most likely to be?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Invasive carcinoma of no special type.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "And the histology?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Nests and glands of pleomorphic cells infiltrating a desmoplastic stroma, so this is invasive carcinoma of no special type.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you grade it?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Nottingham grading: tubule formation, nuclear pleomorphism and mitotic count, each scored 1 to 3.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What else would the pathologist report?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Oestrogen and progesterone receptors and HER2, because they decide endocrine and anti-HER2 treatment.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What predicts prognosis?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Nodal status, tumour size and grade, combined in the Nottingham Prognostic Index.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "So is this definitely cancer?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "It looks like carcinoma, but the diagnosis rests on the histology and receptor testing, not the naked-eye findings.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "examiner",
+        "text": "Summarise the specimen findings."
+      },
+      {
+        "speaker": "candidate",
+        "text": "A wide local excision, orientated with sutures and sliced. There's a firm, grey-white, stellate mass about 2 cm across with a gritty cut surface. It lies close to one margin; the skin and nipple aren't included.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What is it most likely to be?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Invasive carcinoma of no special type. The differential is lobular carcinoma, fat necrosis or a radial scar; histology will decide.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "And the histology?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Pleomorphic cells in nests and glands infiltrating desmoplastic stroma: invasive carcinoma of no special type. Lobular carcinoma would show single-file, discohesive cells with loss of E-cadherin.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Grade?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Nottingham: tubules, pleomorphism and mitoses, each 1 to 3. A total of 3 to 5 is grade 1, 6 to 7 grade 2, 8 to 9 grade 3.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Receptors?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "ER, PR and HER2. HER2 3+ on immunohistochemistry is positive; 2+ is equivocal and needs in situ hybridisation. ER staining in 1 to 10% of cells is reported as ER low.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Prognosis?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "The Nottingham Prognostic Index: 0.2 times size in centimetres, plus grade, plus a nodal score of 1 for no nodes, 2 for one to three, 3 for four or more.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "So is this definitely cancer?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Most likely invasive carcinoma of no special type. Histology showing an in situ lesion, or fat necrosis, would change that.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G5",
+      "move": "Forgetting HER2.",
+      "consequence": "Misses the result that decides anti-HER2 treatment."
+    },
+    {
+      "row": "G6",
+      "move": "Giving grade as the only prognostic factor.",
+      "consequence": "Nodal status is the strongest single factor, and it's missing."
+    },
+    {
+      "row": "G1",
+      "move": "Skipping the margins when summarising the findings.",
+      "consequence": "Misses the observation that decides whether re-excision is needed."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You're unsure of the diagnosis",
+      "line": "Let me describe it first: size, shape, colour, consistency, then its relation to the margins."
+    },
+    {
+      "when": "You forget the grade bands",
+      "line": "Three components, each scored 1 to 3, so totals run from 3 to 9, in three bands."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Nottingham grade: tubule formation, nuclear pleomorphism, mitotic count, each 1–3; totals 3–5 grade 1, 6–7 grade 2, 8–9 grade 3.",
+      "source": "RCPATH"
+    },
+    {
+      "fact": "HER2 IHC: 3+ positive; 2+ equivocal, needs in situ hybridisation.",
+      "source": "RCPATH"
+    },
+    {
+      "fact": "ER staining in 1–10% of cells is reported as ER low.",
+      "source": "RCPATH"
+    },
+    {
+      "fact": "NPI = 0.2 × size (cm) + grade + nodal score (1, 2 or 3).",
+      "source": "NPI"
+    },
+    {
+      "fact": "Lobular carcinoma: discohesive single-file cells, loss of E-cadherin."
+    }
+  ],
+  "recall": {
+    "think": "Describe, differential, histology, grade, receptors, prognosis.",
+    "say": "\"I'll describe it before I name it.\"",
+    "do": [
+      "Specimen, orientation, margins",
+      "Grade from three components",
+      "ER, PR and HER2, then NPI"
+    ],
+    "numbers": [
+      {
+        "value": "3–9",
+        "meaning": "Nottingham total: 3–5 G1, 6–7 G2, 8–9 G3",
+        "source": "RCPATH"
+      },
+      {
+        "value": "HER2 2+",
+        "meaning": "equivocal: needs in situ hybridisation",
+        "source": "RCPATH"
+      },
+      {
+        "value": "0.2 × size",
+        "meaning": "+ grade + nodal score = NPI",
+        "source": "NPI"
+      }
+    ],
+    "trap": "Naming it before summarising the findings.",
+    "finish": "Diagnosis, grade, receptors and nodes decide treatment and prognosis."
+  },
+  "sources": [
+    {
+      "id": "RCPATH",
+      "name": "RCPath G148: Dataset for histopathological reporting of breast disease in surgical excision specimens of breast cancer",
+      "version": "Version 3, November 2024",
+      "url": "https://www.rcpath.org/resourceLibrary/g148-dataset-for-histopathological-reporting-of-breast-disease-in-surgical-excision-specimens-of-breast-cancer.html",
+      "supports": "Nottingham grading, ER/PR (including ER low, 1–10%), HER2 reporting"
+    },
+    {
+      "id": "NPI",
+      "name": "Galea MH et al. The Nottingham Prognostic Index in primary breast cancer. Breast Cancer Res Treat 1992;22:207–19",
+      "version": "1992",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/1391987/",
+      "supports": "NPI formula and nodal score"
+    },
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format: 9-minute stations with 1 minute's reading; marking domains"
+    }
+  ],
+  "partner": {
+    "opening": "You have the written findings for a specimen from a 58-year-old woman. Summarise them for me.",
+    "reveals": [
+      {
+        "trigger": "After the specimen summary",
+        "finding": "Read out: the H&E section shows nests, cords and gland-like groups of epithelial cells with enlarged, variably sized, hyperchromatic nuclei and scattered mitoses. The groups lie haphazardly in dense, reactive fibrous stroma and extend into the surrounding fat. Ask what this shows.",
+        "row": "G3"
+      },
+      {
+        "trigger": "When asked about receptors",
+        "finding": "Read out: HER2 immunohistochemistry shows strong, complete membrane staining around more than 10% of the tumour cells. Ask how this is scored and what it means.",
+        "row": "G5"
+      },
+      {
+        "trigger": "When asked about prognosis",
+        "finding": "Read out: 2.0 cm, grade 2, 2 of 14 nodes positive.",
+        "row": "G6"
+      }
+    ],
+    "push": [
+      {
+        "question": "What is your differential?",
+        "row": "G2",
+        "expect": "Invasive NST, lobular carcinoma, fat necrosis, radial scar."
+      },
+      {
+        "question": "How is it graded?",
+        "row": "G4",
+        "expect": "Three components, each 1–3; totals 3–5, 6–7, 8–9."
+      },
+      {
+        "question": "What is the NPI here?",
+        "row": "G6",
+        "expect": "0.2 × 2.0 + 2 + 2 = 4.4."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "HER2 is 2+. Is she HER2 positive?",
+        "safeAnswer": "Equivocal: it needs in situ hybridisation before deciding.",
+        "row": "G5"
+      },
+      {
+        "prompt": "The cells are in single file and E-cadherin is negative. Now what?",
+        "safeAnswer": "That points to invasive lobular carcinoma.",
+        "row": "G3"
+      },
+      {
+        "prompt": "The tumour is 0.5 mm from the margin. Is that clear?",
+        "safeAnswer": "I'd give the measured distance and discuss re-excision with the MDT against local margin policy.",
+        "row": "G1"
+      }
+    ]
+  }
+}

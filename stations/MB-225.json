@@ -1,0 +1,614 @@
+{
+  "id": "MB-225",
+  "exam": "MRCS-B",
+  "title": "Postoperative chest X-ray: pneumothorax, free gas and lobar collapse",
+  "type": "data-interpretation",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "Applied surgical science and critical care",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "BTS Guideline for pleural disease, full guideline and pneumothorax pathway (Thorax, July 2023)",
+      "Needle decompression meta-analysis, World J Emerg Surg (May 2025)",
+      "Shatari et al, Tech Coloproctol (2004)",
+      "Manco et al, lobar collapse (2024)",
+      "Postoperative pulmonary complications review, Balkan Med J (September 2025)"
+    ],
+    "related": [
+      {
+        "id": "MB-164 Major trauma",
+        "why": "Tension pneumothorax and the same decompression site"
+      },
+      {
+        "id": "MB-179 Chest drain insertion",
+        "why": "The drain if aspiration fails"
+      },
+      {
+        "id": "MB-134 Postoperative breathlessness",
+        "why": "Other causes of breathlessness after surgery"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Surgical ward",
+    "role": "Core surgical trainee on call",
+    "scenario": "Mrs Brenda Saddler, 66, had an open right hemicolectomy yesterday. A right subclavian central line was inserted in theatre. She is now breathless, with right-sided pleuritic chest pain. She has never smoked and has no lung disease. An erect portable chest X-ray has been taken. Written findings: erect AP portable chest film of Mrs Saddler, dated today. A thin crescent of lucency lies between the right hemidiaphragm and the liver, so the diaphragm shows as a thin line. The bones are intact. The left lung is clear and the heart is not enlarged. A central line enters from the right subclavian region, its tip projected over the superior vena cava. The trachea and mediastinum are central. At the right apex a thin white line runs parallel to the chest wall, with no lung markings between it and the chest wall.",
+    "task": "Interpret the written findings of her chest X-ray and describe your management. The examiner will read out further findings, including a later film, in stages."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Go through every finding on the film: lines, pleura, lungs, under the diaphragm. Tension or not decides the speed.",
+    "trap": "Calling a stable pneumothorax an emergency for needle decompression, or a small crescent of postoperative gas a perforation.",
+    "firstMove": "\"Is she stable? Then an erect AP film of Mrs Saddler, taken today; I'll start with the lines.\""
+  },
+  "flow": [
+    "Systematic read",
+    "Pneumothorax: tension or not",
+    "Aspirate or drain",
+    "Gas under the diaphragm",
+    "Day 4 film: collapse",
+    "Treat and escalate"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-skill",
+      "label": "Systematic read",
+      "fail": "Names one finding and stops.",
+      "pass": "Works through the findings in order: name, date, projection and adequacy; then lines, airway, lungs and pleura, heart, diaphragm and below it, bones.",
+      "high": "Checks the central line tip and looks for the complication of each line; compares with any earlier film."
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-knowledge",
+      "label": "Recognising the pneumothorax",
+      "fail": "Misses the pneumothorax, or can't explain what the apical pleural line means.",
+      "pass": "Right apical pneumothorax: a visceral pleural line with no lung markings beyond it; 3 cm at the apex.",
+      "high": "Links it to the subclavian line; knows 2 cm or more apically or laterally is usually enough to intervene safely; checks for mediastinal shift.",
+      "source": "BTSG"
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "Tension pneumothorax (safety-critical)",
+      "fail": "Sends a shocked, hypoxic patient for an X-ray first.",
+      "pass": "Tension is clinical: decompress at once, 4th or 5th intercostal space just anterior to the mid-axillary line, then a chest drain.",
+      "high": "Knows about a third of needles fail to reach the pleura; the chest wall is thinner at the 5th space than the 2nd.",
+      "source": "AHMAD"
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-knowledge",
+      "label": "Managing a non-tension pneumothorax",
+      "fail": "Calls for emergency needle decompression of a stable pneumothorax, or leaves a breathless patient untreated.",
+      "borderline": "Plans aspiration but calls it decompression and can't say when a drain is needed.",
+      "pass": "Line-related pneumothoraces often settle, but she is symptomatic, 3 cm, no high-risk features: aspirate (or drain); observe only if minimally symptomatic.",
+      "high": "Knows BTS 2023 excludes iatrogenic pneumothorax, so borrows its pathway: high-risk features mean a drain; judges aspiration by symptoms and X-ray.",
+      "source": "BTSG"
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-knowledge",
+      "label": "Gas under the diaphragm",
+      "fail": "Misses it, or calls it a perforation and books theatre.",
+      "pass": "Thin crescent of gas under the right hemidiaphragm; small amounts can be normal after open surgery, so correlates with her abdomen.",
+      "high": "Knows small amounts can persist to about day 10; a larger or late collection, peritonism or sepsis suggests a leak.",
+      "source": "SHAT"
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-knowledge",
+      "label": "Recognising lobar collapse",
+      "fail": "Calls the day 4 film normal or blames the heart.",
+      "pass": "Left lower lobe collapse: triangular opacity behind the heart, losing the left hemidiaphragm and descending aorta outlines.",
+      "high": "Adds volume-loss signs: smaller, depressed left hilum, raised hemidiaphragm, shift to the left; suspects a mucus plug.",
+      "source": "MANCO"
+    },
+    {
+      "id": "G7",
+      "domain": "clinical-knowledge",
+      "label": "Managing collapse",
+      "fail": "Gives antibiotics alone and leaves her in bed.",
+      "pass": "Analgesia so she can breathe deeply and cough; chest physiotherapy, deep breathing or incentive spirometry, early mobilisation.",
+      "high": "Knows pain-limited shallow breathing and immobility drive it; bronchoscopy if physiotherapy fails to clear a mucus plug.",
+      "source": "UFUK"
+    },
+    {
+      "id": "G8",
+      "domain": "professionalism",
+      "label": "Escalation and follow-up",
+      "fail": "Doesn't repeat the film or tell anyone.",
+      "pass": "Tells the registrar; repeats the chest X-ray after aspiration; records findings and plan.",
+      "high": "Tells the anaesthetist who placed the line and reports the complication; states what would trigger a drain."
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "Take me through her chest X-ray findings."
+      },
+      {
+        "speaker": "candidate",
+        "text": "There's a pneumothorax.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Where?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'm not sure what the line at the apex means.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'll put a green cannula in the 2nd space mid-clavicular line straight away.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Anything under the diaphragm?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "That's free gas: she's perforated. I'd book theatre.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "On day 4, here are the findings of a second film."
+      },
+      {
+        "speaker": "candidate",
+        "text": "That sounds normal to me.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "She's still hypoxic."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd start antibiotics and let her rest in bed.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I won't need to repeat the film.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "examiner",
+        "text": "She's stable. Take me through her chest X-ray findings."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Erect AP film of Mrs Saddler, today, adequate. Lines first, then airway, lungs and pleura, heart, diaphragm and below, bones.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Right apical pneumothorax: a pleural line with no lung markings beyond, 3 cm at the apex.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What if she became shocked and hypoxic?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "That's tension, a clinical diagnosis: decompress immediately at the 4th or 5th intercostal space just in front of the mid-axillary line, then a chest drain.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "She's stable. What now?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Line-related ones often settle, but she's symptomatic, it's 3 cm and there are no high-risk features, so I'd aspirate it, or drain it.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "There's a thin crescent of gas under the right hemidiaphragm. That can be normal after open surgery; I'd check her abdomen.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "On day 4, here are the findings of a second film."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Triangular opacity behind the heart, the left hemidiaphragm and descending aorta outlines lost: left lower lobe collapse.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Better analgesia so she can breathe deeply and cough, chest physiotherapy, incentive spirometry and getting her up.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd tell my registrar, repeat the X-ray after aspiration and document the plan.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "examiner",
+        "text": "She's stable. Take me through her chest X-ray findings."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Erect AP film of Mrs Saddler, today. Lines first: the right subclavian line tip is in the SVC, and I'll look for its complication. Then airway, lungs and pleura, heart, diaphragm and below, bones.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Right apical pneumothorax, 3 cm at the apex, almost certainly from the line. Two centimetres or more is usually enough to intervene safely. No mediastinal shift.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What if she became shocked and hypoxic?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Tension: decompress before any film, 4th or 5th space just anterior to the mid-axillary line. About a third of needles don't reach the pleura, and the chest wall is thinner here than at the 2nd space. Then a drain.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "She's stable. What now?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "This isn't tension, so no decompression. BTS 2023 doesn't cover line-related pneumothorax, which often settles, so I'd borrow its pathway. She's symptomatic with no high-risk features: no shock, significant hypoxia, lung disease, smoking or blood. Needle aspiration, judged by her symptoms and a repeat film; drain if it fails.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Crescent of gas under the right hemidiaphragm. Small amounts persist to about day 10 after open surgery. A large or late collection, peritonism or sepsis would make me think of a leak.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "On day 4, here are the findings of a second film."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Left lower lobe collapse: triangular retrocardiac opacity, left hemidiaphragm and descending aorta lost, a smaller, depressed left hilum and shift to the left. Probably a mucus plug.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Pain is stopping her coughing, so I'd fix that first; physiotherapy, incentive spirometry, mobilising; bronchoscopy if physiotherapy doesn't clear the plug.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Registrar informed; repeat film after aspiration; a drain if it recurs. I'd tell the anaesthetist who placed the line and report it.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G3",
+      "move": "Sending a shocked, hypoxic patient for an X-ray before decompressing.",
+      "consequence": "Safety-critical: tension pneumothorax can progress to cardiac arrest."
+    },
+    {
+      "row": "G4",
+      "move": "Needle-decompressing a stable, non-tension pneumothorax.",
+      "consequence": "An emergency procedure she doesn't need; aspiration or a drain treats it."
+    },
+    {
+      "row": "G5",
+      "move": "Booking a laparotomy for a small crescent of gas the day after open surgery.",
+      "consequence": "An unnecessary operation: small volumes can be normal after open surgery."
+    },
+    {
+      "row": "G1",
+      "move": "Commenting only on the obvious lung finding and ignoring the lines.",
+      "consequence": "The cause of the pneumothorax and a misplaced line can be missed."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You called it decompression",
+      "line": "To be precise: this isn't tension, so I'd aspirate or drain it, not decompress it."
+    },
+    {
+      "when": "You saw only the pneumothorax",
+      "line": "Let me finish the read: lines, the other lung, the heart, and under the diaphragm."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "BTS pathway: symptomatic with high-risk features (haemodynamic compromise, significant hypoxia, bilateral, lung disease, 50 or over with a significant smoking history, blood) means a drain.",
+      "source": "BTSG"
+    },
+    {
+      "fact": "BTS 2023 treats iatrogenic pneumothorax as a separate entity outside its evidence review; these tend to resolve more easily, and intervention may not be needed.",
+      "source": "BTSG"
+    },
+    {
+      "fact": "ATLS adult decompression site: 4th or 5th intercostal space, anterior mid-axillary line; about a third of needles fail to reach the pleura.",
+      "source": "AHMAD"
+    },
+    {
+      "fact": "After open colorectal surgery, small subdiaphragmatic gas was seen up to day 10, not after.",
+      "source": "SHAT"
+    },
+    {
+      "fact": "Left lower lobe collapse: triangular opacity at the diaphragm and mediastinum, left hemidiaphragm and descending aorta obscured.",
+      "source": "MANCO"
+    },
+    {
+      "fact": "Postoperative atelectasis: good analgesia, incentive spirometry, early mobilisation, chest physiotherapy; bronchoscopy for mucus plugging.",
+      "source": "UFUK"
+    }
+  ],
+  "recall": {
+    "think": "Tension pneumothorax; a missed leak; hypoxia from collapse.",
+    "say": "\"Not tension, so aspirate or drain; tension is decompressed before any film.\"",
+    "do": [
+      "Read the lines first",
+      "Tension? Decompress. Stable? Aspirate or drain",
+      "Gas and collapse: correlate and treat"
+    ],
+    "numbers": [
+      {
+        "value": "≥ 2 cm",
+        "meaning": "apically or laterally: large enough to intervene",
+        "source": "BTSG"
+      },
+      {
+        "value": "4th–5th ICS",
+        "meaning": "anterior mid-axillary line (ATLS, adults)",
+        "source": "AHMAD"
+      },
+      {
+        "value": "Day 10",
+        "meaning": "small postoperative free gas seen up to here",
+        "source": "SHAT"
+      }
+    ],
+    "trap": "Free gas the day after laparotomy isn't a perforation on its own.",
+    "finish": "Aspiration or drain, repeat film; physiotherapy and analgesia for collapse."
+  },
+  "sources": [
+    {
+      "id": "BTSG",
+      "name": "Roberts ME, Rahman NM, Maskell NA, et al. British Thoracic Society Guideline for pleural disease (full guideline, with appendix 1 pneumothorax pathway). Thorax 2023;78(Suppl 3):s1-s42",
+      "version": "July 2023 (Thorax supplement 3)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37433578/",
+      "supports": "Spontaneous pneumothorax: conservative management can be considered if minimally symptomatic (no significant pain or breathlessness, no physiological compromise) or asymptomatic, regardless of size; if not suitable for conservative or ambulatory care, needle aspiration or tube drainage; pathway: symptomatic with high-risk characteristics (haemodynamic compromise, significant hypoxia, bilateral pneumothorax, underlying lung disease, 50 or over with significant smoking history, haemopneumothorax) goes to a chest drain; sufficient size to intervene depends on clinical context but is in general usually 2 cm or more laterally or apically on chest X-ray; needle aspiration succeeds if symptoms improve with sustained improvement on the X-ray, otherwise a chest drain. Iatrogenic pneumothorax (for example after CT-guided biopsy or pacemaker insertion) is a different entity, not covered by the evidence review; such pneumothoraces tend to resolve more easily and intervention may not be required"
+    },
+    {
+      "id": "AHMAD",
+      "name": "Ahmad SJS, Degiannis JR, et al. Meta-analysis of the optimal needle length and decompression site for tension pneumothorax and consensus recommendations on current ATLS and ETC guidelines. World J Emerg Surg 2025;20:39",
+      "version": "Published 19 May 2025",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40383767/",
+      "supports": "Immediate management of tension pneumothorax is needle decompression followed by an intercostal chest drain; ATLS advises the 4th or 5th intercostal space in the anterior mid-axillary line (5 cm needle for small adults, 8 cm for larger adults), the European Trauma Course the 2nd intercostal space mid-clavicular line; radiological data (24 studies, 8,046 patients) show about 33% failure of needle penetration into the pleural cavity; chest wall thinner at the 5th space mid-axillary and anterior axillary lines than at the 2nd mid-clavicular line; shorter needles often fail"
+    },
+    {
+      "id": "SHAT",
+      "name": "Shatari T, Clark MA, Keighley MRB. Duration of pneumoperitoneum on chest radiograph after open colorectal surgery. Tech Coloproctol 2004;8:27-30",
+      "version": "March 2004",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/15057586/",
+      "supports": "204 open colorectal laparotomies: small amounts of subdiaphragmatic air (under 15 mm high) in 15% of films on days 0-5 and 18% on days 6-10, none after day 10; the one patient with air over 20 mm high on day 10 had a visceral perforation; small pneumoperitoneum up to day 10 is often of no clinical importance"
+    },
+    {
+      "id": "MANCO",
+      "name": "Manco G, Caruso V, Lezzi G, et al. Lobar collapse: what radiologists need to know. J Med Imaging Interv Radiol 2024;11:23",
+      "version": "2024",
+      "url": "https://doi.org/10.1007/s44326-024-00024-z",
+      "supports": "Direct signs: displaced fissures, crowded vessels and bronchi; indirect signs: increased opacity, hilar displacement, raised hemidiaphragm, mediastinal shift, compensatory overinflation; left lower lobe collapse: triangular opacity based on the diaphragm and mediastinum, obscuring the left hemidiaphragm and descending aorta, with a smaller hilum; mucus plugs as a non-neoplastic cause"
+    },
+    {
+      "id": "UFUK",
+      "name": "Ufuk F, Ocak I, Chelala L, Landeras L. Postoperative pulmonary complications: clinical and imaging insights. Balkan Med J 2025;42(5):405-418",
+      "version": "Published 1 September 2025",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40746192/",
+      "supports": "Postoperative atelectasis is common after abdominal or thoracic surgery, mainly from shallow breathing due to pain, mucus obstruction or prolonged immobility; X-ray shows volume loss (opacity, raised diaphragm, rib crowding, mediastinal shift); management re-expands the lung with pulmonary toilet, incentive spirometry, good pain control, early mobilisation and chest physiotherapy, with bronchoscopy if mucus plugging is present"
+    },
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format: 9 minutes with 1 minute's reading"
+    }
+  ],
+  "partner": {
+    "opening": "Mrs Saddler is breathless the day after her operation. You have the written findings of her chest X-ray. Interpret them.",
+    "reveals": [
+      {
+        "trigger": "At the start, or asks how she is",
+        "finding": "RR 22, SpO2 95% on air, pulse 102, BP 128/76, temperature 37.4°C, alert. Trachea central; reduced breath sounds at the right apex.",
+        "row": "G1"
+      },
+      {
+        "trigger": "Asks about inspiration, rotation or the quality of the film",
+        "finding": "Say: \"The film is adequately inspired and not rotated.\"",
+        "row": "G1"
+      },
+      {
+        "trigger": "Asks the size",
+        "finding": "Say: \"The pleural line is 3 cm below the apex.\"",
+        "row": "G2"
+      },
+      {
+        "trigger": "Asks to examine the abdomen",
+        "finding": "Soft, tender only around the wound, no guarding; bowel sounds present.",
+        "row": "G5"
+      },
+      {
+        "trigger": "After needle aspiration",
+        "finding": "Say: \"She feels better and the repeat film shows the lung re-expanded.\"",
+        "row": "G4"
+      },
+      {
+        "trigger": "After the pneumothorax plan",
+        "finding": "Say: \"Day 4: she's breathless again, SpO2 93% on air, temperature 37.9°C, with a weak cough limited by wound pain.\" Read out: the day 4 frontal chest film shows a triangular opacity behind the left side of the heart, its base on the diaphragm and its apex towards the hilum. The outlines of the inner part of the left hemidiaphragm and of the descending aorta cannot be seen. The left hilum is smaller and lower than the right, and the mediastinum is shifted slightly to the left. The right lung is fully expanded.",
+        "row": "G6"
+      }
+    ],
+    "push": [
+      {
+        "question": "How do you tell this from a tension pneumothorax?",
+        "row": "G3",
+        "expect": "Tension is clinical: hypoxia, shock, absent breath sounds; decompress at once at the 4th or 5th space anterior to the mid-axillary line."
+      },
+      {
+        "question": "Is the gas under the diaphragm a problem?",
+        "row": "G5",
+        "expect": "Small amounts can be normal after open surgery, up to about day 10; correlate clinically; large, late or with peritonism suggests a leak."
+      },
+      {
+        "question": "Which features would make you put in a drain first?",
+        "row": "G4",
+        "expect": "Haemodynamic compromise, significant hypoxia, bilateral, lung disease, 50 or over with a significant smoking history, blood in the pleura."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "During the discussion her BP falls to 78/40, SpO2 84% on oxygen, and the trachea shifts left.",
+        "safeAnswer": "Tension: decompress now at the right 4th or 5th space just anterior to the mid-axillary line, call for help, then a chest drain.",
+        "row": "G3"
+      },
+      {
+        "prompt": "Aspiration doesn't help and the lung is still down.",
+        "safeAnswer": "Chest drain, then a repeat film.",
+        "row": "G4"
+      },
+      {
+        "prompt": "On day 8 she has peritonism and a larger volume of free gas.",
+        "safeAnswer": "Suspect an anastomotic leak: resuscitate, senior review now, imaging and possible return to theatre.",
+        "row": "G5"
+      }
+    ]
+  }
+}

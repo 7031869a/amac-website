@@ -1,0 +1,583 @@
+{
+  "id": "MB-183",
+  "exam": "MRCS-B",
+  "title": "Abdominal X-ray: bowel obstruction and sigmoid volvulus",
+  "type": "data-interpretation",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "Applied surgical science and critical care",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "WSES sigmoid volvulus guideline (May 2023)",
+      "James & Kelly, The abdominal radiograph, Ulster Med J (2013)"
+    ],
+    "related": [
+      {
+        "id": "MB-165 Adhesional small bowel obstruction",
+        "why": "Small bowel obstruction and its management"
+      },
+      {
+        "id": "MB-182 Arterial blood gas",
+        "why": "Lactate and acidosis in obstructed bowel"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Emergency department",
+    "role": "Core surgical trainee on call",
+    "scenario": "Mr Albert Finch, 81, lives in a care home and has long-standing constipation. He has 3 days of abdominal distension and hasn't passed flatus for 2 days. He has vomited once. Pulse 96, BP 134/78, temperature 36.9°C.",
+    "task": "The examiner will read out the findings of his abdominal X-ray, then give you other results. Interpret them and describe your management."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Interpret the X-ray findings in order, name the pattern, look for danger, then decompress or operate.",
+    "trap": "Calling it 'large bowel obstruction' and missing the volvulus, or scoping a patient with peritonitis.",
+    "firstMove": "\"This is a supine abdominal radiograph of Mr Finch, taken today.\""
+  },
+  "flow": [
+    "X-ray details",
+    "Gas pattern and diameters",
+    "Name the diagnosis",
+    "Look for danger",
+    "Resuscitate",
+    "Decompress or operate",
+    "Prevent recurrence"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-skill",
+      "label": "Systematic interpretation",
+      "fail": "Names a diagnosis without checking the patient, date or projection.",
+      "pass": "Patient, date, supine projection, adequacy; then works through bowel gas, diameters, free gas, soft tissues, calcification and bones.",
+      "high": "Asks for an erect chest film if perforation is possible, and asks whether Rigler's sign is present.",
+      "source": "UMJ"
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-knowledge",
+      "label": "Recognising sigmoid volvulus",
+      "fail": "Calls it large bowel obstruction or pseudo-obstruction without naming the volvulus.",
+      "pass": "Interprets the hugely dilated, featureless inverted-U loop arising from the pelvis as the coffee bean sign of sigmoid volvulus.",
+      "high": "Notes the proximal colon is dilated too, and that volvulus is a closed loop at risk of ischaemia.",
+      "source": "UMJ"
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "Small vs large bowel: the 3/6/9 rule",
+      "fail": "Can't tell small from large bowel.",
+      "borderline": "Knows the 3, 6 and 9 cm limits but can't describe the folds.",
+      "pass": "Small bowel: central, valvulae across the full width, dilated over 3 cm. Large bowel: peripheral, haustra partway across, over 6 cm, caecum over 9 cm.",
+      "high": "Knows gas in the rectum argues against complete mechanical obstruction; it can be seen in pseudo-obstruction or incomplete obstruction. Knows plain films rarely show the cause.",
+      "source": "UMJ"
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-knowledge",
+      "label": "Looking for ischaemia or perforation (safety-critical)",
+      "fail": "Doesn't examine for peritonism or ask for a lactate.",
+      "pass": "Examines for peritonism; bloods with blood gas and lactate; CT if the diagnosis is uncertain or ischaemia or perforation is suspected.",
+      "high": "Knows ischaemia can exist without a raised lactate, so clinical signs still decide.",
+      "source": "WSESSV"
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-skill",
+      "label": "Resuscitation",
+      "fail": "Sends him for endoscopy without resuscitating.",
+      "pass": "ABCDE; IV access, fluids; nasogastric tube if vomiting; catheter and fluid balance; senior informed.",
+      "high": "Asks early about frailty, baseline function and wishes, which shape later decisions."
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-knowledge",
+      "label": "Endoscopic decompression",
+      "fail": "Plans a laparotomy first, or a blind flatus tube only.",
+      "pass": "No ischaemia or perforation: flexible sigmoidoscopic decompression, inspecting the mucosa; leaves a flatus tube.",
+      "high": "Quotes success in 60–95%; knows dusky mucosa at endoscopy means stop and go to theatre.",
+      "source": "WSESSV"
+    },
+    {
+      "id": "G7",
+      "domain": "clinical-knowledge",
+      "label": "Indications for surgery (safety-critical)",
+      "fail": "Scopes a patient with peritonitis or perforation.",
+      "pass": "Urgent resection if detorsion fails, or the colon is non-viable or perforated.",
+      "high": "Plans with the consultant and anaesthetist; consents for resection and a possible stoma.",
+      "source": "WSESSV"
+    },
+    {
+      "id": "G8",
+      "domain": "professionalism",
+      "label": "Preventing recurrence",
+      "fail": "Discharges him after decompression with no plan.",
+      "pass": "Discusses sigmoid colectomy after decompression, ideally on the same admission.",
+      "high": "Quotes recurrence of 43–75%; endoscopic fixation if surgery is too risky; involves the patient and family.",
+      "source": "WSESSV"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "I'll read out his abdominal X-ray findings."
+      },
+      {
+        "speaker": "candidate",
+        "text": "That's a large bowel obstruction.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          },
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How do you tell small from large bowel?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'm not sure; it's the size, I think.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "He's not in much pain, so I won't need bloods yet.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd send him straight to endoscopy.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "No peritonism, lactate 1.6."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd book him for a laparotomy.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "He's now peritonitic."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd still try the sigmoidoscope first.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "It worked. Then?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Home when he's passing flatus.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "examiner",
+        "text": "I'll read out his abdominal X-ray findings."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Supine abdominal radiograph of Mr Finch, today, adequate. Then the gas pattern, free gas, soft tissues and bones.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "A huge featureless inverted-U loop from the pelvis: a coffee bean. This is sigmoid volvulus.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How do you tell small from large bowel?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Small bowel is central, with valvulae across the full width, dilated over 3 cm. Large bowel is peripheral, haustra only partway across, over 6 cm, or 9 for the caecum.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd examine for peritonism, and send bloods with a gas and lactate. CT if I'm unsure or worried about ischaemia.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "ABCDE, IV fluids, catheter, and I'd tell my registrar.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "No peritonism, lactate 1.6."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Flexible sigmoidoscopy to decompress, checking the mucosa, and a flatus tube left in.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "When would he need theatre?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "If decompression fails, or the colon is non-viable or perforated.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "After decompression, I'd discuss a sigmoid colectomy on this admission.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "examiner",
+        "text": "I'll read out his abdominal X-ray findings."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Supine abdominal film, Mr Finch, today, diaphragm to pubis. I'll go through gas pattern, free gas, soft tissues, calcification and bones, and ask for an erect chest film if perforation is possible.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "A massively dilated, featureless inverted-U loop rising from the pelvis: coffee bean sign. Sigmoid volvulus, with the proximal colon dilated. It's a closed loop, so ischaemia is the risk.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How do you tell small from large bowel?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Small bowel: central, valvulae across the full width, over 3 cm. Large bowel: peripheral, haustra partway across, over 6 cm, caecum over 9. Gas in the rectum argues against complete mechanical obstruction; it can be seen in pseudo-obstruction or incomplete obstruction. The film rarely shows the cause.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Examine for peritonism; gas and lactate. A normal lactate wouldn't exclude ischaemia. CT if in doubt.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "ABCDE, fluids, catheter. I'd ask about his frailty and wishes early.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "No peritonism, lactate 1.6."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Flexible sigmoidoscopic decompression, successful in 60 to 95%, inspecting the mucosa and leaving a flatus tube. Dusky or black mucosa means theatre.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "When would he need theatre?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Failed detorsion, non-viable or perforated colon. With my consultant: resection, consenting for a possible stoma.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "It recurs in 43 to 75%, so I'd discuss sigmoid colectomy this admission; endoscopic fixation if surgery is too risky.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G7",
+      "move": "Attempting endoscopic decompression in a patient with peritonitis or perforation.",
+      "consequence": "Safety-critical: delays resection of gangrenous or perforated colon."
+    },
+    {
+      "row": "G4",
+      "move": "Not examining for peritonism or checking lactate before decompression.",
+      "consequence": "Safety-critical: ischaemia is missed and the wrong treatment chosen."
+    },
+    {
+      "row": "G2",
+      "move": "Calling it large bowel obstruction without naming volvulus.",
+      "consequence": "The closed-loop emergency and endoscopic decompression are missed."
+    },
+    {
+      "row": "G8",
+      "move": "No plan after successful decompression.",
+      "consequence": "It is likely to recur, each time risking ischaemia or perforation."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You named the pattern before checking details",
+      "line": "Let me start properly: patient, date, projection, then the gas pattern."
+    },
+    {
+      "when": "You're unsure between volvulus and pseudo-obstruction",
+      "line": "I'd ask for a CT to confirm and look for ischaemia."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Small bowel: central, valvulae conniventes cross the lumen, abnormal over 3 cm. Colon: peripheral, haustra don't cross fully; over 6 cm, caecum over 9 cm.",
+      "source": "UMJ"
+    },
+    {
+      "fact": "Sigmoid volvulus: inverted-U loop from the pelvis, coffee bean sign.",
+      "source": "UMJ"
+    },
+    {
+      "fact": "No ischaemia or perforation: flexible endoscopic decompression first, then a flatus tube.",
+      "source": "WSESSV"
+    },
+    {
+      "fact": "Failed detorsion, non-viable or perforated colon: urgent resection.",
+      "source": "WSESSV"
+    },
+    {
+      "fact": "Recurrence 43–75% after detorsion: offer sigmoid colectomy, ideally the same admission.",
+      "source": "WSESSV"
+    }
+  ],
+  "recall": {
+    "think": "A closed loop that can become gangrenous or perforate.",
+    "say": "\"Coffee bean sign: sigmoid volvulus. Any sign of ischaemia?\"",
+    "do": [
+      "Interpret the X-ray findings in order",
+      "Peritonism, lactate, CT if in doubt",
+      "Scope and flatus tube, or theatre"
+    ],
+    "numbers": [
+      {
+        "value": "3 / 6 / 9 cm",
+        "meaning": "small bowel / colon / caecum",
+        "source": "UMJ"
+      },
+      {
+        "value": "60–95%",
+        "meaning": "endoscopic detorsion success",
+        "source": "WSESSV"
+      },
+      {
+        "value": "43–75%",
+        "meaning": "recurrence after detorsion",
+        "source": "WSESSV"
+      }
+    ],
+    "trap": "A normal lactate doesn't exclude ischaemia.",
+    "finish": "Sigmoid colectomy, ideally on the index admission."
+  },
+  "sources": [
+    {
+      "id": "UMJ",
+      "name": "James B, Kelly B. The abdominal radiograph. Ulster Med J 2013;82(3):179-187",
+      "version": "September 2013",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3913410/",
+      "supports": "A logical, repeatable step-by-step approach; single supine film for the acute abdomen, erect chest film if perforation suspected (RCR iRefer); small bowel central, with valvulae conniventes traversing the lumen; haustral folds don't span the colon; small bowel should not exceed 3 cm; large bowel peripheral with haustra; colon over 6 cm or caecum over 9 cm is dilated; gas in the rectum argues against complete mechanical obstruction; sigmoid volvulus: inverted U-shaped loop from the pelvis, coffee bean sign, often treated with a flatus tube; Rigler's sign of free gas"
+    },
+    {
+      "id": "WSESSV",
+      "name": "Tian BWCA, Vigutto G, Tan E, et al. WSES consensus guidelines on sigmoid volvulus management. World J Emerg Surg 2023;18:34",
+      "version": "Published 15 May 2023",
+      "url": "https://doi.org/10.1186/s13017-023-00502-x",
+      "supports": "History, examination and full bloods including blood gas and lactate; ischaemia may be present without a raised lactate (rec 1); plain radiograph first, coffee bean sign (rec 2); CT if the diagnosis is in doubt or ischaemia or perforation suspected (rec 3); flexible endoscopic decompression first line if no ischaemia or perforation (rec 4), effective in 60-95%; view the mucosa and leave a decompression flatus tube; urgent resection if detorsion fails or the colon is non-viable or perforated (rec 5); after decompression offer sigmoid colectomy, as early as possible, even on the index admission (rec 6); recurrence 43-75% after detorsion; endoscopic fixation in selected patients at prohibitive risk (rec 8)"
+    },
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format: 9 minutes with 1 minute's reading"
+    }
+  ],
+  "partner": {
+    "opening": "I'll read out Mr Finch's abdominal X-ray findings. Please interpret them.",
+    "reveals": [
+      {
+        "trigger": "At the start",
+        "finding": "Read out: supine abdominal radiograph of Mr Albert Finch, taken today, covering the diaphragm to the symphysis pubis. A single, massively dilated loop of bowel, about 12 cm across and with no haustral markings, rises out of the pelvis in an inverted-U shape, its apex lying high in the right upper quadrant. Its two limbs lie side by side, and their adjoining walls form a dense line running down towards the pelvis. The rest of the colon is dilated, with haustra visible. No free intraperitoneal gas is seen.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Asks how to tell small from large bowel",
+        "finding": "Read out, for comparison: in a second patient, the supine film shows several dilated loops of bowel up to 4 cm wide in the centre of the abdomen, with fine folds crossing the full width of each loop; little or no gas is seen in the colon. In a third patient, dilated bowel up to 8 cm wide lies around the periphery of the abdomen, with folds crossing only partway across; the caecum measures 10 cm, and there is no single inverted-U loop.",
+        "row": "G3"
+      },
+      {
+        "trigger": "Examines the abdomen",
+        "finding": "Grossly distended, tympanic, mildly tender, no guarding or rebound. Empty rectum.",
+        "row": "G4"
+      },
+      {
+        "trigger": "Asks for bloods and a gas",
+        "finding": "WCC 11.2, CRP 38, creatinine 104, K 3.4; lactate 1.6 mmol/L, pH 7.39.",
+        "row": "G4"
+      },
+      {
+        "trigger": "Asks about the sigmoidoscopy",
+        "finding": "Say: \"The loop untwists with a rush of gas; the mucosa is pink.\"",
+        "row": "G6"
+      }
+    ],
+    "push": [
+      {
+        "question": "What features tell you this is sigmoid volvulus?",
+        "row": "G2",
+        "expect": "Featureless inverted-U loop from the pelvis, coffee bean sign, proximal colon dilated."
+      },
+      {
+        "question": "Why not go straight to theatre?",
+        "row": "G6",
+        "expect": "No ischaemia or perforation: endoscopic decompression first, effective in 60–95%."
+      },
+      {
+        "question": "He's decompressed. What next?",
+        "row": "G8",
+        "expect": "Recurrence 43–75%: offer sigmoid colectomy, ideally on this admission."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "At sigmoidoscopy the mucosa is black.",
+        "safeAnswer": "Non-viable colon: withdraw, resuscitate, consultant, and urgent resection.",
+        "row": "G7"
+      },
+      {
+        "prompt": "The erect chest film shows free gas under the diaphragm.",
+        "safeAnswer": "Perforation: no endoscopy; resuscitate, antibiotics, and theatre.",
+        "row": "G7"
+      },
+      {
+        "prompt": "He has severe dementia and a treatment escalation plan limiting surgery.",
+        "safeAnswer": "Decompress; discuss with family and consultant; endoscopic fixation or a palliative plan if surgery is too risky.",
+        "row": "G8"
+      }
+    ]
+  }
+}

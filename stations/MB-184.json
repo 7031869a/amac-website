@@ -1,0 +1,617 @@
+{
+  "id": "MB-184",
+  "exam": "MRCS-B",
+  "title": "CT head after head injury: extradural vs subdural haematoma",
+  "type": "data-interpretation",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "Applied surgical science and critical care",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "NICE NG232 (May 2023, minor changes Mar 2025)",
+      "NICE NG24 (updated Feb 2026)",
+      "MHRA DOAC reversal agents (Jun 2020)",
+      "NICE TA697 (updated Jan 2025) and TA1029 (Jan 2025)",
+      "BSH warfarin guideline, 4th edition (2011)"
+    ],
+    "related": [
+      {
+        "id": "MB-136 Head injury",
+        "why": "GCS and the NICE CT criteria that come before this scan"
+      },
+      {
+        "id": "MB-164 Major trauma",
+        "why": "Primary survey with cervical spine control"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Emergency department resuscitation room",
+    "role": "Core surgical trainee on the trauma team",
+    "scenario": "Mr Owen Pritchard, 23, was struck on the left side of his head by a cricket ball 90 minutes ago. He was knocked out briefly, then walked off talking normally. He is now drowsy and has vomited twice. A CT head has just been done.",
+    "task": "The examiner will give you his findings and then read out the findings of his CT head. Interpret them and explain your management. You will then be given the CT findings of a second patient."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Interpret the CT findings systematically, name the bleed by its shape, then act: airway, neurosurgeon, safe transfer.",
+    "trap": "Naming the bleed but not seeing the midline shift and dilating pupil that make it an emergency.",
+    "firstMove": "\"Plain CT head, axial, brain windows. I'll go through it systematically.\""
+  },
+  "flow": [
+    "Findings: GCS by component, pupils",
+    "Systematic CT interpretation",
+    "Name the lesion and mass effect",
+    "Neurosurgeon, TXA, airway",
+    "Safe transfer",
+    "Second CT: subdural and reversal"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-skill",
+      "label": "Systematic CT interpretation",
+      "fail": "Jumps to one abnormality and doesn't ask about the rest of the scan.",
+      "pass": "Checks the details, then works through in order, asking about anything not read out: blood, cisterns, brain, ventricles, bone (\"Blood Can Be Very Bad\").",
+      "high": "Asks for bone windows for the fracture and states what is normal as well as abnormal."
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-knowledge",
+      "label": "Identifies the extradural haematoma",
+      "fail": "Calls it a subdural or contusion.",
+      "borderline": "Sees an extra-axial bleed but can't say why it is extradural rather than subdural.",
+      "pass": "Left temporal hyperdense biconvex (lentiform) collection, limited by the sutures: acute extradural haematoma.",
+      "high": "Links it to the temporal fracture, middle meningeal artery and lucid interval, and knows a lucid interval is uncommon and not diagnostic.",
+      "source": "SPEDH"
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "Mass effect and herniation",
+      "fail": "Doesn't comment on the midline or the cisterns.",
+      "pass": "Reports midline shift, effaced ipsilateral ventricle and sulci, and compressed basal cisterns.",
+      "high": "Links the dilating left pupil to uncal herniation compressing the third nerve: time-critical.",
+      "source": "BL"
+    },
+    {
+      "id": "G4",
+      "domain": "professionalism",
+      "label": "Neurosurgical referral and immediate care",
+      "fail": "Admits him for neurological observations.",
+      "pass": "ABCDE with cervical spine control; GCS by component and pupils; discusses with the neurosurgeon now.",
+      "high": "Gives the referral in order: mechanism, GCS trend, pupils, CT findings; if no pre-hospital tranexamic acid, considers 2 g IV now (within 2 hours, no extracranial bleeding).",
+      "source": "NG232"
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-knowledge",
+      "label": "Airway before transfer (safety-critical)",
+      "fail": "Transfers a deteriorating patient without securing the airway.",
+      "pass": "Intubates and ventilates for transfer if GCS is 8 or less, or with a deteriorating motor score, seizures or airway threat.",
+      "high": "Knows the blood-gas triggers (PaO2 under 13 kPa, PaCO2 over 6 kPa) and ventilation targets: PaCO2 4.5–5.0 kPa (lower, briefly, with signs of raised ICP), MAP 80 or more.",
+      "source": "NG232"
+    },
+    {
+      "id": "G6",
+      "domain": "professionalism",
+      "label": "Safe transfer",
+      "fail": "Sends him in an ambulance without a doctor or monitoring.",
+      "pass": "Completes resuscitation and stabilisation first; transfers with trained, accompanied staff, monitoring and communication.",
+      "high": "Doesn't transport him with persistent hypotension until the cause is found and treated; looks for bleeding elsewhere.",
+      "source": "NG232"
+    },
+    {
+      "id": "G7",
+      "domain": "clinical-knowledge",
+      "label": "Identifies the acute subdural haematoma",
+      "fail": "Calls the crescentic bleed extradural.",
+      "pass": "Hyperdense crescent that crosses sutures but not the falx or tentorium: acute subdural from torn bridging veins.",
+      "high": "Links it to age, atrophy and anticoagulation, and knows it may present without a clear lucid interval.",
+      "source": "SPSDH"
+    },
+    {
+      "id": "G8",
+      "domain": "clinical-knowledge",
+      "label": "Reversing anticoagulation (safety-critical)",
+      "fail": "Waits for the INR or gives fresh frozen plasma for warfarin.",
+      "pass": "Warfarin with intracranial bleeding: immediate prothrombin complex concentrate (25–50 units/kg) plus vitamin K 5 mg IV; recheck the INR.",
+      "high": "For DOACs, follows the MHRA reversal list and haematology advice; knows NICE made no recommendation on andexanet for intracranial haemorrhage.",
+      "source": "BSHW"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "I'll read out his CT head findings."
+      },
+      {
+        "speaker": "candidate",
+        "text": "There's a big bleed on the left. I think it's a subdural.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          },
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Anything else on the scan?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "No, that's the main thing.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What would you do?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Admit him under surgery for hourly neuro obs and repeat the scan tomorrow.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "His GCS is now 7. The neurosurgeons will take him."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd get an ambulance to take him straight over.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          },
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Here are the CT head findings of a second patient: an 84-year-old on warfarin, INR 3.4."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Another extradural. I'd give fresh frozen plasma once the repeat INR is back.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          },
+          {
+            "row": "G8",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "examiner",
+        "text": "I'll read out his CT head findings."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Plain CT head, axial, brain windows; I'd check the name and date. I'll go through blood, cisterns, brain, ventricles and bone.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "There's a hyperdense biconvex collection over the left temporal lobe that doesn't cross the sutures. That's an acute extradural haematoma.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "There's midline shift to the right, the left ventricle and sulci are effaced, and the basal cisterns are compressed.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What would you do?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "ABCDE with his cervical spine protected, GCS by component and pupils, and I'd discuss him with the neurosurgeon now.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "His GCS is now 7. The neurosurgeons will take him."
+      },
+      {
+        "speaker": "candidate",
+        "text": "He needs intubating and ventilating before transfer: his GCS is 8 or less.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd make sure he's resuscitated and stable first, with monitoring and trained staff travelling with him.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Here are the CT head findings of a second patient: an 84-year-old on warfarin, INR 3.4."
+      },
+      {
+        "speaker": "candidate",
+        "text": "A hyperdense crescent over the right hemisphere crossing the sutures: an acute subdural, from torn bridging veins.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Immediate prothrombin complex concentrate and 5 mg IV vitamin K, then recheck the INR. Then neurosurgery.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "examiner",
+        "text": "I'll read out his CT head findings."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Plain CT head, axial; I'd confirm his details. Blood, cisterns, brain, ventricles, bone, and I'd like the bone windows too.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Left temporal hyperdense lentiform collection, stopping at the sutures, with a temporal bone fracture: an extradural haematoma, probably from the middle meningeal artery. His lucid spell fits, though only a minority have one.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Midline shift, left ventricle effaced, cisterns compressed. With a dilating left pupil, that's uncal herniation onto the third nerve. This is time-critical.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What would you do?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "ABCDE with the neck held. I'd call the neurosurgeon now: 23, cricket ball, GCS 10, E2 V3 M5, falling, left pupil dilating, extradural with shift. If he hasn't had tranexamic acid pre-hospital, I'd consider 2 g IV now: he's within 2 hours, with no extracranial bleeding.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "His GCS is now 7. The neurosurgeons will take him."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Anaesthetist now for intubation before he goes. On the ventilator: PaO2 over 13, PaCO2 4.5 to 5, lower briefly if there are signs of raised pressure, mean arterial pressure 80 or more.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Resuscitated and stable before he moves, with an experienced doctor and monitoring. If he were hypotensive, I'd look for bleeding elsewhere before transfer.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Here are the CT head findings of a second patient: an 84-year-old on warfarin, INR 3.4."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Right hyperdense crescent crossing the sutures but stopped by the falx: acute subdural. Torn bridging veins, made likelier by her age, atrophy and warfarin. There may never be a lucid interval.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Immediate prothrombin complex concentrate, not plasma, plus 5 mg IV vitamin K, and a repeat INR. If she were on apixaban, I'd use the MHRA reversal list with haematology: NICE has no recommendation on andexanet for intracranial bleeding.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G3",
+      "move": "Naming the extradural but not reporting the midline shift, cisterns or the dilating pupil.",
+      "consequence": "Safety-critical: coning is missed; he is observed while he herniates."
+    },
+    {
+      "row": "G5",
+      "move": "Transferring a patient with GCS 7 without intubation.",
+      "consequence": "Safety-critical: he can lose his airway or become hypoxic and hypercapnic in the ambulance."
+    },
+    {
+      "row": "G8",
+      "move": "Waiting for a repeat INR, or giving fresh frozen plasma, before reversing warfarin in an intracranial bleed.",
+      "consequence": "Safety-critical: the haematoma keeps expanding; NICE says not to use FFP to reverse a vitamin K antagonist."
+    },
+    {
+      "row": "G4",
+      "move": "Admitting him for observation instead of calling the neurosurgeon.",
+      "consequence": "A surgically significant bleed with a falling GCS goes untreated."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You named the bleed before going through the scan",
+      "line": "Let me go through it properly: blood, cisterns, brain, ventricles, bone."
+    },
+    {
+      "when": "You can't decide extradural or subdural",
+      "line": "The shape decides it: lens-shaped and stopped by sutures is extradural; a crescent crossing sutures is subdural."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Extradural: biconvex, doesn't cross sutures, usually middle meningeal artery with a temporal fracture. Lucid interval in only about 14–21%.",
+      "source": "SPEDH"
+    },
+    {
+      "fact": "Acute subdural: hyperdense crescent, crosses sutures, limited by falx and tentorium; bridging veins; age, atrophy, anticoagulants and alcohol.",
+      "source": "SPSDH"
+    },
+    {
+      "fact": "Intubate for transfer if GCS 8 or less, deteriorating motor score, seizures, unstable facial fractures or copious bleeding into the mouth, or PaO2 under 13 or PaCO2 over 6 kPa.",
+      "source": "NG232"
+    },
+    {
+      "fact": "Warfarin with head injury and suspected intracranial bleed: offer immediate PCC; don't use FFP.",
+      "source": "NG24"
+    },
+    {
+      "fact": "Andexanet alfa is recommended by NICE only for life-threatening or uncontrolled GI bleeding on apixaban or rivaroxaban.",
+      "source": "TA697"
+    }
+  ],
+  "recall": {
+    "think": "Herniation from an expanding haematoma; hypoxia on transfer; bleeding on anticoagulants.",
+    "say": "\"Acute extradural with midline shift: I'm calling the neurosurgeon now.\"",
+    "do": [
+      "Systematic interpretation: blood, cisterns, brain, ventricles, bone",
+      "Neurosurgeon now; secure the airway",
+      "Reverse anticoagulation immediately"
+    ],
+    "numbers": [
+      {
+        "value": "GCS ≤ 8",
+        "meaning": "intubate and ventilate for transfer",
+        "source": "NG232"
+      },
+      {
+        "value": "2 g / 2 h",
+        "meaning": "TXA if GCS 12 or less, within 2 hours of injury",
+        "source": "NG232"
+      }
+    ],
+    "trap": "A talking patient can still have an extradural.",
+    "finish": "Craniotomy and evacuation by the neurosurgical team."
+  },
+  "sources": [
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format: 9 minutes with 1 minute's reading; examiner-led questioning in applied knowledge stations"
+    },
+    {
+      "id": "NG232",
+      "name": "NICE NG232: Head injury: assessment and early management",
+      "version": "Published 18 May 2023; minor changes March 2025",
+      "url": "https://www.nice.org.uk/guidance/ng232",
+      "supports": "GCS components always accompany the total (1.3.3); GCS 12 or less without suspected active extracranial bleeding: consider tranexamic acid 2 g IV bolus as soon as possible within 2 hours of injury, before imaging (1.3.17); discuss with a neurosurgeon anyone with new surgically significant abnormalities on imaging (1.4.15); regardless of imaging, discuss if persisting coma (GCS 8 or less) after resuscitation, unexplained confusion over 4 hours, deterioration in GCS after admission (especially motor), progressive focal signs, seizure without full recovery, penetrating injury or CSF leak (1.4.16); CT head within 1 hour (1.5.8); for reversing vitamin K antagonists see NG24 on prothrombin complex concentrate, and for DOACs the MHRA list of reversal agents (1.5.13; link to TA697 removed March 2025); complete resuscitation and stabilisation before transfer (1.8.6); intubate and ventilate anyone with GCS 8 or less needing transfer to a neuroscience unit (1.8.7); intubate immediately for coma (GCS 8 or less), loss of protective laryngeal reflexes, PaO2 under 13 kPa on oxygen or PaCO2 over 6 kPa, or irregular respirations (1.8.8); also before the journey for a significantly deteriorating conscious level (1 or more points on the motor score), unstable facial fractures, copious bleeding into the mouth, or seizures (1.8.9); once intubated aim for PaO2 over 13 kPa, PaCO2 4.5-5.0 kPa unless there is clinical or radiological evidence of raised intracranial pressure, when more aggressive hyperventilation is justified, MAP 80 mmHg or more (1.8.10)"
+    },
+    {
+      "id": "NG24",
+      "name": "NICE NG24: Blood transfusion",
+      "version": "Published 18 November 2015; last updated 26 February 2026",
+      "url": "https://www.nice.org.uk/guidance/ng24",
+      "supports": "Offer immediate prothrombin complex concentrate for emergency reversal of warfarin in severe bleeding or head injury with suspected intracerebral haemorrhage (1.12.3); monitor the INR to make sure reversal is adequate and consider further PCC (1.12.6); do not offer FFP for reversal of a vitamin K antagonist (1.9.2); for DOACs, see the MHRA list of reversal agents"
+    },
+    {
+      "id": "BSHW",
+      "name": "Keeling D, et al. Guidelines on oral anticoagulation with warfarin – fourth edition. Br J Haematol 2011;154:311–24",
+      "version": "2011",
+      "url": "https://doi.org/10.1111/j.1365-2141.2011.08753.x",
+      "supports": "Major bleeding on warfarin: four-factor PCC 25–50 units/kg plus vitamin K 5 mg IV"
+    },
+    {
+      "id": "MHRA",
+      "name": "MHRA Drug Safety Update: Direct-acting oral anticoagulants (DOACs): reminder of bleeding risk, including availability of reversal agents (volume 13, issue 11)",
+      "version": "Published 29 June 2020",
+      "url": "https://www.gov.uk/drug-safety-update/direct-acting-oral-anticoagulants-doacs-reminder-of-bleeding-risk-including-availability-of-reversal-agents",
+      "supports": "Specific reversal agents: idarucizumab (Praxbind) for dabigatran; andexanet alfa (Ondexxya) for apixaban and rivaroxaban; no specific authorised reversal agent for edoxaban; stop the DOAC if severe bleeding occurs"
+    },
+    {
+      "id": "TA697",
+      "name": "NICE TA697: Andexanet alfa for reversing anticoagulation from apixaban or rivaroxaban",
+      "version": "Published 12 May 2021; last updated 15 January 2025",
+      "url": "https://www.nice.org.uk/guidance/ta697",
+      "supports": "Andexanet alfa recommended for life-threatening or uncontrolled bleeding on apixaban or rivaroxaban only if the bleed is in the gastrointestinal tract (1.1); the intracranial haemorrhage recommendation (1.2) was replaced by TA1029 in January 2025"
+    },
+    {
+      "id": "TA1029",
+      "name": "NICE TA1029: Andexanet alfa for reversing anticoagulation in people with intracranial haemorrhage (terminated appraisal)",
+      "version": "Terminated 15 January 2025",
+      "url": "https://www.nice.org.uk/guidance/ta1029",
+      "supports": "NICE is unable to make a recommendation on andexanet alfa for intracranial haemorrhage because the company did not provide an evidence submission; partially updates and replaces TA697"
+    },
+    {
+      "id": "SPEDH",
+      "name": "Khairat A, Margetis K, Waseem M. Epidural Hematoma. StatPearls (NCBI Bookshelf NBK518982)",
+      "version": "Last update 7 July 2025",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK518982/",
+      "supports": "Biconvex (lentiform) hyperdense collection that does not cross suture lines; usually arterial, typically a branch of the middle meningeal artery, often with a temporal bone fracture at the pterion; lucid interval in about 14-21% and not pathognomonic; surgery for volume over 30 ml regardless of GCS, or GCS under 9 with anisocoria"
+    },
+    {
+      "id": "SPSDH",
+      "name": "Pierre L, Julien C, Margetis K, Kondamudi NP. Subdural Hematoma. StatPearls (NCBI Bookshelf NBK532970)",
+      "version": "Last update 24 May 2026",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK532970/",
+      "supports": "Acute subdural: hyperdense crescent-shaped collection that crosses suture lines but is limited by the falx and tentorium; tearing of bridging veins; atrophy with age stretches bridging veins; oral anticoagulants and alcohol increase the risk"
+    },
+    {
+      "id": "BL",
+      "name": "Bailey & Love's Short Practice of Surgery (O'Connell, McCaskie, Sayers, eds)",
+      "version": "28th edition, 2023",
+      "url": "https://www.routledge.com/Bailey--Loves-Short-Practice-of-Surgery---28th-Edition/OConnell-McCaskie-Sayers/p/book/9780367548117",
+      "supports": "Mass effect on CT (midline shift, effaced ventricles and cisterns); uncal herniation compressing the oculomotor nerve with an ipsilateral dilated pupil"
+    }
+  ],
+  "partner": {
+    "opening": "Mr Pritchard has just come back from CT. I'll give you his findings, then read out the CT findings.",
+    "reveals": [
+      {
+        "trigger": "At the start, or when asked for his GCS and pupils",
+        "finding": "GCS 10: E2 V3 M5 (was talking on arrival). Left pupil 5 mm and sluggish, right 3 mm and brisk. Pulse 56, BP 162/88, RR 14, SpO2 97% on 15 L.",
+        "row": "G4"
+      },
+      {
+        "trigger": "When the candidate is ready to interpret the scan",
+        "finding": "Read out: plain axial CT head of Mr Owen Pritchard, taken today, brain windows. Between the inner table of the skull and the left temporal lobe there is a hyperdense, lens-shaped collection with a smoothly convex inner margin. It stops at the sutures and does not extend beyond them. Give further findings only when asked: on bone windows, a linear fracture of the left temporal bone.",
+        "row": "G1"
+      },
+      {
+        "trigger": "Asks about the midline and cisterns",
+        "finding": "Midline shift 8 mm to the right; left lateral ventricle effaced; basal cisterns partly effaced.",
+        "row": "G3"
+      },
+      {
+        "trigger": "After the neurosurgical referral",
+        "finding": "Ten minutes later: GCS 7 (E1 V2 M4); left pupil 6 mm and fixed. The neurosurgical unit accepts him.",
+        "row": "G5"
+      },
+      {
+        "trigger": "After the transfer plan",
+        "finding": "Mrs Glenys Pardoe, 84, fell at home; on warfarin for atrial fibrillation; INR 3.4; GCS 13 (E3 V4 M6). Read out: plain axial CT head of Mrs Glenys Pardoe. Over the right cerebral hemisphere there is a thin, hyperdense, crescent-shaped collection following the inner curve of the skull. It extends across the line of the coronal suture from the frontal to the parietal region, and medially it stops at the falx. There is some midline shift to the left. The sulci and ventricles are generally widened.",
+        "row": "G7"
+      }
+    ],
+    "push": [
+      {
+        "question": "How do you tell an extradural from a subdural on CT?",
+        "row": "G2",
+        "expect": "Extradural is biconvex and stops at the sutures; subdural is a crescent that crosses sutures but stops at the falx and tentorium."
+      },
+      {
+        "question": "Why does his left pupil matter?",
+        "row": "G3",
+        "expect": "Uncal herniation compressing the ipsilateral third nerve; he needs decompression urgently."
+      },
+      {
+        "question": "When must a head-injured patient be intubated before transfer?",
+        "row": "G5",
+        "expect": "GCS 8 or less, loss of laryngeal reflexes, PaO2 under 13 or PaCO2 over 6 kPa, irregular breathing; also a falling motor score, seizures, unstable facial fractures or bleeding into the mouth."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "Mrs Pardoe takes apixaban, not warfarin.",
+        "safeAnswer": "Stop apixaban, involve haematology and use the reversal agent in the MHRA list per local protocol. NICE made no recommendation on andexanet alfa for intracranial haemorrhage.",
+        "row": "G8"
+      },
+      {
+        "prompt": "His BP falls to 80/50 before transfer.",
+        "safeAnswer": "Look for another source of bleeding (chest, abdomen, pelvis, long bones) and resuscitate; don't transfer until he is stabilised.",
+        "row": "G6"
+      },
+      {
+        "prompt": "The ED registrar suggests plasma for the warfarin because PCC is in the lab.",
+        "safeAnswer": "Get the PCC now; NICE says not to use FFP to reverse a vitamin K antagonist.",
+        "row": "G8"
+      }
+    ]
+  }
+}

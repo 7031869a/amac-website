@@ -1,0 +1,589 @@
+{
+  "id": "MB-253",
+  "exam": "MRCS-B",
+  "title": "Primary spontaneous pneumothorax: the BTS 2023 pathway",
+  "type": "data-interpretation",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "Emergency thoracic problems: spontaneous pneumothorax",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "BTS Guideline for pleural disease (Thorax 2023)",
+      "BTS Clinical Statement on pleural procedures (Thorax 2023)"
+    ],
+    "related": [
+      {
+        "id": "MB-164",
+        "why": "Tension pneumothorax in the trauma primary survey"
+      },
+      {
+        "id": "MB-134",
+        "why": "Other causes of acute breathlessness in surgical patients"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Emergency department",
+    "role": "Core surgical trainee covering thoracic surgery",
+    "scenario": "Mr Liam Stewart, 22, developed sudden left-sided pleuritic chest pain and breathlessness six hours ago while sitting at his desk. He smokes. He has no lung disease. Written findings: a PA chest X-ray shows a fine, sharp white line following the curve of the left lung, with a 3 cm rim between the lung edge and the chest wall at the level of the hilum, with no lung markings between this line and the chest wall. The trachea and mediastinum are central. There is no fluid level. The lung inside the line and the right lung look normal.",
+    "task": "Interpret the written chest X-ray findings and answer the examiner's questions on his management and advice."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Read the findings, check for high-risk features, then let his symptoms and priorities choose the treatment.",
+    "trap": "Deciding on a chest drain by size alone.",
+    "firstMove": "\"Before I interpret the X-ray: is he stable, and how short of breath is he?\""
+  },
+  "flow": [
+    "Interpret the X-ray findings",
+    "High-risk features",
+    "Symptoms and size",
+    "Choose with the patient",
+    "Procedure safety",
+    "Tension",
+    "Discharge advice"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-skill",
+      "label": "Interpret the X-ray findings",
+      "fail": "Misses the pneumothorax, or calls tension from the X-ray alone.",
+      "pass": "Left pneumothorax: visible visceral pleural edge, no lung markings beyond it; notes the trachea and mediastinum are central.",
+      "high": "Also checks for a fluid level (haemopneumothorax), underlying lung disease and the other side; knows a skin fold can mimic the edge."
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-knowledge",
+      "label": "High-risk features",
+      "fail": "Does not look for features that mandate intervention.",
+      "pass": "Primary spontaneous pneumothorax. Checks BTS high-risk features: haemodynamic compromise, significant hypoxia, bilateral, lung disease, age 50 or over with smoking, haemopneumothorax.",
+      "high": "States any high-risk feature means intervention (usually a drain) regardless of preference; secondary pneumothorax needs inpatient review.",
+      "source": "BTS"
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "Symptoms and size",
+      "fail": "Uses size alone: small means home, large means drain.",
+      "pass": "Symptoms decide whether to intervene; size decides whether it is safe (usually 2 cm or more laterally or apically on the X-ray).",
+      "high": "Knows conservative care suits minimal symptoms regardless of size; if too small to intervene safely but high-risk, get a CT.",
+      "source": "BTS"
+    },
+    {
+      "id": "G4",
+      "domain": "communication",
+      "label": "Choose with the patient",
+      "fail": "Inserts a drain without discussing options.",
+      "pass": "Asks his priority: avoid a procedure (conservative, outpatient review), or rapid relief (ambulatory device or needle aspiration); drain if aspiration fails.",
+      "high": "Gives the review plan: conservative review every 2–4 days; aspiration success is improved symptoms and film; clinic follow-up at 2–4 weeks.",
+      "source": "BTS"
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-skill",
+      "label": "Procedure safety",
+      "fail": "Cannot describe the safe triangle, or plans a posterior or low site.",
+      "pass": "Safe triangle: lateral border of pectoralis major, anterior border of latissimus dorsi, line at nipple level (fifth intercostal space), apex below the axilla.",
+      "high": "Inserts just above a rib to avoid the neurovascular bundle under the rib above; avoids a posterior approach.",
+      "source": "PROC"
+    },
+    {
+      "id": "G6",
+      "domain": "professionalism",
+      "label": "Recognise tension",
+      "fail": "Waits for a chest X-ray in a hypotensive, hypoxic patient.",
+      "pass": "Tension is clinical: immediate decompression (needle or open thoracostomy), then a chest drain.",
+      "high": "Adds that tension at the first episode is a reason to consider surgery to prevent recurrence.",
+      "source": "BTS"
+    },
+    {
+      "id": "G7",
+      "domain": "communication",
+      "label": "Discharge advice",
+      "fail": "Tells him he can fly or dive next week.",
+      "pass": "Return at once if breathless; no flying until the film shows resolution, then wait 7 days; stop smoking; follow-up X-ray.",
+      "high": "Recurrence about 1 in 3; diving discouraged permanently unless surgical pleurectomy; surgery after a second ipsilateral or first contralateral episode.",
+      "source": "BTS"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "Here are the findings on his chest X-ray."
+      },
+      {
+        "speaker": "candidate",
+        "text": "There's a large left pneumothorax, so this is a tension pneumothorax.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Anything else you'd look for?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "No, it's a primary one, he's young.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you manage it?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "It's over 2 cm, so he needs a chest drain.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          },
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Where would you put it?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Somewhere low at the back, where the air is.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Later, BP 80/50 and SpO2 84%."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd get a repeat X-ray first to confirm.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "He's flying to Spain next week to go diving."
+      },
+      {
+        "speaker": "candidate",
+        "text": "That should be fine once the drain is out.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "examiner",
+        "text": "Here are the findings on his chest X-ray."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Left pneumothorax: a visible pleural edge with no lung markings beyond it. The trachea and mediastinum are central.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What kind of pneumothorax?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Primary spontaneous. I'd check the high-risk features: haemodynamic compromise, significant hypoxia, bilateral, lung disease, age 50 or over with smoking, or haemopneumothorax. He has none.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Does the size matter?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Symptoms decide whether to intervene. Size, about 2 cm or more, tells me it's safe to.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you manage him?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd ask his priority. To avoid a procedure: conservative care with outpatient review. For rapid relief: an ambulatory device or needle aspiration, and a drain if that fails.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Where would you aspirate or drain?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "The safe triangle: pectoralis major, latissimus dorsi, the nipple line and an apex below the axilla.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Later, BP 80/50 and SpO2 84%."
+      },
+      {
+        "speaker": "candidate",
+        "text": "That's tension until proven otherwise: decompress now, then a chest drain.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What advice on discharge?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Come back if breathless, no flying until resolved on X-ray and then 7 days, stop smoking, and follow-up.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "examiner",
+        "text": "Here are the findings on his chest X-ray."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Left pneumothorax, trachea central. No fluid level, so no haemopneumothorax; the lung looks normal and the right side is clear. That's a true pleural edge, not a skin fold.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "He's now breathless and hypoxic at rest."
+      },
+      {
+        "speaker": "candidate",
+        "text": "That's a high-risk feature, so he needs intervention, usually a drain, whatever his preference.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Suppose it were a 1 cm apical rim."
+      },
+      {
+        "speaker": "candidate",
+        "text": "If he's barely symptomatic, conservative care is fine at any size. If he's high-risk and it's too small to intervene safely, I'd get a CT to find a window.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "He chooses conservative care."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Review every 2 to 4 days as an outpatient, and a drain if it enlarges. After aspiration, success means better symptoms and a better film. Clinic at 2 to 4 weeks.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd go just above the rib to avoid the neurovascular bundle, and avoid a posterior approach.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "And if he'd presented with tension?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Decompress and drain, then consider surgery, because tension at a first episode is a reason to prevent recurrence.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "He's a keen diver."
+      },
+      {
+        "speaker": "candidate",
+        "text": "About 1 in 3 recur. Diving is off permanently unless he has a surgical pleurectomy. I'd offer surgery after a second ipsilateral or first contralateral episode.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G3",
+      "move": "Choosing a drain by size alone.",
+      "consequence": "An avoidable procedure for a minimally symptomatic patient."
+    },
+    {
+      "row": "G2",
+      "move": "Not checking high-risk features.",
+      "consequence": "A hypoxic or older smoker is sent home for conservative care."
+    },
+    {
+      "row": "G6",
+      "move": "Waiting for an X-ray in suspected tension.",
+      "consequence": "Cardiac arrest from obstructive shock."
+    },
+    {
+      "row": "G7",
+      "move": "Allowing early flying or diving.",
+      "consequence": "Recurrence at altitude or depth, far from help."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "Asked \"Does he need a drain?\"",
+      "line": "It depends on his symptoms, high-risk features and priorities; size tells me whether intervention is safe."
+    },
+    {
+      "when": "Unsure of the pathway order",
+      "line": "Symptomatic? High-risk? Safe to intervene? Then what matters most to him."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "BTS 2023: conservative care can be considered for minimally symptomatic primary pneumothorax regardless of size.",
+      "source": "BTS"
+    },
+    {
+      "fact": "Sufficient size to intervene: usually 2 cm or more laterally or apically, or any size on CT with a safe window.",
+      "source": "BTS"
+    },
+    {
+      "fact": "Recurrence after a first primary pneumothorax: 32%.",
+      "source": "BTS"
+    },
+    {
+      "fact": "Fly 7 days after radiological resolution; scuba diving discouraged permanently unless surgical pleurectomy.",
+      "source": "BTS"
+    },
+    {
+      "fact": "Safe triangle: pectoralis major, latissimus dorsi, fifth intercostal space, apex below the axilla.",
+      "source": "BL"
+    }
+  ],
+  "recall": {
+    "think": "Tension kills; a high-risk patient sent home can deteriorate.",
+    "say": "\"Primary spontaneous pneumothorax, no high-risk features: management depends on his symptoms and priorities.\"",
+    "do": [
+      "Check high-risk features",
+      "Offer conservative, ambulatory or aspiration",
+      "Drain if aspiration fails or high-risk"
+    ],
+    "numbers": [
+      {
+        "value": "2 cm",
+        "meaning": "usual size needed to intervene safely",
+        "source": "BTS"
+      },
+      {
+        "value": "7 days",
+        "meaning": "wait after radiological resolution before flying",
+        "source": "BTS"
+      },
+      {
+        "value": "32%",
+        "meaning": "recurrence after first primary pneumothorax",
+        "source": "BTS"
+      }
+    ],
+    "trap": "A large pneumothorax in a comfortable patient does not need a drain.",
+    "finish": "Clinic follow-up at 2–4 weeks; surgery for a second ipsilateral or first contralateral episode."
+  },
+  "sources": [
+    {
+      "id": "BTS",
+      "name": "Roberts ME, Rahman NM, Maskell NA, et al. British Thoracic Society Guideline for pleural disease. Thorax 2023;78(Suppl 3):s1–s42",
+      "version": "July 2023",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37433578/",
+      "supports": "Pneumothorax pathway and high-risk characteristics; conservative care regardless of size if minimally symptomatic; ambulatory, aspiration or drain; sufficient size usually 2 cm; review intervals; recurrence 32%; flying 7 days after resolution; diving advice; elective surgery indications"
+    },
+    {
+      "id": "PROC",
+      "name": "Asciak R, Bedawi EO, Bhatnagar R, et al. British Thoracic Society Clinical Statement on pleural procedures. Thorax 2023;78(Suppl 3):s43–s68",
+      "version": "July 2023",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37433579/",
+      "supports": "Needle inserted in the triangle of safety directly above a rib; avoid a posterior approach"
+    },
+    {
+      "id": "BL",
+      "name": "Bailey & Love's Short Practice of Surgery (O'Connell, McCaskie, Sayers, eds)",
+      "version": "28th edition, 2023",
+      "url": "https://www.routledge.com/Bailey--Loves-Short-Practice-of-Surgery---28th-Edition/OConnell-McCaskie-Sayers/p/book/9780367548117",
+      "supports": "Borders of the safe triangle; tension pneumothorax as a clinical diagnosis"
+    },
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format: 9 minutes with 1 minute's reading; examiner-led questioning in applied knowledge stations"
+    }
+  ],
+  "partner": {
+    "opening": "Here are the findings on Mr Stewart's chest X-ray. What do they show?",
+    "reveals": [
+      {
+        "trigger": "Candidate asks for observations",
+        "finding": "Read out: HR 96, BP 128/76, RR 20, SpO2 97% on air. Talking in full sentences; pain controlled with paracetamol.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Candidate asks about size",
+        "finding": "Read out: the rim measures 3 cm at the lateral chest wall.",
+        "row": "G3"
+      },
+      {
+        "trigger": "Candidate asks what matters to him",
+        "finding": "\"I'd rather avoid a tube if I can, but I want to get back to work.\"",
+        "row": "G4"
+      },
+      {
+        "trigger": "Candidate asks about travel or hobbies",
+        "finding": "Flying to Spain in ten days for a diving holiday.",
+        "row": "G7"
+      }
+    ],
+    "push": [
+      {
+        "question": "Interpret the X-ray findings.",
+        "row": "G1",
+        "expect": "Left pneumothorax, pleural edge, trachea central."
+      },
+      {
+        "question": "What would make this high risk?",
+        "row": "G2",
+        "expect": "Compromise, hypoxia, bilateral, lung disease, 50+ smoker, haemopneumothorax."
+      },
+      {
+        "question": "Does size decide the treatment?",
+        "row": "G3",
+        "expect": "Symptoms decide; size of about 2 cm makes intervention safe."
+      },
+      {
+        "question": "How would you manage him?",
+        "row": "G4",
+        "expect": "Options by his priority: conservative, ambulatory, aspiration; drain if fails."
+      },
+      {
+        "question": "Where would you insert a drain?",
+        "row": "G5",
+        "expect": "Safe triangle, above the rib."
+      },
+      {
+        "question": "What would you tell him on discharge?",
+        "row": "G7",
+        "expect": "Return if breathless, flying and diving advice, smoking, follow-up."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "BP 80/50, SpO2 84%, trachea deviated to the right.",
+        "safeAnswer": "Tension: decompress immediately, then chest drain; do not wait for imaging.",
+        "row": "G6"
+      },
+      {
+        "prompt": "He is 64 with COPD and the same X-ray findings.",
+        "safeAnswer": "Secondary pneumothorax, high risk: admit and drain.",
+        "row": "G2"
+      },
+      {
+        "prompt": "Needle aspiration leaves him still breathless with little change on the film.",
+        "safeAnswer": "Aspiration has failed: insert a chest drain.",
+        "row": "G4"
+      },
+      {
+        "prompt": "What is the safe triangle?",
+        "safeAnswer": "Lateral border of pectoralis major, anterior border of latissimus dorsi, the nipple line, apex below the axilla.",
+        "row": "G5"
+      }
+    ]
+  }
+}

@@ -1,0 +1,558 @@
+{
+  "id": "MB-133",
+  "exam": "MRCS-B",
+  "title": "Perforated viscus and peritonitis",
+  "type": "applied-knowledge",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "Applied surgical science and critical care",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "NICE NG253 (Nov 2025, updated Sep 2026)",
+      "RCP NEWS2 (Dec 2017)",
+      "RCS England High-Risk General Surgical Patient (2018)"
+    ],
+    "related": [
+      {
+        "id": "MB-125 Gallstones and cholecystitis",
+        "why": "Another source of abdominal sepsis"
+      },
+      {
+        "id": "Consent for laparotomy",
+        "why": "Consent and stoma discussion in the emergency"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Emergency department",
+    "role": "Core surgical trainee on call",
+    "scenario": "Mr Evans, 68, has had sudden severe epigastric pain for 6 hours, now spreading across the abdomen. He takes ibuprofen for back pain. Pulse 118, BP 96/60, RR 24, SpO2 95% on air, temperature 38.2°C, alert. His abdomen is rigid.",
+    "task": "The examiner will ask you about your assessment and management, and will read out the results of any investigations you request."
+  },
+  "beforeYouWalkIn": {
+    "frame": "He is septic from a likely perforation. Resuscitate, find the hole, and get the source controlled by the right team.",
+    "trap": "Waiting for the CT before giving antibiotics and fluids.",
+    "firstMove": "Say you'd assess him ABCDE and work out his NEWS2."
+  },
+  "flow": [
+    "ABCDE and NEWS2",
+    "Cultures, lactate, antibiotics, fluids",
+    "Erect chest X-ray, then CT",
+    "Differential",
+    "Senior and risk score",
+    "Theatre",
+    "Escalation call"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-skill",
+      "label": "Initial assessment",
+      "fail": "Jumps to the diagnosis without ABCDE or observations.",
+      "pass": "ABCDE; calculates NEWS2 (here 8: high risk); oxygen; two large-bore cannulas.",
+      "high": "Works the score aloud (RR 2, SpO2 1, BP 2, pulse 2, temperature 1) and escalates straight away.",
+      "source": "NEWS2"
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-knowledge",
+      "label": "Sepsis management",
+      "fail": "Holds antibiotics until the diagnosis is confirmed.",
+      "borderline": "Gives antibiotics and fluids but can't say how fast, or gives litres without reassessing.",
+      "pass": "Cultures, lactate and bloods; IV broad-spectrum antibiotics within 1 hour; 250 ml crystalloid bolus, reassess, repeat up to 1,000 ml.",
+      "high": "Catheter and hourly urine output; senior advice if not improved after 1,000 ml; senior in person and critical care if no response within 1 hour.",
+      "source": "NG253"
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "Imaging",
+      "fail": "Sends him to CT before resuscitation has started.",
+      "pass": "Erect chest X-ray for free gas under the diaphragm; CT abdomen and pelvis to find the site.",
+      "high": "Knows a normal erect film doesn't exclude perforation; CT is more sensitive and shapes the operation.",
+      "source": "BL"
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-knowledge",
+      "label": "Differential diagnosis",
+      "fail": "Names a single diagnosis.",
+      "pass": "Perforated peptic ulcer (NSAIDs) most likely; also perforated diverticulum, pancreatitis, mesenteric ischaemia, ruptured aortic aneurysm.",
+      "high": "Tests for the mimics early: amylase or lipase, ECG and troponin, and asks for aneurysm history.",
+      "source": "BL"
+    },
+    {
+      "id": "G5",
+      "domain": "professionalism",
+      "label": "Senior involvement and risk",
+      "fail": "Manages alone without telling the registrar or consultant.",
+      "pass": "Early registrar and consultant input; mortality risk documented; 5% or more is high risk: consultant surgeon and anaesthetist in theatre.",
+      "high": "Source control within 3 hours in septic shock, 6 hours in sepsis; plans critical care after surgery.",
+      "source": "RCS18"
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-knowledge",
+      "label": "Definitive management",
+      "fail": "Plans ward management for a septic patient with peritonitis.",
+      "pass": "Laparoscopy or laparotomy: washout and repair (e.g. omental patch for a duodenal ulcer); consent including stoma where relevant.",
+      "high": "Adds IV PPI, H. pylori testing and stopping NSAIDs; knows non-operative care is a consultant decision for selected sealed perforations.",
+      "source": "BL"
+    },
+    {
+      "id": "G7",
+      "domain": "communication",
+      "label": "Escalation call",
+      "fail": "Rambles without saying what he needs.",
+      "pass": "SBAR: patient, NEWS2 and lactate, suspected perforation, what's been done, what you need.",
+      "high": "Makes a clear request with a time: 'Please see him now; I think he needs theatre.'",
+      "source": "NEWS2"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "How would you manage this man?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I think he has a perforated ulcer. I'd get a CT to confirm it.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          },
+          {
+            "row": "G3",
+            "band": "fail"
+          },
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "And antibiotics?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Once the CT confirms it, I'd start them.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Who would you tell?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd book him for theatre myself.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What operation?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd keep him nil by mouth and see how he goes on the ward.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Call your registrar."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Hi, there's a man in ED with tummy pain, he's not great, not sure what's going on.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "examiner",
+        "text": "How would you manage this man?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "ABCDE. His NEWS2 is 8, so he's high risk. Oxygen, two large-bore cannulas.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Blood cultures, lactate, FBC, U&E, LFTs, amylase, clotting, group and save. IV broad-spectrum antibiotics within the hour, and a 250 ml crystalloid bolus, reassessing after each, up to a litre.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Imaging?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "An erect chest X-ray for free gas, then CT abdomen and pelvis to find the site.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Differential?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Perforated peptic ulcer is most likely with ibuprofen. Also perforated diverticulum, pancreatitis, mesenteric ischaemia, and a ruptured aneurysm.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Then?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Registrar and consultant now. We'd document his mortality risk; if it's 5% or more, the consultant surgeon and anaesthetist should be in theatre.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Laparoscopy or laparotomy, washout and an omental patch if it's a duodenal ulcer. I'd consent him, including a possible stoma if it's colonic.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Call your registrar."
+      },
+      {
+        "speaker": "candidate",
+        "text": "It's Dr Patel in ED. Mr Evans, 68, suspected perforation, NEWS2 8, lactate 4.1. Cultures and antibiotics are in and the first bolus is running. Can you come and see him?",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "examiner",
+        "text": "How would you manage this man?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "He's septic. ABCDE; NEWS2 is 8: respiratory rate 2, sats 1, blood pressure 2, pulse 2, temperature 1. High risk, so I escalate now. Oxygen and two large-bore cannulas.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Cultures, lactate and bloods, then antibiotics within an hour of that score. 250 ml of Hartmann's over 10 to 15 minutes, reassess, repeat up to a litre in total. A catheter for hourly urine. If he hasn't improved after that litre, I get senior advice; if there's no response within an hour, the senior comes in person and I call critical care.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Imaging?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Erect chest X-ray first. A normal film doesn't exclude a perforation, so CT abdomen and pelvis, once he's being resuscitated, to find the site and plan the operation.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Differential?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Perforated duodenal ulcer is my working diagnosis. I'd check lipase for pancreatitis, an ECG and troponin, and ask about an aneurysm, because those change everything.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Then?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Consultant involvement now and a documented risk score. He's almost certainly high risk, so consultant surgeon and anaesthetist in theatre, a critical care bed afterwards, and source control within 3 hours if he's in septic shock.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Washout and omental patch for a duodenal perforation. Afterwards: IV PPI, H. pylori testing, stop the ibuprofen. Non-operative management is only for selected sealed perforations, and that's the consultant's decision.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Call your registrar."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Dr Patel in ED. Mr Evans, 68, suspected perforated ulcer with peritonitis. NEWS2 8, lactate 4.1, free gas on the erect film. Antibiotics in, second bolus running. Please see him now; I think he needs theatre tonight.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G2",
+      "move": "Waiting for the CT before antibiotics and fluids.",
+      "consequence": "Sepsis treatment belongs in the first hour, not after the scan."
+    },
+    {
+      "row": "G3",
+      "move": "Treating a normal erect chest X-ray as ruling out perforation.",
+      "consequence": "Misses a perforation that CT would show."
+    },
+    {
+      "row": "G5",
+      "move": "No documented risk score and no consultant involvement.",
+      "consequence": "A high-risk patient reaches theatre without the right team or a critical care bed."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You went straight to imaging",
+      "line": "Before any scan, I'd resuscitate: ABCDE, cultures, antibiotics within the hour and a fluid bolus."
+    },
+    {
+      "when": "You can't recall the NEWS2 bands",
+      "line": "I'd calculate his NEWS2 on the chart; with these observations he's clearly high risk, so I'd escalate now."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "NEWS2 of 7 or more is high risk: antibiotics within 1 hour; 250 ml crystalloid boluses, reassessed, up to 1,000 ml total; senior advice if not improved after 1,000 ml.",
+      "source": "NG253"
+    },
+    {
+      "fact": "Predicted mortality of 5% or more is high risk: consultant surgeon and anaesthetist present in theatre.",
+      "source": "RCS18"
+    },
+    {
+      "fact": "Source control within 3 hours in septic shock, 6 hours in sepsis without shock.",
+      "source": "RCS18"
+    },
+    {
+      "fact": "Free gas under the diaphragm on an erect chest X-ray suggests perforation; a normal film does not exclude it.",
+      "source": "BL"
+    }
+  ],
+  "recall": {
+    "think": "Septic, perforated, and on a clock.",
+    "say": "\"NEWS2 is 8: antibiotics within the hour, and I'm calling my registrar now.\"",
+    "do": [
+      "Cultures, lactate, antibiotics, 250 ml bolus",
+      "Erect CXR, then CT",
+      "Risk score, consultant, theatre"
+    ],
+    "numbers": [
+      {
+        "value": "1 hour",
+        "meaning": "antibiotics in high-risk sepsis",
+        "source": "NG253"
+      },
+      {
+        "value": "250 ml",
+        "meaning": "bolus, repeat to 1,000 ml",
+        "source": "NG253"
+      },
+      {
+        "value": "≥ 5%",
+        "meaning": "predicted mortality: consultants in theatre",
+        "source": "RCS18"
+      }
+    ],
+    "trap": "Scanning before treating.",
+    "finish": "Source control within 3 hours if in septic shock."
+  },
+  "sources": [
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format: 9 minutes with 1 minute's reading; examiner-led questioning in applied knowledge stations"
+    },
+    {
+      "id": "BL",
+      "name": "Bailey & Love's Short Practice of Surgery (O'Connell, McCaskie, Sayers, eds)",
+      "version": "28th edition, 2023",
+      "url": "https://www.routledge.com/Bailey--Loves-Short-Practice-of-Surgery---28th-Edition/OConnell-McCaskie-Sayers/p/book/9780367548117",
+      "supports": "Erect chest X-ray and CT in perforation; differential of peritonitis; operative management of perforated peptic ulcer"
+    },
+    {
+      "id": "NG253",
+      "name": "NICE NG253: Suspected sepsis in people aged 16 or over: recognition, assessment and early management",
+      "version": "Published 19 November 2025; last updated 23 September 2026",
+      "url": "https://www.nice.org.uk/guidance/ng253",
+      "supports": "High risk = NEWS2 7 or more; senior assessment, bloods with lactate and cultures (1.8.2); IV antibiotics within 1 hour of the NEWS2 score (1.8.3); fluid bolus within 1 hour (1.8.4): 250 ml crystalloid over 10–15 minutes, repeat up to 1,000 ml total including fluids already given, reassess after each (1.8.5–1.8.8); not improved after 1,000 ml: senior advice (1.8.9); no response within 1 hour: senior in person and critical care (1.8.15); early surgical team for source control (1.11.4)"
+    },
+    {
+      "id": "NEWS2",
+      "name": "Royal College of Physicians: National Early Warning Score (NEWS) 2",
+      "version": "December 2017",
+      "url": "https://www.rcp.ac.uk/improving-care/resources/national-early-warning-score-news-2/",
+      "supports": "NEWS2 parameter bands and aggregate score"
+    },
+    {
+      "id": "RCS18",
+      "name": "RCS England: The High-Risk General Surgical Patient: Raising the Standard",
+      "version": "2018",
+      "url": "https://www.rcseng.ac.uk/-/media/files/rcs/news-and-events/media-centre/2018-press-releases-documents/rcs-report-the-highrisk-general-surgical-patient--raising-the-standard--december-2018.pdf",
+      "supports": "Risk documented by ST3+ within 4 hours; high risk = predicted mortality 5% or more; consultant surgeon and anaesthetist present in theatre; source control within 3 hours in septic shock, 6 hours in sepsis; antibiotics within 1 hour"
+    }
+  ],
+  "partner": {
+    "opening": "This is Mr Evans. You're the surgical trainee on call. How would you manage him?",
+    "reveals": [
+      {
+        "trigger": "Asks about airway and breathing",
+        "finding": "Talking, RR 24, SpO2 95% on air, chest clear.",
+        "row": "G1"
+      },
+      {
+        "trigger": "Asks about circulation",
+        "finding": "Pulse 118, BP 96/60, capillary refill 3 seconds, cool peripheries.",
+        "row": "G1"
+      },
+      {
+        "trigger": "Asks for bloods and a gas",
+        "finding": "Lactate 4.1 mmol/L, WCC 18, CRP 160, amylase 90, creatinine 128.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Asks for an erect chest X-ray",
+        "finding": "Read out: the erect chest X-ray shows a thin crescent of lucency beneath the right hemidiaphragm, separating it from the upper surface of the liver. The lung fields are clear.",
+        "row": "G3"
+      },
+      {
+        "trigger": "Asks for CT",
+        "finding": "Read out: the axial CT abdomen shows pockets of gas outside the bowel lumen, beneath the anterior abdominal wall and next to the first part of the duodenum, with fluid around the first part of the duodenum.",
+        "row": "G3"
+      },
+      {
+        "trigger": "Asks about the response to fluids",
+        "finding": "After 500 ml: pulse 108, BP 104/64.",
+        "row": "G2"
+      }
+    ],
+    "push": [
+      {
+        "question": "How quickly should antibiotics go in?",
+        "row": "G2",
+        "expect": "Within 1 hour of the NEWS2 score in a high-risk patient."
+      },
+      {
+        "question": "Who should be in theatre?",
+        "row": "G5",
+        "expect": "If predicted mortality is 5% or more, a consultant surgeon and a consultant anaesthetist."
+      },
+      {
+        "question": "What would you do after the operation?",
+        "row": "G6",
+        "expect": "IV PPI, H. pylori testing, stop NSAIDs, critical care bed."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "After a litre of fluid his BP is 82/50 and lactate is 5.",
+        "safeAnswer": "Not improved after 1,000 ml: senior advice now, and with no response in the hour, senior in person and critical care; septic shock, so source control within 3 hours.",
+        "row": "G2"
+      },
+      {
+        "prompt": "He says he's allergic to penicillin.",
+        "safeAnswer": "I'd ask what the reaction was and choose an alternative from the local antimicrobial guideline, without delaying.",
+        "row": "G2"
+      },
+      {
+        "prompt": "The CT shows a perforated sigmoid with faecal peritonitis.",
+        "safeAnswer": "Likely Hartmann's procedure: consent for a colostomy, consultant-led.",
+        "row": "G6"
+      }
+    ]
+  }
+}

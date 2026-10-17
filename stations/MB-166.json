@@ -1,0 +1,529 @@
+{
+  "id": "MB-166",
+  "exam": "MRCS-B",
+  "title": "Hyperkalaemia in a surgical patient",
+  "type": "applied-knowledge",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "Applied surgical science and critical care",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "UKKA Treatment of Acute Hyperkalaemia in Adults (July 2020; updated Oct 2023 and July 2026)",
+      "NICE NG148 (updated Oct 2024)"
+    ],
+    "related": [
+      {
+        "id": "MB-165 Small bowel obstruction",
+        "why": "Fluids, electrolytes and AKI after abdominal surgery"
+      },
+      {
+        "id": "MB-133 Perforated viscus",
+        "why": "Sepsis driving postoperative AKI"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Surgical ward, evening",
+    "role": "Core surgical trainee on call",
+    "scenario": "Mr Dennis Hale, 71, is on day 3 after a laparotomy and Hartmann's procedure. His ramipril was restarted yesterday. He has passed 90 ml of urine in the last 6 hours. The lab phones: potassium 7.1 mmol/L (not haemolysed), creatinine 246 µmol/L (baseline 92).",
+    "task": "The examiner will ask how you would manage him, and will read out his ECG findings."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Severe hyperkalaemia with AKI: protect the heart, shift potassium, remove it, monitor, and fix the cause.",
+    "trap": "Giving insulin without calcium when the ECG is abnormal, or forgetting the glucose afterwards.",
+    "firstMove": "\"I'd see him now, attach a monitor and get a 12-lead ECG.\""
+  },
+  "flow": [
+    "Assess and monitor",
+    "Interpret the ECG findings",
+    "Calcium",
+    "Insulin-glucose, salbutamol",
+    "Glucose monitoring",
+    "Repeat K, stop culprits",
+    "Treat AKI, escalate"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-skill",
+      "label": "Initial assessment and monitoring",
+      "fail": "Treats by phone without seeing him or getting an ECG.",
+      "pass": "Sees him now: ABCDE, NEWS2, 12-lead ECG, continuous cardiac monitoring; blood gas for a rapid potassium; recognises 6.5 or more as severe.",
+      "high": "Moves him to a monitored bed, and treats on the gas result rather than waiting for a repeat lab sample.",
+      "source": "UKKA"
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-knowledge",
+      "label": "ECG interpretation",
+      "fail": "Calls the ECG findings normal or can't name any hyperkalaemic change.",
+      "pass": "Interprets the written findings as peaked T waves, flattened P waves, prolonged PR and a broad QRS.",
+      "high": "Knows the sequence can jump straight to a sine wave, bradycardia or arrest; the ECG doesn't track the level reliably.",
+      "source": "UKKA"
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "IV calcium first (safety-critical)",
+      "fail": "Omits calcium despite ECG changes, or gives it only after the insulin.",
+      "pass": "IV calcium first: 30 ml 10% calcium gluconate over 10 minutes (or 10 ml 10% calcium chloride over 5 minutes).",
+      "high": "Knows calcium doesn't lower potassium, works within 3 minutes, lasts 30–60 minutes; repeats the ECG and considers a further dose.",
+      "source": "UKKA"
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-knowledge",
+      "label": "Shifting potassium",
+      "fail": "Gives salbutamol alone, or gets the insulin dose wrong.",
+      "pass": "10 units soluble insulin in 25 g glucose (50 ml of 50%) IV over 5–15 minutes; nebulised salbutamol 10–20 mg as an adjunct.",
+      "high": "Checks pre-treatment glucose: below 7.0, adds 10% glucose at 50 ml/h for 5 hours; starts sodium zirconium cyclosilicate.",
+      "source": "UKKA"
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-knowledge",
+      "label": "Glucose monitoring (safety-critical)",
+      "fail": "Doesn't check glucose after insulin.",
+      "pass": "Monitors capillary glucose regularly for 6 hours after insulin-glucose.",
+      "high": "States the schedule: 0, 30, 60, 90, 120 minutes, then hourly to 6 hours; treats hypoglycaemia below 4.0 mmol/L.",
+      "source": "UKKA"
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-knowledge",
+      "label": "Repeat potassium and culprit drugs",
+      "fail": "Doesn't recheck potassium, or leaves the ramipril prescribed.",
+      "pass": "Repeats potassium at 1, 2, 4, 6 and 24 hours; stops ramipril and any potassium supplements or added KCl.",
+      "high": "Checks for NSAIDs and potassium-sparing diuretics, and watches for rebound as the insulin wears off.",
+      "source": "UKKA"
+    },
+    {
+      "id": "G7",
+      "domain": "professionalism",
+      "label": "Treating the AKI and escalating",
+      "fail": "Corrects the potassium but ignores the AKI.",
+      "pass": "Assesses volume, fluid challenge if dry, catheter and fluid balance; stops nephrotoxins; tells the registrar and renal or critical care team.",
+      "high": "Refers immediately for renal replacement therapy if potassium doesn't respond; ultrasound within 24 hours if obstruction possible; looks for sepsis.",
+      "source": "NG148"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "How would you manage Mr Hale?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd ask the nurse to give him some insulin and dextrose and I'll recheck the potassium in the morning.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          },
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "I'll read out his ECG findings."
+      },
+      {
+        "speaker": "candidate",
+        "text": "That sounds okay to me.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Would you give anything else?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Salbutamol nebulisers should bring it down on their own.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          },
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Anything after the insulin?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "No, that's it.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "And his kidneys?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Once the potassium's normal, the kidneys should sort themselves out.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "examiner",
+        "text": "How would you manage Mr Hale?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "This is severe hyperkalaemia, 6.5 or more. I'd see him now: ABCDE, NEWS2, a 12-lead ECG, cardiac monitoring, and a blood gas for a quick potassium.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "I'll read out his ECG findings."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Those are peaked T waves, flattened P waves, a long PR and a broad QRS.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What first?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "IV calcium to protect the heart: 30 ml of 10% calcium gluconate over 10 minutes.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Then 10 units of soluble insulin in 25 g of glucose over 5 to 15 minutes, and nebulised salbutamol 10 to 20 mg as an adjunct.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd monitor his glucose regularly for 6 hours afterwards.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Then?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Repeat potassium at 1, 2, 4, 6 and 24 hours. Stop the ramipril and any potassium supplements or added KCl.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "For the AKI: assess his fluid status, fluid challenge if dry, catheter and fluid balance, stop nephrotoxins. I'd tell my registrar and the renal team.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "examiner",
+        "text": "How would you manage Mr Hale?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Potassium 7.1 is severe, and with an AKI it may still be rising. I'd see him now, ABCDE and NEWS2, get him on a monitor in a monitored bed, a 12-lead ECG, and a gas so I'm not waiting for the lab.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "I'll read out his ECG findings."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Tall peaked T waves, flat P waves, a long PR, and the QRS is broadening. That's dangerous: it can go straight to a sine wave or bradycardic arrest.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What first?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "30 ml of 10% calcium gluconate over 10 minutes. It stabilises the myocardium within minutes but doesn't lower potassium and lasts 30 to 60 minutes, so I'd repeat the ECG and give more if the changes persist.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Then 10 units of Actrapid in 50 ml of 50% glucose over 5 to 15 minutes. His glucose was 5.8, below 7, so I'd follow it with 10% glucose at 50 ml an hour for 5 hours. Salbutamol 10 to 20 mg nebulised as an adjunct, and sodium zirconium cyclosilicate to remove potassium.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Capillary glucose at 0, 30, 60, 90 and 120 minutes, then hourly to 6 hours. Below 4 I'd treat it.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Then?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Potassium at 1, 2, 4, 6 and 24 hours, watching for rebound. Stop the ramipril, any added potassium, and any NSAIDs or spironolactone.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "The AKI is the driver: volume assessment, fluid challenge if he's dry, catheter, look for sepsis or a leak. Registrar and renal or critical care now; if potassium doesn't respond, he needs renal replacement therapy.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G3",
+      "move": "Giving insulin-glucose without IV calcium when the ECG shows hyperkalaemic changes.",
+      "consequence": "Safety-critical: the myocardium is unprotected while potassium falls slowly; he can arrest."
+    },
+    {
+      "row": "G5",
+      "move": "No glucose monitoring after insulin-glucose.",
+      "consequence": "Safety-critical: hypoglycaemia is the frequent harm of this treatment and can go unrecognised."
+    },
+    {
+      "row": "G7",
+      "move": "Normalising the potassium without treating the AKI.",
+      "consequence": "Potassium rebounds and he may need renal replacement therapy late."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You forgot calcium",
+      "line": "Before the insulin, I'd give IV calcium because the ECG is abnormal."
+    },
+    {
+      "when": "You're unsure of a dose",
+      "line": "I'd check the trust hyperkalaemia protocol and give calcium first while I do."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Severe hyperkalaemia is 6.5 mmol/L or more; moderate 6.0–6.4.",
+      "source": "UKKA"
+    },
+    {
+      "fact": "ECG changes: 30 ml 10% calcium gluconate over 10 minutes, or 10 ml 10% calcium chloride over 5 minutes in resuscitation.",
+      "source": "UKKA"
+    },
+    {
+      "fact": "10 units soluble insulin in 25 g glucose; if pre-treatment glucose is below 7.0, 10% glucose at 50 ml/h for 5 hours. Monitor glucose for 6 hours.",
+      "source": "UKKA"
+    },
+    {
+      "fact": "Refer immediately for renal replacement therapy if hyperkalaemia isn't responding to medical management.",
+      "source": "NG148"
+    }
+  ],
+  "recall": {
+    "think": "Arrest from hyperkalaemia; hypoglycaemia from its treatment.",
+    "say": "\"ECG changes: IV calcium now, then insulin-glucose.\"",
+    "do": [
+      "Monitor, ECG, blood gas",
+      "Calcium, then insulin-glucose and salbutamol",
+      "Glucose for 6 hours; repeat K; stop ramipril"
+    ],
+    "numbers": [
+      {
+        "value": "30 ml",
+        "meaning": "10% calcium gluconate over 10 minutes",
+        "source": "UKKA"
+      },
+      {
+        "value": "10 units / 25 g",
+        "meaning": "soluble insulin in glucose",
+        "source": "UKKA"
+      },
+      {
+        "value": "≥ 6.5",
+        "meaning": "severe hyperkalaemia (mmol/L)",
+        "source": "UKKA"
+      }
+    ],
+    "trap": "Calcium doesn't lower potassium.",
+    "finish": "Treat the AKI; renal replacement therapy if refractory."
+  },
+  "sources": [
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format: 9 minutes with 1 minute's reading; examiner-led questioning in applied knowledge stations"
+    },
+    {
+      "id": "UKKA",
+      "name": "UK Kidney Association Clinical Practice Guidelines: Treatment of Acute Hyperkalaemia in Adults (Alfonzo A, Harrison A, Baines R, et al.)",
+      "version": "Original July 2020; updated October 2023 and July 2026 (review October 2026)",
+      "url": "https://www.ukkidney.org/health-professionals/guidelines/treatment-acute-hyperkalaemia-adults-0",
+      "supports": "Mild 5.5-5.9, moderate 6.0-6.4, severe 6.5 mmol/l or more; 12-lead ECG if K 6.0 or more (14.1); continuous monitoring if 6.5 or more or ECG changes (14.2); point-of-care blood gas K (15.2); IV calcium with ECG changes: 30 ml 10% calcium gluconate over 10 minutes or 10 ml 10% calcium chloride over 5 minutes (16.2a), chloride in resuscitation, gluconate otherwise (16.2b); effect within 3 minutes, lasts 30-60 minutes; insulin-glucose 10 units soluble insulin in 25 g glucose (16.3.1), given over 5-15 minutes (appendix 4B); if pre-treatment glucose below 7.0 mmol/l, 10% glucose 50 ml/h for 5 hours (16.3.3); nebulised salbutamol 10-20 mg as adjunct, not monotherapy (16.4.1-16.4.3); sodium zirconium cyclosilicate for severe hyperkalaemia (16.6.1a); K at 1, 2, 4, 6 and 24 h (17.1.2); glucose at 0, 30, 60, 90, 120, 180, 240, 300 and 360 minutes (17.2); hypoglycaemia defined as below 4.0 mmol/l; withhold RAAS inhibitors in acute illness (2.6); stop drugs that potentiate hyperkalaemia, e.g. potassium supplements, NSAIDs, potassium-sparing diuretics (Table 32); renal or critical care referral if severe (19.1). July 2026 update: IV calcium evidence grade lowered to 2C after ILCOR 2025; doses and rates unchanged"
+    },
+    {
+      "id": "NG148",
+      "name": "NICE NG148: Acute kidney injury: prevention, detection and management",
+      "version": "Published 18 December 2019; last updated 16 October 2024",
+      "url": "https://www.nice.org.uk/guidance/ng148",
+      "supports": "Consider stopping ACE inhibitors and ARBs in vomiting or sepsis (1.2.14); urgent ultrasound within 24 hours if no cause or risk of obstruction (1.4.6); discuss renal replacement therapy immediately with a nephrologist or critical care (1.5.6); refer immediately for RRT if hyperkalaemia, acidosis, uraemic complications, fluid overload or pulmonary oedema are not responding to medical management (1.5.8)"
+    }
+  ],
+  "partner": {
+    "opening": "Mr Hale's potassium has just been phoned through. How would you manage him?",
+    "reveals": [
+      {
+        "trigger": "Asks about his observations",
+        "finding": "NEWS2 4: pulse 58, BP 96/60, RR 22, SpO2 96% on air, temperature 37.6°C, alert.",
+        "row": "G1"
+      },
+      {
+        "trigger": "Asks for an ECG",
+        "finding": "Read out: the 12-lead ECG shows a regular rhythm at 58 per minute, with a P wave before every QRS complex. The P waves are small and flattened. PR interval 240 ms. QRS duration 130 ms. The T waves across the chest leads are tall, narrow-based, symmetrical and pointed.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Asks for a blood gas",
+        "finding": "K 7.0, pH 7.29, bicarbonate 17, lactate 2.1, glucose 5.8 mmol/L.",
+        "row": "G4"
+      },
+      {
+        "trigger": "Asks about the drug chart and fluids",
+        "finding": "Ramipril 5 mg restarted yesterday; Hartmann's running; regular paracetamol; ibuprofen as needed.",
+        "row": "G6"
+      },
+      {
+        "trigger": "Asks about the response",
+        "finding": "At 1 hour: K 6.2; ECG changes improved; glucose 4.6.",
+        "row": "G6"
+      }
+    ],
+    "push": [
+      {
+        "question": "Why calcium, if it doesn't lower potassium?",
+        "row": "G3",
+        "expect": "Stabilises the myocardium within minutes; given first when the ECG is abnormal."
+      },
+      {
+        "question": "What is the main hazard of insulin-glucose, and how do you prevent it?",
+        "row": "G5",
+        "expect": "Hypoglycaemia: extra 10% glucose if pre-treatment glucose is below 7.0, and glucose checks for 6 hours."
+      },
+      {
+        "question": "When would he need dialysis?",
+        "row": "G7",
+        "expect": "Hyperkalaemia, acidosis, uraemic complications or fluid overload not responding to medical treatment."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "He becomes bradycardic at 34 and loses his output.",
+        "safeAnswer": "Cardiac arrest: call the arrest team, ALS; IV calcium chloride 10 ml 10% and insulin-glucose as a reversible cause.",
+        "row": "G3"
+      },
+      {
+        "prompt": "Would you give Hartmann's? It contains potassium.",
+        "safeAnswer": "Hartmann's contains only 5 mmol/L potassium and isn't the cause. Stop potassium supplements or added KCl; choose fluid by volume status and acid–base (he is acidotic), and follow local guidance.",
+        "row": "G6"
+      },
+      {
+        "prompt": "At 4 hours the potassium is back up to 6.8 despite treatment.",
+        "safeAnswer": "Refractory: repeat treatment, and refer immediately to renal or critical care for renal replacement therapy.",
+        "row": "G7"
+      }
+    ]
+  }
+}

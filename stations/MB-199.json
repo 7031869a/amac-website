@@ -1,0 +1,529 @@
+{
+  "id": "MB-199",
+  "exam": "MRCS-B",
+  "title": "Osteomyelitis: acute haematogenous and chronic",
+  "type": "data-interpretation",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "Pathology: bone and joint infection",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "BOAST: The management of children with acute musculoskeletal infection (May 2022)",
+      "Bailey & Love, 28th ed. (2023)",
+      "Cierny-Mader staging (Clin Orthop Relat Res 2003)"
+    ]
+  },
+  "brief": {
+    "setting": "Orthopaedic admissions",
+    "role": "Core surgical trainee",
+    "scenario": "Owen Castleford, 16, has had two weeks of worsening right shoulder pain after a feverish illness. He is holding the arm still. Temperature 38.2°C, heart rate 96, blood pressure normal.",
+    "task": "The examiner will give you his blood results and an MRI report, and later read out the findings of a radiograph. Interpret them, explain the pathology and outline management."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Metaphysis, pus, pressure, periosteum. Culture before antibiotics if he is stable.",
+    "trap": "Starting oral antibiotics and sending him home, or ignoring the subperiosteal collection.",
+    "firstMove": "\"This is acute haematogenous osteomyelitis of the proximal humeral metaphysis with a subperiosteal abscess.\""
+  },
+  "flow": [
+    "Bloods and MRI",
+    "Pathogenesis",
+    "Investigations",
+    "Management",
+    "Chronic osteomyelitis radiograph findings",
+    "Classification"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-skill",
+      "label": "Interprets the MRI",
+      "fail": "Reads it as a fracture or reassures without considering infection.",
+      "pass": "Acute haematogenous osteomyelitis of the proximal humeral metaphysis with a subperiosteal abscess.",
+      "high": "Keeps Ewing sarcoma in the differential for periosteal reaction, so sends tissue for histology as well as culture.",
+      "source": "BL"
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-knowledge",
+      "label": "Pathogenesis",
+      "fail": "Cannot explain why the metaphysis is involved.",
+      "pass": "Bacteraemia seeds the metaphysis, where looping vessels slow flow; pus raises pressure, lifts the periosteum and kills cortex.",
+      "high": "Proximal humeral metaphysis is intracapsular, so pus can enter the shoulder joint; Staphylococcus aureus is the usual organism.",
+      "source": "PELT"
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "Investigations",
+      "fail": "Relies on a normal radiograph to exclude infection.",
+      "pass": "FBC, CRP, blood cultures, ESR and plain radiographs; radiographs are often normal early, MRI is the second-line test.",
+      "high": "Blood culture at least 2 ml; MRI ideally within 48 hours; ultrasound for joint effusion in the same time frame.",
+      "source": "BOAST"
+    },
+    {
+      "id": "G4",
+      "domain": "professionalism",
+      "label": "Management",
+      "fail": "Gives oral antibiotics and discharges, or delays antibiotics in a septic patient to wait for theatre.",
+      "pass": "Blood cultures, IV antibiotics; drain the abscess with deep samples. If stable and surgery planned, antibiotics may wait for sampling.",
+      "high": "Oral switch and duration guided by temperature, CRP, ESR and white count; PICC if IV continues; follow-up at least 12 months.",
+      "source": "BOAST"
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-knowledge",
+      "label": "Chronic osteomyelitis from the radiograph findings",
+      "fail": "Confuses sequestrum with involucrum, or says antibiotics alone cure chronic disease.",
+      "pass": "Sequestrum: dead bone. Involucrum: new periosteal bone around it. Chronic disease needs debridement plus antibiotics.",
+      "high": "Explains antibiotics cannot reach avascular sequestrum; names cloaca and sinus, and squamous carcinoma (Marjolin's ulcer) in a long-standing sinus.",
+      "source": "LEW"
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-knowledge",
+      "label": "Cierny-Mader staging",
+      "fail": "Mixes up anatomical types and host classes.",
+      "pass": "Anatomical types 1 medullary, 2 superficial, 3 localised, 4 diffuse. Host A normal, B compromised, C treatment worse than the disease.",
+      "high": "Splits B into local and systemic compromise, and says stage guides debridement, reconstruction or suppression.",
+      "source": "CIERNY"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "MRI shows metaphyseal oedema and a subperiosteal collection. What is it?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Probably a stress fracture from sport.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Why the metaphysis?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'm not sure, it's just where it happens.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "His X-ray is normal. Does that help?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Yes, a normal X-ray makes osteomyelitis unlikely.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you manage him?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Oral flucloxacillin and review in clinic.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Here are the radiograph findings from another patient. What is the dense fragment?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "That's the involucrum. Antibiotics should clear it.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What is Cierny-Mader?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Type A is acute and type C is chronic.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "examiner",
+        "text": "WCC 14.8, CRP 86, ESR 60. MRI shows metaphyseal oedema, periosteal elevation and a subperiosteal collection."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Acute haematogenous osteomyelitis of the proximal humeral metaphysis with a subperiosteal abscess.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How does it develop?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Bacteraemia seeds the metaphysis, where looping vessels slow blood flow. Pus raises pressure, lifts the periosteum and the cortex dies.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What investigations?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "FBC, CRP, blood cultures and ESR, and plain radiographs. X-rays are often normal early, so MRI is the next test.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Management?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Blood cultures, then IV antibiotics. The abscess needs drainage with deep samples. He's stable, so antibiotics can wait for theatre sampling if it's soon.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Here are the radiograph findings from another patient."
+      },
+      {
+        "speaker": "candidate",
+        "text": "A sequestrum, which is dead bone, inside an involucrum of new periosteal bone. Chronic osteomyelitis needs debridement plus antibiotics.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you classify chronic osteomyelitis?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Cierny-Mader: types 1 medullary, 2 superficial, 3 localised, 4 diffuse. Hosts A normal, B compromised, C treatment worse than the disease.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "examiner",
+        "text": "Anything else on the differential?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Ewing sarcoma can mimic this with periosteal reaction, so I'd send tissue for histology as well as culture.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The MRI also shows a small shoulder effusion."
+      },
+      {
+        "speaker": "candidate",
+        "text": "The proximal humeral metaphysis is intracapsular, so pus can enter the joint. I'd want the joint assessed for septic arthritis. Staph aureus is the usual organism.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Blood culture at least 2 ml, MRI ideally within 48 hours, and ultrasound of the joint in the same window.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "When would you switch to oral?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "When temperature, CRP, ESR and white count are improving with the clinical picture. A PICC if IV has to continue, and follow-up for at least 12 months.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Why doesn't chronic infection clear with antibiotics?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "The sequestrum is avascular, so antibiotics can't reach it. Pus escapes through a cloaca to a sinus, and a long-standing sinus can develop squamous carcinoma, Marjolin's ulcer.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Host B splits into local and systemic compromise, and the stage guides whether we debride and reconstruct or aim for suppression.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G4",
+      "move": "Oral antibiotics and discharge with a subperiosteal abscess.",
+      "consequence": "Undrained pus spreads, with risk of septic arthritis, growth disturbance and chronic infection."
+    },
+    {
+      "row": "G3",
+      "move": "Accepting a normal early radiograph as excluding infection.",
+      "consequence": "Delayed diagnosis while bone necrosis progresses."
+    },
+    {
+      "row": "G1",
+      "move": "Culturing but not sending tissue for histology.",
+      "consequence": "A Ewing sarcoma mimicking infection could be missed."
+    },
+    {
+      "row": "G5",
+      "move": "Treating chronic osteomyelitis with antibiotics alone.",
+      "consequence": "Dead bone remains and infection recurs."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You blank on pathogenesis",
+      "line": "Metaphysis, pus, pressure, periosteum, dead bone."
+    },
+    {
+      "when": "Asked when to start antibiotics",
+      "line": "Immediately if he is septic; if stable and theatre is imminent, after deep samples."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Metaphyseal vessels loop and slow, so bacteria settle there in growing bone.",
+      "source": "PELT"
+    },
+    {
+      "fact": "BOAST: FBC, CRP, blood cultures, ESR; radiographs; MRI second line.",
+      "source": "BOAST"
+    },
+    {
+      "fact": "Antibiotics immediately if high-risk sepsis; if stable and surgery planned, may delay for deep samples.",
+      "source": "BOAST"
+    },
+    {
+      "fact": "Chronic osteomyelitis: sequestrum needs debridement as well as antibiotics.",
+      "source": "LEW"
+    },
+    {
+      "fact": "Cierny-Mader: anatomical types 1 to 4; hosts A, B, C.",
+      "source": "CIERNY"
+    }
+  ],
+  "recall": {
+    "think": "Sepsis, septic arthritis, and a tumour mimicking infection.",
+    "say": "\"Acute haematogenous osteomyelitis with a subperiosteal abscess.\"",
+    "do": [
+      "Blood cultures and inflammatory markers",
+      "IV antibiotics; drain abscess with deep samples",
+      "Histology as well as culture"
+    ],
+    "numbers": [
+      {
+        "value": "48 hours",
+        "meaning": "MRI ideally within this time",
+        "source": "BOAST"
+      },
+      {
+        "value": "12 months",
+        "meaning": "minimum clinical and radiographic follow-up",
+        "source": "BOAST"
+      }
+    ],
+    "trap": "A normal early radiograph.",
+    "finish": "Drainage, IV then oral antibiotics guided by response, long follow-up."
+  },
+  "sources": [
+    {
+      "id": "BOAST",
+      "name": "British Orthopaedic Association Standard for Trauma (BOAST): The management of children with acute musculoskeletal infection",
+      "version": "May 2022",
+      "url": "https://www.boa.ac.uk/resource/boast-the-management-of-children-with-acute-musculoskeletal-infection.html",
+      "supports": "Investigations (FBC, CRP, blood cultures of at least 2 ml, ESR, radiographs), MRI within 48 hours, ultrasound, immediate antibiotics in high-risk sepsis, delaying antibiotics for deep sampling when stable, surgery for abscess, IV-to-oral switch guided by markers, PICC, 12-month follow-up"
+    },
+    {
+      "id": "PELT",
+      "name": "Peltola H, Pääkkönen M. Acute osteomyelitis in children. N Engl J Med 2014;370:352-60",
+      "version": "2014",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/24450893/",
+      "supports": "Haematogenous pathogenesis in the metaphysis; Staphylococcus aureus as the main organism; IV then oral treatment"
+    },
+    {
+      "id": "LEW",
+      "name": "Lew DP, Waldvogel FA. Osteomyelitis. Lancet 2004;364:369-79",
+      "version": "2004",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/15276398/",
+      "supports": "Bone sampling for microbiology and pathology; sequestrum in chronic osteomyelitis; surgical debridement needed for cure"
+    },
+    {
+      "id": "CIERNY",
+      "name": "Cierny G 3rd, Mader JT, Penninck JJ. A clinical staging system for adult osteomyelitis. Clin Orthop Relat Res 2003;(414):7-24",
+      "version": "2003",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/12966271/",
+      "supports": "Anatomical types 1 to 4 and physiological host classes A, B (local and systemic), C"
+    },
+    {
+      "id": "BL",
+      "name": "Bailey & Love's Short Practice of Surgery (O'Connell, McCaskie, Sayers, eds)",
+      "version": "28th edition, 2023",
+      "url": "https://www.routledge.com/Bailey--Loves-Short-Practice-of-Surgery---28th-Edition/OConnell-McCaskie-Sayers/p/book/9780367548117",
+      "supports": "Acute and chronic osteomyelitis: intracapsular metaphyses, sequestrum, involucrum, cloaca, Marjolin's ulcer; Ewing sarcoma as a differential"
+    },
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format: 9 minutes with 1 minute's reading; examiner-led questioning in applied knowledge stations"
+    }
+  ],
+  "partner": {
+    "opening": "Here are Owen's blood results and his MRI. Tell me what is going on.",
+    "reveals": [
+      {
+        "trigger": "Candidate asks for bloods",
+        "finding": "WCC 14.8 ×10⁹/L, CRP 86 mg/L, ESR 60 mm/h. Blood cultures not yet taken.",
+        "row": "G3"
+      },
+      {
+        "trigger": "Candidate asks for the MRI report",
+        "finding": "Read out: coronal fat-suppressed MRI of the right humerus shows proximal humeral metaphyseal marrow oedema, periosteal elevation, a 15 mm subperiosteal collection and a small glenohumeral effusion. The growth plate is open.",
+        "row": "G1"
+      },
+      {
+        "trigger": "Candidate asks for a radiograph of his shoulder",
+        "finding": "Normal.",
+        "row": "G3"
+      },
+      {
+        "trigger": "Candidate finishes acute management",
+        "finding": "This is a different patient, years after an open tibial fracture. Read out: the plain radiograph of the tibia shows a thickened, irregular shaft. Within the medullary cavity lies a dense, sharply outlined fragment of bone about 3 cm long, separated from the bone around it by a thin lucent rim. Surrounding it is a thick, irregular shell of new bone formed beneath the lifted periosteum. A small rounded defect passes through this shell towards the skin.",
+        "row": "G5"
+      }
+    ],
+    "push": [
+      {
+        "question": "Why does this start in the metaphysis?",
+        "row": "G2",
+        "expect": "Looping vessels, slow flow, bacteria settle."
+      },
+      {
+        "question": "When would you give the first antibiotic dose?",
+        "row": "G4",
+        "expect": "After blood cultures; immediately if septic; after deep samples if stable and theatre is imminent."
+      },
+      {
+        "question": "What does the collection change?",
+        "row": "G4",
+        "expect": "Surgical drainage with samples for culture and histology."
+      },
+      {
+        "question": "Name the features described on this radiograph.",
+        "row": "G5",
+        "expect": "Sequestrum and involucrum; needs debridement."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "He becomes hypotensive and his lactate is 4.",
+        "safeAnswer": "Treat as sepsis: blood cultures and IV antibiotics immediately, resuscitate, escalate; do not wait for theatre.",
+        "row": "G4"
+      },
+      {
+        "prompt": "Culture is negative but the histology shows small round blue cells.",
+        "safeAnswer": "Possible Ewing sarcoma: refer to a bone sarcoma centre.",
+        "row": "G1"
+      },
+      {
+        "prompt": "What is a Brodie's abscess?",
+        "safeAnswer": "Subacute osteomyelitis: a localised abscess walled off by sclerotic bone.",
+        "row": "G5"
+      }
+    ]
+  }
+}

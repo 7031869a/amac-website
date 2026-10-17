@@ -1,0 +1,501 @@
+{
+  "id": "MB-198",
+  "exam": "MRCS-B",
+  "title": "Wound healing and abnormal scars: keloid or hypertrophic?",
+  "type": "applied-knowledge",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "Pathology: wound healing and scarring",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "Bailey & Love, 28th ed. (2023)",
+      "International clinical recommendations on scar management (Mustoe et al., 2002; updated Gold et al., 2014)",
+      "Ogawa, Int J Mol Sci (2017)"
+    ]
+  },
+  "brief": {
+    "setting": "Plastic surgery clinic",
+    "role": "Core surgical trainee",
+    "scenario": "Miss Tamsin Oduya, 24, had an epidermoid cyst excised from her right shoulder 8 months ago. The scar is now raised, red and itchy and has spread beyond the incision. She is unhappy with it.",
+    "task": "The examiner will read out written findings of the scar and then of its histology. Answer questions on wound healing, abnormal scars and their management."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Four overlapping phases; abnormal scars come from a prolonged inflammatory and proliferative response.",
+    "trap": "Offering excision alone for a keloid.",
+    "firstMove": "\"A scar spreading beyond the original wound is a keloid.\""
+  },
+  "flow": [
+    "Phases of healing",
+    "Collagen and strength",
+    "Clinical findings",
+    "Histology findings",
+    "Treatment",
+    "Counselling"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-knowledge",
+      "label": "Phases of healing",
+      "fail": "Omits haemostasis or remodelling, or gives the phases out of order.",
+      "pass": "Haemostasis, inflammation, proliferation, remodelling: overlapping, not sequential steps.",
+      "high": "Timing: inflammation in the first days; granulation from about day 4; remodelling from 2 to 3 weeks for a year or more.",
+      "source": "GONZ"
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-knowledge",
+      "label": "Cells and collagen",
+      "fail": "Cannot name the cell that lays down collagen.",
+      "pass": "Neutrophils then macrophages; fibroblasts lay down type III collagen, replaced by cross-linked type I in remodelling.",
+      "high": "Macrophages drive the switch to repair; myofibroblasts contract the wound; the scar never regains the strength of normal skin.",
+      "source": "BL"
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "Keloid or hypertrophic from the findings",
+      "fail": "Calls a scar extending beyond the wound hypertrophic.",
+      "pass": "Keloid: grows beyond the original wound and does not regress. Hypertrophic: stays within it and may improve with time.",
+      "high": "Adds risk factors: shoulder, anterior chest and earlobe sites, darker skin, family history, adolescence, wound tension.",
+      "source": "OGAWA"
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-knowledge",
+      "label": "Histology",
+      "fail": "Cannot describe the difference.",
+      "pass": "Keloid: thick, hyalinised, eosinophilic 'keloidal' collagen bundles, sparse in hypertrophic scars.",
+      "high": "Explains both as chronic inflammation of the reticular dermis, driven by tension, with many blood vessels in keloids.",
+      "source": "OGAWA"
+    },
+    {
+      "id": "G5",
+      "domain": "professionalism",
+      "label": "Treatment",
+      "fail": "Offers excision alone.",
+      "pass": "Silicone gel sheeting and intralesional corticosteroid (triamcinolone) first; pressure therapy.",
+      "high": "Excision alone has a high recurrence rate, so only with adjuvant steroid or radiotherapy, and a low-tension closure.",
+      "source": "MUSTOE"
+    },
+    {
+      "id": "G6",
+      "domain": "communication",
+      "label": "Counselling",
+      "fail": "Promises the scar will disappear.",
+      "pass": "Realistic expectations: flatter and less itchy, not gone. Warns of steroid atrophy, hypopigmentation and telangiectasia.",
+      "high": "Advises avoiding elective procedures or piercings in keloid-prone skin; would biopsy an atypical or ulcerating scar.",
+      "source": "BL"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "What are the phases of wound healing?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Inflammation, then the wound closes and scars.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Which cell lays down collagen?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I think the macrophage.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Here are the findings of her scar. What is it?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "A hypertrophic scar, because it's raised.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you treat it?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Cut it out and close it neatly.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "She asks if it will go away."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Yes, it will disappear once we've removed it.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "examiner",
+        "text": "What are the phases of wound healing?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Haemostasis, inflammation, proliferation and remodelling. They overlap.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Which cells, and what collagen?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Neutrophils, then macrophages. Fibroblasts lay down type III collagen, which is replaced by cross-linked type I during remodelling.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Here are the findings of her scar."
+      },
+      {
+        "speaker": "candidate",
+        "text": "It has spread beyond the incision, so it's a keloid. A hypertrophic scar stays within the wound and may settle.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Here are the histology findings."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Thick, hyalinised, eosinophilic collagen bundles: keloidal collagen.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you treat it?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Silicone gel sheeting and intralesional triamcinolone first, with pressure.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "She asks if it will go away."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd explain it should become flatter and less itchy but won't disappear. Steroid can cause thinning, pale skin and small vessels.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "examiner",
+        "text": "How long does each phase last?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Inflammation in the first days, granulation tissue from about day 4, and remodelling from 2 to 3 weeks for a year or more.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Macrophages drive the switch to repair, myofibroblasts contract the wound, and the scar never regains the strength of normal skin.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Why did she get a keloid?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "The shoulder is a high-tension site, and she's young. Darker skin and a family history also increase the risk.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What is the mechanism?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Both scars are chronic inflammation of the reticular dermis, driven by tension. Keloids have more hyalinised collagen and more vessels.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "She wants it cut out."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Excision alone has a high recurrence rate. If we excise, it's with a low-tension closure and adjuvant steroid or radiotherapy.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "She should avoid elective procedures or piercings in keloid-prone skin. If it ulcerated or changed, I'd biopsy it.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G5",
+      "move": "Excising a keloid without adjuvant treatment.",
+      "consequence": "High recurrence, often larger than the original."
+    },
+    {
+      "row": "G3",
+      "move": "Labelling a keloid as hypertrophic.",
+      "consequence": "Wrong counselling: she is told it will settle when it will not."
+    },
+    {
+      "row": "G4",
+      "move": "Not recognising keloidal collagen.",
+      "consequence": "Cannot confirm the diagnosis on histology."
+    },
+    {
+      "row": "G1",
+      "move": "Missing haemostasis or remodelling.",
+      "consequence": "Cannot explain why scars change for months."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "Unsure keloid or hypertrophic",
+      "line": "The key question is whether it has grown beyond the original wound."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Remodelling starts at 2 to 3 weeks and lasts a year or more.",
+      "source": "GONZ"
+    },
+    {
+      "fact": "Keloid: beyond the wound margin. Hypertrophic: within it.",
+      "source": "OGAWA"
+    },
+    {
+      "fact": "Keloidal collagen (thick, hyalinised bundles) is the histological marker of keloid.",
+      "source": "OGAWA"
+    },
+    {
+      "fact": "Silicone gel sheeting and intralesional corticosteroid have the best evidence.",
+      "source": "MUSTOE"
+    },
+    {
+      "fact": "Combination treatment is advised; the 2014 update favours more aggressive early keloid treatment.",
+      "source": "GOLD"
+    }
+  ],
+  "recall": {
+    "think": "Recurrence after surgery; missing a malignancy in an atypical scar.",
+    "say": "\"Beyond the wound margin: keloid.\"",
+    "do": [
+      "Silicone gel sheeting",
+      "Intralesional triamcinolone",
+      "No excision without adjuvant"
+    ],
+    "numbers": [
+      {
+        "value": "2 to 3 weeks",
+        "meaning": "remodelling begins, lasting a year or more",
+        "source": "GONZ"
+      }
+    ],
+    "trap": "A raised red scar is not always hypertrophic.",
+    "finish": "Steroid and silicone; excision only with adjuvant treatment."
+  },
+  "sources": [
+    {
+      "id": "BL",
+      "name": "Bailey & Love's Short Practice of Surgery (O'Connell, McCaskie, Sayers, eds)",
+      "version": "28th edition, 2023",
+      "url": "https://www.routledge.com/Bailey--Loves-Short-Practice-of-Surgery---28th-Edition/OConnell-McCaskie-Sayers/p/book/9780367548117",
+      "supports": "Phases of wound healing, collagen types, scar strength; keloid and hypertrophic scars; side effects of intralesional steroid; malignant change in chronic scars"
+    },
+    {
+      "id": "GONZ",
+      "name": "Gonzalez ACO, Costa TF, Andrade ZA, Medrado ARAP. Wound healing: a literature review. An Bras Dermatol 2016;91:614-20",
+      "version": "2016",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/27828635/",
+      "supports": "Timing of inflammation, granulation tissue (about day 4) and remodelling (from 2 to 3 weeks, lasting a year or more)"
+    },
+    {
+      "id": "OGAWA",
+      "name": "Ogawa R. Keloid and hypertrophic scars are the result of chronic inflammation in the reticular dermis. Int J Mol Sci 2017;18:606",
+      "version": "2017",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/28287424/",
+      "supports": "Clinical definitions (beyond or within wound boundary); keloidal collagen on histology; tension, site and systemic risk factors; treatment options"
+    },
+    {
+      "id": "MUSTOE",
+      "name": "Mustoe TA, Cooter RD, Gold MH, et al. International clinical recommendations on scar management. Plast Reconstr Surg 2002;110:560-71",
+      "version": "2002",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/12142678/",
+      "supports": "Silicone gel sheeting and intralesional corticosteroids as the treatments with the best evidence"
+    },
+    {
+      "id": "GOLD",
+      "name": "Gold MH, McGuire M, Mustoe TA, et al. Updated international clinical recommendations on scar management: part 2, algorithms for scar prevention and treatment. Dermatol Surg 2014;40:825-31",
+      "version": "2014",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/25068544/",
+      "supports": "Combination treatment; more aggressive early management of keloids"
+    },
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format: 9 minutes with 1 minute's reading; examiner-led questioning in applied knowledge stations"
+    }
+  ],
+  "partner": {
+    "opening": "Before I read out the findings of her scar: what are the phases of wound healing?",
+    "reveals": [
+      {
+        "trigger": "Candidate describes the phases",
+        "finding": "Read out: on the right shoulder there is a firm, raised, shiny, red-purple scar about 4 cm by 2 cm. The original incision can be traced as a 2 cm line within it, and the raised tissue extends well beyond that line into the surrounding normal skin, with claw-like projections at its edges. The surface is smooth and the skin over it is intact.",
+        "row": "G3"
+      },
+      {
+        "trigger": "Candidate identifies keloid",
+        "finding": "Read out: the H&E section of a biopsy from the scar shows the dermis largely replaced by thick, glassy, brightly pink-staining bundles of collagen lying haphazardly among finer collagen fibres, with scattered fibroblasts and small blood vessels. The overlying epidermis is thin and intact.",
+        "row": "G4"
+      },
+      {
+        "trigger": "Candidate asks about history",
+        "finding": "Her brother has keloids on his chest. The scar itches at night.",
+        "row": "G3"
+      }
+    ],
+    "push": [
+      {
+        "question": "Which collagen is laid down first, and what replaces it?",
+        "row": "G2",
+        "expect": "Type III, replaced by cross-linked type I."
+      },
+      {
+        "question": "Is this keloid or hypertrophic? Why?",
+        "row": "G3",
+        "expect": "Keloid: beyond the original wound."
+      },
+      {
+        "question": "What would you offer first?",
+        "row": "G5",
+        "expect": "Silicone gel sheeting and intralesional triamcinolone."
+      },
+      {
+        "question": "She wants it cut out. What do you say?",
+        "row": "G5",
+        "expect": "High recurrence alone; only with adjuvant steroid or radiotherapy."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "Why use radiotherapy for a benign condition?",
+        "safeAnswer": "As an adjuvant after excision of resistant keloids, to reduce recurrence, after discussing its risks.",
+        "row": "G5"
+      },
+      {
+        "prompt": "A long-standing burn scar has ulcerated.",
+        "safeAnswer": "Biopsy it to exclude squamous cell carcinoma (Marjolin's ulcer).",
+        "row": "G6"
+      },
+      {
+        "prompt": "Where on the body are keloids least likely?",
+        "safeAnswer": "Sites with little skin tension, such as the upper eyelid, scalp and anterior lower leg.",
+        "row": "G3"
+      }
+    ]
+  }
+}
