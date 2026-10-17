@@ -64,3 +64,5 @@ PLAB 1 bank 3,314 → 3,597; held 2,431 → 2,342; parked 3,443 → 2,807. Recor
 - PLAB 1 bank 5,712 → 5,817: 185 more questions went live, 80 duplicate rejects were removed from live, 17 live questions were edited. `plab1-adapted-awaiting-review.json`: 204 → 19.
 - 10 parked duplicates are marked `review_status: "rejected"` (their originals are live). PAN8630 and PAAKT051 stay here as `needs rewrite` (not published).
 - PAQ854 was retired by #126 as a near-duplicate of PAQ16136 and PAQ16476 (both live); it was not restored.
+
+**17 Oct 2026 (O&G batch, PR for plab1-adaptation-og-review):** 24 O&G sources resolved by live adaptations (PAN6753, PAN4106, PAN8063, PAN4146, PAN2022, PAN4557, PAN9552, PAN5333, PAN10406, PAN2378, PAN7538, PAN9323, PAN2881, PAN6319, PAN4116, PAN9011, PAN2368, PAN10402, PAN5951, PAN9555, PAN2079, PAN6497, PAN6747, PAN2006) removed from `plab1-adaptation-ii-unadapted.json`: 2,707 → 2,683. N2322 stays, marked `review_status: "dropped_review_dup"` (duplicate of live ID018). The 8 O&G holds stay parked.
