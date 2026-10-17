@@ -31,8 +31,10 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import vm from 'node:vm';
+import { createRequire } from 'node:module';
 import { ROOT, literalStart, literalEnd } from './sync-counts.mjs';
 import { BANNED, WARN, NOT_A_LABEL, blank } from './phrases.mjs';
+const { PACES_FILE_RE } = createRequire(import.meta.url)('../build-paces-index.js');
 
 const args = process.argv.slice(2);
 const SHOW_ALL = args.includes('--all');
@@ -202,7 +204,7 @@ const LIBRARIES = [
     phraseText: s => ({ ...s, sources: (s.sources || []).map(x =>
       x && /^Station format:/.test(x.supports || '') ? { ...x, supports: '' } : x) }) },
   // PACES marks seven skills per encounter; there is no critical-fail section to check.
-  { source: 'MRCP PACES stations', dir: 'paces-stations', files: /^R[2-5]-\d{2,3}\.json$/, id: s => s.id,
+  { source: 'MRCP PACES stations', dir: 'paces-stations', files: PACES_FILE_RE, id: s => s.id,
     required: ['title'], grid: s => (s.sections || []).filter(x => /scoring grid/i.test(x.heading)).flatMap(x => x.blocks),
     critical: null, noCritical: true },
 ];
@@ -215,7 +217,7 @@ for (const L of LIBRARIES) {
     const ids = new Set(items.map(s => String(s.id)));
     for (const id of index) if (!ids.has(id)) hit('empty-field', L.source, id, `listed in ${L.dir}/index.json but has no station file`);
   } else items = literal(L.file, L.name);
-  checked.push([L.source, L.file || `${L.dir}/${L.files ? 'R5-*' : 'MB-*'}.json`, items.length]);
+  checked.push([L.source, L.file || `${L.dir}/${L.files ? 'R*-* and X-*' : 'MB-*'}.json`, items.length]);
   duplicateIds(L.source, items, L.id);
   for (const s of items) {
     const id = L.id(s);
