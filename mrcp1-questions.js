@@ -6206,5 +6206,1205 @@ window.MRCP1_QUESTIONS = [
     },
     "generalisation": "",
     "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q269",
+    "subdomain": "Genetics",
+    "topic": "Hereditary diffuse gastric cancer",
+    "difficulty": "Moderate",
+    "stem": "A 35-year-old woman is diagnosed with diffuse-type gastric carcinoma. Her mother developed diffuse gastric cancer at 39, and a maternal aunt developed lobular breast cancer at 43. Genetic testing identifies a pathogenic germline variant in CDH1. Which cellular function is directly affected by this gene?",
+    "options": {
+      "A": "Telomere maintenance",
+      "B": "Nucleotide excision repair",
+      "C": "DNA mismatch repair",
+      "D": "Cell–cell adhesion mediated by E-cadherin",
+      "E": "Mitochondrial DNA replication"
+    },
+    "correct_letter": "D",
+    "why_correct": "CDH1 encodes E-cadherin, an important epithelial cell-adhesion protein. Germline pathogenic variants are associated with hereditary diffuse gastric cancer and an increased risk of lobular breast cancer. A family history of diffuse gastric cancer and lobular breast cancer should raise suspicion of a germline CDH1 pathogenic variant.",
+    "distractor_analysis": {
+      "A": "Telomere biology disorders can cause bone marrow failure and other systemic manifestations but do not explain the classic CDH1 cancer predisposition.",
+      "B": "Nucleotide excision repair: Defects in this pathway are associated with xeroderma pigmentosum.",
+      "C": "DNA mismatch repair: Defects in mismatch repair genes, such as MLH1 and MSH2, are associated with Lynch syndrome.",
+      "E": "Mitochondrial DNA replication: This is not the function of E-cadherin and does not explain the familial cancer pattern."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q270",
+    "subdomain": "Gastroenterology & hepatology",
+    "topic": "Autoimmune gastritis and iron deficiency",
+    "difficulty": "Moderate",
+    "stem": "A 48-year-old woman presents with fatigue. Investigations show iron-deficiency anaemia that has not responded as expected to oral iron. She has no overt bleeding, and coeliac serology is negative. Gastroscopy with biopsies shows atrophy of the gastric body and fundus with relative preservation of the antrum. Parietal-cell antibodies are detected. Which mechanism most directly contributes to impaired iron absorption in this condition?",
+    "options": {
+      "A": "Excess hepcidin causing iron retention within intestinal epithelial cells",
+      "B": "Reduced gastric acid secretion impairing non-haem iron absorption",
+      "C": "Increased intestinal loss of iron due to defective clotting",
+      "D": "Increased gastric acidity enhancing conversion of dietary iron to an absorbable form",
+      "E": "Increased renal excretion of iron"
+    },
+    "correct_letter": "B",
+    "why_correct": "Autoimmune destruction of parietal cells can cause hypochlorhydria or achlorhydria, reducing the availability of dietary non-haem iron for absorption. Iron deficiency can precede vitamin B12 deficiency. Autoimmune gastritis may present with iron deficiency before pernicious anaemia becomes apparent.",
+    "distractor_analysis": {
+      "A": "Hepcidin can reduce intestinal iron export, but this is not the principal mechanism suggested by the specific gastric findings.",
+      "C": "Intestinal iron loss due to defective clotting: A coagulation disorder may cause bleeding, but it does not explain the characteristic gastric histology and autoantibodies.",
+      "D": "Gastric acid can facilitate the solubilisation and absorption of non-haem iron. The atrophic gastritis described reduces acid secretion rather than increasing it.",
+      "E": "Renal excretion: Urinary iron loss is not the usual mechanism of iron deficiency in autoimmune gastritis."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q271",
+    "subdomain": "Clinical biochemistry and metabolism",
+    "topic": "D-lactic acidosis",
+    "difficulty": "Moderate",
+    "stem": "A 38-year-old man who underwent extensive small-bowel resection several years ago develops intermittent episodes of confusion, slurred speech and an unsteady gait after carbohydrate-rich meals. During an episode, blood tests show a metabolic acidosis, but the routine laboratory lactate concentration is not substantially elevated. His symptoms resolve between episodes. Which mechanism best explains this presentation?",
+    "options": {
+      "A": "Increased production of methylmalonic acid due to vitamin B12 deficiency",
+      "B": "Accumulation of beta-hydroxybutyrate due to insulin deficiency",
+      "C": "Accumulation of L-lactate due to tissue hypoxia",
+      "D": "Colonic bacterial production and absorption of D-lactate from unabsorbed carbohydrates",
+      "E": "Reduced renal ammonium excretion due to distal renal tubular acidosis"
+    },
+    "correct_letter": "D",
+    "why_correct": "In short-bowel syndrome, unabsorbed carbohydrates may reach the colon, where bacteria produce D-lactate. Absorption can cause episodic encephalopathy and metabolic acidosis. Routine lactate assays commonly measure L-lactate rather than D-lactate. Episodic neurological symptoms and metabolic acidosis after carbohydrate intake in a patient with short-bowel syndrome should raise suspicion of D-lactic acidosis.",
+    "distractor_analysis": {
+      "A": "Methylmalonic acid: Vitamin B12 deficiency can cause neurological dysfunction and raised methylmalonic acid, but does not characteristically cause this episodic post-carbohydrate syndrome.",
+      "B": "Beta-hydroxybutyrate: This accumulates in ketoacidosis, typically associated with diabetes, fasting or alcohol-related metabolic disturbance.",
+      "C": "L-lactate accumulation: Tissue hypoperfusion or hypoxia can cause lactic acidosis, usually with an elevated routine L-lactate measurement.",
+      "E": "Distal renal tubular acidosis: This can cause a normal-anion-gap metabolic acidosis, but does not explain the meal-related episodic neurological symptoms."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q272",
+    "subdomain": "Gastroenterology & hepatology",
+    "topic": "Ménétrier disease",
+    "difficulty": "Moderate",
+    "stem": "A 57-year-old man presents with weight loss, epigastric discomfort and bilateral ankle oedema. Serum albumin is low. Gastroscopy reveals markedly enlarged gastric folds, predominantly affecting the body and fundus. Biopsies demonstrate foveolar hyperplasia with loss of normal gastric glands. Urinalysis shows no proteinuria, and liver function tests are otherwise normal. Which mechanism best explains the oedema?",
+    "options": {
+      "A": "Urinary albumin loss from glomerular disease",
+      "B": "Reduced hepatic albumin synthesis due to chronic liver disease",
+      "C": "Protein malabsorption due to small-bowel mucosal disease",
+      "D": "Excess aldosterone causing isolated sodium retention",
+      "E": "Protein loss across the abnormal gastric mucosa"
+    },
+    "correct_letter": "E",
+    "why_correct": "Ménétrier disease is a hypertrophic gastropathy associated with enlarged gastric folds and protein-losing gastropathy. Loss of albumin contributes to reduced plasma oncotic pressure and peripheral oedema. Enlarged gastric folds with foveolar hyperplasia and hypoalbuminaemia should prompt consideration of Ménétrier disease, a protein-losing hypertrophic gastropathy.",
+    "distractor_analysis": {
+      "A": "Glomerular protein loss causes hypoalbuminaemia, but urinalysis shows no proteinuria.",
+      "B": "Impaired synthesis can lower albumin, but liver function is otherwise normal and the gastric findings point elsewhere.",
+      "C": "Small-bowel disease can cause protein loss or malabsorption, but the pathology described is confined to the stomach.",
+      "D": "Aldosterone can contribute to sodium retention, but it does not explain the characteristic gastric histology and protein loss."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q273",
+    "subdomain": "Neurology",
+    "topic": "CADASIL",
+    "difficulty": "Moderate",
+    "stem": "A 46-year-old woman has recurrent episodes consistent with migraine with aura, followed by several transient neurological deficits. Over the next decade she develops executive dysfunction and gait impairment. Her mother developed early-onset vascular dementia. MRI shows extensive white-matter abnormalities and lacunar infarcts, particularly involving the anterior temporal poles and external capsules. Which genetic abnormality is most strongly associated with this disorder?",
+    "options": {
+      "A": "A pathogenic variant in SMN1",
+      "B": "A pathogenic variant in DMD",
+      "C": "A pathogenic variant in APP causing familial Alzheimer disease",
+      "D": "A pathogenic variant in NOTCH3",
+      "E": "A pathogenic variant in HTT"
+    },
+    "correct_letter": "D",
+    "why_correct": "CADASIL is an autosomal dominant small-vessel disease caused by pathogenic variants in NOTCH3. It can cause migraine with aura, recurrent subcortical ischaemic events, mood or cognitive changes and progressive vascular dementia. Migraine with aura, early recurrent subcortical events, a family history of early vascular dementia and characteristic white-matter MRI abnormalities suggest CADASIL.",
+    "distractor_analysis": {
+      "A": "SMN1: Biallelic loss of SMN1 causes spinal muscular atrophy.",
+      "B": "DMD: Pathogenic variants in DMD cause Duchenne or Becker muscular dystrophy.",
+      "C": "APP: Certain APP variants cause familial Alzheimer disease or hereditary cerebral amyloid angiopathy, depending on the variant and disease mechanism.",
+      "E": "HTT: Pathogenic CAG-repeat expansion in HTT causes Huntington disease, characterised by progressive movement, cognitive and psychiatric abnormalities."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q274",
+    "subdomain": "Neurology",
+    "topic": "Cerebral amyloid angiopathy",
+    "difficulty": "Moderate",
+    "stem": "A 76-year-old man presents with a spontaneous lobar intracerebral haemorrhage. He has no history of trauma, and his blood pressure is not markedly elevated. MRI demonstrates multiple strictly lobar cerebral microbleeds and cortical superficial siderosis, without a predominantly deep pattern of haemorrhagic lesions. Which underlying pathology is most likely?",
+    "options": {
+      "A": "Amyloid-beta deposition in cortical and leptomeningeal vessel walls",
+      "B": "Venous sinus thrombosis causing haemorrhagic venous infarction",
+      "C": "Demyelination caused by oligodendrocyte injury",
+      "D": "Immune-complex deposition in cerebral small vessels",
+      "E": "Hypertensive lipohyalinosis of deep perforating arteries"
+    },
+    "correct_letter": "A",
+    "why_correct": "Cerebral amyloid angiopathy involves amyloid-beta deposition in cortical and leptomeningeal vessel walls. It is associated with lobar haemorrhage, strictly lobar microbleeds and cortical superficial siderosis, particularly in older adults. In an older adult, lobar haemorrhage plus strictly lobar microbleeds or cortical superficial siderosis strongly suggests cerebral amyloid angiopathy.",
+    "distractor_analysis": {
+      "B": "Venous sinus thrombosis: This can cause haemorrhagic venous infarction, but the distribution and chronic markers described are more characteristic of cerebral amyloid angiopathy.",
+      "C": "Demyelination: Demyelinating disorders cause neurological deficits and characteristic white-matter lesions but do not explain this haemorrhagic MRI pattern.",
+      "D": "Immune-complex deposition: Some inflammatory vascular disorders affect cerebral vessels, but the age and strictly lobar haemorrhagic pattern favour cerebral amyloid angiopathy.",
+      "E": "Hypertensive small-vessel disease more often causes deep haemorrhages involving structures such as the basal ganglia, thalamus, pons or cerebellum."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q275",
+    "subdomain": "Renal & urology",
+    "topic": "Pseudohypoaldosteronism type 1",
+    "difficulty": "Moderate",
+    "stem": "A 3-week-old infant presents with vomiting, poor feeding and dehydration. Blood tests show hyponatraemia, hyperkalaemia and a normal-anion-gap metabolic acidosis. Plasma renin activity and aldosterone concentrations are markedly elevated. Investigations do not support congenital adrenal hyperplasia. Which mechanism best explains these findings?",
+    "options": {
+      "A": "Renal resistance to aldosterone action",
+      "B": "Constitutive activation of the epithelial sodium channel",
+      "C": "Autonomous aldosterone secretion",
+      "D": "Excess cortisol activation of mineralocorticoid receptors",
+      "E": "Inappropriate secretion of antidiuretic hormone"
+    },
+    "correct_letter": "A",
+    "why_correct": "Pseudohypoaldosteronism type 1 causes impaired aldosterone action, reducing sodium reabsorption and potassium and hydrogen ion excretion. Sodium loss, hyperkalaemia and metabolic acidosis stimulate renin and aldosterone production. An infant with salt wasting, hyperkalaemia, metabolic acidosis and high renin and aldosterone should be assessed for aldosterone resistance after urgent exclusion of adrenal causes.",
+    "distractor_analysis": {
+      "B": "Constitutive epithelial sodium channel activation: This is the mechanism of Liddle syndrome, which causes hypertension, hypokalaemic metabolic alkalosis and suppressed renin and aldosterone.",
+      "C": "Autonomous aldosterone secretion: Primary aldosteronism typically causes hypertension, hypokalaemia and metabolic alkalosis, with suppressed renin.",
+      "D": "Excess cortisol activation of mineralocorticoid receptors: Apparent mineralocorticoid excess typically causes hypertension, hypokalaemia and alkalosis with low renin and aldosterone.",
+      "E": "Excess antidiuretic hormone: SIADH can cause hyponatraemia but does not explain the characteristic hyperkalaemic metabolic acidosis and markedly elevated aldosterone."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q276",
+    "subdomain": "Musculoskeletal & rheumatology",
+    "topic": "IgG4-related disease",
+    "difficulty": "Moderate",
+    "stem": "A 63-year-old man presents with painless jaundice, weight loss and bilateral enlargement of the submandibular glands. CT demonstrates diffuse enlargement of the pancreas and a soft-tissue rind surrounding the abdominal aorta. Serum IgG4 is elevated. Which histological finding would most strongly support the suspected diagnosis?",
+    "options": {
+      "A": "Storiform fibrosis with a dense lymphoplasmacytic infiltrate and obliterative phlebitis",
+      "B": "Non-caseating granulomas with multinucleated giant cells",
+      "C": "Amyloid deposits composed of serum amyloid A",
+      "D": "Linear deposition of IgG along the glomerular basement membrane",
+      "E": "Fibrinoid necrosis of medium-sized arteries with no inflammatory infiltrate"
+    },
+    "correct_letter": "A",
+    "why_correct": "IgG4-related disease is a fibroinflammatory disorder that can affect the pancreas, salivary glands, kidneys, retroperitoneum and other organs. Storiform fibrosis, a dense lymphoplasmacytic infiltrate with increased IgG4-positive plasma cells, and obliterative phlebitis are characteristic, although histological interpretation requires the overall clinical context. Multiorgan fibroinflammatory disease involving the pancreas, salivary glands and retroperitoneum should prompt consideration of IgG4-related disease.",
+    "distractor_analysis": {
+      "B": "Non-caseating granulomas: These are associated with conditions such as sarcoidosis. Granulomas are not the characteristic histological pattern of IgG4-related disease.",
+      "C": "Serum amyloid A deposits: These indicate AA amyloidosis, associated with sustained inflammation.",
+      "D": "Linear IgG deposition: This is characteristic of anti-glomerular basement membrane disease.",
+      "E": "Fibrinoid necrosis of medium-sized arteries: This is associated with necrotising vasculitides, including polyarteritis nodosa."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q277",
+    "subdomain": "Neurology",
+    "topic": "Paraneoplastic cerebellar degeneration",
+    "difficulty": "Moderate",
+    "stem": "A 58-year-old woman develops rapidly progressive gait ataxia, dysarthria and limb incoordination over several weeks. MRI initially shows no structural cerebellar lesion. Investigation identifies a previously unsuspected ovarian malignancy, and serum testing detects anti-Yo antibodies. Which mechanism best explains the neurological syndrome?",
+    "options": {
+      "A": "Immune-mediated injury to cerebellar neurons associated with the tumour",
+      "B": "Acute demyelination of peripheral motor nerves",
+      "C": "Direct compression of the cerebellum by metastatic disease",
+      "D": "Degeneration caused by a pathogenic HTT CAG-repeat expansion",
+      "E": "Deficiency of dopamine in the nigrostriatal pathway"
+    },
+    "correct_letter": "A",
+    "why_correct": "Paraneoplastic cerebellar degeneration is associated with an immune response directed against antigens shared by tumour cells and neural tissue. Anti-Yo antibodies are associated particularly with breast and gynaecological cancers and cerebellar dysfunction. Rapidly progressive cerebellar dysfunction with anti-Yo antibodies should prompt investigation for an associated malignancy, particularly breast or gynaecological cancer.",
+    "distractor_analysis": {
+      "B": "Peripheral nerve demyelination: This can cause weakness, sensory dysfunction and reduced reflexes, but does not explain a primary cerebellar syndrome with anti-Yo antibodies.",
+      "C": "Direct compression: A posterior fossa mass can cause ataxia, but the absence of a structural lesion and the anti-Yo association support a paraneoplastic process.",
+      "D": "HTT expansion: This causes Huntington disease, characterised by progressive movement, cognitive and psychiatric abnormalities.",
+      "E": "Dopamine deficiency: Nigrostriatal dopamine loss is central to Parkinson's disease, which primarily causes bradykinesia, rigidity and tremor."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q278",
+    "subdomain": "Cardiology",
+    "topic": "Arrhythmogenic right ventricular cardiomyopathy",
+    "difficulty": "Moderate",
+    "stem": "A 26-year-old man collapses while playing competitive sport. He recovers spontaneously. His older brother died suddenly at 31. ECG demonstrates T-wave inversion in the right precordial leads, and ambulatory monitoring records ventricular tachycardia with a left bundle branch block morphology. Cardiac MRI demonstrates regional right ventricular akinesia and dilatation. Which pathological process is most strongly associated with this disorder?",
+    "options": {
+      "A": "Amyloid deposition within the ventricular myocardium",
+      "B": "Fibrofatty replacement of right ventricular myocardium",
+      "C": "Hypertrophy of the interventricular septum caused by sarcomeric protein variants",
+      "D": "Iron deposition causing restrictive cardiomyopathy",
+      "E": "Granulomatous inflammation of the cardiac conduction system"
+    },
+    "correct_letter": "B",
+    "why_correct": "Arrhythmogenic right ventricular cardiomyopathy is commonly associated with desmosomal protein abnormalities and fibrofatty myocardial replacement, creating a substrate for ventricular arrhythmias and sudden cardiac death. Exercise-associated syncope, familial sudden death and ventricular arrhythmia with right ventricular abnormalities should raise suspicion of arrhythmogenic cardiomyopathy.",
+    "distractor_analysis": {
+      "A": "Amyloid deposition: Cardiac amyloidosis causes an infiltrative cardiomyopathy, often with increased ventricular wall thickness and restrictive physiology.",
+      "C": "Septal hypertrophy: This is characteristic of hypertrophic cardiomyopathy, which is commonly associated with sarcomeric gene variants.",
+      "D": "Iron deposition: Cardiac iron overload can cause dilated or restrictive cardiomyopathy and conduction abnormalities, but does not explain the characteristic familial arrhythmogenic phenotype.",
+      "E": "Granulomatous inflammation: Cardiac sarcoidosis can cause ventricular arrhythmias and conduction block, but the family history and imaging pattern favour an inherited cardiomyopathy."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q279",
+    "subdomain": "Gastroenterology & hepatology",
+    "topic": "Type 2 autoimmune pancreatitis",
+    "difficulty": "Moderate",
+    "stem": "A 38-year-old man with ulcerative colitis develops abdominal discomfort and obstructive jaundice. Imaging shows diffuse pancreatic enlargement with a narrowed pancreatic duct. Pancreatic biopsy demonstrates granulocytic epithelial lesions, with neutrophils infiltrating and damaging pancreatic duct epithelium. Serum IgG4 is not elevated. Which diagnosis is most consistent with these findings?",
+    "options": {
+      "A": "Type 1 autoimmune pancreatitis",
+      "B": "Pancreatic ductal adenocarcinoma",
+      "C": "Alcohol-related chronic pancreatitis",
+      "D": "Type 2 autoimmune pancreatitis",
+      "E": "Acute gallstone pancreatitis"
+    },
+    "correct_letter": "D",
+    "why_correct": "Type 2 disease is characterised by granulocytic epithelial lesions and is associated with inflammatory bowel disease in a proportion of patients. Serum IgG4 is often normal. Granulocytic epithelial lesions, normal IgG4 and coexisting inflammatory bowel disease support type 2 autoimmune pancreatitis.",
+    "distractor_analysis": {
+      "A": "Type 1 disease is associated with IgG4-related disease and typically shows lymphoplasmacytic inflammation, storiform fibrosis and increased IgG4-positive plasma cells.",
+      "B": "Pancreatic ductal adenocarcinoma: Cancer can cause obstructive jaundice and pancreatic abnormalities. Histological findings and the broader clinical context are needed to distinguish malignancy from autoimmune pancreatitis.",
+      "C": "Alcohol-related chronic pancreatitis: This commonly produces chronic structural changes, including calcification and ductal abnormalities, but does not characteristically produce granulocytic epithelial lesions.",
+      "E": "Acute gallstone pancreatitis: This usually presents acutely with characteristic pain and raised pancreatic enzymes, often with evidence of gallstone disease. It does not explain the characteristic biopsy pattern."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q280",
+    "subdomain": "Respiratory",
+    "topic": "Hypersensitivity pneumonitis",
+    "difficulty": "Moderate",
+    "stem": "A 46-year-old woman develops cough, breathlessness and malaise several hours after cleaning a poorly ventilated aviary. She reports that similar symptoms recur after exposure to birds but improve when she spends several days away. High-resolution CT shows patchy ground-glass opacities and areas of mosaic attenuation. Pulmonary function testing demonstrates a restrictive pattern. Which mechanism best explains the disease?",
+    "options": {
+      "A": "An immune-mediated inflammatory response to inhaled environmental antigens",
+      "B": "Pulmonary arterial obstruction by recurrent thromboemboli",
+      "C": "Abnormal proliferation of pulmonary Langerhans cells",
+      "D": "Destruction of alveolar walls caused by alpha-1 antitrypsin deficiency",
+      "E": "Deposition of iron in alveolar macrophages due to chronic intrapulmonary bleeding"
+    },
+    "correct_letter": "A",
+    "why_correct": "Hypersensitivity pneumonitis results from an immune response to inhaled antigens in susceptible individuals. Exposure-related symptoms, ground-glass changes and mosaic attenuation support the diagnosis, although the findings must be interpreted with the exposure history and other investigations. Reproducible respiratory symptoms after a specific inhaled exposure should prompt a detailed occupational and environmental history and assessment for hypersensitivity pneumonitis.",
+    "distractor_analysis": {
+      "B": "Recurrent thromboemboli: These can cause pulmonary vascular disease and breathlessness, but do not account for the exposure-linked inflammatory syndrome.",
+      "C": "Pulmonary Langerhans cell histiocytosis: This is strongly associated with smoking and commonly causes upper-zone nodules and irregular cysts, rather than an exposure-related acute inflammatory pattern.",
+      "D": "Alpha-1 antitrypsin deficiency: This can cause early emphysema, classically with lower-zone predominance, but does not explain reproducible symptoms after bird exposure.",
+      "E": "Pulmonary haemosiderosis: Recurrent alveolar bleeding can produce iron-laden macrophages and anaemia, but is not the expected response to bird antigen exposure."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q281",
+    "subdomain": "Renal & urology",
+    "topic": "Pseudohyperkalaemia",
+    "difficulty": "Moderate",
+    "stem": "A 67-year-old man with marked thrombocytosis is found to have a serum potassium concentration of 6.7 mmol/L on routine testing. He feels well, renal function is normal, and the ECG shows no hyperkalaemic changes. A promptly processed plasma sample has a potassium concentration within the reference range. Which explanation is most likely?",
+    "options": {
+      "A": "Primary adrenal insufficiency causing true potassium retention",
+      "B": "Severe insulin deficiency causing a sustained extracellular potassium shift",
+      "C": "Rhabdomyolysis releasing intracellular potassium",
+      "D": "Acute renal failure causing true potassium retention",
+      "E": "Pseudohyperkalaemia caused by potassium release from platelets during clotting"
+    },
+    "correct_letter": "E",
+    "why_correct": "Platelets release potassium during clot formation. In marked thrombocytosis, serum potassium can therefore be falsely elevated relative to plasma potassium. The discrepancy between serum and promptly processed plasma results supports pseudohyperkalaemia. When the laboratory potassium result conflicts with the clinical picture, consider pseudohyperkalaemia and obtain an appropriately collected, promptly processed sample. Do not dismiss a potentially dangerous potassium result without confirming the discrepancy safely.",
+    "distractor_analysis": {
+      "A": "Mineralocorticoid deficiency causes true hyperkalaemia, which would also be present in the plasma sample.",
+      "B": "Insulin deficiency can contribute to extracellular potassium shifts, but it would not explain the serum–plasma discrepancy in this case.",
+      "C": "Muscle breakdown causes true hyperkalaemia; it would not explain a normal plasma potassium in a well patient.",
+      "D": "Renal failure can cause true hyperkalaemia, but normal renal function and a normal plasma potassium make this explanation unlikely."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q282",
+    "subdomain": "Neurology",
+    "topic": "Autoimmune encephalitis associated with LGI1 antibodies",
+    "difficulty": "Moderate",
+    "stem": "A 68-year-old man develops progressive short-term memory impairment and confusion over several weeks. His family reports frequent, very brief episodes of unilateral facial grimacing accompanied by flexion of the ipsilateral arm. Serum sodium is low. MRI shows mesial temporal signal abnormalities. Which antibody is most strongly associated with this clinical syndrome?",
+    "options": {
+      "A": "Acetylcholine receptor",
+      "B": "Desmoglein 3",
+      "C": "Glomerular basement membrane antigen",
+      "D": "LGI1",
+      "E": "Aquaporin-4"
+    },
+    "correct_letter": "D",
+    "why_correct": "Leucine-rich glioma-inactivated 1 antibodies are associated with autoimmune limbic encephalitis, often in older adults. Brief faciobrachial dystonic seizures, memory impairment and hyponatraemia are characteristic clues. Subacute memory impairment with faciobrachial dystonic seizures and hyponatraemia should raise suspicion of LGI1-associated autoimmune encephalitis.",
+    "distractor_analysis": {
+      "A": "Acetylcholine receptor: These antibodies are associated with myasthenia gravis and cause fatigable muscle weakness.",
+      "B": "Desmoglein 3: Antibodies against desmoglein 3 are associated with pemphigus vulgaris.",
+      "C": "Glomerular basement membrane antigen: Antibodies against the relevant type IV collagen antigen cause anti-GBM disease, which can produce rapidly progressive glomerulonephritis and pulmonary haemorrhage.",
+      "E": "Aquaporin-4 antibodies are associated with neuromyelitis optica spectrum disorder, which commonly involves optic neuritis and longitudinally extensive transverse myelitis."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q283",
+    "subdomain": "Respiratory",
+    "topic": "Spontaneous pneumomediastinum",
+    "difficulty": "Moderate",
+    "stem": "A 20-year-old man presents with acute chest pain after a prolonged episode of forceful coughing. He is haemodynamically stable and has no history of trauma or instrumentation. Examination reveals palpable crepitus over the neck. Chest imaging demonstrates air outlining mediastinal structures, without evidence of a pneumothorax. Which mechanism most likely explains the condition?",
+    "options": {
+      "A": "Pleural fluid accumulation causing mediastinal displacement",
+      "B": "Complete obstruction of the central airway by a foreign body",
+      "C": "Alveolar rupture with air dissecting along bronchovascular sheaths into the mediastinum",
+      "D": "Full-thickness oesophageal rupture after forceful vomiting",
+      "E": "Tracheobronchial rupture after blunt chest injury"
+    },
+    "correct_letter": "C",
+    "why_correct": "A sudden rise in intra-alveolar pressure can cause alveolar rupture. Air may then track along bronchovascular sheaths towards the mediastinum, producing spontaneous pneumomediastinum. Pneumomediastinum can occur when alveolar air tracks along bronchovascular sheaths. Clinical assessment must also consider dangerous alternatives, including oesophageal perforation, according to the presentation.",
+    "distractor_analysis": {
+      "A": "Pleural fluid can compress the lung and shift mediastinal structures but does not produce mediastinal air.",
+      "B": "Central airway obstruction: This can cause acute respiratory compromise but does not account for the characteristic air-tracking mechanism described.",
+      "D": "Oesophageal rupture is a dangerous cause of mediastinal air, but it follows vomiting or instrumentation and usually causes severe illness, not a stable patient after coughing.",
+      "E": "Airway rupture can cause pneumomediastinum, but there is no history of trauma."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q284",
+    "subdomain": "Cardiology",
+    "topic": "Hypertrophic obstructive cardiomyopathy: dynamic obstruction",
+    "difficulty": "Moderate",
+    "stem": "A 24-year-old man with a family history of sudden cardiac death is found to have hypertrophic cardiomyopathy. On examination, a systolic murmur is heard along the left sternal edge. The murmur becomes louder when he stands from a squatting position and softer when he squats. Which physiological change most directly explains the increase in murmur intensity on standing?",
+    "options": {
+      "A": "Increased systemic vascular resistance reducing outflow tract obstruction",
+      "B": "Reduced contractility increasing the velocity of blood through the outflow tract",
+      "C": "Increased venous return causing a greater reduction in systolic anterior motion of the mitral valve",
+      "D": "Reduced ventricular preload increasing dynamic left ventricular outflow tract obstruction",
+      "E": "Increased ventricular preload reducing the left ventricular cavity size"
+    },
+    "correct_letter": "D",
+    "why_correct": "Standing reduces venous return and ventricular filling. In obstructive hypertrophic cardiomyopathy, a smaller ventricular cavity can intensify dynamic left ventricular outflow tract obstruction and increase the murmur.",
+    "distractor_analysis": {
+      "A": "Increased afterload often reduces the degree of dynamic obstruction rather than intensifying it.",
+      "B": "Reduced contractility would not explain an increase in dynamic obstruction; increased contractility can exacerbate it.",
+      "C": "Increased venous return generally increases preload and tends to reduce obstruction.",
+      "E": "Increased ventricular filling generally enlarges the ventricular cavity and tends to reduce dynamic obstruction."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q285",
+    "subdomain": "Pharmacology & prescribing",
+    "topic": "Abacavir hypersensitivity and HLA-B*57:01",
+    "difficulty": "Moderate",
+    "stem": "A 34-year-old man with newly diagnosed HIV is being considered for an antiretroviral regimen containing abacavir. He has never previously taken the drug. His clinician arranges genetic testing before treatment. Which genetic variant is most strongly associated with abacavir hypersensitivity?",
+    "options": {
+      "A": "HLA-B27",
+      "B": "HLA-DQ2",
+      "C": "Factor V Leiden",
+      "D": "CYP2D6 gene duplication",
+      "E": "HLA-B*57:01"
+    },
+    "correct_letter": "E",
+    "why_correct": "This allele is strongly associated with abacavir hypersensitivity. Screening before abacavir treatment substantially reduces the risk of this potentially serious reaction. HLA-B*57:01 testing is required before starting abacavir. A negative result reduces the risk but does not eliminate the possibility of every adverse reaction.",
+    "distractor_analysis": {
+      "A": "HLA-B27: This allele is associated with conditions including axial spondyloarthritis and acute anterior uveitis.",
+      "B": "HLA-DQ2 is associated with susceptibility to coeliac disease, although its presence alone does not diagnose the condition.",
+      "C": "Factor V Leiden: This variant causes resistance to activated protein C and increases venous thromboembolism risk; it is not the relevant pharmacogenetic marker.",
+      "D": "CYP2D6 gene duplication: Increased CYP2D6 activity can affect the metabolism of certain medicines but is not the established marker for abacavir hypersensitivity."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q286",
+    "subdomain": "Pharmacology & prescribing",
+    "topic": "Lead poisoning",
+    "difficulty": "Moderate",
+    "stem": "A 43-year-old man presents with abdominal colic, constipation, fatigue and progressive weakness of wrist extension. He works restoring old painted furniture without consistently using protective equipment. Blood tests show microcytic anaemia, and the blood film demonstrates coarse basophilic stippling. Which exposure best explains this combination?",
+    "options": {
+      "A": "Organophosphate insecticide",
+      "B": "Carbon monoxide",
+      "C": "Ethylene glycol",
+      "D": "Methanol",
+      "E": "Lead"
+    },
+    "correct_letter": "E",
+    "why_correct": "Lead toxicity can cause abdominal colic, constipation, anaemia and peripheral neuropathy, including extensor weakness. Basophilic stippling can occur, and exposure may arise from old paint or other contaminated materials. Abdominal colic, microcytic anaemia, basophilic stippling and extensor neuropathy should prompt consideration of lead exposure and appropriate blood lead testing.",
+    "distractor_analysis": {
+      "A": "Organophosphate insecticide: Organophosphates inhibit acetylcholinesterase, producing cholinergic symptoms such as secretions, bronchospasm, miosis and muscle fasciculations.",
+      "B": "Carbon monoxide: CO poisoning impairs oxygen delivery and can cause headache, confusion and tissue hypoxia; it does not characteristically produce this chronic combination of abdominal colic, basophilic stippling and extensor neuropathy.",
+      "C": "Ethylene glycol poisoning can cause high-anion-gap metabolic acidosis and kidney injury, with calcium oxalate deposition; it does not explain the characteristic chronic haematological and neurological pattern.",
+      "D": "Methanol poisoning classically causes metabolic acidosis and visual toxicity in acute exposure."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q287",
+    "subdomain": "Cardiology",
+    "topic": "Atrioventricular nodal re-entrant tachycardia",
+    "difficulty": "Moderate",
+    "stem": "A 27-year-old woman presents with sudden-onset palpitations. Her heart rate is 190 beats/min, and ECG shows a regular narrow-complex tachycardia. P waves are not clearly visible, although a small pseudo-R′ wave can be seen in lead V1. She is haemodynamically stable. Which mechanism most likely explains the arrhythmia?",
+    "options": {
+      "A": "Atrial fibrillation with multiple disorganised atrial wavefronts",
+      "B": "Atrial flutter with a fixed 4:1 conduction ratio",
+      "C": "Ventricular re-entry through an infarct-related scar",
+      "D": "Re-entry involving dual conduction pathways within or adjacent to the AV node",
+      "E": "Enhanced automaticity arising from the sinoatrial node"
+    },
+    "correct_letter": "D",
+    "why_correct": "AV nodal re-entrant tachycardia (AVNRT) commonly causes sudden-onset, regular narrow-complex tachycardia. A pseudo-R′ in V1 or pseudo-S waves in the inferior leads can reflect retrograde atrial activation close to the QRS complex. Sudden-onset regular narrow-complex tachycardia with very short or hidden P waves is characteristic of AVNRT, although ECG findings must be interpreted in context.",
+    "distractor_analysis": {
+      "A": "Atrial fibrillation is typically irregularly irregular and does not usually produce a consistently regular narrow-complex rhythm.",
+      "B": "Atrial flutter with 4:1 conduction usually produces a ventricular rate around one quarter of the atrial rate, often with flutter waves visible on ECG.",
+      "C": "Scar-related ventricular tachycardia usually produces a broad-complex tachycardia, particularly in a patient with previous myocardial infarction.",
+      "E": "Sinus tachycardia generally has a visible sinus P wave preceding each QRS and usually accelerates and decelerates more gradually."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q288",
+    "subdomain": "Endocrinology & diabetes",
+    "topic": "Hyperosmolar hyperglycaemic state",
+    "difficulty": "Moderate",
+    "stem": "A 79-year-old man with type 2 diabetes presents after several days of polyuria, thirst and progressive confusion. His plasma glucose is markedly elevated, calculated or measured serum osmolality is substantially raised, and he is clinically dehydrated. Blood ketones are low, and there is no significant metabolic acidosis. Which diagnosis best fits this presentation?",
+    "options": {
+      "A": "Diabetic ketoacidosis",
+      "B": "Euglycaemic diabetic ketoacidosis",
+      "C": "Hyperosmolar hyperglycaemic state",
+      "D": "Insulinoma",
+      "E": "Adrenal crisis"
+    },
+    "correct_letter": "C",
+    "why_correct": "Hyperosmolar hyperglycaemic state (HHS) typically presents with severe hyperglycaemia, hyperosmolality and dehydration, often with neurological disturbance. Significant ketoacidosis is absent or less prominent than in DKA. Severe hyperglycaemia with dehydration, raised osmolality and minimal ketonaemia or acidosis suggests HHS.",
+    "distractor_analysis": {
+      "A": "DKA is characterised by ketonaemia and metabolic acidosis, although hyperglycaemia is common.",
+      "B": "Euglycaemic DKA involves ketoacidosis despite glucose that is not markedly elevated. The low ketones and absence of significant acidosis argue against it.",
+      "D": "Insulinoma causes endogenous hyperinsulinaemic hypoglycaemia rather than severe hyperglycaemia and hyperosmolality.",
+      "E": "Adrenal crisis can cause hypotension, electrolyte abnormalities and sometimes hypoglycaemia, but it does not explain this hyperglycaemic hyperosmolar pattern."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q289",
+    "subdomain": "Haematology & oncology",
+    "topic": "TRALI versus transfusion-associated circulatory overload",
+    "difficulty": "Moderate",
+    "stem": "A 78-year-old woman with known heart failure develops acute breathlessness and hypoxaemia during a red-cell transfusion. Examination reveals raised jugular venous pressure and peripheral oedema. Imaging shows bilateral pulmonary oedema, and the clinical assessment supports elevated cardiac filling pressures. Which transfusion complication is most consistent with these findings?",
+    "options": {
+      "A": "Transfusion-related acute lung injury (TRALI)",
+      "B": "Transfusion-transmitted hepatitis",
+      "C": "Post-transfusion purpura",
+      "D": "Delayed haemolytic transfusion reaction",
+      "E": "Transfusion-associated circulatory overload (TACO)"
+    },
+    "correct_letter": "E",
+    "why_correct": "TACO is hydrostatic pulmonary oedema associated with transfusion. Older age, heart failure, raised jugular venous pressure and evidence of volume overload support this diagnosis. In acute respiratory deterioration during transfusion, distinguish hydrostatic overload (TACO) from permeability oedema (TRALI), while initiating the local emergency transfusion-reaction process.",
+    "distractor_analysis": {
+      "A": "TRALI is an acute lung injury with increased pulmonary capillary permeability and non-cardiogenic pulmonary oedema. It remains an important differential, but the evidence of elevated filling pressures and fluid overload favours TACO.",
+      "B": "Transfusion-transmitted hepatitis is not the explanation for acute pulmonary oedema during the transfusion.",
+      "C": "Post-transfusion purpura is a delayed immune-mediated thrombocytopenic complication, not an acute volume-overload syndrome.",
+      "D": "A delayed haemolytic reaction causes haemolysis after transfusion rather than primarily hydrostatic pulmonary oedema."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q290",
+    "subdomain": "Cardiology",
+    "topic": "Coarctation of the aorta",
+    "difficulty": "Moderate",
+    "stem": "A 22-year-old man is referred for hypertension detected during a routine examination. His blood pressure is substantially higher in the arms than in the legs. Femoral pulses are delayed compared with radial pulses, and he has a systolic murmur heard over the back. Which diagnosis best explains the findings?",
+    "options": {
+      "A": "Atrial septal defect",
+      "B": "Mitral valve prolapse",
+      "C": "Coarctation of the aorta",
+      "D": "Aortic valve regurgitation",
+      "E": "Pulmonary valve stenosis"
+    },
+    "correct_letter": "C",
+    "why_correct": "Coarctation causes narrowing of the aorta, typically resulting in upper-limb hypertension, reduced or delayed lower-limb pulses and a systolic murmur that may be heard over the back. Hypertension in a young adult with radiofemoral delay and lower leg blood pressure should prompt assessment for coarctation of the aorta.",
+    "distractor_analysis": {
+      "A": "An atrial septal defect may cause a pulmonary flow murmur and fixed splitting of the second heart sound, but not the described upper–lower limb blood pressure difference.",
+      "B": "Mitral valve prolapse may produce a mid-systolic click and late systolic murmur, but it does not cause this pattern of peripheral pulses.",
+      "D": "Aortic regurgitation typically causes an early diastolic murmur and may produce a wide pulse pressure; it does not explain the marked arm–leg pressure difference.",
+      "E": "Pulmonary valve stenosis causes right ventricular outflow obstruction and a systolic murmur, usually best heard at the upper left sternal edge."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q291",
+    "subdomain": "Gastroenterology & hepatology",
+    "topic": "Kayser–Fleischer rings",
+    "difficulty": "Moderate",
+    "stem": "A 21-year-old man presents with progressive tremor, behavioural changes and abnormal liver function tests. Slit-lamp examination reveals a brownish-green ring at the corneal periphery. Which mechanism is responsible for this finding?",
+    "options": {
+      "A": "Cholesterol deposition in the retinal vessels",
+      "B": "Copper deposition in Descemet’s membrane",
+      "C": "Amyloid deposition in the conjunctiva",
+      "D": "Calcium deposition in the corneal stroma due to chronic hypercalcaemia",
+      "E": "Iron deposition in the lens capsule"
+    },
+    "correct_letter": "B",
+    "why_correct": "Kayser–Fleischer rings result from copper deposition in Descemet’s membrane of the cornea. They are associated with Wilson disease, particularly when neurological manifestations are present. Kayser–Fleischer rings in a patient with neurological or hepatic features strongly support Wilson disease, but diagnosis should be confirmed using the appropriate clinical and biochemical assessment.",
+    "distractor_analysis": {
+      "A": "Cholesterol-related retinal vascular changes do not explain this corneal finding.",
+      "C": "Amyloid deposition can affect ocular tissues in some disorders but does not cause the characteristic copper ring.",
+      "D": "Calcium deposition can cause band keratopathy, which has a different appearance and mechanism.",
+      "E": "Iron deposition can cause ocular changes in particular settings, but it does not explain the characteristic Kayser–Fleischer ring."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q292",
+    "subdomain": "Renal & urology",
+    "topic": "Renal fibromuscular dysplasia",
+    "difficulty": "Moderate",
+    "stem": "A 32-year-old woman is investigated for persistent hypertension despite treatment. Renal function is initially preserved. CT angiography demonstrates alternating areas of narrowing and dilatation in the mid-to-distal portions of both renal arteries. There is no substantial atherosclerotic plaque. Which diagnosis is most likely?",
+    "options": {
+      "A": "Acute renal vein thrombosis",
+      "B": "Diabetic nephropathy",
+      "C": "Bilateral atherosclerotic renal artery stenosis",
+      "D": "Renal artery fibromuscular dysplasia",
+      "E": "Acute post-infectious glomerulonephritis"
+    },
+    "correct_letter": "D",
+    "why_correct": "Fibromuscular dysplasia is a non-atherosclerotic, non-inflammatory arterial disorder. Renal artery involvement can cause renovascular hypertension, and multifocal disease may produce alternating stenosis and dilatation, giving a “string-of-beads” appearance. In a younger patient with otherwise unexplained hypertension, multifocal narrowing and dilatation of the renal arteries suggests fibromuscular dysplasia.",
+    "distractor_analysis": {
+      "A": "Renal vein thrombosis may cause flank pain, haematuria or renal dysfunction but does not explain the characteristic renal arterial imaging.",
+      "B": "Diabetic nephropathy is a parenchymal kidney disease and does not produce this renal artery pattern.",
+      "C": "Atherosclerotic renal artery stenosis more commonly affects the ostium or proximal renal artery and is associated with atherosclerotic risk factors and plaque.",
+      "E": "Post-infectious glomerulonephritis typically presents with a nephritic syndrome and is not characterised by renal artery beading."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q293",
+    "subdomain": "Cardiology",
+    "topic": "Mitral stenosis",
+    "difficulty": "Moderate",
+    "stem": "A 46-year-old woman presents with progressive exertional breathlessness. Cardiac auscultation reveals a loud first heart sound and an opening snap followed by a low-pitched, mid-diastolic rumbling murmur at the apex. The murmur is more readily heard with the bell of the stethoscope. Which diagnosis best explains these findings?",
+    "options": {
+      "A": "Aortic regurgitation",
+      "B": "Mitral stenosis",
+      "C": "Mitral regurgitation",
+      "D": "Aortic stenosis",
+      "E": "Tricuspid regurgitation"
+    },
+    "correct_letter": "B",
+    "why_correct": "Mitral stenosis obstructs blood flow from the left atrium to the left ventricle. The characteristic auscultatory findings include an opening snap and a low-pitched mid-diastolic murmur at the apex. An opening snap followed by a low-pitched mid-diastolic apical murmur is characteristic of mitral stenosis.",
+    "distractor_analysis": {
+      "A": "Aortic regurgitation typically produces an early diastolic decrescendo murmur, usually best heard along the left sternal edge.",
+      "C": "Mitral regurgitation produces a pansystolic murmur, usually loudest at the apex and potentially radiating towards the axilla.",
+      "D": "Aortic stenosis typically produces an ejection systolic murmur, often radiating to the carotids.",
+      "E": "Tricuspid regurgitation produces a pansystolic murmur at the lower left sternal edge, often louder during inspiration."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q294",
+    "subdomain": "Cardiology",
+    "topic": "Second-degree atrioventricular block, Mobitz type II",
+    "difficulty": "Moderate",
+    "stem": "A 76-year-old man presents with intermittent light-headedness. His ECG shows sinus rhythm with regular P waves. Some P waves are not followed by QRS complexes, but the PR intervals of conducted beats remain constant. There is no progressive PR prolongation before a dropped beat. Which diagnosis best fits the ECG?",
+    "options": {
+      "A": "Second-degree atrioventricular block, Mobitz type I",
+      "B": "Second-degree atrioventricular block, Mobitz type II",
+      "C": "Complete atrioventricular block",
+      "D": "First-degree atrioventricular block",
+      "E": "Sinus arrhythmia"
+    },
+    "correct_letter": "B",
+    "why_correct": "Mobitz type II is characterised by intermittently non-conducted P waves without progressive PR prolongation before the dropped beat. It may indicate significant conduction-system disease. Distinguish Mobitz II from Mobitz I by the behaviour of the PR interval. Mobitz II warrants prompt assessment because of the risk of progression to complete heart block.",
+    "distractor_analysis": {
+      "A": "Mobitz type I typically shows progressive PR prolongation before a non-conducted P wave.",
+      "C": "Complete AV block involves atrioventricular dissociation, with no consistent relationship between P waves and QRS complexes.",
+      "D": "First-degree AV block involves prolonged PR conduction, with every P wave conducted to the ventricles.",
+      "E": "Sinus arrhythmia causes variation in sinus cycle length; it does not explain the intermittent failure of atrial impulses to conduct."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q295",
+    "subdomain": "Cardiology",
+    "topic": "Cardiac sarcoidosis",
+    "difficulty": "Moderate",
+    "stem": "A 44-year-old man presents with palpitations and two episodes of presyncope. His ECG shows intermittent high-grade atrioventricular block. Echocardiography reveals mildly impaired left ventricular systolic function. Cardiac MRI demonstrates patchy areas of non-ischaemic myocardial enhancement, and chest imaging shows bilateral hilar lymphadenopathy. Which diagnosis best explains the findings?",
+    "options": {
+      "A": "Arrhythmogenic right ventricular cardiomyopathy",
+      "B": "Cardiac sarcoidosis",
+      "C": "Hypertensive heart disease",
+      "D": "Acute coronary syndrome",
+      "E": "Acute rheumatic fever"
+    },
+    "correct_letter": "B",
+    "why_correct": "Sarcoid granulomatous inflammation can involve the myocardium and conduction system, causing atrioventricular block, ventricular arrhythmias and ventricular dysfunction. The combination of conduction disease, non-ischaemic MRI abnormalities and hilar lymphadenopathy supports this diagnosis. Unexplained high-grade AV block in a relatively young adult, particularly with ventricular arrhythmias or extracardiac sarcoidosis, should raise suspicion of cardiac sarcoidosis.",
+    "distractor_analysis": {
+      "A": "Arrhythmogenic right ventricular cardiomyopathy is associated particularly with ventricular arrhythmias and right ventricular structural abnormalities. It does not explain the hilar lymphadenopathy.",
+      "C": "Hypertensive heart disease may cause left ventricular hypertrophy and dysfunction, but it does not characteristically cause this combination of high-grade conduction disease and systemic findings.",
+      "D": "Acute coronary syndrome may cause ventricular dysfunction and arrhythmias, but the described non-ischaemic enhancement pattern and hilar lymphadenopathy point towards a systemic inflammatory disorder.",
+      "E": "Acute rheumatic fever may cause carditis and valvular disease following streptococcal infection, but this presentation is not characteristic."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q296",
+    "subdomain": "Infectious disease & sexual health",
+    "topic": "Chagas disease",
+    "difficulty": "Moderate",
+    "stem": "A 46-year-old man who grew up in rural Bolivia presents with progressive exertional dyspnoea and palpitations. ECG shows right bundle branch block with left anterior fascicular block. Echocardiography reveals a dilated cardiomyopathy with an apical aneurysm. He recalls living in a mud-brick house during childhood. Which infection is the most likely underlying cause?",
+    "options": {
+      "A": "Trypanosoma brucei",
+      "B": "Trypanosoma cruzi",
+      "C": "Toxoplasma gondii",
+      "D": "Leishmania donovani",
+      "E": "Borrelia burgdorferi"
+    },
+    "correct_letter": "B",
+    "why_correct": "T. cruzi causes Chagas disease, transmitted principally by infected triatomine insects. Chronic disease can produce conduction abnormalities, dilated cardiomyopathy, ventricular arrhythmias and apical aneurysms. In a person with relevant Latin American exposure, conduction disease and dilated cardiomyopathy with an apical aneurysm should raise suspicion of chronic Chagas disease.",
+    "distractor_analysis": {
+      "A": "T. brucei causes African trypanosomiasis, associated with fever, lymphadenopathy and, in later disease, neurological and sleep disturbances.",
+      "C": "T. gondii can cause encephalitis, particularly in immunocompromised patients, and congenital infection. It does not characteristically cause this chronic cardiomyopathy.",
+      "D": "L. donovani causes visceral leishmaniasis, typically presenting with prolonged fever, splenomegaly and cytopenias.",
+      "E": "B. burgdorferi causes Lyme disease and may cause AV conduction block, but the epidemiological setting and apical aneurysm with dilated cardiomyopathy favour Chagas disease."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q297",
+    "subdomain": "Renal & urology",
+    "topic": "Toluene-associated renal tubular acidosis",
+    "difficulty": "Moderate",
+    "stem": "A 29-year-old man is admitted with weakness and confusion. He has a history of inhaling solvents. Blood tests reveal severe hypokalaemia and a hyperchloraemic metabolic acidosis with a normal anion gap. Urinary potassium loss is present. There is no evidence of significant diarrhoea. Which exposure is a recognised cause of this presentation?",
+    "options": {
+      "A": "Carbon monoxide",
+      "B": "Methanol",
+      "C": "Toluene",
+      "D": "Ethylene glycol",
+      "E": "Paracetamol"
+    },
+    "correct_letter": "C",
+    "why_correct": "Toluene exposure can cause severe hypokalaemia and metabolic acidosis through effects on renal acid handling and the metabolism of toluene to hippuric acid. The acid–base pattern can vary with the timing and severity of exposure. In a patient with solvent exposure, severe hypokalaemia and metabolic acidosis should prompt consideration of toluene toxicity. Urgent assessment and correction of electrolyte abnormalities are essential.",
+    "distractor_analysis": {
+      "A": "Carbon monoxide causes tissue hypoxia through carboxyhaemoglobin formation and may cause lactic acidosis, but it is not the characteristic cause of this solvent-associated hypokalaemic, normal-anion-gap pattern.",
+      "B": "Methanol is metabolised to formate and classically causes a high-anion-gap metabolic acidosis, often with visual toxicity.",
+      "D": "Ethylene glycol can cause high-anion-gap metabolic acidosis and acute kidney injury, sometimes with calcium oxalate crystalluria.",
+      "E": "Paracetamol overdose primarily causes hepatic toxicity in severe poisoning. It is not the characteristic explanation for this exposure history and electrolyte pattern."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q298",
+    "subdomain": "Clinical biochemistry and metabolism",
+    "topic": "Hyperornithinaemia–hyperammonaemia–homocitrullinuria syndrome",
+    "difficulty": "Moderate",
+    "stem": "A 17-year-old boy develops episodic confusion and vomiting, particularly during intercurrent illness or after a high-protein meal. Investigations during an episode show hyperammonaemia. Plasma amino-acid analysis reveals elevated ornithine, and urine testing identifies homocitrulline. Which defective protein best explains these findings?",
+    "options": {
+      "A": "Cystathionine beta-synthase",
+      "B": "Phenylalanine hydroxylase",
+      "C": "Mitochondrial ornithine transporter (ORNT1)",
+      "D": "Branched-chain alpha-ketoacid dehydrogenase complex",
+      "E": "Homogentisate 1,2-dioxygenase"
+    },
+    "correct_letter": "C",
+    "why_correct": "HHH syndrome is a rare urea-cycle disorder, usually due to defects in the mitochondrial ornithine transporter encoded by SLC25A15. Impaired ornithine transport disrupts ureagenesis and can cause hyperammonaemia, elevated plasma ornithine and urinary homocitrulline. Hyperammonaemia with raised ornithine and urinary homocitrulline should raise suspicion of HHH syndrome.",
+    "distractor_analysis": {
+      "A": "Classical homocystinuria is associated with elevated homocysteine and methionine and may cause lens dislocation and thrombosis.",
+      "B": "Phenylketonuria results from impaired phenylalanine metabolism and is associated with raised phenylalanine, not this characteristic biochemical triad.",
+      "D": "Maple syrup urine disease results from impaired branched-chain amino-acid metabolism and can cause neurological deterioration, but does not produce the defining ornithine–homocitrulline pattern.",
+      "E": "Alkaptonuria causes homogentisic acid accumulation, ochronosis and degenerative arthropathy, rather than a urea-cycle disorder."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q299",
+    "subdomain": "Infectious disease & sexual health",
+    "topic": "Streptococcus gallolyticus bacteraemia and colorectal neoplasia",
+    "difficulty": "Moderate",
+    "stem": "A 68-year-old man is admitted with fever and a new cardiac murmur. Blood cultures grow Streptococcus gallolyticus subsp. gallolyticus. Echocardiography demonstrates a vegetation on the aortic valve. He has no abdominal symptoms and reports no visible rectal bleeding. Which additional investigation is particularly important because of the organism identified?",
+    "options": {
+      "A": "Bronchoscopy to exclude bronchogenic carcinoma",
+      "B": "Bone marrow biopsy to exclude acute leukaemia",
+      "C": "Colonoscopy to assess for colorectal neoplasia",
+      "D": "Cystoscopy to exclude bladder malignancy",
+      "E": "Thyroid ultrasonography to exclude thyroid carcinoma"
+    },
+    "correct_letter": "C",
+    "why_correct": "S. gallolyticus subsp. gallolyticus bacteraemia and infective endocarditis are associated with colorectal neoplasia. Colonic evaluation is therefore important even when bowel symptoms are absent.",
+    "distractor_analysis": {
+      "A": "This organism does not specifically indicate bronchogenic carcinoma. Bronchoscopy would require a separate clinical indication.",
+      "B": "Bone marrow biopsy is not routinely indicated solely because this organism has been isolated; it would require separate evidence of a haematological disorder.",
+      "D": "There is no established specific association that makes cystoscopy the priority investigation in this presentation.",
+      "E": "Thyroid malignancy is not the relevant associated condition."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q300",
+    "subdomain": "Cardiology",
+    "topic": "Giant cell myocarditis",
+    "difficulty": "Moderate",
+    "stem": "A 39-year-old man presents with rapidly progressive breathlessness, chest discomfort and palpitations. Over several days he develops severe left ventricular dysfunction and recurrent ventricular tachycardia. Coronary angiography shows no obstructive coronary disease. Cardiac MRI demonstrates extensive myocardial inflammation, but the clinical course is unusually aggressive despite initial treatment for acute myocarditis. Which diagnosis should be particularly considered?",
+    "options": {
+      "A": "Stable coronary artery disease",
+      "B": "Hypertrophic cardiomyopathy",
+      "C": "Giant cell myocarditis",
+      "D": "Arrhythmogenic right ventricular cardiomyopathy",
+      "E": "Chronic constrictive pericarditis"
+    },
+    "correct_letter": "C",
+    "why_correct": "Giant cell myocarditis is a rare, potentially fulminant inflammatory myocardial disease that can cause rapidly progressive heart failure, ventricular arrhythmias and cardiogenic shock. Endomyocardial biopsy may establish the diagnosis. Rapidly progressive heart failure with ventricular arrhythmias and suspected myocarditis warrants urgent specialist assessment for aggressive inflammatory myocardial disease, including giant cell myocarditis.",
+    "distractor_analysis": {
+      "A": "Stable coronary artery disease does not explain severe acute myocardial inflammation, particularly with unobstructed coronary arteries.",
+      "B": "Hypertrophic cardiomyopathy is characterised by unexplained myocardial hypertrophy and may cause arrhythmias, but does not explain the acute inflammatory presentation.",
+      "D": "Arrhythmogenic right ventricular cardiomyopathy is an inherited myocardial disease associated with ventricular arrhythmias and structural abnormalities, classically involving the right ventricle. The rapid inflammatory deterioration favours giant cell myocarditis.",
+      "E": "Constrictive pericarditis causes impaired diastolic filling due to pericardial disease; it does not usually cause this rapidly progressive inflammatory myocardial syndrome."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q301",
+    "subdomain": "Endocrinology & diabetes",
+    "topic": "Congenital adrenal hyperplasia due to 11β-hydroxylase deficiency",
+    "difficulty": "Moderate",
+    "stem": "A 15-year-old boy presents with early virilisation and persistent hypertension. Blood tests show suppressed renin and evidence of androgen excess. Further endocrine investigation demonstrates increased concentrations of 11-deoxycorticosterone. Which enzyme deficiency best explains the combination of hypertension and androgen excess?",
+    "options": {
+      "A": "11β-hydroxylase deficiency",
+      "B": "17α-hydroxylase deficiency",
+      "C": "5α-reductase deficiency",
+      "D": "Aromatase deficiency",
+      "E": "21-hydroxylase deficiency"
+    },
+    "correct_letter": "A",
+    "why_correct": "11β-hydroxylase deficiency causes accumulation of 11-deoxycorticosterone, which has mineralocorticoid activity and can produce hypertension with suppressed renin. Increased adrenal androgen production can cause virilisation. Hypertension with androgen excess and elevated 11-deoxycorticosterone suggests 11β-hydroxylase deficiency.",
+    "distractor_analysis": {
+      "B": "17α-hydroxylase deficiency can cause hypertension and low-renin physiology, but androgen and sex-steroid production is reduced rather than increased.",
+      "C": "5α-reductase deficiency affects conversion of testosterone to dihydrotestosterone and can alter genital development; it does not explain mineralocorticoid-mediated hypertension.",
+      "D": "Aromatase deficiency alters sex-steroid conversion and may cause androgen excess, but does not explain the characteristic elevated 11-deoxycorticosterone.",
+      "E": "21-hydroxylase deficiency can cause androgen excess, but salt-wasting or simple virilising forms do not characteristically produce hypertension from 11-deoxycorticosterone accumulation."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q302",
+    "subdomain": "Endocrinology & diabetes",
+    "topic": "Diabetic muscle infarction",
+    "difficulty": "Moderate",
+    "stem": "A 49-year-old woman with longstanding diabetes and established microvascular complications presents with acute pain and swelling in her thigh. She is afebrile and has no history of trauma. The affected muscle is tender, but there is no overlying erythema. Creatine kinase is normal or only mildly elevated, and inflammatory markers are modestly raised. MRI shows muscle oedema with areas of abnormal signal but no drainable collection. Which diagnosis is most likely?",
+    "options": {
+      "A": "Polymyositis",
+      "B": "Pyomyositis with a mature intramuscular abscess",
+      "C": "Acute compartment syndrome",
+      "D": "Deep vein thrombosis",
+      "E": "Diabetic muscle infarction"
+    },
+    "correct_letter": "E",
+    "why_correct": "Diabetic muscle infarction, also called diabetic myonecrosis, is an uncommon complication of longstanding diabetes, often with microvascular disease. It causes acute atraumatic muscle pain and swelling; creatine kinase may be normal or only mildly elevated. In a patient with longstanding diabetes and microvascular complications, acute atraumatic focal muscle pain should raise the possibility of diabetic muscle infarction while urgent alternatives, especially infection and compartment syndrome, are assessed.",
+    "distractor_analysis": {
+      "A": "Polymyositis usually causes subacute, relatively symmetrical proximal muscle weakness rather than sudden focal muscle pain and swelling.",
+      "B": "Pyomyositis is an infectious process. Fever, systemic illness or a collection may support it, although early infection can be less obvious. The diagnosis must be considered carefully before attributing muscle symptoms to infarction.",
+      "C": "Compartment syndrome is a clinical emergency characterised by concerning compartment findings and possible neurovascular compromise. It must not be dismissed solely because of imaging or laboratory results, but the vignette does not provide its characteristic clinical pattern.",
+      "D": "DVT can cause limb pain and swelling, but does not explain the characteristic intramuscular MRI abnormalities as well."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q303",
+    "subdomain": "Pharmacology & prescribing",
+    "topic": "Clozapine-associated myocarditis",
+    "difficulty": "Moderate",
+    "stem": "A 29-year-old man begins clozapine for treatment-resistant schizophrenia. During the early weeks of treatment, he develops fever, chest discomfort, persistent tachycardia and breathlessness. Blood tests reveal elevated cardiac troponin and inflammatory markers. Echocardiography demonstrates new left ventricular systolic dysfunction. Which adverse drug reaction is the most important to suspect?",
+    "options": {
+      "A": "Serotonin syndrome",
+      "B": "Acute lithium toxicity",
+      "C": "Clozapine-induced agranulocytosis",
+      "D": "Neuroleptic malignant syndrome",
+      "E": "Clozapine-associated myocarditis"
+    },
+    "correct_letter": "E",
+    "why_correct": "Clozapine-associated myocarditis can present during early treatment with fever, tachycardia, chest symptoms, elevated troponin and impaired ventricular function. This presentation warrants urgent assessment and specialist management. New persistent tachycardia, systemic symptoms and cardiac injury soon after clozapine initiation should raise concern for myocarditis.",
+    "distractor_analysis": {
+      "A": "Serotonin syndrome is associated with serotonergic drug exposure and typically features neuromuscular hyperactivity, including clonus and hyperreflexia.",
+      "B": "Lithium toxicity can cause neurological, gastrointestinal and cardiac manifestations, but there is no stated lithium exposure and the timing points towards clozapine-associated myocarditis.",
+      "C": "Clozapine-associated agranulocytosis is an important haematological adverse effect, but it is identified by neutropenia and does not explain the raised cardiac troponin and new ventricular dysfunction.",
+      "D": "Neuroleptic malignant syndrome typically involves severe rigidity, altered mental state, autonomic instability and often substantial creatine kinase elevation. It does not best explain the cardiac injury pattern described."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q304",
+    "subdomain": "Endocrinology & diabetes",
+    "topic": "Insulin-derived amyloidosis at injection sites",
+    "difficulty": "Moderate",
+    "stem": "A 58-year-old man with longstanding insulin-treated diabetes has persistently poor glycaemic control despite escalating insulin doses. Examination reveals a firm subcutaneous lump at a site he has used repeatedly for insulin injections. After he begins injecting into unaffected tissue, his glucose concentrations fall substantially and his insulin requirement decreases. Which diagnosis best explains this presentation?",
+    "options": {
+      "A": "Insulin autoimmune syndrome",
+      "B": "Diabetic lipoatrophy",
+      "C": "Insulin-derived amyloidosis at the injection site",
+      "D": "Generalised insulin resistance caused by glucocorticoid excess",
+      "E": "Endogenous hyperinsulinaemia from an insulinoma"
+    },
+    "correct_letter": "C",
+    "why_correct": "Repeated insulin injections can lead to local amyloid deposits composed of insulin. Absorption from affected tissue may be impaired, leading to escalating doses and poor glycaemic control. Moving injections to unaffected tissue can substantially increase insulin absorption. Poor glycaemic control with a firm, repeatedly used insulin injection site should prompt consideration of insulin-derived amyloidosis as well as lipohypertrophy.",
+    "distractor_analysis": {
+      "A": "Insulin autoimmune syndrome involves insulin-binding antibodies and can cause abnormal glucose patterns, particularly hypoglycaemia. It does not characteristically produce a local amyloid mass.",
+      "B": "Lipoatrophy causes loss of subcutaneous fat at injection sites, rather than a firm mass associated with impaired insulin absorption.",
+      "D": "Glucocorticoid excess can cause systemic insulin resistance, but it does not explain the localised firm injection-site mass or the marked improvement after changing injection sites.",
+      "E": "An insulinoma produces endogenous insulin and typically causes inappropriate hypoglycaemia; it does not explain this injection-site finding."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q305",
+    "subdomain": "Cardiology",
+    "topic": "Catecholaminergic polymorphic ventricular tachycardia",
+    "difficulty": "Moderate",
+    "stem": "A 17-year-old boy experiences recurrent syncope during competitive sport. His resting ECG is normal, with no prolonged QT interval or characteristic Brugada pattern. Echocardiography reveals no structural heart disease. During exercise testing, ventricular ectopic beats appear and progress to bidirectional ventricular tachycardia. Which diagnosis best explains these findings?",
+    "options": {
+      "A": "Catecholaminergic polymorphic ventricular tachycardia",
+      "B": "Congenital long QT syndrome",
+      "C": "Wolff–Parkinson–White syndrome",
+      "D": "Hypertrophic cardiomyopathy",
+      "E": "Arrhythmogenic right ventricular cardiomyopathy"
+    },
+    "correct_letter": "A",
+    "why_correct": "Catecholaminergic polymorphic ventricular tachycardia is an inherited arrhythmia syndrome in which adrenergic stimulation can trigger ventricular arrhythmias despite a structurally normal heart and often normal resting ECG. Bidirectional or polymorphic ventricular tachycardia during exercise is a key clue. Exercise-triggered syncope in a young person with a normal resting ECG and structurally normal heart warrants consideration of an inherited arrhythmia syndrome, particularly CPVT.",
+    "distractor_analysis": {
+      "B": "Congenital long QT syndrome can cause exertional syncope, but QT prolongation is a central diagnostic clue in many cases. The exercise-induced bidirectional ventricular tachycardia described is more characteristic of CPVT.",
+      "C": "Wolff–Parkinson–White syndrome is associated with ventricular pre-excitation on the ECG, although intermittent pre-excitation can occur. It does not best explain this exercise-induced arrhythmia pattern.",
+      "D": "Hypertrophic cardiomyopathy can cause exertional syncope, but structural imaging would usually demonstrate ventricular hypertrophy.",
+      "E": "Arrhythmogenic right ventricular cardiomyopathy can cause exercise-associated ventricular arrhythmias, but structural or electrical evidence of the cardiomyopathy would be sought; bidirectional ventricular tachycardia with a normal resting ECG and structurally normal heart points more strongly to CPVT."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q306",
+    "subdomain": "Neurology",
+    "topic": "Cerebral cavernous malformations",
+    "difficulty": "Moderate",
+    "stem": "A 39-year-old woman presents with a focal seizure. MRI of the brain demonstrates several well-circumscribed lesions containing blood products of different ages, giving a mixed-signal “popcorn-like” appearance on susceptibility-sensitive sequences. There is no associated high-flow vascular shunt. Her father had a similar diagnosis. Which lesion is most likely?",
+    "options": {
+      "A": "Saccular intracranial aneurysms",
+      "B": "Arteriovenous malformations",
+      "C": "Cerebral cavernous malformations",
+      "D": "Multiple intracranial meningiomas",
+      "E": "Acute ischaemic infarcts"
+    },
+    "correct_letter": "C",
+    "why_correct": "Cavernous malformations are low-flow vascular lesions composed of abnormal dilated vascular spaces. Repeated small haemorrhages can produce blood products of different ages and a characteristic mixed-signal appearance on MRI. Multiple lesions and a family history support a familial form. Multiple low-flow brain vascular lesions with characteristic susceptibility findings and a family history suggest familial cerebral cavernous malformations.",
+    "distractor_analysis": {
+      "A": "Saccular aneurysms are focal arterial dilatations and are more commonly associated with subarachnoid haemorrhage when they rupture; they do not characteristically produce this MRI appearance.",
+      "B": "Arteriovenous malformations contain abnormal arterial-to-venous shunts and often demonstrate high-flow vascular features, unlike the low-flow lesions described.",
+      "D": "Meningiomas are extra-axial tumours that commonly enhance after contrast and may cause seizures, but do not have the described vascular-malformation appearance.",
+      "E": "Ischaemic infarcts cause acute tissue injury in a vascular distribution and do not typically produce multiple longstanding popcorn-like lesions containing blood products of different ages."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q307",
+    "subdomain": "Clinical biochemistry and metabolism",
+    "topic": "Macroamylasaemia",
+    "difficulty": "Moderate",
+    "stem": "A 46-year-old woman is found to have persistently elevated serum amylase during investigations for intermittent abdominal discomfort. Serum lipase is normal, renal function is normal, and abdominal imaging shows no evidence of pancreatitis. Urinary amylase excretion is low relative to the serum amylase concentration. Which diagnosis best explains the biochemical findings?",
+    "options": {
+      "A": "Acute pancreatitis",
+      "B": "Acute mesenteric ischaemia",
+      "C": "Salivary-gland inflammation",
+      "D": "Severe renal impairment",
+      "E": "Macroamylasaemia"
+    },
+    "correct_letter": "E",
+    "why_correct": "Macroamylasaemia occurs when amylase forms a high-molecular-weight complex, often with immunoglobulin. The complex is poorly filtered by the kidneys, causing elevated serum amylase with relatively low urinary amylase excretion. It is often a benign explanation for persistent hyperamylasaemia. Persistent isolated hyperamylasaemia with normal lipase, preserved renal function and low urinary amylase should prompt consideration of macroamylasaemia.",
+    "distractor_analysis": {
+      "A": "Acute pancreatitis usually presents with a compatible acute clinical syndrome and typically raises serum lipase. The persistent isolated amylase elevation and absent imaging findings argue against it.",
+      "B": "Acute mesenteric ischaemia may cause abdominal pain and sometimes elevated amylase, but would require assessment for an acute ischaemic presentation rather than explaining this stable, persistent biochemical pattern.",
+      "C": "Salivary-gland disease can elevate serum amylase, but does not specifically explain the low urinary excretion relative to serum concentration that suggests macroamylasaemia.",
+      "D": "Renal impairment can reduce amylase clearance, but the case specifically describes normal renal function."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q308",
+    "subdomain": "Renal & urology",
+    "topic": "Nephrogenic systemic fibrosis",
+    "difficulty": "Moderate",
+    "stem": "A 59-year-old man with advanced chronic kidney disease develops progressive thickening and hardening of the skin over his limbs. The skin has a woody texture, joint movement is becoming restricted, and examination reveals no typical sclerodactyly. His symptoms began after contrast-enhanced imaging performed when his renal function was severely impaired. Which exposure is most strongly associated with the suspected disorder?",
+    "options": {
+      "A": "Gadolinium-based contrast agent",
+      "B": "Barium sulphate contrast",
+      "C": "Oral polyethylene glycol bowel preparation",
+      "D": "Iodinated contrast agent",
+      "E": "Intravenous iron"
+    },
+    "correct_letter": "A",
+    "why_correct": "Nephrogenic systemic fibrosis is a rare fibrosing disorder historically associated with exposure to certain gadolinium-based contrast agents in patients with severe renal impairment. Risk varies by agent, and modern contrast practice has reduced this complication. Progressive woody skin thickening and restricted joint movement in a patient with severe renal impairment, following historical gadolinium exposure, suggest nephrogenic systemic fibrosis.",
+    "distractor_analysis": {
+      "B": "Barium sulphate is used in gastrointestinal imaging and is not the recognised trigger for this fibrosing syndrome.",
+      "C": "Polyethylene glycol is used for bowel preparation and does not explain the characteristic post-exposure fibrosing skin disease.",
+      "D": "Iodinated contrast can be associated with acute kidney injury in susceptible patients, but it is not the characteristic exposure associated with nephrogenic systemic fibrosis.",
+      "E": "Intravenous iron can cause adverse effects, but it is not the established exposure associated with nephrogenic systemic fibrosis."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q309",
+    "subdomain": "Clinical biochemistry and metabolism",
+    "topic": "Hereditary coproporphyria",
+    "difficulty": "Moderate",
+    "stem": "A 28-year-old woman develops severe abdominal pain, nausea and agitation. During a subsequent episode, she develops blistering skin lesions on sun-exposed areas. Urinary porphobilinogen and porphyrin precursors are elevated during the acute illness. Further specialist testing identifies a marked increase in faecal coproporphyrin III. Which diagnosis best accounts for the combination of neurovisceral and cutaneous manifestations?",
+    "options": {
+      "A": "Congenital erythropoietic porphyria",
+      "B": "Hereditary coproporphyria",
+      "C": "Acute intermittent porphyria",
+      "D": "Porphyria cutanea tarda",
+      "E": "Lead poisoning"
+    },
+    "correct_letter": "B",
+    "why_correct": "Hereditary coproporphyria results from deficient coproporphyrinogen oxidase activity. It can cause acute neurovisceral attacks and, in some affected individuals, photosensitive skin lesions. Faecal porphyrin analysis helps distinguish it from other acute hepatic porphyrias. Acute neurovisceral attacks with photosensitive skin lesions suggest a porphyria in which both manifestations occur; biochemical profiling is needed to identify the specific type.",
+    "distractor_analysis": {
+      "A": "Congenital erythropoietic porphyria typically causes severe photosensitivity beginning early in life and is associated with a different porphyrin pattern.",
+      "C": "Acute intermittent porphyria causes acute neurovisceral attacks but does not typically cause the blistering photosensitivity described.",
+      "D": "Porphyria cutanea tarda causes fragile skin and blistering photosensitivity, but does not characteristically cause acute neurovisceral attacks with markedly raised urinary porphobilinogen.",
+      "E": "Lead poisoning can cause abdominal pain, neurological symptoms and disturbed haem synthesis, but does not explain the combined biochemical pattern and characteristic faecal porphyrin findings."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q310",
+    "subdomain": "Gastroenterology & hepatology",
+    "topic": "Hepatic adenoma associated with anabolic steroid exposure",
+    "difficulty": "Moderate",
+    "stem": "A 37-year-old man presents with right upper-quadrant discomfort. Liver imaging identifies a hypervascular hepatic mass. He has used anabolic-androgenic steroids for several years for bodybuilding. Background liver imaging does not show established cirrhosis, and there is no evidence of chronic viral hepatitis. Which benign liver lesion is particularly associated with anabolic steroid exposure?",
+    "options": {
+      "A": "Biliary hamartoma",
+      "B": "Hepatocellular adenoma",
+      "C": "Haemangioma",
+      "D": "Simple hepatic cyst",
+      "E": "Focal nodular hyperplasia"
+    },
+    "correct_letter": "B",
+    "why_correct": "Hepatocellular adenomas are benign hepatocellular tumours associated with certain hormonal exposures, including anabolic steroids. They can cause abdominal discomfort and, depending on their features, carry risks including haemorrhage and malignant transformation. A solid hepatic lesion in someone using anabolic steroids should prompt consideration of hepatocellular adenoma and appropriate specialist imaging assessment.",
+    "distractor_analysis": {
+      "A": "Biliary hamartomas are benign developmental lesions of the bile ducts and do not have the characteristic exposure relationship described.",
+      "C": "Haemangioma is a common benign vascular liver lesion, but anabolic steroid exposure is not its characteristic association.",
+      "D": "A simple hepatic cyst is a fluid-filled lesion and does not explain a hypervascular solid mass.",
+      "E": "Focal nodular hyperplasia is a benign hyperplastic lesion associated with a vascular abnormality. It is not characteristically linked to anabolic steroid exposure."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q311",
+    "subdomain": "Haematology & oncology",
+    "topic": "Systemic mastocytosis",
+    "difficulty": "Moderate",
+    "stem": "A 46-year-old woman has recurrent episodes of flushing, abdominal cramping, diarrhoea and light-headedness. Examination reveals multiple small brown-red skin lesions that become raised and itchy when rubbed. Serum tryptase is persistently elevated when she is clinically well. Which molecular abnormality is most strongly associated with systemic mastocytosis?",
+    "options": {
+      "A": "BCR–ABL1 fusion",
+      "B": "PML–RARA fusion",
+      "C": "JAK2 V617F mutation",
+      "D": "Activating mutation in KIT",
+      "E": "MYD88 L265P mutation"
+    },
+    "correct_letter": "D",
+    "why_correct": "Systemic mastocytosis is commonly associated with an activating KIT mutation, particularly D816V, which promotes abnormal mast-cell survival and accumulation. Mediator release accounts for flushing, gastrointestinal symptoms and episodes of hypotension; persistently elevated basal tryptase supports further investigation. Recurrent mediator-related symptoms, suggestive skin lesions and persistently elevated basal tryptase should raise suspicion of a clonal mast-cell disorder.",
+    "distractor_analysis": {
+      "A": "BCR–ABL1 is associated with chronic myeloid leukaemia and some acute lymphoblastic leukaemias.",
+      "B": "PML–RARA is the characteristic fusion in acute promyelocytic leukaemia.",
+      "C": "JAK2 V617F is strongly associated with several classical myeloproliferative neoplasms, including polycythaemia vera.",
+      "E": "MYD88 L265P is strongly associated with lymphoplasmacytic lymphoma and Waldenström macroglobulinaemia."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q312",
+    "subdomain": "Immunology",
+    "topic": "Wiskott–Aldrich syndrome",
+    "difficulty": "Moderate",
+    "stem": "A 2-year-old boy is referred with recurrent bacterial infections, eczema and easy bruising. His full blood count shows thrombocytopenia, and the platelets are unusually small. His maternal uncle died in childhood following recurrent infections. Which molecular defect most likely explains this presentation?",
+    "options": {
+      "A": "Defective WAS protein, impairing actin cytoskeleton remodelling in haematopoietic cells",
+      "B": "Defective C1 esterase inhibitor, causing excessive bradykinin activity",
+      "C": "Defective BTK signalling, impairing B-cell maturation",
+      "D": "Defective CD18 integrin, impairing leukocyte adhesion",
+      "E": "Defective NADPH oxidase, impairing the neutrophil respiratory burst"
+    },
+    "correct_letter": "A",
+    "why_correct": "Wiskott–Aldrich syndrome is an X-linked disorder caused by pathogenic variants in WAS. WAS protein supports actin cytoskeleton organisation and immune-cell function. The characteristic combination is eczema, recurrent infections and thrombocytopenia with small platelets.",
+    "distractor_analysis": {
+      "B": "C1 esterase inhibitor deficiency causes hereditary angioedema, characterised by episodic swelling rather than the characteristic triad described here.",
+      "C": "BTK deficiency causes X-linked agammaglobulinaemia, with markedly reduced mature B cells and immunoglobulins.",
+      "D": "CD18 deficiency causes leukocyte adhesion deficiency, typically associated with impaired pus formation, delayed umbilical cord separation and recurrent bacterial infections.",
+      "E": "NADPH oxidase dysfunction causes chronic granulomatous disease, characterised by impaired oxidative killing and recurrent infections, but not the classic small-platelet thrombocytopenia."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q313",
+    "subdomain": "Clinical biochemistry and metabolism",
+    "topic": "Metachromatic leukodystrophy",
+    "difficulty": "Moderate",
+    "stem": "A 6-year-old child develops progressive gait disturbance, loss of previously acquired skills and peripheral neuropathy. MRI demonstrates symmetrical abnormalities of cerebral white matter. Enzyme analysis identifies deficient arylsulfatase A activity. Which substance accumulates in this disorder?",
+    "options": {
+      "A": "Glucocerebroside",
+      "B": "Very-long-chain fatty acids",
+      "C": "Ganglioside GM2",
+      "D": "Sulfatides",
+      "E": "Sphingomyelin"
+    },
+    "correct_letter": "D",
+    "why_correct": "Metachromatic leukodystrophy is usually caused by deficient arylsulfatase A activity, resulting in sulfatide accumulation in myelin and progressive central and peripheral demyelination. Progressive demyelination with deficient arylsulfatase A activity suggests metachromatic leukodystrophy, associated with sulfatide accumulation.",
+    "distractor_analysis": {
+      "A": "Glucocerebroside accumulation characterises Gaucher disease, caused by deficient glucocerebrosidase activity.",
+      "B": "Increased very-long-chain fatty acids are associated with X-linked adrenoleukodystrophy, which can cause cerebral demyelination and adrenal dysfunction.",
+      "C": "GM2 ganglioside accumulation occurs in Tay–Sachs disease and related GM2 gangliosidoses.",
+      "E": "Sphingomyelin accumulation is characteristic of acid sphingomyelinase deficiency, historically known as Niemann–Pick disease types A and B."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q314",
+    "subdomain": "Clinical biochemistry and metabolism",
+    "topic": "Menkes disease",
+    "difficulty": "Moderate",
+    "stem": "A 4-month-old boy presents with developmental regression, hypotonia and seizures. His hair is sparse, brittle and unusually twisted on microscopy. Blood tests demonstrate low copper and ceruloplasmin concentrations. His mother’s male relatives include two boys who died in infancy with unexplained neurological disease. Which molecular defect most directly explains this presentation?",
+    "options": {
+      "A": "Impaired cellular copper transport due to pathogenic variants in ATP7A",
+      "B": "Impaired intestinal zinc absorption due to pathogenic variants in SLC39A4",
+      "C": "Deficient mitochondrial iron–sulphur cluster formation",
+      "D": "Impaired copper incorporation into ceruloplasmin due to pathogenic variants in ATP7B",
+      "E": "Deficient lysosomal glucocerebrosidase activity"
+    },
+    "correct_letter": "A",
+    "why_correct": "Menkes disease is an X-linked disorder caused by pathogenic variants in ATP7A. Impaired copper transport disrupts copper distribution and the function of copper-dependent enzymes. Neurological deterioration and characteristic brittle, twisted hair are important clues. An infant boy with neurological deterioration and characteristic brittle, twisted hair should prompt consideration of Menkes disease. The underlying defect is impaired copper transport caused by ATP7A dysfunction.",
+    "distractor_analysis": {
+      "B": "SLC39A4 variants cause inherited acrodermatitis enteropathica, characterised by zinc deficiency, dermatitis, diarrhoea and impaired growth.",
+      "C": "Mitochondrial iron–sulphur cluster disorders can cause neurological and metabolic abnormalities, but do not explain the characteristic copper deficiency and hair findings.",
+      "D": "ATP7B variants cause Wilson disease, in which impaired biliary copper excretion leads to copper accumulation, particularly in the liver and brain.",
+      "E": "Glucocerebrosidase deficiency causes Gaucher disease, which can present with hepatosplenomegaly, cytopenias and, in some forms, neurological manifestations."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q315",
+    "subdomain": "Pharmacology & prescribing",
+    "topic": "Methanol poisoning",
+    "difficulty": "Moderate",
+    "stem": "A 37-year-old man presents with vomiting, abdominal discomfort and progressive visual disturbance after drinking an illicitly produced alcoholic liquid. Blood gas analysis shows a high-anion-gap metabolic acidosis. His measured serum osmolality is elevated relative to the calculated value. Which metabolite is primarily responsible for the characteristic visual toxicity?",
+    "options": {
+      "A": "Acetaldehyde",
+      "B": "Formate",
+      "C": "Acetoacetate",
+      "D": "Salicylate",
+      "E": "Oxalate"
+    },
+    "correct_letter": "B",
+    "why_correct": "Methanol is metabolised to formaldehyde and then formate. Formate contributes to metabolic acidosis and is strongly associated with optic-nerve and retinal toxicity. Visual disturbance with high-anion-gap metabolic acidosis after exposure to illicit alcohol should raise urgent concern for methanol poisoning.",
+    "distractor_analysis": {
+      "A": "Acetaldehyde is a metabolite of ethanol and contributes to some of its toxic effects, but it is not the principal cause of methanol-associated visual toxicity.",
+      "C": "Acetoacetate is a ketone body and may contribute to ketoacidosis, but it is not responsible for the characteristic visual injury in methanol poisoning.",
+      "D": "Salicylate poisoning can cause mixed acid–base disturbances and tinnitus, among other features, but does not explain the exposure history and characteristic methanol-related visual toxicity.",
+      "E": "Oxalate is associated with ethylene glycol poisoning and can form calcium oxalate crystals, contributing to renal injury."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q316",
+    "subdomain": "Clinical biochemistry and metabolism",
+    "topic": "Fabry disease",
+    "difficulty": "Moderate",
+    "stem": "A 27-year-old man has episodic burning pain in his hands and feet, reduced sweating and clusters of small dark-red skin lesions. Urinalysis reveals albuminuria, and echocardiography shows left ventricular hypertrophy. His maternal uncle developed renal failure at a young age. Which enzyme deficiency is associated with this disorder?",
+    "options": {
+      "A": "Acid sphingomyelinase",
+      "B": "Hexosaminidase A",
+      "C": "Alpha-galactosidase A",
+      "D": "Lysosomal acid lipase",
+      "E": "Beta-glucocerebrosidase"
+    },
+    "correct_letter": "C",
+    "why_correct": "Fabry disease is an X-linked lysosomal storage disorder caused by deficient alpha-galactosidase A activity, resulting in accumulation of globotriaosylceramide and related substrates. It can affect the skin, peripheral nerves, kidneys and heart. Neuropathic pain, hypohidrosis, angiokeratomas, renal disease and cardiac hypertrophy should raise suspicion for Fabry disease.",
+    "distractor_analysis": {
+      "A": "Acid sphingomyelinase deficiency is associated with acid sphingomyelinase deficiency disorders, historically including Niemann–Pick disease types A and B.",
+      "B": "Hexosaminidase A deficiency causes Tay–Sachs disease.",
+      "D": "Lysosomal acid lipase deficiency can cause hepatic disease and dyslipidaemia but does not explain the characteristic Fabry phenotype.",
+      "E": "Beta-glucocerebrosidase deficiency causes Gaucher disease, which may present with hepatosplenomegaly, cytopenias and bone disease."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q317",
+    "subdomain": "Genetics",
+    "topic": "Von Hippel–Lindau disease",
+    "difficulty": "Moderate",
+    "stem": "A 35-year-old woman is found to have bilateral renal lesions during surveillance after treatment for a retinal haemangioblastoma. Her father underwent surgery for a similar renal tumour at a young age. Genetic testing identifies a pathogenic germline variant in VHL. Which additional tumour is particularly associated with this inherited syndrome?",
+    "options": {
+      "A": "Medullary thyroid carcinoma",
+      "B": "Hepatocellular carcinoma arising in chronic viral hepatitis",
+      "C": "Gastric gastrointestinal stromal tumour associated with a KIT variant",
+      "D": "Colonic adenocarcinoma arising from hundreds of adenomatous polyps",
+      "E": "Phaeochromocytoma"
+    },
+    "correct_letter": "E",
+    "why_correct": "Von Hippel–Lindau disease is an autosomal dominant tumour-predisposition syndrome associated with retinal and central nervous system haemangioblastomas, clear-cell renal cell carcinoma, phaeochromocytoma and several other lesions. A family history of renal tumours combined with retinal haemangioblastoma should raise suspicion for von Hippel–Lindau disease.",
+    "distractor_analysis": {
+      "A": "Medullary thyroid carcinoma is classically associated with multiple endocrine neoplasia type 2 and pathogenic variants in RET.",
+      "B": "Hepatocellular carcinoma is associated with chronic liver disease and specific inherited conditions, but it is not the characteristic association being tested.",
+      "C": "Many familial gastrointestinal stromal tumours are associated with activating variants in genes such as KIT or PDGFRA, rather than the characteristic VHL tumour spectrum.",
+      "D": "Numerous colorectal adenomas with substantial colorectal cancer risk suggest familial adenomatous polyposis, associated with APC."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q318",
+    "subdomain": "Genetics",
+    "topic": "Marfan syndrome",
+    "difficulty": "Moderate",
+    "stem": "A 24-year-old man is unusually tall, with long fingers, pectus deformity and generalised joint laxity. He has severe myopia, and ophthalmological examination identifies displacement of the lens. His father died suddenly from a ruptured aortic aneurysm. Which protein is most directly implicated in the underlying disorder?",
+    "options": {
+      "A": "Dystrophin",
+      "B": "Elastase inhibitor alpha-1 antitrypsin",
+      "C": "Type IV collagen",
+      "D": "Type VII collagen",
+      "E": "Fibrillin-1"
+    },
+    "correct_letter": "E",
+    "why_correct": "Marfan syndrome is usually caused by pathogenic variants in FBN1, which encodes fibrillin-1, a component of extracellular microfibrils. The condition can affect the skeleton, eyes and cardiovascular system, particularly the aortic root. A combination of characteristic skeletal features, lens displacement and aortic disease suggests Marfan syndrome and warrants assessment for potentially life-threatening cardiovascular involvement.",
+    "distractor_analysis": {
+      "A": "Dystrophin deficiency causes muscular dystrophy.",
+      "B": "Alpha-1 antitrypsin deficiency can cause emphysema and liver disease but does not explain the characteristic combination of skeletal features, lens displacement and aortic disease.",
+      "C": "Type IV collagen abnormalities are associated with disorders such as Alport syndrome, which typically affects the kidneys, hearing and eyes.",
+      "D": "Type VII collagen abnormalities cause dystrophic epidermolysis bullosa."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
   }
 ];
