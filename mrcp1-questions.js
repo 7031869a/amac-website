@@ -494,5 +494,965 @@ window.MRCP1_QUESTIONS = [
     },
     "generalisation": "When one deletion produces two syndromes, the variable is not the deletion but which parent it came from.",
     "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q021",
+    "subdomain": "Gastroenterology & hepatology",
+    "topic": "Acute pancreatitis: metabolic cause",
+    "difficulty": "Moderate",
+    "stem": "A 46-year-old man is admitted with acute pancreatitis. Abdominal ultrasonography shows no gallstones, and he reports no significant alcohol intake. His corrected serum calcium and medication history do not suggest a cause. Which additional blood test is most useful to investigate another recognised metabolic cause?",
+    "options": {
+      "A": "Serum amylase",
+      "B": "Serum triglycerides",
+      "C": "Serum ferritin",
+      "D": "Serum caeruloplasmin",
+      "E": "Serum alpha-1 antitrypsin"
+    },
+    "correct_letter": "B",
+    "why_correct": "Hypertriglyceridaemia is a recognised cause of acute pancreatitis. Once gallstones and significant alcohol exposure are not evident, triglyceride measurement is an appropriate part of investigating the cause.",
+    "distractor_analysis": {},
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q022",
+    "subdomain": "Respiratory",
+    "topic": "Obstructive sleep apnoea/hypopnoea syndrome",
+    "difficulty": "Moderate",
+    "stem": "A 49-year-old man is obese and reports loud snoring, witnessed episodes of breathing cessation during sleep and marked daytime sleepiness. Which diagnosis is most likely?",
+    "options": {
+      "A": "Idiopathic pulmonary fibrosis",
+      "B": "Obstructive sleep apnoea/hypopnoea syndrome",
+      "C": "Bronchiectasis",
+      "D": "Pulmonary embolism",
+      "E": "Alpha-1 antitrypsin deficiency"
+    },
+    "correct_letter": "B",
+    "why_correct": "Obesity with loud snoring, witnessed apnoeas and excessive daytime sleepiness is the classic presentation of obstructive sleep apnoea/hypopnoea syndrome. The diagnosis is confirmed with a sleep study, such as home respiratory polygraphy. The other options cause breathlessness or chronic lung disease, not this sleep-related pattern.",
+    "distractor_analysis": {},
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q023",
+    "subdomain": "Haematology & oncology",
+    "topic": "Reactive thrombocytosis in iron deficiency",
+    "difficulty": "Moderate",
+    "stem": "A 67-year-old man presents with fatigue. Blood tests show:, Hb 86 g/L, MCV 72 fL, Ferritin 8 µg/L, Platelets 520 × 10⁹/LHe has no overt bleeding. Which interpretation best explains the platelet count?",
+    "options": {
+      "A": "The thrombocytosis is a typical primary feature of iron deficiency",
+      "B": "The thrombocytosis is most likely a reactive response associated with iron deficiency",
+      "C": "The thrombocytosis establishes a diagnosis of essential thrombocythaemia",
+      "D": "The thrombocytosis excludes iron deficiency as the cause of the anaemia",
+      "E": "The thrombocytosis indicates that the microcytosis is caused by polycythaemia"
+    },
+    "correct_letter": "B",
+    "why_correct": "Decisive clue: The patient has clear biochemical evidence of iron deficiency, with thrombocytosis occurring in that context. Reasoning path: Iron deficiency can be associated with reactive thrombocytosis. The platelet count therefore does not automatically imply a primary myeloproliferative disorder. The important discrimination is between a plausible reactive explanation and prematurely diagnosing a primary platelet disorder.",
+    "distractor_analysis": {
+      "A": "The wording “typical primary feature” is incorrect: thrombocytosis is a recognised association but does not define iron deficiency.",
+      "C": "A raised platelet count alone does not establish essential thrombocythaemia.",
+      "D": "Iron deficiency is directly demonstrated by the low ferritin.",
+      "E": "Polycythaemia does not explain this microcytic iron-deficiency anaemia."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q024",
+    "subdomain": "Infectious disease & sexual health",
+    "topic": "Suspected meningococcal disease: immediate action",
+    "difficulty": "Difficult",
+    "stem": "A 24-year-old man presents with fever, severe headache, photophobia and a non-blanching purpuric rash. He is confused and appears seriously unwell. What is the most appropriate immediate action?",
+    "options": {
+      "A": "Arrange outpatient neurological assessment",
+      "B": "Perform lumbar puncture before giving any treatment",
+      "C": "Treat as a medical emergency and arrange immediate hospital assessment and treatment",
+      "D": "Wait for the rash to become more extensive before starting treatment",
+      "E": "Arrange routine blood-borne-virus screening before treatment"
+    },
+    "correct_letter": "C",
+    "why_correct": "Decisive clue: Suspected meningococcal disease/meningitis with systemic toxicity and purpuric rash. Reasoning path: Suspected meningococcal disease requires urgent hospital assessment and treatment. Current UKHSA guidance states that people with suspected bacterial meningitis or meningococcal disease should be transferred to hospital as an emergency, and treatment should not be delayed unnecessarily for investigations.",
+    "distractor_analysis": {
+      "A": "This presentation is an emergency, not an outpatient problem.",
+      "B": "Lumbar puncture should not delay appropriate emergency management.",
+      "D": "Waiting is unsafe.",
+      "E": "Routine screening is irrelevant to the immediate emergency."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q025",
+    "subdomain": "Cardiology",
+    "topic": "Pulmonary embolism: mechanism of hypoxaemia",
+    "difficulty": "Moderate",
+    "stem": "A 45-year-old woman develops sudden pleuritic chest pain and breathlessness. She has a swollen, painful calf. Her oxygen saturation is reduced. Which pathophysiological abnormality is primarily responsible for the hypoxaemia?",
+    "options": {
+      "A": "Diffuse alveolar destruction",
+      "B": "Ventilation of alveoli with reduced or absent perfusion",
+      "C": "Reduced inspired oxygen concentration",
+      "D": "Increased pulmonary venous pressure from left ventricular failure",
+      "E": "Global reduction in alveolar ventilation"
+    },
+    "correct_letter": "B",
+    "why_correct": "Reasoning: Pulmonary vascular obstruction creates regions that are ventilated but poorly perfused, producing ventilation–perfusion mismatch and contributing to hypoxaemia.",
+    "distractor_analysis": {},
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q026",
+    "subdomain": "Endocrinology & diabetes",
+    "topic": "SIADH in small-cell lung cancer",
+    "difficulty": "Moderate",
+    "stem": "A 69-year-old man with a 50-pack-year smoking history presents with weight loss and persistent cough. Chest imaging shows a central lung mass. He develops confusion and a serum sodium concentration of 121 mmol/L. Serum osmolality is low and urine osmolality is inappropriately high. Which mechanism most likely explains his hyponatraemia?",
+    "options": {
+      "A": "Excess aldosterone secretion",
+      "B": "Ectopic secretion of antidiuretic hormone",
+      "C": "Increased renal sodium reabsorption caused by cortisol deficiency",
+      "D": "Excess atrial natriuretic peptide secretion",
+      "E": "Primary polydipsia"
+    },
+    "correct_letter": "B",
+    "why_correct": "Decisive clue: Hypotonic hyponatraemia with inappropriately concentrated urine in a patient with a central lung malignancy. Reasoning path: The findings are consistent with SIADH, classically associated with small-cell lung cancer.",
+    "distractor_analysis": {},
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q027",
+    "subdomain": "Endocrinology & diabetes",
+    "topic": "Thyroid function: primary hypothyroidism",
+    "difficulty": "Moderate",
+    "stem": "A 38-year-old woman reports fatigue, constipation and cold intolerance. Thyroid function tests show a markedly raised TSH and a low free T4. Which diagnosis best explains this pattern?",
+    "options": {
+      "A": "Primary hypothyroidism",
+      "B": "Secondary hypothyroidism",
+      "C": "Subclinical hypothyroidism",
+      "D": "T3 thyrotoxicosis",
+      "E": "Euthyroid sick syndrome"
+    },
+    "correct_letter": "A",
+    "why_correct": "In primary thyroid failure, the thyroid gland produces insufficient hormone, so free T4 falls and pituitary TSH rises in response. Subclinical hypothyroidism has a raised TSH with free T4 still within the reference range. Central hypothyroidism generally produces a low free T4 with a TSH that is low or inappropriately normal.",
+    "distractor_analysis": {},
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q028",
+    "subdomain": "Musculoskeletal & rheumatology",
+    "topic": "Rheumatoid arthritis: referral despite negative serology",
+    "difficulty": "Moderate",
+    "stem": "A 43-year-old woman has persistent synovitis affecting both wrists and several metacarpophalangeal joints. Her rheumatoid factor is negative, and her CRP is within the reference range. Which is the most appropriate next step?",
+    "options": {
+      "A": "Exclude rheumatoid arthritis because the rheumatoid factor is negative",
+      "B": "Refer urgently for specialist assessment",
+      "C": "Repeat the rheumatoid factor annually before considering referral",
+      "D": "Diagnose osteoarthritis because the CRP is normal",
+      "E": "Start long-term oral glucocorticoids without establishing a diagnosis"
+    },
+    "correct_letter": "B",
+    "why_correct": "Persistent synovitis involving multiple joints, particularly the small joints of the hands, warrants urgent specialist referral even if rheumatoid factor, anti-CCP antibodies or inflammatory markers are negative. Investigations should not delay referral.",
+    "distractor_analysis": {},
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q029",
+    "subdomain": "Endocrinology & diabetes",
+    "topic": "Metabolic medicine: SGLT2 inhibitor-associated ketoacidosis",
+    "difficulty": "Moderate",
+    "stem": "A 59-year-old man with type 2 diabetes takes an SGLT2 inhibitor. After several days of vomiting and poor oral intake, he develops abdominal pain and deep breathing. His blood glucose is only modestly raised, but blood ketones are elevated and blood tests show a metabolic acidosis. Which diagnosis should be suspected?",
+    "options": {
+      "A": "Hyperosmolar hyperglycaemic state without ketosis",
+      "B": "SGLT2 inhibitor-associated diabetic ketoacidosis",
+      "C": "Isolated respiratory alkalosis",
+      "D": "Uncomplicated fasting hypoglycaemia",
+      "E": "Metformin-associated vitamin B12 deficiency"
+    },
+    "correct_letter": "B",
+    "why_correct": "SGLT2 inhibitor-associated DKA may occur without the marked hyperglycaemia traditionally associated with DKA. Vomiting, abdominal pain, deep breathing, ketosis and metabolic acidosis are warning features. The medicine should be stopped and the patient requires urgent hospital assessment and treatment for DKA.",
+    "distractor_analysis": {},
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q030",
+    "subdomain": "Endocrinology & diabetes",
+    "topic": "Phaeochromocytoma: biochemical investigation",
+    "difficulty": "Moderate",
+    "stem": "A 45-year-old man reports episodic headaches, palpitations, sweating and marked surges in blood pressure. Which biochemical investigation is most appropriate when a phaeochromocytoma or paraganglioma is suspected?",
+    "options": {
+      "A": "Plasma free metanephrines",
+      "B": "Serum aldosterone alone",
+      "C": "A random serum cortisol",
+      "D": "Serum calcitonin alone",
+      "E": "A fasting insulin concentration"
+    },
+    "correct_letter": "A",
+    "why_correct": "Phaeochromocytomas and paragangliomas produce catecholamines and their metabolites. Plasma free metanephrines are an established biochemical investigation; urinary fractionated metanephrines are another option in appropriate circumstances. Sampling conditions and interpretation matter because stress, medicines and other factors can affect results.",
+    "distractor_analysis": {},
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q031",
+    "subdomain": "Haematology & oncology",
+    "topic": "Disseminated intravascular coagulation",
+    "difficulty": "Moderate",
+    "stem": "A 63-year-old man with severe sepsis develops widespread oozing from venepuncture sites. His platelet count is falling, prothrombin time is prolonged, fibrinogen is low and D-dimer is markedly raised. Which process best explains these findings?",
+    "options": {
+      "A": "Systemic activation of coagulation with consumption of platelets and clotting factors",
+      "B": "Isolated immune-mediated platelet destruction",
+      "C": "An inherited deficiency of factor VIII alone",
+      "D": "Isolated vitamin B12 deficiency",
+      "E": "Reduced platelet production without activation of coagulation"
+    },
+    "correct_letter": "A",
+    "why_correct": "DIC involves widespread coagulation activation, with consumption of platelets and coagulation factors and increased fibrin turnover. It can cause both bleeding and thrombosis. The underlying cause, such as sepsis, must be treated while the coagulopathy is managed according to the clinical situation.",
+    "distractor_analysis": {},
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q032",
+    "subdomain": "Geriatrics & palliative care",
+    "topic": "Falls and comprehensive assessment",
+    "difficulty": "Moderate",
+    "stem": "A 79-year-old man has fallen three times in the past six months. He reports feeling unsteady when turning and has difficulty rising from a chair. He takes several regular medicines and lives alone. Which is the most appropriate next step?",
+    "options": {
+      "A": "Prescribe a walking frame without further assessment",
+      "B": "Arrange a comprehensive falls assessment and individualised management",
+      "C": "Reassure him that falls are an inevitable consequence of ageing",
+      "D": "Request a CT head scan as the sole investigation",
+      "E": "Advise him to avoid walking outdoors"
+    },
+    "correct_letter": "B",
+    "why_correct": "Recurrent falls warrant a comprehensive assessment rather than a single intervention\u0001The assessment \u0002 consider gait and balance, muscle strength, medicines, cardiovascular factors, vision, functional ability and environmental hazards. Management should address the factors identified. NICE advises against using falls prediction tools to estimate an individual's future risk.",
+    "distractor_analysis": {},
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q033",
+    "subdomain": "Gastroenterology & hepatology",
+    "topic": "Hepatic encephalopathy: identify a precipitant",
+    "difficulty": "Moderate",
+    "stem": "A 62-year-old man with cirrhosis is brought to hospital with new confusion and disorientation. He has had no bowel movement for four days. There is no reported haematemesis or melaena. Which potential precipitating factor should be specifically addressed as part of his assessment?",
+    "options": {
+      "A": "Constipation",
+      "B": "Iron deficiency without anaemia",
+      "C": "Stable chronic thrombocytopenia",
+      "D": "Uncomplicated gallstones",
+      "E": "Chronic hepatitis seropositivity without evidence of active disease"
+    },
+    "correct_letter": "A",
+    "why_correct": "Constipation can precipitate hepatic encephalopathy\u0001The assessment \u0002 also look for other causes and precipitants, including infection, gastrointestinal bleeding, dehydration and medication-related problems; identifying constipation does not exclude these.",
+    "distractor_analysis": {},
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q034",
+    "subdomain": "Endocrinology & diabetes",
+    "topic": "Adrenal disease: primary hyperaldosteronism",
+    "difficulty": "Moderate",
+    "stem": "A 48-year-old man has persistent hypertension despite treatment with three antihypertensive medicines. His potassium is low, and his bicarbonate is raised. There is no history of vomiting or diuretic use. Which biochemical investigation is most appropriate when screening for primary aldosteronism?",
+    "options": {
+      "A": "Plasma aldosterone-to-renin ratio",
+      "B": "Plasma metanephrines alone",
+      "C": "An overnight dexamethasone suppression test",
+      "D": "A short Synacthen test",
+      "E": "Serum 17-hydroxyprogesterone"
+    },
+    "correct_letter": "A",
+    "why_correct": "Primary aldosteronism causes autonomous aldosterone production, leading to sodium retention, hypertension and increased renal potassium and hydrogen ion loss. Screening assesses aldosterone in relation to renin. Hypokalaemia supports the suspicion but is not present in every affected patient.",
+    "distractor_analysis": {},
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q035",
+    "subdomain": "Haematology & oncology",
+    "topic": "Chronic myeloid leukaemia",
+    "difficulty": "Moderate",
+    "stem": "A 52-year-old man is found to have marked leukocytosis on a routine blood test. The blood film shows granulocytes at different stages of maturation, and examination reveals splenomegaly. Which molecular abnormality is characteristic of chronic myeloid leukaemia?",
+    "options": {
+      "A": "BCR::ABL1 fusion",
+      "B": "PML::RARA fusion",
+      "C": "JAK2 mutation in every case",
+      "D": "BRAF V600E mutation",
+      "E": "MYC rearrangement as the defining abnormality"
+    },
+    "correct_letter": "A",
+    "why_correct": "Chronic myeloid leukaemia is characterised by the BCR::ABL1 fusion, usually resulting from the Philadelphia chromosome translocation t(9;22). The fusion encodes a constitutively active tyrosine kinase. Molecular or cytogenetic testing is needed to confirm the diagnosis.",
+    "distractor_analysis": {},
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q036",
+    "subdomain": "Haematology & oncology",
+    "topic": "Vitamin B12 deficiency: neurological presentation",
+    "difficulty": "Moderate",
+    "stem": "A 67-year-old man presents with progressive numbness in both feet, unsteadiness and reduced vibration sense at the ankles. His full blood count shows macrocytosis. Which deficiency is most likely to explain both the haematological and neurological findings?",
+    "options": {
+      "A": "Iron",
+      "B": "Vitamin B12",
+      "C": "Vitamin C",
+      "D": "Vitamin K",
+      "E": "Folate"
+    },
+    "correct_letter": "B",
+    "why_correct": "Vitamin B12 deficiency can cause megaloblastic anaemia and neurological dysfunction, including peripheral neuropathy and impaired proprioception. Neurological manifestations can occur without prominent anaemia, so a normal haemoglobin does not reliably exclude deficiency.",
+    "distractor_analysis": {},
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q037",
+    "subdomain": "Cardiology",
+    "topic": "Suspected deep-vein thrombosis: choosing the next investigation",
+    "difficulty": "Moderate",
+    "stem": "A 44-year-old woman presents with unilateral calf swelling and tenderness. After clinical assessment, her two-level DVT Wells score is 3. A proximal leg-vein ultrasound scan can be obtained promptly. According to NICE guidance, what is the appropriate next investigation?",
+    "options": {
+      "A": "D-dimer as the only initial test, irrespective of clinical probability",
+      "B": "Proximal leg-vein ultrasound",
+      "C": "CT pulmonary angiography",
+      "D": "Thrombophilia testing before imaging",
+      "E": "No investigation unless the D-dimer is elevated"
+    },
+    "correct_letter": "B",
+    "why_correct": "A two-level DVT Wells score of 2 or more makes DVT likely. NICE recommends proximal leg-vein ultrasound, with the result available within 4 hours if possible. If it cannot be obtained within that time, the recommended pathway includes D-dimer testing, interim therapeutic anticoagulation when appropriate, and ultrasound within 24 hours.",
+    "distractor_analysis": {},
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q038",
+    "subdomain": "Respiratory",
+    "topic": "Tension pneumothorax: immediate action",
+    "difficulty": "Difficult",
+    "stem": "A 23-year-old man suddenly develops severe unilateral chest pain and breathlessness. He is hypotensive, tachycardic and severely distressed. Examination reveals absent breath sounds on one side and marked hyperresonance. What is the most appropriate immediate action?",
+    "options": {
+      "A": "Arrange an outpatient CT chest",
+      "B": "Perform spirometry",
+      "C": "Treat immediately as a tension pneumothorax",
+      "D": "Wait for a chest radiograph before intervening",
+      "E": "Start oral antibiotics"
+    },
+    "correct_letter": "C",
+    "why_correct": "Decisive clue: Shock + acute unilateral absent breath sounds + hyperresonance. The diagnosis is clinical in this emergency context; waiting for imaging would delay life-saving treatment.",
+    "distractor_analysis": {},
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q039",
+    "subdomain": "Endocrinology & diabetes",
+    "topic": "Type 1 diabetes: illness and ketones",
+    "difficulty": "Moderate",
+    "stem": "A 24-year-old man with established type 1 diabetes develops vomiting and abdominal pain during a febrile illness. His capillary glucose is elevated and he appears dehydrated. Which additional bedside test is most directly useful when assessing for diabetic ketoacidosis?",
+    "options": {
+      "A": "Capillary blood ketones",
+      "B": "Urinary albumin-to-creatinine ratio",
+      "C": "Serum thyroid peroxidase antibodies",
+      "D": "A fasting lipid profile",
+      "E": "A glycated haemoglobin measurement alone"
+    },
+    "correct_letter": "A",
+    "why_correct": "In a person with type 1 diabetes who is acutely unwell and may have DKA, blood ketone measurement helps identify ketosis and guide urgent assessment. Glucose or HbA1c alone cannot establish or exclude DKA; assessment also requires acid–base and electrolyte evaluation.",
+    "distractor_analysis": {},
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q040",
+    "subdomain": "Musculoskeletal & rheumatology",
+    "topic": "Giant cell arteritis: immediate management",
+    "difficulty": "Moderate",
+    "stem": "A 74-year-old woman presents with a new temporal headache, scalp tenderness and jaw pain when chewing. She reports a brief episode of transient visual loss in one eye earlier that day. Giant cell arteritis is suspected. What is the most appropriate immediate approach?",
+    "options": {
+      "A": "Wait for temporal artery biopsy results before starting treatment",
+      "B": "Arrange urgent specialist assessment and start glucocorticoid treatment immediately",
+      "C": "Reassure her because transient visual loss is not associated with giant cell arteritis",
+      "D": "Prescribe a triptan and review in one week",
+      "E": "Wait for ESR and CRP results before deciding whether treatment is needed"
+    },
+    "correct_letter": "B",
+    "why_correct": "Suspected giant cell arteritis with visual symptoms is an emergency because vision loss may become permanent. Glucocorticoid treatment should not be delayed while awaiting confirmatory investigations. Urgent specialist assessment and the appropriate diagnostic pathway remain essential.",
+    "distractor_analysis": {},
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q041",
+    "subdomain": "Statistics, epidemiology and evidence-based medicine",
+    "topic": "Number needed to harm",
+    "difficulty": "Moderate",
+    "stem": "In a randomised trial, an adverse event occurs in 2% of patients receiving placebo and 5% receiving a new treatment over the same follow-up period. What is the number needed to harm (NNH) for the adverse event?",
+    "options": {
+      "A": "3",
+      "B": "20",
+      "C": "34",
+      "D": "50",
+      "E": "100"
+    },
+    "correct_letter": "C",
+    "why_correct": "The absolute risk increase is 5% − 2% = 3% (0.03). NNH = 1/0.03 = 33.3; by convention the NNH is rounded up to the next whole number, giving 34.",
+    "distractor_analysis": {},
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q042",
+    "subdomain": "Anatomy, physiology & basic science",
+    "topic": "Vitamin D physiology",
+    "difficulty": "Moderate",
+    "stem": "A patient with severe vitamin D deficiency develops hypocalcaemia and secondary hyperparathyroidism. Which action of parathyroid hormone helps compensate for the low serum calcium concentration?",
+    "options": {
+      "A": "Reduced renal calcium reabsorption",
+      "B": "Increased renal phosphate reabsorption",
+      "C": "Increased renal calcium reabsorption",
+      "D": "Inhibition of renal 1α-hydroxylase",
+      "E": "Suppression of osteoclast-mediated bone resorption"
+    },
+    "correct_letter": "C",
+    "why_correct": "Parathyroid hormone increases renal calcium reabsorption, particularly in the distal nephron, and promotes phosphate excretion. It also stimulates renal 1α-hydroxylase, increasing production of active vitamin D. These actions help restore serum calcium, although severe vitamin D deficiency can limit intestinal calcium absorption.",
+    "distractor_analysis": {},
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q043",
+    "subdomain": "Infectious disease & sexual health",
+    "topic": "Infectious mononucleosis: antibiotic-associated rash",
+    "difficulty": "Moderate",
+    "stem": "A 19-year-old student presents with fever, severe sore throat, posterior cervical lymphadenopathy and marked fatigue. A heterophile antibody test supports infectious mononucleosis. Which antibiotic-related statement is most appropriate?",
+    "options": {
+      "A": "Amoxicillin is routinely indicated to shorten the illness",
+      "B": "An aminopenicillin-associated rash can occur and antibiotics do not treat the underlying viral infection",
+      "C": "A rash after amoxicillin proves immediate IgE-mediated penicillin allergy",
+      "D": "Antiviral treatment is routinely required for every case",
+      "E": "Corticosteroids are indicated for all patients with sore throat"
+    },
+    "correct_letter": "B",
+    "why_correct": "Infectious mononucleosis is usually caused by Epstein–Barr virus. Aminopenicillin exposure is associated with a rash in this setting, but the rash alone does not establish immediate IgE-mediated allergy. Management is generally supportive; antibiotics are reserved for a separately established bacterial indication.",
+    "distractor_analysis": {},
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q044",
+    "subdomain": "Geriatrics & palliative care",
+    "topic": "Recognising frailty",
+    "difficulty": "Moderate",
+    "stem": "An 86-year-old woman has gradually lost weight, walks slowly, feels exhausted with everyday activities and has become less physically active. She needs increasing help with shopping and housework. There is no acute illness. Which concept best describes this clinical picture?",
+    "options": {
+      "A": "Delirium",
+      "B": "Frailty",
+      "C": "Normal ageing alone",
+      "D": "Sarcopenia as the only possible diagnosis",
+      "E": "Terminal illness"
+    },
+    "correct_letter": "B",
+    "why_correct": "Frailty describes reduced physiological reserve and increased vulnerability to adverse outcomes when exposed to stressors. Weight loss, exhaustion, slow walking and reduced activity are characteristic features. Sarcopenia may contribute, but it does not fully explain the broader functional vulnerability described.",
+    "distractor_analysis": {},
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q045",
+    "subdomain": "Haematology & oncology",
+    "topic": "Haemolysis: interpreting the blood results",
+    "difficulty": "Moderate",
+    "stem": "A 34-year-old woman develops jaundice and fatigue. Her haemoglobin has fallen, reticulocytes are raised, unconjugated bilirubin is elevated, and haptoglobin is low. Which process best explains this combination?",
+    "options": {
+      "A": "Reduced erythropoietin production",
+      "B": "Increased red-cell destruction",
+      "C": "Iron deficiency from chronic blood loss",
+      "D": "Suppressed bone-marrow activity without red-cell destruction",
+      "E": "Reduced intestinal folate absorption as the sole mechanism"
+    },
+    "correct_letter": "B",
+    "why_correct": "Reticulocytosis reflects a marrow response to red-cell loss or destruction. Increased unconjugated bilirubin and reduced haptoglobin support haemolysis. These findings establish a haemolytic pattern but do not, by themselves, identify its cause; the blood film, direct antiglobulin test and other investigations help distinguish the possibilities.",
+    "distractor_analysis": {},
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q046",
+    "subdomain": "Neurology",
+    "topic": "Cauda equina syndrome: urgent investigation",
+    "difficulty": "Moderate",
+    "stem": "A 46-year-old man with acute low-back pain develops new urinary retention, altered sensation around the perineum and bilateral leg symptoms. What is the most appropriate next step?",
+    "options": {
+      "A": "Routine physiotherapy without further assessment",
+      "B": "Urgent assessment for cauda equina syndrome and emergency MRI where indicated",
+      "C": "Reassurance that urinary retention is a usual feature of uncomplicated mechanical back pain",
+      "D": "Elective nerve-conduction studies before deciding whether imaging is needed",
+      "E": "A trial of oral antibiotics without investigation"
+    },
+    "correct_letter": "B",
+    "why_correct": "New bladder dysfunction and saddle sensory disturbance in the context of back pain are concerning for cauda equina compression. This requires emergency assessment and urgent MRI according to the local pathway. Delayed recognition can result in permanent bladder, bowel, sexual and lower-limb dysfunction.",
+    "distractor_analysis": {},
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q047",
+    "subdomain": "Haematology & oncology",
+    "topic": "Multiple myeloma: recognising end-organ damage",
+    "difficulty": "Moderate",
+    "stem": "A 70-year-old man presents with persistent back pain, fatigue and recurrent infections. Investigations reveal normocytic anaemia, raised serum calcium, renal impairment and a monoclonal immunoglobulin. Which diagnosis best unifies these findings?",
+    "options": {
+      "A": "Multiple myeloma",
+      "B": "Essential thrombocythaemia",
+      "C": "Chronic myeloid leukaemia",
+      "D": "Immune thrombocytopenia",
+      "E": "Aplastic anaemia"
+    },
+    "correct_letter": "A",
+    "why_correct": "Multiple myeloma can cause bone disease, hypercalcaemia, renal impairment and anaemia, alongside monoclonal immunoglobulin production. The combination is strongly suggestive, but confirmation requires appropriate myeloma investigations, including assessment for clonal plasma cells and myeloma-defining events.",
+    "distractor_analysis": {},
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q048",
+    "subdomain": "Infectious disease & sexual health",
+    "topic": "Suspected enteric fever",
+    "difficulty": "Moderate",
+    "stem": "A 32-year-old traveller returns from South Asia with sustained fever, headache and abdominal discomfort. Enteric fever is suspected. He is stable enough for prompt investigation, and antibiotics have not yet been started. Which investigation is particularly important for microbiological diagnosis?",
+    "options": {
+      "A": "Blood cultures",
+      "B": "A single stool occult-blood test",
+      "C": "Serum rheumatoid factor",
+      "D": "A throat swab alone",
+      "E": "A urine dipstick as the definitive test"
+    },
+    "correct_letter": "A",
+    "why_correct": "Blood cultures are important in suspected enteric fever, particularly early in illness. Stool cultures may also be useful, depending on the stage of disease and clinical context. Obtain appropriate cultures before antibiotics where this can be done without unsafe delay, and seek specialist advice on treatment and public-health implications.",
+    "distractor_analysis": {},
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q049",
+    "subdomain": "Haematology & oncology",
+    "topic": "Thrombotic thrombocytopenic purpura",
+    "difficulty": "Moderate",
+    "stem": "A 39-year-old woman presents with confusion, petechiae and fever. Blood tests show thrombocytopenia, anaemia, raised LDH and schistocytes on the blood film. Her coagulation screen is not significantly prolonged. Which diagnosis is the most urgent to consider?",
+    "options": {
+      "A": "Thrombotic thrombocytopenic purpura",
+      "B": "Isolated immune thrombocytopenia",
+      "C": "Iron-deficiency anaemia",
+      "D": "Haemophilia A",
+      "E": "Uncomplicated vitamin B12 deficiency without haemolysis"
+    },
+    "correct_letter": "A",
+    "why_correct": "Thrombocytopenia with microangiopathic haemolytic anaemia and neurological features raises concern for a thrombotic microangiopathy, including TTP. Suspected TTP is a haematological emergency: urgent specialist assessment and treatment must not be delayed while awaiting confirmatory ADAMTS13 results.",
+    "distractor_analysis": {},
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q050",
+    "subdomain": "Respiratory",
+    "topic": "Pulmonary tuberculosis: diagnostic sampling",
+    "difficulty": "Moderate",
+    "stem": "A 41-year-old man has a persistent cough, weight loss and an abnormal chest radiograph suspicious for pulmonary tuberculosis. He is clinically stable. Which investigation is appropriate to obtain microbiological confirmation?",
+    "options": {
+      "A": "A single sputum Gram stain only",
+      "B": "Multiple deep-cough sputum samples for mycobacterial microscopy and culture",
+      "C": "A tuberculin skin test as the sole test for active pulmonary disease",
+      "D": "Serum tuberculosis antibody testing",
+      "E": "A repeat chest radiograph without respiratory sampling"
+    },
+    "correct_letter": "B",
+    "why_correct": "NICE recommends obtaining three respiratory samples for suspected pulmonary TB, preferably including an early-morning specimen, and sending them for microscopy and culture. Rapid molecular testing is appropriate in specified circumstances. A tuberculin skin test or interferon-gamma release assay does not, on its own, confirm active pulmonary TB.",
+    "distractor_analysis": {},
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q051",
+    "subdomain": "Endocrinology & diabetes",
+    "topic": "Type 2 diabetes: initial medicines",
+    "difficulty": "Moderate",
+    "stem": "A 56-year-old adult has newly diagnosed type 2 diabetes. They have no relevant cardiovascular or renal comorbidity, no contraindication to metformin or an SGLT2 inhibitor, and are not pregnant. According to the NICE type 2 diabetes guideline updated in February 2026, which initial medication approach is recommended?",
+    "options": {
+      "A": "Modified-release metformin alone",
+      "B": "An SGLT2 inhibitor alone in every case",
+      "C": "Modified-release metformin plus an SGLT2 inhibitor",
+      "D": "Immediate insulin therapy for all newly diagnosed adults",
+      "E": "A sulfonylurea plus pioglitazone as routine first-line treatment"
+    },
+    "correct_letter": "C",
+    "why_correct": "NICE NG28 was updated in February 2026. For adults with type 2 diabetes and no relevant comorbidities, it recommends modified-release metformin and an SGLT2 inhibitor. This reflects the guideline’s emphasis on cardiovascular and renal protection as well as glycaemic control. Prescribing still requires individual review of contraindications, precautions and patient circumstances.",
+    "distractor_analysis": {},
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q052",
+    "subdomain": "Musculoskeletal & rheumatology",
+    "topic": "Polymyalgia rheumatica: distinguishing features",
+    "difficulty": "Moderate",
+    "stem": "A 71-year-old woman develops bilateral shoulder and hip-girdle pain with prolonged morning stiffness. She struggles to get dressed and rise from a chair because of pain, but formal muscle strength is preserved. Her inflammatory markers are raised. She has no headache, jaw claudication or visual symptoms. Which diagnosis best fits the presentation?",
+    "options": {
+      "A": "Polymyalgia rheumatica",
+      "B": "Polymyositis",
+      "C": "Myasthenia gravis",
+      "D": "Osteoarthritis confined to the distal interphalangeal joints",
+      "E": "Acute gout"
+    },
+    "correct_letter": "A",
+    "why_correct": "Polymyalgia rheumatica typically causes pain and stiffness around the shoulders and hips in adults over 50, often with raised inflammatory markers. Pain-limited movement differs from the objective muscle weakness that may occur in inflammatory myopathy. Giant cell arteritis symptoms must always be actively sought.",
+    "distractor_analysis": {},
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q053",
+    "subdomain": "Pharmacology & prescribing",
+    "topic": "Volume of distribution",
+    "difficulty": "Moderate",
+    "stem": "A medicine is highly lipid-soluble and extensively partitions into tissues. After administration, its measured plasma concentration is low relative to the total amount of drug in the body. Which pharmacokinetic property best explains this finding?",
+    "options": {
+      "A": "Low volume of distribution",
+      "B": "High apparent volume of distribution",
+      "C": "High renal clearance necessarily",
+      "D": "Low bioavailability necessarily",
+      "E": "High plasma protein binding necessarily"
+    },
+    "correct_letter": "B",
+    "why_correct": "The apparent volume of distribution relates the total amount of drug in the body to its measured plasma concentration. Extensive tissue distribution can produce a high apparent volume of distribution, even though this value does not represent a literal anatomical fluid volume.",
+    "distractor_analysis": {},
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q054",
+    "subdomain": "Infectious disease & sexual health",
+    "topic": "Suspected acute HIV infection",
+    "difficulty": "Moderate",
+    "stem": "A 27-year-old man presents with fever, rash, sore throat and generalised lymphadenopathy two weeks after a sexual exposure that may have transmitted HIV. An initial HIV screening test is negative. Clinical suspicion remains high. What is the most appropriate approach?",
+    "options": {
+      "A": "Exclude HIV definitively on the basis of this early negative result",
+      "B": "Arrange appropriate repeat testing and discuss specialist testing for acute infection",
+      "C": "Diagnose HIV solely from the symptoms",
+      "D": "Wait for symptoms to resolve and take no further action",
+      "E": "Prescribe long-term antiretroviral therapy without diagnostic assessment"
+    },
+    "correct_letter": "B",
+    "why_correct": "Early testing can be negative during the window period. If acute HIV infection is suspected, the test type, timing of exposure and ongoing clinical picture matter; specialist advice and appropriate repeat or additional testing may be required. Symptoms alone neither confirm nor exclude HIV.",
+    "distractor_analysis": {},
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q055",
+    "subdomain": "Ophthalmology & ENT",
+    "topic": "Optic neuritis",
+    "difficulty": "Moderate",
+    "stem": "A 32-year-old woman develops blurred vision in her right eye over three days. She describes pain that worsens when moving the eye and says colours appear less vivid in that eye. Examination reveals reduced visual acuity and a relative afferent pupillary defect. The optic disc appears normal. Which diagnosis best fits this presentation?",
+    "options": {
+      "A": "Acute angle-closure glaucoma",
+      "B": "Central retinal vein occlusion",
+      "C": "Optic neuritis",
+      "D": "Retinal detachment",
+      "E": "Diabetic macular oedema"
+    },
+    "correct_letter": "C",
+    "why_correct": "Subacute visual loss, pain on eye movement, impaired colour vision and a relative afferent pupillary defect are characteristic of optic neuritis. The optic disc can appear normal in retrobulbar optic neuritis because the inflammation affects the optic nerve behind the visible disc.",
+    "distractor_analysis": {},
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q056",
+    "subdomain": "Infectious disease & sexual health",
+    "topic": "Clostridioides difficile: antimicrobial stewardship",
+    "difficulty": "Moderate",
+    "stem": "A 76-year-old inpatient develops frequent watery diarrhoea after a course of broad-spectrum antibiotics. C. difficile infection is suspected, and a stool sample is being tested. He is still receiving antibiotics for an infection that has now clinically resolved. What is the most appropriate action regarding his existing antibiotics?",
+    "options": {
+      "A": "Continue all antibiotics unchanged until the stool result is available",
+      "B": "Review the existing antibiotics and stop them unless they remain essential",
+      "C": "Add another broad-spectrum antibiotic routinely",
+      "D": "Prescribe loperamide routinely while awaiting results",
+      "E": "Give prophylactic antibiotics to prevent recurrence"
+    },
+    "correct_letter": "B",
+    "why_correct": "NICE recommends reviewing existing antibiotics in suspected or confirmed C. difficile infection and stopping them unless essential. If an antibiotic remains necessary, consider an alternative with a lower associated risk. Fluid status, severity, infection-control measures and the need for specific treatment must also be assessed.",
+    "distractor_analysis": {},
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q057",
+    "subdomain": "Renal & urology",
+    "topic": "Acute kidney injury: diagnostic criteria",
+    "difficulty": "Moderate",
+    "stem": "A 74-year-old man is admitted with pneumonia and dehydration. His serum creatinine was 92 micromol/L two days ago and is now 121 micromol/L. Which interpretation is correct?",
+    "options": {
+      "A": "He does not meet criteria for acute kidney injury because creatinine remains below 150 micromol/L",
+      "B": "He meets a creatinine-based criterion for acute kidney injury",
+      "C": "He can only be diagnosed with acute kidney injury if urine output is also reduced",
+      "D": "He has chronic kidney disease because the creatinine has risen",
+      "E": "The change is insignificant unless his eGFR falls below 30 mL/min/1.73 m²"
+    },
+    "correct_letter": "B",
+    "why_correct": "His creatinine has risen by 29 micromol/L within 48 hours, meeting the NICE criterion of a rise of at least 26 micromol/L in that period. AKI can be diagnosed using creatinine or urine-output criteria; both are not required.",
+    "distractor_analysis": {},
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q058",
+    "subdomain": "Haematology & oncology",
+    "topic": "Sickle cell disease: acute painful episode",
+    "difficulty": "Moderate",
+    "stem": "A 23-year-old man with established sickle cell disease presents to hospital with severe limb pain typical of his previous painful episodes. He is haemodynamically stable and has no features suggesting an alternative diagnosis. What is the most appropriate immediate approach?",
+    "options": {
+      "A": "Delay analgesia until the full blood count and haemoglobin electrophoresis are available",
+      "B": "Treat as an acute medical emergency and provide prompt, appropriate analgesia",
+      "C": "Give corticosteroids routinely to shorten the episode",
+      "D": "Withhold analgesia until imaging confirms bone infarction",
+      "E": "Arrange an outpatient haematology appointment before treating the pain"
+    },
+    "correct_letter": "B",
+    "why_correct": "NICE recommends treating acute painful sickle cell episodes as medical emergencies and offering analgesia within 30 minutes of presentation. The assessment must still consider complications and alternative diagnoses when indicated; a typical pain episode does not rule out acute chest syndrome, infection or other serious pathology.",
+    "distractor_analysis": {},
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q059",
+    "subdomain": "Neurology",
+    "topic": "Multiple sclerosis: suspected relapse",
+    "difficulty": "Moderate",
+    "stem": "A 32-year-old woman with established multiple sclerosis develops worsening leg weakness and urinary urgency over three days, after several months of stability. She also reports dysuria and a fever. What should be addressed before concluding that this is an MS relapse?",
+    "options": {
+      "A": "Possible urinary tract infection",
+      "B": "Whether she has developed essential tremor",
+      "C": "Whether she needs routine screening for coeliac disease",
+      "D": "Whether her symptoms meet criteria for Parkinson’s disease",
+      "E": "Whether her serum vitamin D concentration is above the laboratory reference range"
+    },
+    "correct_letter": "A",
+    "why_correct": "Infection, particularly urinary or respiratory infection, can worsen existing neurological symptoms and must be considered before diagnosing an MS relapse. NICE advises excluding infection and other causes before diagnosing relapse. A clinically significant relapse may need specialist assessment and treatment, but not every episode of worsening symptoms requires corticosteroids.",
+    "distractor_analysis": {},
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q060",
+    "subdomain": "Haematology & oncology",
+    "topic": "Immune thrombocytopenia",
+    "difficulty": "Moderate",
+    "stem": "A 28-year-old woman has easy bruising and petechiae. Her platelet count is low, but haemoglobin and white-cell count are normal. The blood film confirms thrombocytopenia without platelet clumping or schistocytes. She has no splenomegaly and no evidence of systemic illness. Which diagnosis is most consistent with this pattern?",
+    "options": {
+      "A": "Immune thrombocytopenia",
+      "B": "Acute leukaemia with marrow failure",
+      "C": "Thrombotic thrombocytopenic purpura",
+      "D": "Disseminated intravascular coagulation",
+      "E": "Aplastic anaemia"
+    },
+    "correct_letter": "A",
+    "why_correct": "Immune thrombocytopenia commonly presents as isolated thrombocytopenia in an otherwise well patient. It is a diagnosis made after considering other causes, rather than from platelet count alone. The absence of schistocytes and other cytopenias makes some alternatives less likely, but clinical context and further investigations remain important.",
+    "distractor_analysis": {},
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q061",
+    "subdomain": "Respiratory",
+    "topic": "Community-acquired pneumonia: severity assessment",
+    "difficulty": "Moderate",
+    "stem": "A 72-year-old man is admitted with community-acquired pneumonia. He is newly confused, has a respiratory rate of 32 breaths/min, a blood pressure of 86/54 mmHg and a urea concentration above 7 mmol/L. Which interpretation of his CURB65 score is correct?",
+    "options": {
+      "A": "Score 2; intermediate severity",
+      "B": "Score 3; high severity",
+      "C": "Score 4; high severity",
+      "D": "Score 5; high severity",
+      "E": "CURB65 cannot be used in hospital"
+    },
+    "correct_letter": "D",
+    "why_correct": "CURB65 gives one point each for new confusion, urea above 7 mmol/L, respiratory rate of 30/min or more, systolic BP below 90 mmHg or diastolic 60 mmHg or below, and age 65 or over. He meets all five criteria, so the score is 5: high-severity pneumonia needing urgent senior and critical-care assessment.",
+    "distractor_analysis": {},
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q062",
+    "subdomain": "Endocrinology & diabetes",
+    "topic": "Cushing syndrome: screening test",
+    "difficulty": "Moderate",
+    "stem": "A 42-year-old woman develops progressive central weight gain, easy bruising, proximal muscle weakness and wide violaceous abdominal striae. She has no history of glucocorticoid treatment. Which is an appropriate initial test for endogenous Cushing syndrome?",
+    "options": {
+      "A": "Random serum cortisol",
+      "B": "Overnight 1 mg dexamethasone suppression test",
+      "C": "Plasma aldosterone-to-renin ratio",
+      "D": "Serum growth hormone after a meal",
+      "E": "A single morning ACTH measurement as the sole screening test"
+    },
+    "correct_letter": "B",
+    "why_correct": "The clinical features raise suspicion of cortisol excess. The overnight dexamethasone suppression test is an accepted initial screening test; late-night salivary cortisol and urinary free cortisol are other established approaches. A random cortisol or ACTH measurement alone is not an appropriate screening test for Cushing syndrome.",
+    "distractor_analysis": {},
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q063",
+    "subdomain": "Musculoskeletal & rheumatology",
+    "topic": "Septic arthritis: immediate diagnostic approach",
+    "difficulty": "Moderate",
+    "stem": "A 65-year-old man presents with a hot, swollen knee, severe pain on passive movement and fever. Septic arthritis is suspected. He is haemodynamically stable, and joint aspiration can be performed promptly. What is the most appropriate approach?",
+    "options": {
+      "A": "Treat as osteoarthritis and review in two weeks",
+      "B": "Arrange urgent joint aspiration for synovial-fluid analysis and culture before antibiotics, provided this does not cause an unsafe delay",
+      "C": "Give an intra-articular glucocorticoid before obtaining samples",
+      "D": "Exclude infection if the peripheral white-cell count is normal",
+      "E": "Wait for blood cultures to become positive before aspirating the joint"
+    },
+    "correct_letter": "B",
+    "why_correct": "Septic arthritis is an emergency because joint destruction and systemic complications can develop rapidly. Synovial-fluid analysis and culture are important for diagnosis. In a stable patient, samples should generally be obtained before antibiotics; if the patient is septic or unstable, treatment must not be dangerously delayed to obtain samples.",
+    "distractor_analysis": {},
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q064",
+    "subdomain": "Pharmacology & prescribing",
+    "topic": "Cytochrome P450 inhibition",
+    "difficulty": "Moderate",
+    "stem": "A patient who is stable on a medicine metabolised by a particular cytochrome P450 enzyme starts a second medicine that strongly inhibits that enzyme. Assume the original medicine is active and that its metabolism is an important route of elimination. What is the most likely consequence?",
+    "options": {
+      "A": "Reduced plasma concentration of the original medicine",
+      "B": "Increased clearance of the original medicine",
+      "C": "Increased plasma concentration of the original medicine",
+      "D": "Complete prevention of absorption of the original medicine",
+      "E": "Guaranteed loss of pharmacological effect"
+    },
+    "correct_letter": "C",
+    "why_correct": "Inhibition of a major metabolic pathway can reduce the clearance of an active parent drug and increase its plasma concentration, raising the risk of adverse effects. The effect depends on the fraction metabolised by that pathway and other routes of elimination. This relationship may differ for prodrugs, whose activation depends on metabolism.",
+    "distractor_analysis": {},
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q065",
+    "subdomain": "Infectious disease & sexual health",
+    "topic": "Herd immunity",
+    "difficulty": "Moderate",
+    "stem": "A communicable infection spreads through a population. A vaccine reduces the probability that vaccinated individuals become infected and transmit the pathogen. Vaccination coverage increases substantially. Which mechanism best explains how this may indirectly protect some people who remain unvaccinated?",
+    "options": {
+      "A": "Vaccination makes every infected individual non-infectious",
+      "B": "Reduced transmission decreases the probability that susceptible people encounter an infectious person",
+      "C": "Vaccination changes the pathogen's genome in every transmission event",
+      "D": "Unvaccinated people acquire vaccine-induced antibodies through ordinary social contact",
+      "E": "The pathogen is immediately eradicated once a majority is vaccinated"
+    },
+    "correct_letter": "B",
+    "why_correct": "Herd protection occurs when immunity in a population reduces transmission, indirectly lowering exposure risk for susceptible individuals. The extent of protection depends on factors such as vaccine effectiveness against infection and transmission, coverage, contact patterns and pathogen characteristics. High coverage does not guarantee eradication.",
+    "distractor_analysis": {},
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q066",
+    "subdomain": "Neurology",
+    "topic": "Wernicke encephalopathy",
+    "difficulty": "Moderate",
+    "stem": "A 58-year-old man with chronic alcohol dependence is admitted with poor nutrition and persistent vomiting. He develops confusion, an unsteady gait and abnormal eye movements. Which is the most appropriate immediate treatment?",
+    "options": {
+      "A": "Oral glucose alone",
+      "B": "Urgent parenteral thiamine",
+      "C": "A selective serotonin reuptake inhibitor",
+      "D": "Lithium",
+      "E": "A dopamine agonist"
+    },
+    "correct_letter": "B",
+    "why_correct": "The combination of nutritional deficiency, confusion, gait ataxia and ocular abnormalities raises strong suspicion of Wernicke encephalopathy. This is a medical emergency: give parenteral thiamine promptly and correct associated nutritional and metabolic problems. Treatment should not be delayed while waiting for confirmatory investigations. If hypoglycaemia is present, glucose must also be treated promptly; thiamine should be given before or alongside it where feasible, without delaying emergency glucose treatment.",
+    "distractor_analysis": {},
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q067",
+    "subdomain": "Geriatrics & palliative care",
+    "topic": "Pressure ulcer prevention",
+    "difficulty": "Moderate",
+    "stem": "An 88-year-old inpatient is bedbound after a hip fracture. He is unable to reposition himself independently and has reduced oral intake. His skin is currently intact. Which intervention is most appropriate to reduce his risk of pressure ulcers?",
+    "options": {
+      "A": "Massage areas of redness every shift",
+      "B": "Use a standard-specification foam mattress and avoid repositioning",
+      "C": "Assess his skin and pressure-ulcer risk, support regular repositioning and provide an appropriate pressure-redistributing surface",
+      "D": "Restrict fluids to reduce skin moisture",
+      "E": "Provide nutritional supplements regardless of nutritional status"
+    },
+    "correct_letter": "C",
+    "why_correct": "Prevention combines risk and skin assessment, an individualised care plan, repositioning assistance, and suitable pressure-redistributing equipment. Nutrition and hydration should be assessed and addressed according to need. Massage or rubbing should not be used to prevent pressure ulcers.",
+    "distractor_analysis": {},
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q068",
+    "subdomain": "Renal & urology",
+    "topic": "Acute kidney injury: identifying possible nephritis",
+    "difficulty": "Moderate",
+    "stem": "A 58-year-old woman develops acute kidney injury without an obvious cause. Urine dipstick testing shows blood and protein. There is no history of urinary trauma or evidence of urinary tract infection. Which diagnosis should be considered?",
+    "options": {
+      "A": "Acute nephritis",
+      "B": "Uncomplicated essential hypertension",
+      "C": "Isolated renal glucosuria",
+      "D": "Diabetes insipidus",
+      "E": "Uncomplicated lower urinary tract infection"
+    },
+    "correct_letter": "A",
+    "why_correct": "Unexplained AKI with both haematuria and proteinuria raises concern for intrinsic renal disease, including acute nephritis. NICE recommends considering nephrology referral in this setting. Further assessment may include urine microscopy, quantification of proteinuria, renal function, immunological investigations and imaging as indicated.",
+    "distractor_analysis": {},
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q069",
+    "subdomain": "Haematology & oncology",
+    "topic": "Acute transfusion reaction",
+    "difficulty": "Moderate",
+    "stem": "A 67-year-old man develops fever, rigors, loin pain and hypotension shortly after a red-cell transfusion begins. The transfusion is still running. What is the immediate action?",
+    "options": {
+      "A": "Slow the transfusion and observe",
+      "B": "Stop the transfusion immediately and initiate the local transfusion-reaction protocol",
+      "C": "Complete the unit before taking blood samples",
+      "D": "Give an antihistamine and restart the same unit if symptoms settle",
+      "E": "Discard the blood bag before informing the transfusion laboratory"
+    },
+    "correct_letter": "B",
+    "why_correct": "A potentially serious acute transfusion reaction requires immediate cessation of the transfusion, urgent clinical assessment and adherence to the local reaction protocol. The identity checks, patient assessment, required samples and communication with the transfusion laboratory are essential. Do not restart the implicated unit while a serious reaction is being investigated.",
+    "distractor_analysis": {},
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q070",
+    "subdomain": "Neurology",
+    "topic": "First suspected seizure: initial assessment",
+    "difficulty": "Moderate",
+    "stem": "A 26-year-old man is assessed after a first episode of transient loss of consciousness with witnessed limb jerking. He has recovered fully. There is no obvious metabolic cause on initial assessment. Which investigation is important because a cardiac cause can mimic an epileptic seizure?",
+    "options": {
+      "A": "A 12-lead ECG",
+      "B": "Routine serum amylase",
+      "C": "A D-dimer in every patient",
+      "D": "A screening chest radiograph in every patient",
+      "E": "An EEG as the sole investigation, without clinical assessment"
+    },
+    "correct_letter": "A",
+    "why_correct": "Transient loss of consciousness requires careful history, examination and appropriate investigation. A 12-lead ECG helps identify cardiac abnormalities that can cause syncope and may be mistaken for a seizure. If an epileptic seizure is suspected, the patient should be assessed by a clinician with expertise in first seizures; EEG may support diagnosis but should not be used in isolation to exclude epilepsy.",
+    "distractor_analysis": {},
+    "generalisation": "",
+    "review_status": "reviewed"
   }
 ];
