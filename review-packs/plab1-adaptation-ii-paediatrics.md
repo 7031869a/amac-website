@@ -1,6 +1,6 @@
 # PLAB 1 Adaptation II: Paediatrics review pack
 
-Review pack only. Not live, no PR. Branch `plab1-adapt-ii-paediatrics`, built from main a2a368a (PLAB 1 bank 5,888). 17 October 2026.
+Review pack, revised after review (PAN9549 dropped, wording fixes, answer letters rebalanced to 7 each). Branch `plab1-adapt-ii-paediatrics`, built from main ee147a7 (PLAB 1 bank 5,888). 17 October 2026.
 
 ## Summary
 
@@ -10,17 +10,17 @@ Review pack only. Not live, no PR. Branch `plab1-adapt-ii-paediatrics`, built fr
 | Candidates in | 174 |
 | Pre-screen repeats | 3 |
 | Sent to writers | 171 |
-| Written | 45 (of which 3 within-batch drops, 6 checker drops) |
-| **Items in this pack** | **36** |
-| Answer letters | A 5, B 8, C 3, D 11, E 9 |
-| Key is the longest option | 0 of 36 |
-| Key is the shortest option | 1 of 36 |
+| Written | 45 (of which 3 within-batch drops, 6 checker drops, 1 reviewer drop) |
+| **Items in this pack** | **35** |
+| Answer letters | A 7, B 7, C 7, D 7, E 7 |
+| Key is the longest option | 0 of 35 |
+| Key is the shortest option | 2 of 35 |
 | Validator (`_tools/plab-adaptation/validate.py`, incl. key longest/shortest <= 25%) | OK |
 | Live-bank checks | no ID clash, no stem >= 85% (rapidfuzz token_set_ratio) against the 5,888 live questions |
 
 Every item below is labelled "2026 UKMLA Adaptation II — adapted (Oct 2026)".
 
-Reviewer notes: the answer-letter spread is uneven (C only 3 of 36); letters were fixed by the batch plan before writing and the checkers did not reorder options. Items marked **weak source** rest on a hospital, charity or society page, or on standard teaching, because no NICE/NHS page could be opened; look at these first.
+Reviewer notes: answer letters were rebalanced after review by reordering options only (wording unchanged). Citation checks on 17 October 2026: NICE NG235 (Intrapartum care, published 29 September 2023, last updated 9 June 2026) carries the newborn vitamin K recommendations 1.11.12 and 1.11.13; NICE NG194 (Postnatal care) 1.3.4 points to them. NICE CG84 was published 22 April 2009, with minor changes in January 2019 and October 2022. NICE NG124 (published 3 April 2019, minor changes October 2022) covers bronchopulmonary dysplasia in its context section and risk-factor recommendations, but does not define it by oxygen need at term-equivalent age. Items marked **weak source** rest on a hospital, charity or society page, or on standard teaching, because no NICE/NHS page could be opened; look at these first.
 
 ---
 
@@ -129,11 +129,11 @@ What is the most appropriate advice about vitamin K?
 
 **Key:** C. Offer vitamin K to every newborn, preferably as an intramuscular injection
 
-**Why correct:** Vitamin K is offered to all newborn babies to prevent vitamin K deficiency bleeding, a rare but serious and sometimes fatal disorder. NICE advises an intramuscular injection because this works best, with oral vitamin K as an alternative if parents decline, though oral dosing may need to be repeated after discharge. Source: NICE NG235, Intrapartum care, 2023 (amended 2026).
+**Why correct:** Vitamin K is offered to all newborn babies to prevent vitamin K deficiency bleeding, a rare but serious and sometimes fatal disorder. NICE advises an intramuscular injection because this works best, with oral vitamin K as an alternative if parents decline, though oral dosing may need to be repeated after discharge. Source: NICE NG235, Intrapartum care, 2023 (updated 2026), recommendations 1.11.12 and 1.11.13; see also NICE NG194, Postnatal care, 2021 (updated 2026), recommendation 1.3.4.
 
 **Why others are wrong:** A. Newborns of any gestation have low vitamin K stores, so prophylaxis is offered to all. B. Breast milk is a relatively poor source of vitamin K, so exclusively breastfed babies remain at risk. D. Prophylaxis aims to prevent the first bleed, which can be catastrophic such as an intracranial haemorrhage. E. The intramuscular injection is the recommended route, with oral vitamin K only an alternative.
 
-**Citation:** NICE NG235, Intrapartum care, 2023 (amended 2026).
+**Citation:** NICE NG235, Intrapartum care, 2023 (updated 2026), recommendations 1.11.12 and 1.11.13; see also NICE NG194, Postnatal care, 2021 (updated 2026), recommendation 1.3.4.
 
 
 ## 5. PAN2981: Pallor in a toddler on a milk-dominated diet
@@ -208,10 +208,10 @@ Which is the most likely diagnosis?
 - A. Autism spectrum disorder
 - B. Developmental language disorder
 - C. Oppositional defiant disorder
-- D. **Selective mutism, an anxiety disorder**
+- D. **Selective mutism**
 - E. Attention deficit hyperactivity disorder
 
-**Key:** D. Selective mutism, an anxiety disorder
+**Key:** D. Selective mutism
 
 **Why correct:** Selective mutism is an anxiety disorder in which a child is unable to speak in particular social situations, such as with classmates at school or relatives they rarely see, while speaking normally elsewhere. It most often starts in early childhood and is often first noticed when the child begins to interact with people outside the family, and the child is not choosing to be defiant. Early recognition allows a supportive, anxiety-focused approach. Source: NHS.uk, Selective mutism, page last reviewed February 2023.
 
@@ -355,11 +355,11 @@ What is the most likely diagnosis?
 
 **Key:** B. Bronchopulmonary dysplasia (BPD)
 
-**Why correct:** A very preterm baby who needed prolonged ventilation and oxygen and still has an oxygen requirement and abnormal lung fields around the expected date of birth has bronchopulmonary dysplasia, the chronic lung disease of prematurity. Immature lungs injured by ventilation, oxygen and inflammation heal abnormally, leaving a continuing oxygen need. Source: NICE NG124, Specialist neonatal respiratory care for babies born preterm, 2019.
+**Why correct:** A very preterm baby who needed prolonged ventilation and oxygen and still has an oxygen requirement and abnormal lung fields around the expected date of birth has bronchopulmonary dysplasia, the chronic lung disease of prematurity. Immature lungs injured by ventilation, oxygen and inflammation heal abnormally, leaving a continuing oxygen need. Source: NICE NG124, Specialist neonatal respiratory care for babies born preterm, 2019 (updated 2022).
 
 **Why others are wrong:** A. Respiratory distress syndrome is the acute surfactant-deficiency illness of the first days of life, not an oxygen need persisting for weeks. C. Transient tachypnoea of the newborn settles within a day or two and does not follow weeks of ventilation. D. Congenital lobar emphysema is a developmental overinflation of one lobe, unrelated to ventilator injury in prematurity. E. Meconium aspiration affects term or post-term babies who pass meconium before birth, and it is not the consequence of extreme prematurity.
 
-**Citation:** NICE NG124, Specialist neonatal respiratory care for babies born preterm, 2019.
+**Citation:** NICE NG124, Specialist neonatal respiratory care for babies born preterm, 2019 (updated 2022).
 
 
 ## 13. PAN4233: Fever, cough and fast breathing in a child
@@ -603,15 +603,15 @@ Which primary immunodeficiency is most likely?
 
 - A. DiGeorge syndrome
 - B. Severe combined immunodeficiency
-- C. X-linked agammaglobulinaemia
-- D. **Wiskott-Aldrich syndrome**
+- C. **Wiskott-Aldrich syndrome**
+- D. X-linked agammaglobulinaemia
 - E. Hyper-IgE syndrome
 
-**Key:** D. Wiskott-Aldrich syndrome
+**Key:** C. Wiskott-Aldrich syndrome
 
 **Why correct:** Wiskott-Aldrich syndrome is an X-linked disorder in which eczema, small platelets with thrombocytopenia (causing bruising and bleeding) and recurrent infections occur together. The family history through a maternal uncle fits X-linked inheritance. Source: Immunodeficiency UK, Wiskott-Aldrich syndrome patient information (page accessed October 2026).
 
-**Why others are wrong:** A. DiGeorge syndrome features cardiac defects, hypocalcaemia and T-cell deficiency rather than eczema with thrombocytopenia. B. Severe combined immunodeficiency presents in early infancy with severe infections and failure to thrive, without this eczema and platelet picture. C. X-linked agammaglobulinaemia causes recurrent bacterial infections from low antibodies but not eczema or low platelets. E. Hyper-IgE syndrome causes eczema and staphylococcal abscesses but platelet numbers are normal.
+**Why others are wrong:** A. DiGeorge syndrome features cardiac defects, hypocalcaemia and T-cell deficiency rather than eczema with thrombocytopenia. B. Severe combined immunodeficiency presents in early infancy with severe infections and failure to thrive, without this eczema and platelet picture. D. X-linked agammaglobulinaemia causes recurrent bacterial infections from low antibodies but not eczema or low platelets. E. Hyper-IgE syndrome causes eczema and staphylococcal abscesses but platelet numbers are normal.
 
 **Citation:** Immunodeficiency UK, Wiskott-Aldrich syndrome patient information (page accessed October 2026).
 
@@ -693,13 +693,13 @@ Which is the most appropriate next step?
 - B. **Referral to a specialist metabolic team for targeted testing**
 - C. Serum immunoglobulins with vaccine antibody levels
 - D. Review by community paediatrics with a developmental programme alone
-- E. Chromosomal microarray testing as the only investigation
+- E. Chromosomal microarray testing
 
 **Key:** B. Referral to a specialist metabolic team for targeted testing
 
 **Why correct:** Coarse facial features, a large tongue, an umbilical hernia, an enlarged liver, recurrent respiratory infections and slow development together suggest an inherited lysosomal storage disorder such as a mucopolysaccharidosis, in which a missing enzyme lets substances build up in the tissues. The right step is specialist metabolic assessment with targeted biochemical and genetic testing, because treatment options depend on early diagnosis. Source: MPS Society (UK), MPS I Hurler, Hurler-Scheie and Scheie, page accessed October 2026.
 
-**Why others are wrong:** A. Investigating only the chest would not explain the multisystem features and delays diagnosis. C. Immunodeficiency does not cause coarse facies, organomegaly or developmental regression. D. Developmental support alone would miss a progressive treatable metabolic disease. E. Microarray alone does not detect storage disorders, which need enzyme and metabolite testing.
+**Why others are wrong:** A. Investigating only the chest would not explain the multisystem features and delays diagnosis. C. Immunodeficiency does not cause coarse facies, organomegaly or slow development. D. Developmental support alone would miss a progressive treatable metabolic disease. E. Microarray does not detect storage disorders, which need enzyme and metabolite testing.
 
 **Citation:** MPS Society (UK), MPS I Hurler, Hurler-Scheie and Scheie, page accessed October 2026.
 
@@ -749,15 +749,15 @@ Which of the following would most strongly suggest bowel obstruction rather than
 
 - A. Frequent watery stools with a low-grade fever
 - B. Nausea with mild generalised tenderness only
-- C. Gradual loss of appetite over several days
-- D. **Pain that comes in waves with green vomiting**
+- C. **Pain that comes in waves with green vomiting**
+- D. Gradual loss of appetite over several days
 - E. A single non-bilious vomit after eating a meal
 
-**Key:** D. Pain that comes in waves with green vomiting
+**Key:** C. Pain that comes in waves with green vomiting
 
 **Why correct:** Pain that comes in waves (colicky) with bile-stained green vomiting, especially after previous abdominal surgery that can cause adhesions, suggests mechanical obstruction. Peristalsis contracts repeatedly against the blockage, whereas gastroenteritis typically features diarrhoea and fever. Source: NHS, Diarrhoea and vomiting (page last reviewed 21 December 2023), green vomit in children as a reason for urgent assessment; NICE CG84, Diarrhoea and vomiting caused by gastroenteritis in under 5s, 2009 (bilious vomit, severe or localised abdominal pain and distension suggest an alternative serious diagnosis).
 
-**Why others are wrong:** A. Watery diarrhoea with low-grade fever is the usual picture of gastroenteritis. B. Nausea with mild tenderness is non-specific and often seen in self-limiting illness. C. Gradual appetite loss over days is non-specific and does not indicate obstruction. E. One non-bilious vomit is common in many minor illnesses.
+**Why others are wrong:** A. Watery diarrhoea with low-grade fever is the usual picture of gastroenteritis. B. Nausea with mild tenderness is non-specific and often seen in self-limiting illness. D. Gradual appetite loss over days is non-specific and does not indicate obstruction. E. One non-bilious vomit is common in many minor illnesses.
 
 **Citation:** NHS, Diarrhoea and vomiting (page last reviewed 21 December 2023), green vomit in children as a reason for urgent assessment; NICE CG84, Diarrhoea and vomiting caused by gastroenteritis in under 5s, 2009 (bilious vomit, severe or localised abdominal pain and distension suggest an alternative serious diagnosis).
 
@@ -807,15 +807,15 @@ What is the most appropriate initial approach?
 
 - A. Referral for urgent upper gastrointestinal endoscopy and biopsies
 - B. Contrast-enhanced CT of the abdomen and pelvis
-- C. Empirical Helicobacter pylori eradication therapy without testing
-- D. **Reassurance and explanation of likely functional pain**
+- C. **Reassurance and explanation of likely functional pain**
+- D. Empirical Helicobacter pylori eradication therapy without testing
 - E. Referral on the suspected cancer pathway to paediatric oncology
 
-**Key:** D. Reassurance and explanation of likely functional pain
+**Key:** C. Reassurance and explanation of likely functional pain
 
 **Why correct:** Recurrent abdominal pain with a clear link to school days, normal growth and no red flags is most often functional. After a careful history and examination, reassurance and explanation with a plan to review if new red flags appear is appropriate, and invasive investigation is not needed. Source: Kingston and Richmond NHS Foundation Trust, Chronic abdominal pain in children (paediatric referral guidance, page accessed October 2026).
 
-**Why others are wrong:** A. Endoscopy is invasive and not indicated without alarm features. B. CT exposes the child to radiation and is not indicated without red flags. C. Eradication therapy without a positive test is inappropriate. E. Nothing in the history suggests malignancy, so a suspected cancer pathway referral is not justified.
+**Why others are wrong:** A. Endoscopy is invasive and not indicated without alarm features. B. CT exposes the child to radiation and is not indicated without red flags. D. Eradication therapy without a positive test is inappropriate. E. Nothing in the history suggests malignancy, so a suspected cancer pathway referral is not justified.
 
 **Citation:** Kingston and Richmond NHS Foundation Trust, Chronic abdominal pain in children (paediatric referral guidance, page accessed October 2026).
 
@@ -899,7 +899,7 @@ What is the most appropriate next step?
 
 **Key:** E. Admit to hospital for immediate assessment by a paediatrician
 
-**Why correct:** A febrile seizure that is prolonged, such as one still continuing after twenty minutes and needing rescue medication to stop, is a complex febrile seizure, and this is also his first seizure. These children need immediate hospital assessment by a paediatrician to exclude CNS infection and other causes and to monitor recovery. Antipyretics and antiepileptic prophylaxis are not routinely used. Source: NICE CKS, Febrile seizure, last revised January 2024.
+**Why correct:** A febrile seizure that is prolonged, such as one still continuing after twenty minutes and needing rescue medication to stop, is a complex febrile seizure, and this is also his first seizure. These children need immediate hospital assessment by a paediatrician to exclude CNS infection and other causes and to monitor recovery. Antipyretics may be given for comfort but do not prevent further febrile seizures, and antiepileptic prophylaxis is not routinely used. Source: NICE CKS, Febrile seizure, last revised January 2024.
 
 **Why others are wrong:** A. Discharge with reassurance is reserved for simple, brief seizures in children already assessed by a paediatrician. B. An outpatient EEG delays assessment and is not needed to manage a febrile seizure. C. Antiepileptic prophylaxis is not routinely given for febrile seizures. D. Observation at home would miss the need to exclude meningitis and other causes in a child who has had a long seizure and is still drowsy.
 
@@ -936,35 +936,7 @@ What is the most appropriate next step?
 **Flag: weak source.** Key (urgent neonatal team plus respiratory support for persistent central cyanosis with respiratory distress at 30 minutes) is clinically uncontroversial and no distractor is defensible. Original source line cited only the NHS congenital heart disease page (opened: last reviewed 11 December 2025; says call 999 for blue lips/tongue, difficulty breathing, limp/floppy) which does not address newborns
 
 
-## 33. PAN9549: Bronchiolitis: indications for referral to hospital
-
-**Label:** 2026 UKMLA Adaptation II — adapted (Oct 2026)  
-**Source ID:** N9549 (parked UN/UQ copy of the AKT question)  
-**Difficulty:** Moderate  
-**Domain:** Paediatrics
-
-**Stem:** A health visitor telephones the GP about a 3-month-old boy who has had a runny nose and cough for four days, and now has noisy breathing with a mild wheeze. His mother says he is taking only about half of his usual milk volumes and has had noticeably fewer wet nappies today. He is alert, has no grunting, and his oxygen saturation in air is normal. A clinical diagnosis of bronchiolitis is made.
-
-Which is the most appropriate management?
-
-**Options:**
-
-- A. Prescribe a course of oral amoxicillin and review in 48 hours
-- B. Start regular salbutamol via a spacer and review at the next routine contact
-- C. Reassure the mother, advise nasal saline drops and let her review if he worsens
-- D. Prescribe a short course of oral prednisolone to reduce airway inflammation
-- E. **Refer him for same-day assessment in the paediatric assessment unit**
-
-**Key:** E. Refer him for same-day assessment in the paediatric assessment unit
-
-**Why correct:** Bronchiolitis is a viral illness managed supportively, but a baby who is not maintaining adequate oral fluid intake or who is clinically dehydrating needs hospital assessment because fluids may need to be given by a nasogastric tube or intravenously. Normal saturations and good alertness do not remove that need. NICE advises considering hospital referral when fluid intake is inadequate, in addition to high respiratory rate, clinical dehydration or persistently low saturations. Source: NICE NG9, Bronchiolitis in children: diagnosis and management, 2015 (updated 2021).
-
-**Why others are wrong:** A. Bronchiolitis is viral, and NICE advises against antibiotics unless there is a proven or strongly suspected bacterial co-infection. B. Bronchodilators such as salbutamol are not recommended in bronchiolitis because they do not improve outcomes. C. Home care with nasal saline and a safety net suits a baby who is feeding well, but this baby already has reduced intake and fewer wet nappies. D. Oral corticosteroids are not recommended for bronchiolitis in the absence of other indications.
-
-**Citation:** NICE NG9, Bronchiolitis in children: diagnosis and management, 2015 (updated 2021).
-
-
-## 34. PAN9986: Bloody diarrhoea with pallor and oliguria: possible haemolytic uraemic syndrome
+## 33. PAN9986: Bloody diarrhoea with pallor and oliguria: possible haemolytic uraemic syndrome
 
 **Label:** 2026 UKMLA Adaptation II — adapted (Oct 2026)  
 **Source ID:** N9986 (parked UN/UQ copy of the AKT question)  
@@ -979,20 +951,20 @@ What is the most appropriate management?
 
 - A. Oral rehydration at home and a stool sample sent through the surgery, with review when results return
 - B. Loperamide to reduce stool frequency and review in 48 hours
-- C. Empirical oral antibiotic for presumed bacterial gastroenteritis
-- D. **Same-day hospital referral for blood tests including renal function**
+- C. **Same-day hospital referral for blood tests including renal function**
+- D. Empirical oral antibiotic for presumed bacterial gastroenteritis
 - E. Reassure that this is a viral illness and review only if it persists beyond a week
 
-**Key:** D. Same-day hospital referral for blood tests including renal function
+**Key:** C. Same-day hospital referral for blood tests including renal function
 
 **Why correct:** Bloody diarrhoea with severe pain followed by pallor and reduced urine output in a young child should raise concern for Shiga toxin-producing E. coli infection and haemolytic uraemic syndrome, which can cause haemolysis and acute kidney injury. NICE advises that children with blood in the stool or signs of an alternative serious diagnosis are assessed face to face, and that specialist advice is sought on monitoring for haemolytic uraemic syndrome in STEC infection, so this child needs same-day hospital assessment with blood count and renal function. Antibiotics are not routinely given in gastroenteritis and antidiarrhoeal drugs are not used. Source: NICE CG84, Diarrhoea and vomiting caused by gastroenteritis in under 5s: diagnosis and management, 2009 (updated 2022).
 
-**Why others are wrong:** A. Home care with a delayed stool result misses the pallor and oliguria that indicate possible systemic complications. B. NICE advises against antidiarrhoeal medication in children with gastroenteritis, and it is particularly unwise when blood in the stool points to an invasive or toxin-mediated infection. C. Antibiotics are not routinely given for gastroenteritis, and empirical treatment is wrong when STEC infection is suspected. E. Pallor and reduced urine output are not features of a self-limiting viral illness.
+**Why others are wrong:** A. Home care with a delayed stool result misses the pallor and oliguria that indicate possible systemic complications. B. NICE advises against antidiarrhoeal medication in children with gastroenteritis, and it is particularly unwise when blood in the stool points to an invasive or toxin-mediated infection. D. Antibiotics are not routinely given for gastroenteritis, and empirical treatment is wrong when STEC infection is suspected. E. Pallor and reduced urine output are not features of a self-limiting viral illness.
 
 **Citation:** NICE CG84, Diarrhoea and vomiting caused by gastroenteritis in under 5s: diagnosis and management, 2009 (updated 2022).
 
 
-## 35. PAN9991: Pubertal gynaecomastia
+## 34. PAN9991: Pubertal gynaecomastia
 
 **Label:** 2026 UKMLA Adaptation II — adapted (Oct 2026)  
 **Source ID:** N9991 (parked UN/UQ copy of the AKT question)  
@@ -1005,22 +977,22 @@ What is the most likely explanation?
 
 **Options:**
 
-- A. Klinefelter syndrome with small, firm testes
-- B. **Physiological gynaecomastia of puberty**
+- A. **Physiological gynaecomastia of puberty**
+- B. Klinefelter syndrome with small, firm testes
 - C. Prolactin-secreting pituitary adenoma
 - D. Hormone-secreting testicular tumour
 - E. Anabolic steroid use
 
-**Key:** B. Physiological gynaecomastia of puberty
+**Key:** A. Physiological gynaecomastia of puberty
 
 **Why correct:** Transient, symmetrical, tender subareolar breast enlargement is common in healthy adolescent boys at mid-puberty, and the examination here shows no features of an underlying cause. It usually settles on its own over time, so reassurance and review are appropriate. Pathological causes are suggested by abnormal pubertal development, abnormal testes, nipple discharge, medicines or drug use, or a rapid, unilateral or hard lump. Source: NHS, Gynaecomastia, page last reviewed 31 May 2024.
 
-**Why others are wrong:** A. Klinefelter syndrome is suggested by small firm testes, tall stature and delayed or incomplete virilisation, which are absent here. C. A prolactinoma typically causes galactorrhoea and symptoms such as headache or visual problems. D. A testicular tumour would produce a palpable testicular mass, not normal testes. E. Anabolic steroid use is excluded by the history, and it is usually associated with other features of androgen excess.
+**Why others are wrong:** B. Klinefelter syndrome is suggested by small firm testes, tall stature and delayed or incomplete virilisation, which are absent here. C. A prolactinoma typically causes galactorrhoea and symptoms such as headache or visual problems. D. A testicular tumour would produce a palpable testicular mass, not normal testes. E. Anabolic steroid use is excluded by the history, and it is usually associated with other features of androgen excess.
 
 **Citation:** NHS, Gynaecomastia, page last reviewed 31 May 2024.
 
 
-## 36. PAN10054: Patent ductus arteriosus: continuous murmur in a preterm baby
+## 35. PAN10054: Patent ductus arteriosus: continuous murmur in a preterm baby
 
 **Label:** 2026 UKMLA Adaptation II — adapted (Oct 2026)  
 **Source ID:** N10054 (parked UN/UQ copy of the AKT question)  
@@ -1033,17 +1005,17 @@ Which congenital heart lesion is most likely?
 
 **Options:**
 
-- A. Ventricular septal defect
-- B. Coarctation of the aorta
-- C. Atrial septal defect
-- D. Pulmonary valve stenosis
-- E. **Patent ductus arteriosus**
+- A. **Patent ductus arteriosus**
+- B. Ventricular septal defect
+- C. Coarctation of the aorta
+- D. Atrial septal defect
+- E. Pulmonary valve stenosis
 
-**Key:** E. Patent ductus arteriosus
+**Key:** A. Patent ductus arteriosus
 
 **Why correct:** A ductus arteriosus that stays open or reopens, especially in premature babies, lets blood flow from the high-pressure aorta to the pulmonary artery throughout the cardiac cycle. This produces a continuous murmur with bounding pulses, and the extra pulmonary blood flow can make weaning from respiratory support difficult. Confirmation is by echocardiography. Source: Great Ormond Street Hospital, Patent ductus arteriosus (PDA) patient information; Patient.info Professional, Patent ductus arteriosus (accessed October 2026).
 
-**Why others are wrong:** A. A ventricular septal defect usually gives a pansystolic murmur at the lower left sternal edge. B. Coarctation causes weak or delayed femoral pulses, with a blood pressure difference between the arms and legs. C. An atrial septal defect typically gives a soft ejection systolic murmur with fixed splitting of the second heart sound. D. Pulmonary valve stenosis causes an ejection systolic murmur at the upper left sternal edge, not a continuous murmur.
+**Why others are wrong:** B. A ventricular septal defect usually gives a pansystolic murmur at the lower left sternal edge. C. Coarctation causes weak or delayed femoral pulses, with a blood pressure difference between the arms and legs. D. An atrial septal defect typically gives a soft ejection systolic murmur with fixed splitting of the second heart sound. E. Pulmonary valve stenosis causes an ejection systolic murmur at the upper left sternal edge, not a continuous murmur.
 
 **Citation:** Great Ormond Street Hospital, Patent ductus arteriosus (PDA) patient information; Patient.info Professional, Patent ductus arteriosus (accessed October 2026).
 
@@ -1171,13 +1143,14 @@ Which congenital heart lesion is most likely?
 - PAN7923: within-batch repeat of PAN4248 (gastroenteritis with red-flag dehydration needs urgent hospital assessment/rehydration)
 - PAN9982: within-batch overlap: gastroenteritis with shock needing emergency IV fluids repeats PAN4248 (gastroenteritis red flags) and the emergency-transfer decision of PAN9979
 
-### A4. Checker drops: duplicate of a live question (5)
+### A4. Checker drops: duplicate of a live question (6)
 
 - PAN8886 (C3): DUPLICATE of live DER047 (acute urticaria, no breathing difficulty/lip or tongue swelling/systemic compromise; key non-sedating oral antihistamine; adrenaline distractor) and DER038 (food-triggered acute urticaria, key non-sedating antihistamine). Same scenario and same learning point; only the age 
 - PAN9255 (C3): DUPLICATE of live PAN4402 (GP home visit, febrile 3-year-old, cold hands and feet, lethargic, non-blanching spots; key parenteral benzylpenicillin without delaying transfer plus 999 admission). Same scenario and learning point (community parenteral antibiotic plus emergency transfer for suspected me
 - PAN9529 (C3): DUPLICATE in substance of live PAQ16343 (health visitor, term-born infant with motor milestone delay, key refer for paediatric developmental assessment, NG62). Same setting, same action and same learning point (refer delayed motor milestones, do not reassure); only age and the specific milestones di
 - PAN9979 (C3): DUPLICATE of live PAN264 (mother phones GP surgery about a febrile child under 5 who is floppy and unresponsive; key call 999 for emergency transfer; NG143 immediately life-threatening features). Same scenario (telephone triage) and same learning point. NG143 content is correct (published 7 Nov 2019
 - PAN10415 (C3): DUPLICATE of live PAQ978 (2-day-old term baby on postnatal ward with sepsis signs and a risk factor; key take blood cultures and start IV antibiotics immediately; CRP-only distractor; same NG195 "2021 (updated 2026)" source). Same scenario and learning point. NG195 content verified (1.15.2, 1.15.3 [
+- PAN9549 (review): Duplicate of live PAQ1152 (bronchiolitis with inadequate feeding needing fluid support), the same reason PAN5721 was dropped. Dropped after review, 17 October 2026.
 
 ## Appendix B: held, not in the pack (25)
 
