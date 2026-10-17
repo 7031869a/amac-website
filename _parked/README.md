@@ -55,3 +55,8 @@ PLAB 1 bank 3,314 → 3,597; held 2,431 → 2,342; parked 3,443 → 2,807. Recor
 - `plab1-adapted-awaiting-review.json`: 2,204 → 1,402. 802 questions went live (PLAB 1 bank 3,717 → 4,519), six with reviewer edits: PAN7551, PAQ588 (relabelled Surgery / Vascular), PAQ15409, PAQ1004, PAQ14737, PAQ16207. PAAKT058 and PAN214 approved unchanged.
 - No live near-verbatim AKT copy existed for any of the 802 (none carries their `source_akt_id`), so all 802 were added, none replaced one.
 - Rejected as duplicates and kept here with `review_status: "rejected"`: PAQ15559 (of PAQ15361), PAQ15603 (of PAQ15208), PAQ15605 (of PAQ15209). Do not return them live. PAN15778 stays rejected.
+
+**17 Oct 2026 (later) — batch 2, 1,299 go-live.** Record: `_tools/mla-map/signoff/2026-10-17-plab1-batch2.md`.
+- `plab1-adapted-awaiting-review.json`: 1,402 → 103. 1,299 questions went live (PLAB 1 bank 4,519 → 5,818), 18 with edits (PAN1274, PAN1007, PAN473, PAN240, PAN5120, PAN3396, PAN7260, PAN8427, PAQ15494 text; PAQ558, PAQ559, PAQ581, PAQ582, PAAKT170, PAAKT196, PAQ547, PAQ868, PAQ15836 relabelled to existing domains).
+- 96 near-duplicates marked `review_status: "rejected"` and kept here (ids and the item each duplicates are in the sign-off JSON). Do not return them live.
+- No live near-verbatim AKT copy existed for any of the 1,299, so none replaced a live question.
