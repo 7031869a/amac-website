@@ -50,7 +50,3 @@ PLAB 1 bank 3,314 → 3,597; held 2,431 → 2,342; parked 3,443 → 2,807. Recor
 - `plab1-adaptation-ii-unadapted.json`: 2,807 → 2,707. All 100 Paediatrics batch-2 sources resolved: 61 live, 3 held back (below), 36 retired. Do not re-adapt these sources.
 - `plab1-next-review-pack.json`: +3 approved batch-2 questions held back because each repeats a Held 01 question that went live (PAN2526/PAQ300, PAN1799/PAQ15511,
   PAN1974/PAQ15553). Ahmed or the reviewer to choose which of each pair stays live.
-
-**17 Oct 2026: PLAB 1 packs 01, 02, 03, 04, 08, 09 go live (Ahmed's instruction).** Record: `_tools/mla-map/signoff/2026-10-17-plab1-packs-01-02-03-04-08-09.md`.
-- `plab1-adapted-awaiting-review.json`: 2,204 to 1,006. 1,193 questions went live (PLAB 1 bank 3,717 to 4,910); 5 duplicates retired (PAQ841, PAQ854, PAQ15206, PAQ15424, PAQ15456); PAN8630 and PAAKT051 stay here marked `needs rewrite`. Packs 05, 06, 07, 10 and 11 (1,000 items) are still held.
-- Packs 04 and 09 carry an AI review ("needs human sign-off") and packs 01, 02, 03, 08 have no verdicts in the files; the go-live follows Ahmed's item-level decisions. Section labels are unchanged.
