@@ -50,3 +50,8 @@ PLAB 1 bank 3,314 → 3,597; held 2,431 → 2,342; parked 3,443 → 2,807. Recor
 - `plab1-adaptation-ii-unadapted.json`: 2,807 → 2,707. All 100 Paediatrics batch-2 sources resolved: 61 live, 3 held back (below), 36 retired. Do not re-adapt these sources.
 - `plab1-next-review-pack.json`: +3 approved batch-2 questions held back because each repeats a Held 01 question that went live (PAN2526/PAQ300, PAN1799/PAQ15511,
   PAN1974/PAQ15553). Ahmed or the reviewer to choose which of each pair stays live.
+
+**17 Oct 2026 — clinician sign-off, packs 05, 06, 07, 10, 11 (802 go-live).** Record: `_tools/mla-map/signoff/2026-10-17-plab1-packs-05-06-07-10-11.md`.
+- `plab1-adapted-awaiting-review.json`: 2,204 → 1,402. 802 questions went live (PLAB 1 bank 3,717 → 4,519), six with reviewer edits: PAN7551, PAQ588 (relabelled Surgery / Vascular), PAQ15409, PAQ1004, PAQ14737, PAQ16207. PAAKT058 and PAN214 approved unchanged.
+- No live near-verbatim AKT copy existed for any of the 802 (none carries their `source_akt_id`), so all 802 were added, none replaced one.
+- Rejected as duplicates and kept here with `review_status: "rejected"`: PAQ15559 (of PAQ15361), PAQ15603 (of PAQ15208), PAQ15605 (of PAQ15209). Do not return them live. PAN15778 stays rejected.
