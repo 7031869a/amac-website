@@ -1,0 +1,580 @@
+{
+  "id": "MB-248",
+  "exam": "MRCS-B",
+  "title": "Ankle fracture: reading the X-ray, Weber classification and when to fix",
+  "type": "data-interpretation",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "Trauma and orthopaedics (radiograph interpretation)",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "BOAST The Management of Ankle Fractures (August 2016)",
+      "NICE NG38 Fractures (non-complex) (February 2016)",
+      "Stiell et al., JAMA (1993)"
+    ],
+    "related": [
+      {
+        "id": "MB-249",
+        "why": "Same BOAST and NICE NG38 framework applied to the wrist"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Emergency department",
+    "role": "Core surgical trainee in trauma and orthopaedics",
+    "scenario": "Miss Holly Kinross, 28, twisted her right ankle stepping off a kerb two hours ago. She could not put weight on it. The ankle is swollen on both sides. Written findings: AP mortise and lateral radiographs of the right ankle; the growth plates are fused. On the AP mortise view there is an oblique fracture of the distal fibula that begins at the level of the tibial plafond and runs upwards. The medial malleolus is intact. The gap between the medial malleolus and the medial side of the talus measures 7 mm; the gap between the talar dome and the tibial plafond measures 3 mm. On the lateral view the fibular fracture runs obliquely from anteroinferior to posterosuperior, and the posterior margin of the distal tibia is intact.",
+    "task": "Interpret the written radiograph findings and discuss her management with the examiner."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Read the findings, classify the fibula, then decide stability from the medial side.",
+    "trap": "Calling a Weber B fracture stable without looking at the medial clear space.",
+    "firstMove": "\"These are AP mortise and lateral views of a right ankle in a skeletally mature patient.\""
+  },
+  "flow": [
+    "Why an X-ray",
+    "Systematic read",
+    "Classify",
+    "Stable or unstable",
+    "Immediate care",
+    "Definitive plan",
+    "Aftercare"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-knowledge",
+      "label": "Indication for radiographs",
+      "fail": "X-rays every ankle injury, or cannot state the Ottawa ankle rules.",
+      "pass": "X-ray if malleolar pain plus bone tenderness at the posterior edge or tip of either malleolus, or unable to bear weight immediately and in ED.",
+      "high": "Adds the distal 6 cm of each malleolus and four steps for weight-bearing, and the foot rules: base of fifth metatarsal and navicular.",
+      "source": "STIELL"
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-skill",
+      "label": "Systematic read",
+      "fail": "Says 'broken ankle' without naming the views or describing the fracture.",
+      "pass": "Confirms details, side and views (AP mortise and true lateral). Oblique distal fibular fracture starting at the level of the joint line.",
+      "high": "Compares the medial clear space with the superior clear space, notes talar shift, and checks the lateral view for a posterior malleolar fragment.",
+      "source": "BOAST"
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "Weber classification",
+      "fail": "Classifies by the medial malleolus, or mixes up the levels.",
+      "pass": "Level of the fibular fracture against the syndesmosis: A below, B at, C above. This is Weber B.",
+      "high": "Weber C implies syndesmotic disruption; palpates the proximal fibula and asks for full-length films if a Maisonneuve injury is possible.",
+      "source": "BOAST"
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-knowledge",
+      "label": "Stability",
+      "fail": "Calls every Weber B fracture stable and plans discharge.",
+      "pass": "Stability depends on the medial side: a widened medial clear space with talar shift means deltoid rupture and an unstable mortise.",
+      "high": "If stability is uncertain, review within 2 weeks with weight-bearing radiographs to confirm the position.",
+      "source": "BOAST"
+    },
+    {
+      "id": "G5",
+      "domain": "professionalism",
+      "label": "Immediate care",
+      "fail": "No neurovascular or skin check; leaves a deformed ankle unreduced.",
+      "pass": "Documents circulation, sensation and skin. Urgent reduction and backslab if deformed; repeats neurovascular check and X-rays afterwards.",
+      "high": "Reduces before X-ray if waiting would threaten the skin; elevation, analgesia and a thromboprophylaxis risk assessment.",
+      "source": "BOAST"
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-knowledge",
+      "label": "Definitive plan",
+      "fail": "Six weeks in a non-weight-bearing cast for an unstable fracture in a 28-year-old.",
+      "pass": "Unstable mortise under 60: fixation on the day of injury or the next day. Stable fractures: splint and weight-bear as tolerated.",
+      "high": "Surgery restores the mortise; the syndesmosis is then tested and stabilised if unstable. Over 60, a close contact cast is an option.",
+      "source": "BOAST"
+    },
+    {
+      "id": "G7",
+      "domain": "communication",
+      "label": "Aftercare and complications",
+      "fail": "Gives no complications or follow-up plan.",
+      "pass": "Warns of wound infection, malunion, post-traumatic arthritis, stiffness and VTE; fracture clinic within 6 weeks of surgery.",
+      "high": "Most can weight-bear as tolerated after fixation; advises on work and driving and how to self-refer if recovery stalls.",
+      "source": "BOAST"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "Why did she need an X-ray?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "We X-ray all ankle injuries to be safe.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Interpret the radiograph findings."
+      },
+      {
+        "speaker": "candidate",
+        "text": "She has a broken ankle.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Classify it."
+      },
+      {
+        "speaker": "candidate",
+        "text": "The medial malleolus is intact, so it's a Weber A.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Is it stable?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Yes, it's only the fibula. I'd send her home.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Anything to check before she leaves?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "No, the X-ray has answered the question.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you treat it?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Below-knee cast, non-weight-bearing for six weeks.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Any complications to mention?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Not really, it's a simple fracture.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "examiner",
+        "text": "Why did she need an X-ray?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "She meets the Ottawa ankle rules: she couldn't bear weight at the time or in the department, and I'd check for tenderness at the posterior edge or tip of the malleoli.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Interpret the radiograph findings."
+      },
+      {
+        "speaker": "candidate",
+        "text": "AP mortise and lateral views of a right ankle, name and date checked. There's an oblique fracture of the distal fibula starting at the joint line.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Classify it."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Weber classifies by the level of the fibular fracture against the syndesmosis: A below, B at, C above. This is Weber B.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Is it stable?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "The medial clear space is widened and the talus has shifted, so the deltoid is torn and the mortise is unstable.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What do you do now?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Check circulation, sensation and skin and document them. If it's deformed, reduce it urgently and apply a backslab, then repeat the neurovascular check and X-rays.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Definitive treatment?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "She's under 60 with an unstable mortise, so fixation on the day of injury or the next day.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What would you tell her?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Risks include infection, malunion, arthritis, stiffness and clots. She'll be seen in fracture clinic within 6 weeks of surgery.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "candidate",
+        "text": "Ottawa rules apply to the distal 6 cm of each malleolus and to four steps of weight-bearing. I'd also check the base of the fifth metatarsal and the navicular for the foot series.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What else do the findings tell you?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I compare the medial clear space with the superior clear space: here it's wider, so the talus has shifted laterally. On the lateral view I check for a posterior malleolar fragment, and there isn't one.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What if this had been a Weber C?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Then the syndesmosis is torn. I'd feel the proximal fibula and get full-length films to exclude a Maisonneuve injury.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Suppose the medial clear space were normal but she was tender medially."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Stability is uncertain, so I'd splint her, let her bear weight as tolerated, and review her within 2 weeks with weight-bearing films.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The skin over the medial side is tented and blanching."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd reduce it now, before the X-ray if waiting would harm the skin. Then elevation, analgesia and a VTE risk assessment.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What does surgery aim to achieve?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Anatomical reduction of the mortise. The syndesmosis is then stressed on table and fixed if unstable. If she were over 60, a close contact cast would be an option if reduction held.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Most patients can weight-bear as tolerated after fixation. I'd advise on work and driving and give her a route to self-refer if she's not progressing.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G4",
+      "move": "Calling an isolated fibular fracture stable without checking the medial clear space.",
+      "consequence": "An unstable mortise is sent home and heals with talar shift, leading to early arthritis."
+    },
+    {
+      "row": "G5",
+      "move": "Leaving a deformed ankle unreduced while waiting for radiographs.",
+      "consequence": "Tented skin necroses and the neurovascular bundle stays compromised."
+    },
+    {
+      "row": "G6",
+      "move": "Casting an unstable fracture in a young patient.",
+      "consequence": "Loss of reduction and malunion; delayed fixation is harder once the soft tissues swell."
+    },
+    {
+      "row": "G3",
+      "move": "Missing a proximal fibular fracture with a medial injury.",
+      "consequence": "A Maisonneuve syndesmotic injury goes untreated."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You cannot remember the Weber levels",
+      "line": "I classify by where the fibula breaks relative to the syndesmosis, then decide stability from the medial side."
+    },
+    {
+      "when": "Asked whether a Weber B needs surgery",
+      "line": "It depends on the mortise: if the talus has shifted, it's unstable and I'd fix it early."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Ottawa ankle rules: X-ray if malleolar pain with bone tenderness at the posterior edge or tip of either malleolus (distal 6 cm), or inability to bear weight for four steps immediately and in ED.",
+      "source": "STIELL"
+    },
+    {
+      "fact": "Views: AP mortise and true lateral centred on the ankle; full-length films if Maisonneuve suspected.",
+      "source": "BOAST"
+    },
+    {
+      "fact": "Weber A, B, C: fibular fracture below, at or above the syndesmosis.",
+      "source": "BL"
+    },
+    {
+      "fact": "Under 60 with an unstable mortise: fix on the day of injury or the next day. Over 60: close contact cast is an option.",
+      "source": "BOAST"
+    },
+    {
+      "fact": "Non-operative unimalleolar fractures: unrestricted weight-bearing as tolerated; review within 2 weeks if stability uncertain.",
+      "source": "NG38"
+    }
+  ],
+  "recall": {
+    "think": "Unstable mortise, threatened skin, neurovascular compromise.",
+    "say": "\"Weber B with medial clear space widening: unstable.\"",
+    "do": [
+      "Check and document skin and neurovascular status",
+      "Reduce and backslab if deformed; repeat X-rays",
+      "Fix early if under 60"
+    ],
+    "numbers": [
+      {
+        "value": "Distal 6 cm, four steps",
+        "meaning": "Ottawa ankle rules",
+        "source": "STIELL"
+      },
+      {
+        "value": "Day of injury or next day",
+        "meaning": "fixation of unstable mortise under 60",
+        "source": "BOAST"
+      },
+      {
+        "value": "2 weeks",
+        "meaning": "weight-bearing films if stability uncertain",
+        "source": "BOAST"
+      }
+    ],
+    "trap": "An intact medial malleolus does not mean a stable ankle.",
+    "finish": "ORIF of the fibula, test and stabilise the syndesmosis; weight-bear as tolerated."
+  },
+  "sources": [
+    {
+      "id": "BOAST",
+      "name": "British Orthopaedic Association. BOAST: The Management of Ankle Fractures",
+      "version": "August 2016",
+      "url": "https://www.boa.ac.uk/resource/boast-12-pdf.html",
+      "supports": "Documentation of skin and neurovascular status; urgent reduction; mortise and lateral views; Maisonneuve films; repeat neurovascular check and radiographs after reduction; review within 2 weeks if stability uncertain; early fixation (day of or day after injury) under 60 with unstable mortise; close contact cast over 60; syndesmosis assessment; weight-bearing; follow-up within 6 weeks; thromboprophylaxis; self-referral"
+    },
+    {
+      "id": "NG38",
+      "name": "NICE NG38. Fractures (non-complex): assessment and management",
+      "version": "February 2016",
+      "url": "https://www.nice.org.uk/guidance/ng38/chapter/Recommendations",
+      "supports": "Ottawa ankle and foot rules (1.2.2); unrestricted weight-bearing and review within 2 weeks if stability uncertain for unimalleolar fractures (1.4.1); surgery on day of injury or next day (1.4.2)"
+    },
+    {
+      "id": "STIELL",
+      "name": "Stiell IG, Greenberg GH, McKnight RD, et al. Decision rules for the use of radiography in acute ankle injuries: refinement and prospective validation. JAMA 1993;269:1127–32",
+      "version": "1993",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/8433468/",
+      "supports": "Refined Ottawa ankle and foot rules (malleolar and midfoot zones, weight-bearing criterion); 100% sensitivity for fractures in validation"
+    },
+    {
+      "id": "BL",
+      "name": "Bailey & Love's Short Practice of Surgery (O'Connell, McCaskie, Sayers, eds)",
+      "version": "28th edition, 2023",
+      "url": "https://www.routledge.com/Bailey--Loves-Short-Practice-of-Surgery---28th-Edition/OConnell-McCaskie-Sayers/p/book/9780367548117",
+      "supports": "Danis-Weber classification of ankle fractures; complications of ankle fractures"
+    },
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format: 9 minutes with 1 minute's reading; examiner-led questioning in applied knowledge stations"
+    }
+  ],
+  "partner": {
+    "opening": "Here are the findings on her ankle radiographs. Why did she need them, and what do they show?",
+    "reveals": [
+      {
+        "trigger": "Candidate asks about weight-bearing or bony tenderness",
+        "finding": "Read out: could not take four steps at the scene or in the department. Tender at the tip of the lateral malleolus and over the deltoid.",
+        "row": "G1"
+      },
+      {
+        "trigger": "Candidate asks about neurovascular status and skin",
+        "finding": "Read out: foot warm, dorsalis pedis palpable, sensation intact. Skin intact, no tenting.",
+        "row": "G5"
+      },
+      {
+        "trigger": "Candidate asks about the proximal fibula",
+        "finding": "Read out: not tender.",
+        "row": "G3"
+      }
+    ],
+    "push": [
+      {
+        "question": "Classify this fracture.",
+        "row": "G3",
+        "expect": "Weber B: at the level of the syndesmosis."
+      },
+      {
+        "question": "Is it stable?",
+        "row": "G4",
+        "expect": "No: widened medial clear space and talar shift mean deltoid rupture."
+      },
+      {
+        "question": "When would you operate?",
+        "row": "G6",
+        "expect": "Under 60 with an unstable mortise: day of injury or next day."
+      },
+      {
+        "question": "What would you tell her about recovery?",
+        "row": "G7",
+        "expect": "Infection, malunion, arthritis, stiffness, VTE; clinic within 6 weeks; weight-bear as tolerated."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "The radiographs show only a small avulsion below the joint line and the mortise is congruent.",
+        "safeAnswer": "Weber A, stable: analgesia, splint or boot, weight-bear as tolerated.",
+        "row": "G3"
+      },
+      {
+        "prompt": "She is 78 with diabetic neuropathy and the same fracture.",
+        "safeAnswer": "Close contact cast is an option over 60 if reduction holds; neuropathy is a reason for caution with early weight-bearing.",
+        "row": "G6"
+      },
+      {
+        "prompt": "The medial clear space is normal but she is tender medially.",
+        "safeAnswer": "Stability uncertain: weight-bearing radiographs and review within 2 weeks.",
+        "row": "G4"
+      }
+    ]
+  }
+}

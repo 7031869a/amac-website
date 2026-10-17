@@ -1,0 +1,598 @@
+{
+  "id": "MB-245",
+  "exam": "MRCS-B",
+  "title": "Bone metastasis in the proximal femur: impending fracture and the Mirels score",
+  "type": "data-interpretation",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "Pathology and trauma: metastatic bone disease (radiograph findings with a clinical scenario)",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "BOASt: Management of Metastatic Bone Disease (June 2022)",
+      "BOOS/BOA Metastatic Bone Disease: A Guide to Good Practice (2015 revision)",
+      "Mirels, Clin Orthop Relat Res (1989)"
+    ]
+  },
+  "brief": {
+    "setting": "Orthopaedic clinic",
+    "role": "Core surgical trainee",
+    "scenario": "Mrs Rosalind Tennant, 64, had breast cancer treated four years ago and was discharged from oncology follow-up. She has six weeks of right thigh pain, now worse at night and when she walks. She has not fallen. Written findings: an AP radiograph of the right proximal femur shows an ill-defined area of bone loss, darker than the surrounding bone, in the peritrochanteric region. It has eroded the lateral cortex from the inside, which is thinned to about half its normal thickness over the length of the lesion. The cortex is not breached and there is no fracture line. The femoral head and hip joint are normal.",
+    "task": "Interpret the written findings of her radiograph and answer questions on assessment and management."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Lytic lesion, stage before you fix, score the fracture risk, then plan surgery that outlasts her.",
+    "trap": "Nailing a lesion before staging. It may be a solitary metastasis or a primary bone tumour.",
+    "firstMove": "\"A lytic lesion in the proximal right femur with cortical destruction, no fracture.\""
+  },
+  "flow": [
+    "Interpret the radiograph findings",
+    "Likely primaries",
+    "Work-up before surgery",
+    "Mirels score",
+    "Surgical plan",
+    "Non-surgical treatment"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-skill",
+      "label": "Interprets the radiograph findings",
+      "fail": "Calls it osteoporosis, or plans treatment from a single view.",
+      "pass": "Lytic lesion in the peritrochanteric femur with cortical destruction and no fracture; wants orthogonal views of the whole femur.",
+      "high": "Estimates cortical involvement; notes about 50% destruction of one cortex, or lesser trochanter avulsion, signals high fracture risk.",
+      "source": "BOAGUIDE"
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-knowledge",
+      "label": "Pathology of bone metastases",
+      "fail": "Cannot name the primaries that spread to bone.",
+      "pass": "Breast, prostate, kidney, lung and thyroid. Prostate usually sclerotic; kidney and thyroid lytic. Breast lytic or mixed.",
+      "high": "Kidney and thyroid metastases are vascular: considers pre-operative embolisation. Myeloma is a key lytic differential.",
+      "source": "BL"
+    },
+    {
+      "id": "G3",
+      "domain": "professionalism",
+      "label": "Work-up before fixing",
+      "fail": "Plans to nail the femur this week without bloods, staging or MDT discussion.",
+      "pass": "Bloods including calcium and myeloma screen; whole-femur radiographs; staging CT of thorax, abdomen and pelvis within 24 hours; MDT.",
+      "high": "Solitary metastasis: tertiary centre referral. Primary bone tumour features or negative staging: sarcoma centre within 72 hours, where biopsy is done.",
+      "source": "BOAST"
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-knowledge",
+      "label": "Mirels score",
+      "fail": "Cannot name the four components.",
+      "pass": "Site, pain, lesion type, size, each scored 1 to 3. Hers: peritrochanteric 3, functional pain 3, lytic 3, one to two thirds 2: total 11.",
+      "high": "Size is the maximum cortical destruction on plain film in any view; functional pain is the most important single clinical sign.",
+      "source": "MIRELS"
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-knowledge",
+      "label": "Acts on the score",
+      "fail": "Sends her for radiotherapy alone.",
+      "pass": "9 or more: consider prophylactic fixation before radiotherapy. 7 or less: radiotherapy and observe. 8 is borderline.",
+      "high": "Fracture risk about 33% at 9 against 4% at 7 or less; weighs fitness, prognosis and wishes, as the score is an aid.",
+      "source": "MESCHINI"
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-skill",
+      "label": "Surgical plan",
+      "fail": "Uses a short device or plans fixation that relies on the fracture uniting.",
+      "pass": "Consultant-led; implant that outlasts her and allows immediate weight-bearing; cephalomedullary nail protecting the neck; post-operative radiotherapy to the whole bone.",
+      "high": "Curettage and cement augmentation; cemented proximal femoral replacement if destruction is extensive or prognosis good; thromboprophylaxis.",
+      "source": "BOAST"
+    },
+    {
+      "id": "G7",
+      "domain": "clinical-knowledge",
+      "label": "Non-surgical treatment",
+      "fail": "Omits oncology input and bone-targeted treatment.",
+      "pass": "Oncology input; radiotherapy; bisphosphonates or denosumab to reduce skeletal-related events; analgesia; correct hypercalcaemia before surgery.",
+      "high": "Explains denosumab is a monoclonal antibody to RANK ligand, reducing osteoclast bone resorption.",
+      "source": "BOAGUIDE"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "What do the radiograph findings show?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "The bone looks thin. Probably osteoporosis.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "It's a metastasis. From where?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'm not sure; maybe the bowel.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What would you do?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Put her on the list and nail it this week.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Do you know a scoring system for fracture risk?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I know there is one, but I can't remember the parts.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "So how would you decide?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "She hasn't broken it, so radiotherapy first and see.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What implant?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "A dynamic hip screw, and it should heal.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Anything else?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Painkillers.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "examiner",
+        "text": "What do the radiograph findings show?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "An AP of the right proximal femur showing a lytic lesion in the peritrochanteric region with cortical destruction. No fracture. I'd want orthogonal views of the whole femur.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Which cancers spread to bone?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Breast, prostate, kidney, lung and thyroid. Prostate is usually sclerotic, kidney and thyroid lytic, and breast lytic or mixed.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "She was thought cured. What next?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Bloods including calcium, bone profile and a myeloma screen, whole-femur radiographs, and a staging CT of the thorax, abdomen and pelvis within 24 hours. Then MDT discussion before surgery.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Staging shows several bone metastases. How would you assess fracture risk?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Mirels: site, pain, lesion type and size, each 1 to 3. Peritrochanteric 3, functional pain 3, lytic 3, and one to two thirds of the cortex 2. That's 11.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What does that mean?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "At 9 or more, consider prophylactic fixation before radiotherapy. 7 or less, radiotherapy and observe. 8 is borderline.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you fix it?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Consultant-led, with a cephalomedullary nail protecting the neck, so she can bear weight immediately. It must outlast her, then radiotherapy to the whole bone.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Anything non-surgical?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Oncology input, bisphosphonates or denosumab to reduce skeletal events, analgesia, and correct any hypercalcaemia before surgery.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "examiner",
+        "text": "How do you judge the cortex?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Plain films underestimate it. Destruction of about half of one cortex, or avulsion of the lesser trochanter, means a fracture is likely soon.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Anything about the primary that changes surgery?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Renal and thyroid metastases bleed, so I'd consider embolisation beforehand. And a lytic lesion always makes me think of myeloma.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What if staging shows nothing else?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "A solitary metastasis goes to a tertiary centre. If staging is negative or it looks like a primary bone tumour, refer to a sarcoma centre within 72 hours, where the biopsy is done.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How is size scored?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Maximum cortical destruction on plain film in any view. Functional pain is the most important single sign.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How big is the risk?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "About 33% at 9, and 4% at 7 or less. The score is an aid; I'd weigh her fitness, prognosis and wishes.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Would you ever not nail?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Where internal fixation is used, curettage and cement augmentation. With extensive destruction or a good prognosis, a cemented proximal femoral replacement. Thromboprophylaxis for all.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How does denosumab work?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "It's a monoclonal antibody against RANK ligand, reducing osteoclast resorption.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G3",
+      "move": "Nailing an unstaged lytic lesion in a patient thought cured.",
+      "consequence": "A primary bone sarcoma is contaminated along the whole canal and limb salvage may be lost."
+    },
+    {
+      "row": "G5",
+      "move": "Sending a high-scoring lesion for radiotherapy alone.",
+      "consequence": "Pathological fracture before or after radiotherapy, with emergency surgery and poorer union."
+    },
+    {
+      "row": "G6",
+      "move": "Choosing a device that relies on fracture healing.",
+      "consequence": "Pathological fractures often fail to unite, so the implant fails."
+    },
+    {
+      "row": "G4",
+      "move": "Not knowing the Mirels components.",
+      "consequence": "Cannot justify fixation or observation to the patient or the MDT."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You forget a Mirels item",
+      "line": "Where is it, does it hurt on use, what does it look like, and how much cortex is gone: each 1 to 3."
+    },
+    {
+      "when": "Pushed to fix it tonight",
+      "line": "No fracture yet, so there's time to stage and discuss her at the MDT; I'd protect her weight-bearing meanwhile."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Primaries that spread to bone: breast, prostate, kidney, lung, thyroid.",
+      "source": "BOAGUIDE"
+    },
+    {
+      "fact": "Mirels: site, pain, lesion, size, each 1 to 3; 9 or more, consider prophylactic fixation before radiotherapy.",
+      "source": "BOAGUIDE"
+    },
+    {
+      "fact": "Suspected MBD: calcium, bone profile, myeloma screen, PSA in men; whole-bone radiographs; CT thorax, abdomen and pelvis within 24 hours.",
+      "source": "BOAST"
+    },
+    {
+      "fact": "Solitary metastasis: tertiary centre. Possible primary bone tumour: sarcoma centre within 72 hours.",
+      "source": "BOAST"
+    },
+    {
+      "fact": "Constructs should outlast the patient and allow immediate weight-bearing.",
+      "source": "BOAST"
+    }
+  ],
+  "recall": {
+    "think": "Impending fracture, or a primary bone tumour that must not be nailed.",
+    "say": "\"Lytic proximal femoral lesion, no fracture: stage, score, then fix.\"",
+    "do": [
+      "Bloods, whole-femur films, staging CT",
+      "Mirels score",
+      "MDT, then fixation and radiotherapy"
+    ],
+    "numbers": [
+      {
+        "value": "Mirels 9 or more",
+        "meaning": "consider prophylactic fixation",
+        "source": "BOAGUIDE"
+      },
+      {
+        "value": "24 h / 72 h",
+        "meaning": "staging CT / sarcoma centre referral",
+        "source": "BOAST"
+      }
+    ],
+    "trap": "A history of cancer does not make every lytic lesion a metastasis.",
+    "finish": "Cephalomedullary nail or cemented replacement, whole-bone radiotherapy, bone-targeted therapy."
+  },
+  "sources": [
+    {
+      "id": "BOAST",
+      "name": "British Orthopaedic Association Standard for Trauma (BOASt): Management of Metastatic Bone Disease",
+      "version": "June 2022",
+      "url": "https://www.boa.ac.uk/resource/boast-management-of-metastatic-bone-disease.html",
+      "supports": "Investigations (FBC, U+E, LFT, calcium and bone profile, PSA in men, myeloma screen; orthogonal whole-bone radiographs; CT-TAP within 24 hours); primary bone tumour features or negative CT-TAP to a bone sarcoma centre within 72 hours, where biopsy is done; solitary metastasis to a tertiary centre; consultant-led surgery that outlasts the patient, curettage and cement augmentation, immediate weight-bearing, thromboprophylaxis"
+    },
+    {
+      "id": "BOAGUIDE",
+      "name": "British Orthopaedic Oncology Society and British Orthopaedic Association. Metastatic Bone Disease: A Guide to Good Practice",
+      "version": "2015 revision",
+      "url": "https://baso.org.uk/media/61543/boos_mbd_2016_boa.pdf",
+      "supports": "Primaries that most often spread to bone; Mirels table and fixation at 9 or above before radiotherapy; functional pain as the key sign; 50% destruction of one cortex or lesser trochanter avulsion as high-risk signs; pre-operative embolisation for renal and thyroid metastases; cephalomedullary nails in the femur; cemented or endoprosthetic replacement around the proximal femur; whole-bone radiotherapy after nailing; bisphosphonates and denosumab; correction of hypercalcaemia"
+    },
+    {
+      "id": "MIRELS",
+      "name": "Mirels H. Metastatic disease in long bones: a proposed scoring system for diagnosing impending pathologic fractures. Clin Orthop Relat Res 1989;(249):256–64",
+      "version": "1989",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/2684463/",
+      "supports": "Four variables (site, pain, lesion, size) each scored 1–3; lesions scoring 7 or less can be irradiated safely; fracture risk rises with scores above 7"
+    },
+    {
+      "id": "MESCHINI",
+      "name": "Meschini C, El Motassime A, El Ezzo O, et al. Advancements in assessing pathological fracture risk: news on Mirels' score. Cancers (Basel) 2025;17(6):973",
+      "version": "2025",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40149307/",
+      "supports": "Mirels' original fracture risks: 4% at 7 or less, 15% at 8, 33% at 9; prophylactic stabilisation at 9 or above"
+    },
+    {
+      "id": "BL",
+      "name": "Bailey & Love's Short Practice of Surgery (O'Connell, McCaskie, Sayers, eds)",
+      "version": "28th edition, 2023",
+      "url": "https://www.routledge.com/Bailey--Loves-Short-Practice-of-Surgery---28th-Edition/OConnell-McCaskie-Sayers/p/book/9780367548117",
+      "supports": "Pathology of bone metastases: lytic and sclerotic patterns; myeloma as a differential"
+    },
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format: 9 minutes with 1 minute's reading; examiner-led questioning in applied knowledge stations"
+    }
+  ],
+  "partner": {
+    "opening": "These are the findings on her right femoral radiograph. What do they show?",
+    "reveals": [
+      {
+        "trigger": "Candidate asks for blood results",
+        "finding": "Read out: corrected calcium 2.78 mmol/L; ALP raised; myeloma screen negative.",
+        "row": "G7"
+      },
+      {
+        "trigger": "Candidate asks for staging",
+        "finding": "Read out: staging CT shows multiple bone metastases in the spine and pelvis; no visceral disease.",
+        "row": "G3"
+      },
+      {
+        "trigger": "Candidate asks about the pain",
+        "finding": "Read out: pain on walking and weight-bearing, and at night.",
+        "row": "G4"
+      },
+      {
+        "trigger": "Candidate asks for the lateral view",
+        "finding": "Read out: the lateral view shows the lesion involves about half of the cortical width; the lesser trochanter is intact.",
+        "row": "G1"
+      }
+    ],
+    "push": [
+      {
+        "question": "Which cancers spread to bone?",
+        "row": "G2",
+        "expect": "Breast, prostate, kidney, lung, thyroid."
+      },
+      {
+        "question": "What would you do before any surgery?",
+        "row": "G3",
+        "expect": "Bloods, whole-femur radiographs, staging CT within 24 hours, MDT."
+      },
+      {
+        "question": "Score her lesion.",
+        "row": "G4",
+        "expect": "3 + 3 + 3 + 2 = 11."
+      },
+      {
+        "question": "What does the score mean for her?",
+        "row": "G5",
+        "expect": "9 or more: consider prophylactic fixation before radiotherapy."
+      },
+      {
+        "question": "How would you fix it?",
+        "row": "G6",
+        "expect": "Cephalomedullary nail or cemented replacement; immediate weight-bearing; radiotherapy to the whole bone."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "Staging CT shows no other disease.",
+        "safeAnswer": "Do not nail. Treat as a possible primary bone tumour or solitary metastasis: sarcoma or tertiary centre referral and biopsy there.",
+        "row": "G3"
+      },
+      {
+        "prompt": "A 70-year-old man with prostate cancer has a sclerotic femoral lesion.",
+        "safeAnswer": "Blastic lesions score 1 for lesion type and are less likely to fracture; score it and involve oncology.",
+        "row": "G4"
+      },
+      {
+        "prompt": "Her calcium is 2.78 mmol/L.",
+        "safeAnswer": "Hypercalcaemia: rehydrate and treat before surgery, with medical and oncology input.",
+        "row": "G7"
+      },
+      {
+        "prompt": "She falls on the ward and fractures through the lesion.",
+        "safeAnswer": "No rush to fix: splint or traction, analgesia, imaging now; plan fixation with the MDT lead.",
+        "row": "G6"
+      }
+    ]
+  }
+}

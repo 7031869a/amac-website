@@ -1,0 +1,531 @@
+{
+  "id": "MB-197",
+  "exam": "MRCS-B",
+  "title": "Melanoma: reading the histology report, staging and margins",
+  "type": "data-interpretation",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "Pathology: skin cancer (melanoma and non-melanoma)",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "NICE NG14 Melanoma: assessment and management (published July 2015, last updated 27 July 2022)",
+      "RCPath G125 Dataset for histopathological reporting of primary cutaneous malignant melanoma (February 2019)",
+      "AJCC Cancer Staging Manual 8th edition melanoma staging (Gershenwald et al., 2017)"
+    ]
+  },
+  "brief": {
+    "setting": "Plastic surgery clinic",
+    "role": "Core surgical trainee",
+    "scenario": "Mr Graham Pellow, 58, had a changing 12 mm pigmented lesion excised from his left upper back two weeks ago. The histology report is back. He has no palpable lymph nodes. Written findings: before excision, the lesion was a 12 mm flat to slightly raised pigmented patch on the left upper back. Its two halves did not match in shape. The border was irregular and notched, with pigment fading out into the surrounding skin in places. The colour was mixed light brown, dark brown and black, with a small area of grey-blue.",
+    "task": "The examiner will read out the histology findings and then give you the report. Interpret them and answer questions on further management and on non-melanoma skin cancer."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Thickness and ulceration give the T stage; the stage drives margin, SLNB and BRAF.",
+    "trap": "Calling any melanoma over 1 mm stage II and taking a 2 cm margin.",
+    "firstMove": "\"1.8 mm, not ulcerated: pT2a. With no clinical nodes that is stage IB.\""
+  },
+  "flow": [
+    "Clinical findings",
+    "Histology findings and report",
+    "Stage",
+    "Margin",
+    "SLNB and BRAF",
+    "Non-melanoma skin cancer"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-knowledge",
+      "label": "Breslow thickness",
+      "fail": "Cannot define it, or measures from the skin surface or the base of the epidermis.",
+      "pass": "From the top of the granular layer (or ulcer base) to the deepest invasive cell, in millimetres to 0.1 mm.",
+      "high": "Excludes microsatellites and periadnexal extension; notes mitotic index is still recorded as prognostic though no longer in the T category.",
+      "source": "RCPMEL"
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-knowledge",
+      "label": "Stages correctly",
+      "fail": "Calls a 1.8 mm non-ulcerated melanoma stage II.",
+      "pass": "1.8 mm without ulceration is pT2a; with no clinical nodes this is stage IB.",
+      "high": "Ulceration would make it pT2b, stage IIA; a positive sentinel node would make it stage III.",
+      "source": "AJCC"
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "Excision margin",
+      "fail": "Takes a 2 cm margin because it is over 1 mm, or plans no further excision.",
+      "pass": "Wide local excision with a 1 cm clinical margin for stage I, measured around the biopsy scar.",
+      "high": "States 2 cm is for stage II, and 1 cm is used for stage II if 2 cm would cause unacceptable disfigurement or morbidity.",
+      "source": "NG14"
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-knowledge",
+      "label": "Sentinel lymph node biopsy",
+      "fail": "Presents SLNB as curative, or orders imaging first.",
+      "pass": "Consider SLNB as Breslow is over 1.0 mm; a staging procedure, discussed with him. No imaging beforehand unless metastases suspected.",
+      "high": "If positive: stage III, CE-CT staging, and completion dissection not routinely offered.",
+      "source": "NG14"
+    },
+    {
+      "id": "G5",
+      "domain": "professionalism",
+      "label": "BRAF testing",
+      "fail": "Requests BRAF analysis on this stage IB primary as routine.",
+      "pass": "Not for stage IA or IB except in a trial; consider at IIA; carry out for IIB to IV.",
+      "high": "Would request BRAF analysis if the sentinel node is positive, because targeted therapy may then be relevant.",
+      "source": "NG14"
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-knowledge",
+      "label": "Non-melanoma skin cancer",
+      "fail": "Treats basal cell carcinoma as having the same metastatic risk as melanoma.",
+      "pass": "BCC: basal keratinocytes, locally invasive, metastasis rare. SCC: keratinocytes, can spread to nodes. Melanoma: melanocytes, lymphatic and blood spread.",
+      "high": "Gives the clinical clues: pearly rolled edge and telangiectasia for BCC; keratotic, tender or ulcerated nodule for SCC.",
+      "source": "BL"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "What is Breslow thickness?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "The depth from the skin surface to the bottom of the lesion.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The report says 1.8 mm, no ulceration. What stage?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Over 1 mm, so stage II.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What margin?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "2 cm, because it's stage II.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Anything else?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "A CT scan, then sentinel node biopsy to remove the cancer in the nodes.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Any molecular tests?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "BRAF on the primary for everyone.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How does a basal cell carcinoma differ?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "It's another skin cancer; it spreads in the same way.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "examiner",
+        "text": "What is Breslow thickness?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "The distance from the top of the granular layer, or the ulcer base, to the deepest invasive cell, in millimetres to one decimal place.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The report says 1.8 mm, no ulceration, mitotic index 2 per mm². Stage it."
+      },
+      {
+        "speaker": "candidate",
+        "text": "pT2a. With no palpable nodes, stage IB.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What margin?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Wide local excision with a 1 cm clinical margin around the scar, because it's stage I.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Would you do anything to the nodes?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd consider sentinel lymph node biopsy because it's over 1.0 mm. It's a staging test, so I'd discuss it with him. No scan before it unless we suspect spread.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Should the primary have BRAF testing?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Not at stage IB unless he's in a trial. It's considered at IIA and done from IIB to IV.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How do BCC and SCC differ from melanoma?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "BCC is from basal keratinocytes: locally invasive, rarely metastasises. SCC can spread to nodes. Melanoma spreads by lymphatics and blood.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "examiner",
+        "text": "How is thickness measured?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Microsatellites and extension down adnexa are excluded. Mitotic index isn't in the T category any more but is still recorded, because it predicts outcome.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What would change the stage?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Ulceration would make it pT2b, stage IIA, and a positive sentinel node would make it stage III.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Why not 2 cm?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "NICE reserves 2 cm for stage II. Even then, 1 cm is used if 2 cm would cause unacceptable disfigurement or morbidity.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The sentinel node is positive."
+      },
+      {
+        "speaker": "candidate",
+        "text": "That's stage III. He'd have contrast CT staging, and NICE doesn't routinely offer completion lymph node dissection for a micrometastasis.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd now request BRAF analysis, because targeted therapy may become relevant.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you tell a BCC from an SCC clinically?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "BCC: pearly rolled edge with telangiectasia. SCC: a keratotic, often tender or ulcerated nodule.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G2",
+      "move": "Staging a 1.8 mm non-ulcerated melanoma as stage II.",
+      "consequence": "Leads to an unnecessary 2 cm margin, BRAF testing and staging scans."
+    },
+    {
+      "row": "G3",
+      "move": "Taking a 2 cm margin for stage IB disease.",
+      "consequence": "Larger defect, possibly needing a graft or flap, with no guideline support."
+    },
+    {
+      "row": "G4",
+      "move": "Describing SLNB as treatment.",
+      "consequence": "The patient consents to a staging test on false expectations."
+    },
+    {
+      "row": "G1",
+      "move": "Measuring from the skin surface.",
+      "consequence": "Thickness, and therefore stage, is wrong."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You blank on staging",
+      "line": "I'd take the T stage from thickness and ulceration, then add node status: here pT2a, N0, stage IB."
+    },
+    {
+      "when": "Asked why not 2 cm",
+      "line": "The margin follows the stage, not the thickness alone."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Breslow: top of granular layer (or ulcer base) to deepest invasive cell, to 0.1 mm.",
+      "source": "RCPMEL"
+    },
+    {
+      "fact": "T2 is over 1.0 to 2.0 mm; 'a' means no ulceration. T2a N0 is stage IB; T2b N0 is IIA.",
+      "source": "AJCC"
+    },
+    {
+      "fact": "Margins: stage 0 at least 0.5 cm; stage I 1 cm; stage II 2 cm.",
+      "source": "NG14"
+    },
+    {
+      "fact": "Consider SLNB over 1.0 mm, or 0.8 to 1.0 mm with ulceration, lymphovascular invasion or mitotic index of 2 or more.",
+      "source": "NG14"
+    },
+    {
+      "fact": "BRAF on the primary: not IA or IB; consider IIA; do IIB to IV.",
+      "source": "NG14"
+    }
+  ],
+  "recall": {
+    "think": "Nodal and distant spread; wrong stage means wrong operation.",
+    "say": "\"pT2a, stage IB: 1 cm wide local excision and discuss SLNB.\"",
+    "do": [
+      "Stage from thickness and ulceration",
+      "Margin by stage",
+      "Offer SLNB discussion; no BRAF at IB"
+    ],
+    "numbers": [
+      {
+        "value": "1.8 mm, no ulcer",
+        "meaning": "pT2a, stage IB",
+        "source": "AJCC"
+      },
+      {
+        "value": "1 cm / 2 cm",
+        "meaning": "margin for stage I / stage II",
+        "source": "NG14"
+      },
+      {
+        "value": "> 1.0 mm",
+        "meaning": "consider SLNB",
+        "source": "NG14"
+      }
+    ],
+    "trap": "Thickness over 1 mm does not by itself mean stage II.",
+    "finish": "Wide local excision, SLNB discussion, skin cancer MDT and follow-up."
+  },
+  "sources": [
+    {
+      "id": "NG14",
+      "name": "NICE guideline NG14: Melanoma: assessment and management",
+      "version": "Published 29 July 2015, last updated 27 July 2022",
+      "url": "https://www.nice.org.uk/guidance/ng14/chapter/Recommendations",
+      "supports": "BRAF analysis by stage (1.3.8 to 1.3.10); no imaging before SLNB unless metastases suspected (1.4.2); SLNB criteria (1.4.3, 1.4.4); CE-CT staging for IIB to IV (1.4.6, 1.4.7); excision margins (1.5.1, 1.5.3); completion lymph node dissection (1.6.1)"
+    },
+    {
+      "id": "RCPMEL",
+      "name": "Royal College of Pathologists G125: Dataset for histopathological reporting of primary cutaneous malignant melanoma and regional lymph nodes",
+      "version": "Version 4, February 2019",
+      "url": "https://www.rcpath.org/static/fb177728-072d-4b8a-97ae94319eaac5fd/Dataset-for-the-histological-reporting-of-primary-cutaneous-malignant-melanoma-and-regional-lymph-nodes.pdf",
+      "supports": "Measurement of Breslow thickness to 0.1 mm from the granular layer or ulcer base; exclusions; mitotic index as a prognostic item"
+    },
+    {
+      "id": "AJCC",
+      "name": "Gershenwald JE, Scolyer RA, Hess KR, et al. Melanoma staging: evidence-based changes in the American Joint Committee on Cancer eighth edition cancer staging manual. CA Cancer J Clin 2017;67:472-92",
+      "version": "AJCC 8th edition, 2017",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/29028110/",
+      "supports": "T categories by thickness and ulceration; T2a N0 M0 stage IB; T2b N0 M0 stage IIA"
+    },
+    {
+      "id": "BL",
+      "name": "Bailey & Love's Short Practice of Surgery (O'Connell, McCaskie, Sayers, eds)",
+      "version": "28th edition, 2023",
+      "url": "https://www.routledge.com/Bailey--Loves-Short-Practice-of-Surgery---28th-Edition/OConnell-McCaskie-Sayers/p/book/9780367548117",
+      "supports": "Basal cell and squamous cell carcinoma: origin, clinical features and spread"
+    },
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format: 9 minutes with 1 minute's reading; examiner-led questioning in applied knowledge stations"
+    }
+  ],
+  "partner": {
+    "opening": "You have the written findings of the lesion before excision. Which features worry you, and why? Then I'll read out the histology findings.",
+    "reveals": [
+      {
+        "trigger": "Candidate describes the lesion",
+        "finding": "Read out: the H&E section shows an intact epidermis with a distinct granular layer and no ulceration. Atypical melanocytes lie singly and in nests along the junction between epidermis and dermis, and single cells extend upward into the upper epidermis. Nests and sheets of atypical melanocytes invade the dermis, the deepest invasive cells lying well below the junction. Where would the pathologist measure the thickness from and to?",
+        "row": "G1"
+      },
+      {
+        "trigger": "Candidate asks for the report",
+        "finding": "Superficial spreading melanoma, Breslow 1.8 mm, no ulceration, mitotic index 2/mm², no lymphovascular invasion, no microsatellites, peripheral and deep margins clear.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Candidate asks about nodes",
+        "finding": "No palpable nodes in either axilla or the neck.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Candidate discusses SLNB",
+        "finding": "SLNB shows a micrometastasis in one axillary node.",
+        "row": "G4"
+      }
+    ],
+    "push": [
+      {
+        "question": "What stage is this?",
+        "row": "G2",
+        "expect": "pT2a, stage IB."
+      },
+      {
+        "question": "What margin would you take, and why?",
+        "row": "G3",
+        "expect": "1 cm for stage I (NICE NG14)."
+      },
+      {
+        "question": "What is the role of sentinel node biopsy?",
+        "row": "G4",
+        "expect": "Consider it; staging, not therapeutic."
+      },
+      {
+        "question": "Would you send the primary for BRAF testing?",
+        "row": "G5",
+        "expect": "No at IB, except in a trial."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "The lesion is on his face and 1 cm would distort the eyelid.",
+        "safeAnswer": "Discuss with the specialist skin cancer MDT; consider specialist reconstruction or alternative approaches rather than compromising care alone.",
+        "row": "G3"
+      },
+      {
+        "prompt": "What if the report had said ulceration present?",
+        "safeAnswer": "pT2b, stage IIA: 2 cm margin, consider SLNB, consider BRAF analysis.",
+        "row": "G2"
+      },
+      {
+        "prompt": "What is Clark level?",
+        "safeAnswer": "Anatomical level of invasion; superseded by Breslow thickness, which is more reproducible.",
+        "row": "G1"
+      }
+    ]
+  }
+}

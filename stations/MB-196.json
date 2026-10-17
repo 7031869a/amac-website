@@ -1,0 +1,601 @@
+{
+  "id": "MB-196",
+  "exam": "MRCS-B",
+  "title": "Thyroid nodule: FNA, histology and the four thyroid cancers",
+  "type": "data-interpretation",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "Pathology: endocrine (thyroid cancer)",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "NICE NG230 Thyroid cancer: assessment and management (December 2022)",
+      "RCPath G089 Guidance on the reporting of thyroid cytology specimens (March 2024)",
+      "RCPath G098 Dataset for the histopathological reporting of thyroid cancer (August 2023)",
+      "ATA medullary thyroid carcinoma guidelines (2015)",
+      "ATA anaplastic thyroid cancer guidelines (2021)"
+    ]
+  },
+  "brief": {
+    "setting": "Endocrine surgery clinic",
+    "role": "Core surgical trainee",
+    "scenario": "Mrs Joanna Fairley, 45, has a 2.5 cm right thyroid nodule. She is euthyroid. The examiner will give you her ultrasound report, her fine needle aspiration cytology report and then read out the written histology findings.",
+    "task": "Interpret each result as it is given, including the histology findings the examiner reads out, say what happens next, and answer questions on the types of thyroid cancer."
+  },
+  "beforeYouWalkIn": {
+    "frame": "UK reports use Thy categories. Read each result, then say what it changes.",
+    "trap": "Treating Thy4 as a proven cancer, or as a reason to repeat the FNA and wait.",
+    "firstMove": "\"This is Thy4, suspicious of malignancy, most likely papillary. It needs discussion at the thyroid MDT.\""
+  },
+  "flow": [
+    "Ultrasound and FNA report",
+    "Next step",
+    "Histology findings",
+    "Stage and plan",
+    "Other types: follicular, medullary, anaplastic"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-knowledge",
+      "label": "Reads the FNA report",
+      "fail": "Treats Thy4 as a confirmed cancer or as benign, or quotes a Bethesda class without relating it to Thy.",
+      "pass": "Thy4: suspicious of malignancy, probably papillary; not diagnostic. Equivalent to Bethesda V.",
+      "high": "Gives the RCPath risk of malignancy for Thy4 (about 79%) and states all Thy4 and Thy5 cases go to the thyroid MDT.",
+      "source": "RCPCYT"
+    },
+    {
+      "id": "G2",
+      "domain": "professionalism",
+      "label": "Next step after Thy4",
+      "fail": "Repeats FNA and waits, or orders an isotope scan or routine CT.",
+      "pass": "MDT discussion, then offer diagnostic hemithyroidectomy, or therapeutic hemithyroidectomy or total thyroidectomy.",
+      "high": "No routine CT or MRI for T1 to T2 disease; calcitonin only if medullary cancer is suspected. Counsels on voice, calcium and thyroxine.",
+      "source": "NG230"
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "Identifies papillary carcinoma",
+      "fail": "Cannot name the features, or calls it follicular carcinoma because follicles are present.",
+      "pass": "Papillae with fibrovascular cores; crowded, clear (Orphan Annie eye) nuclei with grooves and pseudoinclusions; psammoma bodies.",
+      "high": "States the diagnosis rests on the nuclear features, so the follicular subtype of papillary carcinoma is still papillary.",
+      "source": "RCPHIS"
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-knowledge",
+      "label": "Stages and plans",
+      "fail": "Stages on size alone without the node status, or plans a preventive neck dissection.",
+      "pass": "25 mm, confined to the thyroid: pT2. Hemithyroidectomy or total thyroidectomy; completion thyroidectomy if histology shows adverse features.",
+      "high": "No preventive neck dissection; RAI and TSH suppression follow total thyroidectomy according to risk. Papillary spreads mainly to lymph nodes.",
+      "source": "NG230"
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-knowledge",
+      "label": "Follicular carcinoma",
+      "fail": "Says follicular carcinoma can be diagnosed on FNA.",
+      "pass": "Needs capsular or vascular invasion on histology, so FNA can only suggest a follicular neoplasm (Thy3f). Spreads by blood to lung and bone.",
+      "high": "Links Thy3f to diagnostic hemithyroidectomy, and names RAS mutations or PAX8-PPARG fusion.",
+      "source": "RCPCYT"
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-knowledge",
+      "label": "Medullary carcinoma",
+      "fail": "Says it arises from follicular cells, or plans thyroidectomy without excluding phaeochromocytoma.",
+      "pass": "Parafollicular C cells: calcitonin and CEA as markers, amyloid stroma. RET mutation; MEN2A and MEN2B.",
+      "high": "Germline RET testing even when it looks sporadic; exclude phaeochromocytoma before surgery; screen relatives.",
+      "source": "ATAMTC"
+    },
+    {
+      "id": "G7",
+      "domain": "professionalism",
+      "label": "Anaplastic carcinoma",
+      "fail": "Books a rapidly enlarging neck mass in an older patient into routine clinic.",
+      "pass": "Undifferentiated, grows over weeks, threatens the airway; urgent assessment and tissue diagnosis; very poor prognosis.",
+      "high": "Requests rapid BRAF V600E testing because targeted therapy may be possible; involves palliative care early.",
+      "source": "ATAATC"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "Here is her FNA report: Thy4. What does it mean?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "It's thyroid cancer, it's Bethesda five.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What would you do next?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Repeat the FNA in three months and get a CT neck.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Here are the histology findings. What is it?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "There are follicles, so it's follicular carcinoma.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you stage it?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "By size, it's small. I'd do a neck dissection as well to be safe.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Can FNA diagnose follicular carcinoma?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Yes, if the cells look follicular.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Where does medullary carcinoma arise?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "From the follicular cells, like the others.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "examiner",
+        "text": "Ultrasound shows a solid hypoechoic nodule with microcalcification. The FNA is reported as Thy4. What does that mean?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Thy4 is suspicious of malignancy, probably papillary, but it isn't diagnostic. It's the RCPath equivalent of Bethesda five.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What next?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Discuss at the thyroid MDT, then offer diagnostic hemithyroidectomy, or a therapeutic hemithyroidectomy or total thyroidectomy.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "She has a hemithyroidectomy. Here are the histology findings."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Papillae with fibrovascular cores, crowded clear nuclei with grooves and pseudoinclusions, and psammoma bodies. Papillary carcinoma.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "It is 25 mm and confined to the gland."
+      },
+      {
+        "speaker": "candidate",
+        "text": "pT2. Hemithyroidectomy can be enough; completion thyroidectomy if the histology shows adverse features.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How is follicular carcinoma different?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "It needs capsular or vascular invasion on histology, so FNA can only say follicular neoplasm, Thy3f. It spreads by blood to lung and bone.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "And medullary?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "From C cells. Calcitonin and CEA are the markers, with amyloid in the stroma. RET mutations, and MEN2.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Anaplastic?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Undifferentiated and fast-growing, it threatens the airway. Urgent assessment and tissue diagnosis. The prognosis is very poor.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "examiner",
+        "text": "The FNA is Thy4."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Suspicious of malignancy, probably papillary. RCPath puts the risk of malignancy at about 79%, and every Thy4 goes to the thyroid MDT.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I wouldn't do routine CT or MRI for T1 or T2 disease, or measure calcitonin unless medullary is suspected. I'd counsel her on voice change, low calcium and thyroxine.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Here are the histology findings."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Papillary carcinoma. It's the nuclei that make the diagnosis, not the papillae, which is why the follicular subtype still counts as papillary.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "25 mm, confined to the gland, no adverse features."
+      },
+      {
+        "speaker": "candidate",
+        "text": "pT2. No preventive neck dissection. Radioiodine and TSH suppression only follow total thyroidectomy, by risk. Papillary spreads mainly to nodes.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "And follicular?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Thy3f can't separate adenoma from carcinoma, so diagnostic hemithyroidectomy answers it. RAS mutations or PAX8-PPARG fusion are typical.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Medullary?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd offer germline RET testing even if it looks sporadic, exclude a phaeochromocytoma before surgery, and screen relatives.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "A 75-year-old with a neck mass that doubled in two weeks?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Anaplastic until proven otherwise. Secure the airway plan, get tissue urgently, and request rapid BRAF V600E testing because targeted treatment may be possible. Palliative care early.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G1",
+      "move": "Calling Thy4 a confirmed cancer.",
+      "consequence": "Counsels the patient wrongly; about a fifth of Thy4 nodules are benign."
+    },
+    {
+      "row": "G2",
+      "move": "Repeating FNA and waiting after Thy4.",
+      "consequence": "Delays surgery that NICE recommends offering."
+    },
+    {
+      "row": "G6",
+      "move": "Operating on medullary carcinoma without excluding phaeochromocytoma.",
+      "consequence": "Risks a hypertensive crisis under anaesthesia."
+    },
+    {
+      "row": "G7",
+      "move": "Routine referral of a rapidly enlarging neck mass.",
+      "consequence": "Anaplastic cancer can obstruct the airway within days."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "Given a Bethesda category",
+      "line": "In the UK that maps to Thy: Bethesda V is Thy4, VI is Thy5."
+    },
+    {
+      "when": "Unsure of the histology",
+      "line": "I'd look at the nuclei first: clear, grooved nuclei mean papillary."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Thy1 non-diagnostic, Thy2 non-neoplastic, Thy3a atypia, Thy3f follicular neoplasm, Thy4 suspicious, Thy5 malignant.",
+      "source": "RCPCYT"
+    },
+    {
+      "fact": "Thy4 and Thy5: offer diagnostic hemithyroidectomy, or therapeutic hemithyroidectomy or total thyroidectomy.",
+      "source": "NG230"
+    },
+    {
+      "fact": "Papillary is the most frequent type; BRAF V600E is its most frequent mutation.",
+      "source": "TCGA"
+    },
+    {
+      "fact": "Follicular carcinoma needs capsular or vascular invasion on histology.",
+      "source": "RCPHIS"
+    },
+    {
+      "fact": "NIFTP: non-invasive, extremely low risk, not overtly malignant; treated by lobectomy alone.",
+      "source": "NIKI"
+    },
+    {
+      "fact": "Medullary: germline RET testing for all.",
+      "source": "ATAMTC"
+    }
+  ],
+  "recall": {
+    "think": "Airway (anaplastic) and phaeochromocytoma (medullary) are what can kill.",
+    "say": "\"Thy4, suspicious of papillary carcinoma: thyroid MDT.\"",
+    "do": [
+      "Map Thy to the NICE table",
+      "Name papillary nuclear features",
+      "Stage by TNM"
+    ],
+    "numbers": [
+      {
+        "value": "Thy4 about 79%",
+        "meaning": "risk of malignancy",
+        "source": "RCPCYT"
+      },
+      {
+        "value": "pT2 = >20 to 40 mm",
+        "meaning": "confined to thyroid",
+        "source": "RCPHIS"
+      }
+    ],
+    "trap": "Thinking FNA can diagnose follicular carcinoma.",
+    "finish": "Hemithyroidectomy or total thyroidectomy; completion if histology demands."
+  },
+  "sources": [
+    {
+      "id": "NG230",
+      "name": "NICE guideline NG230: Thyroid cancer: assessment and management",
+      "version": "December 2022",
+      "url": "https://www.nice.org.uk/guidance/ng230/chapter/Recommendations",
+      "supports": "RCPath Thy reporting (1.2.9); calcitonin only if MTC suspected (1.2.1); management after Thy4 and Thy5 (table 1); no routine CT or MRI for T1 to T2 (1.2.13); hemithyroidectomy or total thyroidectomy, completion thyroidectomy, no preventive neck dissection, RAI (1.3.1 to 1.3.16)"
+    },
+    {
+      "id": "RCPCYT",
+      "name": "Royal College of Pathologists G089: Guidance on the reporting of thyroid cytology specimens",
+      "version": "Version 4, March 2024",
+      "url": "https://www.rcpath.org/asset/D40AF26C-0E49-4D40-8FCE4A38F2A5C44B/",
+      "supports": "Thy1 to Thy5 categories and Bethesda equivalents; Thy4 risk of malignancy 79%; Thy4 and Thy5 cases discussed at MDT; NIFTP cannot be diagnosed on cytology"
+    },
+    {
+      "id": "RCPHIS",
+      "name": "Royal College of Pathologists G098: Dataset for the histopathological reporting of thyroid cancer",
+      "version": "Version 5, August 2023",
+      "url": "https://www.rcpath.org/static/f9998652-9f19-47e5-8c8fa4cae8fda6bd/35fa80ef-6f49-426e-9ebc513b7673620a/G098-Dataset-for-the-histopathological-reporting-of-thyroid-cancer.pdf",
+      "supports": "pT2 >20 mm to 40 mm limited to thyroid (TNM 8); invasion defines follicular carcinoma; papillary nuclear features; NIFTP"
+    },
+    {
+      "id": "NIKI",
+      "name": "Nikiforov YE, Seethala RR, Tallini G, et al. Nomenclature revision for encapsulated follicular variant of papillary thyroid carcinoma: a paradigm shift to reduce overtreatment of indolent tumors. JAMA Oncol 2016;2:1023-9",
+      "version": "2016",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/27078145/",
+      "supports": "Definition of NIFTP and its very low risk"
+    },
+    {
+      "id": "TCGA",
+      "name": "Cancer Genome Atlas Research Network. Integrated genomic characterization of papillary thyroid carcinoma. Cell 2014;159:676-90",
+      "version": "2014",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/25417114/",
+      "supports": "BRAF V600E and RAS mutations, RET fusions in papillary carcinoma"
+    },
+    {
+      "id": "ATAMTC",
+      "name": "Wells SA Jr, Asa SL, Dralle H, et al. Revised American Thyroid Association guidelines for the management of medullary thyroid carcinoma. Thyroid 2015;25:567-610",
+      "version": "2015",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/25810047/",
+      "supports": "C-cell origin, calcitonin and CEA, germline RET testing in presumed sporadic MTC, phaeochromocytoma exclusion before thyroidectomy in MEN2"
+    },
+    {
+      "id": "ATAATC",
+      "name": "Bible KC, Kebebew E, Brierley J, et al. 2021 American Thyroid Association guidelines for management of patients with anaplastic thyroid cancer. Thyroid 2021;31:337-86",
+      "version": "2021",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33728999/",
+      "supports": "Rapid diagnosis, airway assessment, BRAF V600E testing, early palliative care"
+    },
+    {
+      "id": "BL",
+      "name": "Bailey & Love's Short Practice of Surgery (O'Connell, McCaskie, Sayers, eds)",
+      "version": "28th edition, 2023",
+      "url": "https://www.routledge.com/Bailey--Loves-Short-Practice-of-Surgery---28th-Edition/OConnell-McCaskie-Sayers/p/book/9780367548117",
+      "supports": "Thyroid neoplasms: pathology, spread and clinical features"
+    },
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format: 9 minutes with 1 minute's reading; examiner-led questioning in applied knowledge stations"
+    }
+  ],
+  "partner": {
+    "opening": "Mrs Fairley's ultrasound shows a 2.5 cm solid, hypoechoic right nodule with microcalcification and no abnormal nodes. Her FNA report says Thy4. Interpret it.",
+    "reveals": [
+      {
+        "trigger": "Candidate interprets the FNA and asks for more",
+        "finding": "Cytology comment: 'Cells with nuclear grooves and occasional intranuclear pseudoinclusions; suspicious of papillary carcinoma.'",
+        "row": "G1"
+      },
+      {
+        "trigger": "Candidate recommends surgery",
+        "finding": "She has a right hemithyroidectomy. Read out: the H&E section of the nodule shows branching finger-like fronds, each with a central core of connective tissue and thin-walled vessels, with some areas forming small follicles. The lining cells have enlarged, crowded, overlapping nuclei with pale, empty-looking centres, longitudinal grooves and occasional round pink inclusions within the nucleus. Scattered small, round, concentrically laminated purple calcified bodies lie in the cores.",
+        "row": "G3"
+      },
+      {
+        "trigger": "Candidate asks for the histology report",
+        "finding": "Classic papillary carcinoma, 25 mm, confined to the thyroid, no vascular invasion, margins clear.",
+        "row": "G4"
+      },
+      {
+        "trigger": "Candidate finishes papillary",
+        "finding": "Read out, from a different patient: the H&E section of a thyroid tumour shows nests and sheets of polygonal and spindle-shaped cells with finely granular cytoplasm and fairly uniform round to oval nuclei. The nests are separated by pale pink, acellular, amorphous material in the stroma. No papillae or colloid-filled follicles are seen.",
+        "row": "G6"
+      }
+    ],
+    "push": [
+      {
+        "question": "What does Thy4 mean, and what is its Bethesda equivalent?",
+        "row": "G1",
+        "expect": "Suspicious of malignancy; Bethesda V; not diagnostic."
+      },
+      {
+        "question": "What would you offer her?",
+        "row": "G2",
+        "expect": "MDT; diagnostic hemithyroidectomy, or therapeutic hemithyroidectomy or total thyroidectomy."
+      },
+      {
+        "question": "Stage this tumour and tell me if she needs more surgery.",
+        "row": "G4",
+        "expect": "pT2; completion only if adverse features."
+      },
+      {
+        "question": "Why can't FNA diagnose follicular carcinoma?",
+        "row": "G5",
+        "expect": "Needs capsular or vascular invasion, seen only on histology."
+      },
+      {
+        "question": "What must you do before operating on medullary carcinoma?",
+        "row": "G6",
+        "expect": "Exclude phaeochromocytoma; germline RET testing."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "The final histology says NIFTP. Is that a cancer?",
+        "safeAnswer": "No. It is a non-invasive neoplasm with extremely low risk, not overtly malignant; lobectomy alone is enough.",
+        "row": "G5"
+      },
+      {
+        "prompt": "Should we check her calcitonin?",
+        "safeAnswer": "Not routinely: only if medullary carcinoma is suspected, for example family history or suggestive ultrasound.",
+        "row": "G2"
+      },
+      {
+        "prompt": "The report says Bethesda VI.",
+        "safeAnswer": "That is malignant, the equivalent of Thy5; MDT and surgery.",
+        "row": "G1"
+      }
+    ]
+  }
+}

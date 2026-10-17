@@ -1,0 +1,637 @@
+{
+  "id": "MB-231",
+  "exam": "MRCS-B",
+  "title": "Hip fracture in an older patient",
+  "type": "applied-knowledge",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "Applied surgical science and critical care",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "NICE CG124 (Jun 2011, updated Jan 2023)",
+      "NICE NG89 (Mar 2018, updated Aug 2019)",
+      "NHFD KPIs (Aug 2025)"
+    ],
+    "related": [
+      {
+        "id": "MB-140 Hip examination",
+        "why": "Examining the hip"
+      },
+      {
+        "id": "MB-160 Consent: emergency laparotomy and possible stoma",
+        "why": "Consent and information in an emergency"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Emergency department",
+    "role": "Core surgical trainee in trauma and orthopaedics",
+    "scenario": "Mrs Winifred Lacey, 84, tripped on a rug at home last night and lay on the floor until a neighbour found her this morning. Her right leg is shortened and externally rotated. She lives alone, walks to the shops with a stick and manages her own care. She takes ramipril and amlodipine.",
+    "task": "The examiner will read out her X-ray findings and ask about her management and her operation."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Treat the patient, not just the hip: why she fell, pain, fitness, then timely surgery, the right operation, and orthogeriatric care.",
+    "trap": "Delaying surgery for tests that won't change the plan.",
+    "firstMove": "\"ABCDE, analgesia now, and I'll find out why she fell.\""
+  },
+  "flow": [
+    "Assess: why she fell",
+    "X-ray findings",
+    "Analgesia",
+    "Optimise; surgery by the next day",
+    "Which operation",
+    "Orthogeriatric programme",
+    "After surgery",
+    "Information"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-skill",
+      "label": "Initial assessment",
+      "fail": "Focuses on the leg and misses why she fell or how long she lay.",
+      "pass": "ABCDE; cause of the fall (syncope, stroke, infection); bloods, ECG and chest X-ray; checks cognition.",
+      "high": "Looks for the effects of a long lie (pressure areas, dehydration, CK for rhabdomyolysis) and screens for delirium from the outset.",
+      "source": "CG124"
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-knowledge",
+      "label": "Interpreting the X-ray findings",
+      "fail": "Calls it a trochanteric fracture, or misses the displacement.",
+      "pass": "Interprets the findings as a right displaced intracapsular (femoral neck) fracture.",
+      "high": "Explains that displacement disrupts the retinacular supply to the head, so fixation risks avascular necrosis and non-union.",
+      "source": "BL"
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "Analgesia",
+      "fail": "Prescribes an NSAID, or waits for the orthopaedic review before giving analgesia.",
+      "pass": "Immediate analgesia: paracetamol 6-hourly, opioids if needed; reassesses pain within 30 minutes, then hourly until settled.",
+      "high": "Adds a nerve block if paracetamol and opioids aren't enough or to limit opioids, but not as a substitute for early surgery.",
+      "source": "CG124"
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-knowledge",
+      "label": "Timing of surgery",
+      "fail": "Waits for a routine echo or next week's list.",
+      "borderline": "Knows surgery should be prompt but can't give the NICE timing.",
+      "pass": "Surgery on the day of, or the day after, admission, on a planned trauma list.",
+      "high": "Treats correctable problems now: anaemia, anticoagulation, volume depletion, electrolytes, diabetes, heart failure, arrhythmia, chest infection.",
+      "source": "CG124"
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-knowledge",
+      "label": "Choice of operation",
+      "fail": "Plans screw fixation for a displaced intracapsular fracture in a fit patient.",
+      "pass": "Arthroplasty; considers total hip replacement because she walks outdoors with no more than a stick.",
+      "high": "Gives all three NICE criteria, including expected ADL independence beyond 2 years; cemented implants.",
+      "source": "CG124"
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-knowledge",
+      "label": "Orthogeriatric care",
+      "fail": "Leaves medical care to the ward team after surgery.",
+      "pass": "Hip Fracture Programme from admission: orthogeriatric assessment, rapid optimisation, rehabilitation goals, falls and bone health.",
+      "high": "Knows the NHFD indicator: assessment by a senior geriatrician within 72 hours of admission.",
+      "source": "NHFD"
+    },
+    {
+      "id": "G7",
+      "domain": "clinical-knowledge",
+      "label": "After surgery",
+      "fail": "Keeps her on bed rest for a few days to protect the hip.",
+      "pass": "Operates for full weight bearing; physiotherapy and mobilisation the day after surgery; VTE prophylaxis.",
+      "high": "LMWH from 6–12 hours after surgery for a month, if VTE risk outweighs bleeding risk; fondaparinux from 6 hours if bleeding risk is low.",
+      "source": "NG89"
+    },
+    {
+      "id": "G8",
+      "domain": "communication",
+      "label": "Information and choices",
+      "fail": "Tells her 'it's a routine hip operation' and gets a signature.",
+      "pass": "Explains the diagnosis, the choice of spinal or general anaesthesia, the operation, complications and rehabilitation; checks capacity.",
+      "high": "Gives printed as well as verbal information and asks about her goals, including returning home.",
+      "source": "CG124"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "How would you assess her?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd examine the hip and get an X-ray.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Here are her X-ray findings."
+      },
+      {
+        "speaker": "candidate",
+        "text": "An intertrochanteric fracture.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "She is in pain."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Ibuprofen, and more once orthopaedics have seen her.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "When would you operate?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "After an echo, probably early next week.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Which operation?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Cannulated screws; it's a smaller operation.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Who else is involved?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "The ward team can manage her medically.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "After surgery?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Bed rest for a few days to protect the hip.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Consent?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "It's a routine hip operation; she just needs to sign.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "examiner",
+        "text": "How would you assess her?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "ABCDE, and why she fell: a trip, or syncope, stroke or infection. Bloods, ECG, chest X-ray, and I'd check her cognition.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Here are her X-ray findings."
+      },
+      {
+        "speaker": "candidate",
+        "text": "A displaced intracapsular fracture of the right femoral neck.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "She is in pain."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Analgesia now: paracetamol 6-hourly and opioids if needed. I'd reassess within 30 minutes, then hourly.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "When would you operate?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "On the day of admission or the day after, on a planned trauma list.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Which operation?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Arthroplasty. She walks outdoors with a stick, so I'd consider a total hip replacement.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Who else is involved?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "The orthogeriatric team, from admission, as part of the Hip Fracture Programme: optimisation, rehabilitation, falls and bone health.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "After surgery?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Full weight bearing, physiotherapy and mobilisation the day after surgery, and VTE prophylaxis.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Consent?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd explain the diagnosis, spinal or general anaesthetic, the operation, risks and rehab, and check her capacity.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "examiner",
+        "text": "How would you assess her?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "ABCDE, and why she fell: mechanical, syncope, stroke, infection. She lay all night, so I'd check pressure areas, hydration and a CK. Bloods, ECG, chest X-ray, and a delirium and cognition screen now as a baseline.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Here are her X-ray findings."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Displaced right intracapsular neck of femur fracture. Displacement disrupts the retinacular vessels to the head, so fixation risks avascular necrosis and non-union.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "She is in pain."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Paracetamol 6-hourly now and opioids if needed; reassess within 30 minutes. A nerve block if that isn't enough or to limit opioids, but it doesn't replace early surgery. No NSAIDs.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "When would you operate?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Today or tomorrow, on the trauma list. Her urea suggests she's dry, so IV fluids now; I'd correct anything fixable so it doesn't delay her.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Which operation?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Arthroplasty. She meets NICE's criteria for considering a total hip replacement: independent outdoors with a stick, nothing making it unsuitable, and likely to be independent beyond 2 years. Cemented implants.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Who else is involved?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Orthogeriatrics from admission, not after the operation. The NHFD standard is senior geriatrician review within 72 hours. They'll lead on delirium, falls and bone health.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "After surgery?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Full weight bearing and mobilising the day after surgery. LMWH starting 6 to 12 hours after surgery, for a month, if her VTE risk outweighs bleeding.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Consent?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Verbal and printed information: spinal or general anaesthetic, the operation, complications and rehab. I'd ask what matters to her, such as getting home.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G1",
+      "move": "Treating the fracture without asking why she fell.",
+      "consequence": "Safety-critical: syncope, arrhythmia, stroke or sepsis as the cause of the fall is missed."
+    },
+    {
+      "row": "G3",
+      "move": "Giving an NSAID to an 84-year-old on ramipril with a raised urea.",
+      "consequence": "Safety-critical: NICE doesn't recommend NSAIDs in hip fracture, and with ramipril and a raised urea her kidneys are at risk."
+    },
+    {
+      "row": "G4",
+      "move": "Delaying surgery for tests that won't change the plan.",
+      "consequence": "She stays in bed and in pain, missing NICE's day-of or day-after target."
+    },
+    {
+      "row": "G5",
+      "move": "Fixing a displaced intracapsular fracture with screws in a fit patient.",
+      "consequence": "Fixation risks avascular necrosis and non-union; NICE says offer arthroplasty."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You jumped to the operation",
+      "line": "Before that: analgesia, why she fell, and anything we need to correct so it doesn't delay surgery."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Suspected hip fracture with normal X-rays: MRI; CT if MRI isn't available within 24 hours.",
+      "source": "CG124"
+    },
+    {
+      "fact": "Trochanteric fractures above and including the lesser trochanter (not reverse oblique): sliding hip screw; subtrochanteric: intramedullary nail.",
+      "source": "CG124"
+    },
+    {
+      "fact": "If surgery is delayed beyond the day after admission, consider preoperative VTE prophylaxis; last LMWH dose at least 12 hours before.",
+      "source": "NG89"
+    },
+    {
+      "fact": "NHFD indicators: surgery by the day after admission; mobilised by the day after surgery.",
+      "source": "NHFD"
+    }
+  ],
+  "recall": {
+    "think": "Why she fell; pain; delay; the wrong implant.",
+    "say": "\"Displaced intracapsular: arthroplasty, and she meets the criteria to consider a THR.\"",
+    "do": [
+      "Analgesia now and reassess",
+      "Correct what's fixable; operate by the next day",
+      "Orthogeriatrics from admission"
+    ],
+    "numbers": [
+      {
+        "value": "Day of or after",
+        "meaning": "admission: time for surgery",
+        "source": "CG124"
+      },
+      {
+        "value": "72 h",
+        "meaning": "senior geriatrician review (NHFD)",
+        "source": "NHFD"
+      },
+      {
+        "value": "1 month",
+        "meaning": "VTE prophylaxis after surgery",
+        "source": "NG89"
+      }
+    ],
+    "trap": "NSAIDs, bed rest and waiting for non-essential tests.",
+    "finish": "Mobilise the day after surgery; bone health and falls prevention."
+  },
+  "sources": [
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format: 9 minutes with 1 minute's reading; examiner-led questioning in applied knowledge stations"
+    },
+    {
+      "id": "CG124",
+      "name": "NICE CG124: Hip fracture: management",
+      "version": "Published 22 June 2011; last updated 6 January 2023",
+      "url": "https://www.nice.org.uk/guidance/cg124",
+      "supports": "MRI if hip fracture suspected despite negative adequate X-rays; CT if MRI not available within 24 hours or contraindicated (1.1.1); surgery on the day of, or the day after, admission (1.2.1); identify and treat correctable comorbidities immediately so surgery is not delayed: anaemia, anticoagulation, volume depletion, electrolyte imbalance, uncontrolled diabetes, uncontrolled heart failure, correctable arrhythmia or ischaemia, acute chest infection, exacerbation of chronic chest conditions (1.2.2); assess pain on presentation, within 30 minutes of initial analgesia, hourly until settled on the ward, then regularly (1.3.1); immediate analgesia including for cognitive impairment (1.3.2); paracetamol every 6 hours preoperatively (1.3.4); additional opioids if needed (1.3.5); consider nerve blocks if paracetamol and opioids are not enough or to limit opioids; not a substitute for early surgery (1.3.6); NSAIDs not recommended (1.3.9); choice of spinal or general anaesthesia (1.4.1); planned trauma list (1.5.1); operate to allow full weight bearing immediately (1.6.1); offer arthroplasty (THR or hemiarthroplasty) for displaced intracapsular fracture (1.6.2); consider THR rather than hemiarthroplasty if able to walk independently out of doors with no more than a stick, no condition or comorbidity making it unsuitable, and expected to carry out ADLs independently beyond 2 years (1.6.3, 2023); cemented implants (1.6.4); extramedullary implant such as a sliding hip screw rather than an intramedullary nail for trochanteric fractures above and including the lesser trochanter, except reverse oblique (1.6.9); intramedullary nail for subtrochanteric fractures (1.6.10); physiotherapy assessment and mobilisation on the day after surgery (1.7.1); Hip Fracture Programme from admission with orthogeriatric assessment, rapid optimisation, rehabilitation goals, and liaison with mental health, falls prevention, bone health, primary care and social services (1.8.1); look for cognitive impairment at presentation and reassess for delirium (1.8.3); verbal and printed information (1.9.1)"
+    },
+    {
+      "id": "NG89",
+      "name": "NICE NG89: Venous thromboembolism in over 16s: reducing the risk of hospital-acquired deep vein thrombosis or pulmonary embolism",
+      "version": "Published 21 March 2018; last updated 13 August 2019",
+      "url": "https://www.nice.org.uk/guidance/ng89",
+      "supports": "Fragility fractures of the pelvis, hip or proximal femur: offer VTE prophylaxis for a month if VTE risk outweighs bleeding risk: LMWH starting 6-12 hours after surgery, or fondaparinux starting 6 hours after surgery if bleeding risk is low (1.11.2); consider pre-operative prophylaxis if surgery is delayed beyond the day after admission, last dose no less than 12 hours (LMWH) or 24 hours (fondaparinux) before surgery (1.11.3)"
+    },
+    {
+      "id": "NHFD",
+      "name": "Royal College of Physicians, Falls and Fragility Fracture Audit Programme. Room for improvement: hip fracture care in 2024. National Hip Fracture Database report: methodology",
+      "version": "Version 1.0, August 2025",
+      "url": "https://www.rcp.ac.uk/media/4gia5hth/nhfd-2025-report-analysis-methodology.pdf",
+      "supports": "NHFD key performance indicators: given a nerve block and admitted to a specialist ward within 4 hours (KPI 0); orthogeriatric assessment by a senior geriatrician within 72 hours of admission (KPI 1); surgery by the day following admission (KPI 2); surgery consistent with NICE CG124 (KPI 3); mobilisation on the day of, or by the day following, surgery (KPI 4); not delirious when tested after surgery (KPI 5); return to original residence by 120 days (KPI 6); bone protection medication (KPI 7)"
+    },
+    {
+      "id": "BL",
+      "name": "Bailey & Love's Short Practice of Surgery (O'Connell, McCaskie, Sayers, eds)",
+      "version": "28th edition, 2023",
+      "url": "https://www.routledge.com/Bailey--Loves-Short-Practice-of-Surgery---28th-Edition/OConnell-McCaskie-Sayers/p/book/9780367548117",
+      "supports": "Displaced intracapsular fractures disrupt the retinacular blood supply to the femoral head, risking avascular necrosis and non-union after fixation"
+    }
+  ],
+  "partner": {
+    "opening": "Mrs Lacey has just arrived. How would you assess her?",
+    "reveals": [
+      {
+        "trigger": "Asks for observations and examination",
+        "finding": "Pulse 96 regular, BP 128/74, RR 18, SpO2 96% on air, temperature 36.4°C. Alert and oriented; no cognitive impairment on screening. Reddened sacrum. Pain 8/10.",
+        "row": "G1"
+      },
+      {
+        "trigger": "When the candidate is ready for imaging",
+        "finding": "Read out: AP pelvis and lateral view of the right hip. On the right, a fracture line crosses the femoral neck just below the femoral head, proximal to the intertrochanteric line. There is no bony contact across the fracture: the shaft and distal neck are shifted upwards and rotated outwards relative to the head, and the trabecular lines of the head no longer line up with those of the neck. The greater and lesser trochanters are intact. The left hip is normal. The bones are generally osteopenic.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Asks for bloods and ECG",
+        "finding": "Hb 121, Na 136, K 4.4, urea 11.8, creatinine 98, CK 640 U/L. ECG sinus rhythm. Chest X-ray clear.",
+        "row": "G4"
+      },
+      {
+        "trigger": "Asks about her mobility and function",
+        "finding": "Walks to the shops with one stick; washes, dresses and cooks for herself. No other major illness.",
+        "row": "G5"
+      }
+    ],
+    "push": [
+      {
+        "question": "Which patients should be considered for total hip replacement?",
+        "row": "G5",
+        "expect": "Walked independently outdoors with no more than a stick; no condition making it unsuitable; expected to be independent in ADLs beyond 2 years."
+      },
+      {
+        "question": "Her pain is still 7 out of 10 after paracetamol and morphine.",
+        "row": "G3",
+        "expect": "Consider a nerve block by trained staff; it doesn't replace early surgery."
+      },
+      {
+        "question": "What does the orthogeriatric team add?",
+        "row": "G6",
+        "expect": "Assessment and optimisation, delirium care, rehabilitation goals, falls prevention and bone health, discharge planning."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "She takes apixaban for atrial fibrillation.",
+        "safeAnswer": "Anticoagulation is a correctable problem to address immediately so it doesn't delay surgery: plan timing with the anaesthetist and haematology per local protocol.",
+        "row": "G4"
+      },
+      {
+        "prompt": "She has moderate dementia and walks indoors with a frame.",
+        "safeAnswer": "She doesn't meet the criteria to consider THR: cemented hemiarthroplasty; involve her family, and assess capacity and best interests.",
+        "row": "G5"
+      },
+      {
+        "prompt": "There's no theatre space until day 3.",
+        "safeAnswer": "Escalate to get her on the list; consider preoperative VTE prophylaxis, with the last LMWH dose at least 12 hours before surgery.",
+        "row": "G7"
+      }
+    ]
+  }
+}

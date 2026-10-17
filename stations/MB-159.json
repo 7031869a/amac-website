@@ -1,0 +1,550 @@
+{
+  "id": "MB-159",
+  "exam": "MRCS-B",
+  "title": "Examination of a stoma",
+  "type": "examination",
+  "header": {
+    "domain": "Applied Skills",
+    "contentArea": "Clinical and procedural skills",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "signalMinutes": 6,
+    "guidelineVersions": [
+      "ASCN UK stoma care guidelines (2016)",
+      "BIFA high output stoma top tips (Apr 2023)"
+    ],
+    "related": [
+      {
+        "id": "Postoperative fluid balance station",
+        "why": "Dehydration and acute kidney injury from a high output"
+      },
+      {
+        "id": "Stoma siting and consent",
+        "why": "Why the stoma was placed where it is"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Surgical ward",
+    "role": "Core surgical trainee on the ward round",
+    "scenario": "Mr Colin Barker, 67, is 10 days after an emergency laparotomy for a perforated caecal cancer. He has a stoma. He is otherwise recovering. The examiner will read out what you see and feel, including the appearance of the stoma, as you examine.",
+    "task": "Examine his abdomen, including the stoma; the examiner will read out the findings as you go. You will be stopped at 6 minutes to present your findings and answer questions."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Which stoma is it, is it healthy, and what is it putting out?",
+    "trap": "Naming the stoma from its site alone.",
+    "firstMove": "\"May I look at your stoma? I'll ask before I touch the bag.\""
+  },
+  "flow": [
+    "Introduce, consent, privacy, clean hands",
+    "Site, spout, lumens, output",
+    "Stoma health",
+    "Skin, cough, stenosis",
+    "Wound and abdomen",
+    "At 6 minutes: present"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "professionalism",
+      "label": "Preparation",
+      "fail": "Pulls the bag off without asking.",
+      "pass": "Introduces, confirms identity, gains consent, ensures privacy, cleans hands, wears gloves, exposes the abdomen.",
+      "high": "Asks before removing the bag, looks through a clear bag first, and has a replacement ready or the stoma nurse involved."
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-skill",
+      "label": "Identifying the stoma",
+      "fail": "Names the stoma by its site alone.",
+      "borderline": "Calls it an ileostomy correctly, but can't say whether it's end or loop.",
+      "pass": "Notes site, spouted or flush, number of lumens, and the bag contents.",
+      "high": "Concludes: right iliac fossa, spouted, single lumen, liquid output: end ileostomy; contrasts a flush colostomy with formed stool."
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-skill",
+      "label": "Stoma health (safety-critical)",
+      "fail": "Doesn't comment on the colour of the stoma.",
+      "pass": "Colour (pink and moist, not dusky or black), mucocutaneous junction intact, no retraction or prolapse.",
+      "high": "Escalates a dusky or black stoma to a senior the same day, and checks how far below the skin the ischaemia extends."
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-skill",
+      "label": "Peristomal skin and complications",
+      "fail": "Doesn't look at the skin around the stoma.",
+      "pass": "Inspects peristomal skin for soreness; asks him to cough for a parastomal hernia; looks for stenosis and retraction.",
+      "high": "Describes skin damage in DET terms (discolouration, erosion, tissue overgrowth), and offers gentle digital examination only if stenosis is suspected.",
+      "source": "ASCN"
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-skill",
+      "label": "Wound and abdomen",
+      "fail": "Examines the stoma and ignores the rest of the abdomen.",
+      "pass": "Inspects the laparotomy wound and drain sites; palpates for tenderness and distension; auscultates.",
+      "high": "Looks for a second stoma or mucous fistula, and asks for the stoma chart and fluid balance."
+    },
+    {
+      "id": "G6",
+      "domain": "communication",
+      "label": "Presentation at the signal",
+      "fail": "Lists what they did rather than what they found.",
+      "pass": "Names the stoma, states whether it is healthy, and summarises the abdomen and output.",
+      "high": "Leads with 'a healthy end ileostomy', gives the important negatives, and names the one problem to act on."
+    },
+    {
+      "id": "G7",
+      "domain": "clinical-knowledge",
+      "label": "Output and high output",
+      "fail": "Tells a patient with a high output to drink as much water as possible.",
+      "pass": "Knows there is no single cut-off (commonly 1.5–2 L in 24 hours); checks fluid balance, U&E and magnesium.",
+      "high": "Restricts oral hypotonic fluid, gives oral rehydration solution and loperamide before food, and looks for sepsis or obstruction.",
+      "source": "ASCN"
+    },
+    {
+      "id": "G8",
+      "domain": "professionalism",
+      "label": "Closing",
+      "fail": "Leaves the stoma uncovered.",
+      "pass": "Replaces or secures the bag, thanks him, cleans hands, and documents.",
+      "high": "Involves the stoma care nurse for skin care and appliance fit, and asks how he feels about the stoma."
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "candidate",
+        "text": "[Pulls the bag off without asking.]",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "It's on the right, so it's an ileostomy.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Doesn't look at the colour or the skin around it.]",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          },
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop. Your findings?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I looked at the stoma and felt the tummy.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "If his output rose to 2.4 litres a day, what would you advise?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Drink plenty of water to keep up.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Walks away with the stoma uncovered.]",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "candidate",
+        "text": "Hello, I'm Dr Patel, one of the surgical team. Can I check your name and date of birth? I'd like to examine your tummy and your stoma. Is anything sore? [Consent; curtains; cleans hands; gloves.]",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Looks through the clear bag; the examiner reads out the findings.] It's in the right iliac fossa, spouted, with one lumen and green liquid output.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "May I take the bag off to look at the edge? [Removes it gently.] It's pink and moist, the edge where it meets the skin is intact, and there's no retraction or prolapse.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Inspects the skin around it.] Could you cough for me? [Looks for a bulge around the stoma.]",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Inspects the wound and drain sites; palpates; auscultates.]",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Replaces the bag.] Thank you. [Cleans hands.] I'll write this in the notes.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop. Your findings?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Mr Barker has an end ileostomy in the right iliac fossa: spouted, single lumen, liquid output. It's pink and healthy, with an intact mucocutaneous junction, mild redness of the skin below it, and no parastomal hernia. The midline wound is healing and the abdomen is soft.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What is a high output, and what would you check?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "There's no single cut-off; it's usually quoted as 1.5 to 2 litres in 24 hours. I'd check his fluid balance, U&E and magnesium.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "candidate",
+        "text": "Hello, I'm Dr Patel, one of the surgical team. Can I check your name and date of birth? I'd like to look at your stoma and your tummy. I'll look through the bag first, and ask before I take it off. [Consent; curtains; cleans hands; gloves; new bag ready.]",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Looks through the clear bag; the examiner reads out the findings.] Right iliac fossa, spouted, one lumen, liquid green output: that's an end ileostomy. A colostomy would usually be flush, in the left iliac fossa, with formed stool.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "May I take the bag off now? [Removes it gently.] Pink and moist, with an intact junction. If it were dusky or black, I'd call my senior today and check how deep the ischaemia goes.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Peristomal skin: mild discolouration below the stoma, no erosion or overgrowth.] Could you cough? [No bulge.] The opening isn't narrowed; if it were, I'd gently check it with a finger.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[Midline wound, drain sites; no second stoma or mucous fistula; soft; bowel sounds.] Could I see his stoma chart and fluid balance?",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "[New bag.] Thank you. How are you finding the stoma? I'll ask the stoma nurse to look at the skin and the bag fit. [Cleans hands.]",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Please stop. Your findings?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "A healthy end ileostomy in the right iliac fossa: pink, spouted, intact junction. Importantly, no retraction, prolapse, stenosis or parastomal hernia, and the wound is healing. The one issue is mild peristomal redness below the stoma, likely from leakage, which needs the stoma nurse.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What is a high output, and how would you manage it?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Guidance varies, from 1.5 to 2 litres a day, so I'd judge it by him: his fluid balance, urine output and renal function, not the number alone. I'd look for a cause such as sepsis or obstruction, correct fluid and electrolytes, restrict plain water and other hypotonic drinks, give an oral rehydration solution, and start loperamide before meals.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G2",
+      "move": "Naming the stoma from its site alone.",
+      "consequence": "A right-sided stoma can be a colostomy and a left-sided one an ileostomy; the spout and output decide."
+    },
+    {
+      "row": "G3",
+      "move": "Missing a dusky stoma.",
+      "consequence": "Safety-critical: ischaemia extending below the fascia can perforate and needs early return to theatre."
+    },
+    {
+      "row": "G5",
+      "move": "Ignoring the wound and the rest of the abdomen.",
+      "consequence": "Misses wound infection, dehiscence or a collection."
+    },
+    {
+      "row": "G7",
+      "move": "Advising lots of water for a high output.",
+      "consequence": "Hypotonic fluid increases sodium loss through the stoma and worsens dehydration."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You named it too early",
+      "line": "Let me describe it properly: site, spout, lumens and output, then I'll name it."
+    },
+    {
+      "when": "You're not sure if it's healthy",
+      "line": "I'd like my senior and the stoma nurse to look at it today."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Ileostomy: usually right iliac fossa, spouted, liquid output. Colostomy: usually left iliac fossa, flush, formed stool. Two lumens: loop stoma.",
+      "source": "BL"
+    },
+    {
+      "fact": "No single universal cut-off for a high output stoma: ASCN UK uses over 1.5 L in 24 hours; assess peristomal skin with the DET score.",
+      "source": "ASCN"
+    },
+    {
+      "fact": "Depletion usually occurs above 2 L a day. Exclude obstruction and sepsis; restrict hypotonic fluid to 0.5–1 L a day; sip oral rehydration solution; loperamide before food; monitor magnesium.",
+      "source": "BIFA"
+    }
+  ],
+  "recall": {
+    "think": "Is the stoma alive, and is he getting dry?",
+    "say": "\"May I look through the bag before I take it off?\"",
+    "do": [
+      "Site, spout, lumens, output",
+      "Colour and mucocutaneous junction",
+      "Skin, cough impulse, wound"
+    ],
+    "numbers": [
+      {
+        "value": "1.5–2 L / 24 h",
+        "meaning": "high output: range quoted, no single cut-off (ASCN 1.5 L, BIFA 2 L)",
+        "source": "ASCN"
+      },
+      {
+        "value": "0.5–1 L",
+        "meaning": "daily oral hypotonic fluid limit in high output",
+        "source": "BIFA"
+      },
+      {
+        "value": "6 min",
+        "meaning": "signal to stop and present",
+        "source": "ICBSE"
+      }
+    ],
+    "trap": "Site alone doesn't tell you the stoma type.",
+    "finish": "Stoma nurse; fluid balance; escalate a dusky stoma."
+  },
+  "sources": [
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "At every station: introduce yourself, explain the task, confirm identity, obtain consent, clean hands before and after patient contact; 6-minute signal in examination stations"
+    },
+    {
+      "id": "BL",
+      "name": "Bailey & Love's Short Practice of Surgery (O'Connell, McCaskie, Sayers, eds)",
+      "version": "28th edition, 2023",
+      "url": "https://www.routledge.com/Bailey--Loves-Short-Practice-of-Surgery---28th-Edition/OConnell-McCaskie-Sayers/p/book/9780367548117",
+      "supports": "Examination technique and clinical signs"
+    },
+    {
+      "id": "ASCN",
+      "name": "ASCN UK (Association of Stoma Care Nurses UK) Stoma Care National Clinical Guidelines",
+      "version": "2016 edition (foreword January 2016)",
+      "url": "https://www.sath.nhs.uk/wp-content/uploads/2017/11/Stoma-Care-Guidelines.pdf",
+      "supports": "High output stoma: output over 1500 ml in 24 hours, watery; fluid balance; loperamide; peristomal skin assessment with the DET score (discolouration, erosion, tissue overgrowth); digital examination of the stoma if stenosis is suspected; prolapse with signs of ischaemia or obstruction referred urgently"
+    },
+    {
+      "id": "BIFA",
+      "name": "British Intestinal Failure Alliance (BAPEN). Top Tips: Managing a high output stoma (Nightingale J and BIFA Committee)",
+      "version": "Updated April 2023",
+      "url": "https://www.bapen.org.uk/pdfs/bifa/bifa-top-tips-series-1-updated.pdf",
+      "supports": "High output usually causes depletion above 2 L in 24 hours; exclude obstruction and intra-abdominal sepsis; restrict oral hypotonic fluid to 0.5–1 L a day; sip a glucose–salt solution; high-dose loperamide before food; proton pump inhibitor; monitor urinary sodium and magnesium"
+    }
+  ],
+  "partner": {
+    "opening": "Please examine this patient's abdomen, including his stoma. I'll read out the findings as you go, and I'll stop you at 6 minutes.",
+    "actorBrief": "You are Mr Colin Barker, 67, ten days after an emergency operation. You're getting used to the bag but it leaked once last night and the skin underneath is a bit sore. You're worried about managing at home. Cough when asked.",
+    "reveals": [
+      {
+        "trigger": "Inspects the stoma through the bag",
+        "finding": "Read out: through the clear bag, there is a stoma in the right iliac fossa. It projects above the skin as a spout and has a single opening. The bag contains green liquid effluent.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Assesses stoma health",
+        "finding": "Read out: with the bag off, the stoma is pink and moist. The junction between the stoma and the skin is intact all the way round. No retraction or prolapse.",
+        "row": "G3"
+      },
+      {
+        "trigger": "Inspects peristomal skin, asks him to cough, checks for stenosis",
+        "finding": "Mild redness below the stoma, no erosion. No cough impulse. No stenosis.",
+        "row": "G4"
+      },
+      {
+        "trigger": "Examines the wound and abdomen",
+        "finding": "Midline wound with clips, clean and dry. No second stoma. Soft, mildly tender near the wound. Bowel sounds present.",
+        "row": "G5"
+      },
+      {
+        "trigger": "Asks for the stoma chart",
+        "finding": "Output 900, 1100 and 1300 ml over the last three days.",
+        "row": "G5"
+      },
+      {
+        "trigger": "At 6 minutes",
+        "finding": "Say: \"Please stop there and present your findings.\"",
+        "row": "G6"
+      }
+    ],
+    "push": [
+      {
+        "question": "What type of stoma is this, and how do you know?",
+        "row": "G2",
+        "expect": "End ileostomy: right iliac fossa, spouted, one lumen, liquid output."
+      },
+      {
+        "question": "Why is an ileostomy spouted?",
+        "row": "G2",
+        "expect": "Small bowel content is liquid and irritant; the spout keeps it off the skin."
+      },
+      {
+        "question": "What is a high output?",
+        "row": "G7",
+        "expect": "No single cut-off; usually 1.5–2 L in 24 hours, judged against the patient's fluid balance and renal function."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "Two days later his output is 2.4 litres a day and his creatinine has risen.",
+        "safeAnswer": "High output with AKI: IV fluid, restrict hypotonic drinks, oral rehydration solution, loperamide, and look for sepsis or obstruction.",
+        "row": "G7"
+      },
+      {
+        "prompt": "The stoma is dark purple.",
+        "safeAnswer": "Possible ischaemia: urgent senior review today; check how deep it extends; theatre if below the fascia.",
+        "row": "G3"
+      },
+      {
+        "prompt": "Read out: a different patient has a stoma in the left iliac fossa. It lies flush with the skin, has a single opening, and the bag contains formed brown stool. What is this?",
+        "safeAnswer": "End colostomy: left iliac fossa, flush, formed stool, e.g. after a Hartmann's procedure.",
+        "row": "G2"
+      },
+      {
+        "prompt": "The spouted stoma has two lumens.",
+        "safeAnswer": "A loop ileostomy, usually defunctioning a distal anastomosis.",
+        "row": "G2"
+      }
+    ]
+  }
+}

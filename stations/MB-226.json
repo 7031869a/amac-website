@@ -1,0 +1,587 @@
+{
+  "id": "MB-226",
+  "exam": "MRCS-B",
+  "title": "Postoperative new atrial fibrillation: ECG and management",
+  "type": "data-interpretation",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "Applied surgical science and critical care",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "NICE NG196 (updated June 2021, minor changes March 2025)",
+      "Resuscitation Council UK ALS 2025; tachyarrhythmia algorithm (March 2026)",
+      "ESC 2024 AF guideline, via Eur Cardiol Rev (February 2025)"
+    ],
+    "related": [
+      {
+        "id": "MB-163 Telephone referral (SBAR): suspected anastomotic leak",
+        "why": "When new AF is the first sign of a leak"
+      },
+      {
+        "id": "MB-166 Hyperkalaemia",
+        "why": "Reading the ECG with the electrolytes"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Surgical ward",
+    "role": "Core surgical trainee on call",
+    "scenario": "Mr Gerald Tamworth, 72, is on day 2 after an emergency laparotomy and small bowel resection with anastomosis. He takes amlodipine for hypertension. He has no heart failure, diabetes, stroke or vascular disease. He has developed palpitations and mild breathlessness. The nurse reports an irregular pulse of 140.",
+    "task": "The examiner will read out his ECG findings, then other results. Interpret them and explain your management."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Interpret the ECG findings, check for life-threatening features, find the cause, then rate or rhythm, stroke risk, and anticoagulation with the surgeon.",
+    "trap": "Giving a rate-control drug to a dry, septic patient without treating why he's in AF.",
+    "firstMove": "\"I'd assess him ABCDE and check for shock, syncope, chest pain or heart failure.\""
+  },
+  "flow": [
+    "ECG interpretation",
+    "Life-threatening features",
+    "Reversible causes",
+    "Rate or rhythm",
+    "Stroke risk",
+    "Anticoagulation timing",
+    "Monitor and escalate"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-skill",
+      "label": "Systematic ECG interpretation",
+      "fail": "Calls it sinus tachycardia or SVT.",
+      "pass": "Interprets the findings: irregularly irregular narrow-complex tachycardia, about 140, no P waves, fibrillating baseline: atrial fibrillation with a fast ventricular rate.",
+      "high": "States the QRS is under 0.12 s; looks for ischaemic changes; compares with the preoperative ECG.",
+      "source": "RCUK"
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-skill",
+      "label": "Life-threatening features (safety-critical)",
+      "fail": "Gives drugs without checking for shock, syncope, ischaemia or heart failure.",
+      "pass": "ABCDE; checks for shock, syncope, myocardial ischaemia and severe heart failure; none, so treats as stable.",
+      "high": "If they appear: synchronised shock, up to 3 attempts, under sedation or anaesthesia; then amiodarone 300 mg over 10–20 minutes.",
+      "source": "RCUK"
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "Reversible causes",
+      "fail": "Treats the rhythm and ignores the cause.",
+      "pass": "Looks for and corrects causes: fluid deficit, sepsis, hypoxia, low potassium and magnesium, pain.",
+      "high": "Treats the fluid deficit and electrolytes before rate control; considers an anastomotic leak or collection and asks for senior review.",
+      "source": "NG196"
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-knowledge",
+      "label": "Rate or rhythm control",
+      "fail": "Picks a drug with no rationale, or a calcium-channel blocker despite heart failure.",
+      "pass": "Onset under 48 hours: rate or rhythm control. For rate: a beta-blocker (not sotalol), or diltiazem or verapamil.",
+      "high": "Knows NICE doesn't make rate control first-line when the cause is reversible or AF is new; avoids calcium-channel blockers in heart failure.",
+      "source": "NG196"
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-knowledge",
+      "label": "Cardioversion choices",
+      "fail": "Suggests magnesium or diltiazem to cardiovert.",
+      "pass": "If rhythm control: flecainide or amiodarone without structural or ischaemic heart disease; amiodarone if there is.",
+      "high": "No magnesium or calcium-channel blocker to cardiovert; beyond 48 hours, 3 weeks of anticoagulation first.",
+      "source": "NG196"
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-knowledge",
+      "label": "Stroke and bleeding risk",
+      "fail": "Doesn't assess stroke risk.",
+      "pass": "CHA2DS2-VASc 2 (hypertension 1, age 65–74 1); 2 or more means offer anticoagulation, weighing bleeding risk.",
+      "high": "Uses ORBIT for bleeding; knows NICE still uses CHA2DS2-VASc, and ESC's CHA2DS2-VA (without sex) also scores him 2.",
+      "source": "NG196"
+    },
+    {
+      "id": "G7",
+      "domain": "professionalism",
+      "label": "Anticoagulation after laparotomy",
+      "fail": "Starts treatment-dose anticoagulation on his own, or never raises it.",
+      "pass": "Agrees timing with the operating consultant, weighing bleeding; prophylactic enoxaparin continues meanwhile.",
+      "high": "Knows NICE offers heparin at presentation unless contraindicated; a fresh anastomosis may be one; records the plan and when to revisit.",
+      "source": "NG196"
+    },
+    {
+      "id": "G8",
+      "domain": "professionalism",
+      "label": "Monitoring and escalation",
+      "fail": "Leaves him without monitoring or senior input.",
+      "pass": "Continuous ECG monitoring, repeat 12-lead ECG, registrar informed; medical advice.",
+      "high": "Records the onset time, which decides the strategy; echocardiogram if cardioversion is considered or heart disease suspected.",
+      "source": "NG196"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "Here are his ECG findings."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Fast and narrow: probably SVT.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd give him IV diltiazem now.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          },
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Anything else?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "No, the rate is the problem.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Could you cardiovert him with drugs?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Yes, with magnesium.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What about stroke risk?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'm not sure it matters after surgery.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'll start treatment-dose enoxaparin tonight.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "The nurses can recheck his pulse in the morning.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "examiner",
+        "text": "Here are his ECG findings."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Irregularly irregular narrow-complex tachycardia, about 140, no P waves: atrial fibrillation with a fast ventricular rate.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd assess him ABCDE and check for shock, syncope, ischaemia and heart failure. None, so he's stable.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd look for causes: he's 1.8 litres down, potassium and magnesium are low, and he could be septic. I'd give fluid and replace both.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "After fluid, electrolytes and analgesia he is still in AF at 120."
+      },
+      {
+        "speaker": "candidate",
+        "text": "It started under 48 hours ago, so rate or rhythm control. For rate, a beta-blocker such as metoprolol.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "For rhythm control without structural heart disease, flecainide or amiodarone; amiodarone if there is.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "CHA2DS2-VASc is 2: hypertension and age 72. That means offering anticoagulation, weighing bleeding.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Two days after an anastomosis, I'd agree the timing with the operating consultant and continue his prophylactic enoxaparin meanwhile.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Continuous monitoring, repeat ECG, and I'd tell my registrar and ask the medical team for advice.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "examiner",
+        "text": "Here are his ECG findings."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Irregularly irregular, narrow QRS under 0.12 seconds, about 140, no P waves, fibrillating baseline: fast AF. No ischaemic changes; I'd compare with his preoperative ECG.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "ABCDE: no shock, syncope, chest pain or heart failure, so stable. If he became shocked, a synchronised shock, up to three attempts under sedation, then amiodarone 300 mg over 10 to 20 minutes.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Day 2 after an anastomosis, 1.8 litres down, low potassium and magnesium, and a high CRP. I'd correct fluid and electrolytes first, and ask whether this is an early leak.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "After fluid, electrolytes and analgesia he is still in AF at 120."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Onset under 48 hours, with a reversible cause, so rate control isn't automatically first-line; rhythm control is an option. If rate, a beta-blocker; no calcium-channel blocker if he develops heart failure.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "For cardioversion, flecainide or amiodarone if his heart is structurally normal; never magnesium or a calcium-channel blocker. If he'd been in AF over 48 hours, three weeks of anticoagulation first.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "CHA2DS2-VASc 2, age and hypertension; ORBIT for bleeding. NICE still uses VASc; ESC's CHA2DS2-VA drops sex and also gives 2.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "NICE offers heparin at presentation unless contraindicated; a fresh anastomosis may be. I'd agree the timing with his operating consultant, keep his prophylactic dose, and document when we'll revisit.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "candidate",
+        "text": "Monitored bed, repeat ECG, onset time recorded, registrar and medical team informed; echo if cardioversion is planned.",
+        "tags": [
+          {
+            "row": "G8",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G2",
+      "move": "Giving rate-control drugs to a shocked patient instead of synchronised cardioversion.",
+      "consequence": "Safety-critical: delays the treatment for life-threatening instability."
+    },
+    {
+      "row": "G3",
+      "move": "Giving a beta-blocker before correcting a 1.8 litre deficit, potassium and magnesium.",
+      "consequence": "The driver persists, and his blood pressure may fall."
+    },
+    {
+      "row": "G7",
+      "move": "Starting treatment-dose anticoagulation without the operating surgeon.",
+      "consequence": "The bleeding risk from a fresh anastomosis isn't weighed by the team who operated."
+    },
+    {
+      "row": "G5",
+      "move": "Using magnesium or a calcium-channel blocker to cardiovert.",
+      "consequence": "NICE advises against both for pharmacological cardioversion."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You jumped to a drug",
+      "line": "Before any drug: is he stable, and what's driving this?"
+    },
+    {
+      "when": "Asked about anticoagulation",
+      "line": "His score says offer it; the timing after surgery is a decision with his operating consultant."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "CHA2DS2-VASc: heart failure 1, hypertension 1, age 75 or over 2, diabetes 1, stroke or TIA 2, vascular disease 1, age 65–74 1, female 1.",
+      "source": "XING"
+    },
+    {
+      "fact": "ESC 2024 CHA2DS2-VA removes sex; NICE NG196 still uses CHA2DS2-VASc.",
+      "source": "ECR"
+    },
+    {
+      "fact": "NICE: onset under 48 hours, rate or rhythm control; over 48 hours or uncertain, rate control, and at least 3 weeks' anticoagulation before cardioversion.",
+      "source": "NG196"
+    },
+    {
+      "fact": "RCUK 2025 tachyarrhythmia algorithm: probable AF with EF over 40%, control rate (beta-blocker, verapamil, diltiazem or digoxin); anticoagulate if the arrhythmia has lasted over 24 h.",
+      "source": "RCUK"
+    },
+    {
+      "fact": "Postoperative AF after non-cardiothoracic surgery: manage as new-onset AF, and correct causes such as electrolytes and hypoxia.",
+      "source": "NG196"
+    },
+    {
+      "fact": "Life-threatening features: shock, syncope, myocardial ischaemia, severe heart failure. Synchronised shock, up to 3 attempts.",
+      "source": "RCUK"
+    }
+  ],
+  "recall": {
+    "think": "Instability; a leak or sepsis driving the AF; stroke; bleeding from early anticoagulation.",
+    "say": "\"Fast AF, stable: I'm treating the cause and checking for a leak.\"",
+    "do": [
+      "ABCDE and life-threatening features",
+      "Fluid, potassium, magnesium, sepsis",
+      "Rate or rhythm; CHA2DS2-VASc; anticoagulate with the surgeon"
+    ],
+    "numbers": [
+      {
+        "value": "48 h",
+        "meaning": "onset under: rate or rhythm control",
+        "source": "NG196"
+      },
+      {
+        "value": "≥ 2",
+        "meaning": "CHA2DS2-VASc: offer anticoagulation",
+        "source": "NG196"
+      },
+      {
+        "value": "Up to 3",
+        "meaning": "synchronised shocks if unstable",
+        "source": "RCUK"
+      }
+    ],
+    "trap": "Controlling the rate while missing the leak that caused it.",
+    "finish": "Sinus rhythm or controlled rate, cause treated, anticoagulation plan agreed."
+  },
+  "sources": [
+    {
+      "id": "NG196",
+      "name": "NICE NG196: Atrial fibrillation: diagnosis and management",
+      "version": "Published 27 April 2021; last updated 30 June 2021; minor changes March 2025",
+      "url": "https://www.nice.org.uk/guidance/ng196",
+      "supports": "12-lead ECG to diagnose (1.1.2); CHA2DS2-VASc for stroke risk (1.2.1) and ORBIT for bleeding risk (1.2.2); TTE if cardioversion is considered or heart disease suspected (1.3.1); offer a DOAC if CHA2DS2-VASc 2 or more, taking bleeding risk into account (1.6.3); rate control first-line except with a reversible cause or new-onset AF (1.7.1); beta-blocker other than sotalol, or diltiazem or verapamil (1.7.2); emergency electrical cardioversion for life-threatening instability (1.8.1); onset under 48 hours: rate or rhythm control; over 48 hours or uncertain: rate control (1.8.2); in acute decompensated heart failure seek senior input on beta-blockers and avoid calcium-channel blockers (1.8.3); flecainide or amiodarone without structural or ischaemic heart disease, amiodarone with it (1.8.5); over 48 hours: 3 weeks of therapeutic anticoagulation before cardioversion (1.8.6); no magnesium or calcium-channel blocker for pharmacological cardioversion (1.8.7); new-onset AF: heparin at presentation in the absence of contraindications (1.8.8); after non-cardiothoracic surgery manage as new-onset AF of any cause (1.10.7); correct identifiable causes such as electrolyte imbalance or hypoxia (1.10.8). NG196 still uses CHA2DS2-VASc"
+    },
+    {
+      "id": "RCUK",
+      "name": "Resuscitation Council UK: Adult advanced life support guidelines 2025, with the adult tachyarrhythmia algorithm (version 3)",
+      "version": "Guidelines published 27 October 2025; algorithm updated March 2026",
+      "url": "https://www.resus.org.uk/professional-library/2025-resuscitation-guidelines/adult-advanced-life-support-guidelines",
+      "supports": "ABCDE, oxygen if SpO2 under 94%, IV access, monitor and 12-lead ECG, treat reversible causes; life-threatening features: shock, syncope with severe or ongoing hypotension, myocardial ischaemia, severe heart failure with pulmonary oedema; if present, synchronised shock up to 3 attempts with sedation or anaesthesia if conscious, then amiodarone 300 mg IV over 10-20 min and repeat the shock; narrow QRS is under 0.12 s; irregular narrow complex: probable AF, with EF over 40% control rate with a beta-blocker, verapamil, diltiazem or digoxin, with EF under 40% consider a beta-blocker or digoxin, and anticoagulate if the arrhythmia has lasted over 24 h; for AF, an initial synchronised shock at maximum output is reasonable"
+    },
+    {
+      "id": "XING",
+      "name": "Xing Y, Sun Y, Li H, et al. CHA2DS2-VASc score as a predictor of long-term cardiac outcomes in elderly patients with or without atrial fibrillation. Clin Interv Aging 2018;13:497-504",
+      "version": "Published online 29 March 2018",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/29636604/",
+      "supports": "CHA2DS2-VASc points: heart failure or LV dysfunction 1, hypertension 1, age 75 or over 2, diabetes 1, stroke or TIA 2, vascular disease 1, age 65-74 1, female sex 1"
+    },
+    {
+      "id": "ECR",
+      "name": "Dan G-A, Martinez-Rubio A. 2024 European Society of Cardiology atrial fibrillation guidelines: a moving goalpost. Eur Cardiol Rev 2025;20:e01",
+      "version": "Published 13 February 2025",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40027995/",
+      "supports": "The 2024 ESC guideline uses CHA2DS2-VA, removing female sex as a risk modifier; only CHA2DS2-VA 0 is excluded from anticoagulation"
+    },
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format: 9 minutes with 1 minute's reading"
+    }
+  ],
+  "partner": {
+    "opening": "Mr Tamworth has an irregular pulse of 140. I'll read out his ECG findings.",
+    "reveals": [
+      {
+        "trigger": "At the start",
+        "finding": "Read out: 12-lead ECG. Ventricular rate about 140 per minute. The R-R intervals are irregularly irregular, with no repeating pattern. No P waves are seen in any lead; the baseline between complexes shows a fine, irregular, low-amplitude undulation. QRS complexes are narrow, 0.08 s, with a normal axis. No ST elevation or depression and no T-wave inversion.",
+        "row": "G1"
+      },
+      {
+        "trigger": "Assesses him (ABCDE)",
+        "finding": "HR 142 irregular, BP 116/72, RR 22, SpO2 95% on air, temperature 37.8°C, alert. No chest pain; chest clear; no raised JVP.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Asks about onset and fluid balance",
+        "finding": "Pulse regular at 08:00; palpitations since 14:00. Fluid balance 1.8 litres negative over 24 hours; urine 20 ml/h for 3 hours.",
+        "row": "G3"
+      },
+      {
+        "trigger": "Asks for bloods",
+        "finding": "K 3.2 mmol/L, Mg 0.58 mmol/L, Hb 121 g/L, WCC 13.4, CRP 198, creatinine 96 (baseline 84), lactate 1.6.",
+        "row": "G3"
+      },
+      {
+        "trigger": "Asks to examine the abdomen or see the drug chart",
+        "finding": "Soft, tender around the wound, no peritonism. Enoxaparin 40 mg daily; amlodipine held since surgery.",
+        "row": "G7"
+      }
+    ],
+    "push": [
+      {
+        "question": "What would make you shock him?",
+        "row": "G2",
+        "expect": "Shock, syncope, myocardial ischaemia or severe heart failure: synchronised shock, up to 3 attempts, under sedation."
+      },
+      {
+        "question": "Calculate his CHA2DS2-VASc score.",
+        "row": "G6",
+        "expect": "2: hypertension 1, age 65–74 1. Offer anticoagulation, weighing bleeding risk. CHA2DS2-VA also gives 2."
+      },
+      {
+        "question": "Would you start anticoagulation today?",
+        "row": "G7",
+        "expect": "Agree the timing with the operating consultant; heparin at presentation unless contraindicated; a fresh anastomosis may be one."
+      },
+      {
+        "question": "The RCUK algorithm says 24 hours; NICE says 48. Which do you use?",
+        "row": "G5",
+        "expect": "NICE NG196 uses 48 hours for the rate-or-rhythm choice and before cardioversion; RCUK advises anticoagulation beyond 24 hours. Follow local policy and cardiology advice."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "His BP falls to 78/40 and he becomes confused.",
+        "safeAnswer": "Life-threatening instability: call for help, synchronised shock under sedation or anaesthesia, up to 3 attempts, then amiodarone.",
+        "row": "G2"
+      },
+      {
+        "prompt": "He has severe asthma.",
+        "safeAnswer": "Avoid a beta-blocker; diltiazem or verapamil if there's no heart failure.",
+        "row": "G4"
+      },
+      {
+        "prompt": "His CRP rises to 310 and his abdomen becomes more tender.",
+        "safeAnswer": "Suspect an anastomotic leak: sepsis management, senior review now, imaging and possible return to theatre.",
+        "row": "G3"
+      }
+    ]
+  }
+}

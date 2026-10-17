@@ -1,0 +1,568 @@
+{
+  "id": "MB-254",
+  "exam": "MRCS-B",
+  "title": "Bilious vomiting in a neonate: malrotation and midgut volvulus",
+  "type": "data-interpretation",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "Paediatric surgery: the neonate with bilious vomiting",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "NICE NG29 (2015, updated 2020; minor changes 2022)",
+      "Bailey & Love, 28th ed. (2023)"
+    ],
+    "related": [
+      {
+        "id": "MB-207",
+        "why": "Non-bilious projectile vomiting in an infant: pyloric stenosis"
+      },
+      {
+        "id": "MB-208",
+        "why": "Another infant surgical emergency: intussusception"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Neonatal unit",
+    "role": "Core surgical trainee on the paediatric surgical team",
+    "scenario": "Baby Noah Carrick, a boy born at term three days ago, fed well until this morning. He has since vomited green fluid three times. He passed meconium on day one. The neonatal team has asked for a surgical opinion. The examiner will read out examination, blood and imaging findings.",
+    "task": "Answer the examiner's questions on your assessment, investigation and management. Imaging findings will be read out to you."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Green vomit in a neonate is malrotation with volvulus until proven otherwise; the gut is on a clock.",
+    "trap": "Calling it feed intolerance, or sending a shocked baby for imaging.",
+    "firstMove": "\"Bilious vomiting in a neonate is a surgical emergency: I'd treat this as volvulus until proven otherwise.\""
+  },
+  "flow": [
+    "Recognise the emergency",
+    "Resuscitate and decompress",
+    "Choose the investigation",
+    "Interpret the contrast findings",
+    "Explain the pathology",
+    "Ladd's procedure"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "professionalism",
+      "label": "Recognise the emergency",
+      "fail": "Calls it reflux or feed intolerance and changes the milk.",
+      "pass": "Malrotation with volvulus until proven otherwise; urgent senior paediatric surgical review at a surgical centre.",
+      "high": "Lists other surgical causes (atresia, Hirschsprung's, meconium ileus) and says a normal examination and plain film do not exclude malrotation.",
+      "source": "GODBOLE"
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-skill",
+      "label": "Resuscitate and decompress",
+      "fail": "Continues feeds or omits a nasogastric tube.",
+      "pass": "Nil by mouth; nasogastric tube on free drainage; IV access, blood gas, glucose, bloods, cross-match; IV fluids and antibiotics.",
+      "high": "If shocked: 10–20 mL/kg glucose-free isotonic crystalloid over under 10 minutes, then reassess; maintain glucose.",
+      "source": "NG29"
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "Choose the investigation",
+      "fail": "Waits for imaging in a shocked, peritonitic baby.",
+      "pass": "Stable: urgent upper GI contrast study. Shocked or peritonitic: straight to laparotomy without imaging.",
+      "high": "Knows contrast sensitivity for malrotation is about 96%, and false negatives occur; ultrasound (whirlpool sign) is used where expertise exists.",
+      "source": "SIZEMORE"
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-skill",
+      "label": "Interpret the contrast findings",
+      "fail": "Calls it normal or pyloric stenosis.",
+      "pass": "Duodenojejunal flexure lies right of the midline and low; with volvulus, the duodenum spirals (corkscrew) or is obstructed.",
+      "high": "States the normal flexure lies left of the left vertebral pedicle at the level of the duodenal bulb.",
+      "source": "STROUSE"
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-knowledge",
+      "label": "Explain the pathology",
+      "fail": "Cannot explain why the bowel twists.",
+      "pass": "Incomplete rotation leaves a narrow mesenteric base, so the midgut twists round the superior mesenteric vessels; Ladd's bands cross the duodenum.",
+      "high": "Normal rotation is 270 degrees anticlockwise; volvulus usually twists clockwise, so derotation is anticlockwise.",
+      "source": "BL"
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-knowledge",
+      "label": "Ladd's procedure",
+      "fail": "Says only \"untwist the bowel\".",
+      "pass": "Laparotomy, anticlockwise derotation, divide Ladd's bands, widen the mesentery, appendicectomy, small bowel to the right and colon to the left.",
+      "high": "If viability is doubtful, plans a second look rather than a massive resection; warns parents about short bowel syndrome.",
+      "source": "BL"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "What do you think is going on?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Probably reflux or feed intolerance. I'd try a different formula.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What would you do now?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Keep feeding small amounts and watch him.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "His heart rate is 190, capillary refill 4 seconds, abdomen distended and tender."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd send him for a contrast study first to be sure.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Here are the contrast study findings."
+      },
+      {
+        "speaker": "candidate",
+        "text": "The stomach is emptying, so I think it's normal.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Why might the bowel twist?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'm not sure.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What would the operation involve?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Untwisting the bowel.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "examiner",
+        "text": "What do you think is going on?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Bilious vomiting in a neonate is malrotation with volvulus until proven otherwise. He needs urgent senior paediatric surgical review.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What would you do now?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Nil by mouth, nasogastric tube on free drainage, IV access, gas, glucose, bloods and cross-match, then IV fluids and antibiotics.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "He's pink, heart rate 150, abdomen soft. Investigation?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "An urgent upper GI contrast study. If he were shocked or peritonitic, I'd go straight to theatre.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Here are the contrast study findings."
+      },
+      {
+        "speaker": "candidate",
+        "text": "The duodenojejunal flexure is to the right of the midline and low, and the duodenum spirals down: malrotation with volvulus.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Why does it happen?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Incomplete rotation leaves a narrow mesenteric base, so the midgut twists round the superior mesenteric vessels. Ladd's bands can also obstruct the duodenum.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What operation?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Ladd's: laparotomy, derotate anticlockwise, divide the bands, widen the mesentery, appendicectomy, small bowel on the right and colon on the left.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "examiner",
+        "text": "What do you think is going on?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Volvulus until proven otherwise. Other causes include atresia, Hirschsprung's and meconium ileus, but a normal examination and plain film don't exclude malrotation.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "He becomes mottled, heart rate 190."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Glucose-free isotonic crystalloid, 10 to 20 mL/kg over under 10 minutes, reassess, and keep his glucose up. He then goes to theatre without further imaging.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What does the contrast study offer?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Sensitivity for malrotation is about 96%, but false negatives happen. Where there's expertise, ultrasound can show the whirlpool sign.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Where should the flexure be?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Left of the left vertebral pedicle, at the level of the duodenal bulb.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Which way do you untwist?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Normal rotation is 270 degrees anticlockwise. The volvulus usually twists clockwise, so I derotate anticlockwise.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The bowel looks dusky after derotation."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd warm it and plan a second look rather than resect a lot now, and I'd warn his parents about the risk of short bowel syndrome.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G1",
+      "move": "Treating green vomit as feed intolerance.",
+      "consequence": "The midgut infarcts while the baby is observed."
+    },
+    {
+      "row": "G3",
+      "move": "Sending a shocked, peritonitic baby for a contrast study.",
+      "consequence": "Delays surgery for a diagnosis already made clinically."
+    },
+    {
+      "row": "G2",
+      "move": "No nasogastric tube and continued feeds.",
+      "consequence": "Aspiration risk and worsening distension."
+    },
+    {
+      "row": "G6",
+      "move": "Extensive resection of dusky bowel at first look.",
+      "consequence": "Avoidable short bowel syndrome."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "Asked for a differential first",
+      "line": "My working diagnosis is volvulus, because missing it costs the whole midgut; I'd then consider atresia and Hirschsprung's."
+    },
+    {
+      "when": "Unsure which way to derotate",
+      "line": "Turn it anticlockwise, like turning back the hands of a clock."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "In a prospective audit, 38% of neonates with bilious vomiting had a surgical cause; one malrotation had a normal examination and plain film.",
+      "source": "GODBOLE"
+    },
+    {
+      "fact": "Upper GI contrast: sensitivity 96% for surgically confirmed malrotation.",
+      "source": "SIZEMORE"
+    },
+    {
+      "fact": "Normal duodenojejunal flexure: left of the left vertebral pedicle, at the level of the duodenal bulb.",
+      "source": "STROUSE"
+    },
+    {
+      "fact": "Term neonate needing resuscitation: 10–20 mL/kg glucose-free crystalloid over under 10 minutes.",
+      "source": "NG29"
+    },
+    {
+      "fact": "Ladd's: derotate anticlockwise, divide bands, widen mesentery, appendicectomy.",
+      "source": "BL"
+    }
+  ],
+  "recall": {
+    "think": "Midgut volvulus can infarct the whole small bowel within hours.",
+    "say": "\"Bilious vomiting in a neonate is volvulus until proven otherwise.\"",
+    "do": [
+      "Nil by mouth, NG tube, IV fluids",
+      "Senior paediatric surgeon now",
+      "Contrast study if stable; theatre if shocked"
+    ],
+    "numbers": [
+      {
+        "value": "10–20 mL/kg",
+        "meaning": "fluid bolus for a term neonate, over under 10 minutes",
+        "source": "NG29"
+      },
+      {
+        "value": "96%",
+        "meaning": "sensitivity of upper GI contrast for malrotation",
+        "source": "SIZEMORE"
+      }
+    ],
+    "trap": "A normal examination or plain film does not exclude malrotation.",
+    "finish": "Ladd's procedure; second look if bowel viability is doubtful."
+  },
+  "sources": [
+    {
+      "id": "GODBOLE",
+      "name": "Godbole P, Stringer MD. Bilious vomiting in the newborn: how often is it pathologic? J Pediatr Surg 2002;37:909–11",
+      "version": "2002",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/12037761/",
+      "supports": "Bilious vomiting attributed to obstruction until proved otherwise; surgical cause in 38%; malrotation with normal examination and plain film"
+    },
+    {
+      "id": "NG29",
+      "name": "NICE NG29: Intravenous fluid therapy in children and young people in hospital",
+      "version": "Published 9 December 2015; updated June 2020; minor changes October 2022",
+      "url": "https://www.nice.org.uk/guidance/ng29",
+      "supports": "Term neonates needing resuscitation: glucose-free crystalloid, sodium 131–154 mmol/L, bolus 10–20 mL/kg over under 10 minutes (1.3.2)"
+    },
+    {
+      "id": "SIZEMORE",
+      "name": "Sizemore AW, Rabbani KZ, Ladd A, Applegate KE. Diagnostic performance of the upper gastrointestinal series in the evaluation of children with clinically suspected malrotation. Pediatr Radiol 2008;38:518–28",
+      "version": "2008",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/18265969/",
+      "supports": "Upper GI series sensitivity 96% for surgically verified malrotation; false negatives related to jejunal position"
+    },
+    {
+      "id": "STROUSE",
+      "name": "Strouse PJ. Disorders of intestinal rotation and fixation (\"malrotation\"). Pediatr Radiol 2004;34:837–51",
+      "version": "2004",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/15378215/",
+      "supports": "Malrotation with volvulus as a surgical emergency; radiological findings including position of the duodenojejunal junction and the corkscrew appearance"
+    },
+    {
+      "id": "NGUYEN",
+      "name": "Nguyen HN, El-Ali AM, Van Tassel D, et al. Diagnostic performance of ultrasound for diagnosing midgut malrotation and volvulus in children. AJR Am J Roentgenol 2025;225:e2532660",
+      "version": "September 2025",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40499019/",
+      "supports": "Ultrasound performs well where expertise exists; whirlpool sign the most accurate sign of volvulus"
+    },
+    {
+      "id": "BL",
+      "name": "Bailey & Love's Short Practice of Surgery (O'Connell, McCaskie, Sayers, eds)",
+      "version": "28th edition, 2023",
+      "url": "https://www.routledge.com/Bailey--Loves-Short-Practice-of-Surgery---28th-Edition/OConnell-McCaskie-Sayers/p/book/9780367548117",
+      "supports": "Embryology of midgut rotation; malrotation and volvulus; Ladd's procedure"
+    },
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format: 9 minutes with 1 minute's reading; examiner-led questioning in applied knowledge stations"
+    }
+  ],
+  "partner": {
+    "opening": "You've been asked to see Baby Noah. What do you think is going on?",
+    "reveals": [
+      {
+        "trigger": "Candidate asks for observations and examination",
+        "finding": "HR 150, CRT 2 seconds, pink, alert. Abdomen soft, mildly full, not tender. Green aspirate in the cot.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Candidate asks for a gas and glucose",
+        "finding": "pH 7.36, lactate 1.8, glucose 3.9 mmol/L.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Candidate asks for a plain abdominal film",
+        "finding": "Read out: the supine abdominal film shows a distended, gas-filled stomach with only sparse gas in the distal bowel.",
+        "row": "G1"
+      },
+      {
+        "trigger": "Candidate requests a contrast study",
+        "finding": "Read out: the frontal view of the upper GI contrast study shows contrast filling the stomach and passing into the duodenum. The duodenum does not cross the midline: the duodenojejunal flexure lies to the right of the spine and below the level of the duodenal bulb. The proximal jejunum descends on the right in a tight spiral, like a corkscrew.",
+        "row": "G4"
+      },
+      {
+        "trigger": "Candidate asks what is found at laparotomy",
+        "finding": "Midgut volvulus, two turns clockwise; bowel dusky, improves after derotation.",
+        "row": "G6"
+      }
+    ],
+    "push": [
+      {
+        "question": "What is your working diagnosis?",
+        "row": "G1",
+        "expect": "Malrotation with volvulus until proven otherwise."
+      },
+      {
+        "question": "What would you do immediately?",
+        "row": "G2",
+        "expect": "Nil by mouth, NG tube, IV access, bloods, fluids, antibiotics, senior call."
+      },
+      {
+        "question": "Which investigation, and when would you skip it?",
+        "row": "G3",
+        "expect": "Upper GI contrast if stable; theatre if shocked or peritonitic."
+      },
+      {
+        "question": "Interpret these contrast study findings.",
+        "row": "G4",
+        "expect": "Flexure right of midline and low; corkscrew."
+      },
+      {
+        "question": "Why does malrotation lead to volvulus?",
+        "row": "G5",
+        "expect": "Narrow mesenteric base; twists round the superior mesenteric vessels."
+      },
+      {
+        "question": "Describe Ladd's procedure.",
+        "row": "G6",
+        "expect": "Derotate anticlockwise, divide bands, widen mesentery, appendicectomy."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "HR 190, mottled, abdomen distended and tender, blood per rectum.",
+        "safeAnswer": "Established volvulus with ischaemia: resuscitate and go straight to theatre, no imaging.",
+        "row": "G3"
+      },
+      {
+        "prompt": "The plain abdominal film is normal. Can he go back to feeds?",
+        "safeAnswer": "No: a normal film does not exclude malrotation; he needs a contrast study.",
+        "row": "G1"
+      },
+      {
+        "prompt": "Why remove the appendix?",
+        "safeAnswer": "It ends up on the left after Ladd's, so later appendicitis would be hard to diagnose.",
+        "row": "G6"
+      }
+    ]
+  }
+}

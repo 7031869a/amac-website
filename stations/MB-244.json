@@ -1,0 +1,587 @@
+{
+  "id": "MB-244",
+  "exam": "MRCS-B",
+  "title": "Pathology: basal cell and squamous cell carcinoma of the skin",
+  "type": "data-interpretation",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "Pathology: non-melanoma skin cancer (clinical and histology findings)",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "BAD guidelines for basal cell carcinoma 2021 (Nasr et al., Br J Dermatol 2021)",
+      "BAD guidelines for cutaneous squamous cell carcinoma 2020 (Keohane et al., Br J Dermatol 2021)",
+      "NICE NG12 Suspected cancer: recognition and referral (published June 2015, last updated 15 April 2026)",
+      "Bailey & Love, 28th ed. (2023)"
+    ],
+    "related": [
+      {
+        "id": "MB-197",
+        "why": "Melanoma: the same skin cancer clinic, with Breslow staging and margins"
+      },
+      {
+        "id": "MB-143",
+        "why": "The excision itself: planning an ellipse and closing it"
+      }
+    ]
+  },
+  "brief": {
+    "setting": "Plastic surgery clinic",
+    "role": "Core surgical trainee",
+    "scenario": "Mrs Isla Buchanan, 70, is a retired farmer with fair skin. She has a 1 cm lesion on the ala of her nose and a 1.5 cm lesion on her bald scalp, both present for several months. Written findings: the nasal lesion is a 1 cm shiny, pearly, skin-coloured nodule with a raised, rolled edge and fine branching vessels running over its surface. The scalp lesion is a 1.5 cm raised nodule covered by thick, adherent, yellow-brown crust and scale, firm and indurated at its base, on sun-damaged skin.",
+    "task": "Interpret the written findings for both lesions. The examiner will then read out the histology findings. Answer questions on risk and management."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Two lesions, two diseases: name each, say how it behaves, then set the margin by risk.",
+    "trap": "Quoting a 4 mm margin for the nose. The nose is a high-risk site.",
+    "firstMove": "\"The nose shows a nodular basal cell carcinoma; the scalp lesion looks like a squamous cell carcinoma.\""
+  },
+  "flow": [
+    "Clinical findings",
+    "Histology findings",
+    "Behaviour and risk factors",
+    "Referral and nodes",
+    "Margins for each",
+    "Prompts"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "clinical-knowledge",
+      "label": "Recognises each lesion",
+      "fail": "Calls both lesions the same, or cannot describe either.",
+      "pass": "Nose: pearly nodule, rolled edge, fine surface vessels: nodular BCC. Scalp: crusted, keratotic, indurated nodule: cutaneous SCC.",
+      "high": "Adds that keratoacanthoma cannot be told from SCC clinically, so is treated as SCC; Bowen's disease is SCC in situ.",
+      "source": "NG12"
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-knowledge",
+      "label": "Reads the histology",
+      "fail": "Cannot name a single histological feature of either tumour.",
+      "pass": "BCC: nests of basaloid cells with peripheral palisading. SCC: atypical keratinocytes invading the dermis, with keratin pearls.",
+      "high": "Adds retraction clefts around BCC nests and intercellular bridges in SCC; notes differentiation, depth and perineural invasion should be reported.",
+      "source": "BL"
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "Behaviour and risk factors",
+      "fail": "Says BCC and SCC metastasise alike, or cannot give risk factors.",
+      "pass": "BCC is locally invasive and rarely metastasises; SCC can spread to regional nodes. Risk factors: ultraviolet exposure, fair skin, age, immunosuppression, previous skin cancer.",
+      "high": "Names features linked to poor SCC outcome: size, depth beyond subcutaneous fat, poor differentiation, perineural invasion, ear or lip site, immunosuppression.",
+      "source": "BADSCC"
+    },
+    {
+      "id": "G4",
+      "domain": "professionalism",
+      "label": "Referral urgency",
+      "fail": "Refers both routinely, or both as suspected cancer.",
+      "pass": "SCC: consider a suspected cancer pathway referral. BCC: consider non-urgent referral.",
+      "high": "BCC goes on the suspected cancer pathway only if delay could have a significant impact because of site or size.",
+      "source": "NG12"
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-skill",
+      "label": "Examines the nodes",
+      "fail": "Does not examine the regional nodes for the scalp SCC.",
+      "pass": "Examines parotid and cervical nodes for the scalp SCC; suspicious nodes need ultrasound-guided fine-needle aspiration.",
+      "high": "Would consider high-resolution nodal ultrasound in the clinically node-negative high-risk patient; discusses at the skin cancer MDT.",
+      "source": "BADSCC"
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-knowledge",
+      "label": "BCC margin",
+      "fail": "Takes a 4 mm margin from the nose, or quotes melanoma margins.",
+      "pass": "The nose is a high-risk site: excise with at least a 5 mm peripheral margin. Low-risk BCC: 4 mm.",
+      "high": "Consider Mohs micrographic surgery for high-risk primary BCC; offer it first line for recurrent high-risk BCC.",
+      "source": "BADBCC"
+    },
+    {
+      "id": "G7",
+      "domain": "clinical-knowledge",
+      "label": "SCC margin",
+      "fail": "Cannot give an SCC margin, or uses the same margin whatever the risk.",
+      "pass": "Peripheral margin by risk: at least 4 mm low risk, 6 mm high risk, 10 mm very high risk.",
+      "high": "Adds that at least 1 mm histological clearance is the aim; the final risk group depends on the histology report.",
+      "source": "BADSCC"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "What do the findings suggest for each lesion?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Two basal cell carcinomas.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Describe the histology."
+      },
+      {
+        "speaker": "candidate",
+        "text": "It's cancer cells in the skin. I'm not sure of the details.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How do the two behave?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "They both spread to the lymph nodes like melanoma.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How urgently should her GP have referred her?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Routinely for both; they're slow-growing.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What margin for the nose?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "4 mm, like any basal cell carcinoma.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "And the scalp?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "The same, 4 mm.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "examiner",
+        "text": "What do the findings suggest for each lesion?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "The nose has a pearly nodule with a rolled edge and fine surface vessels: a nodular basal cell carcinoma. The scalp lesion is crusted, keratotic and indurated, so I'd treat it as a squamous cell carcinoma.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "I'll read out the histology. What does it show?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "The first shows nests of basaloid cells with peripheral palisading, which is BCC. The second shows atypical keratinocytes invading the dermis with keratin pearls, which is SCC.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How do they differ in behaviour?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "BCC is locally invasive and rarely metastasises. SCC can spread to regional nodes. Her risks are sun exposure, fair skin and age; immunosuppression and previous skin cancer also matter.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How urgently should she have been referred?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "The SCC warrants a suspected cancer pathway referral. For BCC NICE advises non-urgent referral.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Anything else you'd examine?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "The parotid and neck nodes, because of the scalp SCC. Any suspicious node needs ultrasound-guided fine-needle aspiration.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What margin for the nose?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "The nose is a high-risk site, so at least 5 mm. A low-risk BCC would be 4 mm.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "And the scalp?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "It depends on risk: at least 4 mm if low risk, 6 mm if high, 10 mm if very high.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "examiner",
+        "text": "Could the scalp lesion be anything else?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "A keratoacanthoma, but it can't be reliably told from SCC clinically, so I'd excise it as an SCC. Bowen's disease would be SCC in situ, confined to the epidermis.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What else would you look for in the histology?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Retraction clefts around the BCC nests, and intercellular bridges in the SCC. I'd want the report to give differentiation, depth and any perineural invasion.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Which SCC features worry you?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Size, invasion beyond subcutaneous fat, poor differentiation, perineural invasion, ear or lip site, and immunosuppression, particularly after organ transplant.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Would a BCC ever go on the suspected cancer pathway?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Yes, if a delay could have a significant impact because of its site or size.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Her nodes feel normal."
+      },
+      {
+        "speaker": "candidate",
+        "text": "For a high-risk SCC I'd still consider high-resolution nodal ultrasound, and discuss her at the skin cancer MDT.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Is standard excision the only option for the nose?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Mohs micrographic surgery should be considered for a high-risk primary BCC, and offered first line if it recurs.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The SCC report is back."
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd aim for at least 1 mm histological clearance, and use the report's depth, differentiation and perineural invasion to confirm the risk group.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G6",
+      "move": "Taking a 4 mm margin from the nose.",
+      "consequence": "The nose is a high-risk site; an under-sized margin risks incomplete excision and recurrence in a cosmetically critical area."
+    },
+    {
+      "row": "G3",
+      "move": "Treating SCC as locally invasive only, like BCC.",
+      "consequence": "The nodes go unassessed and nodal spread is found late."
+    },
+    {
+      "row": "G5",
+      "move": "Not examining the parotid and neck nodes.",
+      "consequence": "Misses nodal disease that changes staging and surgery."
+    },
+    {
+      "row": "G4",
+      "move": "Referring a suspected SCC routinely.",
+      "consequence": "Delays treatment of a tumour that can metastasise."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You can't recall the exact SCC margins",
+      "line": "The SCC margin scales with risk, and the nose BCC is high risk by site, so neither gets the smallest margin."
+    },
+    {
+      "when": "Unsure of the scalp diagnosis",
+      "line": "A keratotic, indurated scalp nodule is an SCC until histology says otherwise."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "BCC: pearly nodule, rolled edge, fine vessels; basaloid nests with peripheral palisading.",
+      "source": "BL"
+    },
+    {
+      "fact": "SCC: keratotic, indurated or ulcerated nodule; invasive atypical keratinocytes with keratin pearls.",
+      "source": "BL"
+    },
+    {
+      "fact": "NG12: consider a suspected cancer pathway referral for SCC; non-urgent referral for BCC unless site or size makes delay significant.",
+      "source": "NG12"
+    },
+    {
+      "fact": "BCC margins: 4 mm low risk; at least 5 mm with a high-risk factor, such as a central face or nose site.",
+      "source": "BADBCC"
+    },
+    {
+      "fact": "SCC margins: at least 4, 6 and 10 mm for low, high and very high risk; aim for 1 mm histological clearance.",
+      "source": "BADSCC"
+    },
+    {
+      "fact": "Suspicious nodes in SCC: ultrasound-guided fine-needle aspiration.",
+      "source": "BADSCC"
+    }
+  ],
+  "recall": {
+    "think": "SCC can spread to nodes; a nose BCC can destroy the nose.",
+    "say": "\"Nodular BCC on the nose, SCC on the scalp.\"",
+    "do": [
+      "Name each lesion and its histology",
+      "Examine parotid and neck nodes",
+      "Set the margin by risk group"
+    ],
+    "numbers": [
+      {
+        "value": "4 mm / at least 5 mm",
+        "meaning": "BCC margin: low risk / high risk",
+        "source": "BADBCC"
+      },
+      {
+        "value": "4 / 6 / 10 mm",
+        "meaning": "SCC margin: low / high / very high risk",
+        "source": "BADSCC"
+      }
+    ],
+    "trap": "A small nose BCC is still high risk by site.",
+    "finish": "Excision with the right margin, or Mohs for high-risk BCC; skin cancer MDT."
+  },
+  "sources": [
+    {
+      "id": "BADBCC",
+      "name": "Nasr I, et al. British Association of Dermatologists guidelines for the management of adults with basal cell carcinoma 2021. Br J Dermatol 2021;185:899–920",
+      "version": "2021",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/34050920/",
+      "supports": "4 mm peripheral margin for low-risk BCC (R6); at least 5 mm with a high-risk factor (R7); high-risk sites include the nose and central face; consider Mohs for high-risk primary BCC (R9) and offer it first line for recurrent high-risk BCC (R10)"
+    },
+    {
+      "id": "BADSCC",
+      "name": "Keohane SG, Botting J, Budny PG, et al. British Association of Dermatologists guidelines for the management of people with cutaneous squamous cell carcinoma 2020. Br J Dermatol 2021;184:401–414",
+      "version": "2020 guideline, published 2021",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33150585/",
+      "supports": "Peripheral margins of at least 4, 6 and 10 mm for low, high and very high-risk cSCC (R6); at least 1 mm histological clearance (R7); risk factors including depth beyond subcutaneous fat and perineural invasion; consider high-resolution nodal ultrasound in the N0 setting; ultrasound-guided FNA for suspicious nodes"
+    },
+    {
+      "id": "NG12",
+      "name": "NICE NG12: Suspected cancer: recognition and referral",
+      "version": "Published 23 June 2015; last updated 15 April 2026",
+      "url": "https://www.nice.org.uk/guidance/ng12",
+      "supports": "1.7.4 suspected cancer pathway referral for suspected SCC; 1.7.5 non-urgent referral for suspected BCC with typical features (rolled edge, fine vessels, pearly nodule); 1.7.6 suspected cancer pathway for BCC only if delay may have a significant impact because of site or size"
+    },
+    {
+      "id": "BL",
+      "name": "Bailey & Love's Short Practice of Surgery (O'Connell, McCaskie, Sayers, eds)",
+      "version": "28th edition, 2023",
+      "url": "https://www.routledge.com/Bailey--Loves-Short-Practice-of-Surgery---28th-Edition/OConnell-McCaskie-Sayers/p/book/9780367548117",
+      "supports": "Clinical features and histology of BCC and SCC; keratoacanthoma and Bowen's disease; risk factors"
+    },
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format: 9 minutes with 1 minute's reading; examiner-led questioning in applied knowledge stations"
+    }
+  ],
+  "partner": {
+    "opening": "Here are the written findings for two lesions from the same patient. Tell me what you think each one is.",
+    "reveals": [
+      {
+        "trigger": "Candidate interprets the clinical findings",
+        "finding": "Read out: section from the nasal lesion: the dermis contains rounded nests of small cells with dark oval nuclei and scant cytoplasm. The outermost cells of each nest line up in a regular row, and a thin empty space separates each nest from the surrounding stroma. Section from the scalp lesion: irregular tongues of large cells with abundant pink cytoplasm and enlarged, irregular nuclei extend down from the epidermis into the dermis. Some groups surround concentric whorls of pink keratin, and adjacent cells are joined by fine spiny connections.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Candidate asks to examine the nodes",
+        "finding": "Read out: no palpable parotid or cervical nodes.",
+        "row": "G5"
+      },
+      {
+        "trigger": "Candidate asks about immunosuppression",
+        "finding": "Read out: none. No previous skin cancer.",
+        "row": "G3"
+      },
+      {
+        "trigger": "Candidate asks for the SCC histology report",
+        "finding": "Read out: Moderately differentiated SCC, 3 mm thick, no perineural invasion; margins to follow excision.",
+        "row": "G7"
+      }
+    ],
+    "push": [
+      {
+        "question": "How do these two tumours behave differently?",
+        "row": "G3",
+        "expect": "BCC local invasion, metastasis rare; SCC can spread to nodes."
+      },
+      {
+        "question": "How urgently should each be referred?",
+        "row": "G4",
+        "expect": "SCC suspected cancer pathway; BCC non-urgent unless site or size makes delay significant."
+      },
+      {
+        "question": "What margin for the nose?",
+        "row": "G6",
+        "expect": "High-risk site: at least 5 mm, or consider Mohs."
+      },
+      {
+        "question": "And for the scalp?",
+        "row": "G7",
+        "expect": "At least 4, 6 or 10 mm by risk group."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "She has had a kidney transplant.",
+        "safeAnswer": "Immunosuppression raises SCC risk and aggression; treat as higher risk and involve the transplant team and skin cancer MDT.",
+        "row": "G3"
+      },
+      {
+        "prompt": "What is Gorlin syndrome?",
+        "safeAnswer": "Autosomal dominant basal cell naevus syndrome: multiple BCCs from a young age, jaw keratocysts and palmar pits.",
+        "row": "G1"
+      },
+      {
+        "prompt": "The scalp lesion grew over a few weeks. Could it be a keratoacanthoma?",
+        "safeAnswer": "Possibly, but it cannot be reliably separated from SCC, so excise and treat as SCC.",
+        "row": "G1"
+      },
+      {
+        "prompt": "The report shows the SCC is excised with a 0.5 mm deep margin.",
+        "safeAnswer": "Below the 1 mm clearance target: discuss at the skin cancer MDT about further treatment.",
+        "row": "G7"
+      }
+    ]
+  }
+}

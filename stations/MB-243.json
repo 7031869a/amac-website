@@ -1,0 +1,605 @@
+{
+  "id": "MB-243",
+  "exam": "MRCS-B",
+  "title": "Oesophageal adenocarcinoma and Barrett's oesophagus",
+  "type": "data-interpretation",
+  "header": {
+    "domain": "Applied Knowledge",
+    "contentArea": "Pathology: upper gastrointestinal cancer",
+    "minutes": 9,
+    "readingMinutes": 1,
+    "guidelineVersions": [
+      "NICE NG12 Suspected cancer (last updated 15 April 2026)",
+      "NICE NG231 Barrett's oesophagus and stage 1 oesophageal adenocarcinoma (February 2023)",
+      "NICE NG83 Oesophago-gastric cancer (last updated 4 July 2023)",
+      "Bailey & Love, 28th ed. (2023)"
+    ]
+  },
+  "brief": {
+    "setting": "Upper GI clinic",
+    "role": "Core surgical trainee",
+    "scenario": "Douglas Aitken, 62, has had three months of progressive dysphagia to solids and 7 kg weight loss. He has had reflux for 15 years. The examiner will read out his endoscopy, histology and staging findings in stages.",
+    "task": "Interpret the findings, explain the underlying pathology, and outline staging and management. You may be asked about Barrett's surveillance."
+  },
+  "beforeYouWalkIn": {
+    "frame": "Refer, read the endoscopy, name the pathology, stage, then treat in a specialist MDT.",
+    "trap": "Quoting old Barrett's intervals: low-grade dysplasia now means ablation, not 6-monthly endoscopy.",
+    "firstMove": "\"Dysphagia at any age needs a suspected cancer pathway referral.\""
+  },
+  "flow": [
+    "Referral",
+    "Read endoscopy and histology",
+    "Pathology and risk",
+    "Staging",
+    "Treatment",
+    "Barrett's surveillance and dysplasia"
+  ],
+  "grid": [
+    {
+      "id": "G1",
+      "domain": "professionalism",
+      "label": "Referral",
+      "fail": "Treats dysphagia as reflux with a PPI trial.",
+      "pass": "Dysphagia at any age: suspected cancer pathway referral for oesophageal cancer.",
+      "high": "Adds the other trigger: aged 55 or over with weight loss plus upper abdominal pain, reflux or dyspepsia.",
+      "source": "NG12"
+    },
+    {
+      "id": "G2",
+      "domain": "clinical-skill",
+      "label": "Reading the endoscopy",
+      "fail": "Cannot define Barrett's or read the Prague score.",
+      "pass": "Barrett's: columnar epithelium at least 1 cm above the gastro-oesophageal junction, confirmed on biopsy. C3M7 is long-segment Barrett's.",
+      "high": "Explains C is circumferential and M maximum extent in cm; Seattle protocol: quadrant biopsies every 2 cm plus targeted biopsies.",
+      "source": "NG231"
+    },
+    {
+      "id": "G3",
+      "domain": "clinical-knowledge",
+      "label": "Pathology and risk",
+      "fail": "Confuses adenocarcinoma and squamous cell carcinoma risk factors.",
+      "pass": "Adenocarcinoma: distal, reflux, Barrett's, obesity, men. Squamous: upper or middle third, smoking, alcohol. Metaplasia, dysplasia, carcinoma sequence.",
+      "high": "Non-dysplastic Barrett's progresses to cancer in about 0.3% per year, roughly 1 in 300.",
+      "source": "DESAI"
+    },
+    {
+      "id": "G4",
+      "domain": "clinical-skill",
+      "label": "Staging",
+      "fail": "Plans surgery without staging.",
+      "pass": "CT chest, abdomen and pelvis first; then PET-CT if suitable for radical treatment.",
+      "high": "Endoscopic ultrasound or staging laparoscopy only if it will change management; endoscopic resection to stage suspected T1 disease.",
+      "source": "NG83"
+    },
+    {
+      "id": "G5",
+      "domain": "clinical-knowledge",
+      "label": "Treatment",
+      "fail": "Offers surgery alone, or treats outside a specialist team.",
+      "pass": "Specialist OG cancer MDT. Localised adenocarcinoma: chemotherapy before (or before and after) surgery, or chemoradiotherapy before surgery, then oesophagectomy.",
+      "high": "Adds dietitian and specialist nurse; adjuvant nivolumab for residual disease after neoadjuvant chemoradiotherapy; stenting or radiotherapy if palliative.",
+      "source": "NG83"
+    },
+    {
+      "id": "G6",
+      "domain": "clinical-knowledge",
+      "label": "Barrett's surveillance",
+      "fail": "Gives one interval for all Barrett's.",
+      "pass": "Long segment (3 cm or more): every 2 to 3 years. Short segment with intestinal metaplasia: every 3 to 5 years.",
+      "high": "Short segment without intestinal metaplasia on 2 endoscopies: no surveillance. Tailors within the range by age, sex, family history and smoking.",
+      "source": "NG231"
+    },
+    {
+      "id": "G7",
+      "domain": "clinical-knowledge",
+      "label": "Dysplasia",
+      "fail": "Plans oesophagectomy for all high-grade dysplasia, or only surveillance.",
+      "pass": "High-grade: endoscopic resection of visible lesions, then ablation. Low-grade on 2 endoscopies, confirmed by 2 GI pathologists: radiofrequency ablation.",
+      "high": "Indefinite dysplasia: repeat at 6 months after optimising acid suppression. T1b with deep invasion or lymphovascular invasion: oesophagectomy if fit.",
+      "source": "NG231"
+    }
+  ],
+  "performances": {
+    "fail": [
+      {
+        "speaker": "examiner",
+        "text": "His GP calls. How should he be referred?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Start omeprazole and refer routinely if it doesn't settle.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "The report says Prague C3M7. What does that mean?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'm not sure. Some kind of reflux grade.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What are the risk factors for this cancer?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Smoking and alcohol, like squamous cell.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Biopsy shows adenocarcinoma. What next?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "List him for oesophagectomy.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "fail"
+          },
+          {
+            "row": "G5",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "His brother has Barrett's. How often should he be scoped?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Every year.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "fail"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "And if it shows high-grade dysplasia?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Oesophagectomy.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "fail"
+          }
+        ]
+      }
+    ],
+    "pass": [
+      {
+        "speaker": "examiner",
+        "text": "How should he be referred?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Dysphagia at any age needs a suspected cancer pathway referral.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Read the endoscopy report."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Barrett's is columnar epithelium at least 1 cm above the gastro-oesophageal junction, confirmed on biopsy. C3M7 is long-segment Barrett's, with a mass at the distal end. Goblet cells in the columnar mucosa mean intestinal metaplasia.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "What is the pathology?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Adenocarcinoma, from reflux causing metaplasia, then dysplasia, then carcinoma. Obesity and male sex add risk. Squamous cancers are higher up and linked to smoking and alcohol.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How would you stage him?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "CT chest, abdomen and pelvis, then PET-CT if he's suitable for radical treatment.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "No metastases. Management?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Discuss at the specialist MDT. Chemotherapy or chemoradiotherapy before surgery, then oesophagectomy.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "His brother has 5 cm of Barrett's without dysplasia."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Long segment, so every 2 to 3 years. A short segment with intestinal metaplasia would be every 3 to 5 years.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "pass"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "And if dysplasia is found?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "High-grade: endoscopic resection of visible lesions then ablation. Low-grade confirmed on two endoscopies by two GI pathologists: radiofrequency ablation.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "pass"
+          }
+        ]
+      }
+    ],
+    "high": [
+      {
+        "speaker": "candidate",
+        "text": "He also meets the second trigger: over 55 with weight loss and reflux.",
+        "tags": [
+          {
+            "row": "G1",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How is the Barrett's segment measured?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "C is the circumferential extent and M the maximum extent, in cm above the junction. Surveillance uses the Seattle protocol: quadrant biopsies every 2 cm plus targeted biopsies.",
+        "tags": [
+          {
+            "row": "G2",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "How often does Barrett's become cancer?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Without dysplasia, about 0.3% per year, roughly 1 in 300.",
+        "tags": [
+          {
+            "row": "G3",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Would you do an endoscopic ultrasound?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Only if it would change management. Staging laparoscopy likewise. If it looked like a T1 lesion, endoscopic resection itself stages it.",
+        "tags": [
+          {
+            "row": "G4",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "Anything else for his treatment?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "A dietitian and specialist nurse from the start. If he has chemoradiotherapy and there's residual disease after resection, adjuvant nivolumab. If he's unfit, stenting or radiotherapy for palliation.",
+        "tags": [
+          {
+            "row": "G5",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "His brother's segment is 2 cm without intestinal metaplasia."
+      },
+      {
+        "speaker": "candidate",
+        "text": "If that's confirmed on two endoscopies, no surveillance. Otherwise I'd tailor the interval to age, sex, family history and smoking.",
+        "tags": [
+          {
+            "row": "G6",
+            "band": "high"
+          }
+        ]
+      },
+      {
+        "speaker": "examiner",
+        "text": "And indefinite for dysplasia?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Optimise acid suppression and repeat at 6 months. If a resected lesion is T1b with deep submucosal or lymphovascular invasion, he'd need oesophagectomy if fit.",
+        "tags": [
+          {
+            "row": "G7",
+            "band": "high"
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "row": "G1",
+      "move": "Giving a PPI trial for new dysphagia.",
+      "consequence": "Delays the diagnosis of oesophageal cancer."
+    },
+    {
+      "row": "G4",
+      "move": "Listing for oesophagectomy before staging.",
+      "consequence": "Exposes a patient with metastases to a major operation that cannot cure him."
+    },
+    {
+      "row": "G7",
+      "move": "Surveillance alone for confirmed low-grade dysplasia.",
+      "consequence": "NICE now offers radiofrequency ablation once the diagnosis is confirmed."
+    },
+    {
+      "row": "G6",
+      "move": "Annual endoscopy for all Barrett's.",
+      "consequence": "Over-investigates low-risk patients; intervals depend on segment length and metaplasia."
+    }
+  ],
+  "recovery": [
+    {
+      "when": "You forget the intervals",
+      "line": "Long segment 2 to 3 years, short with metaplasia 3 to 5, short without none."
+    },
+    {
+      "when": "Asked about any cancer treatment",
+      "line": "Staging first, then a specialist MDT decision."
+    }
+  ],
+  "knowledge": [
+    {
+      "fact": "Dysphagia at any age: suspected cancer pathway referral.",
+      "source": "NG12"
+    },
+    {
+      "fact": "Barrett's: columnar epithelium 1 cm or more above the junction, confirmed histologically.",
+      "source": "NG231"
+    },
+    {
+      "fact": "Annual adenocarcinoma risk in Barrett's was 0.12% in a Danish national cohort, lower than older estimates.",
+      "source": "HVID"
+    },
+    {
+      "fact": "Surveillance: 3 cm or more every 2 to 3 years; under 3 cm with metaplasia every 3 to 5 years.",
+      "source": "NG231"
+    },
+    {
+      "fact": "Localised adenocarcinoma for resection: chemotherapy before, or before and after, surgery, or preoperative chemoradiotherapy.",
+      "source": "NG83"
+    },
+    {
+      "fact": "Prague C&M: circumferential and maximum extent of Barrett's in cm.",
+      "source": "PRAGUE"
+    }
+  ],
+  "recall": {
+    "think": "Dysphagia with weight loss is cancer until proven otherwise.",
+    "say": "\"Suspected cancer pathway referral, then stage before any decision.\"",
+    "do": [
+      "Refer on the suspected cancer pathway",
+      "CT, then PET-CT if radical treatment possible",
+      "Specialist MDT: neoadjuvant therapy then oesophagectomy"
+    ],
+    "numbers": [
+      {
+        "value": "2-3 / 3-5 years",
+        "meaning": "surveillance: long segment / short segment with metaplasia",
+        "source": "NG231"
+      },
+      {
+        "value": "About 0.3% per year",
+        "meaning": "cancer risk in non-dysplastic Barrett's",
+        "source": "DESAI"
+      }
+    ],
+    "trap": "Low-grade dysplasia confirmed twice now means ablation, not watching.",
+    "finish": "Neoadjuvant therapy and oesophagectomy in a specialist centre; endoscopic therapy for dysplasia and T1a."
+  },
+  "sources": [
+    {
+      "id": "NG12",
+      "name": "NICE NG12. Suspected cancer: recognition and referral",
+      "version": "Published 23 June 2015; last updated 15 April 2026",
+      "url": "https://www.nice.org.uk/guidance/ng12",
+      "supports": "Recommendation 1.2.1: suspected cancer pathway referral for dysphagia, or age 55 and over with weight loss and upper abdominal pain, reflux or dyspepsia"
+    },
+    {
+      "id": "NG231",
+      "name": "NICE NG231. Barrett's oesophagus and stage 1 oesophageal adenocarcinoma: monitoring and management",
+      "version": "8 February 2023",
+      "url": "https://www.nice.org.uk/guidance/ng231",
+      "supports": "Definition; Seattle protocol; surveillance intervals; no surveillance for short segment without metaplasia; endoscopic resection and ablation for high-grade dysplasia; ablation for confirmed low-grade dysplasia; 6-monthly for indefinite dysplasia; T1a and T1b management. Endorsed by BSG as replacing its earlier Barrett's guideline"
+    },
+    {
+      "id": "NG83",
+      "name": "NICE NG83. Oesophago-gastric cancer: assessment and management in adults",
+      "version": "Published 24 January 2018; last updated 4 July 2023",
+      "url": "https://www.nice.org.uk/guidance/ng83",
+      "supports": "Specialist MDT and surgical unit; PET-CT, EUS and staging laparoscopy; neoadjuvant or perioperative chemotherapy or preoperative chemoradiotherapy; adjuvant nivolumab (TA746); palliative options"
+    },
+    {
+      "id": "DESAI",
+      "name": "Desai TK, Krishnan K, Samala N, et al. The incidence of oesophageal adenocarcinoma in non-dysplastic Barrett's oesophagus: a meta-analysis. Gut 2012;61(7):970-6",
+      "version": "2012",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/21997553/",
+      "supports": "Pooled annual incidence 0.33% (about 1 in 300); 0.19% in short segment"
+    },
+    {
+      "id": "HVID",
+      "name": "Hvid-Jensen F, Pedersen L, Drewes AM, Sorensen HT, Funch-Jensen P. Incidence of adenocarcinoma among patients with Barrett's esophagus. N Engl J Med 2011;365(15):1375-83",
+      "version": "2011",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/21995385/",
+      "supports": "Annual adenocarcinoma risk 0.12% in a national cohort"
+    },
+    {
+      "id": "PRAGUE",
+      "name": "Sharma P, Dent J, Armstrong D, et al. The development and validation of an endoscopic grading system for Barrett's esophagus: the Prague C & M criteria. Gastroenterology 2006;131(5):1392-9",
+      "version": "2006",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/17101315/",
+      "supports": "Circumferential (C) and maximum (M) extent grading"
+    },
+    {
+      "id": "BSG",
+      "name": "British Society of Gastroenterology. Barrett's oesophagus and stage 1 oesophageal adenocarcinoma: clinical resource",
+      "version": "Endorsement of NICE NG231 (2023) and ESGE (2023), replacing the earlier BSG guideline (Fitzgerald et al., Gut 2014;63:7-42)",
+      "url": "https://www.bsg.org.uk/clinical-resource/barrett%E2%80%99s-oesophagus-and-stage-1-oesophageal-adeno",
+      "supports": "BSG position that NICE NG231 and ESGE now replace its Barrett's guideline"
+    },
+    {
+      "id": "BL",
+      "name": "Bailey & Love's Short Practice of Surgery (O'Connell, McCaskie, Sayers, eds)",
+      "version": "28th edition, 2023",
+      "url": "https://www.routledge.com/Bailey--Loves-Short-Practice-of-Surgery---28th-Edition/OConnell-McCaskie-Sayers/p/book/9780367548117",
+      "supports": "Oesophageal adenocarcinoma and squamous cell carcinoma: sites, risk factors and the metaplasia-dysplasia-carcinoma sequence"
+    },
+    {
+      "id": "ICBSE",
+      "name": "ICBSE Guide to the intercollegiate MRCS examination",
+      "version": "August 2021",
+      "url": "https://www.intercollegiatemrcsexams.org.uk/about-the-mrcs/candidate-guidance/",
+      "supports": "Station format: 9 minutes with 1 minute's reading; examiner-led questioning in applied knowledge stations"
+    }
+  ],
+  "partner": {
+    "opening": "Mr Aitken's GP has referred him. How should a patient like this be referred? I will then read out his endoscopy findings.",
+    "reveals": [
+      {
+        "trigger": "Candidate asks for the endoscopy report",
+        "finding": "Read out: the endoscopy shows salmon-pink, velvety mucosa replacing the pale squamous lining of the distal oesophagus. It extends circumferentially for 3 cm above the gastro-oesophageal junction, with tongues reaching 7 cm above it: Prague C3M7. There is an irregular, ulcerated mass at 35 to 38 cm, just above the gastro-oesophageal junction.",
+        "row": "G2"
+      },
+      {
+        "trigger": "Candidate asks for histology",
+        "finding": "Read out: biopsies of the mass show invasive adenocarcinoma. Biopsies of the flat salmon-pink mucosa show columnar epithelium in place of the normal stratified squamous lining, with scattered goblet cells: rounded cells with a large, clear, mucin-filled vacuole.",
+        "row": "G3"
+      },
+      {
+        "trigger": "Candidate asks for staging",
+        "finding": "Read out: CT: thickened distal oesophagus, one enlarged paraoesophageal node, no metastases. PET-CT: no distant uptake.",
+        "row": "G4"
+      }
+    ],
+    "push": [
+      {
+        "question": "How should the GP refer him?",
+        "row": "G1",
+        "expect": "Suspected cancer pathway referral for dysphagia."
+      },
+      {
+        "question": "What does C3M7 mean?",
+        "row": "G2",
+        "expect": "Circumferential 3 cm, maximum 7 cm: long-segment Barrett's."
+      },
+      {
+        "question": "How would you stage him?",
+        "row": "G4",
+        "expect": "CT chest, abdomen, pelvis, then PET-CT."
+      },
+      {
+        "question": "What treatment will the MDT consider?",
+        "row": "G5",
+        "expect": "Neoadjuvant or perioperative chemotherapy, or preoperative chemoradiotherapy, then oesophagectomy."
+      },
+      {
+        "question": "How often should Barrett's be surveyed?",
+        "row": "G6",
+        "expect": "3 cm or more: 2 to 3 years; under 3 cm with metaplasia: 3 to 5 years."
+      },
+      {
+        "question": "What if low-grade dysplasia is found?",
+        "row": "G7",
+        "expect": "Confirm on 2 endoscopies and by 2 pathologists, then radiofrequency ablation."
+      }
+    ],
+    "curveballs": [
+      {
+        "prompt": "Should he take aspirin to stop progression?",
+        "safeAnswer": "No. NICE advises against aspirin for this purpose.",
+        "row": "G7"
+      },
+      {
+        "prompt": "Would anti-reflux surgery prevent cancer in Barrett's?",
+        "safeAnswer": "No. It is not offered to prevent progression; only for reflux symptoms under the GORD guidance.",
+        "row": "G6"
+      },
+      {
+        "prompt": "The resected lesion is T1a with clear margins.",
+        "safeAnswer": "Endoscopic resection is first-line; ablate residual Barrett's and follow up endoscopically.",
+        "row": "G7"
+      }
+    ]
+  }
+}
