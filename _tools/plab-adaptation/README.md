@@ -25,7 +25,7 @@ Per batch (work folder `_tools/plab-adaptation/work/<batch>/`, not served):
    remove resolved sources from `_parked`, `node scripts/sync-counts.mjs`, then `--check`, test pages, PR.
 
 Locked rules: adapt not copy (stem Jaccard vs copy < 0.40); no unnecessary figures; key never hinges on a movable
-threshold; check before creating (no repeat of a live PLAB 1 scenario + learning point); correct option never the longest.
+threshold; check before creating (no repeat of a live PLAB 1 scenario + learning point); correct option never the longest; across a batch the key is the longest option in no more than 25% of items and the shortest in no more than 25% (validate.py enforces both).
 One-line recall questions (BX…) DO count as repeats: if a live BX question tests the same fact as the candidate, the
 candidate is a repeat, even though the BX stem is one line and the scenarios look different. Writers, checkers and the
 pre-screen all apply this rule.
