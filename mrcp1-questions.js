@@ -5006,5 +5006,1205 @@ window.MRCP1_QUESTIONS = [
     },
     "generalisation": "",
     "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q219",
+    "subdomain": "Ophthalmology & ENT",
+    "topic": "Central retinal vein occlusion",
+    "difficulty": "Moderate",
+    "stem": "A 67-year-old man develops sudden, painless blurring of vision in his left eye. Fundoscopy shows widespread retinal haemorrhages in all four quadrants, dilated tortuous retinal veins, retinal oedema and optic-disc swelling. Which is the most likely diagnosis?",
+    "options": {
+      "A": "Central retinal artery occlusion",
+      "B": "Central retinal vein occlusion",
+      "C": "Optic neuritis",
+      "D": "Retinal detachment",
+      "E": "Acute anterior uveitis"
+    },
+    "correct_letter": "B",
+    "why_correct": "Central retinal vein occlusion classically produces widespread retinal haemorrhages, venous dilatation and tortuosity, retinal oedema and sometimes optic-disc swelling. The sudden painless visual disturbance is consistent with this diagnosis. Widespread retinal haemorrhages with dilated tortuous veins strongly suggest central retinal vein occlusion. Prompt ophthalmic assessment is required to assess vision, complications and relevant systemic risk factors.",
+    "distractor_analysis": {
+      "A": "Central retinal artery occlusion typically causes sudden, painless visual loss with retinal pallor; a cherry-red spot may be seen. The widespread haemorrhages and dilated tortuous veins in this vignette favour venous rather than arterial occlusion.",
+      "C": "Optic neuritis often presents with subacute visual loss, impaired colour vision and pain on eye movement. It does not usually produce widespread four-quadrant retinal haemorrhages with dilated tortuous retinal veins.",
+      "D": "Retinal detachment commonly presents with flashes, floaters or a curtain-like visual-field defect. Examination demonstrates separation of the neurosensory retina rather than the widespread haemorrhagic venous pattern described.",
+      "E": "Acute anterior uveitis typically causes ocular pain, photophobia and anterior-chamber inflammation. It does not explain the widespread retinal haemorrhages and venous changes."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q220",
+    "subdomain": "Respiratory",
+    "topic": "Sarcoidosis",
+    "difficulty": "Moderate",
+    "stem": "A 34-year-old woman presents with a persistent dry cough and fatigue. Chest radiography shows bilateral hilar lymphadenopathy. She also reports tender erythematous nodules over both shins and ankle pain. She has no known tuberculosis exposure. Which diagnosis best explains the combination of findings?",
+    "options": {
+      "A": "Sarcoidosis",
+      "B": "Idiopathic pulmonary fibrosis",
+      "C": "Acute pulmonary embolism",
+      "D": "Pulmonary oedema due to left ventricular failure",
+      "E": "Chronic obstructive pulmonary disease"
+    },
+    "correct_letter": "A",
+    "why_correct": "Bilateral hilar lymphadenopathy, respiratory symptoms, erythema nodosum and ankle arthralgia are a characteristic clinical combination associated with sarcoidosis. The findings strongly support the diagnosis, although the need for tissue confirmation and further investigation depends on the clinical presentation and exclusion of alternative causes. Bilateral hilar lymphadenopathy accompanied by erythema nodosum and ankle arthralgia is a strong clue to sarcoidosis, but the diagnosis must be considered in context and relevant alternative causes excluded.",
+    "distractor_analysis": {
+      "B": "Idiopathic pulmonary fibrosis typically causes progressive exertional breathlessness, dry cough and a restrictive lung pattern, often with bibasal inspiratory crackles. Bilateral hilar lymphadenopathy with erythema nodosum is not its characteristic presentation.",
+      "C": "Pulmonary embolism can cause acute breathlessness, pleuritic chest pain and hypoxaemia. It does not account for this subacute multisystem presentation.",
+      "D": "Left ventricular failure can cause breathlessness and radiographic pulmonary congestion. It does not adequately explain the combination of bilateral hilar lymphadenopathy, erythema nodosum and ankle arthralgia.",
+      "E": "Chronic obstructive pulmonary disease: COPD usually presents with persistent airflow obstruction, often associated with smoking or other relevant exposure. It does not explain the characteristic combination of bilateral hilar lymphadenopathy and erythema nodosum."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q221",
+    "subdomain": "Infectious disease & sexual health",
+    "topic": "Legionnaires’ disease",
+    "difficulty": "Moderate",
+    "stem": "A 64-year-old man presents with fever, dry cough, confusion and watery diarrhoea. He has a temperature of 39.4°C and bilateral chest signs. Blood tests show hyponatraemia and raised inflammatory markers. He returned from a hotel stay several days before becoming unwell. Which pathogen is the most likely cause of this pneumonia?",
+    "options": {
+      "A": "Legionella pneumophila",
+      "B": "Pneumocystis jirovecii",
+      "C": "Mycoplasma pneumoniae",
+      "D": "Streptococcus pyogenes",
+      "E": "Mycobacterium tuberculosis"
+    },
+    "correct_letter": "A",
+    "why_correct": "Legionnaires’ disease can cause severe pneumonia with gastrointestinal and neurological features. Hyponatraemia may occur, although it is not specific enough to diagnose the infection on its own. Severe pneumonia accompanied by gastrointestinal or neurological symptoms should raise suspicion for Legionella, particularly when there is a plausible environmental exposure.",
+    "distractor_analysis": {
+      "B": "Pneumocystis pneumonia is particularly associated with impaired cellular immunity and commonly presents with progressive dyspnoea, dry cough and hypoxaemia. The acute febrile gastrointestinal presentation is less characteristic.",
+      "C": "Mycoplasma pneumoniae: This can cause atypical pneumonia, particularly in younger people, but the combination of systemic illness, gastrointestinal symptoms, confusion and a possible accommodation-associated exposure favours Legionella.",
+      "D": "Streptococcus pyogenes: This organism is an important cause of other infections, but it is not the best fit for this classic atypical-pneumonia presentation.",
+      "E": "Mycobacterium tuberculosis: TB more often presents with a subacute or chronic illness, although acute presentations can occur. The short time course and systemic pattern favour Legionella."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q222",
+    "subdomain": "Clinical biochemistry and metabolism",
+    "topic": "Familial hypercholesterolaemia",
+    "difficulty": "Moderate",
+    "stem": "A 32-year-old man is found to have a markedly elevated LDL-cholesterol concentration during routine screening. Examination reveals tendon xanthomas over the Achilles tendons. His father had a myocardial infarction in his early forties, and his older sister has similarly elevated LDL cholesterol. Which diagnosis best explains this pattern?",
+    "options": {
+      "A": "Secondary hypercholesterolaemia due to untreated hypothyroidism",
+      "B": "Familial hypercholesterolaemia",
+      "C": "Familial hypertriglyceridaemia",
+      "D": "Isolated high lipoprotein(a) concentration",
+      "E": "Abetalipoproteinaemia"
+    },
+    "correct_letter": "B",
+    "why_correct": "Markedly raised LDL cholesterol, tendon xanthomas and premature coronary disease across generations are characteristic of familial hypercholesterolaemia, commonly inherited in an autosomal dominant pattern. Severe LDL elevation with tendon xanthomas and premature coronary disease in close relatives should prompt assessment for familial hypercholesterolaemia and appropriate family evaluation.",
+    "distractor_analysis": {
+      "A": "Hypothyroidism can raise LDL cholesterol and should be assessed as a secondary cause. However, the tendon xanthomas and strong multigenerational history make familial hypercholesterolaemia the best answer.",
+      "C": "Familial hypertriglyceridaemia: This primarily affects triglyceride concentrations and does not typically produce the classic combination of markedly elevated LDL cholesterol and tendon xanthomas.",
+      "D": "Isolated high lipoprotein(a): Elevated lipoprotein(a) is an inherited cardiovascular risk factor, but it does not adequately explain the overall phenotype and family pattern presented.",
+      "E": "Abetalipoproteinaemia: This rare disorder causes very low concentrations of apoB-containing lipoproteins and may present with fat malabsorption and neurological complications, rather than isolated severe LDL elevation."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q223",
+    "subdomain": "Respiratory",
+    "topic": "Chronic thromboembolic pulmonary hypertension",
+    "difficulty": "Moderate",
+    "stem": "A 59-year-old woman has persistent exertional dyspnoea and reduced exercise tolerance following a previous pulmonary embolism. Echocardiography suggests pulmonary hypertension. Ventilation–perfusion imaging is requested as part of the assessment. Which finding would most strongly support chronic thromboembolic pulmonary hypertension?",
+    "options": {
+      "A": "A single small area of reduced ventilation with normal perfusion",
+      "B": "Diffuse bilateral air-space opacification",
+      "C": "A normal ventilation–perfusion scan",
+      "D": "Isolated reduction in lung diffusing capacity with otherwise normal imaging",
+      "E": "Multiple segmental perfusion defects with preserved ventilation"
+    },
+    "correct_letter": "E",
+    "why_correct": "This is the characteristic mismatched pattern that raises suspicion for chronic thromboembolic obstruction. Further specialist assessment is needed to establish the diagnosis and define operability and treatment options. In suspected chronic thromboembolic pulmonary hypertension, mismatched perfusion defects on ventilation–perfusion imaging are a key diagnostic clue.",
+    "distractor_analysis": {
+      "A": "Reduced ventilation with normal perfusion: This is a reverse mismatch (a ventilation defect with preserved perfusion), the opposite of the perfusion defects with preserved ventilation seen in chronic thromboembolic disease.",
+      "B": "Diffuse bilateral air-space opacification: This pattern is more suggestive of diffuse parenchymal or alveolar disease than chronic thromboembolic obstruction.",
+      "C": "A normal ventilation–perfusion scan: A normal scan makes chronic thromboembolic pulmonary hypertension unlikely in the appropriate diagnostic setting.",
+      "D": "Reduced diffusing capacity can occur in pulmonary vascular disease, but it is non-specific and does not establish chronic thromboembolic pulmonary hypertension."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q224",
+    "subdomain": "Haematology & oncology",
+    "topic": "G6PD deficiency",
+    "difficulty": "Moderate",
+    "stem": "A 25-year-old man develops jaundice, dark urine and fatigue two days after taking a new medicine. His haemoglobin has fallen, reticulocytes are increased, and blood tests show raised unconjugated bilirubin and lactate dehydrogenase with reduced haptoglobin. The blood film shows bite cells. He has a family history of similar episodes after certain medicines. Which underlying abnormality best explains the presentation?",
+    "options": {
+      "A": "Reduced glucose-6-phosphate dehydrogenase activity",
+      "B": "Failure of vitamin B12 absorption",
+      "C": "Defective globin-chain synthesis",
+      "D": "Autoantibodies directed against intrinsic factor",
+      "E": "Defective platelet adhesion"
+    },
+    "correct_letter": "A",
+    "why_correct": "G6PD helps red cells generate NADPH, which supports protection against oxidative damage. Deficiency can cause episodic haemolysis after exposure to certain medicines, infections or foods. Bite cells are compatible with oxidative damage. Acute haemolysis after an oxidative trigger, particularly with bite cells, should raise suspicion of G6PD deficiency.",
+    "distractor_analysis": {
+      "B": "B12 deficiency can cause macrocytic anaemia and neurological abnormalities but does not explain the typical acute oxidant-associated haemolysis.",
+      "C": "Defective globin-chain synthesis: Thalassaemias cause inherited abnormalities of haemoglobin production, often producing chronic microcytosis rather than this characteristic oxidant-triggered haemolytic episode.",
+      "D": "Anti-intrinsic-factor antibodies: These are associated with pernicious anaemia and B12 deficiency, not G6PD deficiency.",
+      "E": "Defective platelet adhesion: This causes a bleeding tendency, not red-cell destruction."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q225",
+    "subdomain": "Endocrinology & diabetes",
+    "topic": "Central hypothyroidism",
+    "difficulty": "Moderate",
+    "stem": "A 52-year-old woman reports fatigue, cold intolerance and constipation. She has a history of pituitary surgery. Her thyroid function tests show a low free thyroxine concentration with a thyroid-stimulating hormone concentration that is within the laboratory reference range. Which interpretation is most appropriate?",
+    "options": {
+      "A": "Normal thyroid function because TSH is within range",
+      "B": "Thyroid hormone resistance",
+      "C": "Subclinical hyperthyroidism",
+      "D": "Primary hyperthyroidism",
+      "E": "Central hypothyroidism due to hypothalamic or pituitary dysfunction"
+    },
+    "correct_letter": "E",
+    "why_correct": "Pituitary or hypothalamic dysfunction can impair stimulation of the thyroid. The combination of low free T4 and an inappropriately normal or low TSH supports central hypothyroidism in the appropriate context. When pituitary disease is suspected, interpret TSH alongside free T4 rather than relying on TSH alone. NICE specifically recommends measuring both in adults when secondary thyroid dysfunction is suspected.",
+    "distractor_analysis": {
+      "A": "Normal thyroid function: A TSH within the reference range does not exclude hypothyroidism when pituitary disease is present. The TSH response may be inappropriately normal for the low free T4.",
+      "B": "Thyroid hormone resistance more commonly presents with elevated free thyroid hormones and a non-suppressed TSH.",
+      "C": "Subclinical hyperthyroidism: This is characterised by a low TSH with free thyroid hormone concentrations within their reference ranges, not a low free T4.",
+      "D": "Primary hyperthyroidism generally produces a suppressed TSH with raised free thyroid hormones."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q226",
+    "subdomain": "Renal & urology",
+    "topic": "Primary membranous nephropathy",
+    "difficulty": "Moderate",
+    "stem": "A 56-year-old man presents with progressive peripheral oedema and frothy urine. Urine testing confirms heavy proteinuria, and blood tests show hypoalbuminaemia. His renal function is relatively preserved. Serum testing detects antibodies against the M-type phospholipase A2 receptor (anti-PLA2R). Which diagnosis is most strongly supported by this finding in the appropriate clinical context?",
+    "options": {
+      "A": "Primary membranous nephropathy",
+      "B": "Acute post-streptococcal glomerulonephritis",
+      "C": "Distal renal tubular acidosis",
+      "D": "Acute interstitial nephritis",
+      "E": "Isolated renal artery stenosis"
+    },
+    "correct_letter": "A",
+    "why_correct": "Membranous nephropathy is an important cause of nephrotic syndrome in adults. Anti-PLA2R antibodies strongly support primary membranous nephropathy in a compatible presentation, although interpretation and the need for biopsy depend on the clinical context. In an adult with nephrotic syndrome, anti-PLA2R antibodies can support primary membranous nephropathy, but secondary causes and the need for further investigation still require clinical assessment.",
+    "distractor_analysis": {
+      "B": "Acute post-streptococcal glomerulonephritis: This more typically causes a nephritic presentation with haematuria, hypertension and impaired renal function following infection.",
+      "C": "Distal renal tubular acidosis: This causes a defect in urinary acidification and a normal-anion-gap metabolic acidosis; it does not explain nephrotic-range proteinuria.",
+      "D": "Acute interstitial nephritis: This commonly causes acute kidney injury, often in association with a drug or infection, rather than this characteristic nephrotic presentation.",
+      "E": "Renal artery stenosis may contribute to hypertension and renal dysfunction but does not explain the anti-PLA2R finding and nephrotic syndrome pattern."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q227",
+    "subdomain": "Gastroenterology & hepatology",
+    "topic": "Eosinophilic oesophagitis",
+    "difficulty": "Moderate",
+    "stem": "A 28-year-old man with asthma and allergic rhinitis reports several years of intermittent difficulty swallowing solid food. On two occasions, food has become lodged in his oesophagus and required urgent assessment. Upper gastrointestinal endoscopy shows oesophageal rings and longitudinal furrows. Which investigation is required to establish the suspected diagnosis?",
+    "options": {
+      "A": "A urea breath test for Helicobacter pylori",
+      "B": "Oesophageal biopsies for histological assessment",
+      "C": "A faecal calprotectin measurement",
+      "D": "Abdominal ultrasound",
+      "E": "Serum amylase measurement"
+    },
+    "correct_letter": "B",
+    "why_correct": "Eosinophilic oesophagitis is an immune-mediated oesophageal disease diagnosed using symptoms of oesophageal dysfunction and histological evidence of eosinophilic inflammation, interpreted in the clinical context. Recurrent food impaction, dysphagia and oesophageal rings should raise suspicion of eosinophilic oesophagitis; oesophageal biopsies are central to diagnosis.",
+    "distractor_analysis": {
+      "A": "Urea breath test: This tests for H. pylori infection, which is not the suspected cause of the recurrent food impaction and characteristic endoscopic appearance.",
+      "C": "Faecal calprotectin: This is used mainly to help assess intestinal inflammation, particularly when distinguishing inflammatory bowel disease from non-inflammatory conditions; it does not diagnose eosinophilic oesophagitis.",
+      "D": "Ultrasound can assess abdominal organs but cannot establish eosinophilic inflammation in the oesophageal mucosa.",
+      "E": "Amylase is used in the assessment of pancreatic injury and does not diagnose an inflammatory oesophageal disorder."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q228",
+    "subdomain": "Musculoskeletal & rheumatology",
+    "topic": "Kawasaki disease",
+    "difficulty": "Moderate",
+    "stem": "A 3-year-old child is brought to hospital with a fever that has persisted for 6 days. Examination reveals bilateral non-purulent conjunctival injection, cracked red lips, a polymorphous rash, erythema and swelling of the hands and feet, and cervical lymphadenopathy. No bacterial focus is identified. Which diagnosis best explains this presentation?",
+    "options": {
+      "A": "Measles",
+      "B": "Kawasaki disease",
+      "C": "Scarlet fever",
+      "D": "Systemic juvenile idiopathic arthritis",
+      "E": "Adenoviral infection"
+    },
+    "correct_letter": "B",
+    "why_correct": "This is an acute inflammatory vasculitis of childhood. The characteristic clinical pattern includes prolonged fever, bilateral non-purulent conjunctivitis, oral mucosal changes, rash, extremity changes and cervical lymphadenopathy. Coronary artery complications are an important concern. A child with persistent fever and characteristic mucocutaneous changes needs prompt assessment for Kawasaki disease because coronary artery complications can occur.",
+    "distractor_analysis": {
+      "A": "Measles typically features a respiratory prodrome, cough, coryza, conjunctivitis and a rash that begins on the face and spreads downwards. The extremity and oral findings here favour Kawasaki disease.",
+      "C": "Scarlet fever usually accompanies group A streptococcal infection, with features such as a sore throat, a sandpaper-like rash and a strawberry tongue. The combination of prolonged fever, non-purulent conjunctivitis and extremity changes is more characteristic of Kawasaki disease.",
+      "D": "Systemic juvenile idiopathic arthritis: This can cause persistent fever and a transient salmon-pink rash, often with arthritis. The specific mucocutaneous pattern in this vignette is more suggestive of Kawasaki disease.",
+      "E": "Adenoviral infection: Adenovirus can cause fever, conjunctivitis and pharyngitis, making it a genuine differential diagnosis. However, the combination of oral changes, rash and extremity inflammation raises greater concern for Kawasaki disease."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q229",
+    "subdomain": "Immunology",
+    "topic": "DiGeorge syndrome",
+    "difficulty": "Moderate",
+    "stem": "A newborn develops hypocalcaemic seizures. Examination identifies a congenital cardiac outflow tract abnormality. Subsequent investigations show a markedly reduced number of circulating T lymphocytes. Which developmental abnormality best explains this combination?",
+    "options": {
+      "A": "Defective NADPH oxidase activity in phagocytes",
+      "B": "Abnormal development of the third and fourth pharyngeal pouches",
+      "C": "Failure of B-cell maturation due to a BTK mutation",
+      "D": "Defective complement C5–C9 complex formation",
+      "E": "Failure of immunoglobulin class switching"
+    },
+    "correct_letter": "B",
+    "why_correct": "DiGeorge syndrome is commonly associated with a 22q11.2 deletion. Abnormal development of the thymus can cause T-cell deficiency, while parathyroid hypoplasia can cause hypocalcaemia. Congenital cardiac abnormalities may also occur. The combination of congenital cardiac abnormalities, hypocalcaemia and T-cell deficiency should raise suspicion of DiGeorge syndrome.",
+    "distractor_analysis": {
+      "A": "Defective NADPH oxidase activity in phagocytes: This causes chronic granulomatous disease, in which impaired oxidative killing predisposes to recurrent infections. It does not account for neonatal hypocalcaemia and congenital outflow tract abnormalities.",
+      "C": "Failure of B-cell maturation due to a BTK mutation: This causes X-linked agammaglobulinaemia, characterised by profoundly reduced mature B cells and immunoglobulins. It does not explain the characteristic combination of congenital cardiac disease and hypocalcaemia.",
+      "D": "Defective complement C5–C9 complex formation: Terminal complement deficiency predisposes particularly to recurrent Neisseria infections. It does not produce this developmental phenotype.",
+      "E": "Failure of immunoglobulin class switching: This is a feature of hyper-IgM syndromes, in which immunoglobulin switching is impaired. It does not explain thymic hypoplasia with hypocalcaemia and congenital heart disease."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q230",
+    "subdomain": "Genetics",
+    "topic": "Cystic fibrosis",
+    "difficulty": "Moderate",
+    "stem": "A 17-year-old has had recurrent chest infections since childhood, chronic productive cough, nasal polyps and difficulty maintaining weight. Sputum cultures have repeatedly grown Pseudomonas aeruginosa. Which underlying defect is most likely responsible?",
+    "options": {
+      "A": "Defective NADPH oxidase activity in neutrophils",
+      "B": "Defective ciliary dynein arms causing impaired mucociliary clearance",
+      "C": "Impaired function of the epithelial sodium channel caused by an SCNN1A mutation",
+      "D": "Deficient alpha-1 antitrypsin activity",
+      "E": "Abnormal function of the CFTR chloride and bicarbonate channel"
+    },
+    "correct_letter": "E",
+    "why_correct": "Cystic fibrosis results from pathogenic variants in the CFTR gene. Dysfunction of this epithelial channel disrupts chloride and bicarbonate transport and contributes to dehydrated secretions, impaired mucociliary clearance and recurrent respiratory infection. Cystic fibrosis is an inherited epithelial ion-transport disorder caused by pathogenic variants in CFTR.",
+    "distractor_analysis": {
+      "A": "Defective NADPH oxidase activity: This causes chronic granulomatous disease, leading to impaired phagocyte oxidative killing and recurrent infections, rather than the characteristic epithelial ion-transport defect.",
+      "B": "Defective ciliary dynein arms: This is associated with primary ciliary dyskinesia, which can also cause recurrent respiratory infections and impaired mucociliary clearance. It is a different inherited disorder.",
+      "C": "Impaired function of the epithelial sodium channel: Abnormal epithelial sodium channel function can affect airway surface hydration, but it is not the primary inherited defect in cystic fibrosis.",
+      "D": "Alpha-1 antitrypsin deficiency predisposes to emphysema and may cause liver disease. It does not explain the characteristic multisystem presentation of cystic fibrosis."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q231",
+    "subdomain": "Renal & urology",
+    "topic": "Liddle syndrome",
+    "difficulty": "Moderate",
+    "stem": "A 24-year-old is investigated for persistent hypertension. Blood tests show hypokalaemia and metabolic alkalosis. Plasma renin activity and plasma aldosterone concentration are both suppressed. There is a strong family history of early-onset hypertension. Which mechanism best explains this presentation?",
+    "options": {
+      "A": "Impaired 11β-hydroxysteroid dehydrogenase type 2 activity",
+      "B": "Constitutive activation of epithelial sodium channels in the distal nephron",
+      "C": "Deficiency of 11β-hydroxylase causing accumulation of mineralocorticoid-active precursors",
+      "D": "Autonomous aldosterone secretion by an adrenal adenoma",
+      "E": "Excess renal potassium reabsorption caused by reduced distal sodium delivery"
+    },
+    "correct_letter": "B",
+    "why_correct": "Liddle syndrome is usually caused by pathogenic variants affecting epithelial sodium channel regulation. Excess sodium reabsorption expands extracellular volume and suppresses renin and aldosterone. Increased distal sodium reabsorption also promotes potassium and hydrogen ion secretion, contributing to hypokalaemia and metabolic alkalosis. Hypertension with hypokalaemic metabolic alkalosis and suppressed renin and aldosterone suggests a low-renin, low-aldosterone mechanism; Liddle syndrome is one important cause.",
+    "distractor_analysis": {
+      "A": "Impaired 11β-hydroxysteroid dehydrogenase type 2: This can cause apparent mineralocorticoid excess because cortisol activates mineralocorticoid receptors in the kidney. It can produce low renin and aldosterone, but it is a different mechanism.",
+      "C": "Deficiency of 11β-hydroxylase: This can cause accumulation of mineralocorticoid-active steroid precursors, hypertension and hypokalaemia. The diagnosis would require supporting steroid and clinical findings; it is not the best explanation of this classic familial pattern.",
+      "D": "Autonomous aldosterone secretion: Primary aldosteronism can cause hypertension, hypokalaemia and metabolic alkalosis, but aldosterone is typically inappropriately elevated relative to renin rather than suppressed alongside renin.",
+      "E": "Reduced sodium delivery to the distal nephron tends to limit renal potassium secretion rather than produce the characteristic potassium wasting of Liddle syndrome."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q232",
+    "subdomain": "Renal & urology",
+    "topic": "Haemolytic uraemic syndrome",
+    "difficulty": "Moderate",
+    "stem": "A 6-year-old develops pallor, reduced urine output and lethargy several days after an episode of bloody diarrhoea. Investigations show acute kidney injury, thrombocytopenia and anaemia with schistocytes on the blood film. The direct antiglobulin test is negative. Which diagnosis best accounts for these findings?",
+    "options": {
+      "A": "Immune thrombocytopenia",
+      "B": "Disseminated intravascular coagulation",
+      "C": "Aplastic anaemia",
+      "D": "Warm autoimmune haemolytic anaemia",
+      "E": "Haemolytic uraemic syndrome"
+    },
+    "correct_letter": "E",
+    "why_correct": "The classic syndrome comprises microangiopathic haemolytic anaemia, thrombocytopenia and acute kidney injury. A preceding bloody diarrhoeal illness raises concern for Shiga toxin-associated disease, although not all cases follow diarrhoea.",
+    "distractor_analysis": {
+      "A": "Immune thrombocytopenia causes thrombocytopenia but does not ordinarily explain microangiopathic haemolytic anaemia with schistocytes and acute kidney injury.",
+      "B": "Disseminated intravascular coagulation: DIC can cause thrombocytopenia, haemolysis and organ dysfunction, but usually occurs in an appropriate systemic context and is supported by coagulation abnormalities such as prolonged clotting times and reduced fibrinogen.",
+      "C": "Aplastic anaemia causes bone marrow failure with cytopenias, rather than schistocyte-associated microangiopathic haemolysis and acute kidney injury.",
+      "D": "Warm autoimmune haemolytic anaemia: This typically causes immune-mediated haemolysis, often with a positive direct antiglobulin test and spherocytes. It does not explain the full triad as well."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q233",
+    "subdomain": "Musculoskeletal & rheumatology",
+    "topic": "Takayasu arteritis",
+    "difficulty": "Moderate",
+    "stem": "A 29-year-old woman reports fatigue, weight loss and aching in both arms when carrying shopping. Her left radial pulse is weaker than the right, and blood pressure is substantially lower in the left arm. Inflammatory markers are raised. Which diagnosis is most likely?",
+    "options": {
+      "A": "Takayasu arteritis",
+      "B": "Giant cell arteritis",
+      "C": "Granulomatosis with polyangiitis",
+      "D": "Antiphospholipid syndrome",
+      "E": "Polyarteritis nodosa"
+    },
+    "correct_letter": "A",
+    "why_correct": "This large-vessel vasculitis often affects younger women and can involve the aorta and its major branches. Arterial stenosis may produce unequal arm blood pressures, reduced pulses and limb claudication. In a younger patient, limb claudication with reduced pulses and unequal arm blood pressures should prompt consideration of Takayasu arteritis.",
+    "distractor_analysis": {
+      "B": "Giant cell arteritis affects older adults and commonly presents with a new headache, scalp tenderness, jaw claudication or visual symptoms. Large-vessel involvement can occur, but the patient's age and presentation favour Takayasu arteritis.",
+      "C": "Granulomatosis with polyangiitis: This commonly affects the upper airways, lungs and kidneys, with findings such as chronic sinonasal disease, pulmonary lesions and glomerulonephritis.",
+      "D": "Antiphospholipid syndrome: This is associated with thrombosis and certain pregnancy complications. It does not characteristically cause chronic inflammatory large-vessel stenosis with this pattern of pulse deficits.",
+      "E": "Polyarteritis nodosa: This medium-vessel vasculitis can cause systemic symptoms, hypertension, neuropathy and abdominal pain. It does not classically produce the combination of major-branch pulse deficits and inter-arm blood-pressure differences."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q234",
+    "subdomain": "Renal & urology",
+    "topic": "Nephrogenic diabetes insipidus",
+    "difficulty": "Moderate",
+    "stem": "A patient receiving long-term lithium develops persistent thirst and passes large volumes of dilute urine. Plasma sodium is elevated, while urine osmolality remains low. Following specialist-supervised administration of desmopressin, urine osmolality shows little meaningful increase. Which mechanism best explains these findings?",
+    "options": {
+      "A": "Excess aldosterone secretion causing renal water loss",
+      "B": "Reduced secretion of antidiuretic hormone from the posterior pituitary",
+      "C": "Failure of proximal tubular glucose reabsorption",
+      "D": "Renal resistance to the action of antidiuretic hormone",
+      "E": "Increased secretion of atrial natriuretic peptide as the primary defect"
+    },
+    "correct_letter": "D",
+    "why_correct": "Nephrogenic diabetes insipidus occurs when the kidneys cannot respond appropriately to antidiuretic hormone. Lithium is a recognised cause. The result is impaired urinary concentration, polyuria and risk of hypernatraemia if water intake cannot keep pace. In a patient taking lithium, polyuria with persistently dilute urine and little response to desmopressin suggests nephrogenic diabetes insipidus.",
+    "distractor_analysis": {
+      "A": "Excess aldosterone secretion: Primary aldosteronism principally causes hypertension and may cause hypokalaemia. It does not explain the characteristic failure to concentrate urine after desmopressin.",
+      "B": "Reduced secretion of antidiuretic hormone: This describes central diabetes insipidus. In central disease, desmopressin generally increases urine concentration because the kidney can respond to the hormone.",
+      "C": "Failure of proximal tubular glucose reabsorption: This can cause glycosuria and osmotic diuresis, but it would not be the best explanation for this presentation and desmopressin response.",
+      "E": "Natriuretic peptides influence sodium and water excretion but do not explain the classic lithium-associated defect in the renal response to antidiuretic hormone."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q235",
+    "subdomain": "Genetics",
+    "topic": "Osteogenesis imperfecta",
+    "difficulty": "Moderate",
+    "stem": "A 10-year-old has had several fractures after minor trauma. Examination reveals blue sclerae and hearing impairment. There is no evidence of non-accidental injury, and the family history includes multiple relatives with recurrent fractures. Which underlying abnormality is most commonly responsible?",
+    "options": {
+      "A": "Defective dystrophin-associated linkage between muscle cytoskeleton and extracellular matrix",
+      "B": "Impaired osteoclast function due to defective acidification of the resorption lacuna",
+      "C": "Defective fibrillin-1 microfibril formation",
+      "D": "Defective type I collagen synthesis or structure",
+      "E": "Reduced intestinal calcium absorption caused by vitamin D deficiency"
+    },
+    "correct_letter": "D",
+    "why_correct": "Osteogenesis imperfecta is a group of inherited connective-tissue disorders commonly involving type I collagen. Fragility fractures, blue sclerae and hearing impairment are characteristic features. Recurrent low-trauma fractures with blue sclerae and a compatible family history suggest osteogenesis imperfecta, commonly involving type I collagen.",
+    "distractor_analysis": {
+      "A": "Dystrophin defects cause muscular dystrophy, characterised primarily by progressive muscle weakness rather than the classic bone-fragility phenotype.",
+      "B": "Impaired osteoclast acidification: Defective osteoclast-mediated bone resorption can cause osteopetrosis, with abnormally dense bone and possible marrow compromise. It does not fit the characteristic osteogenesis imperfecta phenotype.",
+      "C": "Defective fibrillin-1 microfibril formation: This is associated with Marfan syndrome, which classically involves features such as aortic-root dilatation, lens dislocation and disproportionate skeletal growth.",
+      "E": "Reduced intestinal calcium absorption: Vitamin D deficiency can cause defective bone mineralisation and osteomalacia or rickets. It does not best explain the inherited pattern with blue sclerae and hearing impairment."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q236",
+    "subdomain": "Immunology",
+    "topic": "X-linked hyper-IgM syndrome",
+    "difficulty": "Moderate",
+    "stem": "A boy has recurrent bacterial infections and develops an opportunistic infection. Investigations show markedly raised serum IgM with low IgG and IgA. His circulating B-cell count is preserved. Which molecular defect most directly explains the classic X-linked form of this disorder?",
+    "options": {
+      "A": "A mutation in CFTR impairing epithelial chloride transport",
+      "B": "A mutation in CYBB impairing the phagocyte respiratory burst",
+      "C": "A mutation in CD40LG impairing CD40-mediated B-cell activation and immunoglobulin class switching",
+      "D": "A mutation in BTK preventing mature B-cell development",
+      "E": "A deletion involving 22q11.2 causing thymic hypoplasia"
+    },
+    "correct_letter": "C",
+    "why_correct": "The classic X-linked hyper-IgM syndrome results from defective CD40 ligand on activated T cells. Impaired CD40 signalling disrupts immunoglobulin class switching and other immune functions, producing low IgG and IgA with normal or raised IgM. Opportunistic infection is an important clue. Raised IgM with low IgG and IgA, preserved B cells and opportunistic infection should raise concern for a class-switching defect such as X-linked CD40 ligand deficiency.",
+    "distractor_analysis": {
+      "A": "CFTR mutation: This causes cystic fibrosis, an epithelial ion-transport disorder associated with chronic respiratory disease and other multisystem manifestations.",
+      "B": "CYBB mutation: This commonly causes X-linked chronic granulomatous disease, in which defective NADPH oxidase impairs the phagocyte respiratory burst.",
+      "D": "BTK mutation: This causes X-linked agammaglobulinaemia, in which mature B cells and immunoglobulin levels are profoundly reduced. The preserved B-cell count and raised IgM argue against this diagnosis.",
+      "E": "22q11.2 deletion: This may cause DiGeorge syndrome, with thymic hypoplasia and T-cell deficiency, often alongside congenital cardiac abnormalities and hypocalcaemia."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q237",
+    "subdomain": "Respiratory",
+    "topic": "Acute eosinophilic pneumonia",
+    "difficulty": "Moderate",
+    "stem": "A 32-year-old develops fever, dry cough and rapidly progressive breathlessness over several days. Oxygen saturation is low, and chest imaging shows bilateral diffuse pulmonary opacities. Bronchoalveolar lavage demonstrates marked eosinophilia. There is no history of asthma or a known chronic eosinophilic disorder. Which diagnosis best fits this acute presentation?",
+    "options": {
+      "A": "Idiopathic pulmonary fibrosis",
+      "B": "Acute eosinophilic pneumonia",
+      "C": "Pulmonary alveolar proteinosis",
+      "D": "Chronic obstructive pulmonary disease exacerbation",
+      "E": "Obstructive sleep apnoea"
+    },
+    "correct_letter": "B",
+    "why_correct": "This can present with an acute febrile respiratory illness, hypoxaemia and diffuse pulmonary infiltrates. Eosinophilia in bronchoalveolar lavage is a key diagnostic clue; peripheral blood eosinophilia may be absent early in the illness. Acute febrile hypoxaemic respiratory illness with diffuse infiltrates and marked bronchoalveolar eosinophilia should prompt consideration of acute eosinophilic pneumonia.",
+    "distractor_analysis": {
+      "A": "Idiopathic pulmonary fibrosis: This typically causes a more chronic, progressive interstitial lung disease, rather than a rapidly evolving febrile illness with marked lavage eosinophilia.",
+      "C": "Pulmonary alveolar proteinosis: This is associated with accumulation of surfactant-like material in the alveoli and may produce diffuse opacities, sometimes with a “crazy-paving” CT pattern. That imaging pattern is not specific, and marked lavage eosinophilia points elsewhere.",
+      "D": "COPD exacerbations cause worsening respiratory symptoms in a patient with underlying airflow obstruction. They do not explain the characteristic acute diffuse infiltrates and marked bronchoalveolar eosinophilia.",
+      "E": "Obstructive sleep apnoea: This causes recurrent upper-airway obstruction during sleep. It does not explain an acute febrile illness with hypoxaemia and diffuse pulmonary infiltrates."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q238",
+    "subdomain": "Renal & urology",
+    "topic": "Alport syndrome",
+    "difficulty": "Moderate",
+    "stem": "A 19-year-old man is referred because of persistent microscopic haematuria. His renal function has gradually deteriorated, and audiometry confirms sensorineural hearing loss. His maternal uncle developed kidney failure in early adulthood. Ophthalmological assessment identifies an abnormality of the lens. Which underlying defect best explains this presentation?",
+    "options": {
+      "A": "Defective dystrophin production",
+      "B": "Defective cystic fibrosis transmembrane conductance regulator",
+      "C": "Mutation affecting type I collagen",
+      "D": "Mutation affecting type IV collagen",
+      "E": "Mutation affecting fibrillin-1"
+    },
+    "correct_letter": "D",
+    "why_correct": "Alport syndrome is caused by pathogenic variants affecting type IV collagen, a structural component of basement membranes. Renal disease, sensorineural hearing loss and ocular abnormalities are characteristic. X-linked disease commonly involves COL4A5. Persistent haematuria, progressive kidney disease, sensorineural hearing loss and compatible family history suggest Alport syndrome.",
+    "distractor_analysis": {
+      "A": "Dystrophin abnormalities cause muscular dystrophies, presenting predominantly with progressive muscle weakness.",
+      "B": "CFTR dysfunction causes cystic fibrosis, with characteristic respiratory, gastrointestinal and other multisystem manifestations.",
+      "C": "Type I collagen abnormalities are associated with osteogenesis imperfecta, which typically causes bone fragility and may cause blue sclerae and hearing impairment.",
+      "E": "Fibrillin-1 abnormalities are associated with Marfan syndrome, including aortic-root disease, lens dislocation and skeletal features."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q239",
+    "subdomain": "Immunology",
+    "topic": "Hyper-IgE syndrome",
+    "difficulty": "Moderate",
+    "stem": "A 12-year-old has a history of recurrent staphylococcal skin abscesses, recurrent pneumonias and severe eczema. Examination identifies retained primary teeth and a characteristic coarse facial appearance. Serum IgE is markedly elevated. Which molecular abnormality is most strongly associated with the classic autosomal dominant form of this disorder?",
+    "options": {
+      "A": "Variants in CD40LG causing impaired immunoglobulin class switching",
+      "B": "Variants in BTK causing failure of B-cell maturation",
+      "C": "Deletion of 22q11.2 causing thymic hypoplasia",
+      "D": "Variants in CYBB causing defective oxidative killing by phagocytes",
+      "E": "Loss-of-function variants in STAT3"
+    },
+    "correct_letter": "E",
+    "why_correct": "The classic autosomal dominant form of hyper-IgE syndrome is associated with impaired STAT3 signalling. Features can include eczema, recurrent infections, characteristic facies, retained primary teeth and skeletal abnormalities. Recurrent infections, eczema, markedly elevated IgE and retained primary teeth are clues to classic STAT3-associated hyper-IgE syndrome.",
+    "distractor_analysis": {
+      "A": "CD40LG variants: These cause the classic X-linked form of hyper-IgM syndrome, with impaired immunoglobulin class switching.",
+      "B": "BTK variants: These cause X-linked agammaglobulinaemia, characterised by markedly reduced mature B cells and immunoglobulins.",
+      "C": "22q11.2 deletion: This can cause DiGeorge syndrome, which is associated with thymic hypoplasia, T-cell deficiency, hypocalcaemia and congenital cardiac abnormalities.",
+      "D": "CYBB variants: These can cause X-linked chronic granulomatous disease, which impairs the phagocyte respiratory burst and predisposes to recurrent infections."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q240",
+    "subdomain": "Musculoskeletal & rheumatology",
+    "topic": "Behçet disease",
+    "difficulty": "Moderate",
+    "stem": "A 31-year-old man has experienced recurrent painful oral ulcers for several years. He now reports recurrent genital ulceration and a painful red eye with photophobia. Examination confirms anterior uveitis. He has no evidence of a sexually transmitted infection. Which diagnosis best unifies these findings?",
+    "options": {
+      "A": "Behçet disease",
+      "B": "Granulomatosis with polyangiitis",
+      "C": "Rheumatoid arthritis",
+      "D": "Reactive arthritis",
+      "E": "Systemic lupus erythematosus"
+    },
+    "correct_letter": "A",
+    "why_correct": "Behçet disease is a multisystem inflammatory disorder characterised by recurrent oral and genital ulceration and ocular inflammation, which may threaten vision. Other manifestations can include skin lesions, vascular disease and neurological involvement. Recurrent oral and genital ulceration with uveitis should prompt consideration of Behçet disease and urgent ophthalmological assessment when eye inflammation is suspected.",
+    "distractor_analysis": {
+      "B": "Granulomatosis with polyangiitis: This may cause upper-airway disease, pulmonary lesions, glomerulonephritis and ocular inflammation, but recurrent oral and genital ulcers are less characteristic of the syndrome described.",
+      "C": "Rheumatoid arthritis primarily causes inflammatory synovitis. It does not explain this characteristic mucosal ulceration pattern.",
+      "D": "Reactive arthritis follows certain gastrointestinal or genitourinary infections and can cause arthritis, enthesitis, conjunctivitis or uveitis, and mucocutaneous lesions. The longstanding recurrent oral and genital ulceration pattern favours Behçet disease.",
+      "E": "Lupus can cause oral ulcers and ocular or systemic manifestations, but recurrent genital ulceration together with uveitis is more characteristic of Behçet disease."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q241",
+    "subdomain": "Neurology",
+    "topic": "Familial hypokalaemic periodic paralysis",
+    "difficulty": "Moderate",
+    "stem": "A 22-year-old man develops several episodes of painless, symmetrical limb weakness, usually after strenuous exercise followed by rest or after a carbohydrate-rich meal. During an episode, serum potassium is low. Sensation and consciousness are preserved, and strength returns as the episode resolves. Which mechanism is most closely associated with the classic inherited form of this condition?",
+    "options": {
+      "A": "Autoimmune destruction of peripheral myelin",
+      "B": "A defect in mitochondrial DNA replication affecting multiple organs",
+      "C": "Autoantibodies against acetylcholine receptors",
+      "D": "Degeneration of upper and lower motor neurons",
+      "E": "Pathogenic variants affecting skeletal-muscle voltage-gated calcium or sodium channel function"
+    },
+    "correct_letter": "E",
+    "why_correct": "Familial hypokalaemic periodic paralysis is associated with skeletal-muscle ion-channel dysfunction, commonly involving CACNA1S or SCN4A. Attacks feature episodic weakness associated with low serum potassium. Recurrent reversible weakness associated with low potassium suggests hypokalaemic periodic paralysis; the inherited form commonly involves skeletal-muscle ion channels.",
+    "distractor_analysis": {
+      "A": "Autoimmune destruction of peripheral myelin: This can occur in Guillain–Barré syndrome, which usually produces an acute progressive neuropathy with reduced reflexes rather than recurrent potassium-associated episodes.",
+      "B": "Mitochondrial disorders can cause muscle weakness and multisystem disease, but they do not best explain the characteristic episodic hypokalaemic attacks.",
+      "C": "Autoantibodies against acetylcholine receptors: These are associated with myasthenia gravis, which causes fatigable weakness and is not characterised by episodic hypokalaemia.",
+      "D": "Degeneration of upper and lower motor neurons: This describes the pathological process in motor neuron disease, which typically causes progressive rather than reversible episodic weakness."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q242",
+    "subdomain": "Renal & urology",
+    "topic": "Gordon syndrome",
+    "difficulty": "Moderate",
+    "stem": "A 35-year-old man is assessed for hypertension. Blood tests repeatedly show hyperkalaemia and a mild hyperchloraemic metabolic acidosis. Renal function is preserved, and plasma renin and aldosterone are suppressed. His father developed hypertension at a young age. Which abnormality best explains this presentation?",
+    "options": {
+      "A": "Increased sodium chloride reabsorption in the distal convoluted tubule",
+      "B": "Defective proximal tubular glucose reabsorption",
+      "C": "Excess aldosterone secretion from an adrenal adenoma",
+      "D": "Constitutive activation of epithelial sodium channels in the collecting duct",
+      "E": "Impaired secretion of antidiuretic hormone"
+    },
+    "correct_letter": "A",
+    "why_correct": "Gordon syndrome, also called pseudohypoaldosteronism type II or familial hyperkalaemic hypertension, is associated with increased activity of the thiazide-sensitive sodium-chloride cotransporter pathway. The resulting physiology causes hypertension, hyperkalaemia and metabolic acidosis. Hypertension with hyperkalaemia and metabolic acidosis, especially with a family history, suggests Gordon syndrome; thiazide sensitivity is a useful distinguishing feature.",
+    "distractor_analysis": {
+      "B": "Defective proximal tubular glucose reabsorption: This can cause glycosuria and may occur as part of proximal tubular dysfunction, but it does not explain this inherited hypertension phenotype.",
+      "C": "Excess aldosterone secretion: Primary aldosteronism usually causes hypertension with suppressed renin and inappropriately elevated aldosterone. Hypokalaemia and metabolic alkalosis are typical, rather than the hyperkalaemia and acidosis described here.",
+      "D": "Constitutive activation of epithelial sodium channels: This is the characteristic mechanism of Liddle syndrome, which typically produces hypertension with hypokalaemic metabolic alkalosis and suppressed renin and aldosterone.",
+      "E": "Impaired secretion of antidiuretic hormone: This causes central diabetes insipidus, characterised by impaired urine concentration and polyuria, not the characteristic electrolyte and acid–base pattern here."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q243",
+    "subdomain": "Endocrinology & diabetes",
+    "topic": "Kallmann syndrome",
+    "difficulty": "Moderate",
+    "stem": "A 19-year-old man is referred because he has not undergone normal pubertal development. Examination shows small testes and sparse facial hair. Testosterone is low, with low or inappropriately normal luteinising hormone and follicle-stimulating hormone concentrations. He also reports that he has never been able to smell coffee or perfume. Which diagnosis best explains this combination?",
+    "options": {
+      "A": "Prolactinoma",
+      "B": "Cushing syndrome",
+      "C": "Primary testicular failure",
+      "D": "Androgen insensitivity syndrome",
+      "E": "Kallmann syndrome"
+    },
+    "correct_letter": "E",
+    "why_correct": "Kallmann syndrome is a form of congenital hypogonadotropic hypogonadism associated with impaired development or migration of gonadotrophin-releasing hormone neurons and olfactory pathways. The combination of absent or impaired smell and deficient pubertal development is characteristic. Delayed puberty with low sex hormones and low or inappropriately normal gonadotrophins indicates central hypogonadism; associated anosmia strongly suggests Kallmann syndrome.",
+    "distractor_analysis": {
+      "A": "Prolactinoma: Hyperprolactinaemia can suppress the hypothalamic–pituitary–gonadal axis and cause hypogonadism. However, it does not explain congenital anosmia as well as Kallmann syndrome.",
+      "B": "Cushing syndrome: Excess cortisol can suppress reproductive function, but it would not explain the characteristic combination of anosmia and congenital hypogonadotropic hypogonadism.",
+      "C": "Primary gonadal failure typically causes low testosterone with raised LH and FSH because negative feedback from the gonads is reduced.",
+      "D": "Androgen insensitivity syndrome: This results from impaired androgen receptor function in an individual with a 46,XY karyotype. The phenotype depends on the degree of androgen insensitivity and does not characteristically include anosmia with low gonadotrophins."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q244",
+    "subdomain": "Infectious disease & sexual health",
+    "topic": "Leptospirosis",
+    "difficulty": "Moderate",
+    "stem": "A 28-year-old develops fever, severe headache and marked calf muscle pain several days after clearing floodwater from a contaminated building. Examination reveals conjunctival suffusion. Blood tests show acute kidney injury and hyperbilirubinaemia. Which infection is the most likely cause?",
+    "options": {
+      "A": "Acute hepatitis A",
+      "B": "Enteric fever",
+      "C": "Malaria",
+      "D": "Dengue fever",
+      "E": "Leptospirosis"
+    },
+    "correct_letter": "E",
+    "why_correct": "Leptospirosis is a zoonotic infection that can be acquired through exposure to water or soil contaminated with infected animal urine. Fever, prominent calf myalgia, conjunctival suffusion and, in severe disease, renal and hepatic dysfunction are characteristic clues. Fever after contaminated-water exposure accompanied by calf myalgia, conjunctival suffusion and renal or hepatic dysfunction should raise suspicion of leptospirosis.",
+    "distractor_analysis": {
+      "A": "Hepatitis A may cause fever, malaise and jaundice, but does not characteristically cause severe calf myalgia and conjunctival suffusion with this exposure history.",
+      "B": "Enteric fever typically follows ingestion of contaminated food or water and can cause sustained fever and gastrointestinal or systemic symptoms. The particular combination described is more suggestive of leptospirosis.",
+      "C": "Malaria can cause fever and severe systemic illness after exposure in an endemic area. The exposure described and the characteristic calf pain with conjunctival suffusion favour leptospirosis; malaria must nevertheless be urgently considered when the travel history warrants it.",
+      "D": "Dengue may cause fever, severe myalgia and thrombocytopenia, often after mosquito exposure. The water exposure, conjunctival suffusion and renal–hepatic pattern make leptospirosis more likely."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q245",
+    "subdomain": "Clinical biochemistry and metabolism",
+    "topic": "Hereditary fructose intolerance",
+    "difficulty": "Moderate",
+    "stem": "A 2-year-old develops recurrent vomiting, sweating and lethargy after eating fruit or foods containing sucrose. Episodes began after weaning. Investigations during an episode show hypoglycaemia and raised liver enzymes. The child has developed a strong aversion to sweet foods. Which enzyme deficiency best explains the presentation?",
+    "options": {
+      "A": "Glucose-6-phosphatase deficiency",
+      "B": "Fructokinase deficiency",
+      "C": "Aldolase B deficiency",
+      "D": "Galactose-1-phosphate uridylyltransferase deficiency",
+      "E": "Phenylalanine hydroxylase deficiency"
+    },
+    "correct_letter": "C",
+    "why_correct": "Hereditary fructose intolerance is caused by deficiency of aldolase B. Fructose exposure leads to accumulation of fructose-1-phosphate, disrupting hepatic metabolism and glycogenolysis and causing hypoglycaemia, vomiting and possible liver injury. Recurrent illness after fructose or sucrose exposure, with hypoglycaemia and hepatic dysfunction, suggests hereditary fructose intolerance due to aldolase B deficiency.",
+    "distractor_analysis": {
+      "A": "Glucose-6-phosphatase deficiency: This causes glycogen storage disease type I, with fasting hypoglycaemia, hepatomegaly and metabolic abnormalities. The close relationship to fructose or sucrose ingestion is less characteristic.",
+      "B": "Fructokinase deficiency: This causes essential fructosuria, a benign condition in which unmetabolised fructose is excreted in the urine; it does not cause hypoglycaemia or liver injury.",
+      "D": "Galactose-1-phosphate uridylyltransferase deficiency: Classic galactosaemia can cause illness after milk feeding, including liver dysfunction and hypoglycaemia. It is associated with galactose exposure rather than specifically fructose and sucrose.",
+      "E": "Phenylalanine hydroxylase deficiency: This causes phenylketonuria, which affects phenylalanine metabolism and is not the mechanism behind fructose-triggered hypoglycaemia."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q246",
+    "subdomain": "Renal & urology",
+    "topic": "Medullary sponge kidney",
+    "difficulty": "Moderate",
+    "stem": "A 36-year-old has recurrent episodes of renal colic and microscopic haematuria. Imaging demonstrates multiple small calcifications within the renal medullary regions and ectatic collecting ducts. Renal function is preserved. Which structural abnormality best explains these findings?",
+    "options": {
+      "A": "Inherited deficiency of type IV collagen",
+      "B": "Immune-complex deposition in the glomerular basement membrane",
+      "C": "Bilateral renal artery stenosis",
+      "D": "Cystic dilatation of collecting ducts in the renal medulla",
+      "E": "Obstruction of the ureteropelvic junction"
+    },
+    "correct_letter": "D",
+    "why_correct": "Medullary sponge kidney is a structural disorder involving dilatation of collecting ducts in the renal medulla. It can be associated with nephrocalcinosis, recurrent renal stones, haematuria and urinary tract infections, while renal function is often preserved. Recurrent renal stones or haematuria with medullary nephrocalcinosis and ectatic collecting ducts suggests medullary sponge kidney.",
+    "distractor_analysis": {
+      "A": "Inherited deficiency of type IV collagen: This is associated with Alport syndrome, which typically causes haematuria and may cause hearing and ocular abnormalities.",
+      "B": "Glomerular immune-complex disease can cause haematuria and proteinuria, but it does not explain the characteristic structural changes described.",
+      "C": "Bilateral renal artery stenosis: This can cause renovascular hypertension and, in some cases, deterioration in renal function after renin–angiotensin system blockade. It does not explain medullary collecting-duct ectasia and calcifications.",
+      "E": "Obstruction of the ureteropelvic junction: This may cause hydronephrosis and impaired drainage from the renal pelvis. It does not account for diffuse medullary collecting-duct dilatation with nephrocalcinosis."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q247",
+    "subdomain": "Clinical biochemistry and metabolism",
+    "topic": "Hypophosphatasia",
+    "difficulty": "Moderate",
+    "stem": "A 42-year-old has a history of recurrent metatarsal stress fractures and chronic musculoskeletal pain. He lost several primary teeth prematurely in childhood. Investigations repeatedly show a low serum alkaline phosphatase concentration, despite evidence of impaired bone mineralisation. Which underlying abnormality best explains this presentation?",
+    "options": {
+      "A": "Excess osteoclast activity caused by increased RANKL signalling",
+      "B": "Excess parathyroid hormone secretion",
+      "C": "Deficiency of tissue-nonspecific alkaline phosphatase activity",
+      "D": "Vitamin D deficiency causing secondary hyperparathyroidism",
+      "E": "Defective type I collagen synthesis"
+    },
+    "correct_letter": "C",
+    "why_correct": "Hypophosphatasia is caused by pathogenic variants in ALPL, which encodes tissue-nonspecific alkaline phosphatase. Reduced enzyme activity impairs mineralisation and may cause fractures, musculoskeletal symptoms and premature loss of teeth. Persistently low alkaline phosphatase is an important clue. Persistently low alkaline phosphatase with stress fractures, musculoskeletal symptoms or premature tooth loss should prompt consideration of hypophosphatasia.",
+    "distractor_analysis": {
+      "A": "Excess osteoclast activity: Increased bone resorption can occur in several metabolic and malignant bone disorders, but it does not explain the characteristic low alkaline phosphatase and premature tooth loss.",
+      "B": "Excess parathyroid hormone secretion: Primary hyperparathyroidism commonly causes hypercalcaemia and may cause skeletal disease, but alkaline phosphatase is not characteristically persistently low as a defining feature.",
+      "D": "Vitamin D deficiency can cause defective mineralisation and secondary hyperparathyroidism, but alkaline phosphatase is generally raised rather than persistently low.",
+      "E": "Defective type I collagen synthesis: This is associated with osteogenesis imperfecta, which typically causes bone fragility and may cause blue sclerae and hearing impairment."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q248",
+    "subdomain": "Renal & urology",
+    "topic": "Bartter syndrome",
+    "difficulty": "Moderate",
+    "stem": "A 17-year-old is investigated for recurrent muscle cramps and polyuria. Blood tests show hypokalaemic metabolic alkalosis, raised plasma renin activity and raised aldosterone. Blood pressure is normal, and urinary calcium excretion is increased. Which renal tubular defect best explains these findings?",
+    "options": {
+      "A": "Impaired aldosterone synthesis in the adrenal cortex",
+      "B": "Defective proximal tubular bicarbonate reabsorption",
+      "C": "Impaired sodium-potassium-2-chloride cotransport in the thick ascending limb",
+      "D": "Constitutive activation of epithelial sodium channels in the collecting duct",
+      "E": "Impaired sodium-chloride cotransport in the distal convoluted tubule"
+    },
+    "correct_letter": "C",
+    "why_correct": "Bartter syndrome comprises inherited disorders affecting salt reabsorption in the thick ascending limb. Salt loss activates the renin–angiotensin–aldosterone system, contributing to hypokalaemia and metabolic alkalosis. Increased urinary calcium excretion is a useful distinguishing clue in the classic forms. Bartter syndrome and Gitelman syndrome both cause renal salt wasting and hypokalaemic metabolic alkalosis; urinary calcium and magnesium findings help distinguish them.",
+    "distractor_analysis": {
+      "A": "Impaired aldosterone synthesis: Reduced aldosterone activity tends to impair potassium and hydrogen ion secretion, potentially causing hyperkalaemia and metabolic acidosis rather than this pattern.",
+      "B": "Defective proximal bicarbonate reabsorption: This can cause proximal renal tubular acidosis, which produces metabolic acidosis rather than metabolic alkalosis.",
+      "D": "Constitutive activation of epithelial sodium channels: This causes Liddle syndrome, which usually produces hypertension with suppressed renin and aldosterone.",
+      "E": "Impaired sodium-chloride cotransport: This is the characteristic tubular defect in Gitelman syndrome, which commonly produces hypokalaemic metabolic alkalosis but is usually associated with hypomagnesaemia and reduced urinary calcium excretion."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q249",
+    "subdomain": "Haematology & oncology",
+    "topic": "Glanzmann thrombasthenia",
+    "difficulty": "Moderate",
+    "stem": "A 9-year-old has recurrent epistaxis, gingival bleeding and prolonged bleeding after minor cuts. The platelet count is normal, as are the prothrombin time and activated partial thromboplastin time. Platelet aggregation testing shows impaired aggregation in response to most physiological agonists, but agglutination in response to ristocetin is preserved. Which defect is most likely?",
+    "options": {
+      "A": "Deficiency of von Willebrand factor",
+      "B": "Deficiency of coagulation factor VIII",
+      "C": "Deficiency or dysfunction of platelet glycoprotein IIb/IIIa",
+      "D": "Defective fibrinogen synthesis by the liver",
+      "E": "Deficiency of platelet glycoprotein Ib"
+    },
+    "correct_letter": "C",
+    "why_correct": "Glanzmann thrombasthenia impairs platelet aggregation because the platelet integrin αIIbβ3 cannot function normally in fibrinogen-mediated platelet bridging. Platelet count and routine coagulation tests may be normal. Mucocutaneous bleeding with a normal platelet count and preserved ristocetin response but defective platelet aggregation suggests Glanzmann thrombasthenia.",
+    "distractor_analysis": {
+      "A": "Von Willebrand disease primarily impairs platelet adhesion and can reduce factor VIII stability. The platelet aggregation pattern described is more characteristic of Glanzmann thrombasthenia.",
+      "B": "Deficiency of factor VIII: Haemophilia A causes a coagulation defect, typically with an isolated prolonged aPTT, and more often produces deep tissue bleeding or haemarthroses.",
+      "D": "Defective fibrinogen synthesis: A significant fibrinogen deficiency can impair clot formation and may alter coagulation testing. It does not explain the characteristic platelet receptor defect.",
+      "E": "Deficiency of platelet glycoprotein Ib: This is associated with Bernard–Soulier syndrome, which impairs platelet adhesion and typically causes thrombocytopenia with unusually large platelets. Ristocetin-induced agglutination is impaired."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q250",
+    "subdomain": "Endocrinology & diabetes",
+    "topic": "Resistance to thyroid hormone beta",
+    "difficulty": "Moderate",
+    "stem": "A 24-year-old is investigated after routine blood tests repeatedly show raised free thyroxine and free triiodothyronine concentrations. Thyroid-stimulating hormone is not suppressed. The patient has few symptoms of thyrotoxicosis, and a first-degree relative has a similar biochemical pattern. Which diagnosis best explains these findings?",
+    "options": {
+      "A": "A toxic thyroid adenoma",
+      "B": "Destructive thyroiditis",
+      "C": "Primary hypothyroidism",
+      "D": "Graves disease",
+      "E": "Resistance to thyroid hormone beta"
+    },
+    "correct_letter": "E",
+    "why_correct": "This inherited disorder commonly results from pathogenic variants in THRB. Reduced tissue responsiveness to thyroid hormones can produce raised circulating thyroid hormone concentrations with a non-suppressed TSH. Clinical manifestations vary between tissues and individuals. Raised free thyroid hormones with non-suppressed TSH require careful evaluation; resistance to thyroid hormone and a TSH-secreting pituitary tumour are important differential diagnoses, alongside assay interference.",
+    "distractor_analysis": {
+      "A": "A toxic thyroid adenoma: Autonomous thyroid hormone production typically suppresses TSH. A familial pattern with persistently non-suppressed TSH suggests an alternative explanation.",
+      "B": "Thyroiditis can cause a transient thyrotoxic phase, but TSH is usually suppressed when circulating thyroid hormone concentrations are substantially raised.",
+      "C": "Primary thyroid failure typically produces low free T4 and raised TSH, rather than elevated free T4 and T3.",
+      "D": "Graves disease: In typical untreated Graves disease, raised thyroid hormones suppress TSH. The non-suppressed TSH and familial pattern are not typical of uncomplicated Graves disease."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q251",
+    "subdomain": "Clinical biochemistry and metabolism",
+    "topic": "Familial dysbetalipoproteinaemia",
+    "difficulty": "Moderate",
+    "stem": "A 46-year-old man is investigated for mixed hyperlipidaemia. Both plasma cholesterol and triglyceride concentrations are markedly raised. Examination reveals yellow-orange deposits in the palmar creases and tuberous xanthomas over the elbows. Further testing supports accumulation of cholesterol-rich remnant lipoproteins. Which underlying abnormality is most closely associated with this disorder?",
+    "options": {
+      "A": "Deficiency of apolipoprotein B-100 synthesis",
+      "B": "Increased hepatic uptake of chylomicron remnants",
+      "C": "Complete absence of LDL receptors",
+      "D": "Impaired apolipoprotein E-mediated clearance of remnant lipoproteins",
+      "E": "Increased activity of lipoprotein lipase"
+    },
+    "correct_letter": "D",
+    "why_correct": "Familial dysbetalipoproteinaemia is classically associated with apoE dysfunction, commonly the apoE2/E2 genotype in the appropriate clinical context. Impaired remnant clearance leads to accumulation of cholesterol-rich remnant particles and mixed hyperlipidaemia. Mixed hyperlipidaemia with palmar-crease xanthomas should prompt consideration of familial dysbetalipoproteinaemia and remnant-lipoprotein accumulation.",
+    "distractor_analysis": {
+      "A": "Deficiency of apolipoprotein B-100 synthesis: ApoB abnormalities can affect lipoprotein production and transport, but this is not the characteristic mechanism of familial dysbetalipoproteinaemia.",
+      "B": "Increased remnant uptake would tend to improve clearance rather than explain remnant accumulation.",
+      "C": "Complete absence of LDL receptors: Severe LDL receptor dysfunction is associated with familial hypercholesterolaemia, in which LDL cholesterol is markedly elevated. It does not specifically explain the remnant-lipoprotein pattern and palmar xanthomas.",
+      "E": "Increased triglyceride-rich lipoprotein hydrolysis would not explain accumulation of remnant particles due to impaired clearance."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q252",
+    "subdomain": "Gastroenterology & hepatology",
+    "topic": "Zollinger–Ellison syndrome",
+    "difficulty": "Moderate",
+    "stem": "A 38-year-old man has recurrent peptic ulceration despite appropriate treatment. Endoscopy identifies multiple ulcers, including ulcers beyond the duodenal bulb. He also reports chronic watery diarrhoea. Gastric acid secretion is markedly increased, and fasting serum gastrin is substantially elevated. Which diagnosis best explains this presentation?",
+    "options": {
+      "A": "Autoimmune metaplastic atrophic gastritis",
+      "B": "Zollinger–Ellison syndrome",
+      "C": "Coeliac disease",
+      "D": "Gastric antral G-cell hyperplasia due to chronic achlorhydria",
+      "E": "Lactase deficiency"
+    },
+    "correct_letter": "B",
+    "why_correct": "A gastrin-secreting neuroendocrine tumour causes excessive gastric acid production. This can lead to recurrent or multiple ulcers, including distal duodenal ulcers, and diarrhoea due to the effects of acid on intestinal function. Recurrent or multiple peptic ulcers with diarrhoea and markedly elevated gastrin should raise suspicion of Zollinger–Ellison syndrome, but gastrin must be interpreted in the context of gastric acidity and medications.",
+    "distractor_analysis": {
+      "A": "Autoimmune metaplastic atrophic gastritis: This causes loss of acid-producing parietal cells, leading to reduced gastric acid and compensatory hypergastrinaemia. It does not explain markedly increased acid secretion.",
+      "C": "Coeliac disease can cause chronic diarrhoea and malabsorption but does not explain the combination of markedly increased acid secretion and pronounced hypergastrinaemia.",
+      "D": "G-cell hyperplasia due to chronic achlorhydria: Reduced gastric acidity can cause compensatory increases in gastrin. The acid-secretion pattern in the vignette argues against this explanation.",
+      "E": "Lactase deficiency can cause osmotic diarrhoea after lactose ingestion but does not cause recurrent peptic ulcers or hypergastrinaemia."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q253",
+    "subdomain": "Genetics",
+    "topic": "Neurofibromatosis type 1",
+    "difficulty": "Moderate",
+    "stem": "A 14-year-old is referred because of multiple café-au-lait macules, axillary freckling and several cutaneous neurofibromas. Ophthalmological examination identifies Lisch nodules. Which gene is associated with this disorder?",
+    "options": {
+      "A": "RET",
+      "B": "NF2",
+      "C": "VHL",
+      "D": "NF1",
+      "E": "TSC1"
+    },
+    "correct_letter": "D",
+    "why_correct": "Neurofibromatosis type 1 is an autosomal dominant disorder caused by pathogenic variants in NF1, which encodes neurofibromin, a negative regulator of RAS signalling. Café-au-lait macules, axillary or inguinal freckling, neurofibromas and Lisch nodules are characteristic findings. Café-au-lait macules, intertriginous freckling, neurofibromas and Lisch nodules strongly suggest neurofibromatosis type 1.",
+    "distractor_analysis": {
+      "A": "RET: Pathogenic variants in RET are associated with multiple endocrine neoplasia type 2 and some cases of Hirschsprung disease.",
+      "B": "NF2-related schwannomatosis is associated with schwannomas, classically bilateral vestibular schwannomas, and other nervous-system tumours. It does not produce the classic NF1 skin phenotype.",
+      "C": "VHL: Von Hippel–Lindau disease predisposes to tumours and cysts, including retinal and central nervous system haemangioblastomas and renal cell carcinoma.",
+      "E": "TSC1 variants can cause tuberous sclerosis complex, which is associated with findings such as hypomelanotic macules, facial angiofibromas and cortical tubers."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q254",
+    "subdomain": "Renal & urology",
+    "topic": "Cerebral salt wasting",
+    "difficulty": "Moderate",
+    "stem": "A 54-year-old is recovering from a subarachnoid haemorrhage. Over the following days, serum sodium falls and urine sodium concentration is high. He has polyuria, postural hypotension and clinical evidence of reduced circulating volume. Which mechanism best explains the hyponatraemia?",
+    "options": {
+      "A": "Pure water loss caused by central diabetes insipidus",
+      "B": "Excess aldosterone secretion causing sodium retention",
+      "C": "Renal sodium loss causing extracellular volume depletion and secondary water retention",
+      "D": "Water retention caused by inappropriate antidiuretic hormone secretion, with clinical euvolaemia",
+      "E": "Excess cortisol secretion causing mineralocorticoid receptor activation"
+    },
+    "correct_letter": "C",
+    "why_correct": "Cerebral salt wasting is characterised by renal sodium loss with extracellular volume depletion in the setting of intracranial disease. The resulting volume depletion stimulates mechanisms that conserve water, contributing to hyponatraemia. In a patient with intracranial disease and hyponatraemia, assess volume status carefully; cerebral salt wasting and SIADH have overlapping laboratory findings but different volume states and management implications.",
+    "distractor_analysis": {
+      "A": "Central diabetes insipidus: This causes deficient antidiuretic hormone activity, producing large volumes of dilute urine and a risk of hypernatraemia rather than this characteristic sodium-loss presentation.",
+      "B": "Aldosterone promotes renal sodium retention and potassium secretion. It does not explain persistent renal sodium loss with volume depletion.",
+      "D": "SIADH can cause hypotonic hyponatraemia with inappropriately concentrated urine and urinary sodium excretion, but patients are generally clinically euvolaemic. The evidence of volume depletion favours cerebral salt wasting in this vignette.",
+      "E": "Excess cortisol secretion: Cushing syndrome can cause hypertension and metabolic disturbances but does not explain this typical clinical pattern after subarachnoid haemorrhage."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q255",
+    "subdomain": "Neurology",
+    "topic": "Anti-NMDA receptor encephalitis",
+    "difficulty": "Moderate",
+    "stem": "A 23-year-old woman develops a febrile illness followed by rapidly progressive behavioural changes, paranoia and short-term memory impairment. Over the following week, she develops seizures, abnormal involuntary movements and episodes of reduced consciousness. Cerebrospinal fluid shows lymphocytic pleocytosis. Which mechanism best explains the underlying disorder?",
+    "options": {
+      "A": "Antibodies directed against presynaptic voltage-gated calcium channels",
+      "B": "Antibodies directed against postsynaptic acetylcholine receptors at the neuromuscular junction",
+      "C": "Antibodies directed against myelin oligodendrocyte glycoprotein",
+      "D": "Antibodies directed against the GluN1 subunit of the NMDA receptor",
+      "E": "Antibodies directed against aquaporin-4 water channels"
+    },
+    "correct_letter": "D",
+    "why_correct": "Anti-NMDA receptor encephalitis is an autoimmune encephalitis associated with antibodies against the GluN1 subunit of the NMDA receptor. It can cause psychiatric symptoms, cognitive dysfunction, seizures, movement disorders and impaired consciousness. Some cases are associated with an underlying tumour, particularly an ovarian teratoma. Rapidly evolving psychiatric symptoms accompanied by seizures, movement abnormalities or reduced consciousness should raise concern for autoimmune encephalitis.",
+    "distractor_analysis": {
+      "A": "Presynaptic voltage-gated calcium-channel antibodies: These are associated with Lambert–Eaton myasthenic syndrome, which typically causes proximal weakness and reduced reflexes.",
+      "B": "Postsynaptic acetylcholine receptor antibodies: These are associated with myasthenia gravis, which causes fluctuating, fatigable skeletal muscle weakness rather than a rapidly progressive encephalitic syndrome.",
+      "C": "Myelin oligodendrocyte glycoprotein antibodies: MOG-associated disease can cause optic neuritis, myelitis and certain encephalitic presentations, but it is not the mechanism defining anti-NMDA receptor encephalitis.",
+      "E": "Aquaporin-4 antibodies: These are associated with neuromyelitis optica spectrum disorder, which typically causes optic neuritis, myelitis and related neurological syndromes."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q256",
+    "subdomain": "Genetics",
+    "topic": "Pseudoxanthoma elasticum",
+    "difficulty": "Moderate",
+    "stem": "A 35-year-old woman is found to have yellowish papules clustered over the sides of her neck and in flexural skin. Ophthalmological examination reveals angioid streaks. She has a history of easy bruising and is being investigated for premature vascular disease. Which underlying abnormality is most closely associated with this condition?",
+    "options": {
+      "A": "Abnormal mineralisation and fragmentation of elastic fibres associated with ABCC6 variants",
+      "B": "Defective type I collagen synthesis",
+      "C": "Defective fibrillin-1 microfibril formation",
+      "D": "Autoimmune destruction of dermal collagen",
+      "E": "Impaired lysosomal degradation of glycosaminoglycans"
+    },
+    "correct_letter": "A",
+    "why_correct": "Pseudoxanthoma elasticum is commonly associated with pathogenic variants in ABCC6. It causes progressive mineralisation and fragmentation of elastic fibres, affecting the skin, Bruch's membrane in the eye and blood vessels. Flexural yellow papules, angioid streaks and premature vascular complications suggest pseudoxanthoma elasticum.",
+    "distractor_analysis": {
+      "B": "Defective type I collagen synthesis: This is associated with osteogenesis imperfecta, which typically presents with bone fragility and may cause blue sclerae and hearing impairment.",
+      "C": "Defective fibrillin-1 formation: This is associated with Marfan syndrome, which can cause aortic-root dilatation, lens dislocation and characteristic skeletal features.",
+      "D": "Autoimmune connective-tissue disorders can affect skin and other organs but do not explain the characteristic combination of angioid streaks and mineralised elastic fibres.",
+      "E": "Impaired lysosomal degradation of glycosaminoglycans: This describes the broad mechanism of mucopolysaccharidoses, a group of lysosomal storage disorders with distinct multisystem manifestations."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q257",
+    "subdomain": "Renal & urology",
+    "topic": "Cystinuria",
+    "difficulty": "Moderate",
+    "stem": "A 19-year-old has experienced recurrent renal colic since adolescence. Urinalysis shows crystals with a characteristic hexagonal appearance. Which underlying defect best explains the condition?",
+    "options": {
+      "A": "Increased urinary calcium excretion caused by parathyroid hormone excess",
+      "B": "Defective renal acidification causing persistently alkaline urine",
+      "C": "Reduced renal urate excretion due to impaired proximal tubular transport",
+      "D": "Impaired proximal tubular and intestinal transport of cystine and dibasic amino acids",
+      "E": "Excess endogenous oxalate production due to a hepatic enzyme deficiency"
+    },
+    "correct_letter": "D",
+    "why_correct": "Cystinuria is an inherited transport disorder affecting cystine and dibasic amino acids, classically involving the proximal renal tubule and intestinal epithelium. Poor cystine solubility in urine predisposes to recurrent stones. Recurrent early-onset renal stones with hexagonal urinary crystals strongly suggest cystinuria.",
+    "distractor_analysis": {
+      "A": "Increased urinary calcium excretion: Hypercalciuria can predispose to calcium-containing stones, but it does not explain cystine stone composition or hexagonal cystine crystals.",
+      "B": "Defective renal acidification: Distal renal tubular acidosis can predispose to calcium phosphate stones, often in association with persistently alkaline urine. It does not cause cystinuria.",
+      "C": "Reduced urate excretion: This can contribute to hyperuricaemia or uric acid stones, depending on the underlying disturbance, but it does not explain cystine crystals.",
+      "E": "Excess endogenous oxalate production: This is associated with primary hyperoxaluria, which causes calcium oxalate stones and may lead to nephrocalcinosis."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q258",
+    "subdomain": "Gastroenterology & hepatology",
+    "topic": "Bile acid diarrhoea",
+    "difficulty": "Moderate",
+    "stem": "A 42-year-old has chronic watery diarrhoea, urgency and occasional faecal incontinence. Colonoscopy and colonic biopsies are unremarkable. Symptoms began after a cholecystectomy. There is no evidence of infection, inflammatory bowel disease or coeliac disease. Which mechanism best explains the most likely diagnosis?",
+    "options": {
+      "A": "Failure of pancreatic acinar cells to secrete digestive enzymes",
+      "B": "Autoimmune injury to small-intestinal villi",
+      "C": "Excess bile acids reaching the colon, stimulating fluid secretion and motility",
+      "D": "Impaired intestinal lactase activity",
+      "E": "Autoimmune destruction of gastric parietal cells"
+    },
+    "correct_letter": "C",
+    "why_correct": "Bile acid diarrhoea can result from excessive delivery of bile acids to the colon or impaired ileal bile acid reabsorption. Colonic bile acids stimulate secretion and motility, causing watery diarrhoea and urgency. It can occur after cholecystectomy. Chronic watery diarrhoea after cholecystectomy should prompt consideration of bile acid diarrhoea, even when colonoscopy is normal.",
+    "distractor_analysis": {
+      "A": "Pancreatic exocrine insufficiency typically causes maldigestion, which may present with bulky, greasy stools, weight loss and fat-soluble vitamin deficiency.",
+      "B": "Autoimmune injury to small-intestinal villi: This is the mechanism of coeliac disease, which may cause diarrhoea and malabsorption but is not supported by the negative investigations in the vignette.",
+      "D": "Lactase deficiency causes osmotic diarrhoea, bloating and flatulence associated with lactose ingestion.",
+      "E": "Autoimmune destruction of gastric parietal cells: This causes autoimmune gastritis, which can result in vitamin B12 deficiency and iron deficiency. It does not explain this characteristic diarrhoeal mechanism."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q259",
+    "subdomain": "Neurology",
+    "topic": "Myotonia congenita",
+    "difficulty": "Moderate",
+    "stem": "A 20-year-old man reports difficulty releasing his grip after firmly holding an object. The stiffness improves after he repeatedly opens and closes his hands. Examination reveals percussion myotonia, but muscle strength is largely preserved and there is no evidence of progressive muscle wasting. Which underlying defect is most likely?",
+    "options": {
+      "A": "Deficiency of dystrophin",
+      "B": "Abnormal skeletal-muscle chloride channel function",
+      "C": "Degeneration of upper and lower motor neurons",
+      "D": "Abnormal mitochondrial oxidative phosphorylation",
+      "E": "Autoimmune destruction of acetylcholine receptors"
+    },
+    "correct_letter": "B",
+    "why_correct": "Myotonia congenita is associated with pathogenic variants in CLCN1, which encodes a skeletal-muscle chloride channel. Reduced chloride conductance increases muscle membrane excitability and causes delayed relaxation after contraction. Delayed muscle relaxation that improves with repeated movement suggests myotonia; myotonia congenita is associated with CLCN1 variants.",
+    "distractor_analysis": {
+      "A": "Deficiency of dystrophin: This causes Duchenne or Becker muscular dystrophy, characterised by progressive muscle weakness and muscle damage rather than isolated classic myotonia with preserved strength.",
+      "C": "Degeneration of upper and lower motor neurons: This is the pathological process in motor neuron disease, which typically causes progressive weakness and other motor signs.",
+      "D": "Mitochondrial disorders can cause myopathy and exercise intolerance but do not explain the characteristic chloride-channel-related myotonia.",
+      "E": "Autoimmune destruction of acetylcholine receptors: This is associated with myasthenia gravis, which causes fatigable weakness rather than delayed muscle relaxation."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q260",
+    "subdomain": "Clinical biochemistry and metabolism",
+    "topic": "Familial hypobetalipoproteinaemia",
+    "difficulty": "Moderate",
+    "stem": "A 29-year-old woman is found to have very low LDL cholesterol and apolipoprotein B concentrations. She has mild hepatic steatosis but no evidence of malnutrition, hyperthyroidism or advanced liver disease. A first-degree relative has similarly low LDL cholesterol. Which mechanism best explains the classic inherited form of familial hypobetalipoproteinaemia?",
+    "options": {
+      "A": "Severe impairment of lipoprotein lipase activity",
+      "B": "Impaired apolipoprotein E-mediated clearance of remnant lipoproteins",
+      "C": "Reduced production or secretion of apolipoprotein B-containing lipoproteins",
+      "D": "Complete absence of LDL receptors",
+      "E": "Increased intestinal cholesterol absorption"
+    },
+    "correct_letter": "C",
+    "why_correct": "Familial hypobetalipoproteinaemia is commonly associated with variants affecting APOB. Reduced apoB-containing lipoprotein production or secretion can result in very low LDL cholesterol and may contribute to hepatic fat accumulation. Very low LDL cholesterol and apoB, particularly with a family history and hepatic steatosis, should prompt consideration of familial hypobetalipoproteinaemia.",
+    "distractor_analysis": {
+      "A": "Severe impairment of lipoprotein lipase activity: This is associated with familial chylomicronaemia syndrome, characterised by extreme hypertriglyceridaemia and risk of pancreatitis.",
+      "B": "Impaired apolipoprotein E-mediated remnant clearance: This is associated with familial dysbetalipoproteinaemia, which typically causes remnant accumulation and mixed hyperlipidaemia.",
+      "D": "Complete absence of LDL receptors: This causes severe familial hypercholesterolaemia, with markedly raised LDL cholesterol rather than very low concentrations.",
+      "E": "Increased cholesterol absorption does not explain the characteristic inherited reduction in apoB and LDL concentrations."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q261",
+    "subdomain": "Endocrinology & diabetes",
+    "topic": "Glucagonoma",
+    "difficulty": "Moderate",
+    "stem": "A 54-year-old woman presents with weight loss, new-onset diabetes mellitus and a recurrent painful rash affecting the groin, perineum and lower abdomen. The rash consists of erythematous plaques with superficial blistering and crusting; lesions heal centrally while new lesions develop at the edges. Blood tests show a raised fasting plasma glucose. Abdominal imaging identifies a pancreatic tail mass. Which hormone is most likely being secreted in excess?",
+    "options": {
+      "A": "Vasoactive intestinal peptide (VIP)",
+      "B": "Gastrin",
+      "C": "Somatostatin",
+      "D": "Glucagon",
+      "E": "Insulin"
+    },
+    "correct_letter": "D",
+    "why_correct": "Glucagonoma can cause diabetes, weight loss and necrolytic migratory erythema, a characteristic recurrent inflammatory rash associated with glucagon excess.",
+    "distractor_analysis": {
+      "A": "VIP: VIPoma classically causes profuse watery diarrhoea, hypokalaemia and reduced gastric acid secretion.",
+      "B": "Gastrin: Gastrinomas cause gastric acid hypersecretion, recurrent peptic ulceration and sometimes diarrhoea.",
+      "C": "Somatostatin: Somatostatinoma may cause diabetes, gallstones and steatorrhoea, rather than the characteristic rash described.",
+      "E": "Insulin: Insulinoma causes endogenous hyperinsulinaemic hypoglycaemia, often with sweating, tremor, confusion or other neuroglycopenic symptoms."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q262",
+    "subdomain": "Endocrinology & diabetes",
+    "topic": "VIPoma",
+    "difficulty": "Moderate",
+    "stem": "A 46-year-old man reports several weeks of profuse watery diarrhoea, including overnight. He has lost 8 kg and feels increasingly weak. Investigations show hypokalaemia and a normal-anion-gap metabolic acidosis. Stool cultures are negative, and the diarrhoea persists despite fasting. Imaging reveals a pancreatic mass. Which mechanism best explains this presentation?",
+    "options": {
+      "A": "Inhibition of intestinal bile acid reabsorption",
+      "B": "Excess gastrin stimulating gastric acid secretion",
+      "C": "Excess insulin causing recurrent hypoglycaemia",
+      "D": "Pancreatic exocrine insufficiency causing fat malabsorption",
+      "E": "Excess vasoactive intestinal peptide stimulating intestinal secretion"
+    },
+    "correct_letter": "E",
+    "why_correct": "VIP increases intestinal fluid and electrolyte secretion. A VIP-secreting tumour can cause watery diarrhoea, potassium depletion and bicarbonate loss, producing metabolic acidosis. Persistent watery diarrhoea with hypokalaemia and bicarbonate loss suggests secretory diarrhoea; a pancreatic mass raises the possibility of a VIPoma.",
+    "distractor_analysis": {
+      "A": "Bile acid diarrhoea can cause watery stools but does not typically explain the combination of severe electrolyte depletion and a pancreatic neuroendocrine tumour.",
+      "B": "Gastrin excess causes acid hypersecretion and recurrent ulceration; it does not characteristically produce this profound secretory diarrhoea syndrome.",
+      "C": "Insulin excess causes hypoglycaemia, not persistent high-volume secretory diarrhoea.",
+      "D": "Pancreatic exocrine insufficiency: This typically produces maldigestion and steatorrhoea, rather than fasting-persistent high-volume watery diarrhoea with this biochemical pattern."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q263",
+    "subdomain": "Musculoskeletal & rheumatology",
+    "topic": "Cryoglobulinaemic vasculitis",
+    "difficulty": "Moderate",
+    "stem": "A 61-year-old man presents with recurrent palpable purpura over his lower legs, arthralgia and peripheral sensory neuropathy. He also has microscopic haematuria and proteinuria. Investigations reveal a low C4 concentration and circulating cryoglobulins. Further testing identifies chronic hepatitis C infection. Which mechanism most directly explains this combination?",
+    "options": {
+      "A": "Immune-complex deposition involving circulating cryoglobulins",
+      "B": "IgE-mediated mast-cell activation",
+      "C": "Antibodies against presynaptic voltage-gated calcium channels",
+      "D": "Defective neutrophil NADPH oxidase activity",
+      "E": "Anti-glomerular basement membrane antibodies"
+    },
+    "correct_letter": "A",
+    "why_correct": "Mixed cryoglobulinaemic vasculitis is associated with hepatitis C and may affect small vessels, causing palpable purpura, arthralgia, neuropathy and glomerulonephritis. Complement consumption, particularly low C4, is a useful clue. Palpable purpura, neuropathy, renal abnormalities, low C4 and cryoglobulins in a patient with hepatitis C strongly suggest cryoglobulinaemic vasculitis.",
+    "distractor_analysis": {
+      "B": "IgE-mediated mast-cell activation: This underlies immediate allergic reactions and does not explain immune-complex vasculitis with renal involvement.",
+      "C": "Presynaptic calcium-channel antibodies: These are associated with Lambert–Eaton myasthenic syndrome, causing proximal weakness and autonomic symptoms.",
+      "D": "NADPH oxidase defect: This causes chronic granulomatous disease, characterised by recurrent infections with particular bacteria and fungi.",
+      "E": "Anti-GBM disease causes pulmonary–renal disease, often with rapidly progressive glomerulonephritis and sometimes pulmonary haemorrhage. It does not characteristically produce this purpura–arthralgia–neuropathy syndrome."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q264",
+    "subdomain": "Musculoskeletal & rheumatology",
+    "topic": "Polyarteritis nodosa",
+    "difficulty": "Moderate",
+    "stem": "A 49-year-old man presents with weight loss, livedo reticularis, abdominal pain after meals, hypertension and asymmetric peripheral neuropathy. Hepatitis B surface antigen is positive. Urinalysis shows no significant glomerular haematuria, and chest imaging shows no pulmonary haemorrhage. Which diagnosis is most consistent with this presentation?",
+    "options": {
+      "A": "Microscopic polyangiitis",
+      "B": "IgA vasculitis",
+      "C": "Eosinophilic granulomatosis with polyangiitis",
+      "D": "Polyarteritis nodosa",
+      "E": "Granulomatosis with polyangiitis"
+    },
+    "correct_letter": "D",
+    "why_correct": "This necrotising vasculitis affects medium-sized arteries and can cause mesenteric ischaemia, hypertension, livedo and mononeuritis multiplex. Hepatitis B is a recognised association. Glomerulonephritis and pulmonary capillaritis are not typical features. Medium-vessel ischaemic manifestations, mononeuritis multiplex and hepatitis B infection should raise suspicion of polyarteritis nodosa.",
+    "distractor_analysis": {
+      "A": "Microscopic polyangiitis: It commonly causes pauci-immune glomerulonephritis and may cause pulmonary capillaritis.",
+      "B": "IgA vasculitis: It classically causes palpable purpura, arthralgia, abdominal pain and sometimes glomerulonephritis, rather than the medium-vessel ischaemic pattern described.",
+      "C": "Eosinophilic granulomatosis with polyangiitis: Asthma and eosinophilia are prominent clues, often with pulmonary or peripheral nerve involvement.",
+      "E": "Granulomatosis with polyangiitis: This small-vessel vasculitis commonly involves the upper and lower respiratory tracts and kidneys."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q265",
+    "subdomain": "Genetics",
+    "topic": "Tuberous sclerosis complex",
+    "difficulty": "Moderate",
+    "stem": "A 19-year-old woman is investigated after a seizure. Examination reveals facial angiofibromas and ungual fibromas. Brain MRI demonstrates cortical tubers, and renal imaging identifies multiple angiomyolipomas. Which molecular mechanism is most closely associated with this disorder?",
+    "options": {
+      "A": "Defective nucleotide excision repair after ultraviolet exposure",
+      "B": "Constitutive activation of the RET receptor tyrosine kinase",
+      "C": "Loss of inhibition of the mechanistic target of rapamycin (mTOR) pathway",
+      "D": "Impaired type IV collagen formation",
+      "E": "Defective mismatch repair of DNA replication errors"
+    },
+    "correct_letter": "C",
+    "why_correct": "Pathogenic variants affecting TSC1 or TSC2 impair the hamartin–tuberin complex, which normally restrains mTORC1 signalling. This contributes to hamartoma formation in multiple organs. Seizures, cortical tubers, facial angiofibromas and renal angiomyolipomas are characteristic of tuberous sclerosis complex, which involves dysregulated mTOR signalling.",
+    "distractor_analysis": {
+      "A": "Nucleotide excision repair: Defects in this pathway cause xeroderma pigmentosum, with ultraviolet sensitivity and a markedly increased risk of skin cancer.",
+      "B": "RET activation: Germline activating variants in RET are associated with MEN2 and medullary thyroid carcinoma, sometimes with phaeochromocytoma.",
+      "D": "Type IV collagen abnormalities are associated with disorders such as Alport syndrome, characterised by renal disease and often hearing or ocular involvement.",
+      "E": "Mismatch repair gene defects can cause Lynch syndrome and a predisposition to several cancers."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q266",
+    "subdomain": "Genetics",
+    "topic": "Birt–Hogg–Dubé syndrome",
+    "difficulty": "Moderate",
+    "stem": "A 42-year-old woman presents with recurrent spontaneous pneumothoraces. Examination reveals multiple small, pale papules on her face and neck. Her father underwent surgery for a renal tumour at a relatively young age. Genetic testing identifies a pathogenic variant in FLCN. Which protein is encoded by the affected gene?",
+    "options": {
+      "A": "Fibrillin-1",
+      "B": "Folliculin",
+      "C": "Hamartin",
+      "D": "Neurofibromin",
+      "E": "Von Hippel–Lindau tumour suppressor protein"
+    },
+    "correct_letter": "B",
+    "why_correct": "Pathogenic FLCN variants cause Birt–Hogg–Dubé syndrome, associated with fibrofolliculomas, pulmonary cysts and spontaneous pneumothorax, and an increased risk of renal tumours. Recurrent spontaneous pneumothorax plus characteristic skin lesions and a family history of renal tumours should raise suspicion of Birt–Hogg–Dubé syndrome.",
+    "distractor_analysis": {
+      "A": "Fibrillin-1: Encoded by FBN1, it is associated with Marfan syndrome.",
+      "C": "Hamartin: Encoded by TSC1 and involved in tuberous sclerosis complex.",
+      "D": "Neurofibromin: Encoded by NF1; pathogenic variants cause neurofibromatosis type 1, associated with café-au-lait macules and neurofibromas.",
+      "E": "Von Hippel–Lindau protein: Encoded by VHL; pathogenic variants predispose to renal cell carcinoma, haemangioblastomas and other tumours, but do not explain the characteristic combination of pulmonary cysts and fibrofolliculomas."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q267",
+    "subdomain": "Clinical biochemistry and metabolism",
+    "topic": "Niemann–Pick disease type C",
+    "difficulty": "Moderate",
+    "stem": "A 17-year-old boy develops progressive difficulty walking, impaired coordination and cognitive decline. His parents report that he has recently struggled to move his eyes vertically, particularly when looking down. Examination confirms vertical supranuclear gaze palsy. He also has mild splenomegaly. Which underlying abnormality is most likely?",
+    "options": {
+      "A": "Defective lysosomal cholesterol trafficking",
+      "B": "Impaired copper excretion into bile",
+      "C": "Deficiency of dystrophin",
+      "D": "Defective mitochondrial oxidative phosphorylation",
+      "E": "Loss of peripheral myelin due to an inherited PMP22 duplication"
+    },
+    "correct_letter": "A",
+    "why_correct": "Niemann–Pick disease type C is usually caused by pathogenic variants in NPC1 or NPC2, disrupting intracellular lipid trafficking. It can produce progressive neurological dysfunction, vertical supranuclear gaze palsy and hepatosplenomegaly. Vertical supranuclear gaze palsy with progressive neurological decline and hepatosplenomegaly is an important clue to Niemann–Pick disease type C.",
+    "distractor_analysis": {
+      "B": "Impaired biliary copper excretion: This is associated with Wilson disease, which can cause hepatic and neurological manifestations but does not characteristically produce this specific combination.",
+      "C": "Dystrophin deficiency: This causes Duchenne or Becker muscular dystrophy, characterised principally by progressive skeletal muscle weakness.",
+      "D": "Mitochondrial disorders have diverse neurological and systemic presentations, but the gaze palsy and splenomegaly strongly favour Niemann–Pick disease type C.",
+      "E": "PMP22 duplication: This is associated with Charcot–Marie–Tooth disease type 1A, a hereditary peripheral neuropathy."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q268",
+    "subdomain": "Haematology & oncology",
+    "topic": "Factor V Leiden",
+    "difficulty": "Moderate",
+    "stem": "A 29-year-old woman is investigated after a second episode of deep-vein thrombosis. Her mother and older brother have both experienced venous thromboembolism. Thrombophilia testing identifies the most common inherited thrombophilia in people of European ancestry. Which mechanism best explains the increased thrombotic tendency?",
+    "options": {
+      "A": "Failure to synthesise vitamin K-dependent clotting factors",
+      "B": "Deficiency of von Willebrand factor",
+      "C": "Resistance of factor V to inactivation by activated protein C",
+      "D": "Failure to convert fibrinogen into fibrin",
+      "E": "Inhibition of platelet glycoprotein IIb/IIIa"
+    },
+    "correct_letter": "C",
+    "why_correct": "Factor V Leiden is caused by a variant that makes factor V less susceptible to inactivation by activated protein C. This reduces a natural anticoagulant mechanism and increases venous thrombosis risk. Factor V Leiden causes inherited thrombophilia through resistance to activated protein C, an important physiological anticoagulant.",
+    "distractor_analysis": {
+      "A": "Vitamin K deficiency reduces functional factors II, VII, IX and X, as well as proteins C and S, and generally causes a bleeding tendency.",
+      "B": "Von Willebrand factor deficiency: This causes impaired platelet adhesion and mucocutaneous bleeding.",
+      "D": "Failure to convert fibrinogen into fibrin: Thrombin normally converts fibrinogen to fibrin. A failure of this process would impair clot formation rather than explain the inherited prothrombotic phenotype.",
+      "E": "Inhibition of glycoprotein IIb/IIIa: This impairs platelet aggregation and is not the mechanism of inherited factor V Leiden thrombophilia."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
   }
 ];
