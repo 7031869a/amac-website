@@ -2654,5 +2654,1205 @@ window.MRCP1_QUESTIONS = [
     },
     "generalisation": "",
     "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q121",
+    "subdomain": "Infectious disease & sexual health",
+    "topic": "Imported fever: urgent malaria diagnosis",
+    "difficulty": "Moderate",
+    "stem": "A 29-year-old man returns to the UK from Ghana. He develops fever, headache and malaise 10 days later. He has no localising symptoms. His platelet count is low and his temperature is 39.2°C. What is the most appropriate investigation to establish the diagnosis?",
+    "options": {
+      "A": "Blood cultures alone",
+      "B": "Serological testing for malaria antibodies",
+      "C": "Urgent malaria blood-film examination",
+      "D": "Chest radiography",
+      "E": "Stool microscopy"
+    },
+    "correct_letter": "C",
+    "why_correct": "Decisive clue: Fever following recent travel to a malaria-risk area. Reasoning path: Malaria must be considered urgently in a patient who becomes unwell after returning from the tropics. UKHSA guidance states that suspected malaria is a medical emergency and that suspected cases should undergo urgent blood-film diagnosis. A single clinical presentation cannot reliably establish or exclude malaria.",
+    "distractor_analysis": {
+      "A": "Blood cultures are needed for enteric fever and sepsis, but on their own they miss malaria, the diagnosis that must be excluded first.",
+      "B": "Antibodies reflect past exposure and take time to appear, so serology cannot diagnose acute malaria.",
+      "D": "There are no respiratory symptoms, and a chest film cannot diagnose the systemic febrile illness most likely after West Africa.",
+      "E": "He has no diarrhoea, and stool microscopy does not address an undifferentiated fever with thrombocytopenia."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q122",
+    "subdomain": "Neurology",
+    "topic": "Stroke: localising the lesion",
+    "difficulty": "Moderate",
+    "stem": "A 63-year-old woman develops sudden weakness affecting her right arm and leg. She also has expressive dysphasia. Examination shows a right facial weakness affecting the lower face, with preserved forehead movement. Which anatomical site best accounts for these findings?",
+    "options": {
+      "A": "Left cerebral hemisphere",
+      "B": "Right cerebral hemisphere",
+      "C": "Right facial nerve",
+      "D": "Left cerebellar hemisphere",
+      "E": "Brainstem at the level of the facial nucleus"
+    },
+    "correct_letter": "A",
+    "why_correct": "Decisive clue: Contralateral hemiparesis + expressive dysphasia + upper motor neurone facial weakness. Reasoning path: The motor findings localise above the facial nucleus, while expressive dysphasia strongly supports a dominant cerebral-hemisphere lesion. In a patient with right-sided weakness and dysphasia, the most likely localisation is the left cerebral hemisphere.",
+    "distractor_analysis": {
+      "B": "A right hemisphere lesion causes left-sided weakness and does not usually produce dysphasia in a right-handed patient.",
+      "C": "A facial nerve lesion is lower motor neurone and involves the forehead; it cannot explain limb weakness or dysphasia.",
+      "D": "Cerebellar lesions cause ipsilateral ataxia and incoordination, not hemiparesis, facial weakness or dysphasia.",
+      "E": "A lesion here gives ipsilateral lower motor neurone facial palsy with contralateral limb weakness, and no dysphasia."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q123",
+    "subdomain": "Cardiology",
+    "topic": "Heart failure with reduced ejection fraction: drug treatment",
+    "difficulty": "Moderate",
+    "stem": "A 68-year-old man has symptomatic chronic heart failure. Echocardiography demonstrates a left ventricular ejection fraction of 30%. Which combination represents the four main pharmacological treatment classes recommended by NICE for heart failure with reduced ejection fraction?",
+    "options": {
+      "A": "ARB, loop diuretic, calcium-channel blocker and statin",
+      "B": "Beta-blocker, nitrate, digoxin and thiazide diuretic",
+      "C": "MRA, calcium-channel blocker, nitrate and statin",
+      "D": "ACE inhibitor, beta-blocker, MRA and SGLT2 inhibitor",
+      "E": "ACE inhibitor, calcium-channel blocker, digoxin and nitrate"
+    },
+    "correct_letter": "D",
+    "why_correct": "NICE recommends offering four drug classes to people with HFrEF: an ACE inhibitor (or alternative such as an ARB or sacubitril valsartan where appropriate), a beta-blocker licensed for heart failure, a mineralocorticoid receptor antagonist and an SGLT2 inhibitor. These improve survival and reduce hospital admission; diuretics are used for congestion but do not improve prognosis.",
+    "distractor_analysis": {
+      "A": "Loop diuretics relieve congestion without improving survival, and statins and calcium-channel blockers are not HFrEF disease-modifying treatment.",
+      "B": "Only the beta-blocker is a core prognostic drug; the others are symptomatic or specialist add-ons.",
+      "C": "The MRA is correct, but the other three classes have no place among the four core HFrEF treatments.",
+      "E": "Rate-limiting calcium-channel blockers can worsen HFrEF, and digoxin and nitrates are add-on treatments, not core therapy."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q124",
+    "subdomain": "Respiratory",
+    "topic": "COPD",
+    "difficulty": "Moderate",
+    "stem": "A 67-year-old smoker with COPD has stable chronic breathlessness. His oxygen saturation is 91% breathing air. He is receiving otherwise optimal medical treatment. Which investigation is required when assessing whether he may be suitable for long-term oxygen therapy?",
+    "options": {
+      "A": "Peak expiratory flow monitoring for one week",
+      "B": "Arterial blood gases when clinically stable",
+      "C": "CT pulmonary angiography",
+      "D": "Exercise ECG",
+      "E": "Bronchoscopy"
+    },
+    "correct_letter": "B",
+    "why_correct": "NICE recommends assessment for long-term oxygen therapy using arterial blood gases on two occasions at least three weeks apart in appropriately selected, stable patients receiving optimal treatment.",
+    "distractor_analysis": {
+      "A": "Peak flow helps in asthma but does not measure oxygenation, which decides eligibility for long-term oxygen.",
+      "C": "CTPA investigates pulmonary embolism, not suitability for long-term oxygen in stable COPD.",
+      "D": "An exercise ECG assesses ischaemic heart disease and has no role in oxygen assessment.",
+      "E": "Bronchoscopy looks for airway lesions and does not measure gas exchange."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q125",
+    "subdomain": "Gastroenterology & hepatology",
+    "topic": "Coeliac disease",
+    "difficulty": "Moderate",
+    "stem": "A 32-year-old woman presents with chronic diarrhoea, fatigue and iron-deficiency anaemia. She has started a gluten-free diet herself, and her symptoms have improved. She asks whether a blood test can now reliably establish the diagnosis of coeliac disease. Which is the most appropriate advice?",
+    "options": {
+      "A": "Testing is unreliable on a gluten-free diet; seek specialist advice",
+      "B": "A faecal calprotectin result would confirm or exclude coeliac disease",
+      "C": "HLA-DQ2 positivity alone would establish the diagnosis",
+      "D": "She should remain gluten-free for several months before testing",
+      "E": "A negative tissue transglutaminase antibody test would reliably exclude coeliac disease"
+    },
+    "correct_letter": "A",
+    "why_correct": "Decisive clue: She has already restricted gluten before diagnostic testing. Reasoning: Coeliac serology is most reliable when the patient is consuming gluten. NICE advises people not to start a gluten-free diet until the diagnosis is confirmed and recommends specialist assessment when someone is already restricting gluten and cannot or will not reintroduce it. If she can reintroduce gluten, she should eat gluten in more than one meal every day for at least 6 weeks before testing. HLA-DQ2/DQ8 testing is not an initial diagnostic test in non-specialist settings.",
+    "distractor_analysis": {
+      "B": "Calprotectin is a marker of intestinal inflammation, mainly used for IBD, and does not diagnose coeliac disease.",
+      "C": "HLA-DQ2 is common in the general population, so a positive result cannot confirm coeliac disease.",
+      "D": "Staying gluten-free makes serology and biopsy less accurate; gluten should be eaten before testing.",
+      "E": "While she is avoiding gluten, antibody levels may fall, so a negative result could be falsely reassuring."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q126",
+    "subdomain": "Gastroenterology & hepatology",
+    "topic": "Achalasia",
+    "difficulty": "Moderate",
+    "stem": "A 51-year-old man has progressive difficulty swallowing both solids and liquids. He regurgitates undigested food and has lost weight. Upper gastrointestinal endoscopy does not reveal an obstructing lesion. Which investigation best confirms a suspected oesophageal motility disorder such as achalasia?",
+    "options": {
+      "A": "Serum gastrin concentration",
+      "B": "Faecal elastase",
+      "C": "Ambulatory pH monitoring",
+      "D": "High-resolution oesophageal manometry",
+      "E": "Gastric emptying scintigraphy"
+    },
+    "correct_letter": "D",
+    "why_correct": "Decisive clue: Dysphagia to solids and liquids with no obstructing lesion at endoscopy. Reasoning: Oesophageal manometry measures pressure and motility during swallowing and can confirm achalasia. Endoscopy is important for assessing structural disease, but a normal endoscopy does not exclude an oesophageal motility disorder.",
+    "distractor_analysis": {
+      "A": "Gastrin is measured for suspected gastrinoma and does not assess swallowing.",
+      "B": "Faecal elastase tests pancreatic exocrine function and is unrelated to dysphagia.",
+      "C": "pH monitoring quantifies acid reflux; it does not measure sphincter relaxation or peristalsis.",
+      "E": "This assesses gastroparesis, not oesophageal motility."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q127",
+    "subdomain": "Gastroenterology & hepatology",
+    "topic": "Helicobacter pylori testing",
+    "difficulty": "Moderate",
+    "stem": "A 43-year-old woman with dyspepsia is taking omeprazole. Her clinician plans to request a urea breath test for Helicobacter pylori. What should be done to improve the accuracy of the test?",
+    "options": {
+      "A": "Continue omeprazole unchanged until the test",
+      "B": "Replace omeprazole with an antibiotic for two days before testing",
+      "C": "Use an office-based antibody test because proton pump inhibitors do not affect it",
+      "D": "Stop omeprazole for two weeks before testing, if clinically appropriate",
+      "E": "Perform the breath test immediately after the morning omeprazole dose"
+    },
+    "correct_letter": "D",
+    "why_correct": "Decisive clue: Proton pump inhibitor use before a test for active H. pylori infection. Reasoning: NICE recommends a two-week PPI washout before a urea breath test or stool antigen test. Any interruption should be clinically appropriate for the patient.",
+    "distractor_analysis": {
+      "A": "PPIs suppress H. pylori urease activity and can cause false-negative breath tests.",
+      "B": "Recent antibiotics also cause false negatives; a four-week antibiotic-free interval is needed.",
+      "C": "Serology cannot distinguish current from past infection, so it is not recommended to test for active infection.",
+      "E": "Timing around the dose does not remove the PPI effect; a washout is needed."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q128",
+    "subdomain": "Gastroenterology & hepatology",
+    "topic": "Acute variceal bleeding",
+    "difficulty": "Difficult",
+    "stem": "A 59-year-old man with established cirrhosis presents with haematemesis and melaena. He is tachycardic and hypotensive. Variceal bleeding is suspected. After immediate assessment and resuscitation have begun, which additional treatment is recommended at presentation for suspected variceal bleeding?",
+    "options": {
+      "A": "Intravenous proton pump inhibitor before endoscopy",
+      "B": "Fresh frozen plasma regardless of clotting results",
+      "C": "Intravenous tranexamic acid",
+      "D": "Platelet transfusion regardless of platelet count",
+      "E": "Prophylactic antibiotic therapy"
+    },
+    "correct_letter": "E",
+    "why_correct": "Decisive clue: Cirrhosis with suspected acute upper gastrointestinal bleeding from varices. Reasoning: People with cirrhosis and upper gastrointestinal bleeding should receive prophylactic intravenous antibiotics at presentation, as this reduces infection and mortality. Terlipressin is also offered at presentation. Antibiotics are an adjunct, not a substitute for resuscitation and endoscopic control of bleeding.",
+    "distractor_analysis": {
+      "A": "NICE advises against starting acid suppression before endoscopy in acute upper GI bleeding.",
+      "B": "FFP is reserved for patients with abnormal clotting tests who are actively bleeding, not given to everyone.",
+      "C": "Tranexamic acid has not been shown to reduce death in GI bleeding and increases venous thrombosis risk.",
+      "D": "Platelets are given only if the count is low and bleeding is active, not routinely."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q129",
+    "subdomain": "Gastroenterology & hepatology",
+    "topic": "Hereditary haemochromatosis",
+    "difficulty": "Moderate",
+    "stem": "A 46-year-old man has persistent fatigue, abnormal liver blood tests and a first-degree relative with hereditary haemochromatosis. Which combination of blood tests is most directly useful in the initial assessment for iron overload?",
+    "options": {
+      "A": "Serum caeruloplasmin and urinary copper alone",
+      "B": "Serum amylase and lipase",
+      "C": "Serum haptoglobin and reticulocyte count",
+      "D": "Serum folate and vitamin B12",
+      "E": "Serum ferritin and transferrin saturation"
+    },
+    "correct_letter": "E",
+    "why_correct": "Decisive clue: Family history and possible iron overload. Reasoning: Ferritin provides information about iron stores, while transferrin saturation assesses the proportion of transferrin bound to iron. Both are used in the assessment of suspected haemochromatosis. Ferritin can also rise with inflammation or liver disease, so it must be interpreted in context.",
+    "distractor_analysis": {
+      "A": "These assess Wilson disease (copper overload), not haemochromatosis.",
+      "B": "These help diagnose acute pancreatitis and say nothing about iron overload.",
+      "C": "These are markers of haemolysis, not iron stores.",
+      "D": "These assess causes of macrocytic anaemia, not iron overload."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q130",
+    "subdomain": "Gastroenterology & hepatology",
+    "topic": "Pancreatic exocrine insufficiency",
+    "difficulty": "Moderate",
+    "stem": "A 57-year-old man with chronic pancreatitis has weight loss, bulky pale stools and difficulty maintaining his weight despite an adequate appetite. Which mechanism best explains these symptoms?",
+    "options": {
+      "A": "Excess gastric intrinsic-factor production",
+      "B": "Excess pancreatic bicarbonate secretion",
+      "C": "Increased ileal absorption of bile acids",
+      "D": "Reduced pancreatic enzyme secretion causing maldigestion",
+      "E": "Increased colonic water absorption"
+    },
+    "correct_letter": "D",
+    "why_correct": "Decisive clue: Chronic pancreatitis with features of fat malabsorption and weight loss. Reasoning: Chronic pancreatic damage can cause exocrine insufficiency. Reduced digestive-enzyme delivery to the intestine impairs nutrient digestion, particularly fat digestion, resulting in steatorrhoea and weight loss.",
+    "distractor_analysis": {
+      "A": "Intrinsic factor concerns B12 absorption; an excess would not cause fat malabsorption.",
+      "B": "Chronic pancreatitis reduces, not increases, pancreatic secretion, and bicarbonate excess would not cause steatorrhoea.",
+      "C": "Steatorrhoea from bile acids follows reduced ileal absorption, as in ileal disease, not increased absorption.",
+      "E": "This would make stools firmer and does not explain fatty stools or weight loss."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q131",
+    "subdomain": "Gastroenterology & hepatology",
+    "topic": "Acute upper gastrointestinal bleeding",
+    "difficulty": "Difficult",
+    "stem": "A 70-year-old man presents with a large haematemesis. He is hypotensive and confused. An acute upper gastrointestinal bleed is suspected. When should endoscopy be performed?",
+    "options": {
+      "A": "Only after a routine outpatient clinic review",
+      "B": "After discharge, if symptoms recur",
+      "C": "Only after all haemoglobin measurements have returned to normal",
+      "D": "Immediately, before resuscitation",
+      "E": "Immediately after resuscitation"
+    },
+    "correct_letter": "E",
+    "why_correct": "Decisive clue: Haemodynamic instability due to severe upper gastrointestinal bleeding. Reasoning: NICE recommends endoscopy for unstable patients with severe acute upper gastrointestinal bleeding immediately after resuscitation. Other patients with upper gastrointestinal bleeding should generally undergo endoscopy within 24 hours of admission.",
+    "distractor_analysis": {
+      "A": "Outpatient timing is far too slow for a haemodynamically unstable bleed.",
+      "B": "A severe bleed with shock needs inpatient endoscopy, not deferred assessment.",
+      "C": "Waiting for haemoglobin to normalise delays treatment of the bleeding source.",
+      "D": "Endoscopy in a shocked, unresuscitated patient is unsafe; resuscitation comes first."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q132",
+    "subdomain": "Gastroenterology & hepatology",
+    "topic": "Crohn disease versus ulcerative colitis",
+    "difficulty": "Moderate",
+    "stem": "A 27-year-old woman has chronic diarrhoea, abdominal pain and weight loss. Colonoscopy shows patchy areas of inflammation separated by segments of normal mucosa. An anal fistula is also present. Which diagnosis best fits this combination?",
+    "options": {
+      "A": "Coeliac disease",
+      "B": "Ulcerative colitis",
+      "C": "Crohn disease",
+      "D": "Microscopic colitis",
+      "E": "Irritable bowel syndrome"
+    },
+    "correct_letter": "C",
+    "why_correct": "Decisive clue: Patchy intestinal inflammation with perianal fistulising disease. Reasoning: Crohn disease can affect different parts of the gastrointestinal tract and characteristically produces discontinuous inflammation. Fistula formation is an important feature supporting Crohn disease over ulcerative colitis.",
+    "distractor_analysis": {
+      "A": "Coeliac disease affects the small bowel and does not produce patchy colitis or fistulae.",
+      "B": "UC causes continuous inflammation from the rectum, and fistulae are not a feature.",
+      "D": "The colonic mucosa looks normal at colonoscopy in microscopic colitis.",
+      "E": "IBS causes no visible inflammation and does not cause weight loss or fistulae."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q133",
+    "subdomain": "Renal & urology",
+    "topic": "Nephrotic syndrome and thrombosis",
+    "difficulty": "Moderate",
+    "stem": "A 39-year-old man presents with marked peripheral oedema and frothy urine. Investigations show heavy proteinuria, low serum albumin and hyperlipidaemia. He subsequently develops a painful, swollen leg. Which mechanism contributes to the increased risk of venous thrombosis in nephrotic syndrome?",
+    "options": {
+      "A": "Increased urinary loss of red blood cells",
+      "B": "Reduced hepatic synthesis of all clotting factors",
+      "C": "Universal severe thrombocytopenia",
+      "D": "Persistent activation of fibrinolysis",
+      "E": "Urinary loss of anticoagulant proteins such as antithrombin"
+    },
+    "correct_letter": "E",
+    "why_correct": "Nephrotic syndrome creates a prothrombotic state through several mechanisms, including urinary loss of anticoagulant proteins, increased hepatic synthesis of procoagulant proteins and altered platelet activity. The extent of risk varies with the underlying renal disease and clinical circumstances.",
+    "distractor_analysis": {
+      "A": "Haematuria is a nephritic feature and does not increase thrombotic risk.",
+      "B": "The liver increases synthesis of procoagulant factors such as fibrinogen in nephrotic syndrome.",
+      "C": "Platelet counts are usually normal or raised in nephrotic syndrome, and low platelets would reduce clotting.",
+      "D": "Fibrinolysis is impaired, not activated, in nephrotic syndrome."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q134",
+    "subdomain": "Renal & urology",
+    "topic": "Renal artery stenosis",
+    "difficulty": "Moderate",
+    "stem": "A 72-year-old man with widespread atherosclerotic disease develops a substantial rise in creatinine after starting an ACE inhibitor. His blood pressure remains difficult to control despite several antihypertensive medicines. Which mechanism best explains the rise in creatinine if he has significant bilateral renal artery stenosis?",
+    "options": {
+      "A": "Increased efferent arteriolar constriction",
+      "B": "Increased renal prostaglandin synthesis",
+      "C": "Increased aldosterone-mediated potassium excretion",
+      "D": "Loss of angiotensin II efferent constriction, lowering glomerular pressure",
+      "E": "Direct immune-mediated destruction of glomerular basement membranes"
+    },
+    "correct_letter": "D",
+    "why_correct": "When renal perfusion is compromised, angiotensin II-mediated efferent arteriolar constriction helps maintain glomerular filtration pressure. ACE inhibitors reduce angiotensin II formation, potentially lowering filtration and increasing creatinine in significant bilateral renal artery stenosis or other states dependent on this mechanism. A substantial creatinine rise warrants prompt clinical review and assessment for contributing causes.",
+    "distractor_analysis": {
+      "A": "ACE inhibitors relax, not constrict, the efferent arteriole; constriction would support filtration.",
+      "B": "Prostaglandins dilate the afferent arteriole and protect filtration; NSAIDs that block them reduce GFR.",
+      "C": "ACE inhibitors reduce aldosterone and cause potassium retention, which does not explain a creatinine rise.",
+      "E": "ACE inhibitors do not cause anti-GBM disease; the change is haemodynamic."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q135",
+    "subdomain": "Renal & urology",
+    "topic": "Chronic kidney disease and anaemia",
+    "difficulty": "Moderate",
+    "stem": "A 68-year-old woman with established chronic kidney disease develops fatigue and exertional breathlessness. Her haemoglobin is low, mean corpuscular volume is normal, ferritin is not reduced and there is no evidence of haemolysis or active bleeding. Which mechanism is a major contributor to her anaemia?",
+    "options": {
+      "A": "Increased intestinal iron absorption",
+      "B": "Excessive destruction of platelets",
+      "C": "Reduced renal erythropoietin production",
+      "D": "Excessive renal erythropoietin production",
+      "E": "Increased intrinsic factor secretion"
+    },
+    "correct_letter": "C",
+    "why_correct": "Healthy kidneys produce erythropoietin, which stimulates red-cell production in the bone marrow. Chronic kidney disease can reduce erythropoietin production, contributing to normocytic anaemia. Iron deficiency, inflammation, blood loss and other causes should still be assessed rather than attributing every case of anaemia to CKD alone.",
+    "distractor_analysis": {
+      "A": "Iron absorption is usually reduced in CKD, and increased absorption would not cause anaemia.",
+      "B": "Platelet destruction causes thrombocytopenia, not anaemia.",
+      "D": "Excess erythropoietin causes polycythaemia, not anaemia.",
+      "E": "Intrinsic factor relates to B12 absorption; an increase would not cause anaemia, and the MCV is normal."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q136",
+    "subdomain": "Statistics, epidemiology and evidence-based medicine",
+    "topic": "Diagnostic test interpretation",
+    "difficulty": "Moderate",
+    "stem": "A diagnostic test is evaluated in 200 people who have a disease and 800 people who do not. It gives a positive result in 180 people with the disease and 160 people without it. What is the specificity of the test?",
+    "options": {
+      "A": "20%",
+      "B": "80%",
+      "C": "82%",
+      "D": "90%",
+      "E": "98%"
+    },
+    "correct_letter": "B",
+    "why_correct": "Specificity is the proportion of people without the disease who test negative. True negatives = 800 − 160 = 640; specificity = 640/800 = 0.80 = 80%.",
+    "distractor_analysis": {
+      "A": "160/800 is the false-positive rate, which is 1 minus specificity.",
+      "C": "(180 + 640)/1,000 = 82% is the overall accuracy, not the specificity.",
+      "D": "180/200 is the sensitivity, the proportion of people with the disease who test positive.",
+      "E": "This would need only 16 false positives, not 160."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q137",
+    "subdomain": "Genetics",
+    "topic": "Hardy–Weinberg equilibrium",
+    "difficulty": "Moderate",
+    "stem": "In a population in Hardy–Weinberg equilibrium, the frequency of a recessive disease allele is q = 0.1. Assume the disease is fully penetrant and occurs only in homozygotes for that allele. What proportion of the population is expected to have the disease?",
+    "options": {
+      "A": "0.1%",
+      "B": "1%",
+      "C": "9%",
+      "D": "18%",
+      "E": "81%"
+    },
+    "correct_letter": "B",
+    "why_correct": "Under Hardy–Weinberg equilibrium, the expected frequency of homozygous recessive individuals is q² = 0.1 × 0.1 = 0.01, or 1%. This calculation assumes the stated genetic model and population equilibrium.",
+    "distractor_analysis": {
+      "A": "This is q³; the homozygote frequency is q².",
+      "C": "This is pq (0.9 × 0.1), half the carrier frequency; the affected frequency is q².",
+      "D": "2pq = 2 × 0.9 × 0.1 = 0.18 is the carrier (heterozygote) frequency, not the affected frequency.",
+      "E": "p² = 0.81 is the frequency of unaffected homozygotes for the normal allele."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q138",
+    "subdomain": "Clinical physiology",
+    "topic": "Acid–base interpretation",
+    "difficulty": "Moderate",
+    "stem": "A patient with prolonged vomiting has the following arterial blood gas results: pH 7.50; PCO2 6.0 kPa; bicarbonate 35 mmol/L. Which is the primary acid–base disturbance?",
+    "options": {
+      "A": "Respiratory alkalosis",
+      "B": "Mixed metabolic and respiratory acidosis",
+      "C": "Metabolic acidosis",
+      "D": "Respiratory acidosis",
+      "E": "Metabolic alkalosis"
+    },
+    "correct_letter": "E",
+    "why_correct": "The pH indicates alkalaemia and the bicarbonate is elevated, identifying metabolic alkalosis as the primary disturbance. The raised carbon dioxide is in the direction expected for respiratory compensation. Vomiting can cause loss of gastric hydrochloric acid and contribute to metabolic alkalosis.",
+    "distractor_analysis": {
+      "A": "Respiratory alkalosis would have a low PCO2, not a raised one.",
+      "B": "The pH is above 7.45, which rules out any net acidosis.",
+      "C": "Metabolic acidosis has a low pH and low bicarbonate, the opposite of these results.",
+      "D": "The pH is alkalaemic, so the primary disturbance cannot be an acidosis; the raised PCO2 is compensation."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q139",
+    "subdomain": "Pharmacology & prescribing",
+    "topic": "Pharmacokinetics",
+    "difficulty": "Moderate",
+    "stem": "A medicine is eliminated by first-order kinetics over its therapeutic concentration range. Its half-life is six hours, and the patient has stable drug distribution and clearance. Approximately what proportion of the original drug amount remains after 18 hours?",
+    "options": {
+      "A": "6.25%",
+      "B": "12.5%",
+      "C": "25%",
+      "D": "50%",
+      "E": "75%"
+    },
+    "correct_letter": "B",
+    "why_correct": "Eighteen hours represents three half-lives. The amount remaining is 100% → 50% → 25% → 12.5%. This assumes first-order elimination and no additional doses during the interval.",
+    "distractor_analysis": {
+      "A": "This is the amount after four half-lives (24 hours), not three.",
+      "C": "This is the amount after two half-lives (12 hours).",
+      "D": "This is the amount after one half-life (6 hours).",
+      "E": "This assumes linear loss of about a quarter, which is not how first-order elimination works."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q140",
+    "subdomain": "Clinical physiology",
+    "topic": "Oxygen–haemoglobin dissociation curve",
+    "difficulty": "Moderate",
+    "stem": "A patient develops a fever of 39.5°C due to pneumonia. At a given partial pressure of oxygen, haemoglobin has a lower affinity for oxygen than it would at normal body temperature. Which change explains this finding?",
+    "options": {
+      "A": "A leftward shift of the oxygen–haemoglobin dissociation curve",
+      "B": "A reduction in hydrogen ion concentration",
+      "C": "A rightward shift of the oxygen–haemoglobin dissociation curve",
+      "D": "A reduction in carbon dioxide concentration",
+      "E": "A reduction in 2,3-bisphosphoglycerate concentration"
+    },
+    "correct_letter": "C",
+    "why_correct": "Increased temperature shifts the dissociation curve to the right, reducing haemoglobin's affinity for oxygen and facilitating oxygen unloading in tissues. Increased carbon dioxide, increased hydrogen ion concentration and increased 2,3-bisphosphoglycerate also promote a rightward shift.",
+    "distractor_analysis": {
+      "A": "A left shift increases oxygen affinity, as with hypothermia or carbon monoxide.",
+      "B": "Alkalosis increases oxygen affinity (left shift).",
+      "D": "Lower CO2 increases affinity and shifts the curve left.",
+      "E": "Lower 2,3-BPG increases affinity and shifts the curve left."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q141",
+    "subdomain": "Clinical physiology",
+    "topic": "Starling forces and oedema",
+    "difficulty": "Moderate",
+    "stem": "A 67-year-old man with severe hypoalbuminaemia develops bilateral ankle oedema. His cardiac function is normal, and there is no evidence of venous obstruction. Which mechanism most directly contributes to the oedema?",
+    "options": {
+      "A": "Reduced plasma colloid osmotic pressure",
+      "B": "Increased lymphatic drainage",
+      "C": "Reduced capillary hydrostatic pressure",
+      "D": "Increased intracellular oncotic pressure in red blood cells",
+      "E": "Increased plasma colloid osmotic pressure"
+    },
+    "correct_letter": "A",
+    "why_correct": "Albumin contributes substantially to plasma colloid osmotic pressure. A marked reduction in plasma albumin decreases the force retaining fluid within the vascular compartment and can promote movement of fluid into the interstitial space. Renal sodium retention and other mechanisms may also contribute to oedema in clinical disease.",
+    "distractor_analysis": {
+      "B": "More lymphatic drainage removes interstitial fluid; reduced drainage causes oedema.",
+      "C": "Lower hydrostatic pressure reduces fluid filtration and would not cause oedema.",
+      "D": "Red-cell oncotic pressure does not govern fluid movement across the capillary wall.",
+      "E": "Higher oncotic pressure would hold fluid in the vessels and reduce oedema."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q142",
+    "subdomain": "Immunology",
+    "topic": "Immunoglobulin class switching",
+    "difficulty": "Moderate",
+    "stem": "A patient with a B-cell immune response initially produces IgM antibodies against a newly encountered antigen. Following an appropriate immune response, the same B-cell lineage begins producing antigen-specific IgG. Which process allows this change?",
+    "options": {
+      "A": "Class-switch recombination",
+      "B": "Negative selection of thymocytes",
+      "C": "Somatic hypermutation alone",
+      "D": "Neutrophil degranulation",
+      "E": "Complement fixation"
+    },
+    "correct_letter": "A",
+    "why_correct": "Class-switch recombination changes the immunoglobulin heavy-chain constant region, allowing a B cell to produce a different antibody class while retaining antigen specificity. Somatic hypermutation instead introduces mutations into variable-region genes and contributes to affinity maturation.",
+    "distractor_analysis": {
+      "B": "This removes self-reactive T cells in the thymus and does not affect B-cell antibody class.",
+      "C": "Hypermutation alters the variable region to improve affinity; it does not change the antibody class.",
+      "D": "This is an innate effector response with no role in antibody production.",
+      "E": "Complement fixation is an antibody effector function, not a mechanism for changing class."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q143",
+    "subdomain": "Genetics",
+    "topic": "Mitochondrial inheritance",
+    "difficulty": "Moderate",
+    "stem": "A woman carries a pathogenic mitochondrial DNA variant associated with a mitochondrial disorder. She has children with a man who does not carry the variant. The clinical severity varies among affected members of her family. Which phenomenon best explains variation in disease severity between individuals carrying the mitochondrial variant?",
+    "options": {
+      "A": "Genomic imprinting of the paternal mitochondrial genome",
+      "B": "Independent assortment of homologous nuclear chromosomes alone",
+      "C": "Heteroplasmy, with varying proportions of mutant mitochondrial DNA",
+      "D": "X-linked recessive inheritance",
+      "E": "Anticipation caused by expansion of nuclear DNA repeats"
+    },
+    "correct_letter": "C",
+    "why_correct": "Heteroplasmy refers to the coexistence of different mitochondrial DNA populations within a cell or individual. The proportion and distribution of mutant mitochondrial DNA can influence whether a tissue reaches the threshold at which dysfunction becomes apparent. Mitochondrial DNA is generally maternally inherited.",
+    "distractor_analysis": {
+      "A": "Mitochondria are inherited from the mother, and imprinting affects nuclear genes.",
+      "B": "Independent assortment concerns nuclear chromosomes, not mitochondrial genomes.",
+      "D": "Mitochondrial DNA is not on the X chromosome, and affected mothers pass it to children of both sexes.",
+      "E": "Anticipation applies to nuclear trinucleotide repeat disorders, not mitochondrial DNA variants."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q144",
+    "subdomain": "Clinical physiology",
+    "topic": "Autonomic physiology",
+    "difficulty": "Moderate",
+    "stem": "A healthy volunteer stands rapidly from a supine position. Venous return and stroke volume initially decrease, causing a transient fall in arterial blood pressure. Which response is expected from the arterial baroreceptor reflex?",
+    "options": {
+      "A": "Suppression of cardiac sympathetic activity",
+      "B": "Reduced peripheral vascular resistance",
+      "C": "Increased baroreceptor firing with reduced sympathetic output",
+      "D": "Reduced baroreceptor firing with increased sympathetic output",
+      "E": "Increased vagal output to the ventricles with reduced heart rate"
+    },
+    "correct_letter": "D",
+    "why_correct": "Reduced arterial stretch decreases firing from carotid sinus and aortic arch baroreceptors. The reflex increases sympathetic activity and reduces parasympathetic activity, promoting tachycardia, increased contractility and peripheral vasoconstriction to help restore blood pressure.",
+    "distractor_analysis": {
+      "A": "Cardiac sympathetic activity increases to raise heart rate and contractility.",
+      "B": "The reflex causes vasoconstriction, increasing resistance to restore pressure.",
+      "C": "This is the response to a rise in blood pressure, not a fall.",
+      "E": "Vagal output falls when blood pressure drops, allowing the heart rate to rise."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q145",
+    "subdomain": "Genetics",
+    "topic": "Inheritance patterns",
+    "difficulty": "Moderate",
+    "stem": "A genetic disorder affects males and females. An affected father transmits the disorder to all his daughters but none of his sons. An affected mother can transmit the disorder to children of either sex. Which inheritance pattern best fits this pedigree?",
+    "options": {
+      "A": "Y-linked",
+      "B": "Autosomal recessive",
+      "C": "X-linked recessive",
+      "D": "Autosomal dominant",
+      "E": "X-linked dominant"
+    },
+    "correct_letter": "E",
+    "why_correct": "A father transmits his X chromosome to every daughter and his Y chromosome to every son. In an X-linked dominant condition, an affected father therefore transmits the variant to all daughters and no sons. An affected heterozygous mother may transmit the variant to children of either sex.",
+    "distractor_analysis": {
+      "A": "Y-linked conditions pass only from father to son and never affect females.",
+      "B": "Recessive conditions need two affected alleles, and a father would not affect all his daughters.",
+      "C": "Daughters of an affected father are usually carriers, not affected, in X-linked recessive disease.",
+      "D": "An autosomal dominant condition passes from father to son as often as to daughters."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q146",
+    "subdomain": "Statistics, epidemiology and evidence-based medicine",
+    "topic": "Randomised controlled trials",
+    "difficulty": "Moderate",
+    "stem": "A randomised controlled trial allocates participants to treatment or control using a concealed randomisation process. What is the principal methodological advantage of randomisation?",
+    "options": {
+      "A": "It balances known and unknown confounders between groups on average",
+      "B": "It guarantees that the results apply to every patient population",
+      "C": "It guarantees that every participant receives the allocated intervention",
+      "D": "It eliminates all loss to follow-up",
+      "E": "It removes the need for blinding or appropriate outcome measurement"
+    },
+    "correct_letter": "A",
+    "why_correct": "Randomisation reduces the risk that treatment allocation is systematically associated with prognostic factors, including unmeasured factors. It does not guarantee perfect balance in a particular trial, prevent attrition, eliminate measurement bias or ensure generalisability.",
+    "distractor_analysis": {
+      "B": "Generalisability depends on who was recruited, not on randomisation.",
+      "C": "Randomisation does not ensure adherence; crossover and non-adherence still happen.",
+      "D": "Attrition can occur in any trial regardless of how participants were allocated.",
+      "E": "Blinding protects against performance and detection bias, which randomisation does not address."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q147",
+    "subdomain": "Statistics, epidemiology and evidence-based medicine",
+    "topic": "Type I and type II errors",
+    "difficulty": "Moderate",
+    "stem": "A clinical trial fails to demonstrate a statistically significant difference between a new treatment and placebo. The treatment actually has a genuine effect in the population, but the trial fails to detect it. What type of error has occurred?",
+    "options": {
+      "A": "Type I error",
+      "B": "Type II error",
+      "C": "Publication bias",
+      "D": "Selection bias",
+      "E": "Confounding"
+    },
+    "correct_letter": "B",
+    "why_correct": "A type II error occurs when a study fails to reject the null hypothesis despite a genuine effect. The probability of a type II error is denoted by β; statistical power is 1 − β. A non-significant result does not, by itself, establish that the treatments are equivalent.",
+    "distractor_analysis": {
+      "A": "A type I error is a false positive: finding a difference that does not truly exist.",
+      "C": "Publication bias affects which studies are published, not the result of a single trial.",
+      "D": "Selection bias is a systematic error in who enters the study, not a statistical decision error.",
+      "E": "Confounding distorts an association through a third factor; it is not the failure to detect a real effect."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q148",
+    "subdomain": "Clinical physiology",
+    "topic": "Membrane transport",
+    "difficulty": "Moderate",
+    "stem": "A laboratory experiment measures glucose uptake into intestinal epithelial cells. Uptake across the apical membrane occurs against the glucose concentration gradient and depends on the sodium concentration gradient maintained by the basolateral sodium–potassium ATPase. Which transport mechanism accounts for apical glucose uptake?",
+    "options": {
+      "A": "Facilitated diffusion independent of ion gradients",
+      "B": "Secondary active transport coupled to sodium",
+      "C": "Primary active transport powered by ATP at the glucose transporter",
+      "D": "Simple diffusion",
+      "E": "Osmosis through aquaporins"
+    },
+    "correct_letter": "B",
+    "why_correct": "The sodium–glucose cotransporter (SGLT1) uses the energy stored in the sodium electrochemical gradient to move glucose against its gradient. The basolateral sodium–potassium ATPase maintains that sodium gradient using ATP. The cotransporter itself does not directly hydrolyse ATP.",
+    "distractor_analysis": {
+      "A": "Facilitated diffusion (e.g. GLUT2) moves glucose only down its gradient.",
+      "C": "The transporter does not use ATP itself; the ATPase that does is on the basolateral membrane.",
+      "D": "Simple diffusion cannot move a substance against its concentration gradient.",
+      "E": "Aquaporins move water, not glucose."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q149",
+    "subdomain": "Clinical physiology",
+    "topic": "Respiratory compensation",
+    "difficulty": "Moderate",
+    "stem": "A patient with diabetic ketoacidosis has the following arterial blood gas results: pH 7.18; PCO2 2.5 kPa; bicarbonate 10 mmol/L. Which process best explains the low carbon dioxide concentration?",
+    "options": {
+      "A": "Reduced alveolar ventilation",
+      "B": "Reduced renal bicarbonate excretion",
+      "C": "Primary respiratory acidosis",
+      "D": "Respiratory compensation through increased alveolar ventilation",
+      "E": "Increased carbon dioxide production without a change in ventilation"
+    },
+    "correct_letter": "D",
+    "why_correct": "The low pH and reduced bicarbonate indicate primary metabolic acidosis. Increased alveolar ventilation (Kussmaul breathing) lowers arterial carbon dioxide and partially compensates for the fall in bicarbonate. This is a compensatory response, not a separate primary respiratory disorder.",
+    "distractor_analysis": {
+      "A": "Hypoventilation raises PCO2, not lowers it.",
+      "B": "This is a renal response affecting bicarbonate and does not lower PCO2.",
+      "C": "Respiratory acidosis has a high PCO2; here the PCO2 is low.",
+      "E": "More CO2 production without extra ventilation would raise PCO2."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q150",
+    "subdomain": "Clinical biochemistry and metabolism",
+    "topic": "Bilirubin metabolism",
+    "difficulty": "Moderate",
+    "stem": "A 24-year-old man develops mild jaundice during a febrile illness after several days of reduced food intake. His unconjugated bilirubin is raised, but liver enzymes, haemoglobin and reticulocyte count are normal. The jaundice resolves as he recovers. Which mechanism best explains this pattern?",
+    "options": {
+      "A": "Impaired conjugation of bilirubin",
+      "B": "Massive intravascular haemolysis",
+      "C": "Complete obstruction of the common bile duct",
+      "D": "Autoimmune destruction of hepatocytes",
+      "E": "Failure of bile acid synthesis"
+    },
+    "correct_letter": "A",
+    "why_correct": "Mild isolated unconjugated hyperbilirubinaemia precipitated by illness or fasting, with otherwise reassuring tests and no evidence of haemolysis, is characteristic of Gilbert syndrome. Reduced activity of the bilirubin-conjugating enzyme UGT1A1 causes the unconjugated bilirubin rise.",
+    "distractor_analysis": {
+      "B": "Haemoglobin and reticulocytes are normal, which argues against haemolysis.",
+      "C": "Obstruction causes conjugated hyperbilirubinaemia with a cholestatic enzyme pattern.",
+      "D": "Autoimmune hepatitis raises transaminases, which are normal here.",
+      "E": "Bile acid synthesis defects cause cholestasis and malabsorption, not isolated unconjugated jaundice."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q151",
+    "subdomain": "Clinical biochemistry and metabolism",
+    "topic": "Enzyme kinetics",
+    "difficulty": "Moderate",
+    "stem": "An enzyme-catalysed reaction is studied at different substrate concentrations. In the presence of a reversible competitive inhibitor, the maximum reaction velocity can still be achieved by increasing the substrate concentration sufficiently. Which change is expected?",
+    "options": {
+      "A": "Increased apparent Km with unchanged Vmax",
+      "B": "Complete irreversible loss of enzyme activity",
+      "C": "Reduced Km with reduced Vmax",
+      "D": "Increased Vmax with unchanged Km",
+      "E": "Reduced Vmax with unchanged Km"
+    },
+    "correct_letter": "A",
+    "why_correct": "A competitive inhibitor competes with substrate for enzyme binding. More substrate is required to reach half of Vmax, so the apparent Km increases. At sufficiently high substrate concentration, the same Vmax can be achieved.",
+    "distractor_analysis": {
+      "B": "The stem says the inhibitor is reversible and can be overcome by more substrate.",
+      "C": "This is the pattern of an uncompetitive inhibitor.",
+      "D": "An inhibitor cannot increase the maximum velocity.",
+      "E": "This is the pattern of a non-competitive inhibitor."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q152",
+    "subdomain": "Immunology",
+    "topic": "Type I hypersensitivity",
+    "difficulty": "Moderate",
+    "stem": "A patient develops urticaria, wheeze and hypotension within minutes of exposure to a known allergen. Previous exposure has sensitised the patient to that allergen. Which mechanism is primarily responsible for this immediate reaction?",
+    "options": {
+      "A": "Direct activation of cytotoxic T lymphocytes against infected cells",
+      "B": "T-cell-mediated delayed tissue injury",
+      "C": "IgG-mediated activation of complement against cell-surface antigens",
+      "D": "Allergen-mediated cross-linking of IgE bound to mast cells",
+      "E": "Immune-complex deposition in small blood vessels"
+    },
+    "correct_letter": "D",
+    "why_correct": "In type I hypersensitivity, allergen cross-linking of IgE bound to FcεRI receptors on sensitised mast cells triggers mediator release. Histamine and other mediators contribute to urticaria, bronchoconstriction and vascular leakage. The clinical presentation is consistent with anaphylaxis, which requires immediate emergency treatment.",
+    "distractor_analysis": {
+      "A": "This is an antiviral cellular response, not an allergic reaction.",
+      "B": "Type IV reactions take 48–72 hours, not minutes.",
+      "C": "This is type II hypersensitivity, as in haemolytic transfusion reactions, not immediate anaphylaxis.",
+      "E": "This is type III hypersensitivity, which develops over days, as in serum sickness."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q153",
+    "subdomain": "Genetics",
+    "topic": "Oncogenes and tumour suppressor genes",
+    "difficulty": "Moderate",
+    "stem": "A tumour is found to contain a mutation that constitutively activates a growth-signalling protein. The mutation increases signalling even when the normal extracellular growth stimulus is absent. Which description best fits this genetic change?",
+    "options": {
+      "A": "Inactivation of a tumour suppressor gene through loss of function",
+      "B": "Increased expression of a normal cell-cycle inhibitor",
+      "C": "Activation of a proto-oncogene to form an oncogene",
+      "D": "Silencing of every gene on one chromosome",
+      "E": "Loss of a DNA mismatch-repair gene as the only possible mechanism"
+    },
+    "correct_letter": "C",
+    "why_correct": "Proto-oncogenes encode proteins involved in normal growth and survival signalling, such as RAS. Activating mutations can make these proteins constitutively active, promoting uncontrolled cell proliferation. Tumour suppressor genes generally restrain growth or maintain genomic integrity and contribute to cancer when their function is lost.",
+    "distractor_analysis": {
+      "A": "Tumour suppressor loss removes a brake; it does not activate a signalling protein.",
+      "B": "More cell-cycle inhibitor would slow, not drive, proliferation.",
+      "D": "This does not describe a gain-of-function change in a single growth pathway.",
+      "E": "Mismatch-repair loss increases mutation rate generally and is not itself a gain of signalling."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q154",
+    "subdomain": "Clinical physiology",
+    "topic": "Renal clearance",
+    "difficulty": "Moderate",
+    "stem": "A substance is freely filtered at the glomerulus and is neither secreted nor reabsorbed by the renal tubules. Its plasma concentration is stable. Which relationship describes its renal clearance?",
+    "options": {
+      "A": "It equals renal plasma flow",
+      "B": "It is independent of the glomerular filtration rate",
+      "C": "It equals the glomerular filtration rate",
+      "D": "It is necessarily greater than renal plasma flow",
+      "E": "It is zero"
+    },
+    "correct_letter": "C",
+    "why_correct": "For a substance that is freely filtered and neither reabsorbed nor secreted (such as inulin), the amount excreted per unit time equals the filtered load. Its clearance therefore equals the glomerular filtration rate, under the stated assumptions.",
+    "distractor_analysis": {
+      "A": "Clearance approaches renal plasma flow only for substances that are filtered and also secreted, such as PAH.",
+      "B": "For a filtered-only substance, clearance equals GFR and changes with it.",
+      "D": "Clearance cannot exceed renal plasma flow, and a filtered-only substance is cleared at GFR.",
+      "E": "Zero clearance applies to a substance that is filtered and then fully reabsorbed, such as glucose normally."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q155",
+    "subdomain": "Pharmacology & prescribing",
+    "topic": "Partial agonism",
+    "difficulty": "Moderate",
+    "stem": "A drug binds to the same receptor as a full agonist but produces a smaller maximal response, even when it occupies all available receptors. When given alongside the full agonist, it reduces the overall response. Which description best fits this drug?",
+    "options": {
+      "A": "Physiological antagonist acting at a different receptor",
+      "B": "Inverse agonist",
+      "C": "Partial agonist",
+      "D": "Enzyme inducer",
+      "E": "Irreversible antagonist"
+    },
+    "correct_letter": "C",
+    "why_correct": "A partial agonist activates a receptor but has lower intrinsic efficacy than a full agonist. In the presence of a full agonist, it can compete for receptor occupancy and reduce the overall response.",
+    "distractor_analysis": {
+      "A": "The drug acts at the same receptor as the agonist, not at a different one.",
+      "B": "An inverse agonist reduces receptor activity below baseline rather than producing a smaller positive effect.",
+      "D": "Enzyme induction changes drug metabolism and does not involve binding to the agonist's receptor.",
+      "E": "An antagonist produces no response on its own, whereas this drug produces a partial one."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q156",
+    "subdomain": "Pharmacology & prescribing",
+    "topic": "Zero-order elimination",
+    "difficulty": "Moderate",
+    "stem": "A patient taking phenytoin has a small dose increase, after which the plasma concentration rises disproportionately and he develops ataxia. The enzymes that metabolise the drug are saturated at therapeutic concentrations. Which statement best describes elimination in this situation?",
+    "options": {
+      "A": "The drug cannot accumulate with repeated dosing",
+      "B": "Elimination rate increases proportionally with concentration",
+      "C": "The elimination half-life is necessarily constant at all concentrations",
+      "D": "A constant proportion of the drug is eliminated per unit time",
+      "E": "A constant amount of drug is eliminated per unit time"
+    },
+    "correct_letter": "E",
+    "why_correct": "In zero-order elimination, the elimination rate is approximately constant because the relevant pathways are saturated. Unlike first-order elimination, the proportion eliminated per unit time is not constant, and the half-life can vary with concentration. This is why small dose increases of phenytoin can cause large rises in plasma concentration.",
+    "distractor_analysis": {
+      "A": "Saturable elimination makes accumulation and toxicity more likely, as here.",
+      "B": "This is first-order behaviour; once saturated, elimination rate no longer rises with concentration.",
+      "C": "In zero-order kinetics the apparent half-life lengthens as the concentration rises.",
+      "D": "This describes first-order kinetics, which applies when elimination pathways are not saturated."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q157",
+    "subdomain": "Pharmacology & prescribing",
+    "topic": "Loading dose",
+    "difficulty": "Moderate",
+    "stem": "A medicine has a long elimination half-life. A clinician wants to achieve a therapeutic plasma concentration rapidly rather than waiting for repeated maintenance doses to accumulate. Which pharmacokinetic principle primarily determines the loading dose?",
+    "options": {
+      "A": "Renal clearance alone",
+      "B": "Volume of distribution and target plasma concentration",
+      "C": "Elimination half-life alone",
+      "D": "Drug clearance alone",
+      "E": "The percentage of the drug excreted unchanged, regardless of other factors"
+    },
+    "correct_letter": "B",
+    "why_correct": "The loading dose is determined primarily by the apparent volume of distribution and the desired plasma concentration (loading dose = Vd × target concentration), with adjustment for bioavailability when the drug is not given intravenously. Clearance is a key determinant of maintenance dosing, while half-life influences how quickly steady state is approached.",
+    "distractor_analysis": {
+      "A": "Renal clearance is part of total clearance and so guides maintenance, not loading, dosing.",
+      "C": "Half-life determines how long steady state takes to reach, not the size of the loading dose.",
+      "D": "Clearance determines the maintenance dose, not the loading dose.",
+      "E": "This guides dose adjustment in renal impairment, not the loading dose."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q158",
+    "subdomain": "Immunology",
+    "topic": "Antigen presentation",
+    "difficulty": "Moderate",
+    "stem": "A virus infects a nucleated human cell. Viral peptides are processed intracellularly and displayed on the cell surface for recognition by cytotoxic T lymphocytes. Which molecule principally presents these peptides?",
+    "options": {
+      "A": "The B-cell receptor",
+      "B": "MHC class I",
+      "C": "Complement component C3",
+      "D": "Secretory IgA",
+      "E": "MHC class II"
+    },
+    "correct_letter": "B",
+    "why_correct": "MHC class I molecules present intracellularly derived peptides to CD8-positive cytotoxic T lymphocytes. MHC class II molecules mainly present peptides derived from extracellular material processed by professional antigen-presenting cells to CD4-positive T lymphocytes.",
+    "distractor_analysis": {
+      "A": "The B-cell receptor binds intact antigen and is found only on B cells, not on infected cells.",
+      "C": "C3 opsonises pathogens and is not an antigen-presenting molecule.",
+      "D": "Secretory IgA protects mucosal surfaces and does not present peptides to T cells.",
+      "E": "MHC class II presents extracellular antigens to CD4 helper T cells, mainly on antigen-presenting cells."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q159",
+    "subdomain": "Statistics, epidemiology and evidence-based medicine",
+    "topic": "Relative risk in a cohort study",
+    "difficulty": "Moderate",
+    "stem": "In a cohort study, 40 of 1,000 people exposed to a suspected risk factor develop a disease. In the unexposed group, 20 of 1,000 people develop the disease. What is the relative risk associated with exposure?",
+    "options": {
+      "A": "0.5",
+      "B": "1",
+      "C": "2",
+      "D": "20",
+      "E": "40"
+    },
+    "correct_letter": "C",
+    "why_correct": "Risk in the exposed group = 40/1,000 = 0.04; risk in the unexposed group = 20/1,000 = 0.02; relative risk = 0.04/0.02 = 2. The observed risk is twice as high in the exposed group. This association alone does not establish causation or exclude confounding.",
+    "distractor_analysis": {
+      "A": "This is unexposed risk divided by exposed risk, the ratio the wrong way round.",
+      "B": "A relative risk of 1 would mean equal risk in both groups, which is not the case.",
+      "D": "This is the difference in case numbers (40 − 20), not a ratio of risks.",
+      "E": "This is the number of cases in the exposed group, not a measure of relative risk."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q160",
+    "subdomain": "Emergency & critical care",
+    "topic": "Carbon monoxide poisoning",
+    "difficulty": "Moderate",
+    "stem": "A 34-year-old man is brought to the emergency department with headache, nausea and confusion after using a petrol-powered generator in an enclosed garage. His conventional pulse oximeter reads 99%. Which statement best explains why this reading does not exclude significant carbon monoxide poisoning?",
+    "options": {
+      "A": "Carbon monoxide causes falsely low arterial oxygen tension",
+      "B": "Carbon monoxide increases dissolved oxygen in plasma",
+      "C": "Carbon monoxide causes a right shift of the oxygen–haemoglobin dissociation curve",
+      "D": "Conventional pulse oximetry measures only deoxygenated haemoglobin",
+      "E": "Pulse oximetry cannot distinguish carboxyhaemoglobin from oxyhaemoglobin"
+    },
+    "correct_letter": "E",
+    "why_correct": "Standard pulse oximeters can give reassuringly high readings in carbon monoxide poisoning because their light-absorption method does not reliably separate carboxyhaemoglobin from oxyhaemoglobin. Diagnosis requires appropriate assessment, including co-oximetry. A normal arterial oxygen tension also does not exclude carbon monoxide poisoning.",
+    "distractor_analysis": {
+      "A": "PaO2 is usually normal in carbon monoxide poisoning, which is why it is also falsely reassuring.",
+      "B": "Carbon monoxide does not increase dissolved oxygen; it reduces oxygen-carrying capacity.",
+      "C": "Carbon monoxide shifts the curve to the left, and this would not explain the oximeter reading.",
+      "D": "Pulse oximeters compare oxygenated and deoxygenated haemoglobin rather than measuring only one."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q161",
+    "subdomain": "Clinical physiology",
+    "topic": "Receptor signalling",
+    "difficulty": "Moderate",
+    "stem": "A drug binds to a cell-surface receptor and activates a G protein, resulting in increased intracellular cyclic AMP. Which enzyme directly synthesises cyclic AMP from ATP?",
+    "options": {
+      "A": "Adenylyl cyclase",
+      "B": "Protein kinase A",
+      "C": "Phosphodiesterase",
+      "D": "Phospholipase C",
+      "E": "Guanylyl cyclase"
+    },
+    "correct_letter": "A",
+    "why_correct": "Activated G proteins (Gs) stimulate adenylyl cyclase, which converts ATP into cyclic AMP. Cyclic AMP acts as a second messenger, including by activating protein kinase A. Phosphodiesterases degrade cyclic AMP; guanylyl cyclase produces cyclic GMP.",
+    "distractor_analysis": {
+      "B": "Protein kinase A is activated by cyclic AMP; it is downstream, not the producer.",
+      "C": "Phosphodiesterase breaks down cyclic AMP rather than making it.",
+      "D": "Phospholipase C generates IP3 and DAG through Gq signalling, not cyclic AMP.",
+      "E": "Guanylyl cyclase makes cyclic GMP from GTP."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q162",
+    "subdomain": "Pharmacology & prescribing",
+    "topic": "Enzyme induction",
+    "difficulty": "Moderate",
+    "stem": "A patient taking a medicine metabolised by a hepatic cytochrome P450 enzyme starts a second medicine that induces that enzyme. The original medicine is pharmacologically active and has no clinically important active metabolites. What is the expected effect at steady state, assuming no other relevant changes?",
+    "options": {
+      "A": "Increased concentration of the original medicine",
+      "B": "Reduced clearance of the original medicine",
+      "C": "Complete inhibition of renal excretion",
+      "D": "Reduced concentration of the original medicine",
+      "E": "No change in concentration because induction affects absorption only"
+    },
+    "correct_letter": "D",
+    "why_correct": "Enzyme induction can increase metabolic clearance and lower the steady-state concentration of an active parent drug. The clinical effect depends on the medicine and its metabolites; induction can have different consequences for prodrugs and drugs with active metabolites.",
+    "distractor_analysis": {
+      "A": "This is the effect of an enzyme inhibitor, not an inducer.",
+      "B": "Induction increases clearance; reduced clearance follows enzyme inhibition.",
+      "C": "Hepatic enzyme induction does not block renal excretion.",
+      "E": "Cytochrome P450 induction mainly increases hepatic metabolism, not absorption."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q163",
+    "subdomain": "Statistics, epidemiology and evidence-based medicine",
+    "topic": "Choosing a study design",
+    "difficulty": "Moderate",
+    "stem": "Researchers want to investigate whether a rare adverse effect is associated with a medicine. The adverse effect may occur years after exposure, and the medicine is already widely prescribed. Which study design is generally the most efficient starting point?",
+    "options": {
+      "A": "Cross-sectional study",
+      "B": "Ecological study",
+      "C": "Randomised controlled trial",
+      "D": "Case-control study",
+      "E": "Case series without a comparison group"
+    },
+    "correct_letter": "D",
+    "why_correct": "A case-control study starts by identifying people with the outcome and suitable controls without it, then compares prior exposure. It is often efficient for rare outcomes and can investigate exposures that occurred years earlier. It is vulnerable to selection and recall bias and does not directly estimate incidence from the sampled groups.",
+    "distractor_analysis": {
+      "A": "A cross-sectional study measures exposure and outcome at one time point, so it handles long delays and rare outcomes poorly.",
+      "B": "Ecological studies use group-level data and cannot link exposure to outcome in individuals.",
+      "C": "An RCT would need very large numbers and long follow-up for a rare, late outcome, and may be unethical.",
+      "E": "Without controls, a case series cannot show an association with the medicine."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q164",
+    "subdomain": "Clinical physiology",
+    "topic": "Resting membrane potential",
+    "difficulty": "Moderate",
+    "stem": "The resting membrane potential of a typical neurone is determined predominantly by which factor?",
+    "options": {
+      "A": "High resting permeability to potassium relative to sodium",
+      "B": "Equal permeability of the membrane to all ions",
+      "C": "Continuous opening of voltage-gated sodium channels",
+      "D": "Active transport of chloride out of the cell as the sole mechanism",
+      "E": "Complete absence of intracellular negatively charged proteins"
+    },
+    "correct_letter": "A",
+    "why_correct": "At rest, neuronal membranes are much more permeable to potassium than to sodium, largely because of potassium leak channels. Potassium movement down its electrochemical gradient contributes substantially to the resting membrane potential, which therefore lies close to the potassium equilibrium potential. The sodium–potassium ATPase maintains the ion gradients that make this possible.",
+    "distractor_analysis": {
+      "B": "Equal permeability would collapse the potential towards zero; the membrane is selectively permeable.",
+      "C": "Open sodium channels would depolarise the cell, as in an action potential.",
+      "D": "Chloride transport is not the main determinant of the neuronal resting potential.",
+      "E": "Intracellular anionic proteins are present and contribute to the negative interior."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q165",
+    "subdomain": "Dermatology",
+    "topic": "Psoriasis",
+    "difficulty": "Moderate",
+    "stem": "A 29-year-old man presents with sharply demarcated erythematous plaques covered by silvery scale on his elbows and knees. Examination also reveals several nail pits. Which diagnosis best explains these findings?",
+    "options": {
+      "A": "Plaque psoriasis",
+      "B": "Lichen planus",
+      "C": "Atopic eczema",
+      "D": "Tinea corporis",
+      "E": "Pityriasis rosea"
+    },
+    "correct_letter": "A",
+    "why_correct": "Plaque psoriasis typically causes well-demarcated erythematous plaques with silvery scale, commonly on extensor surfaces. Nail pitting is a recognised associated feature. Atopic eczema more often produces poorly demarcated, itchy eczematous lesions, while tinea corporis commonly has an annular lesion with an active scaly edge.",
+    "distractor_analysis": {
+      "B": "Lichen planus causes purple, flat-topped papules, often on the wrists, without silvery scale.",
+      "C": "Eczema favours flexures and has ill-defined borders, not well-demarcated extensor plaques.",
+      "D": "Tinea gives annular lesions with an active scaly edge and does not cause nail pitting.",
+      "E": "Pityriasis rosea starts with a herald patch and causes a self-limiting truncal rash."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q166",
+    "subdomain": "Dermatology",
+    "topic": "Melanoma",
+    "difficulty": "Moderate",
+    "stem": "A 58-year-old woman is concerned about a pigmented lesion on her upper back. Which feature in the history most strongly supports concern for melanoma?",
+    "options": {
+      "A": "The lesion has been unchanged since childhood",
+      "B": "The lesion has changed in size, shape or colour",
+      "C": "The lesion is uniformly coloured and symmetrical",
+      "D": "The lesion is on the trunk rather than the face",
+      "E": "The lesion is less than 6 mm across"
+    },
+    "correct_letter": "B",
+    "why_correct": "Change in size, shape or colour is a major feature on the weighted seven-point checklist used in UK practice and is the most important warning sign in a pigmented lesion. Asymmetry, irregular borders and colour variation also raise concern. A lesion should not be considered safe solely because it is small or located in a particular body region.",
+    "distractor_analysis": {
+      "A": "Long-term stability is reassuring rather than concerning.",
+      "C": "Uniform colour and symmetry are features of a benign naevus.",
+      "D": "Site alone does not raise or lower concern; the trunk is a common site in either case.",
+      "E": "Small size does not exclude melanoma, and it is not a feature that raises concern."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q167",
+    "subdomain": "Dermatology",
+    "topic": "Atopic eczema",
+    "difficulty": "Moderate",
+    "stem": "A 7-year-old child has recurrent itchy, dry, inflamed skin affecting the flexures of the elbows and knees. The symptoms worsen during winter. Which diagnosis is most likely?",
+    "options": {
+      "A": "Bullous pemphigoid",
+      "B": "Herpes zoster",
+      "C": "Atopic eczema",
+      "D": "Scabies",
+      "E": "Plaque psoriasis"
+    },
+    "correct_letter": "C",
+    "why_correct": "Atopic eczema commonly causes recurrent itch and dry, inflamed skin. In children, flexural involvement is characteristic. The distribution and chronic relapsing course support eczema, although the diagnosis should be reconsidered if the morphology or clinical course is atypical.",
+    "distractor_analysis": {
+      "A": "Bullous pemphigoid causes tense blisters in older adults.",
+      "B": "Shingles is acute, painful and dermatomal, not a recurrent flexural rash.",
+      "D": "Scabies causes intense itch with burrows in the finger webs and wrists, and close contacts are often affected.",
+      "E": "Psoriasis typically affects extensor surfaces with well-defined silvery plaques."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q168",
+    "subdomain": "Dermatology",
+    "topic": "Bullous pemphigoid",
+    "difficulty": "Moderate",
+    "stem": "An 82-year-old patient develops intensely itchy, tense blisters on the trunk and limbs. The oral mucosa is unaffected. Which diagnosis is most likely?",
+    "options": {
+      "A": "Stevens–Johnson syndrome",
+      "B": "Dermatitis herpetiformis",
+      "C": "Impetigo",
+      "D": "Pemphigus vulgaris",
+      "E": "Bullous pemphigoid"
+    },
+    "correct_letter": "E",
+    "why_correct": "Bullous pemphigoid usually affects older adults and produces pruritic, tense blisters due to separation at the dermal–epidermal junction. Mucosal involvement is less common than in pemphigus vulgaris. Confirmation may require skin biopsy and immunofluorescence.",
+    "distractor_analysis": {
+      "A": "SJS is an acute drug reaction with prominent mucosal involvement and systemic illness.",
+      "B": "DH causes small grouped vesicles on the extensor surfaces and is linked to coeliac disease.",
+      "C": "Impetigo is a bacterial infection with honey-crusted lesions, usually in children.",
+      "D": "Pemphigus causes flaccid, easily ruptured blisters with frequent oral involvement."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q169",
+    "subdomain": "Dermatology",
+    "topic": "Pemphigus vulgaris",
+    "difficulty": "Moderate",
+    "stem": "A 46-year-old patient presents with painful oral erosions and fragile blisters that rupture easily, leaving raw areas of skin. Which mechanism best explains this disease?",
+    "options": {
+      "A": "Autoantibodies against the basement membrane zone",
+      "B": "Infection of the epidermis by a dermatophyte",
+      "C": "IgE-mediated mast-cell degranulation",
+      "D": "Immune-complex deposition in dermal blood vessels",
+      "E": "Autoantibodies against desmosomal proteins"
+    },
+    "correct_letter": "E",
+    "why_correct": "Pemphigus vulgaris is an autoimmune blistering disorder associated with antibodies against desmosomal proteins, particularly desmogleins. Loss of adhesion between keratinocytes causes intraepidermal blistering. Painful mucosal erosions are common. In contrast, bullous pemphigoid involves antibodies against components of the basement membrane zone.",
+    "distractor_analysis": {
+      "A": "This is bullous pemphigoid, which gives tense blisters and less mucosal disease.",
+      "B": "Dermatophytes cause scaly tinea, not painful mucosal erosions.",
+      "C": "This mechanism causes urticaria and anaphylaxis, not blistering with erosions.",
+      "D": "This causes vasculitis such as palpable purpura, not intraepidermal blisters."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
+  },
+  {
+    "id": "M1Q170",
+    "subdomain": "Dermatology",
+    "topic": "Erythema nodosum",
+    "difficulty": "Moderate",
+    "stem": "A 25-year-old woman develops multiple tender, red nodules over the anterior aspects of both shins. The lesions gradually fade without ulceration or scarring. Which pathological process best characterises this condition?",
+    "options": {
+      "A": "Necrotising inflammation of the epidermis",
+      "B": "Septal panniculitis without primary vasculitis",
+      "C": "Superficial fungal invasion of the stratum corneum",
+      "D": "Subepidermal blister formation",
+      "E": "Granulomatous inflammation confined to hair follicles"
+    },
+    "correct_letter": "B",
+    "why_correct": "Erythema nodosum is an inflammatory disorder of subcutaneous fat, classically presenting with tender nodules on the shins. Histologically, it is a septal panniculitis and does not typically cause ulceration or scarring. Potential associations include streptococcal infection, sarcoidosis, inflammatory bowel disease and certain medicines.",
+    "distractor_analysis": {
+      "A": "Epidermal necrosis would cause ulceration, which does not occur here.",
+      "C": "Superficial fungal infection causes scaly patches, not tender subcutaneous nodules.",
+      "D": "This is the pathology of bullous pemphigoid, not tender nodules.",
+      "E": "Follicular inflammation produces papules and pustules, not deep shin nodules."
+    },
+    "generalisation": "",
+    "review_status": "reviewed"
   }
 ];
