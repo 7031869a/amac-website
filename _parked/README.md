@@ -54,3 +54,8 @@ PLAB 1 bank 3,314 → 3,597; held 2,431 → 2,342; parked 3,443 → 2,807. Recor
 **17 Oct 2026: PLAB 1 packs 01, 02, 03, 04, 08, 09 go live (Ahmed's instruction).** Record: `_tools/mla-map/signoff/2026-10-17-plab1-packs-01-02-03-04-08-09.md`.
 - `plab1-adapted-awaiting-review.json`: 2,204 to 1,006. 1,193 questions went live (PLAB 1 bank 3,717 to 4,910); 5 duplicates retired (PAQ841, PAQ854, PAQ15206, PAQ15424, PAQ15456); PAN8630 and PAAKT051 stay here marked `needs rewrite`. Packs 05, 06, 07, 10 and 11 (1,000 items) are still held.
 - Reviewed by A. Mansour and colleagues, October 2026. No named-clinician sign-off is required for these packs, now or in future (owner decision, 17 Oct 2026). Section labels are unchanged.
+
+**17 Oct 2026 — clinician sign-off, packs 05, 06, 07, 10, 11 (802 go-live).** Record: `_tools/mla-map/signoff/2026-10-17-plab1-packs-05-06-07-10-11.md`.
+- `plab1-adapted-awaiting-review.json`: 1,006 → 204. 802 questions went live (PLAB 1 bank 4,910 → 5,712), six with reviewer edits: PAN7551, PAQ588 (relabelled Surgery / Vascular), PAQ15409, PAQ1004, PAQ14737, PAQ16207. PAAKT058 and PAN214 approved unchanged.
+- No live near-verbatim AKT copy existed for any of the 802 (none carries their `source_akt_id`), so all 802 were added, none replaced one.
+- Rejected as duplicates and kept here with `review_status: "rejected"`: PAQ15559 (of PAQ15361), PAQ15603 (of PAQ15208), PAQ15605 (of PAQ15209). Do not return them live. PAN15778 stays rejected.
