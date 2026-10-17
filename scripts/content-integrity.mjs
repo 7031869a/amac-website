@@ -202,7 +202,7 @@ const LIBRARIES = [
     phraseText: s => ({ ...s, sources: (s.sources || []).map(x =>
       x && /^Station format:/.test(x.supports || '') ? { ...x, supports: '' } : x) }) },
   // PACES marks seven skills per encounter; there is no critical-fail section to check.
-  { source: 'MRCP PACES stations', dir: 'paces-stations', files: /^R5-\d{3}\.json$/, id: s => s.id,
+  { source: 'MRCP PACES stations', dir: 'paces-stations', files: /^R[2-5]-\d{2,3}\.json$/, id: s => s.id,
     required: ['title'], grid: s => (s.sections || []).filter(x => /scoring grid/i.test(x.heading)).flatMap(x => x.blocks),
     critical: null, noCritical: true },
 ];
