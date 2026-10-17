@@ -19,7 +19,7 @@ Cardiovascular 165, Care of the Elderly 133). Parked list: 4,476 → 4,002 entri
 
 `plab1-adapted-awaiting-review.json` — 2,431 PLAB 1 adaptations ("2026 UKMLA Adaptation III — adapted (Oct 2026)": waves 1–4,
 PRs #58, #59, #62 and #64) taken off the live bank on Ahmed's instruction because they were reviewed by AI only, never by a
-human clinician. Content is unchanged. They can return to the live bank once clinically reviewed.
+human clinician. Content is unchanged. They can return to the live bank on the owner's instruction; a named-clinician sign-off is not required (owner decision, 17 Oct 2026).
 
 **9 Oct 2026 — clinician verdicts, non-Paediatrics (held pack H01 and Adapted packs 01–03).** Record: `_tools/mla-map/signoff/2026-10-09-plab1-clinician-verdicts-non-paeds.md`.
 - `plab1-adapted-awaiting-review.json`: 2,431 → 2,342. 46 H01 questions went live (44 approved, 2 edited: PAQ932, PAQ14765); 43 H01 section-3
@@ -50,3 +50,7 @@ PLAB 1 bank 3,314 → 3,597; held 2,431 → 2,342; parked 3,443 → 2,807. Recor
 - `plab1-adaptation-ii-unadapted.json`: 2,807 → 2,707. All 100 Paediatrics batch-2 sources resolved: 61 live, 3 held back (below), 36 retired. Do not re-adapt these sources.
 - `plab1-next-review-pack.json`: +3 approved batch-2 questions held back because each repeats a Held 01 question that went live (PAN2526/PAQ300, PAN1799/PAQ15511,
   PAN1974/PAQ15553). Ahmed or the reviewer to choose which of each pair stays live.
+
+**17 Oct 2026: PLAB 1 packs 01, 02, 03, 04, 08, 09 go live (Ahmed's instruction).** Record: `_tools/mla-map/signoff/2026-10-17-plab1-packs-01-02-03-04-08-09.md`.
+- `plab1-adapted-awaiting-review.json`: 2,204 to 1,006. 1,193 questions went live (PLAB 1 bank 3,717 to 4,910); 5 duplicates retired (PAQ841, PAQ854, PAQ15206, PAQ15424, PAQ15456); PAN8630 and PAAKT051 stay here marked `needs rewrite`. Packs 05, 06, 07, 10 and 11 (1,000 items) are still held.
+- Reviewed by A. Mansour and colleagues, October 2026. No named-clinician sign-off is required for these packs, now or in future (owner decision, 17 Oct 2026). Section labels are unchanged.

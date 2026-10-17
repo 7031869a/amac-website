@@ -20,7 +20,7 @@ Per batch (work folder `_tools/plab-adaptation/work/<batch>/`, not served):
    still check the rest.
 2. Writers (4 × 25) follow WRITER_BRIEF.md → `out/W*.json`; run `BATCH_DIR=... python3 _tools/plab-adaptation/validate.py`.
 3. Independent checkers (3) follow CHECK_BRIEF.md → `rev/C*.json` (pass / fix / drop); apply fixes; re-validate.
-4. Clinician review pack (.docx) + feedback form (.xlsx); apply verdicts.
+4. Review pack (.docx) + feedback form (.xlsx); apply the reviewers' verdicts. A named-clinician sign-off is not required (owner decision, 17 Oct 2026).
 5. Go live: append approved items to plab1-questions.js (section "2026 UKMLA adaptation — clinically reviewed (Oct 2026)"),
    remove resolved sources from `_parked`, `node scripts/sync-counts.mjs`, then `--check`, test pages, PR.
 
