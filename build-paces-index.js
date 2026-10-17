@@ -6,6 +6,15 @@
 const fs = require('fs');
 const path = require('path');
 
+// Station codes: R<round>-NN or R<round>-NNN (round 2 to 5), or X-NN (two digits).
+const PACES_ID_RE = /^(?:R[2-5]-\d{2,3}|X-\d{2})$/;
+const PACES_FILE_RE = /^(?:R[2-5]-\d{2,3}|X-\d{2})\.json$/;
+// R-codes keep their existing order; X-codes sort after them, in numeric order.
+const comparePacesIds = (a, b) => {
+  const xa = a.startsWith('X-'), xb = b.startsWith('X-');
+  return xa !== xb ? (xa ? 1 : -1) : a.localeCompare(b, 'en', { numeric: true });
+};
+
 // Workflow notes, banned labels and images that must never reach a live station.
 // (Author and reviewer names are checked by hand before each push, so they are not listed here.)
 const FORBIDDEN = [
@@ -22,7 +31,7 @@ const textOf = st => st.sections.flatMap(s => [s.heading, ...s.blocks.flatMap(b 
 // Returns a list of problems for one station object (empty = publishable).
 function validate(st) {
   const errors = [];
-  if (!/^R[2-5]-\d{2,3}$/.test(st.id || '')) errors.push(`id "${st.id}" is not R<round>-NN or NNN`);
+  if (!PACES_ID_RE.test(st.id || '')) errors.push(`id "${st.id}" is not R<round>-NN, R<round>-NNN or X-NN`);
   if (st.exam !== 'MRCP-PACES') errors.push('exam is not MRCP-PACES');
   if (!st.title || !st.title.trim()) errors.push('no title');
   if (!Array.isArray(st.sections) || !st.sections.length) return errors.concat('no sections');
@@ -39,7 +48,7 @@ function validate(st) {
 }
 
 function buildIndex(dir) {
-  const files = fs.readdirSync(dir).filter(f => /^R[2-5]-\d{2,3}\.json$/.test(f)).sort();
+  const files = fs.readdirSync(dir).filter(f => PACES_FILE_RE.test(f)).sort();
   const index = [], skipped = [];
   for (const f of files) {
     const st = JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8'));
@@ -49,11 +58,11 @@ function buildIndex(dir) {
     const e = st.encounter || {};
     index.push({ id: st.id, title: st.title, station: e.station, label: e.label, minutes: e.minutes });
   }
-  index.sort((a, b) => a.id.localeCompare(b.id, 'en', { numeric: true }));
+  index.sort((a, b) => comparePacesIds(a.id, b.id));
   return { index, skipped, read: files.length };
 }
 
-module.exports = { validate, buildIndex };
+module.exports = { validate, buildIndex, PACES_ID_RE, PACES_FILE_RE, comparePacesIds };
 
 if (require.main === module) {
   const DIR = path.join(__dirname, 'paces-stations');
