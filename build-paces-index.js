@@ -22,7 +22,7 @@ const textOf = st => st.sections.flatMap(s => [s.heading, ...s.blocks.flatMap(b 
 // Returns a list of problems for one station object (empty = publishable).
 function validate(st) {
   const errors = [];
-  if (!/^R5-\d{3}$/.test(st.id || '')) errors.push(`id "${st.id}" is not R5-NNN`);
+  if (!/^R[2-5]-\d{2,3}$/.test(st.id || '')) errors.push(`id "${st.id}" is not R<round>-NN or NNN`);
   if (st.exam !== 'MRCP-PACES') errors.push('exam is not MRCP-PACES');
   if (!st.title || !st.title.trim()) errors.push('no title');
   if (!Array.isArray(st.sections) || !st.sections.length) return errors.concat('no sections');
@@ -39,7 +39,7 @@ function validate(st) {
 }
 
 function buildIndex(dir) {
-  const files = fs.readdirSync(dir).filter(f => /^R5-\d{3}\.json$/.test(f)).sort();
+  const files = fs.readdirSync(dir).filter(f => /^R[2-5]-\d{2,3}\.json$/.test(f)).sort();
   const index = [], skipped = [];
   for (const f of files) {
     const st = JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8'));
